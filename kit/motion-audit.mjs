@@ -89,6 +89,7 @@ function labDemos() {
 function claimsAudit() {
   const files = [
     ['README.md', path.join(ROOT, 'README.md')],
+    ['README.tr.md', path.join(ROOT, 'README.tr.md')],
     ['playbook.md', path.join(ROOT, 'playbook.md')],
   ];
   const problems = [];

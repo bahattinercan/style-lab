@@ -373,11 +373,13 @@ function indexJson(styles) {
 /* ------------------------------------------------------------ README QA */
 
 function checkReadmeLinks() {
-  const readme = path.join(ROOT, 'README.md');
-  if (!fs.existsSync(readme)) return;
-  const md = fs.readFileSync(readme, 'utf8');
-  for (const m of md.matchAll(/\]\((styles\/[^)\s]+)\)/g)) {
-    if (!fs.existsSync(path.join(ROOT, m[1]))) fail(`README.md: kırık link ${m[1]}`);
+  for (const name of ['README.md', 'README.tr.md']) {
+    const readme = path.join(ROOT, name);
+    if (!fs.existsSync(readme)) continue;
+    const md = fs.readFileSync(readme, 'utf8');
+    for (const m of md.matchAll(/\]\((styles\/[^)\s]+)\)/g)) {
+      if (!fs.existsSync(path.join(ROOT, m[1]))) fail(`${name}: kırık link ${m[1]}`);
+    }
   }
 }
 
