@@ -1,595 +1,598 @@
-# Tasarım Stilleri Kütüphanesi (style-lab)
+# Design Style Library (style-lab)
 
-> **Depo:** https://github.com/bahattinercan/style-lab
-> **Kapılar:** `bash kit/gates.sh` (38 adım) · **Kurulum:** `bash kit/install-hooks.sh` (commit öncesi kapılar)
-> **Etkileşimli:** `kit/gallery.html` (arama · filtre · çekmece · kısa liste · karşılaştırma) · `kit/live.html?style=<slug>` · `kit/motion-lab.html`
-> **Katalog indeksi:** [`docs/katalog.md`](docs/katalog.md) (151 stil, 22 aile) · **Rapor:** `kit/dist/report.md` · **Kompozisyon:** `kit/dist/composition.md`
+> **Languages:** [English](README.md) · [Türkçe](README.tr.md)
+> **Repository:** https://github.com/bahattinercan/style-lab
+> **Gates:** `bash kit/gates.sh` (38 steps) · **Install:** `bash kit/install-hooks.sh` (pre-commit gates)
+> **Interactive:** `kit/gallery.html` (search · filter · drawer · shortlist · compare) · `kit/live.html?style=<slug>` · `kit/motion-lab.html`
+> **Catalog index:** [`docs/katalog.md`](docs/katalog.md) (151 styles, 22 families) · **Report:** `kit/dist/report.md` · **Composition:** `kit/dist/composition.md`
 
-Uygulamalarda tekdüze tasarım yapmamak için: **151 görsel stil**, her biri için **37 sahne şablonu**
-(`kit/shots.manifest.json` sahne listesi), görsel imza,
-token seti, ekran + bileşen reçetesi, **ölçülebilir animasyon imzası**, tuzaklar ve **AI brief**.
+A catalog against uniform design: **151 visual styles**, each with **37 scene templates**
+(`kit/shots.manifest.json` scene list), a visual signature, a token set, screen + component
+recipes, a **measurable motion signature**, pitfalls and an **AI brief**.
 
-**Sahne politikası (v5):** repoda her stilin **4 çekirdek sahnesi** durur (`kit/shots.core.json`:
-landing · dashboard · components · dark-landing = **604 PNG, ≈195,2 MiB**). Kalan **33 sahne × 151 = 4983**
-görsel üretilen çıktıdır, `kit/.shots-cache/` altında tutulur (gitignore). Tek komut:
-`node kit/render/render-shots.mjs --styles <slug>` (tam set: `--all`). Gerekçe ve ölçüm: `docs/v5-revizyon-raporu.md` §0.2.
+**Scene policy (v5):** the repo keeps **4 core scenes per style** (`kit/shots.core.json`:
+landing · dashboard · components · dark-landing = **604 PNG, ≈195.2 MiB**). The remaining
+**33 scenes × 151 = 4983** images are generated output and live under `kit/.shots-cache/`
+(gitignored). Single command: `node kit/render/render-shots.mjs --styles <slug>` (full set:
+`--all`). Rationale and measurements: `docs/v5-revizyon-raporu.md` §0.2.
 
-> **Durum: v5 katalog.** 151/151 stil tam şema **v3** (kompozisyon ekseni dahil) · **604/604 çekirdek sahne repoda** · **koyu mod 151/151, borç 0**
-> · 8 hero × 5 nav × 3 yoğunluk arketipi; **16 farklı hero|nav parmak izi**, tekdüzelik endeksi **%16** (v4'te %100'dü)
-> · 151 farklı animasyon imzası (aile içi kopya 0) · doğrulama: `bash kit/gates.sh`
-> · Çekirdek PNG: **604 dosya, 195,2 MiB** dosya verisi (`du`: 197 MiB disk kullanımı) · `kit/.shots-cache/` gitignore kapsamındaki üretilen sahnelerdir.
-> · makine-okur giriş: `kit/styles.index.json` (`docsReady: true` = 151) · sahne listesi: `kit/shots.manifest.json`.
+> **Status: v5 catalog.** 151/151 styles on full schema **v3** (composition axis included) · **604/604 core scenes in repo** · **dark mode 151/151, debt 0**
+> · 8 hero × 5 nav × 3 density archetypes; **16 distinct hero|nav fingerprints**, uniformity index **16%** (100% in v4)
+> · 151 distinct motion signatures (0 in-family copies) · verification: `bash kit/gates.sh`
+> · Core PNGs: **604 files, 195.2 MiB** of file data (`du`: 197 MiB disk usage) · `kit/.shots-cache/` holds the generated scenes covered by gitignore.
+> · machine-readable entry: `kit/styles.index.json` (`docsReady: true` = 151) · scene list: `kit/shots.manifest.json`.
 
-## Klasör haritası
+## Folder map
 
 ```
 style-lab/
-├── README.md                  # seçim rehberi (bu dosya)
-├── docs/katalog.md            # 151 stilin aile aile indeksi (üretilmiş okuma listesi)
-├── docs/animasyon-referanslari.md # ödüllü animasyonlu siteler → desen eşlemesi + CSS reçeteleri
-├── playbook.md                # tekdüzelik kırma + §6.2 animasyon imzası + §17 koyu mod + §18 export
+├── README.md                  # selection guide (English, this file)
+├── README.tr.md               # selection guide (Türkçe)
+├── docs/katalog.md            # family-by-family index of the 151 styles (generated reading list)
+├── docs/animasyon-referanslari.md # award-winning animated sites → pattern mapping + CSS recipes
+├── playbook.md                # breaking uniformity + §6.2 motion signature + §17 dark mode + §18 export
 ├── styles/<nn-slug>/
-│   ├── style.md               # şema v3 doküman (Öz → AI brief → Token)
-│   ├── tokens.json            # makine-okur: palet (açık+koyu), tipografi, motion imzası, reçeteler
-│   ├── token-block.css        # CSS değişken blokları (151/151; apply-fragments tek kaynağı)
-│   ├── shots.config.fragment.mjs # motif + imza CSS + scenes.landing (151/151)
-│   ├── keywords.json          # galeri etiketleri (151/151)
-│   └── shots/                 # 27 PNG (üretilen; elle düzenlenmez)
+│   ├── style.md               # schema v3 document (Sections → AI brief → Tokens)
+│   ├── tokens.json            # machine-readable: palette (light+dark), typography, motion signature, recipes
+│   ├── token-block.css        # CSS variable blocks (151/151; single source for apply-fragments)
+│   ├── shots.config.fragment.mjs # motif + signature CSS + scenes.landing (151/151)
+│   ├── keywords.json          # gallery tags (151/151)
+│   └── shots/                 # 27 PNGs (generated; never edited by hand)
 ├── kit/
-│   ├── tokens.css             # 151 stilin değişken setleri (apply-fragments üretir, elle yazılmaz)
-│   ├── families.json          # 22 aile bandı (tek kaynak: build-gallery + report)
+│   ├── tokens.css             # variable sets for all 151 styles (generated by apply-fragments, not hand-written)
+│   ├── families.json          # 22 family bands (single source: build-gallery + report)
 │   ├── apply-fragments.mjs    # fragment → tokens.css / shots.config.mjs / gallery.data.mjs (idempotent)
-│   ├── styles.index.json      # AI giriş noktası: 151 stilin özeti + yolları
-│   ├── lib/tokens.mjs         # renk/süre/eğri/px/em/% ayrıştırıcıları (hedef-bağımsız)
-│   ├── normalize-motion.mjs   # motion prose → dist/motion.json (kapı: --check)
-│   ├── export/flutter.mjs     # dist/flutter/style_lab_tokens.dart + pubspec.fonts.yaml (kapı: --verify)
-│   ├── fetch-fonts.mjs        # kit/fonts/ttf/*.ttf indirir + INDEX.json (kapı: --check)
-│   ├── dist/                  # üretilen: tokens.all.css · tailwind.theme.css · figma.variables.json · motion.json · flutter/ · report.md · composition.md
-│   ├── check-schema.mjs       # şema v3 + koyu mod + üç kopya paritesi (json ⇄ fragment ⇄ css)
-│   ├── assign-layouts.mjs     # 151 stile kompozisyon arketipi atar (deterministik, kapı: --check)
-│   ├── assign-motion.mjs      # 151 stile hareket koreografisi atar (desen ekseni, --check)
-│   ├── motion-audit.mjs       # dist/motion.md (desen dağılımı, arketip×pin, doküman drift'i)
-│   ├── check-layout.mjs       # kompozisyon çeşitliliği + arketip canlılığı + şablon paritesi (+ --self-test)
-│   ├── composition-report.mjs # dist/composition.md (tekdüzelik endeksi, aile bazlı çeşitlilik)
-│   ├── check-contrast.mjs     # WCAG + APCA + odak halkası (açık + koyu bloklar)
-│   ├── motion-check.mjs       # animasyon imzası + çeşitlilik + bütçe + self-test
-│   ├── export-tokens.mjs      # dist çıktısı (--check kapıda)
-│   ├── dark-fill.mjs          # yarım koyu paletleri formülle tamamlar (+ --sync)
-│   ├── report.mjs             # dist/report.md (kapsam + kontrast + borç)
-│   ├── color.mjs              # renk ayrıştırma + kontrast (tek kaynak)
-│   ├── build-gallery.mjs      # galeri + index.json üretimi ve doğrulaması
-│   ├── gallery.template.mjs   # galeri HTML iskeleti + kart markup'ı (sunucu tarafı)
-│   ├── gallery.js            # galeri etkileşimi: arama/filtre/sıralama/çekmece/URL durumu
-│   ├── gallery.css           # galeri görünümü (chrome nötr, demo alanı temalı)
-│   ├── viewer-nav.js         # canlı/bölüm/akış görüntüleyicileri için ortak geçiş çubuğu
-│   ├── viewer-lightbox.js    # bölüm/akış kartlarını büyütme: tıkla→aç · ←→ gezin · 1:1 zoom · Esc
-│   ├── check-gallery-ui.mjs  # galeri kullanılabilirlik kapısı (kart, filtre, çekmece, mobil, URL)
-│   ├── fonts/                 # gömülü woff2 (offline render) + ttf/ (Flutter asset'leri, 30 aile)
+│   ├── styles.index.json      # AI entry point: summary + paths for all 151 styles
+│   ├── lib/tokens.mjs         # color/duration/curve/px/em/% parsers (target-agnostic)
+│   ├── normalize-motion.mjs   # motion prose → dist/motion.json (gate: --check)
+│   ├── export/flutter.mjs     # dist/flutter/style_lab_tokens.dart + pubspec.fonts.yaml (gate: --verify)
+│   ├── fetch-fonts.mjs        # downloads kit/fonts/ttf/*.ttf + INDEX.json (gate: --check)
+│   ├── dist/                  # generated: tokens.all.css · tailwind.theme.css · figma.variables.json · motion.json · flutter/ · report.md · composition.md
+│   ├── check-schema.mjs       # schema v3 + dark mode + three-copy parity (json ⇄ fragment ⇄ css)
+│   ├── assign-layouts.mjs     # assigns a composition archetype to 151 styles (deterministic, gate: --check)
+│   ├── assign-motion.mjs      # assigns motion choreography to 151 styles (pattern axis, --check)
+│   ├── motion-audit.mjs       # dist/motion.md (pattern distribution, archetype×pin, document drift)
+│   ├── check-layout.mjs       # composition variety + archetype liveness + template parity (+ --self-test)
+│   ├── composition-report.mjs # dist/composition.md (uniformity index, per-family variety)
+│   ├── check-contrast.mjs     # WCAG + APCA + focus ring (light + dark blocks)
+│   ├── motion-check.mjs       # motion signature + variety + budget + self-test
+│   ├── export-tokens.mjs      # dist output (--check in the gates)
+│   ├── dark-fill.mjs          # completes half-finished dark palettes by formula (+ --sync)
+│   ├── report.mjs             # dist/report.md (coverage + contrast + debt)
+│   ├── color.mjs              # color parsing + contrast (single source)
+│   ├── build-gallery.mjs      # gallery + index.json generation and verification
+│   ├── gallery.template.mjs   # gallery HTML skeleton + card markup (server side)
+│   ├── gallery.js            # gallery interaction: search/filter/sort/drawer/URL state
+│   ├── gallery.css           # gallery look (neutral chrome, themed demo area)
+│   ├── viewer-nav.js         # shared switch bar for live/section/flow viewers
+│   ├── viewer-lightbox.js    # enlarge section/flow cards: click→open · ←→ browse · 1:1 zoom · Esc
+│   ├── check-gallery-ui.mjs  # gallery usability gate (card, filter, drawer, mobile, URL)
+│   ├── fonts/                 # embedded woff2 (offline render) + ttf/ (Flutter assets, 30 families)
 │   └── render/
-│       ├── layouts.json       # KOMPOZİSYON EKSENİ tek kaynağı: 8 hero · 5 nav · 3 yoğunluk · 12 bölüm
-│       ├── motion/patterns.json # HAREKET SÖZLÜĞÜ: 20 desen (7 giriş · 9 scroll · 3 hover · 1 sayfa) + reduced stratejileri
-│       ├── motion/policy.json   # yasak desenler + teachingOnly gerekçeleri (lab ↔ üretim)
-│       ├── partials/          # hero-<id>.html + nav-<id>.html (13 parça; landing şablonları bunları gömer)
-│       ├── render-shots.mjs   # Chrome/Edge headless (tek tarayıcı + CDP), 37 sahne şablonu
-│       ├── cdp-browser.mjs    # bağlantı havuzu: N sekme paralel, PNG/WebP, animasyon dondurma
-│       ├── shots.core.json    # repoda tutulan çekirdek sahneler (tek kaynak)
-│       ├── optimize-shots.mjs # kayıpsız PNG sıkıştırma (--verify: piksel-identical)
-│       ├── baseline.mjs       # görsel regresyon baseline (--write/--status/--clean)
-│       ├── scene.css          # sahnelerin ortak iskeleti (yalnız var())
-│       └── shots.config.mjs   # stil başına imza ayarları (apply-fragments üretir)
-├── skills/style-lab-catalog/  # ajan prosedürü: SKILL.md + references/{families,workflow}.md
+│       ├── layouts.json       # single source of the COMPOSITION AXIS: 8 hero · 5 nav · 3 density · 12 sections
+│       ├── motion/patterns.json # MOTION VOCABULARY: 20 patterns (7 enter · 9 scroll · 3 hover · 1 page) + reduced strategies
+│       ├── motion/policy.json   # forbidden patterns + teachingOnly rationale (lab ↔ production)
+│       ├── partials/          # hero-<id>.html + nav-<id>.html (13 partials; landing templates embed them)
+│       ├── render-shots.mjs   # Chrome/Edge headless (single browser + CDP), 37 scene templates
+│       ├── cdp-browser.mjs    # connection pool: N tabs in parallel, PNG/WebP, animation freezing
+│       ├── shots.core.json    # core scenes kept in the repo (single source)
+│       ├── optimize-shots.mjs # lossless PNG compression (--verify: pixel-identical)
+│       ├── baseline.mjs       # visual regression baseline (--write/--status/--clean)
+│       ├── scene.css          # shared skeleton for scenes (var() only)
+│       └── shots.config.mjs   # per-style signature settings (generated by apply-fragments)
+├── skills/style-lab-catalog/  # agent procedure: SKILL.md + references/{families,workflow}.md
 └── _templates/style-template.md
 ```
 
-## 10 saniyede seçim
+## Pick in 10 seconds
 
-| İhtiyaç | Stil |
+| Need | Style |
 |---|---|
-| Odak, hız, veri yoğun panel | `01 minimalism`, `02 swiss-design`, `46 telemetry-grid`, `47 trading-desk` |
-| İçerik/dergi/blog | `03 editorial-design`, `86 poetry-chapbook`, `87 zine-collage` |
-| Premium, pahalı his | `04 luxury-typography`, `26 art-deco`, `41 grand-tourer`, `128 brass-copper` |
-| Lüks emlak vitrini | `42 grand-tourer-oxblood` + `22–27` emlak sahneleri |
-| Dashboard düzeni | `05 bento-grid`, `48 executive-kpi`, `109 kanban-flow` |
-| Sakin, sürdürülebilir | `06 japandi`, `07 wabi-sabi`, `78 biophilic-botanical` |
-| Medya üstü katman | `08 glassmorphism`, `09 liquid-glass`, `98 generative-grid` |
-| Eğlenceli, çocuk/wellness | `11 claymorphism`, `18 dopamine-ui`, `116 kids-playground` |
-| Cesur, indie | `13 neo-brutalism`, `14 anti-design`, `15 acid-graphics` |
-| Nostalji, oyun, müzik | `19 y2k`, `21 synthwave`, `119 arcade-8bit`, `124 album-sleeve` |
-| Teknik, terminal, hacker | `22 cyberpunk`, `23 cybercore`, `45 terminal-ui` |
-| Klavye önceliği, dev tool | `45 terminal-ui`, `108 command-palette`, `115 keyboard-first` |
-| Ajan/otomasyon ürünü | `137 agent-orchestration`, `113 notebook-repl`, `112 zero-ui` |
-| Akademik, arşiv, kitap | `33 dark-academia`, `27 victorian`, `89 library-index` |
-| Malzeme/lüks doku | `126 marble-vein`, `127 silk-drape`, `130 leather-craft`, `135 enamel-porcelain` |
-| Deneysel, spekülatif gelecek | `136 speculative-scifi`, `140 nanotech`, `145 zero-gravity` |
+| Focus, speed, data-dense panel | `01 minimalism`, `02 swiss-design`, `46 telemetry-grid`, `47 trading-desk` |
+| Content/magazine/blog | `03 editorial-design`, `86 poetry-chapbook`, `87 zine-collage` |
+| Premium, expensive feel | `04 luxury-typography`, `26 art-deco`, `41 grand-tourer`, `128 brass-copper` |
+| Luxury real-estate showcase | `42 grand-tourer-oxblood` + `22–27` real-estate scenes |
+| Dashboard layout | `05 bento-grid`, `48 executive-kpi`, `109 kanban-flow` |
+| Calm, sustainable | `06 japandi`, `07 wabi-sabi`, `78 biophilic-botanical` |
+| Layer over media | `08 glassmorphism`, `09 liquid-glass`, `98 generative-grid` |
+| Playful, kids/wellness | `11 claymorphism`, `18 dopamine-ui`, `116 kids-playground` |
+| Bold, indie | `13 neo-brutalism`, `14 anti-design`, `15 acid-graphics` |
+| Nostalgia, games, music | `19 y2k`, `21 synthwave`, `119 arcade-8bit`, `124 album-sleeve` |
+| Technical, terminal, hacker | `22 cyberpunk`, `23 cybercore`, `45 terminal-ui` |
+| Keyboard-first, dev tool | `45 terminal-ui`, `108 command-palette`, `115 keyboard-first` |
+| Agent/automation product | `137 agent-orchestration`, `113 notebook-repl`, `112 zero-ui` |
+| Academic, archive, book | `33 dark-academia`, `27 victorian`, `89 library-index` |
+| Material/luxe texture | `126 marble-vein`, `127 silk-drape`, `130 leather-craft`, `135 enamel-porcelain` |
+| Experimental, speculative future | `136 speculative-scifi`, `140 nanotech`, `145 zero-gravity` |
 
-Tam liste (slug + tek cümle + etiketler): [`docs/katalog.md`](docs/katalog.md).
+Full list (slug + one-liner + tags): [`docs/katalog.md`](docs/katalog.md).
 
-## Aile bantları (21)
+## Family bands (21)
 
-Tek kaynak `kit/families.json`; 1–151 kesintisiz. `tokens.json → motion.family` bazı stillerde alt-kümeyi yazar.
+Single source `kit/families.json`; 1–151 uninterrupted. `tokens.json → motion.family` names the sub-band on some styles.
 
-| Bant | Aile | Stil | Tipik kullanım |
+| Band | Family | Styles | Typical use |
 |---|---|---|---|
-| 01–07 | Sade | 7 | ürün arayüzü, dokümantasyon, okuma |
-| 08–12 | Yüzey | 5 | katman, cam, ışıma, yumuşak kontrol |
-| 13–18 | Cesur | 6 | indie marka, etkinlik, kampanya |
-| 19–27 | Retro | 9 | nostalji, oyun, kültür |
-| 28–34 | Sanatsal | 7 | sanat, kişisel, deneysel vitrin |
-| 35–36 | Geometrik | 2 | kültür/ajans vitrini |
-| 37 | Tipografik | 1 | tipografi odaklı poster/landing |
-| 38 | Organik | 1 | doğal/ürün hikâyesi |
-| 39–40 | Yeni Dalga | 2 | AI ürünü, mesh/gradyan vitrin |
-| 41–44 | Zamansız | 4 | premium, kurumsal, lüks emlak |
-| 45 | Teknik | 1 | TUI, CI paneli, log |
-| 46–55 | Veri & Gösterge | 10 | telemetri, finans, KPI, log, IoT |
-| 56–65 | Endüstriyel | 10 | blueprint, MES, saha, kokpit |
-| 66–75 | Kültürel & Bölgesel | 10 | bölgesel miras, desen, el sanatları |
-| 76–85 | Doğa & Organik | 10 | biyofilik, hava, arazi, deniz |
-| 86–95 | Yayın & Tipografi | 10 | kitap, gazete, katalog, fanzin |
-| 96–105 | Hareket & Optik | 10 | kinetik, illüzyon, generative, holografik |
-| 106–115 | Etkileşim | 10 | voice, AR, komut paleti, wizard |
-| 116–125 | Oyuncul | 10 | çocuk, festival, sticker, arcade |
-| 126–135 | Materyal & Lüks | 10 | mermer, ipek, pirinç, deri, cam |
-| 136–145 | Deneysel & Gelecek | 10 | spekülatif, AI-native, orbital |
-| 146–151 | Sahne & Prestij | 6 | sinematik emlak, ajans vitrini, lansman, butik otel, lookbook, koyu panel |
+| 01–07 | Plain | 7 | product UI, documentation, reading |
+| 08–12 | Surface | 5 | layering, glass, glow, soft controls |
+| 13–18 | Bold | 6 | indie brand, event, campaign |
+| 19–27 | Retro | 9 | nostalgia, games, culture |
+| 28–34 | Artistic | 7 | art, personal, experimental showcase |
+| 35–36 | Geometric | 2 | culture/agency showcase |
+| 37 | Typographic | 1 | typography-led poster/landing |
+| 38 | Organic | 1 | nature/product story |
+| 39–40 | New Wave | 2 | AI product, mesh/gradient showcase |
+| 41–44 | Timeless | 4 | premium, corporate, luxury real estate |
+| 45 | Technical | 1 | TUI, CI panel, logs |
+| 46–55 | Data & Instrument | 10 | telemetry, finance, KPI, logs, IoT |
+| 56–65 | Industrial | 10 | blueprint, MES, field, cockpit |
+| 66–75 | Cultural & Regional | 10 | regional heritage, pattern, craft |
+| 76–85 | Nature & Organic | 10 | biophilic, weather, terrain, sea |
+| 86–95 | Publishing & Typography | 10 | book, newspaper, catalog, fanzine |
+| 96–105 | Motion & Optics | 10 | kinetic, illusion, generative, holographic |
+| 106–115 | Interaction | 10 | voice, AR, command palette, wizard |
+| 116–125 | Playful | 10 | kids, festival, sticker, arcade |
+| 126–135 | Material & Luxe | 10 | marble, silk, brass, leather, glass |
+| 136–145 | Experimental & Future | 10 | speculative, AI-native, orbital |
+| 146–151 | Stage & Prestige | 6 | cinematic real estate, agency showcase, launch, boutique hotel, lookbook, dark panel |
 
-## Nasıl kullanılır
+## How to use it
 
-1. **Seç** — niyete göre **1 baskın + en fazla 1 garnitür** (`playbook.md` §2). Aday listesi: `docs/katalog.md`.
-2. **Bak** — `styles/<nn-slug>/shots/01-landing.png`, `02-dashboard.png`, `04-components.png`. Dokümanla görsel çelişirse **görsel kazanır**.
-3. **Oku** — `style.md` (§ Görsel imza, § Zorunlu kurallar, § Yasaklar, § Bileşen reçeteleri, § Tuzaklar, § AI brief) + `tokens.json`.
-4. **Uygula** — token'ları `kit/tokens.css`'teki `[data-style="<slug>"]` bloğundan (veya hazır `kit/dist/tokens.all.css`) al; koyu mod `[data-theme="dark"]`. Bileşen kodunda hard-coded renk/radius/gölge yok.
-5. **Animasyonu kur** — `tokens.json → motion.sequences` o stilin imzasıdır (aşağıya bak). `prefers-reduced-motion` zorunlu.
-6. **Doğrula** — kendi ekranını `node kit/render/render-shots.mjs --styles <slug> --force` ile üret ve görselle karşılaştır; repoda `bash kit/gates.sh`.
-7. **Karşılaştır** — `kit/gallery.html`: kartlarda **⇄** ile 2–4 stil seç → **Karşılaştır** aynı sahneyi yan yana açar.
-   **Kapak** çipleri tüm kartları aynı sahneye çevirir; **koyu mod** durumu çekmecede rozet olarak görünür.
-   Kart aksiyonları: **⧉** `data-style`'ı kopyalar · **★** kısa listeye ekler · **⊕** detay çekmecesini açar
-   (token CSS, AI brief, tüm kareler, canlı bileşen). Klavye: `/` ara · `f` filtre · `j`/`k` gez ·
-   `Enter` detay · `c` kopyala · `s` yıldız · `Esc` kapat. Filtreler URL'de tutulur (`?fam=&q=&scene=`), link paylaşılabilir.
-8. **Canlı gör** — `kit/live.html?style=<slug>`: maskeli giriş → scroll reveal → pin+scrub → sayaç → hover;
-   `hareket: açık/kapalı` reduced-motion karşılığını, `❙❙` poster döngüsünü gösterir.
-9. **İncele** — `kit/sections.html?style=<slug>` (12 bölüm) ve `kit/flows.html?style=<slug>` (3 akış):
-   karta tıkla → tam ekran inceleme; `←`/`→` gezin, tık veya `z` ile 1:1 zoom, `↗ aç` yeni sekmede, `Esc` kapat.
+1. **Pick** — by intent take **1 dominant + at most 1 accent** style (`playbook.md` §2). Candidate list: `docs/katalog.md`.
+2. **Look** — `styles/<nn-slug>/shots/01-landing.png`, `02-dashboard.png`, `04-components.png`. If the document contradicts the image, **the image wins**.
+3. **Read** — `style.md` (§ Visual signature, § Required rules, § Forbidden, § Component recipes, § Pitfalls, § AI brief) + `tokens.json`.
+4. **Apply** — take tokens from the `[data-style="<slug>"]` block in `kit/tokens.css` (or the ready-made `kit/dist/tokens.all.css`); dark mode is `[data-theme="dark"]`. No hard-coded color/radius/shadow in component code.
+5. **Set up motion** — `tokens.json → motion.sequences` is that style's signature (see below). `prefers-reduced-motion` is mandatory.
+6. **Verify** — render your own screen with `node kit/render/render-shots.mjs --styles <slug> --force` and compare against the images; in this repo run `bash kit/gates.sh`.
+7. **Compare** — `kit/gallery.html`: pick 2–4 styles with **⇄** on the cards → **Compare** opens the same scene side by side.
+   The **Cover** chips switch every card to the same scene; **dark mode** status shows as a badge in the drawer.
+   Card actions: **⧉** copies `data-style` · **★** adds to the shortlist · **⊕** opens the detail drawer
+   (token CSS, AI brief, all frames, live component). Keyboard: `/` search · `f` filter · `j`/`k` browse ·
+   `Enter` detail · `c` copy · `s` star · `Esc` close. Filters live in the URL (`?fam=&q=&scene=`), so links are shareable.
+8. **See it live** — `kit/live.html?style=<slug>`: masked intro → scroll reveal → pin+scrub → counter → hover;
+   `motion: on/off` shows the reduced-motion counterpart, `❙❙` shows the poster loop.
+9. **Inspect** — `kit/sections.html?style=<slug>` (12 sections) and `kit/flows.html?style=<slug>` (3 flows):
+   click a card → full-screen review; `←`/`→` to browse, click or `z` for 1:1 zoom, `↗ open` in a new tab, `Esc` to close.
 
-## Animasyon sistemi (stil başına imza)
+## Motion system (per-style signature)
 
-Her stil 7 parametreyle tanımlı **tek bir imza** taşır:
+Every style carries **one signature** defined by 7 parameters:
 `enter {duration, ease, offsetY, stagger}` · `scroll {trigger, duration, offsetY, once}` · `hover {duration, imageScale}` (+ `pin`).
 
-| Kural | Ölçü |
+| Rule | Measure |
 |---|---|
-| Aile içi çeşitlilik | İki stil 7 parametrenin **≥2'sinde** farklı olmak zorunda (`kit/motion-check.mjs`) |
-| Süre bütçesi | `enter ≤ 1.2s`, `scroll ≤ 1.2s`; `pin.scrub > 1.4` uyarı |
-| Eğri | Stilin `motion.easing` değeri esastır; CSS varsayılanı (`ease`/`linear`) yalnız bilinçli tercihse kullanılır. **Eğri sayısı elle yazılmaz**, `kit/dist/motion.md` §1'den ölçülür (normalize eğri + `steps()` sayısı) |
-| reduced-motion | Zorunlu; hareket yerine opaklık |
-| Muafiyet | **Yok.** Kural 151. stille birlikte istisnasız uygulanıyor; `--self-test` kuralın no-op olmadığını kanıtlar |
+| In-family variety | Two styles must differ in **≥2 of the 7** parameters (`kit/motion-check.mjs`) |
+| Duration budget | `enter ≤ 1.2s`, `scroll ≤ 1.2s`; `pin.scrub > 1.4` warns |
+| Curve | The style's `motion.easing` is authoritative; CSS defaults (`ease`/`linear`) only as a deliberate choice. **Curve counts are never hand-written**, they are measured from `kit/dist/motion.md` §1 (normalized curves + `steps()`) |
+| reduced-motion | Mandatory; opacity instead of movement |
+| Exemptions | **None.** The rule applies to all 151 styles without exception; `--self-test` proves it is not a no-op |
 
-Durum: **151 farklı imza / 151 stil**, aile içi kopya **0**. Ayrıntı: `playbook.md` §6.2.
+Status: **151 distinct signatures / 151 styles**, in-family copies **0**. Details: `playbook.md` §6.2.
 
-## Kompozisyon ekseni (şema v3)
+## Composition axis (schema v3)
 
-Renk/tipografi iki stili ayırır ama **aynı iskelet** iki siteyi ayırmaz. Bu yüzden her stil
-`tokens.json → layout` altında bir kompozisyon arketipi taşır:
+Color and typography set two styles apart, but **the same skeleton** does not separate two sites. So every style
+carries a composition archetype under `tokens.json → layout`:
 
-| Eksen | Değerler | Nerede |
+| Axis | Values | Where |
 |---|---|---|
 | `hero` | `split` · `split-reverse` · `centered` · `type` · `fullbleed` · `product` · `index` · `sticky` | `kit/render/partials/hero-<id>.html` |
 | `nav` | `inline` · `pill` · `split` · `utility` · `rail` | `kit/render/partials/nav-<id>.html` |
 | `density` | `sparse` · `balanced` · `dense` | `kit/render/scene.css` (`.density-*`) |
 
-Tek kaynak `kit/render/layouts.json` (her arketipin "ne zaman" gerekçesiyle). Şablonlar
-`<!-- HERO -->` / `<!-- NAV -->` yer tutucularını taşır; `render-shots.mjs` stilin layout'una göre
-partial'ı gömer. Arketip seçicileri `[data-layout]` / `[data-nav]` ile nitelendiği için **iskelet**
-kazanır, stilin `extraCss`'i iç öğeleri (kart, buton, başlık rengi) boyamaya devam eder.
+Single source `kit/render/layouts.json` (with a "when" rationale per archetype). Templates carry
+`<!-- HERO -->` / `<!-- NAV -->` placeholders; `render-shots.mjs` embeds the partial matching the style's
+layout. Archetype selectors are qualified with `[data-layout]` / `[data-nav]`, so the **skeleton** wins and the
+style's `extraCss` keeps painting inner elements (card, button, heading color).
 
-| Kural | Ölçü | Kapı |
+| Rule | Measure | Gate |
 |---|---|---|
-| Aile çeşitliliği | aile ≥8 stilse **≥3 farklı hero**, ≥1 farklı parmak izi seti | `check-layout.mjs` |
-| Parmak izi tavanı | tek `hero|nav` kombinasyonu ≤ **%25**, tek hero ≤ **%35** | `check-layout.mjs` |
-| Arketip canlılığı | her arketip ≥4 stilde kullanılır (ölü arketip yok) | `check-layout.mjs` |
-| Şablon paritesi | `landing.html` ⇄ `dark-landing.html` yalnız `data-theme` ile ayrılır | `check-layout.mjs` |
-| Atama kararlılığı | `assign-layouts --check` → tokens.json öneriyle aynı | `assign-layouts.mjs` |
+| Family variety | if a family has ≥8 styles → **≥3 distinct heroes**, ≥1 distinct fingerprint set | `check-layout.mjs` |
+| Fingerprint ceiling | a single `hero|nav` combination ≤ **25%**, a single hero ≤ **35%** | `check-layout.mjs` |
+| Archetype liveness | every archetype is used by ≥4 styles (no dead archetype) | `check-layout.mjs` |
+| Template parity | `landing.html` ⇄ `dark-landing.html` differ only by `data-theme` | `check-layout.mjs` |
+| Assignment stability | `assign-layouts --check` → identical to the tokens.json proposal | `assign-layouts.mjs` |
 
-Durum: **16 farklı hero|nav parmak izi**, tekdüzelik endeksi **%16** (v4'te %100), aile başına
-ortalama **2,9** farklı hero. Dağılım: [`kit/dist/composition.md`](kit/dist/composition.md).
+Status: **16 distinct hero|nav fingerprints**, uniformity index **16%** (100% in v4), average **2.9** distinct
+heroes per family. Distribution: [`kit/dist/composition.md`](kit/dist/composition.md).
 
 ```bash
-node kit/assign-layouts.mjs --dry          # öneriyi gör (slug+aile+etiket puanlaması, deterministik)
-node kit/assign-layouts.mjs --apply        # 151 tokens.json'a yaz (şema v3)
-node kit/check-layout.mjs --report         # dağılım tablosu
+node kit/assign-layouts.mjs --dry          # see the proposal (slug+family+tag scoring, deterministic)
+node kit/assign-layouts.mjs --apply        # write into the 151 tokens.json files (schema v3)
+node kit/check-layout.mjs --report         # distribution table
 node kit/composition-report.mjs            # dist/composition.md
 ```
 
-Yeni arketip eklemek: `layouts.json`'a kayıt → `partials/<tip>-<id>.html` → `scene.css`'te
-`[data-layout='<id>']` bloğu → `assign-layouts.mjs` sözlüğüne anahtar kelime → `--apply` → render.
+Adding an archetype: register it in `layouts.json` → add `partials/<type>-<id>.html` → add a
+`[data-layout='<id>']` block in `scene.css` → add keywords to the `assign-layouts.mjs` dictionary → `--apply` → render.
 
-## Hareket sözlüğü (şema v4, M1)
+## Motion vocabulary (schema v4, M1)
 
-Sayı imzası (süre/eğri/offset) tek başına ifade çeşitliliği üretmiyor: v5 ölçümünde 110/151 stil
-yalnız `opacity+transform`, 94/151 scroll = `reveal`, en kalabalık parmak izi %51'di. Bu yüzden
-her stil artık **desen** de taşır: `tokens.json → motion.choreography`.
+The numeric signature (duration/curve/offset) alone does not produce expressive variety: in the v5 measurement
+110/151 styles were only `opacity+transform`, 94/151 scroll was `reveal`, and the busiest fingerprint was 51%.
+So every style now also carries a **pattern**: `tokens.json → motion.choreography`.
 
-| Eksen | Desenler (tek kaynak `kit/render/motion/patterns.json`) |
+| Axis | Patterns (single source `kit/render/motion/patterns.json`) |
 |---|---|
 | `enter` | `fade-rise` · `line-mask` · `clip-curtain` · `blur-in` · `scale-settle` · `letter-stagger` · `split-slide` |
 | `scroll` | `reveal` · `grid-stagger` · `pin-scrub` · `parallax` · `counter` · `mask-wipe` · `stack-pin` · `velocity-skew` · `scroll-zoom` |
 | `hover` | `scale` · `underline-draw` · `tilt-3d` |
-| `page` | `crossfade` (View Transitions varsa cross-fade'e düşer) |
+| `page` | `crossfade` (falls back to cross-fade when View Transitions are unavailable) |
 | `reduced` | `opacity` · `instant` · `static-frame` |
 
-| Kural | Ölçü | Kapı |
+| Rule | Measure | Gate |
 |---|---|---|
-| Aile çeşitliliği | aile ≥4 stilse **≥3 farklı** `enter` deseni | `motion-check` |
-| Desen tavanı | tek `enter` deseni ≤ **%30** stil; her desen ≥3 stilde canlı | `motion-check` |
-| Arketip kuralı | `sticky ⇒ pin-scrub`, `index ⇒ grid-stagger` | `motion-check` |
-| Aile ↔ desen | `Sade` ailesinde `tilt-3d` yasak | `motion-check` |
-| Atama kararlılığı | `assign-motion --check` → tokens.json öneriyle aynı | `assign-motion.mjs` |
-| Sözlük no-op değil | 6 sentetik ihlal (eksik, tanımsız id, tekdüze, ölü desen, arketip, hover) | `motion-check --self-test` |
-| Çalışma zamanı paritesi | hesaplanmış süre ↔ tokens **±20ms/%2**; reduced'ta **0** gerçek animasyon; p95 frame ≤32ms | `motion-measure` (CDP) |
-| Canlı önizleme | `live.html` sabit süre içermez, `data-motion` + `--mi/--ms/--mh` değişkenleri | `motion-check` |
-| Storyboard | 151 şerit: 5 kare (0-100%) + reduced karesi, ms etiketli | `motion-strip` |
-| Lab ↔ katalog | her desenin ≥1 demosu, her bağ mevcut | `build-motion-lab --check` |
+| Family variety | if a family has ≥4 styles → **≥3 distinct** `enter` patterns | `motion-check` |
+| Pattern ceiling | a single `enter` pattern ≤ **30%** of styles; every pattern alive in ≥3 styles | `motion-check` |
+| Archetype rule | `sticky ⇒ pin-scrub`, `index ⇒ grid-stagger` | `motion-check` |
+| Family ↔ pattern | `tilt-3d` forbidden in the `Plain` family | `motion-check` |
+| Assignment stability | `assign-motion --check` → identical to the tokens.json proposal | `assign-motion.mjs` |
+| Vocabulary is not a no-op | 6 synthetic violations (missing, undefined id, uniform, dead pattern, archetype, hover) | `motion-check --self-test` |
+| Runtime parity | computed duration ↔ tokens **±20ms/2%**; in reduced mode **0** real animations; p95 frame ≤32ms | `motion-measure` (CDP) |
+| Live preview | `live.html` contains no hard-coded durations, uses `data-motion` + `--mi/--ms/--mh` variables | `motion-check` |
+| Storyboard | 151 strips: 5 frames (0-100%) + a reduced frame, ms-labelled | `motion-strip` |
+| Lab ↔ catalog | every pattern has ≥1 demo, every link resolves | `build-motion-lab --check` |
 
-Durum: **20 desen · 78 farklı hareket parmak izi**, en kalabalık %6, `choreography` kapsamı 151/151.
-Ödüllü site tekniklerinden türetilen desenler (hangi site → hangi stil → hangi CSS):
+Status: **20 patterns · 78 distinct motion fingerprints**, busiest 6%, `choreography` coverage 151/151.
+Patterns derived from award-winning site techniques (which site → which style → which CSS):
 [`docs/animasyon-referanslari.md`](docs/animasyon-referanslari.md).
-Dağılım: [`kit/dist/motion.md`](kit/dist/motion.md). Politika (üretimde yasak desenler):
-[`kit/motion/policy.json`](kit/motion/policy.json) — lab bunları yalnız `teachingOnly` gerekçesiyle sergiler.
+Distribution: [`kit/dist/motion.md`](kit/dist/motion.md). Policy (patterns forbidden in production):
+[`kit/motion/policy.json`](kit/motion/policy.json) — the lab shows them only with a `teachingOnly` rationale.
 
 ```bash
-node kit/assign-motion.mjs --dry | --apply | --check   # deterministik koreografi ataması
-node kit/motion-check.mjs --self-test                  # kural setini sentetik ihlallerle kanıtla
-node kit/motion-audit.mjs                              # dist/motion.md (desen dağılımı)
-node kit/render/motion-measure.mjs --sample 8          # tarayıcıda süre paritesi + reduced + p95 frame
-node kit/render/motion-measure.mjs --all               # 151 stil (~2 dk)
-node kit/render/motion-strip.mjs --all                # 151 storyboard (kit/.shots-cache/*/27-motion.png, ~80 s)
+node kit/assign-motion.mjs --dry | --apply | --check   # deterministic choreography assignment
+node kit/motion-check.mjs --self-test                  # prove the rule set with synthetic violations
+node kit/motion-audit.mjs                              # dist/motion.md (pattern distribution)
+node kit/render/motion-measure.mjs --sample 8          # duration parity + reduced + p95 frame in the browser
+node kit/render/motion-measure.mjs --all               # 151 styles (~2 min)
+node kit/render/motion-strip.mjs --all                # 151 storyboards (kit/.shots-cache/*/27-motion.png, ~80 s)
 ```
 
-## Keşif ve ajan erişimi (P5)
+## Discovery and agent access (P5)
 
-Galeri artık niyetle aranıyor: **aile · sektör · ton · sahne** çipleri + arama (ton, accent renginin
-hue kovası: sıcak/soğuk/yeşil/nötr). Kartlarda `▶ canlı`, `▦ bölüm`, `⇢ akış` bağlantıları.
+The gallery is now searched by intent: **family · industry · tone · scene** chips plus search (tone is the hue
+bucket of the accent color: warm/cool/green/neutral). Cards link to `▶ live`, `▦ section`, `⇢ flow`.
 
-Ajan tarafı iki giriş:
+Two entry points for agents:
 
-| Araç | Ne verir |
+| Tool | What it gives you |
 |---|---|
-`node kit/pick.mjs --intent "premium emlak"` | sıralı adaylar + eşleşen terimler (deterministik) |
-`node kit/brief.mjs --intent "…"` | tek dosyalık uygulanabilir brief: stil + sektör + layout + koreografi + fotoğraf + token bloğu + kanıt yolları + yasaklar |
-`node kit/mcp-server.mjs` | **MCP (stdio, JSON-RPC)**: `pick` · `style` · `tokens` · `shots` · `sections` · `flows` · `brief` |
+| `node kit/pick.mjs --intent "premium real estate"` | ranked candidates + matched terms (deterministic) |
+| `node kit/brief.mjs --intent "…"` | single-file actionable brief: style + industry + layout + choreography + photo + token block + evidence paths + forbidden list |
+| `node kit/mcp-server.mjs` | **MCP (stdio, JSON-RPC)**: `pick` · `style` · `tokens` · `shots` · `sections` · `flows` · `brief` |
 
 ```bash
-node kit/brief.mjs --intent "premium emlak" --out brief.md
-node kit/mcp-server.mjs --list       # 7 araç + açıklama
-node kit/mcp-server.mjs --self-test  # kapı
+node kit/brief.mjs --intent "premium real estate" --out brief.md
+node kit/mcp-server.mjs --list       # 7 tools + descriptions
+node kit/mcp-server.mjs --self-test  # gate
 ```
 
-MCP kaydı (Claude/Codex/Cursor): çalışma dizini depo kökü, komut `node`, argüman `kit/mcp-server.mjs`.
+MCP registration (Claude/Codex/Cursor): working directory = repo root, command `node`, argument `kit/mcp-server.mjs`.
 
-## Akış şeritleri (P4)
+## Flow strips (P4)
 
-Refero'nun değeri ekran değil **akış**; katalogda her stil için 3 akış × 3 adım tek şeritte:
-`kit/.shots-cache/<dir>/flows/<id>.png`. Görüntüleyici: `kit/flows.html?style=<slug>`.
+Refero's value is not a screen but a **flow**; the catalog carries 3 flows × 3 steps per style in a single strip:
+`kit/.shots-cache/<dir>/flows/<id>.png`. Viewer: `kit/flows.html?style=<slug>`.
 
-| Akış | Adımlar | Ne kanıtlar |
+| Flow | Steps | What it proves |
 |---|---|---|
-| `onboarding` | Amaç → Ekip → Davet | seçenek kartı, alan, ilerleme noktaları |
-| `checkout` | Sepet → Ödeme → Onay | tutar satırları, kart alanı, başarı durumu |
-| `invite` | Rol → Mesaj → Gönder | rol seçimi, çoklu alıcı çipi |
+| `onboarding` | Goal → Team → Invite | option card, fields, progress dots |
+| `checkout` | Cart → Payment → Confirm | amount rows, card field, success state |
+| `invite` | Role → Message → Send | role picker, multi-recipient chips |
 
 ```bash
-node kit/render/render-flows.mjs --styles y2k      # tek stil, 3 akış
+node kit/render/render-flows.mjs --styles y2k      # one style, 3 flows
 node kit/render/render-flows.mjs --all             # 151 × 3 = 453 (~80 s)
-node kit/render/render-flows.mjs --sample 3 --measure  # 3 adım var mı, taşma var mı (CDP)
+node kit/render/render-flows.mjs --sample 3 --measure  # are there 3 steps, is anything overflowing (CDP)
 ```
 
-Kapı: her akışta **3 adım**, yatay taşma ≤2px, viewport dışına taşan adım yok, boş kare yok.
-Galeri kartlarında `▦ bölüm` ve `⇢ akış` bağlantıları.
+Gate: **3 steps** per flow, horizontal overflow ≤2px, no step outside the viewport, no empty frame.
+Gallery cards link to `▦ section` and `⇢ flow`.
 
-## Bölüm kütüphanesi (P3)
+## Section library (P3)
 
-Tam sayfa yerine **bölüm** kütüphanesi: 12 arketip × 151 stil = **1812 bölüm** görseli.
-Görüntüleyici: `kit/sections.html?style=<slug>` (stil seç → 12 bölüm).
+A **section** library instead of full pages: 12 archetypes × 151 styles = **1812 section** images.
+Viewer: `kit/sections.html?style=<slug>` (pick a style → 12 sections).
 
-| # | Bölüm | Ne kanıtlar |
+| # | Section | What it proves |
 |---|---|---|
-| 01 | `hero` | başlık hiyerarşisi + CTA + güven satırı |
-| 02 | `logo-wall` | sosyal kanıt şeridinin tipografisi |
-| 03 | `feature-trio` | üçlü özellik ritmi |
-| 04 | `bento` | farklı boyutlu kutu ızgarası |
-| 05 | `how-it-works` | numaralı 3 adım akışı |
-| 06 | `testimonial` | tek güçlü alıntı + kimlik |
-| 07 | `stats` | 4 büyük sayının ölçeği |
-| 08 | `pricing-table` | plan karşılaştırma + öne çıkan kart |
-| 09 | `faq` | itiraz kırma bloğu |
-| 10 | `cta` | kapanış eylemi |
-| 11 | `footer` | site haritası + yasal |
-| 12 | `og-card` | 1200×630 paylaşım görseli |
+| 01 | `hero` | heading hierarchy + CTA + trust line |
+| 02 | `logo-wall` | typography of the social-proof strip |
+| 03 | `feature-trio` | three-feature rhythm |
+| 04 | `bento` | mixed-size box grid |
+| 05 | `how-it-works` | numbered 3-step flow |
+| 06 | `testimonial` | one strong quote + identity |
+| 07 | `stats` | scale of 4 large numbers |
+| 08 | `pricing-table` | plan comparison + highlighted card |
+| 09 | `faq` | objection-breaking block |
+| 10 | `cta` | closing action |
+| 11 | `footer` | sitemap + legal |
+| 12 | `og-card` | 1200×630 share image |
 
-Sahne şablonları (37): 01 landing · 02 dashboard · 03–08 bileşenler · 09–16 sayfalar ·
-17–21 koyu+mobil · 22–27 emlak+hareket levhası · 28–31 koyu listeler · **32 paywall · 33 akış ·
-34 filtreli tablo · 35 profil · 36 arama · 37 entegrasyonlar**. `12-page-states` artık
-**5 varyant** gösterir (boş · iskelet · hata · 404 · dolu).
+Scene templates (37): 01 landing · 02 dashboard · 03–08 components · 09–16 pages ·
+17–21 dark+mobile · 22–27 real estate+motion sheet · 28–31 dark lists · **32 paywall · 33 flow ·
+34 filtered table · 35 profile · 36 search · 37 integrations**. `12-page-states` now shows
+**5 variants** (empty · skeleton · error · 404 · filled).
 
 ```bash
-node kit/render/render-sections.mjs --styles y2k        # tek stil, 12 bölüm
-node kit/render/render-sections.mjs --all               # 151 × 12 = 1812 (~5 dk)
-node kit/render/render-sections.mjs --sample 3 --measure # taşma/ölçü kapısı (CDP)
+node kit/render/render-sections.mjs --styles y2k        # one style, 12 sections
+node kit/render/render-sections.mjs --all               # 151 × 12 = 1812 (~5 min)
+node kit/render/render-sections.mjs --sample 3 --measure # overflow/measure gate (CDP)
 ```
 
-Çıktı `kit/.shots-cache/<dir>/sections/<id>.png` (üretilen; repoda tutulmaz). Kapı: yatay taşma ≤2px,
-viewport dışına taşan öğe yok, 9px altı metin yok, boş kare yok (PNG renk çeşitliliği ile ölçülür).
+Output lands in `kit/.shots-cache/<dir>/sections/<id>.png` (generated; not kept in the repo). Gate: horizontal
+overflow ≤2px, no element outside the viewport, no text under 9px, no empty frame (measured via PNG color variety).
 
-## Sektör içerik katmanı (P1)
+## Industry content layer (P1)
 
-Aynı kurgusal SaaS metni her stilde görünüyordu; artık her stilin bir **sektörü** ve o sektörün
-kopya paketi var: `tokens.json → industries[]` (ilk eleman render'da kullanılır) →
-`kit/content/<id>.json`.
+The same fictional SaaS copy used to show up in every style; now each style has an **industry** with its own
+copy pack: `tokens.json → industries[]` (the first entry is used at render time) → `kit/content/<id>.json`.
 
-| Sektör | Örnek başlık | Tipik stiller |
+| Industry | Sample headline | Typical styles |
 |---|---|---|
-| `saas` | "Ürün ekibin için sakin bir çalışma alanı" | panel/araç/veri stilleri |
-| `emlak` | "Deniz manzaralı, az katlı, sakin bir yaşam" | vitrin, lüks, `fullbleed` |
-| `danismanlik` | "Kararı tahmine değil kanıta dayandırın" | sade/kurumsal |
-| `egitim` | "Herkesin öğrenebildiği bir sınıf" | oyuncul, etkileşim |
-| `eticaret` | "Mevsimin en sade parçaları" | cesur, retro |
-| `dergi` | "Uzun okumalar, kısa cümleler" | yayın, tipografik, `type` |
-| `ajans` | "Markayı süslemeden anlatan işler" | sanatsal, hareket |
-| `saglik` | "Randevudan önce bilmeniz gerekenler" | organik, yüzey |
+| `saas` | "A calm workspace for your product team" | panel/tool/data styles |
+| `emlak` (real estate) | "Low-rise, calm living with a sea view" | showcase, luxury, `fullbleed` |
+| `danismanlik` (consulting) | "Base the decision on evidence, not on a hunch" | plain/corporate |
+| `egitim` (education) | "A classroom where everyone can learn" | playful, interaction |
+| `eticaret` (e-commerce) | "The plainest pieces of the season" | bold, retro |
+| `dergi` (magazine) | "Long reads, short sentences" | publishing, typographic, `type` |
+| `ajans` (agency) | "Work that tells the brand without decoration" | artistic, motion |
+| `saglik` (health) | "What you should know before the appointment" | organic, surface |
 
-Şablonlar literal metin taşımaz: `__COPY_H1__`, `__COPY_LEDE__`, `__COPY_PROOF1..3__`,
-`__COPY_LOGO1..5__`, `__COPY_TILE1..4__` — `render-shots.mjs` paketten doldurur.
+Templates carry no literal copy: `__COPY_H1__`, `__COPY_LEDE__`, `__COPY_PROOF1..3__`,
+`__COPY_LOGO1..5__`, `__COPY_TILE1..4__` — `render-shots.mjs` fills them from the pack.
 
-| Kural | Ölçü | Kapı |
+| Rule | Measure | Gate |
 |---|---|---|
-| Atama | `industries[0]` geçerli, aile/arketip kuralına uygun | `assign-content --check` |
-| Paket canlılığı | her paket ≥3 stilde (ölü paket yok), hiçbiri %35 tavanını aşmaz | `check-content` |
-| Metin sınırı | `h1 ≤ 56`, `lede ≤ 120`, `cta ≤ 26` karakter (taşma önleme) | `check-content` |
-| Şablon | literal demo metni yok; her `__COPY_*__` anahtarının karşılığı var | `check-content` |
+| Assignment | `industries[0]` is valid and follows the family/archetype rule | `assign-content --check` |
+| Pack liveness | every pack is used by ≥3 styles (no dead pack), none exceeds the 35% ceiling | `check-content` |
+| Text limits | `h1 ≤ 56`, `lede ≤ 120`, `cta ≤ 26` characters (overflow prevention) | `check-content` |
+| Template | no literal demo copy; every `__COPY_*__` key has a counterpart | `check-content` |
 
 ```bash
-node kit/assign-content.mjs --apply   # 151 stile industries[] (aile + arketip + denge)
-node kit/check-content.mjs            # kapı
+node kit/assign-content.mjs --apply   # industries[] for 151 styles (family + archetype + balance)
+node kit/check-content.mjs            # gate
 ```
 
-Dağılım (151): dergi 31 · emlak 31 · saas 23 · ajans 22 · danışmanlık 13 · e-ticaret 13 · eğitim 11 · sağlık 7.
+Distribution (151): magazine 31 · real estate 31 · saas 23 · agency 22 · consulting 13 · e-commerce 13 · education 11 · health 7.
 
-## Görsel katman (P2)
+## Imagery layer (P2)
 
-Fotoğraf artık katalogun parçası: 24 lisans-temiz kare (`kit/images/`, Unsplash License — atıf zorunlu
-değil, kaynak URL provenance için `INDEX.json`'da) ve her stile **bir fotoğraf + bir treatment** atanır
-(`tokens.json → imagery.photo|treatment`). Fotoğraf yalnız `fullbleed` ve `centered` arketiplerinde
-kullanılır; kopya metni fotoğrafın üstünde değil, kendi kolonunda durur.
+Photography is part of the catalog now: 24 licence-clean frames (`kit/images/`, Unsplash License — attribution
+not required, source URLs kept in `INDEX.json` for provenance) and every style is assigned **one photo + one
+treatment** (`tokens.json → imagery.photo|treatment`). Photos are used only in the `fullbleed` and `centered`
+archetypes; the copy sits in its own column, never on top of the photo.
 
-| Eksen | Değerler | Nerede |
+| Axis | Values | Where |
 |---|---|---|
 | `imagery.photo` | `arch-*` · `int-*` · `nat-*` · `tex-*` · `obj-*` · `urb-*` · `por-*` | `kit/images/INDEX.json` |
-| `imagery.treatment` | `plain` (0) · `scrim` (0.3–0.55) · `duotone` (accent blend) · `grain` (doku) | `kit/render/scene.css` |
+| `imagery.treatment` | `plain` (0) · `scrim` (0.3–0.55) · `duotone` (accent blend) · `grain` (texture) | `kit/render/scene.css` |
 
-| Kural | Ölçü | Kapı |
+| Rule | Measure | Gate |
 |---|---|---|
-| Kaynak bütünlüğü | dosya var, ≥40 KB, INDEX kaydı tam, yetim dosya yok | `fetch-images --check` |
-| Atama kararlılığı | `assign-imagery --check` → tokens.json öneriyle aynı | `assign-imagery.mjs` |
-| Treatment tutarlılığı | `plain ⇒ strength 0`, diğerleri `>0`; fullbleed/centered stillerinde photo zorunlu | `check-imagery.mjs` |
-| Şablon sözleşmesi | `hero-fullbleed.html` + `hero-centered.html` `__PHOTO__` taşır | `check-imagery.mjs` |
+| Source integrity | file exists, ≥40 KB, INDEX record complete, no orphan files | `fetch-images --check` |
+| Assignment stability | `assign-imagery --check` → identical to the tokens.json proposal | `assign-imagery.mjs` |
+| Treatment consistency | `plain ⇒ strength 0`, others `>0`; photo required for fullbleed/centered styles | `check-imagery.mjs` |
+| Template contract | `hero-fullbleed.html` + `hero-centered.html` carry `__PHOTO__` | `check-imagery.mjs` |
 
 ```bash
-node kit/fetch-images.mjs --all      # eksik görselleri indir (24 kare ≈ 7 MB)
-node kit/assign-imagery.mjs --apply  # 151 stile fotoğraf + treatment ata
-node kit/check-imagery.mjs           # kapı: kapsam + treatment + şablon
+node kit/fetch-images.mjs --all      # download missing images (24 frames ≈ 7 MB)
+node kit/assign-imagery.mjs --apply  # assign photo + treatment to 151 styles
+node kit/check-imagery.mjs           # gate: coverage + treatment + template
 ```
 
-## Değişken sözleşmesi
+## Variable contract
 
-Her stil aynı adları doldurur; bileşen kodu stil değişince değişmez.
+Every style fills the same names; component code does not change when the style changes.
 
-| Değişken | İş |
+| Variable | Job |
 |---|---|
-| `--bg`, `--bg-2` · `--surface`, `--surface-2` | zemin / yüzey katmanları |
-| `--ink`, `--ink-soft`, `--ink-faint` | metin katmanları (`--ink-faint` yalnız dekoratif) |
-| `--accent`, `--accent-ink` | vurgu + üstüne yazılacak metin |
-| `--line` | kenarlık |
-| `--radius`, `--radius-lg` | köşe |
-| `--shadow`, `--shadow-hard` | yumuşak / sert gölge |
-| `--font-display`, `--font-body`, `--font-mono` | tipografi |
-| `--tracking`, `--blur`, `--grain` | harf aralığı, cam bulanıklığı, doku |
-| `--focus` | odak halkası (varsayılan `--accent`; 13 stilde 3:1 için türetilmiş değer) |
-| `--danger`, `--danger-ink`, `--ok`, `--warn` | durum renkleri (stil ezebilir) |
+| `--bg`, `--bg-2` · `--surface`, `--surface-2` | ground / surface layers |
+| `--ink`, `--ink-soft`, `--ink-faint` | text layers (`--ink-faint` is decorative only) |
+| `--accent`, `--accent-ink` | accent + the text drawn on top of it |
+| `--line` | border |
+| `--radius`, `--radius-lg` | corners |
+| `--shadow`, `--shadow-hard` | soft / hard shadow |
+| `--font-display`, `--font-body`, `--font-mono` | typography |
+| `--tracking`, `--blur`, `--grain` | letter spacing, glass blur, texture |
+| `--focus` | focus ring (defaults to `--accent`; a derived value for 3:1 in 13 styles) |
+| `--danger`, `--danger-ink`, `--ok`, `--warn` | status colors (a style may override them) |
 | `--space-1 … --space-8` | 4/8/12/16/24/32/48/64 px |
-| `--data-1 … --data-4` | grafik serileri |
+| `--data-1 … --data-4` | chart series |
 
-## Koyu mod
+## Dark mode
 
-**151/151 stil uygulandı, borç 0.** Her stilde `palette.dark` (10 renk) + `tokens.css` koyu bloğu + `shots/17-18` render'ı var;
-üçü `kit/check-schema.mjs` tarafından karşılıklı doğrulanır.
+**151/151 styles implemented, debt 0.** Every style has `palette.dark` (10 colors) + a dark block in
+`tokens.css` + a `shots/17-18` render; all three are cross-checked by `kit/check-schema.mjs`.
 
 ```bash
-node kit/dark-fill.mjs --styles <slug> --dry  # eksik anahtarlar + kontrast önizlemesi
-node kit/dark-fill.mjs --styles <slug>        # paleti tamamla + koyu bloğu yaz (kontrast geçmeyeni yazmaz)
-node kit/dark-fill.mjs --sync                 # tokens.json ↔ tokens.css bloklarını eşitle
+node kit/dark-fill.mjs --styles <slug> --dry  # missing keys + contrast preview
+node kit/dark-fill.mjs --styles <slug>        # complete the palette + write the dark block (never writes failing contrast)
+node kit/dark-fill.mjs --sync                 # sync tokens.json ↔ tokens.css blocks
 ```
 
-Türetme formülleri (bg2 %6, surface2 %8, inkSoft %70 ink, inkFaint %45 ink, line = ink %14 alfa, accentInk = en yüksek kontrastlı aday)
-`kit/dark-fill.mjs` başlığında; hiçbir değer kontrast kapısından geçmeden yazılmaz. Ayrıntı: `playbook.md` §17.
+The derivation formulas (bg2 6%, surface2 8%, inkSoft 70% of ink, inkFaint 45% of ink, line = ink at 14% alpha,
+accentInk = highest-contrast candidate) are documented at the top of `kit/dark-fill.mjs`; no value is written
+without passing the contrast gate. Details: `playbook.md` §17.
 
-## Doğrulama (kapılar)
+## Verification (gates)
 
 ```bash
-bash kit/gates.sh                     # 38 adım: galeri → slim indeks → fragment senkronu → şema → kontrast → tablolar → koreografi ataması → hareket CSS → hareket kapısı → hareket ölçümü → hareket lab → hareket ölçümü (tarayıcı) → hareket storyboard → motion normalize → export → font TTF → flutter → react → style-lint → layout ataması → kompozisyon çeşitliliği → kompozisyon self-test → DOM kompozisyonu → rapor güncel → kompozisyon raporu güncel → görsel imza → görsel regresyon
-node kit/apply-fragments.mjs --check    # fragment → tokens.css / shots.config / gallery.data senkron mu
-node kit/check-schema.mjs               # şema v3 + layout + koyu mod + üç kopya paritesi + komşu/refs + eksik sahne
-node kit/assign-layouts.mjs --check      # tokens.json layout'u öneriyle aynı mı (drift kapısı)
-node kit/assign-motion.mjs --check       # motion.choreography öneriyle aynı mı
-node kit/build-motion-css.mjs --check    # patterns.json → patterns.css senkron mu
-node kit/fetch-images.mjs --check        # görsel kaynakları (24 kare, INDEX tutarlı)
-node kit/assign-imagery.mjs --check      # imagery.photo/treatment öneriyle aynı mı
-node kit/check-imagery.mjs               # treatment tutarlılığı + fotoğraflı arketip kapsamı
-node kit/assign-content.mjs --check      # industries[] öneriyle aynı mı
-node kit/check-content.mjs               # sektör paketleri + şablon yer tutucuları + taşma sınırı
-node kit/render/render-sections.mjs --sample 3 --measure  # bölüm kütüphanesi taşma ölçümü
-node kit/render/render-flows.mjs --sample 3 --measure     # akış şeritleri (3 adım, taşma) ölçümü
-node kit/render/render-shots.mjs --sample 3 --measure     # 37 sahne: yatay taşma + alttan kırpılma
-node kit/check-viewers.mjs                                # sections.html / flows.html görselleri yükleniyor mu
-node kit/brief.mjs --intent "premium emlak" --out brief.md  # uygulanabilir brief (MCP aracı olarak da)
-node kit/mcp-server.mjs --self-test                       # MCP araçları (7 araç) çalışıyor mu
-node kit/motion-audit.mjs --check        # kit/dist/motion.md bayat mı
-node kit/build-motion-lab.mjs --check    # lab ↔ politika (yasak desen gerekçesi)
-node kit/check-layout.mjs               # kompozisyon çeşitliliği + parmak izi tavanı + şablon paritesi
-node kit/check-layout.mjs --self-test   # kural setinin no-op olmadığını kanıtlar
-node kit/check-contrast.mjs             # WCAG + APCA + odak halkası 3:1 (açık VE koyu bloklar)
-node kit/motion-check.mjs               # imza çeşitliliği + süre bütçesi + self-test
-node kit/export-tokens.mjs --check      # kit/dist güncel mi
-node kit/render/optimize-shots.mjs --all --verify   # PNG kayıpsız mı (piksel farkı 0)
-node kit/report.mjs --check             # kit/dist/report.md bayat mı
-node kit/composition-report.mjs --check # kit/dist/composition.md bayat mı
+bash kit/gates.sh                     # 38 steps: gallery → slim index → fragment sync → schema → contrast → tables → choreography assignment → motion CSS → motion gate → motion measurement → motion lab → motion measurement (browser) → motion storyboard → motion normalize → export → font TTF → flutter → react → style-lint → layout assignment → composition variety → composition self-test → DOM composition → report up to date → composition report up to date → visual signature → visual regression
+node kit/apply-fragments.mjs --check    # fragment → tokens.css / shots.config / gallery.data in sync
+node kit/check-schema.mjs               # schema v3 + layout + dark mode + three-copy parity + neighbours/refs + missing scenes
+node kit/assign-layouts.mjs --check      # tokens.json layout matches the proposal (drift gate)
+node kit/assign-motion.mjs --check       # motion.choreography matches the proposal
+node kit/build-motion-css.mjs --check    # patterns.json → patterns.css in sync
+node kit/fetch-images.mjs --check        # image sources (24 frames, consistent INDEX)
+node kit/assign-imagery.mjs --check      # imagery.photo/treatment match the proposal
+node kit/check-imagery.mjs               # treatment consistency + photo archetype coverage
+node kit/assign-content.mjs --check      # industries[] match the proposal
+node kit/check-content.mjs               # industry packs + template placeholders + overflow limits
+node kit/render/render-sections.mjs --sample 3 --measure  # section library overflow measurement
+node kit/render/render-flows.mjs --sample 3 --measure     # flow strips (3 steps, overflow) measurement
+node kit/render/render-shots.mjs --sample 3 --measure     # 37 scenes: horizontal overflow + bottom clipping
+node kit/check-viewers.mjs                                # do sections.html / flows.html images load
+node kit/brief.mjs --intent "premium real estate" --out brief.md  # actionable brief (also as an MCP tool)
+node kit/mcp-server.mjs --self-test                       # do the MCP tools (7 tools) work
+node kit/motion-audit.mjs --check        # is kit/dist/motion.md stale
+node kit/build-motion-lab.mjs --check    # lab ↔ policy (rationale for forbidden patterns)
+node kit/check-layout.mjs               # composition variety + fingerprint ceiling + template parity
+node kit/check-layout.mjs --self-test   # proves the rule set is not a no-op
+node kit/check-contrast.mjs             # WCAG + APCA + 3:1 focus ring (light AND dark blocks)
+node kit/motion-check.mjs               # signature variety + duration budget + self-test
+node kit/export-tokens.mjs --check      # is kit/dist current
+node kit/render/optimize-shots.mjs --all --verify   # are the PNGs lossless (pixel diff 0)
+node kit/report.mjs --check             # is kit/dist/report.md stale
+node kit/composition-report.mjs --check # is kit/dist/composition.md stale
 ```
 
 ### CI
 
-`.github/workflows/gates.yml` — aynı kapılar üç işe bölünmüş (veri · flutter · görsel imza).
-Yerel hook tek makineyi korur; CI sunucu tarafını korur. `flutter-version: 3.47.9` pinli,
-Node 22. Görsel iş `--json` çıktısı verir (hangi sahne, kaç bit fark).
-Depoda 604 çekirdek PNG tutulur; tam set repoya eklenmez, görsel regresyon çekirdek sette çalışır.
+`.github/workflows/gates.yml` — the same gates split into three jobs (data · flutter · visual signature).
+The local hook protects one machine; CI protects the server side. `flutter-version: 3.47.9` is pinned,
+Node 22. The visual job produces `--json` output (which scene, how many bits differ).
+The repo keeps 604 core PNGs; the full set is not committed and visual regression runs on the core set.
 
-**Görsel imza regresyonu** (kapıda, **604 çekirdek sahne**): `node kit/render/phash.mjs --check` (tam set: `--cache`) —
-sahne başına 256-bit dHash + ortalama renk, baseline `kit/render/visual-baseline.json` **368 KB**.
-Eşik: hash ≤ 8/256 bit, renk Δ ≤ 10. Duyarlılık `--self-test` ile kanıtlı (%15 parlaklık, negatif, 24px kayma yakalanır).
-Piksel-piksel baseline ayrıca istenirse: `node kit/render/baseline.mjs --write` (çekirdek set; tam set için cache'i de dahil et).
+**Visual signature regression** (in the gates, **604 core scenes**): `node kit/render/phash.mjs --check` (full set: `--cache`) —
+a 256-bit dHash + mean color per scene, baseline `kit/render/visual-baseline.json` **368 KB**.
+Threshold: hash ≤ 8/256 bits, color Δ ≤ 10. Sensitivity is proven by `--self-test` (15% brightness, negative, 24px shift are caught).
+Pixel-by-pixel baseline on demand: `node kit/render/baseline.mjs --write` (core set; include the cache for the full set).
 
-**Temiz klonda üretilen artefaktlar (gitignore):**
-- `kit/.shots-cache/<dir>/27-motion.png` — hareket storyboard şeritleri; `node kit/render/motion-strip.mjs --sample 6 --check` (veya `--ensure`) eksik şeritleri headless tarayıcıda üretip varlığını/boyutunu doğrular, tarayıcı bulunamazsa `↷` satırıyla görünür biçimde atlar (tam set: `--all`).
-- `kit/.shots-cache/<dir>/sections/*.png` (12 bölüm) ve `flows/*.png` (3 akış) — bölüm/akış görüntüleyici görselleri; `node kit/check-viewers.mjs` (`--ensure`) ve `render-sections.mjs` / `render-flows.mjs --check --ensure` temiz klonda eksik PNG'leri headless tarayıcıda üretip doğrular, tarayıcı bulunamazsa `↷` satırıyla görünür biçimde atlar (tam set: `--all`).
-- `kit/render/.baseline/` — piksel-piksel görsel regresyon referansı; `node kit/render/baseline.mjs --write` ile oluşturulur, dizin yoksa `gates.sh` adımı `↷ görsel regresyon (baseline yok, atlandı)` ile atlar.
-- `kit/.shots-cache/<dir>/` altındaki çekirdek dışı 33 sahne — `node kit/render/render-shots.mjs` ile talep üzerine üretilir.
+**Artifacts generated in a clean clone (gitignored):**
+- `kit/.shots-cache/<dir>/27-motion.png` — motion storyboard strips; `node kit/render/motion-strip.mjs --sample 6 --check` (or `--ensure`) generates missing strips in a headless browser and verifies presence/size, skipping visibly with a `↷` line when no browser is found (full set: `--all`).
+- `kit/.shots-cache/<dir>/sections/*.png` (12 sections) and `flows/*.png` (3 flows) — section/flow viewer images; `node kit/check-viewers.mjs` (`--ensure`) and `render-sections.mjs` / `render-flows.mjs --check --ensure` generate and verify missing PNGs in a headless browser in a clean clone, skipping visibly with a `↷` line when no browser is found (full set: `--all`).
+- `kit/render/.baseline/` — pixel-by-pixel visual regression reference; created by `node kit/render/baseline.mjs --write`, and if the directory is absent the `gates.sh` step skips with `↷ visual regression (no baseline, skipped)`.
+- The 33 non-core scenes under `kit/.shots-cache/<dir>/` — generated on demand with `node kit/render/render-shots.mjs`.
 
-**Borç defterleri:** `kit/contrast-baseline.json` (kabul edilmiş kontrast istisnaları) ve
-`kit/dark-baseline.json` (koyu mod borcu). Listede olmayan yeni ihlal **hata**dır.
+**Debt ledgers:** `kit/contrast-baseline.json` (accepted contrast exceptions) and
+`kit/dark-baseline.json` (dark mode debt). A new violation that is not on the list is an **error**.
 
-## Token dışa aktarma
+## Token export
 
 ```bash
 node kit/export-tokens.mjs              # dist/{tokens.all.css,tailwind.theme.css,figma.variables.json,index.json}
-node kit/export-tokens.mjs --styles utility --split   # ayrıca stil başına dosya
-node kit/export-tokens.mjs --check      # kapı
+node kit/export-tokens.mjs --styles utility --split   # plus a per-style file
+node kit/export-tokens.mjs --check      # gate
 ```
 
-| Çıktı | Ne işe yarar |
+| Output | What it is for |
 |---|---|
-| `dist/tokens.all.css` | `:root` + 151 `[data-style]` + koyu bloklar — projeye doğrudan kopyalanır |
-| `dist/tailwind.theme.css` | Tailwind v4 `@theme` (renk/font/radius/gölge) + 8 adım boşluk → `p-1…p-16` |
+| `dist/tokens.all.css` | `:root` + 151 `[data-style]` + dark blocks — copied straight into a project |
+| `dist/tailwind.theme.css` | Tailwind v4 `@theme` (color/font/radius/shadow) + 8 spacing steps → `p-1…p-16` |
 | `dist/figma.variables.json` | Figma variables: `Color System` (Light/Dark) + `Radius` + `Spacing` + `Typography` |
-| `dist/report.md` | kapsam + kontrast + borç raporu |
-| `dist/motion.json` | 151 stilin normalize edilmiş hareket imzası (ms + `{kind, points}` eğri) |
-| `dist/flutter/` | `style_lab_tokens.dart` (ThemeExtension + 151 açık/151 koyu), `pubspec.fonts.yaml`, kullanım README'si |
-| `dist/react/` | `styleLabTokens.js` + `.d.ts` (151 stil, light/dark, motion), `styleLabCssVars`, `applyStyleLab`, ThemeProvider reçetesi |
-| `dist/index.slim.json` | Kompakt ajan indeksi (slug/ad/aile/etiket/hareket/komşular) — `kit/pick.mjs` kaynağı |
+| `dist/report.md` | coverage + contrast + debt report |
+| `dist/motion.json` | normalized motion signature of the 151 styles (ms + `{kind, points}` curves) |
+| `dist/flutter/` | `style_lab_tokens.dart` (ThemeExtension + 151 light/151 dark), `pubspec.fonts.yaml`, usage README |
+| `dist/react/` | `styleLabTokens.js` + `.d.ts` (151 styles, light/dark, motion), `styleLabCssVars`, `applyStyleLab`, ThemeProvider recipe |
+| `dist/index.slim.json` | compact agent index (slug/name/family/tags/motion/neighbours) — the source for `kit/pick.mjs` |
 
 ## Flutter / React
 
-Hedef çıktılar aynı kaynaktan (`tokens.json` + `dist/motion.json`) üretilir; CSS dışı hedefler
-prose değil **sayı** ister. Yeni hedef eklemek = `kit/export/<hedef>.mjs` yazmak (ayrıştırıcılar
-`kit/lib/tokens.mjs`'de hazır).
+Both target outputs come from the same source (`tokens.json` + `dist/motion.json`); non-CSS targets need
+**numbers**, not prose. Adding a target = writing `kit/export/<target>.mjs` (the parsers are ready in
+`kit/lib/tokens.mjs`).
 
 ```bash
-node kit/normalize-motion.mjs                 # prose → dist/motion.json (önkoşul)
-node kit/fetch-fonts.mjs                      # kit/fonts/ttf/ (30 aile, OFL) + INDEX.json
+node kit/normalize-motion.mjs                 # prose → dist/motion.json (prerequisite)
+node kit/fetch-fonts.mjs                      # kit/fonts/ttf/ (30 families, OFL) + INDEX.json
 node kit/export/flutter.mjs                   # dist/flutter/*
 node kit/export/flutter.mjs --verify          # + dart analyze + flutter test (fixture)
 ```
 
 **Flutter.** `cp kit/dist/flutter/style_lab_tokens.dart lib/theme/` →
 `MaterialApp(theme: styleLabTheme(slug: 'terminal-ui'), darkTheme: styleLabTheme(slug: 'terminal-ui', brightness: Brightness.dark))`.
-`context.styleLab` ile token'lara eriş (`t.surface`, `t.padding(3)`, `t.h2`, `t.motion.enterDurationValue`).
-Koyu mod yalnız paleti değiştirir; tipografi/şekil/hareket aynı kalır. `pubspec.fonts.yaml`
-yalnız gerçekten indirilen TTF'leri listeler (11 ailede bazı ağırlıklar Google Fonts'ta yok —
-Flutter en yakın bildirilen ağırlığa düşer; 11 sistem fontu bilinçli olarak paketlenmez).
+Reach the tokens through `context.styleLab` (`t.surface`, `t.padding(3)`, `t.h2`, `t.motion.enterDurationValue`).
+Dark mode only swaps the palette; typography/shape/motion stay the same. `pubspec.fonts.yaml` lists only the
+TTFs that are actually downloaded (11 families are missing some weights on Google Fonts — Flutter falls back to
+the nearest declared weight; 11 system fonts are deliberately not bundled).
 
-**Garnitür koyu modda.** Koyu bloklar bileşik seçici (`[data-theme="dark"][data-style="Y"]`)
-aynı elemanda iki öznitelik ister: `<div data-style="Y" data-theme="dark">`. Yalnız `data-style`
-verirsen garnitür açık paletle boyanır (kapı: `kit/check-composition.mjs --browser`).
+**Accent style in dark mode.** Dark blocks use a compound selector (`[data-theme="dark"][data-style="Y"]`),
+which requires both attributes on the same element: `<div data-style="Y" data-theme="dark">`. With only
+`data-style` the accent style is painted with the light palette (gate: `kit/check-composition.mjs --browser`).
 
-**React.** `dist/tokens.all.css` + `dist/tailwind.theme.css` yeterli: `<html data-style="<slug>" data-theme="dark">`.
-Tüm değerler CSS değişkeni; bileşen kodu stil değişince değişmez. JS tarafı (grafik, canvas, inline style,
-test) için `node kit/export/react.mjs` → `dist/react/styleLabTokens.js` + `.d.ts`:
+**React.** `dist/tokens.all.css` + `dist/tailwind.theme.css` are enough: `<html data-style="<slug>" data-theme="dark">`.
+All values are CSS variables; component code does not change when the style changes. For the JS side (charts,
+canvas, inline styles, tests) run `node kit/export/react.mjs` → `dist/react/styleLabTokens.js` + `.d.ts`:
 `styleLabTokens[slug].light|dark`, `styleLabCssVars(slug, theme)`, `applyStyleLab(slug, {theme})`.
-ThemeProvider reçetesi `dist/react/README.md` içinde (bağımlılık yok, SSR notlarıyla).
+The ThemeProvider recipe lives in `dist/react/README.md` (no dependencies, with SSR notes).
 
-Doğrulama kanıtı: `kit/export/flutter/fixture/` paketinde 11 test (`dart analyze` 0 issue) —
-palet/tipografi/motion değerleri `tokens.json` ile karşılaştırılır, `ThemeData` köprüsü ve
-`StyleLabSteps` eğrisi test edilir.
+Proof: the `kit/export/flutter/fixture/` package has 11 tests (`dart analyze` 0 issues) — palette/typography/motion
+values are compared against `tokens.json`, and the `ThemeData` bridge plus the `StyleLabSteps` curve are tested.
 
-## Uygulanan kodu denetleme (style-lint)
+## Auditing applied code (style-lint)
 
-Katalog token üretir; `kit/style-lint.mjs` tüketen projede **gerçekten kullanıldığını** denetler:
+The catalog produces tokens; `kit/style-lint.mjs` audits that a consuming project **actually uses** them:
 
 ```bash
-node kit/style-lint.mjs src --style terminal-ui            # hata varsa exit 1
-node kit/style-lint.mjs src --style terminal-ui --json     # makine-okur
-node kit/style-lint.mjs src --style terminal-ui --strict    # uyarılar da hata
-node kit/style-lint.mjs --list-rules                        # 12 kural
-node kit/style-lint.mjs --self-test                         # fixture'larla kuralları kanıtla
+node kit/style-lint.mjs src --style terminal-ui            # exit 1 on errors
+node kit/style-lint.mjs src --style terminal-ui --json     # machine-readable
+node kit/style-lint.mjs src --style terminal-ui --strict    # warnings become errors
+node kit/style-lint.mjs --list-rules                        # 12 rules
+node kit/style-lint.mjs --self-test                         # prove the rules with fixtures
 ```
 
-| Kural | Önem | Ne yakalar |
+| Rule | Severity | What it catches |
 |---|---|---|
-| `color-literal`, `dart-color-literal` | hata | `#fff`, `rgba(…)`, `Color(0x…)`, `Colors.red` — `var(--…)` / `context.styleLab` olmalı |
-| `font-literal`, `dart-font-literal` | hata | stilin fontları dışında `font-family` / `fontFamily:` |
-| `radius-literal`, `dart-radius-literal` | uyarı | `border-radius: 7px`, `BorderRadius.circular(7)` — `var(--radius)` / `t.radius` |
-| `duration-literal`, `dart-duration-literal` | uyarı | token dışı süre (`320ms`, `Duration(milliseconds: 123)`) |
-| `default-ease` | uyarı | stilin eğrisi varken `ease`/`linear` |
-| `reduced-motion-missing` | uyarı | hareket var, `prefers-reduced-motion` / `disableAnimations` yok |
-| `ink-faint-text` | uyarı | `--ink-faint` metin rengi olarak (yalnız dekoratif) |
-| `root-style-missing` | uyarı | hiçbir dosyada `data-style="<slug>"` yok |
+| `color-literal`, `dart-color-literal` | error | `#fff`, `rgba(…)`, `Color(0x…)`, `Colors.red` — should be `var(--…)` / `context.styleLab` |
+| `font-literal`, `dart-font-literal` | error | `font-family` / `fontFamily:` outside the style's fonts |
+| `radius-literal`, `dart-radius-literal` | warning | `border-radius: 7px`, `BorderRadius.circular(7)` — use `var(--radius)` / `t.radius` |
+| `duration-literal`, `dart-duration-literal` | warning | durations outside the tokens (`320ms`, `Duration(milliseconds: 123)`) |
+| `default-ease` | warning | `ease`/`linear` when the style has its own curve |
+| `reduced-motion-missing` | warning | motion present without `prefers-reduced-motion` / `disableAnimations` |
+| `ink-faint-text` | warning | `--ink-faint` used as a text color (decorative only) |
+| `root-style-missing` | warning | `data-style="<slug>"` appears in no file |
 
-Muafiyet: satıra (veya bir üst satıra) `style-lint-allow` yorumu; `--allow-color "#fff"` listesi.
-Üretilen dosyalar (`tokens.css`, `style_lab_tokens.dart`, `styleLabTokens.js`…) ve
-`node_modules/dist/build/.dart_tool` atlanır.
+Exemption: a `style-lint-allow` comment on the line (or the line above); `--allow-color "#fff"` list.
+Generated files (`tokens.css`, `style_lab_tokens.dart`, `styleLabTokens.js`…) and
+`node_modules/dist/build/.dart_tool` are skipped.
 
-## Yeni stil ekleme
+## Adding a new style
 
-1. `_templates/style-template.md` → `styles/146-<slug>/style.md` (`# 146 · Ad` + `> **Bir cümlede:**`).
-2. `token-block.css` — açık + koyu iki blok, sözleşme değişkenlerinin tamamı.
-3. `tokens.json` — palet (açık + koyu), tipografi, **motion imzası** (aile içinde ≥2 parametre farklı), **`layout` (hero/nav/density, şema v3)**, 3 referans.
-4. `shots.config.fragment.mjs` — `motif`, `bodyClass`, `extraCss`, `scenes: { landing }` (stile özel hero).
-5. `keywords.json` (3 etiket) + `kit/families.json`'a bandı ekle (aralık kesintisiz kalacak).
-6. `node kit/apply-fragments.mjs --apply` → `--check` (tokens.css / shots.config / gallery.data üretilir);
-   `node kit/assign-layouts.mjs --apply` → `--check` (kompozisyon arketipi atanır).
+1. `_templates/style-template.md` → `styles/146-<slug>/style.md` (`# 146 · Name` + `> **In one sentence:**`).
+2. `token-block.css` — light + dark blocks, every contract variable.
+3. `tokens.json` — palette (light + dark), typography, **motion signature** (≥2 parameters different within the family), **`layout` (hero/nav/density, schema v3)**, 3 references.
+4. `shots.config.fragment.mjs` — `motif`, `bodyClass`, `extraCss`, `scenes: { landing }` (style-specific hero).
+5. `keywords.json` (3 tags) + add its band to `kit/families.json` (keep the range uninterrupted).
+6. `node kit/apply-fragments.mjs --apply` → `--check` (generates tokens.css / shots.config / gallery.data);
+   `node kit/assign-layouts.mjs --apply` → `--check` (assigns the composition archetype).
 7. `node kit/render/render-shots.mjs --styles <slug> --force --jobs 2` → `node kit/sync-shot-tables.mjs --write --styles <slug>`.
-8. `node kit/render/optimize-shots.mjs --styles <slug>` → `node kit/build-gallery.mjs` → `bash kit/gates.sh` temiz olana kadar.
+8. `node kit/render/optimize-shots.mjs --styles <slug>` → `node kit/build-gallery.mjs` → `bash kit/gates.sh` until clean.
 
-`tokens.css`, `shots.config.mjs` ve `gallery.data.mjs` **elle düzenlenmez**; `apply-fragments --check` elle yazımı drift olarak yakalar.
+`tokens.css`, `shots.config.mjs` and `gallery.data.mjs` are **never edited by hand**; `apply-fragments --check` catches hand edits as drift.
 
-## Ajanlar için
+## For agents
 
-Hazır prosedür: **[`skills/style-lab-catalog/SKILL.md`](skills/style-lab-catalog/SKILL.md)** — niyete göre stil seçer,
-`[data-style]` token bloğunu uygular, `motion.sequences` imzasını kurar, `scenes`/`Tuzaklar` listesini uygular ve kapılarla doğrular.
-Referanslar: `families.md` (aile → kullanım), `workflow.md` (yeni stil akışı).
+Ready-made procedure: **[`skills/style-lab-catalog/SKILL.md`](skills/style-lab-catalog/SKILL.md)** — picks a style by
+intent, applies the `[data-style]` token block, sets up the `motion.sequences` signature, applies the
+`scenes`/`Pitfalls` list and verifies with the gates.
+References: `families.md` (family → use), `workflow.md` (new style flow).
 
-**Ajan desteği.** Bu depo ajan destekli geliştirilir. Kanonik prosedürler `skills/` altında durur;
-uyumlu araçların kullanıcı düzeyindeki keşif yoluna (`~/.agents/skills/`) bağlanabilir:
+**Agent support.** This repo is developed with agents. Canonical procedures live under `skills/`; they can be
+linked into the user-level discovery path (`~/.agents/skills/`) of compatible tools:
 
 ```bash
-node kit/link-skill.mjs status    # bağ, hedef ve SKILL.md frontmatter kontrolü
-node kit/link-skill.mjs install   # junction/symlink kur — kopya yok, drift yok
-node kit/link-skill.mjs remove    # yalnız bağı siler, hedef klasöre dokunmaz
+node kit/link-skill.mjs status    # check link, target and SKILL.md frontmatter
+node kit/link-skill.mjs install   # create a junction/symlink — no copies, no drift
+node kit/link-skill.mjs remove    # removes only the link, never touches the target folder
 ```
 
-Frontmatter doğrulaması önce kurulu `yaml` paketini arar. Ek arama dizini
-`STYLE_LAB_YAML_RELEASES` ile seçilebilir; varsayılan, uyumluluk için mevcut ajan kurulumudur.
-Ajanın prosedürleri keşfetmesi ve yeniden yüklemesi kullandığınız araca bağlıdır.
+Frontmatter validation looks for an installed `yaml` package first. An extra search directory can be selected
+with `STYLE_LAB_YAML_RELEASES`; the default is the existing agent installation for compatibility. Whether an
+agent discovers and reloads the procedures depends on the tool you use.
 
-Ajan oturumu için 3 adım: `kit/styles.index.json` ile **seç** → `style.md` + `tokens.json` ile **oku** →
-`shots/01…04` ile **bak**. Katalog sayılarını ezberleme; `bash kit/gates.sh` ve `kit/dist/report.md` ile ölç.
+Three steps for an agent session: **pick** with `kit/styles.index.json` → **read** `style.md` + `tokens.json` →
+**look** at `shots/01…04`. Do not memorize catalog numbers; measure with `bash kit/gates.sh` and `kit/dist/report.md`.
 
-## Lisans
+## License
 
-Proje [MIT lisansıyla](LICENSE) dağıtılır. Fontlar için [OFL 1.1 ve aile listesi](kit/fonts/LICENSES.md),
-tasarım kaynak kataloğu için [kaynak MIT lisansı](refs/design-resources/LICENSE-upstream.txt),
-fotoğraflar için `kit/images/` altındaki lisans bilgileri geçerlidir.
+The project is distributed under the [MIT license](LICENSE). Fonts: [OFL 1.1 and the family list](kit/fonts/LICENSES.md),
+the design resource catalog: [upstream MIT license](refs/design-resources/LICENSE-upstream.txt),
+photographs: the license information under `kit/images/` applies.
 
-## Bilinen sınırlar
+## Known limits
 
-- **2 bloklamayan uyarı:** `60-energy-grid` scrub 1.45 ve `98-generative-grid` scrub 1.6 (>1.4) — süre bütçesi değil, "gecikmeli his" uyarısı.
-- **20 stilde `typography.forbidden` boş** (şema uyarısı, hata değil).
-- **PNG ağırlıklı katalog:** metin keskinliği için PNG; kayıpsız optimize edilir, yeni sahne üretiminden sonra `optimize-shots --all` çalıştırılmalı.
-- Stil açıklamaları tasarım araştırmalarıyla hazırlanır; katalog önizlemeleri depodaki token ve sahne kaynaklarından üretilir.
+- **2 non-blocking warnings:** `60-energy-grid` scrub 1.45 and `98-generative-grid` scrub 1.6 (>1.4) — not a duration budget breach, but a "feels delayed" warning.
+- **`typography.forbidden` is empty in 20 styles** (schema warning, not an error).
+- **PNG-heavy catalog:** PNG for text sharpness; compressed losslessly, so `optimize-shots --all` must run after generating new scenes.
+- Style descriptions are prepared from design research; catalog previews are generated from the token and scene sources in the repo.
