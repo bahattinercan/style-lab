@@ -10,17 +10,47 @@
  * tıkla → aç · → ile gezin · zoom · Esc ile kapat.
  *
  * Kullanım:
- *   node kit/check-viewers.mjs                 # örnek stil(ler) ile denetle
+ *   node kit/check-viewers.mjs                 # örnek stil(ler) ile denetle (--ensure varsayılan)
+ *   node kit/check-viewers.mjs --ensure        # eksik bölüm/akış görsellerini üretip doğrular
+ *   node kit/check-viewers.mjs --no-ensure     # üretim yapmadan yalnız mevcut cache'i denetler
  *   node kit/check-viewers.mjs --styles y2k,editorial-design
  */
+import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { launch } from './render/cdp-browser.mjs';
+import { SECTIONS } from './render/sections.mjs';
+import { FLOWS } from './render/flows.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const STYLES_DIR = path.join(ROOT, 'styles');
+const CACHE_DIR = path.join(ROOT, 'kit', '.shots-cache');
 const ARGV = process.argv.slice(2);
+const ENSURE = !ARGV.includes('--no-ensure');
+const MIN_PNG_BYTES = 1024;
 const i = ARGV.indexOf('--styles');
 const SLUGS = i >= 0 ? (ARGV[i + 1] ?? '').split(',').filter(Boolean) : ['editorial-design', 'terminal-ui'];
+
+function dirOf(slug) {
+  return fs
+    .readdirSync(STYLES_DIR, { withFileTypes: true })
+    .find((d) => d.isDirectory() && d.name.replace(/^\d+-/, '') === slug)?.name;
+}
+
+function missingCacheFor(slug) {
+  const dir = dirOf(slug);
+  if (!dir) return { dir: null, missingSections: SECTIONS.map((s) => s.id), missingFlows: FLOWS.map((f) => f.id) };
+  const missingSections = SECTIONS.map((s) => s.id).filter((id) => {
+    const p = path.join(CACHE_DIR, dir, 'sections', `${id}.png`);
+    return !fs.existsSync(p) || fs.statSync(p).size < MIN_PNG_BYTES;
+  });
+  const missingFlows = FLOWS.map((f) => f.id).filter((id) => {
+    const p = path.join(CACHE_DIR, dir, 'flows', `${id}.png`);
+    return !fs.existsSync(p) || fs.statSync(p).size < MIN_PNG_BYTES;
+  });
+  return { dir, missingSections, missingFlows };
+}
 
 /* Görseller lazy yükleniyor: hepsi bitene kadar bekle (en fazla 4 sn), sonra say.
    Ardından lightbox sözleşmesini gerçek tıklamayla sına. */
@@ -84,9 +114,49 @@ const PROBE = `(async () => {
   return out;
 })()`;
 
-const cdp = await launch({ tabs: 2 });
+let cdp = null;
+try {
+  cdp = await launch({ tabs: 2 });
+} catch (err) {
+  console.log(`↷ görüntüleyiciler (bölüm + akış) (cache yok, atlandı: ${err?.message || 'tarayıcı bulunamadı'})`);
+  process.exit(0);
+}
+
 let failed = 0;
 try {
+  if (ENSURE) {
+    const needSections = [];
+    const needFlows = [];
+    for (const slug of SLUGS) {
+      const { missingSections, missingFlows } = missingCacheFor(slug);
+      if (missingSections.length) needSections.push(slug);
+      if (missingFlows.length) needFlows.push(slug);
+    }
+    if (needSections.length) {
+      execFileSync(
+        process.execPath,
+        [path.join(ROOT, 'kit', 'render', 'render-sections.mjs'), '--styles', needSections.join(','), '--check', '--ensure'],
+        { stdio: 'inherit' },
+      );
+    }
+    if (needFlows.length) {
+      execFileSync(
+        process.execPath,
+        [path.join(ROOT, 'kit', 'render', 'render-flows.mjs'), '--styles', needFlows.join(','), '--check', '--ensure'],
+        { stdio: 'inherit' },
+      );
+    }
+    for (const slug of SLUGS) {
+      const after = missingCacheFor(slug);
+      if (after.missingSections.length || after.missingFlows.length) {
+        console.log(
+          `× ${slug}: üretim sonrası eksik cache (sections: ${after.missingSections.length}, flows: ${after.missingFlows.length})`,
+        );
+        failed += 1;
+      }
+    }
+  }
+
   for (const slug of SLUGS) {
     for (const [page, expect] of [
       ['sections.html', 12],

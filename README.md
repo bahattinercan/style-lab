@@ -458,8 +458,9 @@ Piksel-piksel baseline ayrıca istenirse: `node kit/render/baseline.mjs --write`
 
 **Temiz klonda üretilen artefaktlar (gitignore):**
 - `kit/.shots-cache/<dir>/27-motion.png` — hareket storyboard şeritleri; `node kit/render/motion-strip.mjs --sample 6 --check` (veya `--ensure`) eksik şeritleri headless tarayıcıda üretip varlığını/boyutunu doğrular, tarayıcı bulunamazsa `↷` satırıyla görünür biçimde atlar (tam set: `--all`).
+- `kit/.shots-cache/<dir>/sections/*.png` (12 bölüm) ve `flows/*.png` (3 akış) — bölüm/akış görüntüleyici görselleri; `node kit/check-viewers.mjs` (`--ensure`) ve `render-sections.mjs` / `render-flows.mjs --check --ensure` temiz klonda eksik PNG'leri headless tarayıcıda üretip doğrular, tarayıcı bulunamazsa `↷` satırıyla görünür biçimde atlar (tam set: `--all`).
 - `kit/render/.baseline/` — piksel-piksel görsel regresyon referansı; `node kit/render/baseline.mjs --write` ile oluşturulur, dizin yoksa `gates.sh` adımı `↷ görsel regresyon (baseline yok, atlandı)` ile atlar.
-- `kit/.shots-cache/<dir>/` altındaki çekirdek dışı 33 sahne, `sections/*.png` (12 bölüm) ve `flows/*.png` (3 akış) — ilgili `render-*.mjs` komutlarıyla talep üzerine üretilir.
+- `kit/.shots-cache/<dir>/` altındaki çekirdek dışı 33 sahne — `node kit/render/render-shots.mjs` ile talep üzerine üretilir.
 
 **Borç defterleri:** `kit/contrast-baseline.json` (kabul edilmiş kontrast istisnaları) ve
 `kit/dark-baseline.json` (koyu mod borcu). Listede olmayan yeni ihlal **hata**dır.

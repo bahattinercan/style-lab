@@ -106,7 +106,9 @@ run_gate "içerik katmanı" node kit/check-content.mjs
 run_gate "bölüm kütüphanesi (ölçüm)" node kit/render/render-sections.mjs --sample 3 --measure
 run_gate "akış şeritleri (ölçüm)" node kit/render/render-flows.mjs --sample 3 --measure
 run_gate "sahne taşma ölçümü" node kit/render/render-shots.mjs --sample 3 --measure
-run_gate "görüntüleyiciler (bölüm + akış)" node kit/check-viewers.mjs
+# Bölüm/akış görüntüleyici görselleri kit/.shots-cache/<dir>/{sections,flows}/*.png altındadır (gitignore).
+# --ensure: temiz klonda eksik PNG varsa tarayıcıda üretip doğrular; tarayıcı yoksa ↷ ile atlar.
+run_gate "görüntüleyiciler (bölüm + akış)" node kit/check-viewers.mjs --ensure
 run_gate "galeri arayüzü" node kit/check-gallery-ui.mjs
 run_gate "brief üretimi" node kit/brief.mjs --self-test
 run_gate "mcp sunucusu" node kit/mcp-server.mjs --self-test

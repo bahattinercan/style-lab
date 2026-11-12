@@ -32,6 +32,8 @@ index üretimi) yazmak bu skill'in işi değildir.
 **Kullanma:** stil dışı işler (saf bug fix, veri/metin işi) · `kit/` altyapı değişikliği
 (ayrı bakım işi) · PNG render dalgası (komutu öğret, çalıştırma) · ölçüsüz "zevk" tartışması.
 
+**Sınır (öncelik):** Bu skill **neyi** istediğini seçer (stil + token). **Nasıl** yazılacağı `modern-web-guidance` yetkisindedir: koyu mod, tema reaktivitesi, renk uzayı, `@property`, container query, gölge/blur detayı kodlanırken `npx -y modern-web-guidance@latest search "<2-5 kelime>"` → `retrieve "<id>"` kullan (`light-dark()`, `color-mix()`, `design-token-reactivity`, `component-specific-light-dark-theme`). Token değerlerini MWG'ye göre değiştirme; MWG yalnız mekanizmayı verir.
+
 ## 30 saniyede karar
 
 | Niyet | Band | Örnek slug |

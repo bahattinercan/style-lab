@@ -9,7 +9,14 @@
  *   node kit/render/render-sections.mjs --styles y2k,terminal-ui
  *   node kit/render/render-sections.mjs --all
  *   node kit/render/render-sections.mjs --sample 6 --check
+ *   node kit/render/render-sections.mjs --sample 6 --check --ensure
  *   node kit/render/render-sections.mjs --styles y2k --measure   # taşma/kontrast ölçümü (CDP)
+ *
+ * Bayraklar:
+ *   --check      Bölüm PNG'lerinin varlığını ve geçerli boyutunu doğrular; eksik varsa üretir.
+ *   --ensure     Kontrol sırasında eksik bölüm varsa tarayıcıda üretip doğrular;
+ *                tarayıcı açılamazsa ↷ ile görünür biçimde atlar (--check ile varsayılan).
+ *   --no-ensure  Üretim yapmadan yalnız mevcut dosyaları denetler.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -31,8 +38,10 @@ const TMP = HERE;
 const ARGV = process.argv.slice(2);
 const ALL = ARGV.includes('--all');
 const CHECK = ARGV.includes('--check');
+const ENSURE = ARGV.includes('--ensure') || (CHECK && !ARGV.includes('--no-ensure'));
 const MEASURE = ARGV.includes('--measure');
 const JSON_OUT = ARGV.includes('--json');
+const MIN_SECTION_BYTES = 1024;
 const SAMPLE = (() => {
   const i = ARGV.indexOf('--sample');
   return i >= 0 ? Number(ARGV[i + 1]) : 6;
@@ -138,7 +147,8 @@ async function main() {
   const tpl = fs.readFileSync(path.join(HERE, 'section.html'), 'utf8');
   const vars = tokenVars();
   const list = targets();
-  const cdp = await launch({ tabs: 2 });
+  let cdp = null;
+  let skippedNoBrowser = null;
   const out = [];
   const problems = [];
   try {
@@ -151,9 +161,31 @@ async function main() {
       for (const sec of SECTIONS) {
         const target = path.join(CACHE, dir, 'sections', `${sec.id}.png`);
         if (CHECK) {
-          out.push({ dir, section: sec.id, ok: fs.existsSync(target) });
-          if (!fs.existsSync(target)) problems.push(`${dir}/sections/${sec.id}.png yok`);
-          continue;
+          const existingBytes = fs.existsSync(target) ? fs.statSync(target).size : 0;
+          if (existingBytes >= MIN_SECTION_BYTES) {
+            out.push({ dir, section: sec.id, ok: true, bytes: existingBytes });
+            continue;
+          }
+          if (!ENSURE) {
+            out.push({ dir, section: sec.id, ok: false, bytes: existingBytes });
+            problems.push(
+              existingBytes > 0
+                ? `${dir}/sections/${sec.id}.png geçersiz boyutta (${existingBytes} B)`
+                : `${dir}/sections/${sec.id}.png yok`,
+            );
+            continue;
+          }
+        }
+        if (!cdp) {
+          try {
+            cdp = await launch({ tabs: 2 });
+          } catch (err) {
+            if (CHECK && ENSURE) {
+              skippedNoBrowser = err?.message || 'tarayıcı bulunamadı';
+              break;
+            }
+            throw err;
+          }
         }
         // sıra önemli: gövde ÖNCE gömülür, copy SONRA doldurulur (bölüm metinleri de paketten gelir)
         const html = fillCopy(
@@ -180,29 +212,42 @@ async function main() {
           const png = await cdp.capture(file, { width, height, format: 'png' });
           fs.mkdirSync(path.dirname(target), { recursive: true });
           fs.writeFileSync(target, png);
-          const blank = isBlankPng(png);
-          out.push({ dir, section: sec.id, ok: !blank, bytes: png.length });
-          if (blank) problems.push(`${slug}/${sec.id}: boş kare (${png.length} B, renk çeşitliliği yok)`);
+          const writtenBytes = fs.existsSync(target) ? fs.statSync(target).size : 0;
+          const blank = writtenBytes < MIN_SECTION_BYTES || isBlankPng(png);
+          out.push({ dir, section: sec.id, ok: !blank, generated: CHECK, bytes: writtenBytes });
+          if (blank) problems.push(`${slug}/${sec.id}: boş/geçersiz kare (${writtenBytes} B)`);
         }
         fs.rmSync(file, { force: true });
         void tokens;
         void v;
       }
+      if (skippedNoBrowser) break;
     }
   } finally {
-    await cdp.close();
+    if (cdp) await cdp.close();
     for (const f of fs.existsSync(TMP) ? fs.readdirSync(TMP) : []) {
       if (f.startsWith('.tmp-section-') && f.endsWith('.html')) fs.rmSync(path.join(TMP, f), { force: true });
     }
+  }
+
+  if (skippedNoBrowser) {
+    if (JSON_OUT) {
+      console.log(JSON.stringify({ count: out.length, skipped: true, reason: skippedNoBrowser, problems, out }, null, 2));
+    } else {
+      console.log(`↷ bölüm kütüphanesi (cache yok, atlandı: ${skippedNoBrowser})`);
+    }
+    return 0;
   }
 
   if (JSON_OUT) console.log(JSON.stringify({ count: out.length, problems, out }, null, 2));
   else {
     for (const p of problems.slice(0, 20)) console.log(`× ${p}`);
     const ok = out.filter((o) => o.ok !== false).length;
+    const generated = out.filter((o) => o.generated && o.ok).length;
+    const genNote = generated > 0 ? ` (${generated} eksik üretildi)` : '';
     console.log(
       `bölüm kütüphanesi · ${list.length} stil × ${SECTIONS.length} bölüm = ${out.length} kayıt · ` +
-        `${ok} ✓ · ${problems.length} sorun${MEASURE ? ' (ölçüm modu)' : ''}`,
+        `${ok} ✓${genNote} · ${problems.length} sorun${MEASURE ? ' (ölçüm modu)' : ''}`,
     );
   }
   return problems.length ? 1 : 0;
