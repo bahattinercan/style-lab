@@ -1,0 +1,56 @@
+/* kit/render/section.css — bölüm kütüphanesi iskeleti (P3). Yalnız var(--…) renk. */
+body.section-page { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); }
+.section-page .wrap { padding: 44px 56px; }
+.section-page .s-cap { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
+.section-page .s-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+.section-page h1 { margin: 6px 0 10px; font-family: var(--font-display); font-size: 46px; line-height: 1.06; letter-spacing: var(--tracking); max-width: 18ch; }
+.section-page h2 { margin: 0; font-family: var(--font-display); font-size: 30px; line-height: 1.12; letter-spacing: var(--tracking); }
+.section-page h3 { margin: 8px 0 6px; font-size: 17px; }
+.section-page .lede { margin: 0; color: var(--ink-soft); max-width: 52ch; font-size: 14.5px; }
+.section-page .proof { display: flex; gap: 18px; list-style: none; margin: 16px 0 0; padding: 0; font-size: 12px; color: var(--ink-soft); }
+.section-page .proof li::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); margin-right: 6px; }
+.section-page .cta-row { display: flex; gap: 10px; margin-top: 18px; }
+.section-page .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: 18px; }
+.section-page .chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border: 1px solid var(--line); border-radius: 999px; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+
+.s-hero { display: flex; flex-direction: column; align-items: flex-start; }
+.s-wall { display: flex; flex-direction: column; gap: 18px; align-items: center; text-align: center; }
+.s-logos { display: flex; gap: 46px; align-items: center; font-family: var(--font-display); font-size: 18px; color: var(--ink-soft); }
+.s-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.s-bento { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 150px 150px; gap: 14px; }
+.s-bento .b-a { grid-row: span 2; }
+.s-bars { display: grid; gap: 8px; margin-top: 14px; }
+.s-bars i { height: 8px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); }
+.s-bars i:first-child { background: var(--accent); border-color: transparent; width: 46%; }
+.s-num { font-family: var(--font-display); font-size: 34px; display: block; margin-top: 12px; }
+.s-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; list-style: none; padding: 0; margin: 0; }
+.s-steps li { border-top: 2px solid var(--accent); padding-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.s-steps b { font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); }
+.s-steps span { font-family: var(--font-display); font-size: 19px; }
+.s-quote { margin: 0; border-left: 2px solid var(--accent); padding-left: 22px; }
+.s-quote blockquote { margin: 0 0 14px; font-family: var(--font-display); font-size: 28px; line-height: 1.24; max-width: 26ch; }
+.s-quote figcaption { display: flex; gap: 10px; align-items: baseline; font-size: 12.5px; color: var(--ink-soft); }
+.s-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.s-stats div { border-top: 1px solid var(--line); padding-top: 14px; display: flex; flex-direction: column; gap: 4px; }
+.s-stats b { font-family: var(--font-display); font-size: 40px; font-weight: 400; }
+.s-stats span { font-size: 11.5px; color: var(--ink-soft); }
+.s-pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.s-pricing .panel { display: flex; flex-direction: column; gap: 10px; }
+.s-pricing .is-pop { border-color: var(--accent); box-shadow: var(--shadow); }
+.s-price { font-family: var(--font-display); font-size: 32px; }
+.s-list { list-style: none; padding: 0; margin: 0 0 auto; display: grid; gap: 6px; font-size: 12.5px; color: var(--ink-soft); }
+.s-faq { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.s-faq details { border-bottom: 1px solid var(--line); padding: 12px 0; }
+.s-faq summary { cursor: default; font-weight: 600; font-size: 14px; }
+.s-faq p { margin: 8px 0 0; color: var(--ink-soft); font-size: 13px; }
+.s-cta { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.s-footer { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; border-top: 1px solid var(--line); padding-top: 26px; }
+.s-f-brand { display: flex; flex-direction: column; gap: 8px; }
+.s-f-brand b { font-family: var(--font-display); font-size: 20px; }
+.s-f-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; font-size: 12.5px; }
+.s-f-cols div { display: flex; flex-direction: column; gap: 6px; }
+.s-f-cols b { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.s-f-cols a { color: var(--ink-soft); text-decoration: none; }
+.s-og { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.s-og h1 { font-size: 62px; max-width: 16ch; }
+.s-og-brand { font-family: var(--font-mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); }

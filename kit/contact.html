@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>__TITLE__</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 22px 40px;
+    background: #14161a; color: #e8eaee;
+    font: 400 13px/1.4 "Segoe UI", system-ui, sans-serif;
+  }
+  header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 16px; }
+  h1 { font-size: 18px; margin: 0; letter-spacing: -0.01em; }
+  .sub { font: 400 11px/1 ui-monospace, monospace; color: #8b93a1; letter-spacing: 0.06em; }
+  .grid {
+    display: grid; grid-template-columns: repeat(__COLS__, __TILEW__px); gap: 12px;
+    align-items: start;
+  }
+  figure { margin: 0; }
+  img {
+    display: block; width: __TILEW__px; height: auto;
+    border-radius: 4px; background: #0d0f12;
+    outline: 1px solid rgba(255,255,255,.10);
+  }
+  figcaption {
+    font: 400 10px/1.6 ui-monospace, monospace; color: #8b93a1;
+    letter-spacing: 0.04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  figcaption b { color: #e8eaee; font-weight: 600; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>__TITLE__</h1>
+    <span class="sub">__SUB__</span>
+  </header>
+  <div class="grid">
+      __TILES__
+  </div>
+</body>
+</html>

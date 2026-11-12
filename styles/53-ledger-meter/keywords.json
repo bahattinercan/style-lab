@@ -1,0 +1,21 @@
+{
+  "slug": "ledger-meter",
+  "num": "53",
+  "labels": [
+    "faturalama ve kullanım metrikleri",
+    "kota ve limit takibi",
+    "defter hizalı tutarlar"
+  ],
+  "synonyms": [
+    "abonelik faturası paneli",
+    "usage-based billing ekranı",
+    "kullanım sayacı",
+    "ödeme özeti tablosu",
+    "muhasebe raporu"
+  ],
+  "avoid": [
+    "oyun/eğlence landing",
+    "vitrin e-ticareti hero",
+    "çocuk ürünü"
+  ]
+}

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Bileşenler</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-components __BODY_CLASS__">
+  <div class="comp-head">
+    <h2>Bileşen reçetesi</h2>
+    <span class="label">__STYLE__ · tokens.css</span>
+  </div>
+
+  <div class="comp-grid">
+    <section class="panel spec">
+      <h3>Renk</h3>
+      <div class="sw-row">
+        <div class="sw-item"><span class="box" style="background:var(--bg)"></span><span class="code">bg<br>__BG__</span></div>
+        <div class="sw-item"><span class="box" style="background:var(--surface)"></span><span class="code">surface<br>__SURFACE__</span></div>
+        <div class="sw-item"><span class="box" style="background:var(--ink)"></span><span class="code">ink<br>__INK__</span></div>
+        <div class="sw-item"><span class="box" style="background:var(--accent)"></span><span class="code">accent<br>__ACCENT__</span></div>
+      </div>
+      <div class="divider"></div>
+      <div class="sw-row">
+        <div class="sw-item"><span class="box radius-sm" style="background:var(--bg-2)"></span><span class="code">bg-2</span></div>
+        <div class="sw-item"><span class="box radius-sm" style="background:var(--surface-2)"></span><span class="code">surface-2</span></div>
+        <div class="sw-item"><span class="box radius-sm" style="background:var(--ink-soft)"></span><span class="code">ink-soft</span></div>
+        <div class="sw-item"><span class="box radius-sm" style="background:var(--ink-faint)"></span><span class="code">ink-faint</span></div>
+      </div>
+    </section>
+
+    <section class="panel spec">
+      <h3>Tipografi</h3>
+      <div class="type-scale">
+        <div class="line"><b style="font-size:34px">Aa Başlık</b><span class="sz">display 34</span></div>
+        <div class="line"><b style="font-size:22px">Aa Başlık</b><span class="sz">display 22</span></div>
+        <div class="line"><b style="font-size:15px">Gövde metni</b><span class="sz">body 15</span></div>
+        <div class="line"><b style="font-family:var(--font-mono);font-size:10px;font-weight:400;letter-spacing:.16em">ETİKET MONO</b><span class="sz">mono 10</span></div>
+        <div class="line"><span class="muted" style="font-size:12px">İkincil açıklama satırı</span><span class="sz">ink-soft 12</span></div>
+      </div>
+      <div class="divider"></div>
+      <span class="code" style="font-family:var(--font-mono);font-size:8.5px;color:var(--ink-faint)">tracking __TRACKING__ · display __FONT_DISPLAY__ · body __FONT_BODY__</span>
+    </section>
+
+    <section class="panel spec">
+      <h3>Butonlar</h3>
+      <div class="btn-stack">
+        <span class="btn">Birincil</span>
+        <span class="btn ghost">İkincil</span>
+        <span class="btn soft">Sessiz</span>
+        <span class="btn" aria-disabled="true" style="opacity:.42">Pasif</span>
+      </div>
+      <div class="divider"></div>
+      <h3 style="font-size:12px">Girdi</h3>
+      <div class="field-stack">
+        <input class="field" placeholder="Varsayılan" aria-label="varsayılan">
+        <input class="field focus" value="Odaklı" aria-label="odaklı">
+        <input class="field err" value="Hatalı" aria-label="hatalı">
+        <span class="help err">Bu alan zorunlu</span>
+      </div>
+    </section>
+
+    <section class="panel spec">
+      <h3>Yüzey ve gölge</h3>
+      <div class="comp-card-demo">
+        <div class="top"><span class="mark" style="width:20px;height:20px;font-size:10px">A</span><span class="t">Kart başlığı</span><span class="chip" style="margin-left:auto">yeni</span></div>
+        <p class="d">Kart yüzeyi: --surface, kenarlık --line, köşe --radius-lg, gölge --shadow.</p>
+      </div>
+      <div class="shape-row">
+        <div><div class="sq radius-sm"></div><span class="cap">--radius __RADIUS__</span></div>
+        <div><div class="sq radius-lg"></div><span class="cap">--radius-lg __RADIUS_LG__</span></div>
+      </div>
+    </section>
+
+    <section class="panel spec">
+      <h3>Boşluk ritmi</h3>
+      <div class="spacings">
+        <i style="height:4px"></i><i style="height:8px"></i><i style="height:12px"></i>
+        <i style="height:16px"></i><i style="height:24px"></i><i style="height:32px"></i>
+        <i style="height:48px"></i><i style="height:64px"></i>
+      </div>
+      <span class="code" style="font-family:var(--font-mono);font-size:8.5px;color:var(--ink-faint)">4 · 8 · 12 · 16 · 24 · 32 · 48 · 64</span>
+      <div class="divider"></div>
+      <h3 style="font-size:12px">Tablo satırı</h3>
+      <table class="mini-table">
+        <thead><tr><th>ad</th><th>durum</th><th>değer</th></tr></thead>
+        <tbody>
+          <tr><td>Atlas</td><td><span class="chip accent">aktif</span></td><td>%72</td></tr>
+          <tr><td>Fatura</td><td><span class="chip">bekler</span></td><td>%40</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel spec">
+      <h3>İşaret ve durum</h3>
+      <div class="btn-stack">
+        <span class="chip">nötr</span>
+        <span class="chip accent">vurgu</span>
+        <span class="chip" style="border-color:var(--danger);color:var(--danger)">hata</span>
+        <span class="chip"><span class="dot"></span>canlı</span>
+      </div>
+      <div class="divider"></div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span class="mark">N</span>
+        <span class="icon-btn">⌘</span>
+        <span class="avatar">EB</span>
+        <span class="label" style="margin-left:auto">__FAMILY__</span>
+      </div>
+    </section>
+  </div>
+  <div class="sig"></div>
+</body>
+</html>

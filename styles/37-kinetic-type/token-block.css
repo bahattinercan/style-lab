@@ -1,0 +1,20 @@
+/* 37 · Kinetic Type — token bloğu (kaynak: styles/37-kinetic-type/tokens.json) */
+
+[data-style="kinetic-type"] {
+  --bg: #0e0e10; --bg-2: #17171a;
+  --surface: #1b1b1f; --surface-2: #232329;
+  --ink: #f4f2ec; --ink-soft: #a8a49b; --ink-faint: #6f6b64;
+  --accent: #e8ff47; --accent-ink: #0e0e10;
+  --line: rgba(244,242,236,.18);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Anton", "Archivo Black", sans-serif;
+  --font-body: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.03em; --blur: 0px; --grain: .05;
+}
+
+[data-theme="dark"][data-style="kinetic-type"] {
+  --bg: #0e0e10; --bg-2: #1c1c1d; --surface: #1b1b1f; --surface-2: #2c2c2f;
+  --ink: #f4f2ec; --ink-soft: #afaeaa; --ink-faint: #757573; --accent: #e8ff47; --accent-ink: #0d0d0d; --line: rgba(244,242,236,.14);
+}

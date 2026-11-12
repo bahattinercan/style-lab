@@ -1,0 +1,36 @@
+/* styles/52-experiment-split/token-block.css — üretildi; kaynak tokens.json.
+   Entegratör: açık bloğu kit/tokens.css [data-style] bölümüne, koyu bloğu koyu mod
+   bölümüne taşır. Açık bloktaki bildirimler tokens.json "css" alanıyla aynıdır
+   (kit/build-gallery.mjs norm() karşılaştırması geçer). */
+
+[data-style="experiment-split"] {
+  --bg: #f7f7fb; --bg-2: #eeeef6;
+  --surface: #ffffff; --surface-2: #f2f2fa;
+  --ink: #15151f; --ink-soft: #55566b; --ink-faint: #85869c;
+  --accent: #4b3ee8; --accent-ink: #ffffff;
+  --line: rgba(21,21,31,.10);
+  --radius: 10px; --radius-lg: 16px;
+  --shadow: 0 12px 28px -24px rgba(21,21,31,.35); --shadow-hard: 4px 0 0 var(--surface-2);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: -0.025em; --blur: 0px; --grain: 0;
+  --danger: #c2352b; --danger-ink: #ffffff;
+  --ok: #1f7a52; --warn: #8a5a06;
+}
+
+[data-theme="dark"][data-style="experiment-split"] {
+  --bg: #0c0c14; --bg-2: #121220;
+  --surface: #161627; --surface-2: #1d1d31;
+  --ink: #ecebff; --ink-soft: #a9a8c6; --ink-faint: #787890;
+  --accent: #8f86ff; --accent-ink: #0a0918;
+  --line: rgba(236,235,255,.14);
+  --radius: 10px; --radius-lg: 16px;
+  --shadow: 0 12px 28px -24px rgba(21,21,31,.35); --shadow-hard: 4px 0 0 var(--surface-2);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: -0.025em; --blur: 0px; --grain: 0;
+  --danger: #c2352b; --danger-ink: #ffffff;
+  --ok: #1f7a52; --warn: #8a5a06;
+}

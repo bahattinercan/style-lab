@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Mobil · form</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-m-form __BODY_CLASS__">
+  <div class="statusbar"><span>9:41</span><span class="right">5G ▮▮▮ 82%</span></div>
+
+  <header class="app-bar">
+    <h2>Yeni hesap</h2>
+    <span class="chip">2/3</span>
+  </header>
+
+  <div class="m-body">
+    <section class="panel">
+      <div class="ctl">
+        <span class="lbl">Ad soyad</span>
+        <input class="field" value="Emre Batur" aria-label="ad soyad">
+      </div>
+      <div class="ctl">
+        <span class="lbl">E-posta <b>zorunlu</b></span>
+        <input class="field err" value="ornek@" aria-label="e-posta" aria-invalid="true">
+        <span class="help err">Geçerli bir e-posta gir</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="ctl">
+        <span class="lbl">Şirket büyüklüğü</span>
+        <div class="f-wrap sel-wrap">
+          <select class="field sel" aria-label="şirket büyüklüğü">
+            <option>1–10 kişi</option>
+            <option selected>11–50 kişi</option>
+            <option>51–200 kişi</option>
+          </select>
+        </div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" checked>
+        <span class="track"><span class="thumb"></span></span>
+        <span>Ürün güncellemelerini e-posta ile al</span>
+      </label>
+      <span class="help">Bildirimleri hesap ayarlarından istediğin an kapatabilirsin.</span>
+    </section>
+  </div>
+
+  <div class="m-foot">
+    <span class="help">Devam ederek kullanım koşullarını kabul edersin.</span>
+    <span class="btn">Devam</span>
+  </div>
+  <div class="sig"></div>
+</body>
+</html>

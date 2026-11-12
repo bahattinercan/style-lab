@@ -1,0 +1,5299 @@
+/* kit/export-tokens.mjs üretir — elle düzenlemeyin. Kaynak: kit/tokens.css + styles/<nn-slug>/tokens.json */
+
+/* Kullanım: <html data-style="<slug>"> + bu dosyayı theme olarak yükle. */
+
+/* ---- 01 · Minimalism ---- */
+@theme {
+  --color-bg: #fafaf9;
+  --color-bg-2: #f2f2f0;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f7f5;
+  --color-ink: #101112;
+  --color-ink-soft: #5a5f66;
+  --color-ink-faint: #9aa0a6;
+  --color-accent: #2563eb;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(16,17,18,.10);
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --shadow-control: 0 1px 2px rgba(16,17,18,.06);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="minimalism"] {
+  --color-bg: #0b0b0c;
+  --color-bg-2: #121214;
+  --color-surface: #161618;
+  --color-surface-2: #1d1d20;
+  --color-ink: #ededed;
+  --color-ink-soft: #a0a4aa;
+  --color-ink-faint: #6f747a;
+  --color-accent: #60a5fa;
+  --color-accent-ink: #0b0b0c;
+  --color-line: rgba(255,255,255,.12);
+}
+
+/* ---- 02 · Swiss Design ---- */
+@theme {
+  --color-bg: #ffffff;
+  --color-bg-2: #f1f1f1;
+  --color-surface: #ffffff;
+  --color-surface-2: #fafafa;
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #4a4a4a;
+  --color-ink-faint: #8c8c8c;
+  --color-accent: #e4002b;
+  --color-accent-ink: #ffffff;
+  --color-line: #0a0a0a;
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Helvetica Neue, Inter, Arial, sans-serif;
+  --font-body: Helvetica Neue, Inter, Arial, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="swiss-design"] {
+  --color-bg: #0d0d0d;
+  --color-bg-2: #1b1b1b;
+  --color-surface: #141414;
+  --color-surface-2: #262626;
+  --color-ink: #f5f5f5;
+  --color-ink-soft: #afafaf;
+  --color-ink-faint: #757575;
+  --color-accent: #ff2d4b;
+  --color-accent-ink: #0d0d0d;
+  --color-line: #f5f5f5;
+}
+
+/* ---- 03 · Editorial Design ---- */
+@theme {
+  --color-bg: #fdfcf9;
+  --color-bg-2: #f4f1ea;
+  --color-surface: #ffffff;
+  --color-surface-2: #faf8f3;
+  --color-ink: #141414;
+  --color-ink-soft: #56504a;
+  --color-ink-faint: #8e8880;
+  --color-accent: #b4472f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(20,20,20,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: none;
+  --font-display: Fraunces, Playfair Display, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="editorial-design"] {
+  --color-bg: #14120f;
+  --color-bg-2: #1e1b16;
+  --color-surface: #1a1714;
+  --color-surface-2: #2b2824;
+  --color-ink: #f0e9dd;
+  --color-ink-soft: #b9b0a2;
+  --color-ink-faint: #77736c;
+  --color-accent: #d76a4c;
+  --color-accent-ink: #14120f;
+  --color-line: rgba(240,233,221,.18);
+}
+
+/* ---- 04 · Luxury Typography ---- */
+@theme {
+  --color-bg: #f6f1e7;
+  --color-bg-2: #efe7d8;
+  --color-surface: #fffdf8;
+  --color-surface-2: #f3ecdf;
+  --color-ink: #1a1815;
+  --color-ink-soft: #5c554b;
+  --color-ink-faint: #9a9184;
+  --color-accent: #c6a664;
+  --color-accent-ink: #1a1815;
+  --color-line: rgba(26,24,21,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Cormorant Garamond, Didot, Georgia, serif;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="luxury-typography"] {
+  --color-bg: #12100e;
+  --color-bg-2: #1a1714;
+  --color-surface: #171512;
+  --color-surface-2: #282622;
+  --color-ink: #efe8db;
+  --color-ink-soft: #b3aa9c;
+  --color-ink-faint: #75716a;
+  --color-accent: #d8bb7d;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(239,232,219,.18);
+}
+
+/* ---- 05 · Bento Grid ---- */
+@theme {
+  --color-bg: #f4f4f2;
+  --color-bg-2: #ececea;
+  --color-surface: #ffffff;
+  --color-surface-2: #fafaf9;
+  --color-ink: #12130f;
+  --color-ink-soft: #5b5f58;
+  --color-ink-faint: #9aa096;
+  --color-accent: #1f6feb;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(18,19,15,.08);
+  --radius-control: 18px;
+  --radius-card: 24px;
+  --shadow-control: 0 1px 2px rgba(18,19,15,.05), 0 8px 24px rgba(18,19,15,.04);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="bento-grid"] {
+  --color-bg: #0e0f0d;
+  --color-bg-2: #1c1d1b;
+  --color-surface: #191b18;
+  --color-surface-2: #202320;
+  --color-ink: #f0f1ee;
+  --color-ink-soft: #a8ada5;
+  --color-ink-faint: #747572;
+  --color-accent: #5b9cff;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(255,255,255,.10);
+}
+
+/* ---- 06 · Japandi ---- */
+@theme {
+  --color-bg: #f4efe7;
+  --color-bg-2: #ebe4d9;
+  --color-surface: #fbf8f3;
+  --color-surface-2: #f2ece2;
+  --color-ink: #2c2925;
+  --color-ink-soft: #635c53;
+  --color-ink-faint: #918a80;
+  --color-accent: #8a9b84;
+  --color-accent-ink: #2c2925;
+  --color-line: rgba(44,41,37,.10);
+  --radius-control: 10px;
+  --radius-card: 14px;
+  --shadow-control: 0 1px 2px rgba(44,41,37,.04);
+  --font-display: Lora, Iowan Old Style, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="japandi"] {
+  --color-bg: #17150f;
+  --color-bg-2: #24211b;
+  --color-surface: #221f18;
+  --color-surface-2: #2a261e;
+  --color-ink: #ece5d8;
+  --color-ink-soft: #b3aa9c;
+  --color-ink-faint: #777369;
+  --color-accent: #9fae97;
+  --color-accent-ink: #17150f;
+  --color-line: rgba(236,229,216,.14);
+}
+
+/* ---- 07 · Wabi-Sabi ---- */
+@theme {
+  --color-bg: #ede6da;
+  --color-bg-2: #e3d9c9;
+  --color-surface: #f6f1e6;
+  --color-surface-2: #eadfce;
+  --color-ink: #2a2724;
+  --color-ink-soft: #5f574d;
+  --color-ink-faint: #8f8779;
+  --color-accent: #a85831;
+  --color-accent-ink: #fff8ef;
+  --color-line: rgba(42,39,36,.18);
+  --radius-control: 3px;
+  --radius-card: 18px;
+  --shadow-control: 0 1px 0 rgba(42,39,36,.06);
+  --font-display: Fraunces, Lora, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Courier New, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="wabi-sabi"] {
+  --color-bg: #1a1714;
+  --color-bg-2: #26231f;
+  --color-surface: #221e19;
+  --color-surface-2: #322e28;
+  --color-ink: #e8e0d3;
+  --color-ink-soft: #b0a495;
+  --color-ink-faint: #77716a;
+  --color-accent: #c9744a;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(232,224,211,.16);
+}
+
+/* ---- 08 · Glassmorphism ---- */
+@theme {
+  --color-bg: #1b1035;
+  --color-bg-2: #2a1a5e;
+  --color-surface: rgba(255,255,255,.12);
+  --color-surface-2: rgba(255,255,255,.07);
+  --color-ink: #ffffff;
+  --color-ink-soft: rgba(255,255,255,.78);
+  --color-ink-faint: rgba(255,255,255,.55);
+  --color-accent: #7dd3fc;
+  --color-accent-ink: #06222e;
+  --color-line: rgba(255,255,255,.24);
+  --radius-control: 16px;
+  --radius-card: 24px;
+  --shadow-control: 0 8px 32px rgba(0,0,0,.22);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="glassmorphism"] {
+  --color-bg: #1b1035;
+  --color-bg-2: #2a1a5e;
+  --color-surface: rgba(255,255,255,.12);
+  --color-surface-2: rgba(255,255,255,.07);
+  --color-ink: #ffffff;
+  --color-ink-soft: rgba(255,255,255,.78);
+  --color-ink-faint: rgba(255,255,255,.55);
+  --color-accent: #7dd3fc;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(255,255,255,.24);
+}
+
+/* ---- 09 · Liquid Glass ---- */
+@theme {
+  --color-bg: #0a0d12;
+  --color-bg-2: #141a24;
+  --color-surface: rgba(255,255,255,.10);
+  --color-surface-2: rgba(255,255,255,.06);
+  --color-ink: #f5f7fa;
+  --color-ink-soft: rgba(245,247,250,.76);
+  --color-ink-faint: rgba(245,247,250,.5);
+  --color-accent: #4cc9f0;
+  --color-accent-ink: #041018;
+  --color-line: rgba(255,255,255,.28);
+  --radius-control: 20px;
+  --radius-card: 28px;
+  --shadow-control: 0 10px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.35);
+  --font-display: SF Pro Display, Inter, system-ui, sans-serif;
+  --font-body: SF Pro Text, Inter, system-ui, sans-serif;
+  --font-mono: SF Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="liquid-glass"] {
+  --color-bg: #04060a;
+  --color-bg-2: #0a1017;
+  --color-surface: rgba(255,255,255,.08);
+  --color-surface-2: rgba(255,255,255,.05);
+  --color-ink: #fbfdff;
+  --color-ink-soft: rgba(251,253,255,.78);
+  --color-ink-faint: rgba(251,253,255,.52);
+  --color-accent: #7fdcff;
+  --color-accent-ink: #03121a;
+  --color-line: rgba(255,255,255,.22);
+}
+
+/* ---- 10 · Neumorphism ---- */
+@theme {
+  --color-bg: #e4e8ef;
+  --color-bg-2: #dde2ea;
+  --color-surface: #e4e8ef;
+  --color-surface-2: #e9edf3;
+  --color-ink: #333a45;
+  --color-ink-soft: #5d6674;
+  --color-ink-faint: #8b93a1;
+  --color-accent: #4262e8;
+  --color-accent-ink: #ffffff;
+  --color-line: transparent;
+  --radius-control: 16px;
+  --radius-card: 24px;
+  --shadow-control: 6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff;
+  --font-display: Nunito Sans, Inter, system-ui, sans-serif;
+  --font-body: Nunito Sans, Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="neumorphism"] {
+  --color-bg: #23262e;
+  --color-bg-2: #1c1f26;
+  --color-surface: #23262e;
+  --color-surface-2: #33363d;
+  --color-ink: #e6e9ef;
+  --color-ink-soft: #a7aebc;
+  --color-ink-faint: #7b7e85;
+  --color-accent: #4262e8;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(230,233,239,.14);
+}
+
+/* ---- 11 · Claymorphism ---- */
+@theme {
+  --color-bg: #f3efff;
+  --color-bg-2: #e9e3ff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f2ff;
+  --color-ink: #2b2350;
+  --color-ink-soft: #5b5382;
+  --color-ink-faint: #8d87ad;
+  --color-accent: #6f4df0;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(255,255,255,.7);
+  --radius-control: 24px;
+  --radius-card: 32px;
+  --shadow-control: 0 12px 24px rgba(124,92,255,.18), inset -6px -8px 16px rgba(43,35,80,.10), inset 6px 8px 16px rgba(255,255,255,.65);
+  --font-display: Baloo 2, Poppins, Nunito, system-ui, sans-serif;
+  --font-body: Nunito, Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="claymorphism"] {
+  --color-bg: #1a1630;
+  --color-bg-2: #27233c;
+  --color-surface: #241f3d;
+  --color-surface-2: #2c2649;
+  --color-ink: #ece7ff;
+  --color-ink-soft: #b4add6;
+  --color-ink-faint: #78748d;
+  --color-accent: #8b6dff;
+  --color-accent-ink: #14102a;
+  --color-line: rgba(236,231,255,.14);
+}
+
+/* ---- 12 · Aurora UI ---- */
+@theme {
+  --color-bg: #0a0a10;
+  --color-bg-2: #12121c;
+  --color-surface: rgba(255,255,255,.06);
+  --color-surface-2: rgba(255,255,255,.04);
+  --color-ink: #f7f7fb;
+  --color-ink-soft: rgba(247,247,251,.72);
+  --color-ink-faint: rgba(247,247,251,.48);
+  --color-accent: #6d5bff;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(255,255,255,.14);
+  --radius-control: 16px;
+  --radius-card: 24px;
+  --shadow-control: 0 20px 60px rgba(109,91,255,.25);
+  --font-display: Inter, Satoshi, system-ui, sans-serif;
+  --font-body: Inter, Satoshi, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="aurora-ui"] {
+  --color-bg: #050409;
+  --color-bg-2: #0b0a14;
+  --color-surface: rgba(255,255,255,.05);
+  --color-surface-2: rgba(255,255,255,.035);
+  --color-ink: #fbfbff;
+  --color-ink-soft: rgba(251,251,255,.76);
+  --color-ink-faint: rgba(251,251,255,.50);
+  --color-accent: #9b8cff;
+  --color-accent-ink: #0a0818;
+  --color-line: rgba(255,255,255,.12);
+}
+
+/* ---- 13 · Neo-Brutalism ---- */
+@theme {
+  --color-bg: #fffdf5;
+  --color-bg-2: #ffe9a8;
+  --color-surface: #ffffff;
+  --color-surface-2: #ffd93d;
+  --color-ink: #000000;
+  --color-ink-soft: #2b2b2b;
+  --color-ink-faint: #6b6b6b;
+  --color-accent: #ff5c8a;
+  --color-accent-ink: #000000;
+  --color-line: #000000;
+  --radius-control: 0px;
+  --radius-card: 4px;
+  --shadow-control: 4px 4px 0 #000000;
+  --font-display: Archivo Black, Space Grotesk, system-ui, sans-serif;
+  --font-body: Space Grotesk, Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="neo-brutalism"] {
+  --color-bg: #111111;
+  --color-bg-2: #2a2a1a;
+  --color-surface: #1b1b1b;
+  --color-surface-2: #3a3320;
+  --color-ink: #fffdf5;
+  --color-ink-soft: #d8d4c8;
+  --color-ink-faint: #9a958a;
+  --color-accent: #ff5c8a;
+  --color-accent-ink: #000000;
+  --color-line: #fffdf5;
+}
+
+/* ---- 14 · Anti-Design ---- */
+@theme {
+  --color-bg: #f2e9da;
+  --color-bg-2: #d6ff3f;
+  --color-surface: #ffffff;
+  --color-surface-2: #ff3b6b;
+  --color-ink: #1b1b1b;
+  --color-ink-soft: #4a4a4a;
+  --color-ink-faint: #7b7b7b;
+  --color-accent: #ff3b6b;
+  --color-accent-ink: #1b1b1b;
+  --color-line: #1b1b1b;
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Anton, Archivo Black, Impact, sans-serif;
+  --font-body: Space Grotesk, Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="anti-design"] {
+  --color-bg: #111111;
+  --color-bg-2: #c6ef2e;
+  --color-surface: #1c1c1c;
+  --color-surface-2: #2d2d2c;
+  --color-ink: #f5f1e6;
+  --color-ink-soft: #b1aea6;
+  --color-ink-faint: #787671;
+  --color-accent: #ff3b6b;
+  --color-accent-ink: #0d0d0d;
+  --color-line: #f5f1e6;
+}
+
+/* ---- 15 · Acid Graphics ---- */
+@theme {
+  --color-bg: #050505;
+  --color-bg-2: #101010;
+  --color-surface: #0e0e0e;
+  --color-surface-2: #161616;
+  --color-ink: #f2fff0;
+  --color-ink-soft: rgba(242,255,240,.72);
+  --color-ink-faint: rgba(242,255,240,.45);
+  --color-accent: #ccff00;
+  --color-accent-ink: #050505;
+  --color-line: rgba(204,255,0,.35);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 0 24px rgba(204,255,0,.25);
+  --font-display: Archivo Expanded, Druk Wide, Anton, sans-serif;
+  --font-body: Space Grotesk, Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="acid-graphics"] {
+  --color-bg: #030303;
+  --color-bg-2: #0a0a0a;
+  --color-surface: #070707;
+  --color-surface-2: #101010;
+  --color-ink: #f6fff4;
+  --color-ink-soft: #c8d6c6;
+  --color-ink-faint: #8f9c8e;
+  --color-accent: #d8ff2e;
+  --color-accent-ink: #050505;
+  --color-line: rgba(216,255,46,.30);
+}
+
+/* ---- 16 · Memphis ---- */
+@theme {
+  --color-bg: #fff6e9;
+  --color-bg-2: #ffe8cc;
+  --color-surface: #ffffff;
+  --color-surface-2: #ffd400;
+  --color-ink: #111111;
+  --color-ink-soft: #3d3d3d;
+  --color-ink-faint: #767676;
+  --color-accent: #ff4e50;
+  --color-accent-ink: #111111;
+  --color-line: #111111;
+  --radius-control: 10px;
+  --radius-card: 18px;
+  --shadow-control: 3px 3px 0 #111111;
+  --font-display: Poppins, Baloo 2, system-ui, sans-serif;
+  --font-body: Poppins, Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="memphis"] {
+  --color-bg: #141210;
+  --color-bg-2: #22201d;
+  --color-surface: #1e1a16;
+  --color-surface-2: #e8c000;
+  --color-ink: #fff6e9;
+  --color-ink-soft: #b9b2a8;
+  --color-ink-faint: #7e7972;
+  --color-accent: #ff4e50;
+  --color-accent-ink: #0d0d0d;
+  --color-line: #fff6e9;
+}
+
+/* ---- 17 · Maximalism ---- */
+@theme {
+  --color-bg: #f6e7d8;
+  --color-bg-2: #e8cfae;
+  --color-surface: #fffaf3;
+  --color-surface-2: #f2c14e;
+  --color-ink: #221410;
+  --color-ink-soft: #57403a;
+  --color-ink-faint: #8f7a72;
+  --color-accent: #7a1f3d;
+  --color-accent-ink: #f6e7d8;
+  --color-line: rgba(34,20,16,.2);
+  --radius-control: 6px;
+  --radius-card: 14px;
+  --shadow-control: 6px 6px 0 rgba(34,20,16,.85);
+  --font-display: Playfair Display, Fraunces, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="maximalism"] {
+  --color-bg: #1a1310;
+  --color-bg-2: #27201c;
+  --color-surface: #241a15;
+  --color-surface-2: #c79b33;
+  --color-ink: #f6e7d8;
+  --color-ink-soft: #b4a79c;
+  --color-ink-faint: #7d726a;
+  --color-accent: #a8385a;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(246,231,216,.14);
+}
+
+/* ---- 18 · Dopamine UI ---- */
+@theme {
+  --color-bg: #fffdf7;
+  --color-bg-2: #fff3d6;
+  --color-surface: #ffffff;
+  --color-surface-2: #ffe3ec;
+  --color-ink: #16121f;
+  --color-ink-soft: #4a4358;
+  --color-ink-faint: #837b93;
+  --color-accent: #ff3d71;
+  --color-accent-ink: #16121f;
+  --color-line: rgba(22,18,31,.10);
+  --radius-control: 18px;
+  --radius-card: 24px;
+  --shadow-control: 0 10px 24px rgba(255,61,113,.18);
+  --font-display: Poppins, Inter, system-ui, sans-serif;
+  --font-body: Poppins, Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="dopamine-ui"] {
+  --color-bg: #14101a;
+  --color-bg-2: #221e27;
+  --color-surface: #211b2b;
+  --color-surface-2: #3a2430;
+  --color-ink: #fdf7f9;
+  --color-ink-soft: #b9b1c6;
+  --color-ink-faint: #7d787e;
+  --color-accent: #ff5d8a;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(253,247,249,.14);
+}
+
+/* ---- 19 · Y2K ---- */
+@theme {
+  --color-bg: #eaf4ff;
+  --color-bg-2: #d9e9ff;
+  --color-surface: #ffffff;
+  --color-surface-2: #e6f0ff;
+  --color-ink: #1b2340;
+  --color-ink-soft: #4b557a;
+  --color-ink-faint: #8b94b5;
+  --color-accent: #6f4de8;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(90,120,220,.35);
+  --radius-control: 20px;
+  --radius-card: 28px;
+  --shadow-control: 0 6px 18px rgba(120,150,255,.35), inset 0 1px 0 #ffffff;
+  --font-display: Michroma, Eurostile, Inter, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="y2k"] {
+  --color-bg: #0b1024;
+  --color-bg-2: #181e31;
+  --color-surface: #141a33;
+  --color-surface-2: #252b43;
+  --color-ink: #eaf2ff;
+  --color-ink-soft: #a7aebd;
+  --color-ink-faint: #6f7687;
+  --color-accent: #8b74ff;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(234,242,255,.14);
+}
+
+/* ---- 20 · Vaporwave ---- */
+@theme {
+  --color-bg: #1a1230;
+  --color-bg-2: #2a1b4d;
+  --color-surface: rgba(185,167,224,.14);
+  --color-surface-2: rgba(242,160,192,.12);
+  --color-ink: #f6efff;
+  --color-ink-soft: rgba(246,239,255,.74);
+  --color-ink-faint: rgba(246,239,255,.5);
+  --color-accent: #f2a0c0;
+  --color-accent-ink: #2a1b4d;
+  --color-line: rgba(242,160,192,.4);
+  --radius-control: 6px;
+  --radius-card: 14px;
+  --shadow-control: 0 10px 40px rgba(107,78,155,.45);
+  --font-display: Michroma, Poppins, system-ui, sans-serif;
+  --font-body: Poppins, Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0.14em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="vaporwave"] {
+  --color-bg: #0c0718;
+  --color-bg-2: #170f2e;
+  --color-surface: rgba(185,167,224,.12);
+  --color-surface-2: rgba(242,160,192,.10);
+  --color-ink: #fbf4ff;
+  --color-ink-soft: rgba(251,244,255,.76);
+  --color-ink-faint: rgba(251,244,255,.52);
+  --color-accent: #ff9ec6;
+  --color-accent-ink: #2a1b4d;
+  --color-line: rgba(255,158,198,.34);
+}
+
+/* ---- 21 · Synthwave ---- */
+@theme {
+  --color-bg: #120458;
+  --color-bg-2: #2b1055;
+  --color-surface: #1b0a63;
+  --color-surface-2: #2a1178;
+  --color-ink: #fdfdff;
+  --color-ink-soft: rgba(253,253,255,.78);
+  --color-ink-faint: rgba(253,253,255,.52);
+  --color-accent: #ff2a6d;
+  --color-accent-ink: #120458;
+  --color-line: rgba(5,217,232,.55);
+  --radius-control: 4px;
+  --radius-card: 10px;
+  --shadow-control: 0 0 12px rgba(255,42,109,.65), 0 0 32px rgba(5,217,232,.35);
+  --font-display: Outrun, Turbo, Michroma, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0.06em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="synthwave"] {
+  --color-bg: #0a0330;
+  --color-bg-2: #1c0a44;
+  --color-surface: #12064a;
+  --color-surface-2: #1e0c5c;
+  --color-ink: #fdfdff;
+  --color-ink-soft: rgba(253,253,255,.80);
+  --color-ink-faint: rgba(253,253,255,.54);
+  --color-accent: #ff4f86;
+  --color-accent-ink: #120458;
+  --color-line: rgba(5,217,232,.48);
+}
+
+/* ---- 22 · Cyberpunk ---- */
+@theme {
+  --color-bg: #0b0b0f;
+  --color-bg-2: #15151d;
+  --color-surface: rgba(20,20,28,.85);
+  --color-surface-2: #1b1b26;
+  --color-ink: #f2f5f7;
+  --color-ink-soft: rgba(242,245,247,.76);
+  --color-ink-faint: rgba(242,245,247,.5);
+  --color-accent: #f9f002;
+  --color-accent-ink: #0b0b0f;
+  --color-line: rgba(5,217,232,.55);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 0 16px rgba(5,217,232,.35);
+  --font-display: Chakra Petch, Rajdhani, system-ui, sans-serif;
+  --font-body: IBM Plex Mono, ui-monospace, monospace;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.10em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="cyberpunk"] {
+  --color-bg: #0b0b0f;
+  --color-bg-2: #15151d;
+  --color-surface: rgba(20,20,28,.85);
+  --color-surface-2: #1b1b26;
+  --color-ink: #f2f5f7;
+  --color-ink-soft: rgba(242,245,247,.76);
+  --color-ink-faint: rgba(242,245,247,.5);
+  --color-accent: #f9f002;
+  --color-accent-ink: #0b0b0f;
+  --color-line: rgba(5,217,232,.55);
+}
+
+/* ---- 23 · Cybercore ---- */
+@theme {
+  --color-bg: #05080a;
+  --color-bg-2: #0a1014;
+  --color-surface: #0a1014;
+  --color-surface-2: #0f171c;
+  --color-ink: #d7ffe9;
+  --color-ink-soft: #86c9a6;
+  --color-ink-faint: #4d7a63;
+  --color-accent: #33ff99;
+  --color-accent-ink: #05080a;
+  --color-line: rgba(51,255,153,.35);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 0 10px rgba(51,255,153,.28);
+  --font-display: JetBrains Mono, ui-monospace, monospace;
+  --font-body: JetBrains Mono, ui-monospace, monospace;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.04em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="cybercore"] {
+  --color-bg: #030507;
+  --color-bg-2: #070d10;
+  --color-surface: #070d10;
+  --color-surface-2: #0b1419;
+  --color-ink: #e6fff2;
+  --color-ink-soft: #93d7b3;
+  --color-ink-faint: #58876e;
+  --color-accent: #4dffab;
+  --color-accent-ink: #04150c;
+  --color-line: rgba(77,255,171,.30);
+}
+
+/* ---- 24 · Pixel Art ---- */
+@theme {
+  --color-bg: #1a1c2c;
+  --color-bg-2: #23263a;
+  --color-surface: #29366f;
+  --color-surface-2: #3b5dc9;
+  --color-ink: #f4f4f4;
+  --color-ink-soft: #c2c3c7;
+  --color-ink-faint: #8b8d98;
+  --color-accent: #ffcd75;
+  --color-accent-ink: #1a1c2c;
+  --color-line: #f4f4f4;
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: 0 0 0 2px #f4f4f4, 0 0 0 4px #1a1c2c;
+  --font-display: Press Start 2P, Silkscreen, monospace;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Silkscreen, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="pixel-art"] {
+  --color-bg: #101220;
+  --color-bg-2: #171a2a;
+  --color-surface: #1d2752;
+  --color-surface-2: #2a3f8f;
+  --color-ink: #f7f7f7;
+  --color-ink-soft: #c9cace;
+  --color-ink-faint: #92949f;
+  --color-accent: #ffd98a;
+  --color-accent-ink: #14162a;
+  --color-line: #f7f7f7;
+}
+
+/* ---- 25 · Frutiger Aero ---- */
+@theme {
+  --color-bg: #dff1ff;
+  --color-bg-2: #bfe3ff;
+  --color-surface: linear-gradient(180deg, #ffffff, #d6ecff);
+  --color-surface-2: #eaf6ff;
+  --color-ink: #0d2b45;
+  --color-ink-soft: #365a75;
+  --color-ink-faint: #6f8fa8;
+  --color-accent: #2f9be0;
+  --color-accent-ink: #0d2b45;
+  --color-line: rgba(255,255,255,.85);
+  --radius-control: 14px;
+  --radius-card: 22px;
+  --shadow-control: 0 8px 20px rgba(47,155,224,.28), inset 0 1px 0 #ffffff;
+  --font-display: Segoe UI, Frutiger, system-ui, sans-serif;
+  --font-body: Segoe UI, Myriad Pro, system-ui, sans-serif;
+  --font-mono: Consolas, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="frutiger-aero"] {
+  --color-bg: #0d2233;
+  --color-bg-2: #1a2f3f;
+  --color-surface: linear-gradient(180deg,#15364d,#0f2839);
+  --color-surface-2: linear-gradient(180deg,#15364d,#0f2839);
+  --color-ink: #e6f4ff;
+  --color-ink-soft: #a5b5c2;
+  --color-ink-faint: #6f818f;
+  --color-accent: #4cb8f0;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(230,244,255,.14);
+}
+
+/* ---- 26 · Art Deco ---- */
+@theme {
+  --color-bg: #0e1b17;
+  --color-bg-2: #14241e;
+  --color-surface: #12211c;
+  --color-surface-2: #18302a;
+  --color-ink: #ede3d2;
+  --color-ink-soft: #bcb2a1;
+  --color-ink-faint: #8a8172;
+  --color-accent: #c8a24a;
+  --color-accent-ink: #0e1b17;
+  --color-line: rgba(200,162,74,.55);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Cinzel, Poiret One, Georgia, serif;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: Courier New, ui-monospace, monospace;
+  --tracking-display: 0.22em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="art-deco"] {
+  --color-bg: #08120f;
+  --color-bg-2: #0d1a16;
+  --color-surface: #0b1713;
+  --color-surface-2: #112420;
+  --color-ink: #f2ead9;
+  --color-ink-soft: #c3b9a7;
+  --color-ink-faint: #918877;
+  --color-accent: #d8b34f;
+  --color-accent-ink: #0a1512;
+  --color-line: rgba(216,179,79,.48);
+}
+
+/* ---- 27 · Victorian ---- */
+@theme {
+  --color-bg: #efe7d6;
+  --color-bg-2: #e5dbc5;
+  --color-surface: #f7f1e3;
+  --color-surface-2: #eae0cb;
+  --color-ink: #1c1a17;
+  --color-ink-soft: #4f4940;
+  --color-ink-faint: #857c6e;
+  --color-accent: #5a1e2b;
+  --color-accent-ink: #f7f1e3;
+  --color-line: rgba(28,26,23,.45);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Playfair Display, Baskerville, Georgia, serif;
+  --font-body: EB Garamond, Georgia, serif;
+  --font-mono: Courier New, ui-monospace, monospace;
+  --tracking-display: 0.04em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="victorian"] {
+  --color-bg: #1a1713;
+  --color-bg-2: #26231e;
+  --color-surface: #221d18;
+  --color-surface-2: #322d26;
+  --color-ink: #e9dfcc;
+  --color-ink-soft: #aba394;
+  --color-ink-faint: #777166;
+  --color-accent: #8d3547;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(233,223,204,.14);
+}
+
+/* ---- 28 · Surrealism ---- */
+@theme {
+  --color-bg: #e7e2da;
+  --color-bg-2: #d9d2c7;
+  --color-surface: #fbf9f5;
+  --color-surface-2: #efeae1;
+  --color-ink: #1e1c1a;
+  --color-ink-soft: #56514a;
+  --color-ink-faint: #8d877e;
+  --color-accent: #e4572e;
+  --color-accent-ink: #1e1c1a;
+  --color-line: rgba(30,28,26,.12);
+  --radius-control: 4px;
+  --radius-card: 10px;
+  --shadow-control: 0 24px 60px rgba(30,28,26,.16);
+  --font-display: Inter, Helvetica Neue, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="surrealism"] {
+  --color-bg: #15130f;
+  --color-bg-2: #22201b;
+  --color-surface: #1e1b16;
+  --color-surface-2: #2e2b26;
+  --color-ink: #ece7de;
+  --color-ink-soft: #aca7a0;
+  --color-ink-faint: #76726c;
+  --color-accent: #f07a52;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(236,231,222,.14);
+}
+
+/* ---- 29 · Ethereal ---- */
+@theme {
+  --color-bg: #f7f4f8;
+  --color-bg-2: #efe9f4;
+  --color-surface: rgba(255,255,255,.55);
+  --color-surface-2: rgba(255,255,255,.35);
+  --color-ink: #3b3542;
+  --color-ink-soft: #635c6e;
+  --color-ink-faint: #968fa3;
+  --color-accent: #7a63bd;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(59,53,66,.10);
+  --radius-control: 20px;
+  --radius-card: 28px;
+  --shadow-control: 0 20px 50px rgba(143,123,214,.16);
+  --font-display: Cormorant Garamond, Lora, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="ethereal"] {
+  --color-bg: #1a1720;
+  --color-bg-2: #27232d;
+  --color-surface: #27232d;
+  --color-surface-2: #37333d;
+  --color-ink: #ece7f2;
+  --color-ink-soft: #ada9b3;
+  --color-ink-faint: #78757f;
+  --color-accent: #9d8ae0;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(236,231,242,.14);
+}
+
+/* ---- 30 · Bohemian ---- */
+@theme {
+  --color-bg: #f3e9d8;
+  --color-bg-2: #e8d9c0;
+  --color-surface: #fbf4e6;
+  --color-surface-2: #f0e0c4;
+  --color-ink: #2e2620;
+  --color-ink-soft: #5f5347;
+  --color-ink-faint: #91857a;
+  --color-accent: #b45634;
+  --color-accent-ink: #fff8ee;
+  --color-line: rgba(46,38,32,.18);
+  --radius-control: 14px;
+  --radius-card: 22px;
+  --shadow-control: 0 10px 24px rgba(46,38,32,.12);
+  --font-display: Fraunces, Lora, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Courier New, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="bohemian"] {
+  --color-bg: #1c1712;
+  --color-bg-2: #29231e;
+  --color-surface: #26201a;
+  --color-surface-2: #363029;
+  --color-ink: #f0e6d5;
+  --color-ink-soft: #b0a89b;
+  --color-ink-faint: #7b746a;
+  --color-accent: #d0704a;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(240,230,213,.14);
+}
+
+/* ---- 31 · Scrapbook ---- */
+@theme {
+  --color-bg: #f7f1e4;
+  --color-bg-2: #efe6d2;
+  --color-surface: #fffdf7;
+  --color-surface-2: #fdf3dc;
+  --color-ink: #1f2b3a;
+  --color-ink-soft: #4e5a68;
+  --color-ink-faint: #858e99;
+  --color-accent: #c63d2f;
+  --color-accent-ink: #fffdf7;
+  --color-line: rgba(31,43,58,.18);
+  --radius-control: 3px;
+  --radius-card: 8px;
+  --shadow-control: 0 2px 6px rgba(31,43,58,.18);
+  --font-display: Caveat, Kalam, cursive;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="scrapbook"] {
+  --color-bg: #1a1f26;
+  --color-bg-2: #272b31;
+  --color-surface: #232a33;
+  --color-surface-2: #343a41;
+  --color-ink: #f2ece0;
+  --color-ink-soft: #b1afa8;
+  --color-ink-faint: #7b7b7a;
+  --color-accent: #e0574a;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(242,236,224,.14);
+}
+
+/* ---- 32 · Conceptual Sketch ---- */
+@theme {
+  --color-bg: #fcfbf7;
+  --color-bg-2: #f2f0e8;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f6f0;
+  --color-ink: #2a2a2a;
+  --color-ink-soft: #5c5c5c;
+  --color-ink-faint: #8f8f8f;
+  --color-accent: #2b5fad;
+  --color-accent-ink: #ffffff;
+  --color-line: #2a2a2a;
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: none;
+  --font-display: Architects Daughter, Caveat, cursive;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="conceptual-sketch"] {
+  --color-bg: #15161a;
+  --color-bg-2: #222327;
+  --color-surface: #1d1f24;
+  --color-surface-2: #2d2f34;
+  --color-ink: #e9eaee;
+  --color-ink-soft: #a9aaae;
+  --color-ink-faint: #747579;
+  --color-accent: #7aa7f0;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(233,234,238,.14);
+}
+
+/* ---- 33 · Dark Academia ---- */
+@theme {
+  --color-bg: #1b1714;
+  --color-bg-2: #241f1a;
+  --color-surface: #262019;
+  --color-surface-2: #2f2820;
+  --color-ink: #e8dfce;
+  --color-ink-soft: #b8ac97;
+  --color-ink-faint: #8a7f6d;
+  --color-accent: #b0863f;
+  --color-accent-ink: #1b1714;
+  --color-line: rgba(176,134,63,.32);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 12px 32px rgba(0,0,0,.5);
+  --font-display: Cormorant Garamond, EB Garamond, Georgia, serif;
+  --font-body: EB Garamond, Georgia, serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="dark-academia"] {
+  --color-bg: #1b1714;
+  --color-bg-2: #241f1a;
+  --color-surface: #262019;
+  --color-surface-2: #2f2820;
+  --color-ink: #e8dfce;
+  --color-ink-soft: #b8ac97;
+  --color-ink-faint: #8a7f6d;
+  --color-accent: #b0863f;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(176,134,63,.32);
+}
+
+/* ---- 34 · Skeuomorphism ---- */
+@theme {
+  --color-bg: #cfc6b8;
+  --color-bg-2: #bdb2a1;
+  --color-surface: #f2ebdd;
+  --color-surface-2: #e6ddcb;
+  --color-ink: #2f2a24;
+  --color-ink-soft: #5d554a;
+  --color-ink-faint: #8b8173;
+  --color-accent: #2f6b4f;
+  --color-accent-ink: #f7f3e8;
+  --color-line: rgba(47,42,36,.35);
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --shadow-control: 0 2px 4px rgba(47,42,36,.35), inset 0 1px 0 rgba(255,255,255,.75);
+  --font-display: Helvetica Neue, Segoe UI, system-ui, sans-serif;
+  --font-body: Helvetica Neue, Segoe UI, system-ui, sans-serif;
+  --font-mono: Menlo, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="skeuomorphism"] {
+  --color-bg: #2a241d;
+  --color-bg-2: #363028;
+  --color-surface: #3a3226;
+  --color-surface-2: #494134;
+  --color-ink: #f0e8da;
+  --color-ink-soft: #b5ada1;
+  --color-ink-faint: #837c72;
+  --color-accent: #3f8a68;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(240,232,218,.14);
+}
+
+/* ---- 35 · Bauhaus ---- */
+@theme {
+  --color-bg: #f2ece1;
+  --color-bg-2: #e6ddcd;
+  --color-surface: #fffdf8;
+  --color-surface-2: #efe7d8;
+  --color-ink: #16161a;
+  --color-ink-soft: #55524b;
+  --color-ink-faint: #7d776b;
+  --color-accent: #d92b2b;
+  --color-accent-ink: #fffdf8;
+  --color-line: #16161a;
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Archivo Black, Inter, sans-serif;
+  --font-body: Jost, Inter, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="bauhaus"] {
+  --color-bg: #16161a;
+  --color-bg-2: #232326;
+  --color-surface: #1f1f24;
+  --color-surface-2: #302f33;
+  --color-ink: #f4ede1;
+  --color-ink-soft: #b1aca5;
+  --color-ink-faint: #7a7774;
+  --color-accent: #e84747;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(244,237,225,.14);
+}
+
+/* ---- 36 · Constructivism ---- */
+@theme {
+  --color-bg: #efeae0;
+  --color-bg-2: #e2dbcd;
+  --color-surface: #fbf8f2;
+  --color-surface-2: #e9e2d5;
+  --color-ink: #11100f;
+  --color-ink-soft: #5a5349;
+  --color-ink-faint: #847d6f;
+  --color-accent: #c1121f;
+  --color-accent-ink: #fbf8f2;
+  --color-line: #11100f;
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Archivo Black, Inter, sans-serif;
+  --font-body: Jost, Inter, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="constructivism"] {
+  --color-bg: #11100f;
+  --color-bg-2: #1e1d1c;
+  --color-surface: #1a1817;
+  --color-surface-2: #2b2927;
+  --color-ink: #f0eae0;
+  --color-ink-soft: #ada9a1;
+  --color-ink-faint: #75726d;
+  --color-accent: #cb2f38;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(240,234,224,.14);
+}
+
+/* ---- 37 · Kinetic Type ---- */
+@theme {
+  --color-bg: #0e0e10;
+  --color-bg-2: #17171a;
+  --color-surface: #1b1b1f;
+  --color-surface-2: #232329;
+  --color-ink: #f4f2ec;
+  --color-ink-soft: #a8a49b;
+  --color-ink-faint: #6f6b64;
+  --color-accent: #e8ff47;
+  --color-accent-ink: #0e0e10;
+  --color-line: rgba(244,242,236,.18);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: none;
+  --font-display: Anton, Archivo Black, sans-serif;
+  --font-body: Space Grotesk, Inter, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="kinetic-type"] {
+  --color-bg: #0e0e10;
+  --color-bg-2: #1c1c1d;
+  --color-surface: #1b1b1f;
+  --color-surface-2: #2c2c2f;
+  --color-ink: #f4f2ec;
+  --color-ink-soft: #afaeaa;
+  --color-ink-faint: #757573;
+  --color-accent: #e8ff47;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(244,242,236,.14);
+}
+
+/* ---- 38 · Organic / Biophilic ---- */
+@theme {
+  --color-bg: #f3f1e7;
+  --color-bg-2: #e7e4d6;
+  --color-surface: #fbfaf4;
+  --color-surface-2: #eeece0;
+  --color-ink: #232a22;
+  --color-ink-soft: #55604f;
+  --color-ink-faint: #848b78;
+  --color-accent: #4f7a45;
+  --color-accent-ink: #fbfaf4;
+  --color-line: rgba(35,42,34,.16);
+  --radius-control: 18px;
+  --radius-card: 26px;
+  --shadow-control: 0 6px 18px rgba(35,42,34,.10);
+  --font-display: Fraunces, Georgia, serif;
+  --font-body: Nunito, Inter, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="organic-bio"] {
+  --color-bg: #171c16;
+  --color-bg-2: #242923;
+  --color-surface: #212720;
+  --color-surface-2: #313730;
+  --color-ink: #eef1e7;
+  --color-ink-soft: #aeb1a8;
+  --color-ink-faint: #787c74;
+  --color-accent: #8fbf7d;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(238,241,231,.14);
+}
+
+/* ---- 39 · AI-native Mesh ---- */
+@theme {
+  --color-bg: #0b0c10;
+  --color-bg-2: #101218;
+  --color-surface: #14161d;
+  --color-surface-2: #1b1e27;
+  --color-ink: #f2f4f8;
+  --color-ink-soft: #a9b0c0;
+  --color-ink-faint: #7a8294;
+  --color-accent: #7c8cff;
+  --color-accent-ink: #0b0c10;
+  --color-line: rgba(242,244,248,.12);
+  --radius-control: 14px;
+  --radius-card: 22px;
+  --shadow-control: 0 8px 30px rgba(0,0,0,.45);
+  --font-display: Geist, Inter, system-ui, sans-serif;
+  --font-body: Inter, Segoe UI, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="ai-native-mesh"] {
+  --color-bg: #0b0c10;
+  --color-bg-2: #191a1e;
+  --color-surface: #14161d;
+  --color-surface-2: #26282f;
+  --color-ink: #f2f4f8;
+  --color-ink-soft: #adaeb2;
+  --color-ink-faint: #737478;
+  --color-accent: #7c8cff;
+  --color-accent-ink: #0b0c10;
+  --color-line: rgba(242,244,248,.14);
+}
+
+/* ---- 40 · Scandinavian Dark ---- */
+@theme {
+  --color-bg: #171a19;
+  --color-bg-2: #1d211f;
+  --color-surface: #1f2422;
+  --color-surface-2: #262c29;
+  --color-ink: #e9e7e0;
+  --color-ink-soft: #a6aaa2;
+  --color-ink-faint: #7d8279;
+  --color-accent: #b9c6a9;
+  --color-accent-ink: #141715;
+  --color-line: rgba(233,231,224,.14);
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --shadow-control: 0 2px 10px rgba(0,0,0,.35);
+  --font-display: Fraunces, Georgia, serif;
+  --font-body: Inter, Segoe UI, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="scandinavian-dark"] {
+  --color-bg: #171a19;
+  --color-bg-2: #242625;
+  --color-surface: #1f2422;
+  --color-surface-2: #2f3431;
+  --color-ink: #e9e7e0;
+  --color-ink-soft: #aaaaa4;
+  --color-ink-faint: #767673;
+  --color-accent: #b9c6a9;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(233,231,224,.14);
+}
+
+/* ---- 41 · Grand Tourer ---- */
+@theme {
+  --color-bg: #efe7da;
+  --color-bg-2: #e6dccb;
+  --color-surface: #f8f2e8;
+  --color-surface-2: #e8ddca;
+  --color-ink: #1c1a17;
+  --color-ink-soft: #574f44;
+  --color-ink-faint: #726757;
+  --color-accent: #1f3b2c;
+  --color-accent-ink: #f4ecdc;
+  --color-line: rgba(28,26,23,.18);
+  --radius-control: 3px;
+  --radius-card: 6px;
+  --shadow-control: inset 0 0 0 1px rgba(255,255,255,.6), 0 1px 2px rgba(28,26,23,.08);
+  --font-display: Cinzel, Playfair Display, Georgia, serif;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: Courier Prime, IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.09em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="grand-tourer"] {
+  --color-bg: #14180f;
+  --color-bg-2: #21241b;
+  --color-surface: #1d2318;
+  --color-surface-2: #2e3328;
+  --color-ink: #efe7da;
+  --color-ink-soft: #ada99d;
+  --color-ink-faint: #77756a;
+  --color-accent: #b7c8a8;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(239,231,218,.14);
+}
+
+/* ---- 42 · Grand Tourer Oxblood ---- */
+@theme {
+  --color-bg: #f1e9dd;
+  --color-bg-2: #e8dfd0;
+  --color-surface: #f9f3e9;
+  --color-surface-2: #e9dfce;
+  --color-ink: #201a17;
+  --color-ink-soft: #5a4d45;
+  --color-ink-faint: #74665c;
+  --color-accent: #6b2130;
+  --color-accent-ink: #f7efe1;
+  --color-line: rgba(32,26,23,.18);
+  --radius-control: 3px;
+  --radius-card: 6px;
+  --shadow-control: inset 0 0 0 1px rgba(255,255,255,.6), 0 1px 2px rgba(32,26,23,.08);
+  --font-display: Cinzel, Playfair Display, Georgia, serif;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: Courier Prime, IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.12em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="grand-tourer-oxblood"] {
+  --color-bg: #1a1214;
+  --color-bg-2: #271f20;
+  --color-surface: #241a1c;
+  --color-surface-2: #342b2b;
+  --color-ink: #f1e9dd;
+  --color-ink-soft: #b1a9a1;
+  --color-ink-faint: #7b736e;
+  --color-accent: #d3a3ab;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(241,233,221,.14);
+}
+
+/* ---- 43 · Grand Tourer Midnight ---- */
+@theme {
+  --color-bg: #f1ece2;
+  --color-bg-2: #e7e0d2;
+  --color-surface: #f8f4ec;
+  --color-surface-2: #e6e1d5;
+  --color-ink: #171b23;
+  --color-ink-soft: #4f5560;
+  --color-ink-faint: #5f6470;
+  --color-accent: #1b2e4a;
+  --color-accent-ink: #f2eadb;
+  --color-line: rgba(23,27,35,.18);
+  --radius-control: 3px;
+  --radius-card: 6px;
+  --shadow-control: inset 0 0 0 1px rgba(255,255,255,.6), 0 1px 2px rgba(23,27,35,.08);
+  --font-display: Cinzel, Playfair Display, Georgia, serif;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: Courier Prime, IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.09em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="grand-tourer-midnight"] {
+  --color-bg: #101520;
+  --color-bg-2: #1d222b;
+  --color-surface: #171d29;
+  --color-surface-2: #282d37;
+  --color-ink: #eae6dc;
+  --color-ink-soft: #a9a7a4;
+  --color-ink-faint: #727375;
+  --color-accent: #9db2cc;
+  --color-accent-ink: #0d0d0d;
+  --color-line: rgba(234,230,220,.14);
+}
+
+/* ---- 44 · Utility ---- */
+@theme {
+  --color-bg: #ffffff;
+  --color-bg-2: #f6f6f7;
+  --color-surface: #ffffff;
+  --color-surface-2: #fafafa;
+  --color-ink: #111112;
+  --color-ink-soft: #5a5f66;
+  --color-ink-faint: #9298a0;
+  --color-accent: #1d4ed8;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(17,17,18,.10);
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --shadow-control: 0 1px 2px rgba(17,17,18,.06);
+  --font-display: Poppins, system-ui, sans-serif;
+  --font-body: Poppins, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="utility"] {
+  --color-bg: #000000;
+  --color-bg-2: #181818;
+  --color-surface: #1f1f1f;
+  --color-surface-2: #272727;
+  --color-ink: #ffffff;
+  --color-ink-soft: #9b9b9b;
+  --color-ink-faint: #6e6e6e;
+  --color-accent: #7aa2ff;
+  --color-accent-ink: #000000;
+  --color-line: rgba(255,255,255,.12);
+}
+
+/* ---- 45 · Terminal UI ---- */
+@theme {
+  --color-bg: #0a0d0a;
+  --color-bg-2: #0d110d;
+  --color-surface: #0f140f;
+  --color-surface-2: #131a13;
+  --color-ink: #d7e6d2;
+  --color-ink-soft: #9bb394;
+  --color-ink-faint: #6d8268;
+  --color-accent: #58e08a;
+  --color-accent-ink: #04120a;
+  --color-line: rgba(215,230,210,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: JetBrains Mono, ui-monospace, monospace;
+  --font-body: JetBrains Mono, ui-monospace, monospace;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="terminal-ui"] {
+  --color-bg: #050705;
+  --color-bg-2: #080b08;
+  --color-surface: #0b0f0b;
+  --color-surface-2: #101510;
+  --color-ink: #e6f1e2;
+  --color-ink-soft: #a8bda2;
+  --color-ink-faint: #78896f;
+  --color-accent: #6ff09c;
+  --color-accent-ink: #03150a;
+  --color-line: rgba(230,241,226,.18);
+}
+
+/* ---- 46 · Telemetry Grid ---- */
+@theme {
+  --color-bg: #eef1f4;
+  --color-bg-2: #e5eaee;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f8fa;
+  --color-ink: #10171c;
+  --color-ink-soft: #46585f;
+  --color-ink-faint: #7b8a91;
+  --color-accent: #0b6e75;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(16,23,28,.14);
+  --radius-control: 4px;
+  --radius-card: 10px;
+  --shadow-control: 0 1px 2px rgba(16,23,28,.07);
+  --font-display: Chakra Petch, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="telemetry-grid"] {
+  --color-bg: #0a0f12;
+  --color-bg-2: #0e1417;
+  --color-surface: #101820;
+  --color-surface-2: #162028;
+  --color-ink: #e6eef2;
+  --color-ink-soft: #a3b3bb;
+  --color-ink-faint: #6e8089;
+  --color-accent: #3ec6cd;
+  --color-accent-ink: #04191b;
+  --color-line: rgba(230,238,242,.16);
+}
+
+/* ---- 47 · Trading Desk ---- */
+@theme {
+  --color-bg: #101418;
+  --color-bg-2: #151b20;
+  --color-surface: #161d23;
+  --color-surface-2: #1c242b;
+  --color-ink: #e8eef2;
+  --color-ink-soft: #9fb3bf;
+  --color-ink-faint: #6f8593;
+  --color-accent: #f2a33c;
+  --color-accent-ink: #171002;
+  --color-line: rgba(232,238,242,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: none;
+  --font-display: Rajdhani, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.015em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="trading-desk"] {
+  --color-bg: #05070a;
+  --color-bg-2: #080d12;
+  --color-surface: #0c131a;
+  --color-surface-2: #131c26;
+  --color-ink: #f2f7f9;
+  --color-ink-soft: #a8bcc7;
+  --color-ink-faint: #74899a;
+  --color-accent: #ffbd6b;
+  --color-accent-ink: #1a1104;
+  --color-line: rgba(242,247,249,.16);
+}
+
+/* ---- 48 · Executive KPI ---- */
+@theme {
+  --color-bg: #faf7f1;
+  --color-bg-2: #f3eee5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f3ec;
+  --color-ink: #171614;
+  --color-ink-soft: #51544b;
+  --color-ink-faint: #86897e;
+  --color-accent: #2b5c46;
+  --color-accent-ink: #f6f7f2;
+  --color-line: rgba(23,22,20,.14);
+  --radius-control: 0px;
+  --radius-card: 3px;
+  --shadow-control: none;
+  --font-display: Fraunces, Georgia, serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="executive-kpi"] {
+  --color-bg: #121310;
+  --color-bg-2: #171913;
+  --color-surface: #1a1c16;
+  --color-surface-2: #21251d;
+  --color-ink: #eeeadf;
+  --color-ink-soft: #b3b0a2;
+  --color-ink-faint: #7e7c70;
+  --color-accent: #9dbf8f;
+  --color-accent-ink: #101a0e;
+  --color-line: rgba(238,234,223,.16);
+}
+
+/* ---- 49 · Log Stream ---- */
+@theme {
+  --color-bg: #12141a;
+  --color-bg-2: #171a22;
+  --color-surface: #1a1e28;
+  --color-surface-2: #21262f;
+  --color-ink: #e7e9f0;
+  --color-ink-soft: #a2a8bb;
+  --color-ink-faint: #767d92;
+  --color-accent: #a78bfa;
+  --color-accent-ink: #14101f;
+  --color-line: rgba(231,233,240,.14);
+  --radius-control: 6px;
+  --radius-card: 12px;
+  --shadow-control: none;
+  --font-display: Space Mono, ui-monospace, monospace;
+  --font-body: IBM Plex Mono, ui-monospace, monospace;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="log-stream"] {
+  --color-bg: #06070b;
+  --color-bg-2: #0a0c12;
+  --color-surface: #0e1119;
+  --color-surface-2: #141926;
+  --color-ink: #f0f1f7;
+  --color-ink-soft: #abb0c4;
+  --color-ink-faint: #7c8399;
+  --color-accent: #ccb9ff;
+  --color-accent-ink: #120d1e;
+  --color-line: rgba(240,241,247,.16);
+}
+
+/* ---- 50 · Lab Instrument ---- */
+@theme {
+  --color-bg: #f5f7f7;
+  --color-bg-2: #eaeff0;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2f6f7;
+  --color-ink: #0e1517;
+  --color-ink-soft: #43565c;
+  --color-ink-faint: #76898f;
+  --color-accent: #1a5c8a;
+  --color-accent-ink: #f4f8fa;
+  --color-line: rgba(14,21,23,.14);
+  --radius-control: 2px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 2px rgba(14,21,23,.08);
+  --font-display: Michroma, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="lab-instrument"] {
+  --color-bg: #0b0f11;
+  --color-bg-2: #0f1517;
+  --color-surface: #121a1d;
+  --color-surface-2: #182326;
+  --color-ink: #e5eef0;
+  --color-ink-soft: #a1b3b9;
+  --color-ink-faint: #6c8086;
+  --color-accent: #63bde0;
+  --color-accent-ink: #06171f;
+  --color-line: rgba(229,238,240,.16);
+}
+
+/* ---- 51 · Atlas Console ---- */
+@theme {
+  --color-bg: #0d1520;
+  --color-bg-2: #111b28;
+  --color-surface: #14202e;
+  --color-surface-2: #1a2836;
+  --color-ink: #e9eef6;
+  --color-ink-soft: #a7b7cb;
+  --color-ink-faint: #7c8ea6;
+  --color-accent: #7fa8f0;
+  --color-accent-ink: #081120;
+  --color-line: rgba(233,238,246,.16);
+  --radius-control: 8px;
+  --radius-card: 16px;
+  --shadow-control: 0 18px 40px -32px rgba(4,8,14,.9);
+  --font-display: Cinzel, ui-serif, Georgia, serif;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.06em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="atlas-console"] {
+  --color-bg: #04090f;
+  --color-bg-2: #070e17;
+  --color-surface: #0a1420;
+  --color-surface-2: #101d2c;
+  --color-ink: #f2f6fb;
+  --color-ink-soft: #b6c5d6;
+  --color-ink-faint: #8595a8;
+  --color-accent: #ffcf7a;
+  --color-accent-ink: #071019;
+  --color-line: rgba(242,246,251,.18);
+}
+
+/* ---- 52 · Experiment Split ---- */
+@theme {
+  --color-bg: #f7f7fb;
+  --color-bg-2: #eeeef6;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2f2fa;
+  --color-ink: #15151f;
+  --color-ink-soft: #55566b;
+  --color-ink-faint: #85869c;
+  --color-accent: #4b3ee8;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(21,21,31,.10);
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --shadow-control: 0 12px 28px -24px rgba(21,21,31,.35);
+  --font-display: Space Grotesk, ui-sans-serif, system-ui, sans-serif;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: -0.025em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="experiment-split"] {
+  --color-bg: #0c0c14;
+  --color-bg-2: #121220;
+  --color-surface: #161627;
+  --color-surface-2: #1d1d31;
+  --color-ink: #ecebff;
+  --color-ink-soft: #a9a8c6;
+  --color-ink-faint: #787890;
+  --color-accent: #8f86ff;
+  --color-accent-ink: #0a0918;
+  --color-line: rgba(236,235,255,.14);
+}
+
+/* ---- 53 · Ledger Meter ---- */
+@theme {
+  --color-bg: #faf7ee;
+  --color-bg-2: #f2ecdc;
+  --color-surface: #fffdf6;
+  --color-surface-2: #f6f0e1;
+  --color-ink: #1c1913;
+  --color-ink-soft: #56503f;
+  --color-ink-faint: #8a8068;
+  --color-accent: #22456b;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(28,25,19,.13);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 10px 24px -22px rgba(29,26,21,.55);
+  --font-display: EB Garamond, ui-serif, Georgia, serif;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="ledger-meter"] {
+  --color-bg: #12110d;
+  --color-bg-2: #181712;
+  --color-surface: #1d1b15;
+  --color-surface-2: #24221a;
+  --color-ink: #f1ebdc;
+  --color-ink-soft: #bdb29b;
+  --color-ink-faint: #8d8571;
+  --color-accent: #8fb3dd;
+  --color-accent-ink: #0b1119;
+  --color-line: rgba(241,235,220,.16);
+}
+
+/* ---- 54 · Vitals Triage ---- */
+@theme {
+  --color-bg: #f4f8f7;
+  --color-bg-2: #e8f1ef;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef5f3;
+  --color-ink: #10201f;
+  --color-ink-soft: #47605d;
+  --color-ink-faint: #7d938f;
+  --color-accent: #b3341f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(16,32,31,.11);
+  --radius-control: 14px;
+  --radius-card: 22px;
+  --shadow-control: 0 16px 32px -26px rgba(16,32,31,.35);
+  --font-display: Baloo 2, ui-rounded, Nunito, ui-sans-serif, sans-serif;
+  --font-body: Nunito, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: -0.015em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="vitals-triage"] {
+  --color-bg: #0a1413;
+  --color-bg-2: #0f1c1a;
+  --color-surface: #132220;
+  --color-surface-2: #1a2c29;
+  --color-ink: #e9f4f1;
+  --color-ink-soft: #a3bfba;
+  --color-ink-faint: #79948f;
+  --color-accent: #ff8a72;
+  --color-accent-ink: #250a05;
+  --color-line: rgba(233,244,241,.15);
+}
+
+/* ---- 55 · Fleet Telemetry ---- */
+@theme {
+  --color-bg: #f1f4f7;
+  --color-bg-2: #e6ebf0;
+  --color-surface: #ffffff;
+  --color-surface-2: #edf1f5;
+  --color-ink: #101820;
+  --color-ink-soft: #47555f;
+  --color-ink-faint: #7b8892;
+  --color-accent: #a8386f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(16,24,32,.13);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 6px 14px -12px rgba(16,19,23,.5);
+  --font-display: Share Tech Mono, ui-monospace, SFMono-Regular, monospace;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="fleet-telemetry"] {
+  --color-bg: #0d1116;
+  --color-bg-2: #121820;
+  --color-surface: #161e26;
+  --color-surface-2: #1e2731;
+  --color-ink: #e9eef3;
+  --color-ink-soft: #a9b6c2;
+  --color-ink-faint: #7d8b97;
+  --color-accent: #f07fb4;
+  --color-accent-ink: #20050f;
+  --color-line: rgba(233,238,243,.16);
+}
+
+/* ---- 56 · Blueprint Çizimi ---- */
+@theme {
+  --color-bg: #0a1b2b;
+  --color-bg-2: #0d2133;
+  --color-surface: #102a40;
+  --color-surface-2: #14344e;
+  --color-ink: #dceaf5;
+  --color-ink-soft: #a6c2d6;
+  --color-ink-faint: #6f90a6;
+  --color-accent: #6fd3f2;
+  --color-accent-ink: #04202c;
+  --color-line: rgba(220,234,245,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Chakra Petch, Space Grotesk, system-ui, sans-serif;
+  --font-body: Space Grotesk, Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="blueprint-drawing"] {
+  --color-bg: #04101a;
+  --color-bg-2: #061727;
+  --color-surface: #082034;
+  --color-surface-2: #0b2a41;
+  --color-ink: #e8f2fa;
+  --color-ink-soft: #b3ccdd;
+  --color-ink-faint: #7b9cb2;
+  --color-accent: #b0eaff;
+  --color-accent-ink: #03161f;
+  --color-line: rgba(232,242,250,.18);
+}
+
+/* ---- 57 · İşlenmiş Metal Panel ---- */
+@theme {
+  --color-bg: #d5d8da;
+  --color-bg-2: #c9cdd0;
+  --color-surface: #e2e5e7;
+  --color-surface-2: #eceef0;
+  --color-ink: #1b1f22;
+  --color-ink-soft: #4e565c;
+  --color-ink-faint: #6b7379;
+  --color-accent: #9c4a0c;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(27,31,34,.18);
+  --radius-control: 3px;
+  --radius-card: 6px;
+  --shadow-control: inset 0 1px 0 rgba(255,255,255,.55), inset 0 -1px 0 rgba(20,24,26,.18);
+  --font-display: Michroma, Jost, system-ui, sans-serif;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .04em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="machined-metal-panel"] {
+  --color-bg: #1a1d1f;
+  --color-bg-2: #202426;
+  --color-surface: #24282b;
+  --color-surface-2: #2b3033;
+  --color-ink: #e6e9ea;
+  --color-ink-soft: #aeb6ba;
+  --color-ink-faint: #7a8286;
+  --color-accent: #e59244;
+  --color-accent-ink: #1a1d1f;
+  --color-line: rgba(230,233,234,.18);
+}
+
+/* ---- 58 · Güvenlik Tabelası ---- */
+@theme {
+  --color-bg: #12120e;
+  --color-bg-2: #1a1a14;
+  --color-surface: #1f1f18;
+  --color-surface-2: #26261d;
+  --color-ink: #f6f2e4;
+  --color-ink-soft: #c4c0a9;
+  --color-ink-faint: #8b8874;
+  --color-accent: #ffd52e;
+  --color-accent-ink: #14140d;
+  --color-line: rgba(246,242,228,.20);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Anton, Archivo Black, system-ui, sans-serif;
+  --font-body: Rajdhani, Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="safety-signage"] {
+  --color-bg: #090906;
+  --color-bg-2: #0f0f0b;
+  --color-surface: #15150e;
+  --color-surface-2: #1d1d15;
+  --color-ink: #fbf8ec;
+  --color-ink-soft: #cdc9b2;
+  --color-ink-faint: #918e79;
+  --color-accent: #fff08a;
+  --color-accent-ink: #0f0f0a;
+  --color-line: rgba(251,248,236,.22);
+}
+
+/* ---- 59 · Üretim Hattı · MES ---- */
+@theme {
+  --color-bg: #f2f4f3;
+  --color-bg-2: #e8ebe9;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f9f8;
+  --color-ink: #17201c;
+  --color-ink-soft: #4c5a53;
+  --color-ink-faint: #7d8a83;
+  --color-accent: #0d7a4f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(23,32,28,.14);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 2px rgba(23,32,28,.10);
+  --font-display: JetBrains Mono, ui-monospace, monospace;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="mes-production-line"] {
+  --color-bg: #101614;
+  --color-bg-2: #141b18;
+  --color-surface: #18201c;
+  --color-surface-2: #1e2723;
+  --color-ink: #e3ece6;
+  --color-ink-soft: #a5b4ab;
+  --color-ink-faint: #78867e;
+  --color-accent: #35c98b;
+  --color-accent-ink: #06110c;
+  --color-line: rgba(227,236,230,.16);
+}
+
+/* ---- 60 · Enerji Şebekesi ---- */
+@theme {
+  --color-bg: #0c0f12;
+  --color-bg-2: #101519;
+  --color-surface: #131a1f;
+  --color-surface-2: #182127;
+  --color-ink: #e4eef2;
+  --color-ink-soft: #a7b8c0;
+  --color-ink-faint: #71858f;
+  --color-accent: #9be23c;
+  --color-accent-ink: #0e1503;
+  --color-line: rgba(228,238,242,.14);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 8px 24px rgba(3,6,8,.55);
+  --font-display: Archivo Black, Space Grotesk, system-ui, sans-serif;
+  --font-body: Space Grotesk, Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="energy-grid"] {
+  --color-bg: #04080d;
+  --color-bg-2: #081019;
+  --color-surface: #0b1620;
+  --color-surface-2: #102230;
+  --color-ink: #edf5f7;
+  --color-ink-soft: #b0c1c8;
+  --color-ink-faint: #7b8f98;
+  --color-accent: #d2ff85;
+  --color-accent-ink: #080d01;
+  --color-line: rgba(237,245,247,.16);
+}
+
+/* ---- 61 · Calibration Lab ---- */
+@theme {
+  --color-bg: #eef1f0;
+  --color-bg-2: #e5eae9;
+  --color-surface: #fbfcfc;
+  --color-surface-2: #f3f7f6;
+  --color-ink: #101a1a;
+  --color-ink-soft: #4a5c5b;
+  --color-ink-faint: #728482;
+  --color-accent: #0d5f5c;
+  --color-accent-ink: #f4fbfa;
+  --color-line: rgba(16,26,26,.15);
+  --radius-control: 3px;
+  --radius-card: 6px;
+  --shadow-control: 0 1px 2px rgba(16,26,26,.06);
+  --font-display: Jost, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="calibration-lab"] {
+  --color-bg: #0c1414;
+  --color-bg-2: #111b1b;
+  --color-surface: #142020;
+  --color-surface-2: #1a2828;
+  --color-ink: #e6efee;
+  --color-ink-soft: #a3b6b4;
+  --color-ink-faint: #6f8482;
+  --color-accent: #3fd7cb;
+  --color-accent-ink: #02201d;
+  --color-line: rgba(230,239,238,.16);
+}
+
+/* ---- 62 · Warehouse Flow ---- */
+@theme {
+  --color-bg: #f3f1ec;
+  --color-bg-2: #e7e4dc;
+  --color-surface: #fcfbf8;
+  --color-surface-2: #f0ede5;
+  --color-ink: #17150f;
+  --color-ink-soft: #56523f;
+  --color-ink-faint: #807b66;
+  --color-accent: #f2b705;
+  --color-accent-ink: #1a1608;
+  --color-line: rgba(23,21,15,.22);
+  --radius-control: 2px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 0 rgba(23,21,15,.10);
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="warehouse-flow"] {
+  --color-bg: #14130f;
+  --color-bg-2: #1c1a14;
+  --color-surface: #211f18;
+  --color-surface-2: #2a271d;
+  --color-ink: #f2efe4;
+  --color-ink-soft: #ada695;
+  --color-ink-faint: #7d7768;
+  --color-accent: #ffc728;
+  --color-accent-ink: #1a1608;
+  --color-line: rgba(242,239,228,.16);
+}
+
+/* ---- 63 · Maintenance CMMS ---- */
+@theme {
+  --color-bg: #17191a;
+  --color-bg-2: #1e2122;
+  --color-surface: #222628;
+  --color-surface-2: #2b3032;
+  --color-ink: #ece9e3;
+  --color-ink-soft: #a9a8a2;
+  --color-ink-faint: #7a7b77;
+  --color-accent: #ff8a3d;
+  --color-accent-ink: #1a0f05;
+  --color-line: rgba(236,233,227,.16);
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --shadow-control: 0 2px 6px rgba(0,0,0,.35);
+  --font-display: Chakra Petch, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="maintenance-cmms"] {
+  --color-bg: #060708;
+  --color-bg-2: #0a0c0d;
+  --color-surface: #0e1112;
+  --color-surface-2: #161a1c;
+  --color-ink: #f7f4ee;
+  --color-ink-soft: #b6b4ae;
+  --color-ink-faint: #868784;
+  --color-accent: #ffa066;
+  --color-accent-ink: #170b03;
+  --color-line: rgba(247,244,238,.18);
+}
+
+/* ---- 64 · Construction Site ---- */
+@theme {
+  --color-bg: #e8e2d4;
+  --color-bg-2: #dcd4c2;
+  --color-surface: #f4efe4;
+  --color-surface-2: #eae3d4;
+  --color-ink: #191612;
+  --color-ink-soft: #4f483d;
+  --color-ink-faint: #7b7059;
+  --color-accent: #a03a26;
+  --color-accent-ink: #f7f1e6;
+  --color-line: rgba(25,22,18,.42);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 0 rgba(25,22,18,.12);
+  --font-display: Anton, system-ui, sans-serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="construction-site"] {
+  --color-bg: #14120e;
+  --color-bg-2: #1c1914;
+  --color-surface: #211d17;
+  --color-surface-2: #2a251d;
+  --color-ink: #f0e9db;
+  --color-ink-soft: #b1a795;
+  --color-ink-faint: #82796a;
+  --color-accent: #df6b4a;
+  --color-accent-ink: #130a06;
+  --color-line: rgba(240,233,219,.18);
+}
+
+/* ---- 65 · Cockpit Avionics ---- */
+@theme {
+  --color-bg: #0a0f14;
+  --color-bg-2: #10161c;
+  --color-surface: #131a21;
+  --color-surface-2: #1a232b;
+  --color-ink: #e8f0f4;
+  --color-ink-soft: #9fb0ba;
+  --color-ink-faint: #6d7f8a;
+  --color-accent: #35d6e8;
+  --color-accent-ink: #032026;
+  --color-line: rgba(232,240,244,.15);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.5);
+  --font-display: Rajdhani, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: .06em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="cockpit-avionics"] {
+  --color-bg: #02040a;
+  --color-bg-2: #05080f;
+  --color-surface: #080d16;
+  --color-surface-2: #0d1420;
+  --color-ink: #f4fbff;
+  --color-ink-soft: #b0c4d2;
+  --color-ink-faint: #7e93a3;
+  --color-accent: #7ff0ff;
+  --color-accent-ink: #021a22;
+  --color-line: rgba(244,251,255,.2);
+}
+
+/* ---- 66 · Nordic Folk ---- */
+@theme {
+  --color-bg: #f2ece0;
+  --color-bg-2: #e9e0cf;
+  --color-surface: #fbf7ed;
+  --color-surface-2: #e3d9c6;
+  --color-ink: #1d2a24;
+  --color-ink-soft: #4b5b51;
+  --color-ink-faint: #6f7d71;
+  --color-accent: #9c2b21;
+  --color-accent-ink: #fdf6e8;
+  --color-line: rgba(29,42,36,.16);
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --shadow-control: 0 1px 2px rgba(29,42,36,.10);
+  --font-display: Fraunces, Georgia, serif;
+  --font-body: Lora, Georgia, serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.015em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="nordic-folk"] {
+  --color-bg: #141a17;
+  --color-bg-2: #1a221e;
+  --color-surface: #1f2823;
+  --color-surface-2: #27332c;
+  --color-ink: #ece5d5;
+  --color-ink-soft: #b4bfae;
+  --color-ink-faint: #8a9686;
+  --color-accent: #e07a66;
+  --color-accent-ink: #141a17;
+  --color-line: rgba(236,229,213,.16);
+}
+
+/* ---- 67 · Japanese Ma ---- */
+@theme {
+  --color-bg: #f6f5f1;
+  --color-bg-2: #ecebe5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f0ea;
+  --color-ink: #16181a;
+  --color-ink-soft: #4a4f52;
+  --color-ink-faint: #7b8084;
+  --color-accent: #bf3320;
+  --color-accent-ink: #fdf7f2;
+  --color-line: rgba(22,24,26,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Jost, Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="japanese-ma"] {
+  --color-bg: #0f1113;
+  --color-bg-2: #141719;
+  --color-surface: #171a1d;
+  --color-surface-2: #1e2225;
+  --color-ink: #ece9e2;
+  --color-ink-soft: #a8adaf;
+  --color-ink-faint: #7d8286;
+  --color-accent: #e4674f;
+  --color-accent-ink: #12100f;
+  --color-line: rgba(236,233,226,.15);
+}
+
+/* ---- 68 · Levant Calligraphy ---- */
+@theme {
+  --color-bg: #f4eee1;
+  --color-bg-2: #eae2d0;
+  --color-surface: #fdf9ef;
+  --color-surface-2: #f0e8d7;
+  --color-ink: #171d2e;
+  --color-ink-soft: #444d63;
+  --color-ink-faint: #6f7789;
+  --color-accent: #7a5a22;
+  --color-accent-ink: #fdf8ec;
+  --color-line: rgba(23,29,46,.16);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 2px 14px rgba(23,29,46,.10);
+  --font-display: Cormorant Garamond, Georgia, serif;
+  --font-body: Lora, Georgia, serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="levant-calligraphy"] {
+  --color-bg: #101426;
+  --color-bg-2: #161b30;
+  --color-surface: #1a2038;
+  --color-surface-2: #222a45;
+  --color-ink: #ece5d3;
+  --color-ink-soft: #b3b6c4;
+  --color-ink-faint: #868ca0;
+  --color-accent: #d8b269;
+  --color-accent-ink: #141422;
+  --color-line: rgba(236,229,211,.16);
+}
+
+/* ---- 69 · Andalusian Azulejo ---- */
+@theme {
+  --color-bg: #ecebe6;
+  --color-bg-2: #e2e1da;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f4ef;
+  --color-ink: #14233a;
+  --color-ink-soft: #46566f;
+  --color-ink-faint: #72808f;
+  --color-accent: #1c4ea0;
+  --color-accent-ink: #f4f8ff;
+  --color-line: rgba(20,35,58,.18);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 0 rgba(20,35,58,.14);
+  --font-display: Poiret One, Jost, system-ui, sans-serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="andalusian-azulejo"] {
+  --color-bg: #0b1524;
+  --color-bg-2: #101c2e;
+  --color-surface: #142237;
+  --color-surface-2: #1b2c45;
+  --color-ink: #e9f0f8;
+  --color-ink-soft: #a9b7c8;
+  --color-ink-faint: #7d8ea1;
+  --color-accent: #5b93f0;
+  --color-accent-ink: #081120;
+  --color-line: rgba(233,240,248,.16);
+}
+
+/* ---- 70 · Slavic Late Brutalist ---- */
+@theme {
+  --color-bg: #d8d6d0;
+  --color-bg-2: #cdcac3;
+  --color-surface: #e7e5e0;
+  --color-surface-2: #bfbcb5;
+  --color-ink: #16181a;
+  --color-ink-soft: #43464a;
+  --color-ink-faint: #6b6f74;
+  --color-accent: #a8431d;
+  --color-accent-ink: #f7f3ea;
+  --color-line: rgba(22,24,26,.26);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Anton, Impact, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="slavic-late-brutalist"] {
+  --color-bg: #1a1b1c;
+  --color-bg-2: #202224;
+  --color-surface: #24262a;
+  --color-surface-2: #2f3236;
+  --color-ink: #e8e6e1;
+  --color-ink-soft: #adaead;
+  --color-ink-faint: #83858a;
+  --color-accent: #d26234;
+  --color-accent-ink: #141414;
+  --color-line: rgba(232,230,225,.22);
+}
+
+/* ---- 71 · West African Pattern ---- */
+@theme {
+  --color-bg: #17120f;
+  --color-bg-2: #1e1713;
+  --color-surface: #241b16;
+  --color-surface-2: #2d221b;
+  --color-ink: #f3e7d3;
+  --color-ink-soft: #c0ae93;
+  --color-ink-faint: #8d7f68;
+  --color-accent: #d99a1f;
+  --color-accent-ink: #1c1206;
+  --color-line: rgba(243,231,211,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="west-african-pattern"] {
+  --color-bg: #0a0705;
+  --color-bg-2: #0e0a07;
+  --color-surface: #14100c;
+  --color-surface-2: #1c1711;
+  --color-ink: #fbf2e2;
+  --color-ink-soft: #cbbba1;
+  --color-ink-faint: #9a8b72;
+  --color-accent: #f2b64a;
+  --color-accent-ink: #1d1204;
+  --color-line: rgba(251,242,226,.2);
+}
+
+/* ---- 72 · Andean Textile ---- */
+@theme {
+  --color-bg: #f1ece2;
+  --color-bg-2: #e7e0d2;
+  --color-surface: #fffdf8;
+  --color-surface-2: #f7f2e8;
+  --color-ink: #1a1620;
+  --color-ink-soft: #4e4657;
+  --color-ink-faint: #857c8f;
+  --color-accent: #8d2148;
+  --color-accent-ink: #fdf6f7;
+  --color-line: rgba(26,22,32,.14);
+  --radius-control: 4px;
+  --radius-card: 12px;
+  --shadow-control: none;
+  --font-display: Fraunces, Georgia, serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="andean-textile"] {
+  --color-bg: #171319;
+  --color-bg-2: #1c1820;
+  --color-surface: #211c26;
+  --color-surface-2: #2a2430;
+  --color-ink: #efe8f2;
+  --color-ink-soft: #b6abbf;
+  --color-ink-faint: #82768d;
+  --color-accent: #e06a92;
+  --color-accent-ink: #24101a;
+  --color-line: rgba(239,232,242,.16);
+}
+
+/* ---- 73 · Indian Block Print ---- */
+@theme {
+  --color-bg: #f7f1e2;
+  --color-bg-2: #eee6d2;
+  --color-surface: #fffcf3;
+  --color-surface-2: #f6efdd;
+  --color-ink: #16181d;
+  --color-ink-soft: #464a55;
+  --color-ink-faint: #7c8089;
+  --color-accent: #26356e;
+  --color-accent-ink: #f7f4e9;
+  --color-line: rgba(22,24,29,.15);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 1px 1px 0 rgba(22,24,29,.10);
+  --font-display: Playfair Display, Georgia, serif;
+  --font-body: Poppins, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.015em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="indian-block-print"] {
+  --color-bg: #131519;
+  --color-bg-2: #181b20;
+  --color-surface: #1c2026;
+  --color-surface-2: #24282f;
+  --color-ink: #eceee6;
+  --color-ink-soft: #aeb2b8;
+  --color-ink-faint: #7b7f88;
+  --color-accent: #7f97e0;
+  --color-accent-ink: #0f1424;
+  --color-line: rgba(236,238,230,.16);
+}
+
+/* ---- 74 · Persian Miniature ---- */
+@theme {
+  --color-bg: #131a2c;
+  --color-bg-2: #182135;
+  --color-surface: #1c2640;
+  --color-surface-2: #232f4c;
+  --color-ink: #f0e6ce;
+  --color-ink-soft: #bfb193;
+  --color-ink-faint: #8b8368;
+  --color-accent: #cfa53a;
+  --color-accent-ink: #1a1206;
+  --color-line: rgba(240,230,206,.16);
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --shadow-control: 0 2px 6px rgba(0,0,0,.45);
+  --font-display: EB Garamond, Georgia, serif;
+  --font-body: Lora, Georgia, serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="persian-miniature"] {
+  --color-bg: #070a15;
+  --color-bg-2: #0a0f1e;
+  --color-surface: #0d1324;
+  --color-surface-2: #141b30;
+  --color-ink: #f6efe2;
+  --color-ink-soft: #c2b6a0;
+  --color-ink-faint: #8f8571;
+  --color-accent: #e6c169;
+  --color-accent-ink: #1b1406;
+  --color-line: rgba(246,239,226,.18);
+}
+
+/* ---- 75 · Aegean Island ---- */
+@theme {
+  --color-bg: #fbfaf6;
+  --color-bg-2: #f2f1ea;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f6f1;
+  --color-ink: #12181c;
+  --color-ink-soft: #44545c;
+  --color-ink-faint: #7d8b92;
+  --color-accent: #0e6f92;
+  --color-accent-ink: #f7fbfd;
+  --color-line: rgba(18,24,28,.13);
+  --radius-control: 14px;
+  --radius-card: 22px;
+  --shadow-control: 0 1px 2px rgba(18,24,28,.07);
+  --font-display: Jost, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="aegean-island"] {
+  --color-bg: #0c1418;
+  --color-bg-2: #101a1f;
+  --color-surface: #131f25;
+  --color-surface-2: #1a282f;
+  --color-ink: #e9f2f4;
+  --color-ink-soft: #a6b6bc;
+  --color-ink-faint: #71848b;
+  --color-accent: #4fb8d4;
+  --color-accent-ink: #04181f;
+  --color-line: rgba(233,242,244,.16);
+}
+
+/* ---- 76 · Biyofilik Botanik ---- */
+@theme {
+  --color-bg: #f2f4ea;
+  --color-bg-2: #e9eddd;
+  --color-surface: #fbfcf6;
+  --color-surface-2: #f5f8ee;
+  --color-ink: #1b2a1f;
+  --color-ink-soft: #4a5c4a;
+  --color-ink-faint: #73826f;
+  --color-accent: #2f6b3f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(27,42,31,.14);
+  --radius-control: 14px;
+  --radius-card: 24px;
+  --shadow-control: 0 8px 24px rgba(27,42,31,.10);
+  --font-display: Fraunces, Lora, Georgia, serif;
+  --font-body: Nunito, Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="biophilic-botanical"] {
+  --color-bg: #101a12;
+  --color-bg-2: #16221a;
+  --color-surface: #1b2a1f;
+  --color-surface-2: #223328;
+  --color-ink: #e6efe2;
+  --color-ink-soft: #a9bca6;
+  --color-ink-faint: #7d9079;
+  --color-accent: #7fbf6a;
+  --color-accent-ink: #0e1a10;
+  --color-line: rgba(230,239,226,.16);
+}
+
+/* ---- 77 · Hava Durumu & Atmosfer ---- */
+@theme {
+  --color-bg: #eef2f7;
+  --color-bg-2: #e4eaf2;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f9fc;
+  --color-ink: #1a2430;
+  --color-ink-soft: #4d5b6b;
+  --color-ink-faint: #75828d;
+  --color-accent: #2b6491;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(26,36,48,.14);
+  --radius-control: 10px;
+  --radius-card: 18px;
+  --shadow-control: 0 12px 32px rgba(26,36,48,.12);
+  --font-display: Poppins, Jost, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: .02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="weather-atmosphere"] {
+  --color-bg: #0e141b;
+  --color-bg-2: #131b24;
+  --color-surface: #18222d;
+  --color-surface-2: #1e2a36;
+  --color-ink: #e6eef6;
+  --color-ink-soft: #a8b7c6;
+  --color-ink-faint: #7c8b9a;
+  --color-accent: #6fb3e6;
+  --color-accent-ink: #08131c;
+  --color-line: rgba(230,238,246,.16);
+}
+
+/* ---- 78 · Topografya & Arazi ---- */
+@theme {
+  --color-bg: #ece6d8;
+  --color-bg-2: #e2dac9;
+  --color-surface: #f7f3e8;
+  --color-surface-2: #f0eadc;
+  --color-ink: #241f18;
+  --color-ink-soft: #574e3e;
+  --color-ink-faint: #857b64;
+  --color-accent: #a34f24;
+  --color-accent-ink: #fff8ef;
+  --color-line: rgba(36,31,24,.16);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: none;
+  --font-display: Space Grotesk, Inter, system-ui, sans-serif;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="topographic-terrain"] {
+  --color-bg: #17130e;
+  --color-bg-2: #1d1811;
+  --color-surface: #241e16;
+  --color-surface-2: #2b2419;
+  --color-ink: #efe8da;
+  --color-ink-soft: #bcb09c;
+  --color-ink-faint: #8c8271;
+  --color-accent: #e08a4e;
+  --color-accent-ink: #1a1209;
+  --color-line: rgba(239,232,218,.16);
+}
+
+/* ---- 79 · Deniz & Akıntı ---- */
+@theme {
+  --color-bg: #0a2029;
+  --color-bg-2: #0e2833;
+  --color-surface: #12323e;
+  --color-surface-2: #163a48;
+  --color-ink: #dff0f4;
+  --color-ink-soft: #a3c4cd;
+  --color-ink-faint: #6f939d;
+  --color-accent: #46d8c4;
+  --color-accent-ink: #04211d;
+  --color-line: rgba(223,240,244,.16);
+  --radius-control: 6px;
+  --radius-card: 16px;
+  --shadow-control: 0 16px 40px rgba(3,12,16,.55);
+  --font-display: Cormorant Garamond, Lora, Georgia, serif;
+  --font-body: Lora, Inter, Georgia, serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: .015em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="ocean-current"] {
+  --color-bg: #01070c;
+  --color-bg-2: #041019;
+  --color-surface: #061723;
+  --color-surface-2: #0a2130;
+  --color-ink: #f2fcff;
+  --color-ink-soft: #b9d9e0;
+  --color-ink-faint: #83aab4;
+  --color-accent: #8affe8;
+  --color-accent-ink: #02100c;
+  --color-line: rgba(242,252,255,.22);
+}
+
+/* ---- 80 · Mevsim Geçişi ---- */
+@theme {
+  --color-bg: #f6efe2;
+  --color-bg-2: #ede3d2;
+  --color-surface: #fdf9f1;
+  --color-surface-2: #f7f0e4;
+  --color-ink: #2a2018;
+  --color-ink-soft: #5c4c3d;
+  --color-ink-faint: #8a7b68;
+  --color-accent: #a4471f;
+  --color-accent-ink: #fff6ec;
+  --color-line: rgba(42,32,24,.14);
+  --radius-control: 8px;
+  --radius-card: 16px;
+  --shadow-control: 0 6px 20px rgba(42,32,24,.12);
+  --font-display: EB Garamond, Lora, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: .02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="seasonal-shift"] {
+  --color-bg: #1a1310;
+  --color-bg-2: #211813;
+  --color-surface: #271d17;
+  --color-surface-2: #2f231b;
+  --color-ink: #f0e6d8;
+  --color-ink-soft: #c0af9c;
+  --color-ink-faint: #8f8172;
+  --color-accent: #e88f4a;
+  --color-accent-ink: #1b1108;
+  --color-line: rgba(240,230,216,.16);
+}
+
+/* ---- 81 · Forest Bark ---- */
+@theme {
+  --color-bg: #1f2620;
+  --color-bg-2: #19201a;
+  --color-surface: #283029;
+  --color-surface-2: #313b31;
+  --color-ink: #ecefe3;
+  --color-ink-soft: #b4bfa8;
+  --color-ink-faint: #85917b;
+  --color-accent: #d7a469;
+  --color-accent-ink: #201708;
+  --color-line: rgba(236,239,227,.15);
+  --radius-control: 5px;
+  --radius-card: 11px;
+  --shadow-control: 0 2px 10px rgba(8,12,9,.45);
+  --font-display: Lora, Georgia, serif;
+  --font-body: EB Garamond, Georgia, serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="forest-bark"] {
+  --color-bg: #0a0d08;
+  --color-bg-2: #0d110a;
+  --color-surface: #131711;
+  --color-surface-2: #1b2117;
+  --color-ink: #f1f4e7;
+  --color-ink-soft: #bcc7ae;
+  --color-ink-faint: #8d9a80;
+  --color-accent: #e9bd7f;
+  --color-accent-ink: #171004;
+  --color-line: rgba(241,244,231,.22);
+}
+
+/* ---- 82 · Desert Sand ---- */
+@theme {
+  --color-bg: #f0e5cf;
+  --color-bg-2: #e6d9be;
+  --color-surface: #faf4e6;
+  --color-surface-2: #efe4cc;
+  --color-ink: #241f18;
+  --color-ink-soft: #5a4f3e;
+  --color-ink-faint: #857a62;
+  --color-accent: #5f4a8a;
+  --color-accent-ink: #f7f1e4;
+  --color-line: rgba(36,31,24,.16);
+  --radius-control: 24px;
+  --radius-card: 44px;
+  --shadow-control: 0 14px 30px -18px rgba(76,58,34,.45);
+  --font-display: Cormorant Garamond, Georgia, serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="desert-sand"] {
+  --color-bg: #191510;
+  --color-bg-2: #211b14;
+  --color-surface: #251f17;
+  --color-surface-2: #2f271d;
+  --color-ink: #f4ecdc;
+  --color-ink-soft: #c0b39c;
+  --color-ink-faint: #8f8271;
+  --color-accent: #b39ae0;
+  --color-accent-ink: #1d1230;
+  --color-line: rgba(244,236,220,.16);
+}
+
+/* ---- 83 · Polar Ice ---- */
+@theme {
+  --color-bg: #eaf3f8;
+  --color-bg-2: #dceaf2;
+  --color-surface: #f9fcfe;
+  --color-surface-2: #eef5fa;
+  --color-ink: #0e2733;
+  --color-ink-soft: #45626f;
+  --color-ink-faint: #6c8794;
+  --color-accent: #096d8a;
+  --color-accent-ink: #f2fbfd;
+  --color-line: rgba(14,39,51,.14);
+  --radius-control: 2px;
+  --radius-card: 10px;
+  --shadow-control: 0 1px 2px rgba(14,39,51,.08);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="polar-ice"] {
+  --color-bg: #071119;
+  --color-bg-2: #0b1a24;
+  --color-surface: #0e2130;
+  --color-surface-2: #13293a;
+  --color-ink: #e8f4fa;
+  --color-ink-soft: #a6c2d0;
+  --color-ink-faint: #74909e;
+  --color-accent: #4ecde8;
+  --color-accent-ink: #04212a;
+  --color-line: rgba(232,244,250,.16);
+}
+
+/* ---- 84 · Volcanic Mineral ---- */
+@theme {
+  --color-bg: #14120f;
+  --color-bg-2: #0e0d0b;
+  --color-surface: #1c1916;
+  --color-surface-2: #26221d;
+  --color-ink: #f0eae0;
+  --color-ink-soft: #b6a998;
+  --color-ink-faint: #877d6d;
+  --color-accent: #e0572a;
+  --color-accent-ink: #120603;
+  --color-line: rgba(240,234,224,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 8px 22px -12px rgba(0,0,0,.9);
+  --font-display: Michroma, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: .04em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="volcanic-mineral"] {
+  --color-bg: #040403;
+  --color-bg-2: #0b0a08;
+  --color-surface: #100e0b;
+  --color-surface-2: #191512;
+  --color-ink: #f8f3ea;
+  --color-ink-soft: #b9b0a1;
+  --color-ink-faint: #8b8276;
+  --color-accent: #ff8a4d;
+  --color-accent-ink: #140703;
+  --color-line: rgba(248,243,234,.22);
+}
+
+/* ---- 85 · Coral Reef ---- */
+@theme {
+  --color-bg: #0d2b30;
+  --color-bg-2: #092226;
+  --color-surface: #123840;
+  --color-surface-2: #174650;
+  --color-ink: #e6f4f2;
+  --color-ink-soft: #a4c6c4;
+  --color-ink-faint: #779c9b;
+  --color-accent: #ff8a73;
+  --color-accent-ink: #2a0d08;
+  --color-line: rgba(230,244,242,.16);
+  --radius-control: 22px;
+  --radius-card: 36px;
+  --shadow-control: 0 10px 24px -14px rgba(4,14,16,.6);
+  --font-display: Baloo 2, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="coral-reef"] {
+  --color-bg: #021015;
+  --color-bg-2: #051b21;
+  --color-surface: #07222a;
+  --color-surface-2: #0b2c34;
+  --color-ink: #f0fbf9;
+  --color-ink-soft: #b6d8d6;
+  --color-ink-faint: #82a9a7;
+  --color-accent: #ffa88f;
+  --color-accent-ink: #180904;
+  --color-line: rgba(240,251,249,.22);
+}
+
+/* ---- 86 · Literary Hardcover ---- */
+@theme {
+  --color-bg: #f2ebdd;
+  --color-bg-2: #e8dfcd;
+  --color-surface: #fdfaf2;
+  --color-surface-2: #ece3d3;
+  --color-ink: #1b1a17;
+  --color-ink-soft: #4e4a42;
+  --color-ink-faint: #7b7568;
+  --color-accent: #2f4a3c;
+  --color-accent-ink: #f7f3e8;
+  --color-line: rgba(27,26,23,.16);
+  --radius-control: 4px;
+  --radius-card: 10px;
+  --shadow-control: 0 1px 0 rgba(27,26,23,.10);
+  --font-display: Lora, Georgia, Times New Roman, serif;
+  --font-body: Lora, Georgia, Times New Roman, serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="literary-hardcover"] {
+  --color-bg: #191813;
+  --color-bg-2: #211f18;
+  --color-surface: #1e1d16;
+  --color-surface-2: #2a2820;
+  --color-ink: #f2eee2;
+  --color-ink-soft: #b3ada0;
+  --color-ink-faint: #7e786c;
+  --color-accent: #a8c3b2;
+  --color-accent-ink: #10130f;
+  --color-line: rgba(242,238,226,.14);
+}
+
+/* ---- 87 · Broadsheet Daily ---- */
+@theme {
+  --color-bg: #f3f0e9;
+  --color-bg-2: #e8e4da;
+  --color-surface: #fbf9f4;
+  --color-surface-2: #ece8df;
+  --color-ink: #12141a;
+  --color-ink-soft: #45484f;
+  --color-ink-faint: #74777e;
+  --color-accent: #a8241b;
+  --color-accent-ink: #fdf7f2;
+  --color-line: rgba(18,20,26,.18);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Archivo Black, Impact, system-ui, sans-serif;
+  --font-body: EB Garamond, Georgia, serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="broadsheet-daily"] {
+  --color-bg: #121316;
+  --color-bg-2: #1b1c20;
+  --color-surface: #17181c;
+  --color-surface-2: #232428;
+  --color-ink: #f0eee8;
+  --color-ink-soft: #b0ada6;
+  --color-ink-faint: #7d7a74;
+  --color-accent: #e0665a;
+  --color-accent-ink: #14100f;
+  --color-line: rgba(240,238,232,.16);
+}
+
+/* ---- 88 · Magazine Feature ---- */
+@theme {
+  --color-bg: #faf6f0;
+  --color-bg-2: #f0e9df;
+  --color-surface: #fffdf9;
+  --color-surface-2: #f4eee4;
+  --color-ink: #1a1614;
+  --color-ink-soft: #4b423d;
+  --color-ink-faint: #7b716a;
+  --color-accent: #8a2f52;
+  --color-accent-ink: #fdf3f0;
+  --color-line: rgba(26,22,20,.14);
+  --radius-control: 2px;
+  --radius-card: 14px;
+  --shadow-control: 0 10px 30px rgba(26,22,20,.12);
+  --font-display: Fraunces, Georgia, serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="magazine-feature"] {
+  --color-bg: #161113;
+  --color-bg-2: #1f171a;
+  --color-surface: #1b1417;
+  --color-surface-2: #282022;
+  --color-ink: #f4ece7;
+  --color-ink-soft: #b5a9a6;
+  --color-ink-faint: #82746f;
+  --color-accent: #e08aa6;
+  --color-accent-ink: #180d11;
+  --color-line: rgba(244,236,231,.14);
+}
+
+/* ---- 89 · Academic Paper ---- */
+@theme {
+  --color-bg: #f8f8f6;
+  --color-bg-2: #eeeeea;
+  --color-surface: #fdfdfb;
+  --color-surface-2: #f2f2ee;
+  --color-ink: #1b1e23;
+  --color-ink-soft: #4a4e55;
+  --color-ink-faint: #7a7e85;
+  --color-accent: #1f4a7a;
+  --color-accent-ink: #f6f8fb;
+  --color-line: rgba(27,30,35,.16);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 2px rgba(27,30,35,.08);
+  --font-display: EB Garamond, Georgia, serif;
+  --font-body: EB Garamond, Georgia, serif;
+  --font-mono: Courier Prime, Courier, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="academic-paper"] {
+  --color-bg: #101216;
+  --color-bg-2: #171a1f;
+  --color-surface: #14171c;
+  --color-surface-2: #1f232a;
+  --color-ink: #eef0f2;
+  --color-ink-soft: #a9aeb5;
+  --color-ink-faint: #757a82;
+  --color-accent: #86aad6;
+  --color-accent-ink: #0d1015;
+  --color-line: rgba(238,240,242,.14);
+}
+
+/* ---- 90 · Poetry Chapbook ---- */
+@theme {
+  --color-bg: #f7f2e9;
+  --color-bg-2: #ece6da;
+  --color-surface: #fdfaf4;
+  --color-surface-2: #f0eadd;
+  --color-ink: #22201d;
+  --color-ink-soft: #55504a;
+  --color-ink-faint: #837c74;
+  --color-accent: #4b3f66;
+  --color-accent-ink: #f7f3ee;
+  --color-line: rgba(34,32,29,.14);
+  --radius-control: 2px;
+  --radius-card: 8px;
+  --shadow-control: none;
+  --font-display: Cormorant Garamond, Garamond, Georgia, serif;
+  --font-body: Cormorant Garamond, Garamond, Georgia, serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="poetry-chapbook"] {
+  --color-bg: #15141a;
+  --color-bg-2: #1d1c23;
+  --color-surface: #19181f;
+  --color-surface-2: #25242c;
+  --color-ink: #f1eee9;
+  --color-ink-soft: #b0aba4;
+  --color-ink-faint: #7c7770;
+  --color-accent: #b0a2d6;
+  --color-accent-ink: #14121a;
+  --color-line: rgba(241,238,233,.14);
+}
+
+/* ---- 91 · Product Catalog ---- */
+@theme {
+  --color-bg: #f6f4ef;
+  --color-bg-2: #eeeae0;
+  --color-surface: #fffdf8;
+  --color-surface-2: #e9e4d8;
+  --color-ink: #1a1c19;
+  --color-ink-soft: #4b5148;
+  --color-ink-faint: #767c72;
+  --color-accent: #16624f;
+  --color-accent-ink: #f7f3e8;
+  --color-line: rgba(26,28,25,.16);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 2px rgba(26,28,25,.08);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Lora, Georgia, serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="product-catalog"] {
+  --color-bg: #121512;
+  --color-bg-2: #171b17;
+  --color-surface: #1b201b;
+  --color-surface-2: #232a23;
+  --color-ink: #e8e6dd;
+  --color-ink-soft: #b0b5a9;
+  --color-ink-faint: #868c80;
+  --color-accent: #5fb39c;
+  --color-accent-ink: #0d1412;
+  --color-line: rgba(232,230,221,.16);
+}
+
+/* ---- 92 · Museum & Thesis ---- */
+@theme {
+  --color-bg: #f4f2ec;
+  --color-bg-2: #ebe8df;
+  --color-surface: #fbfaf6;
+  --color-surface-2: #e6e2d8;
+  --color-ink: #191b1f;
+  --color-ink-soft: #4c515a;
+  --color-ink-faint: #787e88;
+  --color-accent: #3c4a63;
+  --color-accent-ink: #f4f1e8;
+  --color-line: rgba(25,27,31,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 1px 3px rgba(25,27,31,.07);
+  --font-display: EB Garamond, Georgia, serif;
+  --font-body: EB Garamond, Georgia, serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="museum-thesis"] {
+  --color-bg: #14161a;
+  --color-bg-2: #191c21;
+  --color-surface: #1e2228;
+  --color-surface-2: #262b33;
+  --color-ink: #e9e7e0;
+  --color-ink-soft: #b6b9bf;
+  --color-ink-faint: #8b9099;
+  --color-accent: #9fb0c9;
+  --color-accent-ink: #14161a;
+  --color-line: rgba(233,231,224,.16);
+}
+
+/* ---- 93 · Type Experiment ---- */
+@theme {
+  --color-bg: #f4f4f0;
+  --color-bg-2: #eaeae4;
+  --color-surface: #ffffff;
+  --color-surface-2: #efefe9;
+  --color-ink: #0d0d0f;
+  --color-ink-soft: #47474c;
+  --color-ink-faint: #74747a;
+  --color-accent: #2b1de0;
+  --color-accent-ink: #f6f5ff;
+  --color-line: rgba(13,13,15,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Michroma, Space Grotesk, system-ui, sans-serif;
+  --font-body: Space Mono, ui-monospace, monospace;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="type-experiment"] {
+  --color-bg: #0b0b0d;
+  --color-bg-2: #101013;
+  --color-surface: #141417;
+  --color-surface-2: #1b1b1f;
+  --color-ink: #efeff1;
+  --color-ink-soft: #a9a9ae;
+  --color-ink-faint: #7e7e84;
+  --color-accent: #7b6cff;
+  --color-accent-ink: #0b0b0d;
+  --color-line: rgba(239,239,241,.16);
+}
+
+/* ---- 94 · Encyclopedia ---- */
+@theme {
+  --color-bg: #f7f5ee;
+  --color-bg-2: #efece1;
+  --color-surface: #fffcf4;
+  --color-surface-2: #ebe7da;
+  --color-ink: #1a1c1a;
+  --color-ink-soft: #4a4f4a;
+  --color-ink-faint: #767b76;
+  --color-accent: #7a1f52;
+  --color-accent-ink: #fdf6ef;
+  --color-line: rgba(26,28,26,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Lora, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="encyclopedia"] {
+  --color-bg: #131211;
+  --color-bg-2: #181715;
+  --color-surface: #1d1b19;
+  --color-surface-2: #262321;
+  --color-ink: #ece7dc;
+  --color-ink-soft: #b5afa4;
+  --color-ink-faint: #8a857c;
+  --color-accent: #d684ae;
+  --color-accent-ink: #17100f;
+  --color-line: rgba(236,231,220,.16);
+}
+
+/* ---- 95 · Punk Fanzine ---- */
+@theme {
+  --color-bg: #e6e4dd;
+  --color-bg-2: #dbd8d0;
+  --color-surface: #f2f0e9;
+  --color-surface-2: #d2cfc6;
+  --color-ink: #0e0e0e;
+  --color-ink-soft: #43433f;
+  --color-ink-faint: #6d6d68;
+  --color-accent: #cf1f2b;
+  --color-accent-ink: #fff7f1;
+  --color-line: rgba(14,14,14,.24);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Kalam, Archivo Black, system-ui, sans-serif;
+  --font-body: Courier Prime, ui-monospace, monospace;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="punk-fanzine"] {
+  --color-bg: #0f0f0f;
+  --color-bg-2: #151514;
+  --color-surface: #1a1a19;
+  --color-surface-2: #242423;
+  --color-ink: #ececea;
+  --color-ink-soft: #adadab;
+  --color-ink-faint: #838381;
+  --color-accent: #f0434f;
+  --color-accent-ink: #100b0b;
+  --color-line: rgba(236,236,234,.22);
+}
+
+/* ---- 96 · Kinetic Marquee ---- */
+@theme {
+  --color-bg: #f4f1ea;
+  --color-bg-2: #eae5da;
+  --color-surface: #fdfbf6;
+  --color-surface-2: #f2eee4;
+  --color-ink: #14161a;
+  --color-ink-soft: #4a4d57;
+  --color-ink-faint: #82858f;
+  --color-accent: #2d3ad0;
+  --color-accent-ink: #f7f7ff;
+  --color-line: rgba(20,22,26,.14);
+  --radius-control: 3px;
+  --radius-card: 8px;
+  --shadow-control: none;
+  --font-display: Chakra Petch, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="kinetic-marquee"] {
+  --color-bg: #0d0f18;
+  --color-bg-2: #121522;
+  --color-surface: #161a2a;
+  --color-surface-2: #1e2338;
+  --color-ink: #eef0f6;
+  --color-ink-soft: #a9afc4;
+  --color-ink-faint: #78809a;
+  --color-accent: #7f88ff;
+  --color-accent-ink: #0a0b18;
+  --color-line: rgba(238,240,246,.16);
+}
+
+/* ---- 97 · Optical Illusion ---- */
+@theme {
+  --color-bg: #fbfbfb;
+  --color-bg-2: #f1f1f1;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f4f4;
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #464646;
+  --color-ink-faint: #8a8a8a;
+  --color-accent: #b8123f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(10,10,10,.12);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="optical-illusion"] {
+  --color-bg: #0a0a0a;
+  --color-bg-2: #121212;
+  --color-surface: #171717;
+  --color-surface-2: #1f1f1f;
+  --color-ink: #f7f7f7;
+  --color-ink-soft: #b0b0b0;
+  --color-ink-faint: #7d7d7d;
+  --color-accent: #ff5d7e;
+  --color-accent-ink: #20040a;
+  --color-line: rgba(247,247,247,.14);
+}
+
+/* ---- 98 · Generative Grid ---- */
+@theme {
+  --color-bg: #e9edf0;
+  --color-bg-2: #dfe5e9;
+  --color-surface: #f7f9fa;
+  --color-surface-2: #eef2f4;
+  --color-ink: #0f161a;
+  --color-ink-soft: #414b51;
+  --color-ink-faint: #79858c;
+  --color-accent: #0b7d55;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(15,22,26,.13);
+  --radius-control: 1px;
+  --radius-card: 4px;
+  --shadow-control: none;
+  --font-display: Michroma, system-ui, sans-serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="generative-grid"] {
+  --color-bg: #0e1215;
+  --color-bg-2: #131a1e;
+  --color-surface: #172025;
+  --color-surface-2: #1f2a30;
+  --color-ink: #e8f0f3;
+  --color-ink-soft: #a7b6bd;
+  --color-ink-faint: #74858d;
+  --color-accent: #3ddca0;
+  --color-accent-ink: #04170f;
+  --color-line: rgba(232,240,243,.16);
+}
+
+/* ---- 99 · Depth Parallax ---- */
+@theme {
+  --color-bg: #0b1014;
+  --color-bg-2: #101820;
+  --color-surface: #131d26;
+  --color-surface-2: #1a2732;
+  --color-ink: #eaf0f4;
+  --color-ink-soft: #a8b6c0;
+  --color-ink-faint: #74828c;
+  --color-accent: #5ac8ff;
+  --color-accent-ink: #05131a;
+  --color-line: rgba(234,240,244,.15);
+  --radius-control: 6px;
+  --radius-card: 14px;
+  --shadow-control: 0 4px 18px rgba(0,0,0,.45);
+  --font-display: Fraunces, Georgia, serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="depth-parallax"] {
+  --color-bg: #05161a;
+  --color-bg-2: #082025;
+  --color-surface: #0a282e;
+  --color-surface-2: #0f333a;
+  --color-ink: #eef7f8;
+  --color-ink-soft: #aebfc1;
+  --color-ink-faint: #7d9092;
+  --color-accent: #7af0ff;
+  --color-accent-ink: #042022;
+  --color-line: rgba(238,247,248,.18);
+}
+
+/* ---- 100 · Fluid Simulation ---- */
+@theme {
+  --color-bg: #eff4f3;
+  --color-bg-2: #e3ecea;
+  --color-surface: #fbfdfc;
+  --color-surface-2: #f0f6f4;
+  --color-ink: #101a1c;
+  --color-ink-soft: #435452;
+  --color-ink-faint: #7d8b89;
+  --color-accent: #b8481a;
+  --color-accent-ink: #fdf6f2;
+  --color-line: rgba(16,26,28,.13);
+  --radius-control: 18px;
+  --radius-card: 28px;
+  --shadow-control: 0 2px 10px rgba(16,26,28,.08);
+  --font-display: Baloo 2, system-ui, sans-serif;
+  --font-body: Poppins, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="fluid-simulation"] {
+  --color-bg: #0b1417;
+  --color-bg-2: #101c1f;
+  --color-surface: #132327;
+  --color-surface-2: #1a2f33;
+  --color-ink: #e9f1f1;
+  --color-ink-soft: #a6b6b5;
+  --color-ink-faint: #748584;
+  --color-accent: #ff8a5c;
+  --color-accent-ink: #1d0a04;
+  --color-line: rgba(233,241,241,.16);
+}
+
+/* ---- 101 · Shadow Stage ---- */
+@theme {
+  --color-bg: #12151a;
+  --color-bg-2: #171b21;
+  --color-surface: #1b2028;
+  --color-surface-2: #232a33;
+  --color-ink: #eef1f5;
+  --color-ink-soft: #adb6c2;
+  --color-ink-faint: #7e8896;
+  --color-accent: #e3b341;
+  --color-accent-ink: #1a1405;
+  --color-line: rgba(238,241,245,.15);
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --shadow-control: 0 24px 60px -42px rgba(0,0,0,.92);
+  --font-display: Poiret One, ui-sans-serif, system-ui, sans-serif;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.04em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="shadow-stage"] {
+  --color-bg: #100c08;
+  --color-bg-2: #151009;
+  --color-surface: #19130c;
+  --color-surface-2: #221a11;
+  --color-ink: #f6f3ee;
+  --color-ink-soft: #c3b9ad;
+  --color-ink-faint: #948a7d;
+  --color-accent: #ffc861;
+  --color-accent-ink: #1a1206;
+  --color-line: rgba(246,243,238,.18);
+}
+
+/* ---- 102 · Moiré Field ---- */
+@theme {
+  --color-bg: #a6a29b;
+  --color-bg-2: #9c9891;
+  --color-surface: #b1ada6;
+  --color-surface-2: #8e8a84;
+  --color-ink: #12130f;
+  --color-ink-soft: #2b2c28;
+  --color-ink-faint: #45463f;
+  --color-accent: #9c2e6e;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(18,19,15,.22);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Silkscreen, ui-monospace, monospace;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="moire-field"] {
+  --color-bg: #1c1b19;
+  --color-bg-2: #232220;
+  --color-surface: #2a2825;
+  --color-surface-2: #34322e;
+  --color-ink: #ece8e1;
+  --color-ink-soft: #b3aea6;
+  --color-ink-faint: #8a857d;
+  --color-accent: #e57ab0;
+  --color-accent-ink: #1a0712;
+  --color-line: rgba(236,232,225,.18);
+}
+
+/* ---- 103 · Motion Trail ---- */
+@theme {
+  --color-bg: #f5f3ef;
+  --color-bg-2: #ecebe6;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0eeea;
+  --color-ink: #14161a;
+  --color-ink-soft: #4c5157;
+  --color-ink-faint: #7d838a;
+  --color-accent: #a8500f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(20,22,26,.12);
+  --radius-control: 20px;
+  --radius-card: 28px;
+  --shadow-control: 0 18px 44px -32px rgba(20,22,26,.55);
+  --font-display: Anton, ui-sans-serif, system-ui, Arial Narrow, sans-serif;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="motion-trail"] {
+  --color-bg: #121316;
+  --color-bg-2: #181a1e;
+  --color-surface: #1e2025;
+  --color-surface-2: #262930;
+  --color-ink: #f1f2f4;
+  --color-ink-soft: #aeb3b9;
+  --color-ink-faint: #7f858c;
+  --color-accent: #ffa06b;
+  --color-accent-ink: #200a06;
+  --color-line: rgba(241,242,244,.16);
+}
+
+/* ---- 104 · Stepped Mechanism ---- */
+@theme {
+  --color-bg: #a0a6aa;
+  --color-bg-2: #979da1;
+  --color-surface: #abb1b5;
+  --color-surface-2: #8b9195;
+  --color-ink: #0f1417;
+  --color-ink-soft: #2b3238;
+  --color-ink-faint: #485056;
+  --color-accent: #1f6b3d;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(15,20,23,.22);
+  --radius-control: 8px;
+  --radius-card: 16px;
+  --shadow-control: 0 8px 18px -14px rgba(15,20,23,.5);
+  --font-display: Share Tech Mono, ui-monospace, SFMono-Regular, monospace;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="stepped-mechanism"] {
+  --color-bg: #15191c;
+  --color-bg-2: #1b2024;
+  --color-surface: #22272b;
+  --color-surface-2: #2b3136;
+  --color-ink: #eaf0f3;
+  --color-ink-soft: #adb8be;
+  --color-ink-faint: #7f8a90;
+  --color-accent: #4fbf7a;
+  --color-accent-ink: #05170c;
+  --color-line: rgba(234,240,243,.17);
+}
+
+/* ---- 105 · Holographic Layer ---- */
+@theme {
+  --color-bg: #0e0b16;
+  --color-bg-2: #141020;
+  --color-surface: #181323;
+  --color-surface-2: #211a2e;
+  --color-ink: #f0edf7;
+  --color-ink-soft: #b3aac4;
+  --color-ink-faint: #827896;
+  --color-accent: #8f7bff;
+  --color-accent-ink: #0a0713;
+  --color-line: rgba(240,237,247,.16);
+  --radius-control: 20px;
+  --radius-card: 28px;
+  --shadow-control: 0 28px 64px -44px rgba(4,2,10,.95);
+  --font-display: Michroma, ui-sans-serif, system-ui, sans-serif;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="holographic-layer"] {
+  --color-bg: #12081a;
+  --color-bg-2: #180c22;
+  --color-surface: #1d1029;
+  --color-surface-2: #261534;
+  --color-ink: #f6f1fb;
+  --color-ink-soft: #c3b6d2;
+  --color-ink-faint: #94899f;
+  --color-accent: #d0a8ff;
+  --color-accent-ink: #150a1f;
+  --color-line: rgba(246,241,251,.18);
+}
+
+/* ---- 106 · Ses-Öncelikli ---- */
+@theme {
+  --color-bg: #171021;
+  --color-bg-2: #1d152a;
+  --color-surface: #241a33;
+  --color-surface-2: #2b2040;
+  --color-ink: #f1e9f7;
+  --color-ink-soft: #c0b0d0;
+  --color-ink-faint: #8f7fa2;
+  --color-accent: #ff8ad4;
+  --color-accent-ink: #2a0a1e;
+  --color-line: rgba(241,233,247,.16);
+  --radius-control: 24px;
+  --radius-card: 32px;
+  --shadow-control: 0 8px 40px rgba(255,138,212,.22);
+  --font-display: Poppins, Jost, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="voice-first"] {
+  --color-bg: #050309;
+  --color-bg-2: #09060f;
+  --color-surface: #0d0814;
+  --color-surface-2: #14101d;
+  --color-ink: #fdf8ff;
+  --color-ink-soft: #cfc2e0;
+  --color-ink-faint: #9e8fb4;
+  --color-accent: #d9a6ff;
+  --color-accent-ink: #170428;
+  --color-line: rgba(253,248,255,.16);
+}
+
+/* ---- 107 · Uzamsal AR Katman ---- */
+@theme {
+  --color-bg: #e9edf5;
+  --color-bg-2: #dfe5f0;
+  --color-surface: #f7f9fc;
+  --color-surface-2: #eef2f9;
+  --color-ink: #161a24;
+  --color-ink-soft: #4a5364;
+  --color-ink-faint: #78818f;
+  --color-accent: #2a4bd7;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(22,26,36,.16);
+  --radius-control: 12px;
+  --radius-card: 20px;
+  --shadow-control: 0 18px 40px rgba(22,26,36,.14);
+  --font-display: Chakra Petch, Jost, system-ui, sans-serif;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="spatial-ar-layer"] {
+  --color-bg: #0c1017;
+  --color-bg-2: #111722;
+  --color-surface: #161d29;
+  --color-surface-2: #1c2533;
+  --color-ink: #e8edf6;
+  --color-ink-soft: #a7b2c4;
+  --color-ink-faint: #75808f;
+  --color-accent: #7d95ff;
+  --color-accent-ink: #0a0f1e;
+  --color-line: rgba(232,237,246,.16);
+}
+
+/* ---- 108 · Komut Paleti ---- */
+@theme {
+  --color-bg: #111318;
+  --color-bg-2: #16191f;
+  --color-surface: #1b1f26;
+  --color-surface-2: #222731;
+  --color-ink: #eef0f3;
+  --color-ink-soft: #a9b1bc;
+  --color-ink-faint: #767e8a;
+  --color-accent: #e8ecf2;
+  --color-accent-ink: #14171c;
+  --color-line: rgba(238,240,243,.14);
+  --radius-control: 6px;
+  --radius-card: 12px;
+  --shadow-control: 0 24px 60px rgba(0,0,0,.55);
+  --font-display: JetBrains Mono, ui-monospace, monospace;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="command-palette"] {
+  --color-bg: #020305;
+  --color-bg-2: #05070a;
+  --color-surface: #0a0c11;
+  --color-surface-2: #10141b;
+  --color-ink: #f8fafd;
+  --color-ink-soft: #b6bec9;
+  --color-ink-faint: #7f8893;
+  --color-accent: #cfe0ff;
+  --color-accent-ink: #06101f;
+  --color-line: rgba(248,250,253,.12);
+}
+
+/* ---- 109 · Zaman Çizelgesi Editörü ---- */
+@theme {
+  --color-bg: #f1efec;
+  --color-bg-2: #e7e3de;
+  --color-surface: #fbfaf8;
+  --color-surface-2: #f5f2ee;
+  --color-ink: #1e1a17;
+  --color-ink-soft: #554d46;
+  --color-ink-faint: #857b71;
+  --color-accent: #a12a6e;
+  --color-accent-ink: #fff4f8;
+  --color-line: rgba(30,26,23,.16);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 2px 8px rgba(30,26,23,.12);
+  --font-display: Archivo Black, Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="timeline-editor"] {
+  --color-bg: #121213;
+  --color-bg-2: #171719;
+  --color-surface: #1d1c1f;
+  --color-surface-2: #242327;
+  --color-ink: #efece7;
+  --color-ink-soft: #b7b0a8;
+  --color-ink-faint: #857f78;
+  --color-accent: #d97ac0;
+  --color-accent-ink: #1c0508;
+  --color-line: rgba(239,236,231,.16);
+}
+
+/* ---- 110 · Kanban Akışı ---- */
+@theme {
+  --color-bg: #f2f4f7;
+  --color-bg-2: #e8ebf0;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f9fb;
+  --color-ink: #171a20;
+  --color-ink-soft: #4e5663;
+  --color-ink-faint: #7d8593;
+  --color-accent: #1a62cc;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(23,26,32,.14);
+  --radius-control: 8px;
+  --radius-card: 14px;
+  --shadow-control: 0 1px 3px rgba(23,26,32,.12);
+  --font-display: Space Grotesk, Inter, system-ui, sans-serif;
+  --font-body: Nunito, Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="kanban-flow"] {
+  --color-bg: #0f1216;
+  --color-bg-2: #141922;
+  --color-surface: #191f28;
+  --color-surface-2: #1f2632;
+  --color-ink: #e9eef4;
+  --color-ink-soft: #a9b3c0;
+  --color-ink-faint: #79828f;
+  --color-accent: #6fa8ff;
+  --color-accent-ink: #08101c;
+  --color-line: rgba(233,238,244,.16);
+}
+
+/* ---- 111 · Adım Sihirbazı ---- */
+@theme {
+  --color-bg: #f4f6fa;
+  --color-bg-2: #e9eef7;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f9fd;
+  --color-ink: #101828;
+  --color-ink-soft: #46536b;
+  --color-ink-faint: #7b879c;
+  --color-accent: #3346c9;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(16,24,40,.14);
+  --radius-control: 10px;
+  --radius-card: 18px;
+  --shadow-control: 0 2px 6px rgba(16,24,40,.08);
+  --font-display: Jost, Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="step-wizard"] {
+  --color-bg: #0c1120;
+  --color-bg-2: #121a2c;
+  --color-surface: #172033;
+  --color-surface-2: #1d283d;
+  --color-ink: #eef2fa;
+  --color-ink-soft: #aeb9cd;
+  --color-ink-faint: #7d8aa1;
+  --color-accent: #8fa3ff;
+  --color-accent-ink: #0a1024;
+  --color-line: rgba(238,242,250,.16);
+}
+
+/* ---- 112 · Sıfır Arayüz ---- */
+@theme {
+  --color-bg: #f4f3ee;
+  --color-bg-2: #ecebe5;
+  --color-surface: #fdfcf8;
+  --color-surface-2: #f2f1eb;
+  --color-ink: #1f211d;
+  --color-ink-soft: #4f544a;
+  --color-ink-faint: #83887c;
+  --color-accent: #26302a;
+  --color-accent-ink: #f6f5ef;
+  --color-line: rgba(31,33,29,.12);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: none;
+  --font-display: Fraunces, Lora, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="zero-ui"] {
+  --color-bg: #12130f;
+  --color-bg-2: #191a15;
+  --color-surface: #1d1e18;
+  --color-surface-2: #24251f;
+  --color-ink: #eeefe6;
+  --color-ink-soft: #b6b8ab;
+  --color-ink-faint: #86887c;
+  --color-accent: #dfe3d3;
+  --color-accent-ink: #14150f;
+  --color-line: rgba(238,239,230,.14);
+}
+
+/* ---- 113 · Notebook / REPL ---- */
+@theme {
+  --color-bg: #e9edf2;
+  --color-bg-2: #dfe5ec;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f7fa;
+  --color-ink: #131a22;
+  --color-ink-soft: #47566a;
+  --color-ink-faint: #7a8798;
+  --color-accent: #b8460f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(19,26,34,.14);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 2px rgba(19,26,34,.08);
+  --font-display: Space Mono, ui-monospace, monospace;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="notebook-repl"] {
+  --color-bg: #101519;
+  --color-bg-2: #171d23;
+  --color-surface: #1c242b;
+  --color-surface-2: #232c34;
+  --color-ink: #e8eef4;
+  --color-ink-soft: #a7b5c2;
+  --color-ink-faint: #79879a;
+  --color-accent: #f08a4b;
+  --color-accent-ink: #1a0e05;
+  --color-line: rgba(232,238,244,.15);
+}
+
+/* ---- 114 · Eşzamanlı İşbirlikçi ---- */
+@theme {
+  --color-bg: #f8f7fc;
+  --color-bg-2: #eeecf8;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f2fc;
+  --color-ink: #1b1630;
+  --color-ink-soft: #514870;
+  --color-ink-faint: #857ea0;
+  --color-accent: #6d28d9;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(27,22,48,.14);
+  --radius-control: 12px;
+  --radius-card: 20px;
+  --shadow-control: 0 4px 14px rgba(27,22,48,.10);
+  --font-display: Baloo 2, Nunito, system-ui, sans-serif;
+  --font-body: Nunito, Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="multiplayer-presence"] {
+  --color-bg: #14101f;
+  --color-bg-2: #1b1630;
+  --color-surface: #221c33;
+  --color-surface-2: #2a2340;
+  --color-ink: #f0ecfa;
+  --color-ink-soft: #b6adcc;
+  --color-ink-faint: #8b82a3;
+  --color-accent: #b18cff;
+  --color-accent-ink: #150a24;
+  --color-line: rgba(240,236,250,.16);
+}
+
+/* ---- 115 · Klavye-Öncelikli Komut Arayüzü ---- */
+@theme {
+  --color-bg: #0f1013;
+  --color-bg-2: #14161a;
+  --color-surface: #17191e;
+  --color-surface-2: #1d2026;
+  --color-ink: #e9ecf1;
+  --color-ink-soft: #a3abb8;
+  --color-ink-faint: #737d8c;
+  --color-accent: #ffb62e;
+  --color-accent-ink: #1a1205;
+  --color-line: rgba(233,236,241,.16);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.4);
+  --font-display: Rajdhani, Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: .02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="keyboard-first"] {
+  --color-bg: #020306;
+  --color-bg-2: #06080c;
+  --color-surface: #08090d;
+  --color-surface-2: #0f1216;
+  --color-ink: #f6f8fc;
+  --color-ink-soft: #b1bac7;
+  --color-ink-faint: #808a98;
+  --color-accent: #ffd79a;
+  --color-accent-ink: #1a1205;
+  --color-line: rgba(246,248,252,.13);
+}
+
+/* ---- 116 · Kids Playground ---- */
+@theme {
+  --color-bg: #fdf7ec;
+  --color-bg-2: #f6eddd;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4ecdf;
+  --color-ink: #1e2a33;
+  --color-ink-soft: #4b5a64;
+  --color-ink-faint: #7c8a92;
+  --color-accent: #17607a;
+  --color-accent-ink: #f6fbfd;
+  --color-line: rgba(30,42,51,.16);
+  --radius-control: 14px;
+  --radius-card: 18px;
+  --shadow-control: 0 6px 0 var(--line);
+  --font-display: Baloo 2, Nunito, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="kids-playground"] {
+  --color-bg: #141c22;
+  --color-bg-2: #1c262e;
+  --color-surface: #18222a;
+  --color-surface-2: #24313a;
+  --color-ink: #f0f4f2;
+  --color-ink-soft: #b0bcc0;
+  --color-ink-faint: #7c8a90;
+  --color-accent: #7fd3c8;
+  --color-accent-ink: #0e1518;
+  --color-line: rgba(240,244,242,.16);
+}
+
+/* ---- 117 · Carnival Festival ---- */
+@theme {
+  --color-bg: #fdf3e3;
+  --color-bg-2: #f6e7d0;
+  --color-surface: #fffaf0;
+  --color-surface-2: #f7ead6;
+  --color-ink: #241a12;
+  --color-ink-soft: #55463a;
+  --color-ink-faint: #827164;
+  --color-accent: #b3360f;
+  --color-accent-ink: #fdf5ee;
+  --color-line: rgba(36,26,18,.18);
+  --radius-control: 0px;
+  --radius-card: 4px;
+  --shadow-control: none;
+  --font-display: Anton, Impact, system-ui, sans-serif;
+  --font-body: Poppins, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="carnival-festival"] {
+  --color-bg: #191009;
+  --color-bg-2: #231710;
+  --color-surface: #1e140d;
+  --color-surface-2: #2c1f15;
+  --color-ink: #f8ecdd;
+  --color-ink-soft: #bfaa99;
+  --color-ink-faint: #8a7767;
+  --color-accent: #f0873f;
+  --color-accent-ink: #1a1007;
+  --color-line: rgba(248,236,221,.16);
+}
+
+/* ---- 118 · Sticker Sheet ---- */
+@theme {
+  --color-bg: #f7f6f2;
+  --color-bg-2: #ecebe4;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2f1ea;
+  --color-ink: #16160f;
+  --color-ink-soft: #4a4a40;
+  --color-ink-faint: #78786c;
+  --color-accent: #b5174e;
+  --color-accent-ink: #fff5f7;
+  --color-line: rgba(22,22,15,.18);
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --shadow-control: 2px 2px 0 rgba(22,22,15,.92);
+  --font-display: Nunito, system-ui, sans-serif;
+  --font-body: Poppins, system-ui, sans-serif;
+  --font-mono: Silkscreen, Courier Prime, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="sticker-sheet"] {
+  --color-bg: #121210;
+  --color-bg-2: #1b1b18;
+  --color-surface: #171714;
+  --color-surface-2: #24241f;
+  --color-ink: #f4f3ea;
+  --color-ink-soft: #b3b2a5;
+  --color-ink-faint: #7f7e72;
+  --color-accent: #f472a0;
+  --color-accent-ink: #1a0a10;
+  --color-line: rgba(244,243,234,.16);
+}
+
+/* ---- 119 · Arcade 8-bit ---- */
+@theme {
+  --color-bg: #0e1224;
+  --color-bg-2: #141a2e;
+  --color-surface: #121728;
+  --color-surface-2: #1b2136;
+  --color-ink: #eef4ff;
+  --color-ink-soft: #a7b3cc;
+  --color-ink-faint: #78849c;
+  --color-accent: #35e08a;
+  --color-accent-ink: #05130c;
+  --color-line: rgba(238,244,255,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Press Start 2P, Space Mono, monospace;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: VT323, ui-monospace, monospace;
+  --tracking-display: 0;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="arcade-8bit"] {
+  --color-bg: #010309;
+  --color-bg-2: #050914;
+  --color-surface: #04070f;
+  --color-surface-2: #0d1424;
+  --color-ink: #f4f9ff;
+  --color-ink-soft: #aebcd4;
+  --color-ink-faint: #7f8ba3;
+  --color-accent: #66ffb8;
+  --color-accent-ink: #04120a;
+  --color-line: rgba(244,249,255,.13);
+}
+
+/* ---- 120 · Craft Handmade ---- */
+@theme {
+  --color-bg: #efe6d6;
+  --color-bg-2: #e5dac6;
+  --color-surface: #f9f3e7;
+  --color-surface-2: #e9dfcb;
+  --color-ink: #2a231a;
+  --color-ink-soft: #574c3d;
+  --color-ink-faint: #857a68;
+  --color-accent: #7a4b2a;
+  --color-accent-ink: #fbf5ea;
+  --color-line: rgba(42,35,26,.20);
+  --radius-control: 4px;
+  --radius-card: 10px;
+  --shadow-control: none;
+  --font-display: Caveat, Kalam, cursive;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="craft-handmade"] {
+  --color-bg: #1a1610;
+  --color-bg-2: #241f17;
+  --color-surface: #201b14;
+  --color-surface-2: #2c261c;
+  --color-ink: #f2e9d9;
+  --color-ink-soft: #bcb09c;
+  --color-ink-faint: #8a8071;
+  --color-accent: #d9a86a;
+  --color-accent-ink: #1a1208;
+  --color-line: rgba(242,233,217,.16);
+}
+
+/* ---- 121 · Celebration Card ---- */
+@theme {
+  --color-bg: #fbeee8;
+  --color-bg-2: #f5e2da;
+  --color-surface: #fffaf7;
+  --color-surface-2: #f2ded4;
+  --color-ink: #341c2a;
+  --color-ink-soft: #6b4a5b;
+  --color-ink-faint: #8f6f7f;
+  --color-accent: #bd1f5c;
+  --color-accent-ink: #fff5f9;
+  --color-line: rgba(52,28,42,.16);
+  --radius-control: 14px;
+  --radius-card: 22px;
+  --shadow-control: 0 6px 18px rgba(52,28,42,.10);
+  --font-display: Playfair Display, Georgia, serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="celebration-card"] {
+  --color-bg: #1a1116;
+  --color-bg-2: #211720;
+  --color-surface: #271b24;
+  --color-surface-2: #33232e;
+  --color-ink: #f6e9ee;
+  --color-ink-soft: #cbb2bd;
+  --color-ink-faint: #9c8390;
+  --color-accent: #ff7fae;
+  --color-accent-ink: #2a0d18;
+  --color-line: rgba(246,233,238,.16);
+}
+
+/* ---- 122 · Collectible Card ---- */
+@theme {
+  --color-bg: #eef1f7;
+  --color-bg-2: #e5e9f2;
+  --color-surface: #ffffff;
+  --color-surface-2: #e9edf6;
+  --color-ink: #131521;
+  --color-ink-soft: #474b5c;
+  --color-ink-faint: #767b8c;
+  --color-accent: #5c33e0;
+  --color-accent-ink: #f7f4ff;
+  --color-line: rgba(19,21,33,.16);
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --shadow-control: 0 10px 24px rgba(19,21,33,.14);
+  --font-display: Chakra Petch, system-ui, sans-serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="collectible-card"] {
+  --color-bg: #0d0e15;
+  --color-bg-2: #12131c;
+  --color-surface: #171926;
+  --color-surface-2: #1f2231;
+  --color-ink: #eceaf5;
+  --color-ink-soft: #b0aec0;
+  --color-ink-faint: #86849a;
+  --color-accent: #a48bff;
+  --color-accent-ink: #0f0d18;
+  --color-line: rgba(236,234,245,.16);
+}
+
+/* ---- 123 · Comic Story ---- */
+@theme {
+  --color-bg: #f8f2e2;
+  --color-bg-2: #f0e8d3;
+  --color-surface: #fffdf6;
+  --color-surface-2: #ece4cd;
+  --color-ink: #111114;
+  --color-ink-soft: #494a45;
+  --color-ink-faint: #75766e;
+  --color-accent: #d92b1f;
+  --color-accent-ink: #fff8f2;
+  --color-line: rgba(17,17,20,.22);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: none;
+  --font-display: Baloo 2, Archivo Black, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="comic-story"] {
+  --color-bg: #121214;
+  --color-bg-2: #17171a;
+  --color-surface: #1c1c20;
+  --color-surface-2: #26262b;
+  --color-ink: #f2eddd;
+  --color-ink-soft: #b5b0a2;
+  --color-ink-faint: #8a857a;
+  --color-accent: #ff6a58;
+  --color-accent-ink: #180a08;
+  --color-line: rgba(242,237,221,.18);
+}
+
+/* ---- 124 · Album Sleeve ---- */
+@theme {
+  --color-bg: #ecebe4;
+  --color-bg-2: #e2e0d8;
+  --color-surface: #fbfaf5;
+  --color-surface-2: #e6e4da;
+  --color-ink: #131418;
+  --color-ink-soft: #45474e;
+  --color-ink-faint: #74767c;
+  --color-accent: #cf3b0c;
+  --color-accent-ink: #fff8f2;
+  --color-line: rgba(19,20,24,.18);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 2px 10px rgba(19,20,24,.10);
+  --font-display: Anton, Impact, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.015em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="album-sleeve"] {
+  --color-bg: #0e0f11;
+  --color-bg-2: #141517;
+  --color-surface: #191a1d;
+  --color-surface-2: #222327;
+  --color-ink: #eeede8;
+  --color-ink-soft: #b3b2ab;
+  --color-ink-faint: #888780;
+  --color-accent: #ff6a2c;
+  --color-accent-ink: #140a05;
+  --color-line: rgba(238,237,232,.16);
+}
+
+/* ---- 125 · Sports Energy ---- */
+@theme {
+  --color-bg: #f1f3f1;
+  --color-bg-2: #e7eae7;
+  --color-surface: #ffffff;
+  --color-surface-2: #eceee9;
+  --color-ink: #0f1412;
+  --color-ink-soft: #444d47;
+  --color-ink-faint: #6f7a73;
+  --color-accent: #f24a00;
+  --color-accent-ink: #17100c;
+  --color-line: rgba(15,20,18,.18);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: none;
+  --font-display: Rajdhani, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="sports-energy"] {
+  --color-bg: #0c100e;
+  --color-bg-2: #111612;
+  --color-surface: #161b18;
+  --color-surface-2: #1e2420;
+  --color-ink: #e9efe9;
+  --color-ink-soft: #aebbb2;
+  --color-ink-faint: #7f8d84;
+  --color-accent: #ff6a2e;
+  --color-accent-ink: #100804;
+  --color-line: rgba(233,239,233,.16);
+}
+
+/* ---- 126 · Marble Vein ---- */
+@theme {
+  --color-bg: #f3f4f3;
+  --color-bg-2: #e8eae8;
+  --color-surface: #fdfdfc;
+  --color-surface-2: #f0f2f0;
+  --color-ink: #14181a;
+  --color-ink-soft: #4c565a;
+  --color-ink-faint: #748083;
+  --color-accent: #242b2e;
+  --color-accent-ink: #f5f7f6;
+  --color-line: rgba(20,24,26,.14);
+  --radius-control: 5px;
+  --radius-card: 12px;
+  --shadow-control: 0 1px 2px rgba(20,24,26,.07);
+  --font-display: Lora, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="marble-vein"] {
+  --color-bg: #121416;
+  --color-bg-2: #0d0f10;
+  --color-surface: #191c1e;
+  --color-surface-2: #222629;
+  --color-ink: #eef0ef;
+  --color-ink-soft: #a7aeae;
+  --color-ink-faint: #7b8484;
+  --color-accent: #e8ebe7;
+  --color-accent-ink: #14181a;
+  --color-line: rgba(238,240,239,.16);
+}
+
+/* ---- 127 · Silk Drape ---- */
+@theme {
+  --color-bg: #f6efe7;
+  --color-bg-2: #ede2d6;
+  --color-surface: #fdf9f3;
+  --color-surface-2: #f3eade;
+  --color-ink: #241a20;
+  --color-ink-soft: #5b4b52;
+  --color-ink-faint: #83737a;
+  --color-accent: #6b2f4a;
+  --color-accent-ink: #f9f1f4;
+  --color-line: rgba(36,26,32,.14);
+  --radius-control: 20px;
+  --radius-card: 44px;
+  --shadow-control: 0 10px 30px -18px rgba(60,34,44,.35);
+  --font-display: Cormorant Garamond, Georgia, serif;
+  --font-body: Poppins, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="silk-drape"] {
+  --color-bg: #1a1217;
+  --color-bg-2: #140e12;
+  --color-surface: #221820;
+  --color-surface-2: #2c2028;
+  --color-ink: #f6ecf0;
+  --color-ink-soft: #c4b1ba;
+  --color-ink-faint: #8e7d86;
+  --color-accent: #d08aa8;
+  --color-accent-ink: #26101a;
+  --color-line: rgba(246,236,240,.16);
+}
+
+/* ---- 128 · Brass Copper ---- */
+@theme {
+  --color-bg: #1a1512;
+  --color-bg-2: #130f0d;
+  --color-surface: #221b16;
+  --color-surface-2: #2c231c;
+  --color-ink: #f0e7da;
+  --color-ink-soft: #bda892;
+  --color-ink-faint: #8a7862;
+  --color-accent: #c9743c;
+  --color-accent-ink: #1a0d05;
+  --color-line: rgba(240,231,218,.15);
+  --radius-control: 5px;
+  --radius-card: 12px;
+  --shadow-control: 0 8px 24px -16px rgba(0,0,0,.85);
+  --font-display: Cinzel, Georgia, serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: .12em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="brass-copper"] {
+  --color-bg: #0b0705;
+  --color-bg-2: #080403;
+  --color-surface: #120d0a;
+  --color-surface-2: #1a1310;
+  --color-ink: #f8f0e5;
+  --color-ink-soft: #cdbba7;
+  --color-ink-faint: #9a876f;
+  --color-accent: #f0a062;
+  --color-accent-ink: #1a0d05;
+  --color-line: rgba(248,240,229,.18);
+}
+
+/* ---- 129 · Porcelain Glaze ---- */
+@theme {
+  --color-bg: #f2f6f8;
+  --color-bg-2: #e6eef3;
+  --color-surface: #fbfdfe;
+  --color-surface-2: #eef4f7;
+  --color-ink: #141d26;
+  --color-ink-soft: #46586a;
+  --color-ink-faint: #6f8394;
+  --color-accent: #1d4f9c;
+  --color-accent-ink: #f4f8fd;
+  --color-line: rgba(20,29,38,.12);
+  --radius-control: 14px;
+  --radius-card: 28px;
+  --shadow-control: 0 2px 6px rgba(20,29,38,.06);
+  --font-display: Cormorant Garamond, Georgia, serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="porcelain-glaze"] {
+  --color-bg: #0b1420;
+  --color-bg-2: #0e1926;
+  --color-surface: #121f2e;
+  --color-surface-2: #192838;
+  --color-ink: #eaf2fa;
+  --color-ink-soft: #a8bccf;
+  --color-ink-faint: #7b8fa3;
+  --color-accent: #6aa6f0;
+  --color-accent-ink: #07172b;
+  --color-line: rgba(234,242,250,.14);
+}
+
+/* ---- 130 · Leather Craft ---- */
+@theme {
+  --color-bg: #e3cba9;
+  --color-bg-2: #d7bd98;
+  --color-surface: #f0e0c6;
+  --color-surface-2: #e9d5b7;
+  --color-ink: #2b1d12;
+  --color-ink-soft: #5d452f;
+  --color-ink-faint: #7f6748;
+  --color-accent: #7a3f1d;
+  --color-accent-ink: #f8ecda;
+  --color-line: rgba(43,29,18,.22);
+  --radius-control: 7px;
+  --radius-card: 16px;
+  --shadow-control: 0 6px 16px -10px rgba(43,29,18,.45);
+  --font-display: Playfair Display, Georgia, serif;
+  --font-body: Lora, Georgia, serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: -.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="leather-craft"] {
+  --color-bg: #1d1510;
+  --color-bg-2: #160f0b;
+  --color-surface: #251b14;
+  --color-surface-2: #2f241b;
+  --color-ink: #f4ead9;
+  --color-ink-soft: #c6b39a;
+  --color-ink-faint: #93826b;
+  --color-accent: #d59a63;
+  --color-accent-ink: #1c1007;
+  --color-line: rgba(244,234,217,.16);
+}
+
+/* ---- 131 · Optic Prism ---- */
+@theme {
+  --color-bg: #f2f6f7;
+  --color-bg-2: #e7eef0;
+  --color-surface: #fdfeff;
+  --color-surface-2: #eaf1f3;
+  --color-ink: #101a1f;
+  --color-ink-soft: #43535a;
+  --color-ink-faint: #74858c;
+  --color-accent: #0d5c63;
+  --color-accent-ink: #f2fbfc;
+  --color-line: rgba(16,26,31,.14);
+  --radius-control: 2px;
+  --radius-card: 10px;
+  --shadow-control: none;
+  --font-display: Michroma, Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="optic-prism"] {
+  --color-bg: #0a1216;
+  --color-bg-2: #111a1f;
+  --color-surface: #0d161b;
+  --color-surface-2: #172128;
+  --color-ink: #eef6f8;
+  --color-ink-soft: #a9bcc2;
+  --color-ink-faint: #7e939b;
+  --color-accent: #6fe6dc;
+  --color-accent-ink: #04140f;
+  --color-line: rgba(238,246,248,.16);
+}
+
+/* ---- 132 · Wood Joinery ---- */
+@theme {
+  --color-bg: #f0e9dc;
+  --color-bg-2: #e6dccb;
+  --color-surface: #faf5ec;
+  --color-surface-2: #ece2d1;
+  --color-ink: #1f1c17;
+  --color-ink-soft: #4f4a41;
+  --color-ink-faint: #7b7469;
+  --color-accent: #33546b;
+  --color-accent-ink: #f4f8fa;
+  --color-line: rgba(31,28,23,.16);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: none;
+  --font-display: Fraunces, Georgia, serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: Courier Prime, Courier, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="wood-joinery"] {
+  --color-bg: #17130f;
+  --color-bg-2: #211b15;
+  --color-surface: #1d1812;
+  --color-surface-2: #2a231b;
+  --color-ink: #f2ebdf;
+  --color-ink-soft: #bdb2a3;
+  --color-ink-faint: #8a8072;
+  --color-accent: #8fb6cf;
+  --color-accent-ink: #0d1519;
+  --color-line: rgba(242,235,223,.16);
+}
+
+/* ---- 133 · Letterpress Print ---- */
+@theme {
+  --color-bg: #f7f4ec;
+  --color-bg-2: #ece7db;
+  --color-surface: #fdfbf5;
+  --color-surface-2: #efeade;
+  --color-ink: #191713;
+  --color-ink-soft: #4a453d;
+  --color-ink-faint: #7a746a;
+  --color-accent: #2a2c6b;
+  --color-accent-ink: #f3f2fb;
+  --color-line: rgba(25,23,19,.16);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: inset 0 1px 0 var(--line);
+  --font-display: Cinzel, Trajan Pro, Georgia, serif;
+  --font-body: Lora, Georgia, serif;
+  --font-mono: Courier Prime, Courier, monospace;
+  --tracking-display: 0.06em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="letterpress-print"] {
+  --color-bg: #14120f;
+  --color-bg-2: #1d1a16;
+  --color-surface: #191612;
+  --color-surface-2: #26221c;
+  --color-ink: #f4efe4;
+  --color-ink-soft: #b6afa2;
+  --color-ink-faint: #857f73;
+  --color-accent: #9fa2e8;
+  --color-accent-ink: #0e0d1a;
+  --color-line: rgba(244,239,228,.16);
+}
+
+/* ---- 134 · Concrete Monolith ---- */
+@theme {
+  --color-bg: #dedcd6;
+  --color-bg-2: #d2cfc8;
+  --color-surface: #eae8e3;
+  --color-surface-2: #c6c3bc;
+  --color-ink: #14161a;
+  --color-ink-soft: #3f4448;
+  --color-ink-faint: #6b7074;
+  --color-accent: #7a5a17;
+  --color-accent-ink: #f9f5e9;
+  --color-line: rgba(20,22,26,.22);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Archivo Black, Impact, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="concrete-monolith"] {
+  --color-bg: #1b1c1d;
+  --color-bg-2: #232526;
+  --color-surface: #202223;
+  --color-surface-2: #2c2e30;
+  --color-ink: #e8e7e3;
+  --color-ink-soft: #a9a8a4;
+  --color-ink-faint: #82837f;
+  --color-accent: #d9b463;
+  --color-accent-ink: #1a1408;
+  --color-line: rgba(232,231,227,.16);
+}
+
+/* ---- 135 · Enamel Porcelain ---- */
+@theme {
+  --color-bg: #f8f6f0;
+  --color-bg-2: #efebe1;
+  --color-surface: #fffdf8;
+  --color-surface-2: #f2eee4;
+  --color-ink: #131a18;
+  --color-ink-soft: #46514c;
+  --color-ink-faint: #757f7a;
+  --color-accent: #17543f;
+  --color-accent-ink: #f1faf4;
+  --color-line: rgba(19,26,24,.14);
+  --radius-control: 6px;
+  --radius-card: 12px;
+  --shadow-control: 0 1px 2px rgba(19,24,32,.10);
+  --font-display: Poiret One, Jost, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.08em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="enamel-porcelain"] {
+  --color-bg: #101612;
+  --color-bg-2: #17201b;
+  --color-surface: #141a16;
+  --color-surface-2: #1f2823;
+  --color-ink: #f0f4f1;
+  --color-ink-soft: #aeb8b2;
+  --color-ink-faint: #78837d;
+  --color-accent: #7fd2ae;
+  --color-accent-ink: #08120d;
+  --color-line: rgba(240,244,241,.14);
+}
+
+/* ---- 136 · Spekülatif Bilim-Kurgu ---- */
+@theme {
+  --color-bg: #e9e8e2;
+  --color-bg-2: #dfded6;
+  --color-surface: #f4f3ee;
+  --color-surface-2: #eeede6;
+  --color-ink: #1c1a16;
+  --color-ink-soft: #524d42;
+  --color-ink-faint: #837c6d;
+  --color-accent: #8a5a12;
+  --color-accent-ink: #fff6e6;
+  --color-line: rgba(28,26,22,.16);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: none;
+  --font-display: Chakra Petch, Space Grotesk, system-ui, sans-serif;
+  --font-body: Space Grotesk, Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .06em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="speculative-scifi"] {
+  --color-bg: #14120e;
+  --color-bg-2: #1a1813;
+  --color-surface: #211e17;
+  --color-surface-2: #28241b;
+  --color-ink: #f0ece1;
+  --color-ink-soft: #bcb4a2;
+  --color-ink-faint: #8b8375;
+  --color-accent: #e0a33a;
+  --color-accent-ink: #1a1405;
+  --color-line: rgba(240,236,225,.16);
+}
+
+/* ---- 137 · Hologram & Uzamsal Veri ---- */
+@theme {
+  --color-bg: #0a1428;
+  --color-bg-2: #0e1a32;
+  --color-surface: #122240;
+  --color-surface-2: #17294a;
+  --color-ink: #e6eef8;
+  --color-ink-soft: #a6b8cf;
+  --color-ink-faint: #6f819a;
+  --color-accent: #ffb347;
+  --color-accent-ink: #2a1500;
+  --color-line: rgba(230,238,248,.16);
+  --radius-control: 4px;
+  --radius-card: 10px;
+  --shadow-control: 0 10px 30px rgba(3,10,22,.55);
+  --font-display: IBM Plex Mono, ui-monospace, monospace;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .03em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="volumetric-data"] {
+  --color-bg: #010306;
+  --color-bg-2: #04080f;
+  --color-surface: #0b1a2e;
+  --color-surface-2: #112740;
+  --color-ink: #f7faff;
+  --color-ink-soft: #c3d3e6;
+  --color-ink-faint: #8b9db8;
+  --color-accent: #ffdf9e;
+  --color-accent-ink: #1a1105;
+  --color-line: rgba(247,250,255,.20);
+}
+
+/* ---- 138 · AI-native Ajan Arayüzü ---- */
+@theme {
+  --color-bg: #f4f5f6;
+  --color-bg-2: #eaecee;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f8f9;
+  --color-ink: #16181c;
+  --color-ink-soft: #4b5158;
+  --color-ink-faint: #7c838b;
+  --color-accent: #3b3f8f;
+  --color-accent-ink: #f6f7ff;
+  --color-line: rgba(22,24,28,.14);
+  --radius-control: 6px;
+  --radius-card: 16px;
+  --shadow-control: 0 1px 2px rgba(22,24,28,.08);
+  --font-display: Space Mono, ui-monospace, monospace;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="agent-orchestration"] {
+  --color-bg: #101216;
+  --color-bg-2: #15181d;
+  --color-surface: #1a1e24;
+  --color-surface-2: #20252c;
+  --color-ink: #e9ecf0;
+  --color-ink-soft: #a8afb8;
+  --color-ink-faint: #78808a;
+  --color-accent: #8e93e8;
+  --color-accent-ink: #0d0e20;
+  --color-line: rgba(233,236,240,.16);
+}
+
+/* ---- 139 · Biyo & Sentetik ---- */
+@theme {
+  --color-bg: #0f1412;
+  --color-bg-2: #141a17;
+  --color-surface: #19211d;
+  --color-surface-2: #1f2924;
+  --color-ink: #e9f2ec;
+  --color-ink-soft: #a9bfb2;
+  --color-ink-faint: #75897e;
+  --color-accent: #c8f05f;
+  --color-accent-ink: #141f07;
+  --color-line: rgba(233,242,236,.16);
+  --radius-control: 20px;
+  --radius-card: 32px;
+  --shadow-control: 0 14px 34px rgba(4,10,7,.55);
+  --font-display: Baloo 2, Nunito, system-ui, sans-serif;
+  --font-body: Nunito, Inter, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="bio-synthetic"] {
+  --color-bg: #020504;
+  --color-bg-2: #050d08;
+  --color-surface: #0d1f16;
+  --color-surface-2: #142e20;
+  --color-ink: #f6fdf8;
+  --color-ink-soft: #c6dccb;
+  --color-ink-faint: #93ab9c;
+  --color-accent: #a6f5c8;
+  --color-accent-ink: #0d2418;
+  --color-line: rgba(246,253,248,.20);
+}
+
+/* ---- 140 · Nanoteknik ---- */
+@theme {
+  --color-bg: #f7f7f5;
+  --color-bg-2: #edede9;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f4f1;
+  --color-ink: #191b1e;
+  --color-ink-soft: #4d5257;
+  --color-ink-faint: #7f858a;
+  --color-accent: #22272c;
+  --color-accent-ink: #f7f7f5;
+  --color-line: rgba(25,27,30,.16);
+  --radius-control: 3px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 2px rgba(25,27,30,.10);
+  --font-display: Archivo Black, Inter, system-ui, sans-serif;
+  --font-body: Jost, Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .04em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="nanotech"] {
+  --color-bg: #0c0d0f;
+  --color-bg-2: #111316;
+  --color-surface: #16181b;
+  --color-surface-2: #1c1f23;
+  --color-ink: #eef0f2;
+  --color-ink-soft: #a9aeb4;
+  --color-ink-faint: #767c83;
+  --color-accent: #e6e9ec;
+  --color-accent-ink: #101215;
+  --color-line: rgba(238,240,242,.16);
+}
+
+/* ---- 141 · Planetary Service ---- */
+@theme {
+  --color-bg: #0a1420;
+  --color-bg-2: #0e1a28;
+  --color-surface: #12202f;
+  --color-surface-2: #182a3c;
+  --color-ink: #e6eef7;
+  --color-ink-soft: #a4b6c8;
+  --color-ink-faint: #75899e;
+  --color-accent: #2f6bc4;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(230,238,247,.15);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: 0 16px 36px -30px rgba(2,6,12,.95);
+  --font-display: IBM Plex Mono, ui-monospace, SFMono-Regular, monospace;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.04em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="planetary-service"] {
+  --color-bg: #010307;
+  --color-bg-2: #040a12;
+  --color-surface: #0a1a2b;
+  --color-surface-2: #102538;
+  --color-ink: #f5f9fe;
+  --color-ink-soft: #c0cfdf;
+  --color-ink-faint: #8ea1b6;
+  --color-accent: #a8d0ff;
+  --color-accent-ink: #04101f;
+  --color-line: rgba(245,249,254,.22);
+}
+
+/* ---- 142 · Quantum Lab ---- */
+@theme {
+  --color-bg: #9b99a3;
+  --color-bg-2: #92909a;
+  --color-surface: #a6a4ae;
+  --color-surface-2: #86848e;
+  --color-ink: #14121a;
+  --color-ink-soft: #2f2c38;
+  --color-ink-faint: #4a4753;
+  --color-accent: #5b3fa8;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(20,18,26,.24);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Courier Prime, ui-monospace, SFMono-Regular, monospace;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="quantum-lab"] {
+  --color-bg: #191822;
+  --color-bg-2: #1f1e29;
+  --color-surface: #26242f;
+  --color-surface-2: #2e2c38;
+  --color-ink: #ece9f2;
+  --color-ink-soft: #b4b0c0;
+  --color-ink-faint: #8a8698;
+  --color-accent: #a48bff;
+  --color-accent-ink: #120a26;
+  --color-line: rgba(236,233,242,.17);
+}
+
+/* ---- 143 · Retro Future ---- */
+@theme {
+  --color-bg: #f3ecdd;
+  --color-bg-2: #ece3d0;
+  --color-surface: #faf5e9;
+  --color-surface-2: #e8dfca;
+  --color-ink: #1b1710;
+  --color-ink-soft: #4f4737;
+  --color-ink-faint: #857a63;
+  --color-accent: #7a5c04;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(27,23,16,.16);
+  --radius-control: 20px;
+  --radius-card: 28px;
+  --shadow-control: 0 20px 44px -34px rgba(27,23,16,.55);
+  --font-display: Jost, ui-sans-serif, system-ui, sans-serif;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.1em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="retro-future"] {
+  --color-bg: #16130d;
+  --color-bg-2: #1c1811;
+  --color-surface: #221d14;
+  --color-surface-2: #2a241a;
+  --color-ink: #f4eddc;
+  --color-ink-soft: #c2b69c;
+  --color-ink-faint: #918872;
+  --color-accent: #e8b93f;
+  --color-accent-ink: #1a1405;
+  --color-line: rgba(244,237,220,.16);
+}
+
+/* ---- 144 · Virtual Engine ---- */
+@theme {
+  --color-bg: #120c1c;
+  --color-bg-2: #181024;
+  --color-surface: #1d142b;
+  --color-surface-2: #251a36;
+  --color-ink: #eee8fa;
+  --color-ink-soft: #b3a7c9;
+  --color-ink-faint: #7f7395;
+  --color-accent: #c7307f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(238,232,250,.15);
+  --radius-control: 8px;
+  --radius-card: 14px;
+  --shadow-control: 0 14px 30px -26px rgba(4,1,10,.95);
+  --font-display: VT323, ui-monospace, monospace;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="virtual-engine"] {
+  --color-bg: #030206;
+  --color-bg-2: #07040d;
+  --color-surface: #140c22;
+  --color-surface-2: #1d1230;
+  --color-ink: #faf6ff;
+  --color-ink-soft: #cfc2e2;
+  --color-ink-faint: #9a8db2;
+  --color-accent: #ff9fcb;
+  --color-accent-ink: #1f0612;
+  --color-line: rgba(250,246,255,.22);
+}
+
+/* ---- 145 · Zero Gravity ---- */
+@theme {
+  --color-bg: #eef4f2;
+  --color-bg-2: #e3ecea;
+  --color-surface: #f8fbfa;
+  --color-surface-2: #dfe9e6;
+  --color-ink: #0f1a19;
+  --color-ink-soft: #3f5450;
+  --color-ink-faint: #74857f;
+  --color-accent: #1d6b52;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(15,26,25,.13);
+  --radius-control: 28px;
+  --radius-card: 36px;
+  --shadow-control: 0 30px 70px -48px rgba(8,26,24,.6);
+  --font-display: Poiret One, ui-sans-serif, system-ui, sans-serif;
+  --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, SFMono-Regular, monospace;
+  --tracking-display: 0.06em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="zero-gravity"] {
+  --color-bg: #0b1514;
+  --color-bg-2: #101d1b;
+  --color-surface: #142321;
+  --color-surface-2: #1a2c29;
+  --color-ink: #e9f4f1;
+  --color-ink-soft: #a9c2bb;
+  --color-ink-faint: #7c968f;
+  --color-accent: #6fd3a8;
+  --color-accent-ink: #05170f;
+  --color-line: rgba(233,244,241,.16);
+}
+
+/* ---- 146 · Noir Estate ---- */
+@theme {
+  --color-bg: #0d0b09;
+  --color-bg-2: #070605;
+  --color-surface: #171310;
+  --color-surface-2: #211b15;
+  --color-ink: #f5f0e7;
+  --color-ink-soft: #c7bca9;
+  --color-ink-faint: #8f8574;
+  --color-accent: #d3af62;
+  --color-accent-ink: #170f04;
+  --color-line: rgba(245,240,231,.14);
+  --radius-control: 6px;
+  --radius-card: 16px;
+  --shadow-control: 0 18px 48px -28px rgba(0,0,0,.95);
+  --font-display: Cormorant Garamond, Georgia, serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: .01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="noir-estate"] {
+  --color-bg: #060505;
+  --color-bg-2: #030303;
+  --color-surface: #0f0d0b;
+  --color-surface-2: #17130f;
+  --color-ink: #faf6ef;
+  --color-ink-soft: #d2c8b7;
+  --color-ink-faint: #9c9283;
+  --color-accent: #e9c882;
+  --color-accent-ink: #17100a;
+  --color-line: rgba(250,246,239,.16);
+}
+
+/* ---- 147 · Agency Portfolio ---- */
+@theme {
+  --color-bg: #f3f1ec;
+  --color-bg-2: #eae7e0;
+  --color-surface: #ffffff;
+  --color-surface-2: #e4e0d7;
+  --color-ink: #0e0e0d;
+  --color-ink-soft: #55534d;
+  --color-ink-faint: #8b8880;
+  --color-accent: #1f45d6;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(14,14,13,.14);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 0 0 1px var(--ink);
+  --font-display: Archivo Black, Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -.02em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="agency-portfolio"] {
+  --color-bg: #0a0a0a;
+  --color-bg-2: #050505;
+  --color-surface: #141414;
+  --color-surface-2: #1d1d1d;
+  --color-ink: #f6f5f2;
+  --color-ink-soft: #b6b3ac;
+  --color-ink-faint: #85827c;
+  --color-accent: #7d93ff;
+  --color-accent-ink: #08091a;
+  --color-line: rgba(246,245,242,.16);
+}
+
+/* ---- 148 · Product Launch ---- */
+@theme {
+  --color-bg: #070b14;
+  --color-bg-2: #04070e;
+  --color-surface: #0e1522;
+  --color-surface-2: #16202f;
+  --color-ink: #eef3fb;
+  --color-ink-soft: #b3c1d6;
+  --color-ink-faint: #7d8ba1;
+  --color-accent: #6fe8b8;
+  --color-accent-ink: #04140d;
+  --color-line: rgba(238,243,251,.12);
+  --radius-control: 10px;
+  --radius-card: 24px;
+  --shadow-control: 0 24px 60px -32px rgba(0,0,0,.9);
+  --font-display: Space Grotesk, Inter, system-ui, sans-serif;
+  --font-body: Poppins, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: .16em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="product-launch"] {
+  --color-bg: #04070c;
+  --color-bg-2: #020408;
+  --color-surface: #0a111b;
+  --color-surface-2: #121b27;
+  --color-ink: #f2f7fd;
+  --color-ink-soft: #bcc9dc;
+  --color-ink-faint: #8695aa;
+  --color-accent: #8bf2c9;
+  --color-accent-ink: #04140d;
+  --color-line: rgba(242,247,253,.14);
+}
+
+/* ---- 149 · Boutique Hotel ---- */
+@theme {
+  --color-bg: #16110c;
+  --color-bg-2: #100c08;
+  --color-surface: #211a13;
+  --color-surface-2: #2b2219;
+  --color-ink: #f3e9dc;
+  --color-ink-soft: #c8b7a3;
+  --color-ink-faint: #94836f;
+  --color-accent: #d97f4e;
+  --color-accent-ink: #1a0b04;
+  --color-line: rgba(243,233,220,.14);
+  --radius-control: 2px;
+  --radius-card: 10px;
+  --shadow-control: 0 16px 40px -26px rgba(0,0,0,.9);
+  --font-display: Playfair Display, Georgia, serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="boutique-hotel"] {
+  --color-bg: #0e0a07;
+  --color-bg-2: #080605;
+  --color-surface: #17120d;
+  --color-surface-2: #211a13;
+  --color-ink: #f8f0e6;
+  --color-ink-soft: #d3c2ae;
+  --color-ink-faint: #9e8d79;
+  --color-accent: #e89567;
+  --color-accent-ink: #1a0b04;
+  --color-line: rgba(248,240,230,.16);
+}
+
+/* ---- 150 · Lookbook Editorial ---- */
+@theme {
+  --color-bg: #efebe4;
+  --color-bg-2: #e6e1d8;
+  --color-surface: #f7f4ef;
+  --color-surface-2: #ffffff;
+  --color-ink: #13110f;
+  --color-ink-soft: #5a554e;
+  --color-ink-faint: #857f76;
+  --color-accent: #a8402a;
+  --color-accent-ink: #fdf6f2;
+  --color-line: rgba(19,17,15,.14);
+  --radius-control: 0px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px var(--ink);
+  --font-display: Fraunces, Georgia, serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -.01em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="lookbook-editorial"] {
+  --color-bg: #0c0b0a;
+  --color-bg-2: #080706;
+  --color-surface: #151312;
+  --color-surface-2: #1e1c1a;
+  --color-ink: #f2ede6;
+  --color-ink-soft: #bcb4aa;
+  --color-ink-faint: #8a837a;
+  --color-accent: #e0704f;
+  --color-accent-ink: #140703;
+  --color-line: rgba(242,237,230,.16);
+}
+
+/* ---- 151 · Dark Dashboard ---- */
+@theme {
+  --color-bg: #0b0d10;
+  --color-bg-2: #07090b;
+  --color-surface: #12161a;
+  --color-surface-2: #1a2026;
+  --color-ink: #e9eef4;
+  --color-ink-soft: #a9b6c2;
+  --color-ink-faint: #75818d;
+  --color-accent: #58c8ff;
+  --color-accent-ink: #04141f;
+  --color-line: rgba(233,238,244,.12);
+  --radius-control: 8px;
+  --radius-card: 14px;
+  --shadow-control: 0 20px 48px -30px rgba(0,0,0,.9);
+  --font-display: Michroma, Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: .16em;
+}
+
+/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */
+[data-theme="dark"][data-style="dark-dashboard"] {
+  --color-bg: #06080a;
+  --color-bg-2: #040506;
+  --color-surface: #0d1014;
+  --color-surface-2: #151a20;
+  --color-ink: #f0f5fa;
+  --color-ink-soft: #b6c2ce;
+  --color-ink-faint: #818d99;
+  --color-accent: #7ad6ff;
+  --color-accent-ink: #04141f;
+  --color-line: rgba(240,245,250,.14);
+}
+
+/* ---- boşluk: katalog ölçeği = Tailwind 4px tabanı
+   --space-1 4px → p-1
+   --space-2 8px → p-2
+   --space-3 12px → p-3
+   --space-4 16px → p-4
+   --space-5 24px → p-6
+   --space-6 32px → p-8
+   --space-7 48px → p-12
+   --space-8 64px → p-16
+   ---- */

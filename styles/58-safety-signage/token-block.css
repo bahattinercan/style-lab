@@ -1,0 +1,55 @@
+/* 58 · Güvenlik Tabelası — token bloğu (kaynak: styles/58-safety-signage/tokens.json) */
+
+[data-style="safety-signage"] {
+  --bg: #12120e;
+  --bg-2: #1a1a14;
+  --surface: #1f1f18;
+  --surface-2: #26261d;
+  --ink: #f6f2e4;
+  --ink-soft: #c4c0a9;
+  --ink-faint: #8b8874;
+  --accent: #ffd52e;
+  --accent-ink: #14140d;
+  --line: rgba(246,242,228,.20);
+  --radius: 0px;
+  --radius-lg: 0px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Anton", "Archivo Black", system-ui, sans-serif;
+  --font-body: "Rajdhani", "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: .01em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff6b57;
+  --danger-ink: #12120e;
+  --ok: #7ee08a;
+  --warn: #ffd52e;
+}
+
+[data-theme="dark"][data-style="safety-signage"] {
+  --bg: #090906;
+  --bg-2: #0f0f0b;
+  --surface: #15150e;
+  --surface-2: #1d1d15;
+  --ink: #fbf8ec;
+  --ink-soft: #cdc9b2;
+  --ink-faint: #918e79;
+  --accent: #fff08a;
+  --accent-ink: #0f0f0a;
+  --line: rgba(251,248,236,.22);
+  --radius: 0px;
+  --radius-lg: 0px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Anton", "Archivo Black", system-ui, sans-serif;
+  --font-body: "Rajdhani", "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: .01em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff6b57;
+  --danger-ink: #12120e;
+  --ok: #7ee08a;
+  --warn: #ffd52e;
+}

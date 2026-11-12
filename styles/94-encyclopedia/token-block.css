@@ -1,0 +1,5 @@
+/* 94 · Encyclopedia — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="encyclopedia"] { --bg: #f7f5ee; --bg-2: #efece1; --surface: #fffcf4; --surface-2: #ebe7da; --ink: #1a1c1a; --ink-soft: #4a4f4a; --ink-faint: #767b76; --accent: #7a1f52; --accent-ink: #fdf6ef; --line: rgba(26,28,26,.16); --radius: 0px; --radius-lg: 2px; --shadow: none; --shadow-hard: none; --font-display: "Lora", Georgia, serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.005em; --blur: 0px; --grain: 0.015; }
+
+/* 94 · Encyclopedia — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="encyclopedia"] { --bg: #131211; --bg-2: #181715; --surface: #1d1b19; --surface-2: #262321; --ink: #ece7dc; --ink-soft: #b5afa4; --ink-faint: #8a857c; --accent: #d684ae; --accent-ink: #17100f; --line: rgba(236,231,220,.16); }

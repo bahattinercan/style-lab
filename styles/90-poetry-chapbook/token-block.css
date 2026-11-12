@@ -1,0 +1,5 @@
+/* 90 · Poetry Chapbook — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="poetry-chapbook"] { --bg: #f7f2e9; --bg-2: #ece6da; --surface: #fdfaf4; --surface-2: #f0eadd; --ink: #22201d; --ink-soft: #55504a; --ink-faint: #837c74; --accent: #4b3f66; --accent-ink: #f7f3ee; --line: rgba(34,32,29,.14); --radius: 2px; --radius-lg: 8px; --shadow: none; --shadow-hard: none; --font-display: "Cormorant Garamond", Garamond, Georgia, serif; --font-body: "Cormorant Garamond", Garamond, Georgia, serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.01em; --blur: 0px; --grain: 0.02; }
+
+/* 90 · Poetry Chapbook — koyu tema (palette.dark ile birebir aynı; fildişi gece mürekkebine döner, accent açık leylakaya çekilir, gölge yine yok) */
+[data-theme="dark"][data-style="poetry-chapbook"] { --bg: #15141a; --bg-2: #1d1c23; --surface: #19181f; --surface-2: #25242c; --ink: #f1eee9; --ink-soft: #b0aba4; --ink-faint: #7c7770; --accent: #b0a2d6; --accent-ink: #14121a; --line: rgba(241,238,233,.14); --shadow-hard: none; }

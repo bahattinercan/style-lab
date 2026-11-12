@@ -1,0 +1,5 @@
+/* 121 · Celebration Card — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="celebration-card"] { --bg: #fbeee8; --bg-2: #f5e2da; --surface: #fffaf7; --surface-2: #f2ded4; --ink: #341c2a; --ink-soft: #6b4a5b; --ink-faint: #8f6f7f; --accent: #bd1f5c; --accent-ink: #fff5f9; --line: rgba(52,28,42,.16); --radius: 14px; --radius-lg: 22px; --shadow: 0 6px 18px rgba(52,28,42,.10); --shadow-hard: none; --font-display: "Playfair Display", Georgia, serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em; --blur: 0px; --grain: 0.03; }
+
+/* 121 · Celebration Card — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="celebration-card"] { --bg: #1a1116; --bg-2: #211720; --surface: #271b24; --surface-2: #33232e; --ink: #f6e9ee; --ink-soft: #cbb2bd; --ink-faint: #9c8390; --accent: #ff7fae; --accent-ink: #2a0d18; --line: rgba(246,233,238,.16); }

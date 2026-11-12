@@ -1,0 +1,5 @@
+/* 92 · Museum & Thesis — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="museum-thesis"] { --bg: #f4f2ec; --bg-2: #ebe8df; --surface: #fbfaf6; --surface-2: #e6e2d8; --ink: #191b1f; --ink-soft: #4c515a; --ink-faint: #787e88; --accent: #3c4a63; --accent-ink: #f4f1e8; --line: rgba(25,27,31,.16); --radius: 0px; --radius-lg: 2px; --shadow: 0 1px 3px rgba(25,27,31,.07); --shadow-hard: none; --font-display: "EB Garamond", Georgia, serif; --font-body: "EB Garamond", Georgia, serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.005em; --blur: 0px; --grain: 0.025; }
+
+/* 92 · Museum & Thesis — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="museum-thesis"] { --bg: #14161a; --bg-2: #191c21; --surface: #1e2228; --surface-2: #262b33; --ink: #e9e7e0; --ink-soft: #b6b9bf; --ink-faint: #8b9099; --accent: #9fb0c9; --accent-ink: #14161a; --line: rgba(233,231,224,.16); }

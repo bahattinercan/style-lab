@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="tr" data-theme="dark" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-dashboard __BODY_CLASS__">
+  <aside class="side">
+    <div class="brand"><span class="mark">N</span> Northwind</div>
+    <nav class="side-nav">
+      <a class="active" href="#"><span class="ico"></span> Genel bakış</a>
+      <a href="#"><span class="ico"></span> Projeler</a>
+      <a href="#"><span class="ico"></span> Raporlar</a>
+      <a href="#"><span class="ico"></span> Ekip</a>
+      <a href="#"><span class="ico"></span> Ayarlar</a>
+    </nav>
+    <div class="side-foot">
+      <span class="avatar">EB</span>
+      <div class="who">Elif Baş<b><span>Pro plan</span></b></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <h2>Genel bakış</h2>
+      <span class="chip">son 30 gün</span>
+      <div class="topbar-actions">
+        <input class="field" placeholder="Ara…" aria-label="arama">
+        <span class="icon-btn">⌘K</span>
+        <span class="icon-btn">?</span>
+        <span class="avatar">EB</span>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="panel kpi">
+        <span class="label">Aylık gelir</span>
+        <span class="num-big">₺842.400</span>
+        <div class="kpi-row"><span class="chip accent">+12,4%</span><span class="faint" style="font-size:10.5px">geçen aya göre</span></div>
+      </div>
+      <div class="panel kpi">
+        <span class="label">Aktif kullanıcı</span>
+        <span class="num-big">12.480</span>
+        <div class="kpi-row"><span class="chip">+3,1%</span><span class="faint" style="font-size:10.5px">organik</span></div>
+      </div>
+      <div class="panel kpi">
+        <span class="label">Ortalama oturum</span>
+        <span class="num-big">7d 42s</span>
+        <div class="kpi-row"><span class="chip">hedef %80</span><span class="faint" style="font-size:10.5px">tamamlandı</span></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <section class="panel chart">
+        <div class="chart-head">
+          <h3>Haftalık hacim</h3>
+          <span class="chip accent">canlı</span>
+          <span class="label">bin ₺</span>
+        </div>
+        <div class="bars">
+          <i style="height:38%"></i><i style="height:54%"></i><i class="dim" style="height:46%"></i>
+          <i style="height:68%"></i><i style="height:82%"></i><i style="height:61%"></i>
+          <i class="dim" style="height:74%"></i><i style="height:92%"></i>
+        </div>
+        <div class="axis">
+          <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span>
+          <span>Cum</span><span>Cmt</span><span>Paz</span><span>Top</span>
+        </div>
+      </section>
+
+      <section class="panel feed">
+        <h3>Aktivite</h3>
+        <div class="feed-row"><span class="ico">01</span><div class="t">Yeni sürüm yayınlandı<span>2 dk önce · Deniz</span></div></div>
+        <div class="feed-row"><span class="ico">02</span><div class="t">Fatura ödendi<span>18 dk önce · sistem</span></div></div>
+        <div class="feed-row"><span class="ico">03</span><div class="t">3 görev tamamlandı<span>1 sa önce · Ekip</span></div></div>
+        <div class="feed-row"><span class="ico">04</span><div class="t">Yeni üye katıldı<span>2 sa önce · Selin</span></div></div>
+        <div class="feed-row"><span class="ico">05</span><div class="t">API anahtarı yenilendi<span>dün · sistem</span></div></div>
+      </section>
+    </div>
+
+    <section class="panel table">
+      <div class="table-head"><h3>Son projeler</h3><span class="chip">6 kayıt</span></div>
+      <div class="trow"><span class="name"><span class="sq"></span> Atlas yeniden tasarım</span><span class="muted">Deniz K.</span><span class="chip accent">aktif</span><span class="num">%72</span></div>
+      <div class="trow"><span class="name"><span class="sq"></span> Fatura otomasyonu</span><span class="muted">Selin A.</span><span class="chip">beklemede</span><span class="num">%40</span></div>
+      <div class="trow"><span class="name"><span class="sq"></span> Mobil beta</span><span class="muted">Emre T.</span><span class="chip accent">aktif</span><span class="num">%88</span></div>
+      <div class="trow"><span class="name"><span class="sq"></span> Rapor şablonları</span><span class="muted">Deniz K.</span><span class="chip">beklemede</span><span class="num">%25</span></div>
+      <div class="trow"><span class="name"><span class="sq"></span> API v3 geçişi</span><span class="muted">Selin A.</span><span class="chip accent">aktif</span><span class="num">%61</span></div>
+      <div class="trow"><span class="name"><span class="sq"></span> Tasarım sistemi</span><span class="muted">Emre T.</span><span class="chip">planlandı</span><span class="num">%12</span></div>
+    </section>
+  </div>
+  <div class="sig"></div>
+</body>
+</html>

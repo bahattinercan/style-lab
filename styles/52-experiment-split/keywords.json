@@ -1,0 +1,21 @@
+{
+  "slug": "experiment-split",
+  "num": "52",
+  "labels": [
+    "deney ve A-B analizi",
+    "kontrol/varyant karşılaştırması",
+    "delta ve örneklem"
+  ],
+  "synonyms": [
+    "A/B test paneli",
+    "deney sonuç ekranı",
+    "feature flag karşılaştırması",
+    "ürün analitiği raporu",
+    "hipotez doğrulama masası"
+  ],
+  "avoid": [
+    "lüks marka vitrini",
+    "editoryal anlatı",
+    "çocuk/oyun ürünü"
+  ]
+}

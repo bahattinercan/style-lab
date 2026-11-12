@@ -1,0 +1,46 @@
+{
+  "label": "Dergi / yayın",
+  "tags": [
+    "dergi",
+    "yayın",
+    "okuma"
+  ],
+  "hero": {
+    "eyebrow": "Sayı 14 · Kış",
+    "h1": "Uzun okumalar, kısa cümleler",
+    "lede": "Şehir, emek ve sessizlik üzerine üç dosya; basılı sayıyla birlikte.",
+    "ctaPrimary": "Sayıyı oku",
+    "ctaSecondary": "Arşive git →"
+  },
+  "proofs": [
+    "Yılda 4 sayı",
+    "Baskı + dijital",
+    "Reklamsız"
+  ],
+  "logos": [
+    "Kış",
+    "Defter",
+    "Kitap",
+    "Baskı",
+    "Arşiv"
+  ],
+  "tiles": [
+    {
+      "num": "01",
+      "cap": "Dosya: Şehir"
+    },
+    {
+      "num": "02",
+      "cap": "Söyleşi"
+    },
+    {
+      "num": "03",
+      "cap": "Fotoğraf"
+    },
+    {
+      "num": "04",
+      "cap": "Kitap notları"
+    }
+  ],
+  "logoLabel": "Katkı verenler"
+}

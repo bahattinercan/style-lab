@@ -1,0 +1,48 @@
+/* 148 · Product Launch — token bloğu (açık + koyu)
+   Kaynak: styles/148-product-launch/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="product-launch"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="product-launch"] {
+  /* --- sözleşme: renk --- */
+ --bg: #070b14;
+ --bg-2: #04070e;
+ --surface: #0e1522;
+ --surface-2: #16202f;
+ --ink: #eef3fb;
+ --ink-soft: #b3c1d6;
+ --ink-faint: #7d8ba1;
+ --accent: #6fe8b8;
+ --accent-ink: #04140d;
+ --line: rgba(238,243,251,.12);
+  /* --- sözleşme: biçim ve gölge --- */
+ --radius: 10px;
+ --radius-lg: 24px;
+ --shadow: 0 24px 60px -32px rgba(0,0,0,.9);
+ --shadow-hard: 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent), 0 10px 30px -18px color-mix(in srgb, var(--accent) 55%, transparent);
+  /* --- sözleşme: tipografi ve doku --- */
+ --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+ --font-body: "Poppins", system-ui, sans-serif;
+ --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+ --tracking: .16em;
+ --blur: 10px;
+ --grain: .015;
+  /* --- stil ekleri (durum renkleri) --- */
+ --danger: #ff6b7a;
+ --danger-ink: #1a0206;
+ --ok: #6fe8b8;
+ --warn: #f2c14e;
+}
+
+[data-theme="dark"][data-style="product-launch"] {
+  --bg:#04070c;
+  --bg-2:#020408;
+  --surface:#0a111b;
+  --surface-2:#121b27;
+  --ink:#f2f7fd;
+  --ink-soft:#bcc9dc;
+  --ink-faint:#8695aa;
+  --accent:#8bf2c9;
+  --accent-ink:#04140d;
+  --line:rgba(242,247,253,.14);
+}

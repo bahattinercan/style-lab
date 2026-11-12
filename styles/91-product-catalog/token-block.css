@@ -1,0 +1,5 @@
+/* 91 · Product Catalog — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="product-catalog"] { --bg: #f6f4ef; --bg-2: #eeeae0; --surface: #fffdf8; --surface-2: #e9e4d8; --ink: #1a1c19; --ink-soft: #4b5148; --ink-faint: #767c72; --accent: #16624f; --accent-ink: #f7f3e8; --line: rgba(26,28,25,.16); --radius: 2px; --radius-lg: 4px; --shadow: 0 1px 2px rgba(26,28,25,.08); --shadow-hard: none; --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Lora", Georgia, serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em; --blur: 0px; --grain: 0.02; }
+
+/* 91 · Product Catalog — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="product-catalog"] { --bg: #121512; --bg-2: #171b17; --surface: #1b201b; --surface-2: #232a23; --ink: #e8e6dd; --ink-soft: #b0b5a9; --ink-faint: #868c80; --accent: #5fb39c; --accent-ink: #0d1412; --line: rgba(232,230,221,.16); }

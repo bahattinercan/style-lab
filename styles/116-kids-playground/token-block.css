@@ -1,0 +1,5 @@
+/* 116 · Kids Playground — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="kids-playground"] { --bg: #fdf7ec; --bg-2: #f6eddd; --surface: #ffffff; --surface-2: #f4ecdf; --ink: #1e2a33; --ink-soft: #4b5a64; --ink-faint: #7c8a92; --accent: #17607a; --accent-ink: #f6fbfd; --line: rgba(30,42,51,.16); --radius: 14px; --radius-lg: 18px; --shadow: 0 6px 0 var(--line); --shadow-hard: 0 6px 0 var(--line); --font-display: "Baloo 2", "Nunito", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: 0; --blur: 0px; --grain: 0; }
+
+/* 116 · Kids Playground — koyu tema (palette.dark ile birebir aynı; krem zemin gece mavisine döner, accent açık turkuaza çekilir, blur 0 kalır) */
+[data-theme="dark"][data-style="kids-playground"] { --bg: #141c22; --bg-2: #1c262e; --surface: #18222a; --surface-2: #24313a; --ink: #f0f4f2; --ink-soft: #b0bcc0; --ink-faint: #7c8a90; --accent: #7fd3c8; --accent-ink: #0e1518; --line: rgba(240,244,242,.16); --shadow-hard: 0 6px 0 var(--line); }

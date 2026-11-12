@@ -1,0 +1,20 @@
+/* 44 · Utility — token bloğu (kaynak: styles/44-utility/tokens.json) */
+
+[data-style="utility"] {
+  --bg: #ffffff; --bg-2: #f6f6f7;
+  --surface: #ffffff; --surface-2: #fafafa;
+  --ink: #111112; --ink-soft: #5a5f66; --ink-faint: #9298a0;
+  --accent: #1d4ed8; --accent-ink: #ffffff;
+  --line: rgba(17,17,18,.10);
+  --radius: 8px; --radius-lg: 12px;
+  --shadow: 0 1px 2px rgba(17,17,18,.06); --shadow-hard: none;
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0em; --blur: 12px; --grain: 0;
+}
+
+[data-theme="dark"][data-style="utility"] {
+  --bg: #000000; --bg-2: #181818; --surface: #1f1f1f; --surface-2: #272727;
+  --ink: #ffffff; --ink-soft: #9b9b9b; --ink-faint: #6e6e6e; --accent: #7aa2ff; --accent-ink: #000000; --line: rgba(255,255,255,.12);
+}

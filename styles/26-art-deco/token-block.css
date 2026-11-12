@@ -1,0 +1,20 @@
+/* 26 · Art Deco — token bloğu (kaynak: styles/26-art-deco/tokens.json) */
+
+[data-style="art-deco"] {
+  --bg: #0e1b17; --bg-2: #14241e;
+  --surface: #12211c; --surface-2: #18302a;
+  --ink: #ede3d2; --ink-soft: #bcb2a1; --ink-faint: #8a8172;
+  --accent: #c8a24a; --accent-ink: #0e1b17;
+  --line: rgba(200,162,74,.55);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cinzel", "Poiret One", Georgia, serif;
+  --font-body: "Jost", "Inter", system-ui, sans-serif;
+  --font-mono: "Courier New", ui-monospace, monospace;
+  --tracking: 0.22em; --blur: 0px; --grain: .03;
+}
+
+[data-theme="dark"][data-style="art-deco"] {
+  --bg: #08120f; --bg-2: #0d1a16; --surface: #0b1713; --surface-2: #112420;
+  --ink: #f2ead9; --ink-soft: #c3b9a7; --ink-faint: #918877; --accent: #d8b34f; --accent-ink: #0a1512; --line: rgba(216,179,79,.48);
+}

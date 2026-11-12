@@ -1,0 +1,23 @@
+/* 10 · Neumorphism — token bloğu (kaynak: styles/10-neumorphism/tokens.json) */
+
+[data-style="neumorphism"] {
+  --bg: #e4e8ef; --bg-2: #dde2ea;
+  --surface: #e4e8ef; --surface-2: #e9edf3;
+  --ink: #333a45; --ink-soft: #5d6674; --ink-faint: #8b93a1;
+  --accent: #4262e8; --accent-ink: #ffffff;
+  --line: transparent;
+  --radius: 16px; --radius-lg: 24px;
+  --shadow: 6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff;
+  --shadow-hard: inset 6px 6px 12px #cfd4dd, inset -6px -6px 12px #f8fbff;
+  --font-display: "Nunito Sans", "Inter", system-ui, sans-serif;
+  --font-body: "Nunito Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0em; --blur: 0px; --grain: 0;
+  --focus: #4262e8;
+}
+
+[data-theme="dark"][data-style="neumorphism"] {
+  --bg: #23262e; --bg-2: #1c1f26; --surface: #23262e; --surface-2: #33363d;
+  --ink: #e6e9ef; --ink-soft: #a7aebc; --ink-faint: #7b7e85; --accent: #4262e8; --accent-ink: #ffffff; --line: rgba(230,233,239,.14);
+  --focus: #4a69e8;
+}

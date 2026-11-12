@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akış şeritleri · style-lab</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: #101112; color: #e8e6e1; font: 13px/1.5 ui-sans-serif, system-ui, sans-serif; }
+  header { position: sticky; top: 0; z-index: 10; display: flex; gap: 12px; align-items: center; padding: 12px 16px; background: #16181a; border-bottom: 1px solid #2a2c2e; }
+  header h1 { font-size: 14px; margin: 0; font-weight: 600; }
+  header .grow { flex: 1; }
+  select, a { font: inherit; color: #e8e6e1; background: #1d2023; border: 1px solid #2f3235; border-radius: 6px; padding: 6px 10px; text-decoration: none; }
+  main { padding: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(520px, 1fr)); gap: 14px; }
+  figure { margin: 0; background: #16181a; border: 1px solid #2a2c2e; border-radius: 8px; overflow: hidden; }
+  figure img { display: block; width: 100%; background: #fff; }
+  figcaption { display: flex; justify-content: space-between; padding: 8px 10px; font-size: 11px; color: #9aa0a6; }
+  figcaption b { color: #e8e6e1; font-weight: 500; }
+  .empty { color: #9aa0a6; padding: 24px; border: 1px dashed #2f3235; border-radius: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Akış şeritleri</h1>
+  <span id="meta" style="color:#9aa0a6"></span>
+  <span class="grow"></span>
+  <label for="styleSel" style="color:#9aa0a6">stil</label>
+  <select id="styleSel"></select>
+</header>
+<main><div id="grid" class="grid"></div></main>
+<script src="live-styles.js"></script>
+<script>
+(() => {
+  const qs = new URLSearchParams(location.search);
+  const list = window.LIVE_STYLES || [];
+  const sel = document.getElementById('styleSel');
+  const grid = document.getElementById('grid');
+  const meta = document.getElementById('meta');
+  const FLOWS = [
+    ['onboarding', 'İlk kurulum'], ['checkout', 'Ödeme'], ['invite', 'Davet'],
+  ];
+  for (const s of list) {
+    const o = document.createElement('option');
+    o.value = s.slug; o.textContent = s.num + ' · ' + s.name;
+    sel.appendChild(o);
+  }
+  const current = qs.get('style') || list[0]?.slug;
+  if (current) sel.value = current;
+  sel.addEventListener('change', () => { location.search = '?style=' + sel.value; });
+
+  const dirOf = (slug) => (list.find((x) => x.slug === slug) || {}).num?.padStart(2, '0') + '-' + slug;
+  const dir = dirOf(sel.value || current);
+  meta.textContent = dir + ' · 3 akış × 3 adım';
+
+  for (const [id, label] of FLOWS) {
+    const fig = document.createElement('figure');
+    const img = document.createElement('img');
+    img.loading = 'lazy';
+    img.alt = label + ' · ' + (sel.value || current);
+    img.src = '.shots-cache/' + encodeURIComponent(dir) + '/flows/' + id + '.png';
+    img.onerror = () => {
+      fig.replaceWith(Object.assign(document.createElement('div'), {
+        className: 'empty',
+        textContent: 'Bu akış henüz üretilmemiş: node kit/render/render-flows.mjs --styles ' + (sel.value || current),
+      }));
+    };
+    const cap = document.createElement('figcaption');
+    cap.innerHTML = '<b>' + label + '</b><span>' + id + '</span>';
+    fig.append(img, cap);
+    grid.append(fig);
+  }
+})();
+</script>
+<script src="viewer-nav.js"></script>
+<script src="viewer-lightbox.js"></script>
+</body>
+</html>

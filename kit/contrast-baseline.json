@@ -1,0 +1,1 @@
+{"_readme":"Bilinen ve kabul edilmiş kontrast borçları. Buraya yalnızca kaydı olan istisna girer; yeni bir stil accent kontrastını düşürürse check-contrast onu HATA olarak raporlar. Bir stili v2 şemasına taşırken borcunu kapat ve bu dosyadan sil. Tüm accent borçları kapatıldı (2026-11): accent-ink veya accent tonu düzeltildi."}

@@ -1,0 +1,48 @@
+/* 84 · Volcanic Mineral — token bloğu (açık + koyu)
+   Kaynak: styles/84-volcanic-mineral/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="volcanic-mineral"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="volcanic-mineral"] {
+  /* --- sözleşme: renk --- */
+  --bg: #14120f;
+  --bg-2: #0e0d0b;
+  --surface: #1c1916;
+  --surface-2: #26221d;
+  --ink: #f0eae0;
+  --ink-soft: #b6a998;
+  --ink-faint: #877d6d;
+  --accent: #e0572a;
+  --accent-ink: #120603;
+  --line: rgba(240,234,224,.14);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 0px;
+  --radius-lg: 2px;
+  --shadow: 0 8px 22px -12px rgba(0,0,0,.9);
+  --shadow-hard: 0 0 0 1px rgba(224,87,42,.5);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Michroma", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: .04em;
+  --blur: 0px;
+  --grain: .02;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #ff6b5a;
+  --danger-ink: #170704;
+  --ok: #8fae5a;
+  --warn: #d8b04a;
+}
+
+[data-theme="dark"][data-style="volcanic-mineral"] {
+  --bg:#040403;
+  --bg-2:#0b0a08;
+  --surface:#100e0b;
+  --surface-2:#191512;
+  --ink:#f8f3ea;
+  --ink-soft:#b9b0a1;
+  --ink-faint:#8b8276;
+  --accent:#ff8a4d;
+  --accent-ink:#140703;
+  --line:rgba(248,243,234,.22);
+}

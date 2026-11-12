@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Emlak · Harita</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="estate.css">
+<style id="extra"></style>
+</head>
+<body class="__BODY_CLASS__" style="overflow:hidden">
+<div class="est">
+
+  <header class="nav">
+    <div class="brand"><span class="mark">N</span> Northwind Estate</div>
+    <nav class="nav-links">
+      <a href="#">Portföy</a><a href="#">Semtler</a><a href="#">Koleksiyon</a><a href="#">Danışmanlık</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn ghost sm" href="#">Harita</a>
+      <a class="btn sm" href="#">Görüşme talep et</a>
+    </div>
+  </header>
+
+  <h1 class="sr-only">Portföy haritası</h1>
+
+  <div class="est-search">
+    <aside class="est-filters">
+      <div class="est-between">
+        <span class="est-h3">Filtre</span>
+        <span class="est-mono">12 / 186</span>
+      </div>
+      <input class="field" placeholder="Semt, ada veya ilan no" aria-label="arama">
+      <div class="grp">
+        <span class="est-mono">işlem</span>
+        <div class="est-chips">
+          <span class="chip accent">satılık</span><span class="chip">kiralık</span><span class="chip">yeni proje</span>
+        </div>
+      </div>
+      <div class="grp">
+        <span class="est-mono">bütçe · ₺40m — ₺120m</span>
+        <div class="est-range">
+          <div class="track"><i></i></div>
+          <span class="kn a"></span><span class="kn b"></span>
+        </div>
+      </div>
+      <div class="grp">
+        <span class="est-mono">oda</span>
+        <div class="est-chips">
+          <span class="chip">2+1</span><span class="chip accent">4+1</span><span class="chip">6+</span>
+        </div>
+      </div>
+      <div class="grp">
+        <span class="est-mono">özellik</span>
+        <div class="est-chips">
+          <span class="chip">manzara</span><span class="chip">havuz</span><span class="chip">bahçe</span><span class="chip">iskele</span>
+        </div>
+      </div>
+      <div class="divider" style="margin:2px 0"></div>
+      <div class="est-between"><span class="est-mono">kayıtlı arama</span><span class="est-mono">2</span></div>
+    </aside>
+
+    <div class="est-results">
+      <div class="est-map" style="min-height:540px">
+        <div class="water"></div>
+        <div class="road r1"></div>
+        <div class="road r2"></div>
+        <div class="road r3"></div>
+        <div class="est-pin p1"><i></i><b>₺84.5m · 4+1</b></div>
+        <div class="est-pin p2"><i></i><b>₺62m · 3+1</b></div>
+        <div class="est-pin p3"><i></i><b>₺118m · 6+2</b></div>
+        <div class="est-pin p4"><i></i><b>₺46m · 2+1</b></div>
+        <div class="est-map-card">
+          <div class="est-photo __MOTIF__"><span class="est-cap">04 · yalı dairesi</span></div>
+          <div class="bd">
+            <div class="est-between"><b style="font-size:12px">Yalı Dairesi</b><span class="est-num">₺84.5m</span></div>
+            <span class="est-mono" style="font-size:8px">Beşiktaş · 320 m² · 4+1</span>
+          </div>
+        </div>
+        <span class="chip" style="position:absolute;right:12px;bottom:12px;z-index:3">4 / 186 · %18</span>
+        <div class="est-map-legend"><span><i></i> portföy</span><span><i style="background:var(--ink-soft)"></i> okul / iskele</span></div>
+      </div>
+
+      <div class="est-mini">
+        <div class="est-between"><span class="est-mono">seçili · 4</span><span class="est-mono">fiyat ↓</span></div>
+        <div class="it on">
+          <div class="est-photo"></div>
+          <div class="tx"><b>Yalı Dairesi</b><span>beşiktaş · 4+1 · 320 m²</span></div>
+          <span class="est-num">₺84.5m</span>
+        </div>
+        <div class="it">
+          <div class="est-photo"></div>
+          <div class="tx"><b>Orman Evi</b><span>beykoz · 3+1 · 240 m²</span></div>
+          <span class="est-num">₺62m</span>
+        </div>
+        <div class="it">
+          <div class="est-photo"></div>
+          <div class="tx"><b>Çamlık Konak</b><span>sarıyer · 6+2 · 610 m²</span></div>
+          <span class="est-num">₺118m</span>
+        </div>
+        <div class="it">
+          <div class="est-photo"></div>
+          <div class="tx"><b>Vadi Dairesi</b><span>üsküdar · 2+1 · 128 m²</span></div>
+          <span class="est-num">₺46m</span>
+        </div>
+        <span class="est-note">12 sonuç · harita üstünde 4 iğne</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="est-foot" style="padding:12px 52px 16px">
+    <div class="brand-col"><div class="brand"><span class="mark">N</span> Northwind Estate</div></div>
+    <div><div class="col-h">Portföy</div><ul><li>Satılık</li><li>Kiralık</li></ul></div>
+    <div><div class="col-h">Semtler</div><ul><li>Beşiktaş</li><li>Sarıyer</li></ul></div>
+    <div><div class="col-h">İletişim</div><ul><li>+90 212 000 00 00</li><li>randevu@northwind.estate</li></ul></div>
+  </footer>
+
+  <div class="sig"></div>
+</div>
+</body>
+</html>

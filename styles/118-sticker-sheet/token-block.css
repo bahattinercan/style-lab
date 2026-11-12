@@ -1,0 +1,5 @@
+/* 118 · Sticker Sheet — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="sticker-sheet"] { --bg: #f7f6f2; --bg-2: #ecebe4; --surface: #ffffff; --surface-2: #f2f1ea; --ink: #16160f; --ink-soft: #4a4a40; --ink-faint: #78786c; --accent: #b5174e; --accent-ink: #fff5f7; --line: rgba(22,22,15,.18); --radius: 10px; --radius-lg: 16px; --shadow: 2px 2px 0 rgba(22,22,15,.92); --shadow-hard: 2px 2px 0 rgba(22,22,15,.92); --font-display: "Nunito", system-ui, sans-serif; --font-body: "Poppins", system-ui, sans-serif; --font-mono: "Silkscreen", "Courier Prime", monospace; --tracking: -0.01em; --blur: 0px; --grain: 0; }
+
+/* 118 · Sticker Sheet — koyu tema (palette.dark ile birebir aynı; kâğıt antrasite döner, die-cut halka koyulaşır, ofset gölge mürekkep siyahına yaklaşır) */
+[data-theme="dark"][data-style="sticker-sheet"] { --bg: #121210; --bg-2: #1b1b18; --surface: #171714; --surface-2: #24241f; --ink: #f4f3ea; --ink-soft: #b3b2a5; --ink-faint: #7f7e72; --accent: #f472a0; --accent-ink: #1a0a10; --line: rgba(244,243,234,.16); --shadow-hard: 2px 2px 0 rgba(22,22,15,.92); }

@@ -1,0 +1,5 @@
+/* styles/104-stepped-mechanism/token-block.css — üretildi; kaynak tokens.json.
+[data-style="stepped-mechanism"] { --bg: #a0a6aa; --bg-2: #979da1; --surface: #abb1b5; --surface-2: #8b9195; --ink: #0f1417; --ink-soft: #2b3238; --ink-faint: #485056; --accent: #1f6b3d; --accent-ink: #ffffff; --line: rgba(15,20,23,.22); --radius: 8px; --radius-lg: 16px; --shadow: 0 8px 18px -14px rgba(15,20,23,.5); --shadow-hard: 0 2px 0 var(--ink); --font-display: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace; --font-body: "Inter", ui-sans-serif, system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; --tracking: 0.03em; --blur: 0px; --grain: .01; --danger: #8f1f1c; --danger-ink: #ffffff; --ok: #0e2f1b; --warn: #382603; --focus: #1d5e37; }
+
+/* Stepped Mechanism — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="stepped-mechanism"] { --bg: #15191c; --bg-2: #1b2024; --surface: #22272b; --surface-2: #2b3136; --ink: #eaf0f3; --ink-soft: #adb8be; --ink-faint: #7f8a90; --accent: #4fbf7a; --accent-ink: #05170c; --line: rgba(234,240,243,.17); --ok: #32af64; --warn: #ce8c0c; --focus: #4fbf7a; }

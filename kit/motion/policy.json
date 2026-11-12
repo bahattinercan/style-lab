@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "_readme": "Hareket politikası tek kaynağı. `forbidden` = üretimde kullanılmayacak desenler (playbook §6.1 #10). `teachingOnly` = laboratuvarda gösterilebilir ama katalog koreografisine atanamaz. M1 atama sözlüğü ve build-motion-lab --check bu dosyayı okur.",
+  "forbidden": [
+    {
+      "id": "custom-cursor",
+      "reason": "Özel imleç dokunma/klavye kullanıcısını yanıltır; odak halkasını gizleme riski taşır (WCAG 2.4.7).",
+      "demospattern": "cursor-blend|image-trail|gooey-hover"
+    },
+    {
+      "id": "scroll-hijack",
+      "reason": "Kaydırmayı ele geçirmek tarayıcı beklentisini kırar (WCAG 2.2.2, geri tuşu/klavye).",
+      "demospattern": "horizontal-pin|snap-gallery"
+    },
+    {
+      "id": "marquee-multi",
+      "reason": "Birden fazla sonsuz kayan şerit dikkat dağıtır ve sürekli animasyon durdurma kontrolü gerektirir.",
+      "demospattern": "kinetic-marquee"
+    },
+    {
+      "id": "flash-burst",
+      "reason": "Saniyede 3'ten fazla parlama/flaş fotosensitivite riskidir.",
+      "demospattern": "confetti-burst"
+    }
+  ],
+  "teachingOnly": {
+    "cursor-blend": "Laboratuvar: 'özel imleç' deseninin ne olduğunu göstermek için. Katalog koreografisine atanamaz.",
+    "image-trail": "Laboratuvar: imleç takibi tekniği. Üretimde yasak (custom-cursor).",
+    "gooey-hover": "Laboratuvar: SVG gooey tekniği. Üretimde atanmaz (imleç takibi).",
+    "horizontal-pin": "Laboratuvar: yatay track tekniği. Üretimde yasak (scroll-hijack).",
+    "snap-gallery": "Laboratuvar: scroll-snap tekniği. Yatay zorunlu akış üretimde atanmaz.",
+    "kinetic-marquee": "Laboratuvar: marquee tekniği. Katalogda en çok 1 şerit (M1 kontrolü).",
+    "confetti-burst": "Laboratuvar: kutlama efekti. Flaş yoğunluğu üretimde atanmaz."
+  }
+}

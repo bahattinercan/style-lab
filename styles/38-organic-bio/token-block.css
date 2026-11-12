@@ -1,0 +1,20 @@
+/* 38 · Organic / Biophilic — token bloğu (kaynak: styles/38-organic-bio/tokens.json) */
+
+[data-style="organic-bio"] {
+  --bg: #f3f1e7; --bg-2: #e7e4d6;
+  --surface: #fbfaf4; --surface-2: #eeece0;
+  --ink: #232a22; --ink-soft: #55604f; --ink-faint: #848b78;
+  --accent: #4f7a45; --accent-ink: #fbfaf4;
+  --line: rgba(35,42,34,.16);
+  --radius: 18px; --radius-lg: 26px;
+  --shadow: 0 6px 18px rgba(35,42,34,.10); --shadow-hard: none;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Nunito", "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: .04;
+}
+
+[data-theme="dark"][data-style="organic-bio"] {
+  --bg: #171c16; --bg-2: #242923; --surface: #212720; --surface-2: #313730;
+  --ink: #eef1e7; --ink-soft: #aeb1a8; --ink-faint: #787c74; --accent: #8fbf7d; --accent-ink: #0d0d0d; --line: rgba(238,241,231,.14);
+}

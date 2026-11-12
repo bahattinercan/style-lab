@@ -1,0 +1,48 @@
+/* 128 · Brass Copper — token bloğu (açık + koyu)
+   Kaynak: styles/128-brass-copper/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="brass-copper"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="brass-copper"] {
+  /* --- sözleşme: renk --- */
+  --bg: #1a1512;
+  --bg-2: #130f0d;
+  --surface: #221b16;
+  --surface-2: #2c231c;
+  --ink: #f0e7da;
+  --ink-soft: #bda892;
+  --ink-faint: #8a7862;
+  --accent: #c9743c;
+  --accent-ink: #1a0d05;
+  --line: rgba(240,231,218,.15);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 5px;
+  --radius-lg: 12px;
+  --shadow: 0 8px 24px -16px rgba(0,0,0,.85);
+  --shadow-hard: 0 0 0 1px rgba(201,116,60,.45);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Cinzel", Georgia, serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: .12em;
+  --blur: 0px;
+  --grain: .035;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #e2664f;
+  --danger-ink: #1c0703;
+  --ok: #8fae62;
+  --warn: #d6ab52;
+}
+
+[data-theme="dark"][data-style="brass-copper"] {
+  --bg:#0b0705;
+  --bg-2:#080403;
+  --surface:#120d0a;
+  --surface-2:#1a1310;
+  --ink:#f8f0e5;
+  --ink-soft:#cdbba7;
+  --ink-faint:#9a876f;
+  --accent:#f0a062;
+  --accent-ink:#1a0d05;
+  --line:rgba(248,240,229,.18);
+}

@@ -1,0 +1,48 @@
+/* 81 · Forest Bark — token bloğu (açık + koyu)
+   Kaynak: styles/81-forest-bark/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="forest-bark"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="forest-bark"] {
+  /* --- sözleşme: renk --- */
+  --bg: #1f2620;
+  --bg-2: #19201a;
+  --surface: #283029;
+  --surface-2: #313b31;
+  --ink: #ecefe3;
+  --ink-soft: #b4bfa8;
+  --ink-faint: #85917b;
+  --accent: #d7a469;
+  --accent-ink: #201708;
+  --line: rgba(236,239,227,.15);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 5px;
+  --radius-lg: 11px;
+  --shadow: 0 2px 10px rgba(8,12,9,.45);
+  --shadow-hard: 0 0 0 1px rgba(215,164,105,.35);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Lora", Georgia, serif;
+  --font-body: "EB Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -.01em;
+  --blur: 0px;
+  --grain: .07;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #e07a5f;
+  --danger-ink: #1d0906;
+  --ok: #9ec27a;
+  --warn: #d9b25f;
+}
+
+[data-theme="dark"][data-style="forest-bark"] {
+  --bg:#0a0d08;
+  --bg-2:#0d110a;
+  --surface:#131711;
+  --surface-2:#1b2117;
+  --ink:#f1f4e7;
+  --ink-soft:#bcc7ae;
+  --ink-faint:#8d9a80;
+  --accent:#e9bd7f;
+  --accent-ink:#171004;
+  --line:rgba(241,244,231,.22);
+}

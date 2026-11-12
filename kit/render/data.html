@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Veri bileşenleri</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-data __BODY_CLASS__">
+  <div class="comp-head">
+    <h2>Veri bileşenleri</h2>
+    <span class="label">07 · __STYLE__ · tablo · kpi · grafik</span>
+  </div>
+
+  <div class="kpi-row">
+    <div class="panel kpi">
+      <span class="k">Aktif proje</span>
+      <span class="row"><span class="v">24</span><span class="d up">__ICON:chevron-down:11__ 3</span></span>
+      <svg class="spark" width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="0,15 14,13 28,14 42,9 56,11 70,6 84,7 100,3" fill="none" stroke-width="1.6" style="stroke: var(--data-1)"/>
+      </svg>
+    </div>
+    <div class="panel kpi">
+      <span class="k">Tamamlanan</span>
+      <span class="row"><span class="v">128</span><span class="d up">__ICON:chevron-down:11__ 12</span></span>
+      <svg class="spark" width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="0,17 14,16 28,12 42,13 56,9 70,10 84,5 100,4" fill="none" stroke-width="1.6" style="stroke: var(--data-1)"/>
+      </svg>
+    </div>
+    <div class="panel kpi">
+      <span class="k">Bekleyen</span>
+      <span class="row"><span class="v">9</span><span class="d down">__ICON:chevron-down:11__ 2</span></span>
+      <svg class="spark" width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="0,6 14,8 28,7 42,11 56,10 70,14 84,13 100,16" fill="none" stroke-width="1.6" style="stroke: var(--data-2)"/>
+      </svg>
+    </div>
+    <div class="panel kpi">
+      <span class="k">Gelir · bu ay</span>
+      <span class="row"><span class="v">₺48.200</span><span class="d up">__ICON:chevron-down:11__ %8</span></span>
+      <svg class="spark" width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="0,14 14,15 28,11 42,12 56,8 70,9 84,6 100,2" fill="none" stroke-width="1.6" style="stroke: var(--data-1)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="data-grid">
+    <section class="panel sheet-panel tbl-wrap">
+      <h3>Projeler <span class="n">24 kayıt</span></h3>
+      <div style="flex:1;min-height:0">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th style="width:22px"><span class="opt"><input type="checkbox"><span class="box"></span></span></th>
+              <th>Proje <span class="srt">__ICON:chevron-down:10__</span></th>
+              <th>Durum</th>
+              <th>Ekip</th>
+              <th class="num">İlerleme</th>
+              <th class="num">Güncelleme</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="on">
+              <td><span class="opt"><input type="checkbox" checked><span class="box"></span></span></td>
+              <td>Atlas</td>
+              <td><span class="chip accent">aktif</span></td>
+              <td><span class="who"><span class="avatar">EB</span> Elif</span></td>
+              <td class="num mono">%72</td>
+              <td class="num mono">2 sa</td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Fatura akışı</td>
+              <td><span class="chip">bekler</span></td>
+              <td><span class="who"><span class="avatar">MK</span> Mert</span></td>
+              <td class="num mono">%40</td>
+              <td class="num mono">5 sa</td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Kampanya Q4</td>
+              <td><span class="chip accent">aktif</span></td>
+              <td><span class="who"><span class="avatar">SA</span> Selin</span></td>
+              <td class="num mono">%88</td>
+              <td class="num mono">dün</td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Onboarding</td>
+              <td><span class="chip">taslak</span></td>
+              <td><span class="who"><span class="avatar">DB</span> Deniz</span></td>
+              <td class="num mono">%15</td>
+              <td class="num mono">2 gün</td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Arşiv taşıma</td>
+              <td><span class="chip">duraklatıldı</span></td>
+              <td><span class="who"><span class="avatar">EB</span> Elif</span></td>
+              <td class="num mono">%60</td>
+              <td class="num mono">4 gün</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pager">
+        <span class="pg">__ICON:chevron-left:11__</span>
+        <span class="pg on">1</span>
+        <span class="pg">2</span>
+        <span class="pg">3</span>
+        <span class="pg">__ICON:chevron-right:11__</span>
+        <span class="cnt">1–5 / 24 · 5 satır</span>
+      </div>
+    </section>
+
+    <div class="stack">
+      <section class="panel sheet-panel">
+        <h3>Dağılım <span class="n">08</span></h3>
+        <div class="donut-wrap">
+          <div class="donut"><b>%42</b></div>
+          <div class="legend">
+            <div><i style="background:var(--data-1)"></i> Tasarım <b>%42</b></div>
+            <div><i style="background:var(--data-2)"></i> Mühendislik <b>%29</b></div>
+            <div><i style="background:var(--data-3)"></i> İçerik <b>%17</b></div>
+            <div><i style="background:var(--surface-2);border:1px solid var(--line)"></i> Diğer <b>%12</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel sheet-panel">
+        <h3>İlerleme <span class="n">09</span></h3>
+        <div class="prog-row"><span class="t">Atlas <b>%72</b></span><span class="track"><i style="width:72%"></i></span></div>
+        <div class="prog-row"><span class="t">Kampanya Q4 <b>%88</b></span><span class="track"><i class="d2" style="width:88%"></i></span></div>
+      </section>
+
+      <section class="panel sheet-panel">
+        <h3>Zaman çizelgesi <span class="n">10</span></h3>
+        <div class="tl">
+          <div class="ev"><span class="dt"></span><span class="tx">Sürüm 2.4 yayınlandı<span>12 EKİ · 09:40</span></span></div>
+          <div class="ev"><span class="dt" style="background:var(--data-2)"></span><span class="tx">Tasarım turu onaylandı<span>11 EKİ · 17:20</span></span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="chart-grid">
+    <section class="panel sheet-panel chart-box">
+      <div class="hd"><h3>Haftalık oturum</h3><span class="chip">son 8 hafta</span></div>
+      <svg class="linechart" viewBox="0 0 300 90" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="0" y1="22" x2="300" y2="22" stroke-width="1" style="stroke: var(--line)"/>
+        <line x1="0" y1="45" x2="300" y2="45" stroke-width="1" style="stroke: var(--line)"/>
+        <line x1="0" y1="68" x2="300" y2="68" stroke-width="1" style="stroke: var(--line)"/>
+        <polyline points="0,66 42,54 85,58 128,38 170,44 213,26 256,30 300,12"
+          fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--data-1)"/>
+        <polyline points="0,78 42,72 85,74 128,62 170,66 213,58 256,60 300,50"
+          fill="none" stroke-width="1.6" stroke-dasharray="4 3" stroke-linecap="round" style="stroke: var(--data-2)"/>
+        <circle cx="256" cy="30" r="3" style="fill: var(--data-1)"/>
+      </svg>
+      <div class="chart-x"><span>W34</span><span>W35</span><span>W36</span><span>W37</span><span>W38</span><span>W39</span><span>W40</span><span>W41</span></div>
+    </section>
+
+    <section class="panel sheet-panel chart-box">
+      <div class="hd"><h3>Kanal bazında dönüşüm</h3><span class="chip">%</span></div>
+      <div class="bars">
+        <div class="b"><i style="flex:0 0 62%"></i><span class="n">Pzt</span></div>
+        <div class="b alt"><i style="flex:0 0 48%"></i><span class="n">Sal</span></div>
+        <div class="b"><i style="flex:0 0 76%"></i><span class="n">Çar</span></div>
+        <div class="b alt"><i style="flex:0 0 40%"></i><span class="n">Per</span></div>
+        <div class="b"><i style="flex:0 0 88%"></i><span class="n">Cum</span></div>
+        <div class="b alt"><i style="flex:0 0 34%"></i><span class="n">Cmt</span></div>
+        <div class="b"><i style="flex:0 0 24%"></i><span class="n">Paz</span></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="sig"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* 25 · Frutiger Aero — token bloğu (kaynak: styles/25-frutiger-aero/tokens.json) */
+
+[data-style="frutiger-aero"] {
+  --bg: #dff1ff; --bg-2: #bfe3ff;
+  --surface: linear-gradient(180deg, #ffffff, #d6ecff); --surface-2: #eaf6ff;
+  --ink: #0d2b45; --ink-soft: #365a75; --ink-faint: #6f8fa8;
+  --accent: #2f9be0; --accent-ink: #0d2b45;
+  --line: rgba(255,255,255,.85);
+  --radius: 14px; --radius-lg: 22px;
+  --shadow: 0 8px 20px rgba(47,155,224,.28), inset 0 1px 0 #ffffff;
+  --shadow-hard: none;
+  --font-display: "Segoe UI", "Frutiger", system-ui, sans-serif;
+  --font-body: "Segoe UI", "Myriad Pro", system-ui, sans-serif;
+  --font-mono: "Consolas", ui-monospace, monospace;
+  --tracking: 0em; --blur: 6px; --grain: 0;
+  --focus: #2a8ac9;
+}
+
+[data-theme="dark"][data-style="frutiger-aero"] {
+  --bg: #0d2233; --bg-2: #1a2f3f; --surface: linear-gradient(180deg,#15364d,#0f2839); --surface-2: linear-gradient(180deg,#15364d,#0f2839);
+  --ink: #e6f4ff; --ink-soft: #a5b5c2; --ink-faint: #6f818f; --accent: #4cb8f0; --accent-ink: #0d0d0d; --line: rgba(230,244,255,.14);
+  --focus: #4cb8f0;
+}

@@ -1,0 +1,76 @@
+/* kit/render/motion/patterns.css — ÜRETİLEN DOSYA (elle düzenleme)
+   Kaynak: kit/render/motion/patterns.json · üretim: node kit/build-motion-css.mjs
+   Desen: 20 · reduced stratejisi: 3
+   Değişkenler: --mi-dur/--mi-ease/--mi-offset/--mi-stagger (giriş), --ms-* (scroll), --mh-* (hover) */
+
+/* enter · fade-rise — Fade + yükselme */
+[data-motion='fade-rise'] .mi { opacity: 0; transform: translateY(var(--mi-offset, 16px)); transition: opacity var(--mi-dur) var(--mi-ease), transform var(--mi-dur) var(--mi-ease); transition-delay: calc(var(--mi-i, 0) * var(--mi-stagger)); } [data-motion='fade-rise'].is-in .mi { opacity: 1; transform: none; }
+
+/* enter · line-mask — Satır maskesi */
+[data-motion='line-mask'] .mi-line { display: block; overflow: hidden; } [data-motion='line-mask'] .mi-line > span { display: block; transform: translateY(105%); transition: transform var(--mi-dur) var(--mi-ease); transition-delay: calc(var(--mi-i, 0) * var(--mi-stagger)); } [data-motion='line-mask'].is-in .mi-line > span { transform: none; }
+
+/* enter · clip-curtain — Perde (clip-path) */
+[data-motion='clip-curtain'] .mi { clip-path: inset(0 100% 0 0); transition: clip-path var(--mi-dur) var(--mi-ease); transition-delay: calc(var(--mi-i, 0) * var(--mi-stagger)); } [data-motion='clip-curtain'].is-in .mi { clip-path: inset(0 0 0 0); }
+
+/* enter · blur-in — Bulanıklıktan gelme */
+[data-motion='blur-in'] .mi { opacity: 0; filter: blur(var(--mi-blur, 12px)); transition: opacity var(--mi-dur) var(--mi-ease), filter var(--mi-dur) var(--mi-ease); transition-delay: calc(var(--mi-i, 0) * var(--mi-stagger)); } [data-motion='blur-in'].is-in .mi { opacity: 1; filter: blur(0); }
+
+/* enter · scale-settle — Yerleşme (ölçek) */
+[data-motion='scale-settle'] .mi { opacity: 0; transform: scale(var(--mi-from-scale, .985)); transition: opacity var(--mi-dur) var(--mi-ease), transform var(--mi-dur) var(--mi-ease); transition-delay: calc(var(--mi-i, 0) * var(--mi-stagger)); } [data-motion='scale-settle'].is-in .mi { opacity: 1; transform: none; }
+
+/* enter · letter-stagger — Harf kademesi */
+[data-motion='letter-stagger'] .mi-char { display: inline-block; opacity: 0; transform: translateY(.35em); transition: opacity var(--mi-dur) var(--mi-ease), transform var(--mi-dur) var(--mi-ease); transition-delay: calc(var(--mi-i, 0) * var(--mi-stagger)); } [data-motion='letter-stagger'].is-in .mi-char { opacity: 1; transform: none; }
+
+/* enter · split-slide — İki koldan kayma */
+[data-motion='split-slide'] .mi { opacity: 0; transform: translateX(var(--mi-offset-x, 32px)); transition: opacity var(--mi-dur) var(--mi-ease), transform var(--mi-dur) var(--mi-ease); transition-delay: calc(var(--mi-i, 0) * var(--mi-stagger)); } [data-motion='split-slide'] .mi:nth-child(even) { --mi-offset-x: calc(-1 * var(--mi-offset-x, 32px)); } [data-motion='split-slide'].is-in .mi { opacity: 1; transform: none; }
+
+/* scroll · reveal — Scroll reveal */
+[data-motion='reveal'] .ms { opacity: 0; transform: translateY(var(--ms-offset, 24px)); transition: opacity var(--ms-dur) var(--ms-ease), transform var(--ms-dur) var(--ms-ease); } [data-motion='reveal'] .ms.is-in { opacity: 1; transform: none; }
+
+/* scroll · grid-stagger — Izgara kademesi */
+[data-motion='grid-stagger'] .ms { opacity: 0; transform: translateY(var(--ms-offset, 18px)); transition: opacity var(--ms-dur) var(--ms-ease), transform var(--ms-dur) var(--ms-ease); transition-delay: calc(var(--ms-i, 0) * var(--ms-stagger, 70ms)); } [data-motion='grid-stagger'] .ms.is-in { opacity: 1; transform: none; }
+
+/* scroll · pin-scrub — Pin + scrub */
+[data-motion='pin-scrub'] .ms { will-change: transform; transform: scale(calc(1 - (var(--p, 0) * .04))); opacity: calc(1 - (var(--p, 0) * .2)); }
+
+/* scroll · parallax — Katman parallax */
+[data-motion='parallax'] .ms[data-depth='1'] { transform: translateY(calc(var(--p, 0) * -40px)); } [data-motion='parallax'] .ms[data-depth='2'] { transform: translateY(calc(var(--p, 0) * -80px)); } [data-motion='parallax'] .ms[data-depth='3'] { transform: translateY(calc(var(--p, 0) * -130px)); }
+
+/* scroll · counter — Sayaç */
+[data-motion='counter'] .ms { font-variant-numeric: tabular-nums; }
+
+/* scroll · mask-wipe — Maske silme */
+[data-motion='mask-wipe'] .ms { clip-path: inset(0 100% 0 0); transition: clip-path var(--ms-dur) var(--ms-ease); } [data-motion='mask-wipe'] .ms.is-in { clip-path: inset(0); } @supports (animation-timeline: view()) { [data-motion='mask-wipe'] .ms { animation: mw-wipe linear both; animation-timeline: view(); animation-range: entry 10% cover 45%; } } @keyframes mw-wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+
+/* scroll · stack-pin — Yapışkan kart yığını */
+[data-motion='stack-pin'] .ms { position: sticky; top: calc(var(--stack-top, 64px) + var(--stack-i, 0) * 12px); transform-origin: 50% 0; } [data-motion='stack-pin'] .ms:nth-child(1) { --stack-i: 0; } [data-motion='stack-pin'] .ms:nth-child(2) { --stack-i: 1; } [data-motion='stack-pin'] .ms:nth-child(3) { --stack-i: 2; } [data-motion='stack-pin'] .ms:nth-child(4) { --stack-i: 3; } @supports (animation-timeline: view()) { [data-motion='stack-pin'] .ms { animation: sp-settle linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; } } @keyframes sp-settle { from { transform: scale(.96); opacity: .82; } to { transform: none; opacity: 1; } }
+
+/* scroll · velocity-skew — Hıza bağlı eğim */
+[data-motion='velocity-skew'] .ms { transform: skewY(calc(var(--ms-vel, 0) * 2deg)) translateY(calc(var(--ms-vel, 0) * -4px)); will-change: transform; }
+
+/* scroll · scroll-zoom — Ölçek yerleşmesi */
+[data-motion='scroll-zoom'] .ms { transform: scale(1.08); opacity: .55; transition: transform var(--ms-dur) var(--ms-ease), opacity var(--ms-dur) var(--ms-ease); } [data-motion='scroll-zoom'] .ms.is-in { transform: none; opacity: 1; } @supports (animation-timeline: view()) { [data-motion='scroll-zoom'] .ms { animation: sz-settle linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; } } @keyframes sz-settle { from { transform: scale(1.08); opacity: .55; } to { transform: none; opacity: 1; } }
+
+/* hover · scale — Ölçek */
+[data-motion-hover='scale'] .mh { transition: transform var(--mh-dur) var(--mh-ease); } [data-motion-hover='scale'] .mh:hover { transform: scale(var(--mh-scale, 1.02)); }
+
+/* hover · underline-draw — Alt çizgi çizimi */
+[data-motion-hover='underline-draw'] .mh { position: relative; } [data-motion-hover='underline-draw'] .mh::after { content: ''; position: absolute; left: 0; bottom: -.12em; height: 1px; width: 100%; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform var(--mh-dur) var(--mh-ease); } [data-motion-hover='underline-draw'] .mh:hover::after, [data-motion-hover='underline-draw'] .mh:focus-visible::after { transform: scaleX(1); }
+
+/* hover · tilt-3d — 3D eğilme */
+[data-motion-hover='tilt-3d'] .mh { transition: transform var(--mh-dur) var(--mh-ease); transform-style: preserve-3d; } [data-motion-hover='tilt-3d'] .mh:hover { transform: perspective(700px) rotateX(3deg) rotateY(-3deg); }
+
+/* page · crossfade — Sayfa geçişi */
+@view-transition { navigation: auto; } ::view-transition-old(root) { animation: mf-out var(--mp-dur, 320ms) var(--mp-ease, ease) both; } ::view-transition-new(root) { animation: mf-in var(--mp-dur, 320ms) var(--mp-ease, ease) both; } @keyframes mf-out { to { opacity: 0 } } @keyframes mf-in { from { opacity: 0 } }
+
+/* reduced-motion güvenlik ağı (strateji ayrıntısı patterns.json → reduced) */
+@media (prefers-reduced-motion: reduce) {
+  [data-motion] .mi, [data-motion] .mi-line > span, [data-motion] .mi-char,
+  [data-motion] .ms, [data-motion-hover] .mh, [data-motion-hover] .mh::after {
+    transition-duration: 0.01ms !important; transition-delay: 0ms !important;
+    animation-duration: 0.01ms !important; animation-delay: 0ms !important;
+    transform: none !important; filter: none !important; clip-path: none !important;
+    opacity: 1 !important;
+  }
+  [data-motion='pin-scrub'] .ms, [data-motion='parallax'] .ms { transform: none !important; opacity: 1 !important; }
+}

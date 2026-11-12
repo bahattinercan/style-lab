@@ -1,0 +1,5 @@
+/* 99 · Depth Parallax — token bloğu (kaynak: styles/99-depth-parallax/tokens.json) */
+[data-style="depth-parallax"] { --bg: #0b1014; --bg-2: #101820; --surface: #131d26; --surface-2: #1a2732; --ink: #eaf0f4; --ink-soft: #a8b6c0; --ink-faint: #74828c; --accent: #5ac8ff; --accent-ink: #05131a; --line: rgba(234,240,244,.15); --radius: 6px; --radius-lg: 14px; --shadow: 0 4px 18px rgba(0,0,0,.45); --shadow-hard: 0 10px 32px rgba(0,0,0,.5); --font-display: "Fraunces", Georgia, serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.01em; --blur: 2px; --grain: 0; --danger: #ff8a73; --danger-ink: #260c05; --ok: #6fd6a8; --warn: #e6c27a; }
+
+/* Depth Parallax — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="depth-parallax"] { --bg: #05161a; --bg-2: #082025; --surface: #0a282e; --surface-2: #0f333a; --ink: #eef7f8; --ink-soft: #aebfc1; --ink-faint: #7d9092; --accent: #7af0ff; --accent-ink: #042022; --line: rgba(238,247,248,.18); }

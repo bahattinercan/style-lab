@@ -1,0 +1,4 @@
+{
+  "_readme": "Koyu mod borçları. tokens.json içinde palette.dark tanımlı ama kit/tokens.css koyu bloğu ve shots/17-18 üretilmemiş stiller. Yeni bir stil bu borcu eklemek isterse check-schema onu HATA sayar. Borç kapanınca (blok + 2 render) kaydı buradan sil — kapı, listede kalıp borcu olmayan slug için uyarı verir.",
+  "slugs": {}
+}

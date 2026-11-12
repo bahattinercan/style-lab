@@ -1,0 +1,14 @@
+# geçici render / QA çıktıları
+kit/qa/
+kit/render/.tmp/
+kit/render/.tmp-*.html
+kit/render/.baseline/
+*.log
+
+# işletim sistemi
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# üretilen sahne cache (repoda tutulmaz; çekirdek sahneler styles/*/shots/)
+kit/.shots-cache/

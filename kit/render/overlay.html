@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Katman bileşenleri</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-overlay __BODY_CLASS__">
+  <div class="comp-head">
+    <h2>Katman bileşenleri</h2>
+    <span class="label">06 · __STYLE__ · modal · menü · toast</span>
+  </div>
+
+  <div class="sheet cols-3">
+    <div class="col">
+      <section class="panel modal">
+        <div class="mh">
+          <h3>Yeni proje</h3>
+          <span class="x">__ICON:x:14__</span>
+        </div>
+        <div class="mb">
+          <p>Proje adı ve görünürlüğü belirle. Sonra ekip üyelerini davet edebilirsin.</p>
+          <div class="ctl">
+            <span class="lbl">Proje adı</span>
+            <input class="field" value="Kuzey Kampanyası" aria-label="proje adı">
+          </div>
+          <div class="ctl">
+            <span class="lbl">Şablon</span>
+            <span class="f-wrap sel-wrap">
+              <select class="field sel" aria-label="şablon"><option>Kampanya</option><option>Ürün lansmanı</option></select>
+            </span>
+          </div>
+          <div class="ctl">
+            <span class="lbl">Görünürlük</span>
+            <div class="opt-col">
+              <label class="opt round"><input type="radio" name="ov" checked><span class="box"></span> Ekip</label>
+              <label class="opt round"><input type="radio" name="ov"><span class="box"></span> Özel</label>
+            </div>
+          </div>
+          <div class="ctl">
+            <span class="lbl">Ekip</span>
+            <div class="fbar">
+              <span class="chip accent">EB</span>
+              <span class="chip">MK</span>
+              <span class="chip">SA</span>
+              <span class="chip">__ICON:plus:10__ davet</span>
+            </div>
+          </div>
+          <div class="ctl">
+            <span class="lbl">Açıklama <b>isteğe bağlı</b></span>
+            <textarea class="field area" aria-label="açıklama">Q4 lansmanı için ortak çalışma alanı.</textarea>
+          </div>
+        </div>
+        <div class="mf">
+          <span class="hint">Esc ile kapanır</span>
+          <span class="btn ghost sm">Vazgeç</span>
+          <span class="btn sm">Oluştur</span>
+        </div>
+      </section>
+
+      <section class="panel modal dialog">
+        <div class="mb">
+          <span class="dlg-ico">__ICON:alert:17__</span>
+          <strong>Proje silinsin mi?</strong>
+          <p>Bu işlem geri alınamaz. 12 dosya ve 3 yorum kalıcı olarak silinir.</p>
+        </div>
+        <div class="mf">
+          <span class="btn ghost sm">Vazgeç</span>
+          <span class="btn danger sm">Sil</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel sheet-panel">
+        <h3>Açılır menü <span class="n">04</span></h3>
+        <div class="menu">
+          <div class="it on">__ICON:settings:13__ Düzenle <span class="k">⌘E</span></div>
+          <div class="it">__ICON:download:13__ Dışa aktar <span class="k">⌘⇧D</span></div>
+          <div class="it">__ICON:user:13__ Paylaş <span class="k">⌘P</span></div>
+          <div class="sep"></div>
+          <div class="it danger">__ICON:trash:13__ Sil</div>
+        </div>
+      </section>
+
+      <section class="panel sheet-panel">
+        <h3>Popover <span class="n">05</span></h3>
+        <div class="popover">
+          <strong>Filtre kaydedildi</strong>
+          <span>“Q4 aktif” filtresi kenar çubuğunda görünecek.</span>
+          <span class="chip accent" style="align-self:flex-start">__ICON:check:10__ tamam</span>
+        </div>
+      </section>
+
+      <section class="panel sheet-panel">
+        <h3>İpucu <span class="n">06</span></h3>
+        <div class="tip-row">
+          <span class="tip">Raporu indir · ⌘D</span>
+          <span class="btn ghost sm">__ICON:download:13__ İndir</span>
+          <span class="chip" style="margin-left:auto">1.5sn gecikme</span>
+        </div>
+      </section>
+
+      <section class="panel sheet-panel" style="flex:1">
+        <h3>Karartma <span class="n">07</span></h3>
+        <div class="scrim-row">
+          <div class="scrim"><i></i><i class="s"></i><i></i><span class="cap">%25</span></div>
+          <div class="scrim m45"><i></i><i class="s"></i><i></i><span class="cap">%45</span></div>
+          <div class="scrim m70"><i></i><i class="s"></i><i></i><span class="cap">%70</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="fbar">
+          <span class="chip">kapatma: Esc</span>
+          <span class="chip">odak tuzağı</span>
+          <span class="chip">aria-modal</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel drawer" style="flex:1.35">
+        <div class="dh">
+          <h3>Ekip üyeleri</h3>
+          <span class="chip">5 kişi</span>
+          <span class="x">__ICON:x:14__</span>
+        </div>
+        <div class="db">
+          <div class="mrow">
+            <span class="avatar">EB</span>
+            <span class="nm">Elif Barut<span>sahip</span></span>
+            <span class="chip accent">aktif</span>
+          </div>
+          <div class="mrow">
+            <span class="avatar">MK</span>
+            <span class="nm">Mert Kaya<span>editör</span></span>
+            <span class="chip">davetli</span>
+          </div>
+          <div class="mrow">
+            <span class="avatar">SA</span>
+            <span class="nm">Selin Aydın<span>görüntüleyici</span></span>
+            <span class="chip">davetli</span>
+          </div>
+          <div class="mrow">
+            <span class="avatar">DB</span>
+            <span class="nm">Deniz Bulut<span>editör</span></span>
+            <span class="chip accent">aktif</span>
+          </div>
+          <div class="mrow">
+            <span class="avatar">+</span>
+            <span class="nm">Davet bağlantısı<span>kalan 3 gün</span></span>
+            <span class="chip">kopyala</span>
+          </div>
+        </div>
+        <div class="df">
+          <span class="btn sm">__ICON:plus:13__ Davet et</span>
+          <span class="btn ghost sm">Ayarlar</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="toasts">
+          <div class="toast ok"><span class="bar"></span><span class="tic">__ICON:check:14__</span> Değişiklikler kaydedildi <span class="x">__ICON:x:12__</span></div>
+          <div class="toast warn"><span class="bar"></span><span class="tic">__ICON:alert:14__</span> Depolama %92 dolu <span class="x">__ICON:x:12__</span></div>
+          <div class="toast bad"><span class="bar"></span><span class="tic">__ICON:alert:14__</span> Yükleme başarısız <span class="x">__ICON:x:12__</span></div>
+          <div class="toast info"><span class="bar"></span><span class="tic">__ICON:info:14__</span> Yeni sürüm hazır <span class="x">__ICON:x:12__</span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="sig"></div>
+</body>
+</html>

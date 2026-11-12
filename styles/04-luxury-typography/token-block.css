@@ -1,0 +1,22 @@
+/* 04 · Luxury Typography — token bloğu (kaynak: styles/04-luxury-typography/tokens.json) */
+
+[data-style="luxury-typography"] {
+  --bg: #f6f1e7; --bg-2: #efe7d8;
+  --surface: #fffdf8; --surface-2: #f3ecdf;
+  --ink: #1a1815; --ink-soft: #5c554b; --ink-faint: #9a9184;
+  --accent: #c6a664; --accent-ink: #1a1815;
+  --line: rgba(26,24,21,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cormorant Garamond", "Didot", Georgia, serif;
+  --font-body: "Jost", "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: .03;
+  --focus: #9b8350;
+}
+
+[data-theme="dark"][data-style="luxury-typography"] {
+  --bg: #12100e; --bg-2: #1a1714; --surface: #171512; --surface-2: #282622;
+  --ink: #efe8db; --ink-soft: #b3aa9c; --ink-faint: #75716a; --accent: #d8bb7d; --accent-ink: #0d0d0d; --line: rgba(239,232,219,.18);
+  --focus: #d8bb7d;
+}

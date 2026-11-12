@@ -1,0 +1,21 @@
+/* 11 · Claymorphism — token bloğu (kaynak: styles/11-claymorphism/tokens.json) */
+
+[data-style="claymorphism"] {
+  --bg: #f3efff; --bg-2: #e9e3ff;
+  --surface: #ffffff; --surface-2: #f6f2ff;
+  --ink: #2b2350; --ink-soft: #5b5382; --ink-faint: #8d87ad;
+  --accent: #6f4df0; --accent-ink: #ffffff;
+  --line: rgba(255,255,255,.7);
+  --radius: 24px; --radius-lg: 32px;
+  --shadow: 0 12px 24px rgba(124,92,255,.18), inset -6px -8px 16px rgba(43,35,80,.10), inset 6px 8px 16px rgba(255,255,255,.65);
+  --shadow-hard: 0 16px 28px rgba(124,92,255,.22);
+  --font-display: "Baloo 2", "Poppins", "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0em; --blur: 0px; --grain: 0;
+}
+
+[data-theme="dark"][data-style="claymorphism"] {
+  --bg: #1a1630; --bg-2: #27233c; --surface: #241f3d; --surface-2: #2c2649;
+  --ink: #ece7ff; --ink-soft: #b4add6; --ink-faint: #78748d; --accent: #8b6dff; --accent-ink: #14102a; --line: rgba(236,231,255,.14);
+}

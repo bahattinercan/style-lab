@@ -1,0 +1,35 @@
+/* styles/141-planetary-service/token-block.css — üretildi; kaynak tokens.json.
+   Entegratör: açık bloğu kit/tokens.css [data-style] bölümüne, koyu bloğu koyu mod
+   bölümüne taşır. Açık bloktaki bildirimler tokens.json "css" alanıyla aynıdır
+   (kit/build-gallery.mjs norm() karşılaştırması geçer). */
+
+[data-style="planetary-service"] {
+  --bg: #0a1420; --bg-2: #0e1a28;
+  --surface: #12202f; --surface-2: #182a3c;
+  --ink: #e6eef7; --ink-soft: #a4b6c8; --ink-faint: #75899e;
+  --accent: #2f6bc4; --accent-ink: #ffffff;
+  --line: rgba(230,238,247,.15);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: 0 16px 36px -30px rgba(2,6,12,.95); --shadow-hard: 0 0 0 1px var(--line);
+  --font-display: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.04em; --blur: 0px; --grain: .02;
+  --danger: #ff8a72; --danger-ink: #1b0a06;
+  --ok: #6fe0b0; --warn: #e8c56a;
+}
+
+[data-theme="dark"][data-style="planetary-service"] {
+  --bg: #010307; --bg-2: #040a12;
+  --surface: #0a1a2b; --surface-2: #102538;
+  --ink: #f5f9fe; --ink-soft: #c0cfdf; --ink-faint: #8ea1b6;
+  --accent: #a8d0ff; --accent-ink: #04101f;
+  --line: rgba(245,249,254,.22);
+  --radius: 0px;
+  --shadow: 0 16px 36px -30px rgba(2,6,12,.95);
+  --font-display: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.04em; --blur: 0px; --grain: .02;
+  --danger: #ff8a72; --ok: #6fe0b0; --warn: #e8c56a;
+}

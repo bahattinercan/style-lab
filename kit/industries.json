@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "_readme": "Sektör sözlüğü (P1). tokens.json → industries[] bu id'leri kullanır; içerik paketleri kit/content/<id>.json.",
+  "industries": {
+    "saas": {
+      "label": "SaaS / yazılım",
+      "pack": "saas"
+    },
+    "emlak": {
+      "label": "Emlak / konut",
+      "pack": "emlak"
+    },
+    "danismanlik": {
+      "label": "Danışmanlık",
+      "pack": "danismanlik"
+    },
+    "egitim": {
+      "label": "Eğitim",
+      "pack": "egitim"
+    },
+    "eticaret": {
+      "label": "E-ticaret",
+      "pack": "eticaret"
+    },
+    "dergi": {
+      "label": "Dergi / yayın",
+      "pack": "dergi"
+    },
+    "ajans": {
+      "label": "Ajans / stüdyo",
+      "pack": "ajans"
+    },
+    "saglik": {
+      "label": "Sağlık / klinik",
+      "pack": "saglik"
+    }
+  }
+}

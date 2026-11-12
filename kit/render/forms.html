@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Form bileşenleri</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-form __BODY_CLASS__">
+  <div class="comp-head">
+    <h1>Form bileşenleri</h1>
+    <span class="label">05 · __STYLE__ · __FAMILY__ ailesi</span>
+  </div>
+
+  <div class="sheet cols-3">
+    <section class="panel sheet-panel">
+      <h3>Metin alanları <span class="n">01</span></h3>
+
+      <div class="ctl">
+        <span class="lbl">Varsayılan</span>
+        <input class="field" placeholder="Proje adı" aria-label="varsayılan alan">
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Odaklı</span>
+        <input class="field focus" value="Kuzey Kampanyası" aria-label="odaklı alan">
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Hatalı <b>zorunlu</b></span>
+        <input class="field err" value="ornek@" aria-label="hatalı alan">
+        <span class="help err">Geçerli bir e-posta gir</span>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Pasif</span>
+        <input class="field" value="Düzenlenemez" disabled aria-label="pasif alan">
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Arama</span>
+        <span class="f-wrap">
+          <span class="ic">__ICON:search:14__</span>
+          <input class="field lp" placeholder="Proje, kişi veya etiket" aria-label="arama">
+        </span>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Çok satırlı <b>240</b></span>
+        <textarea class="field area" aria-label="not alanı">Sprint notu: kapsam onaylandı, tasarım turu Perşembe.</textarea>
+        <span class="counter">58 / 240</span>
+      </div>
+    </section>
+
+    <section class="panel sheet-panel">
+      <h3>Seçim <span class="n">02</span></h3>
+
+      <div class="ctl">
+        <span class="lbl">Açılır liste</span>
+        <span class="f-wrap sel-wrap">
+          <select class="field sel" aria-label="açılır liste">
+            <option>Tüm ekipler</option>
+            <option>Tasarım</option>
+            <option>Mühendislik</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Onay kutuları</span>
+        <div class="opt-col">
+          <label class="opt"><input type="checkbox" checked><span class="box"></span> Haftalık özet gönder</label>
+          <label class="opt"><input type="checkbox"><span class="box"></span> Yorum bildirimleri</label>
+          <label class="opt"><input type="checkbox"><span class="box mixed"></span> Kısmi seçim</label>
+        </div>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Radyo</span>
+        <div class="opt-col">
+          <label class="opt round"><input type="radio" name="vis" checked><span class="box"></span> Ekip</label>
+          <label class="opt round"><input type="radio" name="vis"><span class="box"></span> Yalnız davetliler</label>
+        </div>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Anahtarlar</span>
+        <label class="toggle"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span> Bildirimler <span class="st">AÇIK</span></label>
+        <label class="toggle"><input type="checkbox"><span class="track"><span class="thumb"></span></span> Bakım modu <span class="st">KAPALI</span></label>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Segment</span>
+        <div class="segmented"><span class="on">Günlük</span><span>Haftalık</span><span>Aylık</span></div>
+      </div>
+    </section>
+
+    <section class="panel sheet-panel">
+      <h3>Özel girdiler <span class="n">03</span></h3>
+
+      <div class="ctl">
+        <span class="lbl">Kaydırıcı <b>12 kişi</b></span>
+        <input class="slider" type="range" min="1" max="20" value="12" aria-label="ekip boyutu">
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Adet</span>
+        <span class="stepper"><span class="pm">−</span><span class="v">3</span><span class="pm">+</span></span>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Tarih</span>
+        <span class="f-wrap">
+          <span class="ic">__ICON:calendar:14__</span>
+          <input class="field lp" value="24.10.2026" aria-label="tarih">
+        </span>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Dosya</span>
+        <div class="dropzone">__ICON:upload:14__ Sürükle veya seç · PNG, PDF · 10 MB</div>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Etiketler</span>
+        <div class="tags">
+          <span class="chip accent">kampanya</span>
+          <span class="chip">q4</span>
+          <input placeholder="etiket ekle" aria-label="etiket ekle">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="sheet cols-2">
+    <section class="panel sheet-panel">
+      <h3>Filtre çubuğu <span class="n">04</span></h3>
+      <div class="ctl">
+        <span class="lbl">Arama + filtre + sırala</span>
+        <div class="fbar">
+          <span class="f-wrap">
+            <span class="ic">__ICON:search:14__</span>
+            <input class="field lp" placeholder="Ara" aria-label="filtre arama">
+          </span>
+          <span class="btn ghost sm">__ICON:filter:13__ Filtre</span>
+          <span class="btn ghost sm">__ICON:list:13__ Tarih</span>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="lbl">Aktif filtreler</span>
+        <div class="fbar">
+          <span class="chip accent">durum: aktif</span>
+          <span class="chip">ekip: tasarım</span>
+          <span class="chip">__ICON:x:10__ temizle</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel sheet-panel">
+      <h3>İki kolonlu form <span class="n">05</span></h3>
+      <div class="form-2col">
+        <div class="ctl">
+          <span class="lbl">Ad</span>
+          <input class="field" value="Elif" aria-label="ad">
+        </div>
+        <div class="ctl">
+          <span class="lbl">Soyad</span>
+          <input class="field" value="Barut" aria-label="soyad">
+        </div>
+        <div class="ctl">
+          <span class="lbl">E-posta</span>
+          <span class="f-wrap">
+            <span class="ic">__ICON:mail:14__</span>
+            <input class="field lp" value="elif@kuzey.co" aria-label="e-posta">
+          </span>
+        </div>
+        <div class="ctl">
+          <span class="lbl">Rol</span>
+          <span class="f-wrap sel-wrap">
+            <select class="field sel" aria-label="rol"><option>Editör</option><option>Yönetici</option></select>
+          </span>
+        </div>
+      </div>
+      <div class="fbar" style="margin-top:auto">
+        <span class="btn">Kaydet</span>
+        <span class="btn ghost">Vazgeç</span>
+        <span class="chip" style="margin-left:auto">__ICON:check:10__ değişiklik yok</span>
+      </div>
+    </section>
+  </div>
+
+  <div class="state-strip">
+    <div class="panel state-card">
+      <span class="sl"><i></i>normal</span>
+      <input class="field" placeholder="Değer" aria-label="normal durum">
+      <span class="hint">--line</span>
+    </div>
+    <div class="panel state-card">
+      <span class="sl"><i></i>odak</span>
+      <input class="field focus" value="Odakta" aria-label="odak durumu">
+      <span class="hint">--focus</span>
+    </div>
+    <div class="panel state-card bad">
+      <span class="sl"><i></i>hata</span>
+      <input class="field" value="Geçersiz" aria-label="hata durumu">
+      <span class="hint">--danger</span>
+    </div>
+    <div class="panel state-card warn">
+      <span class="sl"><i></i>uyarı</span>
+      <input class="field" value="Zayıf parola" aria-label="uyarı durumu">
+      <span class="hint">--warn</span>
+    </div>
+    <div class="panel state-card ok">
+      <span class="sl"><i></i>başarı</span>
+      <input class="field" value="Doğrulandı" aria-label="başarı durumu">
+      <span class="hint">--ok</span>
+    </div>
+    <div class="panel state-card off">
+      <span class="sl"><i></i>pasif</span>
+      <input class="field" value="Kilitli" disabled aria-label="pasif durum">
+      <span class="hint">opacity .5</span>
+    </div>
+  </div>
+
+  <script>
+    /* Sığdırma: büyük tipografili stiller (indian-block-print, optical-illusion) 900px'i
+       taşırıp alt sırayı kırpıyordu (ölçüm: --measure). İçerik taşarsa gövde tek sefer
+       ölçeklenir; taşmıyorsa hiçbir şey değişmez. Ölçüm fontlar hazır olduktan sonra yapılır. */
+    (() => {
+      const fit = () => {
+        const de = document.documentElement;
+        const over = de.scrollHeight - de.clientHeight;
+        if (over <= 1) return;
+        const z = Math.max(0.82, (de.clientHeight - 2) / de.scrollHeight);
+        document.body.style.zoom = z.toFixed(3);
+      };
+      if (document.fonts?.ready) document.fonts.ready.then(fit);
+      else fit();
+    })();
+  </script>
+  <div class="sig"></div>
+</body>
+</html>

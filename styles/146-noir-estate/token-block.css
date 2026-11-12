@@ -1,0 +1,48 @@
+/* 146 · Noir Estate — token bloğu (açık + koyu)
+   Kaynak: styles/146-noir-estate/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="noir-estate"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="noir-estate"] {
+  /* --- sözleşme: renk --- */
+ --bg: #0d0b09;
+ --bg-2: #070605;
+ --surface: #171310;
+ --surface-2: #211b15;
+ --ink: #f5f0e7;
+ --ink-soft: #c7bca9;
+ --ink-faint: #8f8574;
+ --accent: #d3af62;
+ --accent-ink: #170f04;
+ --line: rgba(245,240,231,.14);
+  /* --- sözleşme: biçim ve gölge --- */
+ --radius: 6px;
+ --radius-lg: 16px;
+ --shadow: 0 18px 48px -28px rgba(0,0,0,.95);
+ --shadow-hard: 0 0 0 1px color-mix(in srgb, var(--accent) 55%, transparent);
+  /* --- sözleşme: tipografi ve doku --- */
+ --font-display: "Cormorant Garamond", Georgia, serif;
+ --font-body: "Jost", system-ui, sans-serif;
+ --font-mono: "JetBrains Mono", ui-monospace, monospace;
+ --tracking: .01em;
+ --blur: 18px;
+ --grain: .02;
+  /* --- stil ekleri (durum renkleri) --- */
+ --danger: #e2664f;
+ --danger-ink: #1c0703;
+ --ok: #9dbb72;
+ --warn: #e0bb63;
+}
+
+[data-theme="dark"][data-style="noir-estate"] {
+  --bg:#060505;
+  --bg-2:#030303;
+  --surface:#0f0d0b;
+  --surface-2:#17130f;
+  --ink:#faf6ef;
+  --ink-soft:#d2c8b7;
+  --ink-faint:#9c9283;
+  --accent:#e9c882;
+  --accent-ink:#17100a;
+  --line:rgba(250,246,239,.16);
+}

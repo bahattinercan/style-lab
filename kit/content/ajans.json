@@ -1,0 +1,46 @@
+{
+  "label": "Ajans / stüdyo",
+  "tags": [
+    "ajans",
+    "stüdyo",
+    "marka"
+  ],
+  "hero": {
+    "eyebrow": "Stüdyo · 2016",
+    "h1": "Markayı süslemeden anlatan işler",
+    "lede": "Kimlik, arayüz ve hareketi tek ekiple kuran küçük bir stüdyo.",
+    "ctaPrimary": "Bizimle çalış",
+    "ctaSecondary": "İşleri gör →"
+  },
+  "proofs": [
+    "Sekiz kişilik ekip",
+    "Sabit fiyat",
+    "Haftalık demo"
+  ],
+  "logos": [
+    "Studio",
+    "Kolektif",
+    "Baskı",
+    "Form",
+    "Işık"
+  ],
+  "tiles": [
+    {
+      "num": "01",
+      "cap": "Kimlik"
+    },
+    {
+      "num": "02",
+      "cap": "Arayüz"
+    },
+    {
+      "num": "03",
+      "cap": "Hareket"
+    },
+    {
+      "num": "04",
+      "cap": "Fotoğraf"
+    }
+  ],
+  "logoLabel": "Birlikte ürettiklerimiz"
+}

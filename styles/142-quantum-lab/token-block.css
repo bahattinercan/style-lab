@@ -1,0 +1,38 @@
+/* styles/142-quantum-lab/token-block.css — üretildi; kaynak tokens.json.
+   Entegratör: açık bloğu kit/tokens.css [data-style] bölümüne, koyu bloğu koyu mod
+   bölümüne taşır. Açık bloktaki bildirimler tokens.json "css" alanıyla aynıdır
+   (kit/build-gallery.mjs norm() karşılaştırması geçer). */
+
+[data-style="quantum-lab"] {
+  --bg: #9b99a3; --bg-2: #92909a;
+  --surface: #a6a4ae; --surface-2: #86848e;
+  --ink: #14121a; --ink-soft: #2f2c38; --ink-faint: #4a4753;
+  --accent: #5b3fa8; --accent-ink: #ffffff;
+  --line: rgba(20,18,26,.24);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: 0 0 0 1px var(--ink);
+  --font-display: "Courier Prime", ui-monospace, SFMono-Regular, monospace;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+  --danger: #8f1f24; --danger-ink: #ffffff;
+  --ok: #1d5c45; --warn: #6d4a06;
+  --focus: #503893;
+}
+
+[data-theme="dark"][data-style="quantum-lab"] {
+  --bg: #191822; --bg-2: #1f1e29;
+  --surface: #26242f; --surface-2: #2e2c38;
+  --ink: #ece9f2; --ink-soft: #b4b0c0; --ink-faint: #8a8698;
+  --accent: #a48bff; --accent-ink: #120a26;
+  --line: rgba(236,233,242,.17);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: 0 0 0 1px var(--ink);
+  --font-display: "Courier Prime", ui-monospace, SFMono-Regular, monospace;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+  --danger: #8f1f24; --danger-ink: #ffffff;
+  --ok: #1d5c45; --warn: #6d4a06;
+  --focus: #a48bff;
+}

@@ -1,0 +1,36 @@
+/* styles/54-vitals-triage/token-block.css — üretildi; kaynak tokens.json.
+   Entegratör: açık bloğu kit/tokens.css [data-style] bölümüne, koyu bloğu koyu mod
+   bölümüne taşır. Açık bloktaki bildirimler tokens.json "css" alanıyla aynıdır
+   (kit/build-gallery.mjs norm() karşılaştırması geçer). */
+
+[data-style="vitals-triage"] {
+  --bg: #f4f8f7; --bg-2: #e8f1ef;
+  --surface: #ffffff; --surface-2: #eef5f3;
+  --ink: #10201f; --ink-soft: #47605d; --ink-faint: #7d938f;
+  --accent: #b3341f; --accent-ink: #ffffff;
+  --line: rgba(16,32,31,.11);
+  --radius: 14px; --radius-lg: 22px;
+  --shadow: 0 16px 32px -26px rgba(16,32,31,.35); --shadow-hard: 0 0 0 2px var(--surface-2);
+  --font-display: "Baloo 2", ui-rounded, "Nunito", ui-sans-serif, sans-serif;
+  --font-body: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: -0.015em; --blur: 6px; --grain: 0;
+  --danger: #a52a1c; --danger-ink: #ffffff;
+  --ok: #1c6b4f; --warn: #8a5a06;
+}
+
+[data-theme="dark"][data-style="vitals-triage"] {
+  --bg: #0a1413; --bg-2: #0f1c1a;
+  --surface: #132220; --surface-2: #1a2c29;
+  --ink: #e9f4f1; --ink-soft: #a3bfba; --ink-faint: #79948f;
+  --accent: #ff8a72; --accent-ink: #250a05;
+  --line: rgba(233,244,241,.15);
+  --radius: 14px; --radius-lg: 22px;
+  --shadow: 0 16px 32px -26px rgba(16,32,31,.35); --shadow-hard: 0 0 0 2px var(--surface-2);
+  --font-display: "Baloo 2", ui-rounded, "Nunito", ui-sans-serif, sans-serif;
+  --font-body: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: -0.015em; --blur: 6px; --grain: 0;
+  --danger: #a52a1c; --danger-ink: #ffffff;
+  --ok: #1c6b4f; --warn: #8a5a06;
+}

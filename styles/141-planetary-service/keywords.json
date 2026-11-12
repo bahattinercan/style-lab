@@ -1,0 +1,21 @@
+{
+  "slug": "planetary-service",
+  "num": "141",
+  "labels": [
+    "gezegen servis operasyonları",
+    "yörünge ve pencere panosu",
+    "görev telemetrisi"
+  ],
+  "synonyms": [
+    "mission control arayüzü",
+    "fırlatma penceresi sayacı",
+    "uydu filosu panosu",
+    "görev aşaması izleme",
+    "yörünge planlama ekranı"
+  ],
+  "avoid": [
+    "tüketici e-ticaret sayfası",
+    "çocuk/oyun arayüzü",
+    "açık zeminli kurumsal vitrin"
+  ]
+}

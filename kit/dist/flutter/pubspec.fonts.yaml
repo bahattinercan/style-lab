@@ -1,0 +1,255 @@
+# GENERATED — node kit/export/flutter.mjs
+# pubspec.yaml içine: `flutter: fonts:` bölümü olarak ekleyin (assets yolu projeye göre)
+# TTF kaynağı: kit/fonts/ttf/ (node kit/fetch-fonts.mjs) → assets/fonts/ olarak kopyalanır
+fonts:
+  - family: Anton
+    fonts:
+      - asset: assets/fonts/Anton-400.ttf
+        weight: 400
+    # Google Fonts'ta yok: 500, 600, 700 — Flutter en yakın ağırlığa düşer
+  - family: Architects Daughter
+    fonts:
+      - asset: assets/fonts/Architects-Daughter-400.ttf
+        weight: 400
+    # Google Fonts'ta yok: 600 — Flutter en yakın ağırlığa düşer
+  - family: Archivo Black
+    fonts:
+      - asset: assets/fonts/Archivo-Black-400.ttf
+        weight: 400
+    # Google Fonts'ta yok: 500, 600, 700 — Flutter en yakın ağırlığa düşer
+  - family: Baloo 2
+    fonts:
+      - asset: assets/fonts/Baloo-2-400.ttf
+        weight: 400
+      - asset: assets/fonts/Baloo-2-500.ttf
+        weight: 500
+      - asset: assets/fonts/Baloo-2-600.ttf
+        weight: 600
+      - asset: assets/fonts/Baloo-2-700.ttf
+        weight: 700
+  - family: Caveat
+    fonts:
+      - asset: assets/fonts/Caveat-400.ttf
+        weight: 400
+      - asset: assets/fonts/Caveat-600.ttf
+        weight: 600
+      - asset: assets/fonts/Caveat-700.ttf
+        weight: 700
+  - family: Chakra Petch
+    fonts:
+      - asset: assets/fonts/Chakra-Petch-400.ttf
+        weight: 400
+      - asset: assets/fonts/Chakra-Petch-500.ttf
+        weight: 500
+      - asset: assets/fonts/Chakra-Petch-600.ttf
+        weight: 600
+      - asset: assets/fonts/Chakra-Petch-700.ttf
+        weight: 700
+  - family: Cinzel
+    fonts:
+      - asset: assets/fonts/Cinzel-400.ttf
+        weight: 400
+      - asset: assets/fonts/Cinzel-500.ttf
+        weight: 500
+      - asset: assets/fonts/Cinzel-600.ttf
+        weight: 600
+  - family: Cormorant Garamond
+    fonts:
+      - asset: assets/fonts/Cormorant-Garamond-300.ttf
+        weight: 300
+      - asset: assets/fonts/Cormorant-Garamond-400.ttf
+        weight: 400
+      - asset: assets/fonts/Cormorant-Garamond-500.ttf
+        weight: 500
+      - asset: assets/fonts/Cormorant-Garamond-600.ttf
+        weight: 600
+      - asset: assets/fonts/Cormorant-Garamond-700.ttf
+        weight: 700
+  - family: Courier Prime
+    fonts:
+      - asset: assets/fonts/Courier-Prime-400.ttf
+        weight: 400
+      - asset: assets/fonts/Courier-Prime-700.ttf
+        weight: 700
+    # Google Fonts'ta yok: 500, 600 — Flutter en yakın ağırlığa düşer
+  - family: EB Garamond
+    fonts:
+      - asset: assets/fonts/EB-Garamond-400.ttf
+        weight: 400
+      - asset: assets/fonts/EB-Garamond-500.ttf
+        weight: 500
+      - asset: assets/fonts/EB-Garamond-600.ttf
+        weight: 600
+  - family: Fraunces
+    fonts:
+      - asset: assets/fonts/Fraunces-400.ttf
+        weight: 400
+      - asset: assets/fonts/Fraunces-500.ttf
+        weight: 500
+      - asset: assets/fonts/Fraunces-600.ttf
+        weight: 600
+      - asset: assets/fonts/Fraunces-700.ttf
+        weight: 700
+  - family: IBM Plex Mono
+    fonts:
+      - asset: assets/fonts/IBM-Plex-Mono-300.ttf
+        weight: 300
+      - asset: assets/fonts/IBM-Plex-Mono-400.ttf
+        weight: 400
+      - asset: assets/fonts/IBM-Plex-Mono-500.ttf
+        weight: 500
+      - asset: assets/fonts/IBM-Plex-Mono-600.ttf
+        weight: 600
+      - asset: assets/fonts/IBM-Plex-Mono-700.ttf
+        weight: 700
+  - family: Inter
+    fonts:
+      - asset: assets/fonts/Inter-300.ttf
+        weight: 300
+      - asset: assets/fonts/Inter-400.ttf
+        weight: 400
+      - asset: assets/fonts/Inter-500.ttf
+        weight: 500
+      - asset: assets/fonts/Inter-600.ttf
+        weight: 600
+      - asset: assets/fonts/Inter-700.ttf
+        weight: 700
+  - family: JetBrains Mono
+    fonts:
+      - asset: assets/fonts/JetBrains-Mono-300.ttf
+        weight: 300
+      - asset: assets/fonts/JetBrains-Mono-400.ttf
+        weight: 400
+      - asset: assets/fonts/JetBrains-Mono-500.ttf
+        weight: 500
+      - asset: assets/fonts/JetBrains-Mono-600.ttf
+        weight: 600
+      - asset: assets/fonts/JetBrains-Mono-700.ttf
+        weight: 700
+  - family: Jost
+    fonts:
+      - asset: assets/fonts/Jost-300.ttf
+        weight: 300
+      - asset: assets/fonts/Jost-400.ttf
+        weight: 400
+      - asset: assets/fonts/Jost-500.ttf
+        weight: 500
+      - asset: assets/fonts/Jost-600.ttf
+        weight: 600
+  - family: Kalam
+    fonts:
+      - asset: assets/fonts/Kalam-400.ttf
+        weight: 400
+      - asset: assets/fonts/Kalam-700.ttf
+        weight: 700
+  - family: Lora
+    fonts:
+      - asset: assets/fonts/Lora-400.ttf
+        weight: 400
+      - asset: assets/fonts/Lora-500.ttf
+        weight: 500
+      - asset: assets/fonts/Lora-600.ttf
+        weight: 600
+      - asset: assets/fonts/Lora-700.ttf
+        weight: 700
+  - family: Michroma
+    fonts:
+      - asset: assets/fonts/Michroma-400.ttf
+        weight: 400
+    # Google Fonts'ta yok: 500, 600, 700 — Flutter en yakın ağırlığa düşer
+  - family: Nunito
+    fonts:
+      - asset: assets/fonts/Nunito-400.ttf
+        weight: 400
+      - asset: assets/fonts/Nunito-500.ttf
+        weight: 500
+      - asset: assets/fonts/Nunito-600.ttf
+        weight: 600
+      - asset: assets/fonts/Nunito-700.ttf
+        weight: 700
+      - asset: assets/fonts/Nunito-900.ttf
+        weight: 900
+  - family: Nunito Sans
+    fonts:
+      - asset: assets/fonts/Nunito-Sans-400.ttf
+        weight: 400
+      - asset: assets/fonts/Nunito-Sans-700.ttf
+        weight: 700
+  - family: Playfair Display
+    fonts:
+      - asset: assets/fonts/Playfair-Display-400.ttf
+        weight: 400
+      - asset: assets/fonts/Playfair-Display-500.ttf
+        weight: 500
+      - asset: assets/fonts/Playfair-Display-600.ttf
+        weight: 600
+      - asset: assets/fonts/Playfair-Display-700.ttf
+        weight: 700
+  - family: Poiret One
+    fonts:
+      - asset: assets/fonts/Poiret-One-400.ttf
+        weight: 400
+    # Google Fonts'ta yok: 600 — Flutter en yakın ağırlığa düşer
+  - family: Poppins
+    fonts:
+      - asset: assets/fonts/Poppins-300.ttf
+        weight: 300
+      - asset: assets/fonts/Poppins-400.ttf
+        weight: 400
+      - asset: assets/fonts/Poppins-500.ttf
+        weight: 500
+      - asset: assets/fonts/Poppins-600.ttf
+        weight: 600
+      - asset: assets/fonts/Poppins-700.ttf
+        weight: 700
+      - asset: assets/fonts/Poppins-900.ttf
+        weight: 900
+  - family: Press Start 2P
+    fonts:
+      - asset: assets/fonts/Press-Start-2P-400.ttf
+        weight: 400
+    # Google Fonts'ta yok: 500 — Flutter en yakın ağırlığa düşer
+  - family: Rajdhani
+    fonts:
+      - asset: assets/fonts/Rajdhani-400.ttf
+        weight: 400
+      - asset: assets/fonts/Rajdhani-500.ttf
+        weight: 500
+      - asset: assets/fonts/Rajdhani-600.ttf
+        weight: 600
+      - asset: assets/fonts/Rajdhani-700.ttf
+        weight: 700
+  - family: Share Tech Mono
+    fonts:
+      - asset: assets/fonts/Share-Tech-Mono-400.ttf
+        weight: 400
+    # Google Fonts'ta yok: 500, 600, 700 — Flutter en yakın ağırlığa düşer
+  - family: Silkscreen
+    fonts:
+      - asset: assets/fonts/Silkscreen-400.ttf
+        weight: 400
+      - asset: assets/fonts/Silkscreen-700.ttf
+        weight: 700
+    # Google Fonts'ta yok: 600, 900 — Flutter en yakın ağırlığa düşer
+  - family: Space Grotesk
+    fonts:
+      - asset: assets/fonts/Space-Grotesk-400.ttf
+        weight: 400
+      - asset: assets/fonts/Space-Grotesk-500.ttf
+        weight: 500
+      - asset: assets/fonts/Space-Grotesk-600.ttf
+        weight: 600
+      - asset: assets/fonts/Space-Grotesk-700.ttf
+        weight: 700
+  - family: Space Mono
+    fonts:
+      - asset: assets/fonts/Space-Mono-400.ttf
+        weight: 400
+      - asset: assets/fonts/Space-Mono-700.ttf
+        weight: 700
+    # Google Fonts'ta yok: 500, 600 — Flutter en yakın ağırlığa düşer
+  - family: VT323
+    fonts:
+      - asset: assets/fonts/VT323-400.ttf
+        weight: 400
+    # Google Fonts'ta yok: 500, 600 — Flutter en yakın ağırlığa düşer

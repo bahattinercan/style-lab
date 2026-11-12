@@ -1,0 +1,5 @@
+/* 132 · Wood Joinery — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="wood-joinery"] { --bg: #f0e9dc; --bg-2: #e6dccb; --surface: #faf5ec; --surface-2: #ece2d1; --ink: #1f1c17; --ink-soft: #4f4a41; --ink-faint: #7b7469; --accent: #33546b; --accent-ink: #f4f8fa; --line: rgba(31,28,23,.16); --radius: 4px; --radius-lg: 8px; --shadow: none; --shadow-hard: none; --font-display: "Fraunces", Georgia, serif; --font-body: "Jost", system-ui, sans-serif; --font-mono: "Courier Prime", Courier, monospace; --tracking: -0.005em; --blur: 0px; --grain: 0.03; }
+
+/* 132 · Wood Joinery — koyu tema (palette.dark ile birebir aynı; meşe koyu cevize döner, accent açık slate'e çekilir, damar %2'ye iner) */
+[data-theme="dark"][data-style="wood-joinery"] { --bg: #17130f; --bg-2: #211b15; --surface: #1d1812; --surface-2: #2a231b; --ink: #f2ebdf; --ink-soft: #bdb2a3; --ink-faint: #8a8072; --accent: #8fb6cf; --accent-ink: #0d1519; --line: rgba(242,235,223,.16); --shadow-hard: none; }

@@ -1,0 +1,5 @@
+/* 86 · Literary Hardcover — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="literary-hardcover"] { --bg: #f2ebdd; --bg-2: #e8dfcd; --surface: #fdfaf2; --surface-2: #ece3d3; --ink: #1b1a17; --ink-soft: #4e4a42; --ink-faint: #7b7568; --accent: #2f4a3c; --accent-ink: #f7f3e8; --line: rgba(27,26,23,.16); --radius: 4px; --radius-lg: 10px; --shadow: 0 1px 0 rgba(27,26,23,.10); --shadow-hard: none; --font-display: "Lora", Georgia, "Times New Roman", serif; --font-body: "Lora", Georgia, "Times New Roman", serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em; --blur: 0px; --grain: 0.03; }
+
+/* 86 · Literary Hardcover — koyu tema (palette.dark ile birebir aynı; kâğıt tonu değişir, hairline opaklığı .14'e düşer, radius sabit) */
+[data-theme="dark"][data-style="literary-hardcover"] { --bg: #191813; --bg-2: #211f18; --surface: #1e1d16; --surface-2: #2a2820; --ink: #f2eee2; --ink-soft: #b3ada0; --ink-faint: #7e786c; --accent: #a8c3b2; --accent-ink: #10130f; --line: rgba(242,238,226,.14); --shadow-hard: none; }

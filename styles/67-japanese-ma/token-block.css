@@ -1,0 +1,43 @@
+/* 67 · Japanese Ma — token bloğu (açık + koyu)
+   Kaynak: styles/67-japanese-ma/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="japanese-ma"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="japanese-ma"] {
+  /* --- sözleşme: renk --- */
+  --bg: #f6f5f1;
+  --bg-2: #ecebe5;
+  --surface: #ffffff;
+  --surface-2: #f1f0ea;
+  --ink: #16181a;
+  --ink-soft: #4a4f52;
+  --ink-faint: #7b8084;
+  --accent: #bf3320;
+  --accent-ink: #fdf7f2;
+  --line: rgba(22,24,26,.14);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 0px;
+  --radius-lg: 2px;
+  --shadow: none;
+  --shadow-hard: none;
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Jost", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.03em;
+  --blur: 0px;
+  --grain: 0.015;
+}
+
+[data-theme="dark"][data-style="japanese-ma"] {
+  --bg: #0f1113;
+  --bg-2: #141719;
+  --surface: #171a1d;
+  --surface-2: #1e2225;
+  --ink: #ece9e2;
+  --ink-soft: #a8adaf;
+  --ink-faint: #7d8286;
+  --accent: #e4674f;
+  --accent-ink: #12100f;
+  --line: rgba(236,233,226,.15);
+}

@@ -1,0 +1,55 @@
+/* 50 · Lab Instrument — token bloğu (kaynak: styles/50-lab-instrument/tokens.json) */
+
+[data-style="lab-instrument"] {
+  --bg: #f5f7f7;
+  --bg-2: #eaeff0;
+  --surface: #ffffff;
+  --surface-2: #f2f6f7;
+  --ink: #0e1517;
+  --ink-soft: #43565c;
+  --ink-faint: #76898f;
+  --accent: #1a5c8a;
+  --accent-ink: #f4f8fa;
+  --line: rgba(14,21,23,.14);
+  --radius: 2px;
+  --radius-lg: 8px;
+  --shadow: 0 1px 2px rgba(14,21,23,.08);
+  --shadow-hard: 2px 2px 0 rgba(14,21,23,.13);
+  --font-display: "Michroma", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: 0.02em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #a1271d;
+  --danger-ink: #ffffff;
+  --ok: #17604a;
+  --warn: #7a4f0a;
+}
+
+[data-theme="dark"][data-style="lab-instrument"] {
+  --bg: #0b0f11;
+  --bg-2: #0f1517;
+  --surface: #121a1d;
+  --surface-2: #182326;
+  --ink: #e5eef0;
+  --ink-soft: #a1b3b9;
+  --ink-faint: #6c8086;
+  --accent: #63bde0;
+  --accent-ink: #06171f;
+  --line: rgba(229,238,240,.16);
+  --radius: 2px;
+  --radius-lg: 8px;
+  --shadow: 0 1px 2px rgba(0,0,0,.5);
+  --shadow-hard: 2px 2px 0 rgba(0,0,0,.6);
+  --font-display: "Michroma", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: 0.02em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff9187;
+  --danger-ink: #2a0b08;
+  --ok: #6fd8b4;
+  --warn: #e6c168;
+}

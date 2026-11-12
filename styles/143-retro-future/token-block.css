@@ -1,0 +1,36 @@
+/* styles/143-retro-future/token-block.css — üretildi; kaynak tokens.json.
+   Entegratör: açık bloğu kit/tokens.css [data-style] bölümüne, koyu bloğu koyu mod
+   bölümüne taşır. Açık bloktaki bildirimler tokens.json "css" alanıyla aynıdır
+   (kit/build-gallery.mjs norm() karşılaştırması geçer). */
+
+[data-style="retro-future"] {
+  --bg: #f3ecdd; --bg-2: #ece3d0;
+  --surface: #faf5e9; --surface-2: #e8dfca;
+  --ink: #1b1710; --ink-soft: #4f4737; --ink-faint: #857a63;
+  --accent: #7a5c04; --accent-ink: #ffffff;
+  --line: rgba(27,23,16,.16);
+  --radius: 20px; --radius-lg: 28px;
+  --shadow: 0 20px 44px -34px rgba(27,23,16,.55); --shadow-hard: 0 3px 0 var(--ink);
+  --font-display: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.1em; --blur: 0px; --grain: .03;
+  --danger: #8f2a12; --danger-ink: #ffffff;
+  --ok: #28603c; --warn: #7a5205;
+}
+
+[data-theme="dark"][data-style="retro-future"] {
+  --bg: #16130d; --bg-2: #1c1811;
+  --surface: #221d14; --surface-2: #2a241a;
+  --ink: #f4eddc; --ink-soft: #c2b69c; --ink-faint: #918872;
+  --accent: #e8b93f; --accent-ink: #1a1405;
+  --line: rgba(244,237,220,.16);
+  --radius: 20px; --radius-lg: 28px;
+  --shadow: 0 20px 44px -34px rgba(27,23,16,.55); --shadow-hard: 0 3px 0 var(--ink);
+  --font-display: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.1em; --blur: 0px; --grain: .03;
+  --danger: #8f2a12; --danger-ink: #ffffff;
+  --ok: #28603c; --warn: #7a5205;
+}

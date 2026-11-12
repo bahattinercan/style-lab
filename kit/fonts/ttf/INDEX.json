@@ -1,0 +1,305 @@
+{
+  "generatedBy": "kit/fetch-fonts.mjs",
+  "license": "Google Fonts — SIL Open Font License (OFL)",
+  "source": "https://fonts.google.com",
+  "families": {
+    "Anton": {
+      "googleFonts": "Anton",
+      "files": {
+        "400": "kit/fonts/ttf/Anton-400.ttf"
+      },
+      "missingWeights": [
+        500,
+        600,
+        700
+      ]
+    },
+    "Architects Daughter": {
+      "googleFonts": "Architects Daughter",
+      "files": {
+        "400": "kit/fonts/ttf/Architects-Daughter-400.ttf"
+      },
+      "missingWeights": [
+        600
+      ]
+    },
+    "Archivo Black": {
+      "googleFonts": "Archivo Black",
+      "files": {
+        "400": "kit/fonts/ttf/Archivo-Black-400.ttf"
+      },
+      "missingWeights": [
+        500,
+        600,
+        700
+      ]
+    },
+    "Baloo 2": {
+      "googleFonts": "Baloo 2",
+      "files": {
+        "400": "kit/fonts/ttf/Baloo-2-400.ttf",
+        "500": "kit/fonts/ttf/Baloo-2-500.ttf",
+        "600": "kit/fonts/ttf/Baloo-2-600.ttf",
+        "700": "kit/fonts/ttf/Baloo-2-700.ttf"
+      }
+    },
+    "Caveat": {
+      "googleFonts": "Caveat",
+      "files": {
+        "400": "kit/fonts/ttf/Caveat-400.ttf",
+        "600": "kit/fonts/ttf/Caveat-600.ttf",
+        "700": "kit/fonts/ttf/Caveat-700.ttf"
+      }
+    },
+    "Chakra Petch": {
+      "googleFonts": "Chakra Petch",
+      "files": {
+        "400": "kit/fonts/ttf/Chakra-Petch-400.ttf",
+        "500": "kit/fonts/ttf/Chakra-Petch-500.ttf",
+        "600": "kit/fonts/ttf/Chakra-Petch-600.ttf",
+        "700": "kit/fonts/ttf/Chakra-Petch-700.ttf"
+      }
+    },
+    "Cinzel": {
+      "googleFonts": "Cinzel",
+      "files": {
+        "400": "kit/fonts/ttf/Cinzel-400.ttf",
+        "500": "kit/fonts/ttf/Cinzel-500.ttf",
+        "600": "kit/fonts/ttf/Cinzel-600.ttf"
+      }
+    },
+    "Cormorant Garamond": {
+      "googleFonts": "Cormorant Garamond",
+      "files": {
+        "300": "kit/fonts/ttf/Cormorant-Garamond-300.ttf",
+        "400": "kit/fonts/ttf/Cormorant-Garamond-400.ttf",
+        "500": "kit/fonts/ttf/Cormorant-Garamond-500.ttf",
+        "600": "kit/fonts/ttf/Cormorant-Garamond-600.ttf",
+        "700": "kit/fonts/ttf/Cormorant-Garamond-700.ttf"
+      }
+    },
+    "Courier Prime": {
+      "googleFonts": "Courier Prime",
+      "files": {
+        "400": "kit/fonts/ttf/Courier-Prime-400.ttf",
+        "700": "kit/fonts/ttf/Courier-Prime-700.ttf"
+      },
+      "missingWeights": [
+        500,
+        600
+      ]
+    },
+    "EB Garamond": {
+      "googleFonts": "EB Garamond",
+      "files": {
+        "400": "kit/fonts/ttf/EB-Garamond-400.ttf",
+        "500": "kit/fonts/ttf/EB-Garamond-500.ttf",
+        "600": "kit/fonts/ttf/EB-Garamond-600.ttf"
+      }
+    },
+    "Fraunces": {
+      "googleFonts": "Fraunces",
+      "files": {
+        "400": "kit/fonts/ttf/Fraunces-400.ttf",
+        "500": "kit/fonts/ttf/Fraunces-500.ttf",
+        "600": "kit/fonts/ttf/Fraunces-600.ttf",
+        "700": "kit/fonts/ttf/Fraunces-700.ttf"
+      }
+    },
+    "IBM Plex Mono": {
+      "googleFonts": "IBM Plex Mono",
+      "files": {
+        "300": "kit/fonts/ttf/IBM-Plex-Mono-300.ttf",
+        "400": "kit/fonts/ttf/IBM-Plex-Mono-400.ttf",
+        "500": "kit/fonts/ttf/IBM-Plex-Mono-500.ttf",
+        "600": "kit/fonts/ttf/IBM-Plex-Mono-600.ttf",
+        "700": "kit/fonts/ttf/IBM-Plex-Mono-700.ttf"
+      }
+    },
+    "Inter": {
+      "googleFonts": "Inter",
+      "files": {
+        "300": "kit/fonts/ttf/Inter-300.ttf",
+        "400": "kit/fonts/ttf/Inter-400.ttf",
+        "500": "kit/fonts/ttf/Inter-500.ttf",
+        "600": "kit/fonts/ttf/Inter-600.ttf",
+        "700": "kit/fonts/ttf/Inter-700.ttf"
+      }
+    },
+    "JetBrains Mono": {
+      "googleFonts": "JetBrains Mono",
+      "files": {
+        "300": "kit/fonts/ttf/JetBrains-Mono-300.ttf",
+        "400": "kit/fonts/ttf/JetBrains-Mono-400.ttf",
+        "500": "kit/fonts/ttf/JetBrains-Mono-500.ttf",
+        "600": "kit/fonts/ttf/JetBrains-Mono-600.ttf",
+        "700": "kit/fonts/ttf/JetBrains-Mono-700.ttf"
+      }
+    },
+    "Jost": {
+      "googleFonts": "Jost",
+      "files": {
+        "300": "kit/fonts/ttf/Jost-300.ttf",
+        "400": "kit/fonts/ttf/Jost-400.ttf",
+        "500": "kit/fonts/ttf/Jost-500.ttf",
+        "600": "kit/fonts/ttf/Jost-600.ttf"
+      }
+    },
+    "Kalam": {
+      "googleFonts": "Kalam",
+      "files": {
+        "400": "kit/fonts/ttf/Kalam-400.ttf",
+        "700": "kit/fonts/ttf/Kalam-700.ttf"
+      }
+    },
+    "Lora": {
+      "googleFonts": "Lora",
+      "files": {
+        "400": "kit/fonts/ttf/Lora-400.ttf",
+        "500": "kit/fonts/ttf/Lora-500.ttf",
+        "600": "kit/fonts/ttf/Lora-600.ttf",
+        "700": "kit/fonts/ttf/Lora-700.ttf"
+      }
+    },
+    "Michroma": {
+      "googleFonts": "Michroma",
+      "files": {
+        "400": "kit/fonts/ttf/Michroma-400.ttf"
+      },
+      "missingWeights": [
+        500,
+        600,
+        700
+      ]
+    },
+    "Nunito": {
+      "googleFonts": "Nunito",
+      "files": {
+        "400": "kit/fonts/ttf/Nunito-400.ttf",
+        "500": "kit/fonts/ttf/Nunito-500.ttf",
+        "600": "kit/fonts/ttf/Nunito-600.ttf",
+        "700": "kit/fonts/ttf/Nunito-700.ttf",
+        "900": "kit/fonts/ttf/Nunito-900.ttf"
+      }
+    },
+    "Nunito Sans": {
+      "googleFonts": "Nunito Sans",
+      "files": {
+        "400": "kit/fonts/ttf/Nunito-Sans-400.ttf",
+        "700": "kit/fonts/ttf/Nunito-Sans-700.ttf"
+      }
+    },
+    "Playfair Display": {
+      "googleFonts": "Playfair Display",
+      "files": {
+        "400": "kit/fonts/ttf/Playfair-Display-400.ttf",
+        "500": "kit/fonts/ttf/Playfair-Display-500.ttf",
+        "600": "kit/fonts/ttf/Playfair-Display-600.ttf",
+        "700": "kit/fonts/ttf/Playfair-Display-700.ttf"
+      }
+    },
+    "Poiret One": {
+      "googleFonts": "Poiret One",
+      "files": {
+        "400": "kit/fonts/ttf/Poiret-One-400.ttf"
+      },
+      "missingWeights": [
+        600
+      ]
+    },
+    "Poppins": {
+      "googleFonts": "Poppins",
+      "files": {
+        "300": "kit/fonts/ttf/Poppins-300.ttf",
+        "400": "kit/fonts/ttf/Poppins-400.ttf",
+        "500": "kit/fonts/ttf/Poppins-500.ttf",
+        "600": "kit/fonts/ttf/Poppins-600.ttf",
+        "700": "kit/fonts/ttf/Poppins-700.ttf",
+        "900": "kit/fonts/ttf/Poppins-900.ttf"
+      }
+    },
+    "Press Start 2P": {
+      "googleFonts": "Press Start 2P",
+      "files": {
+        "400": "kit/fonts/ttf/Press-Start-2P-400.ttf"
+      },
+      "missingWeights": [
+        500
+      ]
+    },
+    "Rajdhani": {
+      "googleFonts": "Rajdhani",
+      "files": {
+        "400": "kit/fonts/ttf/Rajdhani-400.ttf",
+        "500": "kit/fonts/ttf/Rajdhani-500.ttf",
+        "600": "kit/fonts/ttf/Rajdhani-600.ttf",
+        "700": "kit/fonts/ttf/Rajdhani-700.ttf"
+      }
+    },
+    "Share Tech Mono": {
+      "googleFonts": "Share Tech Mono",
+      "files": {
+        "400": "kit/fonts/ttf/Share-Tech-Mono-400.ttf"
+      },
+      "missingWeights": [
+        500,
+        600,
+        700
+      ]
+    },
+    "Silkscreen": {
+      "googleFonts": "Silkscreen",
+      "files": {
+        "400": "kit/fonts/ttf/Silkscreen-400.ttf",
+        "700": "kit/fonts/ttf/Silkscreen-700.ttf"
+      },
+      "missingWeights": [
+        600,
+        900
+      ]
+    },
+    "Space Grotesk": {
+      "googleFonts": "Space Grotesk",
+      "files": {
+        "400": "kit/fonts/ttf/Space-Grotesk-400.ttf",
+        "500": "kit/fonts/ttf/Space-Grotesk-500.ttf",
+        "600": "kit/fonts/ttf/Space-Grotesk-600.ttf",
+        "700": "kit/fonts/ttf/Space-Grotesk-700.ttf"
+      }
+    },
+    "Space Mono": {
+      "googleFonts": "Space Mono",
+      "files": {
+        "400": "kit/fonts/ttf/Space-Mono-400.ttf",
+        "700": "kit/fonts/ttf/Space-Mono-700.ttf"
+      },
+      "missingWeights": [
+        500,
+        600
+      ]
+    },
+    "VT323": {
+      "googleFonts": "VT323",
+      "files": {
+        "400": "kit/fonts/ttf/VT323-400.ttf"
+      },
+      "missingWeights": [
+        500,
+        600
+      ]
+    }
+  },
+  "skippedSystem": [
+    "Archivo Expanded",
+    "Consolas",
+    "Courier New",
+    "Geist",
+    "Helvetica Neue",
+    "Menlo",
+    "Outrun",
+    "SF Mono",
+    "SF Pro Display",
+    "SF Pro Text",
+    "Segoe UI"
+  ]
+}

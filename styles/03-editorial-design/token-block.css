@@ -1,0 +1,20 @@
+/* 03 · Editorial Design — token bloğu (kaynak: styles/03-editorial-design/tokens.json) */
+
+[data-style="editorial-design"] {
+  --bg: #fdfcf9; --bg-2: #f4f1ea;
+  --surface: #ffffff; --surface-2: #faf8f3;
+  --ink: #141414; --ink-soft: #56504a; --ink-faint: #8e8880;
+  --accent: #b4472f; --accent-ink: #ffffff;
+  --line: rgba(20,20,20,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.02em; --blur: 0px; --grain: .04;
+}
+
+[data-theme="dark"][data-style="editorial-design"] {
+  --bg: #14120f; --bg-2: #1e1b16; --surface: #1a1714; --surface-2: #2b2824;
+  --ink: #f0e9dd; --ink-soft: #b9b0a2; --ink-faint: #77736c; --accent: #d76a4c; --accent-ink: #14120f; --line: rgba(240,233,221,.18);
+}

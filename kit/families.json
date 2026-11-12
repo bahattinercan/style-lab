@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "note": "Aile bantları tek kaynak. 1-151 kesintisiz ve çakışmasız; build-gallery.mjs ve report.mjs bu dosyayı okur.",
+  "resolved": "Koordinatör tablosunda 'Teknik 45-46' ile 'Veri & Gösterge 46-55' 46'da çakışıyordu; 46-telemetry-grid veri stili olduğu için Teknik 45-45, Veri & Gösterge 46-55 olarak çözüldü.",
+  "families": [
+    { "name": "Sade", "from": 1, "to": 7 },
+    { "name": "Yüzey", "from": 8, "to": 12 },
+    { "name": "Cesur", "from": 13, "to": 18 },
+    { "name": "Retro", "from": 19, "to": 27 },
+    { "name": "Sanatsal", "from": 28, "to": 34 },
+    { "name": "Geometrik", "from": 35, "to": 36 },
+    { "name": "Tipografik", "from": 37, "to": 37 },
+    { "name": "Organik", "from": 38, "to": 38 },
+    { "name": "Yeni Dalga", "from": 39, "to": 40 },
+    { "name": "Zamansız", "from": 41, "to": 44 },
+    { "name": "Teknik", "from": 45, "to": 45 },
+    { "name": "Veri & Gösterge", "from": 46, "to": 55 },
+    { "name": "Endüstriyel", "from": 56, "to": 65 },
+    { "name": "Kültürel & Bölgesel", "from": 66, "to": 75 },
+    { "name": "Doğa & Organik", "from": 76, "to": 85 },
+    { "name": "Yayın & Tipografi", "from": 86, "to": 95 },
+    { "name": "Hareket & Optik", "from": 96, "to": 105 },
+    { "name": "Etkileşim", "from": 106, "to": 115 },
+    { "name": "Oyuncul", "from": 116, "to": 125 },
+    { "name": "Materyal & Lüks", "from": 126, "to": 135 },
+    { "name": "Deneysel & Gelecek", "from": 136, "to": 145 },
+    { "name": "Sahne & Prestij", "from": 146, "to": 151 }
+  ]
+}

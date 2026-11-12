@@ -1,0 +1,46 @@
+{
+  "label": "E-ticaret",
+  "tags": [
+    "ticaret",
+    "ürün",
+    "moda"
+  ],
+  "hero": {
+    "eyebrow": "Yeni sezon",
+    "h1": "Mevsimin en sade parçaları",
+    "lede": "Az sayıda ürün, açık malzeme bilgisi ve iki günde kapıda teslim.",
+    "ctaPrimary": "Koleksiyonu gör",
+    "ctaSecondary": "Beden tablosu →"
+  },
+  "proofs": [
+    "2 günde teslim",
+    "Ücretsiz iade",
+    "Malzeme künyesi"
+  ],
+  "logos": [
+    "Atelier",
+    "Loom",
+    "Form",
+    "Basit",
+    "Kumas"
+  ],
+  "tiles": [
+    {
+      "num": "01",
+      "cap": "Gömlek"
+    },
+    {
+      "num": "02",
+      "cap": "Pantolon"
+    },
+    {
+      "num": "03",
+      "cap": "Ceket"
+    },
+    {
+      "num": "04",
+      "cap": "Aksesuar"
+    }
+  ],
+  "logoLabel": "Sezon ortakları"
+}

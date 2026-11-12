@@ -1,0 +1,5 @@
+/* 125 · Sports Energy — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="sports-energy"] { --bg: #f1f3f1; --bg-2: #e7eae7; --surface: #ffffff; --surface-2: #eceee9; --ink: #0f1412; --ink-soft: #444d47; --ink-faint: #6f7a73; --accent: #f24a00; --accent-ink: #17100c; --line: rgba(15,20,18,.18); --radius: 2px; --radius-lg: 6px; --shadow: none; --shadow-hard: 6px 6px 0 #0f1412; --font-display: "Rajdhani", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0.005em; --blur: 0px; --grain: 0.02; }
+
+/* 125 · Sports Energy — koyu tema (palette.dark ile birebir aynı; sert gölge koyuda çim grisine döner) */
+[data-theme="dark"][data-style="sports-energy"] { --bg: #0c100e; --bg-2: #111612; --surface: #161b18; --surface-2: #1e2420; --ink: #e9efe9; --ink-soft: #aebbb2; --ink-faint: #7f8d84; --accent: #ff6a2e; --accent-ink: #100804; --line: rgba(233,239,233,.16); --shadow-hard: 6px 6px 0 #3f4a43; }

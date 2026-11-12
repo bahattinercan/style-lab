@@ -1,0 +1,5 @@
+/* styles/102-moire-field/token-block.css — üretildi; kaynak tokens.json.
+[data-style="moire-field"] { --bg: #a6a29b; --bg-2: #9c9891; --surface: #b1ada6; --surface-2: #8e8a84; --ink: #12130f; --ink-soft: #2b2c28; --ink-faint: #45463f; --accent: #9c2e6e; --accent-ink: #ffffff; --line: rgba(18,19,15,.22); --radius: 0px; --radius-lg: 0px; --shadow: none; --shadow-hard: 0 0 0 1px var(--ink); --font-display: "Silkscreen", ui-monospace, monospace; --font-body: "Inter", ui-sans-serif, system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace; --tracking: 0.02em; --blur: 0px; --grain: 0; --danger: #8f1f1c; --danger-ink: #ffffff; --ok: #0c261a; --warn: #2e1f02; --focus: #872a60; }
+
+/* Moiré Field — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="moire-field"] { --bg: #1c1b19; --bg-2: #232220; --surface: #2a2825; --surface-2: #34322e; --ink: #ece8e1; --ink-soft: #b3aea6; --ink-faint: #8a857d; --accent: #e57ab0; --accent-ink: #1a0712; --line: rgba(236,232,225,.18); --ok: #36ad78; --warn: #d38f0c; --focus: #e57ab0; }

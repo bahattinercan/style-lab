@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Tablo + filtre</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-table-filters __BODY_CLASS__">
+  <div class="comp-head">
+    <h2>Filtreli tablo</h2>
+    <span class="label">34 · __STYLE__ · filtre çubuğu · seçim · sayfalama</span>
+  </div>
+
+  <section class="panel tbl-wrap filters-panel">
+    <div class="fbar">
+      <span class="field search-mini">__ICON:search:13__ Filtrele veya ara…</span>
+      <div class="segmented"><span class="on">Tümü</span><span>Aktif</span><span>Taslak</span><span>Arşiv</span></div>
+      <span class="chip">
+        Sahip __ICON:chevron-down:10__
+      </span>
+      <span class="chip">Tarih __ICON:chevron-down:10__</span>
+      <span class="chip accent off">Temizle</span>
+      <span class="btn sm">__ICON:plus:12__ Kayıt</span>
+    </div>
+
+    <div class="bulk">
+      <span class="opt"><input type="checkbox" checked><span class="box"></span></span>
+      <b>3 seçili</b>
+      <span class="chip">Arşivle</span>
+      <span class="chip">Ata</span>
+      <span class="chip danger">Sil</span>
+      <span class="muted" style="margin-left:auto;font-size:11px">1–8 / 148</span>
+    </div>
+
+    <div style="flex:1;min-height:0">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th style="width:26px"><span class="opt"><input type="checkbox"><span class="box"></span></span></th>
+            <th>Kayıt <span class="srt">__ICON:chevron-down:10__</span></th>
+            <th>Sahip</th>
+            <th>Durum</th>
+            <th class="num">__COPY_TILE1__</th>
+            <th class="num">Güncelleme</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="opt"><input type="checkbox" checked><span class="box"></span></span></td><td><b>__COPY_TILE2__</b></td><td><span class="name"><span class="sq"></span> Kerem A.</span></td><td><span class="chip ok">aktif</span></td><td class="num">₺48.200</td><td class="num">12 dk</td><td><span class="icon-btn">__ICON:more:13__</span></td></tr>
+          <tr><td><span class="opt"><input type="checkbox" checked><span class="box"></span></span></td><td><b>__COPY_TILE3__</b></td><td><span class="name"><span class="sq"></span> Mira Z.</span></td><td><span class="chip warn">bekliyor</span></td><td class="num">₺12.400</td><td class="num">40 dk</td><td><span class="icon-btn">__ICON:more:13__</span></td></tr>
+          <tr><td><span class="opt"><input type="checkbox" checked><span class="box"></span></span></td><td><b>__COPY_TILE4__</b></td><td><span class="name"><span class="sq"></span> Ada D.</span></td><td><span class="chip">taslak</span></td><td class="num">₺6.900</td><td class="num">1 sa</td><td><span class="icon-btn">__ICON:more:13__</span></td></tr>
+          <tr><td><span class="opt"><input type="checkbox"><span class="box"></span></span></td><td><b>Bosphorus · Q3</b></td><td><span class="name"><span class="sq"></span> Kerem A.</span></td><td><span class="chip ok">aktif</span></td><td class="num">₺31.050</td><td class="num">3 sa</td><td><span class="icon-btn">__ICON:more:13__</span></td></tr>
+          <tr><td><span class="opt"><input type="checkbox"><span class="box"></span></span></td><td><b>Marmara · pilot</b></td><td><span class="name"><span class="sq"></span> Mira Z.</span></td><td><span class="chip bad">risk</span></td><td class="num">₺4.300</td><td class="num">dün</td><td><span class="icon-btn">__ICON:more:13__</span></td></tr>
+          <tr><td><span class="opt"><input type="checkbox"><span class="box"></span></span></td><td><b>Ege · yenileme</b></td><td><span class="name"><span class="sq"></span> Ada D.</span></td><td><span class="chip">taslak</span></td><td class="num">₺18.700</td><td class="num">2 gün</td><td><span class="icon-btn">__ICON:more:13__</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pager">
+      <span class="muted">Sayfa 1 / 19</span>
+      <div class="pager-nav"><span class="chip">‹</span><span class="chip on">1</span><span class="chip">2</span><span class="chip">3</span><span class="chip">__ICON:arrow-right:12__</span></div>
+      <span class="muted">Sayfa başına 8</span>
+    </div>
+  </section>
+</body>
+</html>

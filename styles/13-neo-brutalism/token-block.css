@@ -1,0 +1,22 @@
+/* 13 · Neo-Brutalism — token bloğu (kaynak: styles/13-neo-brutalism/tokens.json) */
+
+[data-style="neo-brutalism"] {
+  --bg: #fffdf5; --bg-2: #ffe9a8;
+  --surface: #ffffff; --surface-2: #ffd93d;
+  --ink: #000000; --ink-soft: #2b2b2b; --ink-faint: #6b6b6b;
+  --accent: #ff5c8a; --accent-ink: #000000;
+  --line: #000000;
+  --radius: 0px; --radius-lg: 4px;
+  --shadow: 4px 4px 0 #000000; --shadow-hard: 0 0 0 #000000;
+  --font-display: "Archivo Black", "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.02em; --blur: 0px; --grain: 0;
+  --focus: #f25783;
+}
+
+[data-theme="dark"][data-style="neo-brutalism"] {
+  --bg: #111111; --bg-2: #2a2a1a; --surface: #1b1b1b; --surface-2: #3a3320;
+  --ink: #fffdf5; --ink-soft: #d8d4c8; --ink-faint: #9a958a; --accent: #ff5c8a; --accent-ink: #000000; --line: #fffdf5;
+  --focus: #ff5c8a;
+}

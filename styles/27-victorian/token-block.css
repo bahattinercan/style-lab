@@ -1,0 +1,22 @@
+/* 27 · Victorian — token bloğu (kaynak: styles/27-victorian/tokens.json) */
+
+[data-style="victorian"] {
+  --bg: #efe7d6; --bg-2: #e5dbc5;
+  --surface: #f7f1e3; --surface-2: #eae0cb;
+  --ink: #1c1a17; --ink-soft: #4f4940; --ink-faint: #857c6e;
+  --accent: #5a1e2b; --accent-ink: #f7f1e3;
+  --line: rgba(28,26,23,.45);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Playfair Display", "Baskerville", Georgia, serif;
+  --font-body: "EB Garamond", Georgia, serif;
+  --font-mono: "Courier New", ui-monospace, monospace;
+  --tracking: 0.04em; --blur: 0px; --grain: .06;
+  --focus: #5a1e2b;
+}
+
+[data-theme="dark"][data-style="victorian"] {
+  --bg: #1a1713; --bg-2: #26231e; --surface: #221d18; --surface-2: #322d26;
+  --ink: #e9dfcc; --ink-soft: #aba394; --ink-faint: #777166; --accent: #8d3547; --accent-ink: #ffffff; --line: rgba(233,223,204,.14);
+  --focus: #9f5762;
+}

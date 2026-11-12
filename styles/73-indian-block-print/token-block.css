@@ -1,0 +1,48 @@
+/* 73 · Indian Block Print — token bloğu (açık + koyu)
+   Kaynak: styles/73-indian-block-print/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="indian-block-print"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="indian-block-print"] {
+  /* --- sözleşme: renk --- */
+  --bg: #f7f1e2;
+  --bg-2: #eee6d2;
+  --surface: #fffcf3;
+  --surface-2: #f6efdd;
+  --ink: #16181d;
+  --ink-soft: #464a55;
+  --ink-faint: #7c8089;
+  --accent: #26356e;
+  --accent-ink: #f7f4e9;
+  --line: rgba(22,24,29,.15);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 2px;
+  --radius-lg: 6px;
+  --shadow: 1px 1px 0 rgba(22,24,29,.10);
+  --shadow-hard: 4px 4px 0 rgba(22,24,29,.16);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.015em;
+  --blur: 0px;
+  --grain: 0.02;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #9b2c1e;
+  --danger-ink: #ffffff;
+  --ok: #1d5c3f;
+  --warn: #7c5311;
+}
+
+[data-theme="dark"][data-style="indian-block-print"] {
+  --bg: #131519;
+  --bg-2: #181b20;
+  --surface: #1c2026;
+  --surface-2: #24282f;
+  --ink: #eceee6;
+  --ink-soft: #aeb2b8;
+  --ink-faint: #7b7f88;
+  --accent: #7f97e0;
+  --accent-ink: #0f1424;
+  --line: rgba(236,238,230,.16);
+}

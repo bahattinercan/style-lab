@@ -1,0 +1,21 @@
+/* 21 · Synthwave — token bloğu (kaynak: styles/21-synthwave/tokens.json) */
+
+[data-style="synthwave"] {
+  --bg: #120458; --bg-2: #2b1055;
+  --surface: #1b0a63; --surface-2: #2a1178;
+  --ink: #fdfdff; --ink-soft: rgba(253,253,255,.78); --ink-faint: rgba(253,253,255,.52);
+  --accent: #ff2a6d; --accent-ink: #120458;
+  --line: rgba(5,217,232,.55);
+  --radius: 4px; --radius-lg: 10px;
+  --shadow: 0 0 12px rgba(255,42,109,.65), 0 0 32px rgba(5,217,232,.35);
+  --shadow-hard: none;
+  --font-display: "Outrun", "Turbo", "Michroma", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: 0.06em; --blur: 0px; --grain: .04;
+}
+
+[data-theme="dark"][data-style="synthwave"] {
+  --bg: #0a0330; --bg-2: #1c0a44; --surface: #12064a; --surface-2: #1e0c5c;
+  --ink: #fdfdff; --ink-soft: rgba(253,253,255,.80); --ink-faint: rgba(253,253,255,.54); --accent: #ff4f86; --accent-ink: #120458; --line: rgba(5,217,232,.48);
+}

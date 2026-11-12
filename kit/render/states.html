@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Durumlar</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-states __BODY_CLASS__">
+  <div class="comp-head">
+    <h2>Durum ekranları</h2>
+    <span class="label">12 · __STYLE__ · 5 durum: boş · iskelet · hata · 404 · dolu</span>
+  </div>
+
+  <div class="quad">
+    <section class="panel cell">
+      <span class="tagline">01 · boş durum</span>
+      <div class="bodyc">
+        <div>
+          <span class="empty-ic">__ICON:list:18__</span>
+          <h4>Henüz proje yok</h4>
+          <p>İlk projeni oluştur; şablonlardan başlayabilir veya sıfırdan kurabilirsin.</p>
+          <span class="btn sm">__ICON:plus:13__ Proje oluştur</span>
+          <span class="chip">şablonlara göz at</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel cell">
+      <span class="tagline">02 · iskelet yükleme</span>
+      <div class="bodyc">
+        <div style="width:100%">
+          <div class="sk-stack" style="margin:0 auto">
+            <span class="sk" style="height:14px;width:46%"></span>
+            <span class="sk" style="height:9px;width:72%"></span>
+            <div style="display:flex;gap:8px;margin-top:4px">
+              <span class="sk" style="height:52px;flex:1"></span>
+              <span class="sk" style="height:52px;flex:1"></span>
+              <span class="sk" style="height:52px;flex:1"></span>
+            </div>
+            <span class="sk" style="height:9px;width:88%;margin-top:4px"></span>
+            <span class="sk" style="height:9px;width:64%"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel cell">
+      <span class="tagline">03 · hata</span>
+      <div class="bodyc">
+        <div style="width:100%;align-items:stretch">
+          <div class="errbox" style="margin-bottom:2px">
+            <span class="ic">__ICON:alert:15__</span>
+            <div>Kayıtlar yüklenemedi<span style="display:block;font-size:9.5px;color:var(--ink-faint)">Sunucu 503 · 2 sn önce</span></div>
+            <span class="x">__ICON:x:12__</span>
+          </div>
+          <p style="text-align:center">Bağlantıyı kontrol edip yeniden dene. Sorun sürerse durum sayfasına bak.</p>
+          <div style="display:flex;gap:7px;justify-content:center">
+            <span class="btn sm">__ICON:arrow-right:13__ Yeniden dene</span>
+            <span class="btn ghost sm">Durum sayfası</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel cell">
+      <span class="tagline">04 · 404 / çevrimdışı</span>
+      <div class="bodyc">
+        <div>
+          <span class="big404">404</span>
+          <h4>Sayfa bulunamadı</h4>
+          <p>Aradığın sayfa taşınmış veya hiç var olmamış olabilir.</p>
+          <div style="display:flex;gap:7px">
+            <span class="btn sm">Panele dön</span>
+            <span class="btn ghost sm">__ICON:search:13__ Ara</span>
+          </div>
+          <span class="chip">__ICON:info:10__ çevrimdışıysan taslaklar yerelde</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel cell">
+      <span class="tagline">05 · dolu</span>
+      <div class="bodyc">
+        <div style="width:100%">
+          <h4>Veri hazır</h4>
+          <p>__COPY_PROOF1__ · __COPY_TILE1__ panosunda 24 kayıt.</p>
+          <div class="state-strip">
+            <div class="state-card ok"><span class="sl"><i></i>eşitlendi</span><span class="field">24 kayıt</span></div>
+            <div class="state-card ok"><span class="sl"><i></i>tamamlandı</span><span class="field">128 görev</span></div>
+            <div class="state-card ok"><span class="sl"><i></i>yayında</span><span class="field">__COPY_LOGO1__</span></div>
+            <div class="state-card warn"><span class="sl"><i></i>izin</span><span class="field">2 bekliyor</span></div>
+            <div class="state-card bad"><span class="sl"><i></i>risk</span><span class="field">1 uyarı</span></div>
+            <div class="state-card ok"><span class="sl"><i></i>yedek</span><span class="field">4 dk önce</span></div>
+          </div>
+          <div style="display:flex;gap:7px;margin-top:10px">
+            <span class="btn sm">Raporu indir</span>
+            <span class="btn ghost sm">__ICON:upload:13__ Paylaş</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="sig"></div>
+</body>
+</html>

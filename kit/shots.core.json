@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "_readme": "Repoda tutulan sahneler (commit edilen vitrin). Diğer tüm sahneler üretilen çıktıdır ve kit/.shots-cache/ altında tutulur (gitignore). Neden: 31 sahne × 145 stil = 4495 PNG ≈ 1.3 GB; katalogun günlük kullanımı 4 sahneyle dönüyor. Tam set: `node kit/render/render-shots.mjs --all --cache-only`.",
+  "files": ["01-landing.png", "02-dashboard.png", "04-components.png", "17-dark-landing.png"],
+  "labels": {
+    "01-landing.png": "Landing",
+    "02-dashboard.png": "Dashboard",
+    "04-components.png": "Bileşenler · temel",
+    "17-dark-landing.png": "Koyu mod · landing"
+  }
+}

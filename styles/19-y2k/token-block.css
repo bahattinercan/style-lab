@@ -1,0 +1,21 @@
+/* 19 · Y2K — token bloğu (kaynak: styles/19-y2k/tokens.json) */
+
+[data-style="y2k"] {
+  --bg: #eaf4ff; --bg-2: #d9e9ff;
+  --surface: #ffffff; --surface-2: #e6f0ff;
+  --ink: #1b2340; --ink-soft: #4b557a; --ink-faint: #8b94b5;
+  --accent: #6f4de8; --accent-ink: #ffffff;
+  --line: rgba(90,120,220,.35);
+  --radius: 20px; --radius-lg: 28px;
+  --shadow: 0 6px 18px rgba(120,150,255,.35), inset 0 1px 0 #ffffff;
+  --shadow-hard: none;
+  --font-display: "Michroma", "Eurostile", "Inter", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 10px; --grain: 0;
+}
+
+[data-theme="dark"][data-style="y2k"] {
+  --bg: #0b1024; --bg-2: #181e31; --surface: #141a33; --surface-2: #252b43;
+  --ink: #eaf2ff; --ink-soft: #a7aebd; --ink-faint: #6f7687; --accent: #8b74ff; --accent-ink: #0d0d0d; --line: rgba(234,242,255,.14);
+}

@@ -1,0 +1,55 @@
+/* 49 · Log Stream — token bloğu (kaynak: styles/49-log-stream/tokens.json) */
+
+[data-style="log-stream"] {
+  --bg: #12141a;
+  --bg-2: #171a22;
+  --surface: #1a1e28;
+  --surface-2: #21262f;
+  --ink: #e7e9f0;
+  --ink-soft: #a2a8bb;
+  --ink-faint: #767d92;
+  --accent: #a78bfa;
+  --accent-ink: #14101f;
+  --line: rgba(231,233,240,.14);
+  --radius: 6px;
+  --radius-lg: 12px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Space Mono", ui-monospace, monospace;
+  --font-body: "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: 0em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff7b8a;
+  --danger-ink: #23060b;
+  --ok: #55d6a8;
+  --warn: #f0c05a;
+}
+
+[data-theme="dark"][data-style="log-stream"] {
+  --bg: #06070b;
+  --bg-2: #0a0c12;
+  --surface: #0e1119;
+  --surface-2: #141926;
+  --ink: #f0f1f7;
+  --ink-soft: #abb0c4;
+  --ink-faint: #7c8399;
+  --accent: #ccb9ff;
+  --accent-ink: #120d1e;
+  --line: rgba(240,241,247,.16);
+  --radius: 6px;
+  --radius-lg: 12px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Space Mono", ui-monospace, monospace;
+  --font-body: "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: 0em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff93a0;
+  --danger-ink: #2a0810;
+  --ok: #6ee7bb;
+  --warn: #f6cd76;
+}

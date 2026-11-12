@@ -1,0 +1,48 @@
+/* 130 · Leather Craft — token bloğu (açık + koyu)
+   Kaynak: styles/130-leather-craft/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="leather-craft"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="leather-craft"] {
+  /* --- sözleşme: renk --- */
+  --bg: #e3cba9;
+  --bg-2: #d7bd98;
+  --surface: #f0e0c6;
+  --surface-2: #e9d5b7;
+  --ink: #2b1d12;
+  --ink-soft: #5d452f;
+  --ink-faint: #7f6748;
+  --accent: #7a3f1d;
+  --accent-ink: #f8ecda;
+  --line: rgba(43,29,18,.22);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 7px;
+  --radius-lg: 16px;
+  --shadow: 0 6px 16px -10px rgba(43,29,18,.45);
+  --shadow-hard: 0 0 0 1px rgba(122,63,29,.4);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Lora", Georgia, serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: -.01em;
+  --blur: 0px;
+  --grain: .06;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #8f2b1c;
+  --danger-ink: #fbeee6;
+  --ok: #3d5a33;
+  --warn: #7d5a12;
+}
+
+[data-theme="dark"][data-style="leather-craft"] {
+  --bg: #1d1510;
+  --bg-2: #160f0b;
+  --surface: #251b14;
+  --surface-2: #2f241b;
+  --ink: #f4ead9;
+  --ink-soft: #c6b39a;
+  --ink-faint: #93826b;
+  --accent: #d59a63;
+  --accent-ink: #1c1007;
+  --line: rgba(244,234,217,.16);
+}

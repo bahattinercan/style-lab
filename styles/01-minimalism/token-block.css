@@ -1,0 +1,20 @@
+/* 01 · Minimalism — token bloğu (kaynak: styles/01-minimalism/tokens.json) */
+
+[data-style="minimalism"] {
+  --bg: #fafaf9; --bg-2: #f2f2f0;
+  --surface: #ffffff; --surface-2: #f7f7f5;
+  --ink: #101112; --ink-soft: #5a5f66; --ink-faint: #9aa0a6;
+  --accent: #2563eb; --accent-ink: #ffffff;
+  --line: rgba(16,17,18,.10);
+  --radius: 8px; --radius-lg: 12px;
+  --shadow: 0 1px 2px rgba(16,17,18,.06); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.02em; --blur: 0px; --grain: 0;
+}
+
+[data-theme="dark"][data-style="minimalism"] {
+  --bg: #0b0b0c; --bg-2: #121214; --surface: #161618; --surface-2: #1d1d20;
+  --ink: #ededed; --ink-soft: #a0a4aa; --ink-faint: #6f747a; --accent: #60a5fa; --accent-ink: #0b0b0c; --line: rgba(255,255,255,.12);
+}

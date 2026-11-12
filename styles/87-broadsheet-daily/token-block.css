@@ -1,0 +1,5 @@
+/* 87 · Broadsheet Daily — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="broadsheet-daily"] { --bg: #f3f0e9; --bg-2: #e8e4da; --surface: #fbf9f4; --surface-2: #ece8df; --ink: #12141a; --ink-soft: #45484f; --ink-faint: #74777e; --accent: #a8241b; --accent-ink: #fdf7f2; --line: rgba(18,20,26,.18); --radius: 0px; --radius-lg: 2px; --shadow: none; --shadow-hard: 2px 2px 0 rgba(18,20,26,.92); --font-display: "Archivo Black", Impact, system-ui, sans-serif; --font-body: "EB Garamond", Georgia, serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: -0.02em; --blur: 0px; --grain: 0.02; }
+
+/* 87 · Broadsheet Daily — koyu tema (palette.dark ile birebir aynı; kâğıt antrasite döner, accent kırmızı açılır, kâğıt çizgisi dokusu kapanır) */
+[data-theme="dark"][data-style="broadsheet-daily"] { --bg: #121316; --bg-2: #1b1c20; --surface: #17181c; --surface-2: #232428; --ink: #f0eee8; --ink-soft: #b0ada6; --ink-faint: #7d7a74; --accent: #e0665a; --accent-ink: #14100f; --line: rgba(240,238,232,.16); --shadow-hard: 2px 2px 0 rgba(18,20,26,.92); }

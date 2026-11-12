@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Ayarlar</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-settings __BODY_CLASS__">
+  <aside class="side">
+    <div class="brand"><span class="mark" style="width:22px;height:22px;font-size:10px">N</span> Northwind</div>
+    <div class="snav">
+      <div class="grp">Ayarlar</div>
+      <div class="it on"><span class="ic">__ICON:user:14__</span> Profil</div>
+      <div class="it"><span class="ic">__ICON:bell:14__</span> Bildirimler</div>
+      <div class="it"><span class="ic">__ICON:grid:14__</span> Görünüm</div>
+      <div class="it"><span class="ic">__ICON:lock:14__</span> Güvenlik</div>
+      <div class="it"><span class="ic">__ICON:tag:14__</span> Faturalama</div>
+      <div class="grp">Ekip</div>
+      <div class="it"><span class="ic">__ICON:user:14__</span> Üyeler <span class="cnt">5</span></div>
+      <div class="it"><span class="ic">__ICON:settings:14__</span> Roller</div>
+    </div>
+    <div class="divider" style="margin-top:auto"></div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:11px;padding-top:9px">
+      <span class="avatar" style="width:22px;height:22px;font-size:8.5px">EB</span> Elif Barut
+    </div>
+  </aside>
+
+  <div class="body">
+    <div class="hd">
+      <h1>Ayarlar</h1>
+      <span class="chip">pro plan</span>
+      <div class="act">
+        <span class="btn ghost sm">Vazgeç</span>
+        <span class="btn sm">Değişiklikleri kaydet</span>
+      </div>
+    </div>
+
+    <div class="set-grid">
+      <section class="panel sheet-panel full">
+        <h3>Profil <span class="n">01</span></h3>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span class="avatar-lg">EB</span>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <span style="font-size:12.5px;font-weight:600">Elif Barut</span>
+            <span style="font-size:10px;color:var(--ink-faint)">elif@kuzey.co · 12 Eki 2024'ten beri</span>
+          </div>
+          <span class="btn ghost sm" style="margin-left:auto">__ICON:upload:12__ Fotoğraf yükle</span>
+        </div>
+        <div class="divider"></div>
+        <div class="co-2">
+          <div class="ctl"><span class="lbl">Ad Soyad</span><input class="field" value="Elif Barut" aria-label="ad"></div>
+          <div class="ctl"><span class="lbl">E-posta</span><input class="field" value="elif@kuzey.co" aria-label="e-posta"></div>
+          <div class="ctl"><span class="lbl">Dil</span><span class="f-wrap sel-wrap"><select class="field sel" aria-label="dil"><option>Türkçe</option><option>English</option></select></span></div>
+          <div class="ctl"><span class="lbl">Saat dilimi</span><span class="f-wrap sel-wrap"><select class="field sel" aria-label="saat dilimi"><option>(GMT+3) İstanbul</option></select></span></div>
+        </div>
+      </section>
+
+      <section class="panel sheet-panel">
+        <h3>Bildirimler <span class="n">02</span></h3>
+        <div class="set-row">
+          <span class="tx">Haftalık özet<span>Pazartesi 09:00</span></span>
+          <label class="toggle ctl-inline"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+        </div>
+        <div class="set-row">
+          <span class="tx">Yorum bildirimi<span>Bahsedildiğimde</span></span>
+          <label class="toggle ctl-inline"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+        </div>
+        <div class="set-row">
+          <span class="tx">Ürün haberleri<span>Ayda en fazla 2 e-posta</span></span>
+          <label class="toggle ctl-inline"><input type="checkbox"><span class="track"><span class="thumb"></span></span></label>
+        </div>
+        <div class="set-row">
+          <span class="tx">Mobil anlık bildirim<span>Yalnız atamalar</span></span>
+          <label class="toggle ctl-inline"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+        </div>
+      </section>
+
+      <section class="panel sheet-panel">
+        <h3>Görünüm <span class="n">03</span></h3>
+        <div class="ctl">
+          <span class="lbl">Tema</span>
+          <div class="segmented"><span class="on">Sistem</span><span>Açık</span><span>Koyu</span></div>
+        </div>
+        <div class="ctl">
+          <span class="lbl">Yazı boyutu</span>
+          <div class="segmented"><span>A</span><span class="on">A</span><span style="font-size:13px">A</span></div>
+        </div>
+        <div class="ctl">
+          <span class="lbl">Yoğunluk</span>
+          <div class="segmented"><span class="on">Rahat</span><span>Sıkı</span></div>
+        </div>
+        <div class="divider"></div>
+        <label class="opt"><input type="checkbox" checked><span class="box"></span> Hareketi azalt</label>
+        <label class="opt"><input type="checkbox"><span class="box"></span> Yüksek kontrast</label>
+      </section>
+
+      <section class="panel sheet-panel full danger-zone">
+        <h3>Tehlike bölgesi <span class="n">04</span></h3>
+        <div class="set-row" style="border-bottom:0">
+          <span class="tx">Hesabı sil<span>Tüm projeler ve dosyalar kalıcı olarak silinir. 30 gün geri alma yok.</span></span>
+          <span class="btn danger sm" style="margin-left:auto">Hesabı sil</span>
+        </div>
+        <div class="divider"></div>
+        <div class="fbar">
+          <span class="chip">__ICON:download:10__ verilerini indir</span>
+          <span class="chip">__ICON:clock:10__ son giriş: 2 sa önce</span>
+          <span class="chip">__ICON:lock:10__ 2FA açık</span>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="sig"></div>
+</body>
+</html>

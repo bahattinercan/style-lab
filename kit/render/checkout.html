@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Ödeme</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-checkout __BODY_CLASS__">
+  <div class="co-head">
+    <span class="mark" style="width:22px;height:22px;font-size:10px">N</span>
+    <b style="font-size:12.5px">Ödeme</b>
+    <span class="act">
+      <span class="chip">__ICON:lock:9__ güvenli ödeme</span>
+      <span class="chip">__ICON:clock:9__ sepet 15 dk ayrıldı</span>
+    </span>
+  </div>
+
+  <div class="co-body">
+    <div class="co-form">
+      <div class="co-steps">
+        <span class="st done"><span class="n">__ICON:check:9__</span> Sepet</span>
+        <span class="ln done"></span>
+        <span class="st now"><span class="n">2</span> Adres &amp; ödeme</span>
+        <span class="ln"></span>
+        <span class="st"><span class="n">3</span> Onay</span>
+      </div>
+
+      <section class="panel co-sec">
+        <h3><span class="ic">__ICON:mail:13__</span> İletişim</h3>
+        <div class="co-2">
+          <div class="ctl">
+            <span class="lbl">E-posta</span>
+            <input class="field" value="elif@kuzey.co" aria-label="e-posta">
+          </div>
+          <div class="ctl">
+            <span class="lbl">Telefon <b>isteğe bağlı</b></span>
+            <input class="field" value="+90 5•• ••• 42 18" aria-label="telefon">
+          </div>
+        </div>
+      </section>
+
+      <section class="panel co-sec">
+        <h3><span class="ic">__ICON:grid:13__</span> Teslimat adresi</h3>
+        <div class="co-2">
+          <div class="ctl">
+            <span class="lbl">Ad Soyad</span>
+            <input class="field" value="Elif Barut" aria-label="ad soyad">
+          </div>
+          <div class="ctl">
+            <span class="lbl">Şehir</span>
+            <span class="f-wrap sel-wrap">
+              <select class="field sel" aria-label="şehir"><option>İstanbul</option><option>Ankara</option></select>
+            </span>
+          </div>
+        </div>
+        <div class="ctl">
+          <span class="lbl">Adres</span>
+          <input class="field" value="Kuzey Mah. 12/4, Kadıköy" aria-label="adres">
+        </div>
+        <div class="co-2">
+          <div class="ctl">
+            <span class="lbl">Posta kodu</span>
+            <input class="field" value="34710" aria-label="posta kodu">
+          </div>
+          <div class="ctl">
+            <span class="lbl">Ülke</span>
+            <span class="f-wrap sel-wrap">
+              <select class="field sel" aria-label="ülke"><option>Türkiye</option><option>Almanya</option></select>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel co-sec">
+        <h3><span class="ic">__ICON:tag:13__</span> Kart bilgileri</h3>
+        <div class="ctl">
+          <span class="lbl">Kart numarası <b>hatalı</b></span>
+          <span class="f-wrap">
+            <span class="ic">__ICON:tag:14__</span>
+            <input class="field lp err" value="4242 4242 4242 424" aria-label="kart numarası">
+          </span>
+          <span class="help err">Kart numarası 16 haneli olmalı</span>
+        </div>
+        <div class="co-3">
+          <div class="ctl">
+            <span class="lbl">Son kullanma</span>
+            <input class="field" value="09 / 28" aria-label="son kullanma">
+          </div>
+          <div class="ctl">
+            <span class="lbl">CVC</span>
+            <input class="field" value="•••" aria-label="cvc">
+          </div>
+          <div class="ctl">
+            <span class="lbl">Taksit</span>
+            <span class="f-wrap sel-wrap">
+              <select class="field sel" aria-label="taksit"><option>Tek çekim</option><option>3 taksit</option></select>
+            </span>
+          </div>
+        </div>
+        <label class="opt"><input type="checkbox" checked><span class="box"></span> Kartımı sonraki alışverişler için sakla</label>
+      </section>
+
+      <div class="fbar" style="margin-top:auto">
+        <span class="co-note">__ICON:lock:11__ 256-bit TLS · 3D Secure</span>
+        <span class="btn ghost" style="margin-left:auto">Sepete dön</span>
+        <span class="btn">Ödemeyi tamamla</span>
+      </div>
+    </div>
+
+    <aside class="co-sum">
+      <section class="panel" style="flex:0 0 auto">
+        <h3 style="font-size:13px;display:flex;align-items:center;gap:7px">
+          Sipariş özeti <span class="chip" style="margin-left:auto">3 ürün</span>
+        </h3>
+        <div class="co-item">
+          <span class="th">__ICON:star:15__</span>
+          <span class="nm">Ekip planı · yıllık<span>5 kullanıcı</span></span>
+          <span class="pr">₺24.000</span>
+        </div>
+        <div class="co-item">
+          <span class="th">__ICON:download:15__</span>
+          <span class="nm">Şablon paketi<span>Kampanya + ürün</span></span>
+          <span class="pr">₺1.200</span>
+        </div>
+        <div class="co-item">
+          <span class="th">__ICON:user:15__</span>
+          <span class="nm">Onboarding<span>2 saat danışmanlık</span></span>
+          <span class="pr">₺3.500</span>
+        </div>
+        <div class="divider"></div>
+        <div class="sum-row">Ara toplam <b>₺28.700</b></div>
+        <div class="sum-row">KDV (%20) <b>₺5.740</b></div>
+        <div class="sum-row">Teslimat <b>ücretsiz</b></div>
+        <div class="sum-total">Ödenecek <b>₺34.440</b></div>
+      </section>
+
+      <section class="panel" style="flex:0 0 auto">
+        <span class="lbl">İndirim kodu</span>
+        <div class="fbar">
+          <span class="f-wrap"><input class="field lp" placeholder="KOD" aria-label="indirim kodu" style="min-height:34px"></span>
+          <span class="btn soft sm">Uygula</span>
+        </div>
+        <div class="co-note">__ICON:info:11__ KDV dahil fiyatlar, e-fatura e-posta ile gönderilir.</div>
+      </section>
+
+      <section class="panel co-trust">
+        <div style="display:flex;align-items:center;gap:8px"><span class="chip accent">__ICON:lock:9__ 3D Secure</span><span class="chip">__ICON:check:9__ 14 gün iade</span></div>
+        <div class="divider"></div>
+        <div class="sum-row">Destek<span style="margin-left:auto;font-size:10px;color:var(--ink)">7/24 canlı</span></div>
+        <div class="sum-row">Fatura<span style="margin-left:auto;font-size:10px;color:var(--ink)">e-arşiv</span></div>
+        <div class="sum-row">Tahsilat<span style="margin-left:auto;font-size:10px;color:var(--ink)">tek çekim</span></div>
+        <div class="divider"></div>
+        <div class="co-note">__ICON:info:11__ Sorun olursa sipariş numarası ile destek ekibine ulaş.</div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="sig"></div>
+</body>
+</html>

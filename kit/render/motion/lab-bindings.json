@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "_readme": "Lab ↔ katalog bağı (M5). Her desenin en az bir laboratuvar demosu olmalı; her demo bir desene ya da açık bir 'technique' etiketine bağlanır. Kapı: node kit/build-motion-lab.mjs --check.",
+  "bindings": {
+    "fade-rise": ["reveal-stagger", "card-hover"],
+    "line-mask": ["mask-lines", "word-mask", "svg-text-draw"],
+    "clip-curtain": ["clip-wipe", "curtain-split"],
+    "blur-in": ["aurora-blob", "specular-sheen"],
+    "scale-settle": ["card-hover", "switch-morph"],
+    "letter-stagger": ["char-stagger", "typewriter", "decode", "odometer"],
+    "split-slide": ["reveal-stagger", "sticky-stack"],
+    "reveal": ["reveal-stagger", "image-reveal", "progress-line"],
+    "grid-stagger": ["reveal-stagger", "snap-gallery"],
+    "pin-scrub": ["pin-scrub", "sticky-stack", "parallax-layers"],
+    "parallax": ["parallax-layers", "perspective-stack", "image-trail"],
+    "counter": ["odometer", "progress-line"],
+    "mask-wipe": ["clip-wipe", "image-reveal"],
+    "stack-pin": ["sticky-stack", "pin-scrub"],
+    "velocity-skew": ["velocity-skew", "progress-line"],
+    "scroll-zoom": ["image-reveal", "perspective-stack"],
+    "scale": ["card-hover", "magnetic-btn", "rocker-ripple"],
+    "underline-draw": ["link-draw", "word-highlight"],
+    "tilt-3d": ["tilt-3d", "perspective-stack", "card-hover"],
+    "crossfade": ["view-transition", "preloader"]
+  }
+}

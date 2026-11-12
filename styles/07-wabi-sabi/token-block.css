@@ -1,0 +1,20 @@
+/* 07 · Wabi-Sabi — token bloğu (kaynak: styles/07-wabi-sabi/tokens.json) */
+
+[data-style="wabi-sabi"] {
+  --bg: #ede6da; --bg-2: #e3d9c9;
+  --surface: #f6f1e6; --surface-2: #eadfce;
+  --ink: #2a2724; --ink-soft: #5f574d; --ink-faint: #8f8779;
+  --accent: #a85831; --accent-ink: #fff8ef;
+  --line: rgba(42,39,36,.18);
+  --radius: 3px; --radius-lg: 18px;
+  --shadow: 0 1px 0 rgba(42,39,36,.06); --shadow-hard: 2px 2px 0 rgba(42,39,36,.12);
+  --font-display: "Fraunces", "Lora", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Courier New", ui-monospace, monospace;
+  --tracking: 0em; --blur: 0px; --grain: .07;
+}
+
+[data-theme="dark"][data-style="wabi-sabi"] {
+  --bg: #1a1714; --bg-2: #26231f; --surface: #221e19; --surface-2: #322e28;
+  --ink: #e8e0d3; --ink-soft: #b0a495; --ink-faint: #77716a; --accent: #c9744a; --accent-ink: #0d0d0d; --line: rgba(232,224,211,.16);
+}

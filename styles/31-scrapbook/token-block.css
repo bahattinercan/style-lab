@@ -1,0 +1,20 @@
+/* 31 · Scrapbook — token bloğu (kaynak: styles/31-scrapbook/tokens.json) */
+
+[data-style="scrapbook"] {
+  --bg: #f7f1e4; --bg-2: #efe6d2;
+  --surface: #fffdf7; --surface-2: #fdf3dc;
+  --ink: #1f2b3a; --ink-soft: #4e5a68; --ink-faint: #858e99;
+  --accent: #c63d2f; --accent-ink: #fffdf7;
+  --line: rgba(31,43,58,.18);
+  --radius: 3px; --radius-lg: 8px;
+  --shadow: 0 2px 6px rgba(31,43,58,.18); --shadow-hard: 6px 6px 0 rgba(31,43,58,.12);
+  --font-display: "Caveat", "Kalam", cursive;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: 0em; --blur: 0px; --grain: .08;
+}
+
+[data-theme="dark"][data-style="scrapbook"] {
+  --bg: #1a1f26; --bg-2: #272b31; --surface: #232a33; --surface-2: #343a41;
+  --ink: #f2ece0; --ink-soft: #b1afa8; --ink-faint: #7b7b7a; --accent: #e0574a; --accent-ink: #0d0d0d; --line: rgba(242,236,224,.14);
+}

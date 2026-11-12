@@ -1,0 +1,5 @@
+/* 93 · Type Experiment — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="type-experiment"] { --bg: #f4f4f0; --bg-2: #eaeae4; --surface: #ffffff; --surface-2: #efefe9; --ink: #0d0d0f; --ink-soft: #47474c; --ink-faint: #74747a; --accent: #2b1de0; --accent-ink: #f6f5ff; --line: rgba(13,13,15,.16); --radius: 0px; --radius-lg: 2px; --shadow: none; --shadow-hard: none; --font-display: "Michroma", "Space Grotesk", system-ui, sans-serif; --font-body: "Space Mono", ui-monospace, monospace; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.02em; --blur: 0px; --grain: 0.01; }
+
+/* 93 · Type Experiment — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="type-experiment"] { --bg: #0b0b0d; --bg-2: #101013; --surface: #141417; --surface-2: #1b1b1f; --ink: #efeff1; --ink-soft: #a9a9ae; --ink-faint: #7e7e84; --accent: #7b6cff; --accent-ink: #0b0b0d; --line: rgba(239,239,241,.16); }

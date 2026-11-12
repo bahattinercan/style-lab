@@ -1,0 +1,9 @@
+/* fixture: bilinçli ihlaller — style-lint bad */
+.panel {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 7px;
+  font-family: "Comic Sans MS", sans-serif;
+  transition: opacity 320ms ease;
+}
+.title { color: var(--ink-faint); }

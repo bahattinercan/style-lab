@@ -1,0 +1,32 @@
+/* kit/render/flow.css — akış şeridi iskeleti (P4). Yalnız var(--…) renk. */
+body.flow-page { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); }
+.flow-page .wrap { padding: 34px 40px 30px; }
+.flow-page .f-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px; }
+.flow-page .f-head h1 { margin: 0; font-family: var(--font-display); font-size: 26px; letter-spacing: var(--tracking); }
+.flow-page .f-head .f-cap:last-child { margin-left: auto; }
+.flow-page .f-cap { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
+.flow-page .f-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.flow-page .f-step { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow); }
+.flow-page .f-step > header { display: flex; align-items: center; gap: 10px; }
+.flow-page .f-step h2 { margin: 0; font-size: 16px; font-family: var(--font-display); letter-spacing: var(--tracking); }
+.flow-page .f-step .f-n { font-family: var(--font-mono); font-size: 10px; color: var(--accent); border: 1px solid var(--line); border-radius: 999px; padding: 2px 7px; }
+.flow-page .f-dots { display: inline-flex; gap: 4px; margin-left: auto; }
+.flow-page .f-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+.flow-page .f-dots i.on { background: var(--accent); }
+.flow-page .f-opts { display: grid; gap: 8px; }
+.flow-page .f-opt { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-2); }
+.flow-page .f-opt.on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.flow-page .f-opt b { font-size: 13px; }
+.flow-page .f-opt span { font-size: 11.5px; color: var(--ink-soft); }
+.flow-page .f-field { display: grid; gap: 6px; }
+.flow-page .f-label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+.flow-page .f-input { border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); padding: 9px 11px; font-size: 12.5px; color: var(--ink-soft); }
+.flow-page .f-input.tall { min-height: 64px; }
+.flow-page .f-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.flow-page .chip.on { border-color: var(--accent); color: var(--ink); }
+.flow-page .f-note { font-size: 11.5px; color: var(--ink-soft); }
+.flow-page .f-row { display: flex; justify-content: space-between; font-size: 13px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.flow-page .f-row.total { border-bottom: 0; font-weight: 600; }
+.flow-page .f-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.flow-page .f-ok { display: flex; gap: 12px; align-items: flex-start; }
+.flow-page .f-check { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 13px; }

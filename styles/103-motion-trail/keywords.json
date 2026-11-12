@@ -1,0 +1,21 @@
+{
+  "slug": "motion-trail",
+  "num": "103",
+  "labels": [
+    "iz bırakma",
+    "hareket izi katmanları",
+    "uzun pozlama hissi"
+  ],
+  "synonyms": [
+    "motion trail arayüzü",
+    "kuyruk efektli geçiş",
+    "hız çizgisi vurgusu",
+    "kayma izli kart",
+    "hareket bulanıklığı estetiği"
+  ],
+  "avoid": [
+    "sağlık/klinik sakin ekran",
+    "muhasebe tablosu",
+    "erik/yaşlı kullanıcı formu"
+  ]
+}

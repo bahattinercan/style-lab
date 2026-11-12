@@ -1,0 +1,55 @@
+/* 46 · Telemetry Grid — token bloğu (kaynak: styles/46-telemetry-grid/tokens.json) */
+
+[data-style="telemetry-grid"] {
+  --bg: #eef1f4;
+  --bg-2: #e5eaee;
+  --surface: #ffffff;
+  --surface-2: #f6f8fa;
+  --ink: #10171c;
+  --ink-soft: #46585f;
+  --ink-faint: #7b8a91;
+  --accent: #0b6e75;
+  --accent-ink: #ffffff;
+  --line: rgba(16,23,28,.14);
+  --radius: 4px;
+  --radius-lg: 10px;
+  --shadow: 0 1px 2px rgba(16,23,28,.07);
+  --shadow-hard: none;
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.01em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #a3241c;
+  --danger-ink: #ffffff;
+  --ok: #1c6b3f;
+  --warn: #7d5200;
+}
+
+[data-theme="dark"][data-style="telemetry-grid"] {
+  --bg: #0a0f12;
+  --bg-2: #0e1417;
+  --surface: #101820;
+  --surface-2: #162028;
+  --ink: #e6eef2;
+  --ink-soft: #a3b3bb;
+  --ink-faint: #6e8089;
+  --accent: #3ec6cd;
+  --accent-ink: #04191b;
+  --line: rgba(230,238,242,.16);
+  --radius: 4px;
+  --radius-lg: 10px;
+  --shadow: 0 1px 2px rgba(0,0,0,.55);
+  --shadow-hard: none;
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.01em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff8f87;
+  --danger-ink: #2a0a08;
+  --ok: #5ddb9a;
+  --warn: #f0c052;
+}

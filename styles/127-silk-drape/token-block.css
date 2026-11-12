@@ -1,0 +1,48 @@
+/* 127 · Silk Drape — token bloğu (açık + koyu)
+   Kaynak: styles/127-silk-drape/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="silk-drape"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="silk-drape"] {
+  /* --- sözleşme: renk --- */
+  --bg: #f6efe7;
+  --bg-2: #ede2d6;
+  --surface: #fdf9f3;
+  --surface-2: #f3eade;
+  --ink: #241a20;
+  --ink-soft: #5b4b52;
+  --ink-faint: #83737a;
+  --accent: #6b2f4a;
+  --accent-ink: #f9f1f4;
+  --line: rgba(36,26,32,.14);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 20px;
+  --radius-lg: 44px;
+  --shadow: 0 10px 30px -18px rgba(60,34,44,.35);
+  --shadow-hard: 0 0 0 1px rgba(107,47,74,.3);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: .02em;
+  --blur: 0px;
+  --grain: .012;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #9b2436;
+  --danger-ink: #fdf3f4;
+  --ok: #3d5c40;
+  --warn: #7d5a1e;
+}
+
+[data-theme="dark"][data-style="silk-drape"] {
+  --bg: #1a1217;
+  --bg-2: #140e12;
+  --surface: #221820;
+  --surface-2: #2c2028;
+  --ink: #f6ecf0;
+  --ink-soft: #c4b1ba;
+  --ink-faint: #8e7d86;
+  --accent: #d08aa8;
+  --accent-ink: #26101a;
+  --line: rgba(246,236,240,.16);
+}

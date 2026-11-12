@@ -1,0 +1,5 @@
+/* 119 · Arcade 8-bit — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="arcade-8bit"] { --bg: #0e1224; --bg-2: #141a2e; --surface: #121728; --surface-2: #1b2136; --ink: #eef4ff; --ink-soft: #a7b3cc; --ink-faint: #78849c; --accent: #35e08a; --accent-ink: #05130c; --line: rgba(238,244,255,.16); --radius: 0px; --radius-lg: 2px; --shadow: none; --shadow-hard: none; --font-display: "Press Start 2P", "Space Mono", monospace; --font-body: "Space Grotesk", system-ui, sans-serif; --font-mono: "VT323", ui-monospace, monospace; --tracking: 0; --blur: 0px; --grain: 0; }
+
+/* 119 · Arcade 8-bit — koyu tema (palette.dark ile birebir aynı; zemin daha derin laciverte döner, mint aksan parlaklaşır, tarama %3'e iner) */
+[data-theme="dark"][data-style="arcade-8bit"] { --bg: #010309; --bg-2: #050914; --surface: #04070f; --surface-2: #0d1424; --ink: #f4f9ff; --ink-soft: #aebcd4; --ink-faint: #7f8ba3; --accent: #66ffb8; --accent-ink: #04120a; --line: rgba(244,249,255,.13); --shadow-hard: none; }

@@ -1,0 +1,5 @@
+/* 131 · Optic Prism — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="optic-prism"] { --bg: #f2f6f7; --bg-2: #e7eef0; --surface: #fdfeff; --surface-2: #eaf1f3; --ink: #101a1f; --ink-soft: #43535a; --ink-faint: #74858c; --accent: #0d5c63; --accent-ink: #f2fbfc; --line: rgba(16,26,31,.14); --radius: 2px; --radius-lg: 10px; --shadow: none; --shadow-hard: none; --font-display: "Michroma", "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.02em; --blur: 0px; --grain: 0; }
+
+/* 131 · Optic Prism — koyu tema (palette.dark ile birebir aynı; soğuk beyaz gece camına döner, kırılma halkası opaklık kazanır, gölge yok) */
+[data-theme="dark"][data-style="optic-prism"] { --bg: #0a1216; --bg-2: #111a1f; --surface: #0d161b; --surface-2: #172128; --ink: #eef6f8; --ink-soft: #a9bcc2; --ink-faint: #7e939b; --accent: #6fe6dc; --accent-ink: #04140f; --line: rgba(238,246,248,.16); --shadow-hard: none; }

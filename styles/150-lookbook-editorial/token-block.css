@@ -1,0 +1,48 @@
+/* 150 · Lookbook Editorial — token bloğu (açık + koyu)
+   Kaynak: styles/150-lookbook-editorial/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="lookbook-editorial"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="lookbook-editorial"] {
+  /* --- sözleşme: renk --- */
+ --bg: #efebe4;
+ --bg-2: #e6e1d8;
+ --surface: #f7f4ef;
+ --surface-2: #ffffff;
+ --ink: #13110f;
+ --ink-soft: #5a554e;
+ --ink-faint: #857f76;
+ --accent: #a8402a;
+ --accent-ink: #fdf6f2;
+ --line: rgba(19,17,15,.14);
+  /* --- sözleşme: biçim ve gölge --- */
+ --radius: 0px;
+ --radius-lg: 4px;
+ --shadow: 0 0 0 1px var(--ink);
+ --shadow-hard: 0 0 0 1px var(--accent);
+  /* --- sözleşme: tipografi ve doku --- */
+ --font-display: "Fraunces", "Georgia", serif;
+ --font-body: "Inter", system-ui, sans-serif;
+ --font-mono: "JetBrains Mono", ui-monospace, monospace;
+ --tracking: -.01em;
+ --blur: 0px;
+ --grain: .015;
+  /* --- stil ekleri (durum renkleri) --- */
+ --danger: #b3261e;
+ --danger-ink: #fff6f4;
+ --ok: #2f6b46;
+ --warn: #8a6212;
+}
+
+[data-theme="dark"][data-style="lookbook-editorial"] {
+  --bg:#0c0b0a;
+  --bg-2:#080706;
+  --surface:#151312;
+  --surface-2:#1e1c1a;
+  --ink:#f2ede6;
+  --ink-soft:#bcb4aa;
+  --ink-faint:#8a837a;
+  --accent:#e0704f;
+  --accent-ink:#140703;
+  --line:rgba(242,237,230,.16);
+}

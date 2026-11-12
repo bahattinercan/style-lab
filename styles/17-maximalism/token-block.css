@@ -1,0 +1,22 @@
+/* 17 · Maximalism — token bloğu (kaynak: styles/17-maximalism/tokens.json) */
+
+[data-style="maximalism"] {
+  --bg: #f6e7d8; --bg-2: #e8cfae;
+  --surface: #fffaf3; --surface-2: #f2c14e;
+  --ink: #221410; --ink-soft: #57403a; --ink-faint: #8f7a72;
+  --accent: #7a1f3d; --accent-ink: #f6e7d8;
+  --line: rgba(34,20,16,.2);
+  --radius: 6px; --radius-lg: 14px;
+  --shadow: 6px 6px 0 rgba(34,20,16,.85); --shadow-hard: none;
+  --font-display: "Playfair Display", "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: .05;
+  --focus: #7a1f3d;
+}
+
+[data-theme="dark"][data-style="maximalism"] {
+  --bg: #1a1310; --bg-2: #27201c; --surface: #241a15; --surface-2: #c79b33;
+  --ink: #f6e7d8; --ink-soft: #b4a79c; --ink-faint: #7d726a; --accent: #a8385a; --accent-ink: #ffffff; --line: rgba(246,231,216,.14);
+  --focus: #b04a67;
+}

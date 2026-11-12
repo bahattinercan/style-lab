@@ -1,0 +1,48 @@
+/* 74 · Persian Miniature — token bloğu (açık + koyu)
+   Kaynak: styles/74-persian-miniature/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="persian-miniature"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="persian-miniature"] {
+  /* --- sözleşme: renk --- */
+  --bg: #131a2c;
+  --bg-2: #182135;
+  --surface: #1c2640;
+  --surface-2: #232f4c;
+  --ink: #f0e6ce;
+  --ink-soft: #bfb193;
+  --ink-faint: #8b8368;
+  --accent: #cfa53a;
+  --accent-ink: #1a1206;
+  --line: rgba(240,230,206,.16);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 10px;
+  --radius-lg: 16px;
+  --shadow: 0 2px 6px rgba(0,0,0,.45);
+  --shadow-hard: none;
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "EB Garamond", Georgia, serif;
+  --font-body: "Lora", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.02em;
+  --blur: 0px;
+  --grain: 0.02;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #e58a76;
+  --danger-ink: #25100a;
+  --ok: #86cfa4;
+  --warn: #e2c076;
+}
+
+[data-theme="dark"][data-style="persian-miniature"] {
+  --bg: #070a15;
+  --bg-2: #0a0f1e;
+  --surface: #0d1324;
+  --surface-2: #141b30;
+  --ink: #f6efe2;
+  --ink-soft: #c2b6a0;
+  --ink-faint: #8f8571;
+  --accent: #e6c169;
+  --accent-ink: #1b1406;
+  --line: rgba(246,239,226,.18);
+}

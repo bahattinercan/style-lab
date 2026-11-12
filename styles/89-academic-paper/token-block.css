@@ -1,0 +1,5 @@
+/* 89 · Academic Paper — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="academic-paper"] { --bg: #f8f8f6; --bg-2: #eeeeea; --surface: #fdfdfb; --surface-2: #f2f2ee; --ink: #1b1e23; --ink-soft: #4a4e55; --ink-faint: #7a7e85; --accent: #1f4a7a; --accent-ink: #f6f8fb; --line: rgba(27,30,35,.16); --radius: 2px; --radius-lg: 4px; --shadow: 0 1px 2px rgba(27,30,35,.08); --shadow-hard: none; --font-display: "EB Garamond", Georgia, serif; --font-body: "EB Garamond", Georgia, serif; --font-mono: "Courier Prime", Courier, monospace; --tracking: -0.005em; --blur: 0px; --grain: 0; }
+
+/* 89 · Academic Paper — koyu tema (palette.dark ile birebir aynı; soğuk beyaz antrasite döner, accent açık maviye çekilir, gölge yine yok) */
+[data-theme="dark"][data-style="academic-paper"] { --bg: #101216; --bg-2: #171a1f; --surface: #14171c; --surface-2: #1f232a; --ink: #eef0f2; --ink-soft: #a9aeb5; --ink-faint: #757a82; --accent: #86aad6; --accent-ink: #0d1015; --line: rgba(238,240,242,.14); --shadow-hard: none; }

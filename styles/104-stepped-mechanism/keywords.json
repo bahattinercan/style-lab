@@ -1,0 +1,21 @@
+{
+  "slug": "stepped-mechanism",
+  "num": "104",
+  "labels": [
+    "mekanik kademeli geçiş",
+    "kademe göstergesi",
+    "orta gri metal panel"
+  ],
+  "synonyms": [
+    "stepped motion arayüzü",
+    "çentikli kontrol paneli",
+    "kilitlenen buton",
+    "adım adım geçiş",
+    "makine arayüzü"
+  ],
+  "avoid": [
+    "yumuşak yay animasyonlu vitrin",
+    "editoryal makale",
+    "çocuk uygulaması"
+  ]
+}

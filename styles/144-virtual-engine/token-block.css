@@ -1,0 +1,35 @@
+/* styles/144-virtual-engine/token-block.css — üretildi; kaynak tokens.json.
+   Entegratör: açık bloğu kit/tokens.css [data-style] bölümüne, koyu bloğu koyu mod
+   bölümüne taşır. Açık bloktaki bildirimler tokens.json "css" alanıyla aynıdır
+   (kit/build-gallery.mjs norm() karşılaştırması geçer). */
+
+[data-style="virtual-engine"] {
+  --bg: #120c1c; --bg-2: #181024;
+  --surface: #1d142b; --surface-2: #251a36;
+  --ink: #eee8fa; --ink-soft: #b3a7c9; --ink-faint: #7f7395;
+  --accent: #c7307f; --accent-ink: #ffffff;
+  --line: rgba(238,232,250,.15);
+  --radius: 8px; --radius-lg: 14px;
+  --shadow: 0 14px 30px -26px rgba(4,1,10,.95); --shadow-hard: 0 0 0 1px var(--line);
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: .02;
+  --danger: #ff7a72; --danger-ink: #1c0606;
+  --ok: #6fe0a8; --warn: #e8c56a;
+}
+
+[data-theme="dark"][data-style="virtual-engine"] {
+  --bg: #030206; --bg-2: #07040d;
+  --surface: #140c22; --surface-2: #1d1230;
+  --ink: #faf6ff; --ink-soft: #cfc2e2; --ink-faint: #9a8db2;
+  --accent: #ff9fcb; --accent-ink: #1f0612;
+  --line: rgba(250,246,255,.22);
+  --radius: 8px;
+  --shadow: 0 14px 30px -26px rgba(4,1,10,.95);
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: .02;
+  --danger: #ff7a72; --ok: #6fe0a8; --warn: #e8c56a;
+}

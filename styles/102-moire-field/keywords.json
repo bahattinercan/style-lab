@@ -1,0 +1,21 @@
+{
+  "slug": "moire-field",
+  "num": "102",
+  "labels": [
+    "moiré ve desen",
+    "çift perde girişim",
+    "orta ton zemin"
+  ],
+  "synonyms": [
+    "girişim deseni",
+    "optik perde",
+    "çizgi ızgara katmanı",
+    "baskı deseni arayüzü",
+    "keskin köşeli desen paneli"
+  ],
+  "avoid": [
+    "lüks ürün vitrini",
+    "yumuşak pastel marka sayfası",
+    "hareketli video arka plan"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "_readme": "Arketip × hareket matrisi (M2) tek kaynağı. `scroll` ZORUNLU desen(ler); `enterPreferred` atama sırasında öncelikli (yumuşak tercih, kapı uyarı verir). Atama: kit/assign-motion.mjs · kapı: kit/motion-check.mjs.",
+  "archetypes": {
+    "sticky": {
+      "scroll": ["pin-scrub"],
+      "enterPreferred": ["line-mask", "fade-rise"],
+      "why": "Yapışkan anlatının anlamı kaydırmayla açığa çıkmak; pin/scrub olmadan sticky hero boşa gider."
+    },
+    "index": {
+      "scroll": ["grid-stagger"],
+      "enterPreferred": ["letter-stagger", "fade-rise"],
+      "why": "Izgara kademeli açılmalı; tek blok fade ızgara fikrini öldürür."
+    },
+    "type": {
+      "scroll": ["reveal", "counter", "mask-wipe", "velocity-skew"],
+      "enterPreferred": ["line-mask", "letter-stagger"],
+      "why": "Poster tipografisi satır/harf satır gelmeli; kutu fade tipografiyi düzleştirir."
+    },
+    "product": {
+      "scroll": ["reveal", "counter", "grid-stagger", "scroll-zoom", "stack-pin"],
+      "enterPreferred": ["scale-settle", "fade-rise"],
+      "why": "Dev panel 'yerleşiyor' hissi vermeli (scale-settle), yoksa kart sadece belirir."
+    },
+    "fullbleed": {
+      "scroll": ["parallax", "reveal", "mask-wipe", "scroll-zoom"],
+      "enterPreferred": ["clip-curtain", "blur-in"],
+      "why": "Medya kenardan açılmalı/katmanlanmalı; tam kenar medya için perde doğal."
+    },
+    "centered": {
+      "scroll": ["reveal", "counter", "scroll-zoom"],
+      "enterPreferred": ["fade-rise", "blur-in"],
+      "why": "Sakin tek mesaj: abartısız yükselme ya da yumuşak bulanıklıktan gelme."
+    },
+    "split": {
+      "scroll": ["reveal", "parallax", "counter", "mask-wipe"],
+      "enterPreferred": ["fade-rise", "split-slide"],
+      "why": "Dengeli varsayılan; iki kolon ayrı yönden gelebilir."
+    },
+    "split-reverse": {
+      "scroll": ["reveal", "parallax", "grid-stagger", "stack-pin"],
+      "enterPreferred": ["split-slide", "clip-curtain"],
+      "why": "Ters akış ritim kırar; iki koldan kayma bu arketipin doğal hareketi."
+    }
+  }
+}

@@ -1,0 +1,55 @@
+/* 48 · Executive KPI — token bloğu (kaynak: styles/48-executive-kpi/tokens.json) */
+
+[data-style="executive-kpi"] {
+  --bg: #faf7f1;
+  --bg-2: #f3eee5;
+  --surface: #ffffff;
+  --surface-2: #f7f3ec;
+  --ink: #171614;
+  --ink-soft: #51544b;
+  --ink-faint: #86897e;
+  --accent: #2b5c46;
+  --accent-ink: #f6f7f2;
+  --line: rgba(23,22,20,.14);
+  --radius: 0px;
+  --radius-lg: 3px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.005em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #9c2b21;
+  --danger-ink: #ffffff;
+  --ok: #1f6b45;
+  --warn: #7a5a12;
+}
+
+[data-theme="dark"][data-style="executive-kpi"] {
+  --bg: #121310;
+  --bg-2: #171913;
+  --surface: #1a1c16;
+  --surface-2: #21251d;
+  --ink: #eeeadf;
+  --ink-soft: #b3b0a2;
+  --ink-faint: #7e7c70;
+  --accent: #9dbf8f;
+  --accent-ink: #101a0e;
+  --line: rgba(238,234,223,.16);
+  --radius: 0px;
+  --radius-lg: 3px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.005em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #f0978c;
+  --danger-ink: #2a100c;
+  --ok: #8fd8b0;
+  --warn: #e0c07a;
+}

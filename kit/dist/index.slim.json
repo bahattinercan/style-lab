@@ -1,0 +1,5255 @@
+{
+ "generatedBy": "kit/build-slim-index.mjs",
+ "count": 151,
+ "families": [
+  {
+   "name": "Sade",
+   "from": 1,
+   "to": 7
+  },
+  {
+   "name": "Yüzey",
+   "from": 8,
+   "to": 12
+  },
+  {
+   "name": "Cesur",
+   "from": 13,
+   "to": 18
+  },
+  {
+   "name": "Retro",
+   "from": 19,
+   "to": 27
+  },
+  {
+   "name": "Sanatsal",
+   "from": 28,
+   "to": 34
+  },
+  {
+   "name": "Geometrik",
+   "from": 35,
+   "to": 36
+  },
+  {
+   "name": "Tipografik",
+   "from": 37,
+   "to": 37
+  },
+  {
+   "name": "Organik",
+   "from": 38,
+   "to": 38
+  },
+  {
+   "name": "Yeni Dalga",
+   "from": 39,
+   "to": 40
+  },
+  {
+   "name": "Zamansız",
+   "from": 41,
+   "to": 44
+  },
+  {
+   "name": "Teknik",
+   "from": 45,
+   "to": 45
+  },
+  {
+   "name": "Veri & Gösterge",
+   "from": 46,
+   "to": 55
+  },
+  {
+   "name": "Endüstriyel",
+   "from": 56,
+   "to": 65
+  },
+  {
+   "name": "Kültürel & Bölgesel",
+   "from": 66,
+   "to": 75
+  },
+  {
+   "name": "Doğa & Organik",
+   "from": 76,
+   "to": 85
+  },
+  {
+   "name": "Yayın & Tipografi",
+   "from": 86,
+   "to": 95
+  },
+  {
+   "name": "Hareket & Optik",
+   "from": 96,
+   "to": 105
+  },
+  {
+   "name": "Etkileşim",
+   "from": 106,
+   "to": 115
+  },
+  {
+   "name": "Oyuncul",
+   "from": 116,
+   "to": 125
+  },
+  {
+   "name": "Materyal & Lüks",
+   "from": 126,
+   "to": 135
+  },
+  {
+   "name": "Deneysel & Gelecek",
+   "from": 136,
+   "to": 145
+  },
+  {
+   "name": "Sahne & Prestij",
+   "from": 146,
+   "to": 151
+  }
+ ],
+ "contract": {
+  "dir": "dosya yolu: styles/<num>-<slug>/ (style.md · tokens.json · shots/01-landing.png · shots/17-dark-landing.png)",
+  "tag": "tek cümlelik kimlik",
+  "tags": "3 etiket (arama/niyet eşleşmesi)",
+  "motion": "normalize edilmiş hareket özeti (ms + eğri)",
+  "layout": "kompozisyon arketipi: hero|nav|density (kit/render/layouts.json)",
+  "compatible": "garnitür olarak kullanılabilir stiller (baskın değil)",
+  "forbidden": "birlikte kullanılmayacak stiller"
+ },
+ "styles": [
+  {
+   "num": "01",
+   "slug": "minimalism",
+   "name": "Minimalism",
+   "family": "Sade",
+   "tag": "Fazlalığın silinmesi; hiyerarşiyi renk ve süs değil, boşluk + ölçek + ağırlık kurar.",
+   "tags": [
+    "boşluk",
+    "tek aksan",
+    "sakin hiyerarşi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 500,
+    "ease": "ease-out",
+    "scrollMs": 600,
+    "hoverMs": 160
+   },
+   "compatible": [
+    "swiss-design",
+    "bento-grid",
+    "japandi",
+    "glassmorphism"
+   ],
+   "forbidden": [
+    "maximalism",
+    "memphis",
+    "neumorphism"
+   ]
+  },
+  {
+   "num": "02",
+   "slug": "swiss-design",
+   "name": "Swiss Design",
+   "family": "Sade",
+   "tag": "Görünmez bir ızgaraya oturan, sola dayalı, tek yazı karakteriyle kurulmuş rasyonel düzen; süsleme yerine hizalama ve tipografik ölçek konuşur.",
+   "tags": [
+    "12 kolon",
+    "sola dayalı",
+    "dev tipografi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 320,
+    "ease": "cubic-bezier(0.2,0.6,0.2,1)",
+    "scrollMs": 300,
+    "hoverMs": 90
+   },
+   "compatible": [
+    "minimalism",
+    "bento-grid",
+    "editorial-design"
+   ],
+   "forbidden": [
+    "scrapbook",
+    "claymorphism",
+    "vaporwave"
+   ]
+  },
+  {
+   "num": "03",
+   "slug": "editorial-design",
+   "name": "Editorial Design",
+   "family": "Sade",
+   "tag": "Dergi sayfası mantığı: serif display, kolon ritmi, drop cap, dipnot ve hairline — içerik anlatı gibi akar.",
+   "tags": [
+    "serif başlık",
+    "kolon ritmi",
+    "drop cap"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 550,
+    "ease": "ease-out",
+    "scrollMs": 650,
+    "hoverMs": 180
+   },
+   "compatible": [
+    "luxury-typography",
+    "swiss-design",
+    "dark-academia"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "synthwave",
+    "bento-grid"
+   ]
+  },
+  {
+   "num": "04",
+   "slug": "luxury-typography",
+   "name": "Luxury Typography",
+   "family": "Sade",
+   "tag": "Seyrek yerleşim + ince serif + geniş harf aralığı; lüks, boşluğun ve yavaşlığın fiyatıdır.",
+   "tags": [
+    "geniş tracking",
+    "seyrek",
+    "hairline"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 800,
+    "ease": "cubic-bezier(0.2,0.7,0.2,1)",
+    "scrollMs": 1000,
+    "hoverMs": 320
+   },
+   "compatible": [
+    "editorial-design",
+    "art-deco",
+    "minimalism"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "dopamine-ui",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "05",
+   "slug": "bento-grid",
+   "name": "Bento Grid",
+   "family": "Sade",
+   "tag": "Değişken boyutlu modüler kutular; her kutu tek bir cevap verir, ızgara \"her şey yerinde\" hissini kurar.",
+   "tags": [
+    "modüler kutu",
+    "değişken boyut",
+    "sabit gutter"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 450,
+    "ease": "cubic-bezier(0.2,0.6,0.2,1)",
+    "scrollMs": 550,
+    "hoverMs": 200
+   },
+   "compatible": [
+    "minimalism",
+    "swiss-design",
+    "aurora-ui"
+   ],
+   "forbidden": [
+    "scrapbook",
+    "maximalism",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "06",
+   "slug": "japandi",
+   "name": "Japandi",
+   "family": "Sade",
+   "tag": "Japon sadeliği + İskandinav sıcaklığı: düşük kontrast, yumuşak serif başlık, kil-linen tonları, ölçülü boşluk.",
+   "tags": [
+    "sıcak nötr",
+    "düşük kontrast",
+    "doğal doku"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 700,
+    "ease": "cubic-bezier(0.3,0.7,0.3,1)",
+    "scrollMs": 850,
+    "hoverMs": 220
+   },
+   "compatible": [
+    "wabi-sabi",
+    "minimalism",
+    "ethereal"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "cyberpunk",
+    "acid-graphics"
+   ]
+  },
+  {
+   "num": "07",
+   "slug": "wabi-sabi",
+   "name": "Wabi-Sabi",
+   "family": "Sade",
+   "tag": "Kusuru saklamayan düzen: kırık hiza, organik form, el yapımı doku ve eksik bırakılmış boşluk.",
+   "tags": [
+    "kırık hiza",
+    "organik form",
+    "kâğıt grain"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 750,
+    "ease": "cubic-bezier(0.3,0.6,0.3,1)",
+    "scrollMs": 950,
+    "hoverMs": 260
+   },
+   "compatible": [
+    "japandi",
+    "scrapbook",
+    "bohemian"
+   ],
+   "forbidden": [
+    "cyberpunk",
+    "bento-grid",
+    "art-deco"
+   ]
+  },
+  {
+   "num": "08",
+   "slug": "glassmorphism",
+   "name": "Glassmorphism",
+   "family": "Yüzey",
+   "tag": "Medyanın üstünde duran buzlu cam katman; derinlik ışıktan ve bulanıklıktan gelir, süs ne kadar azsa cam o kadar inandırıcı olur.",
+   "tags": [
+    "backdrop blur",
+    "yarı saydam",
+    "ışık kenarı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 700,
+    "ease": "cubic-bezier(0.165,0.84,0.44,1)",
+    "scrollMs": 850,
+    "hoverMs": 260
+   },
+   "compatible": [
+    "minimalism",
+    "aurora-ui",
+    "liquid-glass"
+   ],
+   "forbidden": [
+    "neumorphism",
+    "neo-brutalism",
+    "dark-academia"
+   ]
+  },
+  {
+   "num": "09",
+   "slug": "liquid-glass",
+   "name": "Liquid Glass",
+   "family": "Yüzey",
+   "tag": "Cam sadece bulanıklaştırmakla kalmıyor, büküyor: kenarında ışık kırılan, basınca hafifçe akan, arkasındaki rengi taşıyan optik katman (Apple visionOS/iOS 26 dili).",
+   "tags": [
+    "refraksiyon",
+    "yay fiziği",
+    "optik kenar"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 900,
+    "ease": "cubic-bezier(0.23,1,0.32,1)",
+    "scrollMs": 1000,
+    "hoverMs": 220
+   },
+   "compatible": [
+    "glassmorphism",
+    "aurora-ui",
+    "minimalism"
+   ],
+   "forbidden": [
+    "neumorphism",
+    "neo-brutalism",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "10",
+   "slug": "neumorphism",
+   "name": "Neumorphism",
+   "family": "Yüzey",
+   "tag": "Aynı renkli yumuşak yüzey üzerinde çift gölgeyle kabartma; kontrol \"çizilmiş\" değil \"basılmış\" görünür.",
+   "tags": [
+    "çift gölge",
+    "kabarık",
+    "tek renk"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 400,
+    "ease": "ease-out",
+    "scrollMs": 500,
+    "hoverMs": 200
+   },
+   "compatible": [
+    "claymorphism",
+    "minimalism"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "liquid-glass",
+    "neo-brutalism"
+   ]
+  },
+  {
+   "num": "11",
+   "slug": "claymorphism",
+   "name": "Claymorphism",
+   "family": "Yüzey",
+   "tag": "Kil gibi şişkin, pastel ve oyuncak yüzeyler: iç gölge + dış gölge + kalın yuvarlak hat, dokunulabilir \"oyun hamuru\" hissi.",
+   "tags": [
+    "pastel",
+    "şişkin",
+    "oyuncak"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 600,
+    "ease": "cubic-bezier(0.34,1.328,0.64,1)",
+    "scrollMs": 700,
+    "hoverMs": 300
+   },
+   "compatible": [
+    "dopamine-ui",
+    "neumorphism",
+    "memphis"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "cyberpunk",
+    "dark-academia"
+   ]
+  },
+  {
+   "num": "12",
+   "slug": "aurora-ui",
+   "name": "Aurora UI",
+   "family": "Yüzey",
+   "tag": "Koyu zeminin üzerinde kuzey ışığı gibi akan renkli gradient katmanları; cam paneller gradient'i taşır.",
+   "tags": [
+    "gradient blob",
+    "grain",
+    "koyu zemin"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 900,
+    "ease": "cubic-bezier(0.39,0.575,0.565,1)",
+    "scrollMs": 1150,
+    "hoverMs": 320
+   },
+   "compatible": [
+    "glassmorphism",
+    "liquid-glass",
+    "bento-grid"
+   ],
+   "forbidden": [
+    "synthwave",
+    "swiss-design",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "13",
+   "slug": "neo-brutalism",
+   "name": "Neo-Brutalism",
+   "family": "Cesur",
+   "tag": "Arayüzün \"tasarlanmış\" değil \"basılmış\" görünmesi; kalın siyah kontur, ofset gölge, doygun düz renk ve büyük harf tipografi.",
+   "tags": [
+    "kalın kenar",
+    "sert gölge",
+    "düz renk"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 280,
+    "ease": "linear",
+    "scrollMs": 320,
+    "hoverMs": 90
+   },
+   "compatible": [
+    "memphis",
+    "anti-design",
+    "conceptual-sketch"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "luxury-typography",
+    "japandi"
+   ]
+  },
+  {
+   "num": "14",
+   "slug": "anti-design",
+   "name": "Anti-Design",
+   "family": "Cesur",
+   "tag": "Kuralları bilerek çiğneyen düzen: bozuk ızgara, karışık ölçek, kasıtlı dönüklük ve \"hatalı\" görünen tipografi.",
+   "tags": [
+    "bozuk ızgara",
+    "karışık tipografi",
+    "kasıtlı kaos"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 340,
+    "ease": "steps(3, end)",
+    "scrollMs": 400,
+    "hoverMs": 110
+   },
+   "compatible": [
+    "neo-brutalism",
+    "acid-graphics",
+    "memphis"
+   ],
+   "forbidden": [
+    "minimalism",
+    "swiss-design",
+    "luxury-typography"
+   ]
+  },
+  {
+   "num": "15",
+   "slug": "acid-graphics",
+   "name": "Acid Graphics",
+   "family": "Cesur",
+   "tag": "Siyah zemin üzerinde asit yeşili neon, genişletilmiş grotesk tipografi ve distorsiyon — tekno kültürün görsel gürültüsü.",
+   "tags": [
+    "asit yeşili",
+    "distortion",
+    "krom"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 250,
+    "ease": "steps(4, end)",
+    "scrollMs": 240,
+    "hoverMs": 80
+   },
+   "compatible": [
+    "cyberpunk",
+    "anti-design",
+    "pixel-art"
+   ],
+   "forbidden": [
+    "minimalism",
+    "japandi",
+    "luxury-typography"
+   ]
+  },
+  {
+   "num": "16",
+   "slug": "memphis",
+   "name": "Memphis",
+   "family": "Cesur",
+   "tag": "80'ler Memphis grubunun neşesi: kalın siyah kontur, düz doygun renk, zikzak/nokta/daire geometrisi ve ofset gölge.",
+   "tags": [
+    "zikzak",
+    "konfeti",
+    "kalın kontur"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 300,
+    "ease": "cubic-bezier(0.34,1.6,0.64,1)",
+    "scrollMs": 280,
+    "hoverMs": 100
+   },
+   "compatible": [
+    "neo-brutalism",
+    "dopamine-ui",
+    "pixel-art"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "dark-academia",
+    "luxury-typography"
+   ]
+  },
+  {
+   "num": "17",
+   "slug": "maximalism",
+   "name": "Maximalism",
+   "family": "Cesur",
+   "tag": "Dolu, katmanlı, motifli: her yüzey bir desen, her bölüm bir renk, ama ritim korunur — \"kontrollü bolluk\".",
+   "tags": [
+    "katman",
+    "çok renk",
+    "motif tekrarı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 420,
+    "ease": "cubic-bezier(0.2,0.6,0.2,1)",
+    "scrollMs": 500,
+    "hoverMs": 140
+   },
+   "compatible": [
+    "victorian",
+    "art-deco",
+    "bohemian"
+   ],
+   "forbidden": [
+    "minimalism",
+    "swiss-design",
+    "neumorphism"
+   ]
+  },
+  {
+   "num": "18",
+   "slug": "dopamine-ui",
+   "name": "Dopamine UI",
+   "family": "Cesur",
+   "tag": "Canlı renk + mikro ödül: her etkileşim küçük bir \"iyi his\" bırakır, ama palet disiplinli kalır.",
+   "tags": [
+    "doygun blok",
+    "mikro ödül",
+    "yuvarlak"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 360,
+    "ease": "cubic-bezier(0.34,1.4,0.64,1)",
+    "scrollMs": 300,
+    "hoverMs": 130
+   },
+   "compatible": [
+    "claymorphism",
+    "memphis",
+    "bento-grid"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "dark-academia",
+    "skeuomorphism"
+   ]
+  },
+  {
+   "num": "19",
+   "slug": "y2k",
+   "name": "Y2K",
+   "family": "Retro",
+   "tag": "2000'lerin kromu ve parlak plastiği: buz mavisi zemin, geniş harf aralıklı teknoid tipografi, cam-parlak yüzeyler.",
+   "tags": [
+    "krom",
+    "parlak plastik",
+    "buz mavisi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 400,
+    "ease": "linear",
+    "scrollMs": 550,
+    "hoverMs": 140
+   },
+   "compatible": [
+    "frutiger-aero",
+    "vaporwave",
+    "liquid-glass"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "dark-academia",
+    "wabi-sabi"
+   ]
+  },
+  {
+   "num": "20",
+   "slug": "vaporwave",
+   "name": "Vaporwave",
+   "family": "Retro",
+   "tag": "Mor-pembe bir melankoli: soluk lavanta, cam paneller, geniş harf aralığı, sonsuz ızgara ve yavaşlık.",
+   "tags": [
+    "lavanta",
+    "kolaj",
+    "VHS çizgisi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 650,
+    "ease": "ease-in-out",
+    "scrollMs": 700,
+    "hoverMs": 260
+   },
+   "compatible": [
+    "synthwave",
+    "surrealism",
+    "y2k"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "minimalism",
+    "skeuomorphism"
+   ]
+  },
+  {
+   "num": "21",
+   "slug": "synthwave",
+   "name": "Synthwave",
+   "family": "Retro",
+   "tag": "Derin mavi gece, neon pembe-cyan glow ve perspektif ızgara; 80'ler arcade'inin hızı.",
+   "tags": [
+    "neon",
+    "perspektif ızgara",
+    "gün batımı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 500,
+    "ease": "linear",
+    "scrollMs": 600,
+    "hoverMs": 180
+   },
+   "compatible": [
+    "vaporwave",
+    "cyberpunk",
+    "pixel-art"
+   ],
+   "forbidden": [
+    "minimalism",
+    "japandi",
+    "swiss-design"
+   ]
+  },
+  {
+   "num": "22",
+   "slug": "cyberpunk",
+   "name": "Cyberpunk",
+   "family": "Retro",
+   "tag": "Neon tabelaların altında kirli beton: sarı uyarı şeridi, cyan glow, HUD etiketleri ve mono veri.",
+   "tags": [
+    "neon+kir",
+    "HUD",
+    "uyarı şeridi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 280,
+    "ease": "steps(3, end)",
+    "scrollMs": 500,
+    "hoverMs": 90
+   },
+   "compatible": [
+    "cybercore",
+    "synthwave",
+    "acid-graphics"
+   ],
+   "forbidden": [
+    "japandi",
+    "luxury-typography",
+    "skeuomorphism"
+   ]
+  },
+  {
+   "num": "23",
+   "slug": "cybercore",
+   "name": "Cybercore",
+   "family": "Retro",
+   "tag": "Terminalden taşan arayüz: fosfor yeşili mono tipografi, log satırları, HUD çerçeveleri ve 0 radius.",
+   "tags": [
+    "monospace",
+    "terminal",
+    "fosfor"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 240,
+    "ease": "steps(4, end)",
+    "scrollMs": 520,
+    "hoverMs": 80
+   },
+   "compatible": [
+    "cyberpunk",
+    "conceptual-sketch",
+    "swiss-design"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "luxury-typography",
+    "japandi"
+   ]
+  },
+  {
+   "num": "24",
+   "slug": "pixel-art",
+   "name": "Pixel Art",
+   "family": "Retro",
+   "tag": "8-bit keskinliği: 0 radius, piksel font, sınırlı palet, kalın çerçeve ve blok gölge.",
+   "tags": [
+    "8-bit",
+    "sınırlı palet",
+    "keskin kenar"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 300,
+    "ease": "steps(2, end)",
+    "scrollMs": 580,
+    "hoverMs": 60
+   },
+   "compatible": [
+    "memphis",
+    "neo-brutalism",
+    "cybercore"
+   ],
+   "forbidden": [
+    "luxury-typography",
+    "liquid-glass",
+    "skeuomorphism"
+   ]
+  },
+  {
+   "num": "25",
+   "slug": "frutiger-aero",
+   "name": "Frutiger Aero",
+   "family": "Retro",
+   "tag": "2004–2010'un parlak teknolojisi: gök mavisi, cam-gloss butonlar, su damlası ve iyimserlik.",
+   "tags": [
+    "cam buton",
+    "gök mavisi",
+    "su damlası"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 550,
+    "ease": "ease-out",
+    "scrollMs": 650,
+    "hoverMs": 240
+   },
+   "compatible": [
+    "y2k",
+    "liquid-glass",
+    "glassmorphism"
+   ],
+   "forbidden": [
+    "dark-academia",
+    "cyberpunk",
+    "minimalism"
+   ]
+  },
+  {
+   "num": "26",
+   "slug": "art-deco",
+   "name": "Art Deco",
+   "family": "Retro",
+   "tag": "",
+   "tags": [
+    "simetri",
+    "altın hairline",
+    "ziggurat"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 580,
+    "ease": "ease-in-out",
+    "scrollMs": 680,
+    "hoverMs": 320
+   },
+   "compatible": [
+    "luxury-typography",
+    "maximalism",
+    "victorian"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "pixel-art",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "27",
+   "slug": "victorian",
+   "name": "Victorian",
+   "family": "Retro",
+   "tag": "Gravür ve baskı mirası: çift kural çizgileri, süslü başlık, small caps ve kâğıt dokusu.",
+   "tags": [
+    "gravür",
+    "süslü çerçeve",
+    "small caps"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 520,
+    "ease": "ease-out",
+    "scrollMs": 620,
+    "hoverMs": 300
+   },
+   "compatible": [
+    "dark-academia",
+    "editorial-design",
+    "art-deco"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "pixel-art",
+    "liquid-glass"
+   ]
+  },
+  {
+   "num": "28",
+   "slug": "surrealism",
+   "name": "Surrealism",
+   "family": "Sanatsal",
+   "tag": "Beklenmedik ölçek ve yer değiştirme: küçük şeyler dev, dev şeyler arka planda; düzen gerçekçi, içerik rüya.",
+   "tags": [
+    "ölçek oyunu",
+    "kolaj",
+    "rüya"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 1100,
+    "ease": "ease-out",
+    "scrollMs": 1050,
+    "hoverMs": 420
+   },
+   "compatible": [
+    "editorial-design",
+    "ethereal",
+    "maximalism"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "cybercore",
+    "skeuomorphism"
+   ]
+  },
+  {
+   "num": "29",
+   "slug": "ethereal",
+   "name": "Ethereal",
+   "family": "Sanatsal",
+   "tag": "Sis ve ışık: neredeyse silinen kontrast, yumuşak serif, cam yüzeyler ve nefes gibi hareket.",
+   "tags": [
+    "sis",
+    "yumuşak ışık",
+    "nefes animasyonu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 1150,
+    "ease": "ease-in-out",
+    "scrollMs": 1200,
+    "hoverMs": 380
+   },
+   "compatible": [
+    "japandi",
+    "surrealism",
+    "glassmorphism"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "cyberpunk",
+    "swiss-design"
+   ]
+  },
+  {
+   "num": "30",
+   "slug": "bohemian",
+   "name": "Bohemian",
+   "family": "Sanatsal",
+   "tag": "",
+   "tags": [
+    "toprak paleti",
+    "kilim deseni",
+    "el yazısı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 950,
+    "ease": "ease-out",
+    "scrollMs": 900,
+    "hoverMs": 340
+   },
+   "compatible": [
+    "wabi-sabi",
+    "scrapbook",
+    "maximalism"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "cybercore",
+    "skeuomorphism"
+   ]
+  },
+  {
+   "num": "31",
+   "slug": "scrapbook",
+   "name": "Scrapbook",
+   "family": "Sanatsal",
+   "tag": "",
+   "tags": [
+    "bant",
+    "polaroid",
+    "katman gölgesi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 340,
+    "ease": "cubic-bezier(0.34,1.28,0.52,1)",
+    "scrollMs": 440,
+    "hoverMs": 150
+   },
+   "compatible": [
+    "wabi-sabi",
+    "bohemian",
+    "editorial-design"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "cybercore",
+    "dark-academia"
+   ]
+  },
+  {
+   "num": "32",
+   "slug": "conceptual-sketch",
+   "name": "Conceptual Sketch",
+   "family": "Sanatsal",
+   "tag": "",
+   "tags": [
+    "el çizgisi",
+    "wireframe",
+    "ok ve not"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 380,
+    "ease": "linear",
+    "scrollMs": 300,
+    "hoverMs": 110
+   },
+   "compatible": [
+    "swiss-design",
+    "cybercore",
+    "neo-brutalism"
+   ],
+   "forbidden": [
+    "luxury-typography",
+    "liquid-glass",
+    "skeuomorphism"
+   ]
+  },
+  {
+   "num": "33",
+   "slug": "dark-academia",
+   "name": "Dark Academia",
+   "family": "Sanatsal",
+   "tag": "",
+   "tags": [
+    "koyu ahşap",
+    "gotik serif",
+    "mum ışığı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 1050,
+    "ease": "cubic-bezier(0.5,0.05,0.35,0.95)",
+    "scrollMs": 1050,
+    "hoverMs": 520
+   },
+   "compatible": [
+    "victorian",
+    "editorial-design",
+    "art-deco"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "pixel-art",
+    "claymorphism"
+   ]
+  },
+  {
+   "num": "34",
+   "slug": "skeuomorphism",
+   "name": "Skeuomorphism",
+   "family": "Sanatsal",
+   "tag": "",
+   "tags": [
+    "malzeme dokusu",
+    "gömülü buton",
+    "gerçek gölge"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 360,
+    "ease": "cubic-bezier(0.22,1.32,0.4,1)",
+    "scrollMs": 500,
+    "hoverMs": 130
+   },
+   "compatible": [
+    "art-deco",
+    "neumorphism",
+    "scrapbook"
+   ],
+   "forbidden": [
+    "minimalism",
+    "swiss-design",
+    "cybercore"
+   ]
+  },
+  {
+   "num": "35",
+   "slug": "bauhaus",
+   "name": "Bauhaus",
+   "family": "Geometrik",
+   "tag": "",
+   "tags": [
+    "geometri",
+    "temel renkler",
+    "asimetri"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 440,
+    "ease": "cubic-bezier(0.2,0.8,0.2,1)",
+    "scrollMs": 620,
+    "hoverMs": 170
+   },
+   "compatible": [
+    "swiss-design",
+    "neo-brutalism",
+    "memphis"
+   ],
+   "forbidden": [
+    "ethereal",
+    "luxury-typography",
+    "glassmorphism"
+   ]
+  },
+  {
+   "num": "36",
+   "slug": "constructivism",
+   "name": "Constructivism",
+   "family": "Geometrik",
+   "tag": "1920'ler Rus konstrüktivizmi: kırmızı–siyah–kırık beyaz, kalın diagonal çubuk, aşırı büyük tipografi ve radius'suz asimetrik montaj.",
+   "tags": [
+    "diagonal çubuk",
+    "kırmızı-siyah",
+    "aşırı tipografi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 300,
+    "ease": "cubic-bezier(0.7,0,0.25,1)",
+    "scrollMs": 340,
+    "hoverMs": 110
+   },
+   "compatible": [
+    "bauhaus",
+    "maximalism",
+    "neo-brutalism"
+   ],
+   "forbidden": [
+    "ethereal",
+    "luxury-typography",
+    "glassmorphism"
+   ]
+  },
+  {
+   "num": "37",
+   "slug": "kinetic-type",
+   "name": "Kinetic Type",
+   "family": "Tipografik",
+   "tag": "Tipografi dekor değil taşıyıcıdır — 28→96px arasında atlayan dev ölçek, 0.95 satır aralığı ve metni kesen diagonal katmanlarla arayüz poster gibi okunur.",
+   "tags": [
+    "dev ölçek atlaması",
+    "diagonal şerit",
+    "monokrom + asit"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 620,
+    "ease": "cubic-bezier(0.85,0,0.15,1)",
+    "scrollMs": 500,
+    "hoverMs": 130
+   },
+   "compatible": [
+    "constructivism",
+    "swiss-design",
+    "minimalism"
+   ],
+   "forbidden": [
+    "organic-bio",
+    "glassmorphism",
+    "neumorphism",
+    "claymorphism",
+    "editorial-design"
+   ]
+  },
+  {
+   "num": "38",
+   "slug": "organic-bio",
+   "name": "Organic / Biophilic",
+   "family": "Organik",
+   "tag": "Doğal büyüme mantığıyla kurulmuş arayüz: asimetrik yumuşak radius, toprak–yeşil palet, katmanlı yaprak dokusu ve insan ölçeğinde tipografi.",
+   "tags": [
+    "doğal form",
+    "toprak yeşil",
+    "asimetrik radius"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 1000,
+    "ease": "cubic-bezier(0.215,0.61,0.355,1)",
+    "scrollMs": 900,
+    "hoverMs": 280
+   },
+   "compatible": [
+    "japandi",
+    "wabi-sabi",
+    "bohemian"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "swiss-design",
+    "glassmorphism",
+    "cyberpunk"
+   ]
+  },
+  {
+   "num": "39",
+   "slug": "ai-native-mesh",
+   "name": "AI-native Mesh",
+   "family": "Yeni Dalga",
+   "tag": "Koyu nötr bir zeminin üstünde iki katmanlı mesh gradyanın atmosfer kurduğu, içeriğin ise cam yüzeyler ve sakin geometrik tipografiyle taşındığı \"AI konsolu\" arayüzü — parlama gösteri değil, sadece ışığın yönü.",
+   "tags": [
+    "mesh gradyan",
+    "cam yüzey",
+    "nötr geometrik tipografi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "pill",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 750,
+    "ease": "cubic-bezier(0.32,0.72,0,1)",
+    "scrollMs": 850,
+    "hoverMs": 210
+   },
+   "compatible": [
+    "glassmorphism",
+    "aurora-ui",
+    "minimalism"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "anti-design",
+    "cyberpunk",
+    "vaporwave",
+    "bauhaus",
+    "kinetic-type"
+   ]
+  },
+  {
+   "num": "40",
+   "slug": "scandinavian-dark",
+   "name": "Scandinavian Dark",
+   "family": "Yeni Dalga",
+   "tag": "Kuzey ışığının mat hâli: düşük doygunluklu koyu yüzeyler, 1px hairline ile ayrılmış geniş boşluk ve süs yerine ışığın kendisiyle kurulan sakin bir arayüz.",
+   "tags": [
+    "kuzey ışığı",
+    "mat koyu yüzey",
+    "hairline + boşluk"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 880,
+    "ease": "cubic-bezier(0.5,0.4,0.15,1)",
+    "scrollMs": 950,
+    "hoverMs": 260
+   },
+   "compatible": [
+    "japandi",
+    "minimalism",
+    "dark-academia"
+   ],
+   "forbidden": [
+    "kinetic-type",
+    "neo-brutalism",
+    "glassmorphism",
+    "cyberpunk",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "41",
+   "slug": "grand-tourer",
+   "name": "Grand Tourer",
+   "family": "Zamansız",
+   "tag": "Krem deri, krom hairline ve kadran: 1960'ların klasik GT kokpiti gibi davranan, lüksü süsle değil malzemeyle anlatan bir arayüz.",
+   "tags": [
+    "krem deri + krom",
+    "yarış yeşili",
+    "kadran + sayaç"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 660,
+    "ease": "cubic-bezier(0.22,0.68,0.24,1)",
+    "scrollMs": 850,
+    "hoverMs": 230
+   },
+   "compatible": [
+    "luxury-typography",
+    "editorial-design",
+    "art-deco"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "glassmorphism",
+    "dopamine-ui",
+    "claymorphism",
+    "cyberpunk",
+    "bauhaus"
+   ]
+  },
+  {
+   "num": "42",
+   "slug": "grand-tourer-oxblood",
+   "name": "Grand Tourer Oxblood",
+   "family": "Zamansız",
+   "tag": "Grand Tourer sisteminin bordo deri kardeşi: aynı krem kokpit, aynı krom ve kadran, ama vurgu İngiliz kulüp derisinin bordo tonunda — üstüne gravür başlık, künye şeridi ve mat çerçeve eklenmiş \"prime\" katmanı.",
+   "tags": [
+    "bordo deri",
+    "kulüp lüksü",
+    "krom + kadran"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "pill",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 900,
+    "ease": "cubic-bezier(0.4,0.1,0.2,1)",
+    "scrollMs": 1000,
+    "hoverMs": 300
+   },
+   "compatible": [
+    "grand-tourer",
+    "luxury-typography",
+    "editorial-design"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "glassmorphism",
+    "dopamine-ui",
+    "claymorphism",
+    "cyberpunk",
+    "bauhaus"
+   ]
+  },
+  {
+   "num": "43",
+   "slug": "grand-tourer-midnight",
+   "name": "Grand Tourer Midnight",
+   "family": "Zamansız",
+   "tag": "Grand Tourer'ın gece varyantı: krem kokpit aynı kalır, nötrler maviye kayar ve vurgu gece mavisine döner — gündüz krem, gece koyu lacivert; iki zaman diliminde de aynı krom disiplini.",
+   "tags": [
+    "gece mavisi",
+    "mavi-siyah nötr",
+    "krom + kadran"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 1060,
+    "ease": "cubic-bezier(0.6,0.02,0.25,1)",
+    "scrollMs": 1100,
+    "hoverMs": 340
+   },
+   "compatible": [
+    "grand-tourer",
+    "swiss-design",
+    "editorial-design"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "glassmorphism",
+    "dopamine-ui",
+    "claymorphism",
+    "cyberpunk",
+    "bauhaus"
+   ]
+  },
+  {
+   "num": "44",
+   "slug": "utility",
+   "name": "Utility",
+   "family": "Zamansız",
+   "tag": "Süsün sıfıra çekildiği, hiyerarşiyi yalnız punto, boşluk ve tek vurgu renginin taşıdığı ölçülü ürün arayüzü.",
+   "tags": [
+    "hairline disiplin",
+    "isimli metin stili",
+    "tek accent + düz zemin"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "pill",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 400,
+    "ease": "cubic-bezier(0.22,1,0.36,1)",
+    "scrollMs": 560,
+    "hoverMs": 120
+   },
+   "compatible": [
+    "minimalism",
+    "swiss-design",
+    "japandi"
+   ],
+   "forbidden": [
+    "maximalism",
+    "neumorphism",
+    "aurora-ui",
+    "ai-native-mesh"
+   ]
+  },
+  {
+   "num": "45",
+   "slug": "terminal-ui",
+   "name": "Terminal UI",
+   "family": "Teknik",
+   "tag": "Her şeyin tek mono ızgarada hizalandığı, durumu rengin değil metnin söylediği klavye öncelikli arayüz.",
+   "tags": [
+    "mono ızgara",
+    "klavye öncelikli",
+    "1px çerçeve + ters video"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 180,
+    "ease": "steps(3, end)",
+    "scrollMs": 200,
+    "hoverMs": 90
+   },
+   "compatible": [
+    "cybercore",
+    "scandinavian-dark",
+    "utility"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "maximalism",
+    "memphis"
+   ]
+  },
+  {
+   "num": "46",
+   "slug": "telemetry-grid",
+   "name": "Telemetry Grid",
+   "family": "Veri & Gösterge",
+   "tag": "Her metriğin kendi hairline hücresinde, 24px ölçüm ızgarasına oturduğu ve durumun yalnız eşik değeriyle konuştuğu gözlemlenebilirlik yüzeyi.",
+   "tags": [
+    "24px ölçüm ızgarası",
+    "eşik alarmı",
+    "tabular rakam"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 280,
+    "ease": "cubic-bezier(0.16,0.84,0.44,1)",
+    "scrollMs": 320,
+    "hoverMs": 110
+   },
+   "compatible": [
+    "bento-grid",
+    "terminal-ui",
+    "utility"
+   ],
+   "forbidden": [
+    "maximalism",
+    "claymorphism",
+    "memphis"
+   ]
+  },
+  {
+   "num": "47",
+   "slug": "trading-desk",
+   "name": "Trading Desk",
+   "family": "Veri & Gösterge",
+   "tag": "Fiyatın ve pozisyonun tek bakışta okunduğu, amber vurgulu grafit zeminde 24px satırlarla akan emir defteri arayüzü.",
+   "tags": [
+    "fiyat merdiveni",
+    "amber terminal",
+    "tick yoğunluğu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 220,
+    "ease": "cubic-bezier(0.4,0,0.1,1)",
+    "scrollMs": 260,
+    "hoverMs": 70
+   },
+   "compatible": [
+    "telemetry-grid",
+    "terminal-ui",
+    "scandinavian-dark"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "frutiger-aero",
+    "memphis"
+   ]
+  },
+  {
+   "num": "48",
+   "slug": "executive-kpi",
+   "name": "Executive KPI",
+   "family": "Veri & Gösterge",
+   "tag": "Dört sayının bir hairline kâğıda yerleştiği, her sayının yanında tek satır yorum taşıdığı yönetici özeti raporu.",
+   "tags": [
+    "yönetici özeti",
+    "hairline rapor",
+    "serif rakam"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 950,
+    "ease": "cubic-bezier(0.65,0,0.35,1)",
+    "scrollMs": 1050,
+    "hoverMs": 320
+   },
+   "compatible": [
+    "editorial-design",
+    "telemetry-grid",
+    "grand-tourer"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "dopamine-ui",
+    "memphis"
+   ]
+  },
+  {
+   "num": "49",
+   "slug": "log-stream",
+   "name": "Log Stream",
+   "family": "Veri & Gösterge",
+   "tag": "Olayların 28px satırlarda zebra akıp önem düzeyinin çip + renk + nokta üçlüsüyle kodlandığı, kullanıcının akışı her an durdurabildiği kayıt yüzeyi.",
+   "tags": [
+    "olay zaman çizgisi",
+    "önem derecesi",
+    "akan kayıt"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 160,
+    "ease": "steps(4, end)",
+    "scrollMs": 180,
+    "hoverMs": 60
+   },
+   "compatible": [
+    "terminal-ui",
+    "telemetry-grid",
+    "cybercore"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "memphis",
+    "frutiger-aero"
+   ]
+  },
+  {
+   "num": "50",
+   "slug": "lab-instrument",
+   "name": "Lab Instrument",
+   "family": "Veri & Gösterge",
+   "tag": "Her ölçümün birimi, toleransı ve kanal numarasıyla birlikte kadran yayı üzerinde okunduğu, köşe artılarıyla çerçevelenmiş enstrüman yüzeyi.",
+   "tags": [
+    "ölçüm kanalı",
+    "kadran yayı",
+    "kobalt cetvel"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 420,
+    "ease": "cubic-bezier(0.34,1.28,0.64,1)",
+    "scrollMs": 500,
+    "hoverMs": 190
+   },
+   "compatible": [
+    "telemetry-grid",
+    "scandinavian-dark",
+    "conceptual-sketch"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "maximalism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "51",
+   "slug": "atlas-console",
+   "name": "Atlas Console",
+   "family": "Veri & Gösterge",
+   "tag": "Haritayı arayüzün zemini sayan, koordinat şeridi ve katman disipliniyle çalışan lacivert saha konsolu; süsü pusula, ölçek ve lejantla değiştirir.",
+   "tags": [
+    "coğrafi operasyon haritası",
+    "saha koordinasyonu",
+    "katman ve lejant"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 440,
+    "ease": "cubic-bezier(0.25,0.46,0.45,0.94)",
+    "scrollMs": 500,
+    "hoverMs": 120
+   },
+   "compatible": [
+    "terminal-ui",
+    "scandinavian-dark",
+    "bento-grid"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "memphis",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "52",
+   "slug": "experiment-split",
+   "name": "Experiment Split",
+   "family": "Veri & Gösterge",
+   "tag": "Her kararı iki panelin yan yana kanıtıyla veren; kontrol/varyant ayrımını renk değil etiket, ölçü ve tek kez çizilen bölme çizgisiyle kuran deney masası.",
+   "tags": [
+    "deney ve A-B analizi",
+    "kontrol/varyant karşılaştırması",
+    "delta ve örneklem"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 320,
+    "ease": "cubic-bezier(0.4,0,0.2,1)",
+    "scrollMs": 380,
+    "hoverMs": 180
+   },
+   "compatible": [
+    "utility",
+    "swiss-design",
+    "bento-grid"
+   ],
+   "forbidden": [
+    "memphis",
+    "dopamine-ui",
+    "synthwave"
+   ]
+  },
+  {
+   "num": "53",
+   "slug": "ledger-meter",
+   "name": "Ledger Meter",
+   "family": "Veri & Gösterge",
+   "tag": "Faturayı defter gibi okuyan; her tutarı sağa hizalı tabular rakam ve çift kuralla toplayan, tek ağırlıklı eski stil serifle fildişi kağıt sıcaklığı veren kullanım panosu.",
+   "tags": [
+    "faturalama ve kullanım metrikleri",
+    "kota ve limit takibi",
+    "defter hizalı tutarlar"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 660,
+    "ease": "cubic-bezier(0.65,0,0.35,1)",
+    "scrollMs": 720,
+    "hoverMs": 110
+   },
+   "compatible": [
+    "editorial-design",
+    "japandi",
+    "utility"
+   ],
+   "forbidden": [
+    "cyberpunk",
+    "glassmorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "54",
+   "slug": "vitals-triage",
+   "name": "Vitals Triage",
+   "family": "Veri & Gösterge",
+   "tag": "Vital bulguları büyük yuvarlak kartlarda, triyaj seviyesini sol şerit ve metinle kodlayan; sıcak-soğuk klinik zeminli, nabız halkasıyla durumu hissettiren sağlık panosu.",
+   "tags": [
+    "sağlık vitalleri ve triyaj",
+    "hasta önceliklendirme",
+    "klinik gözlem panosu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 260,
+    "ease": "cubic-bezier(0.16,1,0.3,1)",
+    "scrollMs": 280,
+    "hoverMs": 150
+   },
+   "compatible": [
+    "claymorphism",
+    "japandi",
+    "ethereal"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "cyberpunk",
+    "neo-brutalism"
+   ]
+  },
+  {
+   "num": "55",
+   "slug": "fleet-telemetry",
+   "name": "Fleet Telemetry",
+   "family": "Veri & Gösterge",
+   "tag": "Binlerce cihazın bağlantısını kapsama ızgarası ve tek satırlık cihaz kimliğiyle okuyan; accent'in yalnız \"bağlantı aktif\" anlamına geldiği filo konsolu.",
+   "tags": [
+    "IoT filo kontrolü",
+    "kapsama ve bağlantı durumu",
+    "cihaz telemetrisi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 880,
+    "ease": "cubic-bezier(0.2,0.8,0.2,1)",
+    "scrollMs": 600,
+    "hoverMs": 130
+   },
+   "compatible": [
+    "utility",
+    "bento-grid",
+    "terminal-ui"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "memphis",
+    "vaporwave"
+   ]
+  },
+  {
+   "num": "56",
+   "slug": "blueprint-drawing",
+   "name": "Blueprint Çizimi",
+   "family": "Endüstriyel",
+   "tag": "Mühendislik paftasının ekrana taşınmış hâli: cyanotype zemin, 8/64px çizim ızgarası ve hiyerarşiyi yalnız çizgi kalınlığıyla kuran teknik arayüz.",
+   "tags": [
+    "teknik çizim ızgarası",
+    "cyanotype mavi",
+    "ölçü etiketleri"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 360,
+    "ease": "cubic-bezier(0.55,0.06,0.35,1)",
+    "scrollMs": 400,
+    "hoverMs": 140
+   },
+   "compatible": [
+    "terminal-ui",
+    "utility",
+    "conceptual-sketch"
+   ],
+   "forbidden": [
+    "memphis",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "57",
+   "slug": "machined-metal-panel",
+   "name": "İşlenmiş Metal Panel",
+   "family": "Endüstriyel",
+   "tag": "Frezelenmiş alüminyum panelin dilini ekrana taşıyan arayüz: fırçalanmış yüzey, çift hairline bevel, gravür etiket ve tek amber durum noktası.",
+   "tags": [
+    "fırçalanmış alüminyum",
+    "gravür etiket",
+    "amber durum noktası"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 260,
+    "ease": "cubic-bezier(0.28,1.46,0.58,1)",
+    "scrollMs": 280,
+    "hoverMs": 110
+   },
+   "compatible": [
+    "skeuomorphism",
+    "terminal-ui",
+    "scandinavian-dark"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "58",
+   "slug": "safety-signage",
+   "name": "Güvenlik Tabelası",
+   "family": "Endüstriyel",
+   "tag": "Sahadaki uyarı levhasının mantığı: koyu zemin, çapraz tehlike bandı, 2px uyarı çerçevesi ve piktogram + büyük harf metinle kurulan üç kademeli hiyerarşi.",
+   "tags": [
+    "çapraz tehlike bandı",
+    "sarı-siyah uyarı",
+    "büyük harf hiyerarşi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 140,
+    "ease": "linear",
+    "scrollMs": 150,
+    "hoverMs": 80
+   },
+   "compatible": [
+    "constructivism",
+    "neo-brutalism",
+    "kinetic-type"
+   ],
+   "forbidden": [
+    "japandi",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "59",
+   "slug": "mes-production-line",
+   "name": "Üretim Hattı · MES",
+   "family": "Endüstriyel",
+   "tag": "Üretim hattının nabzını tek ekranda tutan operasyon arayüzü: açık gri zemin, tek katman gölge, durum renk kodu ve tabular sayaçlarla kurulmuş yoğun MES panosu.",
+   "tags": [
+    "durum renk kodu",
+    "tabular sayaç",
+    "yoğun hat tablosu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 440,
+    "ease": "cubic-bezier(0.12,0.94,0.24,1)",
+    "scrollMs": 480,
+    "hoverMs": 180
+   },
+   "compatible": [
+    "utility",
+    "terminal-ui",
+    "bento-grid"
+   ],
+   "forbidden": [
+    "maximalism",
+    "surrealism"
+   ]
+  },
+  {
+   "num": "60",
+   "slug": "energy-grid",
+   "name": "Enerji Şebekesi",
+   "family": "Endüstriyel",
+   "tag": "Elektrik şebekesinin tek hat şemasını ekrana taşıyan SCADA arayüzü: koyu grafit zemin, nokta ızgarası, 1.5px şema hattı, düğüm noktaları ve tek volt yeşili akış rengi.",
+   "tags": [
+    "tek hat şeması",
+    "volt yeşili akış",
+    "düğüm noktası"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 580,
+    "ease": "cubic-bezier(0.45,0,0.15,1)",
+    "scrollMs": 660,
+    "hoverMs": 200
+   },
+   "compatible": [
+    "cybercore",
+    "terminal-ui",
+    "scandinavian-dark"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "japandi"
+   ]
+  },
+  {
+   "num": "61",
+   "slug": "calibration-lab",
+   "name": "Calibration Lab",
+   "family": "Endüstriyel",
+   "tag": "Her okumanın bir referansa ve bir toleransa bağlandığı, süsün yerini ölçüm bandının aldığı laboratuvar arayüzü.",
+   "tags": [
+    "kalibrasyon paneli",
+    "ölçüm bandı",
+    "tolerans çubuğu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 420,
+    "ease": "cubic-bezier(0.16,0.84,0.44,1)",
+    "scrollMs": 360,
+    "hoverMs": 140
+   },
+   "compatible": [
+    "scandinavian-dark",
+    "utility",
+    "terminal-ui"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "memphis",
+    "aurora-ui"
+   ]
+  },
+  {
+   "num": "62",
+   "slug": "warehouse-flow",
+   "name": "Warehouse Flow",
+   "family": "Endüstriyel",
+   "tag": "Raf, görev ve sevkiyatın tek satırda okunduğu, sarının yalnız \"şimdi ne yapılacak\" sorusunu yanıtladığı depo operasyon arayüzü.",
+   "tags": [
+    "depo operasyon panosu",
+    "raf ve sevkiyat takibi",
+    "sert ofset etiket dili"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 300,
+    "ease": "cubic-bezier(0.34,1.56,0.64,1)",
+    "scrollMs": 500,
+    "hoverMs": 110
+   },
+   "compatible": [
+    "utility",
+    "bento-grid",
+    "terminal-ui"
+   ],
+   "forbidden": [
+    "luxury-typography",
+    "wabi-sabi",
+    "art-deco"
+   ]
+  },
+  {
+   "num": "63",
+   "slug": "maintenance-cmms",
+   "name": "Maintenance CMMS",
+   "family": "Endüstriyel",
+   "tag": "Bakım işinin bir iş emri kâğıdı gibi okunduğu, turuncunun yalnız \"acil müdahale\" anlamına geldiği koyu saha arayüzü.",
+   "tags": [
+    "iş emri kartı",
+    "bakım ve arıza panosu",
+    "daktilo künye dili"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 550,
+    "ease": "cubic-bezier(0.4,0,0.2,1)",
+    "scrollMs": 620,
+    "hoverMs": 260
+   },
+   "compatible": [
+    "terminal-ui",
+    "scandinavian-dark",
+    "utility"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "glassmorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "64",
+   "slug": "construction-site",
+   "name": "Construction Site",
+   "family": "Endüstriyel",
+   "tag": "Şantiyenin plaka, kalıp ve numara dilini ekrana taşıyan; her blokun 2px çerçeveyle, her metrajın birimle göründüğü saha arayüzü.",
+   "tags": [
+    "şantiye blok panosu",
+    "metraj ve aşama takibi",
+    "plaka çerçeve dili"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 460,
+    "ease": "cubic-bezier(0.2,1.3,0.3,1)",
+    "scrollMs": 340,
+    "hoverMs": 190
+   },
+   "compatible": [
+    "bauhaus",
+    "swiss-design",
+    "terminal-ui"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "ethereal",
+    "claymorphism"
+   ]
+  },
+  {
+   "num": "65",
+   "slug": "cockpit-avionics",
+   "name": "Cockpit Avionics",
+   "family": "Endüstriyel",
+   "tag": "Her panelin bir gösterge çerçevesi taşıdığı, değerin etiket–sayı–birim üçlüsüyle okunduğu kokpit paneli arayüzü.",
+   "tags": [
+    "kokpit gösterge paneli",
+    "segment çubuk okuma",
+    "bezel çerçeve dili"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 240,
+    "ease": "cubic-bezier(0,0,0.2,1)",
+    "scrollMs": 280,
+    "hoverMs": 70
+   },
+   "compatible": [
+    "terminal-ui",
+    "cybercore",
+    "scandinavian-dark"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "memphis",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "66",
+   "slug": "nordic-folk",
+   "name": "Nordic Folk",
+   "family": "Kültürel & Bölgesel",
+   "tag": "",
+   "tags": [
+    "halk deseni",
+    "el boyaması şerit",
+    "sıcak linen zemin"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 620,
+    "ease": "cubic-bezier(0.22,0.61,0.36,1)",
+    "scrollMs": 760,
+    "hoverMs": 190
+   },
+   "compatible": [
+    "japandi",
+    "bohemian",
+    "editorial-design"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "glassmorphism",
+    "cyberpunk"
+   ]
+  },
+  {
+   "num": "67",
+   "slug": "japanese-ma",
+   "name": "Japanese Ma",
+   "family": "Kültürel & Bölgesel",
+   "tag": "",
+   "tags": [
+    "ölçülmüş boşluk",
+    "tek yatay çizgi",
+    "mühür kırmızısı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 1050,
+    "ease": "cubic-bezier(0.25,0.1,0.25,1)",
+    "scrollMs": 1150,
+    "hoverMs": 520
+   },
+   "compatible": [
+    "minimalism",
+    "editorial-design",
+    "nordic-folk"
+   ],
+   "forbidden": [
+    "maximalism",
+    "memphis",
+    "claymorphism"
+   ]
+  },
+  {
+   "num": "68",
+   "slug": "levant-calligraphy",
+   "name": "Levant Calligraphy",
+   "family": "Kültürel & Bölgesel",
+   "tag": "",
+   "tags": [
+    "hat hattı",
+    "tezhip çerçevesi",
+    "altın hairline"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 940,
+    "ease": "cubic-bezier(0.34,0.03,0.24,1)",
+    "scrollMs": 1020,
+    "hoverMs": 340
+   },
+   "compatible": [
+    "editorial-design",
+    "luxury-typography",
+    "bohemian"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "memphis",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "69",
+   "slug": "andalusian-azulejo",
+   "name": "Andalusian Azulejo",
+   "family": "Kültürel & Bölgesel",
+   "tag": "",
+   "tags": [
+    "kobalt çini",
+    "harç ızgarası",
+    "sekiz köşeli yıldız"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 420,
+    "ease": "cubic-bezier(0.6,0.02,0.2,1)",
+    "scrollMs": 550,
+    "hoverMs": 150
+   },
+   "compatible": [
+    "swiss-design",
+    "bauhaus",
+    "bento-grid"
+   ],
+   "forbidden": [
+    "memphis",
+    "claymorphism",
+    "glassmorphism"
+   ]
+  },
+  {
+   "num": "70",
+   "slug": "slavic-late-brutalist",
+   "name": "Slavic Late Brutalist",
+   "family": "Kültürel & Bölgesel",
+   "tag": "",
+   "tags": [
+    "beton panel",
+    "sert ofset gölge",
+    "tehlike şeridi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 260,
+    "ease": "cubic-bezier(0.85,0,0.15,1)",
+    "scrollMs": 300,
+    "hoverMs": 70
+   },
+   "compatible": [
+    "neo-brutalism",
+    "utility",
+    "constructivism"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "glassmorphism",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "71",
+   "slug": "west-african-pattern",
+   "name": "West African Pattern",
+   "family": "Kültürel & Bölgesel",
+   "tag": "8px dokuma şeritlerinin altın desen bloklarıyla kesildiği koyu zemin üzerinde, süsün yalnız bantlarda yaşadığı dokuma dili.",
+   "tags": [
+    "dokuma şerit",
+    "altın desen bloğu",
+    "damga motifi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 500,
+    "ease": "cubic-bezier(0.7,0.15,0.3,1)",
+    "scrollMs": 580,
+    "hoverMs": 210
+   },
+   "compatible": [
+    "nordic-folk",
+    "bohemian",
+    "maximalism"
+   ],
+   "forbidden": [
+    "japanese-ma",
+    "swiss-design",
+    "glassmorphism"
+   ]
+  },
+  {
+   "num": "72",
+   "slug": "andean-textile",
+   "name": "Andean Textile",
+   "family": "Kültürel & Bölgesel",
+   "tag": "4px adımlı basamak motifinin çözgü şeritleriyle birleştiği ve yalnız birincil yüzeyin 3px ofsetle kabardığı dokuma arayüzü.",
+   "tags": [
+    "basamak motifi",
+    "çözgü şeridi",
+    "ikili simetri"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 720,
+    "ease": "cubic-bezier(0.5,0,0.5,1)",
+    "scrollMs": 660,
+    "hoverMs": 240
+   },
+   "compatible": [
+    "west-african-pattern",
+    "organic-bio",
+    "nordic-folk"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "liquid-glass",
+    "neo-brutalism"
+   ]
+  },
+  {
+   "num": "73",
+   "slug": "indian-block-print",
+   "name": "Indian Block Print",
+   "family": "Kültürel & Bölgesel",
+   "tag": "Her yüzeyin 1–4px kayma iziyle basıldığı, damganın tek renk ve keskin kaldığı blok baskı arayüzü.",
+   "tags": [
+    "blok damga",
+    "kayma izi",
+    "çivit çiçek"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 300,
+    "ease": "steps(2, end)",
+    "scrollMs": 340,
+    "hoverMs": 130
+   },
+   "compatible": [
+    "andean-textile",
+    "editorial-design",
+    "maximalism"
+   ],
+   "forbidden": [
+    "liquid-glass",
+    "cyberpunk",
+    "claymorphism"
+   ]
+  },
+  {
+   "num": "74",
+   "slug": "persian-miniature",
+   "name": "Persian Miniature",
+   "family": "Kültürel & Bölgesel",
+   "tag": "Gece laciverti bir sayfada çift altın çerçevenin ve madalyon kemerinin içine yerleşen, 58 karakterlik ölçülü metin bloğu.",
+   "tags": [
+    "altın tezhip çerçevesi",
+    "madalyon kemeri",
+    "gece laciverti"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 1150,
+    "ease": "cubic-bezier(0.45,0.05,0.55,0.95)",
+    "scrollMs": 1150,
+    "hoverMs": 440
+   },
+   "compatible": [
+    "levant-calligraphy",
+    "art-deco",
+    "dark-academia"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "liquid-glass",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "75",
+   "slug": "aegean-island",
+   "name": "Aegean Island",
+   "family": "Kültürel & Bölgesel",
+   "tag": "Kireç beyazı badana yüzeylerin 22px kemer köşelerle açıldığı, tek Ege mavisiyle kuru ve serin kalan arayüz.",
+   "tags": [
+    "kireç badana",
+    "kemer açıklık",
+    "ege mavisi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 380,
+    "ease": "cubic-bezier(0.25,0.75,0.5,1)",
+    "scrollMs": 440,
+    "hoverMs": 280
+   },
+   "compatible": [
+    "minimalism",
+    "japandi",
+    "scandinavian-dark"
+   ],
+   "forbidden": [
+    "maximalism",
+    "vaporwave",
+    "neo-brutalism"
+   ]
+  },
+  {
+   "num": "76",
+   "slug": "biophilic-botanical",
+   "name": "Biyofilik Botanik",
+   "family": "Doğa & Organik",
+   "tag": "Doğayı dekor olarak değil ölçü olarak kullanan arayüz: kırık beyaz kâğıt zemin, yaprak biçimli kart, tek yumuşak gölge ve derin yaprak yeşilinin taşıdığı sakin hiyerarşi.",
+   "tags": [
+    "yumuşak yeşil",
+    "yaprak formu",
+    "nefes alan boşluk"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 680,
+    "ease": "cubic-bezier(0.3,0.7,0.2,1)",
+    "scrollMs": 740,
+    "hoverMs": 320
+   },
+   "compatible": [
+    "organic-bio",
+    "japandi",
+    "wabi-sabi"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "neo-brutalism"
+   ]
+  },
+  {
+   "num": "77",
+   "slug": "weather-atmosphere",
+   "name": "Hava Durumu & Atmosfer",
+   "family": "Doğa & Organik",
+   "tag": "Gökyüzünün katmanlarını taklit eden arayüz: yukarıdan aşağı incelen atmosfer gradyanı, sisli cam nav, bulut kütlesi ve tek gölgeyle kurulan ferah boşluk.",
+   "tags": [
+    "gökyüzü gradyanı",
+    "sisli cam katman",
+    "bulut kütlesi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 780,
+    "ease": "cubic-bezier(0.25,0.6,0.15,1)",
+    "scrollMs": 640,
+    "hoverMs": 260
+   },
+   "compatible": [
+    "aurora-ui",
+    "ethereal",
+    "liquid-glass"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "safety-signage"
+   ]
+  },
+  {
+   "num": "78",
+   "slug": "topographic-terrain",
+   "name": "Topografya & Arazi",
+   "family": "Doğa & Organik",
+   "tag": "Araziyi pafta gibi okuyan arayüz: sıcak harita kâğıdı zemin, eş yükselti halkaları, 1px pafta çerçevesi ve her ölçünün birim taşıdığı düz, gölgesiz bilgi yüzeyi.",
+   "tags": [
+    "eş yükselti çizgisi",
+    "harita paftası",
+    "toprak tonu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 480,
+    "ease": "cubic-bezier(0.5,0.05,0.3,1)",
+    "scrollMs": 520,
+    "hoverMs": 150
+   },
+   "compatible": [
+    "blueprint-drawing",
+    "wabi-sabi",
+    "utility"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "memphis"
+   ]
+  },
+  {
+   "num": "79",
+   "slug": "ocean-current",
+   "name": "Deniz & Akıntı",
+   "family": "Doğa & Organik",
+   "tag": "Derin suyun katmanlarını taklit eden koyu arayüz: teal zemin, ince akıntı çizgileri, serif display ve tek turkuaz vurgunun taşıdığı yön bilgisi.",
+   "tags": [
+    "akıntı çizgisi",
+    "derin turkuaz",
+    "su dalgası"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 830,
+    "ease": "cubic-bezier(0.35,0.02,0.25,1)",
+    "scrollMs": 860,
+    "hoverMs": 380
+   },
+   "compatible": [
+    "ethereal",
+    "aurora-ui",
+    "wabi-sabi"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "safety-signage"
+   ]
+  },
+  {
+   "num": "80",
+   "slug": "seasonal-shift",
+   "name": "Mevsim Geçişi",
+   "family": "Doğa & Organik",
+   "tag": "Bir mevsimden diğerine geçen arayüz: sıcak krem zemin, iki tonlu geçiş şeridi (pas turuncusu → yaprak yeşili), serif başlık ve tek yumuşak gölge.",
+   "tags": [
+    "mevsim geçişi",
+    "sıcak krem",
+    "pas turuncusu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 570,
+    "ease": "cubic-bezier(0.42,0.12,0.2,1)",
+    "scrollMs": 570,
+    "hoverMs": 220
+   },
+   "compatible": [
+    "japandi",
+    "wabi-sabi",
+    "editorial-design"
+   ],
+   "forbidden": [
+    "y2k",
+    "acid-graphics"
+   ]
+  },
+  {
+   "num": "81",
+   "slug": "forest-bark",
+   "name": "Forest Bark",
+   "family": "Doğa & Organik",
+   "tag": "Orman altının nemli karanlığında, her türün kabuğu ve mevsimiyle kaydedildiği saha defteri arayüzü.",
+   "tags": [
+    "orman saha defteri",
+    "kabuk dokusu",
+    "tür künyesi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 880,
+    "ease": "cubic-bezier(0.32,0.72,0,1)",
+    "scrollMs": 950,
+    "hoverMs": 320
+   },
+   "compatible": [
+    "wabi-sabi",
+    "organic-bio",
+    "dark-academia"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "acid-graphics",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "82",
+   "slug": "desert-sand",
+   "name": "Desert Sand",
+   "family": "Doğa & Organik",
+   "tag": "Kumul eğrileriyle yumuşayan, sıcak kum zemininde mor alacakaranlık vurgusuyla ölçüm gösteren çöl atlası arayüzü.",
+   "tags": [
+    "kumul eğrisi arayüz",
+    "çöl atlası",
+    "mor alacakaranlık accent"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 1150,
+    "ease": "cubic-bezier(0.16,0.62,0.24,1)",
+    "scrollMs": 1150,
+    "hoverMs": 420
+   },
+   "compatible": [
+    "japandi",
+    "ethereal",
+    "editorial-design"
+   ],
+   "forbidden": [
+    "pixel-art",
+    "cyberpunk",
+    "neumorphism"
+   ]
+  },
+  {
+   "num": "83",
+   "slug": "polar-ice",
+   "name": "Polar Ice",
+   "family": "Doğa & Organik",
+   "tag": "Buz plakası gibi keskin, yüksek anahtarlı bir zeminde her ölçümün etiket-değer-birim üçlüsüyle okunduğu kutup veri arayüzü.",
+   "tags": [
+    "buz plakası panel",
+    "kutup verisi",
+    "ölçüm üçlüsü"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 320,
+    "ease": "cubic-bezier(0.15,1,0.3,1)",
+    "scrollMs": 420,
+    "hoverMs": 100
+   },
+   "compatible": [
+    "scandinavian-dark",
+    "utility",
+    "lab-instrument"
+   ],
+   "forbidden": [
+    "wabi-sabi",
+    "bohemian",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "84",
+   "slug": "volcanic-mineral",
+   "name": "Volcanic Mineral",
+   "family": "Doğa & Organik",
+   "tag": "Bazalt siyahı keskin yüzeylerde her örneğin katman kalınlığı ve mineral yüzdesiyle kaydedildiği volkanik kesit arayüzü.",
+   "tags": [
+    "jeolojik kesit paneli",
+    "bazalt ve magma",
+    "mineral yüzdesi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 680,
+    "ease": "cubic-bezier(1,0,0.2,1)",
+    "scrollMs": 300,
+    "hoverMs": 460
+   },
+   "compatible": [
+    "dark-academia",
+    "scandinavian-dark",
+    "machined-metal-panel"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "dopamine-ui",
+    "frutiger-aero"
+   ]
+  },
+  {
+   "num": "85",
+   "slug": "coral-reef",
+   "name": "Coral Reef",
+   "family": "Doğa & Organik",
+   "tag": "Su altı ışığının yumuşattığı koyu turkuaz zeminde, her türün bölgesi ve derinliğiyle kaydedildiği resif gözlem arayüzü.",
+   "tags": [
+    "resif gözlem kaydı",
+    "su altı turkuaz",
+    "asimetrik mercan köşesi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 980,
+    "ease": "cubic-bezier(0.2,0.8,0.3,1)",
+    "scrollMs": 880,
+    "hoverMs": 280
+   },
+   "compatible": [
+    "ocean-current",
+    "ethereal",
+    "organic-bio",
+    "aurora-ui"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "swiss-design",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "86",
+   "slug": "literary-hardcover",
+   "name": "Literary Hardcover",
+   "family": "Yayın & Tipografi",
+   "tag": "Edebiyat kitabının kapağını arayüze çeviren stil: tek serif aile, 17px/1.72 gövde, 64ch ölçü ve derinliği 1px hairline ile kâğıt tonundan alan sakin okuma sayfası.",
+   "tags": [
+    "edebiyat kitabı",
+    "tek serif aile",
+    "hairline kâğıt"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 720,
+    "ease": "cubic-bezier(0.2,0.6,0.2,1)",
+    "scrollMs": 860,
+    "hoverMs": 260
+   },
+   "compatible": [
+    "editorial-design",
+    "dark-academia",
+    "luxury-typography"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "cyberpunk",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "87",
+   "slug": "broadsheet-daily",
+   "name": "Broadsheet Daily",
+   "family": "Yayın & Tipografi",
+   "tag": "Gazete baskısının mantığı: masthead'te tek kalın sans, gövdede haber serifi, bitişik kolonlar ve 0 radius — hareket neredeyse yok, çünkü haber bekletmez.",
+   "tags": [
+    "gazete kolonu",
+    "masthead",
+    "keskin kural"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 220,
+    "ease": "steps(3, end)",
+    "scrollMs": 280,
+    "hoverMs": 80
+   },
+   "compatible": [
+    "swiss-design",
+    "academic-paper",
+    "utility"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "dopamine-ui",
+    "aurora-ui"
+   ]
+  },
+  {
+   "num": "88",
+   "slug": "magazine-feature",
+   "name": "Magazine Feature",
+   "family": "Yayın & Tipografi",
+   "tag": "Dergi feature açılışı: Fraunces 64px display, 34px kayma, 0.9s reveal ve tek pin'li pull-quote sahnesi — okunan değil \"sayfası çevrilen\" bir editoryal yüzey.",
+   "tags": [
+    "dergi feature",
+    "pin'li pull-quote",
+    "tam kanama görsel"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 900,
+    "ease": "cubic-bezier(0.215,0.61,0.355,1)",
+    "scrollMs": 1000,
+    "hoverMs": 320
+   },
+   "compatible": [
+    "editorial-design",
+    "maximalism",
+    "luxury-typography"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "neo-brutalism",
+    "minimalism"
+   ]
+  },
+  {
+   "num": "89",
+   "slug": "academic-paper",
+   "name": "Academic Paper",
+   "family": "Yayın & Tipografi",
+   "tag": "Akademik makale formu: EB Garamond 15.5px/1.66 iki kolon, numaralı başlıklar, dipnot çizgisi ve hareketin neredeyse sıfır olduğu (0.33s linear) bir kanıt yüzeyi.",
+   "tags": [
+    "akademik makale",
+    "kenar notu",
+    "numaralı başlık"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 330,
+    "ease": "linear",
+    "scrollMs": 420,
+    "hoverMs": 120
+   },
+   "compatible": [
+    "swiss-design",
+    "utility",
+    "broadsheet-daily"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "dopamine-ui",
+    "memphis"
+   ]
+  },
+  {
+   "num": "90",
+   "slug": "poetry-chapbook",
+   "name": "Poetry Chapbook",
+   "family": "Yayın & Tipografi",
+   "tag": "Şiir kitapçığı: 1.1s'lik nefes alan giriş, Cormorant Garamond italik dizeler, 46ch dar ölçü ve sol kenarda tek 1px el dikişi çizgisi.",
+   "tags": [
+    "şiir kitapçığı",
+    "el dikişi",
+    "dar ölçü"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 1100,
+    "ease": "cubic-bezier(0.33,1,0.68,1)",
+    "scrollMs": 1150,
+    "hoverMs": 380
+   },
+   "compatible": [
+    "ethereal",
+    "literary-hardcover",
+    "dark-academia"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "terminal-ui",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "91",
+   "slug": "product-catalog",
+   "name": "Product Catalog",
+   "family": "Yayın & Tipografi",
+   "tag": "",
+   "tags": [
+    "katalog sayfası",
+    "kod ve fiyat sütunu",
+    "swatch kareler"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 460,
+    "ease": "cubic-bezier(0.18,0.86,0.24,1)",
+    "scrollMs": 580,
+    "hoverMs": 170
+   },
+   "compatible": [
+    "editorial-design",
+    "swiss-design",
+    "utility"
+   ],
+   "forbidden": [
+    "maximalism",
+    "dopamine-ui",
+    "glassmorphism"
+   ]
+  },
+  {
+   "num": "92",
+   "slug": "museum-thesis",
+   "name": "Museum & Thesis",
+   "family": "Yayın & Tipografi",
+   "tag": "",
+   "tags": [
+    "duvar etiketi",
+    "asılı girinti",
+    "levha çerçevesi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 1100,
+    "ease": "cubic-bezier(0.35,0.02,0.28,1)",
+    "scrollMs": 1150,
+    "hoverMs": 460
+   },
+   "compatible": [
+    "editorial-design",
+    "dark-academia",
+    "luxury-typography"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "memphis",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "93",
+   "slug": "type-experiment",
+   "name": "Type Experiment",
+   "family": "Yayın & Tipografi",
+   "tag": "",
+   "tags": [
+    "tipografik spesimen",
+    "taban çizgisi ızgarası",
+    "ölçü notları"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 220,
+    "ease": "steps(4, end)",
+    "scrollMs": 260,
+    "hoverMs": 80
+   },
+   "compatible": [
+    "swiss-design",
+    "kinetic-type",
+    "utility"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "glassmorphism",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "94",
+   "slug": "encyclopedia",
+   "name": "Encyclopedia",
+   "family": "Yayın & Tipografi",
+   "tag": "",
+   "tags": [
+    "madde başı",
+    "numaralı tanımlar",
+    "çapraz referans"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 330,
+    "ease": "cubic-bezier(0.4,0,0.3,1)",
+    "scrollMs": 420,
+    "hoverMs": 130
+   },
+   "compatible": [
+    "editorial-design",
+    "utility",
+    "museum-thesis"
+   ],
+   "forbidden": [
+    "maximalism",
+    "memphis",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "95",
+   "slug": "punk-fanzine",
+   "name": "Punk Fanzine",
+   "family": "Yayın & Tipografi",
+   "tag": "",
+   "tags": [
+    "fotokopi zine",
+    "kes-yapıştır şerit",
+    "zımba izleri"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "index",
+    "nav": "pill",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 150,
+    "ease": "steps(2, end)",
+    "scrollMs": 180,
+    "hoverMs": 60
+   },
+   "compatible": [
+    "anti-design",
+    "scrapbook",
+    "neo-brutalism"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "glassmorphism",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "96",
+   "slug": "kinetic-marquee",
+   "name": "Kinetic Marquee",
+   "family": "Hareket & Optik",
+   "tag": "Tipografiyi sabit bir poster gibi değil, hızla akan bir bant gibi kullanan; eğimi ve ritmi scroll hızından alan hareket stili.",
+   "tags": [
+    "marquee bandı",
+    "hıza bağlı eğim",
+    "harf dalgası"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "pill",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 620,
+    "ease": "cubic-bezier(0.12,0.9,0.2,1)",
+    "scrollMs": 500,
+    "hoverMs": 180
+   },
+   "compatible": [
+    "kinetic-type",
+    "editorial-design",
+    "acid-graphics"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "minimalism",
+    "claymorphism"
+   ]
+  },
+  {
+   "num": "97",
+   "slug": "optical-illusion",
+   "name": "Optical Illusion",
+   "family": "Hareket & Optik",
+   "tag": "Kenarları keskinleştirip desen frekansını yükselterek gözü yanıltan, ama hiçbir desenini hareket ettirmeyen statik optik stil.",
+   "tags": [
+    "moiré katmanı",
+    "şekil-zemin",
+    "yarım ton nokta"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "pill",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 340,
+    "ease": "cubic-bezier(0.9,0,0.1,1)",
+    "scrollMs": 280,
+    "hoverMs": 90
+   },
+   "compatible": [
+    "swiss-design",
+    "anti-design",
+    "constructivism"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "claymorphism",
+    "liquid-glass"
+   ]
+  },
+  {
+   "num": "98",
+   "slug": "generative-grid",
+   "name": "Generative Grid",
+   "family": "Hareket & Optik",
+   "tag": "24px çizim ızgarasına hizalanmış yay, düğüm ve tarama izlerinden oluşan, her deseni bir tohum etiketiyle tekrar üretilebilir kılan çizici arayüzü.",
+   "tags": [
+    "tohumlu ızgara",
+    "çizici düğüm",
+    "koordinat etiketi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 780,
+    "ease": "cubic-bezier(0.3,0,0,1)",
+    "scrollMs": 900,
+    "hoverMs": 150
+   },
+   "compatible": [
+    "swiss-design",
+    "blueprint-drawing",
+    "bauhaus"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "frutiger-aero",
+    "glassmorphism"
+   ]
+  },
+  {
+   "num": "99",
+   "slug": "depth-parallax",
+   "name": "Depth Parallax",
+   "family": "Hareket & Optik",
+   "tag": "Üç düzlemin farklı hızda kaydığı ve uzak katmanın 2px pusla geri çekildiği, derinliği gölge hiyerarşisiyle kuran arayüz.",
+   "tags": [
+    "üç derinlik düzlemi",
+    "atmosferik pus",
+    "kaydırma hızı farkı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 1000,
+    "ease": "cubic-bezier(0.16,0.6,0.3,1)",
+    "scrollMs": 1100,
+    "hoverMs": 360
+   },
+   "compatible": [
+    "scandinavian-dark",
+    "grand-tourer-midnight",
+    "glassmorphism"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "optical-illusion",
+    "memphis"
+   ]
+  },
+  {
+   "num": "100",
+   "slug": "fluid-simulation",
+   "name": "Fluid Simulation",
+   "family": "Hareket & Optik",
+   "tag": "Köşeleri damla gibi asimetrik yuvarlatılmış yüzeylerin viskoz bir eğriyle aktığı, dekoratif katmanın 6px bulanık bloblarla kurulduğu yumuşak arayüz.",
+   "tags": [
+    "akışkan blob",
+    "yüzey gerilimi",
+    "dalga ayırıcı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "pill",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 1050,
+    "ease": "cubic-bezier(0.22,0.9,0.24,1)",
+    "scrollMs": 1150,
+    "hoverMs": 520
+   },
+   "compatible": [
+    "organic-bio",
+    "claymorphism",
+    "aurora-ui"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "optical-illusion",
+    "constructivism"
+   ]
+  },
+  {
+   "num": "101",
+   "slug": "shadow-stage",
+   "name": "Shadow Stage",
+   "family": "Hareket & Optik",
+   "tag": "Tek bir ışık kaynağının sahnedeki her şeyi sırayla aydınlattığı, hiyerarşiyi rengin değil parlaklık ve gölge yönünün kurduğu koyu sahne arayüzü.",
+   "tags": [
+    "ışık ve gölge oyunu",
+    "tek ışık kaynaklı sahne",
+    "vinyetli koyu yüzey"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 430,
+    "ease": "cubic-bezier(0.4,0.05,0.25,1)",
+    "scrollMs": 610,
+    "hoverMs": 250
+   },
+   "compatible": [
+    "dark-academia",
+    "glassmorphism",
+    "museum-thesis"
+   ],
+   "forbidden": [
+    "memphis",
+    "dopamine-ui",
+    "acid-graphics"
+   ]
+  },
+  {
+   "num": "102",
+   "slug": "moire-field",
+   "name": "Moiré Field",
+   "family": "Hareket & Optik",
+   "tag": "İki ince çizgi perdesinin üst üste bindirilmesiyle oluşan girişim desenini zemin sayan, orta ton gri üzerinde keskin köşe ve pixel başlıkla kurulmuş optik desen arayüzü.",
+   "tags": [
+    "moiré ve desen",
+    "çift perde girişim",
+    "orta ton zemin"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 530,
+    "ease": "cubic-bezier(0.37,0,0.63,1)",
+    "scrollMs": 470,
+    "hoverMs": 95
+   },
+   "compatible": [
+    "type-experiment",
+    "swiss-design",
+    "pixel-art"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "ethereal",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "103",
+   "slug": "motion-trail",
+   "name": "Motion Trail",
+   "family": "Hareket & Optik",
+   "tag": "Her hareket eden öğenin arkasında üç kademeli solan bir iz bıraktığı, hızın kalıcı bir görsel öğe olarak tasarlandığı açık zeminli hareket arayüzü.",
+   "tags": [
+    "iz bırakma",
+    "hareket izi katmanları",
+    "uzun pozlama hissi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 370,
+    "ease": "cubic-bezier(0.15,0.8,0.3,1)",
+    "scrollMs": 490,
+    "hoverMs": 300
+   },
+   "compatible": [
+    "kinetic-type",
+    "neo-brutalism",
+    "grand-tourer"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "japandi",
+    "minimalism"
+   ]
+  },
+  {
+   "num": "104",
+   "slug": "stepped-mechanism",
+   "name": "Stepped Mechanism",
+   "family": "Hareket & Optik",
+   "tag": "Her geçişin dört ayrı kademede tamamlandığı, ara değer üretmeyen ve kademe göstergesiyle hareketin nerede olduğunu söyleyen orta gri mekanik kontrol arayüzü.",
+   "tags": [
+    "mekanik kademeli geçiş",
+    "kademe göstergesi",
+    "orta gri metal panel"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 360,
+    "ease": "steps(4, end)",
+    "scrollMs": 310,
+    "hoverMs": 85
+   },
+   "compatible": [
+    "machined-metal-panel",
+    "mes-production-line",
+    "calibration-lab"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "ethereal",
+    "memphis"
+   ]
+  },
+  {
+   "num": "105",
+   "slug": "holographic-layer",
+   "name": "Holographic Layer",
+   "family": "Hareket & Optik",
+   "tag": "Her panelin arkasında 12px kaymış iki soluk katman bulunduğu, ışığın cam kenarında kırıldığı koyu mor holografik arayüz.",
+   "tags": [
+    "holografik katman",
+    "üç katmanlı cam yığını",
+    "iridesan kenar"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 970,
+    "ease": "cubic-bezier(0.32,0.06,0.2,1)",
+    "scrollMs": 860,
+    "hoverMs": 410
+   },
+   "compatible": [
+    "glassmorphism",
+    "liquid-glass",
+    "ai-native-mesh"
+   ],
+   "forbidden": [
+    "minimalism",
+    "japandi",
+    "swiss-design"
+   ]
+  },
+  {
+   "num": "106",
+   "slug": "voice-first",
+   "name": "Ses-Öncelikli",
+   "family": "Etkileşim",
+   "tag": "Arayüzün ana girişi ses olan stil: ekranın merkezinde dinleme halkası ve dalga formu, çevresinde tek satırlık transkript, hap biçimli dev butonlar.",
+   "tags": [
+    "dinleme halkası",
+    "dalga formu",
+    "ses durumu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 370,
+    "ease": "cubic-bezier(0.2,0.9,0.3,1)",
+    "scrollMs": 230,
+    "hoverMs": 95
+   },
+   "compatible": [
+    "ai-native-mesh",
+    "liquid-glass",
+    "log-stream"
+   ],
+   "forbidden": [
+    "academic-paper",
+    "blueprint-drawing"
+   ]
+  },
+  {
+   "num": "107",
+   "slug": "spatial-ar-layer",
+   "name": "Uzamsal AR Katman",
+   "family": "Etkileşim",
+   "tag": "Ekranı üç derinlik düzlemine bölen stil: perspektif ızgara zemin, çapa artılı yüzen katmanlar, mono koordinat etiketleri ve kapatılabilir pin-scrub paralaks.",
+   "tags": [
+    "derinlik katmanı",
+    "çapa artısı",
+    "perspektif ızgara"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 860,
+    "ease": "cubic-bezier(0.16,0.9,0.24,1)",
+    "scrollMs": 810,
+    "hoverMs": 285
+   },
+   "compatible": [
+    "ai-native-mesh",
+    "liquid-glass",
+    "atlas-console"
+   ],
+   "forbidden": [
+    "scrapbook",
+    "memphis"
+   ]
+  },
+  {
+   "num": "108",
+   "slug": "command-palette",
+   "name": "Komut Paleti",
+   "family": "Etkileşim",
+   "tag": "Fare olmadan çalışan stil: koyu grafit zemin, blur ile karartılmış arka plan, 44px komut satırları, keycap chip'ler ve tek açık (chalk) accent.",
+   "tags": [
+    "klavye önceliği",
+    "keycap chip",
+    "komut arama"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 190,
+    "ease": "cubic-bezier(0.05,0.9,0.1,1)",
+    "scrollMs": 170,
+    "hoverMs": 65
+   },
+   "compatible": [
+    "terminal-ui",
+    "log-stream",
+    "utility"
+   ],
+   "forbidden": [
+    "maximalism",
+    "claymorphism"
+   ]
+  },
+  {
+   "num": "109",
+   "slug": "timeline-editor",
+   "name": "Zaman Çizelgesi Editörü",
+   "family": "Etkileşim",
+   "tag": "Kurgu masasının dili: 32px kanal şeritleri, tek dikey playhead, mono zaman kodu ve %14 kanal tonlu klip bloklarıyla kurulan sıkı çalışma yüzeyi.",
+   "tags": [
+    "playhead",
+    "kanal şeridi",
+    "zaman kodu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 510,
+    "ease": "cubic-bezier(0.45,0.08,0.25,1)",
+    "scrollMs": 530,
+    "hoverMs": 165
+   },
+   "compatible": [
+    "kinetic-type",
+    "utility",
+    "log-stream"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "memphis"
+   ]
+  },
+  {
+   "num": "110",
+   "slug": "kanban-flow",
+   "name": "Kanban Akışı",
+   "family": "Etkileşim",
+   "tag": "İşin kolonlar arasında aktığı arayüz: soğuk gri tahta zemini, beyaz kartlar, 3px kategori şeridi ve WIP sayaçlı kolon başlıkları.",
+   "tags": [
+    "WIP sayacı",
+    "kart şeridi",
+    "kolon akışı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 730,
+    "ease": "cubic-bezier(0.3,0.4,0.2,1)",
+    "scrollMs": 690,
+    "hoverMs": 235
+   },
+   "compatible": [
+    "bento-grid",
+    "utility",
+    "mes-production-line"
+   ],
+   "forbidden": [
+    "slavic-late-brutalist",
+    "vaporwave"
+   ]
+  },
+  {
+   "num": "111",
+   "slug": "step-wizard",
+   "name": "Adım Sihirbazı",
+   "family": "Etkileşim",
+   "tag": "Ekran başına tek karar veren, sol dikey numaralı adım rayı ve altta sabit geri/ileri çubuğu olan çok adımlı form stili.",
+   "tags": [
+    "adım rayı",
+    "tek soru",
+    "ilerleme sayacı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 390,
+    "ease": "cubic-bezier(0.25,0.8,0.3,1)",
+    "scrollMs": 410,
+    "hoverMs": 145
+   },
+   "compatible": [
+    "utility",
+    "kanban-flow",
+    "product-catalog"
+   ],
+   "forbidden": [
+    "maximalism",
+    "acid-graphics"
+   ]
+  },
+  {
+   "num": "112",
+   "slug": "zero-ui",
+   "name": "Sıfır Arayüz",
+   "family": "Etkileşim",
+   "tag": "Görünür kontrolü neredeyse sıfıra indiren, tek niyet satırı ve 1px hairline katmanlarla çalışan monokrom arayüz stili.",
+   "tags": [
+    "monokrom sadeleşme",
+    "niyet satırı",
+    "hairline katman"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 1100,
+    "ease": "cubic-bezier(0.33,0,0.12,1)",
+    "scrollMs": 1150,
+    "hoverMs": 560
+   },
+   "compatible": [
+    "japandi",
+    "minimalism",
+    "academic-paper"
+   ],
+   "forbidden": [
+    "maximalism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "113",
+   "slug": "notebook-repl",
+   "name": "Notebook / REPL",
+   "family": "Etkileşim",
+   "tag": "Ekranı numaralı yürütme hücrelerine bölen, her bloğun altında ayrı çıktı ve kernel durumu gösteren hesaplama-defteri stili.",
+   "tags": [
+    "hücre numarası",
+    "çıktı bloğu",
+    "kernel durumu"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 230,
+    "ease": "cubic-bezier(0.2,0.9,0.2,1)",
+    "scrollMs": 190,
+    "hoverMs": 70
+   },
+   "compatible": [
+    "terminal-ui",
+    "utility",
+    "log-stream"
+   ],
+   "forbidden": [
+    "editorial-design",
+    "art-deco"
+   ]
+  },
+  {
+   "num": "114",
+   "slug": "multiplayer-presence",
+   "name": "Eşzamanlı İşbirlikçi",
+   "family": "Etkileşim",
+   "tag": "Aynı belgede çalışan herkesi canlı imleç, avatar yığını ve uzak seçim vurgusuyla görünür kılan çok kişili çalışma stili.",
+   "tags": [
+    "canlı imleç",
+    "avatar yığını",
+    "uzak seçim"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "sticky",
+    "nav": "pill",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 630,
+    "ease": "cubic-bezier(0.34,1.16,0.64,1)",
+    "scrollMs": 570,
+    "hoverMs": 210
+   },
+   "compatible": [
+    "kanban-flow",
+    "timeline-editor",
+    "utility"
+   ],
+   "forbidden": [
+    "dark-academia",
+    "victorian"
+   ]
+  },
+  {
+   "num": "115",
+   "slug": "keyboard-first",
+   "name": "Klavye-Öncelikli Komut Arayüzü",
+   "family": "Etkileşim",
+   "tag": "Her eylemin tuş ipucunu yanında taşıyan, sabit komut satırı ve 2px odak halkasıyla klavyeden hiç ayrılmadan çalışılan komut yüzeyi stili.",
+   "tags": [
+    "tuş ipucu",
+    "komut satırı",
+    "odak halkası"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 120,
+    "ease": "linear",
+    "scrollMs": 100,
+    "hoverMs": 45
+   },
+   "compatible": [
+    "command-palette",
+    "terminal-ui",
+    "utility"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "coral-reef"
+   ]
+  },
+  {
+   "num": "116",
+   "slug": "kids-playground",
+   "name": "Kids Playground",
+   "family": "Oyuncul",
+   "tag": "Çocuk oyun alanı mantığı: 18px yuvarlak köşe, kalın tek gölge, 4 renkli ama %12 sınırlı bloklar ve 0.46s zıplayan giriş — güvenli, cesur, dokunulabilir.",
+   "tags": [
+    "çocuk oyun alanı",
+    "kalın gölge blok",
+    "60px hedef"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 460,
+    "ease": "cubic-bezier(0.34,1.574,0.64,1)",
+    "scrollMs": 520,
+    "hoverMs": 180
+   },
+   "compatible": [
+    "claymorphism",
+    "dopamine-ui",
+    "memphis"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "dark-academia",
+    "swiss-design"
+   ]
+  },
+  {
+   "num": "117",
+   "slug": "carnival-festival",
+   "name": "Carnival Festival",
+   "family": "Oyuncul",
+   "tag": "Karnaval afişi mantığı: Anton 72px bant başlık, 30px kayma, 0.28s snap giriş ve hareketli renk şeritleri — müzik, ışık ve kalabalık aynı karede.",
+   "tags": [
+    "karnaval afişi",
+    "renk şeridi",
+    "bant başlık"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 280,
+    "ease": "cubic-bezier(0.34,1.56,0.64,1)",
+    "scrollMs": 360,
+    "hoverMs": 120
+   },
+   "compatible": [
+    "memphis",
+    "maximalism",
+    "dopamine-ui"
+   ],
+   "forbidden": [
+    "scandinavian-dark",
+    "academic-paper",
+    "utility"
+   ]
+  },
+  {
+   "num": "118",
+   "slug": "sticker-sheet",
+   "name": "Sticker Sheet",
+   "family": "Oyuncul",
+   "tag": "Çıkartma sayfası mantığı: 6px beyaz die-cut halka, 2px ofset gölge ve 12px kayma — her blok sayfadan \"soyulabiliyormuş\" gibi durur.",
+   "tags": [
+    "çıkartma sayfası",
+    "die-cut halka",
+    "toplanabilir koleksiyon"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 340,
+    "ease": "cubic-bezier(0.34,1.82,0.64,1)",
+    "scrollMs": 400,
+    "hoverMs": 160
+   },
+   "compatible": [
+    "dopamine-ui",
+    "memphis",
+    "y2k"
+   ],
+   "forbidden": [
+    "academic-paper",
+    "utility",
+    "dark-academia"
+   ]
+  },
+  {
+   "num": "119",
+   "slug": "arcade-8bit",
+   "name": "Arcade 8-bit",
+   "family": "Oyuncul",
+   "tag": "Modern arcade kabini: Press Start 2P 32px skor başlığı, CRT tarama dokusu, 0.18s steps(4) giriş ve tek neon aksan — nostalji, ama okunur ve klavye erişilebilir.",
+   "tags": [
+    "arcade kabin",
+    "pixel display",
+    "statik tarama"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 180,
+    "ease": "steps(4, end)",
+    "scrollMs": 220,
+    "hoverMs": 70
+   },
+   "compatible": [
+    "pixel-art",
+    "cybercore",
+    "terminal-ui"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "glassmorphism",
+    "luxury-typography"
+   ]
+  },
+  {
+   "num": "120",
+   "slug": "craft-handmade",
+   "name": "Craft Handmade",
+   "family": "Oyuncul",
+   "tag": "El yapımı zanaat: kraft kâğıt dokusu, Caveat 52px el yazısı başlık, 1px kesikli dikiş çizgisi ve 0.82s ağır giriş — her blok \"elle yerleştirilmiş\" gibi durur.",
+   "tags": [
+    "el yapımı",
+    "kraft kâğıt",
+    "dikiş çizgisi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 820,
+    "ease": "cubic-bezier(0.4,0.1,0.3,1)",
+    "scrollMs": 950,
+    "hoverMs": 300
+   },
+   "compatible": [
+    "scrapbook",
+    "bohemian",
+    "nordic-folk"
+   ],
+   "forbidden": [
+    "cyberpunk",
+    "glassmorphism",
+    "terminal-ui"
+   ]
+  },
+  {
+   "num": "121",
+   "slug": "celebration-card",
+   "name": "Celebration Card",
+   "family": "Oyuncul",
+   "tag": "",
+   "tags": [
+    "die-cut kart",
+    "konfeti saçılımı",
+    "folyo kurdele"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 520,
+    "ease": "cubic-bezier(0.34,1.42,0.4,1)",
+    "scrollMs": 600,
+    "hoverMs": 180
+   },
+   "compatible": [
+    "dopamine-ui",
+    "scrapbook",
+    "bohemian"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "utility",
+    "blueprint-drawing"
+   ]
+  },
+  {
+   "num": "122",
+   "slug": "collectible-card",
+   "name": "Collectible Card",
+   "family": "Oyuncul",
+   "tag": "",
+   "tags": [
+    "2.5:3.5 kart",
+    "holo bant",
+    "nadirlik taşı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 700,
+    "ease": "cubic-bezier(0.16,0.9,0.24,1)",
+    "scrollMs": 780,
+    "hoverMs": 200
+   },
+   "compatible": [
+    "bento-grid",
+    "kanban-flow",
+    "neo-brutalism"
+   ],
+   "forbidden": [
+    "ethereal",
+    "wabi-sabi",
+    "poetry-chapbook"
+   ]
+  },
+  {
+   "num": "123",
+   "slug": "comic-story",
+   "name": "Comic Story",
+   "family": "Oyuncul",
+   "tag": "",
+   "tags": [
+    "panel ızgarası",
+    "konuşma balonu",
+    "yarım ton gölge"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 280,
+    "ease": "steps(3, end)",
+    "scrollMs": 340,
+    "hoverMs": 120
+   },
+   "compatible": [
+    "conceptual-sketch",
+    "scrapbook",
+    "punk-fanzine"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "minimalism",
+    "scandinavian-dark"
+   ]
+  },
+  {
+   "num": "124",
+   "slug": "album-sleeve",
+   "name": "Album Sleeve",
+   "family": "Oyuncul",
+   "tag": "",
+   "tags": [
+    "plak kılıfı",
+    "sırt yazısı",
+    "parça listesi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "index",
+    "nav": "pill",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 900,
+    "ease": "cubic-bezier(0.4,0.05,0.2,1)",
+    "scrollMs": 950,
+    "hoverMs": 380
+   },
+   "compatible": [
+    "editorial-design",
+    "product-catalog",
+    "grand-tourer"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "glassmorphism",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "125",
+   "slug": "sports-energy",
+   "name": "Sports Energy",
+   "family": "Oyuncul",
+   "tag": "",
+   "tags": [
+    "skor tabelası",
+    "forma numarası",
+    "pist şeritleri"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 240,
+    "ease": "cubic-bezier(0.9,0,0.1,1)",
+    "scrollMs": 280,
+    "hoverMs": 80
+   },
+   "compatible": [
+    "utility",
+    "safety-signage",
+    "telemetry-grid"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "glassmorphism",
+    "wabi-sabi"
+   ]
+  },
+  {
+   "num": "126",
+   "slug": "marble-vein",
+   "name": "Marble Vein",
+   "family": "Materyal & Lüks",
+   "tag": "Damarı kesilmiş bir taş plaka gibi sakin, grafitle çizilmiş lüks bir malzeme kataloğu arayüzü.",
+   "tags": [
+    "mermer plaka kataloğu",
+    "grafit damar çizgisi",
+    "taş yüzey künyesi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 640,
+    "ease": "cubic-bezier(0.18,0.72,0.22,1)",
+    "scrollMs": 870,
+    "hoverMs": 310
+   },
+   "compatible": [
+    "luxury-typography",
+    "editorial-design",
+    "japanese-ma"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "neo-brutalism",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "127",
+   "slug": "silk-drape",
+   "name": "Silk Drape",
+   "family": "Materyal & Lüks",
+   "tag": "Işığı yumuşatan ipek kıvrımları gibi akan, asimetrik köşelerle kesilmiş sıcak bir kumaş atölyesi arayüzü.",
+   "tags": [
+    "ipek kumaş kartelası",
+    "kıvrım köşesi",
+    "gramaj ve en"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 760,
+    "ease": "cubic-bezier(0.46,0.03,0.24,1)",
+    "scrollMs": 920,
+    "hoverMs": 245
+   },
+   "compatible": [
+    "luxury-typography",
+    "ethereal",
+    "grand-tourer"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "safety-signage",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "128",
+   "slug": "brass-copper",
+   "name": "Brass Copper",
+   "family": "Materyal & Lüks",
+   "tag": "Gravürlenmiş pirinç plaka gibi kurgulanmış; koyu bronz zemin, üst kenarı iç parlaklıklı paneller, bakır accent ve ağır hareket eden lüks metal kataloğu arayüzü.",
+   "tags": [
+    "pirinç alaşım kataloğu",
+    "gravür plaka künyesi",
+    "bakır accent"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 920,
+    "ease": "cubic-bezier(0.52,0.04,0.3,1)",
+    "scrollMs": 790,
+    "hoverMs": 195
+   },
+   "compatible": [
+    "art-deco",
+    "grand-tourer",
+    "machined-metal-panel"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "frutiger-aero",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "129",
+   "slug": "porcelain-glaze",
+   "name": "Porcelain Glaze",
+   "family": "Materyal & Lüks",
+   "tag": "Sır gibi pürüzsüz bir zeminde, kobalt çizgilerle ölçülen porselen parçaların sessiz bir koleksiyon arayüzü.",
+   "tags": [
+    "porselen sır kataloğu",
+    "kobalt ince çizgi",
+    "çap ve ağırlık"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 560,
+    "ease": "cubic-bezier(0.12,0.75,0.24,1)",
+    "scrollMs": 840,
+    "hoverMs": 360
+   },
+   "compatible": [
+    "japanese-ma",
+    "editorial-design",
+    "magazine-feature"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "acid-graphics",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "130",
+   "slug": "leather-craft",
+   "name": "Leather Craft",
+   "family": "Materyal & Lüks",
+   "tag": "Tabaklanmış deri gibi sıcak ve dokulu bir zeminde, dikiş çerçeveli kartlarda el işi emirlerini takip eden atölye arayüzü.",
+   "tags": [
+    "deri iş emri panosu",
+    "kesikli dikiş çerçevesi",
+    "tan grain doku"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 1080,
+    "ease": "cubic-bezier(0.66,0.02,0.3,1)",
+    "scrollMs": 930,
+    "hoverMs": 430
+   },
+   "compatible": [
+    "wabi-sabi",
+    "grand-tourer",
+    "nordic-folk"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "cyberpunk",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "131",
+   "slug": "optic-prism",
+   "name": "Optic Prism",
+   "family": "Materyal & Lüks",
+   "tag": "Optik cam mantığı: 1px prizma kenarı, conic kırılma halkası ve 0.58s hassas giriş — blur yok, sadece ışığın kırılması.",
+   "tags": [
+    "optik cam",
+    "prizma kenarı",
+    "ölçü bandı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 580,
+    "ease": "cubic-bezier(0.16,0.84,0.44,1)",
+    "scrollMs": 720,
+    "hoverMs": 220
+   },
+   "compatible": [
+    "marble-vein",
+    "machined-metal-panel",
+    "scandinavian-dark"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "claymorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "132",
+   "slug": "wood-joinery",
+   "name": "Wood Joinery",
+   "family": "Materyal & Lüks",
+   "tag": "Marangoz atölyesi mantığı: 1px geçme çizgileri, 4px radius yüzeyler ve 0.66s ölçülü giriş — ahşabın damarından çok birleşim noktaları önemlidir.",
+   "tags": [
+    "marangoz geçmesi",
+    "meşe zemin",
+    "ölçü etiketi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 660,
+    "ease": "cubic-bezier(0.22,0.72,0.24,1)",
+    "scrollMs": 800,
+    "hoverMs": 240
+   },
+   "compatible": [
+    "craft-handmade",
+    "japandi",
+    "marble-vein"
+   ],
+   "forbidden": [
+    "cyberpunk",
+    "glassmorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "133",
+   "slug": "letterpress-print",
+   "name": "Letterpress Print",
+   "family": "Materyal & Lüks",
+   "tag": "Letterpress mantığı: kabartma baskı izi, 2px radius yüzeyler ve 0.30s presleme girişi — tipografi kâğıda gömülür, ekran bunu taklit eder.",
+   "tags": [
+    "letterpress baskı",
+    "deboss izi",
+    "kâğıt elyafı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 300,
+    "ease": "cubic-bezier(0.7,0,0.3,1)",
+    "scrollMs": 340,
+    "hoverMs": 110
+   },
+   "compatible": [
+    "broadsheet-daily",
+    "literary-hardcover",
+    "academic-paper"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "dopamine-ui",
+    "cyberpunk"
+   ]
+  },
+  {
+   "num": "134",
+   "slug": "concrete-monolith",
+   "name": "Concrete Monolith",
+   "family": "Materyal & Lüks",
+   "tag": "Dökme beton kütle: sıfır radius, sıfır kenarlık, tek ton geçişi ve 0.95s ağır giriş — yüzey ayrımı çizgiden değil kütleden gelir.",
+   "tags": [
+    "dökme beton",
+    "monolit kütle",
+    "kalıp izi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 950,
+    "ease": "cubic-bezier(0.5,0.02,0.3,1)",
+    "scrollMs": 1050,
+    "hoverMs": 340
+   },
+   "compatible": [
+    "marble-vein",
+    "scandinavian-dark",
+    "machined-metal-panel"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "glassmorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "135",
+   "slug": "enamel-porcelain",
+   "name": "Enamel Porcelain",
+   "family": "Materyal & Lüks",
+   "tag": "Mine ve porselen: sırlı beyaz yüzey, 6px yumuşak köşe, koyu mine yeşili kontur ve 0.44s parlak ama ölçülü giriş.",
+   "tags": [
+    "emaye sır",
+    "koyu yeşil mine",
+    "sırlı yüzey"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 440,
+    "ease": "cubic-bezier(0.34,1.3,0.64,1)",
+    "scrollMs": 500,
+    "hoverMs": 200
+   },
+   "compatible": [
+    "marble-vein",
+    "optic-prism",
+    "minimalism"
+   ],
+   "forbidden": [
+    "porcelain-glaze",
+    "glassmorphism",
+    "claymorphism"
+   ]
+  },
+  {
+   "num": "136",
+   "slug": "speculative-scifi",
+   "name": "Spekülatif Bilim-Kurgu",
+   "family": "Deneysel & Gelecek",
+   "tag": "Anlatının içinden çıkmış bir enstrüman plakası: açık kemik zemin, gravür çift çerçeve, radyal kadran tiki ve tek sinyal ambarıyla kurulmuş diegetic arayüz.",
+   "tags": [
+    "diegetic plaka",
+    "kadran tiki",
+    "yabancı ölçü birimi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 410,
+    "ease": "cubic-bezier(0.58,0.02,0.34,1)",
+    "scrollMs": 430,
+    "hoverMs": 185
+   },
+   "compatible": [
+    "blueprint-drawing",
+    "lab-instrument",
+    "calibration-lab"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "137",
+   "slug": "volumetric-data",
+   "name": "Hologram & Uzamsal Veri",
+   "family": "Deneysel & Gelecek",
+   "tag": "Uzamsal veriyi hacim olarak okutan arayüz: derin lacivert zemin, nokta bulutu yoğunluk haritası, izdüşüm ızgarası ve tek sıcak amber accent.",
+   "tags": [
+    "nokta bulutu",
+    "kesit dilimi",
+    "eksen etiketi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 960,
+    "ease": "cubic-bezier(0.24,0.02,0.18,1)",
+    "scrollMs": 890,
+    "hoverMs": 430
+   },
+   "compatible": [
+    "depth-parallax",
+    "atlas-console",
+    "telemetry-grid"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "scrapbook"
+   ]
+  },
+  {
+   "num": "138",
+   "slug": "agent-orchestration",
+   "name": "AI-native Ajan Arayüzü",
+   "family": "Deneysel & Gelecek",
+   "tag": "Denetlenebilir ajan dili: numaralı iz kaydı, onay kapıları ve gerekçe/atıf şeritleriyle her adımı görünür kılan nötr zeminli arayüz.",
+   "tags": [
+    "iz kaydı",
+    "onay kapısı",
+    "atıf şeridi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 270,
+    "ease": "cubic-bezier(0.72,0.04,0.2,1)",
+    "scrollMs": 290,
+    "hoverMs": 105
+   },
+   "compatible": [
+    "command-palette",
+    "log-stream",
+    "terminal-ui"
+   ],
+   "forbidden": [
+    "maximalism",
+    "claymorphism"
+   ]
+  },
+  {
+   "num": "139",
+   "slug": "bio-synthetic",
+   "name": "Biyo & Sentetik",
+   "family": "Deneysel & Gelecek",
+   "tag": "Laboratuvarda büyütülmüş arayüz: koyu kültür ortamı, zar halkaları, hücre kümeleri ve biyo-lime accent ile yumuşak-sentetik bir yüzey dili.",
+   "tags": [
+    "zar halkası",
+    "hücre kümesi",
+    "kültür etiketi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 1080,
+    "ease": "cubic-bezier(0.44,0.16,0.3,1)",
+    "scrollMs": 1070,
+    "hoverMs": 490
+   },
+   "compatible": [
+    "organic-bio",
+    "biophilic-botanical",
+    "liquid-glass"
+   ],
+   "forbidden": [
+    "swiss-design",
+    "broadsheet-daily"
+   ]
+  },
+  {
+   "num": "140",
+   "slug": "nanotech",
+   "name": "Nanoteknik",
+   "family": "Deneysel & Gelecek",
+   "tag": "Moleküler ölçeğin monokrom arayüzü: karbon kafes noktaları, 3px köşeler, nm ölçü etiketleri ve neredeyse siyah tek accent ile hassas ölçüm dili.",
+   "tags": [
+    "karbon kafes",
+    "nanometre ölçü",
+    "monokrom accent"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 610,
+    "ease": "cubic-bezier(0.62,0.06,0.28,0.98)",
+    "scrollMs": 670,
+    "hoverMs": 155
+   },
+   "compatible": [
+    "calibration-lab",
+    "topographic-terrain",
+    "utility"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "vaporwave"
+   ]
+  },
+  {
+   "num": "141",
+   "slug": "planetary-service",
+   "name": "Planetary Service",
+   "family": "Deneysel & Gelecek",
+   "tag": "Gezegen yörüngesindeki servis görevlerini eşmerkezli halkalar, mono telemetri ve fırlatma penceresi sayaçlarıyla tek koyu konsolda toplayan operasyon arayüzü.",
+   "tags": [
+    "gezegen servis operasyonları",
+    "yörünge ve pencere panosu",
+    "görev telemetrisi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 570,
+    "ease": "cubic-bezier(0.24,0.72,0.18,1)",
+    "scrollMs": 670,
+    "hoverMs": 190
+   },
+   "compatible": [
+    "atlas-console",
+    "cockpit-avionics",
+    "telemetry-grid"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "dopamine-ui",
+    "memphis"
+   ]
+  },
+  {
+   "num": "142",
+   "slug": "quantum-lab",
+   "name": "Quantum Lab",
+   "family": "Deneysel & Gelecek",
+   "tag": "Kuantum ölçümlerini daktilo başlıklı, keskin köşeli bir laboratuvar defteri gibi sunan; olasılığı nokta bulutu ve çubuk histogramla konuşturan ölçüm arayüzü.",
+   "tags": [
+    "kuantum ve veri",
+    "olasılık dağılımı",
+    "ölçüm laboratuvarı"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 290,
+    "ease": "cubic-bezier(0.5,0.05,0.3,1)",
+    "scrollMs": 350,
+    "hoverMs": 105
+   },
+   "compatible": [
+    "lab-instrument",
+    "calibration-lab",
+    "type-experiment"
+   ],
+   "forbidden": [
+    "claymorphism",
+    "dopamine-ui",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "143",
+   "slug": "retro-future",
+   "name": "Retro Future",
+   "family": "Deneysel & Gelecek",
+   "tag": "1960'lar uzay çağı afişini ekrana taşıyan; krem kâğıt, hardal mürekkep, yuvarlak paneller ve yörünge yayıyla kurulmuş iyimser fütürizm arayüzü.",
+   "tags": [
+    "retro-fütürizm",
+    "uzay çağı afişi",
+    "krem ve hardal palet"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 610,
+    "ease": "cubic-bezier(0.3,1.2,0.4,1)",
+    "scrollMs": 700,
+    "hoverMs": 340
+   },
+   "compatible": [
+    "grand-tourer",
+    "frutiger-aero",
+    "synthwave"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "swiss-design",
+    "neo-brutalism"
+   ]
+  },
+  {
+   "num": "144",
+   "slug": "virtual-engine",
+   "name": "Virtual Engine",
+   "family": "Deneysel & Gelecek",
+   "tag": "Sanal bir dünyayı düzenleyen editör: viewport, varlık hiyerarşisi ve denetçi panelini CRT başlıklı koyu mor bir motorda birleştiren arayüz.",
+   "tags": [
+    "sanal dünya ve oyun motoru",
+    "viewport ve denetçi",
+    "varlık hiyerarşisi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 210,
+    "ease": "steps(6, end)",
+    "scrollMs": 240,
+    "hoverMs": 70
+   },
+   "compatible": [
+    "pixel-art",
+    "cybercore",
+    "ai-native-mesh"
+   ],
+   "forbidden": [
+    "japandi",
+    "minimalism",
+    "skeuomorphism"
+   ]
+  },
+  {
+   "num": "145",
+   "slug": "zero-gravity",
+   "name": "Zero Gravity",
+   "family": "Deneysel & Gelecek",
+   "tag": "Panellerin yerçekimi yokmuş gibi kademeli kaydığı, ince yörünge yaylarının ve yavaş geçişlerin hâkim olduğu buz mavisi orbital pano.",
+   "tags": [
+    "orbital ve sıfır yerçekimi",
+    "yüzen panel düzeni",
+    "ağırlıksız kartlar"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 1080,
+    "ease": "cubic-bezier(0.2,0.7,0.15,1)",
+    "scrollMs": 1050,
+    "hoverMs": 480
+   },
+   "compatible": [
+    "ethereal",
+    "liquid-glass",
+    "japandi"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "neo-brutalism",
+    "pixel-art"
+   ]
+  },
+  {
+   "num": "146",
+   "slug": "noir-estate",
+   "name": "Noir Estate",
+   "family": "Sahne & Prestij",
+   "tag": "Gece çekilmiş bir mimari fotoğraf gibi: sıcak siyah zemin, ince altın çizgi, cam gezinme çubuğu ve 0.88s perde girişi — prestij ışıktan değil, ışığın azlığından gelir.",
+   "tags": [
+    "sinematik lüks emlak",
+    "cam gezinme çubuğu",
+    "altın ince çizgi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 880,
+    "ease": "cubic-bezier(0.16,0.84,0.28,1)",
+    "scrollMs": 900,
+    "hoverMs": 260
+   },
+   "compatible": [
+    "luxury-typography",
+    "boutique-hotel",
+    "glassmorphism"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "claymorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "147",
+   "slug": "agency-portfolio",
+   "name": "Agency Portfolio",
+   "family": "Sahne & Prestij",
+   "tag": "Dijital ajans vitrini: kâğıt beyazı zemin, 72px Archivo Black başlık, elektrik mavi vurgu ve 0.62s harf kademesi — işi tipografi ve indeks numarası anlatır.",
+   "tags": [
+    "ajans portfolyosu",
+    "dev tipografi indeksi",
+    "elektrik mavi blok"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "index",
+    "nav": "pill",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 620,
+    "ease": "cubic-bezier(0.2,0.8,0.2,1)",
+    "scrollMs": 540,
+    "hoverMs": 180
+   },
+   "compatible": [
+    "swiss-design",
+    "magazine-feature",
+    "dark-dashboard"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "luxury-typography",
+    "claymorphism"
+   ]
+  },
+  {
+   "num": "148",
+   "slug": "product-launch",
+   "name": "Product Launch",
+   "family": "Sahne & Prestij",
+   "tag": "Lansman sahnesi: derin lacivert zemin, tepeden inen tek spotlight, mint accent ve 0.74s oturma girişi — ürün çıkar, sayfa süslenmez.",
+   "tags": [
+    "ürün lansmanı",
+    "spotlight hero",
+    "mint accent"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "motion": {
+    "enterMs": 740,
+    "ease": "cubic-bezier(0.22,0.9,0.24,1)",
+    "scrollMs": 700,
+    "hoverMs": 220
+   },
+   "compatible": [
+    "aurora-ui",
+    "dark-dashboard",
+    "bento-grid"
+   ],
+   "forbidden": [
+    "cyberpunk",
+    "neo-brutalism",
+    "minimalism"
+   ]
+  },
+  {
+   "num": "149",
+   "slug": "boutique-hotel",
+   "name": "Boutique Hotel",
+   "family": "Sahne & Prestij",
+   "tag": "Butik otel vitrini: kum-koyu zemin, terracotta vurgu, Playfair serif ve 1.02s yumuşak açılma — oda fotoğrafı ile künye aynı sayfada nefes alır.",
+   "tags": [
+    "butik otel vitrini",
+    "terracotta vurgu",
+    "yumuşak serif"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 1020,
+    "ease": "cubic-bezier(0.3,0.02,0.2,1)",
+    "scrollMs": 1000,
+    "hoverMs": 300
+   },
+   "compatible": [
+    "noir-estate",
+    "wabi-sabi",
+    "magazine-feature"
+   ],
+   "forbidden": [
+    "brass-copper",
+    "neo-brutalism",
+    "cyberpunk"
+   ]
+  },
+  {
+   "num": "150",
+   "slug": "lookbook-editorial",
+   "name": "Lookbook Editorial",
+   "family": "Sahne & Prestij",
+   "tag": "Kemik kâğıt üzerinde dergi sayfası: Fraunces başlık, 104px dev rakam, kiremit ince çizgi ve 0.7s satır maskesi — ürün değil bakış açısı satılır.",
+   "tags": [
+    "moda lookbook",
+    "dergi sayfası",
+    "kiremit ince çizgi"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "motion": {
+    "enterMs": 700,
+    "ease": "cubic-bezier(0.4,0,0.15,1)",
+    "scrollMs": 620,
+    "hoverMs": 160
+   },
+   "compatible": [
+    "magazine-feature",
+    "porcelain-glaze",
+    "boutique-hotel"
+   ],
+   "forbidden": [
+    "bento-grid",
+    "claymorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "151",
+   "slug": "dark-dashboard",
+   "name": "Dark Dashboard",
+   "family": "Sahne & Prestij",
+   "tag": "Kontrol odası: grafit zemin, 1px çizgi ızgara, cyan yalnız veride ve 0.48s hızlı giriş — süs değil, ölçüm okunur.",
+   "tags": [
+    "koyu saas paneli",
+    "cyan veri vurgusu",
+    "grafit ızgara"
+   ],
+   "dark": true,
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "motion": {
+    "enterMs": 480,
+    "ease": "cubic-bezier(0.25,0.6,0.2,1)",
+    "scrollMs": 440,
+    "hoverMs": 140
+   },
+   "compatible": [
+    "product-launch",
+    "telemetry-grid",
+    "agency-portfolio"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "neumorphism",
+    "noir-estate"
+   ]
+  }
+ ]
+}

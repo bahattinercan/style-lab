@@ -1,0 +1,5 @@
+/* 123 · Comic Story — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="comic-story"] { --bg: #f8f2e2; --bg-2: #f0e8d3; --surface: #fffdf6; --surface-2: #ece4cd; --ink: #111114; --ink-soft: #494a45; --ink-faint: #75766e; --accent: #d92b1f; --accent-ink: #fff8f2; --line: rgba(17,17,20,.22); --radius: 4px; --radius-lg: 8px; --shadow: none; --shadow-hard: 4px 4px 0 #111114; --font-display: "Baloo 2", "Archivo Black", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: 0.005em; --blur: 0px; --grain: 0.05; }
+
+/* 123 · Comic Story — koyu tema (palette.dark ile birebir aynı; sert gölge koyuda kâğıt grisine döner) */
+[data-theme="dark"][data-style="comic-story"] { --bg: #121214; --bg-2: #17171a; --surface: #1c1c20; --surface-2: #26262b; --ink: #f2eddd; --ink-soft: #b5b0a2; --ink-faint: #8a857a; --accent: #ff6a58; --accent-ink: #180a08; --line: rgba(242,237,221,.18); --shadow-hard: 4px 4px 0 #4a4741; }

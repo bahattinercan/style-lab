@@ -1,0 +1,5 @@
+/* 96 · Kinetic Marquee — token bloğu (kaynak: styles/96-kinetic-marquee/tokens.json) */
+[data-style="kinetic-marquee"] { --bg: #f4f1ea; --bg-2: #eae5da; --surface: #fdfbf6; --surface-2: #f2eee4; --ink: #14161a; --ink-soft: #4a4d57; --ink-faint: #82858f; --accent: #2d3ad0; --accent-ink: #f7f7ff; --line: rgba(20,22,26,.14); --radius: 3px; --radius-lg: 8px; --shadow: none; --shadow-hard: none; --font-display: "Chakra Petch", system-ui, sans-serif; --font-body: "Space Grotesk", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0.02em; --blur: 0px; --grain: 0; --danger: #a3241c; --danger-ink: #ffffff; --ok: #1c6b3f; --warn: #7d5200; }
+
+/* Kinetic Marquee — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="kinetic-marquee"] { --bg: #0d0f18; --bg-2: #121522; --surface: #161a2a; --surface-2: #1e2338; --ink: #eef0f6; --ink-soft: #a9afc4; --ink-faint: #78809a; --accent: #7f88ff; --accent-ink: #0a0b18; --line: rgba(238,240,246,.16); --ok: #2a9f5d; --warn: #bf7d00; }

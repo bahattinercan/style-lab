@@ -1,0 +1,5 @@
+/* styles/103-motion-trail/token-block.css — üretildi; kaynak tokens.json.
+[data-style="motion-trail"] { --bg: #f5f3ef; --bg-2: #ecebe6; --surface: #ffffff; --surface-2: #f0eeea; --ink: #14161a; --ink-soft: #4c5157; --ink-faint: #7d838a; --accent: #a8500f; --accent-ink: #ffffff; --line: rgba(20,22,26,.12); --radius: 20px; --radius-lg: 28px; --shadow: 0 18px 44px -32px rgba(20,22,26,.55); --shadow-hard: 6px 6px 0 var(--line); --font-display: "Anton", ui-sans-serif, system-ui, "Arial Narrow", sans-serif; --font-body: "Inter", ui-sans-serif, system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; --tracking: -0.01em; --blur: 0px; --grain: 0; --danger: #a3201a; --danger-ink: #ffffff; --ok: #1c6b45; --warn: #8a5a06; }
+
+/* Motion Trail — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="motion-trail"] { --bg: #121316; --bg-2: #181a1e; --surface: #1e2025; --surface-2: #262930; --ink: #f1f2f4; --ink-soft: #aeb3b9; --ink-faint: #7f858c; --accent: #ffa06b; --accent-ink: #200a06; --line: rgba(241,242,244,.16); --ok: #2ba369; --warn: #c58109; }

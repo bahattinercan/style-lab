@@ -1,0 +1,21 @@
+{
+  "slug": "fleet-telemetry",
+  "num": "55",
+  "labels": [
+    "IoT filo kontrolü",
+    "kapsama ve bağlantı durumu",
+    "cihaz telemetrisi"
+  ],
+  "synonyms": [
+    "cihaz filosu paneli",
+    "saha sensör ağı",
+    "uplink/downlink izleme",
+    "uzaktan bakım konsolu",
+    "NOC cihaz listesi"
+  ],
+  "avoid": [
+    "lüks marka vitrini",
+    "editoryal içerik",
+    "çocuk/wellness ürünü"
+  ]
+}

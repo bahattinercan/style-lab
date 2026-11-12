@@ -1,0 +1,48 @@
+/* 63 · Maintenance CMMS — token bloğu (açık + koyu)
+   Kaynak: styles/63-maintenance-cmms/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="maintenance-cmms"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="maintenance-cmms"] {
+  /* --- sözleşme: renk --- */
+  --bg: #17191a;
+  --bg-2: #1e2122;
+  --surface: #222628;
+  --surface-2: #2b3032;
+  --ink: #ece9e3;
+  --ink-soft: #a9a8a2;
+  --ink-faint: #7a7b77;
+  --accent: #ff8a3d;
+  --accent-ink: #1a0f05;
+  --line: rgba(236,233,227,.16);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 6px;
+  --radius-lg: 10px;
+  --shadow: 0 2px 6px rgba(0,0,0,.35);
+  --shadow-hard: 0 0 0 2px rgba(255,138,61,.32);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: 0em;
+  --blur: 0px;
+  --grain: 0;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #ff6b5e;
+  --danger-ink: #1c0806;
+  --ok: #6fd08c;
+  --warn: #f0c04a;
+}
+
+[data-theme="dark"][data-style="maintenance-cmms"] {
+  --bg: #060708;
+  --bg-2: #0a0c0d;
+  --surface: #0e1112;
+  --surface-2: #161a1c;
+  --ink: #f7f4ee;
+  --ink-soft: #b6b4ae;
+  --ink-faint: #868784;
+  --accent: #ffa066;
+  --accent-ink: #170b03;
+  --line: rgba(247,244,238,.18);
+}

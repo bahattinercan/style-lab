@@ -1,0 +1,20 @@
+/* 35 · Bauhaus — token bloğu (kaynak: styles/35-bauhaus/tokens.json) */
+
+[data-style="bauhaus"] {
+  --bg: #f2ece1; --bg-2: #e6ddcd;
+  --surface: #fffdf8; --surface-2: #efe7d8;
+  --ink: #16161a; --ink-soft: #55524b; --ink-faint: #7d776b;
+  --accent: #d92b2b; --accent-ink: #fffdf8;
+  --line: #16161a;
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: 4px 4px 0 #16161a;
+  --font-display: "Archivo Black", "Inter", sans-serif;
+  --font-body: "Jost", "Inter", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: 0em; --blur: 0px; --grain: .02;
+}
+
+[data-theme="dark"][data-style="bauhaus"] {
+  --bg: #16161a; --bg-2: #232326; --surface: #1f1f24; --surface-2: #302f33;
+  --ink: #f4ede1; --ink-soft: #b1aca5; --ink-faint: #7a7774; --accent: #e84747; --accent-ink: #0d0d0d; --line: rgba(244,237,225,.14);
+}

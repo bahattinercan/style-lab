@@ -1,0 +1,55 @@
+/* 51 · Atlas Console — token bloğu (kaynak: styles/51-atlas-console/tokens.json) */
+
+[data-style="atlas-console"] {
+  --bg: #0d1520;
+  --bg-2: #111b28;
+  --surface: #14202e;
+  --surface-2: #1a2836;
+  --ink: #e9eef6;
+  --ink-soft: #a7b7cb;
+  --ink-faint: #7c8ea6;
+  --accent: #7fa8f0;
+  --accent-ink: #081120;
+  --line: rgba(233,238,246,.16);
+  --radius: 8px;
+  --radius-lg: 16px;
+  --shadow: 0 18px 40px -32px rgba(4,8,14,.9);
+  --shadow-hard: 0 0 0 1px var(--line);
+  --font-display: "Cinzel", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.06em;
+  --blur: 0px;
+  --grain: .03;
+  --danger: #ff8a70;
+  --danger-ink: #1a0c07;
+  --ok: #7fd4a8;
+  --warn: #f0c46a;
+}
+
+[data-theme="dark"][data-style="atlas-console"] {
+  --bg: #04090f;
+  --bg-2: #070e17;
+  --surface: #0a1420;
+  --surface-2: #101d2c;
+  --ink: #f2f6fb;
+  --ink-soft: #b6c5d6;
+  --ink-faint: #8595a8;
+  --accent: #ffcf7a;
+  --accent-ink: #071019;
+  --line: rgba(242,246,251,.18);
+  --radius: 8px;
+  --radius-lg: 16px;
+  --shadow: 0 18px 40px -32px rgba(4,8,14,.9);
+  --shadow-hard: 0 0 0 1px var(--line);
+  --font-display: "Cinzel", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.06em;
+  --blur: 0px;
+  --grain: .03;
+  --danger: #ff8a70;
+  --danger-ink: #1a0c07;
+  --ok: #7fd4a8;
+  --warn: #f0c46a;
+}

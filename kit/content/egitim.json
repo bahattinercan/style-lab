@@ -1,0 +1,46 @@
+{
+  "label": "Eğitim",
+  "tags": [
+    "eğitim",
+    "kurs",
+    "öğrenme"
+  ],
+  "hero": {
+    "eyebrow": "Güz dönemi",
+    "h1": "Herkesin öğrenebildiği bir sınıf",
+    "lede": "Kısa dersler, açık örnekler ve gerçek geri bildirim; haftada üç saat yeter.",
+    "ctaPrimary": "Derse katıl",
+    "ctaSecondary": "Programı gör →"
+  },
+  "proofs": [
+    "Haftada 3 saat",
+    "Kayıt açık",
+    "Sertifika dahil"
+  ],
+  "logos": [
+    "Mektep",
+    "Atölye",
+    "Kürsü",
+    "Defter",
+    "Rota"
+  ],
+  "tiles": [
+    {
+      "num": "01",
+      "cap": "Okuma listesi"
+    },
+    {
+      "num": "02",
+      "cap": "Atölye kaydı"
+    },
+    {
+      "num": "03",
+      "cap": "Ödev değerlendirme"
+    },
+    {
+      "num": "04",
+      "cap": "Mezun dosyası"
+    }
+  ],
+  "logoLabel": "Mezunlar"
+}

@@ -1,0 +1,20 @@
+/* 33 · Dark Academia — token bloğu (kaynak: styles/33-dark-academia/tokens.json) */
+
+[data-style="dark-academia"] {
+  --bg: #1b1714; --bg-2: #241f1a;
+  --surface: #262019; --surface-2: #2f2820;
+  --ink: #e8dfce; --ink-soft: #b8ac97; --ink-faint: #8a7f6d;
+  --accent: #b0863f; --accent-ink: #1b1714;
+  --line: rgba(176,134,63,.32);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 12px 32px rgba(0,0,0,.5); --shadow-hard: none;
+  --font-display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-body: "EB Garamond", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: .07;
+}
+
+[data-theme="dark"][data-style="dark-academia"] {
+  --bg: #1b1714; --bg-2: #241f1a; --surface: #262019; --surface-2: #2f2820;
+  --ink: #e8dfce; --ink-soft: #b8ac97; --ink-faint: #8a7f6d; --accent: #b0863f; --accent-ink: #0d0d0d; --line: rgba(176,134,63,.32);
+}

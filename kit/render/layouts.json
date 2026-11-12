@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "_readme": "Kompozisyon ekseni tek kaynağı. style-lab şimdiye kadar rengi/tipografiyi çeşitlendiriyordu; bu dosya İSKELETİ çeşitlendirir. tokens.json → layout.hero / layout.nav buradaki id'lerden birini seçmek zorunda (kapı: kit/check-layout.mjs). Yeni arketip = buraya kayıt + kit/render/partials/<id>.html + scene.css'te [data-layout] bloğu.",
+  "heroes": [
+    {
+      "id": "split",
+      "label": "Split",
+      "when": "kopya solda, ürün görseli sağda; dengeli, nötr varsayılan",
+      "strengths": ["SaaS", "araç", "kurumsal"],
+      "densityBias": "balanced"
+    },
+    {
+      "id": "split-reverse",
+      "label": "Split (ters)",
+      "when": "görsel solda, kopya sağda; okuma akışını kırar, cesur ailelerde ritim",
+      "strengths": ["indie", "etkinlik", "kampanya"],
+      "densityBias": "dense"
+    },
+    {
+      "id": "centered",
+      "label": "Merkezlenmiş",
+      "when": "tek mesaj + geniş görsel bandı; sakin, seyrek markalar",
+      "strengths": ["minimal", "japandi", "kişisel marka"],
+      "densityBias": "sparse"
+    },
+    {
+      "id": "type",
+      "label": "Salt tipografi",
+      "when": "görsel yok; başlık ekranın kendisi. Poster/dergi/ajans vitrini",
+      "strengths": ["tipografi", "kültür", "ajans"],
+      "densityBias": "sparse"
+    },
+    {
+      "id": "fullbleed",
+      "label": "Tam kenar medya",
+      "when": "medya sol kenara taşar (kart yok), kopya sağda nefes alır; vitrin/lüks",
+      "strengths": ["emlak", "otel", "mücevher", "moda"],
+      "densityBias": "sparse"
+    },
+    {
+      "id": "product",
+      "label": "Ürün ekranı",
+      "when": "kopya üstte küçük, dev ürün paneli altta; araç iddiası",
+      "strengths": ["SaaS", "dashboard", "developer tool"],
+      "densityBias": "dense"
+    },
+    {
+      "id": "index",
+      "label": "Dizin ızgarası",
+      "when": "kopya solda dar, sağda 2×2 iş/kayıt ızgarası; portfolyo, arşiv",
+      "strengths": ["ajans", "portfolyo", "arşiv", "müze"],
+      "densityBias": "dense"
+    },
+    {
+      "id": "sticky",
+      "label": "Yapışkan anlatı",
+      "when": "solda yapışkan kopya, sağda kayan 3 panelli hikâye şeridi; uzun sayfa",
+      "strengths": ["hikâye", "ürün anlatısı", "spekülatif"],
+      "densityBias": "balanced"
+    }
+  ],
+  "navs": [
+    {
+      "id": "inline",
+      "label": "Satır içi",
+      "when": "marka + linkler + iki buton; nötr varsayılan"
+    },
+    {
+      "id": "pill",
+      "label": "Yüzen hap",
+      "when": "sayfadan kopuk, ortada linkler; yüzey/cam ve vitrin aileleri"
+    },
+    {
+      "id": "split",
+      "label": "Bölünmüş",
+      "when": "marka solda, linkler sağda, tek metin CTA; editoryal ve tipografik"
+    },
+    {
+      "id": "utility",
+      "label": "Yardımcı satırlı",
+      "when": "üstte ince yardımcı satır, altta ana gezinme; kurumsal, veri, endüstri"
+    },
+    {
+      "id": "rail",
+      "label": "Yan ray",
+      "when": "solda dikey gezinme rayı; uygulama hissi, komut paleti, araç aileleri"
+    }
+  ],
+  "densities": [
+    { "id": "sparse", "label": "Seyrek", "when": "ekran başına ≤5 öğe, geniş boşluk" },
+    { "id": "balanced", "label": "Dengeli", "when": "standart bilgi yoğunluğu" },
+    { "id": "dense", "label": "Yoğun", "when": "çok öğe, küçük boşluk, veri hissi" }
+  ],
+  "sections": [
+    { "id": "hero", "label": "Hero", "when": "giriş sahnesi (heroes[] arketiplerinden biri)" },
+    { "id": "logo-wall", "label": "Güvenen ekipler", "when": "sosyal kanıt şeridi" },
+    { "id": "feature-trio", "label": "Üç özellik", "when": "eşit ağırlıklı üç değer önerisi" },
+    { "id": "bento", "label": "Bento", "when": "farklı boyutlu kutu ızgarası" },
+    { "id": "how-it-works", "label": "Nasıl çalışır", "when": "3 adım, numaralı akış" },
+    { "id": "testimonial", "label": "Referans", "when": "tek güçlü alıntı + kimlik" },
+    { "id": "stats", "label": "İstatistik", "when": "3–4 büyük sayı" },
+    { "id": "pricing", "label": "Fiyat tablosu", "when": "plan karşılaştırma" },
+    { "id": "faq", "label": "SSS", "when": "itiraz kırma" },
+    { "id": "cta", "label": "Kapanış CTA", "when": "son eylem bloğu" },
+    { "id": "footer", "label": "Footer", "when": "site haritası + yasal" },
+    { "id": "og-card", "label": "OG kartı", "when": "1200×630 paylaşım görseli" }
+  ]
+}

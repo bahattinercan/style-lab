@@ -1,0 +1,48 @@
+/* 75 · Aegean Island — token bloğu (açık + koyu)
+   Kaynak: styles/75-aegean-island/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="aegean-island"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="aegean-island"] {
+  /* --- sözleşme: renk --- */
+  --bg: #fbfaf6;
+  --bg-2: #f2f1ea;
+  --surface: #ffffff;
+  --surface-2: #f6f6f1;
+  --ink: #12181c;
+  --ink-soft: #44545c;
+  --ink-faint: #7d8b92;
+  --accent: #0e6f92;
+  --accent-ink: #f7fbfd;
+  --line: rgba(18,24,28,.13);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 14px;
+  --radius-lg: 22px;
+  --shadow: 0 1px 2px rgba(18,24,28,.07);
+  --shadow-hard: none;
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Jost", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0.02em;
+  --blur: 0px;
+  --grain: 0;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #a33224;
+  --danger-ink: #ffffff;
+  --ok: #1b6146;
+  --warn: #7a5510;
+}
+
+[data-theme="dark"][data-style="aegean-island"] {
+  --bg: #0c1418;
+  --bg-2: #101a1f;
+  --surface: #131f25;
+  --surface-2: #1a282f;
+  --ink: #e9f2f4;
+  --ink-soft: #a6b6bc;
+  --ink-faint: #71848b;
+  --accent: #4fb8d4;
+  --accent-ink: #04181f;
+  --line: rgba(233,242,244,.16);
+}

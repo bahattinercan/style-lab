@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Giriş</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-auth __BODY_CLASS__">
+  <aside class="auth-aside">
+    <div class="brand"><span class="mark">N</span> Northwind</div>
+    <div class="mid">
+      <h2>İşe dönmek için tek adım.</h2>
+      <p>Hesabına giriş yap; taslakların, yorumların ve son sürümler seni bekliyor.</p>
+      <ul>
+        <li><span class="ic">__ICON:lock:14__</span> Uçtan uca şifreli oturum</li>
+        <li><span class="ic">__ICON:check:14__</span> SSO ve 2FA desteği</li>
+        <li><span class="ic">__ICON:clock:14__</span> 30 gün oturum hatırlama</li>
+      </ul>
+    </div>
+    <div class="foot">
+      <span class="chip">__ICON:lock:9__ KVKK</span>
+      <span>© 2026 Northwind</span>
+    </div>
+  </aside>
+
+  <main class="auth-main">
+    <section class="panel auth-card">
+      <div>
+        <h1>Giriş yap</h1>
+        <p class="sub">E-posta ve şifrenle devam et.</p>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">E-posta <b>zorunlu</b></span>
+        <span class="f-wrap">
+          <span class="ic">__ICON:mail:14__</span>
+          <input class="field lp err" value="elif@kuzey.co" aria-label="e-posta">
+        </span>
+        <span class="help err">Bu e-posta kayıtlı değil</span>
+      </div>
+
+      <div class="ctl">
+        <span class="lbl">Şifre <b>8+ karakter</b></span>
+        <span class="f-wrap">
+          <span class="ic">__ICON:lock:14__</span>
+          <input class="field lp rp" type="password" value="••••••••••" aria-label="şifre">
+          <span class="ic r">__ICON:eye:14__</span>
+        </span>
+      </div>
+
+      <div class="row">
+        <label class="opt"><input type="checkbox" checked><span class="box"></span> Beni hatırla</label>
+        <span class="r">Şifremi unuttum</span>
+      </div>
+
+      <span class="btn" style="justify-content:center">Giriş yap</span>
+
+      <div class="divider-x">veya</div>
+      <div class="oauth">
+        <span class="btn ghost sm">__ICON:grid:13__ Google</span>
+        <span class="btn ghost sm">__ICON:grid:13__ Microsoft</span>
+      </div>
+
+      <p class="legal">Devam ederek Kullanım Koşulları ve Gizlilik Politikası'nı kabul etmiş olursun.</p>
+    </section>
+
+    <section class="panel auth-card" style="width:344px;gap:9px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="lbl" style="margin:0">İki adımlı doğrulama</span>
+        <span class="chip" style="margin-left:auto">__ICON:shield:9__ 2FA</span>
+      </div>
+      <p style="font-size:10.5px;color:var(--ink-soft)">Uygulamadaki 6 haneli kodu gir.</p>
+      <div class="otp">
+        <span class="on">4</span><span class="on">8</span><span class="on">2</span>
+        <span>—</span><span>—</span><span>—</span>
+      </div>
+      <div class="row">
+        <span class="chip">__ICON:clock:9__ 24sn</span>
+        <span class="r" style="font-size:10px">Kod gelmedi mi?</span>
+      </div>
+    </section>
+  </main>
+
+  <div class="sig"></div>
+</body>
+</html>

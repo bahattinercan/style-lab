@@ -1,0 +1,48 @@
+/* 71 · West African Pattern — token bloğu (açık + koyu)
+   Kaynak: styles/71-west-african-pattern/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="west-african-pattern"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="west-african-pattern"] {
+  /* --- sözleşme: renk --- */
+  --bg: #17120f;
+  --bg-2: #1e1713;
+  --surface: #241b16;
+  --surface-2: #2d221b;
+  --ink: #f3e7d3;
+  --ink-soft: #c0ae93;
+  --ink-faint: #8d7f68;
+  --accent: #d99a1f;
+  --accent-ink: #1c1206;
+  --line: rgba(243,231,211,.16);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 0px;
+  --radius-lg: 2px;
+  --shadow: none;
+  --shadow-hard: none;
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0em;
+  --blur: 0px;
+  --grain: 0.02;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #e2694f;
+  --danger-ink: #220a04;
+  --ok: #6fbf7a;
+  --warn: #e0b84a;
+}
+
+[data-theme="dark"][data-style="west-african-pattern"] {
+  --bg: #0a0705;
+  --bg-2: #0e0a07;
+  --surface: #14100c;
+  --surface-2: #1c1711;
+  --ink: #fbf2e2;
+  --ink-soft: #cbbba1;
+  --ink-faint: #9a8b72;
+  --accent: #f2b64a;
+  --accent-ink: #1d1204;
+  --line: rgba(251,242,226,.2);
+}

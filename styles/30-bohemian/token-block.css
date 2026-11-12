@@ -1,0 +1,20 @@
+/* 30 · Bohemian — token bloğu (kaynak: styles/30-bohemian/tokens.json) */
+
+[data-style="bohemian"] {
+  --bg: #f3e9d8; --bg-2: #e8d9c0;
+  --surface: #fbf4e6; --surface-2: #f0e0c4;
+  --ink: #2e2620; --ink-soft: #5f5347; --ink-faint: #91857a;
+  --accent: #b45634; --accent-ink: #fff8ee;
+  --line: rgba(46,38,32,.18);
+  --radius: 14px; --radius-lg: 22px;
+  --shadow: 0 10px 24px rgba(46,38,32,.12); --shadow-hard: 4px 4px 0 rgba(46,38,32,.15);
+  --font-display: "Fraunces", "Lora", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Courier New", ui-monospace, monospace;
+  --tracking: 0em; --blur: 0px; --grain: .06;
+}
+
+[data-theme="dark"][data-style="bohemian"] {
+  --bg: #1c1712; --bg-2: #29231e; --surface: #26201a; --surface-2: #363029;
+  --ink: #f0e6d5; --ink-soft: #b0a89b; --ink-faint: #7b746a; --accent: #d0704a; --accent-ink: #0d0d0d; --line: rgba(240,230,213,.14);
+}

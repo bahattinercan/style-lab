@@ -1,0 +1,43 @@
+/* 70 · Slavic Late Brutalist — token bloğu (açık + koyu)
+   Kaynak: styles/70-slavic-late-brutalist/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="slavic-late-brutalist"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="slavic-late-brutalist"] {
+  /* --- sözleşme: renk --- */
+  --bg: #d8d6d0;
+  --bg-2: #cdcac3;
+  --surface: #e7e5e0;
+  --surface-2: #bfbcb5;
+  --ink: #16181a;
+  --ink-soft: #43464a;
+  --ink-faint: #6b6f74;
+  --accent: #a8431d;
+  --accent-ink: #f7f3ea;
+  --line: rgba(22,24,26,.26);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 0px;
+  --radius-lg: 2px;
+  --shadow: none;
+  --shadow-hard: 5px 5px 0 #16181a;
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Anton", Impact, system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0.01em;
+  --blur: 0px;
+  --grain: 0.05;
+}
+
+[data-theme="dark"][data-style="slavic-late-brutalist"] {
+  --bg: #1a1b1c;
+  --bg-2: #202224;
+  --surface: #24262a;
+  --surface-2: #2f3236;
+  --ink: #e8e6e1;
+  --ink-soft: #adaead;
+  --ink-faint: #83858a;
+  --accent: #d26234;
+  --accent-ink: #141414;
+  --line: rgba(232,230,225,.22);
+}

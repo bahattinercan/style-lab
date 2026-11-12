@@ -1,0 +1,48 @@
+/* 72 · Andean Textile — token bloğu (açık + koyu)
+   Kaynak: styles/72-andean-textile/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="andean-textile"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="andean-textile"] {
+  /* --- sözleşme: renk --- */
+  --bg: #f1ece2;
+  --bg-2: #e7e0d2;
+  --surface: #fffdf8;
+  --surface-2: #f7f2e8;
+  --ink: #1a1620;
+  --ink-soft: #4e4657;
+  --ink-faint: #857c8f;
+  --accent: #8d2148;
+  --accent-ink: #fdf6f7;
+  --line: rgba(26,22,32,.14);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 4px;
+  --radius-lg: 12px;
+  --shadow: none;
+  --shadow-hard: 3px 3px 0 rgba(26,22,32,.14);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: 0.01em;
+  --blur: 0px;
+  --grain: 0.03;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #96231d;
+  --danger-ink: #ffffff;
+  --ok: #1d6142;
+  --warn: #7a5310;
+}
+
+[data-theme="dark"][data-style="andean-textile"] {
+  --bg: #171319;
+  --bg-2: #1c1820;
+  --surface: #211c26;
+  --surface-2: #2a2430;
+  --ink: #efe8f2;
+  --ink-soft: #b6abbf;
+  --ink-faint: #82768d;
+  --accent: #e06a92;
+  --accent-ink: #24101a;
+  --line: rgba(239,232,242,.16);
+}

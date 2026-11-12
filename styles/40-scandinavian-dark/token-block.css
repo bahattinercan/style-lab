@@ -1,0 +1,20 @@
+/* 40 · Scandinavian Dark — token bloğu (kaynak: styles/40-scandinavian-dark/tokens.json) */
+
+[data-style="scandinavian-dark"] {
+  --bg: #171a19; --bg-2: #1d211f;
+  --surface: #1f2422; --surface-2: #262c29;
+  --ink: #e9e7e0; --ink-soft: #a6aaa2; --ink-faint: #7d8279;
+  --accent: #b9c6a9; --accent-ink: #141715;
+  --line: rgba(233,231,224,.14);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 2px 10px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.005em; --blur: 0px; --grain: .05;
+}
+
+[data-theme="dark"][data-style="scandinavian-dark"] {
+  --bg: #171a19; --bg-2: #242625; --surface: #1f2422; --surface-2: #2f3431;
+  --ink: #e9e7e0; --ink-soft: #aaaaa4; --ink-faint: #767673; --accent: #b9c6a9; --accent-ink: #0d0d0d; --line: rgba(233,231,224,.14);
+}

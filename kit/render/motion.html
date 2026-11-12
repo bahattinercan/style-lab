@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Hareket levhası</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet" href="estate.css">
+<style id="extra"></style>
+</head>
+<body class="__BODY_CLASS__" style="overflow:hidden">
+<div class="motion-board">
+  <div class="hd">
+    <h1>Hareket imzası</h1>
+    <span class="est-kicker">__STYLE__ · üç beat</span>
+    <span class="est-mono">scroll · pin · reveal</span>
+  </div>
+
+  <div class="motion-cols">
+
+    <div class="motion-col">
+      <div class="cap"><b>01 · Giriş</b><span>0 — 800ms</span></div>
+      <div class="motion-stage">
+        <div class="frame ghost" style="transform:translate(10px,10px);opacity:.5"></div>
+        <div class="frame">
+          <div class="mini-photo __MOTIF__"></div>
+          <div class="ln h"></div>
+          <div class="ln w70"></div>
+          <div class="row"><div class="btn-ghost"></div><div class="btn-ghost" style="background:color-mix(in srgb,var(--accent) 22%,transparent)"></div></div>
+          <div class="strip"></div>
+        </div>
+        <span class="motion-tag x">poster → video</span>
+        <span class="motion-tag y">y 24px · fade</span>
+      </div>
+      <div class="motion-ticks">
+        <div class="tk on"><i></i><span>0</span></div>
+        <div class="tk on"><i></i><span>80</span></div>
+        <div class="tk"><i></i><span>160ms</span></div>
+      </div>
+      <div class="motion-meta">
+        <div class="r"><span>süre</span><b>0.8s</b></div>
+        <div class="r"><span>eğri</span><b>power3.out</b></div>
+        <div class="r"><span>stagger</span><b>80ms</b></div>
+      </div>
+    </div>
+
+    <div class="motion-col">
+      <div class="cap"><b>02 · Scroll reveal</b><span>%18 — %26</span></div>
+      <div class="motion-stage">
+        <div class="frame ghost" style="transform:translateY(-12px);opacity:.45"></div>
+        <div class="frame">
+          <div class="ln h" style="width:78%"></div>
+          <div class="ln"></div>
+          <div class="ln w70"></div>
+          <div class="row"><div class="mini-card"></div><div class="mini-card"></div><div class="mini-card"></div></div>
+          <div class="mask"></div>
+        </div>
+        <span class="motion-tag x">maske · satır satır</span>
+        <span class="motion-tag y">y 32px · blur 6</span>
+      </div>
+      <div class="motion-ticks">
+        <div class="tk"><i></i><span>%18</span></div>
+        <div class="tk on"><i></i><span>%22</span></div>
+        <div class="tk on"><i></i><span>%26</span></div>
+      </div>
+      <div class="motion-meta">
+        <div class="r"><span>tetik</span><b>top %82</b></div>
+        <div class="r"><span>süre / stagger</span><b>0.9s / 0.06</b></div>
+        <div class="r"><span>tekrar</span><b>once: true</b></div>
+      </div>
+    </div>
+
+    <div class="motion-col">
+      <div class="cap"><b>03 · Pin + scrub</b><span>+%140 scroll</span></div>
+      <div class="motion-stage">
+        <div class="frame ghost" style="transform:scale(1.06);opacity:.4"></div>
+        <div class="frame">
+          <div class="ln h" style="width:54%"></div>
+          <div class="ln w70"></div>
+          <div class="mini-photo" style="height:44%"></div>
+          <div class="pin-bar"><i></i></div>
+          <div class="row" style="gap:5px"><div class="ln w45" style="flex:1"></div><div class="ln w45" style="flex:1"></div></div>
+        </div>
+        <span class="motion-tag x">sticky · 1 pin</span>
+        <span class="motion-tag y">scale 1.04 → 1</span>
+      </div>
+      <div class="motion-ticks">
+        <div class="tk on"><i></i><span>pin</span></div>
+        <div class="tk on"><i></i><span>%50</span></div>
+        <div class="tk on"><i></i><span>%100</span></div>
+      </div>
+      <div class="motion-meta">
+        <div class="r"><span>scrub</span><b>1.1 · ease none</b></div>
+        <div class="r"><span>pin</span><b>+140% yükseklik</b></div>
+        <div class="r"><span>mobil</span><b>pin kapalı</b></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="motion-timeline">
+    <div class="seg on"><div class="bar"></div><span>poster</span></div>
+    <div class="seg on"><div class="bar"></div><span>başlık</span></div>
+    <div class="seg"><div class="bar"></div><span>künye</span></div>
+    <div class="seg"><div class="bar"></div><span>raf</span></div>
+    <div class="seg"><div class="bar"></div><span>pin</span></div>
+    <div class="seg"><div class="bar"></div><span>galeri</span></div>
+    <div class="seg"><div class="bar"></div><span>harita</span></div>
+    <div class="seg"><div class="bar"></div><span>concierge</span></div>
+  </div>
+  <div class="motion-notes">
+    <div class="panel">
+      <span class="est-mono">izin verilen</span>
+      <ul>
+        <li><b>Poster → video</b> geçişi (0.8s, power3.out)</li>
+        <li><b>Satır maskesi</b> ile başlık reveal (0.9s / 0.06)</li>
+        <li><b>Tek pin</b> + scrub, bölüm anlatısı için</li>
+        <li>Hover: kart 240ms, görsel scale 1.02</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <span class="est-mono">yasak</span>
+      <ul>
+        <li>Custom cursor, scroll hijack, yatay kaydırma</li>
+        <li>Aynı sayfada 2 farklı scrub</li>
+        <li>Sonsuz döngü (marquee dışında)</li>
+        <li>Bounce / elastic / spring eğrileri</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <span class="est-mono">reduced-motion</span>
+      <ul>
+        <li>Tüm beat'ler 0.01ms; pin ve scrub kapalı</li>
+        <li>İçerik ilk karede görünür (opacity 1)</li>
+        <li>Video otomatik oynatılmaz, poster kalır</li>
+        <li>Pause/oynat düğmesi her zaman görünür</li>
+      </ul>
+    </div>
+  </div>
+
+  <span class="est-note">prefers-reduced-motion · tüm beat'ler 0.01ms · içerik anında görünür · pin ve scrub kapalı</span>
+
+  <div class="sig"></div>
+</div>
+</body>
+</html>

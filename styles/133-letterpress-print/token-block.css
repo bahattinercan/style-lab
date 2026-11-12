@@ -1,0 +1,5 @@
+/* 133 · Letterpress Print — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="letterpress-print"] { --bg: #f7f4ec; --bg-2: #ece7db; --surface: #fdfbf5; --surface-2: #efeade; --ink: #191713; --ink-soft: #4a453d; --ink-faint: #7a746a; --accent: #2a2c6b; --accent-ink: #f3f2fb; --line: rgba(25,23,19,.16); --radius: 2px; --radius-lg: 4px; --shadow: inset 0 1px 0 var(--line); --shadow-hard: none; --font-display: "Cinzel", Trajan Pro, Georgia, serif; --font-body: "Lora", Georgia, serif; --font-mono: "Courier Prime", Courier, monospace; --tracking: 0.06em; --blur: 0px; --grain: 0.03; }
+
+/* 133 · Letterpress Print — koyu tema (palette.dark ile birebir aynı; kâğıt is mürekkebine döner, accent açık lila-maviye çekilir, deboss tersine döner) */
+[data-theme="dark"][data-style="letterpress-print"] { --bg: #14120f; --bg-2: #1d1a16; --surface: #191612; --surface-2: #26221c; --ink: #f4efe4; --ink-soft: #b6afa2; --ink-faint: #857f73; --accent: #9fa2e8; --accent-ink: #0e0d1a; --line: rgba(244,239,228,.16); --shadow-hard: none; }

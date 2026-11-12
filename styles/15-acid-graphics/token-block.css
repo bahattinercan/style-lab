@@ -1,0 +1,20 @@
+/* 15 · Acid Graphics — token bloğu (kaynak: styles/15-acid-graphics/tokens.json) */
+
+[data-style="acid-graphics"] {
+  --bg: #050505; --bg-2: #101010;
+  --surface: #0e0e0e; --surface-2: #161616;
+  --ink: #f2fff0; --ink-soft: rgba(242,255,240,.72); --ink-faint: rgba(242,255,240,.45);
+  --accent: #ccff00; --accent-ink: #050505;
+  --line: rgba(204,255,0,.35);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 24px rgba(204,255,0,.25); --shadow-hard: none;
+  --font-display: "Archivo Expanded", "Druk Wide", "Anton", sans-serif;
+  --font-body: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: .08;
+}
+
+[data-theme="dark"][data-style="acid-graphics"] {
+  --bg: #030303; --bg-2: #0a0a0a; --surface: #070707; --surface-2: #101010;
+  --ink: #f6fff4; --ink-soft: #c8d6c6; --ink-faint: #8f9c8e; --accent: #d8ff2e; --accent-ink: #050505; --line: rgba(216,255,46,.30);
+}

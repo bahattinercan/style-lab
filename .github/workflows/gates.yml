@@ -1,0 +1,126 @@
+name: gates
+
+# Katalog kapıları. Yerelde `bash kit/gates.sh`; burada aynı adımlar iş bölümüne ayrılmıştır
+# (flutter SDK kurulumu pahalı, algısal imza taraması ~50 s sürer).
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: gates-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  data:
+    name: veri kapıları
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: galeri denetimi
+        run: node kit/build-gallery.mjs --check
+      - name: slim indeks
+        run: node kit/build-slim-index.mjs --check
+      - name: fragment senkronu
+        run: node kit/apply-fragments.mjs --check
+      - name: şema (üç kopya paritesi + koyu mod)
+        run: node kit/check-schema.mjs
+      - name: kontrast
+        run: node kit/check-contrast.mjs --strict-soft
+      - name: ekran tabloları
+        run: node kit/sync-shot-tables.mjs --check
+      - name: koreografi ataması
+        run: node kit/assign-motion.mjs --check
+      - name: hareket CSS
+        run: node kit/build-motion-css.mjs --check
+      - name: hareket kapısı
+        run: node kit/motion-check.mjs
+      - name: hareket ölçümü
+        run: node kit/motion-audit.mjs --check
+      - name: hareket lab
+        run: node kit/build-motion-lab.mjs --check
+      - name: hareket ölçümü (tarayıcı)
+        run: node kit/render/motion-measure.mjs --sample 6
+      - name: hareket storyboard
+        run: node kit/render/motion-strip.mjs --sample 6 --check
+      - name: motion normalizasyonu
+        run: node kit/normalize-motion.mjs --check
+      - name: token export
+        run: node kit/export-tokens.mjs --check
+      - name: font TTF
+        run: node kit/fetch-fonts.mjs --check
+      - name: react export
+        run: node kit/export/react.mjs --verify
+      - name: görsel kaynakları
+        run: node kit/fetch-images.mjs --check
+      - name: görsel ataması
+        run: node kit/assign-imagery.mjs --check
+      - name: içerik ataması
+        run: node kit/assign-content.mjs --check
+      - name: içerik katmanı
+        run: node kit/check-content.mjs
+      - name: bölüm kütüphanesi (ölçüm)
+        run: node kit/render/render-sections.mjs --sample 3 --measure
+      - name: akış şeritleri (ölçüm)
+        run: node kit/render/render-flows.mjs --sample 3 --measure
+      - name: sahne taşma ölçümü
+        run: node kit/render/render-shots.mjs --sample 3 --measure
+      - name: görüntüleyiciler (bölüm + akış)
+        run: node kit/check-viewers.mjs
+      - name: brief üretimi
+        run: node kit/brief.mjs --self-test
+      - name: mcp sunucusu
+        run: node kit/mcp-server.mjs --self-test
+      - name: görsel katman
+        run: node kit/check-imagery.mjs
+      - name: layout ataması
+        run: node kit/assign-layouts.mjs --check
+      - name: kompozisyon çeşitliliği
+        run: node kit/check-layout.mjs
+      - name: kompozisyon self-test
+        run: node kit/check-layout.mjs --self-test
+      - name: rapor güncel
+        run: node kit/report.mjs --check
+      - name: kompozisyon raporu güncel
+        run: node kit/composition-report.mjs --check
+      - name: style-lint kuralları
+        run: node kit/style-lint.mjs --self-test
+
+  flutter:
+    name: flutter çıktısı
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.9'
+          channel: stable
+          cache: true
+      - name: dart formatı ve analizi
+        run: node kit/export/flutter.mjs --verify
+
+  visual:
+    name: görsel imza
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: eşik duyarlılığı
+        run: node kit/render/phash.mjs --self-test
+      - name: baseline karşılaştırması
+        run: node kit/render/phash.mjs --check --json

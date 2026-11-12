@@ -1,0 +1,20 @@
+/* 18 · Dopamine UI — token bloğu (kaynak: styles/18-dopamine-ui/tokens.json) */
+
+[data-style="dopamine-ui"] {
+  --bg: #fffdf7; --bg-2: #fff3d6;
+  --surface: #ffffff; --surface-2: #ffe3ec;
+  --ink: #16121f; --ink-soft: #4a4358; --ink-faint: #837b93;
+  --accent: #ff3d71; --accent-ink: #16121f;
+  --line: rgba(22,18,31,.10);
+  --radius: 18px; --radius-lg: 24px;
+  --shadow: 0 10px 24px rgba(255,61,113,.18); --shadow-hard: none;
+  --font-display: "Poppins", "Inter", system-ui, sans-serif;
+  --font-body: "Poppins", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}
+
+[data-theme="dark"][data-style="dopamine-ui"] {
+  --bg: #14101a; --bg-2: #221e27; --surface: #211b2b; --surface-2: #3a2430;
+  --ink: #fdf7f9; --ink-soft: #b9b1c6; --ink-faint: #7d787e; --accent: #ff5d8a; --accent-ink: #0d0d0d; --line: rgba(253,247,249,.14);
+}

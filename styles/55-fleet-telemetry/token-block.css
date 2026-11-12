@@ -1,0 +1,36 @@
+/* styles/55-fleet-telemetry/token-block.css — üretildi; kaynak tokens.json.
+   Entegratör: açık bloğu kit/tokens.css [data-style] bölümüne, koyu bloğu koyu mod
+   bölümüne taşır. Açık bloktaki bildirimler tokens.json "css" alanıyla aynıdır
+   (kit/build-gallery.mjs norm() karşılaştırması geçer). */
+
+[data-style="fleet-telemetry"] {
+  --bg: #f1f4f7; --bg-2: #e6ebf0;
+  --surface: #ffffff; --surface-2: #edf1f5;
+  --ink: #101820; --ink-soft: #47555f; --ink-faint: #7b8892;
+  --accent: #a8386f; --accent-ink: #ffffff;
+  --line: rgba(16,24,32,.13);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 6px 14px -12px rgba(16,19,23,.5); --shadow-hard: 0 0 0 2px var(--line);
+  --font-display: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.03em; --blur: 0px; --grain: .02;
+  --danger: #a3201a; --danger-ink: #ffffff;
+  --ok: #1c6b45; --warn: #8a5a06;
+}
+
+[data-theme="dark"][data-style="fleet-telemetry"] {
+  --bg: #0d1116; --bg-2: #121820;
+  --surface: #161e26; --surface-2: #1e2731;
+  --ink: #e9eef3; --ink-soft: #a9b6c2; --ink-faint: #7d8b97;
+  --accent: #f07fb4; --accent-ink: #20050f;
+  --line: rgba(233,238,243,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 6px 14px -12px rgba(16,19,23,.5); --shadow-hard: 0 0 0 2px var(--line);
+  --font-display: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.03em; --blur: 0px; --grain: .02;
+  --danger: #a3201a; --danger-ink: #ffffff;
+  --ok: #1c6b45; --warn: #8a5a06;
+}

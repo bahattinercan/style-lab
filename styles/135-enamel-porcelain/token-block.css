@@ -1,0 +1,5 @@
+/* 135 · Enamel Porcelain — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="enamel-porcelain"] { --bg: #f8f6f0; --bg-2: #efebe1; --surface: #fffdf8; --surface-2: #f2eee4; --ink: #131a18; --ink-soft: #46514c; --ink-faint: #757f7a; --accent: #17543f; --accent-ink: #f1faf4; --line: rgba(19,26,24,.14); --radius: 6px; --radius-lg: 12px; --shadow: 0 1px 2px rgba(19,24,32,.10); --shadow-hard: none; --font-display: "Poiret One", "Jost", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0.08em; --blur: 0px; --grain: 0; }
+
+/* 135 · Enamel Porcelain — koyu tema (palette.dark ile birebir aynı; fildişi sır koyu mine zeminine döner, aksan açık nane tonuna çekilir, sır highlight güçlenir) */
+[data-theme="dark"][data-style="enamel-porcelain"] { --bg: #101612; --bg-2: #17201b; --surface: #141a16; --surface-2: #1f2823; --ink: #f0f4f1; --ink-soft: #aeb8b2; --ink-faint: #78837d; --accent: #7fd2ae; --accent-ink: #08120d; --line: rgba(240,244,241,.14); --shadow-hard: none; }

@@ -1,0 +1,20 @@
+/* 39 · AI-native Mesh — token bloğu (kaynak: styles/39-ai-native-mesh/tokens.json) */
+
+[data-style="ai-native-mesh"] {
+  --bg: #0b0c10; --bg-2: #101218;
+  --surface: #14161d; --surface-2: #1b1e27;
+  --ink: #f2f4f8; --ink-soft: #a9b0c0; --ink-faint: #7a8294;
+  --accent: #7c8cff; --accent-ink: #0b0c10;
+  --line: rgba(242,244,248,.12);
+  --radius: 14px; --radius-lg: 22px;
+  --shadow: 0 8px 30px rgba(0,0,0,.45); --shadow-hard: none;
+  --font-display: "Geist", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 14px; --grain: .03;
+}
+
+[data-theme="dark"][data-style="ai-native-mesh"] {
+  --bg: #0b0c10; --bg-2: #191a1e; --surface: #14161d; --surface-2: #26282f;
+  --ink: #f2f4f8; --ink-soft: #adaeb2; --ink-faint: #737478; --accent: #7c8cff; --accent-ink: #0b0c10; --line: rgba(242,244,248,.14);
+}

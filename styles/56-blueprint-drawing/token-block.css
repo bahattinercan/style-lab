@@ -1,0 +1,55 @@
+/* 56 · Blueprint Çizimi — token bloğu (kaynak: styles/56-blueprint-drawing/tokens.json) */
+
+[data-style="blueprint-drawing"] {
+  --bg: #0a1b2b;
+  --bg-2: #0d2133;
+  --surface: #102a40;
+  --surface-2: #14344e;
+  --ink: #dceaf5;
+  --ink-soft: #a6c2d6;
+  --ink-faint: #6f90a6;
+  --accent: #6fd3f2;
+  --accent-ink: #04202c;
+  --line: rgba(220,234,245,.16);
+  --radius: 0px;
+  --radius-lg: 2px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Chakra Petch", "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: .02em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff8a8a;
+  --danger-ink: #04202c;
+  --ok: #7ee0a8;
+  --warn: #ffd36e;
+}
+
+[data-theme="dark"][data-style="blueprint-drawing"] {
+  --bg: #04101a;
+  --bg-2: #061727;
+  --surface: #082034;
+  --surface-2: #0b2a41;
+  --ink: #e8f2fa;
+  --ink-soft: #b3ccdd;
+  --ink-faint: #7b9cb2;
+  --accent: #b0eaff;
+  --accent-ink: #03161f;
+  --line: rgba(232,242,250,.18);
+  --radius: 0px;
+  --radius-lg: 2px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Chakra Petch", "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: .02em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff8a8a;
+  --danger-ink: #04202c;
+  --ok: #7ee0a8;
+  --warn: #ffd36e;
+}

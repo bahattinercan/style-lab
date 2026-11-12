@@ -1,0 +1,36 @@
+/* styles/145-zero-gravity/token-block.css — üretildi; kaynak tokens.json.
+   Entegratör: açık bloğu kit/tokens.css [data-style] bölümüne, koyu bloğu koyu mod
+   bölümüne taşır. Açık bloktaki bildirimler tokens.json "css" alanıyla aynıdır
+   (kit/build-gallery.mjs norm() karşılaştırması geçer). */
+
+[data-style="zero-gravity"] {
+  --bg: #eef4f2; --bg-2: #e3ecea;
+  --surface: #f8fbfa; --surface-2: #dfe9e6;
+  --ink: #0f1a19; --ink-soft: #3f5450; --ink-faint: #74857f;
+  --accent: #1d6b52; --accent-ink: #ffffff;
+  --line: rgba(15,26,25,.13);
+  --radius: 28px; --radius-lg: 36px;
+  --shadow: 0 30px 70px -48px rgba(8,26,24,.6); --shadow-hard: 0 0 0 1px var(--line);
+  --font-display: "Poiret One", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.06em; --blur: 0px; --grain: .01;
+  --danger: #9c2418; --danger-ink: #ffffff;
+  --ok: #1d6b52; --warn: #7a5205;
+}
+
+[data-theme="dark"][data-style="zero-gravity"] {
+  --bg: #0b1514; --bg-2: #101d1b;
+  --surface: #142321; --surface-2: #1a2c29;
+  --ink: #e9f4f1; --ink-soft: #a9c2bb; --ink-faint: #7c968f;
+  --accent: #6fd3a8; --accent-ink: #05170f;
+  --line: rgba(233,244,241,.16);
+  --radius: 28px; --radius-lg: 36px;
+  --shadow: 0 30px 70px -48px rgba(8,26,24,.6); --shadow-hard: 0 0 0 1px var(--line);
+  --font-display: "Poiret One", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --tracking: 0.06em; --blur: 0px; --grain: .01;
+  --danger: #9c2418; --danger-ink: #ffffff;
+  --ok: #1d6b52; --warn: #7a5205;
+}

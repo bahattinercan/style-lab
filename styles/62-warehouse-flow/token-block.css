@@ -1,0 +1,50 @@
+/* 62 · Warehouse Flow — token bloğu (açık + koyu)
+   Kaynak: styles/62-warehouse-flow/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="warehouse-flow"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="warehouse-flow"] {
+  /* --- sözleşme: renk --- */
+  --bg: #f3f1ec;
+  --bg-2: #e7e4dc;
+  --surface: #fcfbf8;
+  --surface-2: #f0ede5;
+  --ink: #17150f;
+  --ink-soft: #56523f;
+  --ink-faint: #807b66;
+  --accent: #f2b705;
+  --accent-ink: #1a1608;
+  --line: rgba(23,21,15,.22);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 2px;
+  --radius-lg: 8px;
+  --shadow: 0 1px 0 rgba(23,21,15,.10);
+  --shadow-hard: 4px 4px 0 rgba(23,21,15,.88);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -.02em;
+  --blur: 0px;
+  --grain: 0;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #a5261c;
+  --danger-ink: #fdf3f1;
+  --ok: #1f6b33;
+  --warn: #7a5200;
+  --focus: #a57e09;
+}
+
+[data-theme="dark"][data-style="warehouse-flow"] {
+  --bg: #14130f;
+  --bg-2: #1c1a14;
+  --surface: #211f18;
+  --surface-2: #2a271d;
+  --ink: #f2efe4;
+  --ink-soft: #ada695;
+  --ink-faint: #7d7768;
+  --accent: #ffc728;
+  --accent-ink: #1a1608;
+  --line: rgba(242,239,228,.16);
+  --focus: #ffc728;
+}

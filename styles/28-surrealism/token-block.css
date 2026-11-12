@@ -1,0 +1,22 @@
+/* 28 · Surrealism — token bloğu (kaynak: styles/28-surrealism/tokens.json) */
+
+[data-style="surrealism"] {
+  --bg: #e7e2da; --bg-2: #d9d2c7;
+  --surface: #fbf9f5; --surface-2: #efeae1;
+  --ink: #1e1c1a; --ink-soft: #56514a; --ink-faint: #8d877e;
+  --accent: #e4572e; --accent-ink: #1e1c1a;
+  --line: rgba(30,28,26,.12);
+  --radius: 4px; --radius-lg: 10px;
+  --shadow: 0 24px 60px rgba(30,28,26,.16); --shadow-hard: none;
+  --font-display: "Inter", "Helvetica Neue", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.02em; --blur: 0px; --grain: .05;
+  --focus: #d0512c;
+}
+
+[data-theme="dark"][data-style="surrealism"] {
+  --bg: #15130f; --bg-2: #22201b; --surface: #1e1b16; --surface-2: #2e2b26;
+  --ink: #ece7de; --ink-soft: #aca7a0; --ink-faint: #76726c; --accent: #f07a52; --accent-ink: #0d0d0d; --line: rgba(236,231,222,.14);
+  --focus: #f07a52;
+}

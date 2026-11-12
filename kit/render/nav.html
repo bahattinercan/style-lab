@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Gezinme bileşenleri</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-nav __BODY_CLASS__">
+  <div class="comp-head">
+    <h2>Gezinme bileşenleri</h2>
+    <span class="label">08 · __STYLE__ · nav · sekme · footer</span>
+  </div>
+
+  <section class="panel topnav">
+    <span class="mark">N</span>
+    <b style="font-size:13px">Northwind</b>
+    <div class="tn-links">
+      <span class="tn-link on">Genel bakış</span>
+      <span class="tn-link">Projeler</span>
+      <span class="tn-link">Raporlar</span>
+      <span class="tn-link">Ekip</span>
+    </div>
+    <div class="tn-actions">
+      <span class="f-wrap" style="width:150px">
+        <span class="ic">__ICON:search:13__</span>
+        <input class="field lp" placeholder="Ara" aria-label="üst arama" style="min-height:32px;font-size:11.5px">
+      </span>
+      <span class="icon-btn" style="width:32px;height:32px">__ICON:bell:14__</span>
+      <span class="sep"></span>
+      <span class="avatar">EB</span>
+      <span class="btn sm">Yeni</span>
+    </div>
+  </section>
+
+  <div class="nav-grid">
+    <div class="col">
+      <section class="panel sheet-panel">
+        <h3>Yan gezinme · açık <span class="n">01</span></h3>
+        <div class="snav">
+          <div class="grp">Çalışma alanı</div>
+          <div class="it on"><span class="ic">__ICON:grid:14__</span> Genel bakış</div>
+          <div class="it"><span class="ic">__ICON:list:14__</span> Projeler <span class="cnt">24</span></div>
+          <div class="it"><span class="ic">__ICON:clock:14__</span> Zaman çizelgesi</div>
+          <div class="it"><span class="ic">__ICON:star:14__</span> Favoriler <span class="cnt">6</span></div>
+          <div class="grp">Yönetim</div>
+          <div class="it"><span class="ic">__ICON:user:14__</span> Ekip</div>
+          <div class="it"><span class="ic">__ICON:settings:14__</span> Ayarlar</div>
+          <div class="it"><span class="ic">__ICON:mail:14__</span> Davetler <span class="cnt">3</span></div>
+        </div>
+        <div class="divider" style="margin-top:auto"></div>
+        <div class="mrow" style="display:flex;align-items:center;gap:8px;font-size:11px">
+          <span class="avatar" style="width:22px;height:22px;font-size:8.5px">EB</span>
+          Elif Barut
+          <span class="chip" style="margin-left:auto">pro</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel sheet-panel" style="flex:0 0 auto">
+        <h3>Dar ray <span class="n">02</span></h3>
+        <div class="rail" style="flex-direction:row;justify-content:flex-start;gap:6px">
+          <span class="it on">__ICON:grid:15__</span>
+          <span class="it">__ICON:list:15__</span>
+          <span class="it">__ICON:clock:15__</span>
+          <span class="it">__ICON:user:15__</span>
+          <span class="it">__ICON:bell:15__</span>
+          <span class="it">__ICON:settings:15__</span>
+        </div>
+        <div class="divider"></div>
+        <div class="rail">
+          <span class="it on">__ICON:grid:15__</span>
+          <span class="it">__ICON:list:15__</span>
+          <span class="it">__ICON:clock:15__</span>
+          <span class="sep"></span>
+          <span class="it">__ICON:user:15__</span>
+          <span class="it">__ICON:settings:15__</span>
+        </div>
+      </section>
+
+      <section class="panel sheet-panel">
+        <h3>Sekmeler <span class="n">03</span></h3>
+        <div class="tabs">
+          <span class="t on">Genel</span>
+          <span class="t">Aktivite</span>
+          <span class="t">Dosyalar <span class="cnt">12</span></span>
+          <span class="t">Ayarlar</span>
+        </div>
+        <div style="height:8px"></div>
+        <div class="tabs pill">
+          <span class="t on">Günlük</span>
+          <span class="t">Haftalık</span>
+          <span class="t">Aylık</span>
+        </div>
+        <div class="divider" style="margin-top:auto"></div>
+        <span class="code" style="font-family:var(--font-mono);font-size:8.5px;color:var(--ink-faint)">alt çizgi · pill · 4 sekme sınırı</span>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel sheet-panel">
+        <h3>Kırıntı · sayfalama · adım <span class="n">04</span></h3>
+
+        <span class="lbl">Breadcrumb</span>
+        <div class="crumbs">
+          <span>Çalışma alanı</span>
+          <span class="sp">__ICON:chevron-right:10__</span>
+          <span>Projeler</span>
+          <span class="sp">__ICON:chevron-right:10__</span>
+          <b>Atlas</b>
+        </div>
+
+        <div class="divider"></div>
+
+        <span class="lbl">Sayfalama</span>
+        <div class="pager-nav">
+          <span class="pg">__ICON:chevron-left:11__</span>
+          <span class="pg on">1</span>
+          <span class="pg">2</span>
+          <span class="pg">3</span>
+          <span class="gap">…</span>
+          <span class="pg">8</span>
+          <span class="pg">__ICON:chevron-right:11__</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <span class="lbl">Adım göstergesi</span>
+        <div class="wizard">
+          <span class="st done"><span class="n">1</span> Hesap</span>
+          <span class="ln done"></span>
+          <span class="st now"><span class="n">2</span> Ekip</span>
+          <span class="ln"></span>
+          <span class="st"><span class="n">3</span> Plan</span>
+          <span class="ln"></span>
+          <span class="st"><span class="n">4</span> Onay</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <span class="lbl">Yardımcı</span>
+        <div class="fbar">
+          <span class="chip">__ICON:arrow-right:10__ geri</span>
+          <span class="chip accent">ileri __ICON:arrow-right:10__</span>
+          <span class="chip" style="margin-left:auto">1 / 4</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <span class="lbl">Mobil alt bar</span>
+        <div class="mbar">
+          <span class="mb on">__ICON:grid:16__<b>Genel</b></span>
+          <span class="mb">__ICON:list:16__<b>Proje</b></span>
+          <span class="mb">__ICON:plus:16__<b>Ekle</b></span>
+          <span class="mb">__ICON:bell:16__<b>Bildirim</b></span>
+          <span class="mb">__ICON:user:16__<b>Profil</b></span>
+        </div>
+      </section>
+    </div>
+
+  <section class="panel sheet-panel foot">
+    <h3>Alt bilgi <span class="n">05</span></h3>
+    <div class="foot-demo">
+      <div class="brand-col">
+        <span style="display:flex;align-items:center;gap:7px"><span class="mark" style="width:22px;height:22px;font-size:10px">N</span><b style="font-size:12px">Northwind</b></span>
+        <p>Ekipler için sakin çalışma alanı. Planla, yaz, teslim et.</p>
+        <span class="chip" style="align-self:flex-start">__ICON:lock:10__ KVKK</span>
+      </div>
+      <div>
+        <div class="col-h">Ürün</div>
+        <ul><li>Özellikler</li><li>Fiyatlar</li><li>Değişiklikler</li></ul>
+      </div>
+      <div>
+        <div class="col-h">Kaynaklar</div>
+        <ul><li>Dokümanlar</li><li>API</li><li>Durum</li></ul>
+      </div>
+      <div>
+        <div class="col-h">Şirket</div>
+        <ul><li>Hakkında</li><li>Kariyer</li><li>İletişim</li></ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Northwind</span>
+      <span class="r"><span>Gizlilik</span><span>Koşullar</span><span>Çerezler</span></span>
+    </div>
+  </section>
+  </div>
+
+  <div class="sig"></div>
+</body>
+</html>

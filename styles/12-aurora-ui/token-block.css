@@ -1,0 +1,20 @@
+/* 12 · Aurora UI — token bloğu (kaynak: styles/12-aurora-ui/tokens.json) */
+
+[data-style="aurora-ui"] {
+  --bg: #0a0a10; --bg-2: #12121c;
+  --surface: rgba(255,255,255,.06); --surface-2: rgba(255,255,255,.04);
+  --ink: #f7f7fb; --ink-soft: rgba(247,247,251,.72); --ink-faint: rgba(247,247,251,.48);
+  --accent: #6d5bff; --accent-ink: #ffffff;
+  --line: rgba(255,255,255,.14);
+  --radius: 16px; --radius-lg: 24px;
+  --shadow: 0 20px 60px rgba(109,91,255,.25); --shadow-hard: none;
+  --font-display: "Inter", "Satoshi", system-ui, sans-serif;
+  --font-body: "Inter", "Satoshi", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.02em; --blur: 20px; --grain: .06;
+}
+
+[data-theme="dark"][data-style="aurora-ui"] {
+  --bg: #050409; --bg-2: #0b0a14; --surface: rgba(255,255,255,.05); --surface-2: rgba(255,255,255,.035);
+  --ink: #fbfbff; --ink-soft: rgba(251,251,255,.76); --ink-faint: rgba(251,251,255,.50); --accent: #9b8cff; --accent-ink: #0a0818; --line: rgba(255,255,255,.12);
+}

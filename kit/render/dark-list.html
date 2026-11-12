@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="tr" data-theme="dark" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Liste</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-list __BODY_CLASS__">
+  <aside class="side">
+    <div class="brand"><span class="mark" style="width:22px;height:22px;font-size:10px">N</span> Northwind</div>
+    <div class="snav">
+      <div class="grp">Çalışma alanı</div>
+      <div class="it"><span class="ic">__ICON:grid:14__</span> Genel bakış</div>
+      <div class="it on"><span class="ic">__ICON:list:14__</span> Projeler <span class="cnt">24</span></div>
+      <div class="it"><span class="ic">__ICON:clock:14__</span> Zaman çizelgesi</div>
+      <div class="it"><span class="ic">__ICON:star:14__</span> Favoriler</div>
+      <div class="grp">Yönetim</div>
+      <div class="it"><span class="ic">__ICON:user:14__</span> Ekip</div>
+      <div class="it"><span class="ic">__ICON:settings:14__</span> Ayarlar</div>
+    </div>
+    <div class="divider" style="margin-top:auto"></div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:11px;padding-top:9px">
+      <span class="avatar" style="width:22px;height:22px;font-size:8.5px">EB</span> Elif Barut
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="lhead">
+      <h1>Projeler</h1>
+      <span class="cnt">24 kayıt · 3 filtre</span>
+      <div class="act">
+        <span class="btn ghost sm">__ICON:download:13__ Dışa aktar</span>
+        <span class="btn sm">__ICON:plus:13__ Yeni proje</span>
+      </div>
+    </div>
+
+    <div class="lbar">
+      <span class="f-wrap">
+        <span class="ic">__ICON:search:14__</span>
+        <input class="field lp" placeholder="Proje, kişi veya etiket" aria-label="arama">
+      </span>
+      <span class="chip on">durum: aktif __ICON:x:9__</span>
+      <span class="chip">ekip: tasarım __ICON:x:9__</span>
+      <span class="chip">__ICON:filter:10__ filtre</span>
+      <span class="spacer"></span>
+      <span class="chip">__ICON:list:10__ sırala: güncelleme</span>
+      <span class="icon-btn">__ICON:grid:14__</span>
+    </div>
+
+    <div class="bulk">
+      <span class="n">3 SEÇİLİ</span>
+      <span class="chip">__ICON:user:10__ ata</span>
+      <span class="chip">__ICON:tag:10__ etiketle</span>
+      <div class="b">
+        <span class="chip">__ICON:trash:10__ arşivle</span>
+        <span class="chip" style="border-color:color-mix(in srgb,var(--danger) 45%,var(--line));color:color-mix(in srgb,var(--danger) 55%,var(--ink))">__ICON:trash:10__ sil</span>
+      </div>
+    </div>
+
+    <div class="ltable">
+      <section class="panel">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th style="width:22px"><span class="opt"><input type="checkbox" checked><span class="box"></span></span></th>
+              <th>Proje <span class="srt">__ICON:chevron-down:10__</span></th>
+              <th>Durum</th>
+              <th>Ekip</th>
+              <th>Sahip</th>
+              <th class="num">İlerleme</th>
+              <th class="num">Güncelleme</th>
+              <th style="width:26px"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="on">
+              <td><span class="opt"><input type="checkbox" checked><span class="box"></span></span></td>
+              <td>Atlas</td>
+              <td><span class="chip accent">aktif</span></td>
+              <td><span class="who"><span class="avatar">EB</span> Elif</span></td>
+              <td class="muted">Tasarım</td>
+              <td class="num mono">%72</td>
+              <td class="num mono">2 sa</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr class="on">
+              <td><span class="opt"><input type="checkbox" checked><span class="box"></span></span></td>
+              <td>Kampanya Q4</td>
+              <td><span class="chip accent">aktif</span></td>
+              <td><span class="who"><span class="avatar">SA</span> Selin</span></td>
+              <td class="muted">Pazarlama</td>
+              <td class="num mono">%88</td>
+              <td class="num mono">dün</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr class="on">
+              <td><span class="opt"><input type="checkbox" checked><span class="box"></span></span></td>
+              <td>Fatura akışı</td>
+              <td><span class="chip">bekler</span></td>
+              <td><span class="who"><span class="avatar">MK</span> Mert</span></td>
+              <td class="muted">Finans</td>
+              <td class="num mono">%40</td>
+              <td class="num mono">5 sa</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Onboarding</td>
+              <td><span class="chip">taslak</span></td>
+              <td><span class="who"><span class="avatar">DB</span> Deniz</span></td>
+              <td class="muted">Ürün</td>
+              <td class="num mono">%15</td>
+              <td class="num mono">2 gün</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Arşiv taşıma</td>
+              <td><span class="chip">duraklatıldı</span></td>
+              <td><span class="who"><span class="avatar">EB</span> Elif</span></td>
+              <td class="muted">Operasyon</td>
+              <td class="num mono">%60</td>
+              <td class="num mono">4 gün</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Raporlar v2</td>
+              <td><span class="chip accent">aktif</span></td>
+              <td><span class="who"><span class="avatar">MK</span> Mert</span></td>
+              <td class="muted">Veri</td>
+              <td class="num mono">%54</td>
+              <td class="num mono">6 gün</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Marka yenileme</td>
+              <td><span class="chip">taslak</span></td>
+              <td><span class="who"><span class="avatar">SA</span> Selin</span></td>
+              <td class="muted">Tasarım</td>
+              <td class="num mono">%8</td>
+              <td class="num mono">1 hafta</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Site yenileme</td>
+              <td><span class="chip accent">aktif</span></td>
+              <td><span class="who"><span class="avatar">DB</span> Deniz</span></td>
+              <td class="muted">Tasarım</td>
+              <td class="num mono">%66</td>
+              <td class="num mono">1 hafta</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Mobil beta</td>
+              <td><span class="chip">bekler</span></td>
+              <td><span class="who"><span class="avatar">MK</span> Mert</span></td>
+              <td class="muted">Mühendislik</td>
+              <td class="num mono">%33</td>
+              <td class="num mono">1 hafta</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Veri ambarı</td>
+              <td><span class="chip accent">aktif</span></td>
+              <td><span class="who"><span class="avatar">SA</span> Selin</span></td>
+              <td class="muted">Veri</td>
+              <td class="num mono">%47</td>
+              <td class="num mono">2 hafta</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+            <tr>
+              <td><span class="opt"><input type="checkbox"><span class="box"></span></span></td>
+              <td>Destek portalı</td>
+              <td><span class="chip">duraklatıldı</span></td>
+              <td><span class="who"><span class="avatar">EB</span> Elif</span></td>
+              <td class="muted">Operasyon</td>
+              <td class="num mono">%22</td>
+              <td class="num mono">3 hafta</td>
+              <td><span class="faint">__ICON:more:13__</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <div class="lfoot">
+      <span>1–7 / 24 kayıt</span>
+      <span class="r">
+        <span class="pg">__ICON:chevron-left:11__</span>
+        <span class="pg on">1</span>
+        <span class="pg">2</span>
+        <span class="pg">3</span>
+        <span class="pg">4</span>
+        <span class="pg">__ICON:chevron-right:11__</span>
+      </span>
+    </div>
+  </main>
+
+  <div class="sig"></div>
+</body>
+</html>

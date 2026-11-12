@@ -1,0 +1,5 @@
+/* styles/101-shadow-stage/token-block.css — üretildi; kaynak tokens.json.
+[data-style="shadow-stage"] { --bg: #12151a; --bg-2: #171b21; --surface: #1b2028; --surface-2: #232a33; --ink: #eef1f5; --ink-soft: #adb6c2; --ink-faint: #7e8896; --accent: #e3b341; --accent-ink: #1a1405; --line: rgba(238,241,245,.15); --radius: 10px; --radius-lg: 16px; --shadow: 0 24px 60px -42px rgba(0,0,0,.92); --shadow-hard: 0 0 0 1px var(--line); --font-display: "Poiret One", ui-sans-serif, system-ui, sans-serif; --font-body: "Inter", ui-sans-serif, system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; --tracking: 0.04em; --blur: 0px; --grain: .02; --danger: #ff8a7a; --danger-ink: #1c0a07; --ok: #7ad4a8; --warn: #e8c06a; }
+
+/* Shadow Stage — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="shadow-stage"] { --bg: #100c08; --bg-2: #151009; --surface: #19130c; --surface-2: #221a11; --ink: #f6f3ee; --ink-soft: #c3b9ad; --ink-faint: #948a7d; --accent: #ffc861; --accent-ink: #1a1206; --line: rgba(246,243,238,.18); }

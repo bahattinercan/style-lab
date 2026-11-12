@@ -1,0 +1,22 @@
+/* 14 · Anti-Design — token bloğu (kaynak: styles/14-anti-design/tokens.json) */
+
+[data-style="anti-design"] {
+  --bg: #f2e9da; --bg-2: #d6ff3f;
+  --surface: #ffffff; --surface-2: #ff3b6b;
+  --ink: #1b1b1b; --ink-soft: #4a4a4a; --ink-faint: #7b7b7b;
+  --accent: #ff3b6b; --accent-ink: #1b1b1b;
+  --line: #1b1b1b;
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: 8px 8px 0 #1b1b1b;
+  --font-display: "Anton", "Archivo Black", Impact, sans-serif;
+  --font-body: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.03em; --blur: 0px; --grain: .05;
+  --focus: #e83863;
+}
+
+[data-theme="dark"][data-style="anti-design"] {
+  --bg: #111111; --bg-2: #c6ef2e; --surface: #1c1c1c; --surface-2: #2d2d2c;
+  --ink: #f5f1e6; --ink-soft: #b1aea6; --ink-faint: #787671; --accent: #ff3b6b; --accent-ink: #0d0d0d; --line: #f5f1e6;
+  --focus: #ff3b6b;
+}

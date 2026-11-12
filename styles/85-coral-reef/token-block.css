@@ -1,0 +1,48 @@
+/* 85 · Coral Reef — token bloğu (açık + koyu)
+   Kaynak: styles/85-coral-reef/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="coral-reef"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="coral-reef"] {
+  /* --- sözleşme: renk --- */
+  --bg: #0d2b30;
+  --bg-2: #092226;
+  --surface: #123840;
+  --surface-2: #174650;
+  --ink: #e6f4f2;
+  --ink-soft: #a4c6c4;
+  --ink-faint: #779c9b;
+  --accent: #ff8a73;
+  --accent-ink: #2a0d08;
+  --line: rgba(230,244,242,.16);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 22px;
+  --radius-lg: 36px;
+  --shadow: 0 10px 24px -14px rgba(4,14,16,.6);
+  --shadow-hard: 0 0 0 1px rgba(255,138,115,.4);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: 0em;
+  --blur: 0px;
+  --grain: .03;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #ff7a7a;
+  --danger-ink: #260606;
+  --ok: #7fe0b0;
+  --warn: #ffc46b;
+}
+
+[data-theme="dark"][data-style="coral-reef"] {
+  --bg:#021015;
+  --bg-2:#051b21;
+  --surface:#07222a;
+  --surface-2:#0b2c34;
+  --ink:#f0fbf9;
+  --ink-soft:#b6d8d6;
+  --ink-faint:#82a9a7;
+  --accent:#ffa88f;
+  --accent-ink:#180904;
+  --line:rgba(240,251,249,.22);
+}

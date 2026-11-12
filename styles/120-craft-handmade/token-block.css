@@ -1,0 +1,5 @@
+/* 120 · Craft Handmade — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="craft-handmade"] { --bg: #efe6d6; --bg-2: #e5dac6; --surface: #f9f3e7; --surface-2: #e9dfcb; --ink: #2a231a; --ink-soft: #574c3d; --ink-faint: #857a68; --accent: #7a4b2a; --accent-ink: #fbf5ea; --line: rgba(42,35,26,.20); --radius: 4px; --radius-lg: 10px; --shadow: none; --shadow-hard: none; --font-display: "Caveat", "Kalam", cursive; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.01em; --blur: 0px; --grain: 0.04; }
+
+/* 120 · Craft Handmade — koyu tema (palette.dark ile birebir aynı; kraft zemin gece kahvesine döner, taba aksan açılır, grain %3'e iner) */
+[data-theme="dark"][data-style="craft-handmade"] { --bg: #1a1610; --bg-2: #241f17; --surface: #201b14; --surface-2: #2c261c; --ink: #f2e9d9; --ink-soft: #bcb09c; --ink-faint: #8a8071; --accent: #d9a86a; --accent-ink: #1a1208; --line: rgba(242,233,217,.16); --shadow-hard: none; }

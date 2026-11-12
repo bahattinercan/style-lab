@@ -1,0 +1,48 @@
+/* 65 · Cockpit Avionics — token bloğu (açık + koyu)
+   Kaynak: styles/65-cockpit-avionics/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="cockpit-avionics"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="cockpit-avionics"] {
+  /* --- sözleşme: renk --- */
+  --bg: #0a0f14;
+  --bg-2: #10161c;
+  --surface: #131a21;
+  --surface-2: #1a232b;
+  --ink: #e8f0f4;
+  --ink-soft: #9fb0ba;
+  --ink-faint: #6d7f8a;
+  --accent: #35d6e8;
+  --accent-ink: #032026;
+  --line: rgba(232,240,244,.15);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 2px;
+  --radius-lg: 4px;
+  --shadow: 0 1px 3px rgba(0,0,0,.5);
+  --shadow-hard: 0 0 0 1px rgba(53,214,232,.45);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Rajdhani", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: .06em;
+  --blur: 0px;
+  --grain: 0;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #ff6b6b;
+  --danger-ink: #1a0707;
+  --ok: #4fd98a;
+  --warn: #ffb020;
+}
+
+[data-theme="dark"][data-style="cockpit-avionics"] {
+  --bg: #02040a;
+  --bg-2: #05080f;
+  --surface: #080d16;
+  --surface-2: #0d1420;
+  --ink: #f4fbff;
+  --ink-soft: #b0c4d2;
+  --ink-faint: #7e93a3;
+  --accent: #7ff0ff;
+  --accent-ink: #021a22;
+  --line: rgba(244,251,255,.2);
+}

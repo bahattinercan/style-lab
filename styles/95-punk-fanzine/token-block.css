@@ -1,0 +1,5 @@
+/* 95 · Punk Fanzine — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="punk-fanzine"] { --bg: #e6e4dd; --bg-2: #dbd8d0; --surface: #f2f0e9; --surface-2: #d2cfc6; --ink: #0e0e0e; --ink-soft: #43433f; --ink-faint: #6d6d68; --accent: #cf1f2b; --accent-ink: #fff7f1; --line: rgba(14,14,14,.24); --radius: 0px; --radius-lg: 2px; --shadow: none; --shadow-hard: 4px 4px 0 #0e0e0e; --font-display: "Kalam", "Archivo Black", system-ui, sans-serif; --font-body: "Courier Prime", ui-monospace, monospace; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0em; --blur: 0px; --grain: 0.12; }
+
+/* 95 · Punk Fanzine — koyu tema (palette.dark ile birebir aynı; sert gölge koyuda kâğıt grisine döner) */
+[data-theme="dark"][data-style="punk-fanzine"] { --bg: #0f0f0f; --bg-2: #151514; --surface: #1a1a19; --surface-2: #242423; --ink: #ececea; --ink-soft: #adadab; --ink-faint: #838381; --accent: #f0434f; --accent-ink: #100b0b; --line: rgba(236,236,234,.22); }

@@ -1,0 +1,48 @@
+/* 64 · Construction Site — token bloğu (açık + koyu)
+   Kaynak: styles/64-construction-site/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="construction-site"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="construction-site"] {
+  /* --- sözleşme: renk --- */
+  --bg: #e8e2d4;
+  --bg-2: #dcd4c2;
+  --surface: #f4efe4;
+  --surface-2: #eae3d4;
+  --ink: #191612;
+  --ink-soft: #4f483d;
+  --ink-faint: #7b7059;
+  --accent: #a03a26;
+  --accent-ink: #f7f1e6;
+  --line: rgba(25,22,18,.42);
+  /* --- sözleşme: biçim ve gölge --- */
+  --radius: 2px;
+  --radius-lg: 4px;
+  --shadow: 0 1px 0 rgba(25,22,18,.12);
+  --shadow-hard: 6px 6px 0 rgba(25,22,18,.85);
+  /* --- sözleşme: tipografi ve doku --- */
+  --font-display: "Anton", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: .01em;
+  --blur: 0px;
+  --grain: .05;
+  /* --- stil ekleri (durum renkleri) --- */
+  --danger: #8f2417;
+  --danger-ink: #fbeee9;
+  --ok: #2c5c33;
+  --warn: #7d5200;
+}
+
+[data-theme="dark"][data-style="construction-site"] {
+  --bg: #14120e;
+  --bg-2: #1c1914;
+  --surface: #211d17;
+  --surface-2: #2a251d;
+  --ink: #f0e9db;
+  --ink-soft: #b1a795;
+  --ink-faint: #82796a;
+  --accent: #df6b4a;
+  --accent-ink: #130a06;
+  --line: rgba(240,233,219,.18);
+}

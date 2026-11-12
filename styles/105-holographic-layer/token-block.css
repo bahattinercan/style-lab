@@ -1,0 +1,5 @@
+/* styles/105-holographic-layer/token-block.css — üretildi; kaynak tokens.json.
+[data-style="holographic-layer"] { --bg: #0e0b16; --bg-2: #141020; --surface: #181323; --surface-2: #211a2e; --ink: #f0edf7; --ink-soft: #b3aac4; --ink-faint: #827896; --accent: #8f7bff; --accent-ink: #0a0713; --line: rgba(240,237,247,.16); --radius: 20px; --radius-lg: 28px; --shadow: 0 28px 64px -44px rgba(4,2,10,.95); --shadow-hard: 0 0 0 1px var(--line); --font-display: "Michroma", ui-sans-serif, system-ui, sans-serif; --font-body: "Inter", ui-sans-serif, system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; --tracking: 0.02em; --blur: 8px; --grain: .02; --danger: #ff8a7a; --danger-ink: #200a07; --ok: #7fe0b0; --warn: #e8c46a; }
+
+/* Holographic Layer — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="holographic-layer"] { --bg: #12081a; --bg-2: #180c22; --surface: #1d1029; --surface-2: #261534; --ink: #f6f1fb; --ink-soft: #c3b6d2; --ink-faint: #94899f; --accent: #d0a8ff; --accent-ink: #150a1f; --line: rgba(246,241,251,.18); }

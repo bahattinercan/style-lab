@@ -1,0 +1,5 @@
+/* 117 · Carnival Festival — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="carnival-festival"] { --bg: #fdf3e3; --bg-2: #f6e7d0; --surface: #fffaf0; --surface-2: #f7ead6; --ink: #241a12; --ink-soft: #55463a; --ink-faint: #827164; --accent: #b3360f; --accent-ink: #fdf5ee; --line: rgba(36,26,18,.18); --radius: 0px; --radius-lg: 4px; --shadow: none; --shadow-hard: 3px 3px 0 rgba(36,26,18,.92); --font-display: "Anton", Impact, system-ui, sans-serif; --font-body: "Poppins", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.01em; --blur: 0px; --grain: 0; }
+
+/* 117 · Carnival Festival — koyu tema (palette.dark ile birebir aynı; krem zemin gece kahvesine döner, accent mercan-turuncuya çekilir, şerit 2'ye iner) */
+[data-theme="dark"][data-style="carnival-festival"] { --bg: #191009; --bg-2: #231710; --surface: #1e140d; --surface-2: #2c1f15; --ink: #f8ecdd; --ink-soft: #bfaa99; --ink-faint: #8a7767; --accent: #f0873f; --accent-ink: #1a1007; --line: rgba(248,236,221,.16); --shadow-hard: 3px 3px 0 rgba(36,26,18,.92); }

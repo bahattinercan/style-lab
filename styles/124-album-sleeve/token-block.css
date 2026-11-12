@@ -1,0 +1,5 @@
+/* 124 · Album Sleeve — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="album-sleeve"] { --bg: #ecebe4; --bg-2: #e2e0d8; --surface: #fbfaf5; --surface-2: #e6e4da; --ink: #131418; --ink-soft: #45474e; --ink-faint: #74767c; --accent: #cf3b0c; --accent-ink: #fff8f2; --line: rgba(19,20,24,.18); --radius: 2px; --radius-lg: 4px; --shadow: 0 2px 10px rgba(19,20,24,.10); --shadow-hard: none; --font-display: "Anton", Impact, system-ui, sans-serif; --font-body: "Space Grotesk", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.015em; --blur: 0px; --grain: 0.025; }
+
+/* 124 · Album Sleeve — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="album-sleeve"] { --bg: #0e0f11; --bg-2: #141517; --surface: #191a1d; --surface-2: #222327; --ink: #eeede8; --ink-soft: #b3b2ab; --ink-faint: #888780; --accent: #ff6a2c; --accent-ink: #140a05; --line: rgba(238,237,232,.16); }

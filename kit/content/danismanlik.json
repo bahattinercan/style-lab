@@ -1,0 +1,46 @@
+{
+  "label": "Danışmanlık",
+  "tags": [
+    "danışmanlık",
+    "strateji",
+    "kurumsal"
+  ],
+  "hero": {
+    "eyebrow": "Strateji · 2026",
+    "h1": "Kararı tahmine değil kanıta dayandırın",
+    "lede": "Altı haftada ölçülebilir bir plan; sunum değil, uygulanabilir adımlar.",
+    "ctaPrimary": "Görüşme planla",
+    "ctaSecondary": "Vaka dosyası →"
+  },
+  "proofs": [
+    "6 haftalık plan",
+    "Sabit ekip",
+    "Ölçülebilir çıktı"
+  ],
+  "logos": [
+    "Northline",
+    "Meridian",
+    "Aster",
+    "Firma",
+    "Baseline"
+  ],
+  "tiles": [
+    {
+      "num": "01",
+      "cap": "Pazar haritası"
+    },
+    {
+      "num": "02",
+      "cap": "Fiyat mimarisi"
+    },
+    {
+      "num": "03",
+      "cap": "Operasyon planı"
+    },
+    {
+      "num": "04",
+      "cap": "Ölçüm çerçevesi"
+    }
+  ],
+  "logoLabel": "Birlikte çalıştıklarımız"
+}

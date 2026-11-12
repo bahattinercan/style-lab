@@ -1,0 +1,21 @@
+{
+  "slug": "vitals-triage",
+  "num": "54",
+  "labels": [
+    "sağlık vitalleri ve triyaj",
+    "hasta önceliklendirme",
+    "klinik gözlem panosu"
+  ],
+  "synonyms": [
+    "triyaj ekranı",
+    "vital bulgu takibi",
+    "acil servis panosu",
+    "nöbet devir raporu",
+    "refakatçi bakım uygulaması"
+  ],
+  "avoid": [
+    "finansal işlem ekranı",
+    "geliştirici aracı arayüzü",
+    "lüks marka vitrini"
+  ]
+}

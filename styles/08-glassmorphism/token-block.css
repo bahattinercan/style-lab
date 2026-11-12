@@ -1,0 +1,20 @@
+/* 08 · Glassmorphism — token bloğu (kaynak: styles/08-glassmorphism/tokens.json) */
+
+[data-style="glassmorphism"] {
+  --bg: #1b1035; --bg-2: #2a1a5e;
+  --surface: rgba(255,255,255,.12); --surface-2: rgba(255,255,255,.07);
+  --ink: #ffffff; --ink-soft: rgba(255,255,255,.78); --ink-faint: rgba(255,255,255,.55);
+  --accent: #7dd3fc; --accent-ink: #06222e;
+  --line: rgba(255,255,255,.24);
+  --radius: 16px; --radius-lg: 24px;
+  --shadow: 0 8px 32px rgba(0,0,0,.22); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 18px; --grain: .02;
+}
+
+[data-theme="dark"][data-style="glassmorphism"] {
+  --bg: #1b1035; --bg-2: #2a1a5e; --surface: rgba(255,255,255,.12); --surface-2: rgba(255,255,255,.07);
+  --ink: #ffffff; --ink-soft: rgba(255,255,255,.78); --ink-faint: rgba(255,255,255,.55); --accent: #7dd3fc; --accent-ink: #0d0d0d; --line: rgba(255,255,255,.24);
+}

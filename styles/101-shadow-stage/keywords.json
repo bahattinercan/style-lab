@@ -1,0 +1,21 @@
+{
+  "slug": "shadow-stage",
+  "num": "101",
+  "labels": [
+    "ışık ve gölge oyunu",
+    "tek ışık kaynaklı sahne",
+    "vinyetli koyu yüzey"
+  ],
+  "synonyms": [
+    "chiaroscuro arayüz",
+    "spot ışığı vurgusu",
+    "gölge hiyerarşisi",
+    "gece sahnesi paneli",
+    "tek kaynak aydınlatma"
+  ],
+  "avoid": [
+    "gündüz açık zemin ürün sayfası",
+    "çocuk/oyun arayüzü",
+    "çok renkli dashboard"
+  ]
+}

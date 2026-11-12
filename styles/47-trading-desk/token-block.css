@@ -1,0 +1,55 @@
+/* 47 · Trading Desk — token bloğu (kaynak: styles/47-trading-desk/tokens.json) */
+
+[data-style="trading-desk"] {
+  --bg: #101418;
+  --bg-2: #151b20;
+  --surface: #161d23;
+  --surface-2: #1c242b;
+  --ink: #e8eef2;
+  --ink-soft: #9fb3bf;
+  --ink-faint: #6f8593;
+  --accent: #f2a33c;
+  --accent-ink: #171002;
+  --line: rgba(232,238,242,.14);
+  --radius: 2px;
+  --radius-lg: 4px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Rajdhani", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0.015em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff7a6b;
+  --danger-ink: #260a05;
+  --ok: #35d07f;
+  --warn: #e8d05a;
+}
+
+[data-theme="dark"][data-style="trading-desk"] {
+  --bg: #05070a;
+  --bg-2: #080d12;
+  --surface: #0c131a;
+  --surface-2: #131c26;
+  --ink: #f2f7f9;
+  --ink-soft: #a8bcc7;
+  --ink-faint: #74899a;
+  --accent: #ffbd6b;
+  --accent-ink: #1a1104;
+  --line: rgba(242,247,249,.16);
+  --radius: 2px;
+  --radius-lg: 4px;
+  --shadow: none;
+  --shadow-hard: none;
+  --font-display: "Rajdhani", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0.015em;
+  --blur: 0px;
+  --grain: 0;
+  --danger: #ff9084;
+  --danger-ink: #2a0d07;
+  --ok: #4be394;
+  --warn: #f2dd74;
+}

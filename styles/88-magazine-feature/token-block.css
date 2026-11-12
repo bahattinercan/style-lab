@@ -1,0 +1,5 @@
+/* 88 · Magazine Feature — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="magazine-feature"] { --bg: #faf6f0; --bg-2: #f0e9df; --surface: #fffdf9; --surface-2: #f4eee4; --ink: #1a1614; --ink-soft: #4b423d; --ink-faint: #7b716a; --accent: #8a2f52; --accent-ink: #fdf3f0; --line: rgba(26,22,20,.14); --radius: 2px; --radius-lg: 14px; --shadow: 0 10px 30px rgba(26,22,20,.12); --shadow-hard: none; --font-display: "Fraunces", Georgia, serif; --font-body: "Jost", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.02em; --blur: 0px; --grain: 0.02; }
+
+/* 88 · Magazine Feature — koyu tema (palette.dark ile birebir aynı; krem zemin sıcak antrasite döner, accent açık güle çekilir, gölge tek katman kalır) */
+[data-theme="dark"][data-style="magazine-feature"] { --bg: #161113; --bg-2: #1f171a; --surface: #1b1417; --surface-2: #282022; --ink: #f4ece7; --ink-soft: #b5a9a6; --ink-faint: #82746f; --accent: #e08aa6; --accent-ink: #180d11; --line: rgba(244,236,231,.14); --shadow-hard: none; }

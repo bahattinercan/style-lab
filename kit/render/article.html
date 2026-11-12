@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="tr" data-style="__STYLE__">
+<head>
+<meta charset="utf-8">
+<title>Makale</title>
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="scene.css">
+<style id="extra"></style>
+</head>
+<body class="scene-article __BODY_CLASS__">
+  <div class="art-bar">
+    <span class="mark" style="width:22px;height:22px;font-size:10px">N</span>
+    <b style="font-size:12.5px">Northwind · Defter</b>
+    <span class="chip" style="margin-left:10px">tasarım</span>
+    <span class="act">
+      <span class="chip">__ICON:clock:9__ 7 dk okuma</span>
+      <span class="icon-btn" style="width:30px;height:30px">__ICON:star:13__</span>
+      <span class="btn ghost sm">__ICON:download:12__ PDF</span>
+    </span>
+  </div>
+
+  <div class="art-body">
+    <nav class="art-toc">
+      <span class="h">İçindekiler</span>
+      <a class="on">Neden ölçü?</a>
+      <a>Satır uzunluğu</a>
+      <a>Başlık ritmi</a>
+      <a>Vurgu ve sessizlik</a>
+      <a>Kontrol listesi</a>
+      <div class="divider" style="margin:8px 0"></div>
+      <span class="h">Yazar</span>
+      <a>Elif Barut</a>
+      <a>12 Ekim 2026</a>
+    </nav>
+
+    <article class="art-main">
+      <span class="kick">Seri · Okunabilirlik</span>
+      <h1>Bir arayüzde sessizlik nasıl kurulur?</h1>
+      <div class="metaline">
+        <span class="avatar" style="width:20px;height:20px;font-size:8px">EB</span>
+        <span>Elif Barut</span>
+        <span>·</span>
+        <span>12 Ekim 2026</span>
+        <span>·</span>
+        <span class="chip">7 dk</span>
+      </div>
+      <div class="divider"></div>
+
+      <p class="lead">Sessizlik, boşluk bırakmak değil; her öğenin neden orada olduğunu bilmek. Bu yazı, ölçülebilir üç karar üzerinden sakin bir okuma sayfası kuruyor.</p>
+
+      <h2>Neden ölçü?</h2>
+      <p>Göz, satır sonunu bulmak için sürekli geri döner. Satır 45 karakterin altına inerse dönüş sıklığı artar; 80 karakteri geçerse göz bir sonraki satırın başını kaçırır. Bu yüzden gövde metni 58–72 karakter aralığında tutulur ve satır yüksekliği 1,7'nin altına inmez.</p>
+
+      <blockquote>“Okunabilirlik bir zevk meselesi değil; ölçü, kontrast ve satır aralığının çarpımıdır.”</blockquote>
+
+      <h2>Satır uzunluğu</h2>
+      <p>Ölçüyü <code>ch</code> birimiyle vermek, font değişse de aralığı korur. 680 piksel sabit genişlik yalnızca tek font ailesinde doğru sonuç verir; <code>68ch</code> her ailede aynı okuma hissini üretir.</p>
+
+      <h2>Başlık ritmi</h2>
+      <ul>
+        <li>Başlık öncesi boşluk, sonrasının en az iki katı olmalı.</li>
+        <li>Üç seviyeden fazlası hiyerarşiyi değil, gürültüyü büyütür.</li>
+        <li>Başlık ile gövde arasında 8–12 px yeterli; 24 px kopukluk yaratır.</li>
+      </ul>
+
+      <h2>Vurgu ve sessizlik</h2>
+      <p>Vurgu rengi ekranın yüzde beşini geçtiğinde vurgu olmaktan çıkar. Bir sayfada tek bir accent kararı yeterli: ya bağlantı, ya buton, ya alıntı çizgisi.</p>
+
+      <div class="art-author">
+        <span class="avatar">EB</span>
+        <span class="tx">Elif Barut<span>Ürün tasarımcısı · Kuzey Studio</span></span>
+        <span class="chip" style="margin-left:auto">__ICON:mail:10__ yazara yaz</span>
+      </div>
+    </article>
+
+    <aside class="art-side">
+      <section class="panel sheet-panel">
+        <h3>İlgili <span class="n">03</span></h3>
+        <div class="tl">
+          <div class="ev"><span class="dt"></span><span class="tx">Tipografik ölçek nasıl kurulur<span>5 dk · seri 2</span></span></div>
+          <div class="ev"><span class="dt" style="background:var(--data-2)"></span><span class="tx">Boşluğun üç kuralı<span>4 dk · seri 3</span></span></div>
+          <div class="ev"><span class="dt" style="background:var(--data-3)"></span><span class="tx">Kontrast borcu nasıl ödenir<span>6 dk · seri 4</span></span></div>
+        </div>
+      </section>
+      <section class="panel sheet-panel">
+        <h3>Bültende <span class="n">aylık</span></h3>
+        <p style="font-size:10.5px;color:var(--ink-soft);line-height:1.5">Ayda bir, ölçülebilir tasarım notları.</p>
+        <div class="fbar">
+          <span class="f-wrap" style="flex:1"><input class="field lp" placeholder="e-posta" aria-label="bülten e-posta" style="min-height:32px"></span>
+          <span class="btn sm">Abone ol</span>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="sig"></div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "label": "SaaS / araç",
+  "tags": [
+    "yazılım",
+    "ekip",
+    "verimlilik"
+  ],
+  "hero": {
+    "eyebrow": "2.4 · yeni sürüm",
+    "h1": "Ürün ekibin için sakin bir çalışma alanı",
+    "lede": "Dağınık araçları tek yerde topla; planla, yaz ve teslim et — gürültü olmadan.",
+    "ctaPrimary": "Ücretsiz başla",
+    "ctaSecondary": "Demo izle →"
+  },
+  "proofs": [
+    "14 gün ücretsiz",
+    "Kart gerekmez",
+    "SSO dahil"
+  ],
+  "logos": [
+    "Lumen",
+    "Kite",
+    "Orbit",
+    "Nimbus",
+    "Telos"
+  ],
+  "tiles": [
+    {
+      "num": "01",
+      "cap": "Sprint planı"
+    },
+    {
+      "num": "02",
+      "cap": "Tasarım incelemesi"
+    },
+    {
+      "num": "03",
+      "cap": "Sürüm notları"
+    },
+    {
+      "num": "04",
+      "cap": "Ekip alanı"
+    }
+  ],
+  "logoLabel": "Güvenen ekipler"
+}

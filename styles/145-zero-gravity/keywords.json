@@ -1,0 +1,21 @@
+{
+  "slug": "zero-gravity",
+  "num": "145",
+  "labels": [
+    "orbital ve sıfır yerçekimi",
+    "yüzen panel düzeni",
+    "ağırlıksız kartlar"
+  ],
+  "synonyms": [
+    "uzay istasyonu arayüzü",
+    "yörünge yayı paneli",
+    "yavaş geçişli kart yığını",
+    "buz mavisi sakin pano",
+    "havada duran modüller"
+  ],
+  "avoid": [
+    "hızlı oyun arayüzü",
+    "muhasebe/fatura ekranı",
+    "keskin köşeli kurumsal tablo"
+  ]
+}

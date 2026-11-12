@@ -1,0 +1,21 @@
+/* 34 · Skeuomorphism — token bloğu (kaynak: styles/34-skeuomorphism/tokens.json) */
+
+[data-style="skeuomorphism"] {
+  --bg: #cfc6b8; --bg-2: #bdb2a1;
+  --surface: #f2ebdd; --surface-2: #e6ddcb;
+  --ink: #2f2a24; --ink-soft: #5d554a; --ink-faint: #8b8173;
+  --accent: #2f6b4f; --accent-ink: #f7f3e8;
+  --line: rgba(47,42,36,.35);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 2px 4px rgba(47,42,36,.35), inset 0 1px 0 rgba(255,255,255,.75);
+  --shadow-hard: inset 0 2px 6px rgba(47,42,36,.45);
+  --font-display: "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Menlo", ui-monospace, monospace;
+  --tracking: 0em; --blur: 0px; --grain: .05;
+}
+
+[data-theme="dark"][data-style="skeuomorphism"] {
+  --bg: #2a241d; --bg-2: #363028; --surface: #3a3226; --surface-2: #494134;
+  --ink: #f0e8da; --ink-soft: #b5ada1; --ink-faint: #837c72; --accent: #3f8a68; --accent-ink: #0d0d0d; --line: rgba(240,232,218,.14);
+}

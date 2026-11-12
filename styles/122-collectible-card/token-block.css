@@ -1,0 +1,5 @@
+/* 122 · Collectible Card — açık tema (tokens.json "css" alanıyla birebir aynı) */
+[data-style="collectible-card"] { --bg: #eef1f7; --bg-2: #e5e9f2; --surface: #ffffff; --surface-2: #e9edf6; --ink: #131521; --ink-soft: #474b5c; --ink-faint: #767b8c; --accent: #5c33e0; --accent-ink: #f7f4ff; --line: rgba(19,21,33,.16); --radius: 10px; --radius-lg: 16px; --shadow: 0 10px 24px rgba(19,21,33,.14); --shadow-hard: none; --font-display: "Chakra Petch", system-ui, sans-serif; --font-body: "Jost", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0.01em; --blur: 0px; --grain: 0.02; }
+
+/* 122 · Collectible Card — koyu tema (palette.dark ile birebir aynı) */
+[data-theme="dark"][data-style="collectible-card"] { --bg: #0d0e15; --bg-2: #12131c; --surface: #171926; --surface-2: #1f2231; --ink: #eceaf5; --ink-soft: #b0aec0; --ink-faint: #86849a; --accent: #a48bff; --accent-ink: #0f0d18; --line: rgba(236,234,245,.16); }

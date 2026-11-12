@@ -1,0 +1,48 @@
+/* 151 · Dark Dashboard — token bloğu (açık + koyu)
+   Kaynak: styles/151-dark-dashboard/tokens.json · css alanı ve palette.dark
+   Kullanım: <html data-style="dark-dashboard"> · koyu için data-theme="dark"
+   Not: kit/tokens.css ve kit/dist integrator tarafından üretilir; bu dosya stil sahibinin bloğudur. */
+
+[data-style="dark-dashboard"] {
+  /* --- sözleşme: renk --- */
+ --bg: #0b0d10;
+ --bg-2: #07090b;
+ --surface: #12161a;
+ --surface-2: #1a2026;
+ --ink: #e9eef4;
+ --ink-soft: #a9b6c2;
+ --ink-faint: #75818d;
+ --accent: #58c8ff;
+ --accent-ink: #04141f;
+ --line: rgba(233,238,244,.12);
+  /* --- sözleşme: biçim ve gölge --- */
+ --radius: 8px;
+ --radius-lg: 14px;
+ --shadow: 0 20px 48px -30px rgba(0,0,0,.9);
+ --shadow-hard: 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  /* --- sözleşme: tipografi ve doku --- */
+ --font-display: "Michroma", "Inter", system-ui, sans-serif;
+ --font-body: "Inter", system-ui, sans-serif;
+ --font-mono: "JetBrains Mono", ui-monospace, monospace;
+ --tracking: .16em;
+ --blur: 8px;
+ --grain: .01;
+  /* --- stil ekleri (durum renkleri) --- */
+ --danger: #ff7a7a;
+ --danger-ink: #1a0505;
+ --ok: #6ee7a0;
+ --warn: #f2c14e;
+}
+
+[data-theme="dark"][data-style="dark-dashboard"] {
+  --bg:#06080a;
+  --bg-2:#040506;
+  --surface:#0d1014;
+  --surface-2:#151a20;
+  --ink:#f0f5fa;
+  --ink-soft:#b6c2ce;
+  --ink-faint:#818d99;
+  --accent:#7ad6ff;
+  --accent-ink:#04141f;
+  --line:rgba(240,245,250,.14);
+}

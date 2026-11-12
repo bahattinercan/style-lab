@@ -1,0 +1,21 @@
+{
+  "slug": "atlas-console",
+  "num": "51",
+  "labels": [
+    "coğrafi operasyon haritası",
+    "saha koordinasyonu",
+    "katman ve lejant"
+  ],
+  "synonyms": [
+    "harita konsolu",
+    "bölge yönetimi panosu",
+    "pin izleme",
+    "lojistik görünümü",
+    "afet koordinasyon ekranı"
+  ],
+  "avoid": [
+    "editoryal makale",
+    "wellness/çocuk ürünü",
+    "vitrin e-ticareti"
+  ]
+}

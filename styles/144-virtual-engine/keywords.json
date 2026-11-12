@@ -1,0 +1,21 @@
+{
+  "slug": "virtual-engine",
+  "num": "144",
+  "labels": [
+    "sanal dünya ve oyun motoru",
+    "viewport ve denetçi",
+    "varlık hiyerarşisi"
+  ],
+  "synonyms": [
+    "sahne düzenleyici",
+    "oyun motoru arayüzü",
+    "tel kafes ızgara",
+    "katman/varlık listesi",
+    "konsol satırı"
+  ],
+  "avoid": [
+    "editoryal makale sayfası",
+    "muhasebe tablosu",
+    "sakin sağlık ekranı"
+  ]
+}

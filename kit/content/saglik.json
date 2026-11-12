@@ -1,0 +1,46 @@
+{
+  "label": "Sağlık / klinik",
+  "tags": [
+    "sağlık",
+    "klinik",
+    "randevu"
+  ],
+  "hero": {
+    "eyebrow": "Randevu · 7 gün",
+    "h1": "Randevudan önce bilmeniz gerekenler",
+    "lede": "Hekiminizi seçin, hazırlık adımlarını görün; bekleme odasında zaman kaybetmeyin.",
+    "ctaPrimary": "Randevu al",
+    "ctaSecondary": "Nasıl işliyor →"
+  },
+  "proofs": [
+    "Aynı gün dönüş",
+    "Anlaşmalı kurumlar",
+    "KVKK uyumlu"
+  ],
+  "logos": [
+    "Poliklinik",
+    "Klini",
+    "Saglik",
+    "Merkez",
+    "Vital"
+  ],
+  "tiles": [
+    {
+      "num": "01",
+      "cap": "Poliklinikler"
+    },
+    {
+      "num": "02",
+      "cap": "Hazırlık"
+    },
+    {
+      "num": "03",
+      "cap": "Sonuçlar"
+    },
+    {
+      "num": "04",
+      "cap": "Reçete"
+    }
+  ],
+  "logoLabel": "Anlaşmalı kurumlar"
+}
