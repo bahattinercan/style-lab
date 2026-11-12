@@ -456,6 +456,11 @@ sahne başına 256-bit dHash + ortalama renk, baseline `kit/render/visual-baseli
 Eşik: hash ≤ 8/256 bit, renk Δ ≤ 10. Duyarlılık `--self-test` ile kanıtlı (%15 parlaklık, negatif, 24px kayma yakalanır).
 Piksel-piksel baseline ayrıca istenirse: `node kit/render/baseline.mjs --write` (çekirdek set; tam set için cache'i de dahil et).
 
+**Temiz klonda üretilen artefaktlar (gitignore):**
+- `kit/.shots-cache/<dir>/27-motion.png` — hareket storyboard şeritleri; `node kit/render/motion-strip.mjs --sample 6 --check` (veya `--ensure`) eksik şeritleri headless tarayıcıda üretip varlığını/boyutunu doğrular, tarayıcı bulunamazsa `↷` satırıyla görünür biçimde atlar (tam set: `--all`).
+- `kit/render/.baseline/` — piksel-piksel görsel regresyon referansı; `node kit/render/baseline.mjs --write` ile oluşturulur, dizin yoksa `gates.sh` adımı `↷ görsel regresyon (baseline yok, atlandı)` ile atlar.
+- `kit/.shots-cache/<dir>/` altındaki çekirdek dışı 33 sahne, `sections/*.png` (12 bölüm) ve `flows/*.png` (3 akış) — ilgili `render-*.mjs` komutlarıyla talep üzerine üretilir.
+
 **Borç defterleri:** `kit/contrast-baseline.json` (kabul edilmiş kontrast istisnaları) ve
 `kit/dark-baseline.json` (koyu mod borcu). Listede olmayan yeni ihlal **hata**dır.
 

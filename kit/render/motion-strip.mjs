@@ -19,6 +19,13 @@
  *   node kit/render/motion-strip.mjs --styles y2k,terminal-ui
  *   node kit/render/motion-strip.mjs --all          # 145 stil (~4 dk)
  *   node kit/render/motion-strip.mjs --sample 6 --check
+ *   node kit/render/motion-strip.mjs --sample 6 --check --ensure
+ *
+ * Bayraklar:
+ *   --check      Şeritlerin varlığını ve geçerli boyutunu doğrular; eksik varsa üretir.
+ *   --ensure     Kontrol sırasında eksik şerit varsa tarayıcıda üretip doğrular;
+ *                tarayıcı açılamazsa ↷ ile görünür biçimde atlar (--check ile varsayılan).
+ *   --no-ensure  Üretim yapmadan yalnız mevcut dosyaları denetler.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -34,7 +41,9 @@ const TMP = path.join(ROOT, 'kit', 'render', '.tmp-strip');
 const ARGV = process.argv.slice(2);
 const ALL = ARGV.includes('--all');
 const CHECK = ARGV.includes('--check');
+const ENSURE = ARGV.includes('--ensure') || (CHECK && !ARGV.includes('--no-ensure'));
 const JSON_OUT = ARGV.includes('--json');
+const MIN_STRIP_BYTES = 4096;
 const SAMPLE = (() => {
   const i = ARGV.indexOf('--sample');
   return i >= 0 ? Number(ARGV[i + 1]) : 6;
@@ -145,9 +154,9 @@ figcaption b{color:#e8e6e1;font-weight:400}
 }
 
 async function main() {
-  fs.mkdirSync(TMP, { recursive: true });
   const dirs = targets();
-  const cdp = await launch({ tabs: 2 });
+  let cdp = null;
+  let skippedNoBrowser = null;
   const out = [];
   try {
     for (const dir of dirs) {
@@ -159,8 +168,32 @@ async function main() {
       }
       const target = path.join(CACHE_DIR, dir, '27-motion.png');
       if (CHECK) {
-        out.push({ slug, ok: fs.existsSync(target), path: path.relative(ROOT, target) });
-        continue;
+        const existingBytes = fs.existsSync(target) ? fs.statSync(target).size : 0;
+        if (existingBytes >= MIN_STRIP_BYTES) {
+          out.push({ slug, ok: true, path: path.relative(ROOT, target), bytes: existingBytes });
+          continue;
+        }
+        if (!ENSURE) {
+          out.push({
+            slug,
+            ok: false,
+            path: path.relative(ROOT, target),
+            error: existingBytes > 0 ? `şerit geçersiz boyutta (${existingBytes} B)` : 'şerit yok',
+          });
+          continue;
+        }
+      }
+      if (!cdp) {
+        try {
+          fs.mkdirSync(TMP, { recursive: true });
+          cdp = await launch({ tabs: 2 });
+        } catch (err) {
+          if (CHECK && ENSURE) {
+            skippedNoBrowser = err?.message || 'tarayıcı bulunamadı';
+            break;
+          }
+          throw err;
+        }
       }
       const stageFile = path.join(TMP, `${slug}-stage.html`);
       fs.writeFileSync(
@@ -204,18 +237,49 @@ async function main() {
       const strip = await cdp.capture(stripFile, { width: 1560, height: 300, freeze: false });
       fs.mkdirSync(path.dirname(target), { recursive: true });
       fs.writeFileSync(target, strip);
-      out.push({ slug, ok: true, path: path.relative(ROOT, target), bytes: strip.length });
+      const writtenBytes = fs.existsSync(target) ? fs.statSync(target).size : 0;
+      const ok = writtenBytes >= MIN_STRIP_BYTES;
+      out.push({
+        slug,
+        ok,
+        generated: CHECK,
+        path: path.relative(ROOT, target),
+        bytes: writtenBytes,
+        ...(ok ? {} : { error: `üretilen şerit geçersiz (${writtenBytes} B)` }),
+      });
       for (const f of [...frames, stripFile, stageFile]) fs.rmSync(f, { force: true });
     }
   } finally {
-    await cdp.close();
+    if (cdp) await cdp.close();
     fs.rmSync(TMP, { recursive: true, force: true });
+  }
+
+  if (skippedNoBrowser) {
+    if (JSON_OUT) {
+      console.log(
+        JSON.stringify(
+          { count: dirs.length, ok: out.filter((o) => o.ok).length, skipped: true, reason: skippedNoBrowser, out },
+          null,
+          2,
+        ),
+      );
+    } else {
+      console.log(`↷ hareket storyboard (cache yok, atlandı: ${skippedNoBrowser})`);
+    }
+    return 0;
   }
 
   if (JSON_OUT) console.log(JSON.stringify({ count: out.length, ok: out.filter((o) => o.ok).length, out }, null, 2));
   else {
-    for (const o of out) if (!o.ok) console.log(`× ${o.slug}: ${o.error ?? 'şerit yok'}`);
-    console.log(`motion-strip · ${out.length} stil · ${out.filter((o) => o.ok).length} şerit · çıktı: kit/.shots-cache/<dir>/27-motion.png`);
+    for (const o of out) {
+      if (!o.ok) console.log(`× ${o.slug}: ${o.error ?? 'şerit yok'}`);
+      else if (o.generated) console.log(`↻ ${o.slug}: eksik şerit üretildi (${o.bytes} B)`);
+    }
+    const generated = out.filter((o) => o.generated && o.ok).length;
+    const genNote = generated > 0 ? ` (${generated} eksik üretildi)` : '';
+    console.log(
+      `motion-strip · ${out.length} stil · ${out.filter((o) => o.ok).length} şerit${genNote} · çıktı: kit/.shots-cache/<dir>/27-motion.png`,
+    );
   }
   return out.some((o) => !o.ok) ? 1 : 0;
 }

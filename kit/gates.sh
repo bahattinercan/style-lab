@@ -90,7 +90,9 @@ run_gate "hareket kapısı" node kit/motion-check.mjs
 run_gate "hareket ölçümü" node kit/motion-audit.mjs --check
 run_gate "hareket lab" node kit/build-motion-lab.mjs --check
 run_gate "hareket ölçümü (tarayıcı)" node kit/render/motion-measure.mjs --sample 6
-run_gate "hareket storyboard" node kit/render/motion-strip.mjs --sample 6 --check
+# Hareket storyboard şeritleri kit/.shots-cache/<dir>/27-motion.png altındadır (gitignore).
+# --ensure: temiz klonda eksik şerit varsa tarayıcıda üretip doğrular; tarayıcı yoksa ↷ ile atlar.
+run_gate "hareket storyboard" node kit/render/motion-strip.mjs --sample 6 --check --ensure
 run_gate "motion normalizasyonu" node kit/normalize-motion.mjs --check
 run_gate "token export güncel" node kit/export-tokens.mjs --check
 run_gate "font TTF" node kit/fetch-fonts.mjs --check

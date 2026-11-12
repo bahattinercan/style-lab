@@ -94,14 +94,18 @@ BROWSER="./browser/chrome" node kit/check-gallery-ui.mjs
 | Sayfa stilsiz, düz siyah metin | `kit/` dışından açılmış → `tokens.css` bulunamıyor. `kit/gallery.html` yolunu kullan. |
 | Kart görselleri boş | `styles/<slug>/shots/` repoda yoksa o sahne üretilmemiştir: `node kit/render/render-shots.mjs --styles <slug>` |
 | `sections.html` "henüz üretilmemiş" | Bölüm görselleri `kit/.shots-cache/` altında; gitignore'lu, `--sample` ile üretilir |
+| `27-motion.png` / hareket storyboard | `kit/.shots-cache/<dir>/27-motion.png` temiz klonda yoktur; `motion-strip.mjs --sample 6 --check` (`--ensure`) eksikleri otomatik üretip doğrular (tam set: `--all`) |
 | `node: command not found` | Node 22 gerekli. `bash kit/gates.sh` node yoksa kapıları atlar ve uyarır. |
 | `görsel regresyon atlandı` | `kit/render/.baseline/` yok → `node kit/render/baseline.mjs --write` ile oluştur |
 | Port 8000 meşgul | `--port 8080` veya `python -m http.server 8080` |
 
-## 8 · Bilinçli sınırlar
+## 8 · Bilinçli sınırlar ve temiz klonda üretilen artefaktlar
 
-- `kit/.shots-cache/` (~1.2 GB) ve `kit/render/.baseline/` gitignore'da; temiz klonda üretilir, hata değil.
-- Görsel regresyon baseline'ı yoksa kapı **atlanır**, sessizce geçmiş sayılmaz (çıktıda `↷` yazar).
+- `kit/.shots-cache/` (~1.2 GB) ve `kit/render/.baseline/` gitignore'da; temiz klonda üretilir, hata değil:
+  - `kit/.shots-cache/<dir>/27-motion.png`: hareket storyboard şeritleri (`node kit/render/motion-strip.mjs --sample 6 --check` eksik örnekleri üretip doğrular; tarayıcı yoksa `↷` ile atlar).
+  - `kit/render/.baseline/`: piksel regresyon baseline'ı (`node kit/render/baseline.mjs --write` ile üretilir; yoksa kapı `↷` ile atlar).
+  - `kit/.shots-cache/<dir>/sections/*.png`, `flows/*.png` ve çekirdek dışı sahneler: `render-sections.mjs`, `render-flows.mjs`, `render-shots.mjs` ile üretilir.
+- Görsel regresyon baseline'ı veya tarayıcı yoksa ilgili kapı **atlanır**, sessizce geçmiş sayılmaz (çıktıda `↷` yazar).
 - Kapılar headless Chromium'da koşar; WebGL yazılım (SwiftShader) ile — GPU FPS'i ölçmez.
 
 ---
