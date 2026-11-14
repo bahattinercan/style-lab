@@ -33,16 +33,3 @@
  --ok: #2f7d4f;
  --warn: #a5761b;
 }
-
-[data-theme="dark"][data-style="agency-portfolio"] {
-  --bg:#0a0a0a;
-  --bg-2:#050505;
-  --surface:#141414;
-  --surface-2:#1d1d1d;
-  --ink:#f6f5f2;
-  --ink-soft:#b6b3ac;
-  --ink-faint:#85827c;
-  --accent:#7d93ff;
-  --accent-ink:#08091a;
-  --line:rgba(246,245,242,.16);
-}

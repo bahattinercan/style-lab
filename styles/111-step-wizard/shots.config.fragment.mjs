@@ -124,15 +124,5 @@ body.scene-landing .hero-visual .visual-row { grid-template-columns: 22px 1fr au
 body.scene-landing .hero-visual .visual-row:nth-child(1) { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
 body.scene-landing .hero-visual .visual-row .sq { width: 20px; height: 20px; border-radius: 999px; }
 body.scene-landing .hero-visual .visual-card::after { content: 'adım 2/5 · ekip büyüklüğü · ileri'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; color: var(--ink-soft); }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 22px; display: grid; align-content: start; gap: 14px; }
-body.scene-landing .hero-visual { min-height: 370px; }
-body.scene-landing .hero-visual .visual-card .bar { height: 6px; border-radius: 999px; background: var(--line); }
-body.scene-landing .hero-visual .visual-card .bar.accent { width: 100%; background: linear-gradient(90deg, var(--accent) 0 66%, var(--line) 66%); }
-body.scene-landing .hero-visual .visual-card .bar.w70, body.scene-landing .hero-visual .visual-card .bar.w45 { display: none; }
-body.scene-landing .hero-visual .visual-rows { gap: 14px; }
-body.scene-landing .hero-visual .visual-row { grid-template-columns: 22px 1fr auto; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius); }
-body.scene-landing .hero-visual .visual-row:nth-child(1) { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
-body.scene-landing .hero-visual .visual-row .sq { width: 20px; height: 20px; border-radius: 999px; }
-body.scene-landing .hero-visual .visual-card::after { content: 'adım 2/5 · ekip büyüklüğü · ileri'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; color: var(--ink-soft); }`,
-  },
+    },
 };

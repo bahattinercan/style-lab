@@ -13,8 +13,3 @@
   --font-mono: "Space Mono", ui-monospace, monospace;
   --tracking: 0.14em; --blur: 12px; --grain: .07;
 }
-
-[data-theme="dark"][data-style="vaporwave"] {
-  --bg: #0c0718; --bg-2: #170f2e; --surface: rgba(185,167,224,.12); --surface-2: rgba(242,160,192,.10);
-  --ink: #fbf4ff; --ink-soft: rgba(251,244,255,.76); --ink-faint: rgba(251,244,255,.52); --accent: #ff9ec6; --accent-ink: #2a1b4d; --line: rgba(255,158,198,.34);
-}

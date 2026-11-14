@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | iyi (14.28:1 gövde, 9.75:1 accent üstü) |
 | **Aile** | Zamansız (41–44) · **Token** | `kit/tokens.css` → `[data-style="grand-tourer-oxblood"]` |
 | **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -168,25 +168,25 @@ Oxblood, 20. yüzyıl İngiliz kulüp ve otomobil iç mekânlarının deri rengi
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 50px Cinzel, 7/5 asimetri, tek bordo CTA, bir kadran | `shots/01-landing.png` |
-| Dashboard | düşük-orta | mono KPI, krom kartlar, bordo yalnız seri 1 ve aktif satır | `shots/02-dashboard.png` |
-| Mobil | orta | tek kolon, 30px başlık, 44px hedef, plaka sekmeler | — |
-| Bileşenler | orta | palet + tipografi + krom kenar levhası | — |
-| Form | düşük | tek sütun 460px, odak 2px bordo | — |
-| Katman | orta | 6px radius + krom kenar + yüzen gölge | — |
-| Veri | düşük | 52px satır, mono sayaçlar, 4 renkli grafik | — |
-| Gezinme | orta | koç çizgili nav, plaka chip, ceviz damarlı footer | — |
-| Fiyatlandırma | orta | 3 kart, orta kart `--surface-2` + üst 2px bordo | — |
-| Giriş | çok düşük | süs 0, ceviz damarlı sol panel, tek kart | — |
-| Liste | düşük-orta | filtre + 52px satır, seçili satır sol 2px bordo | — |
-| Durumlar | orta | boş/hata/404; 404 mono 44px | — |
-| Ayarlar | düşük | satır ayırıcı hairline, tehlike bölgesi `--danger` | — |
-| Ödeme | çok düşük | mono tutarlar, bordo yalnız ödeme butonunda | — |
-| Onboarding | orta | adım noktaları, tek ileri CTA | — |
-| Makale | orta | 62ch, Cinzel 24px H2, mono künye | — |
-| Mobil · alt sayfa | orta | üst köşe 6px, 44px tutamaç, yapışkan CTA | — |
-| Mobil · form | çok düşük | 54px input, 46px CTA | — |
-| Mobil · liste | düşük | 64px satır, durum plakası | — |
+| Landing / hero | orta | 50px Cinzel, 7/5 asimetri, tek bordo CTA, bir kadran | `shots/01-page.png` |
+| Dashboard | düşük-orta | mono KPI, krom kartlar, bordo yalnız seri 1 ve aktif satır | `shots/01-page.png` |
+| Mobil | orta | tek kolon, 30px başlık, 44px hedef, plaka sekmeler | `shots/01-page.png` |
+| Bileşenler | orta | palet + tipografi + krom kenar levhası | `shots/01-page.png` |
+| Form | düşük | tek sütun 460px, odak 2px bordo | `shots/01-page.png` |
+| Katman | orta | 6px radius + krom kenar + yüzen gölge | `shots/01-page.png` |
+| Veri | düşük | 52px satır, mono sayaçlar, 4 renkli grafik | `shots/01-page.png` |
+| Gezinme | orta | koç çizgili nav, plaka chip, ceviz damarlı footer | `shots/01-page.png` |
+| Fiyatlandırma | orta | 3 kart, orta kart `--surface-2` + üst 2px bordo | `shots/01-page.png` |
+| Giriş | çok düşük | süs 0, ceviz damarlı sol panel, tek kart | `shots/01-page.png` |
+| Liste | düşük-orta | filtre + 52px satır, seçili satır sol 2px bordo | `shots/01-page.png` |
+| Durumlar | orta | boş/hata/404; 404 mono 44px | `shots/01-page.png` |
+| Ayarlar | düşük | satır ayırıcı hairline, tehlike bölgesi `--danger` | `shots/01-page.png` |
+| Ödeme | çok düşük | mono tutarlar, bordo yalnız ödeme butonunda | `shots/01-page.png` |
+| Onboarding | orta | adım noktaları, tek ileri CTA | `shots/01-page.png` |
+| Makale | orta | 62ch, Cinzel 24px H2, mono künye | `shots/01-page.png` |
+| Mobil · alt sayfa | orta | üst köşe 6px, 44px tutamaç, yapışkan CTA | `shots/01-page.png` |
+| Mobil · form | çok düşük | 54px input, 46px CTA | `shots/01-page.png` |
+| Mobil · liste | düşük | 64px satır, durum plakası | `shots/01-page.png` |
 
 | Emlak landing | orta | poster hero + künye şeridi + portföy rafı + bölüm + galeri; 6 ilan kuralı | — |
 | Emlak · ilan detayı | yüksek | galeri (1+2), künye, açıklama, kat planı, harita, yapışkan ajan paneli + 3 alanlı form | — |
@@ -196,37 +196,6 @@ Oxblood, 20. yüzyıl İngiliz kulüp ve otomobil iç mekânlarının deri rengi
 | Hareket levhası | — | giriş / scroll reveal / pin+scrub beatleri; reduced-motion notu | — |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 200ms | `cubic-bezier(.2,.72,.2,1)` | `translateY(1px)` + `--surface-2` |
-| Geçiş / sayfa | 400ms | aynı | `opacity` + `translateY(4px)` (sayfa geçişi 320ms) |
-| Giriş (enter) | **900ms** | `cubic-bezier(.4,.1,.2,1)` | `opacity` + `translateY(28px)`, **stagger 110ms**; başlık maske içinden 0.9s |
-| Kaydırma (scroll) | **1000ms** | `cubic-bezier(.4,.1,.2,1)` | trigger **`top 80%`**, offsetY **30px**, stagger 60ms, `once: true` |
-| Hover | **300ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | açık | `scrub 1.1` | hero sabitlenir, mesafe **+140%**, `scale 1.04 → 1`, mobilde kapalı |
-| Ödül / vurgu | 560ms | aynı | koç çizgisi `scaleX(0→1)` / kadran iğnesi tek atım |
-
-**Sekans (playbook §6.1):** giriş 0.9s `cubic-bezier(.4,.1,.2,1)` (y 28px, stagger 110ms) → scroll reveal 1.0s / `top 80%` / `once` → **tek pin** + scrub 1.1 (`scale 1.04 → 1`, mobilde kapalı) → sayfa geçişi 320ms opacity + 8px. Poster LCP'dir; video arkadan gelir ve duraklat düğmesi görünür kalır.
-
-- Basma/geçiş/vurgu süreleri aile ortalamasından **daha ağır**: 41/43 140/280/420 kullanır, 42 bilinçli olarak 200/400/560 — "ağır kapı" hissi premium katmanın parçası.
-- İmza ölçüsü: enter **0.9s / 28px / stagger 0.11** · scroll **1.0s / `top 80%` / 30px** · hover **300ms / 1.02** · pin **açık (scrub 1.1 / +140%)**.
-- `prefers-reduced-motion`: 0.01ms, iğne son konumda, transform sıfır, pin/scrub kapalı.
-- Yasak: parallax, marquee, sürekli dönen iğne, nefes alan katman, spring.
-## Koyu mod
-
-| Token | Açık (sevk edilen) | Koyu (referans) |
-|---|---|---|
-| `--bg` | `#f1e9dd` | `#1a1214` |
-| `--surface` | `#f9f3e9` | `#241a1c` |
-| `--ink` | `#201a17` | `#f1e9dd` |
-| `--accent` | `#6b2130` | `#d3a3ab` |
-| `--accent-ink` | `#f7efe1` | `#1a1214` |
-
-- Bu stil **açık tabanlıdır**: koyu tema sevk edilmez, koyu mod sahneleri (17/18) üretilmez; yukarıdaki sütun gece vitrini referansıdır (üretilirse `accent-ink/accent ≥ 7:1` yeniden ölçülür).
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Erişilebilirlik
 
@@ -240,14 +209,11 @@ Oxblood, 20. yüzyıl İngiliz kulüp ve otomobil iç mekânlarının deri rengi
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

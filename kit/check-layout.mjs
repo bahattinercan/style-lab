@@ -11,7 +11,7 @@
  *   parmak izi  : aile içinde ≥min(3, n) farklı hero|nav kombinasyonu
  *   tavan       : hiçbir parmak izi stil sayısının %25'ini, hiçbir hero %35'ini geçmez
  *   canlılık    : her arketip en az 4 stilde kullanılır (ölü arketip yok)
- *   şablon      : landing.html + dark-landing.html yer tutucuları taşır ve
+ *   şablon      : page.html yer tutucuları taşır ve
  *                 birbirinden YALNIZ data-theme ile ayrılır (sessiz şablon drift'i yok)
  *
  * Kullanım:
@@ -144,13 +144,9 @@ export function checkLayout(rows) {
     if (list.length >= 8 && densities.size < 2) warnings.push(`aile "${family}": yoğunluk çeşitliliği yok`);
   }
 
-  // şablon sözleşmesi: yer tutucular + koyu/aydınlık paritesi
-  const lightTpl = path.join(ROOT, 'kit', 'render', 'landing.html');
-  const darkTpl = path.join(ROOT, 'kit', 'render', 'dark-landing.html');
-  for (const [label, p] of [
-    ['landing.html', lightTpl],
-    ['dark-landing.html', darkTpl],
-  ]) {
+  // şablon sözleşmesi: yer tutucular (v6: tek sayfa şablonu)
+  const lightTpl = path.join(ROOT, 'kit', 'render', 'page.html');
+  for (const [label, p] of [['page.html', lightTpl]]) {
     if (!fs.existsSync(p)) {
       errors.push(`kit/render/${label} yok`);
       continue;
@@ -159,12 +155,6 @@ export function checkLayout(rows) {
     if (!/<!--\s*HERO\s*-->/.test(html)) errors.push(`kit/render/${label}: <!-- HERO --> yer tutucusu yok`);
     if (!/<!--\s*NAV\s*-->/.test(html)) errors.push(`kit/render/${label}: <!-- NAV --> yer tutucusu yok`);
     if (!html.includes('__LAYOUT_HERO__')) errors.push(`kit/render/${label}: data-layout="__LAYOUT_HERO__" yok`);
-  }
-  if (fs.existsSync(lightTpl) && fs.existsSync(darkTpl)) {
-    const norm = (s) => s.replace(/\s+data-theme="dark"/, '').replace(/\s+/g, ' ').trim();
-    if (norm(fs.readFileSync(lightTpl, 'utf8')) !== norm(fs.readFileSync(darkTpl, 'utf8'))) {
-      errors.push('landing.html ⇄ dark-landing.html yalnız data-theme ile ayrılmalı (şablon drift’i)');
-    }
   }
 
   return {
@@ -249,7 +239,7 @@ function selfTest() {
   }
 
   // şablon sözleşmesi testi: yer tutucu silinince yakalanmalı (geçici kopya ile)
-  const lightTpl = path.join(ROOT, 'kit', 'render', 'landing.html');
+  const lightTpl = path.join(ROOT, 'kit', 'render', 'page.html');
   const backup = fs.readFileSync(lightTpl, 'utf8');
   try {
     fs.writeFileSync(lightTpl, backup.replace('<!-- HERO -->', ''));

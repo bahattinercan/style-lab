@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | iyi |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="poetry-chapbook"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `type` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,51 +144,20 @@ Kökeni 17.–19. yüzyıl chapbook'ları ve modern küçük yayınevi (small pr
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | düşük | Tek şiir: sol 5/8 hizada, dikiş çizgisi, 44px başlık, 46ch gövde | `shots/01-landing.png` |
-| Dashboard | düşük | Dizin: 3 satır mono numara + başlık, 1px hairline | `shots/02-dashboard.png` |
-| Form | çok düşük | 44px input, 2px radius, 1px kenar, geniş etiket aralığı | — |
-| Liste / tablo | düşük | 48px satır, mono numara, hairline | — |
-| Boş durum | orta | Tek dize + 28px boşluk + ikincil bağlantı | — |
-| Onboarding | düşük | İki adım, her adımda tek dize; dikiş çizgisi yok | — |
-| Pricing | düşük | İki plan, kart yerine hairline ile ayrılmış sütun | — |
-| Giriş / ödeme | çok düşük | Tek kolon 340px, 2px radius, süs yok | — |
-| Modal | orta | 460px, 8px radius, 1px kenar, gölge yok | — |
-| Bildirim / toast | orta | Alt orta, 40px, ink zemin + bg metin | — |
-| Hata | düşük | Tek cümle + 1px hairline + ikincil bağlantı | — |
-| Profil / ayar | orta | Form 5/8 + boşluk 3/8; dikiş çizgisi sol | — |
+| Landing / hero | düşük | Tek şiir: sol 5/8 hizada, dikiş çizgisi, 44px başlık, 46ch gövde | `shots/01-page.png` |
+| Dashboard | düşük | Dizin: 3 satır mono numara + başlık, 1px hairline | `shots/01-page.png` |
+| Form | çok düşük | 44px input, 2px radius, 1px kenar, geniş etiket aralığı | `shots/01-page.png` |
+| Liste / tablo | düşük | 48px satır, mono numara, hairline | `shots/01-page.png` |
+| Boş durum | orta | Tek dize + 28px boşluk + ikincil bağlantı | `shots/01-page.png` |
+| Onboarding | düşük | İki adım, her adımda tek dize; dikiş çizgisi yok | `shots/01-page.png` |
+| Pricing | düşük | İki plan, kart yerine hairline ile ayrılmış sütun | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 340px, 2px radius, süs yok | `shots/01-page.png` |
+| Modal | orta | 460px, 8px radius, 1px kenar, gölge yok | `shots/01-page.png` |
+| Bildirim / toast | orta | Alt orta, 40px, ink zemin + bg metin | `shots/01-page.png` |
+| Hata | düşük | Tek cümle + 1px hairline + ikincil bağlantı | `shots/01-page.png` |
+| Profil / ayar | orta | Form 5/8 + boşluk 3/8; dikiş çizgisi sol | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 160ms | `cubic-bezier(.33,1,.68,1)` | `opacity` 1 → .94 (kayma yok) |
-| Giriş (enter) | 1100ms | `cubic-bezier(.33,1,.68,1)` | `opacity` + 26px `translateY`, stagger 0.12s (120ms) |
-| Scroll reveal | 1150ms | aynı eğri | `top 83%` tetikleyici, `opacity` + 22px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 380ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül / vurgu | 520ms | `cubic-bezier(.33,1,.68,1)` | dikiş çizgisi yüksekliği 0→100% (tek atım) |
-
-- Süre bütçesi: enter 1100ms ≤ 1200ms · scroll 1150ms ≤ 1200ms · stagger 0.12s (120ms).
-- Giriş 1100ms: sayfa "nefes alır" gibi açılır; 1200ms üstüne çıkmaz (bütçe).
-- Pin/parallax yok: şiir sabit durur; scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, dikiş çizgisi statik görünür.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f7f2e9` | `#15141a` |
-| `--surface` | `#fdfaf4` | `#19181f` |
-| `--ink` | `#22201d` | `#f1eee9` |
-| `--accent` | `#4b3f66` | `#b0a2d6` |
-| `--line` | `rgba(34,32,29,.14)` | `rgba(241,238,233,.14)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 15.82:1 · `accent-ink / accent` = 7.94:1.
-- Koyu modda fildişi zemin gece mürekkebine (`#15141a`) döner; accent açık leylaka (`#b0a2d6`) çekilir.
-- Hairline opaklığı .14; gölge yok; dikiş çizgisi aynı kesikli desenle kalır.
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 
@@ -220,14 +189,11 @@ Kökeni 17.–19. yüzyıl chapbook'ları ve modern küçük yayınevi (small pr
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | düşük–orta (sevimli olmak kolay, zevkli kalmak zor) · **Erişilebilirlik** | iyi (13.75:1 gövde, 5.60:1 accent üstü) |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="celebration-card"]` |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -142,56 +142,20 @@ Klişeye düşmemesi için korunması gereken detay: **dekorun bütçesi**. Konf
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 52px serif başlık + folyo bant + konfeti + kurdele | `shots/01-landing.png` |
-| Dashboard | düşük | Kartlar yuvarlak ama dekor yok; mono tarih/durum | `shots/02-dashboard.png` |
-| Form | düşük | 48px alanlar, 14px radius, 2px odak halkası | — |
-| Liste / tablo | düşük | Konuk listesi: isim, masa no (mono), durum (chip) | — |
-| Boş durum | orta | Tek kart + konfeti (3 nokta) + 1 buton | — |
-| Onboarding | yüksek | 3 adım: kart seç → mesaj yaz → gönder | — |
-| Pricing | orta | 3 yuvarlak kart; accent yalnız önerilen kartın bandında | — |
-| Giriş / ödeme | çok düşük | Dekor sıfır; 22px kart + tek accent buton | — |
-| Modal | orta | 22px radius, 32px padding, 0.52s yay | — |
-| Bildirim / toast | orta | Pill koyu toast, 8px accent nokta, 3600ms | — |
-| Hata | düşük | `--danger` kenar + açıklama; konfeti kullanılmaz | — |
-| Profil / ayar | orta | Yuvarlak kartlar, mono tarih etiketleri | — |
+| Landing / hero | yüksek | 52px serif başlık + folyo bant + konfeti + kurdele | `shots/01-page.png` |
+| Dashboard | düşük | Kartlar yuvarlak ama dekor yok; mono tarih/durum | `shots/01-page.png` |
+| Form | düşük | 48px alanlar, 14px radius, 2px odak halkası | `shots/01-page.png` |
+| Liste / tablo | düşük | Konuk listesi: isim, masa no (mono), durum (chip) | `shots/01-page.png` |
+| Boş durum | orta | Tek kart + konfeti (3 nokta) + 1 buton | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: kart seç → mesaj yaz → gönder | `shots/01-page.png` |
+| Pricing | orta | 3 yuvarlak kart; accent yalnız önerilen kartın bandında | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Dekor sıfır; 22px kart + tek accent buton | `shots/01-page.png` |
+| Modal | orta | 22px radius, 32px padding, 0.52s yay | `shots/01-page.png` |
+| Bildirim / toast | orta | Pill koyu toast, 8px accent nokta, 3600ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + açıklama; konfeti kullanılmaz | `shots/01-page.png` |
+| Profil / ayar | orta | Yuvarlak kartlar, mono tarih etiketleri | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 120ms | `ease-out` | `transform: translateY(1px)` |
-| Geçiş / sayfa | 180ms | `ease-out` | `opacity` |
-| Giriş (enter) | **520ms** | `cubic-bezier(.34,1.42,.4,1)` | `opacity` + `translateY(14px)`, **stagger 60ms**; sonunda hafif taşma (yay) |
-| Kaydırma (scroll) | **600ms** | `cubic-bezier(.34,1.42,.4,1)` | trigger **`top 85%`**, offsetY **16px**, `once: true` |
-| Hover | **180ms** | `ease-out` | görsel ölçek **1.024** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 320ms | `cubic-bezier(.34,1.42,.4,1)` | konfeti noktaları 1 kez 12px düşer, durur |
-
-- İmza ölçüsü: enter **0.52s / 14px / stagger 0.06** · scroll **0.6s / `top 85%` / 16px** · hover **180ms / 1.024** · pin **kapalı** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; konfeti ve kurdele statik kalır (dekor kaybolmaz, hareket eder durur).
-- Bu stile yasak hareket: parallax, konfeti döngüsü, 1.5s üstü kutlama animasyonu, renk döngüsü/flash.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#fbeee8` | `#1a1116` |
-| `--bg-2` | `#f5e2da` | `#211720` |
-| `--surface` | `#fffaf7` | `#271b24` |
-| `--surface-2` | `#f2ded4` | `#33232e` |
-| `--ink` | `#341c2a` | `#f6e9ee` |
-| `--ink-soft` | `#6b4a5b` | `#cbb2bd` |
-| `--ink-faint` | `#8f6f7f` | `#9c8390` |
-| `--accent` | `#bd1f5c` | `#ff7fae` |
-| `--accent-ink` | `#fff5f9` | `#2a0d18` |
-| `--line` | `rgba(52,28,42,.16)` | `rgba(246,233,238,.16)` |
-
-- Koyu mod **gece kutlaması**: zemin mürdüm-siyah, kart `#271b24`; accent açılır (`#ff7fae`) çünkü gül kurusu koyu zeminde görünmez, `--accent-ink` koyuya döner.
-- Gölge koyuda görünmez: kart ayrımını 1px `--line` taşır, `--shadow` aynı kalır (kart "yüzmez", tonla ayrılır).
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **15.68:1** · `ink-soft/bg` = **9.37:1** · `accent-ink/accent` = **7.61:1** · `ink-faint/bg` = **5.34:1**.
 
 ## Zorunlu kurallar
 
@@ -222,14 +186,11 @@ Klişeye düşmemesi için korunması gereken detay: **dekorun bütçesi**. Konf
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

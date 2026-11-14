@@ -103,15 +103,5 @@ body.scene-landing .hero-visual .visual-row { grid-template-columns: 1fr auto; p
 body.scene-landing .hero-visual .visual-row .sq { display: none; }
 body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-body); font-size: 11px; color: var(--ink-soft); }
 body.scene-landing .hero-visual .visual-card::after { content: 'niyet satırı — yalnız bir eylem; alt çizgi odakta kalınlaşır'; font-family: var(--font-body); font-size: 12px; color: var(--ink-soft); }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 26px; display: grid; align-content: start; gap: 20px; border: 1px solid var(--line); background: transparent; }
-body.scene-landing .hero-visual { min-height: 350px; }
-body.scene-landing .hero-visual .visual-card .bar { height: 1px; border-radius: 0; background: var(--line); }
-body.scene-landing .hero-visual .visual-card .bar.accent { width: 100%; background: linear-gradient(90deg, var(--ink) 0 28%, var(--line) 28%); }
-body.scene-landing .hero-visual .visual-card .bar.w70, body.scene-landing .hero-visual .visual-card .bar.w45 { display: none; }
-body.scene-landing .hero-visual .visual-rows { gap: 18px; }
-body.scene-landing .hero-visual .visual-row { grid-template-columns: 1fr auto; padding: 0 0 14px; border-radius: 0; border-bottom: 1px solid var(--line); }
-body.scene-landing .hero-visual .visual-row .sq { display: none; }
-body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-body); font-size: 11px; color: var(--ink-soft); }
-body.scene-landing .hero-visual .visual-card::after { content: 'niyet satırı — yalnız bir eylem; alt çizgi odakta kalınlaşır'; font-family: var(--font-body); font-size: 12px; color: var(--ink-soft); }`,
-  },
+    },
 };

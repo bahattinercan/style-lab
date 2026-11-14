@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (ölçülen en düşük çift 6.43:1) |
 | **Aile** | Zamansız (41–44) · **Token** | `kit/tokens.css` → `[data-style="utility"]` |
 | **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -174,55 +174,18 @@ Bunun bedeli kişiliksizleşme riskidir; Utility'yi "jenerik" olmaktan kurtaran 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 680px başlık, gradyan metin, tek CTA, altında logo şeridi | `shots/01-landing.png` |
-| Dashboard | düşük | 12 kolon, 24px gutter, KPI kartları aynı yükseklikte | `shots/02-dashboard.png` |
-| Form | düşük | 44px alanlar, etiket üstte, hata alanın altında | — |
-| Liste / tablo | düşük | 52px satır, hairline ayırıcı, sağa hizalı sayı | — |
-| Boş durum | orta | tek cümle + birincil eylem, illüstrasyon yok | — |
-| Onboarding | yüksek | 3 adım, adım göstergesi, tek seçenek grubu | — |
-| Pricing | orta | 3 kart, ortadaki 1px accent halka (gölge değil) | — |
-| Giriş / ödeme | çok düşük | süs 0; tek kart, tek eylem, risk azaltıcı tek satır | — |
-| Modal | orta | 24px padding, başlık + tek karar, kapatma sağ üstte | — |
-| Bildirim / toast | orta | alt sağda, 4sn, hover'da durur | — |
-| Hata | düşük | ne oldu + ne yapmalı; `window.alert` yasak | — |
-| Profil / ayar | orta | bölüm başlıkları Heading 6, satır 52px | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 200ms | `cubic-bezier(0.22,1,0.36,1)` | `transform` |
-| Geçiş / sayfa | 500ms | `cubic-bezier(0.22,1,0.36,1)` | `transform`, `opacity` |
-| Giriş (enter) | **400ms** | `cubic-bezier(0.22,1,0.36,1)` | `opacity` + `translateY(10px)`, **stagger 45ms**; kısa ve kesin |
-| Kaydırma (scroll) | **560ms** | `cubic-bezier(0.22,1,0.36,1)` | trigger **`top 90%`**, offsetY **28px**, `once: true` |
-| Hover | **120ms** | `ease-out` | görsel ölçek **1.000** (ölçek değişmez, yalnız kenar/renk) |
-| Pin | kapalı | — | `scrub: null`, `distance: null` — parallax yok |
-| Ödül / vurgu | 300ms | `cubic-bezier(0.22,1,0.36,1)` | `opacity` |
-| Tagline reveal | 300ms / kelime | `cubic-bezier(0.22,1,0.36,1)` | kelime `--ink-faint`ten `--ink`e, okuma sırasıyla |
-
-- İmza ölçüsü: enter **0.4s / 10px / stagger 0.045** · scroll **0.56s / `top 90%` / 28px** · hover **120ms / 1.000** · pin **kapalı**.
-- `ease`, `linear`, `ease-in-out` yasak. Yalnız `transform` ve `opacity` animasyonlanır.
-- Scroll tetiği `IntersectionObserver` veya Framer Motion `whileInView`; throttle'sız `scroll` dinleyicisi yasak.
-- Mobil menü: tam yükseklik panel, bağlantılar 24px yukarı kayarak girer, 60ms arayla, toplam 400ms sınırı.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, tagline tek seferde tam renkte, hareketli hiçbir öğe kalmaz.
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#ffffff` | `#000000` |
-| `--bg-2` | `#f6f6f7` | `#181818` |
-| `--surface` | `#ffffff` | `#1f1f1f` |
-| `--surface-2` | `#fafafa` | `#272727` |
-| `--ink` | `#111112` | `#ffffff` |
-| `--ink-soft` | `#5a5f66` | `#9b9b9b` |
-| `--accent` | `#1d4ed8` | `#7aa2ff` |
-| `--accent-ink` | `#ffffff` | `#000000` |
-
-- Koyu zeminde kullanılabilecek tek zemin tonları: `#000000` · `#181818` · `#1f1f1f` · `#272727` · `#313131` · `#131209`.
-- Ölçülen kontrast: koyuda `ink / bg` = **21.00:1**, `ink-soft / bg` = **7.56:1**, `accent-ink / accent` = **8.44:1**.
-- Koyu modda değişen başka ne var: gölge yerine kenarlık, blur azaltma yok, görsel doygunluğu düşer.
-- Hero başlık gradyanı koyuda `#ffffff → #9b9b9b`; bu iki durak da token'a bağlanır.
-- `filter: invert()` yasak; palet elle yazılır.
+| Landing / hero | yüksek | 680px başlık, gradyan metin, tek CTA, altında logo şeridi | `shots/01-page.png` |
+| Dashboard | düşük | 12 kolon, 24px gutter, KPI kartları aynı yükseklikte | `shots/01-page.png` |
+| Form | düşük | 44px alanlar, etiket üstte, hata alanın altında | `shots/01-page.png` |
+| Liste / tablo | düşük | 52px satır, hairline ayırıcı, sağa hizalı sayı | `shots/01-page.png` |
+| Boş durum | orta | tek cümle + birincil eylem, illüstrasyon yok | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım, adım göstergesi, tek seçenek grubu | `shots/01-page.png` |
+| Pricing | orta | 3 kart, ortadaki 1px accent halka (gölge değil) | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | süs 0; tek kart, tek eylem, risk azaltıcı tek satır | `shots/01-page.png` |
+| Modal | orta | 24px padding, başlık + tek karar, kapatma sağ üstte | `shots/01-page.png` |
+| Bildirim / toast | orta | alt sağda, 4sn, hover'da durur | `shots/01-page.png` |
+| Hata | düşük | ne oldu + ne yapmalı; `window.alert` yasak | `shots/01-page.png` |
+| Profil / ayar | orta | bölüm başlıkları Heading 6, satır 52px | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Tek typeface; mono yalnız kod/veri/rakam için.
@@ -244,14 +207,11 @@ Bunun bedeli kişiliksizleşme riskidir; Utility'yi "jenerik" olmaktan kurtaran 
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.41:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `styles/145-zero-gravity/tokens.json` → `[data-style="zero-gravity"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,54 +139,20 @@ Uzay istasyonu iç mekânı (ağırlıksız modüller), orbital veri görselleş
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | Yörünge paneli 7/5; yüzen kart, ince halka, tek CTA | `shots/01-landing.png` |
-| Dashboard | orta | 3 yüzen kart; tablo yerine kart listesi | `shots/02-dashboard.png` |
-| Form | düşük | 46px alanlar, 28px radius, yavaş odak | — |
-| Liste / tablo | orta | 46px satır, boşluklu; satır hover'ı yavaş | — |
-| Boş durum | düşük | Boş halka + tek CTA, geniş boşluk | — |
-| Onboarding | orta | 3 adım, her adımda tek yüzen kart | — |
-| Pricing | orta | Plan kartları yüzen kademe; öne çıkan accent halka | — |
-| Giriş / ödeme | çok düşük | Tek yüzen panel, halka yok | — |
-| Modal | orta | Ortada yüzen modal, %35 örtü | — |
-| Bildirim / toast | düşük | Hap toast, yörünge yayı ile girer | — |
-| Hata | düşük | `--danger` halka + "yörünge dışı" metni | — |
-| Profil / ayar | orta | Hareket hızı (yavaş/normal), halka görünürlüğü | — |
+| Landing / hero | orta | Yörünge paneli 7/5; yüzen kart, ince halka, tek CTA | `shots/01-page.png` |
+| Dashboard | orta | 3 yüzen kart; tablo yerine kart listesi | `shots/01-page.png` |
+| Form | düşük | 46px alanlar, 28px radius, yavaş odak | `shots/01-page.png` |
+| Liste / tablo | orta | 46px satır, boşluklu; satır hover'ı yavaş | `shots/01-page.png` |
+| Boş durum | düşük | Boş halka + tek CTA, geniş boşluk | `shots/01-page.png` |
+| Onboarding | orta | 3 adım, her adımda tek yüzen kart | `shots/01-page.png` |
+| Pricing | orta | Plan kartları yüzen kademe; öne çıkan accent halka | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek yüzen panel, halka yok | `shots/01-page.png` |
+| Modal | orta | Ortada yüzen modal, %35 örtü | `shots/01-page.png` |
+| Bildirim / toast | düşük | Hap toast, yörünge yayı ile girer | `shots/01-page.png` |
+| Hata | düşük | `--danger` halka + "yörünge dışı" metni | `shots/01-page.png` |
+| Profil / ayar | orta | Hareket hızı (yavaş/normal), halka görünürlüğü | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **1.08s**, y **36px**, stagger **0.14** | `cubic-bezier(.2,.7,.15,1)` | `opacity` + `transform` |
-| Scroll reveal | **1.05s**, trigger **top 74%**, y **30px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **1.32**, mesafe **+150%** (halka ölçeği büyür) | scrub doğrusal | `transform` (yörünge halkası) |
-| Hover | **480ms**, görsel scale **1.018** | `ease-out` | `transform` |
-| Basma | 200ms | aynı eğri | `transform` (1px) |
-| Kart kayması | 320ms | aynı eğri | `transform` (±4–6px) |
-
-- Bu stilin ölçülebilir imzası: `enter 1.08s / cubic-bezier(.2,.7,.15,1) / 36px / 0.14` + `scroll top 74% / 1.05s / 30px` + `pin scrub 1.32 / +150%` + `hover 480ms / 1.018`. `1.08s` giriş + `hover 480ms` + `scrub 1.32` üçlüsü katalogda yalnız burada.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; yüzme, kayma ve scrub kapanır, kartlar sabitlenir.
-- Bu stile yasak hareket: sürekli yüzme döngüsü (reduced-motion karşılığı yoksa), çok katmanlı parallax, neon glow, hızlı flaş.
-
-## Koyu mod
-
-| Token | Açık (buz) | Koyu (gece yörüngesi) |
-|---|---|---|
-| `--bg` | `#eef4f2` | `#0b1514` |
-| `--bg-2` | `#e3ecea` | `#101d1b` |
-| `--surface` | `#f8fbfa` | `#142321` |
-| `--surface-2` | `#dfe9e6` | `#1a2c29` |
-| `--ink` | `#0f1a19` | `#e9f4f1` |
-| `--ink-soft` | `#3f5450` | `#a9c2bb` |
-| `--ink-faint` | `#74857f` | `#7c968f` |
-| `--accent` | `#1d6b52` | `#6fd3a8` |
-| `--accent-ink` | `#ffffff` | `#05170f` |
-| `--line` | `rgba(15,26,25,.13)` | `rgba(233,244,241,.16)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **16.50:1** · `ink-soft/bg` = **9.83:1** · `accent-ink/accent` = **10.18:1** · `ink-faint/bg` = **5.85:1**.
-- Koyu modda değişen başka ne var: accent parlar (derin yeşil → nane), gölge opaklığı artar, halka `--accent` %35 → %45.
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="zero-gravity"]`.
 
 ## Zorunlu kurallar
 - Kartlar dikeyde 4–8px kademeli kayar; gölge yönü hep aşağı.
@@ -215,14 +181,11 @@ Uzay istasyonu iç mekânı (ağırlıksız modüller), orbital veri görselleş
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

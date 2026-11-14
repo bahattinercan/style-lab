@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 5.50:1) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `styles/103-motion-trail/tokens.json` → `[data-style="motion-trail"]` |
 | **Kompozisyon** | `sticky` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,56 +139,21 @@ Uzun pozlama fotoğrafçılığı (hareket bulanıklığı), spor yayıncılığ
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | İz paneli 7/5; hero görselinin arkasında iki soluk çerçeve | `shots/01-landing.png` |
-| Dashboard | düşük | İz yalnız hover ve geçişlerde; tabloda kayma 4px | `shots/02-dashboard.png` |
-| Form | düşük | 44px alanlar, 20px radius, hata satırı | — |
-| Liste / tablo | düşük | 44px satır, hover'da sağa 4px kayma | — |
-| Boş durum | orta | Boş alanda tek iz çizgisi + birincil eylem | — |
-| Onboarding | yüksek | Adımlar soldan sağa iz bırakarak geçer | — |
-| Pricing | orta | Kartlar hap checklist; öne çıkan kart accent çerçeve | — |
-| Giriş / ödeme | çok düşük | İz kapalı (odak formu), tek panel | — |
-| Modal | orta | Açılışta 2 iz kopyası, 300ms'de söner | — |
-| Bildirim / toast | orta | Sağdan girip iz bırakarak durur | — |
-| Hata | düşük | `--danger` kenar + hata metni; iz yok | — |
-| Profil / ayar | orta | İz yoğunluğu ve süre tercihi (kapalı/açık) | — |
+| Landing / hero | yüksek | İz paneli 7/5; hero görselinin arkasında iki soluk çerçeve | `shots/01-page.png` |
+| Dashboard | düşük | İz yalnız hover ve geçişlerde; tabloda kayma 4px | `shots/01-page.png` |
+| Form | düşük | 44px alanlar, 20px radius, hata satırı | `shots/01-page.png` |
+| Liste / tablo | düşük | 44px satır, hover'da sağa 4px kayma | `shots/01-page.png` |
+| Boş durum | orta | Boş alanda tek iz çizgisi + birincil eylem | `shots/01-page.png` |
+| Onboarding | yüksek | Adımlar soldan sağa iz bırakarak geçer | `shots/01-page.png` |
+| Pricing | orta | Kartlar hap checklist; öne çıkan kart accent çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | İz kapalı (odak formu), tek panel | `shots/01-page.png` |
+| Modal | orta | Açılışta 2 iz kopyası, 300ms'de söner | `shots/01-page.png` |
+| Bildirim / toast | orta | Sağdan girip iz bırakarak durur | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + hata metni; iz yok | `shots/01-page.png` |
+| Profil / ayar | orta | İz yoğunluğu ve süre tercihi (kapalı/açık) | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — iz zaman çizelgesi — 12/24px hayalet kopyalar, kademe etiketi.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.37s**, y **10px**, stagger **0.13** | `cubic-bezier(.15,.8,.3,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.49s**, trigger **top 84%**, y **14px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **1.15**, mesafe **+140%** (iz paneli sabitlenir) | scrub doğrusal | `transform` (iz offseti büyür) |
-| Hover | **300ms**, görsel scale **1.045** | `ease-out` | `transform` + iz `opacity` |
-| Basma | 140ms | aynı eğri | `transform` (1px) |
-| İz sönümü | 300ms | aynı eğri | `opacity` (%40→0, %20→0, %8→0) |
-
-- Bu stilin ölçülebilir imzası: `enter 0.37s / cubic-bezier(.15,.8,.3,1) / 10px / 0.13` + `scroll top 84% / 0.49s / 14px` + `pin scrub 1.15 / +140%` + `hover 300ms / 1.045`. `stagger 0.13` katalogdaki en büyük değerlerden biridir ve `0.37s` + bu eğri ikilisi yalnız burada geçer.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; iz katmanları hiç oluşmaz, öğe doğrudan son konumda olur.
-- Bu stile yasak hareket: sürekli iz (döngü), iz üzerinde blur artışı, iki farklı yön, parallax.
-
-## Koyu mod
-
-| Token | Açık (kırık beyaz) | Koyu (gece izi) |
-|---|---|---|
-| `--bg` | `#f5f3ef` | `#121316` |
-| `--bg-2` | `#ecebe6` | `#181a1e` |
-| `--surface` | `#ffffff` | `#1e2025` |
-| `--surface-2` | `#f0eeea` | `#262930` |
-| `--ink` | `#14161a` | `#f1f2f4` |
-| `--ink-soft` | `#4c5157` | `#aeb3b9` |
-| `--ink-faint` | `#7d838a` | `#7f858c` |
-| `--accent` | `#a8500f` | `#ffa06b` |
-| `--accent-ink` | `#ffffff` | `#200a06` |
-| `--line` | `rgba(20,22,26,.12)` | `rgba(241,242,244,.16)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **16.58:1** · `ink-soft/bg` = **8.80:1** · `accent-ink/accent` = **9.47:1** · `ink-faint/bg` = **4.99:1**.
-- Koyu modda değişen başka ne var: accent açılır (kavrulmuş turuncu → kayısı), iz opaklıkları %40/%20/%8 → %48/%26/%12 (koyu zeminde soluk iz kaybolur).
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="motion-trail"]`.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **5.85:1** açık / **5.79:1** koyu · `--warn / bg` = **5.34:1** / **5.77:1** · `--ok / surface` = 5.08:1 / 5.06:1 (warn) · devre dışı buton metni = **7.04:1** / **7.71:1** · ghost buton kenarı = **3.92:1** / **5.67:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - İz en fazla **üç** kopya: %40 / %20 / %8; offset 8/16/24px; 300ms'de söner.
@@ -217,14 +182,11 @@ Uzun pozlama fotoğrafçılığı (hareket bulanıklığı), spor yayıncılığ
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.84:1) |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="marble-vein"]` |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Mermer ocağı ve mimarlık malzeme kütüphanesi geleneğinden: plaka adı, yü
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 7/5 hero: solda başlık + tek grafit CTA, sağda plaka + damar | `shots/01-landing.png` |
-| Dashboard | düşük | 3 KPI (plaka, parti, kalınlık) + malzeme listesi | `shots/02-dashboard.png` |
-| Form | düşük | plaka girişi: tür, yüzey, kalınlık+mm, ağırlık+kg | — |
-| Liste / tablo | orta | 40px satır, mono ölçü sütunları, chip | — |
-| Boş durum | düşük | "bu partide plaka yok" + ilk plakayı ekle | — |
-| Onboarding | düşük | 3 adım: koleksiyon aç → plaka ekle → yüzey seç | — |
-| Pricing | düşük | iki plan, plaka/parti limitleri | — |
-| Giriş / ödeme | çok düşük | tek plaka, 44px alanlar, tek eylem | — |
-| Modal | orta | plaka detayı: damar fotoğrafı + teknik künye | — |
-| Bildirim | düşük | 40px toast, sol ink şerit, 4sn | — |
-| Hata | düşük | danger çerçeve + neden + sonraki adım | — |
-| Profil / ayar | orta | koleksiyon listesi, birim (mm/inç), yüzey tercihi | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (plaka) | 640ms | `cubic-bezier(.18,.72,.22,1)` | `opacity` + `translateY(13px)`, 32ms arayla |
-| Scroll reveal | 870ms, `top 69%` | aynı | `translateY(17px)`, `once: true` |
-| Basma | 160ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 310ms | aynı | `scale(1.035)` |
-| Seçim vurgusu | 320ms | aynı | `outline-color` (grafit halka) |
-| Pin | kapalı | — | — |
-
-- Ölçülen imza: enter **0.64s · cubic-bezier(.18,.72,.22,1) · 13px · stagger 0.032**; scroll **top 69% · 0.87s · 17px · once**; pin **kapalı**; hover **310ms · 1.035**.
-- Taş gibi oturur: hızlı giriş, kararlı duruş; geri sekme ve elastik hareket yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, hover ölçeği 1.000, içerik anında yerleşir.
-- Bu stile yasak hareket: sürekli damar kayması, parallax, bounce, blur/parlama geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f3f4f3` | `#121416` |
-| `--bg-2` | `#e8eae8` | `#0d0f10` |
-| `--surface` | `#fdfdfc` | `#191c1e` |
-| `--surface-2` | `#f0f2f0` | `#222629` |
-| `--ink` | `#14181a` | `#eef0ef` |
-| `--ink-soft` | `#4c565a` | `#a7aeae` |
-| `--accent` | `#242b2e` | `#e8ebe7` |
-| `--accent-ink` | `#f5f7f6` | `#14181a` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **16.13:1** · `ink-soft/bg` **8.18:1** · `accent-ink/accent` **14.86:1** · `ink-faint/bg` **4.81:1** · accent metin olarak bg'ye **15.36:1**.
-- Koyu modda değişen başka ne var: accent siyahtan **açık mermer beyazına** döner (karanlıkta damar aydınlanır), grain `.02` → `.03`, çizgi %14 → %16.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="marble-vein"]` olarak durur.
+| Landing / hero | orta | 7/5 hero: solda başlık + tek grafit CTA, sağda plaka + damar | `shots/01-page.png` |
+| Dashboard | düşük | 3 KPI (plaka, parti, kalınlık) + malzeme listesi | `shots/01-page.png` |
+| Form | düşük | plaka girişi: tür, yüzey, kalınlık+mm, ağırlık+kg | `shots/01-page.png` |
+| Liste / tablo | orta | 40px satır, mono ölçü sütunları, chip | `shots/01-page.png` |
+| Boş durum | düşük | "bu partide plaka yok" + ilk plakayı ekle | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: koleksiyon aç → plaka ekle → yüzey seç | `shots/01-page.png` |
+| Pricing | düşük | iki plan, plaka/parti limitleri | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek plaka, 44px alanlar, tek eylem | `shots/01-page.png` |
+| Modal | orta | plaka detayı: damar fotoğrafı + teknik künye | `shots/01-page.png` |
+| Bildirim | düşük | 40px toast, sol ink şerit, 4sn | `shots/01-page.png` |
+| Hata | düşük | danger çerçeve + neden + sonraki adım | `shots/01-page.png` |
+| Profil / ayar | orta | koleksiyon listesi, birim (mm/inç), yüzey tercihi | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her plaka kaydı: tür + yüzey + kalınlık (mm) + ağırlık (kg).
@@ -214,14 +181,11 @@ Mermer ocağı ve mimarlık malzeme kütüphanesi geleneğinden: plaka adı, yü
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

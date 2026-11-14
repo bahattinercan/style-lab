@@ -100,9 +100,5 @@ export const CONFIG = {
       .visual-row .sq { width: 10px; height: 10px; background: var(--accent-ink); }
       .visual-row .line { height: 3px; background: color-mix(in srgb, var(--ink) 30%, transparent); }
       .visual-row .num { font-family: var(--font-display); font-size: 11px; color: var(--accent); }`,
-  'dark-landing': `
-      /* koyu mod: bant parlaklığı artar, plaka çerçevesi kalınlaşır */
-      .hero-visual::before { opacity: 1; }
-      .visual-card { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent); }`,
   },
 };

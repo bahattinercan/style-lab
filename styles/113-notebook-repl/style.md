@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 6.36:1, accent üstü 5.36:1) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="notebook-repl"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -134,51 +134,20 @@ REPL (oku-değerlendir-yaz döngüsü) ve hesaplamalı defter (Jupyter/Mathemati
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | solda üç hücre önizlemesi, sağda çalıştır CTA | `shots/01-landing.png` |
-| Dashboard | yüksek | dört KPI hücresi + tek çıktı grafiği | `shots/02-dashboard.png` |
-| Form | orta | mono input'lar, her alanın altında doğrulama çıktısı | — |
-| Liste / tablo | orta | 34px satır, tabular-nums, sağda `Out` özeti | — |
-| Boş durum | orta | `In [ ]:` imleci + tek örnek komut | — |
-| Onboarding | yüksek | ilk hücre: `print("merhaba")` çalıştır | — |
-| Pricing | düşük | iki plan hücresi, sağda `Out` fiyat bloğu | — |
-| Giriş / ödeme | düşük | mono input + `Out` doğrulama satırı | — |
-| Modal | orta | kernel yeniden başlatma onayı (mono uyarı) | — |
-| Bildirim / toast | düşük | alt-sağ, `Out kopyalandı` tek satır | — |
-| Hata | orta | `Traceback` bloğu: sol şerit `--danger`, mono 12px | — |
-| Profil / ayar | orta | ayar hücreleri, değişiklik `Out` satırında özetlenir | — |
+| Landing / hero | yüksek | solda üç hücre önizlemesi, sağda çalıştır CTA | `shots/01-page.png` |
+| Dashboard | yüksek | dört KPI hücresi + tek çıktı grafiği | `shots/01-page.png` |
+| Form | orta | mono input'lar, her alanın altında doğrulama çıktısı | `shots/01-page.png` |
+| Liste / tablo | orta | 34px satır, tabular-nums, sağda `Out` özeti | `shots/01-page.png` |
+| Boş durum | orta | `In [ ]:` imleci + tek örnek komut | `shots/01-page.png` |
+| Onboarding | yüksek | ilk hücre: `print("merhaba")` çalıştır | `shots/01-page.png` |
+| Pricing | düşük | iki plan hücresi, sağda `Out` fiyat bloğu | `shots/01-page.png` |
+| Giriş / ödeme | düşük | mono input + `Out` doğrulama satırı | `shots/01-page.png` |
+| Modal | orta | kernel yeniden başlatma onayı (mono uyarı) | `shots/01-page.png` |
+| Bildirim / toast | düşük | alt-sağ, `Out kopyalandı` tek satır | `shots/01-page.png` |
+| Hata | orta | `Traceback` bloğu: sol şerit `--danger`, mono 12px | `shots/01-page.png` |
+| Profil / ayar | orta | ayar hücreleri, değişiklik `Out` satırında özetlenir | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **230ms** | `cubic-bezier(.2,.9,.2,1)` | `opacity` + `translateY(3px)`; stagger **0.024s** |
-| Scroll reveal | **190ms** | aynı eğri | trigger `top 90%`, `translateY(2px)`, `once: false` |
-| Pin / scrub | yok | — | pin kapalı (hücre sabit kalır) |
-| Basma | **120ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 190ms | aynı eğri | opacity + 2px |
-| Hover | **70ms** | aynı eğri | görsel ölçek **1.004** |
-| Ödül / vurgu | 230ms | aynı eğri | çıktı bloğu belirir, tek kez; `busy` noktası 2 kare yanıp söner |
-
-- İmza ölçüleri: `enter = 0.23s / cubic-bezier(.2,.9,.2,1) / 3px / 0.024` · `scroll = top 90% / 0.19s / 2px / once:false` · `pin = false` · `hover = 70ms / 1.004`.
-- Bant içi fark: 111'den (0.39s / 7px / 0.048 / once:true), 112'den (1.28s / 3px / 0.185 / top 64%), 114'ten (0.63s / 9px / 0.033), 115'ten (0.12s / 0px / 0.008) en az yedi parametrede ayrışır. Karşılaştırma örneği 65-cockpit-avionics (`0.24s / cubic-bezier(0,0,.2,1) / 6px / 0.055`): süre, eğri, offset, stagger, trigger ve `once:false` ile ayrışır (8 parametre); katalogdaki tüm imzalarla en az iki parametre farkı makine kontrolüyle doğrulanır.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; çıktı anında belirir, `busy` noktası yanıp sönmez.
-- Bu stile yasak hareket: hücrelerin yer değiştirmesi, blur geçişi, uzun loading spinner'ı, sonsuz yanıp sönen imleç (en fazla 2 kare).
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#e9edf2` | `#101519` |
-| `--surface` | `#ffffff` | `#1c242b` |
-| `--ink` | `#131a22` | `#e8eef4` |
-| `--accent` | `#b8460f` | `#f08a4b` |
-| `--ink-soft` | `#47566a` | `#a7b5c2` |
-| `--line` | `rgba(19,26,34,.14)` | `rgba(232,238,244,.15)` |
-
-- Koyu modda değişen başka ne var: accent bir ton açılır (`#f08a4b`, kontrast 7.61:1); çıktı bloğu zemini `--surface-2` (#232c34) olur ve kod kontrastı 13:1 üstünde kalır; oluk etiketi `--ink-faint` (`#79879a`) korunur.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark` ve `token-block.css` koyu bloğu birebir aynı).
 
 ## Zorunlu kurallar
 - Her yürütülebilir hücre `In [n]:` numarası taşır; numara sol oluğa mono 10px yazılır ve gizlenmez.
@@ -206,14 +175,11 @@ REPL (oku-değerlendir-yaz döngüsü) ve hesaplamalı defter (Jupyter/Mathemati
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

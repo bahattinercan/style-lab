@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.74:1) |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="porcelain-glaze"]` |
 | **Kompozisyon** | `index` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Porselen atölyesi ve müzayede kataloğu geleneğinden: parça adı, sır (sela
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 6/6 hero: solda başlık + tek hap CTA, sağda silüet (2px kaymış) | `shots/01-landing.png` |
-| Dashboard | düşük | 3 KPI (parça, sır çeşidi, ortalama çap) + koleksiyon | `shots/02-dashboard.png` |
-| Form | düşük | parça girişi: tür, sır, çap+cm, ağırlık+g | — |
-| Liste / tablo | orta | 42px satır, sır chip'i, sağda mono ölçü | — |
-| Boş durum | düşük | "koleksiyonda parça yok" + ilk parçayı ekle | — |
-| Onboarding | düşük | 3 adım: koleksiyon → parça → sır seç | — |
-| Pricing | orta | iki plan, parça/koleksiyon limitleri | — |
-| Giriş / ödeme | çok düşük | tek kart (28px köşe), 46px alanlar | — |
-| Modal | orta | parça detayı: silüet, sır notu, ölçüler | — |
-| Bildirim | düşük | hap toast, alt ortada, 4sn | — |
-| Hata | düşük | danger çerçeve + neden + sonraki adım | — |
-| Profil / ayar | orta | koleksiyon listesi, birim (cm/inç), sır paleti | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (parça) | 560ms | `cubic-bezier(.12,.75,.24,1)` | `opacity` + `translateY(33px)`, 95ms arayla |
-| Scroll reveal | 840ms, `top 98%` | aynı | `translateY(35px)`, `once: false` (yukarı kaydırınca tekrar) |
-| Basma | 150ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 360ms | aynı | `scale(1.028)` |
-| Seçim halkası | 280ms | aynı | `outline-color` (kobalt) |
-| Pin | kapalı | — | — |
-
-- Ölçülen imza: enter **0.56s · cubic-bezier(.12,.75,.24,1) · 33px · stagger 0.095**; scroll **top 98% · 0.84s · 35px · once:false**; pin **kapalı**; hover **360ms · 1.028**.
-- Sır akışı: hızlı başlar, yumuşakça durur; geri sekme yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, hover ölçeği 1.000, içerik anında.
-- Bu stile yasak hareket: sürekli akan sır/damla, bounce, parallax, gloss geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f2f6f8` | `#0b1420` |
-| `--bg-2` | `#e6eef3` | `#0e1926` |
-| `--surface` | `#fbfdfe` | `#121f2e` |
-| `--surface-2` | `#eef4f7` | `#192838` |
-| `--ink` | `#141d26` | `#eaf2fa` |
-| `--ink-soft` | `#46586a` | `#a8bccf` |
-| `--accent` | `#1d4f9c` | `#6aa6f0` |
-| `--accent-ink` | `#f4f8fd` | `#07172b` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **16.37:1** · `ink-soft/bg` **9.48:1** · `accent-ink/accent` **7.14:1** · `ink-faint/bg` **5.55:1** · accent metin olarak bg'ye **7.33:1**.
-- Koyu modda değişen başka ne var: grain zaten 0, açık modda da koyu modda da doku eklenmez; çizgi %12 → %14, kobalt accent bir ton açılır (gece sırrı), gölge opaklığı artar.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="porcelain-glaze"]` olarak durur.
+| Landing / hero | orta | 6/6 hero: solda başlık + tek hap CTA, sağda silüet (2px kaymış) | `shots/01-page.png` |
+| Dashboard | düşük | 3 KPI (parça, sır çeşidi, ortalama çap) + koleksiyon | `shots/01-page.png` |
+| Form | düşük | parça girişi: tür, sır, çap+cm, ağırlık+g | `shots/01-page.png` |
+| Liste / tablo | orta | 42px satır, sır chip'i, sağda mono ölçü | `shots/01-page.png` |
+| Boş durum | düşük | "koleksiyonda parça yok" + ilk parçayı ekle | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: koleksiyon → parça → sır seç | `shots/01-page.png` |
+| Pricing | orta | iki plan, parça/koleksiyon limitleri | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek kart (28px köşe), 46px alanlar | `shots/01-page.png` |
+| Modal | orta | parça detayı: silüet, sır notu, ölçüler | `shots/01-page.png` |
+| Bildirim | düşük | hap toast, alt ortada, 4sn | `shots/01-page.png` |
+| Hata | düşük | danger çerçeve + neden + sonraki adım | `shots/01-page.png` |
+| Profil / ayar | orta | koleksiyon listesi, birim (cm/inç), sır paleti | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her parça kaydı: tür + sır + çap/yükseklik (cm) + ağırlık (g).
@@ -214,14 +181,11 @@ Porselen atölyesi ve müzayede kataloğu geleneğinden: parça adı, sır (sela
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (parlama, banding, yorgunluk) |
 | **Aile** | Yüzey (08–12) · **Token** | `kit/tokens.css` → `[data-style="aurora-ui"]` |
 | **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -153,48 +153,18 @@ Kazandığı şey: modernlik ve ürün lansmanı enerjisi. Feda ettiği şey: uz
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 3 blob + cam hero panel, 56px başlık, tek accent CTA, altında logo şeridi | `shots/01-landing.png` |
-| Dashboard | düşük | Blob'lar sadece arka planda ve **opaklık .12**; cam yalnız nav + tek panel | `shots/02-dashboard.png` |
-| Form | çok düşük | Cam panel içinde tek sütun; gradient minimal | — |
-| Liste / tablo | düşük | Cam panel + satır altı beyaz %10; zebra yok | — |
-| Boş durum | orta | Cam kart + tek cümle + accent buton | — |
-| Onboarding | yüksek | Sayfa başına cam panel; blob rengi adıma göre değişir (tek palet içinde) | — |
-| Pricing | orta | 3 cam kolon, orta kolon accent kenar + glow | — |
-| Giriş / ödeme | çok düşük | Opak koyu kart, blob yok; güven için sade | — |
-| Modal | orta | Cam panel, blur 24px, backdrop %55 | — |
-| Bildirim / toast | orta | Cam pill, 4sn | — |
-| Hata | düşük | `--danger` kenar + açık metin | — |
-| Profil / ayar | orta | Cam sidebar + cam içerik (tek katman) | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 140ms | `ease-out` | `transform: scale(.98)` |
-| Giriş | 900ms | `sine.out` | `opacity` + 24px `translateY`, stagger 60ms |
-| Scroll (`top 76%`) | 1150ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 320ms | aynı eğri | `transform: scale(1.02)` |
-| Blob sürüklenme | 24–40s | `linear` | `transform: translate(0→12px)` döngü |
-| Ödül | 400ms | `ease-in-out` | accent glow `opacity` 0→1 |
-
-- Blob animasyonu tek ve yavaş; `transform` ile (background-position değil).
-- `prefers-reduced-motion`: blob durur, geçişler 0.01ms.
-
-## Koyu mod
-
-Bu stil **koyu tabanlı**. Açık tema gerekiyorsa:
-
-| Token | Koyu | Açık varyant |
-|---|---|---|
-| `--bg` | `#0a0a10` | `#f7f7fb` |
-| `--bg-2` | `#12121c` | `#ecedf5` |
-| `--surface` | `rgba(255,255,255,.06)` | `rgba(255,255,255,.72)` |
-| `--ink` | `#f7f7fb` | `#0b0b14` |
-| `--line` | `rgba(255,255,255,.14)` | `rgba(11,11,20,.12)` |
-| `--accent` | `#6d5bff` | `#4b3ae0` |
-| `--accent-ink` | `#ffffff` | `#ffffff` |
-
-- Açık varyantta blob opaklığı .18'e düşürülür ve cam daha opak olur.
+| Landing / hero | yüksek | 3 blob + cam hero panel, 56px başlık, tek accent CTA, altında logo şeridi | `shots/01-page.png` |
+| Dashboard | düşük | Blob'lar sadece arka planda ve **opaklık .12**; cam yalnız nav + tek panel | `shots/01-page.png` |
+| Form | çok düşük | Cam panel içinde tek sütun; gradient minimal | `shots/01-page.png` |
+| Liste / tablo | düşük | Cam panel + satır altı beyaz %10; zebra yok | `shots/01-page.png` |
+| Boş durum | orta | Cam kart + tek cümle + accent buton | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına cam panel; blob rengi adıma göre değişir (tek palet içinde) | `shots/01-page.png` |
+| Pricing | orta | 3 cam kolon, orta kolon accent kenar + glow | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Opak koyu kart, blob yok; güven için sade | `shots/01-page.png` |
+| Modal | orta | Cam panel, blur 24px, backdrop %55 | `shots/01-page.png` |
+| Bildirim / toast | orta | Cam pill, 4sn | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + açık metin | `shots/01-page.png` |
+| Profil / ayar | orta | Cam sidebar + cam içerik (tek katman) | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -207,14 +177,11 @@ Bu stil **koyu tabanlı**. Açık tema gerekiyorsa:
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta (denge ve renk bütçesi) · **Erişilebilirlik** | iyi (yüksek kontrast) |
 | **Aile** | Geometrik (35) · **Token** | `kit/tokens.css` → `[data-style="bauhaus"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -130,37 +130,18 @@ Kolon 12 · gutter 24px · container 1180px · bölüm 72/44px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | 46px uppercase başlık, 7/5 asimetri, 1 daire + 1 kare, tek kırmızı buton | `shots/01-landing.png` |
-| Dashboard | düşük | Şekiller kapanır; KPI'lar 3px üst çizgi ile ayrılır, kırmızı yalnız pozitif/negatif farkta | `shots/02-dashboard.png` |
-| Form | düşük | 2px kenarlı input, tek sütun 460px, etiket uppercase mono | — |
-| Liste/tablo | çok düşük | Kalın başlık çizgisi, satır 52px, geometri yok | — |
-| Boş durum | orta | Tek daire + tek cümle + tek buton | — |
-| Onboarding | yüksek | Adım başına bir temel şekil (daire→kare→üçgen) | — |
-| Pricing | orta | 3 kart, orta kart 3px ink + blok gölge, kırmızı "seç" | — |
-| Giriş/ödeme | çok düşük | Şekil yok, 2px kenarlı form; güven için sade | — |
-| Modal | orta | 3px ink çerçeve, blok gölge, 2 buton sağa | — |
-| Toast | düşük | Siyah bar + krem metin, sol kenarda 4px kırmızı | — |
-| Hata | düşük | Kırmızı 3px sol çizgi + 14px metin | — |
-| Profil/ayar | düşük | Kalın ayırıcılar, geometri yok | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 100ms | `cubic-bezier(.2,.8,.2,1)` | `transform: translateY(1px)` |
-| Geçiş / sayfa | 180ms | `cubic-bezier(.2,.8,.2,1)` | `opacity` |
-| Giriş (enter) | **440ms** | `cubic-bezier(.2,.8,.2,1)` | `opacity` + `translateY(14px)`, **stagger 70ms**; satır satır |
-| Kaydırma (scroll) | **620ms** | `cubic-bezier(.2,.8,.2,1)` | trigger **`top 86%`**, offsetY **18px**, `once: true` |
-| Hover | **170ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | kapalı | — | `enabled: false` (`scrub 1.0` / `+120%` tanımlı ama kullanılmıyor) |
-| Ödül / vurgu | 260ms | `cubic-bezier(.2,.8,.2,1)` | şekil ölçek .96 → 1 (tek atım) |
-
-- İmza ölçüsü: enter **0.44s / 14px / stagger 0.07** · scroll **0.62s / `top 86%` / 18px** · hover **170ms / 1.02** · pin **kapalı**.
-- `prefers-reduced-motion`: 0.01ms.
-- Bu stile yasak hareket: sürekli dönen şekil, gradient geçişi.
-## Koyu mod
-
-`--bg` `#16161a` · `--surface` `#1f1f24` · `--surface-2` `#2a2a30` · `--ink` `#f4ede1` · `--line` `#f4ede1` · `--accent` `#e84747` · `--accent-ink` `#16161a`.
+| Landing/hero | yüksek | 46px uppercase başlık, 7/5 asimetri, 1 daire + 1 kare, tek kırmızı buton | `shots/01-page.png` |
+| Dashboard | düşük | Şekiller kapanır; KPI'lar 3px üst çizgi ile ayrılır, kırmızı yalnız pozitif/negatif farkta | `shots/01-page.png` |
+| Form | düşük | 2px kenarlı input, tek sütun 460px, etiket uppercase mono | `shots/01-page.png` |
+| Liste/tablo | çok düşük | Kalın başlık çizgisi, satır 52px, geometri yok | `shots/01-page.png` |
+| Boş durum | orta | Tek daire + tek cümle + tek buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına bir temel şekil (daire→kare→üçgen) | `shots/01-page.png` |
+| Pricing | orta | 3 kart, orta kart 3px ink + blok gölge, kırmızı "seç" | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Şekil yok, 2px kenarlı form; güven için sade | `shots/01-page.png` |
+| Modal | orta | 3px ink çerçeve, blok gölge, 2 buton sağa | `shots/01-page.png` |
+| Toast | düşük | Siyah bar + krem metin, sol kenarda 4px kırmızı | `shots/01-page.png` |
+| Hata | düşük | Kırmızı 3px sol çizgi + 14px metin | `shots/01-page.png` |
+| Profil/ayar | düşük | Kalın ayırıcılar, geometri yok | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -173,14 +154,11 @@ Kolon 12 · gutter 24px · container 1180px · bölüm 72/44px · breakpoint 640
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -60,14 +60,5 @@ body.scene-landing .hero-visual .visual-row { grid-template-columns: 26px 1fr au
 body.scene-landing .hero-visual .visual-row .sq { width: 12px; height: 12px; border-radius: 0; clip-path: polygon(0 0, 100% 0, 100% 60%, 60% 100%, 0 100%); }
 body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--accent); }
 body.scene-landing .hero-visual .visual-card::after { content: '1UP 001250 TAKEOFF HIP-SCORE — press start'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 10px; }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 18px; display: grid; align-content: start; gap: 12px; background: var(--bg-2); clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%); }
-body.scene-landing .hero-visual { min-height: 370px; }
-body.scene-landing .hero-visual .visual-card .bar { height: 10px; border-radius: 0; border: 0; background: var(--surface-2); }
-body.scene-landing .hero-visual .visual-card .bar.accent { width: 42%; background: var(--accent); }
-body.scene-landing .hero-visual .visual-rows { gap: 6px; }
-body.scene-landing .hero-visual .visual-row { grid-template-columns: 26px 1fr auto; padding: 8px 10px; border-radius: 0; background: color-mix(in srgb, var(--surface-2) 70%, transparent); border-left: 3px solid var(--accent); }
-body.scene-landing .hero-visual .visual-row .sq { width: 12px; height: 12px; border-radius: 0; clip-path: polygon(0 0, 100% 0, 100% 60%, 60% 100%, 0 100%); }
-body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--accent); }
-body.scene-landing .hero-visual .visual-card::after { content: '1UP 001250 TAKEOFF HIP-SCORE — press start'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 10px; }`,
-  },
+    },
 };

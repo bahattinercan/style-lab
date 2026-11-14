@@ -60,16 +60,5 @@ body.scene-landing .hero-visual .visual-row .sq { width: 32px; height: 32px; mar
 body.scene-landing .hero-visual .visual-row .line { height: 8px; border-radius: 4px; background: color-mix(in srgb, var(--ink) 14%, transparent); }
 body.scene-landing .hero-visual .visual-row .num { font-size: 15px; font-weight: 700; color: var(--ink); }
 body.scene-landing .hero-visual .visual-card::after { content: '3 blok tamam · 12 yıldız · sıradaki: renkleri eşleştir'; font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 22px; display: grid; align-content: start; gap: 14px; }
-body.scene-landing .hero-visual { min-height: 360px; }
-body.scene-landing .hero-visual .visual-card .bar { height: 16px; border-radius: var(--radius); border: 0; background: var(--accent); }
-body.scene-landing .hero-visual .visual-card .bar.w70 { width: 32%; background: var(--surface-2); }
-body.scene-landing .hero-visual .visual-card .bar.w45 { width: 20%; background: color-mix(in srgb, var(--surface-2) 70%, var(--surface)); }
-body.scene-landing .hero-visual .visual-rows { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-body.scene-landing .hero-visual .visual-row { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 14px 12px; background: var(--surface-2); border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
-body.scene-landing .hero-visual .visual-row .sq { width: 32px; height: 32px; margin: 0 auto; border-radius: 999px; }
-body.scene-landing .hero-visual .visual-row .line { height: 8px; border-radius: 4px; background: color-mix(in srgb, var(--ink) 14%, transparent); }
-body.scene-landing .hero-visual .visual-row .num { font-size: 15px; font-weight: 700; color: var(--ink); }
-body.scene-landing .hero-visual .visual-card::after { content: '3 blok tamam · 12 yıldız · sıradaki: renkleri eşleştir'; font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); }`,
-  },
+    },
 };

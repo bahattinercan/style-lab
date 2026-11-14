@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (yüksek kontrast taban) |
 | **Aile** | Sahne & Prestij (146–151) · **Token** | `kit/tokens.css` → `[data-style="agency-portfolio"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `index` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,17 @@ Gölge yok: katman farkı 1px çizgi ve boşlukla kurulur. Yüzen katman 1px `--
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | sol 7/12 dev başlık + tek CTA; sağ 5/12 indeks listesi, aralarında 1px çizgi | `shots/01-landing.png` |
-| Dashboard (vaka) | orta | 3 KPI (vaka sayısı, ortalama süre, sektör) + 8 satırlık indeks tablo | `shots/02-dashboard.png` |
-| Form / brief | düşük | tek sütun 48px alan, mavi odak halkası; hata 1px `--danger` + 12px açıklama | — |
-| Liste / indeks | yüksek | 44px satır, mono numara solda, sektör chip sağda | — |
-| Boş durum | düşük | "bu filtrede vaka yok" + filtreyi temizle (mavi alt çizgi) | — |
-| Onboarding | orta | 2 adım: sektör → bütçe aralığı; her adımda tek karar | — |
-| Pricing | orta | üç paket, yalnız ortada mavi 2px üst şerit | — |
-| Giriş / ödeme | düşük | kart yok, tek sütun, 1px çizgi bölmeli | — |
-| Modal | orta | 6px radius, 1px `--ink` çerçeve, gölge yok | — |
-| Bildirim | orta | 36px toast, sol 3px mavi şerit, 3.2s | — |
-| Mobil (390px) | orta | başlık 36px, indeks tek satır + ok; dokunma hedefi 44px | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (letter-stagger) | 0.62s | `cubic-bezier(.2,.8,.2,1)` | `opacity` + `translateY(20px)`, 0.04 arayla |
-| Scroll reveal | 0.54s, `top 80%` | aynı | `translateY(16px)`, `once: true` |
-| Pin / scrub | kapalı | doğrusal | bu stil sabit bölüm kullanmaz |
-| Basma | 120ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 180ms | aynı | `scale(1.03)` |
-
-- Ölçülen imza: enter **0.62s · cubic-bezier(.2,.8,.2,1) · 20px · stagger 0.04**; scroll **top 80% · 0.54s · 16px · once**; pin **yok**; hover **180ms · 1.03**.
-- undefined
-- `prefers-reduced-motion`: instant.
-- Bu stile yasak hareket: bounce/elastik yay, sonsuz döngü, hover tilt-3d, parallax (indeks ritmini bozar).
-
-## Koyu mod
-
-| Token | Açık (kâğıt) | Koyu (mürekkep) |
-|---|---|---|
-| `--bg` | `#f3f1ec` | `#0a0a0a` |
-| `--bg-2` | `#eae7e0` | `#050505` |
-| `--surface` | `#ffffff` | `#141414` |
-| `--surface-2` | `#e4e0d7` | `#1d1d1d` |
-| `--ink` | `#0e0e0d` | `#f6f5f2` |
-| `--ink-soft` | `#55534d` | `#b6b3ac` |
-| `--ink-faint` | `#8b8880` | `#85827c` |
-| `--accent` | `#1f45d6` | `#7d93ff` |
-| `--accent-ink` | `#ffffff` | `#08091a` |
-| `--line` | `rgba(14,14,13,.14)` | `rgba(246,245,242,.16)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **18.16:1** · `ink-soft/bg` **9.46:1** · `accent-ink/accent` **7.04:1** · `ink-faint/bg` **5.17:1** · odak halkası yüzey üzerinde **6.57:1**.
-- Koyu blok, aydınlık kâğıdın gece okuması: zemin #0a0a0a, mavi #7d93ff (doygunluk düşük, parlaklık yüksek) çünkü #1f45d6 koyu zeminde 3:1 odak eşiğini zor geçiyor. Çizgi %14 → %16.
-- `filter: invert()` yasak; koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="agency-portfolio"]` olarak durur.
+| Landing / hero | yüksek | sol 7/12 dev başlık + tek CTA; sağ 5/12 indeks listesi, aralarında 1px çizgi | `shots/01-page.png` |
+| Dashboard (vaka) | orta | 3 KPI (vaka sayısı, ortalama süre, sektör) + 8 satırlık indeks tablo | `shots/01-page.png` |
+| Form / brief | düşük | tek sütun 48px alan, mavi odak halkası; hata 1px `--danger` + 12px açıklama | `shots/01-page.png` |
+| Liste / indeks | yüksek | 44px satır, mono numara solda, sektör chip sağda | `shots/01-page.png` |
+| Boş durum | düşük | "bu filtrede vaka yok" + filtreyi temizle (mavi alt çizgi) | `shots/01-page.png` |
+| Onboarding | orta | 2 adım: sektör → bütçe aralığı; her adımda tek karar | `shots/01-page.png` |
+| Pricing | orta | üç paket, yalnız ortada mavi 2px üst şerit | `shots/01-page.png` |
+| Giriş / ödeme | düşük | kart yok, tek sütun, 1px çizgi bölmeli | `shots/01-page.png` |
+| Modal | orta | 6px radius, 1px `--ink` çerçeve, gölge yok | `shots/01-page.png` |
+| Bildirim | orta | 36px toast, sol 3px mavi şerit, 3.2s | `shots/01-page.png` |
+| Mobil (390px) | orta | başlık 36px, indeks tek satır + ok; dokunma hedefi 44px | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Başlık Archivo Black 72px (mobil 36px), `-0.02em`; büyük harfe çevrilmez.
@@ -214,14 +180,11 @@ Gölge yok: katman farkı 1px çizgi ve boşlukla kurulur. Yüzen katman 1px `--
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

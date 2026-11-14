@@ -33,16 +33,3 @@
   --ok: #8fae5a;
   --warn: #d8b04a;
 }
-
-[data-theme="dark"][data-style="volcanic-mineral"] {
-  --bg:#040403;
-  --bg-2:#0b0a08;
-  --surface:#100e0b;
-  --surface-2:#191512;
-  --ink:#f8f3ea;
-  --ink-soft:#b9b0a1;
-  --ink-faint:#8b8276;
-  --accent:#ff8a4d;
-  --accent-ink:#140703;
-  --line:rgba(248,243,234,.22);
-}

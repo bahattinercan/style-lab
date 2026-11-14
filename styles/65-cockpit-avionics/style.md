@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (10px etiket + yoğun koyu zemin; en düşük etkileşimli çift 8.61:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="cockpit-avionics"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,52 +141,18 @@ Elektromekanik gösterge paneli ve ECAM/EICAS sistem sayfası geleneğinden: eti
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 3/6/3: solda parametre rayı, ortada başlık + tek CTA, sağda checklist | `shots/01-landing.png` |
-| Dashboard | çok yüksek | gösterge paneli ızgarası, segment çubuklar, uyarı listesi öncelik sırasıyla | `shots/02-dashboard.png` |
-| Form | orta | alanlar üst etiketli, birim ayrı, hata `E/` öneki | — |
-| Liste / tablo | yüksek | 34px satır, etiket–değer–birim, değer değişiminde accent vurgu | — |
-| Boş durum | düşük | `STBY` + "sistem beklemede" + tek eylem | — |
-| Onboarding | orta | 3 adım: sistem seç → checklist → ARM ile başlat | — |
-| Pricing | orta | karşılaştırma tablosu; limitler segment çubukla | — |
-| Giriş / ödeme | düşük | tek panel, iki adımlı doğrulama, koyu zemin | — |
-| Modal | orta | checklist: madde başına ✓/✕, ARM → CONFIRM | — |
-| Bildirim | orta | 34px uyarı, sol durum şeridi, üst üste 3 | — |
-| Hata | düşük | `FAULT` + etkilenen sistem + sonraki adım; kod gizlenmez | — |
-| Profil / ayar | yüksek | anahtar/değer listesi, birim sistemi seçimi (m/ft, kg/lb) | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (panel) | 240ms | `cubic-bezier(0,0,.2,1)` | `opacity` + `translateY(6px)`, 55ms arayla |
-| Scroll reveal | 280ms, `top 94%` | aynı | `translateY(4px)`, `once: true` |
-| Basma | 70ms | aynı | `translateY(1px)` |
-| Değer güncellemesi | 240ms | `linear` | `color` (accent → ink), sayı saymaz |
-| Hover (görsel) | 70ms | aynı | `scale(1.004)` |
-| FAULT uyarısı | 1.2s × 3 tur | `steps(1, end)` | `opacity` (sonra sabit kalır) |
-| Pin | kapalı | — | — |
-
-- Ölçülen imza: enter **0.24s · cubic-bezier(0,0,.2,1) · 6px · stagger 0.055**; scroll **top 94% · 0.28s · 4px · once**; pin **kapalı**; hover **70ms · 1.004**.
-- Çok kısa, sıfır gecikmeli başlangıç: gösterge iğnesi gibi anında hareket eder, hedefte durur; aşırı düzeltme (overshoot) yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, FAULT yanıp sönmez (sabit danger rengi + etiket), değer anında güncellenir.
-- Bu stile yasak hareket: sürekli yanıp sönen uyarı, glow nabzı, parallax, pin/scrub, gradient animasyonu.
-
-## Koyu mod
-
-| Token | Açık (kokpit) | Koyu (gece uçuşu) |
-|---|---|---|
-| `--bg` | `#0a0f14` | `#02040a` |
-| `--bg-2` | `#10161c` | `#05080f` |
-| `--surface` | `#131a21` | `#080d16` |
-| `--surface-2` | `#1a232b` | `#0d1420` |
-| `--ink` | `#e8f0f4` | `#f4fbff` |
-| `--ink-soft` | `#9fb0ba` | `#b0c4d2` |
-| `--accent` | `#35d6e8` | `#7ff0ff` |
-| `--accent-ink` | `#032026` | `#021a22` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **19.61:1** · `ink-soft/bg` **11.40:1** · `accent-ink/accent` **13.47:1** · `ink-faint/bg` **6.43:1** (ΔL açık→koyu **-0.040**; ek olarak zemin mavi-yeşil tondan soğuk laciverte, cyan `#7ff0ff`e kayar).
-- Koyu modda değişen başka ne var: bezel çizgisi %15 → %20 opaklık (panel ayrımı korunur), zemin tonu lacivert banda kayar, cyan `#7ff0ff`e açılır, gölge opaklığı artar; FAULT kırmızısı aynı kalır (uyarı rengi kimliği).
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="cockpit-avionics"]` olarak durur.
+| Landing / hero | yüksek | 3/6/3: solda parametre rayı, ortada başlık + tek CTA, sağda checklist | `shots/01-page.png` |
+| Dashboard | çok yüksek | gösterge paneli ızgarası, segment çubuklar, uyarı listesi öncelik sırasıyla | `shots/01-page.png` |
+| Form | orta | alanlar üst etiketli, birim ayrı, hata `E/` öneki | `shots/01-page.png` |
+| Liste / tablo | yüksek | 34px satır, etiket–değer–birim, değer değişiminde accent vurgu | `shots/01-page.png` |
+| Boş durum | düşük | `STBY` + "sistem beklemede" + tek eylem | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: sistem seç → checklist → ARM ile başlat | `shots/01-page.png` |
+| Pricing | orta | karşılaştırma tablosu; limitler segment çubukla | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek panel, iki adımlı doğrulama, koyu zemin | `shots/01-page.png` |
+| Modal | orta | checklist: madde başına ✓/✕, ARM → CONFIRM | `shots/01-page.png` |
+| Bildirim | orta | 34px uyarı, sol durum şeridi, üst üste 3 | `shots/01-page.png` |
+| Hata | düşük | `FAULT` + etkilenen sistem + sonraki adım; kod gizlenmez | `shots/01-page.png` |
+| Profil / ayar | yüksek | anahtar/değer listesi, birim sistemi seçimi (m/ft, kg/lb) | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her gösterge etiket + değer + birim üçlüsü; birimsiz değer yok.
@@ -215,14 +181,11 @@ Elektromekanik gösterge paneli ve ECAM/EICAS sistem sayfası geleneğinden: eti
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

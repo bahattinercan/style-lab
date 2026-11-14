@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | iyi (kontrastı korursan) |
 | **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="minimalism"]` |
 | **Kompozisyon** | `centered` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -159,51 +159,18 @@ Kazandığı şey odak: kullanıcı ekranda ne yapacağını 1 saniyede görür.
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 56px başlık (2 satır), 68ch paragraf, tek birincil + bir sessiz CTA, altında 3 maddelik güven satırı | `shots/01-landing.png` |
-| Dashboard | düşük | Kart yerine bölüm + hairline; KPI sayısı 28px, etiketi 11px mono gri. Grafikte tek renk | `shots/02-dashboard.png` |
-| Form | düşük | Tek sütun 480px, etiket üstte 13px, input 44px, hata metni input altında 12px | — |
-| Liste / tablo | düşük | Satır 52px, sayılar mono, durum metinle (chip ikincil); zebra çizgi yok, sadece hairline | — |
-| Boş durum | orta | Tek cümle + tek buton; illüstrasyon yerine ikon veya hiçbir şey | — |
-| Onboarding | yüksek | Sayfa başına tek fikir + 2 satır açıklama; ilerleme çizgi değil nokta (3–4) | — |
-| Pricing | orta | 3 kolon, orta plan 1px `--accent` kenarlık + "önerilen" etiketi; fiyat 40px, özellikler 14px | — |
-| Giriş / ödeme | çok düşük | Stil sıfıra yakın: 400px kart, tek sütun, tek buton; ikna öğesi yok | — |
-| Modal | orta | 480–560px, başlık 20px, gövde 14px, 2 buton sağa hizalı | — |
-| Bildirim / toast | orta | Sağ üst, 4sn, ikon + tek satır; üst üste 3'ten fazla kuyruk yok | — |
-| Hata | düşük | Hata metni 14px `--ink`, altında 12px `--ink-soft` çözüm önerisi; kırmızı sadece kenarlık/ikon | — |
-| Profil / ayar | orta | Sol nav + sağ içerik 8/4 kolon; her ayar satırı 56px, açıklama 13px | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `ease-out` | `transform: translateY(1px)`, `opacity` |
-| Giriş | 500ms | `ease-out` | `opacity` + 12px `translateY`, stagger 40ms |
-| Scroll (`top 86%`) | 600ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 160ms | aynı eğri | `transform: scale(1.015)` |
-| Ödül / vurgu | 240ms | `ease-out` | tek seferlik `opacity` 0→1, ölçek yok |
-
-- Sadece `opacity` ve `transform`; `height`/`width`/`filter` animasyonu yasak.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, geçişler anlık (tokens.css global kuralı).
-- Yasak: spring/bounce, parallax, sürekli döngü, sayfa geçişinde slide.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#fafaf9` | `#0b0b0c` |
-| `--bg-2` | `#f2f2f0` | `#121214` |
-| `--surface` | `#ffffff` | `#161618` |
-| `--surface-2` | `#f7f7f5` | `#1d1d20` |
-| `--ink` | `#101112` | `#ededed` |
-| `--ink-soft` | `#5a5f66` | `#a0a4aa` |
-| `--ink-faint` | `#9aa0a6` | `#6f747a` |
-| `--accent` | `#2563eb` | `#60a5fa` |
-| `--accent-ink` | `#ffffff` | `#0b0b0c` |
-| `--line` | `rgba(16,17,18,.10)` | `rgba(255,255,255,.12)` |
-
-- Koyu modda gölge işe yaramaz; kart ayrımı `--line` + `--surface` tonu ile kurulur.
-- `filter: invert()` yasak — palet elle yazılır.
-- Odak halkası koyu modda `--accent` (açık mavi) kalır; 2px yeterli.
+| Landing / hero | yüksek | 56px başlık (2 satır), 68ch paragraf, tek birincil + bir sessiz CTA, altında 3 maddelik güven satırı | `shots/01-page.png` |
+| Dashboard | düşük | Kart yerine bölüm + hairline; KPI sayısı 28px, etiketi 11px mono gri. Grafikte tek renk | `shots/01-page.png` |
+| Form | düşük | Tek sütun 480px, etiket üstte 13px, input 44px, hata metni input altında 12px | `shots/01-page.png` |
+| Liste / tablo | düşük | Satır 52px, sayılar mono, durum metinle (chip ikincil); zebra çizgi yok, sadece hairline | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + tek buton; illüstrasyon yerine ikon veya hiçbir şey | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına tek fikir + 2 satır açıklama; ilerleme çizgi değil nokta (3–4) | `shots/01-page.png` |
+| Pricing | orta | 3 kolon, orta plan 1px `--accent` kenarlık + "önerilen" etiketi; fiyat 40px, özellikler 14px | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Stil sıfıra yakın: 400px kart, tek sütun, tek buton; ikna öğesi yok | `shots/01-page.png` |
+| Modal | orta | 480–560px, başlık 20px, gövde 14px, 2 buton sağa hizalı | `shots/01-page.png` |
+| Bildirim / toast | orta | Sağ üst, 4sn, ikon + tek satır; üst üste 3'ten fazla kuyruk yok | `shots/01-page.png` |
+| Hata | düşük | Hata metni 14px `--ink`, altında 12px `--ink-soft` çözüm önerisi; kırmızı sadece kenarlık/ikon | `shots/01-page.png` |
+| Profil / ayar | orta | Sol nav + sağ içerik 8/4 kolon; her ayar satırı 56px, açıklama 13px | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -217,14 +184,11 @@ Kazandığı şey odak: kullanıcı ekranda ne yapacağını 1 saniyede görür.
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

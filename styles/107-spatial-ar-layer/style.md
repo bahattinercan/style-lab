@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (parallax + cam nav; en düşük metin çifti 6.60:1) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="spatial-ar-layer"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -140,51 +140,20 @@ Uzamsal bilişim literatüründen (spatial computing: konum, çapa, derinlik) ve
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 7/5: solda metin (z=0), sağda üç katmanlı sahne | `shots/01-landing.png` |
-| Dashboard | orta | 4 KPI z=1, tek ön katman (z=2) detay paneli | `shots/02-dashboard.png` |
-| Form | düşük | tek z=1 kart; ızgara arka planda %50 opaklık | — |
-| Liste / tablo | düşük | 40px satır, seçili satır z=2 gölge | — |
-| Boş durum | orta | z=0 ızgara + "çapa bekleniyor" mono etiketi | — |
-| Onboarding | yüksek | 3 adım: tarama → çapa yerleştir → katman ekle | — |
-| Pricing | orta | iki plan kartı z=1; öne çıkan kart z=2 | — |
-| Giriş / ödeme | çok düşük | tek düzlem, ızgara yok; süs sıfır | — |
-| Modal | orta | z=2 + koordinat etiketi + accent çerçeve | — |
-| Bildirim / toast | orta | sağ üst, z=2, accent çapa noktası | — |
-| Hata | düşük | çapa `--danger`, gölge korunur | — |
-| Profil / ayar | orta | iki kolon z=1 kart; koordinat etiketleri | — |
+| Landing / hero | yüksek | 7/5: solda metin (z=0), sağda üç katmanlı sahne | `shots/01-page.png` |
+| Dashboard | orta | 4 KPI z=1, tek ön katman (z=2) detay paneli | `shots/01-page.png` |
+| Form | düşük | tek z=1 kart; ızgara arka planda %50 opaklık | `shots/01-page.png` |
+| Liste / tablo | düşük | 40px satır, seçili satır z=2 gölge | `shots/01-page.png` |
+| Boş durum | orta | z=0 ızgara + "çapa bekleniyor" mono etiketi | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: tarama → çapa yerleştir → katman ekle | `shots/01-page.png` |
+| Pricing | orta | iki plan kartı z=1; öne çıkan kart z=2 | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek düzlem, ızgara yok; süs sıfır | `shots/01-page.png` |
+| Modal | orta | z=2 + koordinat etiketi + accent çerçeve | `shots/01-page.png` |
+| Bildirim / toast | orta | sağ üst, z=2, accent çapa noktası | `shots/01-page.png` |
+| Hata | düşük | çapa `--danger`, gölge korunur | `shots/01-page.png` |
+| Profil / ayar | orta | iki kolon z=1 kart; koordinat etiketleri | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **860ms** | `cubic-bezier(.16,.9,.24,1)` | `opacity` + `translateY(25px)`; stagger **0.088s** |
-| Scroll reveal | **810ms** | aynı eğri | trigger `top 73%`, `translateY(28px)`, `once: true` |
-| Pin / scrub | **0.42** | `transform` | **açık** — sahne `+105%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **140ms** | aynı eğri | `translateY(1px)` + gölge bir kademe küçülür |
-| Geçiş / sayfa | 320ms | aynı eğri | opacity + 12px |
-| Hover | **285ms** | aynı eğri | görsel ölçek **1.008** |
-| Ödül / vurgu | 860ms | aynı eğri | seçili katman z=1 → z=2 gölgeye geçer (tek kez) |
-
-- İmza ölçüleri: `enter = 0.86s / cubic-bezier(.16,.9,.24,1) / 25px / 0.088` · `scroll = top 73% / 0.81s / 28px / once` · `pin = true / scrub 0.42 / +105%` · `hover = 285ms / 1.008`.
-- Bant içi fark: 106'dan (0.37s / 2px / pin yok), 108'den (0.19s / 5px), 109'dan (0.51s / 15px / scrub 1.3), 110'den (0.73s / 19px) en az dört parametrede ayrışır. Mevcut 93 stil içinde en yakını 39-ai-native-mesh (`0.7s / expo.out / 20px / 0.06`) — süre, eğri, offset, trigger, scrub (0.42) ve hover'da farklı.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin kapalı, katman kayması durur (statik z gölgeleri kalır).
-- Bu stile yasak hareket: kullanıcı kontrolü olmayan sürekli parallax, saniyede 3 üstü flash, yatay kaydırma hijack.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#e9edf5` | `#0c1017` |
-| `--surface` | `#f7f9fc` | `#161d29` |
-| `--ink` | `#161a24` | `#e8edf6` |
-| `--accent` | `#2a4bd7` | `#7d95ff` |
-| `--ink-soft` | `#4a5364` | `#a7b2c4` |
-| `--line` | `rgba(22,26,36,.16)` | `rgba(232,237,246,.16)` |
-
-- Koyu modda değişen başka ne var: ızgara opaklığı %6 → %10 (siyahta görünmesi için), z=2 gölgesi yerine 1px accent çerçeve öne çıkar, accent bir ton açılır.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Üç derinlik düzlemi zorunlu: z=0 gölgesiz, z=1 `0 8px 20px`, z=2 `0 18px 40px`.
@@ -211,14 +180,11 @@ Uzamsal bilişim literatüründen (spatial computing: konum, çapa, derinlik) ve
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

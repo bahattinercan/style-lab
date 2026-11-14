@@ -66,15 +66,5 @@ body.scene-landing .hero-visual .visual-row { grid-template-columns: 18px 1fr au
 body.scene-landing .hero-visual .visual-row .sq { width: 16px; height: 16px; border-radius: 2px; }
 body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 11px; }
 body.scene-landing .hero-visual .visual-card::after { content: 'defter · kes → dik → paketle · 3 adım · el işi parti no. 014'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--ink-soft); }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 22px 22px 22px 34px; display: grid; align-content: start; gap: 12px; background: var(--surface); }
-body.scene-landing .hero-visual { min-height: 370px; }
-body.scene-landing .hero-visual .visual-card { border-left: 2px dashed var(--line); }
-body.scene-landing .hero-visual .visual-card .bar { height: 9px; border-radius: 2px; border: 0; background: color-mix(in srgb, var(--accent) 30%, transparent); }
-body.scene-landing .hero-visual .visual-card .bar.accent { width: 40%; background: var(--accent); }
-body.scene-landing .hero-visual .visual-rows { gap: 0; }
-body.scene-landing .hero-visual .visual-row { grid-template-columns: 18px 1fr auto; padding: 10px 0; border-radius: 0; border-bottom: 1px dashed var(--line); }
-body.scene-landing .hero-visual .visual-row .sq { width: 16px; height: 16px; border-radius: 2px; }
-body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 11px; }
-body.scene-landing .hero-visual .visual-card::after { content: 'defter · kes → dik → paketle · 3 adım · el işi parti no. 014'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; color: var(--ink-soft); }`,
-  },
+    },
 };

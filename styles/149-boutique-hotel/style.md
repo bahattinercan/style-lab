@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük-orta risk (terracotta metin olarak kullanılmamalı) |
 | **Aile** | Sahne & Prestij (146–151) · **Token** | `kit/tokens.css` → `[data-style="boutique-hotel"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,17 @@ Kartlarda gölge yok; ayrım 1px çerçeve ve fotoğrafın kendi ışığıyla. 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | tam kanama fotoğraf + sol altta 5/12 metin; altında 4 hücreli künye şeridi ve rezervasyon alanı | `shots/01-landing.png` |
-| Dashboard ( rezervasyon) | orta | 3 KPI (doluluk, ortalama gece, gelir) + 6 satırlık rezervasyon tablosu | `shots/02-dashboard.png` |
-| Form / rezervasyon | düşük | tarih + kişi + oda; 48px alanlar, terracotta odak; hata 1px `--danger` | — |
-| Liste / odalar | orta | kart ızgarası 2 sütun; her kartta müsait chip | — |
-| Boş durum | düşük | "bu tarihlerde oda yok" + tarih değiştir | — |
-| Onboarding | düşük | 3 adım: tarih → oda → misafir bilgisi | — |
-| Pricing | orta | oda tipleri; öne çıkanda terracotta 1px çerçeve | — |
-| Giriş / ödeme | düşük | tek kart, tek eylem; sosyal giriş yok | — |
-| Modal | orta | 10px radius, terracotta %40 çerçeve, `--shadow` | — |
-| Bildirim | orta | 40px toast, sol 3px terracotta şerit, 3.8s | — |
-| Mobil (390px) | orta | hero 300px, künye şeridi 2×2, rezervasyon alanı sticky alt bar | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (clip-curtain) | 1.02s | `cubic-bezier(.3,.02,.2,1)` | `opacity` + `translateY(10px)`, 0.07 arayla |
-| Scroll reveal | 1.0s, `top 68%` | aynı | `translateY(8px)`, `once: true` |
-| Pin / scrub | kapalı | doğrusal | bu stil sabit bölüm kullanmaz |
-| Basma | 150ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 300ms | aynı | `scale(1.018)` |
-
-- Ölçülen imza: enter **1.02s · cubic-bezier(.3,.02,.2,1) · 10px · stagger 0.07**; scroll **top 68% · 1.0s · 8px · once**; pin **yok**; hover **300ms · 1.018**.
-- undefined
-- `prefers-reduced-motion`: static-frame.
-- Bu stile yasak hareket: bounce/elastik yay, sonsuz döngü, hover tilt-3d, kesme/sıçrama (steps) geçişi.
-
-## Koyu mod
-
-| Token | Açık (gündüz) | Koyu (gece) |
-|---|---|---|
-| `--bg` | `#16110c` | `#0e0a07` |
-| `--bg-2` | `#100c08` | `#080605` |
-| `--surface` | `#211a13` | `#17120d` |
-| `--surface-2` | `#2b2219` | `#211a13` |
-| `--ink` | `#f3e9dc` | `#f8f0e6` |
-| `--ink-soft` | `#c8b7a3` | `#d3c2ae` |
-| `--ink-faint` | `#94836f` | `#9e8d79` |
-| `--accent` | `#d97f4e` | `#e89567` |
-| `--accent-ink` | `#1a0b04` | `#1a0b04` |
-| `--line` | `rgba(243,233,220,.14)` | `rgba(248,240,230,.16)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **17.46:1** · `ink-soft/bg` **11.36:1** · `accent-ink/accent` **8.16:1** · `ink-faint/bg` **6.14:1** · odak halkası yüzey üzerinde **7.91:1**.
-- Koyu blok, aynı odanın akşam ışığı: zemin #0e0a07, terracotta #e89567 (parlaklık +1 kademe) — koyu zeminde #d97f4e odak halkası eşiğine yaklaşıyor; çizgi %14 → %16, grain `.03` → `.04`.
-- `filter: invert()` yasak; koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="boutique-hotel"]` olarak durur.
+| Landing / hero | orta | tam kanama fotoğraf + sol altta 5/12 metin; altında 4 hücreli künye şeridi ve rezervasyon alanı | `shots/01-page.png` |
+| Dashboard ( rezervasyon) | orta | 3 KPI (doluluk, ortalama gece, gelir) + 6 satırlık rezervasyon tablosu | `shots/01-page.png` |
+| Form / rezervasyon | düşük | tarih + kişi + oda; 48px alanlar, terracotta odak; hata 1px `--danger` | `shots/01-page.png` |
+| Liste / odalar | orta | kart ızgarası 2 sütun; her kartta müsait chip | `shots/01-page.png` |
+| Boş durum | düşük | "bu tarihlerde oda yok" + tarih değiştir | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: tarih → oda → misafir bilgisi | `shots/01-page.png` |
+| Pricing | orta | oda tipleri; öne çıkanda terracotta 1px çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek kart, tek eylem; sosyal giriş yok | `shots/01-page.png` |
+| Modal | orta | 10px radius, terracotta %40 çerçeve, `--shadow` | `shots/01-page.png` |
+| Bildirim | orta | 40px toast, sol 3px terracotta şerit, 3.8s | `shots/01-page.png` |
+| Mobil (390px) | orta | hero 300px, künye şeridi 2×2, rezervasyon alanı sticky alt bar | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Hero tam kanama oda fotoğrafı + tek scrim; metin sol altta 5/12.
@@ -214,14 +180,11 @@ Kartlarda gölge yok; ayrım 1px çerçeve ve fotoğrafın kendi ışığıyla. 
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

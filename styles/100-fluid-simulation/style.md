@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (uzun yumuşak geçişler + blur katmanı; gövde 15.93:1) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `kit/tokens.css` → `[data-style="fluid-simulation"]` |
 | **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,55 +137,21 @@ Akışkan arayüz fikri 2010'ların "soft UI" akımından ve sıvı metal/cam de
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | blob + 7/5 akış bölünmesi + damla köşeli hero kartı | `shots/01-landing.png` |
-| Dashboard | düşük | 3 damla köşeli KPI + 3 serili yumuşak grafik | `shots/02-dashboard.png` |
-| Form | düşük | 48px alanlar, pill buton, tek kolon | — |
-| Liste / tablo | orta | 48px yumuşak satırlar, hover'da radius 18px | — |
-| Boş durum | orta | boş damla + tek pill CTA | — |
-| Onboarding | yüksek | 3 adım: damla metaforu (birikim → akış → hedef) | — |
-| Pricing | orta | 3 pill kart, orta kart daha büyük radius | — |
-| Giriş / ödeme | çok düşük | tek kolon, blob yok (odak) | — |
-| Modal | orta | 28/28/18/18 köşe + arka blob | — |
-| Bildirim / toast | orta | pill kutu, 6px damla, 520ms giriş | — |
-| Hata | düşük | `--danger` sol damla şeridi, blob susturulur | — |
-| Profil / ayar | orta | 48px satır + "hareketi azalt" anahtarı | — |
+| Landing / hero | orta | blob + 7/5 akış bölünmesi + damla köşeli hero kartı | `shots/01-page.png` |
+| Dashboard | düşük | 3 damla köşeli KPI + 3 serili yumuşak grafik | `shots/01-page.png` |
+| Form | düşük | 48px alanlar, pill buton, tek kolon | `shots/01-page.png` |
+| Liste / tablo | orta | 48px yumuşak satırlar, hover'da radius 18px | `shots/01-page.png` |
+| Boş durum | orta | boş damla + tek pill CTA | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: damla metaforu (birikim → akış → hedef) | `shots/01-page.png` |
+| Pricing | orta | 3 pill kart, orta kart daha büyük radius | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek kolon, blob yok (odak) | `shots/01-page.png` |
+| Modal | orta | 28/28/18/18 köşe + arka blob | `shots/01-page.png` |
+| Bildirim / toast | orta | pill kutu, 6px damla, 520ms giriş | `shots/01-page.png` |
+| Hata | düşük | `--danger` sol damla şeridi, blob susturulur | `shots/01-page.png` |
+| Profil / ayar | orta | 48px satır + "hareketi azalt" anahtarı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — viskozite ölçer — damla kesiti, pill satırlar, akış/sıcaklık altbilgisi.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 1050ms | `cubic-bezier(.22,.9,.24,1)` | `opacity` + `translateY(20px)`, öğe başına 160ms stagger |
-| Scroll reveal | 1150ms | `cubic-bezier(.22,.9,.24,1)` | `top 72%` tetiği, 34px, `once: true` |
-| Basma | 260ms | `linear` | `scale(.98)` |
-| Hover | 520ms | `cubic-bezier(.22,.9,.24,1)` | radius daralması, görsel ölçek `1.028` |
-| Pin / scrub | kapalı | — | — (akışkan yüzey sabitlenmez) |
-| Blob salınımı | 24s / 32s | `ease-in-out` | yalnız dekoratif katman, 2 blob, `alternate` |
-| Form geçişi | 520ms | `cubic-bezier(.22,.9,.24,1)` | tablo satırı radius `12px → 18px` |
-
-- Ölçülebilir imza: `enter 1.05s / cb(.22,.9,.24,1) / 20px / 0.16` · `scroll top 72% / 1.15s / 34px / once:true` · `hover 520ms / 1.028` · `pin kapalı`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, blob salınımı durur, form geçişi kapanır; statik form korunur.
-- Bu stile yasak hareket: bounce/sıçrama, `steps()`, sürekli döngüde 2'den fazla blob, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#eff4f3` | `#0b1417` |
-| `--bg-2` | `#e3ecea` | `#101c1f` |
-| `--surface` | `#fbfdfc` | `#132327` |
-| `--surface-2` | `#f0f6f4` | `#1a2f33` |
-| `--ink` | `#101a1c` | `#e9f1f1` |
-| `--ink-soft` | `#435452` | `#a6b6b5` |
-| `--accent` | `#b8481a` | `#ff8a5c` |
-| `--accent-ink` | `#fdf6f2` | `#1d0a04` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **16.26:1** · `ink-soft / bg` = **8.86:1** · `accent-ink / accent` = **8.24:1** · `ink-faint / bg` = **4.82:1**.
-- Koyu modda değişen başka ne var: blob opaklığı %18 → %14 (koyuda leke daha baskın görünür); gölge 10px → 12px; accent açık mercana döner.
-- `filter: invert()` yasak; palet elle yazılır.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **7.11:1** açık / **6.09:1** koyu · `--warn / bg` = **6.44:1** / **6.05:1** · `--ok / surface` = 5.29:1 / 5.26:1 (warn) · devre dışı buton metni = **7.26:1** / **7.60:1** · ghost buton kenarı = **3.84:1** / **5.56:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - Kart köşeleri asimetrik (`28/28/28/12`); buton ve çipler 999px pill.
@@ -213,14 +179,11 @@ Akışkan arayüz fikri 2010'ların "soft UI" akımından ve sıvı metal/cam de
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

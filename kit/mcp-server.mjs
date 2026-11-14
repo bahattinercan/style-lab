@@ -7,11 +7,9 @@
  * JSON-RPC 2.0 konuşur (bağımlılık yok) ve şu araçları verir:
  *
  *   pick(intent, limit?, family?)     → niyet cümlesinden aday slug'lar (kit/pick.mjs)
- *   style(slug)                       → style.md (kısa) + layout/choreography/imagery/industries özeti
+ *   style(slug)                       → style.md (kısa) + layout/imagery/industries özeti
  *   tokens(slug)                      → tokens.json (tam)
  *   shots(slug, scene?)               → repodaki çekirdek sahne yolları + eksikse render komutu
- *   sections(slug)                    → 12 bölüm yolu (+ eksikse komut)
- *   flows(slug)                       → 3 akış yolu (+ eksikse komut)
  *   brief(intent, industry?)          → hedefe hazır brief markdown (kit/brief.mjs)
  *   render(slug, scene, force?)       → sahneyi üretir ve dosya yolunu döndürür (P5b)
  *
@@ -60,41 +58,32 @@ const TOOLS = [
   },
   {
     name: 'style',
-    description: 'Bir stilin özeti: layout (hero/nav), hareket koreografisi, görsel photo/treatment, sektör, ilk 1200 karakter style.md.',
+    description: 'Bir stilin özeti: layout (hero/nav), görsel photo/treatment, sektör, ilk 1200 karakter style.md.',
     inputSchema: { type: 'object', properties: { slug: { type: 'string' } }, required: ['slug'] },
   },
   {
     name: 'tokens',
-    description: 'Stilin tam tokens.json içeriği (palet açık+koyu, tipografi, layout, motion, imagery, industries).',
+    description: 'Stilin tam tokens.json içeriği (palet, tipografi, layout, imagery, industries).',
     inputSchema: { type: 'object', properties: { slug: { type: 'string' } }, required: ['slug'] },
   },
   {
     name: 'shots',
-    description: 'Stilin çekirdek sahne dosya yolları (landing, dashboard, components, dark-landing). Eksik sahne için render komutu döner.',
+    description: 'Stilin tek sayfa görselinin yolu (shots/01-page.png). Eksikse render komutu döner.',
     inputSchema: {
       type: 'object',
       properties: { slug: { type: 'string' }, scene: { type: 'string' } },
       required: ['slug'],
     },
   },
-  {
-    name: 'sections',
-    description: '12 bölümün (hero, pricing-table, faq…) üretilmiş görsel yolları; eksikse üretim komutu.',
-    inputSchema: { type: 'object', properties: { slug: { type: 'string' } }, required: ['slug'] },
-  },
-  {
-    name: 'flows',
-    description: '3 akış şeridinin (onboarding, checkout, invite) yolları; eksikse üretim komutu.',
-    inputSchema: { type: 'object', properties: { slug: { type: 'string' } }, required: ['slug'] },
-  },
+
   {
     name: 'render',
-    description: 'Bir sahneyi (landing, dashboard, paywall…) üretir ve yolunu döndürür. Çekirdek sahne repoda, diğerleri kit/.shots-cache altında.',
+    description: 'Tek sayfa görselini üretir ve yolunu döndürür (1280×2400).',
     inputSchema: {
       type: 'object',
       properties: {
         slug: { type: 'string' },
-        scene: { type: 'string', description: 'sahne anahtarı: landing, dashboard, paywall, feed, profile, search, integrations, table-filters, states…' },
+        scene: { type: 'string', description: 'sahne anahtarı (v6: yalnız landing)' },
         force: { type: 'boolean' },
       },
       required: ['slug', 'scene'],
@@ -129,7 +118,6 @@ function callStyle({ slug }) {
     family: t.motion?.family ?? null,
     industries: t.industries ?? [],
     layout: t.layout ?? null,
-    choreography: t.motion?.choreography ?? null,
     imagery: t.imagery ?? null,
     palette: { light: t.palette, dark: t.palette?.dark ?? null },
     fonts: { display: t.typography?.display, body: t.typography?.body, mono: t.typography?.mono },
@@ -155,22 +143,6 @@ function callShots({ slug, scene }) {
       ? { missing, render: `node kit/render/render-shots.mjs --styles ${slug}${scene ? ` --scene ${scene}` : ''}` }
       : {}),
   };
-}
-
-function listCache(kind, slug) {
-  const dir = dirOf(slug);
-  const p = path.join(CACHE, dir, kind);
-  if (!fs.existsSync(p)) {
-    return {
-      slug,
-      files: [],
-      render:
-        kind === 'sections'
-          ? `node kit/render/render-sections.mjs --styles ${slug}`
-          : `node kit/render/render-flows.mjs --styles ${slug}`,
-    };
-  }
-  return { slug, files: fs.readdirSync(p).sort().map((f) => ({ id: f.replace(/\.png$/, ''), path: path.relative(ROOT, path.join(p, f)) })) };
 }
 
 function callBrief({ intent, industry }) {
@@ -213,10 +185,6 @@ function dispatch(name, args = {}) {
       return readTokens(args.slug);
     case 'shots':
       return callShots(args);
-    case 'sections':
-      return listCache('sections', args.slug);
-    case 'flows':
-      return listCache('flows', args.slug);
     case 'brief':
       return callBrief(args);
     case 'render':
@@ -269,19 +237,19 @@ if (ARGV.includes('--self-test')) {
   const checks = [];
   const init = { protocolVersion: '2024-11-05', capabilities: { tools: {} }, serverInfo: { name: 'style-lab', version: '5.0.0' } };
   checks.push(['initialize', init.serverInfo.name === 'style-lab']);
-  checks.push(['tools/list', TOOLS.length >= 8]);
+  checks.push(['tools/list', TOOLS.length >= 6]);
   const slugs = fs.readdirSync(STYLES).filter((d) => /^\d+-/.test(d)).map((d) => d.replace(/^\d+-/, ''));
   const sample = slugs[0];
   const picked = callPick({ intent: 'premium emlak sakin', limit: 3 });
   const arr = Array.isArray(picked) ? picked : picked.picks ?? picked.candidates ?? [];
   checks.push(['pick', arr.length > 0 && typeof arr[0].slug === 'string']);
   const style = callStyle({ slug: sample });
-  checks.push(['style', Boolean(style.layout && style.choreography)]);
+  checks.push(['style', Boolean(style.layout)]);
   const shots = callShots({ slug: sample });
   checks.push(['shots', shots.shots.length === CORE.length]);
   const brief = callBrief({ intent: 'premium emlak' });
   checks.push(['brief', brief.markdown.includes('## Seçim') && brief.markdown.length > 400]);
-  const rendered = callRender({ slug: sample, scene: 'paywall', force: true });
+  const rendered = callRender({ slug: sample, scene: 'landing', force: true });
   checks.push(['render', rendered.exists === true]);
   let failed = 0;
   for (const [name, ok] of checks) {

@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (maliyet + erişilebilirlik) · **Erişilebilirlik** | orta risk |
 | **Aile** | Sanatsal (28–34) · **Token** | `kit/tokens.css` → `[data-style="skeuomorphism"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -131,37 +131,18 @@ Kolon 12 · gutter 24px · container 1120px · bölüm 64/44px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | Ahşap panel, gömülü butonlar, fiziksel kontrol kümesi | `shots/01-landing.png` |
-| Dashboard | düşük | Doku azalır; panel + bevel yeter | `shots/02-dashboard.png` |
-| Form | düşük | Gömülü inputlar, tek buton | — |
-| Liste/tablo | çok düşük | Düz yüzey, bevel ayırıcı | — |
-| Boş durum | orta | Panel + tek cümle + buton | — |
-| Onboarding | orta | Adım başına 1 fiziksel kontrol | — |
-| Pricing | düşük | 2–3 panel, bevel kenar | — |
-| Giriş/ödeme | çok düşük | Doku kapanır; sade panel | — |
-| Modal | orta | Panel + dış gölge | — |
-| Toast | orta | Koyu panel + bevel | — |
-| Hata | düşük | `--danger` kenar + 15px metin | — |
-| Profil/ayar | orta | Fiziksel toggle (gömülü ray) | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 120ms | `ease-out` | `transform: translateY(1px)` + inset gölge |
-| Geçiş / sayfa | 220ms | `ease-out` | `opacity` |
-| Giriş (enter) | **360ms** | `cubic-bezier(.22,1.32,.4,1)` | `opacity` + `translateY(6px)`, **stagger 40ms**; malzeme oturur (hafif taşma = "tık") |
-| Kaydırma (scroll) | **500ms** | `cubic-bezier(.22,1.32,.4,1)` | trigger **`top 86%`**, offsetY **10px**, `once: true` |
-| Hover | **130ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 300ms | `ease-out` | "tık": inset → outset |
-
-- İmza ölçüsü: enter **0.36s / 6px / stagger 0.04** · scroll **0.5s / `top 86%` / 10px** · hover **130ms / 1.02** · pin **kapalı**.
-- `prefers-reduced-motion`: 0.01ms.
-- Bu stile yasak hareket: sürekli parlama, döngü.
-## Koyu mod
-
-`--bg` `#2a241d` · `--surface` `#3a3226` · `--ink` `#f0e8da` · `--accent` `#3f8a68` · `--accent-ink` `#1b1714` · doku opacity .08.
+| Landing/hero | yüksek | Ahşap panel, gömülü butonlar, fiziksel kontrol kümesi | `shots/01-page.png` |
+| Dashboard | düşük | Doku azalır; panel + bevel yeter | `shots/01-page.png` |
+| Form | düşük | Gömülü inputlar, tek buton | `shots/01-page.png` |
+| Liste/tablo | çok düşük | Düz yüzey, bevel ayırıcı | `shots/01-page.png` |
+| Boş durum | orta | Panel + tek cümle + buton | `shots/01-page.png` |
+| Onboarding | orta | Adım başına 1 fiziksel kontrol | `shots/01-page.png` |
+| Pricing | düşük | 2–3 panel, bevel kenar | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Doku kapanır; sade panel | `shots/01-page.png` |
+| Modal | orta | Panel + dış gölge | `shots/01-page.png` |
+| Toast | orta | Koyu panel + bevel | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + 15px metin | `shots/01-page.png` |
+| Profil/ayar | orta | Fiziksel toggle (gömülü ray) | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -174,14 +155,11 @@ Kolon 12 · gutter 24px · container 1120px · bölüm 64/44px · breakpoint 640
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

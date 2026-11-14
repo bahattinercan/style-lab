@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | iyi |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="literary-hardcover"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `type` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -145,51 +145,20 @@ Kökeni Penguin Classics cilt tasarımı ve Bringhurst'ün *The Elements of Typo
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Kapak bloğu 4px radius + 1px iç hairline, üstünde 2px accent şerit; h1 58px, tek CTA | `shots/01-landing.png` |
-| Dashboard | düşük | Okuma listesi: 3 satır, satır arası 1px hairline, mono sayaç | `shots/02-dashboard.png` |
-| Form | düşük | 46px input, 4px radius, etiket mono 11px .14em; hata metni ink-soft | — |
-| Liste / tablo | düşük | 48px satır, 1px alt çizgi, başlık mono 11px; zebra yok | — |
-| Boş durum | orta | Tek paragraf 64ch + birincil buton; illüstrasyon yok | — |
-| Onboarding | yüksek | Üç adım, sol kolon metin 7/12, sağ kolon künye 4/12 | — |
-| Pricing | orta | Üç plan kartı 10px radius, 1px hairline; accent yalnız önerilen planın şeridinde | — |
-| Giriş / ödeme | çok düşük | Tek kolon 420px form, ortalanmış; sosyal buton ikincil | — |
-| Modal | orta | 480px, 10px radius, tek yumuşak gölge; backdrop %40 ink | — |
-| Bildirim / toast | orta | Sol alt, 42px, ink zemin + bg metin, 4px radius | — |
-| Hata | düşük | Başlık 34px + tek paragraf 64ch + accent ikincil buton | — |
-| Profil / ayar | orta | İki kolon: form 7/12, künye 4/12; hairline ayırıcı | — |
+| Landing / hero | yüksek | Kapak bloğu 4px radius + 1px iç hairline, üstünde 2px accent şerit; h1 58px, tek CTA | `shots/01-page.png` |
+| Dashboard | düşük | Okuma listesi: 3 satır, satır arası 1px hairline, mono sayaç | `shots/01-page.png` |
+| Form | düşük | 46px input, 4px radius, etiket mono 11px .14em; hata metni ink-soft | `shots/01-page.png` |
+| Liste / tablo | düşük | 48px satır, 1px alt çizgi, başlık mono 11px; zebra yok | `shots/01-page.png` |
+| Boş durum | orta | Tek paragraf 64ch + birincil buton; illüstrasyon yok | `shots/01-page.png` |
+| Onboarding | yüksek | Üç adım, sol kolon metin 7/12, sağ kolon künye 4/12 | `shots/01-page.png` |
+| Pricing | orta | Üç plan kartı 10px radius, 1px hairline; accent yalnız önerilen planın şeridinde | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 420px form, ortalanmış; sosyal buton ikincil | `shots/01-page.png` |
+| Modal | orta | 480px, 10px radius, tek yumuşak gölge; backdrop %40 ink | `shots/01-page.png` |
+| Bildirim / toast | orta | Sol alt, 42px, ink zemin + bg metin, 4px radius | `shots/01-page.png` |
+| Hata | düşük | Başlık 34px + tek paragraf 64ch + accent ikincil buton | `shots/01-page.png` |
+| Profil / ayar | orta | İki kolon: form 7/12, künye 4/12; hairline ayırıcı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `cubic-bezier(.2,.6,.2,1)` | `opacity` + 1px `translateY` |
-| Giriş (enter) | 720ms | `cubic-bezier(.2,.6,.2,1)` | `opacity` + 18px `translateY`, stagger 0.055s (55ms) |
-| Scroll reveal | 860ms | aynı eğri | `top 81%` tetikleyici, `opacity` + 20px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 260ms | aynı eğri | `transform: scale(1.018)` |
-| Ödül / vurgu | 380ms | `cubic-bezier(.2,.6,.2,1)` | accent şerit genişliği 0→100% (tek atım) |
-
-- Süre bütçesi: enter 720ms ≤ 1200ms · scroll 860ms ≤ 1200ms · stagger 0.055s (55ms).
-- Giriş yalnız başlık ve bölüm ilk paragrafında; paragraf paragraf fade-in yok.
-- Pin/parallax yok: okuma akışı sabit kalır, scrub'lı bir sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, reveal yalnız opacity'ye düşer.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f2ebdd` | `#191813` |
-| `--surface` | `#fdfaf2` | `#1e1d16` |
-| `--ink` | `#1b1a17` | `#f2eee2` |
-| `--accent` | `#2f4a3c` | `#a8c3b2` |
-| `--line` | `rgba(27,26,23,.16)` | `rgba(242,238,226,.14)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 15.32:1 · `accent-ink / accent` = 9.90:1.
-- Koyu modda kâğıt kremi sıcak antrasite (`#191813`) döner; accent açık adaçayına (`#a8c3b2`) çekilir.
-- Gölge yine yok; hairline opaklığı .16'dan .14'e düşer, radius değişmez.
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 
@@ -223,14 +192,11 @@ Kökeni Penguin Classics cilt tasarımı ve Bringhurst'ün *The Elements of Typo
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

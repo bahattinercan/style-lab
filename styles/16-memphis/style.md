@@ -10,7 +10,7 @@
 | **Zorluk** | orta (dağınıklığa kayma riski) · **Erişilebilirlik** | orta |
 | **Aile** | Cesur (13–18) · **Token** | `kit/tokens.css` → `[data-style="memphis"]` |
 | **Kompozisyon** | `split` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -152,45 +152,18 @@ Ettore Sottsass ve Memphis Group (1981); 2010'larda "80'ler revival" ile dijital
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 56px başlık, 3–4 konturlu geometri, sarı blok, tek kırmızı buton | `shots/01-landing.png` |
-| Dashboard | düşük | Dekor kapanır; kartlar kontur + ofset, KPI sayıları sade | `shots/02-dashboard.png` |
-| Form | düşük | 3px kontur kalır, dekor yok | — |
-| Liste / tablo | düşük | 2px ayırıcı, zebra sarı %20 | — |
-| Boş durum | yüksek | 1 büyük geometri + tek cümle + buton | — |
-| Onboarding | yüksek | Adım başına 1 illüstrasyon + kısa metin | — |
-| Pricing | yüksek | 3 konturlu kart, orta kart sarı + "popüler" sticker | — |
-| Giriş / ödeme | çok düşük | Dekor yok, kontur + tek buton | — |
-| Modal | orta | 8px ofset gölge | — |
-| Bildirim / toast | orta | Sarı toast + 3px kontur | — |
-| Hata | düşük | Kırmızı kontur + 14px sakin dil | — |
-| Profil / ayar | düşük | Kart listesi, dekor minimum | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 100ms | `ease-out` | `translate(3px,3px)` + gölge 0 |
-| Giriş | 300ms | `cubic-bezier(.34,1.6,.64,1)` | `opacity` + 14px `translateY`, stagger 40ms |
-| Scroll (`top 87%`) | 280ms | aynı eğri | `opacity` + 16px `translateY`, `once: true` |
-| Hover | 100ms | aynı eğri | `transform: scale(1.03)` |
-| Ödül | 260ms | `cubic-bezier(.34,1.6,.64,1)` | dekor şekli `scale(1.1)` tek sefer |
-
-- Enerjik ama 300ms üstüne çıkma.
-- `prefers-reduced-motion`: ölçek kapanır, sadece opacity.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#fff6e9` | `#141210` |
-| `--surface` | `#ffffff` | `#1e1a16` |
-| `--surface-2` | `#ffd400` | `#e8c000` |
-| `--ink` | `#111111` | `#fff6e9` |
-| `--accent` | `#ff4e50` | `#ff4e50` |
-| `--accent-ink` | `#111111` | `#111111` |
-| `--line` | `#111111` | `#fff6e9` |
-
-- Koyu modda kontur açık renge döner; ofset gölge açık renk %20 opaklık.
+| Landing / hero | yüksek | 56px başlık, 3–4 konturlu geometri, sarı blok, tek kırmızı buton | `shots/01-page.png` |
+| Dashboard | düşük | Dekor kapanır; kartlar kontur + ofset, KPI sayıları sade | `shots/01-page.png` |
+| Form | düşük | 3px kontur kalır, dekor yok | `shots/01-page.png` |
+| Liste / tablo | düşük | 2px ayırıcı, zebra sarı %20 | `shots/01-page.png` |
+| Boş durum | yüksek | 1 büyük geometri + tek cümle + buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 illüstrasyon + kısa metin | `shots/01-page.png` |
+| Pricing | yüksek | 3 konturlu kart, orta kart sarı + "popüler" sticker | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Dekor yok, kontur + tek buton | `shots/01-page.png` |
+| Modal | orta | 8px ofset gölge | `shots/01-page.png` |
+| Bildirim / toast | orta | Sarı toast + 3px kontur | `shots/01-page.png` |
+| Hata | düşük | Kırmızı kontur + 14px sakin dil | `shots/01-page.png` |
+| Profil / ayar | düşük | Kart listesi, dekor minimum | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -203,14 +176,11 @@ Ettore Sottsass ve Memphis Group (1981); 2010'larda "80'ler revival" ile dijital
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

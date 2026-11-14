@@ -94,7 +94,6 @@ export const CONFIG = {
       .mark { border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
       .sig { background: radial-gradient(60% 60% at 50% 100%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%); }
 
-
       /* ===== FIX136 denetim düzeltmeleri ===== */
       /* D1a: "Pasif" butonu. Ölçüm: element opacity .42 (kit inline) → 1.9-3.3:1,
          opacity .6 + ink-soft → 2.1-3.7:1 (eşik altı). Bu yüzden .6 görsel ağırlık

@@ -10,7 +10,7 @@
 | **Zorluk** | orta (renk disiplini zor) · **Erişilebilirlik** | orta risk (doygun renk yorgunluğu) |
 | **Aile** | Cesur (13–18) · **Token** | `kit/tokens.css` → `[data-style="dopamine-ui"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -153,45 +153,18 @@ Oyunlaştırma (Duolingo, Strava) ve sosyal ürünlerin "streak/reward" dili; 20
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 48px başlık, pastel blok, tek accent CTA, sağda ödül kartı | `shots/01-landing.png` |
-| Dashboard | orta | Streak/kupa sağ üstte; KPI'lar pastel, grafik 2 renk | `shots/02-dashboard.png` |
-| Form | düşük | 480px, 48px input, tek pill buton; ödül animasyonu yok | — |
-| Liste / tablo | düşük | Satır 54px, pastel hover; accent yalnız durum | — |
-| Boş durum | yüksek | Ödül illüstrasyonu + tek cümle + pill buton | — |
-| Onboarding | yüksek | Sayfa başına 1 kazanım; ilerleme pill; tamamlanınca konfeti | — |
-| Pricing | orta | 3 kart, orta kart accent gölge + "popüler" pill | — |
-| Giriş / ödeme | çok düşük | Doygun rengi azalt; sade kart, tek buton | — |
-| Modal | orta | 24px radius, güçlü gölge | — |
-| Bildirim / toast | yüksek | Pill + ödül ikonu, 4sn | — |
-| Hata | düşük | Sevimli ama sakin dil; `--danger` yalnız ikon | — |
-| Profil / ayar | orta | Ayar satırı 56px, pill toggle | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `ease-out` | `transform: scale(.97)` |
-| Giriş | 360ms | `cubic-bezier(.34,1.4,.64,1)` | `opacity` + 18px `translateY`, stagger 50ms |
-| Scroll (`top 89%`) | 300ms | aynı eğri | `opacity` + 16px `translateY`, `once: true` |
-| Hover | 130ms | aynı eğri | `transform: scale(1.03)` |
-| Ödül | 400ms | `cubic-bezier(.34,1.5,.64,1)` | `scale(1→1.06→1)` + konfeti |
-
-- Ödül hareketi **eylem başına bir kez**; aynı ekranda 2. ödül 1 sn içinde tetiklenmez.
-- `prefers-reduced-motion`: tüm ödül animasyonları kapanır (konfeti dahil).
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#fffdf7` | `#14101a` |
-| `--surface` | `#ffffff` | `#211b2b` |
-| `--surface-2` | `#ffe3ec` | `#3a2430` |
-| `--ink` | `#16121f` | `#fdf7f9` |
-| `--ink-soft` | `#4a4358` | `#b9b1c6` |
-| `--accent` | `#ff3d71` | `#ff5d8a` |
-| `--accent-ink` | `#16121f` | `#14101a` |
-
-- Koyu modda pastel bloklar %40 opaklıkla kullanılır; pembe gölge koyu tonda (`rgba(0,0,0,.45)`).
+| Landing / hero | yüksek | 48px başlık, pastel blok, tek accent CTA, sağda ödül kartı | `shots/01-page.png` |
+| Dashboard | orta | Streak/kupa sağ üstte; KPI'lar pastel, grafik 2 renk | `shots/01-page.png` |
+| Form | düşük | 480px, 48px input, tek pill buton; ödül animasyonu yok | `shots/01-page.png` |
+| Liste / tablo | düşük | Satır 54px, pastel hover; accent yalnız durum | `shots/01-page.png` |
+| Boş durum | yüksek | Ödül illüstrasyonu + tek cümle + pill buton | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına 1 kazanım; ilerleme pill; tamamlanınca konfeti | `shots/01-page.png` |
+| Pricing | orta | 3 kart, orta kart accent gölge + "popüler" pill | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Doygun rengi azalt; sade kart, tek buton | `shots/01-page.png` |
+| Modal | orta | 24px radius, güçlü gölge | `shots/01-page.png` |
+| Bildirim / toast | yüksek | Pill + ödül ikonu, 4sn | `shots/01-page.png` |
+| Hata | düşük | Sevimli ama sakin dil; `--danger` yalnız ikon | `shots/01-page.png` |
+| Profil / ayar | orta | Ayar satırı 56px, pill toggle | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -204,14 +177,11 @@ Oyunlaştırma (Duolingo, Strava) ve sosyal ürünlerin "streak/reward" dili; 20
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

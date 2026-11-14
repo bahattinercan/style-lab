@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (bevel kontrastı düşürür; en düşük metin çifti 5.22:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="machined-metal-panel"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,20 @@ Bedeli: uzun gövde metni metal zeminde yorucudur. Panel bu yüzden **kontrol y�
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | ortalanmış cihaz görseli + iki yanında gravür ölçü bloğu | `shots/01-landing.png` |
-| Dashboard | düşük | panel ızgarası 3×2; her KPI'da amber nokta + etiket | `shots/02-dashboard.png` |
-| Form | düşük | gömük input, etiket üstte 9px mono | — |
-| Liste / tablo | düşük | 34px satır, sağa dayalı tabular sayı | — |
-| Boş durum | orta | gömük oluk + "SİNYAL YOK" gravür etiketi | — |
-| Onboarding | yüksek | her adım bir kontrol paneli; amber nokta ilerlemeyi gösterir | — |
-| Pricing | orta | üç panel; öne çıkan panelde amber üst şerit (2px) | — |
-| Giriş / ödeme | çok düşük | bevel korunur, amber yalnız birincil eylemde | — |
-| Modal | orta | yüzen panel + tek dış gölge 6px | — |
-| Bildirim / toast | orta | alt-sağ, amber nokta + mono metin | — |
-| Hata | düşük | nokta `--danger`, çerçeve 1px danger; zemin değişmez | — |
-| Profil / ayar | orta | sol etiket kolonu 4/8; her satır gömük oluk | — |
+| Landing / hero | yüksek | ortalanmış cihaz görseli + iki yanında gravür ölçü bloğu | `shots/01-page.png` |
+| Dashboard | düşük | panel ızgarası 3×2; her KPI'da amber nokta + etiket | `shots/01-page.png` |
+| Form | düşük | gömük input, etiket üstte 9px mono | `shots/01-page.png` |
+| Liste / tablo | düşük | 34px satır, sağa dayalı tabular sayı | `shots/01-page.png` |
+| Boş durum | orta | gömük oluk + "SİNYAL YOK" gravür etiketi | `shots/01-page.png` |
+| Onboarding | yüksek | her adım bir kontrol paneli; amber nokta ilerlemeyi gösterir | `shots/01-page.png` |
+| Pricing | orta | üç panel; öne çıkan panelde amber üst şerit (2px) | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | bevel korunur, amber yalnız birincil eylemde | `shots/01-page.png` |
+| Modal | orta | yüzen panel + tek dış gölge 6px | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sağ, amber nokta + mono metin | `shots/01-page.png` |
+| Hata | düşük | nokta `--danger`, çerçeve 1px danger; zemin değişmez | `shots/01-page.png` |
+| Profil / ayar | orta | sol etiket kolonu 4/8; her satır gömük oluk | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **260ms** | `cubic-bezier(.28,1.46,.58,1)` | `opacity` + `translateY(4px)`; stagger **0.02s** |
-| Scroll reveal | **280ms** | aynı eğri | trigger `top 87%`, `translateY(11px)`, `once: true` |
-| Pin / scrub | **0.62** | `transform` | **açık** — cihaz görseli `+84%` mesafede pin + scrub |
-| Basma | **80ms** | `cubic-bezier(.28,1.46,.58,1)` | `translateY(1px)`, bevel inset'e döner |
-| Geçiş / sayfa | 160ms | aynı eğri | opacity + 4px |
-| Hover | **110ms** | aynı eğri | görsel ölçek **1.008** |
-| Ödül / vurgu | 280ms | aynı eğri | amber nokta 6px→8px, tek kez |
-
-- İmza ölçüleri: `enter = 0.26s / cubic-bezier(.28,1.46,.58,1) / 4px / 0.02` · `scroll = top 87% / 0.28s / 11px / once` · `pin = true / scrub 0.62 / +84%` · `hover = 110ms / 1.008`.
-- Aynı banttaki komşulardan fark: 56'dan (0.36s / 6px / 0.045) dört, 58'den (0.14s / linear / 16px) dört, 59'dan (0.44s / 20px / scrub 0.95) dört, 60'tan (0.58s / 12px / scrub 1.45) dört parametrede ayrışır. Mevcut 59 stil içinde en yakını 62-warehouse-flow (8 parametre farkı).
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin devre dışı, amber nokta sabit.
-- Bu stile yasak hareket: sürekli parlama, blur geçişi, sürekli döngü (soğutma fanı), parallax.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#d5d8da` | `#1a1d1f` |
-| `--surface` | `#e2e5e7` | `#24282b` |
-| `--ink` | `#1b1f22` | `#e6e9ea` |
-| `--accent` | `#9c4a0c` | `#e59244` |
-| `--ink-soft` | `#4e565c` | `#aeb6ba` |
-| `--line` | `rgba(27,31,34,.18)` | `rgba(230,233,234,.18)` |
-
-- Koyu modda değişen başka ne var: bevel formülü tersine döner (üst kenar daha az açık, alt kenar daha az koyu) — siyah zeminde açık hairline parlar; amber bir ton açılır (`#e59244`), durum noktası 6px kalır.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`). Koyu modda fırçalama izi opaklığı %5 → %4.
 
 ## Zorunlu kurallar
 - Bevel formülü zorunlu: inset üst 1px açık + inset alt 1px koyu; dış gölge yalnız yüzen katmanda (≤6px blur).
@@ -210,14 +179,11 @@ Bedeli: uzun gövde metni metal zeminde yorucudur. Panel bu yüzden **kontrol y�
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

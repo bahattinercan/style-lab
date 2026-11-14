@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (denge + tipografi disiplini) · **Erişilebilirlik** | iyi (yüksek kontrast, süs metni örtmez) |
 | **Aile** | Geometrik (36) · **Token** | `kit/tokens.css` → `[data-style="constructivism"]` |
 | **Kompozisyon** | `index` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -161,55 +161,26 @@ Rodchenko ve El Lissitzky'nin afiş/kitap kapakları, VKhUTEMAS atölyeleri, 192
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 64–72px uppercase başlık, 7/5 asimetri, 1 kırmızı diagonal çubuk, tek CTA; başlık en fazla 3 satır | `shots/01-landing.png` |
-| Dashboard | düşük | çubuk ve döndürme kapanır; KPI'lar `6px` üst kural + mono etiket; kırmızı yalnız sapma değerinde | `shots/02-dashboard.png` |
-| Mobil | orta | tek kolon, display 34px, çubuk ekranın sağ kenarından taşar (taşma `overflow: hidden`), dokunma 44px | — |
-| Bileşenler · temel | orta | palet + ölçek levhası; radius 0 ve 3px kural her bileşende görünür | — |
-| Form | çok düşük | çubuk yok; 3px kenarlı input, tek sütun 460px, etiket mono uppercase | — |
-| Modal / katman | orta | 3px çerçeve + 6px blok gölge; başlık 27px; 2 buton sağa | — |
-| Veri | düşük | tablo 54px satır, dış çerçeve 3px, iç 1px; grafik 0 radius çubuklar | — |
-| Gezinme | orta | alt `3px` kural; aktif öğe altında `6px` kırmızı; logo kare monogram | — |
-| Pricing | orta | 3 kart; orta kart `6px` blok gölge + `6px` üst kırmızı çubuk; "seç" birincil buton | — |
-| Giriş / ödeme | çok düşük | süs ≤.22; yalnız 3px kenar + mono etiket; güven için sade | — |
-| Liste | düşük | filtre çubuğu 3px alt kural; satır 54px; seçili satır sol `6px` kırmızı | — |
-| Boş / hata durumu | orta | tek kırmızı blok (96px) + tek cümle + tek buton; 404'te display 96px | — |
-| Ayarlar | düşük | bölüm başlıkları `6px` kural ile; anahtar 44×24 radius 0; tehlike bölgesi kırmızı kenar | — |
-| Onboarding | yüksek | adım başına bir montaj öğesi (çubuk → blok → harf); ilerleme çubuğu 6px | — |
-| Makale | orta | 680px ölçü, drop-cap yok, 6px kural ile bölüm, mono pull-quote sol kenarda | — |
-| Mobil sheet | orta | alt sayfa 3px üst kural, 0 radius, 48px sürükleme tutamacı | — |
-| Mobil form | çok düşük | tam genişlik input 52px yükseklik, klavye üstü CTA 56px | — |
-| Mobil liste | düşük | 56px satır, avatar yerine kare mono baş harf | — |
+| Landing / hero | yüksek | 64–72px uppercase başlık, 7/5 asimetri, 1 kırmızı diagonal çubuk, tek CTA; başlık en fazla 3 satır | `shots/01-page.png` |
+| Dashboard | düşük | çubuk ve döndürme kapanır; KPI'lar `6px` üst kural + mono etiket; kırmızı yalnız sapma değerinde | `shots/01-page.png` |
+| Mobil | orta | tek kolon, display 34px, çubuk ekranın sağ kenarından taşar (taşma `overflow: hidden`), dokunma 44px | `shots/01-page.png` |
+| Bileşenler · temel | orta | palet + ölçek levhası; radius 0 ve 3px kural her bileşende görünür | `shots/01-page.png` |
+| Form | çok düşük | çubuk yok; 3px kenarlı input, tek sütun 460px, etiket mono uppercase | `shots/01-page.png` |
+| Modal / katman | orta | 3px çerçeve + 6px blok gölge; başlık 27px; 2 buton sağa | `shots/01-page.png` |
+| Veri | düşük | tablo 54px satır, dış çerçeve 3px, iç 1px; grafik 0 radius çubuklar | `shots/01-page.png` |
+| Gezinme | orta | alt `3px` kural; aktif öğe altında `6px` kırmızı; logo kare monogram | `shots/01-page.png` |
+| Pricing | orta | 3 kart; orta kart `6px` blok gölge + `6px` üst kırmızı çubuk; "seç" birincil buton | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | süs ≤.22; yalnız 3px kenar + mono etiket; güven için sade | `shots/01-page.png` |
+| Liste | düşük | filtre çubuğu 3px alt kural; satır 54px; seçili satır sol `6px` kırmızı | `shots/01-page.png` |
+| Boş / hata durumu | orta | tek kırmızı blok (96px) + tek cümle + tek buton; 404'te display 96px | `shots/01-page.png` |
+| Ayarlar | düşük | bölüm başlıkları `6px` kural ile; anahtar 44×24 radius 0; tehlike bölgesi kırmızı kenar | `shots/01-page.png` |
+| Onboarding | yüksek | adım başına bir montaj öğesi (çubuk → blok → harf); ilerleme çubuğu 6px | `shots/01-page.png` |
+| Makale | orta | 680px ölçü, drop-cap yok, 6px kural ile bölüm, mono pull-quote sol kenarda | `shots/01-page.png` |
+| Mobil sheet | orta | alt sayfa 3px üst kural, 0 radius, 48px sürükleme tutamacı | `shots/01-page.png` |
+| Mobil form | çok düşük | tam genişlik input 52px yükseklik, klavye üstü CTA 56px | `shots/01-page.png` |
+| Mobil liste | düşük | 56px satır, avatar yerine kare mono baş harf | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 90ms | `cubic-bezier(.2,.8,.2,1)` | `transform: translate(2px,2px)` + gölge 0 |
-| Geçiş / sayfa | 200ms | `cubic-bezier(.16,.84,.24,1)` | `opacity`, `clip-path` (diagonal reveal) |
-| Giriş (enter) | **300ms** | `cubic-bezier(.7,0,.25,1)` | `opacity` + `translateY(26px)`, **stagger 40ms**; diagonal çubuk gibi sert iniş |
-| Kaydırma (scroll) | **340ms** | `cubic-bezier(.7,0,.25,1)` | trigger **`top 88%`**, offsetY **28px**, `once: true` |
-| Hover | **110ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | kapalı | — | `enabled: false` (`scrub 1.0` / `+120%` kullanılmıyor) |
-| Ödül / vurgu | 320ms | `cubic-bezier(.16,.84,.24,1)` | çubuk `scaleX(0→1)`, tek atım |
-
-- İmza ölçüsü: enter **0.3s / 26px / stagger 0.04** · scroll **0.34s / `top 88%` / 28px** · hover **110ms / 1.02** · pin **kapalı**.
-- `prefers-reduced-motion`: tüm süreler `0.01ms`, çubuk animasyonu durur, `transform` sıfırlanır (basma hariç — basma geri bildirim olarak kalır).
-- Bu stile yasak hareket: sürekli dönen çubuk, parallax, otomatik kayan yazı (marquee), gradient geçişi.
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#efeae0` | `#11100f` |
-| `--surface` | `#fbf8f2` | `#1a1817` |
-| `--ink` | `#11100f` | `#f0eae0` |
-| `--accent` | `#c1121f` | `#e0323c` |
-
-- Koyu mod bu stilin **ana modu değildir**; talep varsa palet elle yazılır (`[data-theme="dark"][data-style="constructivism"]`), `--accent-ink` `#11100f` olur (koyu zeminde kırmızı üstü siyah 4.9:1).
-- Koyu modda çubuk kalınlığı aynı kalır; `--shadow-hard` siyahtan `#000` gölgeye kayar ve opaklığı `.6`'ya iner (siyah zemin üstünde blok gölge okunmaz).
-- `filter: invert()` yasak; grain `.03` → `.02` (koyu zeminde doku daha görünür olur).
-- Koyu mod sahneleri (17/18) bu stil için üretilmedi; koyu varyant üretilirse `--accent-ink/accent` yeniden ölçülür.
 
 ## Erişilebilirlik
 
@@ -223,14 +194,11 @@ Rodchenko ve El Lissitzky'nin afiş/kitap kapakları, VKhUTEMAS atölyeleri, 192
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

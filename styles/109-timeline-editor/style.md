@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (yoğun ızgara + küçük etiketler; en düşük metin çifti 7.21:1) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="timeline-editor"]` |
 | **Kompozisyon** | `sticky` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -140,51 +140,20 @@ Doğrusal olmayan kurgu (NLE) pratiğinden: kanal/klip/playhead modeli, J-K-L tu
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | solda H1 + zaman kodu etiketi, sağda zaman çizgisi görseli | `shots/01-landing.png` |
-| Dashboard | **yüksek** | kanal şeritleri + denetçi paneli; süs sıfır | `shots/02-dashboard.png` |
-| Form | düşük | 32px mono input, tek kolon; zaman kodu doğrulaması | — |
-| Liste / tablo | **yüksek** | 32px kanal satırı, mono süre kolonu | — |
-| Boş durum | orta | boş zaman çizgisi + "medya sürükle" mono etiketi | — |
-| Onboarding | orta | 3 adım: medya ekle → klip kes → dışa aktar | — |
-| Pricing | orta | plan tablosu satır bazlı; süre limiti mono | — |
-| Giriş / ödeme | çok düşük | zaman çizgisi yok; sade form + tek CTA | — |
-| Modal | orta | dışa aktarma: codec + süre mono | — |
-| Bildirim / toast | orta | sağ-alt, playhead çizgisi + mono metin | — |
-| Hata | orta | kırmızı klip çerçevesi + mono hata kodu | — |
-| Profil / ayar | orta | kısayol ve ızgara yoğunluğu ayarları | — |
+| Landing / hero | orta | solda H1 + zaman kodu etiketi, sağda zaman çizgisi görseli | `shots/01-page.png` |
+| Dashboard | **yüksek** | kanal şeritleri + denetçi paneli; süs sıfır | `shots/01-page.png` |
+| Form | düşük | 32px mono input, tek kolon; zaman kodu doğrulaması | `shots/01-page.png` |
+| Liste / tablo | **yüksek** | 32px kanal satırı, mono süre kolonu | `shots/01-page.png` |
+| Boş durum | orta | boş zaman çizgisi + "medya sürükle" mono etiketi | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: medya ekle → klip kes → dışa aktar | `shots/01-page.png` |
+| Pricing | orta | plan tablosu satır bazlı; süre limiti mono | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | zaman çizgisi yok; sade form + tek CTA | `shots/01-page.png` |
+| Modal | orta | dışa aktarma: codec + süre mono | `shots/01-page.png` |
+| Bildirim / toast | orta | sağ-alt, playhead çizgisi + mono metin | `shots/01-page.png` |
+| Hata | orta | kırmızı klip çerçevesi + mono hata kodu | `shots/01-page.png` |
+| Profil / ayar | orta | kısayol ve ızgara yoğunluğu ayarları | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **510ms** | `cubic-bezier(.45,.08,.25,1)` | `opacity` + `translateY(15px)`; stagger **0.042s** |
-| Scroll reveal | **530ms** | aynı eğri | trigger `top 67%`, `translateY(18px)`, `once: true` |
-| Pin / scrub | **1.3** | `transform` | **açık** — zaman ekseni `+190%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **110ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 220ms | aynı eğri | opacity + 8px |
-| Hover | **165ms** | aynı eğri | görsel ölçek **1.004** |
-| Ödül / vurgu | 530ms | aynı eğri | playhead hedef kareye oturur (tek kez) |
-
-- İmza ölçüleri: `enter = 0.51s / cubic-bezier(.45,.08,.25,1) / 15px / 0.042` · `scroll = top 67% / 0.53s / 18px / once` · `pin = true / scrub 1.3 / +190%` · `hover = 165ms / 1.004`.
-- Bant içi fark: 106'dan (0.37s / 2px / pin yok), 107'den (0.86s / 25px / scrub 0.42), 108'den (0.19s / 5px), 110'den (0.73s / 19px / pin yok) en az dört parametrede ayrışır. Mevcut 93 stil içinde en yakını 53-ledger-meter (`0.66s / .65,0,.35,1 / 20px / 0.09 / scrub 1.35`) — süre, eğri, offset, stagger, trigger (top 67%) ve distance farklı; `scrub 1.3` ve `top 67%` katalogda yeni.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin kapalı, playhead statik.
-- Bu stile yasak hareket: kayıt dışında akan playhead, yay/overshoot, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f1efec` | `#121213` |
-| `--surface` | `#fbfaf8` | `#1d1c1f` |
-| `--ink` | `#1e1a17` | `#efece7` |
-| `--accent` | `#a12a6e` | `#d97ac0` |
-| `--ink-soft` | `#554d46` | `#b7b0a8` |
-| `--line` | `rgba(30,26,23,.16)` | `rgba(239,236,231,.16)` |
-
-- Koyu modda değişen başka ne var: ana kare çizgisi ink %12 → %16 (siyahta kaybolmasın), klip tonu %8 → %12, accent bir ton açılır (`#d97ac0`) çünkü koyu zeminde plum kaybolur.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Kanal şeritleri 32px (mobil 40px); zaman kodu mono ve tabular (`00:00:12:04`).
@@ -212,14 +181,11 @@ Doğrusal olmayan kurgu (NLE) pratiğinden: kanal/klip/playhead modeli, J-K-L tu
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

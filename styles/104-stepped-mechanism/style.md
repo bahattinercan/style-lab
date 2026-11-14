@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (orta gri zemin; en düşük etkileşimli çift 5.28:1) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `styles/104-stepped-mechanism/tokens.json` → `[data-style="stepped-mechanism"]` |
 | **Kompozisyon** | `sticky` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,56 +139,21 @@ Endüstriyel operatör panelleri (buton kademeleri, seçici anahtarlar), film pr
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | Kademe paneli 4/8; sağda dört çentik gösterge | `shots/01-landing.png` |
-| Dashboard | yüksek | Paneller 2px kuralla; göstergeler satır altında | `shots/02-dashboard.png` |
-| Form | düşük | 36px alanlar; her alan kademe ızgarasına hizalı | — |
-| Liste / tablo | yüksek | 32px satır, zebra, seçili sol 8px şerit | — |
-| Boş durum | orta | Boş gösterge (0/4 dolu) + tek eylem | — |
-| Onboarding | yüksek | Sihirbaz 4 adım; her adım bir kademe, geri dönüş yok | — |
-| Pricing | orta | Plan kartları 2px ink kenar; öne çıkan accent kilit çizgisi | — |
-| Giriş / ödeme | çok düşük | Tek panel, düşük yoğunluk, hata sol şeritle | — |
-| Modal | orta | Açılış 4 kademede; ESC kademeyi atlamaz (geri sarar) | — |
-| Bildirim / toast | orta | Alt şerit + kademe sayacı | — |
-| Hata | düşük | `--danger` kenar + "kademe 2'de durdu" bilgisi | — |
-| Profil / ayar | orta | Kademe sayısı (sabit 4), ızgara görünürlüğü, sesli geri bildirim | — |
+| Landing / hero | orta | Kademe paneli 4/8; sağda dört çentik gösterge | `shots/01-page.png` |
+| Dashboard | yüksek | Paneller 2px kuralla; göstergeler satır altında | `shots/01-page.png` |
+| Form | düşük | 36px alanlar; her alan kademe ızgarasına hizalı | `shots/01-page.png` |
+| Liste / tablo | yüksek | 32px satır, zebra, seçili sol 8px şerit | `shots/01-page.png` |
+| Boş durum | orta | Boş gösterge (0/4 dolu) + tek eylem | `shots/01-page.png` |
+| Onboarding | yüksek | Sihirbaz 4 adım; her adım bir kademe, geri dönüş yok | `shots/01-page.png` |
+| Pricing | orta | Plan kartları 2px ink kenar; öne çıkan accent kilit çizgisi | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel, düşük yoğunluk, hata sol şeritle | `shots/01-page.png` |
+| Modal | orta | Açılış 4 kademede; ESC kademeyi atlamaz (geri sarar) | `shots/01-page.png` |
+| Bildirim / toast | orta | Alt şerit + kademe sayacı | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + "kademe 2'de durdu" bilgisi | `shots/01-page.png` |
+| Profil / ayar | orta | Kademe sayısı (sabit 4), ızgara görünürlüğü, sesli geri bildirim | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — kademeli gösterge — çentik cetveli, 8px basamak, "0 [###-----] 8".
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.36s**, y **0px**, stagger **0.05** | `steps(4, end)` | `opacity` (4 kademe) |
-| Scroll reveal | **0.31s**, trigger **top 73%**, y **12px**, `once: true` | `steps(4, end)` | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **0.45**, mesafe **+65%** (kısa ve sert) | scrub doğrusal | `transform` (kademe 0→4) |
-| Hover | **85ms**, görsel scale **1.008** | `steps(2, end)` | `background-color` |
-| Basma | 85ms | `steps(2, end)` | `transform` (2px aşağı, kilit) |
-| Kademe göstergesi | 4 × 85ms | `steps(4, end)` | `opacity` (çentik dolar) |
-
-- Bu stilin ölçülebilir imzası: `enter 0.36s / steps(4, end) / 0px / 0.05` + `scroll top 73% / 0.31s / 12px` + `pin scrub 0.45 / +65%` + `hover 85ms / 1.008`. Katalogdaki `steps(4, end)` kullanan diğer stiller farklı süre (0.16–0.36s dışında) ve farklı offset kullanır; `scrub 0.45` yalnız burada.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; kademeler anında son konuma atlar, gösterge dolu görünür.
-- Bu stile yasak hareket: yumuşak ease/spring geçiş, sürekli dönen çark, parallax, gradient geçişi.
-
-## Koyu mod
-
-| Token | Açık (gündüz panosu) | Koyu (gece vardiyası) |
-|---|---|---|
-| `--bg` | `#a0a6aa` | `#15191c` |
-| `--bg-2` | `#979da1` | `#1b2024` |
-| `--surface` | `#abb1b5` | `#22272b` |
-| `--surface-2` | `#8b9195` | `#2b3136` |
-| `--ink` | `#0f1417` | `#eaf0f3` |
-| `--ink-soft` | `#2b3238` | `#adb8be` |
-| `--ink-faint` | `#485056` | `#7f8a90` |
-| `--accent` | `#1f6b3d` | `#4fbf7a` |
-| `--accent-ink` | `#ffffff` | `#05170c` |
-| `--line` | `rgba(15,20,23,.22)` | `rgba(234,240,243,.17)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **15.37:1** · `ink-soft/bg` = **8.74:1** · `accent-ink/accent` = **7.99:1** · `ink-faint/bg` = **5.00:1**.
-- Koyu modda değişen başka ne var: kademe ızgarası `--line` yerine `--ink` %8 karışımı; accent açılır (orman yeşili → sinyal yeşili); 2px kurallar `--ink` kalır.
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="stepped-mechanism"]`.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **5.92:1** açık / **6.27:1** koyu · `--warn / bg` = **5.90:1** / **6.21:1** · `--ok / surface` = 5.35:1 / 5.30:1 (warn) · devre dışı buton metni = **4.51:1** / **7.44:1** · ghost buton kenarı = **3.03:1** / **5.41:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - Her geçiş **4 kademede** tamamlanır: `steps(4, end)`; ara değer (lerp) yok.
@@ -217,14 +182,11 @@ Endüstriyel operatör panelleri (buton kademeleri, seçici anahtarlar), film pr
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

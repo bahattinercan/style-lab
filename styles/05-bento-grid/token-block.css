@@ -14,8 +14,3 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: -0.02em; --blur: 0px; --grain: 0;
 }
-
-[data-theme="dark"][data-style="bento-grid"] {
-  --bg: #0e0f0d; --bg-2: #1c1d1b; --surface: #191b18; --surface-2: #202320;
-  --ink: #f0f1ee; --ink-soft: #a8ada5; --ink-faint: #747572; --accent: #5b9cff; --accent-ink: #0d0d0d; --line: rgba(255,255,255,.10);
-}

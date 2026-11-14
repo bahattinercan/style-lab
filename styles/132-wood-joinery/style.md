@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | iyi |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="wood-joinery"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,51 +144,20 @@ Kökeni geleneksel ahşap geçme teknikleri (kırlangıç kuyruğu, zıvana) ve 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 48px başlık + 7/12 ürün kabı + geçme çizgisi | `shots/01-landing.png` |
-| Dashboard | orta | Sipariş listesi: 52px satır, mono ölçü | `shots/02-dashboard.png` |
-| Form | düşük | 48px input, 4px radius, 1px kenar | — |
-| Liste / tablo | orta | 52px satır, 1px hairline, mono ölçü kolonu | — |
-| Boş durum | orta | Tek kesit çizimi + "atölye boş" + CTA | — |
-| Onboarding | orta | Üç adım: ölç → kes → birleştir | — |
-| Pricing | orta | Üç atölye paketi; 1px kenar, gölge yok | — |
-| Giriş / ödeme | çok düşük | Tek kolon 400px, mono sipariş özeti | — |
-| Modal | orta | 520px, 8px radius, 1px kenar | — |
-| Bildirim / toast | orta | Alt sol, 44px, ink zemin + bg metin | — |
-| Hata | düşük | Tek cümle + "ölçü hatası" mono etiket | — |
-| Profil / ayar | orta | Atölye profili + malzeme listesi | — |
+| Landing / hero | orta | 48px başlık + 7/12 ürün kabı + geçme çizgisi | `shots/01-page.png` |
+| Dashboard | orta | Sipariş listesi: 52px satır, mono ölçü | `shots/01-page.png` |
+| Form | düşük | 48px input, 4px radius, 1px kenar | `shots/01-page.png` |
+| Liste / tablo | orta | 52px satır, 1px hairline, mono ölçü kolonu | `shots/01-page.png` |
+| Boş durum | orta | Tek kesit çizimi + "atölye boş" + CTA | `shots/01-page.png` |
+| Onboarding | orta | Üç adım: ölç → kes → birleştir | `shots/01-page.png` |
+| Pricing | orta | Üç atölye paketi; 1px kenar, gölge yok | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 400px, mono sipariş özeti | `shots/01-page.png` |
+| Modal | orta | 520px, 8px radius, 1px kenar | `shots/01-page.png` |
+| Bildirim / toast | orta | Alt sol, 44px, ink zemin + bg metin | `shots/01-page.png` |
+| Hata | düşük | Tek cümle + "ölçü hatası" mono etiket | `shots/01-page.png` |
+| Profil / ayar | orta | Atölye profili + malzeme listesi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 130ms | `cubic-bezier(.22,.72,.24,1)` | `translateY(1px)` + kenar 1px koyulaşır |
-| Giriş (enter) | 660ms | `cubic-bezier(.22,.72,.24,1)` | `opacity` + 20px `translateY`, stagger 60ms |
-| Scroll reveal | 800ms | aynı eğri | `top 82%` tetikleyici, `opacity` + 24px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 240ms | aynı eğri | `transform: scale(1.015)` |
-| Ödül / vurgu | 380ms | `cubic-bezier(.22,.72,.24,1)` | ölçü etiketi 0→1 opacity (tek atım) |
-
-- Süre bütçesi: enter 660ms ≤ 1200ms · scroll 800ms ≤ 1200ms · stagger 60ms.
-- Hareket ölçülü: 0.66s giriş, 240ms hover; zıplama/overshoot yok.
-- Pin/parallax yok: atölye akışı sabit; scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, yalnız opacity.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f0e9dc` | `#17130f` |
-| `--surface` | `#faf5ec` | `#1d1812` |
-| `--ink` | `#1f1c17` | `#f2ebdf` |
-| `--accent` | `#33546b` | `#8fb6cf` |
-| `--line` | `rgba(31,28,23,.16)` | `rgba(242,235,223,.16)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 15.60:1 · `accent-ink / accent` = 8.57:1.
-- Koyu modda meşe zemini koyu cevize (`#17130f`) döner; accent açık slate'e (`#8fb6cf`) çekilir.
-- Ahşap damarı koyuda %2'ye iner (gürültüyü azaltır).
-- Radius ve 1px çizgi kalınlığı değişmez.
 
 ## Zorunlu kurallar
 
@@ -219,14 +188,11 @@ Kökeni geleneksel ahşap geçme teknikleri (kırlangıç kuyruğu, zıvana) ve 
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

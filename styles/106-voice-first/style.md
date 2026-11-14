@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 9.15:1, accent üstü 8.48:1) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="voice-first"]` |
 | **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -140,51 +140,20 @@ Sesli arayüz (VUI) araştırmalarından: tur alma (turn-taking), dinleme göste
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | merkezde halka + tek CTA + iki satır açıklama | `shots/01-landing.png` |
-| Dashboard | düşük | en fazla 3 KPI; grafik yerine dalga özeti | `shots/02-dashboard.png` |
-| Form | düşük | 48px hap input, tek kolon; sesle doldurma düğmesi | — |
-| Liste / tablo | düşük | 12 satır sınırı, 44px satır | — |
-| Boş durum | orta | "Henüz konuşma yok" + tek mikrofon CTA | — |
-| Onboarding | yüksek | 3 adım: izin → mikrofon testi → ilk dikte | — |
-| Pricing | orta | iki plan kartı; öne çıkan kart accent çerçeve | — |
-| Giriş / ödeme | çok düşük | süs yok; tek CTA, hap input | — |
-| Modal | orta | transkript onayı: mono metin + iki hap buton | — |
-| Bildirim / toast | orta | alt-orta, accent nokta + kısa metin | — |
-| Hata | orta | "ANLAŞILAMADI" + tekrar dinle CTA'sı | — |
-| Profil / ayar | orta | ses/dil/tolerans ayarları, hap seçiciler | — |
+| Landing / hero | yüksek | merkezde halka + tek CTA + iki satır açıklama | `shots/01-page.png` |
+| Dashboard | düşük | en fazla 3 KPI; grafik yerine dalga özeti | `shots/01-page.png` |
+| Form | düşük | 48px hap input, tek kolon; sesle doldurma düğmesi | `shots/01-page.png` |
+| Liste / tablo | düşük | 12 satır sınırı, 44px satır | `shots/01-page.png` |
+| Boş durum | orta | "Henüz konuşma yok" + tek mikrofon CTA | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: izin → mikrofon testi → ilk dikte | `shots/01-page.png` |
+| Pricing | orta | iki plan kartı; öne çıkan kart accent çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | süs yok; tek CTA, hap input | `shots/01-page.png` |
+| Modal | orta | transkript onayı: mono metin + iki hap buton | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-orta, accent nokta + kısa metin | `shots/01-page.png` |
+| Hata | orta | "ANLAŞILAMADI" + tekrar dinle CTA'sı | `shots/01-page.png` |
+| Profil / ayar | orta | ses/dil/tolerans ayarları, hap seçiciler | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **370ms** | `cubic-bezier(.2,.9,.3,1)` | `opacity` + `translateY(2px)`; stagger **0.022s** |
-| Scroll reveal | **230ms** | aynı eğri | trigger `top 95%`, `translateY(6px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (halka konum değiştirmez) |
-| Basma | **95ms** | aynı eğri | `scale .98` (basılı tut) |
-| Geçiş / sayfa | 240ms | aynı eğri | opacity + 6px |
-| Hover | **95ms** | aynı eğri | görsel ölçek **1.002** (halka büyümez) |
-| Ödül / vurgu | 600ms | aynı eğri | dalga çubukları 3 kademe, tek kez |
-
-- İmza ölçüleri: `enter = 0.37s / cubic-bezier(.2,.9,.3,1) / 2px / 0.022` · `scroll = top 95% / 0.23s / 6px / once` · `pin = false` · `hover = 95ms / 1.002`.
-- Bant içi fark: 107'den (0.86s / 25px / pin 0.42), 108'den (0.19s / 5px / 0.018), 109'dan (0.51s / 15px / 0.042), 110'den (0.73s / 19px / 0.068) en az dört parametrede ayrışır. Mevcut 93 stil içinde en yakını 54-vitals-triage (`0.26s / .16,1,.3,1 / 6px / 0.02`) — süre, eğri, offset, trigger (top 95%) ve hover'da farklı.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, halka "nefes" animasyonu ve dalga durur.
-- Bu stile yasak hareket: dinleme dışında sürekli dalga, saniyede 3 üstü flash, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#171021` | `#050309` |
-| `--surface` | `#241a33` | `#0d0814` |
-| `--ink` | `#f1e9f7` | `#fdf8ff` |
-| `--accent` | `#ff8ad4` | `#d9a6ff` |
-| `--ink-soft` | `#c0b0d0` | `#cfc2e0` |
-| `--line` | `rgba(241,233,247,.16)` | `rgba(253,248,255,.16)` |
-
-- Koyu mod artık "gece" bandı: zemin `#171021` → `#050309` (bg çifti ΔE 11.4), yüzey bandı ΔE 15.3, accent pembe → **violet** (`#ff8ad4` → `#d9a6ff`, ΔE 26.6). Eski koyu blok (`#0f0a17`) açık moddan ayırt edilemiyordu (bg çifti 1.05:1); yeni blok 1.11:1 + belirgin hue kayması taşır. Işıma yarıçapı 40px → 48px korunur.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Ekranın tek odağı dinleme hali: halka + dalga; ikinci görsel odak yok.
@@ -212,14 +181,11 @@ Sesli arayüz (VUI) araştırmalarından: tur alma (turn-taking), dinleme göste
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

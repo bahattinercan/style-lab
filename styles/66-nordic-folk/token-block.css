@@ -28,16 +28,3 @@
   --blur: 0px;
   --grain: 0.04;
 }
-
-[data-theme="dark"][data-style="nordic-folk"] {
-  --bg: #141a17;
-  --bg-2: #1a221e;
-  --surface: #1f2823;
-  --surface-2: #27332c;
-  --ink: #ece5d5;
-  --ink-soft: #b4bfae;
-  --ink-faint: #8a9686;
-  --accent: #e07a66;
-  --accent-ink: #141a17;
-  --line: rgba(236,229,213,.16);
-}

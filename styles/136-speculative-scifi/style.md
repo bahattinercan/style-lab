@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 6.84:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `kit/tokens.css` → `[data-style="speculative-scifi"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,20 @@ Anlatı içi (diegetic) arayüz geleneğinden — bilim-kurgu filmlerinde karakt
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | solda H1 + ölçü etiketleri, sağda kadran; plaka başlığı | `shots/01-landing.png` |
-| Dashboard | orta | plaka ızgarası; kadran + mono tablo | `shots/02-dashboard.png` |
-| Form | düşük | 38px input, mono etiket sağda; birim seçici | — |
-| Liste / tablo | düşük | 36px satır, tabular değer + birim | — |
-| Boş durum | orta | boş plaka: iç çerçeve + "KAYIT YOK" mono | — |
-| Onboarding | yüksek | 3 adım: tarama → kalibrasyon → kayıt | — |
-| Pricing | orta | iki plaka; öne çıkan accent iç çerçeve | — |
-| Giriş / ödeme | çok düşük | kadran yok; yalnız plaka ve tek CTA | — |
-| Modal | orta | plaka başlığı + accent çerçeve | — |
-| Bildirim / toast | orta | sağ-alt, 2px accent sinyal çizgisi | — |
-| Hata | orta | plaka uyarı satırı: `! SEKTÖR 7 · ÖLÇÜM DIŞI` | — |
-| Profil / ayar | orta | birim ve kalibrasyon ayarları | — |
+| Landing / hero | yüksek | solda H1 + ölçü etiketleri, sağda kadran; plaka başlığı | `shots/01-page.png` |
+| Dashboard | orta | plaka ızgarası; kadran + mono tablo | `shots/01-page.png` |
+| Form | düşük | 38px input, mono etiket sağda; birim seçici | `shots/01-page.png` |
+| Liste / tablo | düşük | 36px satır, tabular değer + birim | `shots/01-page.png` |
+| Boş durum | orta | boş plaka: iç çerçeve + "KAYIT YOK" mono | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: tarama → kalibrasyon → kayıt | `shots/01-page.png` |
+| Pricing | orta | iki plaka; öne çıkan accent iç çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | kadran yok; yalnız plaka ve tek CTA | `shots/01-page.png` |
+| Modal | orta | plaka başlığı + accent çerçeve | `shots/01-page.png` |
+| Bildirim / toast | orta | sağ-alt, 2px accent sinyal çizgisi | `shots/01-page.png` |
+| Hata | orta | plaka uyarı satırı: `! SEKTÖR 7 · ÖLÇÜM DIŞI` | `shots/01-page.png` |
+| Profil / ayar | orta | birim ve kalibrasyon ayarları | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **410ms** | `cubic-bezier(.58,.02,.34,1)` | `opacity` + `translateY(11px)`; stagger **0.047s** |
-| Scroll reveal | **430ms** | aynı eğri | trigger `top 99%`, `translateY(17px)`, `once: true` |
-| Pin / scrub | **0.58** | `transform` | **açık** — kadran `+115%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **90ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 200ms | aynı eğri | opacity + 6px |
-| Hover | **185ms** | aynı eğri | görsel ölçek **1.011** |
-| Ödül / vurgu | 430ms | aynı eğri | kadran tiki %0→%100 (tek kez) |
-
-- İmza ölçüleri: `enter = 0.41s / cubic-bezier(.58,.02,.34,1) / 11px / 0.047` · `scroll = top 99% / 0.43s / 17px / once` · `pin = true / scrub 0.58 / +115%` · `hover = 185ms / 1.011`.
-- Bant içi fark: 137'den (0.96s / 38px / pin yok), 138'den (0.27s / 1px), 139'den (1.08s / 46px / scrub 1.18), 140'tan (0.61s / 21px / scrub 0.4) en az dört parametrede ayrışır. Mevcut 126 stil içinde en yakını 61-calibration-lab (`0.42s / .16,.84,.44,1 / 8px`) — eğri, offset, trigger (top 99%), pin ve hover'da farklı; `top 99%` katalogda yeni.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, kadran tiki ve pin statik.
-- Bu stile yasak hareket: sürekli dönen kadran iğnesi, blur geçişi, yay/overshoot, saniyede 3 üstü flash.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#e9e8e2` | `#14120e` |
-| `--surface` | `#f4f3ee` | `#211e17` |
-| `--ink` | `#1c1a16` | `#f0ece1` |
-| `--accent` | `#8a5a12` | `#e0a33a` |
-| `--ink-soft` | `#524d42` | `#bcb4a2` |
-| `--line` | `rgba(28,26,22,.16)` | `rgba(240,236,225,.16)` |
-
-- Koyu modda değişen başka ne var: iç çerçeve ink %10 → %14, kadran tiki opaklığı %42 → %52 (siyahta görünmesi için), accent bir ton açılır (`#e0a33a`).
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Her yüzey gravür plakadır: dış 1px + iç 4px çerçeve, gölge yok.
@@ -211,14 +180,11 @@ Anlatı içi (diegetic) arayüz geleneğinden — bilim-kurgu filmlerinde karakt
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 5.48:1) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `styles/51-atlas-console/tokens.json` → `[data-style="atlas-console"]` |
 | **Kompozisyon** | `index` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,52 +137,20 @@ Hidrografi/ofis haritaları (admiralty chart), harita odası estetiği (plotting
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Harita paneli sağda 7/5, solda tek cümle + 2 CTA; koordinat şeridi hero'da da görünür | `shots/01-landing.png` |
-| Dashboard | yüksek | Sol varlık listesi + orta harita + sağ lejant; KPI'lar liste üstünde 3 satır | `shots/02-dashboard.png` |
-| Form | düşük | Koordinat girişi mono, sağa hizalı; alan genişliği 320px | — |
-| Liste / tablo | yüksek | 40px satır, koordinat mono sağa hizalı, seçili satır sol 3px accent | — |
-| Boş durum | orta | Harita zemini boş bırakılmaz: nötr vektör arka plan + "bölge seç" eylemi | — |
-| Onboarding | yüksek | Adımlar sol şeritte 1-2-3, her adımda tek harita görevi | — |
-| Pricing | orta | Bölge sayısı tablosu; harita küçük önizleme olarak sağda | — |
-| Giriş / ödeme | çok düşük | Kimlik doğrulamada harita yok, yalnız koordinat şeridi dokusu | — |
-| Modal | orta | Varlık detayı yan panel; üstte koordinat, altta zaman damgalı olay listesi | — |
-| Bildirim / toast | orta | Tek satır: pin kimliği + durum + saat (mono) | — |
-| Hata | düşük | `--danger` pin + "bölgeye ulaşılamadı" metni; harita gri kalır | — |
-| Profil / ayar | orta | Katman varsayılanları, ölçek birimi, koordinat formatı | — |
+| Landing / hero | yüksek | Harita paneli sağda 7/5, solda tek cümle + 2 CTA; koordinat şeridi hero'da da görünür | `shots/01-page.png` |
+| Dashboard | yüksek | Sol varlık listesi + orta harita + sağ lejant; KPI'lar liste üstünde 3 satır | `shots/01-page.png` |
+| Form | düşük | Koordinat girişi mono, sağa hizalı; alan genişliği 320px | `shots/01-page.png` |
+| Liste / tablo | yüksek | 40px satır, koordinat mono sağa hizalı, seçili satır sol 3px accent | `shots/01-page.png` |
+| Boş durum | orta | Harita zemini boş bırakılmaz: nötr vektör arka plan + "bölge seç" eylemi | `shots/01-page.png` |
+| Onboarding | yüksek | Adımlar sol şeritte 1-2-3, her adımda tek harita görevi | `shots/01-page.png` |
+| Pricing | orta | Bölge sayısı tablosu; harita küçük önizleme olarak sağda | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Kimlik doğrulamada harita yok, yalnız koordinat şeridi dokusu | `shots/01-page.png` |
+| Modal | orta | Varlık detayı yan panel; üstte koordinat, altta zaman damgalı olay listesi | `shots/01-page.png` |
+| Bildirim / toast | orta | Tek satır: pin kimliği + durum + saat (mono) | `shots/01-page.png` |
+| Hata | düşük | `--danger` pin + "bölgeye ulaşılamadı" metni; harita gri kalır | `shots/01-page.png` |
+| Profil / ayar | orta | Katman varsayılanları, ölçek birimi, koordinat formatı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.44s**, `cubic-bezier(.25,.46,.45,.94)`, y **12px**, stagger **0.07** | `cubic-bezier(.25,.46,.45,.94)` | `opacity` + `transform` |
-| Scroll reveal | **0.5s**, trigger **top 78%**, y **18px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **0.6**, mesafe **+90%** (harita panelinde tek pin) | scrub doğrusal | `transform: scale` 1 → 1.04 |
-| Hover | **120ms**, görsel scale **1.010** | `ease-out` | `transform` |
-| Basma | 120ms | aynı eğri | `transform` (1px) |
-| Katman geçişi | 200ms | aynı eğri | `opacity` |
-
-- Bu stilin ölçülebilir imzası: `enter 0.44s / cubic-bezier(.25,.46,.45,.94) / 12px / 0.07` + `scroll top 78% / 0.5s / 18px` + `pin scrub 0.6 / +90%` + `hover 120ms / 1.010`. `cubic-bezier(.25,.46,.45,.94)` ve `0.44s` giriş katalogda yalnız burada; `top 78%` + pseudo-class pin kombinasyonu 47'de (top 92%) ve 56'da (top 88%) yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; pin scrub kapanır, harita statik iğneye döner; koordinat şeridi kaymaz.
-- Bu stile yasak hareket: otomatik harita panı, sürekli dönen pusula, parallax katman kaydırma, 3'ten fazla flash.
-
-## Koyu mod
-
-Koyu modda harita zemini iki kademe derinleşir (ΔL −13) ve ızgara opaklığı artar; accent mavi yerine stilin kimliğindeki amber’e çekilir (aynı hue, daha parlak ton).
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#0d1520` | `#04090f` |
-| `--bg-2` | `#121c29` | `#070e17` |
-| `--surface` | `#16222f` | `#0a1420` |
-| `--surface-2` | `#1c2a39` | `#101d2c` |
-| `--ink` | `#e7eef4` | `#f2f7fc` |
-| `--ink-soft` | `#a4b4c2` | `#b3c2d0` |
-| `--accent` | `#e8b04b` | `#ffcf7a` |
-| `--accent-ink` | `#1a1206` | `#1d1407` |
-
-- Koyu modda değişen başka ne var: harita ızgarası %14 → %22, waypoint halkası 3px accent %24. Ölçüm: `ink/bg` 17.96:1, `accent-ink/accent` 11.99:1.
 
 ## Zorunlu kurallar
 - Harita paneli ekranın en büyük tek yüzeyi olmalı (en az %45 alan); harita yoksa koordinat şeridi + lejant rayı taşınır.
@@ -214,14 +182,11 @@ Koyu modda harita zemini iki kademe derinleşir (ΔL −13) ve ızgara opaklığ
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

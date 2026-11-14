@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 9.06:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="ocean-current"]` |
 | **Kompozisyon** | `split` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,52 +139,20 @@ Oşinografi haritalarından (akıntı vektörleri, izotermler) ve klasik denizci
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 7/5: sağda akıntı görseli, solda serif H1 + tek CTA | `shots/01-landing.png` |
-| Dashboard | orta | akıntı şeması + ölçüm tablosu; tek parlak renk | `shots/02-dashboard.png` |
-| Form | düşük | 46px input, etiket üstte 12px mono | — |
-| Liste / tablo | düşük | 42px satır, tabular değer, birim ayrı sütun | — |
-| Boş durum | orta | boş akıntı alanı + "veri akışı yok" mono etiketi | — |
-| Onboarding | yüksek | 3 adım: bölge → derinlik → eşik | — |
-| Pricing | orta | üç kart; öne çıkan kart accent üst çizgi | — |
-| Giriş / ödeme | çok düşük | akıntı çizgisi yok; yalnız odak halkası ve tek CTA | — |
-| Modal | orta | accent 1px çerçeve + derinlik etiketi (m) | — |
-| Bildirim / toast | orta | alt-sağ, 6px damla + 14px metin | — |
-| Hata | düşük | damla/çizgi `--danger`; zemin değişmez | — |
-| Profil / ayar | orta | iki kolon; ölçüm birimleri mono | — |
+| Landing / hero | yüksek | 7/5: sağda akıntı görseli, solda serif H1 + tek CTA | `shots/01-page.png` |
+| Dashboard | orta | akıntı şeması + ölçüm tablosu; tek parlak renk | `shots/01-page.png` |
+| Form | düşük | 46px input, etiket üstte 12px mono | `shots/01-page.png` |
+| Liste / tablo | düşük | 42px satır, tabular değer, birim ayrı sütun | `shots/01-page.png` |
+| Boş durum | orta | boş akıntı alanı + "veri akışı yok" mono etiketi | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: bölge → derinlik → eşik | `shots/01-page.png` |
+| Pricing | orta | üç kart; öne çıkan kart accent üst çizgi | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | akıntı çizgisi yok; yalnız odak halkası ve tek CTA | `shots/01-page.png` |
+| Modal | orta | accent 1px çerçeve + derinlik etiketi (m) | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sağ, 6px damla + 14px metin | `shots/01-page.png` |
+| Hata | düşük | damla/çizgi `--danger`; zemin değişmez | `shots/01-page.png` |
+| Profil / ayar | orta | iki kolon; ölçüm birimleri mono | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **830ms** | `cubic-bezier(.35,.02,.25,1)` | `opacity` + `translateY(40px)`; stagger **0.115s** |
-| Scroll reveal | **860ms** | aynı eğri | trigger `top 71%`, `translateY(36px)`, `once: true` |
-| Pin / scrub | **1.05** | `transform` | **açık** — akıntı panosu `+180%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **200ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 420ms | aynı eğri | opacity + 24px |
-| Hover | **380ms** | aynı eğri | görsel ölçek **1.022** |
-| Ödül / vurgu | 830ms | aynı eğri | akıntı çizgisi soldan sağa + yön oku (tek kez) |
-
-- İmza ölçüleri: `enter = 0.83s / cubic-bezier(.35,.02,.25,1) / 40px / 0.115` · `scroll = top 71% / 0.86s / 36px / once` · `pin = true / scrub 1.05 / +180%` · `hover = 380ms / 1.022`.
-- Bant içi fark: 76'dan (0.68s / 24px / pin yok), 77'den (0.78s / 18px / scrub 1.35), 78'den (0.48s / 32px / scrub 0.7), 80'den (0.57s / 22px / pin yok) en az dört parametrede ayrışır. Mevcut 72 stil içinde en yakını 38-organic-bio (`1.0s / power2.out / 28px / 0.1`) — süre, eğri, offset, trigger, pin ve hover'da farklı; `top 71%` hiçbir stilde yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin kapalı, akıntı çizgisi son karede durur.
-- Bu stile yasak hareket: ekran başına 1'den fazla sürekli akıntı animasyonu, saniyede 3 üstü flash, yatay kaydırma hijack.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#0a2029` | `#01070c` |
-| `--surface` | `#12323e` | `#061723` |
-| `--ink` | `#dff0f4` | `#f2fcff` |
-| `--accent` | `#46d8c4` | `#8affe8` |
-| `--ink-soft` | `#a3c4cd` | `#b9d9e0` |
-| `--line` | `rgba(223,240,244,.16)` | `rgba(242,252,255,.22)` |
-
-- Koyu modda değişen başka ne var: zemin gece akıntısına iner (`#0a2029` → `#01070c`, ton bandı Δ≈39), yüzey kademeleri dört adım koyulaşır, accent neon turkuaza açılır (`#46d8c4` → `#8affe8`), akıntı çizgileri %26 → %30 ve hairline opaklığı .16 → .22. Açık/koyu ekran artık yan yana ayırt edilir.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
-- Ölçülen koyu kontrastlar: `ink/bg` **19.43:1** · `ink-soft/bg` **13.56:1** · `accent-ink/accent` **16.22:1** · `ink-faint/bg` **8.08:1** · accent metin olarak bg'ye **16.92:1**.
 
 ## Zorunlu kurallar
 - Zemin derin su (`--bg` teal); katmanlar arasında 4–6 puan parlaklık farkı korunur.
@@ -211,14 +179,11 @@ Oşinografi haritalarından (akıntı vektörleri, izotermler) ve klasik denizci
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

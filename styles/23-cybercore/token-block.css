@@ -13,8 +13,3 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: 0.04em; --blur: 0px; --grain: .06;
 }
-
-[data-theme="dark"][data-style="cybercore"] {
-  --bg: #030507; --bg-2: #070d10; --surface: #070d10; --surface-2: #0b1419;
-  --ink: #e6fff2; --ink-soft: #93d7b3; --ink-faint: #58876e; --accent: #4dffab; --accent-ink: #04150c; --line: rgba(77,255,171,.30);
-}

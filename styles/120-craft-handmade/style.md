@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | orta |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="craft-handmade"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `fullbleed` · `pill` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -145,51 +145,20 @@ Kökeni Anadolu ve Avrupa el sanatları tezgâhları, el dikimi defterler ve 201
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 52px el yazısı başlık + 1 ürün fotoğrafı + dikiş çizgisi | `shots/01-landing.png` |
-| Dashboard | düşük | Ürün listesi: 3 kart, 1px kenar, gölge yok | `shots/02-dashboard.png` |
-| Form | düşük | 48px input, 4px radius, 1px kenar | — |
-| Liste / tablo | düşük | 52px satır, mono fiyat, 1px hairline | — |
-| Boş durum | orta | "tezgâh boş" + tek cümle + ikincil buton | — |
-| Onboarding | orta | Üç adım: kes → dik → paketle (pin sahnesi mobilde statik) | — |
-| Pricing | orta | İki atölye paketi: birebir / grup; 10px radius kart | — |
-| Giriş / ödeme | çok düşük | Tek kolon 400px, sade form, mono özet | — |
-| Modal | orta | 480px, 10px radius, 1px kenar, gölge yok | — |
-| Bildirim / toast | orta | Alt sol, 44px, ink zemin + bg metin | — |
-| Hata | düşük | Tek cümle + dikiş çizgisi + tekrar butonu | — |
-| Profil / ayar | orta | Atölye profili: 2 kolon, mono ölçüler | — |
+| Landing / hero | yüksek | 52px el yazısı başlık + 1 ürün fotoğrafı + dikiş çizgisi | `shots/01-page.png` |
+| Dashboard | düşük | Ürün listesi: 3 kart, 1px kenar, gölge yok | `shots/01-page.png` |
+| Form | düşük | 48px input, 4px radius, 1px kenar | `shots/01-page.png` |
+| Liste / tablo | düşük | 52px satır, mono fiyat, 1px hairline | `shots/01-page.png` |
+| Boş durum | orta | "tezgâh boş" + tek cümle + ikincil buton | `shots/01-page.png` |
+| Onboarding | orta | Üç adım: kes → dik → paketle (pin sahnesi mobilde statik) | `shots/01-page.png` |
+| Pricing | orta | İki atölye paketi: birebir / grup; 10px radius kart | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 400px, sade form, mono özet | `shots/01-page.png` |
+| Modal | orta | 480px, 10px radius, 1px kenar, gölge yok | `shots/01-page.png` |
+| Bildirim / toast | orta | Alt sol, 44px, ink zemin + bg metin | `shots/01-page.png` |
+| Hata | düşük | Tek cümle + dikiş çizgisi + tekrar butonu | `shots/01-page.png` |
+| Profil / ayar | orta | Atölye profili: 2 kolon, mono ölçüler | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 160ms | `cubic-bezier(.4,.1,.3,1)` | `translateY(1px)` + kenar tonu koyulaşır |
-| Giriş (enter) | 820ms | `cubic-bezier(.4,.1,.3,1)` | `opacity` + 26px `translateY`, stagger 90ms |
-| Scroll reveal | 950ms | aynı eğri | `top 79%` tetikleyici, `opacity` + 22px `translateY`, `once: true` |
-| Pin / scrub | — | — | tek pin: scrub 1.1, +120%; mobilde kapalı |
-| Hover | 300ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül / vurgu | 520ms | `cubic-bezier(.4,.1,.3,1)` | etiket şeridi genişliği 0→100% (tek atım) |
-
-- Süre bütçesi: enter 820ms ≤ 1200ms · scroll 950ms ≤ 1200ms · stagger 90ms.
-- Tek pin sahnesi (üretim adımları, scrub 1.1, +120%); sayfada ikinci scrub yok, mobilde statik.
-- Giriş 820ms: sayfa "tezgâha konmuş" gibi ağır açılır; 950ms üstüne çıkmaz (bütçe).
-- `prefers-reduced-motion`: süreler 0.01ms, pin kapalı, dikiş statik.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#efe6d6` | `#1a1610` |
-| `--surface` | `#f9f3e7` | `#201b14` |
-| `--ink` | `#2a231a` | `#f2e9d9` |
-| `--accent` | `#7a4b2a` | `#d9a86a` |
-| `--line` | `rgba(42,35,26,.20)` | `rgba(242,233,217,.16)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 14.95:1 · `accent-ink / accent` = 8.61:1.
-- Koyu modda kraft kâğıt gece kahvesine (`#1a1610`) döner; taba aksan açılır (`#d9a86a`).
-- Kraft grain %4'ten %3'e iner; dikiş çizgisi aynı kesikli desende kalır.
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 
@@ -221,14 +190,11 @@ Kökeni Anadolu ve Avrupa el sanatları tezgâhları, el dikimi defterler ve 201
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük metin çifti 6.58:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="topographic-terrain"]` |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,20 @@ USGS/ordinance survey pafta geleneğinden: eş yükselti aralığı, ölçek çu
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 7/5: solda H1 + ölçü etiketleri, sağda kontur paftası | `shots/01-landing.png` |
-| Dashboard | düşük | pafta ızgarası + lejant; gölge yok | `shots/02-dashboard.png` |
-| Form | düşük | 40px input, mono etiket sağda; birim seçici chip | — |
-| Liste / tablo | düşük | 38px satır, tabular değer, sağa dayalı birim | — |
-| Boş durum | orta | boş pafta: iç çerçeve + "veri yok" mono etiketi | — |
-| Onboarding | yüksek | 3 adım: bölge seç → katman ekle → ölçek belirle | — |
-| Pricing | orta | üç pafta; öne çıkan pafta accent iç çerçeve | — |
-| Giriş / ödeme | çok düşük | kontur yok; yalnız çerçeve ve tek CTA | — |
-| Modal | orta | accent 1px çerçeve + yükseklik etiketi | — |
-| Bildirim / toast | orta | sağ-alt, 2px accent ölçü çizgisi | — |
-| Hata | düşük | `--danger` çerçeve + mono not; zemin değişmez | — |
-| Profil / ayar | orta | lejant düzeni: sol etiket, sağ değer | — |
+| Landing / hero | yüksek | 7/5: solda H1 + ölçü etiketleri, sağda kontur paftası | `shots/01-page.png` |
+| Dashboard | düşük | pafta ızgarası + lejant; gölge yok | `shots/01-page.png` |
+| Form | düşük | 40px input, mono etiket sağda; birim seçici chip | `shots/01-page.png` |
+| Liste / tablo | düşük | 38px satır, tabular değer, sağa dayalı birim | `shots/01-page.png` |
+| Boş durum | orta | boş pafta: iç çerçeve + "veri yok" mono etiketi | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: bölge seç → katman ekle → ölçek belirle | `shots/01-page.png` |
+| Pricing | orta | üç pafta; öne çıkan pafta accent iç çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | kontur yok; yalnız çerçeve ve tek CTA | `shots/01-page.png` |
+| Modal | orta | accent 1px çerçeve + yükseklik etiketi | `shots/01-page.png` |
+| Bildirim / toast | orta | sağ-alt, 2px accent ölçü çizgisi | `shots/01-page.png` |
+| Hata | düşük | `--danger` çerçeve + mono not; zemin değişmez | `shots/01-page.png` |
+| Profil / ayar | orta | lejant düzeni: sol etiket, sağ değer | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **480ms** | `cubic-bezier(.5,.05,.3,1)` | `opacity` + `translateY(32px)`; stagger **0.05s** |
-| Scroll reveal | **520ms** | aynı eğri | trigger `top 75%`, `translateY(34px)`, `once: true` |
-| Pin / scrub | **0.7** | `transform` | **açık** — pafta `+130%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **110ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 240ms | aynı eğri | opacity + 16px |
-| Hover | **150ms** | aynı eğri | görsel ölçek **1.006** |
-| Ödül / vurgu | 480ms | aynı eğri | rota çizgisi soldan sağa %0→%100 (tek kez) |
-
-- İmza ölçüleri: `enter = 0.48s / cubic-bezier(.5,.05,.3,1) / 32px / 0.05` · `scroll = top 75% / 0.52s / 34px / once` · `pin = true / scrub 0.7 / +130%` · `hover = 150ms / 1.006`.
-- Bant içi fark: 76'dan (0.68s / 24px / pin yok), 77'den (0.78s / 18px / scrub 1.35), 79'dan (0.83s / 40px / scrub 1.05), 80'den (0.57s / 22px / pin yok) en az dört parametrede ayrışır. Mevcut 72 stil içinde en yakını 46-telemetry-grid (`0.28s / .16,.84,.44,1 / 6px`) — süre, eğri, offset, trigger ve stagger'da farklı.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin kapalı, kontur çizimi statik.
-- Bu stile yasak hareket: ekran başına 1'den fazla sürekli kontur animasyonu, kapatılamayan parallax, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#ece6d8` | `#17130e` |
-| `--surface` | `#f7f3e8` | `#241e16` |
-| `--ink` | `#241f18` | `#efe8da` |
-| `--accent` | `#a34f24` | `#e08a4e` |
-| `--ink-soft` | `#574e3e` | `#bcb09c` |
-| `--line` | `rgba(36,31,24,.16)` | `rgba(239,232,218,.16)` |
-
-- Koyu modda değişen başka ne var: kontur halkaları ink %7 → ink %10, accent halkası %12 → %18 (gece paftasında görünmesi için), iç çerçeve opaklığı %9 → %12.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Eş yükselti (kontur) çizgisi imza öğedir; en az bir bölümde halka dizisi görünür.
@@ -210,14 +179,11 @@ USGS/ordinance survey pafta geleneğinden: eş yükselti aralığı, ölçek çu
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

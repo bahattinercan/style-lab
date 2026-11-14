@@ -14,9 +14,3 @@
   --tracking: 0.02em; --blur: 0px; --grain: .03;
   --focus: #9b8350;
 }
-
-[data-theme="dark"][data-style="luxury-typography"] {
-  --bg: #12100e; --bg-2: #1a1714; --surface: #171512; --surface-2: #282622;
-  --ink: #efe8db; --ink-soft: #b3aa9c; --ink-faint: #75716a; --accent: #d8bb7d; --accent-ink: #0d0d0d; --line: rgba(239,232,219,.18);
-  --focus: #d8bb7d;
-}

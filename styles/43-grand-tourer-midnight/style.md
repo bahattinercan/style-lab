@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | iyi (14.65:1 gövde, 11.44:1 accent üstü) |
 | **Aile** | Zamansız (41–44) · **Token** | `kit/tokens.css` → `[data-style="grand-tourer-midnight"]` |
 | **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -158,55 +158,27 @@ Gece mavisi, 1960'ların "midnight blue" araba boyalarından ve gece kulüplerin
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 50px Cinzel, 7/5 asimetri, tek lacivert CTA, bir kadran | `shots/01-landing.png` |
-| Dashboard | düşük-orta | mono KPI, krom kartlar, lacivert yalnız seri 1 ve aktif satır | `shots/02-dashboard.png` |
-| Mobil | orta | tek kolon, 30px başlık, 44px hedef, plaka sekmeler | — |
-| Bileşenler | orta | palet + tipografi + krom kenar levhası | — |
-| Form | düşük | tek sütun 460px, odak 2px lacivert | — |
-| Katman | orta | 6px radius + krom kenar + yüzen gölge | — |
-| Veri | düşük | 52px satır, mono sayaçlar, 4 renkli grafik | — |
-| Gezinme | orta | koç çizgili nav, plaka chip, ceviz damarlı footer | — |
-| Fiyatlandırma | orta | 3 kart, orta kart `--surface-2` + üst 2px lacivert | — |
-| Giriş | çok düşük | süs 0, ceviz damarlı sol panel, tek kart | — |
-| Liste | düşük-orta | filtre + 52px satır, seçili satır sol 2px lacivert | — |
-| Durumlar | orta | boş/hata/404; 404 mono 44px | — |
-| Ayarlar | düşük | hairline ayırıcı, tehlike bölgesi `--danger` | — |
-| Ödeme | çok düşük | mono tutarlar, lacivert yalnız ödeme butonunda | — |
-| Onboarding | orta | adım noktaları, tek ileri CTA | — |
-| Makale | orta | 62ch, Cinzel 24px H2, mono künye | — |
-| Mobil · alt sayfa | orta | üst köşe 6px, 44px tutamaç, yapışkan CTA | — |
-| Mobil · form | çok düşük | 54px input, 46px CTA | — |
-| Mobil · liste | düşük | 64px satır, durum plakası | — |
+| Landing / hero | orta | 50px Cinzel, 7/5 asimetri, tek lacivert CTA, bir kadran | `shots/01-page.png` |
+| Dashboard | düşük-orta | mono KPI, krom kartlar, lacivert yalnız seri 1 ve aktif satır | `shots/01-page.png` |
+| Mobil | orta | tek kolon, 30px başlık, 44px hedef, plaka sekmeler | `shots/01-page.png` |
+| Bileşenler | orta | palet + tipografi + krom kenar levhası | `shots/01-page.png` |
+| Form | düşük | tek sütun 460px, odak 2px lacivert | `shots/01-page.png` |
+| Katman | orta | 6px radius + krom kenar + yüzen gölge | `shots/01-page.png` |
+| Veri | düşük | 52px satır, mono sayaçlar, 4 renkli grafik | `shots/01-page.png` |
+| Gezinme | orta | koç çizgili nav, plaka chip, ceviz damarlı footer | `shots/01-page.png` |
+| Fiyatlandırma | orta | 3 kart, orta kart `--surface-2` + üst 2px lacivert | `shots/01-page.png` |
+| Giriş | çok düşük | süs 0, ceviz damarlı sol panel, tek kart | `shots/01-page.png` |
+| Liste | düşük-orta | filtre + 52px satır, seçili satır sol 2px lacivert | `shots/01-page.png` |
+| Durumlar | orta | boş/hata/404; 404 mono 44px | `shots/01-page.png` |
+| Ayarlar | düşük | hairline ayırıcı, tehlike bölgesi `--danger` | `shots/01-page.png` |
+| Ödeme | çok düşük | mono tutarlar, lacivert yalnız ödeme butonunda | `shots/01-page.png` |
+| Onboarding | orta | adım noktaları, tek ileri CTA | `shots/01-page.png` |
+| Makale | orta | 62ch, Cinzel 24px H2, mono künye | `shots/01-page.png` |
+| Mobil · alt sayfa | orta | üst köşe 6px, 44px tutamaç, yapışkan CTA | `shots/01-page.png` |
+| Mobil · form | çok düşük | 54px input, 46px CTA | `shots/01-page.png` |
+| Mobil · liste | düşük | 64px satır, durum plakası | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 140ms | `cubic-bezier(.2,.72,.2,1)` | `translateY(1px)` + `--surface-2` |
-| Geçiş / sayfa | 280ms | aynı | `opacity` + `translateY(4px)` (sayfa geçişi 320ms) |
-| Giriş (enter) | **1060ms** | `cubic-bezier(.6,.02,.25,1)` | `opacity` + `translateY(12px)`, **stagger 140ms**; gece sürüşü gibi uzun, en yumuşak açılış |
-| Kaydırma (scroll) | **1100ms** | `cubic-bezier(.6,.02,.25,1)` | trigger **`top 78%`**, offsetY **16px**, stagger 60ms, `once: true` |
-| Hover | **340ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | açık | `scrub 1.1` | hero sabitlenir, mesafe **+140%**, `scale 1.04 → 1`, mobilde kapalı |
-| Ödül / vurgu | 420ms | aynı | koç çizgisi `scaleX(0→1)` / kadran iğnesi tek atım |
-
-- İmza ölçüsü: enter **1.06s / 12px / stagger 0.14** · scroll **1.1s / `top 78%` / 16px** · hover **340ms / 1.02** · pin **açık (scrub 1.1 / +140%)**.
-- `prefers-reduced-motion`: 0.01ms, iğne son konumda, transform sıfır, pin/scrub kapalı.
-- Yasak: parallax, marquee, sürekli dönen iğne, nefes alan katman, spring.
-## Koyu mod
-
-| Token | Açık (sevk edilen) | Koyu (referans) |
-|---|---|---|
-| `--bg` | `#f1ece2` | `#101520` |
-| `--surface` | `#f8f4ec` | `#171d29` |
-| `--ink` | `#171b23` | `#eae6dc` |
-| `--accent` | `#1b2e4a` | `#9db2cc` |
-| `--accent-ink` | `#f2eadb` | `#101520` |
-
-- Bu stil **açık tabanlıdır**: "Midnight" adı gece mavisinden gelir, koyu temadan değil. Koyu tema sevk edilmez, koyu mod sahneleri (17/18) üretilmez; yukarıdaki sütun referanstır (üretilirse `accent-ink/accent ≥ 7:1` yeniden ölçülür, grain `.035 → .04`).
-- `filter: invert()` yasak; palet elle yazılır. Siyah zemine geçmek stili Cyberpunk/Scandinavian Dark bölgesine taşır — yasak.
 
 ## Erişilebilirlik
 
@@ -219,14 +191,11 @@ Gece mavisi, 1960'ların "midnight blue" araba boyalarından ve gece kulüplerin
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -33,16 +33,3 @@
   --ok: #3d5c40;
   --warn: #7d5a1e;
 }
-
-[data-theme="dark"][data-style="silk-drape"] {
-  --bg: #1a1217;
-  --bg-2: #140e12;
-  --surface: #221820;
-  --surface-2: #2c2028;
-  --ink: #f6ecf0;
-  --ink-soft: #c4b1ba;
-  --ink-faint: #8e7d86;
-  --accent: #d08aa8;
-  --accent-ink: #26101a;
-  --line: rgba(246,236,240,.16);
-}

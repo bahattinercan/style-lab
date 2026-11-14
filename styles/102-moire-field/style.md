@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (orta ton zemin; en düşük etkileşimli çift 5.31:1) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `styles/102-moire-field/tokens.json` → `[data-style="moire-field"]` |
 | **Kompozisyon** | `sticky` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,56 +139,21 @@ Baskı öncesi tram hataları, televizyon ekranı girişimi, op-art (Bridget Ril
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Perde paneli 8/4; başlık keskin, tek CTA | `shots/01-landing.png` |
-| Dashboard | düşük | Desen yalnız üst şeritte; tablolar düz zeminde | `shots/02-dashboard.png` |
-| Form | düşük | 36px alanlar, 1px ink kenar, radius 0 | — |
-| Liste / tablo | düşük | 32px satır, zebra yok, 1px ayırıcı | — |
-| Boş durum | orta | Boş desen alanı + "yeni desen üret" eylemi | — |
-| Onboarding | yüksek | Her adımda tek perde; metin opak kartta | — |
-| Pricing | orta | Plan kartları düz zemin; öne çıkan 1px ink + accent başlık | — |
-| Giriş / ödeme | çok düşük | Tek panel, desen yok (odak formu) | — |
-| Modal | orta | %8 perde + opak metin katmanı | — |
-| Bildirim / toast | orta | Mono tek satır, keskin kenar | — |
-| Hata | düşük | `--danger` kenar + hata metni; perde kapanır | — |
-| Profil / ayar | orta | Perde yoğunluğu ve açı ayarı (4°–11°) | — |
+| Landing / hero | yüksek | Perde paneli 8/4; başlık keskin, tek CTA | `shots/01-page.png` |
+| Dashboard | düşük | Desen yalnız üst şeritte; tablolar düz zeminde | `shots/01-page.png` |
+| Form | düşük | 36px alanlar, 1px ink kenar, radius 0 | `shots/01-page.png` |
+| Liste / tablo | düşük | 32px satır, zebra yok, 1px ayırıcı | `shots/01-page.png` |
+| Boş durum | orta | Boş desen alanı + "yeni desen üret" eylemi | `shots/01-page.png` |
+| Onboarding | yüksek | Her adımda tek perde; metin opak kartta | `shots/01-page.png` |
+| Pricing | orta | Plan kartları düz zemin; öne çıkan 1px ink + accent başlık | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel, desen yok (odak formu) | `shots/01-page.png` |
+| Modal | orta | %8 perde + opak metin katmanı | `shots/01-page.png` |
+| Bildirim / toast | orta | Mono tek satır, keskin kenar | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + hata metni; perde kapanır | `shots/01-page.png` |
+| Profil / ayar | orta | Perde yoğunluğu ve açı ayarı (4°–11°) | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — moiré test kartı — açı notu (4°/11°), kesim payı, girişim çizgileri.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.53s**, y **4px**, stagger **0.025** | `cubic-bezier(.37,0,.63,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.47s**, trigger **top 93%**, y **6px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **1.05**, mesafe **+125%** (perde kayması) | scrub doğrusal | `transform` (desen açısı 4° → 11°) |
-| Hover | **95ms**, görsel scale **1.000** (görsel yok — kenarlık/desen yoğunluğu değişir) | `ease-out` | `background-color` |
-| Basma | 95ms | aynı eğri | `transform` (1px) |
-| Perde kayması | 240ms | aynı eğri | `opacity` (desen opaklığı) |
-
-- Bu stilin ölçülebilir imzası: `enter 0.53s / cubic-bezier(.37,0,.63,1) / 4px / 0.025` + `scroll top 93% / 0.47s / 6px` + `pin scrub 1.05 / +125%` + `hover 95ms / 1.000`. `0.53s` + bu eğri ve `scrub 1.05` katalogda yalnız burada geçer.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; perde kayması ve scrub kapanır, desen sabit kalır.
-- Bu stile yasak hareket: saniyede 1'den fazla desen kayması (optik titreşim), sürekli döngü, parallax, gradient geçişi.
-
-## Koyu mod
-
-| Token | Açık (gündüz perdesi) | Koyu (gece perdesi) |
-|---|---|---|
-| `--bg` | `#a6a29b` | `#1c1b19` |
-| `--bg-2` | `#9c9891` | `#232220` |
-| `--surface` | `#b1ada6` | `#2a2825` |
-| `--surface-2` | `#8e8a84` | `#34322e` |
-| `--ink` | `#12130f` | `#ece8e1` |
-| `--ink-soft` | `#2b2c28` | `#b3aea6` |
-| `--ink-faint` | `#45463f` | `#8a857d` |
-| `--accent` | `#9c2e6e` | `#e57ab0` |
-| `--accent-ink` | `#ffffff` | `#1a0712` |
-| `--line` | `rgba(18,19,15,.22)` | `rgba(236,232,225,.18)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **14.09:1** · `ink-soft/bg` = **7.80:1** · `accent-ink/accent` = **7.15:1** · `ink-faint/bg` = **4.70:1**.
-- Koyu modda değişen başka ne var: perde çizgileri `--line` yerine `--ink` %12 karışımı; accent açılır (magenta → pembe); kenarlık ink kalır (kontrast korunur).
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="moire-field"]`.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **6.32:1** açık / **6.07:1** koyu · `--warn / bg` = **6.29:1** / **6.31:1** · `--ok / surface` = 5.18:1 / 5.39:1 (warn) · devre dışı buton metni = **4.66:1** / **6.60:1** · ghost buton kenarı = **3.02:1** / **5.12:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - İki perde kuralı: tam iki çizgi ızgarası, 4–11° farkla; üçüncü perde yok.
@@ -218,14 +183,11 @@ Baskı öncesi tram hataları, televizyon ekranı girişimi, op-art (Bridget Ril
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

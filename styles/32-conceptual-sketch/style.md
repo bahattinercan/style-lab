@@ -10,7 +10,7 @@
 | **Zorluk** | orta (dağınıklık) · **Erişilebilirlik** | iyi (yüksek kontrast) |
 | **Aile** | Sanatsal (28–34) · **Token** | `kit/tokens.css` → `[data-style="conceptual-sketch"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -128,37 +128,18 @@ Kolon 12 · gutter 24px · container 1120px · bölüm 72/48px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | El yazısı başlık, kesikli panel, 2 not etiketi | `shots/01-landing.png` |
-| Dashboard | düşük | Kesikli çerçeve kapanır; düz tablo | `shots/02-dashboard.png` |
-| Form | orta | Kesikli input alt çizgisi, tek buton | — |
-| Liste/tablo | düşük | Düz satırlar, ince ayırıcı | — |
-| Boş durum | yüksek | Boş kesikli kutu + "buraya sürükle" notu | — |
-| Onboarding | yüksek | Adım başına 1 çizim + numara | — |
-| Pricing | orta | 3 kesikli kart, orta kart tam çizgi | — |
-| Giriş/ödeme | düşük | Tam çizgi, sade | — |
-| Modal | orta | Tam çerçeve + ofset | — |
-| Toast | düşük | Koyu bar | — |
-| Hata | orta | Kırmızı kesikli çerçeve + not | — |
-| Profil/ayar | düşük | Düz liste | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 100ms | `ease-out` | `transform: translateY(1px)` |
-| Geçiş / sayfa | 200ms | `ease-out` | `opacity` |
-| Giriş (enter) | **380ms** | `linear` | `opacity` + `translateY(0px)` (hiza kaymaz), **stagger 30ms**; çizgi sabit hızla "çizilir" |
-| Kaydırma (scroll) | **300ms** | `linear` | trigger **`top 92%`**, offsetY **6px**, `once: true` |
-| Hover | **110ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 300ms | `linear` | `stroke-dashoffset` tek atım |
-
-- İmza ölçüsü: enter **0.38s / 0px / stagger 0.03** · scroll **0.3s / `top 92%` / 6px** · hover **110ms / 1.02** · pin **kapalı**.
-- `prefers-reduced-motion`: 0.01ms.
-- Bu stile yasak hareket: sürekli çizim animasyonu, gradient/blur.
-## Koyu mod
-
-`--bg` `#15161a` · `--surface` `#1d1f24` · `--ink` `#e9eaee` · `--accent` `#7aa7f0` · `--accent-ink` `#15161a` · çizgiler açık renk.
+| Landing/hero | yüksek | El yazısı başlık, kesikli panel, 2 not etiketi | `shots/01-page.png` |
+| Dashboard | düşük | Kesikli çerçeve kapanır; düz tablo | `shots/01-page.png` |
+| Form | orta | Kesikli input alt çizgisi, tek buton | `shots/01-page.png` |
+| Liste/tablo | düşük | Düz satırlar, ince ayırıcı | `shots/01-page.png` |
+| Boş durum | yüksek | Boş kesikli kutu + "buraya sürükle" notu | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 çizim + numara | `shots/01-page.png` |
+| Pricing | orta | 3 kesikli kart, orta kart tam çizgi | `shots/01-page.png` |
+| Giriş/ödeme | düşük | Tam çizgi, sade | `shots/01-page.png` |
+| Modal | orta | Tam çerçeve + ofset | `shots/01-page.png` |
+| Toast | düşük | Koyu bar | `shots/01-page.png` |
+| Hata | orta | Kırmızı kesikli çerçeve + not | `shots/01-page.png` |
+| Profil/ayar | düşük | Düz liste | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -170,14 +151,11 @@ Kolon 12 · gutter 24px · container 1120px · bölüm 72/48px · breakpoint 640
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

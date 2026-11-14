@@ -33,14 +33,9 @@ export const CONFIG = {
       font-family: var(--font-display); font-size: 12px; letter-spacing: .28em;
       text-transform: uppercase; color: var(--accent);
       border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-      animation: marqueeSlideA 28s linear infinite;
     }
-    .foot-demo::before { animation-duration: 44s; animation-direction: reverse; color: var(--ink-soft); }
+    .foot-demo::before { color: var(--ink-soft); }
     .hero::after:hover, .foot-demo::before:hover { animation-play-state: paused; }
-    @keyframes marqueeSlideA {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
 
     /* kart: 2px accent üst çizgi, hover'da 24px'e uzar */
     .panel, .card, .kpi, .visual-card, .comp-card-demo, .state-card, .m-tile {

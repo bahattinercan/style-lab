@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.68:1) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `kit/tokens.css` → `[data-style="lab-instrument"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -138,52 +138,20 @@ Analog enstrümantasyondan: osiloskop, spektrum analizörü, sıcaklık kontrol�
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 7/5 kadran + kanal listesi, cetvel kurallı zemin | `shots/01-landing.png` |
-| Dashboard | yüksek | 6 kanal kartı + kadran + kalibrasyon şeridi | `shots/02-dashboard.png` |
-| Form | düşük | kanal ayarı: eşik, birim, örnekleme hızı; 36px alanlar | — |
-| Liste / tablo | yüksek | kanal tablosu 36px satır, sapma (±) sütunu | — |
-| Boş durum | orta | "kanal bağlı değil" + kalibrasyon CTA'sı | — |
-| Onboarding | yüksek | 3 adım: kanal ekle → birim seç → kalibre et | — |
-| Pricing | orta | kanal sayısı / örnekleme planı tablosu | — |
-| Giriş / ödeme | çok düşük | kurum girişi, mono alanlar, dar kart | — |
-| Modal | orta | kanal detayı: eşik tıkları sürüklenebilir | — |
-| Bildirim / toast | orta | eşik aşımı: kanal + değer + tolerans | — |
-| Hata | düşük | "sensör yanıt vermiyor" + son geçerli değer + damga | — |
-| Profil / ayar | orta | kalibrasyon takvimi, birim sistemi (SI/imperial) | — |
+| Landing / hero | orta | 7/5 kadran + kanal listesi, cetvel kurallı zemin | `shots/01-page.png` |
+| Dashboard | yüksek | 6 kanal kartı + kadran + kalibrasyon şeridi | `shots/01-page.png` |
+| Form | düşük | kanal ayarı: eşik, birim, örnekleme hızı; 36px alanlar | `shots/01-page.png` |
+| Liste / tablo | yüksek | kanal tablosu 36px satır, sapma (±) sütunu | `shots/01-page.png` |
+| Boş durum | orta | "kanal bağlı değil" + kalibrasyon CTA'sı | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: kanal ekle → birim seç → kalibre et | `shots/01-page.png` |
+| Pricing | orta | kanal sayısı / örnekleme planı tablosu | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | kurum girişi, mono alanlar, dar kart | `shots/01-page.png` |
+| Modal | orta | kanal detayı: eşik tıkları sürüklenebilir | `shots/01-page.png` |
+| Bildirim / toast | orta | eşik aşımı: kanal + değer + tolerans | `shots/01-page.png` |
+| Hata | düşük | "sensör yanıt vermiyor" + son geçerli değer + damga | `shots/01-page.png` |
+| Profil / ayar | orta | kalibrasyon takvimi, birim sistemi (SI/imperial) | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 420ms | `cubic-bezier(.34,1.28,.64,1)` (hafif taşma) | `opacity` + `translateY(14px)`, kart başına 45ms stagger |
-| Scroll reveal | 500ms | `cubic-bezier(.34,1.28,.64,1)` | `top 86%` tetiği, 18px, `once: true` |
-| Basma | 190ms | `linear` | `translate(2px,2px)` + gölge kalkar (fiziksel basış) |
-| Hover | 190ms | `cubic-bezier(.34,1.28,.64,1)` | zemin `--surface-2`, görsel ölçek `1.018` |
-| Pin / scrub | açık | `scrub 0.75` | kadran bölümü `+110%` mesafede sabitlenir, iğne scroll ile döner |
-| İğne | 640ms | `cubic-bezier(.34,1.28,.64,1)` | yeni değere tek taşmalı geçiş (yalnız bir kez) |
-
-- Ölçülebilir imza: `enter 0.42s / cb(.34,1.28,.64,1) / 14px / 0.045` · `scroll top 86% / 0.5s / 18px / once:true` · `pin açık scrub 0.75 / +110%` · `hover 190ms / 1.018`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, iğne ve scrub kapanır, değer tek karede yazılır.
-- Bu stile yasak hareket: sürekli döngü (yalnız yükleme yayı 700ms), blur geçişi, renk geçişiyle değer değişimi, birden fazla taşma.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f5f7f7` | `#0b0f11` |
-| `--bg-2` | `#eaeff0` | `#0f1517` |
-| `--surface` | `#ffffff` | `#121a1d` |
-| `--surface-2` | `#f2f6f7` | `#182326` |
-| `--ink` | `#0e1517` | `#e5eef0` |
-| `--ink-soft` | `#43565c` | `#a1b3b9` |
-| `--accent` | `#1a5c8a` | `#63bde0` |
-| `--accent-ink` | `#f4f8fa` | `#06171f` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **16.34:1** · `ink-soft / bg` = **8.86:1** · `accent-ink / accent` = **8.60:1** · `ink-faint / bg` = **4.65:1**.
-- Koyu modda değişen başka ne var: accent açık kobalta döner (`#63bde0`); `--shadow-hard` opak siyaha kayar (`2px 2px 0 rgba(0,0,0,.6)`) çünkü koyu zeminde açık gölge görünmez; hairline .14 → .16.
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 - Her ölçüm birim + toleransla yazılır: `24,81 mV ±0,02`. Birimsiz sayı yasak.
@@ -212,14 +180,11 @@ Analog enstrümantasyondan: osiloskop, spektrum analizörü, sıcaklık kontrol�
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

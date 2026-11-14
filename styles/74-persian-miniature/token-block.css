@@ -33,16 +33,3 @@
   --ok: #86cfa4;
   --warn: #e2c076;
 }
-
-[data-theme="dark"][data-style="persian-miniature"] {
-  --bg: #070a15;
-  --bg-2: #0a0f1e;
-  --surface: #0d1324;
-  --surface-2: #141b30;
-  --ink: #f6efe2;
-  --ink-soft: #c2b6a0;
-  --ink-faint: #8f8571;
-  --accent: #e6c169;
-  --accent-ink: #1b1406;
-  --line: rgba(246,239,226,.18);
-}

@@ -10,7 +10,7 @@
 | **Zorluk** | orta (yoğunluk + okunurluk dengesi) · **Erişilebilirlik** | iyi (15.72:1 gövde, 9.14:1 accent üstü) |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="encyclopedia"]` |
 | **Kompozisyon** | `type` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -143,58 +143,21 @@ Klişeye düşmemesi için korunması gereken detay: **iki kolon + mono tip kolo
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Alfabe şeridi + madde başı + telaffuz + ilk tanım | `shots/01-landing.png` |
-| Dashboard | orta | Veri sözlüğü tablosu + 3 KPI; mono tip kolonu | `shots/02-dashboard.png` |
-| Form | düşük | 44px alan, mono etiket, 2px odak halkası | — |
-| Liste / tablo | yüksek | 34px satır, alan/tip/zorunluluk/notlar | — |
-| Boş durum | düşük | "Madde bulunamadı" + `→` önerilen 3 çapraz referans | — |
-| Onboarding | orta | 3 numaralı adım; her adımda tek tanım | — |
-| Pricing | orta | 3 sütun karşılaştırma tablosu; accent yalnız zorunlu satırda | — |
-| Giriş / ödeme | çok düşük | Süs sıfır; arama + tek accent buton | — |
-| Modal | orta | 2px mürekkep çerçeve, serif başlık + mono telaffuz | — |
-| Bildirim / toast | orta | Koyu zemin + 1px accent kural, 3200ms | — |
-| Hata | düşük | `--danger` kenar + mono açıklama satırı | — |
-| Profil / ayar | orta | İki kolon: mono etiket + Inter değer, 1px cetvel | — |
+| Landing / hero | yüksek | Alfabe şeridi + madde başı + telaffuz + ilk tanım | `shots/01-page.png` |
+| Dashboard | orta | Veri sözlüğü tablosu + 3 KPI; mono tip kolonu | `shots/01-page.png` |
+| Form | düşük | 44px alan, mono etiket, 2px odak halkası | `shots/01-page.png` |
+| Liste / tablo | yüksek | 34px satır, alan/tip/zorunluluk/notlar | `shots/01-page.png` |
+| Boş durum | düşük | "Madde bulunamadı" + `→` önerilen 3 çapraz referans | `shots/01-page.png` |
+| Onboarding | orta | 3 numaralı adım; her adımda tek tanım | `shots/01-page.png` |
+| Pricing | orta | 3 sütun karşılaştırma tablosu; accent yalnız zorunlu satırda | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Süs sıfır; arama + tek accent buton | `shots/01-page.png` |
+| Modal | orta | 2px mürekkep çerçeve, serif başlık + mono telaffuz | `shots/01-page.png` |
+| Bildirim / toast | orta | Koyu zemin + 1px accent kural, 3200ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + mono açıklama satırı | `shots/01-page.png` |
+| Profil / ayar | orta | İki kolon: mono etiket + Inter değer, 1px cetvel | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — madde kartı — numaralı tanımlar, telaffuz satırı, çapraz referans oku.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 90ms | `ease-out` | `transform: translateY(1px)` |
-| Geçiş / sayfa | 130ms | `ease-out` | `opacity` |
-| Giriş (enter) | **330ms** | `cubic-bezier(.4,0,.3,1)` | `opacity` + `translateY(6px)`, **stagger 25ms** |
-| Kaydırma (scroll) | **420ms** | `cubic-bezier(.4,0,.3,1)` | trigger **`top 89%`**, offsetY **8px**, `once: false` (her geçişte) |
-| Hover | **130ms** | `ease-out` | görsel ölçek **1.008** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 240ms | `cubic-bezier(.4,0,.3,1)` | tanım numarası accent'e döner, tek atım |
-
-- İmza ölçüsü: enter **0.33s / 6px / stagger 0.025** · scroll **0.42s / `top 89%` / 8px / `once: false`** · hover **130ms / 1.008** · pin **kapalı** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; `once: false` animasyonu da durur, satır vurgusu statik kalır.
-- Bu stile yasak hareket: parallax, sürekli döngü, spring/bounce, harf harf animasyon.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f7f5ee` | `#131211` |
-| `--bg-2` | `#efece1` | `#181715` |
-| `--surface` | `#fffcf4` | `#1d1b19` |
-| `--surface-2` | `#ebe7da` | `#262321` |
-| `--ink` | `#1a1c1a` | `#ece7dc` |
-| `--ink-soft` | `#4a4f4a` | `#b5afa4` |
-| `--ink-faint` | `#767b76` | `#8a857c` |
-| `--accent` | `#7a1f52` | `#d684ae` |
-| `--accent-ink` | `#fdf6ef` | `#17100f` |
-| `--line` | `rgba(26,28,26,.16)` | `rgba(236,231,220,.16)` |
-
-- Koyu mod **gece okuması**: zemin `#131211` (sıcak siyah), kart `#1d1b19`; accent açılır (`#d684ae`) çünkü erik moru koyu zeminde okunmaz.
-- Kolon kuralı koyuda aynı opaklıkta (.16) kalır; 1px çizgi koyu zeminde yeterli.
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **15.17:1** · `ink-soft/bg` = **8.58:1** · `accent-ink/accent` = **6.95:1** · `ink-faint/bg` = **5.10:1**.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **-:1** açık / **-:1** koyu · `--warn / bg` = **-:1** / **-:1** · `--ok / surface` = -:1 / -:1 (warn) · devre dışı buton metni = **7.14:1** / **7.79:1** · ghost buton kenarı = **3.75:1** / **5.22:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 
@@ -225,14 +188,11 @@ Klişeye düşmemesi için korunması gereken detay: **iki kolon + mono tip kolo
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

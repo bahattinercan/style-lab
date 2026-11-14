@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | düşük risk (en düşük metin çifti 8.22:1, accent üstü 10.58:1) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="keyboard-first"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -134,51 +134,20 @@ Vim/Emacs tuş dili, which-key tarzı ipucu şeritleri ve geliştirici konsollar
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | komut satırı + üç örnek komut + tuş haritası önizleme | `shots/01-landing.png` |
-| Dashboard | yüksek | 6 KPI satırı, her satırda tuş ipucu, seçim şeridi | `shots/02-dashboard.png` |
-| Form | orta | mono input, `Tab` sırası numaralı, `Enter` gönderir | — |
-| Liste / tablo | yüksek | 30px satır, ok tuşu gezinme, sol 2px seçim | — |
-| Boş durum | orta | `>` komut satırı + 5 öneri komutu | — |
-| Onboarding | yüksek | 5 kısayol kartı, her biri tuş başlığıyla | — |
-| Pricing | düşük | iki plan satırı, satır sonunda `Enter` ipucu | — |
-| Giriş / ödeme | çok düşük | iki input + `Enter` ile giriş, süs yok | — |
-| Modal | yüksek | komut listesi: tuş + etiket + açıklama, `↑↓` gezinme | — |
-| Bildirim / toast | düşük | sağ alt tek satır mono + `Esc` ipucu | — |
-| Hata | orta | `hata:` önekli mono satır + düzeltme kısayolu | — |
-| Profil / ayar | orta | kısayol atama tablosu, çakışmada `--danger` uyarı | — |
+| Landing / hero | yüksek | komut satırı + üç örnek komut + tuş haritası önizleme | `shots/01-page.png` |
+| Dashboard | yüksek | 6 KPI satırı, her satırda tuş ipucu, seçim şeridi | `shots/01-page.png` |
+| Form | orta | mono input, `Tab` sırası numaralı, `Enter` gönderir | `shots/01-page.png` |
+| Liste / tablo | yüksek | 30px satır, ok tuşu gezinme, sol 2px seçim | `shots/01-page.png` |
+| Boş durum | orta | `>` komut satırı + 5 öneri komutu | `shots/01-page.png` |
+| Onboarding | yüksek | 5 kısayol kartı, her biri tuş başlığıyla | `shots/01-page.png` |
+| Pricing | düşük | iki plan satırı, satır sonunda `Enter` ipucu | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | iki input + `Enter` ile giriş, süs yok | `shots/01-page.png` |
+| Modal | yüksek | komut listesi: tuş + etiket + açıklama, `↑↓` gezinme | `shots/01-page.png` |
+| Bildirim / toast | düşük | sağ alt tek satır mono + `Esc` ipucu | `shots/01-page.png` |
+| Hata | orta | `hata:` önekli mono satır + düzeltme kısayolu | `shots/01-page.png` |
+| Profil / ayar | orta | kısayol atama tablosu, çakışmada `--danger` uyarı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **120ms** | `linear` | `opacity`; `translateY(0px)`; stagger **0.008s** |
-| Scroll reveal | **100ms** | `linear` | trigger `top 98%`, `translateY(1px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (komut yüzeyi kaymaz) |
-| Basma | **45ms** | `linear` | `translateY(2px)` + gölge sıfırlama |
-| Geçiş / sayfa | 110ms | `linear` | yalnız opacity |
-| Hover | **45ms** | `linear` | görsel ölçek **1.000** (yalnız çerçeve/renk) |
-| Ödül / vurgu | 160ms | `linear` | komut çıktısı satırı belirir, tek kez |
-
-- İmza ölçüleri: `enter = 0.12s / linear / 0px / 0.008` · `scroll = top 98% / 0.1s / 1px / once:true` · `pin = false` · `hover = 45ms / 1.000`.
-- Bant içi fark: 111'den (0.39s / 7px / 0.048), 112'den (1.28s / 3px / 0.185 / top 64%), 113'ten (0.23s / 3px / 0.024), 114'ten (0.63s / 9px / 0.033) en az altı parametrede ayrışır. Karşılaştırma örneği 89-academic-paper (`0.33s / linear / 0px / 0.04`): süre, stagger, trigger, scroll süresi ve offset ile ayrışır (6 parametre); 45-terminal-ui (`0.18s / steps(3,end) / 0px / 0.03`) ile eğri, süre, stagger ve hover'da ayrışır. Katalogdaki tüm imzalarla en az iki parametre farkı makine kontrolüyle doğrulanır.
-- `prefers-reduced-motion`: tüm süreler 0.01ms — komut çıktısı ışınlanır, imleç yanıp sönmez, tuş basımı yer değiştirmez.
-- Bu stile yasak hareket: yumuşak/ease geçişler, blur, imleç nabzı, sayfa geçiş animasyonu, kaydırma hijack.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#0f1013` | `#020306` |
-| `--surface` | `#17191e` | `#08090d` |
-| `--ink` | `#e9ecf1` | `#f6f8fc` |
-| `--accent` | `#ffb62e` | `#ffd79a` |
-| `--ink-soft` | `#a3abb8` | `#b1bac7` |
-| `--line` | `rgba(233,236,241,.16)` | `rgba(246,248,252,.13)` |
-
-- Stil açık modda da grafittir; "koyu mod" artık gerçek gece siyahı: zemin `#0f1013` → `#020306` (bg çifti ΔE 3.9 — siyah tabanın sınırı), yüzey bandı ΔE 6.6 ve accent amber → sıcak amber (`#ffb62e` → `#ffd79a`, ΔE 40.2) ayrışmayı taşır. Izgara opaklığı %5 → %4.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark` ve `token-block.css` koyu bloğu birebir aynı).
 
 ## Zorunlu kurallar
 - Her birincil eylemin görünür tuş ipucu vardır; kısayolu olmayan eylem birincil sayılmaz.
@@ -207,14 +176,11 @@ Vim/Emacs tuş dili, which-key tarzı ipucu şeritleri ve geliştirici konsollar
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

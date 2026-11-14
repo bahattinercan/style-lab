@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 7.16:1) |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="silk-drape"]` |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Bedeli: yumuşak köşeler ve geniş boşluk bilgi yoğunluğunu düşürür; ek
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 4/8 hero: solda ince serif başlık + tek hap CTA, sağda kumaş kıvrımı | `shots/01-landing.png` |
-| Dashboard | düşük | 3 KPI (kumaş, gramaj ort., renk) + kartela | `shots/02-dashboard.png` |
-| Form | düşük | yeni kumaş: iplik, gramaj+g/m², en+cm, boya | — |
-| Liste / tablo | orta | 44px satır, iplik chip'i, sağda mono gramaj/en | — |
-| Boş durum | düşük | "kartelada kumaş yok" + ilk kumaşı ekle | — |
-| Onboarding | düşük | 3 adım: koleksiyon → kumaş → renk paleti | — |
-| Pricing | orta | iki plan, kumaş/renk limitleri hap kartlarda | — |
-| Giriş / ödeme | çok düşük | tek kart (44px köşe), 48px alanlar | — |
-| Modal | orta | kumaş detayı: kıvrım fotoğrafı, gramaj, bakım | — |
-| Bildirim | düşük | hap toast, alt ortada, 4.2sn | — |
-| Hata | düşük | bordo çerçeve + neden + sonraki adım | — |
-| Profil / ayar | orta | koleksiyon listesi, birim (cm/inç), boya paleti | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (kart) | 760ms | `cubic-bezier(.46,.03,.24,1)` | `opacity` + `translateY(27px)`, 78ms arayla |
-| Scroll reveal | 920ms, `top 65%` | aynı | `translateY(29px)`, `once: true` |
-| Pin / scrub | 0.78 scrub, +145% mesafe | doğrusal | kumaş kartelası sabitlenir, kıvrım katmanı kayar |
-| Basma | 180ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 245ms | aynı | `scale(1.048)` |
-| Gölge genişlemesi | 380ms | aynı | `box-shadow` yayılımı +4px |
-
-- Ölçülen imza: enter **0.76s · cubic-bezier(.46,.03,.24,1) · 27px · stagger 0.078**; scroll **top 65% · 0.92s · 29px · once**; pin **açık · scrub 0.78 · +145%**; hover **245ms · 1.048**.
-- Kumaşın düşüşü: yumuşak kalkış, uzun iniş; hiçbir hareket geri sekmez.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin/scrub ve gölge genişlemesi kapalı.
-- Bu stile yasak hareket: sürekli dalgalanan kumaş, bounce, yatay parallax, gloss/parlama geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f6efe7` | `#1a1217` |
-| `--bg-2` | `#ede2d6` | `#140e12` |
-| `--surface` | `#fdf9f3` | `#221820` |
-| `--surface-2` | `#f3eade` | `#2c2028` |
-| `--ink` | `#241a20` | `#f6ecf0` |
-| `--ink-soft` | `#5b4b52` | `#c4b1ba` |
-| `--accent` | `#6b2f4a` | `#d08aa8` |
-| `--accent-ink` | `#f9f1f4` | `#26101a` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **15.90:1** · `ink-soft/bg` **9.05:1** · `accent-ink/accent` **6.73:1** · `ink-faint/bg` **4.75:1** · accent metin olarak bg'ye **6.90:1**.
-- Koyu modda değişen başka ne var: grain `.012` → `.02`, çizgi %14 → %16, accent bir ton açılır (gül kurusu); gölge opaklığı artar.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="silk-drape"]` olarak durur.
+| Landing / hero | orta | 4/8 hero: solda ince serif başlık + tek hap CTA, sağda kumaş kıvrımı | `shots/01-page.png` |
+| Dashboard | düşük | 3 KPI (kumaş, gramaj ort., renk) + kartela | `shots/01-page.png` |
+| Form | düşük | yeni kumaş: iplik, gramaj+g/m², en+cm, boya | `shots/01-page.png` |
+| Liste / tablo | orta | 44px satır, iplik chip'i, sağda mono gramaj/en | `shots/01-page.png` |
+| Boş durum | düşük | "kartelada kumaş yok" + ilk kumaşı ekle | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: koleksiyon → kumaş → renk paleti | `shots/01-page.png` |
+| Pricing | orta | iki plan, kumaş/renk limitleri hap kartlarda | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek kart (44px köşe), 48px alanlar | `shots/01-page.png` |
+| Modal | orta | kumaş detayı: kıvrım fotoğrafı, gramaj, bakım | `shots/01-page.png` |
+| Bildirim | düşük | hap toast, alt ortada, 4.2sn | `shots/01-page.png` |
+| Hata | düşük | bordo çerçeve + neden + sonraki adım | `shots/01-page.png` |
+| Profil / ayar | orta | koleksiyon listesi, birim (cm/inç), boya paleti | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her kumaş kaydı: iplik türü + gramaj (g/m²) + en (cm) + boya adı.
@@ -214,14 +181,11 @@ Bedeli: yumuşak köşeler ve geniş boşluk bilgi yoğunluğunu düşürür; ek
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | iyi (koyu zemin + krem metin) |
 | **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="art-deco"]` |
 | **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -132,36 +132,18 @@ Kolon 12 (içerik merkezde 8) · gutter 32px · container 1080px · bölüm 96/5
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | çok yüksek | Merkezli 52px Cinzel, çift çerçeve panel, tek altın buton | `shots/01-landing.png` |
-| Dashboard | düşük | Süs kapanır; hairline ayırıcı + krem metin | `shots/02-dashboard.png` |
-| Form | düşük | 440px merkez, alt çizgili input | — |
-| Liste/tablo | düşük | Altın hairline, 54px satır | — |
-| Boş durum | orta | Merkezli tek cümle + altın hairline | — |
-| Onboarding | yüksek | Adım başına 1 simetrik panel | — |
-| Pricing | yüksek | 3 simetrik kart, orta kart altın çerçeve | — |
-| Giriş/ödeme | düşük | Sade merkezli form, altın hairline | — |
-| Modal | orta | Çift çerçeve, merkezli | — |
-| Toast | orta | Altın çerçeveli koyu kutu | — |
-| Hata | düşük | `--danger` hairline + 14px metin | — |
-| Profil/ayar | düşük | Simetrik liste, altın ayırıcı | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 160ms | `ease-in-out` | `opacity` |
-| Giriş | 580ms | `ease-in-out` | `opacity` + 28px `translateY`, stagger 90ms |
-| Scroll (`top 76%`) | 680ms | aynı eğri | `opacity` + 20px `translateY`, `once: true` |
-| Hover | 320ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 600ms | `ease-in-out` | hairline genişleme |
-
-- `prefers-reduced-motion`: 0.01ms.
-- Yasak: süs döngüsü, hızlı geçiş, parallax.
-- Pin/parallax yok.
-
-## Koyu mod
-
-Stil zaten koyu. Açık varyant: `--bg` `#f3ecdd` · `--surface` `#faf6ec` · `--ink` `#141f1a` · `--accent` `#9a7526` · `--accent-ink` `#ffffff`.
+| Landing/hero | çok yüksek | Merkezli 52px Cinzel, çift çerçeve panel, tek altın buton | `shots/01-page.png` |
+| Dashboard | düşük | Süs kapanır; hairline ayırıcı + krem metin | `shots/01-page.png` |
+| Form | düşük | 440px merkez, alt çizgili input | `shots/01-page.png` |
+| Liste/tablo | düşük | Altın hairline, 54px satır | `shots/01-page.png` |
+| Boş durum | orta | Merkezli tek cümle + altın hairline | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 simetrik panel | `shots/01-page.png` |
+| Pricing | yüksek | 3 simetrik kart, orta kart altın çerçeve | `shots/01-page.png` |
+| Giriş/ödeme | düşük | Sade merkezli form, altın hairline | `shots/01-page.png` |
+| Modal | orta | Çift çerçeve, merkezli | `shots/01-page.png` |
+| Toast | orta | Altın çerçeveli koyu kutu | `shots/01-page.png` |
+| Hata | düşük | `--danger` hairline + 14px metin | `shots/01-page.png` |
+| Profil/ayar | düşük | Simetrik liste, altın ayırıcı | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -174,14 +156,11 @@ Stil zaten koyu. Açık varyant: `--bg` `#f3ecdd` · `--surface` `#faf6ec` · `-
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

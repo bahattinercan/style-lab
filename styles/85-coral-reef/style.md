@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 8.15:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="coral-reef"]` |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Resif izleme raporlarından ve dalış kayıt defterinden: bölge (lagün, resif
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 5/7 hero: solda başlık + tek hap CTA, sağda mercan öbeği + kabarcıklar | `shots/01-landing.png` |
-| Dashboard | orta | 3 KPI (tür, ortalama derinlik, sıcaklık) + bölge dağılımı + gözlem listesi | `shots/02-dashboard.png` |
-| Form | düşük | dalış kaydı: bölge, derinlik+birim, sıcaklık, tür, not | — |
-| Liste / tablo | orta | 44px satır, bölge chip'i, sağda mono derinlik | — |
-| Boş durum | düşük | "bu bölgede gözlem yok" + ilk gözlemi ekle | — |
-| Onboarding | düşük | 3 adım: resif seç → bölge tanımla → ilk gözlem | — |
-| Pricing | orta | iki plan; gözlem/dışa aktarma limitleri hap kartlarda | — |
-| Giriş / ödeme | çok düşük | tek kart, 48px alanlar, tek eylem | — |
-| Modal | orta | tür detayı: foto, derinlik, sıcaklık, gözlem notu | — |
-| Bildirim | düşük | hap toast, alt ortada, 4.2sn | — |
-| Hata | düşük | danger çerçeve + neden + yeniden dene | — |
-| Profil / ayar | orta | resif listesi, birim (m/ft, °C/°F), uyarı eşiği | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (kart) | 980ms | `cubic-bezier(.2,.8,.3,1)` | `opacity` + `translateY(22px)`, 80ms arayla |
-| Scroll reveal | 880ms, `top 79%` | aynı | `translateY(18px)`, `once: false` (yukarı kaydırınca tekrar) |
-| Pin / scrub | 1.05 scrub, +110% mesafe | doğrusal | resif kesiti sabitlenir, bölge katmanı kayar |
-| Basma | 160ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 280ms | aynı | `scale(1.058)` |
-| Kabarcık | 1200ms | `cubic-bezier(.2,.8,.3,1)` | `translateY` + `opacity` (yalnız yükleme göstergesi) |
-
-- Ölçülen imza: enter **0.98s · cubic-bezier(.2,.8,.3,1) · 22px · stagger 0.08**; scroll **top 79% · 0.88s · 18px · once:false**; pin **açık · scrub 1.05 · +110%**; hover **280ms · 1.058**.
-- Su içinde süzülme: yumuşak hızlanma ve yumuşak duruş; hiçbir hareket geri sekmez.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin/scrub ve kabarcık kapalı, içerik anında.
-- Bu stile yasak hareket: sürekli yüzen balık/kabarcık döngüsü, bounce, caustic animasyonu, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık (resif) | Koyu (gece dalışı) |
-|---|---|---|
-| `--bg` | `#0d2b30` | `#021015` |
-| `--bg-2` | `#092226` | `#051b21` |
-| `--surface` | `#123840` | `#07222a` |
-| `--surface-2` | `#174650` | `#0b2c34` |
-| `--ink` | `#e6f4f2` | `#f0fbf9` |
-| `--ink-soft` | `#a4c6c4` | `#b6d8d6` |
-| `--accent` | `#ff8a73` | `#ffa88f` |
-| `--accent-ink` | `#2a0d08` | `#180904` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **18.27:1** · `ink-soft/bg` **12.67:1** · `accent-ink/accent` **10.42:1** · `ink-faint/bg` **7.52:1** · accent metin olarak bg'ye **10.34:1**.
-- Koyu modda değişen başka ne var: resif gece dalışına iner (`#0d2b30` → `#021015`, ton bandı Δ≈40), mercan accent açılır (`#ff8a73` → `#ffa88f`), yüzey kademeleri koyulaşır, hairline .16 → .22. Açık/koyu ekran yan yana ayırt edilir.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="coral-reef"]` olarak durur.
+| Landing / hero | orta | 5/7 hero: solda başlık + tek hap CTA, sağda mercan öbeği + kabarcıklar | `shots/01-page.png` |
+| Dashboard | orta | 3 KPI (tür, ortalama derinlik, sıcaklık) + bölge dağılımı + gözlem listesi | `shots/01-page.png` |
+| Form | düşük | dalış kaydı: bölge, derinlik+birim, sıcaklık, tür, not | `shots/01-page.png` |
+| Liste / tablo | orta | 44px satır, bölge chip'i, sağda mono derinlik | `shots/01-page.png` |
+| Boş durum | düşük | "bu bölgede gözlem yok" + ilk gözlemi ekle | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: resif seç → bölge tanımla → ilk gözlem | `shots/01-page.png` |
+| Pricing | orta | iki plan; gözlem/dışa aktarma limitleri hap kartlarda | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek kart, 48px alanlar, tek eylem | `shots/01-page.png` |
+| Modal | orta | tür detayı: foto, derinlik, sıcaklık, gözlem notu | `shots/01-page.png` |
+| Bildirim | düşük | hap toast, alt ortada, 4.2sn | `shots/01-page.png` |
+| Hata | düşük | danger çerçeve + neden + yeniden dene | `shots/01-page.png` |
+| Profil / ayar | orta | resif listesi, birim (m/ft, °C/°F), uyarı eşiği | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her tür kaydı: tür adı + bölge chip'i + derinlik (m) + sıcaklık (°C).
@@ -214,14 +181,11 @@ Resif izleme raporlarından ve dalış kayıt defterinden: bölge (lagün, resif
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

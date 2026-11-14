@@ -33,16 +33,3 @@
   --ok: #2c5c46;
   --warn: #7d5a12;
 }
-
-[data-theme="dark"][data-style="marble-vein"] {
-  --bg: #121416;
-  --bg-2: #0d0f10;
-  --surface: #191c1e;
-  --surface-2: #222629;
-  --ink: #eef0ef;
-  --ink-soft: #a7aeae;
-  --ink-faint: #7b8484;
-  --accent: #e8ebe7;
-  --accent-ink: #14181a;
-  --line: rgba(238,240,239,.16);
-}

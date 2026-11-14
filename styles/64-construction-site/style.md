@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (sıcak zemin + kiremit accent; en düşük etkileşimli çift 6.99:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="construction-site"]` |
 | **Kompozisyon** | `split` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Bedeli: ekran ağır ve sıcaktır. Ağırlığın "eski" değil "sağlam" gör�
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 9/3 hero: dev Anton başlık + numara kutusu, dar saha notu kolonu | `shots/01-landing.png` |
-| Dashboard | yüksek | blok ilerleme kartları + metraj tablosu + aşama dağılımı | `shots/02-dashboard.png` |
-| Form | orta | saha raporu: blok, metraj, birim, foto, aşama | — |
-| Liste / tablo | çok yüksek | 44px satır, blok no, metraj mono, toplam satırı 2px üst çizgi | — |
-| Boş durum | düşük | "bu blokta kayıt yok" + ilk metrajı gir eylemi | — |
-| Onboarding | orta | 3 adım: proje aç → blok tanımla → metraj gir | — |
-| Pricing | orta | plan karşılaştırma; proje/blok limitleri tablo satırında | — |
-| Giriş / ödeme | düşük | tek plaka, 2px çerçeve, tek eylem, hata saha notu | — |
-| Modal | orta | blok detayı: aşama, metraj, foto, onay | — |
-| Bildirim | orta | 48px toast + 8px accent blok, 4.5sn | — |
-| Hata | düşük | `--danger` çerçeve + neden + tekrar dene | — |
-| Profil / ayar | orta | proje listesi, blok no şeması, birim tercihi | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (blok) | 460ms | `cubic-bezier(.2,1.3,.3,1)` | `opacity` + `translateY(44px)`, 110ms arayla |
-| Scroll reveal | 340ms, `top 86%` | aynı | `translateY(56px)`, `once: true` |
-| Pin / scrub | 0.55 scrub, +160% mesafe | doğrusal | blok kesiti: 2 katman sabitlenir, katman yüksekliği değişir |
-| Basma | 140ms | aynı | ofset 6px → 3px → 0 |
-| Hover (görsel) | 190ms | aynı | `scale(1.012)` |
-| Blok ilerleme | 800ms | `steps(4, end)` | ilerleme çubuğu kare kare dolar |
-
-- Ölçülen imza: enter **0.46s · cubic-bezier(.2,1.3,.3,1) · 44px · stagger 0.11**; scroll **top 86% · 0.34s · 56px · once**; pin **açık · scrub 0.55 · +160%**; hover **190ms · 1.012**.
-- Blok yerine otururken 1–2px taşar ve durur; 3'ten fazla sekme "oyuncak" hissi verdiği için yasak.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin/scrub kapalı, ilerleme anında son değeri gösterir.
-- Bu stile yasak hareket: sürekli sallanan vinç, parallax ezme, blur geçişi, gradient animasyonu.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#e8e2d4` | `#14120e` |
-| `--bg-2` | `#dcd4c2` | `#1c1914` |
-| `--surface` | `#f4efe4` | `#211d17` |
-| `--surface-2` | `#eae3d4` | `#2a251d` |
-| `--ink` | `#191612` | `#f0e9db` |
-| `--ink-soft` | `#4f483d` | `#b1a795` |
-| `--accent` | `#a03a26` | `#df6b4a` |
-| `--accent-ink` | `#f7f1e6` | `#130a06` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **15.48:1** · `ink-soft/bg` **7.87:1** · `accent-ink/accent` **5.90:1** · `ink-faint/bg` **4.36:1** · accent metin olarak bg'ye **5.65:1**.
-- Koyu modda değişen başka ne var: grain `.05` → `.08` (koyu zeminde doku daha görünür), sert ofset gölge `rgba(0,0,0,.9)`, kiremit accent bir ton açılır, yapısal kural 2px `--ink` (açık krem) olur.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="construction-site"]` olarak durur.
+| Landing / hero | yüksek | 9/3 hero: dev Anton başlık + numara kutusu, dar saha notu kolonu | `shots/01-page.png` |
+| Dashboard | yüksek | blok ilerleme kartları + metraj tablosu + aşama dağılımı | `shots/01-page.png` |
+| Form | orta | saha raporu: blok, metraj, birim, foto, aşama | `shots/01-page.png` |
+| Liste / tablo | çok yüksek | 44px satır, blok no, metraj mono, toplam satırı 2px üst çizgi | `shots/01-page.png` |
+| Boş durum | düşük | "bu blokta kayıt yok" + ilk metrajı gir eylemi | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: proje aç → blok tanımla → metraj gir | `shots/01-page.png` |
+| Pricing | orta | plan karşılaştırma; proje/blok limitleri tablo satırında | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek plaka, 2px çerçeve, tek eylem, hata saha notu | `shots/01-page.png` |
+| Modal | orta | blok detayı: aşama, metraj, foto, onay | `shots/01-page.png` |
+| Bildirim | orta | 48px toast + 8px accent blok, 4.5sn | `shots/01-page.png` |
+| Hata | düşük | `--danger` çerçeve + neden + tekrar dene | `shots/01-page.png` |
+| Profil / ayar | orta | proje listesi, blok no şeması, birim tercihi | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her bölüm 32×32 numara kutusu taşır (Anton 18px) ve 2px yapısal kuralla başlar.
@@ -214,14 +181,11 @@ Bedeli: ekran ağır ve sıcaktır. Ağırlığın "eski" değil "sağlam" gör�
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

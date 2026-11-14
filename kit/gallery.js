@@ -122,7 +122,7 @@
     for (const b of chipBtns) {
       const kind = b.dataset.fam !== undefined ? 'fam' : b.dataset.ind !== undefined ? 'ind' : b.dataset.tone !== undefined ? 'ton' : 'scene';
       const val = b.dataset[kind] ?? '';
-      const current = kind === 'scene' ? state.scene || '01-landing.png' : state[kind];
+      const current = kind === 'scene' ? state.scene || '01-page.png' : state[kind];
       b.setAttribute('aria-pressed', String(current === val));
     }
 
@@ -260,8 +260,6 @@
     const s = bySlug.get(slug);
     if (!s) return;
     drawerSlug = slug;
-    const darkBadge = s.dark === 'applied' ? '<span class="pill ok">koyu mod ✓</span>'
-      : s.dark === 'debt' ? '<span class="pill warn">koyu borç</span>' : '<span class="pill">koyu —</span>';
 
     const shots = s.shots.length
       ? s.shots
@@ -277,7 +275,7 @@
     dBody.innerHTML = `
       <header class="dr-h">
         <div>
-          <p class="dr-eyebrow"><span class="num">${escHtml(s.num)}</span> · ${escHtml(s.family)} ${darkBadge}</p>
+          <p class="dr-eyebrow"><span class="num">${escHtml(s.num)}</span> · ${escHtml(s.family)}</p>
           <h2 id="dTitle">${escHtml(s.name)}</h2>
           <p class="dr-tag">${escHtml(s.tag)}</p>
         </div>
@@ -293,14 +291,12 @@
 
       <nav class="dr-jump">
         <a href="live.html?style=${encodeURIComponent(s.slug)}" target="_blank" rel="noopener">▶ canlı önizleme</a>
-        <a href="sections.html?style=${encodeURIComponent(s.slug)}" target="_blank" rel="noopener">▦ 12 bölüm</a>
-        <a href="flows.html?style=${encodeURIComponent(s.slug)}" target="_blank" rel="noopener">⇢ akışlar</a>
         <a href="../styles/${s.dir}/style.md" target="_blank" rel="noopener">style.md</a>
         <a href="../styles/${s.dir}/tokens.json" target="_blank" rel="noopener">tokens.json</a>
       </nav>
 
       <div class="dr-section">
-        <h3>Kareler <span>${s.shots.length}</span></h3>
+        <h3>Tek sayfa <span>${s.shots.length}</span></h3>
         <div class="dshots">${shots}</div>
       </div>
 
@@ -487,7 +483,7 @@
   }
 
   function openCmp() {
-    const file = state.scene || '01-landing.png';
+    const file = state.scene || '01-page.png';
     cmpTitle.textContent = selected.size + ' stil · ' + sceneLabel(file);
     cmpgrid.innerHTML = [...selected.values()]
       .map((s) => {

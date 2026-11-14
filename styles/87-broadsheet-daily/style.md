@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="broadsheet-daily"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `type` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,51 +144,20 @@ Kökeni 20. yüzyıl broadsheet gazeteleri (The Guardian, Frankfurter Allgemeine
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Masthead + çift kural, manşet 8/12, sağ künye 4/12, "son dakika" şeridi | `shots/01-landing.png` |
-| Dashboard | yüksek | Üç kolon haber listesi, 1px hairline, mono tarih | `shots/02-dashboard.png` |
-| Form | düşük | Keskin köşe 44px input, 1px kenar, mono etiket | — |
-| Liste / tablo | yüksek | 44px satır, 1px alt çizgi, mono rakam hizası | — |
-| Boş durum | orta | Tek cümle + 3px kural + ikincil buton | — |
-| Onboarding | yüksek | Üç kolon adım, numaralar mono 22px | — |
-| Pricing | orta | Üç plan, keskin köşe, aralarında 1px dikey hairline | — |
-| Giriş / ödeme | çok düşük | Tek kolon 380px, keskin köşe form, masthead küçük | — |
-| Modal | orta | 2px radius, 2px kenar, gölge yok; backdrop %45 ink | — |
-| Bildirim / toast | orta | Sağ üst, 40px, accent zemin + accent-ink metin | — |
-| Hata | düşük | 3px kural + "HATA" mono etiket + tek paragraf | — |
-| Profil / ayar | orta | İki kolon form + künye; 1px hairline ayırıcı | — |
+| Landing / hero | yüksek | Masthead + çift kural, manşet 8/12, sağ künye 4/12, "son dakika" şeridi | `shots/01-page.png` |
+| Dashboard | yüksek | Üç kolon haber listesi, 1px hairline, mono tarih | `shots/01-page.png` |
+| Form | düşük | Keskin köşe 44px input, 1px kenar, mono etiket | `shots/01-page.png` |
+| Liste / tablo | yüksek | 44px satır, 1px alt çizgi, mono rakam hizası | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + 3px kural + ikincil buton | `shots/01-page.png` |
+| Onboarding | yüksek | Üç kolon adım, numaralar mono 22px | `shots/01-page.png` |
+| Pricing | orta | Üç plan, keskin köşe, aralarında 1px dikey hairline | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 380px, keskin köşe form, masthead küçük | `shots/01-page.png` |
+| Modal | orta | 2px radius, 2px kenar, gölge yok; backdrop %45 ink | `shots/01-page.png` |
+| Bildirim / toast | orta | Sağ üst, 40px, accent zemin + accent-ink metin | `shots/01-page.png` |
+| Hata | düşük | 3px kural + "HATA" mono etiket + tek paragraf | `shots/01-page.png` |
+| Profil / ayar | orta | İki kolon form + künye; 1px hairline ayırıcı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 90ms | `steps(2, end)` | `translate(2px,2px)` + 1px kenar koyulaşır |
-| Giriş (enter) | 220ms | `steps(3, end)` | `opacity` + 4px `translateY`, stagger 0.02s (20ms) |
-| Scroll reveal | 280ms | aynı eğri | `top 94%` tetikleyici, `opacity` + 8px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 80ms | aynı eğri | `transform: scale(1.000)` |
-| Ödül / vurgu | 260ms | `steps(3, end)` | "son dakika" damgası 0→1 opacity, 2px ofset (tek atım) |
-
-- Süre bütçesi: enter 220ms ≤ 1200ms · scroll 280ms ≤ 1200ms · stagger 0.02s (20ms).
-- Hareket kesiklidir: tüm geçişler `steps()`; yumuşak ease-out yalnız odak halkasında.
-- Pin/parallax yok: haber akışı sabit hızda kayar, scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, damga animasyonsuz görünür.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f3f0e9` | `#121316` |
-| `--surface` | `#fbf9f4` | `#17181c` |
-| `--ink` | `#12141a` | `#f0eee8` |
-| `--accent` | `#a8241b` | `#e0665a` |
-| `--line` | `rgba(18,20,26,.18)` | `rgba(240,238,232,.16)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 16.01:1 · `accent-ink / accent` = 5.60:1.
-- Koyu modda gazete kâğıdı antrasite döner (`#121316`); accent kırmızı açılır (`#e0665a`) ki 4.5:1 korunsun.
-- Kural kalınlıkları değişmez (1/2/3px); hairline opaklığı .16.
-- Kâğıt çizgisi dokusu koyu modda kapanır (gürültü yapar).
 
 ## Zorunlu kurallar
 
@@ -221,14 +190,11 @@ Kökeni 20. yüzyıl broadsheet gazeteleri (The Guardian, Frankfurter Allgemeine
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

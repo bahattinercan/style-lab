@@ -13,8 +13,3 @@
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --tracking: -0.005em; --blur: 0px; --grain: .05;
 }
-
-[data-theme="dark"][data-style="scandinavian-dark"] {
-  --bg: #171a19; --bg-2: #242625; --surface: #1f2422; --surface-2: #2f3431;
-  --ink: #e9e7e0; --ink-soft: #aaaaa4; --ink-faint: #767673; --accent: #b9c6a9; --accent-ink: #0d0d0d; --line: rgba(233,231,224,.14);
-}

@@ -65,19 +65,5 @@ body.scene-landing .hero-visual .visual-row:nth-child(2) .sq::before { content: 
 body.scene-landing .hero-visual .visual-row:nth-child(3) .sq::before { content: '23:30'; }
 body.scene-landing .hero-visual .visual-row .line { height: 10px; border-radius: 2px; }
 body.scene-landing .hero-visual .visual-card::after { content: 'ANA SAHNE · BAHÇE · KAPANIŞ — bilet: 4px radius, 2px kesikli kenar'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); border-top: 2px solid var(--accent); padding-top: 10px; }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 18px; display: grid; align-content: start; gap: 10px; border-radius: 4px; }
-body.scene-landing .hero-visual { min-height: 370px; }
-body.scene-landing .hero-visual .visual-card .bar { height: 8px; border-radius: 0; border: 0; background: var(--accent); }
-body.scene-landing .hero-visual .visual-card .bar.w70 { width: 66%; background: var(--ink); }
-body.scene-landing .hero-visual .visual-card .bar.w45 { width: 33%; background: color-mix(in srgb, var(--accent) 60%, var(--ink)); }
-body.scene-landing .hero-visual .visual-rows { gap: 0; }
-body.scene-landing .hero-visual .visual-row { grid-template-columns: 58px 1fr auto; padding: 12px 10px; border-radius: 0; border-bottom: 1px solid var(--line); }
-body.scene-landing .hero-visual .visual-row .sq { width: 100%; height: auto; border-radius: 0; background: transparent; }
-body.scene-landing .hero-visual .visual-row .sq::before { font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); }
-body.scene-landing .hero-visual .visual-row:nth-child(1) .sq::before { content: '20:30'; }
-body.scene-landing .hero-visual .visual-row:nth-child(2) .sq::before { content: '22:00'; }
-body.scene-landing .hero-visual .visual-row:nth-child(3) .sq::before { content: '23:30'; }
-body.scene-landing .hero-visual .visual-row .line { height: 10px; border-radius: 2px; }
-body.scene-landing .hero-visual .visual-card::after { content: 'ANA SAHNE · BAHÇE · KAPANIŞ — bilet: 4px radius, 2px kesikli kenar'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); border-top: 2px solid var(--accent); padding-top: 10px; }`,
-  },
+    },
 };

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (hareketli içerik — durdurma zorunlu; en düşük etkileşimli çift 6.87:1) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `kit/tokens.css` → `[data-style="log-stream"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -136,52 +136,20 @@ Unix `tail -f`, syslog ve 12-factor "log bir olay akışıdır" ilkesinden; bug�
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | nokta dokulu başlık + canlı akış önizlemesi (8 satır) | `shots/01-landing.png` |
-| Dashboard | yüksek | yapışkan filtre + histogram + 20 satır akış | `shots/02-dashboard.png` |
-| Form | düşük | filtre formu: servis, önem, zaman aralığı; 32px alanlar | — |
-| Liste / tablo | yüksek | 28px satır, 88px zaman rayı, zebra | — |
-| Boş durum | orta | "bu filtreye uyan olay yok" + filtreyi temizle | — |
-| Onboarding | yüksek | 3 adım: kaynak bağla → önem seç → ilk olayı gör | — |
-| Pricing | orta | olay hacmi tablosu (satır 28px) | — |
-| Giriş / ödeme | çok düşük | dar SSO kartı, mono alanlar | — |
-| Modal | orta | olay detayı: JSON gövde, trace id, kopyala | — |
-| Bildirim / toast | orta | `+12 yeni olay`, sağ alt, tıkla → akışa dön | — |
-| Hata | düşük | "akış kesildi" bandı + yeniden bağlan; son 5 olay soluk kalır | — |
-| Profil / ayar | orta | önem eşiği, otomatik kaydırma, saklama süresi | — |
+| Landing / hero | orta | nokta dokulu başlık + canlı akış önizlemesi (8 satır) | `shots/01-page.png` |
+| Dashboard | yüksek | yapışkan filtre + histogram + 20 satır akış | `shots/01-page.png` |
+| Form | düşük | filtre formu: servis, önem, zaman aralığı; 32px alanlar | `shots/01-page.png` |
+| Liste / tablo | yüksek | 28px satır, 88px zaman rayı, zebra | `shots/01-page.png` |
+| Boş durum | orta | "bu filtreye uyan olay yok" + filtreyi temizle | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: kaynak bağla → önem seç → ilk olayı gör | `shots/01-page.png` |
+| Pricing | orta | olay hacmi tablosu (satır 28px) | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | dar SSO kartı, mono alanlar | `shots/01-page.png` |
+| Modal | orta | olay detayı: JSON gövde, trace id, kopyala | `shots/01-page.png` |
+| Bildirim / toast | orta | `+12 yeni olay`, sağ alt, tıkla → akışa dön | `shots/01-page.png` |
+| Hata | düşük | "akış kesildi" bandı + yeniden bağlan; son 5 olay soluk kalır | `shots/01-page.png` |
+| Profil / ayar | orta | önem eşiği, otomatik kaydırma, saklama süresi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 160ms | `steps(4, end)` | `opacity`, kayma yok (`0px`), satır başına 12ms stagger |
-| Scroll reveal | 180ms | `steps(4, end)` | `top 94%` tetiği, 4px, `once: false` (akış geri gelince tazelenir) |
-| Yeni satır | 160ms | `steps(4, end)` | `opacity` 0 → 1, kayma yok; en fazla 12 satır aynı anda |
-| Hover | 60ms | `linear` | zemin `--surface-2`, görsel ölçek `1.000` |
-| Pin / scrub | kapalı | — | — (akan liste sabitlenmez) |
-| Otomatik kaydırma | 260ms | `linear` | 12 satır/sn üst sınır; kullanıcı kaydırınca durur |
-
-- Ölçülebilir imza: `enter 0.16s / steps(4,end) / 0px / 0.012` · `scroll top 94% / 0.18s / 4px / once:false` · `hover 60ms / 1.000` · `pin kapalı`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, otomatik kaydırma kapanır, yeni satırlar animasyonsuz eklenir.
-- Bu stile yasak hareket: yumuşak ease-out, blur geçişi, 30ms üzeri stagger, sürekli kayan arka plan.
-
-## Koyu mod
-
-Koyu modda log zemini belirgin biçimde daha derin (ΔL −13), satır bandı genişler; accent (mor) bir kademe açılır ki seviye noktaları siyahta okunsun.
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#12141a` | `#06070b` |
-| `--bg-2` | `#171a21` | `#0a0c12` |
-| `--surface` | `#1a1e26` | `#0e1119` |
-| `--surface-2` | `#20252e` | `#141926` |
-| `--ink` | `#e6e8ef` | `#f2f4fb` |
-| `--ink-soft` | `#a3a9b8` | `#b6bccd` |
-| `--accent` | `#a78bfa` | `#ccb9ff` |
-| `--accent-ink` | `#120d20` | `#150f26` |
-
-- Koyu modda değişen başka ne var: satır ayırıcısı %65 → %75, seviye noktalarına 2px accent halka eklenir. Ölçüm: `ink/bg` 17.56:1, `accent-ink/accent` 9.47:1.
 
 ## Zorunlu kurallar
 - Zaman sütunu 88px sabit, `HH:MM:SS.mmm`, mono + `tabular-nums`.
@@ -210,14 +178,11 @@ Koyu modda log zemini belirgin biçimde daha derin (ΔL −13), satır bandı ge
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

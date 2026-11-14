@@ -125,12 +125,5 @@ body.scene-landing .hero-visual .visual-row { position: relative; grid-template-
 body.scene-landing .hero-visual .visual-row .sq { display: none; }
 body.scene-landing .hero-visual .visual-row::before { content: 'In ['; position: absolute; left: 8px; top: 10px; font-family: var(--font-mono); font-size: 10px; color: var(--ink-soft); }
 body.scene-landing .hero-visual .visual-card::after { content: 'Out[3]: 4 çekirdek · 128 GB · süre 00:04:12 — hata yok'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 10px; }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 18px 20px; display: grid; align-content: start; gap: 12px; }
-body.scene-landing .hero-visual { min-height: 360px; }
-body.scene-landing .hero-visual .visual-rows { gap: 12px; }
-body.scene-landing .hero-visual .visual-row { position: relative; grid-template-columns: 1fr auto; padding: 10px 10px 10px 42px; background: var(--surface-2); border-radius: var(--radius); border-left: 2px solid var(--accent); }
-body.scene-landing .hero-visual .visual-row .sq { display: none; }
-body.scene-landing .hero-visual .visual-row::before { content: 'In ['; position: absolute; left: 8px; top: 10px; font-family: var(--font-mono); font-size: 10px; color: var(--ink-soft); }
-body.scene-landing .hero-visual .visual-card::after { content: 'Out[3]: 4 çekirdek · 128 GB · süre 00:04:12 — hata yok'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 10px; }`,
-  },
+    },
 };

@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | düşük risk (en düşük metin çifti 9.08:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `kit/tokens.css` → `[data-style="volumetric-data"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -147,52 +147,20 @@ Hacim görüntüleme (volume rendering) ve nokta bulutu pratiğinden; tıbbi BT/
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | solda H1 + eksen etiketleri, sağda hacim görseli | `shots/01-landing.png` |
-| Dashboard | **yüksek** | 8/4: hacim + okuma paneli; kesit barı üstte | `shots/02-dashboard.png` |
-| Form | düşük | 40px mono input; değer + tolerans alanları | — |
-| Liste / tablo | orta | 36px satır, tabular ölçü, eksen kolonu | — |
-| Boş durum | orta | boş hacim: soluk nokta ızgarası + "tarama yok" mono | — |
-| Onboarding | yüksek | 3 adım: tara → dilim seç → eşik belirle | — |
-| Pricing | orta | plan tablosu; hacim limiti mono | — |
-| Giriş / ödeme | çok düşük | hacim yok; tek accent, sade form | — |
-| Modal | orta | okuma paneli: x/y/z + tolerans + yoğunluk | — |
-| Bildirim / toast | orta | sağ-alt, 6px accent nokta | — |
-| Hata | orta | eşik aşımı: `--danger` izo-eğri + etiket | — |
-| Profil / ayar | orta | birim/tolerans ayarları, mono | — |
+| Landing / hero | yüksek | solda H1 + eksen etiketleri, sağda hacim görseli | `shots/01-page.png` |
+| Dashboard | **yüksek** | 8/4: hacim + okuma paneli; kesit barı üstte | `shots/01-page.png` |
+| Form | düşük | 40px mono input; değer + tolerans alanları | `shots/01-page.png` |
+| Liste / tablo | orta | 36px satır, tabular ölçü, eksen kolonu | `shots/01-page.png` |
+| Boş durum | orta | boş hacim: soluk nokta ızgarası + "tarama yok" mono | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: tara → dilim seç → eşik belirle | `shots/01-page.png` |
+| Pricing | orta | plan tablosu; hacim limiti mono | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | hacim yok; tek accent, sade form | `shots/01-page.png` |
+| Modal | orta | okuma paneli: x/y/z + tolerans + yoğunluk | `shots/01-page.png` |
+| Bildirim / toast | orta | sağ-alt, 6px accent nokta | `shots/01-page.png` |
+| Hata | orta | eşik aşımı: `--danger` izo-eğri + etiket | `shots/01-page.png` |
+| Profil / ayar | orta | birim/tolerans ayarları, mono | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **960ms** | `cubic-bezier(.24,.02,.18,1)` | `opacity` + `translateY(38px)`; stagger **0.098s** |
-| Scroll reveal | **890ms** | aynı eğri | trigger `top 63%`, `translateY(31px)`, `once: true` |
-| Pin / scrub | yok | — | pin **kapalı** (105'in pin scrubs 1.25 imzasından bilinçli ayrılık) |
-| Basma | **150ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 380ms | aynı eğri | opacity + 16px |
-| Hover | **430ms** | aynı eğri | görsel ölçek **1.029** |
-| Ödül / vurgu | 960ms | aynı eğri | kesit dilimi %0→%100 (tek kez) |
-
-- İmza ölçüleri: `enter = 0.96s / cubic-bezier(.24,.02,.18,1) / 38px / 0.098` · `scroll = top 63% / 0.89s / 31px / once` · `pin = false` · `hover = 430ms / 1.029`.
-- Bant içi fark: 136'dan (0.41s / 11px / pin 0.58), 138'den (0.27s / 1px), 139'den (1.08s / 46px / pin 1.18), 140'tan (0.61s / 21px / pin 0.4) en az dört parametrede ayrışır. Mevcut 126 stil içinde en yakını 105-holographic-layer (`0.97s / .32,.06,.2,1 / 28px / 0.11`) — eğri, offset, trigger, pin (kapalı) ve hover'da farklı; `top 63%` katalogda yeni.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, kesit taraması ve izo-eğri çizimi son kareye atlar.
-- Bu stile yasak hareket: ghost/parallax katman animasyonu, dilim oynatma dışında sürekli tarama, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#0a1428` | `#010306` |
-| `--surface` | `#122240` | `#0b1a2e` |
-| `--ink` | `#e6eef8` | `#f7faff` |
-| `--accent` | `#ffb347` | `#ffdf9e` |
-| `--ink-soft` | `#a6b8cf` | `#c3d3e6` |
-| `--line` | `rgba(230,238,248,.16)` | `rgba(247,250,255,.20)` |
-
-- Koyu modda değişen başka ne var: zemin dört puan daha koyu (nokta bulutu ayrışsın), accent bir ton açılır, izdüşüm ızgarası %18 → %22 ve yoğunluk noktaları %42 → %50.
-- Koyu mod ayrışması: zemin `#010306` (ışık modun %12 parlaklığı), panel bandı **11.9×** daha açık, accent amber → açık altın `#ffdf9e` (kontrast 1.38×).
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Nokta bulutu yoğunluk haritası imza öğedir; yoğunluk accent opaklığıyla kodlanır.
@@ -220,14 +188,11 @@ Hacim görüntüleme (volume rendering) ve nokta bulutu pratiğinden; tıbbi BT/
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -33,16 +33,3 @@
  --ok: #6fe8b8;
  --warn: #f2c14e;
 }
-
-[data-theme="dark"][data-style="product-launch"] {
-  --bg:#04070c;
-  --bg-2:#020408;
-  --surface:#0a111b;
-  --surface-2:#121b27;
-  --ink:#f2f7fd;
-  --ink-soft:#bcc9dc;
-  --ink-faint:#8695aa;
-  --accent:#8bf2c9;
-  --accent-ink:#04140d;
-  --line:rgba(242,247,253,.14);
-}

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 7.36:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `kit/tokens.css` → `[data-style="nanotech"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,20 @@ Malzeme bilimi ve yarı iletken ölçüm pratiğinden (nm ölçeği, tolerans, k
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 8/4: solda H1 + nm etiketleri, sağda kafes sahnesi | `shots/01-landing.png` |
-| Dashboard | **yüksek** | 4 ölçüm kartı; kafes düğümü ve tolerans etiketi | `shots/02-dashboard.png` |
-| Form | düşük | 36px input, mono ölçü alanları (`Ø`, `±`) | — |
-| Liste / tablo | **yüksek** | 34px satır, sağa dayalı nm değerleri | — |
-| Boş durum | orta | boş kafes + "ölçüm yok" mono etiketi | — |
-| Onboarding | orta | 3 adım: örnek yükle → ölçek seç → tolerans | — |
-| Pricing | orta | plan tablosu; ölçüm kotası mono | — |
-| Giriş / ödeme | çok düşük | kafes yok; sade form + tek CTA | — |
-| Modal | orta | ölçüm detayı: `Ø 42 nm · ±1.5 nm` | — |
-| Bildirim / toast | orta | sağ-alt, 3px accent çizgi | — |
-| Hata | orta | tolerans aşımı: `--danger` çerçeve + etiket | — |
-| Profil / ayar | orta | birim/tolerans/kalibrasyon ayarları | — |
+| Landing / hero | yüksek | 8/4: solda H1 + nm etiketleri, sağda kafes sahnesi | `shots/01-page.png` |
+| Dashboard | **yüksek** | 4 ölçüm kartı; kafes düğümü ve tolerans etiketi | `shots/01-page.png` |
+| Form | düşük | 36px input, mono ölçü alanları (`Ø`, `±`) | `shots/01-page.png` |
+| Liste / tablo | **yüksek** | 34px satır, sağa dayalı nm değerleri | `shots/01-page.png` |
+| Boş durum | orta | boş kafes + "ölçüm yok" mono etiketi | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: örnek yükle → ölçek seç → tolerans | `shots/01-page.png` |
+| Pricing | orta | plan tablosu; ölçüm kotası mono | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | kafes yok; sade form + tek CTA | `shots/01-page.png` |
+| Modal | orta | ölçüm detayı: `Ø 42 nm · ±1.5 nm` | `shots/01-page.png` |
+| Bildirim / toast | orta | sağ-alt, 3px accent çizgi | `shots/01-page.png` |
+| Hata | orta | tolerans aşımı: `--danger` çerçeve + etiket | `shots/01-page.png` |
+| Profil / ayar | orta | birim/tolerans/kalibrasyon ayarları | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **610ms** | `cubic-bezier(.62,.06,.28,.98)` | `opacity` + `translateY(21px)`; stagger **0.031s** |
-| Scroll reveal | **670ms** | aynı eğri | trigger `top 59%`, `translateY(23px)`, `once: true` |
-| Pin / scrub | **0.4** | `transform` | **açık** — kafes sahnesi `+88%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **130ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 300ms | aynı eğri | opacity + 8px |
-| Hover | **155ms** | aynı eğri | görsel ölçek **1.007** |
-| Ödül / vurgu | 610ms | aynı eğri | kafes düğümleri sırayla yanar (tek kez) |
-
-- İmza ölçüleri: `enter = 0.61s / cubic-bezier(.62,.06,.28,.98) / 21px / 0.031` · `scroll = top 59% / 0.67s / 23px / once` · `pin = true / scrub 0.4 / +88%` · `hover = 155ms / 1.007`.
-- Bant içi fark: 136'dan (0.41s / 11px / scrub 0.58), 137'den (0.96s / 38px / pin yok), 138'den (0.27s / 1px), 139'dan (1.08s / 46px / scrub 1.18) en az dört parametrede ayrışır. Mevcut 126 stil içinde en yakını 63-maintenance-cmms (`0.55s / .4,0,.2,1 / 26px / 0.09`) — süre, eğri, offset, trigger (top 59%), pin ve hover'da farklı; `scrub 0.4` ve `top 59%` katalogda yeni.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin kapalı, kafes düğüm animasyonu son kareye atlar.
-- Bu stile yasak hareket: sürekli titreşen kafes, blur geçişi, saniyede 3 üstü flash.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f7f7f5` | `#0c0d0f` |
-| `--surface` | `#ffffff` | `#16181b` |
-| `--ink` | `#191b1e` | `#eef0f2` |
-| `--accent` | `#22272c` | `#e6e9ec` |
-| `--ink-soft` | `#4d5257` | `#a9aeb4` |
-| `--line` | `rgba(25,27,30,.16)` | `rgba(238,240,242,.16)` |
-
-- Koyu modda değişen başka ne var: accent ters çevrilir (karbon → açık gri) çünkü koyu zeminde karbon kaybolur; kafes çizgisi %10 → %14, gölge yerine 1px çizgi öne çıkar.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Monokrom taban: accent "karbon" koyu; ikinci renk vurgu yok.
@@ -211,14 +180,11 @@ Malzeme bilimi ve yarı iletken ölçüm pratiğinden (nm ölçeği, tolerans, k
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

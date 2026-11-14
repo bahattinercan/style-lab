@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 5.14:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `styles/141-planetary-service/tokens.json` → `[data-style="planetary-service"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,55 +139,20 @@ Görev kontrol odaları (NASA/ESA flight dynamics), uydu servis (on-orbit servic
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Yörünge paneli 8/4, solda tek cümle + pencere sayacı | `shots/01-landing.png` |
-| Dashboard | yüksek | Görev listesi + yörünge + sayaçlar; KPI'lar 3 satır | `shots/02-dashboard.png` |
-| Form | düşük | Görev tanımı: cisim, aşama, pencere; mono alanlar | — |
-| Liste / tablo | yüksek | 36px satır, zebra, sağda pencere sayacı | — |
-| Boş durum | orta | Boş halka + "görev planla" eylemi | — |
-| Onboarding | yüksek | 3 adım: cisim → yörünge → pencere | — |
-| Pricing | orta | Servis kademeleri tablosu; her satırda birimli değer | — |
-| Giriş / ödeme | çok düşük | Tek panel, halka yok; UTC saat görünür | — |
-| Modal | orta | Yörünge detayı: halka + aşama listesi | — |
-| Bildirim / toast | orta | UTC + görev kimliği mono tek satır | — |
-| Hata | düşük | `--danger` chip + "pencere kaçırıldı" metni | — |
-| Profil / ayar | orta | Birim sistemi, halka ölçeği, uyarı eşiği | — |
+| Landing / hero | yüksek | Yörünge paneli 8/4, solda tek cümle + pencere sayacı | `shots/01-page.png` |
+| Dashboard | yüksek | Görev listesi + yörünge + sayaçlar; KPI'lar 3 satır | `shots/01-page.png` |
+| Form | düşük | Görev tanımı: cisim, aşama, pencere; mono alanlar | `shots/01-page.png` |
+| Liste / tablo | yüksek | 36px satır, zebra, sağda pencere sayacı | `shots/01-page.png` |
+| Boş durum | orta | Boş halka + "görev planla" eylemi | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: cisim → yörünge → pencere | `shots/01-page.png` |
+| Pricing | orta | Servis kademeleri tablosu; her satırda birimli değer | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel, halka yok; UTC saat görünür | `shots/01-page.png` |
+| Modal | orta | Yörünge detayı: halka + aşama listesi | `shots/01-page.png` |
+| Bildirim / toast | orta | UTC + görev kimliği mono tek satır | `shots/01-page.png` |
+| Hata | düşük | `--danger` chip + "pencere kaçırıldı" metni | `shots/01-page.png` |
+| Profil / ayar | orta | Birim sistemi, halka ölçeği, uyarı eşiği | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.57s**, y **22px**, stagger **0.06** | `cubic-bezier(.24,.72,.18,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.67s**, trigger **top 81%**, y **26px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **0.85**, mesafe **+105%** (halka sabitlenir) | scrub doğrusal | `transform` (halka döner) |
-| Hover | **190ms**, görsel scale **1.022** | `ease-out` | `transform` |
-| Basma | 110ms | aynı eğri | `transform` (1px) |
-| Sayaç tiki | 190ms | `linear` | `opacity` (yalnız pencere chip'i) |
-
-- Bu stilin ölçülebilir imzası: `enter 0.57s / cubic-bezier(.24,.72,.18,1) / 22px / 0.06` + `scroll top 81% / 0.67s / 26px` + `pin scrub 0.85 / +105%` + `hover 190ms / 1.022`. Ne `0.57s` giriş süresi ne de `scrub 0.85` katalogda başka bir stilde birlikte geçer.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; halka dönüşü ve scrub kapanır, sayaç statik kalır.
-- Bu stile yasak hareket: sürekli dönen yörünge (reduced-motion karşılığı yoksa), saniyede 1+ telemetri flaşı, parallax, gradient geçişi.
-
-## Koyu mod
-
-| Token | Açık (görev konsolu) | Koyu (gece vardiyası) |
-|---|---|---|
-| `--bg` | `#0a1420` | `#010307` |
-| `--bg-2` | `#0e1a28` | `#08111a` |
-| `--surface` | `#12202f` | `#0a1a2b` |
-| `--surface-2` | `#182a3c` | `#101d2a` |
-| `--ink` | `#e6eef7` | `#f5f9fe` |
-| `--ink-soft` | `#a4b6c8` | `#c0cfdf` |
-| `--ink-faint` | `#75899e` | `#8095a6` |
-| `--accent` | `#2f6bc4` | `#a8d0ff` |
-| `--accent-ink` | `#04151c` | `#04161d` |
-| `--line` | `rgba(230,238,247,.15)` | `rgba(245,249,254,.22)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **18.17:1** · `ink-soft/bg` = **10.94:1** · `accent-ink/accent` = **8.54:1** · `ink-faint/bg` = **6.37:1**.
-- Koyu modda değişen başka ne var: accent bir ton açılır, ızgara opaklığı %70 → %55, halka `--line` yerine `--ink` %10 kullanır.
-- Koyu mod ayrışması: zemin `#010307` (%13 parlaklık), panel bandı **11.3×** açık, accent `#2f6bc4` → `#a8d0ff` (3.27×).
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="planetary-service"]`.
 
 ## Zorunlu kurallar
 - Her değer birimli (km, °, sn) ve mono/tabular.
@@ -215,14 +180,11 @@ Görev kontrol odaları (NASA/ESA flight dynamics), uydu servis (on-orbit servic
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 5.05:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `styles/144-virtual-engine/tokens.json` → `[data-style="virtual-engine"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,55 +139,20 @@ Oyun motoru editörleri (Unity, Godot, Blender viewport), 3B konfigüratörler v
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Viewport 8/4, sağda denetçi önizleme, altta konsol | `shots/01-landing.png` |
-| Dashboard | yüksek | Hiyerarşi + viewport + denetçi üçlüsü | `shots/02-dashboard.png` |
-| Form | düşük | Varlık özellik formu: ad, tür, konum | — |
-| Liste / tablo | yüksek | 30px satır, tür/kimlik/görünürlük, zebra | — |
-| Boş durum | orta | Boş sahne ızgarası + "varlık ekle" | — |
-| Onboarding | yüksek | 3 adım: sahne → varlık → ışık | — |
-| Pricing | orta | Lisans kademeleri; özellik satırları denetçi gibi | — |
-| Giriş / ödeme | çok düşük | Tek panel, viewport yok | — |
-| Modal | orta | Varlık denetçisi yan panel olarak | — |
-| Bildirim / toast | orta | Konsol satırı: zaman + mesaj mono | — |
-| Hata | düşük | `--danger` çerçeve + "sahne yüklenemedi" | — |
-| Profil / ayar | orta | Izgara aralığı, eksen, konsol yoğunluğu | — |
+| Landing / hero | yüksek | Viewport 8/4, sağda denetçi önizleme, altta konsol | `shots/01-page.png` |
+| Dashboard | yüksek | Hiyerarşi + viewport + denetçi üçlüsü | `shots/01-page.png` |
+| Form | düşük | Varlık özellik formu: ad, tür, konum | `shots/01-page.png` |
+| Liste / tablo | yüksek | 30px satır, tür/kimlik/görünürlük, zebra | `shots/01-page.png` |
+| Boş durum | orta | Boş sahne ızgarası + "varlık ekle" | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: sahne → varlık → ışık | `shots/01-page.png` |
+| Pricing | orta | Lisans kademeleri; özellik satırları denetçi gibi | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel, viewport yok | `shots/01-page.png` |
+| Modal | orta | Varlık denetçisi yan panel olarak | `shots/01-page.png` |
+| Bildirim / toast | orta | Konsol satırı: zaman + mesaj mono | `shots/01-page.png` |
+| Hata | düşük | `--danger` çerçeve + "sahne yüklenemedi" | `shots/01-page.png` |
+| Profil / ayar | orta | Izgara aralığı, eksen, konsol yoğunluğu | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.21s**, y **32px**, stagger **0.02** | `steps(6, end)` | `opacity` + `transform` |
-| Scroll reveal | **0.24s**, trigger **top 95%**, y **40px**, `once: true` | `steps(6, end)` | `opacity` + `transform` |
-| Pin / scrub | **kapalı** (viewport sabitlenmez; düzen kaymamalı) | — | — |
-| Hover | **70ms**, görsel scale **1.050** | `steps(2, end)` | `transform` |
-| Basma | 70ms | `steps(2, end)` | `transform` (1px) |
-| Seçim çerçevesi | 130ms | `steps(3, end)` | `opacity` |
-
-- Bu stilin ölçülebilir imzası: `enter 0.21s / steps(6, end) / 32px / 0.02` + `scroll top 95% / 0.24s / 40px` + `pin kapalı` + `hover 70ms / 1.050`. `top 95%` tetikleyicisi ve `hover 1.050` ölçeği katalogda yalnız burada.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; kare geçişleri ve ızgara animasyonu durur, seçim anında gelir.
-- Bu stile yasak hareket: sürekli dönen kamera, renkli glow nabzı, parallax, saniyede 1+ flaş.
-
-## Koyu mod
-
-| Token | Açık (editör) | Koyu (gece editörü) |
-|---|---|---|
-| `--bg` | `#120c1c` | `#030206` |
-| `--bg-2` | `#181024` | `#0c0814` |
-| `--surface` | `#1d142b` | `#140c22` |
-| `--surface-2` | `#251a36` | `#170f23` |
-| `--ink` | `#eee8fa` | `#faf6ff` |
-| `--ink-soft` | `#b3a7c9` | `#cfc2e2` |
-| `--ink-faint` | `#7f7395` | `#8b7fa0` |
-| `--accent` | `#c7307f` | `#ff9fcb` |
-| `--accent-ink` | `#ffffff` | `#1a0512` |
-| `--line` | `rgba(238,232,250,.15)` | `rgba(250,246,255,.22)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **18.32:1** · `ink-soft/bg` = **10.40:1** · `accent-ink/accent` = **6.88:1** · `ink-faint/bg` = **5.43:1**.
-- Koyu modda değişen başka ne var: accent parlar (magenta → pembe), ızgara opaklığı %100 → %80, seçim çerçevesi dış halkası %40 → %30.
-- Koyu mod ayrışması: zemin `#030206` (%16 parlaklık), panel bandı **6.9×** açık, accent `#c7307f` → `#ff9fcb` (2.66×).
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="virtual-engine"]`.
 
 ## Zorunlu kurallar
 - Viewport ekranın en az %55'i; içeriği şema olur, fotoğraf olmaz.
@@ -216,14 +181,11 @@ Oyun motoru editörleri (Unity, Godot, Blender viewport), 3B konfigüratörler v
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

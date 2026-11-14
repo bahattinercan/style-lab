@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (cyan küçük puntoda ve dolgu üstünde zayıflar) |
 | **Aile** | Sahne & Prestij (146–151) · **Token** | `kit/tokens.css` → `[data-style="dark-dashboard"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,17 @@ Kartlarda gölge yok: ayrım 1px çizgi ve yüzey tonu. Gölge yalnız yüzen ka
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | split hero: solda başlık + tek CTA, sağda panel önizlemesi (mini tablo + grafik) | `shots/01-landing.png` |
-| Dashboard | yüksek | 4 KPI + 2 grafik + 8 satırlık tablo; sol ray 240px | `shots/02-dashboard.png` |
-| Form / ayar | orta | iki kolon etiket-alan, 40px alan, cyan odak; hata 1px `--danger` + 11px açıklama | — |
-| Liste / tablo | yüksek | 44px satır, sağa hizalı sayı, durum noktası + etiket | — |
-| Boş durum | düşük | "bu filtrede kayıt yok" + filtre temizle | — |
-| Onboarding | orta | 3 adım: veri kaynağı → ekip → uyarı kanalı | — |
-| Pricing | orta | üç plan; öne çıkanda 1px cyan çerçeve | — |
-| Giriş / ödeme | düşük | tek kart, SSO seçenekleri, 40px alan | — |
-| Modal | orta | 14px radius, `--shadow`, 1px `--line`; kapatma 40×40px | — |
-| Bildirim | orta | 40px toast, sol 3px cyan şerit, 3.2s | — |
-| Mobil (390px) | orta | sidebar alt tabbar'a döner, tablo 2 kolona iner, dokunma hedefi 44px | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (blur-in) | 0.48s | `cubic-bezier(.25,.6,.2,1)` | `opacity` + `translateY(16px)`, 0.03 arayla |
-| Scroll reveal | 0.44s, `top 88%` | aynı | `translateY(12px)`, `once: true` |
-| Pin / scrub | kapalı | doğrusal | bu stil sabit bölüm kullanmaz |
-| Basma | 100ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 140ms | aynı | `scale(1.01)` |
-
-- Ölçülen imza: enter **0.48s · cubic-bezier(.25,.6,.2,1) · 16px · stagger 0.03**; scroll **top 88% · 0.44s · 12px · once**; pin **yok**; hover **140ms · 1.01**.
-- undefined
-- `prefers-reduced-motion`: opacity.
-- Bu stile yasak hareket: bounce/elastik yay, sonsuz döngü (nabız animasyonu), hover tilt-3d, skeleton shimmer.
-
-## Koyu mod
-
-| Token | Açık (kontrol odası) | Koyu (gece vardiyası) |
-|---|---|---|
-| `--bg` | `#0b0d10` | `#06080a` |
-| `--bg-2` | `#07090b` | `#040506` |
-| `--surface` | `#12161a` | `#0d1014` |
-| `--surface-2` | `#1a2026` | `#151a20` |
-| `--ink` | `#e9eef4` | `#f0f5fa` |
-| `--ink-soft` | `#a9b6c2` | `#b6c2ce` |
-| `--ink-faint` | `#75818d` | `#818d99` |
-| `--accent` | `#58c8ff` | `#7ad6ff` |
-| `--accent-ink` | `#04141f` | `#04141f` |
-| `--line` | `rgba(233,238,244,.12)` | `rgba(240,245,250,.14)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **18.29:1** · `ink-soft/bg` **11.08:1** · `accent-ink/accent` **11.46:1** · `ink-faint/bg` **5.93:1** · odak halkası yüzey üzerinde **11.70:1**.
-- Koyu blok gece vardiyası için bir kademe daha derin: zemin #06080a, yüzey #0d1014, cyan #7ad6ff (parlaklık +1 kademe). Amaç siyah değil, düşük parlaklıkta uzun süreli okuma.
-- `filter: invert()` yasak; koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="dark-dashboard"]` olarak durur.
+| Landing / hero | orta | split hero: solda başlık + tek CTA, sağda panel önizlemesi (mini tablo + grafik) | `shots/01-page.png` |
+| Dashboard | yüksek | 4 KPI + 2 grafik + 8 satırlık tablo; sol ray 240px | `shots/01-page.png` |
+| Form / ayar | orta | iki kolon etiket-alan, 40px alan, cyan odak; hata 1px `--danger` + 11px açıklama | `shots/01-page.png` |
+| Liste / tablo | yüksek | 44px satır, sağa hizalı sayı, durum noktası + etiket | `shots/01-page.png` |
+| Boş durum | düşük | "bu filtrede kayıt yok" + filtre temizle | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: veri kaynağı → ekip → uyarı kanalı | `shots/01-page.png` |
+| Pricing | orta | üç plan; öne çıkanda 1px cyan çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek kart, SSO seçenekleri, 40px alan | `shots/01-page.png` |
+| Modal | orta | 14px radius, `--shadow`, 1px `--line`; kapatma 40×40px | `shots/01-page.png` |
+| Bildirim | orta | 40px toast, sol 3px cyan şerit, 3.2s | `shots/01-page.png` |
+| Mobil (390px) | orta | sidebar alt tabbar'a döner, tablo 2 kolona iner, dokunma hedefi 44px | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Sidebar 240px, aktif öğede 2px cyan şerit.
@@ -214,14 +180,11 @@ Kartlarda gölge yok: ayrım 1px çizgi ve yüzey tonu. Gölge yalnız yüzen ka
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta-yüksek (çift çerçeveyi disiplinle uygulamak) · **Erişilebilirlik** | orta (gövde 13.96:1, accent üstü 8.03:1; altın çizgiler dekoratif ama odak halkası güçlü) |
 | **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="persian-miniature"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -138,54 +138,20 @@ Safevi/Timurlu minyatür ve tezhip geleneği: sayfa bir çerçeveyle çevrilir, 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 7/5 metin-süs bölünmesi, altın ızgara zemin, kemerli panel | `shots/01-landing.png` |
-| Dashboard | düşük | 2 çerçeveli KPI + 1 madalyonlu panel, 3 serili grafik | `shots/02-dashboard.png` |
-| Form | düşük | 44px alanlar, çift çerçeveli form paneli | — |
-| Liste / tablo | düşük | 46px satır, mono sayfa no, altın ayırıcı | — |
-| Boş durum | orta | boş madalyon + tek cümle + tek CTA | — |
-| Onboarding | orta | 3 adım: koleksiyon → sayfa düzeni → ilk kayıt | — |
-| Pricing | orta | 3 plan, orta plan madalyonlu | — |
-| Giriş / ödeme | çok düşük | dar çift çerçeveli kart, 44px alanlar | — |
-| Modal | orta | kemerli üst, 32px padding, çift çerçeve | — |
-| Bildirim / toast | orta | altın çerçeveli ince kutu, 6000ms | — |
-| Hata | düşük | `--danger` çerçeve + krem metin; madalyon susturulur | — |
-| Profil / ayar | orta | 46px satır, çift çerçeveli iki panel | — |
+| Landing / hero | orta | 7/5 metin-süs bölünmesi, altın ızgara zemin, kemerli panel | `shots/01-page.png` |
+| Dashboard | düşük | 2 çerçeveli KPI + 1 madalyonlu panel, 3 serili grafik | `shots/01-page.png` |
+| Form | düşük | 44px alanlar, çift çerçeveli form paneli | `shots/01-page.png` |
+| Liste / tablo | düşük | 46px satır, mono sayfa no, altın ayırıcı | `shots/01-page.png` |
+| Boş durum | orta | boş madalyon + tek cümle + tek CTA | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: koleksiyon → sayfa düzeni → ilk kayıt | `shots/01-page.png` |
+| Pricing | orta | 3 plan, orta plan madalyonlu | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | dar çift çerçeveli kart, 44px alanlar | `shots/01-page.png` |
+| Modal | orta | kemerli üst, 32px padding, çift çerçeve | `shots/01-page.png` |
+| Bildirim / toast | orta | altın çerçeveli ince kutu, 6000ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` çerçeve + krem metin; madalyon susturulur | `shots/01-page.png` |
+| Profil / ayar | orta | 46px satır, çift çerçeveli iki panel | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 1150ms | `cubic-bezier(.45,.05,.55,.95)` | `opacity` + `translateY(26px)`, blok başına 100ms stagger |
-| Scroll reveal | 1150ms | `cubic-bezier(.45,.05,.55,.95)` | `top 74%` tetiği, 20px, `once: true` |
-| Basma | 440ms | `linear` | `translateY(1px)` |
-| Hover | 440ms | `cubic-bezier(.45,.05,.55,.95)` | iç çerçeve %55 → %70, görsel ölçek `1.008` |
-| Pin / scrub | açık | `scrub 0.85` | sayfa bölümü `+135%` mesafede sabitlenir, çerçeve kayar |
-| Sayfa geçişi | 800ms | `cubic-bezier(.45,.05,.55,.95)` | `opacity` + 8px dikey; tek seferlik |
-
-- Ölçülebilir imza: `enter 1.15s / cb(.45,.05,.55,.95) / 26px / 0.1` · `scroll top 74% / 1.15s / 20px / once:true` · `pin açık scrub 0.85 / +135%` · `hover 440ms / 1.008`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; pin/scrub kapanır, madalyon ve çerçeve statik kalır.
-- Bu stile yasak hareket: 200ms altı hızlı geçiş, bounce, sürekli döngü, blur geçişi.
-
-## Koyu mod
-
-Varsayılan zemin zaten gece lacivertidir; `data-theme="dark"` bloğu daha da derin bir "mürekkep gecesi" verir.
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#131a2c` | `#070a15` |
-| `--bg-2` | `#182135` | `#0a0f1e` |
-| `--surface` | `#1c2640` | `#0d1324` |
-| `--surface-2` | `#232f4c` | `#141b30` |
-| `--ink` | `#f0e6ce` | `#f6efe2` |
-| `--ink-soft` | `#bfb193` | `#c2b6a0` |
-| `--accent` | `#cfa53a` | `#e6c169` |
-| `--accent-ink` | `#1a1206` | `#1b1406` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **17.27:1** · `ink-soft / bg` = **9.87:1** · `accent-ink / accent` = **10.61:1** · `ink-faint / bg` = **5.42:1** (ΔL açık→koyu **-0.061**; altın `#e6c169`a açılır).
-- Koyu modda değişen başka ne var: altın %8 → %10 açılır; iç çerçeve opaklığı .55 → .62; yüzen katman gölgesi 6px → 8px (zemin daha koyu olduğu için).
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 - Her panel çift altın çerçeve: dış 1px + 4px aralık + iç 1px.
@@ -214,14 +180,11 @@ Varsayılan zemin zaten gece lacivertidir; `data-theme="dark"` bloğu daha da de
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

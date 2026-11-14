@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta-yüksek (kontrast yanması) |
 | **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="synthwave"]` |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -131,37 +131,18 @@ Kolon 12 · gutter 24px · container 1200px · bölüm 88/52px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | çok yüksek | 64px glow başlık, gün batımı diski, perspektif ızgara, tek pembe CTA | `shots/01-landing.png` |
-| Dashboard | düşük | Izgara/glow kapanır; mono sayılar, cyan ayırıcı | `shots/02-dashboard.png` |
-| Form | düşük | Koyu panel, cyan kenar, tek pembe buton | — |
-| Liste/tablo | düşük | Düz koyu zemin, ince cyan çizgi | — |
-| Boş durum | orta | Neon ikon + tek cümle + buton | — |
-| Onboarding | yüksek | Adım başına 1 neon öğe | — |
-| Pricing | orta | 3 panel, orta panel pembe kenar | — |
-| Giriş/ödeme | çok düşük | Glow ve ızgara kapalı; sade koyu form | — |
-| Modal | orta | Glow'lu panel, koyu backdrop | — |
-| Toast | orta | Pembe pill + koyu metin | — |
-| Hata | düşük | `--danger` kenar, kısa metin | — |
-| Profil/ayar | düşük | Düz liste, neon yalnız aktifte | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `ease-out` | `opacity` |
-| Giriş | 500ms | `linear` | `opacity` + 16px `translateY`, stagger 50ms |
-| Scroll (`top 82%`) | 600ms | aynı eğri | `opacity` + 20px `translateY`, `once: true` |
-| Hover | 180ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 320ms | `ease-out` | glow nabız (tek atım) |
-
-- Izgara kayması 12s `linear` (≤8px, dekor).
-- `prefers-reduced-motion`: ızgara ve nabız durur.
-- **Strobe yasak.**
-- Pin/parallax yok.
-
-## Koyu mod
-
-Stil zaten gece. Açık varyant önerilmez; gerekirse `--bg` `#f6f0ff` · `--surface` `#ffffff` · `--ink` `#1a0f3d` · `--accent` `#d1105a` · `--accent-ink` `#ffffff` · glow kaldırılır.
+| Landing/hero | çok yüksek | 64px glow başlık, gün batımı diski, perspektif ızgara, tek pembe CTA | `shots/01-page.png` |
+| Dashboard | düşük | Izgara/glow kapanır; mono sayılar, cyan ayırıcı | `shots/01-page.png` |
+| Form | düşük | Koyu panel, cyan kenar, tek pembe buton | `shots/01-page.png` |
+| Liste/tablo | düşük | Düz koyu zemin, ince cyan çizgi | `shots/01-page.png` |
+| Boş durum | orta | Neon ikon + tek cümle + buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 neon öğe | `shots/01-page.png` |
+| Pricing | orta | 3 panel, orta panel pembe kenar | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Glow ve ızgara kapalı; sade koyu form | `shots/01-page.png` |
+| Modal | orta | Glow'lu panel, koyu backdrop | `shots/01-page.png` |
+| Toast | orta | Pembe pill + koyu metin | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar, kısa metin | `shots/01-page.png` |
+| Profil/ayar | düşük | Düz liste, neon yalnız aktifte | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -174,14 +155,11 @@ Stil zaten gece. Açık varyant önerilmez; gerekirse `--bg` `#f6f0ff` · `--sur
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

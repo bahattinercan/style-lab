@@ -10,7 +10,7 @@
 | **Zorluk** | orta (dağınıklık kontrolü) · **Erişilebilirlik** | orta (eğiklik + doku) |
 | **Aile** | Sanatsal (28–34) · **Token** | `kit/tokens.css` → `[data-style="scrapbook"]` |
 | **Kompozisyon** | `type` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -127,37 +127,18 @@ Kolon 12 · gutter 24px · container 1120px · bölüm 72/48px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | El yazısı başlık, polaroid + bant, tek kırmızı buton | `shots/01-landing.png` |
-| Dashboard | çok düşük | Bant/polaroid kapanır; kart + Inter başlık | `shots/02-dashboard.png` |
-| Form | düşük | 460px, kâğıt kenar, düz | — |
-| Liste/tablo | çok düşük | Düz tablo, eğiklik yok | — |
-| Boş durum | yüksek | Boş polaroid + el yazısı not | — |
-| Onboarding | yüksek | Adım başına 1 polaroid | — |
-| Pricing | orta | 3 kart, orta kart damga | — |
-| Giriş/ödeme | çok düşük | Süs kapanır, düz form | — |
-| Modal | orta | Blok gölgeli kart | — |
-| Toast | orta | Koyu bar + krem | — |
-| Hata | düşük | Kırmızı alt çizgi + 15px | — |
-| Profil/ayar | orta | Anı kartı listesi, eğiklik ≤1° | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 120ms | `ease-out` | `transform: translateY(1px)`; eğiklik değişmez |
-| Geçiş / sayfa | 260ms | `ease-out` | `opacity` + `translateY(4px)` |
-| Giriş (enter) | **340ms** | `cubic-bezier(.34,1.28,.52,1)` | `opacity` + `translateY(10px)`, **stagger 50ms**; hafif taşma = "yapıştır ve otur" |
-| Kaydırma (scroll) | **440ms** | `cubic-bezier(.34,1.28,.52,1)` | trigger **`top 88%`**, offsetY **12px**, `once: true` |
-| Hover | **150ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` — parallax yok |
-| Ödül / vurgu | 320ms | `ease-out` | eğiklik 0 → hedef açı, tek atım (döngü yok) |
-
-- İmza ölçüsü: enter **0.34s / 10px / stagger 0.05** · scroll **0.44s / `top 88%` / 12px** · hover **150ms / 1.02** · pin **kapalı**.
-- `prefers-reduced-motion`: 0.01ms, eğiklik statik.
-- Bu stile yasak hareket: metin döndürme (rotate), sürekli döngü.
-## Koyu mod
-
-`--bg` `#1a1f26` · `--surface` `#232a33` · `--ink` `#f2ece0` · `--accent` `#e0574a` · `--accent-ink` `#1a1f26` · grain .05.
+| Landing/hero | yüksek | El yazısı başlık, polaroid + bant, tek kırmızı buton | `shots/01-page.png` |
+| Dashboard | çok düşük | Bant/polaroid kapanır; kart + Inter başlık | `shots/01-page.png` |
+| Form | düşük | 460px, kâğıt kenar, düz | `shots/01-page.png` |
+| Liste/tablo | çok düşük | Düz tablo, eğiklik yok | `shots/01-page.png` |
+| Boş durum | yüksek | Boş polaroid + el yazısı not | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 polaroid | `shots/01-page.png` |
+| Pricing | orta | 3 kart, orta kart damga | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Süs kapanır, düz form | `shots/01-page.png` |
+| Modal | orta | Blok gölgeli kart | `shots/01-page.png` |
+| Toast | orta | Koyu bar + krem | `shots/01-page.png` |
+| Hata | düşük | Kırmızı alt çizgi + 15px | `shots/01-page.png` |
+| Profil/ayar | orta | Anı kartı listesi, eğiklik ≤1° | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -170,14 +151,11 @@ Kolon 12 · gutter 24px · container 1120px · bölüm 72/48px · breakpoint 640
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

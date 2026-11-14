@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 7.17:1) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `kit/tokens.css` → `[data-style="executive-kpi"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,52 +139,20 @@ Yönetim kurulu raporu ve yatırımcı mektubu geleneğinden: sayfa başına tek
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | düşük | 44px serif başlık + tek paragraf + 4 KPI şeridi | `shots/01-landing.png` |
-| Dashboard | düşük | 4 KPI + 7/5 yorum + dolgusuz çizgi grafik | `shots/02-dashboard.png` |
-| Form | düşük | alt çizgili 48px alanlar, tek kolon | — |
-| Liste / tablo | düşük | 44px satır, ilk sütun serif, sayılar sağa dayalı | — |
-| Boş durum | orta | "dönem seçilmedi" + tek cümle + tek CTA | — |
-| Onboarding | yüksek | 3 adım: veri kaynağı → dönem → ilk özet | — |
-| Pricing | orta | 3 plan, hairline ayırıcı, sayılar serif | — |
-| Giriş / ödeme | çok düşük | tek kolon, 48px alanlar, alt çizgi | — |
-| Modal | orta | dönem karşılaştırması, 32px padding | — |
-| Bildirim / toast | orta | alt orta, sessiz, sol 1px durum çizgi | — |
-| Hata | düşük | "veri gecikmeli" uyarısı + kaynak dipnotu | — |
-| Profil / ayar | orta | rapor sıklığı, alıcı listesi; iki kolon | — |
+| Landing / hero | düşük | 44px serif başlık + tek paragraf + 4 KPI şeridi | `shots/01-page.png` |
+| Dashboard | düşük | 4 KPI + 7/5 yorum + dolgusuz çizgi grafik | `shots/01-page.png` |
+| Form | düşük | alt çizgili 48px alanlar, tek kolon | `shots/01-page.png` |
+| Liste / tablo | düşük | 44px satır, ilk sütun serif, sayılar sağa dayalı | `shots/01-page.png` |
+| Boş durum | orta | "dönem seçilmedi" + tek cümle + tek CTA | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: veri kaynağı → dönem → ilk özet | `shots/01-page.png` |
+| Pricing | orta | 3 plan, hairline ayırıcı, sayılar serif | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek kolon, 48px alanlar, alt çizgi | `shots/01-page.png` |
+| Modal | orta | dönem karşılaştırması, 32px padding | `shots/01-page.png` |
+| Bildirim / toast | orta | alt orta, sessiz, sol 1px durum çizgi | `shots/01-page.png` |
+| Hata | düşük | "veri gecikmeli" uyarısı + kaynak dipnotu | `shots/01-page.png` |
+| Profil / ayar | orta | rapor sıklığı, alıcı listesi; iki kolon | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 950ms | `cubic-bezier(.65,0,.35,1)` | `opacity` + `translateY(30px)`, blok başına 110ms stagger |
-| Scroll reveal | 1050ms | `cubic-bezier(.65,0,.35,1)` | `top 78%` tetiği, 36px, `once: true` |
-| Basma | 320ms | `cubic-bezier(.65,0,.35,1)` | `translateY(1px)` |
-| Hover | 320ms | `cubic-bezier(.65,0,.35,1)` | zemin `--surface-2`, görsel ölçek `1.030` |
-| Pin / scrub | kapalı | — | — (rapor sabitlenmez) |
-| KPI rakamı | 0ms | — | sayaç yok; rakam tek karede yazılır |
-
-- Ölçülebilir imza: `enter 0.95s / cb(.65,0,.35,1) / 30px / 0.11` · `scroll top 78% / 1.05s / 36px / once:true` · `hover 320ms / 1.030` · `pin kapalı`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; bloklar konumunda görünür, hiçbir öğe kaymaz.
-- Bu stile yasak hareket: sayaç yuvarlanması, bounce/overshoot, parallax, sürekli döngü.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#faf7f1` | `#121310` |
-| `--bg-2` | `#f3eee5` | `#171913` |
-| `--surface` | `#ffffff` | `#1a1c16` |
-| `--surface-2` | `#f7f3ec` | `#21251d` |
-| `--ink` | `#171614` | `#eeeadf` |
-| `--ink-soft` | `#51544b` | `#b3b0a2` |
-| `--accent` | `#2b5c46` | `#9dbf8f` |
-| `--accent-ink` | `#f6f7f2` | `#101a0e` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **15.51:1** · `ink-soft / bg` = **8.57:1** · `accent-ink / accent` = **8.74:1** · `ink-faint / bg` = **4.44:1**.
-- Koyu modda değişen başka ne var: accent koyu zeminde açık adaçayına döner (`#9dbf8f`); hairline alfası .14 → .16; gölge yine yok (koyuda gölge kâğıt dilini bozar).
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 - Ekran başına en fazla 4 KPI; her KPI tek cümle yorum + dönem etiketi taşır.
@@ -212,14 +180,11 @@ Yönetim kurulu raporu ve yatırımcı mektubu geleneğinden: sayfa başına tek
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

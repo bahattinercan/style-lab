@@ -54,7 +54,6 @@ const ONLY = (() => {
 
 const MARKS = {
   light: ['/* >>> apply-fragments:light >>> */', '/* <<< apply-fragments:light <<< */'],
-  dark: ['/* >>> apply-fragments:dark >>> */', '/* <<< apply-fragments:dark <<< */'],
   styles: ['  /* >>> apply-fragments:styles >>> */', '  /* <<< apply-fragments:styles <<< */'],
   keywords: ['  /* >>> apply-fragments:keywords >>> */', '  /* <<< apply-fragments:keywords <<< */'],
 };
@@ -106,14 +105,11 @@ function readFragment(style) {
   }
   const css = read(paths.css);
   const light = readBlock(css, `[data-style="${style.slug}"]`);
-  const dark = readBlock(css, `[data-theme="dark"][data-style="${style.slug}"]`);
   if (!light) throw new Error(`açık blok yok: ${style.dirName}/token-block.css`);
-  if (!dark) throw new Error(`koyu blok yok: ${style.dirName}/token-block.css`);
   const tags = readTags(paths.keywords);
   return {
     ...style,
     lightPairs: parsePairs(light),
-    darkPairs: parsePairs(dark),
     config: readConfigSource(read(paths.config)),
     tags,
   };
@@ -127,8 +123,8 @@ function header(dirName) {
   return `/* ---- ${label}${'-'.repeat(width)} */`;
 }
 
-function renderCssBlock(dirName, slug, pairs, mode) {
-  const selector = mode === 'dark' ? `[data-theme="dark"][data-style="${slug}"]` : `[data-style="${slug}"]`;
+function renderCssBlock(dirName, slug, pairs) {
+  const selector = `[data-style="${slug}"]`;
   const body = pairs.map(([k, v]) => `  ${k}: ${v};`).join('\n');
   return `${header(dirName)}\n${selector} {\n${body}\n}`;
 }
@@ -221,6 +217,15 @@ function checkFamilies() {
 
 /* ------------------------------------------------------------------ main */
 
+/** v6: tokens.css sonundaki eski koyu mod bölümü üretimde temizlenir (koyu mod kaldırıldı). */
+function stripDarkSection(css) {
+  const i = css.indexOf('   Koyu mod paletleri (data-theme=dark)');
+  if (i < 0) return css;
+  const start = css.lastIndexOf('/* ===', i);
+  if (start < 0) return css;
+  return css.slice(0, start).replace(/\s*$/, '\n');
+}
+
 function main() {
   if (!APPLY && !CHECK) {
     console.log('kullanım: node kit/apply-fragments.mjs --check | --apply [--styles a,b] [--json]');
@@ -252,12 +257,11 @@ function main() {
   const shots = read(SHOTS_CONFIG);
   const gallery = read(GALLERY_DATA);
 
-  const lightContent = region(MARKS.light, fragments.map((f) => renderCssBlock(f.dirName, f.slug, f.lightPairs, 'light')));
-  const darkContent = region(MARKS.dark, fragments.map((f) => renderCssBlock(f.dirName, f.slug, f.darkPairs, 'dark')));
+  const lightContent = region(MARKS.light, fragments.map((f) => renderCssBlock(f.dirName, f.slug, f.lightPairs)));
   const stylesContent = region(MARKS.styles, fragments.map((f) => renderStyleEntry(f.slug, f.config)));
   const keywordsContent = region(MARKS.keywords, fragments.map((f) => renderKeywordEntry(f.slug, f.tags)));
 
-  const nextCss = upsertRegion(upsertRegion(css, MARKS.light, lightContent, LIGHT_ANCHOR, '\n\n'), MARKS.dark, darkContent, null, '\n');
+  const nextCss = stripDarkSection(upsertRegion(css, MARKS.light, lightContent, LIGHT_ANCHOR, '\n\n'));
   const nextShots = upsertRegion(shots, MARKS.styles, stylesContent, STYLES_ANCHOR, '\n');
   const nextGallery = upsertRegion(gallery, MARKS.keywords, keywordsContent, KEYWORDS_ANCHOR, '\n', { comma: true });
 
@@ -272,9 +276,8 @@ function main() {
 
   const missing = { tokens: [], shots: [], keywords: [] };
   for (const f of scoped) {
-    const light = renderCssBlock(f.dirName, f.slug, f.lightPairs, 'light');
-    const dark = renderCssBlock(f.dirName, f.slug, f.darkPairs, 'dark');
-    if (!css.includes(light) || !css.includes(dark)) missing.tokens.push(f.slug);
+    const light = renderCssBlock(f.dirName, f.slug, f.lightPairs);
+    if (!css.includes(light)) missing.tokens.push(f.slug);
     if (!shots.includes(renderStyleEntry(f.slug, f.config))) missing.shots.push(f.slug);
     if (!gallery.includes(renderKeywordEntry(f.slug, f.tags))) missing.keywords.push(f.slug);
   }

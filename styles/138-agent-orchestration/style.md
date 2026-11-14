@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 7.35:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `kit/tokens.css` → `[data-style="agent-orchestration"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -148,51 +148,20 @@ Bedeli: yoğunluk. Bu yüzden iz kaydı görünür alanda 12 satırla sınırlan
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | düşük | H1 34px mono + tek CTA + 3 satırlık örnek iz rayı | `shots/01-landing.png` |
-| Dashboard | **yüksek** | 7/5: iz kaydı + gerekçe/atıf paneli | `shots/02-dashboard.png` |
-| Form | düşük | 38px input, tek kolon; etki özeti altta | — |
-| Liste / tablo | orta | 36px satır, adım no + araç + süre kolonları | — |
-| Boş durum | orta | "Henüz adım yok" + tek CTA + örnek plan | — |
-| Onboarding | yüksek | 3 adım: izinler → ilk görev → onay kuralı | — |
-| Pricing | orta | plan tablosu; aylık adım kotası mono | — |
-| Giriş / ödeme | çok düşük | iz rayı yok; sade form + tek CTA | — |
-| Modal | orta | onay kapısı: gerekçe + etki listesi + iki karar | — |
-| Bildirim / toast | orta | alt-sağ, 3px accent şerit + kısa metin | — |
-| Hata | orta | satır noktası `--danger` + "geri al" düğmesi | — |
-| Profil / ayar | orta | onay politikası, araç izinleri, oturum kaydı | — |
+| Landing / hero | düşük | H1 34px mono + tek CTA + 3 satırlık örnek iz rayı | `shots/01-page.png` |
+| Dashboard | **yüksek** | 7/5: iz kaydı + gerekçe/atıf paneli | `shots/01-page.png` |
+| Form | düşük | 38px input, tek kolon; etki özeti altta | `shots/01-page.png` |
+| Liste / tablo | orta | 36px satır, adım no + araç + süre kolonları | `shots/01-page.png` |
+| Boş durum | orta | "Henüz adım yok" + tek CTA + örnek plan | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: izinler → ilk görev → onay kuralı | `shots/01-page.png` |
+| Pricing | orta | plan tablosu; aylık adım kotası mono | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | iz rayı yok; sade form + tek CTA | `shots/01-page.png` |
+| Modal | orta | onay kapısı: gerekçe + etki listesi + iki karar | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sağ, 3px accent şerit + kısa metin | `shots/01-page.png` |
+| Hata | orta | satır noktası `--danger` + "geri al" düğmesi | `shots/01-page.png` |
+| Profil / ayar | orta | onay politikası, araç izinleri, oturum kaydı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **270ms** | `cubic-bezier(.72,.04,.2,1)` | `opacity` + `translateY(1px)`; stagger **0.013s** |
-| Scroll reveal | **290ms** | aynı eğri | trigger `top 61%`, `translateY(6px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (iz kaydı kaymaz) |
-| Basma | **105ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 210ms | aynı eğri | opacity + 4px |
-| Hover | **105ms** | aynı eğri | görsel ölçek **1.001** (kart büyümez, yalnız zemin) |
-| Ödül / vurgu | 380ms | aynı eğri | yeni iz satırı rayın altına eklenir (tek kez) |
-
-- İmza ölçüleri: `enter = 0.27s / cubic-bezier(.72,.04,.2,1) / 1px / 0.013` · `scroll = top 61% / 0.29s / 6px / once` · `pin = false` · `hover = 105ms / 1.001`.
-- Bant içi fark: 136'dan (0.41s / 11px / pin 0.58), 137'den (0.96s / 38px), 139'dan (1.08s / 46px), 140'tan (0.61s / 21px / pin 0.4) en az dört parametrede ayrışır. Mevcut 126 stil içinde en yakını 108-command-palette (`0.19s / .05,.9,.1,1 / 5px / 0.018`) — süre, eğri, offset, trigger (top 61%), hover ve zemin bandında farklı; `top 61%` katalogda yeni.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, iz satırları anında görünür.
-- Bu stile yasak hareket: sürekli "düşünüyor" animasyonu (ekran başına ≤1), yay/overshoot, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f4f5f6` | `#101216` |
-| `--surface` | `#ffffff` | `#1a1e24` |
-| `--ink` | `#16181c` | `#e9ecf0` |
-| `--accent` | `#3b3f8f` | `#8e93e8` |
-| `--ink-soft` | `#4b5158` | `#a8afb8` |
-| `--line` | `rgba(22,24,28,.14)` | `rgba(233,236,240,.16)` |
-
-- Koyu modda değişen başka ne var: gölge yerine 1px çizgi öne çıkar, accent bir ton açılır (`#8e93e8`), ray konektörü %14 → %18 (siyahta görünmesi için).
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Her ajan eylemi iz kaydında numaralı satır olarak görünür (araç + süre + sonuç).
@@ -221,14 +190,11 @@ Bedeli: yoğunluk. Bu yüzden iz kaydı görünür alanda 12 satırla sınırlan
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

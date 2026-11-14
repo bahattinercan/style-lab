@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (ölçülen en düşük metin çifti 9.39:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="blueprint-drawing"]` |
 | **Kompozisyon** | `type` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,52 +139,20 @@ Cyanotype (1842) ile çoğaltılan mühendislik paftalarından; ISO 128 çizgi k
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 7/5 bölünme: solda H1 + ölçü etiketli alt başlık, sağda patlatılmış diyagram | `shots/01-landing.png` |
-| Dashboard | düşük | ızgara zemini korunur, süs sıfır; KPI'larda 2px accent ölçü çizgisi | `shots/02-dashboard.png` |
-| Form | düşük | 1px çerçeve, mono etiket sağda; hata metni ölçü notu biçiminde | — |
-| Liste / tablo | düşük | 36px satır, dikey hairline sütunlar, sağa dayalı tabular sayılar | — |
-| Boş durum | orta | boş pafta: kesikli çerçeve + "ölçü bekleniyor" mono etiketi | — |
-| Onboarding | yüksek | her adım bir pafta; adım numarası title block'ta | — |
-| Pricing | orta | üç kolon; öne çıkan plan 2px accent çerçeve, dolgu yok | — |
-| Giriş / ödeme | çok düşük | yalnız çizgi ve hiza; süs yok, odak halkası belirgin | — |
-| Modal | orta | accent 1px çerçeve + pafta numarası başlık | — |
-| Bildirim / toast | orta | sağ üst, 2px accent ölçü çizgisi | — |
-| Hata | düşük | kırmızı yalnız çizgi ve etikette; zemin değişmez | — |
-| Profil / ayar | orta | sol etiket kolonu 4/8 bölünme | — |
+| Landing / hero | yüksek | 7/5 bölünme: solda H1 + ölçü etiketli alt başlık, sağda patlatılmış diyagram | `shots/01-page.png` |
+| Dashboard | düşük | ızgara zemini korunur, süs sıfır; KPI'larda 2px accent ölçü çizgisi | `shots/01-page.png` |
+| Form | düşük | 1px çerçeve, mono etiket sağda; hata metni ölçü notu biçiminde | `shots/01-page.png` |
+| Liste / tablo | düşük | 36px satır, dikey hairline sütunlar, sağa dayalı tabular sayılar | `shots/01-page.png` |
+| Boş durum | orta | boş pafta: kesikli çerçeve + "ölçü bekleniyor" mono etiketi | `shots/01-page.png` |
+| Onboarding | yüksek | her adım bir pafta; adım numarası title block'ta | `shots/01-page.png` |
+| Pricing | orta | üç kolon; öne çıkan plan 2px accent çerçeve, dolgu yok | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | yalnız çizgi ve hiza; süs yok, odak halkası belirgin | `shots/01-page.png` |
+| Modal | orta | accent 1px çerçeve + pafta numarası başlık | `shots/01-page.png` |
+| Bildirim / toast | orta | sağ üst, 2px accent ölçü çizgisi | `shots/01-page.png` |
+| Hata | düşük | kırmızı yalnız çizgi ve etikette; zemin değişmez | `shots/01-page.png` |
+| Profil / ayar | orta | sol etiket kolonu 4/8 bölünme | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **360ms** | `cubic-bezier(.55,.06,.35,1)` | `opacity` + `translateY(6px)`; stagger **0.045s** |
-| Scroll reveal | **400ms** | aynı eğri | trigger `top 89%`, `translateY(9px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (çizim kaymaz) |
-| Basma | **100ms** | aynı eğri | `translateY(1px)` + çerçeve kalınlığı sabit |
-| Geçiş / sayfa | 200ms | `cubic-bezier(.55,.06,.35,1)` | opacity + 6px, cross-fade yok |
-| Hover | **140ms** | aynı eğri | görsel ölçek **1.005** (ölçü çizgisi kalınlaşmaz) |
-| Ödül / vurgu | 360ms | aynı eğri | ölçü çizgisi soldan sağa %0→%100 |
-
-- İmza ölçüleri: `enter = 0.36s / cubic-bezier(.55,.06,.35,1) / 6px / 0.045` · `scroll = top 89% / 0.4s / 9px / once` · `pin = false` · `hover = 140ms / 1.005`.
-- Aynı banttaki komşulardan fark: 45'ten (0.18s / steps(3,end) / 0px / 0.03) dört parametrede; 57'den (0.26s / overshoot eğrisi / 4px / 0.02), 58'den (0.14s / linear / 16px), 59'dan (0.44s / 20px) dört parametrede ayrışır. Mevcut 59 stil içinde en yakını 52-experiment-split (6 parametre farkı).
-- `prefers-reduced-motion`: tüm süreler 0.01ms, ızgara ve çizgi kalınlığı geçişleri kapanır.
-- Bu stile yasak hareket: yay/overshoot, parallax, sürekli döngü, blur geçişi.
-
-## Koyu mod
-
-Koyu modda cyanotype zemini daha da koyulaşır (ΔL −11) ve çizim ızgarası güçlenir; accent cyan bir kademe açılır.
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#0a1b2b` | `#04101a` |
-| `--surface` | `#102a40` | `#082034` |
-| `--ink` | `#dceaf5` | `#e8f2fa` |
-| `--accent` | `#6fd3f2` | `#b0eaff` |
-| `--ink-soft` | `#a6c2d6` | `#b3ccdd` |
-| `--line` | `rgba(220,234,245,.16)` | `rgba(232,242,250,.18)` |
-
-- Koyu modda değişen başka ne var: çizgi ağı opaklığı %16 → %26 (siyah zeminde 1px kaybolmasın), accent bir ton açılır, kesikli iç çerçeve %32 → %26 (fazla parlamasın). Ölçüm: `ink/bg` 16.67:1, `accent-ink/accent` 13.10:1.
 
 ## Zorunlu kurallar
 - Zemin cyanotype; 8/64px çizim ızgarası her ekranda görünür kalır (kapatılamaz).
@@ -211,14 +179,11 @@ Koyu modda cyanotype zemini daha da koyulaşır (ΔL −11) ve çizim ızgarası
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

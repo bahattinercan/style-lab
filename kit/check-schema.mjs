@@ -5,9 +5,9 @@
  * build-gallery yalnız "dosya var mı / bölüm var mı / token metni aynı mı" bakar.
  * Bu kapı verinin **tutarlılığına** bakar:
  *   - tokens.json zorunlu alanları ve ölçek sözleşmesi (boşluk 4…64, radius, tipografi)
- *   - koyu mod paritesi: palette.dark ⟺ tokens.css koyu blok ⟺ shots/17-18 (uydurma koyu render yok)
  *   - üç kopya paritesi: tokens.json palette/.css ⟺ token-block.css ⟺ tokens.css (sessiz drift yok)
- *   - sahne kapsamı: manifestteki tüm sahneler (31) · koyu mod 6 sahne
+ *   - sahne kapsamı: manifestteki tek sahne (01-page.png, 1280×2400)
+ *   - v6 sözleşmesi: palette.dark ve motion geri gelmeyecek (koyu mod + hareket kaldırıldı)
  *   - komşu stil slug'ları katalogda var mı, çelişki var mı
  *   - style.md: "Bir cümlede" uzunluğu, meta tablo anahtarları, AI brief kod bloğu, ≥3 https referans
  *   - must/mustNot ≥3, typography.forbidden dolu, refs biçimi
@@ -25,7 +25,6 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
 const MANIFEST = path.join(ROOT, 'kit', 'shots.manifest.json');
 const TOKENS_CSS = path.join(ROOT, 'kit', 'tokens.css');
-const DARK_BASELINE = path.join(ROOT, 'kit', 'dark-baseline.json');
 const CORE_JSON = path.join(ROOT, 'kit', 'shots.core.json');
 /** Repoda tutulması zorunlu sahneler (kit/shots.core.json); kalanı kit/.shots-cache/ (üretilen). */
 const CORE_FILES = (() => {
@@ -42,22 +41,12 @@ const LAYOUTS = (() => {
     return { heroes: [], navs: [], densities: [] };
   }
 })();
-const PATTERNS = (() => {
-  try {
-    return JSON.parse(fs.readFileSync(path.join(ROOT, 'kit', 'render', 'motion', 'patterns.json'), 'utf8'));
-  } catch {
-    return { patterns: [], reducedStrategies: [] };
-  }
-})();
-const PATTERN_IDS = new Map(PATTERNS.patterns.map((p) => [p.id, p.kind]));
-const REDUCED_IDS = new Set(PATTERNS.reducedStrategies.map((r) => r.id));
 const HERO_IDS = new Set(LAYOUTS.heroes.map((h) => h.id));
 const NAV_IDS = new Set(LAYOUTS.navs.map((n) => n.id));
 const DENSITY_IDS = new Set(LAYOUTS.densities.map((d) => d.id));
 const JSON_OUT = process.argv.includes('--json');
 const STRICT = process.argv.includes('--strict');
 
-const DARK_KEYS = ['bg', 'bg2', 'surface', 'surface2', 'ink', 'inkSoft', 'inkFaint', 'accent', 'accentInk', 'line'];
 const CSS_KEY = {
   bg: 'bg',
   bg2: 'bg-2',
@@ -70,14 +59,6 @@ const CSS_KEY = {
   accentInk: 'accent-ink',
   line: 'line',
 };
-const DARK_SCENES = [
-  '17-dark-landing.png',
-  '18-dark-form.png',
-  '28-dark-dashboard.png',
-  '29-dark-components.png',
-  '30-dark-list.png',
-  '31-dark-mobile.png',
-];
 const SPACING_STEPS = ['4px', '8px', '12px', '16px', '24px', '32px', '48px', '64px'];
 const REQUIRED_PALETTE = ['bg', 'bg2', 'surface', 'surface2', 'ink', 'inkSoft', 'inkFaint', 'accent', 'accentInk', 'line'];
 const REQUIRED_SCALE = ['label', 'caption', 'body', 'h2'];
@@ -101,38 +82,18 @@ function listStyles() {
     .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
 }
 
-function cssDarkSlugs() {
-  const css = read(TOKENS_CSS);
-  const slugs = new Set();
-  for (const m of css.matchAll(/^\[data-theme="dark"\]\[data-style="([a-z0-9-]+)"\]/gm)) slugs.add(m[1]);
-  return slugs;
-}
-
-function cssDarkVars() {
-  const css = read(TOKENS_CSS);
-  const map = {};
-  for (const m of css.matchAll(/^\[data-theme="dark"\]\[data-style="([a-z0-9-]+)"\]\s*\{([\s\S]*?)^\}/gm)) {
-    const vars = {};
-    for (const v of m[2].matchAll(/--([a-z0-9-]+)\s*:\s*([^;]+);/gi)) vars[v[1]] = v[2].trim();
-    map[m[1]] = vars;
-  }
-  return map;
-}
-
 /**
  * Bir stilin üç kopyasını okur: token-block.css (kaynak) · tokens.css (üretilen) · tokens.json.css (özet).
  * Üçü ayrı yerde durur; parite denetlenmezse sessiz drift oluşur.
  */
 function readTokenSources(dirName, slug, tokensCss) {
-  const out = { fragmentLight: null, fragmentDark: null, cssLight: null, jsonCssLight: null };
+  const out = { fragmentLight: null, cssLight: null, jsonCssLight: null };
 
   const fragmentPath = path.join(STYLES_DIR, dirName, 'token-block.css');
   if (fs.existsSync(fragmentPath)) {
     const css = read(fragmentPath);
     const light = readBlock(css, `[data-style="${slug}"]`);
-    const dark = readBlock(css, `[data-theme="dark"][data-style="${slug}"]`);
     if (light) out.fragmentLight = pairsToMap(parsePairs(light));
-    if (dark) out.fragmentDark = pairsToMap(parsePairs(dark));
   }
 
   const cssLightBlock = readBlock(tokensCss, `\n[data-style="${slug}"]`) ?? readBlock(tokensCss, `[data-style="${slug}"]`);
@@ -186,7 +147,6 @@ function checkStyle(dirName, ctx) {
   const tag = `${dirName}`;
 
   if (!ctx.light.has(slug)) E(`${tag}: kit/tokens.css içinde [data-style="${slug}"] bloğu yok`);
-  const hasDarkCss = ctx.dark.has(slug);
 
   /* ---- style.md ---- */
   const oneLine = md.match(/^>\s+\*\*Bir cümle(?:de|yle):\*\*\s+(.+)$/m);
@@ -218,20 +178,17 @@ function checkStyle(dirName, ctx) {
   const shots = fs.existsSync(shotsDir)
     ? fs.readdirSync(shotsDir).filter((f) => f.toLowerCase().endsWith('.png'))
     : [];
-  const requiredScenes = CORE_FILES.length ? CORE_FILES.filter((f) => !DARK_SCENES.includes(f)) : ctx.scenes.filter((f) => !DARK_SCENES.includes(f));
+  const requiredScenes = CORE_FILES.length ? CORE_FILES : ctx.scenes;
   for (const scene of requiredScenes) {
     if (!shots.includes(scene)) E(`${tag}: shots/${scene} yok (zorunlu ${requiredScenes.length} sahne)`);
   }
-  // çekirdek modda yalnız repoda tutulan koyu sahneler beklenir (kalanı kit/.shots-cache/)
-  const coreDark = CORE_FILES.filter((f) => DARK_SCENES.includes(f));
-  const hasDarkShots = coreDark.length
-    ? coreDark.every((s) => shots.includes(s))
-    : DARK_SCENES.every((s) => shots.includes(s));
+  const extraShots = shots.filter((f) => !requiredScenes.includes(f));
+  if (extraShots.length) W(`${tag}: shots/ altında sözleşme dışı ${extraShots.length} görsel (${extraShots.slice(0, 3).join(', ')})`);
 
-  /* ---- tokens.json ---- */
+
   if (!fs.existsSync(jsonPath)) {
     E(`${tag}: tokens.json yok (şema v2 zorunlu)`);
-    return { slug, scenes: shots.length, dark: false };
+    return { slug, scenes: shots.length };
   }
   const t = JSON.parse(read(jsonPath));
 
@@ -258,61 +215,12 @@ function checkStyle(dirName, ctx) {
     W(`${tag}: şema v${t.version} — kompozisyon ekseni (layout) yok; şema v3 beklenir`);
   }
 
-  /* ---- şema v4 · hareket sözlüğü (motion.choreography) ---- */
-  if (t.version >= 4) {
-    const c = t.motion?.choreography;
-    if (!c || typeof c !== 'object') {
-      E(`${tag}: şema v4 için motion.choreography { enter, scroll, hover, reduced } zorunlu`);
-    } else {
-      for (const [key, kind] of [
-        ['enter', 'enter'],
-        ['scroll', 'scroll'],
-        ['hover', 'hover'],
-      ]) {
-        const id = c[key];
-        if (!id) E(`${tag}: motion.choreography.${key} yok`);
-        else if (!PATTERN_IDS.has(id)) E(`${tag}: choreography.${key} "${id}" patterns.json'da yok`);
-        else if (PATTERN_IDS.get(id) !== kind) E(`${tag}: choreography.${key} "${id}" ${PATTERN_IDS.get(id)} deseni (${kind} bekleniyor)`);
-      }
-      if (c.page != null && !PATTERN_IDS.has(c.page)) E(`${tag}: choreography.page "${c.page}" tanımsız`);
-      if (!REDUCED_IDS.has(c.reduced)) E(`${tag}: choreography.reduced "${c.reduced}" geçersiz (${[...REDUCED_IDS].join('|')})`);
-    }
-  } else {
-    W(`${tag}: şema v${t.version} — hareket sözlüğü (motion.choreography) yok; şema v4 beklenir`);
-  }
-
   const palette = t.palette ?? {};
   for (const key of REQUIRED_PALETTE) if (!(key in palette)) E(`${tag}: palette.${key} eksik`);
 
-  const darkPalette = palette.dark ?? null;
-  const darkDebt = ctx.darkBaseline.has(slug);
-  if (darkPalette && !hasDarkCss) {
-    const msg = `${tag}: palette.dark var ama koyu mod uygulanmamış (tokens.css bloğu + shots/17-18 yok)`;
-    if (darkDebt) {
-      W(msg + ' — kit/dark-baseline.json\'da kayıtlı borç');
-      ctx.darkDebtSeen.add(slug);
-    } else {
-      E(msg + ' — yeni borç: kit/dark-baseline.json\'a gerekçeyle ekle ya da uygula');
-    }
-  }
-  if (!darkPalette && hasDarkCss) E(`${tag}: kit/tokens.css koyu bloğu var ama palette.dark yok`);
-
-  // palette.dark ⇄ tokens.css koyu bloğu değer paritesi (sessiz drift'i yakalar)
-  if (darkPalette && hasDarkCss) {
-    const block = ctx.darkVars[slug] ?? {};
-    for (const [key, value] of Object.entries(darkPalette)) {
-      const cssKey = CSS_KEY[key] ?? key.replace(/[A-Z]/g, (c) => '-' + c.toLowerCase());
-      const actual = block[cssKey];
-      if (actual === undefined) {
-        E(`${tag}: palette.dark.${key} var ama tokens.css koyu bloğunda --${cssKey} yok`);
-      } else if (actual !== value) {
-        E(`${tag}: palette.dark.${key}=${value} ile koyu blok --${cssKey}: ${actual} çelişiyor`);
-      }
-    }
-  }
-  if (hasDarkCss && !hasDarkShots && coreDark.length)
-    E(`${tag}: koyu mod uygulanmış ama çekirdek koyu sahne eksik (${coreDark.join(' + ')})`);
-  if (!hasDarkCss && hasDarkShots) E(`${tag}: koyu mod sahnesi var ama koyu palet/blok yok — yanıltıcı render`);
+  /* v6: koyu mod ve hareket kaldırıldı — geri gelirlerse kapı kırmızı. */
+  if ('dark' in palette) E(`${tag}: palette.dark v6'da yasak (koyu mod kaldırıldı)`);
+  if ('motion' in t) E(`${tag}: motion v6'da yasak (hareket katmanı kaldırıldı)`);
 
   /* ---- üç kopya paritesi: token-block.css ⇄ tokens.css ⇄ tokens.json.css ---- */
   const src = readTokenSources(dirName, slug, ctx.tokensCss);
@@ -349,13 +257,6 @@ function checkStyle(dirName, ctx) {
     }
   }
 
-  // 5) fragment koyu blok ⇄ tokens.css koyu blok (ctx.darkVars anahtarları "--" öneksizdir)
-  if (src.fragmentDark && hasDarkCss) {
-    const cssDark = Object.fromEntries(Object.entries(ctx.darkVars[slug] ?? {}).map(([k, v]) => [`--${k}`, v]));
-    const keys = new Set([...Object.keys(src.fragmentDark), ...Object.keys(cssDark)]);
-    compareVars(tag, 'token-block.css (koyu) ⇄ tokens.css', src.fragmentDark, cssDark, [...keys]);
-  }
-
   const ty = t.typography ?? {};
   for (const k of ['display', 'body', 'mono']) if (!ty[k]) E(`${tag}: typography.${k} eksik`);
   for (const k of REQUIRED_SCALE) if (!(ty.scale ?? {})[k]) E(`${tag}: typography.scale.${k} eksik`);
@@ -381,10 +282,6 @@ function checkStyle(dirName, ctx) {
     if (!Array.isArray(arr) || arr.length < 3) E(`${tag}: ${key} en az 3 madde olmalı`);
   }
 
-  const motion = t.motion ?? {};
-  if (!motion.easing) E(`${tag}: motion.easing yok`);
-  if (!motion.reduced) W(`${tag}: motion.reduced notu yok`);
-
   const nb = t.neighbors ?? {};
   for (const key of ['compatible', 'forbidden']) {
     const list = nb[key];
@@ -407,7 +304,7 @@ function checkStyle(dirName, ctx) {
     if (!r.label || !r.use) W(`${tag}: refs "${r.url}" label/use eksik`);
   }
 
-  return { slug, scenes: shots.length, dark: Boolean(darkPalette) };
+  return { slug, scenes: shots.length };
 }
 
 function main() {
@@ -420,32 +317,20 @@ function main() {
   const scenes = (manifest.scenes ?? []).map((s) => s.file);
   const slugs = new Set(dirs.map((d) => d.replace(/^\d+-/, '')));
 
-  const darkBaselineFile = fs.existsSync(DARK_BASELINE) ? JSON.parse(read(DARK_BASELINE)) : { slugs: {} };
-  const darkBaseline = new Set(Object.keys(darkBaselineFile.slugs ?? {}));
 
-  const ctx = { scenes, slugs, light: cssLightSlugs(), dark: cssDarkSlugs(), darkVars: cssDarkVars(), darkBaseline, darkDebtSeen: new Set(), tokensCss: read(TOKENS_CSS) };
+  const ctx = { scenes, slugs, light: cssLightSlugs(), tokensCss: read(TOKENS_CSS) };
   const coverage = dirs.map((d) => checkStyle(d, ctx));
-
-  // baseline'daki borç kapandıysa kaydı silinmeli (yoksa liste gerçeği yansıtmaz)
-  for (const slug of darkBaseline) {
-    if (!ctx.darkDebtSeen.has(slug)) W(`kit/dark-baseline.json: "${slug}" borcu kalmamış — kaydı sil`);
-  }
 
   // tokens.css'te olup klasörü olmayan bloklar (ölü token)
   for (const slug of ctx.light) {
     if (!slugs.has(slug)) E(`kit/tokens.css: "${slug}" bloğu var ama styles/${slug} klasörü yok`);
   }
-  for (const slug of ctx.dark) {
-    if (!slugs.has(slug)) E(`kit/tokens.css: "${slug}" koyu bloğu var ama style klasörü yok`);
-  }
 
-  const darkCount = coverage.filter((c) => c.dark).length;
   const summary = {
     styles: dirs.length,
     scenes: scenes.length,
     slots: dirs.length * scenes.length,
     filled: coverage.reduce((n, c) => n + c.scenes, 0),
-    dark: darkCount,
     errors,
     warnings,
   };
@@ -456,7 +341,7 @@ function main() {
   }
 
   console.log(
-    `şema kapısı · ${dirs.length} stil · ${scenes.length} sahne · ${summary.filled}/${summary.slots} dolu · ${darkCount} koyu modlu`,
+    `şema kapısı · ${dirs.length} stil · ${scenes.length} sahne · ${summary.filled}/${summary.slots} dolu`,
   );
   for (const w of warnings) console.log('  ! ' + w);
   for (const e of errors) console.log('  × ' + e);

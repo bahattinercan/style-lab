@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (koyu zemin + altın vurgu ölçülmeden yazılırsa düşer) |
 | **Aile** | Sahne & Prestij (146–151) · **Token** | `kit/tokens.css` → `[data-style="noir-estate"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,52 +139,18 @@ Derinlik fotoğraftan gelir: kartlarda gölge yok, yalnız 1px çerçeve. Gölge
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | tam kanama fotoğraf + sol altta 5/12 metin, sağ üstte cam gezinti; tek altın CTA + tek ghost CTA | `shots/01-landing.png` |
-| Arama / filtre | orta | cam panelde 4 alan + tek altın buton; etiketler 10px mono, değerler 15px | — |
-| Dashboard (portföy) | orta | 3 KPI (aktif portföy, ortalama m², görüntülenme) + 6 ilan satırı; satır yüksekliği 56px | `shots/02-dashboard.png` |
-| Form / concierge | düşük | tek sütun, 48px alan, altın odak halkası; hata `--danger` 1px + 11px açıklama | — |
-| Liste / tablo | yüksek | 56px satır, fiyat sağa hizalı tabular, ilçe chip | — |
-| Boş durum | düşük | "bu filtrede portföy yok" + tek altın eylem | — |
-| Onboarding | düşük | 3 adım: bölge → bütçe → randevu; her adımda tek karar | — |
-| Pricing | orta | iki plan, altın çerçeve yalnız öne çıkanda | — |
-| Giriş / ödeme | düşük | tek kart, tek eylem, cam panel yok | — |
-| Modal | orta | 16px radius, 1px altın çerçeve, `--shadow`; kapatma 44×44px | — |
-| Bildirim | orta | 40px toast, sol 3px altın şerit, 3.6s | — |
-| Mobil (390px) | orta | tek sütun, hero 360px yüksek, filtre alttan açılır, dokunma hedefi 44px | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (blur-in) | 0.88s | `cubic-bezier(.16,.84,.28,1)` | `opacity` + `translateY(14px)`, 0.06 arayla |
-| Scroll reveal | 0.9s, `top 72%` | aynı | `translateY(10px)`, `once: true` |
-| Pin / scrub | 1.22 scrub, +165% mesafe | doğrusal | öne çıkan portföy sabitlenir, künye katmanı kayar |
-| Basma | 140ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 260ms | aynı | `scale(1.014)` |
-
-- Ölçülen imza: enter **0.88s · cubic-bezier(.16,.84,.28,1) · 14px · stagger 0.06**; scroll **top 72% · 0.9s · 10px · once**; pin **açık · scrub 1.22 · +165%**; hover **260ms · 1.014**.
-- undefined
-- `prefers-reduced-motion`: static-frame.
-- Bu stile yasak hareket: bounce/elastik yay, sonsuz döngü (Ken Burns, parıldayan altın), hover tilt-3d, renk geçişli gradient animasyonu.
-
-## Koyu mod
-
-| Token | Açık (gece) | Koyu (derin gece) |
-|---|---|---|
-| `--bg` | `#0d0b09` | `#060505` |
-| `--bg-2` | `#070605` | `#030303` |
-| `--surface` | `#171310` | `#0f0d0b` |
-| `--surface-2` | `#211b15` | `#17130f` |
-| `--ink` | `#f5f0e7` | `#faf6ef` |
-| `--ink-soft` | `#c7bca9` | `#d2c8b7` |
-| `--ink-faint` | `#8f8574` | `#9c9283` |
-| `--accent` | `#d3af62` | `#e9c882` |
-| `--accent-ink` | `#170f04` | `#17100a` |
-| `--line` | `rgba(245,240,231,.14)` | `rgba(250,246,239,.16)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **18.90:1** · `ink-soft/bg` **12.30:1** · `accent-ink/accent` **11.70:1** · `ink-faint/bg` **6.64:1** · odak halkası yüzey üzerinde **12.05:1**.
-- Koyu blok yeni bir palet değil, aynı sahnenin ışığı kısılmış hâli: zemin #060505, accent #e9c882 (parlaklık +1 kademe) çünkü koyu zeminde altının doygunluğu düşüyor; çizgi %14 → %16.
-- `filter: invert()` yasak; koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="noir-estate"]` olarak durur.
+| Landing / hero | yüksek | tam kanama fotoğraf + sol altta 5/12 metin, sağ üstte cam gezinti; tek altın CTA + tek ghost CTA | `shots/01-page.png` |
+| Arama / filtre | orta | cam panelde 4 alan + tek altın buton; etiketler 10px mono, değerler 15px | `shots/01-page.png` |
+| Dashboard (portföy) | orta | 3 KPI (aktif portföy, ortalama m², görüntülenme) + 6 ilan satırı; satır yüksekliği 56px | `shots/01-page.png` |
+| Form / concierge | düşük | tek sütun, 48px alan, altın odak halkası; hata `--danger` 1px + 11px açıklama | `shots/01-page.png` |
+| Liste / tablo | yüksek | 56px satır, fiyat sağa hizalı tabular, ilçe chip | `shots/01-page.png` |
+| Boş durum | düşük | "bu filtrede portföy yok" + tek altın eylem | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: bölge → bütçe → randevu; her adımda tek karar | `shots/01-page.png` |
+| Pricing | orta | iki plan, altın çerçeve yalnız öne çıkanda | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek kart, tek eylem, cam panel yok | `shots/01-page.png` |
+| Modal | orta | 16px radius, 1px altın çerçeve, `--shadow`; kapatma 44×44px | `shots/01-page.png` |
+| Bildirim | orta | 40px toast, sol 3px altın şerit, 3.6s | `shots/01-page.png` |
+| Mobil (390px) | orta | tek sütun, hero 360px yüksek, filtre alttan açılır, dokunma hedefi 44px | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Hero tam kanama gece fotoğrafı + scrim; metin sol altta 5/12 kolonda.
@@ -215,14 +181,11 @@ Derinlik fotoğraftan gelir: kartlarda gölge yok, yalnız 1px çerçeve. Gölge
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

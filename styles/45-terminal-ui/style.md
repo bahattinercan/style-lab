@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 8.62:1) |
 | **Aile** | Teknik (45–46) · **Token** | `kit/tokens.css` → `[data-style="terminal-ui"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,18 @@ VT100/80×24 metin terminalleri, `top`/`htop` panel dili ve 2020'lerin TUI röne
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | tek ekran: başlık + 3 özellik satırı + kısayol ipucu | `shots/01-landing.png` |
-| Dashboard | çok yüksek | panel ızgarası, KPI tek satır, sparkline | `shots/02-dashboard.png` |
-| Form | orta | alanlar tek sütun, `! ` ile hata | — |
-| Liste / tablo | çok yüksek | 32px satır, tabular sayı, yatay kaydırma | — |
-| Boş durum | düşük | `! ` veya `·` ile tek cümle + komut önerisi | — |
-| Onboarding | orta | 3 adım, komut satırı hissi, `enter` ile ilerleme | — |
-| Pricing | orta | karşılaştırma tablosu; öne çıkan sütun accent çerçeve | — |
-| Giriş / ödeme | düşük | tek panel, tek eylem, `[ok]` doğrulama | — |
-| Modal | orta | komut paleti dili, accent çerçeve, `esc` | — |
-| Bildirim | düşük | durum satırı (toast değil), 3sn | — |
-| Hata | düşük | `! ` + neden + sonraki komut | — |
-| Ayar | yüksek | anahtar/değer listesi, 32px satır | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 90ms | linear | `transform` |
-| Geçiş | 180ms | `steps(3, end)` | `opacity` |
-| Giriş (satır satır) | **180ms**, **30ms arayla** | `steps(3, end)` | `opacity` + `translateY(0px)` (konum kaymaz) |
-| Kaydırma (scroll) | **200ms** | `steps(3, end)` | trigger **`top 90%`**, offsetY **8px**, `once: true` |
-| Hover | **90ms** | linear | görsel ölçek **1.000** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| İmleç | 1s | `steps(2, end)` | `opacity` (tek döngü hakkı) |
-
-- İmza ölçüsü: enter **0.18s / 0px / stagger 0.03** · scroll **0.2s / `top 90%` / 8px** · hover **90ms / 1.000** · pin **kapalı**.
-- Yumuşak yay/ease-out yok: terminal kesik hareket eder.
-- Efekt yok: parallax, blur geçişi, gradient animasyonu, sürekli döngü (imleç hariç) yasak.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, imleç sabit, satır girişi anında.
-## Koyu mod
-
-| Token | Açık (terminal) | Koyu (gece terminali) |
-|---|---|---|
-| `--bg` | `#0a0d0a` | `#050705` |
-| `--bg-2` | `#0d110d` | `#080b08` |
-| `--surface` | `#0f140f` | `#0b0f0b` |
-| `--surface-2` | `#131a13` | `#101510` |
-| `--ink` | `#d7e6d2` | `#e6f1e2` |
-| `--ink-soft` | `#9bb394` | `#a8bda2` |
-| `--accent` | `#58e08a` | `#6ff09c` |
-| `--accent-ink` | `#04120a` | `#03150a` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **17.37:1** · `ink-soft/bg` **10.07:1** · `accent-ink/accent` **13.11:1**.
-- Koyu modda değişen başka ne var: accent bir ton açılır, çizgi opaklığı %16 → %18.
-- `filter: invert()` yasak; palet elle yazılır.
+| Landing / hero | yüksek | tek ekran: başlık + 3 özellik satırı + kısayol ipucu | `shots/01-page.png` |
+| Dashboard | çok yüksek | panel ızgarası, KPI tek satır, sparkline | `shots/01-page.png` |
+| Form | orta | alanlar tek sütun, `! ` ile hata | `shots/01-page.png` |
+| Liste / tablo | çok yüksek | 32px satır, tabular sayı, yatay kaydırma | `shots/01-page.png` |
+| Boş durum | düşük | `! ` veya `·` ile tek cümle + komut önerisi | `shots/01-page.png` |
+| Onboarding | orta | 3 adım, komut satırı hissi, `enter` ile ilerleme | `shots/01-page.png` |
+| Pricing | orta | karşılaştırma tablosu; öne çıkan sütun accent çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek panel, tek eylem, `[ok]` doğrulama | `shots/01-page.png` |
+| Modal | orta | komut paleti dili, accent çerçeve, `esc` | `shots/01-page.png` |
+| Bildirim | düşük | durum satırı (toast değil), 3sn | `shots/01-page.png` |
+| Hata | düşük | `! ` + neden + sonraki komut | `shots/01-page.png` |
+| Ayar | yüksek | anahtar/değer listesi, 32px satır | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Tek aile: JetBrains Mono; display = body = mono.
@@ -211,14 +178,11 @@ VT100/80×24 metin terminalleri, `top`/`htop` panel dili ve 2020'lerin TUI röne
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

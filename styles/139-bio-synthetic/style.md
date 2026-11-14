@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 9.55:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `kit/tokens.css` → `[data-style="bio-synthetic"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,52 +139,20 @@ Doku kültürü (tissue culture) pratiğinden — petri kabı, parti (lot) etike
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | H1 50px + hücre kümesi görseli + tek hap CTA | `shots/01-landing.png` |
-| Dashboard | orta | 3 parti kartı; zar çizgisi ve hücre noktası | `shots/02-dashboard.png` |
-| Form | düşük | 48px hap input, tek kolon; parti alanı mono | — |
-| Liste / tablo | orta | 48px satır, parti no kolonu mono | — |
-| Boş durum | orta | boş petri: zar halkası + "kültür yok" mono | — |
-| Onboarding | yüksek | 3 adım: örnek al → parti aç → pasaj planla | — |
-| Pricing | orta | iki plan kartı; öne çıkan accent zar çizgisi | — |
-| Giriş / ödeme | çok düşük | hücre görseli yok; sade kart + tek hap CTA | — |
-| Modal | orta | kültür onayı: parti no + iki hap düğme | — |
-| Bildirim / toast | orta | alt-sol, 8px hücre noktası | — |
-| Hata | orta | "REDDEDİLDİ" + `--danger` nokta + neden notu | — |
-| Profil / ayar | orta | parti/pasaj tercihleri, hap seçiciler | — |
+| Landing / hero | yüksek | H1 50px + hücre kümesi görseli + tek hap CTA | `shots/01-page.png` |
+| Dashboard | orta | 3 parti kartı; zar çizgisi ve hücre noktası | `shots/01-page.png` |
+| Form | düşük | 48px hap input, tek kolon; parti alanı mono | `shots/01-page.png` |
+| Liste / tablo | orta | 48px satır, parti no kolonu mono | `shots/01-page.png` |
+| Boş durum | orta | boş petri: zar halkası + "kültür yok" mono | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: örnek al → parti aç → pasaj planla | `shots/01-page.png` |
+| Pricing | orta | iki plan kartı; öne çıkan accent zar çizgisi | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | hücre görseli yok; sade kart + tek hap CTA | `shots/01-page.png` |
+| Modal | orta | kültür onayı: parti no + iki hap düğme | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sol, 8px hücre noktası | `shots/01-page.png` |
+| Hata | orta | "REDDEDİLDİ" + `--danger` nokta + neden notu | `shots/01-page.png` |
+| Profil / ayar | orta | parti/pasaj tercihleri, hap seçiciler | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **1080ms** | `cubic-bezier(.44,.16,.3,1)` | `opacity` + `translateY(46px)`; stagger **0.146s** |
-| Scroll reveal | **1070ms** | aynı eğri | trigger `top 60%`, `translateY(33px)`, `once: true` |
-| Pin / scrub | **1.18** | `transform` | **açık** — kültür panosu `+155%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **190ms** | aynı eğri | `scale .985` |
-| Geçiş / sayfa | 420ms | aynı eğri | opacity + 20px |
-| Hover | **490ms** | aynı eğri | görsel ölçek **1.043** |
-| Ödül / vurgu | 1080ms | aynı eğri | zar halkası %0→%100 (tek kez) |
-
-- İmza ölçüleri: `enter = 1.08s / cubic-bezier(.44,.16,.3,1) / 46px / 0.146` · `scroll = top 60% / 1.07s / 33px / once` · `pin = true / scrub 1.18 / +155%` · `hover = 490ms / 1.043`.
-- Bant içi fark: 136'dan (0.41s / 11px / scrub 0.58), 137'den (0.96s / 38px / pin yok), 138'den (0.27s / 1px), 140'tan (0.61s / 21px / scrub 0.4) en az dört parametrede ayrışır. Mevcut 126 stil içinde en yakını 67-japanese-ma (`1.05s / .25,.1,.25,1 / 12px / 0.14`) — süre, eğri, offset, trigger (top 60%) ve hover'da farklı; `top 60%` ve `scrub 1.18` katalogda yeni.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, zar halkası ve nabız durur, pin kapalı.
-- Bu stile yasak hareket: ekran başına 1'den fazla sürekli nabız/nefes, blur geçişi, yatay kaydırma hijack.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#0f1412` | `#020504` |
-| `--surface` | `#19211d` | `#0d1f16` |
-| `--ink` | `#e9f2ec` | `#f6fdf8` |
-| `--accent` | `#c8f05f` | `#a6f5c8` |
-| `--ink-soft` | `#a9bfb2` | `#c6dccb` |
-| `--line` | `rgba(233,242,236,.16)` | `rgba(246,253,248,.20)` |
-
-- Koyu modda değişen başka ne var: zemin altı puan daha koyu, accent bir ton açılır, zar çizgisi %22 → %28 ve hücre noktası %70 → %80 (siyahta kaybolmasın).
-- Koyu mod ayrışması: zemin `#020504` (%20 parlaklık), panel bandı **8.6×** açık, accent lime → mint `#a6f5c8` (69° ton kayması).
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Yüzeyler yumuşak: 20px kontrol / 32px kart; buton, input ve chip hap (999px).
@@ -212,14 +180,11 @@ Doku kültürü (tissue culture) pratiğinden — petri kabı, parti (lot) etike
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

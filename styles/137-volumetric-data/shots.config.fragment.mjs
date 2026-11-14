@@ -77,7 +77,6 @@ export const CONFIG = {
       .mark { border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); }
       .sig { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent) 40%, transparent); }
 
-
       /* ===== FIX136 denetim düzeltmeleri ===== */
       /* D1a: "Pasif" butonu. Ölçüm: element opacity .42 (kit inline) → 1.9-3.3:1,
          opacity .6 + ink-soft → 2.1-3.7:1 (eşik altı). Bu yüzden .6 görsel ağırlık

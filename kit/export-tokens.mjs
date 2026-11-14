@@ -6,7 +6,7 @@
  * (tipografi, radius, boşluk, hareket, bileşen reçetesi).
  *
  * Çıktı (varsayılan: kit/dist/):
- *   tokens.all.css         tüm stiller, :root + [data-style] + [data-theme=dark] — doğrudan kopyalanabilir
+ *   tokens.all.css         tüm stiller, :root + [data-style] — doğrudan kopyalanabilir
  *   tailwind.theme.css     Tailwind v4 @theme (renk/font/radius/gölge) + 8 adım boşluk eşlemesi (yorumsatırı)
  *   figma.variables.json   Figma variables içe aktarma biçimi (Color System Light/Dark + Radius + Spacing + Typography)
  *   index.json             manifest: hangi stil, hangi dosya, kaç token
@@ -46,18 +46,14 @@ const HEADER = '/* kit/export-tokens.mjs üretir — elle düzenlemeyin. Kaynak:
 
 /* ---------------------------------------------------------------- okuma */
 
-/** tokens.css → { light: {slug: vars}, dark: {slug: vars} } */
+/** tokens.css → { light: {slug: vars} } · v6: koyu mod kaldırıldı */
 function readTokensCss() {
   const css = fs.readFileSync(TOKENS_CSS, 'utf8');
   const light = {};
-  const dark = {};
   for (const m of css.matchAll(/^\[data-style="([a-z0-9-]+)"\]\s*\{([\s\S]*?)^\}/gm)) {
     light[m[1]] = parseVars(m[2]);
   }
-  for (const m of css.matchAll(/^\[data-theme="dark"\]\[data-style="([a-z0-9-]+)"\]\s*\{([\s\S]*?)^\}/gm)) {
-    dark[m[1]] = parseVars(m[2]);
-  }
-  return { light, dark };
+  return { light };
 }
 
 function parseVars(block) {
@@ -111,15 +107,6 @@ function styleCssBlock(style, vars) {
   return `/* ${style.num} · ${style.tokens?.name ?? style.slug} */\n[data-style="${style.slug}"] {\n${lines.join('\n')}\n}\n`;
 }
 
-function darkCssBlock(style, vars) {
-  if (!vars) return '';
-  const lines = [];
-  const present = COLOR_VARS.filter((k) => vars[k] !== undefined);
-  if (!present.length) return '';
-  lines.push('  ' + present.map((k) => `--${k}: ${vars[k]};`).join(' '));
-  return `[data-theme="dark"][data-style="${style.slug}"] {\n${lines.join('\n')}\n}\n`;
-}
-
 function buildTokensCss(styles, css) {
   const root = parseVars(fs.readFileSync(TOKENS_CSS, 'utf8').match(/:root\s*\{([\s\S]*?)\n\}/)[1]);
   const rootLine = '  ' + COLOR_VARS.filter((k) => root[k]).map((k) => `--${k}: ${root[k]};`).join(' ');
@@ -134,8 +121,6 @@ function buildTokensCss(styles, css) {
     const light = css.light[s.slug];
     if (!light) continue;
     parts.push(styleCssBlock(s, light).trimEnd());
-    const dark = css.dark[s.slug];
-    if (dark) parts.push(darkCssBlock(s, dark).trimEnd());
     parts.push('');
   }
   return parts.join('\n').trimEnd() + '\n';
@@ -161,7 +146,6 @@ function buildTailwind(styles, css) {
   for (const s of styles) {
     const v = css.light[s.slug];
     if (!v) continue;
-    const d = css.dark[s.slug] ?? null;
     out.push(`/* ---- ${s.num} · ${s.tokens?.name ?? s.slug} ---- */`);
     out.push(`@theme {`);
     for (const key of ['bg', 'bg-2', 'surface', 'surface-2', 'ink', 'ink-soft', 'ink-faint', 'accent', 'accent-ink', 'line']) {
@@ -175,15 +159,6 @@ function buildTailwind(styles, css) {
     out.push(`  --font-mono: ${stripQuotes(v['font-mono'])};`);
     out.push(`  --tracking-display: ${v.tracking ?? '0'};`);
     out.push('}');
-    if (d) {
-      out.push('');
-      out.push('/* koyu mod: data-theme="dark" (Tailwind `dark:` değil, katalog kuralı) */');
-      out.push(`[data-theme="dark"][data-style="${s.slug}"] {`);
-      for (const key of ['bg', 'bg-2', 'surface', 'surface-2', 'ink', 'ink-soft', 'ink-faint', 'accent', 'accent-ink', 'line']) {
-        if (d[key]) out.push(`  --color-${key}: ${d[key]};`);
-      }
-      out.push('}');
-    }
     out.push('');
   }
 
@@ -210,15 +185,12 @@ function buildFigma(styles, css) {
   for (const s of styles) {
     const v = css.light[s.slug];
     if (!v) continue;
-    const d = css.dark[s.slug] ?? null;
     const prefix = `${s.num} ${s.tokens?.name ?? s.slug}`;
 
     for (const key of ['bg', 'bg-2', 'surface', 'surface-2', 'ink', 'ink-soft', 'ink-faint', 'accent', 'accent-ink', 'line']) {
       const light = parseColor(v[key]);
       if (!light) continue;
       const values = { Light: figmaColor(light) };
-      const darkColor = d ? parseColor(d[key]) : null;
-      values.Dark = figmaColor(darkColor ?? light);
       colorVars.push({ name: `${s.slug}/${key}`, description: `${prefix} · ${key}`, type: 'COLOR', values });
     }
 
@@ -256,13 +228,13 @@ function buildFigma(styles, css) {
   return {
     _readme:
       'Figma variables içe aktarma biçimi: collections[].variables[] = { name, type, values: { <mod adı>: değer } }. ' +
-      'Color System iki modlu (Light/Dark); Radius/Spacing/Typography tek modlu. kit/export-tokens.mjs üretir.',
+      'Color System v6 tek modlu (Light); Radius/Spacing/Typography tek modlu. kit/export-tokens.mjs üretir.',
     generatedBy: 'kit/export-tokens.mjs',
     source: 'kit/tokens.css + styles/<nn-slug>/tokens.json',
     collections: [
       {
         name: 'Color System',
-        modes: [{ name: 'Light' }, { name: 'Dark' }],
+        modes: [{ name: 'Light' }],
         variables: colorVars,
       },
       { name: 'Radius', modes: [{ name: 'Mode 1' }], variables: floatVars },
@@ -289,7 +261,6 @@ function build() {
       num: s.num,
       slug: s.slug,
       name: s.tokens?.name ?? s.slug,
-      dark: Boolean(css.dark[s.slug]),
       tokens: Object.keys(css.light[s.slug] ?? {}).length,
       files: {
         css: 'tokens.all.css',
@@ -299,7 +270,6 @@ function build() {
     })),
     counts: {
       styles: styles.length,
-      withDark: styles.filter((s) => css.dark[s.slug]).length,
       variables: styles.length ? Object.keys(css.light[styles[0].slug] ?? {}).length : 0,
     },
   };
@@ -313,7 +283,6 @@ function build() {
         HEADER,
         '',
         styleCssBlock(s, light).trimEnd(),
-        css.dark[s.slug] ? darkCssBlock(s, css.dark[s.slug]).trimEnd() : '',
       ]
         .filter(Boolean)
         .join('\n');
@@ -340,7 +309,7 @@ function main() {
       console.log('  → node kit/export-tokens.mjs');
       return 1;
     }
-    console.log(`export: güncel (${index.counts.styles} stil · ${index.counts.withDark} koyu modlu · ${files.size} dosya)`);
+    console.log(`export: güncel (${index.counts.styles} stil · ${files.size} dosya)`);
     return 0;
   }
 
@@ -352,7 +321,7 @@ function main() {
   const bytes = [...files.values()].reduce((n, c) => n + Buffer.byteLength(c), 0);
   console.log(
     `export: ${files.size} dosya · ${(bytes / 1024).toFixed(1)} KB → ${path.relative(ROOT, OUT_DIR)}` +
-      ` · ${index.counts.styles} stil (${index.counts.withDark} koyu modlu)`,
+      ` · ${index.counts.styles} stil`,
   );
   return 0;
 }

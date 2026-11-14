@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (koyu zemin + ince çizgi; en düşük metin çifti 9.39:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="energy-grid"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,52 +139,20 @@ SCADA ekranları ve tek hat (single-line) diyagramlarından; enerji kontrol odal
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 7/5: solda H1 + ölçüm etiketleri, sağda canlı şema | `shots/01-landing.png` |
-| Dashboard | **yüksek** | şema bölgesi 7 kolon + sağda ölçüm tablosu 5 kolon | `shots/02-dashboard.png` |
-| Form | düşük | 42px input, mono etiket sağda; birim seçici chip | — |
-| Liste / tablo | orta | 34px satır, tabular sayı, alarm satırı sol 2px `--danger` | — |
-| Boş durum | orta | boş şema: soluk nokta ızgarası + "sinyal yok" mono etiketi | — |
-| Onboarding | yüksek | 3 adım: şebeke seç → düğüm ekle → eşik belirle | — |
-| Pricing | orta | plan tablosu; öne çıkan plan 1px accent çerçeve | — |
-| Giriş / ödeme | çok düşük | şema yok; yalnız odak halkası ve tek accent | — |
-| Modal | orta | ölçüm detayı; üst şeritte mono birim etiketi | — |
-| Bildirim / toast | orta | sağ alt, sol uçta 6px düğüm + mono metin | — |
-| Hata | orta | düğüm `--danger`, hat 1.5px kesikli; ölçüm değeri korunur | — |
-| Profil / ayar | orta | eşik ayarları: slider 1.5px hat + düğüm tutamaç | — |
+| Landing / hero | yüksek | 7/5: solda H1 + ölçüm etiketleri, sağda canlı şema | `shots/01-page.png` |
+| Dashboard | **yüksek** | şema bölgesi 7 kolon + sağda ölçüm tablosu 5 kolon | `shots/01-page.png` |
+| Form | düşük | 42px input, mono etiket sağda; birim seçici chip | `shots/01-page.png` |
+| Liste / tablo | orta | 34px satır, tabular sayı, alarm satırı sol 2px `--danger` | `shots/01-page.png` |
+| Boş durum | orta | boş şema: soluk nokta ızgarası + "sinyal yok" mono etiketi | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: şebeke seç → düğüm ekle → eşik belirle | `shots/01-page.png` |
+| Pricing | orta | plan tablosu; öne çıkan plan 1px accent çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | şema yok; yalnız odak halkası ve tek accent | `shots/01-page.png` |
+| Modal | orta | ölçüm detayı; üst şeritte mono birim etiketi | `shots/01-page.png` |
+| Bildirim / toast | orta | sağ alt, sol uçta 6px düğüm + mono metin | `shots/01-page.png` |
+| Hata | orta | düğüm `--danger`, hat 1.5px kesikli; ölçüm değeri korunur | `shots/01-page.png` |
+| Profil / ayar | orta | eşik ayarları: slider 1.5px hat + düğüm tutamaç | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **580ms** | `cubic-bezier(.45,0,.15,1)` | `opacity` + `translateY(12px)`; stagger **0.09s** |
-| Scroll reveal | **660ms** | aynı eğri | trigger `top 81%`, `translateY(16px)`, `once: true` |
-| Pin / scrub | **1.45** | `transform` | **açık** — şema panosu `+210%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **130ms** | aynı eğri | `translateY(1px)` + düğüm 3→2px |
-| Geçiş / sayfa | 340ms | aynı eğri | opacity + 12px |
-| Hover | **200ms** | aynı eğri | görsel ölçek **1.004** (şema kaymasın) |
-| Ödül / vurgu | 660ms | aynı eğri | akış hattı soldan sağa %0→%100 (tek kez) |
-
-- İmza ölçüleri: `enter = 0.58s / cubic-bezier(.45,0,.15,1) / 12px / 0.09` · `scroll = top 81% / 0.66s / 16px / once` · `pin = true / scrub 1.45 / +210%` · `hover = 200ms / 1.004`.
-- Aynı banttaki komşulardan fark: 56'dan (0.36s / 6px / pin yok) dört, 57'den (0.26s / overshoot / scrub 0.62) dört, 58'den (0.14s / linear) dört, 59'dan (0.44s / 20px / scrub 0.95) dört parametrede ayrışır. Mevcut 59 stil içinde en yakını 63-maintenance-cmms (8 parametre farkı).
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin devre dışı, akış hattı statik (son kare).
-- Bu stile yasak hareket: saniyede 3 üstü flash, ekran başına 1'den fazla sürekli döngü, kapatılamayan parallax, 4px üstü blur geçişi.
-
-## Koyu mod
-
-Koyu modda şebeke zemini daha derin (ΔL −7) ama kart bandı 7 puan genişler (L bandı 17 → 24) ve volt accent belirgin biçimde parlar; koyu mod artık 01-landing’den tek bakışta ayrılır.
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#0c0f12` | `#04080d` |
-| `--surface` | `#131a1f` | `#0b1620` |
-| `--ink` | `#e4eef2` | `#edf5f7` |
-| `--accent` | `#9be23c` | `#d2ff85` |
-| `--ink-soft` | `#a7b8c0` | `#b0c1c8` |
-| `--line` | `rgba(228,238,242,.14)` | `rgba(237,245,247,.16)` |
-
-- Koyu modda değişen başka ne var: akış hattı opaklığı %60 → %78, düğüm halkası 3px → 4px, nokta ızgarası %14 → %12 (siyahta gürültü yapmasın). Ölçüm: `ink/bg` 17.87:1, `accent-ink/accent` 16.82:1.
 
 ## Zorunlu kurallar
 - Zemin 8px nokta ızgarası; şema çizgileri 1.5px, düğümler 3px dolu.
@@ -211,14 +179,11 @@ Koyu modda şebeke zemini daha derin (ΔL −7) ama kart bandı 7 puan genişler
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

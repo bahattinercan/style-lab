@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 8.08:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="forest-bark"]` |
 | **Kompozisyon** | `split` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -142,51 +142,18 @@ Herbaryum künyesi ve orman envanter defterinden: tür adı, toplandığı yer, 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 6/6 hero: solda başlık + tek CTA, sağda tür kartı + damar çizgisi | `shots/01-landing.png` |
-| Dashboard | orta | 3 KPI (tür sayısı, yeni kayıt, mevsim) + son gözlemler listesi | `shots/02-dashboard.png` |
-| Form | düşük | tür kaydı: Latince ad, Türkçe ad, ölçü+birim, mevsim, foto | — |
-| Liste / tablo | orta | 40px satır, italik Latince ad, sağda mono ölçü, mevsim chip'i | — |
-| Boş durum | düşük | "bu mevsimde kayıt yok" + ilk gözlemi ekle | — |
-| Onboarding | düşük | 3 adım: bölge seç → tür ekle → mevsim planı | — |
-| Pricing | düşük | iki plan; kayıt limiti ve dışa aktarma satırları | — |
-| Giriş / ödeme | çok düşük | tek kart, 44px alanlar, tek eylem | — |
-| Modal | orta | tür detayı: foto, künye, bakım notu | — |
-| Bildirim | düşük | 40px toast, sol tan şerit, 4.5sn | — |
-| Hata | düşük | danger çerçeve + neden + sonraki adım | — |
-| Profil / ayar | orta | bölge listesi, ölçü birimi, mevsim hatırlatması | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (kart/bölüm) | 880ms | `cubic-bezier(.32,.72,0,1)` | `opacity` + `translateY(30px)`, 120ms arayla |
-| Scroll reveal | 950ms, `top 82%` | aynı | `translateY(36px)`, `once: true` |
-| Basma | 140ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 320ms | aynı | `scale(1.026)` |
-| Mevsim geçişi | 700ms | `cubic-bezier(.32,.72,0,1)` | `opacity` (chip rengi) |
-| Pin | kapalı | — | — |
-
-- Ölçülen imza: enter **0.88s · cubic-bezier(.32,.72,0,1) · 30px · stagger 0.12**; scroll **top 82% · 0.95s · 36px · once**; pin **kapalı**; hover **320ms · 1.026**.
-- Yavaş kalkış, uzun süzülme: yaprak düşüşü gibi; yay ve sekme yok, hareket tek yönlü ve sakin.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, giriş anında, hover ölçeği 1.000.
-- Bu stile yasak hareket: sürekli salınan dal, parallax, bounce, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık (orman) | Koyu (gece ormanı) |
-|---|---|---|
-| `--bg` | `#1f2620` | `#0a0d08` |
-| `--bg-2` | `#19201a` | `#0d110a` |
-| `--surface` | `#283029` | `#131711` |
-| `--surface-2` | `#313b31` | `#1b2117` |
-| `--ink` | `#ecefe3` | `#f1f4e7` |
-| `--ink-soft` | `#b4bfa8` | `#bcc7ae` |
-| `--accent` | `#d7a469` | `#e9bd7f` |
-| `--accent-ink` | `#201708` | `#171004` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **17.54:1** · `ink-soft/bg` **11.10:1** · `accent-ink/accent` **10.83:1** · `ink-faint/bg` **6.58:1** · accent metin olarak bg'ye **11.22:1**.
-- Koyu modda değişen başka ne var: kabuk zemini gece ormanına iner (`#1f2620` → `#0a0d08`, ton bandı Δ≈40), yüzeyler iki adım daha koyu, tan accent açılır (`#d7a469` → `#e9bd7f`), hairline .14 → .22. Açık/koyu ekran yan yana ayırt edilir.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="forest-bark"]` olarak durur.
+| Landing / hero | orta | 6/6 hero: solda başlık + tek CTA, sağda tür kartı + damar çizgisi | `shots/01-page.png` |
+| Dashboard | orta | 3 KPI (tür sayısı, yeni kayıt, mevsim) + son gözlemler listesi | `shots/01-page.png` |
+| Form | düşük | tür kaydı: Latince ad, Türkçe ad, ölçü+birim, mevsim, foto | `shots/01-page.png` |
+| Liste / tablo | orta | 40px satır, italik Latince ad, sağda mono ölçü, mevsim chip'i | `shots/01-page.png` |
+| Boş durum | düşük | "bu mevsimde kayıt yok" + ilk gözlemi ekle | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: bölge seç → tür ekle → mevsim planı | `shots/01-page.png` |
+| Pricing | düşük | iki plan; kayıt limiti ve dışa aktarma satırları | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek kart, 44px alanlar, tek eylem | `shots/01-page.png` |
+| Modal | orta | tür detayı: foto, künye, bakım notu | `shots/01-page.png` |
+| Bildirim | düşük | 40px toast, sol tan şerit, 4.5sn | `shots/01-page.png` |
+| Hata | düşük | danger çerçeve + neden + sonraki adım | `shots/01-page.png` |
+| Profil / ayar | orta | bölge listesi, ölçü birimi, mevsim hatırlatması | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her tür kaydı: Latince ad (italik) + Türkçe ad + ölçü (birimle) + mevsim.
@@ -215,14 +182,11 @@ Herbaryum künyesi ve orman envanter defterinden: tür adı, toplandığı yer, 
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (altını parlaksız, süsü dekoratif katmanda tutmak) · **Erişilebilirlik** | iyi (14.51:1 gövde, 5.98:1 accent üstü) |
 | **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="levant-calligraphy"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -142,55 +142,20 @@ Klişeye düşmemek için korunması gereken detay: **çerçevenin tekliği ve a
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Sağ omurga, rosette sol üstte, kalem kuralı başlık altında | `shots/01-landing.png` |
-| Dashboard | düşük | Süs yok; kartlarda yalnız 1px çizgi + tek gölge; sayılar mono | `shots/02-dashboard.png` |
-| Form | düşük | 46px alan, 1px radius, 2px odak halkası | — |
-| Liste / tablo | düşük | Sola döner (konvansiyon); satır 48px, alt çizgi | — |
-| Boş durum | orta | Tek rosette (104px) + 1 cümle + 1 buton | — |
-| Onboarding | yüksek | Her adımda sağ omurga; ilerleme = 3 kalem kuralı parçası | — |
-| Pricing | orta | 3 kart, orta kartta dolu altın rozet (≤ %8 alan) | — |
-| Giriş / ödeme | çok düşük | Süs yalnız 14px iç kural; alanlar 1px radius | — |
-| Modal | orta | 32px padding, iç tezhip kuralı, sağa dayalı başlık | — |
-| Bildirim / toast | orta | Sol kenarda 2px altın kural; kutu gölgesiz | — |
-| Hata | düşük | `--danger` kenar + açıklama; altın kullanılmaz | — |
-| Profil / ayar | orta | Künye kolonu solda `--bg-2`, formlar sağda | — |
+| Landing / hero | yüksek | Sağ omurga, rosette sol üstte, kalem kuralı başlık altında | `shots/01-page.png` |
+| Dashboard | düşük | Süs yok; kartlarda yalnız 1px çizgi + tek gölge; sayılar mono | `shots/01-page.png` |
+| Form | düşük | 46px alan, 1px radius, 2px odak halkası | `shots/01-page.png` |
+| Liste / tablo | düşük | Sola döner (konvansiyon); satır 48px, alt çizgi | `shots/01-page.png` |
+| Boş durum | orta | Tek rosette (104px) + 1 cümle + 1 buton | `shots/01-page.png` |
+| Onboarding | yüksek | Her adımda sağ omurga; ilerleme = 3 kalem kuralı parçası | `shots/01-page.png` |
+| Pricing | orta | 3 kart, orta kartta dolu altın rozet (≤ %8 alan) | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Süs yalnız 14px iç kural; alanlar 1px radius | `shots/01-page.png` |
+| Modal | orta | 32px padding, iç tezhip kuralı, sağa dayalı başlık | `shots/01-page.png` |
+| Bildirim / toast | orta | Sol kenarda 2px altın kural; kutu gölgesiz | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + açıklama; altın kullanılmaz | `shots/01-page.png` |
+| Profil / ayar | orta | Künye kolonu solda `--bg-2`, formlar sağda | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 160ms | `cubic-bezier(.34,.03,.24,1)` | `translateY(1px)` |
-| Giriş (enter) | **940ms** | `cubic-bezier(.34,.03,.24,1)` | `opacity` + `translateY(26px)`, stagger **90ms** |
-| Kaydırma (scroll) | **1020ms** | `cubic-bezier(.34,.03,.24,1)` | trigger **`top 79%`**, offsetY **30px**, `once: true` |
-| Hover | **340ms** | `ease-out` | görsel ölçek **1.032** |
-| Pin | **açık** | `scrub: 1.4` | mesafe **+150%** (en uzun sabitleme) |
-| Ödül / vurgu (kalem kuralı) | 620ms | `cubic-bezier(.34,.03,.24,1)` | `scaleX` 0→1, origin sol |
-
-- `prefers-reduced-motion`: tüm süreler 0.01ms; pin/scrub kapanır, kalem kuralı statik görünür.
-- Bu stile yasak hareket: parallax, spring/bounce, harf harf animasyon, metalik parlama/ışık süpürme.
-- İmza ölçüsü: giriş **0.94s / 26px / stagger .09**, kaydırma **1.02s / top 79% / 30px**, hover **340ms / 1.032**, pin **scrub 1.4 / +150%** — katalogda tekrar etmez.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f4eee1` | `#101426` |
-| `--bg-2` | `#eae2d0` | `#161b30` |
-| `--surface` | `#fdf9ef` | `#1a2038` |
-| `--surface-2` | `#f0e8d7` | `#222a45` |
-| `--ink` | `#171d2e` | `#ece5d3` |
-| `--ink-soft` | `#444d63` | `#b3b6c4` |
-| `--ink-faint` | `#6f7789` | `#868ca0` |
-| `--accent` | `#7a5a22` | `#d8b269` |
-| `--accent-ink` | `#fdf8ec` | `#141422` |
-| `--line` | `rgba(23,29,46,.16)` | `rgba(236,229,211,.16)` |
-
-- Koyu mod **gece el yazması**dır: parşömen yerine lacivert mürekkep zemini, metin kreme döner, altın açılır (`#d8b269`) — mat kalır, parlamaz.
-- Gölge koyuda zayıf görünür: `--shadow` aynı kalır ama kart ayrımını 1px `--line` taşır; iç tezhip kuralının opaklığı %55 → %60'a çıkar (koyu zeminde altın daha az okunur).
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **14.53:1** · `ink-soft/bg` = **9.05:1** · `accent-ink/accent` = **9.10:1** · `ink-faint/bg` = **5.45:1**.
 
 ## Zorunlu kurallar
 
@@ -221,14 +186,11 @@ Klişeye düşmemek için korunması gereken detay: **çerçevenin tekliği ve a
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

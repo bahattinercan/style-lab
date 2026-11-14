@@ -10,7 +10,7 @@
 | **Zorluk** | orta (kontrast dengesi) · **Erişilebilirlik** | orta risk (düşük kontrast eğilimi) |
 | **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="japandi"]` |
 | **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -153,46 +153,18 @@ Japandi terimi 2010'larda iç mekân tasarımından geldi; dijitalde "slow livin
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 46px serif başlık, 2 satır gövde, tek accent buton, sağda sıcak tonlu görsel | `shots/01-landing.png` |
-| Dashboard | düşük | Kart yerine hairline bölümler; sayı 28px, etiket 10px mono; grafik tek renk | `shots/02-dashboard.png` |
-| Form | düşük | 480px tek sütun, etiket üstte 13px, input 44px | — |
-| Liste / tablo | düşük | 52px satır, hairline; zebra yok | — |
-| Boş durum | orta | Tek cümle + tek buton, küçük çizgi illüstrasyon | — |
-| Onboarding | yüksek | Sayfa başına 1 fikir, ilerleme nokta, görsel + kısa metin | — |
-| Pricing | orta | 2–3 kolon, orta kolon 1px accent kenar | — |
-| Giriş / ödeme | çok düşük | 420px kart, 2 alan, tek buton | — |
-| Modal | orta | 14px radius, hairline, 28px padding | — |
-| Bildirim / toast | orta | Koyu zemin + krem metin, 14px radius | — |
-| Hata | düşük | `--danger` 1px kenar + 13px sakin dil | — |
-| Profil / ayar | orta | Sol nav + 8/4 içerik; satır 56px | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 140ms | `ease-out` | `opacity` |
-| Giriş | 700ms | `cubic-bezier(.3,.7,.3,1)` | `opacity` + 14px `translateY`, stagger 70ms |
-| Scroll (`top 83%`) | 850ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 220ms | aynı eğri | `transform: scale(1.015)` |
-| Ödül | 400ms | `ease-in-out` | accent nokta `scale(.9→1)` tek sefer |
-
-- Hareket yavaş ve küçük: "nefes" hissi, dikkat çekme yok.
-- `prefers-reduced-motion`: 0.01ms.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f4efe7` | `#17150f` |
-| `--surface` | `#fbf8f3` | `#221f18` |
-| `--surface-2` | `#f2ece2` | `#2a261e` |
-| `--ink` | `#2c2925` | `#ece5d8` |
-| `--ink-soft` | `#635c53` | `#b3aa9c` |
-| `--line` | `rgba(44,41,37,.10)` | `rgba(236,229,216,.14)` |
-| `--accent` | `#8a9b84` | `#9fae97` |
-| `--accent-ink` | `#2c2925` | `#17150f` |
-
-- Koyu modda accent-ink her iki modda da koyu; accent zemin üstü metin asla beyaz değil.
+| Landing / hero | yüksek | 46px serif başlık, 2 satır gövde, tek accent buton, sağda sıcak tonlu görsel | `shots/01-page.png` |
+| Dashboard | düşük | Kart yerine hairline bölümler; sayı 28px, etiket 10px mono; grafik tek renk | `shots/01-page.png` |
+| Form | düşük | 480px tek sütun, etiket üstte 13px, input 44px | `shots/01-page.png` |
+| Liste / tablo | düşük | 52px satır, hairline; zebra yok | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + tek buton, küçük çizgi illüstrasyon | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına 1 fikir, ilerleme nokta, görsel + kısa metin | `shots/01-page.png` |
+| Pricing | orta | 2–3 kolon, orta kolon 1px accent kenar | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | 420px kart, 2 alan, tek buton | `shots/01-page.png` |
+| Modal | orta | 14px radius, hairline, 28px padding | `shots/01-page.png` |
+| Bildirim / toast | orta | Koyu zemin + krem metin, 14px radius | `shots/01-page.png` |
+| Hata | düşük | `--danger` 1px kenar + 13px sakin dil | `shots/01-page.png` |
+| Profil / ayar | orta | Sol nav + 8/4 içerik; satır 56px | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -205,14 +177,11 @@ Japandi terimi 2010'larda iç mekân tasarımından geldi; dijitalde "slow livin
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

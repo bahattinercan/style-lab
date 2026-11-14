@@ -71,7 +71,7 @@ const provided = new Set();
 for (const [, key] of fs.readFileSync(path.join(ROOT, 'kit', 'render', 'render-shots.mjs'), 'utf8').matchAll(/__COPY_([A-Z0-9_]+)__:/g)) provided.add(key);
 const partialFiles = fs.readdirSync(PARTIALS).filter((f) => /^hero-.*\.html$/.test(f));
 const HARD_COPY = /Ürün ekibin|Ücretsiz başla|Kart gerekmez|Demo izle|Sprint planı|Ekip alanı/;
-for (const f of [...partialFiles, 'landing.html', 'dark-landing.html']) {
+for (const f of [...partialFiles, 'page.html']) {
   const p = f.endsWith('.html') && !f.startsWith('hero-') ? path.join(ROOT, 'kit', 'render', f) : path.join(PARTIALS, f);
   if (!fs.existsSync(p)) {
     errors.push(`şablon yok: ${path.relative(ROOT, p)}`);

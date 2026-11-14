@@ -10,7 +10,7 @@
 | **Zorluk** | orta (kart oranı + katman disiplini) · **Erişilebilirlik** | iyi (16.04:1 gövde, 6.44:1 accent üstü) |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="collectible-card"]` |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -143,56 +143,20 @@ Klişeye düşmemesi için korunması gereken detay: **oran ve katman**. Kartı 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 1 büyük kart + holo bant + deste ofseti | `shots/01-landing.png` |
-| Dashboard | orta | Koleksiyon sayacı + nadirlik dağılımı; kartlar küçük | `shots/02-dashboard.png` |
-| Form | düşük | 44px alanlar, 2px radius, mono etiket | — |
-| Liste / tablo | yüksek | 40px satır: ad, set (mono), nadirlik (chip), adet | — |
-| Boş durum | orta | Boş deste çerçevesi + tek cümle + 1 buton | — |
-| Onboarding | yüksek | 3 adım: set seç → kart incele → desteye ekle | — |
-| Pricing | orta | 3 paket; önerilen pakette accent iç çerçeve | — |
-| Giriş / ödeme | düşük | Dekor sıfır; 44px alan + tek accent buton | — |
-| Modal | orta | Kart detayı: 5:7 kart + stat şeridi + set no | — |
-| Bildirim / toast | orta | Kazanım bildirimi: mono + 6px accent kare | — |
-| Hata | düşük | `--danger` kenar + mono açıklama; holo bant yok | — |
-| Profil / ayar | orta | Koleksiyon özeti: kart sayısı, set ilerlemesi | — |
+| Landing / hero | yüksek | 1 büyük kart + holo bant + deste ofseti | `shots/01-page.png` |
+| Dashboard | orta | Koleksiyon sayacı + nadirlik dağılımı; kartlar küçük | `shots/01-page.png` |
+| Form | düşük | 44px alanlar, 2px radius, mono etiket | `shots/01-page.png` |
+| Liste / tablo | yüksek | 40px satır: ad, set (mono), nadirlik (chip), adet | `shots/01-page.png` |
+| Boş durum | orta | Boş deste çerçevesi + tek cümle + 1 buton | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: set seç → kart incele → desteye ekle | `shots/01-page.png` |
+| Pricing | orta | 3 paket; önerilen pakette accent iç çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | düşük | Dekor sıfır; 44px alan + tek accent buton | `shots/01-page.png` |
+| Modal | orta | Kart detayı: 5:7 kart + stat şeridi + set no | `shots/01-page.png` |
+| Bildirim / toast | orta | Kazanım bildirimi: mono + 6px accent kare | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + mono açıklama; holo bant yok | `shots/01-page.png` |
+| Profil / ayar | orta | Koleksiyon özeti: kart sayısı, set ilerlemesi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 120ms | `ease-out` | `transform: translateY(1px)` |
-| Geçiş / sayfa | 200ms | `ease-out` | `opacity` |
-| Giriş (enter) | **700ms** | `cubic-bezier(.16,.9,.24,1)` | `opacity` + `translateY(26px)`, **stagger 80ms**; kart masadan kalkar |
-| Kaydırma (scroll) | **780ms** | `cubic-bezier(.16,.9,.24,1)` | trigger **`top 81%`**, offsetY **22px**, `once: true` |
-| Hover | **200ms** | `ease-out` | görsel ölçek **1.038** |
-| Pin | **açık** | `scrub 1.05` | kart destesi sabitlenir, mesafe **+120%** |
-| Ödül / vurgu | 340ms | `cubic-bezier(.16,.9,.24,1)` | nadirlik taşı 22 → 26px, tek atım |
-
-- İmza ölçüsü: enter **0.7s / 26px / stagger 0.08** · scroll **0.78s / `top 81%` / 22px** · hover **200ms / 1.038** · pin **açık (scrub 1.05 / +120%)** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; pin/scrub kapanır, kart ve deste statik kalır.
-- Bu stile yasak hareket: 3B tilt/döndürme, parallax, sürekli holo kayması, spring/bounce.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#eef1f7` | `#0d0e15` |
-| `--bg-2` | `#e5e9f2` | `#12131c` |
-| `--surface` | `#ffffff` | `#171926` |
-| `--surface-2` | `#e9edf6` | `#1f2231` |
-| `--ink` | `#131521` | `#eceaf5` |
-| `--ink-soft` | `#474b5c` | `#b0aec0` |
-| `--ink-faint` | `#767b8c` | `#86849a` |
-| `--accent` | `#5c33e0` | `#a48bff` |
-| `--accent-ink` | `#f7f4ff` | `#0f0d18` |
-| `--line` | `rgba(19,21,33,.16)` | `rgba(236,234,245,.16)` |
-
-- Koyu mod **turnuva gecesi**: zemin `#0d0e15`, kart `#171926`; accent açılır (`#a48bff`) çünkü mor koyu zeminde iç çerçeveyle karışır.
-- Holo bant koyuda `%45` opaklığa düşer (açık renk koyu zeminde daha parlak okunur, holo taklidi abartıya kaçar).
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **16.19:1** · `ink-soft/bg` = **8.86:1** · `accent-ink/accent` = **7.07:1** · `ink-faint/bg` = **5.30:1**.
 
 ## Zorunlu kurallar
 
@@ -223,14 +187,11 @@ Klişeye düşmemesi için korunması gereken detay: **oran ve katman**. Kartı 
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

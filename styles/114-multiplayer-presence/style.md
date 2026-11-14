@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 7.10:1, `ink-faint` 3.59:1) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="multiplayer-presence"]` |
 | **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -133,51 +133,20 @@ Gerçek zamanlı ortak düzenleme (Google Docs, Figma) ve CRDT tabanlı çakış
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | örnek belge + üç canlı imleç + tek CTA | `shots/01-landing.png` |
-| Dashboard | orta | üç kart, sağda katılımcı paneli, iki uzak seçim | `shots/02-dashboard.png` |
-| Form | düşük | hap input'lar, alanın yanında düzenleyen avatarı | — |
-| Liste / tablo | düşük | 42px satır, uzak seçimde sol 2px accent | — |
-| Boş durum | orta | "Belge boş — birini davet et" + avatar yığını | — |
-| Onboarding | yüksek | ekip daveti + ilk ortak düzenleme | — |
-| Pricing | orta | ekip planı kartı; koltuk sayısı avatar yığınıyla | — |
-| Giriş / ödeme | düşük | hap input + tek CTA, `kim olarak katıldın` etiketi | — |
-| Modal | orta | yorum dizisi: avatar + mono zaman + yanıt kutusu | — |
-| Bildirim / toast | orta | alt-orta hap, `Elif katıldı` + avatar | — |
-| Hata | düşük | çakışma uyarısı: `Bu alanı Selin düzenledi` + sürüm seç | — |
-| Profil / ayar | orta | katılımcı listesi, rol seçimi, `çevrimdışı` etiketi | — |
+| Landing / hero | yüksek | örnek belge + üç canlı imleç + tek CTA | `shots/01-page.png` |
+| Dashboard | orta | üç kart, sağda katılımcı paneli, iki uzak seçim | `shots/01-page.png` |
+| Form | düşük | hap input'lar, alanın yanında düzenleyen avatarı | `shots/01-page.png` |
+| Liste / tablo | düşük | 42px satır, uzak seçimde sol 2px accent | `shots/01-page.png` |
+| Boş durum | orta | "Belge boş — birini davet et" + avatar yığını | `shots/01-page.png` |
+| Onboarding | yüksek | ekip daveti + ilk ortak düzenleme | `shots/01-page.png` |
+| Pricing | orta | ekip planı kartı; koltuk sayısı avatar yığınıyla | `shots/01-page.png` |
+| Giriş / ödeme | düşük | hap input + tek CTA, `kim olarak katıldın` etiketi | `shots/01-page.png` |
+| Modal | orta | yorum dizisi: avatar + mono zaman + yanıt kutusu | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-orta hap, `Elif katıldı` + avatar | `shots/01-page.png` |
+| Hata | düşük | çakışma uyarısı: `Bu alanı Selin düzenledi` + sürüm seç | `shots/01-page.png` |
+| Profil / ayar | orta | katılımcı listesi, rol seçimi, `çevrimdışı` etiketi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **630ms** | `cubic-bezier(.34,1.16,.64,1)` | `opacity` + `translateY(9px)`; stagger **0.033s** |
-| Scroll reveal | **570ms** | aynı eğri | trigger `top 88%`, `translateY(11px)`, `once: false` |
-| Pin / scrub | yok | — | pin kapalı (uzak düzenleme sırasında sayfa kaymaz) |
-| Basma | **210ms** | aynı eğri | `scale .98` |
-| Geçiş / sayfa | 380ms | aynı eğri | opacity + 9px |
-| Hover | **210ms** | aynı eğri | görsel ölçek **1.026** |
-| Ödül / vurgu | 380ms | aynı eğri | gelen imleç 1 kez belirir, sürekli nabız yok |
-
-- İmza ölçüleri: `enter = 0.63s / cubic-bezier(.34,1.16,.64,1) / 9px / 0.033` · `scroll = top 88% / 0.57s / 11px / once:false` · `pin = false` · `hover = 210ms / 1.026`.
-- Bant içi fark: 111'den (0.39s / 7px / 0.048 / top 87%), 112'den (1.28s / 3px / 0.185), 113'ten (0.23s / 3px / 0.024), 115'ten (0.12s / 0px / 0.008) en az yedi parametrede ayrışır. Karşılaştırma örneği 46-telemetry-grid (`0.28s / cubic-bezier(.16,.84,.44,1) / 6px / 0.02`): süre, eğri, offset, stagger, trigger ve hover'da ayrışır (8 parametre); katalogdaki tüm imzalarla en az iki parametre farkı makine kontrolüyle doğrulanır.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; imleçler konum atlar, uzak seçim anında belirir, avatar nabzı yok.
-- Bu stile yasak hareket: yumuşak takip gecikmesi (60ms üstü), sürekli nabız atan avatar, blur geçişi, canlı düzenlemede kartın zıplaması.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f8f7fc` | `#14101f` |
-| `--surface` | `#ffffff` | `#221c33` |
-| `--ink` | `#1b1630` | `#f0ecfa` |
-| `--accent` | `#6d28d9` | `#b18cff` |
-| `--ink-soft` | `#514870` | `#b6adcc` |
-| `--line` | `rgba(27,22,48,.14)` | `rgba(240,236,250,.16)` |
-
-- Koyu modda değişen başka ne var: accent açılır (`#b18cff`, 7.33:1) ve dolgu üstü metin koyulaşır (`#150a24`); uzak seçim zemini %6 → %10 (koyu zeminde %6 okunmuyor); gölge görünmez olduğu için kart ayrımı 1px line'a biner.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark` ve `token-block.css` koyu bloğu birebir aynı).
 
 ## Zorunlu kurallar
 - Her çevrimiçi kişi görünür: 28px avatar + baş harf; yığın en fazla 4, fazlası `+3`.
@@ -205,14 +174,11 @@ Gerçek zamanlı ortak düzenleme (Google Docs, Figma) ve CRDT tabanlı çakış
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

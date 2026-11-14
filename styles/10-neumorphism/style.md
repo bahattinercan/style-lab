@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (kontrast) · **Erişilebilirlik** | **yüksek risk** |
 | **Aile** | Yüzey (08–12) · **Token** | `kit/tokens.css` → `[data-style="neumorphism"]` |
 | **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -153,44 +153,18 @@ Kazandığı şey: dokunsal, sakin bir "cihaz" hissi. Feda ettiği şey: erişil
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | Büyük başlık + tek kabartma kontrol kümesi (3–4 öğe); gerisi boşluk | `shots/01-landing.png` |
-| Dashboard | düşük | En fazla 6 kabartma kart; KPI metni `--ink`, grafik gömülü ray | `shots/02-dashboard.png` |
-| Form | düşük | Gömülü inputlar, tek sütun 480px; hata metinle bildirilir | — |
-| Liste / tablo | çok düşük | Gölge yerine boşluk + kalın sayı; tabloda neumorphism kullanma | — |
-| Boş durum | orta | Gömülü daire içinde ikon + tek cümle | — |
-| Onboarding | orta | Sayfa başına 1 kontrol seti; ilerleme gömülü segment | — |
-| Pricing | orta | 2–3 kabartma kart, orta kart accent halka | — |
-| Giriş / ödeme | çok düşük | Gömülü input + düz accent buton; güven için sade | — |
-| Modal | orta | 24px radius, büyük gölge, backdrop düz | — |
-| Bildirim / toast | orta | Kabartma pill, koyu metin | — |
-| Hata | düşük | `--danger` ikon + metin (kenarlık yok) | — |
-| Profil / ayar | orta | Ayar satırı 56px, gömülü toggle | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `ease-out` | dış gölge → iç gölge (geçişli) |
-| Giriş | 400ms | `ease-out` | `opacity` + 8px `translateY`, stagger 30ms |
-| Scroll (`top 88%`) | 500ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 200ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 300ms | `cubic-bezier(.34,1.4,.64,1)` | kabartma `scale(.98→1)` |
-
-- Hareketin işi **basılma** hissi; süs animasyonu yok.
-- `prefers-reduced-motion`: gölge geçişi anlık, süre 0.01ms.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` / `--surface` | `#e4e8ef` | `#23262e` |
-| `--bg-2` | `#dde2ea` | `#1c1f26` |
-| `--ink` | `#333a45` | `#e6e9ef` |
-| `--ink-soft` | `#5d6674` | `#a7aebc` |
-| gölge koyu | `#cfd4dd` | `#171a20` |
-| gölge açık | `#f8fbff` | `#2f333c` |
-
-- Koyu modda gölge renkleri **ters** türetilir (koyu gölge zeminin altı, açık highlight üstü); `--shadow` değerleri elle yazılır.
+| Landing / hero | orta | Büyük başlık + tek kabartma kontrol kümesi (3–4 öğe); gerisi boşluk | `shots/01-page.png` |
+| Dashboard | düşük | En fazla 6 kabartma kart; KPI metni `--ink`, grafik gömülü ray | `shots/01-page.png` |
+| Form | düşük | Gömülü inputlar, tek sütun 480px; hata metinle bildirilir | `shots/01-page.png` |
+| Liste / tablo | çok düşük | Gölge yerine boşluk + kalın sayı; tabloda neumorphism kullanma | `shots/01-page.png` |
+| Boş durum | orta | Gömülü daire içinde ikon + tek cümle | `shots/01-page.png` |
+| Onboarding | orta | Sayfa başına 1 kontrol seti; ilerleme gömülü segment | `shots/01-page.png` |
+| Pricing | orta | 2–3 kabartma kart, orta kart accent halka | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Gömülü input + düz accent buton; güven için sade | `shots/01-page.png` |
+| Modal | orta | 24px radius, büyük gölge, backdrop düz | `shots/01-page.png` |
+| Bildirim / toast | orta | Kabartma pill, koyu metin | `shots/01-page.png` |
+| Hata | düşük | `--danger` ikon + metin (kenarlık yok) | `shots/01-page.png` |
+| Profil / ayar | orta | Ayar satırı 56px, gömülü toggle | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -203,14 +177,11 @@ Kazandığı şey: dokunsal, sakin bir "cihaz" hissi. Feda ettiği şey: erişil
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

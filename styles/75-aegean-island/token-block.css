@@ -33,16 +33,3 @@
   --ok: #1b6146;
   --warn: #7a5510;
 }
-
-[data-theme="dark"][data-style="aegean-island"] {
-  --bg: #0c1418;
-  --bg-2: #101a1f;
-  --surface: #131f25;
-  --surface-2: #1a282f;
-  --ink: #e9f2f4;
-  --ink-soft: #a6b6bc;
-  --ink-faint: #71848b;
-  --accent: #4fb8d4;
-  --accent-ink: #04181f;
-  --line: rgba(233,242,244,.16);
-}

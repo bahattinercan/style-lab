@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (kontrast + performans) |
 | **Aile** | Yüzey (08–12) · **Token** | `kit/tokens.css` → `[data-style="glassmorphism"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -156,50 +156,18 @@ Windows Vista/7 Aero ve macOS'un materyal dilinden miras; 2020'de "glassmorphism
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Zemin: 3 blob gradient; nav cam; hero'da tek cam kart içinde 3 satır mini UI | `shots/01-landing.png` |
-| Dashboard | düşük | Cam yalnızca sidebar + topbar; KPI kartları opak `--surface-2` değil, cam ama blur 18px sabit | `shots/02-dashboard.png` |
-| Form | çok düşük | Cam panel içinde tek sütun 480px; input cam, odak halkası accent | — |
-| Liste / tablo | düşük | Tek cam panel; satır ayrımı 1px beyaz %12; zebra yok | — |
-| Boş durum | orta | Cam kart + tek cümle + accent buton; illüstrasyon yerine blob | — |
-| Onboarding | yüksek | Sayfa başına tek cam kart, arkasında değişen blob; 3 adım | — |
-| Pricing | orta | 3 cam kolon, orta kolon accent kenar + "önerilen" chip | — |
-| Giriş / ödeme | çok düşük | Cam kart 420px, arkada sade gradient; 2 alan + 1 buton | — |
-| Modal | orta | Cam sheet, üst köşe 24px, backdrop blur 4px | — |
-| Bildirim / toast | orta | Sağ üst cam pill, 4sn, ikon + metin | — |
-| Hata | düşük | Cam panel içinde `--danger` kenarlı input + 12px açıklama | — |
-| Profil / ayar | orta | Cam sidebar + cam içerik; iki cam yüzey sınırı | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 140ms | `cubic-bezier(.34,1.4,.64,1)` | `transform: scale(.98)` |
-| Giriş | 700ms | `power3.out` | `opacity` + 20px `translateY`, stagger 50ms |
-| Scroll (`top 80%`) | 850ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 260ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül / vurgu | 400ms | `ease-in-out` | accent halka `opacity` 0→1 |
-
-- `backdrop-filter`'ı sürekli animasyonla değiştirme (mobilde kare düşürür); iki statik değer arasında `opacity` ile geçiş hissi ver.
-- `prefers-reduced-motion`: yay eğrisi `ease-out`a düşer, süreler 0.01ms.
-- `prefers-reduced-transparency`: `--blur: 0`, `--surface: var(--bg-2)` (tokens.css'te tanımlı).
-
-## Koyu mod
-
-Bu stil **koyu tabanlı**; koyu mod zaten ana mod. Açık tema gerekiyorsa:
-
-| Token | Koyu (varsayılan) | Açık varyant |
-|---|---|---|
-| `--bg` | `#1b1035` | `#eef2ff` |
-| `--surface` | `rgba(255,255,255,.12)` | `rgba(255,255,255,.55)` |
-| `--surface-2` | `rgba(255,255,255,.07)` | `rgba(255,255,255,.38)` |
-| `--ink` | `#ffffff` | `#141a2b` |
-| `--ink-soft` | `rgba(255,255,255,.78)` | `rgba(20,26,43,.72)` |
-| `--line` | `rgba(255,255,255,.24)` | `rgba(20,26,43,.14)` |
-| `--accent` | `#7dd3fc` | `#1d4ed8` |
-| `--accent-ink` | `#06222e` | `#ffffff` |
-
-- Açık varyantta cam **daha opak** olmalı (%55): beyaz üstünde %12 beyaz görünmez.
-- `filter: invert()` yasak; cam yüzeyde invert renkleri zehirler.
+| Landing / hero | yüksek | Zemin: 3 blob gradient; nav cam; hero'da tek cam kart içinde 3 satır mini UI | `shots/01-page.png` |
+| Dashboard | düşük | Cam yalnızca sidebar + topbar; KPI kartları opak `--surface-2` değil, cam ama blur 18px sabit | `shots/01-page.png` |
+| Form | çok düşük | Cam panel içinde tek sütun 480px; input cam, odak halkası accent | `shots/01-page.png` |
+| Liste / tablo | düşük | Tek cam panel; satır ayrımı 1px beyaz %12; zebra yok | `shots/01-page.png` |
+| Boş durum | orta | Cam kart + tek cümle + accent buton; illüstrasyon yerine blob | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına tek cam kart, arkasında değişen blob; 3 adım | `shots/01-page.png` |
+| Pricing | orta | 3 cam kolon, orta kolon accent kenar + "önerilen" chip | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Cam kart 420px, arkada sade gradient; 2 alan + 1 buton | `shots/01-page.png` |
+| Modal | orta | Cam sheet, üst köşe 24px, backdrop blur 4px | `shots/01-page.png` |
+| Bildirim / toast | orta | Sağ üst cam pill, 4sn, ikon + metin | `shots/01-page.png` |
+| Hata | düşük | Cam panel içinde `--danger` kenarlı input + 12px açıklama | `shots/01-page.png` |
+| Profil / ayar | orta | Cam sidebar + cam içerik; iki cam yüzey sınırı | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -213,14 +181,11 @@ Bu stil **koyu tabanlı**; koyu mod zaten ana mod. Açık tema gerekiyorsa:
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

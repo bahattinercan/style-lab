@@ -5,7 +5,6 @@
       "num": "01",
       "slug": "minimalism",
       "name": "Minimalism",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -17,7 +16,6 @@
       "num": "02",
       "slug": "swiss-design",
       "name": "Swiss Design",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -29,7 +27,6 @@
       "num": "03",
       "slug": "editorial-design",
       "name": "Editorial Design",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -41,7 +38,6 @@
       "num": "04",
       "slug": "luxury-typography",
       "name": "Luxury Typography",
-      "dark": true,
       "tokens": 21,
       "files": {
         "css": "tokens.all.css",
@@ -53,7 +49,6 @@
       "num": "05",
       "slug": "bento-grid",
       "name": "Bento Grid",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -65,7 +60,6 @@
       "num": "06",
       "slug": "japandi",
       "name": "Japandi",
-      "dark": true,
       "tokens": 21,
       "files": {
         "css": "tokens.all.css",
@@ -77,7 +71,6 @@
       "num": "07",
       "slug": "wabi-sabi",
       "name": "Wabi-Sabi",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -89,7 +82,6 @@
       "num": "08",
       "slug": "glassmorphism",
       "name": "Glassmorphism",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -101,7 +93,6 @@
       "num": "09",
       "slug": "liquid-glass",
       "name": "Liquid Glass",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -113,7 +104,6 @@
       "num": "10",
       "slug": "neumorphism",
       "name": "Neumorphism",
-      "dark": true,
       "tokens": 21,
       "files": {
         "css": "tokens.all.css",
@@ -125,7 +115,6 @@
       "num": "11",
       "slug": "claymorphism",
       "name": "Claymorphism",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -137,7 +126,6 @@
       "num": "12",
       "slug": "aurora-ui",
       "name": "Aurora UI",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -149,7 +137,6 @@
       "num": "13",
       "slug": "neo-brutalism",
       "name": "Neo-Brutalism",
-      "dark": true,
       "tokens": 21,
       "files": {
         "css": "tokens.all.css",
@@ -161,7 +148,6 @@
       "num": "14",
       "slug": "anti-design",
       "name": "Anti-Design",
-      "dark": true,
       "tokens": 21,
       "files": {
         "css": "tokens.all.css",
@@ -173,7 +159,6 @@
       "num": "15",
       "slug": "acid-graphics",
       "name": "Acid Graphics",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -185,7 +170,6 @@
       "num": "16",
       "slug": "memphis",
       "name": "Memphis",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -197,7 +181,6 @@
       "num": "17",
       "slug": "maximalism",
       "name": "Maximalism",
-      "dark": true,
       "tokens": 21,
       "files": {
         "css": "tokens.all.css",
@@ -209,7 +192,6 @@
       "num": "18",
       "slug": "dopamine-ui",
       "name": "Dopamine UI",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -221,7 +203,6 @@
       "num": "19",
       "slug": "y2k",
       "name": "Y2K",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -233,7 +214,6 @@
       "num": "20",
       "slug": "vaporwave",
       "name": "Vaporwave",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -245,7 +225,6 @@
       "num": "21",
       "slug": "synthwave",
       "name": "Synthwave",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -257,7 +236,6 @@
       "num": "22",
       "slug": "cyberpunk",
       "name": "Cyberpunk",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -269,7 +247,6 @@
       "num": "23",
       "slug": "cybercore",
       "name": "Cybercore",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -281,7 +258,6 @@
       "num": "24",
       "slug": "pixel-art",
       "name": "Pixel Art",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -293,7 +269,6 @@
       "num": "25",
       "slug": "frutiger-aero",
       "name": "Frutiger Aero",
-      "dark": true,
       "tokens": 21,
       "files": {
         "css": "tokens.all.css",
@@ -305,7 +280,6 @@
       "num": "26",
       "slug": "art-deco",
       "name": "Art Deco",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -317,7 +291,6 @@
       "num": "27",
       "slug": "victorian",
       "name": "Victorian",
-      "dark": true,
       "tokens": 21,
       "files": {
         "css": "tokens.all.css",
@@ -329,7 +302,6 @@
       "num": "28",
       "slug": "surrealism",
       "name": "Surrealism",
-      "dark": true,
       "tokens": 21,
       "files": {
         "css": "tokens.all.css",
@@ -341,7 +313,6 @@
       "num": "29",
       "slug": "ethereal",
       "name": "Ethereal",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -353,7 +324,6 @@
       "num": "30",
       "slug": "bohemian",
       "name": "Bohemian",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -365,7 +335,6 @@
       "num": "31",
       "slug": "scrapbook",
       "name": "Scrapbook",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -377,7 +346,6 @@
       "num": "32",
       "slug": "conceptual-sketch",
       "name": "Conceptual Sketch",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -389,7 +357,6 @@
       "num": "33",
       "slug": "dark-academia",
       "name": "Dark Academia",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -401,7 +368,6 @@
       "num": "34",
       "slug": "skeuomorphism",
       "name": "Skeuomorphism",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -413,7 +379,6 @@
       "num": "35",
       "slug": "bauhaus",
       "name": "Bauhaus",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -425,7 +390,6 @@
       "num": "36",
       "slug": "constructivism",
       "name": "Constructivism",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -437,7 +401,6 @@
       "num": "37",
       "slug": "kinetic-type",
       "name": "Kinetic Type",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -449,7 +412,6 @@
       "num": "38",
       "slug": "organic-bio",
       "name": "Organic / Biophilic",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -461,7 +423,6 @@
       "num": "39",
       "slug": "ai-native-mesh",
       "name": "AI-native Mesh",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -473,7 +434,6 @@
       "num": "40",
       "slug": "scandinavian-dark",
       "name": "Scandinavian Dark",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -485,7 +445,6 @@
       "num": "41",
       "slug": "grand-tourer",
       "name": "Grand Tourer",
-      "dark": true,
       "tokens": 28,
       "files": {
         "css": "tokens.all.css",
@@ -497,7 +456,6 @@
       "num": "42",
       "slug": "grand-tourer-oxblood",
       "name": "Grand Tourer Oxblood",
-      "dark": true,
       "tokens": 28,
       "files": {
         "css": "tokens.all.css",
@@ -509,7 +467,6 @@
       "num": "43",
       "slug": "grand-tourer-midnight",
       "name": "Grand Tourer Midnight",
-      "dark": true,
       "tokens": 28,
       "files": {
         "css": "tokens.all.css",
@@ -521,7 +478,6 @@
       "num": "44",
       "slug": "utility",
       "name": "Utility",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -533,7 +489,6 @@
       "num": "45",
       "slug": "terminal-ui",
       "name": "Terminal UI",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -545,7 +500,6 @@
       "num": "46",
       "slug": "telemetry-grid",
       "name": "Telemetry Grid",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -557,7 +511,6 @@
       "num": "47",
       "slug": "trading-desk",
       "name": "Trading Desk",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -569,7 +522,6 @@
       "num": "48",
       "slug": "executive-kpi",
       "name": "Executive KPI",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -581,7 +533,6 @@
       "num": "49",
       "slug": "log-stream",
       "name": "Log Stream",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -593,7 +544,6 @@
       "num": "50",
       "slug": "lab-instrument",
       "name": "Lab Instrument",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -605,7 +555,6 @@
       "num": "51",
       "slug": "atlas-console",
       "name": "Atlas Console",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -617,7 +566,6 @@
       "num": "52",
       "slug": "experiment-split",
       "name": "Experiment Split",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -629,7 +577,6 @@
       "num": "53",
       "slug": "ledger-meter",
       "name": "Ledger Meter",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -641,7 +588,6 @@
       "num": "54",
       "slug": "vitals-triage",
       "name": "Vitals Triage",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -653,7 +599,6 @@
       "num": "55",
       "slug": "fleet-telemetry",
       "name": "Fleet Telemetry",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -665,7 +610,6 @@
       "num": "56",
       "slug": "blueprint-drawing",
       "name": "Blueprint Çizimi",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -677,7 +621,6 @@
       "num": "57",
       "slug": "machined-metal-panel",
       "name": "İşlenmiş Metal Panel",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -689,7 +632,6 @@
       "num": "58",
       "slug": "safety-signage",
       "name": "Güvenlik Tabelası",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -701,7 +643,6 @@
       "num": "59",
       "slug": "mes-production-line",
       "name": "Üretim Hattı · MES",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -713,7 +654,6 @@
       "num": "60",
       "slug": "energy-grid",
       "name": "Enerji Şebekesi",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -725,7 +665,6 @@
       "num": "61",
       "slug": "calibration-lab",
       "name": "Calibration Lab",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -737,7 +676,6 @@
       "num": "62",
       "slug": "warehouse-flow",
       "name": "Warehouse Flow",
-      "dark": true,
       "tokens": 25,
       "files": {
         "css": "tokens.all.css",
@@ -749,7 +687,6 @@
       "num": "63",
       "slug": "maintenance-cmms",
       "name": "Maintenance CMMS",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -761,7 +698,6 @@
       "num": "64",
       "slug": "construction-site",
       "name": "Construction Site",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -773,7 +709,6 @@
       "num": "65",
       "slug": "cockpit-avionics",
       "name": "Cockpit Avionics",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -785,7 +720,6 @@
       "num": "66",
       "slug": "nordic-folk",
       "name": "Nordic Folk",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -797,7 +731,6 @@
       "num": "67",
       "slug": "japanese-ma",
       "name": "Japanese Ma",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -809,7 +742,6 @@
       "num": "68",
       "slug": "levant-calligraphy",
       "name": "Levant Calligraphy",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -821,7 +753,6 @@
       "num": "69",
       "slug": "andalusian-azulejo",
       "name": "Andalusian Azulejo",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -833,7 +764,6 @@
       "num": "70",
       "slug": "slavic-late-brutalist",
       "name": "Slavic Late Brutalist",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -845,7 +775,6 @@
       "num": "71",
       "slug": "west-african-pattern",
       "name": "West African Pattern",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -857,7 +786,6 @@
       "num": "72",
       "slug": "andean-textile",
       "name": "Andean Textile",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -869,7 +797,6 @@
       "num": "73",
       "slug": "indian-block-print",
       "name": "Indian Block Print",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -881,7 +808,6 @@
       "num": "74",
       "slug": "persian-miniature",
       "name": "Persian Miniature",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -893,7 +819,6 @@
       "num": "75",
       "slug": "aegean-island",
       "name": "Aegean Island",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -905,7 +830,6 @@
       "num": "76",
       "slug": "biophilic-botanical",
       "name": "Biyofilik Botanik",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -917,7 +841,6 @@
       "num": "77",
       "slug": "weather-atmosphere",
       "name": "Hava Durumu & Atmosfer",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -929,7 +852,6 @@
       "num": "78",
       "slug": "topographic-terrain",
       "name": "Topografya & Arazi",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -941,7 +863,6 @@
       "num": "79",
       "slug": "ocean-current",
       "name": "Deniz & Akıntı",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -953,7 +874,6 @@
       "num": "80",
       "slug": "seasonal-shift",
       "name": "Mevsim Geçişi",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -965,7 +885,6 @@
       "num": "81",
       "slug": "forest-bark",
       "name": "Forest Bark",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -977,7 +896,6 @@
       "num": "82",
       "slug": "desert-sand",
       "name": "Desert Sand",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -989,7 +907,6 @@
       "num": "83",
       "slug": "polar-ice",
       "name": "Polar Ice",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1001,7 +918,6 @@
       "num": "84",
       "slug": "volcanic-mineral",
       "name": "Volcanic Mineral",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1013,7 +929,6 @@
       "num": "85",
       "slug": "coral-reef",
       "name": "Coral Reef",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1025,7 +940,6 @@
       "num": "86",
       "slug": "literary-hardcover",
       "name": "Literary Hardcover",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1037,7 +951,6 @@
       "num": "87",
       "slug": "broadsheet-daily",
       "name": "Broadsheet Daily",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1049,7 +962,6 @@
       "num": "88",
       "slug": "magazine-feature",
       "name": "Magazine Feature",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1061,7 +973,6 @@
       "num": "89",
       "slug": "academic-paper",
       "name": "Academic Paper",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1073,7 +984,6 @@
       "num": "90",
       "slug": "poetry-chapbook",
       "name": "Poetry Chapbook",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1085,7 +995,6 @@
       "num": "91",
       "slug": "product-catalog",
       "name": "Product Catalog",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1097,7 +1006,6 @@
       "num": "92",
       "slug": "museum-thesis",
       "name": "Museum & Thesis",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1109,7 +1017,6 @@
       "num": "93",
       "slug": "type-experiment",
       "name": "Type Experiment",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1121,7 +1028,6 @@
       "num": "94",
       "slug": "encyclopedia",
       "name": "Encyclopedia",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1133,7 +1039,6 @@
       "num": "95",
       "slug": "punk-fanzine",
       "name": "Punk Fanzine",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1145,7 +1050,6 @@
       "num": "96",
       "slug": "kinetic-marquee",
       "name": "Kinetic Marquee",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1157,7 +1061,6 @@
       "num": "97",
       "slug": "optical-illusion",
       "name": "Optical Illusion",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1169,7 +1072,6 @@
       "num": "98",
       "slug": "generative-grid",
       "name": "Generative Grid",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1181,7 +1083,6 @@
       "num": "99",
       "slug": "depth-parallax",
       "name": "Depth Parallax",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1193,7 +1094,6 @@
       "num": "100",
       "slug": "fluid-simulation",
       "name": "Fluid Simulation",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1205,7 +1105,6 @@
       "num": "101",
       "slug": "shadow-stage",
       "name": "Shadow Stage",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1217,7 +1116,6 @@
       "num": "102",
       "slug": "moire-field",
       "name": "Moiré Field",
-      "dark": true,
       "tokens": 25,
       "files": {
         "css": "tokens.all.css",
@@ -1229,7 +1127,6 @@
       "num": "103",
       "slug": "motion-trail",
       "name": "Motion Trail",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1241,7 +1138,6 @@
       "num": "104",
       "slug": "stepped-mechanism",
       "name": "Stepped Mechanism",
-      "dark": true,
       "tokens": 25,
       "files": {
         "css": "tokens.all.css",
@@ -1253,7 +1149,6 @@
       "num": "105",
       "slug": "holographic-layer",
       "name": "Holographic Layer",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1265,7 +1160,6 @@
       "num": "106",
       "slug": "voice-first",
       "name": "Ses-Öncelikli",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1277,7 +1171,6 @@
       "num": "107",
       "slug": "spatial-ar-layer",
       "name": "Uzamsal AR Katman",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1289,7 +1182,6 @@
       "num": "108",
       "slug": "command-palette",
       "name": "Komut Paleti",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1301,7 +1193,6 @@
       "num": "109",
       "slug": "timeline-editor",
       "name": "Zaman Çizelgesi Editörü",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1313,7 +1204,6 @@
       "num": "110",
       "slug": "kanban-flow",
       "name": "Kanban Akışı",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1325,7 +1215,6 @@
       "num": "111",
       "slug": "step-wizard",
       "name": "Adım Sihirbazı",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1337,7 +1226,6 @@
       "num": "112",
       "slug": "zero-ui",
       "name": "Sıfır Arayüz",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1349,7 +1237,6 @@
       "num": "113",
       "slug": "notebook-repl",
       "name": "Notebook / REPL",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1361,7 +1248,6 @@
       "num": "114",
       "slug": "multiplayer-presence",
       "name": "Eşzamanlı İşbirlikçi",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1373,7 +1259,6 @@
       "num": "115",
       "slug": "keyboard-first",
       "name": "Klavye-Öncelikli Komut Arayüzü",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1385,7 +1270,6 @@
       "num": "116",
       "slug": "kids-playground",
       "name": "Kids Playground",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1397,7 +1281,6 @@
       "num": "117",
       "slug": "carnival-festival",
       "name": "Carnival Festival",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1409,7 +1292,6 @@
       "num": "118",
       "slug": "sticker-sheet",
       "name": "Sticker Sheet",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1421,7 +1303,6 @@
       "num": "119",
       "slug": "arcade-8bit",
       "name": "Arcade 8-bit",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1433,7 +1314,6 @@
       "num": "120",
       "slug": "craft-handmade",
       "name": "Craft Handmade",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1445,7 +1325,6 @@
       "num": "121",
       "slug": "celebration-card",
       "name": "Celebration Card",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1457,7 +1336,6 @@
       "num": "122",
       "slug": "collectible-card",
       "name": "Collectible Card",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1469,7 +1347,6 @@
       "num": "123",
       "slug": "comic-story",
       "name": "Comic Story",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1481,7 +1358,6 @@
       "num": "124",
       "slug": "album-sleeve",
       "name": "Album Sleeve",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1493,7 +1369,6 @@
       "num": "125",
       "slug": "sports-energy",
       "name": "Sports Energy",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1505,7 +1380,6 @@
       "num": "126",
       "slug": "marble-vein",
       "name": "Marble Vein",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1517,7 +1391,6 @@
       "num": "127",
       "slug": "silk-drape",
       "name": "Silk Drape",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1529,7 +1402,6 @@
       "num": "128",
       "slug": "brass-copper",
       "name": "Brass Copper",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1541,7 +1413,6 @@
       "num": "129",
       "slug": "porcelain-glaze",
       "name": "Porcelain Glaze",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1553,7 +1424,6 @@
       "num": "130",
       "slug": "leather-craft",
       "name": "Leather Craft",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1565,7 +1435,6 @@
       "num": "131",
       "slug": "optic-prism",
       "name": "Optic Prism",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1577,7 +1446,6 @@
       "num": "132",
       "slug": "wood-joinery",
       "name": "Wood Joinery",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1589,7 +1457,6 @@
       "num": "133",
       "slug": "letterpress-print",
       "name": "Letterpress Print",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1601,7 +1468,6 @@
       "num": "134",
       "slug": "concrete-monolith",
       "name": "Concrete Monolith",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1613,7 +1479,6 @@
       "num": "135",
       "slug": "enamel-porcelain",
       "name": "Enamel Porcelain",
-      "dark": true,
       "tokens": 20,
       "files": {
         "css": "tokens.all.css",
@@ -1625,7 +1490,6 @@
       "num": "136",
       "slug": "speculative-scifi",
       "name": "Spekülatif Bilim-Kurgu",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1637,7 +1501,6 @@
       "num": "137",
       "slug": "volumetric-data",
       "name": "Hologram & Uzamsal Veri",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1649,7 +1512,6 @@
       "num": "138",
       "slug": "agent-orchestration",
       "name": "AI-native Ajan Arayüzü",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1661,7 +1523,6 @@
       "num": "139",
       "slug": "bio-synthetic",
       "name": "Biyo & Sentetik",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1673,7 +1534,6 @@
       "num": "140",
       "slug": "nanotech",
       "name": "Nanoteknik",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1685,7 +1545,6 @@
       "num": "141",
       "slug": "planetary-service",
       "name": "Planetary Service",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1697,7 +1556,6 @@
       "num": "142",
       "slug": "quantum-lab",
       "name": "Quantum Lab",
-      "dark": true,
       "tokens": 25,
       "files": {
         "css": "tokens.all.css",
@@ -1709,7 +1567,6 @@
       "num": "143",
       "slug": "retro-future",
       "name": "Retro Future",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1721,7 +1578,6 @@
       "num": "144",
       "slug": "virtual-engine",
       "name": "Virtual Engine",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1733,7 +1589,6 @@
       "num": "145",
       "slug": "zero-gravity",
       "name": "Zero Gravity",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1745,7 +1600,6 @@
       "num": "146",
       "slug": "noir-estate",
       "name": "Noir Estate",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1757,7 +1611,6 @@
       "num": "147",
       "slug": "agency-portfolio",
       "name": "Agency Portfolio",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1769,7 +1622,6 @@
       "num": "148",
       "slug": "product-launch",
       "name": "Product Launch",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1781,7 +1633,6 @@
       "num": "149",
       "slug": "boutique-hotel",
       "name": "Boutique Hotel",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1793,7 +1644,6 @@
       "num": "150",
       "slug": "lookbook-editorial",
       "name": "Lookbook Editorial",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1805,7 +1655,6 @@
       "num": "151",
       "slug": "dark-dashboard",
       "name": "Dark Dashboard",
-      "dark": true,
       "tokens": 24,
       "files": {
         "css": "tokens.all.css",
@@ -1816,7 +1665,6 @@
   ],
   "counts": {
     "styles": 151,
-    "withDark": 151,
     "variables": 20
   }
 }

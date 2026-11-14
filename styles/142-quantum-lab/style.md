@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (orta ton zemin; en düşük etkileşimli çift 4.86:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `styles/142-quantum-lab/tokens.json` → `[data-style="quantum-lab"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,54 +139,20 @@ Kuantum bilişim laboratuvarları (kubit ölçüm kayıtları), deneysel fizik d
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | Sol daktilo başlık, sağda histogram paneli + bulut | `shots/01-landing.png` |
-| Dashboard | yüksek | Kubit ızgarası 8/4, sağda olasılık paneli | `shots/02-dashboard.png` |
-| Form | düşük | Ölçüm parametreleri: devre, atış sayısı, gürültü | — |
-| Liste / tablo | yüksek | 32px satır, olasılık sağa hizalı 3 hane | — |
-| Boş durum | orta | Boş histogram iskeleti + "ölçüm başlat" | — |
-| Onboarding | yüksek | 3 adım: devre → atış → sonuç | — |
-| Pricing | orta | Hesaplama kotaları tablosu; birimli değerler | — |
-| Giriş / ödeme | çok düşük | Tek panel, bulut yok, form odakta | — |
-| Modal | orta | Ölçüm detayı: histogram + toplam satırı | — |
-| Bildirim / toast | orta | "atış 1024 · sapma %0.8" mono | — |
-| Hata | düşük | `--danger` kenar + "gürültü eşiği aşıldı" | — |
-| Profil / ayar | orta | Gürültü modeli, atış sayısı, hane gösterimi | — |
+| Landing / hero | orta | Sol daktilo başlık, sağda histogram paneli + bulut | `shots/01-page.png` |
+| Dashboard | yüksek | Kubit ızgarası 8/4, sağda olasılık paneli | `shots/01-page.png` |
+| Form | düşük | Ölçüm parametreleri: devre, atış sayısı, gürültü | `shots/01-page.png` |
+| Liste / tablo | yüksek | 32px satır, olasılık sağa hizalı 3 hane | `shots/01-page.png` |
+| Boş durum | orta | Boş histogram iskeleti + "ölçüm başlat" | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: devre → atış → sonuç | `shots/01-page.png` |
+| Pricing | orta | Hesaplama kotaları tablosu; birimli değerler | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel, bulut yok, form odakta | `shots/01-page.png` |
+| Modal | orta | Ölçüm detayı: histogram + toplam satırı | `shots/01-page.png` |
+| Bildirim / toast | orta | "atış 1024 · sapma %0.8" mono | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + "gürültü eşiği aşıldı" | `shots/01-page.png` |
+| Profil / ayar | orta | Gürültü modeli, atış sayısı, hane gösterimi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.29s**, y **0px**, stagger **0.035** | `cubic-bezier(.5,.05,.3,1)` | `opacity` (dikey hareket yok) |
-| Scroll reveal | **0.35s**, trigger **top 89%**, y **8px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **kapalı** (ölçüm paneli sabitlenmez; veri kaymamalı) | — | — |
-| Hover | **105ms**, görsel scale **1.000** (yalnız kenarlık/zemin değişir) | `ease-out` | `background-color` |
-| Basma | 95ms | aynı eğri | `transform` (1px) |
-| Çubuk çizimi | 160ms | `linear` | `opacity` (yükseklik animasyonu yok) |
-
-- Bu stilin ölçülebilir imzası: `enter 0.29s / cubic-bezier(.5,.05,.3,1) / 0px / 0.035` + `scroll top 89% / 0.35s / 8px` + `pin kapalı` + `hover 105ms / 1.000`. `offsetY 0px` + `hover scale 1.000` ikilisi katalogda yalnız burada.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; bulut donar, çubuklar anında çizilir.
-- Bu stile yasak hareket: sürekli dönen faz animasyonu, yükseklik animasyonu, parallax, saniyede 1+ flaş.
-
-## Koyu mod
-
-| Token | Açık (tezgâh) | Koyu (gece ölçümü) |
-|---|---|---|
-| `--bg` | `#9b99a3` | `#191822` |
-| `--bg-2` | `#92909a` | `#1f1e29` |
-| `--surface` | `#a6a4ae` | `#26242f` |
-| `--surface-2` | `#86848e` | `#2e2c38` |
-| `--ink` | `#14121a` | `#ece9f2` |
-| `--ink-soft` | `#2f2c38` | `#b4b0c0` |
-| `--ink-faint` | `#4a4753` | `#8a8698` |
-| `--accent` | `#5b3fa8` | `#a48bff` |
-| `--accent-ink` | `#ffffff` | `#120a26` |
-| `--line` | `rgba(20,18,26,.24)` | `rgba(236,233,242,.17)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **14.65:1** · `ink-soft/bg` = **8.29:1** · `accent-ink/accent` = **7.03:1** · `ink-faint/bg` = **4.97:1**.
-- Koyu modda değişen başka ne var: accent açılır (mor → lavanta), ana kenarlık `--ink` kalır, bulut opaklığı %50 → %38.
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="quantum-lab"]`.
 
 ## Zorunlu kurallar
 - Her olasılık 3 hane + `%`; toplam satırı 100 ± 0.5 görünür.
@@ -215,14 +181,11 @@ Kuantum bilişim laboratuvarları (kubit ölçüm kayıtları), deneysel fizik d
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

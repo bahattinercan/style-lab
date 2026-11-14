@@ -97,16 +97,5 @@ body.scene-landing .hero-visual .visual-row:first-child { background: color-mix(
 body.scene-landing .hero-visual .visual-row .sq { width: 14px; height: 14px; border-radius: 3px; opacity: 1; background: color-mix(in srgb, var(--accent) 26%, transparent); }
 body.scene-landing .hero-visual .visual-row .num { font-size: 10px; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; }
 body.scene-landing .hero-visual .visual-card::after { content: 'komut paleti · 8 satır · esc ile kapanır'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; color: var(--ink-soft); padding: 10px 16px; border-top: 1px solid var(--line); background: var(--surface-2); }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 0; overflow: hidden; box-shadow: 0 24px 60px color-mix(in srgb, var(--ink) 32%, transparent); }
-body.scene-landing .hero-visual { min-height: 370px; }
-body.scene-landing .hero-visual .visual-card .bar { height: 52px; border-radius: 0; border: 0; border-bottom: 1px solid var(--line); background: var(--surface-2); }
-body.scene-landing .hero-visual .visual-card .bar.accent { width: 100%; background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, var(--surface-2)) 0 46%, var(--surface-2) 46%); }
-body.scene-landing .hero-visual .visual-card .bar.w70, body.scene-landing .hero-visual .visual-card .bar.w45 { display: none; }
-body.scene-landing .hero-visual .visual-rows { gap: 0; margin: 0; }
-body.scene-landing .hero-visual .visual-row { grid-template-columns: 18px 1fr auto; padding: 12px 16px; border-radius: 0; border-bottom: 1px solid var(--line); }
-body.scene-landing .hero-visual .visual-row:first-child { background: color-mix(in srgb, var(--accent) 10%, transparent); }
-body.scene-landing .hero-visual .visual-row .sq { width: 14px; height: 14px; border-radius: 3px; opacity: 1; background: color-mix(in srgb, var(--accent) 26%, transparent); }
-body.scene-landing .hero-visual .visual-row .num { font-size: 10px; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; }
-body.scene-landing .hero-visual .visual-card::after { content: 'komut paleti · 8 satır · esc ile kapanır'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; color: var(--ink-soft); padding: 10px 16px; border-top: 1px solid var(--line); background: var(--surface-2); }`,
-  },
+    },
 };

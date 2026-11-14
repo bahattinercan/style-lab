@@ -73,16 +73,10 @@ export const CONFIG = {
       background: color-mix(in srgb, var(--accent) 18%, transparent);
       border-radius: 62% 38% 55% 45% / 48% 55% 45% 52%;
       filter: blur(var(--blur));
-      animation: fluidDrift 24s ease-in-out infinite alternate;
     }
     .foot-demo::before {
       left: auto; right: -6%; top: 10%;
       border-radius: 45% 55% 38% 62% / 55% 42% 58% 45%;
-      animation-duration: 32s;
-    }
-    @keyframes fluidDrift {
-      from { border-radius: 62% 38% 55% 45% / 48% 55% 45% 52%; transform: translate3d(0,0,0) scale(1); }
-      to { border-radius: 44% 56% 40% 60% / 58% 44% 56% 42%; transform: translate3d(6%, 4%, 0) scale(1.06); }
     }
     .side, .art-toc {
       background-image: radial-gradient(120% 90% at 0% 50%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%);

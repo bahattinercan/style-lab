@@ -14,9 +14,3 @@
   --tracking: -0.01em; --blur: 0px; --grain: .03;
   --focus: #7c8a76;
 }
-
-[data-theme="dark"][data-style="japandi"] {
-  --bg: #17150f; --bg-2: #24211b; --surface: #221f18; --surface-2: #2a261e;
-  --ink: #ece5d8; --ink-soft: #b3aa9c; --ink-faint: #777369; --accent: #9fae97; --accent-ink: #17150f; --line: rgba(236,229,216,.14);
-  --focus: #9fae97;
-}

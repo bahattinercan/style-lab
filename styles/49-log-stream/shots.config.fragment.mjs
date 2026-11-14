@@ -107,9 +107,5 @@ export const CONFIG = {
       .visual-row:nth-child(3) .sq { background: var(--danger); }
       .visual-row .line { background: color-mix(in srgb, var(--ink) 22%, transparent); height: 3px; }
       .visual-row .num { font-size: 9px; color: var(--ink-soft); }`,
-  'dark-landing': `
-      /* koyu mod: log zemini koyulaşır, seviye noktaları parlar */
-      .hero-visual { background: color-mix(in srgb, var(--bg-2) 80%, var(--bg)); }
-      .visual-row .sq { box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 26%, transparent); }`,
   },
 };

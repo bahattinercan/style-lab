@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (kaosu kontrol etmek zor) · **Erişilebilirlik** | orta risk |
 | **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="wabi-sabi"]` |
 | **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -153,45 +153,18 @@ Japon çay seremonisi estetiği (侘寂): geçicilik, kusur, tamamlanmamışlık
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 48px serif başlık, daraltılmış metin kolonu, -0.7° görsel, tek pas buton | `shots/01-landing.png` |
-| Dashboard | düşük | Doku ve dönüklük minimum; hairline + serif başlık; sayılar mono | `shots/02-dashboard.png` |
-| Form | düşük | 480px, etiket 12px mono, alt kenar vurgulu input | — |
-| Liste / tablo | düşük | 52px satır, kesikli ayırıcı, dönme yok | — |
-| Boş durum | orta | Tek cümle + el yazısı not + tek buton | — |
-| Onboarding | yüksek | Sayfa başına 1 fikir; görsel eğik, metin düz | — |
-| Pricing | orta | 3 kart farklı yükseklikte (bilinçli), orta kart accent kenar | — |
-| Giriş / ödeme | çok düşük | Dönme ve doku kapatılır; güven için düz form | — |
-| Modal | orta | 18px radius, `--shadow-hard`, kâğıt zemin | — |
-| Bildirim / toast | orta | Koyu zemin + krem metin, 4px radius | — |
-| Hata | düşük | 13px sıcak dil + `--danger` alt kenar | — |
-| Profil / ayar | orta | 7/5 kolon, satır 56px, kesikli ayırıcı | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 140ms | `ease-out` | `opacity` |
-| Giriş | 750ms | `cubic-bezier(.3,.6,.3,1)` | `opacity` + 18px `translateY`, stagger 50ms |
-| Scroll (`top 78%`) | 950ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 260ms | aynı eğri | `transform: scale(1.015)` |
-| Ödül | 500ms | `ease-in-out` | dönüklük 0°→hedef (tek sefer) |
-
-- Yavaş, organik hareket; ani sıçrama yok. Dönüklük **animasyon döngüsünde değişmez**.
-- `prefers-reduced-motion`: 0.01ms, dönüklük statik kalır.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#ede6da` | `#1a1714` |
-| `--surface` | `#f6f1e6` | `#221e19` |
-| `--ink` | `#2a2724` | `#e8e0d3` |
-| `--ink-soft` | `#5f574d` | `#b0a495` |
-| `--line` | `rgba(42,39,36,.18)` | `rgba(232,224,211,.16)` |
-| `--accent` | `#a85831` | `#c9744a` |
-| `--accent-ink` | `#fff8ef` | `#1a1714` |
-
-- Koyu modda grain azaltılır (.04); doku koyu zeminde lekeye dönüşür.
+| Landing / hero | yüksek | 48px serif başlık, daraltılmış metin kolonu, -0.7° görsel, tek pas buton | `shots/01-page.png` |
+| Dashboard | düşük | Doku ve dönüklük minimum; hairline + serif başlık; sayılar mono | `shots/01-page.png` |
+| Form | düşük | 480px, etiket 12px mono, alt kenar vurgulu input | `shots/01-page.png` |
+| Liste / tablo | düşük | 52px satır, kesikli ayırıcı, dönme yok | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + el yazısı not + tek buton | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına 1 fikir; görsel eğik, metin düz | `shots/01-page.png` |
+| Pricing | orta | 3 kart farklı yükseklikte (bilinçli), orta kart accent kenar | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Dönme ve doku kapatılır; güven için düz form | `shots/01-page.png` |
+| Modal | orta | 18px radius, `--shadow-hard`, kâğıt zemin | `shots/01-page.png` |
+| Bildirim / toast | orta | Koyu zemin + krem metin, 4px radius | `shots/01-page.png` |
+| Hata | düşük | 13px sıcak dil + `--danger` alt kenar | `shots/01-page.png` |
+| Profil / ayar | orta | 7/5 kolon, satır 56px, kesikli ayırıcı | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -204,14 +177,11 @@ Japon çay seremonisi estetiği (侘寂): geçicilik, kusur, tamamlanmamışlık
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

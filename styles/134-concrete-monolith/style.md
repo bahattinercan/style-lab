@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | iyi |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="concrete-monolith"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,51 +144,20 @@ Kökeni 1950-70'lerin brutalist ve Tadao Ando tarzı dökme beton mimarisidir: k
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 56px majüskül başlık + 8/12 kütle bloğu (0 radius, 0 kenar) + kalıp izi | `shots/01-landing.png` |
-| Dashboard | orta | Rakam bandı 64px hücre, ton ayrımı, mono değer | `shots/02-dashboard.png` |
-| Form | düşük | 52px input, 0 radius, yalnız alt ton farkı | — |
-| Liste / tablo | orta | 56px satır, ton ayrımı (kenarlık yok) | — |
-| Boş durum | orta | Tek cümle + büyük harf etiket + CTA | — |
-| Onboarding | orta | Üç adım, her adımda tek kütle bloğu | — |
-| Pricing | orta | Üç kütle bloğu, kenarlık yok, ton farkı | — |
-| Giriş / ödeme | çok düşük | Tek kolon 380px, keskin form, mono toplam | — |
-| Modal | orta | 560px, 0 radius, yalnız ton + %55 backdrop | — |
-| Bildirim / toast | orta | Alt sol, 44px, ochre zemin + accent-ink | — |
-| Hata | düşük | Majüskül "HATA" + tek cümle + CTA | — |
-| Profil / ayar | orta | Künye 4/12 + form 8/12, ton ayrımı | — |
+| Landing / hero | orta | 56px majüskül başlık + 8/12 kütle bloğu (0 radius, 0 kenar) + kalıp izi | `shots/01-page.png` |
+| Dashboard | orta | Rakam bandı 64px hücre, ton ayrımı, mono değer | `shots/01-page.png` |
+| Form | düşük | 52px input, 0 radius, yalnız alt ton farkı | `shots/01-page.png` |
+| Liste / tablo | orta | 56px satır, ton ayrımı (kenarlık yok) | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + büyük harf etiket + CTA | `shots/01-page.png` |
+| Onboarding | orta | Üç adım, her adımda tek kütle bloğu | `shots/01-page.png` |
+| Pricing | orta | Üç kütle bloğu, kenarlık yok, ton farkı | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 380px, keskin form, mono toplam | `shots/01-page.png` |
+| Modal | orta | 560px, 0 radius, yalnız ton + %55 backdrop | `shots/01-page.png` |
+| Bildirim / toast | orta | Alt sol, 44px, ochre zemin + accent-ink | `shots/01-page.png` |
+| Hata | düşük | Majüskül "HATA" + tek cümle + CTA | `shots/01-page.png` |
+| Profil / ayar | orta | Künye 4/12 + form 8/12, ton ayrımı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 140ms | `cubic-bezier(.5,.02,.3,1)` | ton bir kademe koyulaşır (kayma yok) |
-| Giriş (enter) | 950ms | `cubic-bezier(.5,.02,.3,1)` | `opacity` + 32px `translateY`, stagger 80ms |
-| Scroll reveal | 1050ms | aynı eğri | `top 76%` tetikleyici, `opacity` + 28px `translateY`, `once: true` |
-| Pin / scrub | — | — | tek pin: scrub 1.15, +130%; mobilde kapalı |
-| Hover | 340ms | aynı eğri | `transform: scale(1.01)` |
-| Ödül / vurgu | 460ms | `cubic-bezier(.5,.02,.3,1)` | rakam bandı 0→1 opacity (tek atım) |
-
-- Süre bütçesi: enter 950ms ≤ 1200ms · scroll 1050ms ≤ 1200ms · stagger 80ms.
-- Tek pin sahnesi (kütle, scrub 1.15, +130%); sayfada ikinci scrub yok, mobilde statik.
-- Giriş 950ms: kütle "oturur" gibi; 1200ms bütçesinin altında kalır.
-- `prefers-reduced-motion`: süreler 0.01ms, pin kapalı, kalıp izi statik.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#dedcd6` | `#1b1c1d` |
-| `--surface` | `#eae8e3` | `#202223` |
-| `--ink` | `#14161a` | `#e8e7e3` |
-| `--accent` | `#7a5a17` | `#d9b463` |
-| `--line` | `rgba(20,22,26,.22)` | `rgba(232,231,227,.16)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 13.79:1 · `accent-ink / accent` = 9.29:1.
-- Koyu modda beton antrasite (`#1b1c1d`) döner; ochre açık kum tonuna (`#d9b463`) çekilir.
-- Kalıp izi koyuda %2'ye iner; kenarlık yine yok.
-- Rakam bandı koyuda `--surface-2` yerine `--surface` tonuna alınır.
 
 ## Zorunlu kurallar
 
@@ -221,14 +190,11 @@ Kökeni 1950-70'lerin brutalist ve Tadao Ando tarzı dökme beton mimarisidir: k
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

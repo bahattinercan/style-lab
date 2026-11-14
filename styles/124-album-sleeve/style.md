@@ -10,7 +10,7 @@
 | **Zorluk** | düşük–orta (oran ve sırt disiplini) · **Erişilebilirlik** | iyi (15.40:1 gövde, 4.66:1 accent üstü) |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="album-sleeve"]` |
 | **Kompozisyon** | `index` · `pill` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -143,56 +143,20 @@ Klişeye düşmemesi için korunması gereken detay: **sırt şeridi ve oran**. 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 66px Anton başlık + 1:1 kılıf + sırt şeridi + katalog kutusu | `shots/01-landing.png` |
-| Dashboard | orta | Son çalınanlar listesi + küçük kılıflar (1:1) | `shots/02-dashboard.png` |
-| Form | düşük | 44px alan, 0–2px radius, mono etiket | — |
-| Liste / tablo | yüksek | A/B parça listesi, süreler mono sağa dayalı | — |
-| Boş durum | orta | Boş kılıf çerçevesi (1:1) + tek cümle + 1 buton | — |
-| Onboarding | orta | 3 adım: sanatçı → albüm → çalma listesi | — |
-| Pricing | orta | 3 baskı (LP / CD / dijital); fiyat mono, sağa dayalı | — |
-| Giriş / ödeme | düşük | Süs yok; kılıf küçük, form önde | — |
-| Modal | orta | Büyük kapak + tam parça listesi, perde %55 | — |
-| Bildirim / toast | orta | Mono metin + 6px accent kare, 3200ms | — |
-| Hata | düşük | `--danger` kenar + mono açıklama; barkod/sırt yok | — |
-| Profil / ayar | orta | Diskografi ızgarası (1:1 kılıflar), mono etiketler | — |
+| Landing / hero | yüksek | 66px Anton başlık + 1:1 kılıf + sırt şeridi + katalog kutusu | `shots/01-page.png` |
+| Dashboard | orta | Son çalınanlar listesi + küçük kılıflar (1:1) | `shots/01-page.png` |
+| Form | düşük | 44px alan, 0–2px radius, mono etiket | `shots/01-page.png` |
+| Liste / tablo | yüksek | A/B parça listesi, süreler mono sağa dayalı | `shots/01-page.png` |
+| Boş durum | orta | Boş kılıf çerçevesi (1:1) + tek cümle + 1 buton | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: sanatçı → albüm → çalma listesi | `shots/01-page.png` |
+| Pricing | orta | 3 baskı (LP / CD / dijital); fiyat mono, sağa dayalı | `shots/01-page.png` |
+| Giriş / ödeme | düşük | Süs yok; kılıf küçük, form önde | `shots/01-page.png` |
+| Modal | orta | Büyük kapak + tam parça listesi, perde %55 | `shots/01-page.png` |
+| Bildirim / toast | orta | Mono metin + 6px accent kare, 3200ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + mono açıklama; barkod/sırt yok | `shots/01-page.png` |
+| Profil / ayar | orta | Diskografi ızgarası (1:1 kılıflar), mono etiketler | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 120ms | `ease-out` | `transform: translateY(1px)` |
-| Geçiş / sayfa | 380ms | `cubic-bezier(.4,.05,.2,1)` | `opacity` |
-| Giriş (enter) | **900ms** | `cubic-bezier(.4,.05,.2,1)` | `opacity` + `translateY(18px)`, **stagger 100ms** |
-| Kaydırma (scroll) | **950ms** | `cubic-bezier(.4,.05,.2,1)` | trigger **`top 80%`**, offsetY **24px**, `once: false` (her geçişte) |
-| Hover | **380ms** | `ease-out` | kapak ölçek **1.062** (en yüksek ölçek) |
-| Pin | **açık** | `scrub 0.7` | kılıf sabitlenir, mesafe **+110%** |
-| Ödül / vurgu | 620ms | `cubic-bezier(.4,.05,.2,1)` | çalan parça göstergesi 2px → 4px genişler |
-
-- İmza ölçüsü: enter **0.9s / 18px / stagger 0.1** · scroll **0.95s / `top 80%` / 24px / `once: false`** · hover **380ms / 1.062** · pin **açık (scrub 0.7 / +110%)** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; pin/scrub kapanır, kılıf statik kalır.
-- Bu stile yasak hareket: dönen plak, iğne animasyonu, parallax, sürekli döngü, spring/bounce.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#ecebe4` | `#0e0f11` |
-| `--bg-2` | `#e2e0d8` | `#141517` |
-| `--surface` | `#fbfaf5` | `#191a1d` |
-| `--surface-2` | `#e6e4da` | `#222327` |
-| `--ink` | `#131418` | `#eeede8` |
-| `--ink-soft` | `#45474e` | `#b3b2ab` |
-| `--ink-faint` | `#74767c` | `#888780` |
-| `--accent` | `#cf3b0c` | `#ff6a2c` |
-| `--accent-ink` | `#fff8f2` | `#140a05` |
-| `--line` | `rgba(19,20,24,.18)` | `rgba(238,237,232,.16)` |
-
-- Koyu mod **gece dinlemesi**: zemin `#0e0f11`, kılıf `#191a1d`; accent açılır (`#ff6a2c`) çünkü kiremit koyu zeminde sırt şeridiyle karışır.
-- Sırt şeridi koyuda `--ink` (krem) zemin + `--bg` metin olur — şerit görünürlüğü korunur, renk ters çevrilir (invert değil, token).
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **16.36:1** · `ink-soft/bg` = **9.02:1** · `accent-ink/accent` = **6.83:1** · `ink-faint/bg` = **5.32:1**.
 
 ## Zorunlu kurallar
 
@@ -223,14 +187,11 @@ Klişeye düşmemesi için korunması gereken detay: **sırt şeridi ve oran**. 
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

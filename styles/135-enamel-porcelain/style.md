@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | iyi |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="enamel-porcelain"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -145,51 +145,20 @@ Kökeni 19. yüzyıl emaye tabelaları, Limoges mine işi ve eczane/hastane emay
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 40px Poiret One başlık + 6/12 ürün kabı (6px radius, sır highlight) | `shots/01-landing.png` |
-| Dashboard | düşük | Ürün listesi: 3 kart, 1px koyu yeşil kontur | `shots/02-dashboard.png` |
-| Form | düşük | 48px input, 6px radius, 1px line | — |
-| Liste / tablo | düşük | 52px satır, 1px hairline, mono malzeme | — |
-| Boş durum | orta | "koleksiyon boş" + tek çizgi motif + CTA | — |
-| Onboarding | orta | İki adım: seç → tamamla | — |
-| Pricing | orta | İki koleksiyon; kart yerine koyu yeşil konturlu sütun | — |
-| Giriş / ödeme | çok düşük | Tek kolon 380px, mono özet | — |
-| Modal | orta | 480px, 12px radius, sır highlight, 2px gölge | — |
-| Bildirim / toast | orta | Alt orta, 42px, mine yeşili zemin + accent-ink | — |
-| Hata | düşük | Tek cümle + ikincil buton, kontur korunur | — |
-| Profil / ayar | orta | Koleksiyon tercihleri + mono ölçü | — |
+| Landing / hero | orta | 40px Poiret One başlık + 6/12 ürün kabı (6px radius, sır highlight) | `shots/01-page.png` |
+| Dashboard | düşük | Ürün listesi: 3 kart, 1px koyu yeşil kontur | `shots/01-page.png` |
+| Form | düşük | 48px input, 6px radius, 1px line | `shots/01-page.png` |
+| Liste / tablo | düşük | 52px satır, 1px hairline, mono malzeme | `shots/01-page.png` |
+| Boş durum | orta | "koleksiyon boş" + tek çizgi motif + CTA | `shots/01-page.png` |
+| Onboarding | orta | İki adım: seç → tamamla | `shots/01-page.png` |
+| Pricing | orta | İki koleksiyon; kart yerine koyu yeşil konturlu sütun | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 380px, mono özet | `shots/01-page.png` |
+| Modal | orta | 480px, 12px radius, sır highlight, 2px gölge | `shots/01-page.png` |
+| Bildirim / toast | orta | Alt orta, 42px, mine yeşili zemin + accent-ink | `shots/01-page.png` |
+| Hata | düşük | Tek cümle + ikincil buton, kontur korunur | `shots/01-page.png` |
+| Profil / ayar | orta | Koleksiyon tercihleri + mono ölçü | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 100ms | `cubic-bezier(.34,1.3,.64,1)` | `scale(.985)` + sır highlight kapanır |
-| Giriş (enter) | 440ms | `cubic-bezier(.34,1.3,.64,1)` | `opacity` + 10px `translateY`, stagger 50ms |
-| Scroll reveal | 500ms | aynı eğri | `top 87%` tetikleyici, `opacity` + 12px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 200ms | aynı eğri | `transform: scale(1.025)` |
-| Ödül / vurgu | 340ms | `cubic-bezier(.34,1.3,.64,1)` | koyu yeşil kontur 0→1 opacity (tek atım) |
-
-- Süre bütçesi: enter 440ms ≤ 1200ms · scroll 500ms ≤ 1200ms · stagger 50ms.
-- Hareket tok ve kısa: 0.44s giriş, 200ms hover; yay 1.3'te durur (2.0 üstü yasak).
-- Pin/parallax yok: ürün sabit; scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, highlight statik kalır.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f8f6f0` | `#101612` |
-| `--surface` | `#fffdf8` | `#141a16` |
-| `--ink` | `#131a18` | `#f0f4f1` |
-| `--accent` | `#17543f` | `#7fd2ae` |
-| `--line` | `rgba(19,26,24,.14)` | `rgba(240,244,241,.14)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 16.51:1 · `accent-ink / accent` = 10.64:1.
-- Koyu modda fildişi sır koyu mine zeminine (`#101612`) döner; aksan açık nane tonuna (`#7fd2ae`) çekilir.
-- Sır highlight koyuda %10 opaklık kazanır; 2px gölge kalır.
-- Radius ve kontur kalınlığı değişmez.
 
 ## Zorunlu kurallar
 
@@ -221,14 +190,11 @@ Kökeni 19. yüzyıl emaye tabelaları, Limoges mine işi ve eczane/hastane emay
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

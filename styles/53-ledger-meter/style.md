@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 7.50:1) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `styles/53-ledger-meter/tokens.json` → `[data-style="ledger-meter"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,54 +137,20 @@ Bedeli: bu stil yoğundur ve serif tek ağırlık olduğu için hiyerarşi punto
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Sol serif başlık + sağ fatura önizleme (kalem tablosu + çift kural toplam) | `shots/01-landing.png` |
-| Dashboard | yüksek | Üstte 3 özet kutusu (dönem, tutar, kota), altında kalem tablosu | `shots/02-dashboard.png` |
-| Form | düşük | Tutar alanları sağa hizalı mono; para birimi ayrı sütun | — |
-| Liste / tablo | yüksek | 34px satır, zebra, toplam satırı çift kural | — |
-| Boş durum | orta | "Bu dönem kullanım yok" + 0,00 satırı (tablo iskeleti korunur) | — |
-| Onboarding | yüksek | 3 adım: plan seç → limit belirle → ödeme yöntemi; her adımda tek tablo | — |
-| Pricing | orta | Plan karşılaştırma tablosu; fiyatlar sağa hizalı, öne çıkan plan çift kural | — |
-| Giriş / ödeme | çok düşük | Tek panel, solda özet (serif), sağda form; toplam satırı görünür | — |
-| Modal | orta | Fatura detayı: üstte dönem, altta kalemler, en altta çift kural toplam | — |
-| Bildirim / toast | orta | "Tahsil edildi · ₺1.240,00" mono tek satır | — |
-| Hata | düşük | Tutar alanında `--danger` kenar + "geçersiz tutar" yardım satırı | — |
-| Profil / ayar | orta | Ödeme yöntemi, fatura e-postası, limit uyarı eşiği | — |
+| Landing / hero | yüksek | Sol serif başlık + sağ fatura önizleme (kalem tablosu + çift kural toplam) | `shots/01-page.png` |
+| Dashboard | yüksek | Üstte 3 özet kutusu (dönem, tutar, kota), altında kalem tablosu | `shots/01-page.png` |
+| Form | düşük | Tutar alanları sağa hizalı mono; para birimi ayrı sütun | `shots/01-page.png` |
+| Liste / tablo | yüksek | 34px satır, zebra, toplam satırı çift kural | `shots/01-page.png` |
+| Boş durum | orta | "Bu dönem kullanım yok" + 0,00 satırı (tablo iskeleti korunur) | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: plan seç → limit belirle → ödeme yöntemi; her adımda tek tablo | `shots/01-page.png` |
+| Pricing | orta | Plan karşılaştırma tablosu; fiyatlar sağa hizalı, öne çıkan plan çift kural | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel, solda özet (serif), sağda form; toplam satırı görünür | `shots/01-page.png` |
+| Modal | orta | Fatura detayı: üstte dönem, altta kalemler, en altta çift kural toplam | `shots/01-page.png` |
+| Bildirim / toast | orta | "Tahsil edildi · ₺1.240,00" mono tek satır | `shots/01-page.png` |
+| Hata | düşük | Tutar alanında `--danger` kenar + "geçersiz tutar" yardım satırı | `shots/01-page.png` |
+| Profil / ayar | orta | Ödeme yöntemi, fatura e-postası, limit uyarı eşiği | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.66s**, y **20px**, stagger **0.09** | `cubic-bezier(.65,0,.35,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.72s**, trigger **top 82%**, y **26px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **1.35**, mesafe **+110%** (kalem tablosu sabitlenir) | scrub doğrusal | `transform` (tablo sabit, özet kayar) |
-| Hover | **110ms**, görsel scale **1.000** (görsel yok — satır zemini değişir) | `ease-out` | `background-color` |
-| Basma | 110ms | aynı eğri | `transform` (1px) |
-| Satır girişi | 200ms, 40ms arayla | aynı eğri | `opacity` |
-
-- Bu stilin ölçülebilir imzası: `enter 0.66s / cubic-bezier(.65,0,.35,1) / 20px / 0.09` + `scroll top 82% / 0.72s / 26px` + `pin scrub 1.35 / +110%` + `hover 110ms / 1.000`. Katalogda `scrub 1.35` yalnız bu stilde; `0.66s` giriş + `hover 1.000` birlikte başka stilde yok (48'in girişi 0.95s ve pini kapalı).
-- `prefers-reduced-motion`: tüm süreler 0.01ms; pin scrub kapanır, toplam satırı anında görünür; sayaç yok.
-- Bu stile yasak hareket: 0→tutar sayaç animasyonu, bounce, sürekli döngü, parallax, defter çizgisi kaydırma efekti.
-
-## Koyu mod
-
-| Token | Açık (kağıt) | Koyu (gece defteri) |
-|---|---|---|
-| `--bg` | `#faf7ee` | `#12110d` |
-| `--bg-2` | `#f2ecdc` | `#181712` |
-| `--surface` | `#fffdf6` | `#1d1b15` |
-| `--surface-2` | `#f6f0e1` | `#24221a` |
-| `--ink` | `#1c1913` | `#f1ebdc` |
-| `--ink-soft` | `#56503f` | `#bdb29b` |
-| `--ink-faint` | `#8a8068` | `#8d8571` |
-| `--accent` | `#22456b` | `#8fb3dd` |
-| `--accent-ink` | `#ffffff` | `#0b1119` |
-| `--line` | `rgba(28,25,19,.13)` | `rgba(241,235,220,.16)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **15.88:1** · `ink-soft/bg` = **9.00:1** · `accent-ink/accent` = **8.71:1** · `ink-faint/bg` = **5.15:1**.
-- Koyu modda değişen başka ne var: accent açılır (lacivert → buz mavisi), defter çizgisi opaklığı .13 → .16, doku aynı kalır ama daha az görünür.
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="ledger-meter"]`.
 
 ## Zorunlu kurallar
 - Tüm tutarlar sağa hizalı, `tabular-nums`, iki ondalık; para birimi ayrı sütunda.
@@ -215,14 +181,11 @@ Bedeli: bu stil yoğundur ve serif tek ağırlık olduğu için hiyerarşi punto
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 7.91:1) |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="brass-copper"]` |
 | **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Metal atölyesi ve gravür plaka geleneğinden: alaşım etiketi, bileşim yüzd
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 5/7 hero: solda gravür başlık + tek CTA, sağda pirinç yüzey | `shots/01-landing.png` |
-| Dashboard | orta | 3 KPI (alaşım, parti, ortalama ağırlık) + alaşım tablosu | `shots/02-dashboard.png` |
-| Form | orta | alaşım girişi: ad, bileşim %, ağırlık g, parti no | — |
-| Liste / tablo | yüksek | 36px satır, mono yüzde, chip | — |
-| Boş durum | düşük | "bu partide plaka yok" + yeni parti ekle | — |
-| Onboarding | orta | 3 adım: atölye → alaşım → yüzey işlemi | — |
-| Pricing | orta | iki plan, parti/alaşım limitleri | — |
-| Giriş / ödeme | düşük | tek plaka, 40px alanlar, tek eylem | — |
-| Modal | orta | gravür künye + alaşım tablosu | — |
-| Bildirim | orta | 36px toast, sol bakır şerit, 3.6sn | — |
-| Hata | düşük | danger çerçeve + neden + yeniden dene | — |
-| Profil / ayar | orta | atölye listesi, birim (g/ons), yüzey tercihi | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (plaka) | 920ms | `cubic-bezier(.52,.04,.3,1)` | `opacity` + `translateY(9px)`, 52ms arayla |
-| Scroll reveal | 790ms, `top 66%` | aynı | `translateY(7px)`, `once: true` |
-| Pin / scrub | 1.32 scrub, +175% mesafe | doğrusal | gravür plaka sabitlenir, künye katmanı kayar |
-| Basma | 130ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 195ms | aynı | `scale(1.009)` |
-| Kenar parlaması | 300ms | aynı | `box-shadow` iç çizgi opaklığı |
-
-- Ölçülen imza: enter **0.92s · cubic-bezier(.52,.04,.3,1) · 9px · stagger 0.052**; scroll **top 66% · 0.79s · 7px · once**; pin **açık · scrub 1.32 · +175%**; hover **195ms · 1.009**.
-- Ağır metal: yavaş kalkar, sert oturur; geri sekme yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin/scrub kapalı, kenar parlaması anında.
-- Bu stile yasak hareket: sürekli parıldayan metal, bounce, yatay parallax, gloss geçişi.
-
-## Koyu mod
-
-| Token | Açık (atölye) | Koyu (gece atölyesi) |
-|---|---|---|
-| `--bg` | `#1a1512` | `#0b0705` |
-| `--bg-2` | `#130f0d` | `#080403` |
-| `--surface` | `#221b16` | `#120d0a` |
-| `--surface-2` | `#2c231c` | `#1a1310` |
-| `--ink` | `#f0e7da` | `#f8f0e5` |
-| `--ink-soft` | `#bda892` | `#cdbba7` |
-| `--accent` | `#c9743c` | `#f0a062` |
-| `--accent-ink` | `#1a0d05` | `#1a0d05` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **17.76:1** · `ink-soft/bg` **10.76:1** · `accent-ink/accent` **8.98:1** · `ink-faint/bg` **5.80:1** · accent metin olarak bg'ye **9.47:1**.
-- Koyu modda değişen başka ne var: gece atölyesi için zemin bir ton daha derinleştirildi (`--bg` `#100c0a` → `#0b0705`) ve accent parlatıldı (`#dd8650` → `#f0a062`); böylece 17-dark-landing açık moddan ölçülebilir şekilde ayrışıyor (zemin farkı ΔRGB 16 → 24, accent farkı 34 → 70). Grain `.035` → `.05`, üst kenar iç parlaklığı `rgba(...,.10)` → `.06`, çizgi %15 → %18.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="brass-copper"]` olarak durur.
+| Landing / hero | yüksek | 5/7 hero: solda gravür başlık + tek CTA, sağda pirinç yüzey | `shots/01-page.png` |
+| Dashboard | orta | 3 KPI (alaşım, parti, ortalama ağırlık) + alaşım tablosu | `shots/01-page.png` |
+| Form | orta | alaşım girişi: ad, bileşim %, ağırlık g, parti no | `shots/01-page.png` |
+| Liste / tablo | yüksek | 36px satır, mono yüzde, chip | `shots/01-page.png` |
+| Boş durum | düşük | "bu partide plaka yok" + yeni parti ekle | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: atölye → alaşım → yüzey işlemi | `shots/01-page.png` |
+| Pricing | orta | iki plan, parti/alaşım limitleri | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek plaka, 40px alanlar, tek eylem | `shots/01-page.png` |
+| Modal | orta | gravür künye + alaşım tablosu | `shots/01-page.png` |
+| Bildirim | orta | 36px toast, sol bakır şerit, 3.6sn | `shots/01-page.png` |
+| Hata | düşük | danger çerçeve + neden + yeniden dene | `shots/01-page.png` |
+| Profil / ayar | orta | atölye listesi, birim (g/ons), yüzey tercihi | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her alaşım kaydı: alaşım + bileşim (%) + ağırlık (g) + parti no.
@@ -214,14 +181,11 @@ Metal atölyesi ve gravür plaka geleneğinden: alaşım etiketi, bileşim yüzd
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

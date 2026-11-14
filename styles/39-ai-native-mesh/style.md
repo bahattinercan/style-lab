@@ -10,7 +10,7 @@
 | **Zorluk** | orta (cam + mesh aynı ekranda iki "gösteri" öğesi; ikisini de sıraya sokmak gerekir) · **Erişilebilirlik** | iyi (17.75:1 gövde, 8.99:1 açıklama, 5.07:1 dekoratif etiket, 6.56:1 accent üstü — dört eşik de geçiyor) |
 | **Aile** | Yeni Dalga (39) · **Token** | `kit/tokens.css` → `[data-style="ai-native-mesh"]` |
 | **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -168,53 +168,25 @@ Klişeye düşmemesi için korunması gereken üç detay: **tek renk ailesi** (m
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 40px Geist 600, 7/5 asimetri, kahraman görselde mesh (opaklık .50), sayfada tek wash (.16); tek dolu CTA + tek ghost | `shots/01-landing.png` |
-| Dashboard | düşük | süs 0, mesh yalnız başlık bandında (.10); KPI sayısı display 700 + mono 8.5px etiket; cam panel ≤6, accent ≤%4 | `shots/02-dashboard.png` |
-| Mobil | orta | tek kolon, 28px başlık, 44px dokunma hedefi, cam yalnız tabbar + kartlar (blur ≤5) | — |
-| Bileşenler · temel | orta | palet + ölçek levhası; radius 14/22, cam ve mat yüzey yan yana görünür | — |
-| Form | çok düşük | tek sütun 460px, 46px input, odak 2px accent + 2px offset; cam tek kart, süs 0 | — |
-| Modal / katman | orta | cam %82 + blur 14px + gölge; sahne backdrop'ı `color-mix(bg 72%)`; başlık 26px; 2 buton sağa | — |
-| Veri | düşük | 52px satır, 1px alt çizgi, çubuk üst 2px; eksen mono 8px; satırlarda blur yok (toplam blur 10) | — |
-| Gezinme | orta | cam nav 72px + alt 1px kural, aktif 2px accent alt çizgi | — |
-| Pricing | orta | 3 cam kart (eşit), orta kart üst 2px accent; tek dolu CTA | — |
-| Giriş | çok düşük | sol aside mesh wash (.10), sağda tek cam kart; hata `--danger` 1px kenar; süs 0 | — |
-| Liste | düşük | filtre çubuğu 1px alt kural, 52px satır, seçili satır sol 2px accent | — |
-| Boş / hata durumu | orta | tek 1.5px ikon + tek cümle + tek buton; 404'te display 44px→64px büyütülür, mesh wash .10 | — |
-| Ayarlar | düşük | bölüm başlıkları mono etiket + 1px kural; anahtar 44×24; tehlike bölgesi `--danger` | — |
-| Ödeme | çok düşük | özet sütunu sağda cam kart, 46px input, hairline tablo; accent yalnız ödeme butonunda | — |
-| Onboarding | orta | adım göstergesi 2px çizgi, seçenek kartı cam + hairline, tek ileri CTA | — |
-| Makale | orta | 68ch ölçü, 26px H2, cam yalnız yan sütunda (İlgili/Bülten); gövde `--bg` üstünde, wash yok | — |
-| Mobil · alt sayfa | orta | üst köşe 22px, alt köşe 0, 44px sürükleme tutamacı (1px çizgi), cam %90 | — |
-| Mobil · form | çok düşük | tam genişlik 46px input, klavye üstü 44px CTA, etiket mono 11px | — |
-| Mobil · liste | düşük | 64px satır, 1px ayırıcı, avatar yerine 14px radius baş harf kutusu, satırda blur yok | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 140ms | `cubic-bezier(.22,.61,.36,1)` | `transform: translateY(1px)` + zemin bir kademe koyulaşır |
-| Geçiş / sayfa | 220ms | `cubic-bezier(.22,.61,.36,1)` | `opacity` + `translateY(6px)` |
-| Giriş (enter) | **750ms** | `cubic-bezier(.32,.72,0,1)` | `opacity` + `translateY(22px)` + `blur: 8px → 0`, **stagger 65ms** |
-| Kaydırma (scroll) | **850ms** | `cubic-bezier(.32,.72,0,1)` | trigger **`top 83%`**, offsetY **20px**, `once: true` |
-| Hover | **210ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | açık | `scrub 1.2` | hero sabitlenir, mesafe **+140%** |
-| Ödül / vurgu | 420ms | `cubic-bezier(.22,.61,.36,1)` | accent alt çizgi `scaleX(0 → 1)`, tek atım; mesh **hareket etmez** |
-
-- İmza ölçüsü: enter **0.75s / 22px / stagger 0.065** · scroll **0.85s / `top 83%` / 20px** · hover **210ms / 1.02** · pin **açık (scrub 1.2 / +140%)**.
-- `prefers-reduced-motion`: tüm süreler `0.01ms`, `transform` sıfırlanır, mesh sabit kalır, pin/scrub kapanır; basma geri bildirimi renk değişimiyle sürer.
-- Bu stile yasak hareket: gradyan kaydırma/döndürme, nefes alan (scale) katman, marquee, parallax, blur geçişi animasyonu, spring/overshoot, sürekli yanıp sönen "AI düşünüyor" noktası (3 nokta en fazla 2 tur döner, sonra durur).
-## Koyu mod
-
-| Token | Açık (yalnız referans, üretilmedi) | Koyu (sevk edilen ana mod) |
-|---|---|---|
-| `--bg` | `#f4f5f8` | `#0b0c10` |
-| `--surface` | `#ffffff` | `#14161d` |
-| `--ink` | `#14161d` | `#f2f4f8` |
-| `--accent` | `#4a5bd8` | `#7c8cff` |
-
-- Bu stil **koyu tabanlıdır**: açık tema uydurulmaz, `[data-theme="light"]` bloğu sevk edilmez. Yukarıdaki açık sütun yalnız baskı/gömme senaryosu için referanstır; üretilirse `--accent-ink` `#ffffff` olur ve `accent-ink/accent` yeniden ölçülür (≈5.1:1).
-- Koyu mod sahneleri (17/18) bu stil için **üretilmez** — stil zaten koyu; ikinci koyu varyant kontrast ölçümünü ikiye katlar, kazanç sağlamaz.
-- Koyu zeminde cam daha görünür olduğu için karışım **%78–%86** aralığında kalır; `--grain` `.03`'ten yükseltilmez (doku atmosferle yarışır). Gölge tek değer (`0 8px 30px rgba(0,0,0,.45)`), koyu zeminde 2px'ten kalın gölge "siyah leke" yapar.
+| Landing / hero | yüksek | 40px Geist 600, 7/5 asimetri, kahraman görselde mesh (opaklık .50), sayfada tek wash (.16); tek dolu CTA + tek ghost | `shots/01-page.png` |
+| Dashboard | düşük | süs 0, mesh yalnız başlık bandında (.10); KPI sayısı display 700 + mono 8.5px etiket; cam panel ≤6, accent ≤%4 | `shots/01-page.png` |
+| Mobil | orta | tek kolon, 28px başlık, 44px dokunma hedefi, cam yalnız tabbar + kartlar (blur ≤5) | `shots/01-page.png` |
+| Bileşenler · temel | orta | palet + ölçek levhası; radius 14/22, cam ve mat yüzey yan yana görünür | `shots/01-page.png` |
+| Form | çok düşük | tek sütun 460px, 46px input, odak 2px accent + 2px offset; cam tek kart, süs 0 | `shots/01-page.png` |
+| Modal / katman | orta | cam %82 + blur 14px + gölge; sahne backdrop'ı `color-mix(bg 72%)`; başlık 26px; 2 buton sağa | `shots/01-page.png` |
+| Veri | düşük | 52px satır, 1px alt çizgi, çubuk üst 2px; eksen mono 8px; satırlarda blur yok (toplam blur 10) | `shots/01-page.png` |
+| Gezinme | orta | cam nav 72px + alt 1px kural, aktif 2px accent alt çizgi | `shots/01-page.png` |
+| Pricing | orta | 3 cam kart (eşit), orta kart üst 2px accent; tek dolu CTA | `shots/01-page.png` |
+| Giriş | çok düşük | sol aside mesh wash (.10), sağda tek cam kart; hata `--danger` 1px kenar; süs 0 | `shots/01-page.png` |
+| Liste | düşük | filtre çubuğu 1px alt kural, 52px satır, seçili satır sol 2px accent | `shots/01-page.png` |
+| Boş / hata durumu | orta | tek 1.5px ikon + tek cümle + tek buton; 404'te display 44px→64px büyütülür, mesh wash .10 | `shots/01-page.png` |
+| Ayarlar | düşük | bölüm başlıkları mono etiket + 1px kural; anahtar 44×24; tehlike bölgesi `--danger` | `shots/01-page.png` |
+| Ödeme | çok düşük | özet sütunu sağda cam kart, 46px input, hairline tablo; accent yalnız ödeme butonunda | `shots/01-page.png` |
+| Onboarding | orta | adım göstergesi 2px çizgi, seçenek kartı cam + hairline, tek ileri CTA | `shots/01-page.png` |
+| Makale | orta | 68ch ölçü, 26px H2, cam yalnız yan sütunda (İlgili/Bülten); gövde `--bg` üstünde, wash yok | `shots/01-page.png` |
+| Mobil · alt sayfa | orta | üst köşe 22px, alt köşe 0, 44px sürükleme tutamacı (1px çizgi), cam %90 | `shots/01-page.png` |
+| Mobil · form | çok düşük | tam genişlik 46px input, klavye üstü 44px CTA, etiket mono 11px | `shots/01-page.png` |
+| Mobil · liste | düşük | 64px satır, 1px ayırıcı, avatar yerine 14px radius baş harf kutusu, satırda blur yok | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -228,14 +200,11 @@ Klişeye düşmemesi için korunması gereken üç detay: **tek renk ailesi** (m
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

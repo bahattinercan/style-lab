@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.71:1) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `styles/52-experiment-split/tokens.json` → `[data-style="experiment-split"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,54 +137,20 @@ Bedeli: bu stil "vitrin" değildir; tek ürünlü bir landing'de boşluk hissi z
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Solda iddia, sağda iki panel önizleme; bölme çizgisi hero'da görünür | `shots/01-landing.png` |
-| Dashboard | yüksek | Üstte deney listesi, altta seçili deneyin iki paneli + delta rozetleri | `shots/02-dashboard.png` |
-| Form | düşük | Deney kurulumu: tek sütun, hipotez alanı 64ch, metrik seçimi chip | — |
-| Liste / tablo | yüksek | Deney listesi 44px satır; durum chip'i, örneklem mono | — |
-| Boş durum | orta | "Henüz deney yok" + iki boş panel iskeleti (bölme çizgisi korunur) | — |
-| Onboarding | yüksek | 3 adım: hipotez → metrik → örneklem; her adımda tek panel | — |
-| Pricing | orta | Plan karşılaştırması iki panel mantığıyla; delta rozeti yok | — |
-| Giriş / ödeme | çok düşük | Tek panel; ikinci panel yerine mono güven satırı | — |
-| Modal | orta | Deney detayı: üstte hipotez, altta iki panel, en altta karar satırı | — |
-| Bildirim / toast | orta | "Varyant önde: +%4.2 · n=12.480" mono tek satır | — |
-| Hata | düşük | Panelde kesikli çerçeve + "veri alınamadı" + yeniden dene | — |
-| Profil / ayar | orta | Varsayılan anlamlılık eşiği, örneklem uyarısı, birim seçimi | — |
+| Landing / hero | yüksek | Solda iddia, sağda iki panel önizleme; bölme çizgisi hero'da görünür | `shots/01-page.png` |
+| Dashboard | yüksek | Üstte deney listesi, altta seçili deneyin iki paneli + delta rozetleri | `shots/01-page.png` |
+| Form | düşük | Deney kurulumu: tek sütun, hipotez alanı 64ch, metrik seçimi chip | `shots/01-page.png` |
+| Liste / tablo | yüksek | Deney listesi 44px satır; durum chip'i, örneklem mono | `shots/01-page.png` |
+| Boş durum | orta | "Henüz deney yok" + iki boş panel iskeleti (bölme çizgisi korunur) | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: hipotez → metrik → örneklem; her adımda tek panel | `shots/01-page.png` |
+| Pricing | orta | Plan karşılaştırması iki panel mantığıyla; delta rozeti yok | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel; ikinci panel yerine mono güven satırı | `shots/01-page.png` |
+| Modal | orta | Deney detayı: üstte hipotez, altta iki panel, en altta karar satırı | `shots/01-page.png` |
+| Bildirim / toast | orta | "Varyant önde: +%4.2 · n=12.480" mono tek satır | `shots/01-page.png` |
+| Hata | düşük | Panelde kesikli çerçeve + "veri alınamadı" + yeniden dene | `shots/01-page.png` |
+| Profil / ayar | orta | Varsayılan anlamlılık eşiği, örneklem uyarısı, birim seçimi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.32s**, y **10px**, stagger **0.045** | `cubic-bezier(.4,0,.2,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.38s**, trigger **top 86%**, y **14px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **kapalı** (iki panel eşit; pin sahneyi böler) | — | — |
-| Hover | **180ms**, görsel scale **1.005** | `ease-out` | `transform` |
-| Basma | 110ms | aynı eğri | `transform` (.995 scale) |
-| Sayı güncellemesi | 180ms | aynı eğri | `opacity` (sayaç animasyonu yok) |
-
-- Bu stilin ölçülebilir imzası: `enter 0.32s / cubic-bezier(.4,0,.2,1) / 10px / 0.045` + `scroll top 86% / 0.38s / 14px` + `pin kapalı` + `hover 180ms / 1.005`. Katalogda `top 86%` trigger'ı yalnız bu stilde geçer; pin kapalı + 0.32s kombinasyonu başka stilde yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; sayaçlar son değerde açılır, panel girişi anında.
-- Bu stile yasak hareket: sayı sayan uzun animasyon (>0.6s), bounce, sürekli döngü, parallax, grafik çizgi çizme animasyonu.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f7f7fb` | `#0c0c14` |
-| `--bg-2` | `#eeeef6` | `#121220` |
-| `--surface` | `#ffffff` | `#161627` |
-| `--surface-2` | `#f2f2fa` | `#1d1d31` |
-| `--ink` | `#15151f` | `#ecebff` |
-| `--ink-soft` | `#55566b` | `#a9a8c6` |
-| `--ink-faint` | `#85869c` | `#787890` |
-| `--accent` | `#4b3ee8` | `#8f86ff` |
-| `--accent-ink` | `#ffffff` | `#0a0918` |
-| `--line` | `rgba(21,21,31,.10)` | `rgba(236,235,255,.14)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **16.59:1** · `ink-soft/bg` = **8.44:1** · `accent-ink/accent` = **6.59:1** · `ink-faint/bg` = **4.53:1**.
-- Koyu modda değişen başka ne var: accent açılır (#8f86ff), kontrol bandı `--ink-faint` yerine `--ink-soft`; delta negatif `--danger` koyuda daha parlak tona geçer.
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="experiment-split"]`.
 
 ## Zorunlu kurallar
 - Karşılaştırma varsa iki panel eşit genişlikte (6/6) ve tek hairline bölme çizgisiyle.
@@ -214,14 +180,11 @@ Bedeli: bu stil "vitrin" değildir; tek ürünlü bir landing'de boşluk hissi z
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -14,9 +14,3 @@
   --tracking: 0.04em; --blur: 0px; --grain: .06;
   --focus: #5a1e2b;
 }
-
-[data-theme="dark"][data-style="victorian"] {
-  --bg: #1a1713; --bg-2: #26231e; --surface: #221d18; --surface-2: #322d26;
-  --ink: #e9dfcc; --ink-soft: #aba394; --ink-faint: #777166; --accent: #8d3547; --accent-ink: #ffffff; --line: rgba(233,223,204,.14);
-  --focus: #9f5762;
-}

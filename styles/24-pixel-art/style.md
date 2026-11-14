@@ -10,7 +10,7 @@
 | **Zorluk** | orta (ölçek/okunurluk) · **Erişilebilirlik** | orta-yüksek risk (piksel font) |
 | **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="pixel-art"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -132,36 +132,18 @@ Kolon 12 · gutter 16px · container 1120px · bölüm 64/40px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | 28px pixel başlık, sprite görsel, tek sarı buton | `shots/01-landing.png` |
-| Dashboard | düşük | Karo KPI'lar, pixel sayı + Inter etiket | `shots/02-dashboard.png` |
-| Form | düşük | Keskin input, tek buton; pixel font yalnız etiket | — |
-| Liste/tablo | düşük | 2px ayırıcı, satır 44px | — |
-| Boş durum | yüksek | Sprite + `PRESS START` tarzı tek satır | — |
-| Onboarding | yüksek | Adım başına 1 sprite + 1 cümle | — |
-| Pricing | orta | 3 karo, orta karo sarı | — |
-| Giriş/ödeme | çok düşük | Piksel font minimum; sade form | — |
-| Modal | orta | Blok gölgeli karo | — |
-| Toast | orta | Sarı karo, 3sn | — |
-| Hata | orta | `!!` pixel + 16px Inter açıklama | — |
-| Profil/ayar | düşük | Karo liste, pixel başlık | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 80ms | `steps(2–4)` | `transform: scale(.98)` (basamaklı) |
-| Giriş | 300ms | `steps(2, end)` | `opacity` + 6px `translateY`, stagger 50ms |
-| Scroll (`top 86%`) | 580ms | aynı eğri | `opacity` + 20px `translateY`, `once: true` |
-| Hover | 60ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 240ms | `steps(4)` | blink (tek atım) |
-
-- `prefers-reduced-motion`: blink kapanır, süreler 0.01ms.
-- Yasak: sürekli animasyon, strobe, yumuşak easing.
-- Pin/parallax yok.
-
-## Koyu mod
-
-Stil zaten koyu. Açık varyant: `--bg` `#f4f4f4` · `--surface` `#e0e0e6` · `--ink` `#1a1c2c` · `--accent` `#c98a1f` · `--accent-ink` `#ffffff`.
+| Landing/hero | yüksek | 28px pixel başlık, sprite görsel, tek sarı buton | `shots/01-page.png` |
+| Dashboard | düşük | Karo KPI'lar, pixel sayı + Inter etiket | `shots/01-page.png` |
+| Form | düşük | Keskin input, tek buton; pixel font yalnız etiket | `shots/01-page.png` |
+| Liste/tablo | düşük | 2px ayırıcı, satır 44px | `shots/01-page.png` |
+| Boş durum | yüksek | Sprite + `PRESS START` tarzı tek satır | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 sprite + 1 cümle | `shots/01-page.png` |
+| Pricing | orta | 3 karo, orta karo sarı | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Piksel font minimum; sade form | `shots/01-page.png` |
+| Modal | orta | Blok gölgeli karo | `shots/01-page.png` |
+| Toast | orta | Sarı karo, 3sn | `shots/01-page.png` |
+| Hata | orta | `!!` pixel + 16px Inter açıklama | `shots/01-page.png` |
+| Profil/ayar | düşük | Karo liste, pixel başlık | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -175,14 +157,11 @@ Stil zaten koyu. Açık varyant: `--bg` `#f4f4f4` · `--surface` `#e0e0e6` · `-
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

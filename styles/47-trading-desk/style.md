@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (en düşük etkileşimli çift 9.07:1; renk yönü tek başına taşımıyor) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `kit/tokens.css` → `[data-style="trading-desk"]` |
 | **Kompozisyon** | `split` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,52 +137,20 @@ Bedeli: bu arayüz sakin değildir ve uzun okuma için uygun değildir. Kazancı
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | ticker bandı + 5/4/3 asimetri + canlı defter önizlemesi | `shots/01-landing.png` |
-| Dashboard | yüksek | üstte fiyat/pozisyon, altta defter + mum grafik | `shots/02-dashboard.png` |
-| Form | düşük | emir formu: sembol, miktar, tip; 28px alanlar, mono | — |
-| Liste / tablo | yüksek | pozisyon tablosu 24px satır, zebra, ▲▼ | — |
-| Boş durum | orta | "pozisyon yok" + tek CTA; boş defter iskeleti kalır | — |
-| Onboarding | yüksek | 3 adım: hesap → risk limiti → ilk emir; her adımda gerçek defter | — |
-| Pricing | orta | komisyon tablosu 24px satır | — |
-| Giriş / ödeme | çok düşük | dar giriş kartı, 2FA alanı mono | — |
-| Modal | orta | emir onayı: 4 satır mono özet + tek tehlike butonu | — |
-| Bildirim / toast | orta | dolum/iptal, sağ alt, 2500ms | — |
-| Hata | düşük | "bağlantı yok" bandı + yeniden bağlan; veriler soluk ama okunur | — |
-| Profil / ayar | orta | risk limiti, kısayol tuşları, iki kolon | — |
+| Landing / hero | yüksek | ticker bandı + 5/4/3 asimetri + canlı defter önizlemesi | `shots/01-page.png` |
+| Dashboard | yüksek | üstte fiyat/pozisyon, altta defter + mum grafik | `shots/01-page.png` |
+| Form | düşük | emir formu: sembol, miktar, tip; 28px alanlar, mono | `shots/01-page.png` |
+| Liste / tablo | yüksek | pozisyon tablosu 24px satır, zebra, ▲▼ | `shots/01-page.png` |
+| Boş durum | orta | "pozisyon yok" + tek CTA; boş defter iskeleti kalır | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: hesap → risk limiti → ilk emir; her adımda gerçek defter | `shots/01-page.png` |
+| Pricing | orta | komisyon tablosu 24px satır | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | dar giriş kartı, 2FA alanı mono | `shots/01-page.png` |
+| Modal | orta | emir onayı: 4 satır mono özet + tek tehlike butonu | `shots/01-page.png` |
+| Bildirim / toast | orta | dolum/iptal, sağ alt, 2500ms | `shots/01-page.png` |
+| Hata | düşük | "bağlantı yok" bandı + yeniden bağlan; veriler soluk ama okunur | `shots/01-page.png` |
+| Profil / ayar | orta | risk limiti, kısayol tuşları, iki kolon | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 220ms | `cubic-bezier(.4,0,.1,1)` | `opacity` + `translateY(4px)`, satır başına 15ms stagger |
-| Scroll reveal | 260ms | `cubic-bezier(.4,0,.1,1)` | `top 92%` tetiği, 6px, `once: true` |
-| Basma | 70ms | `cubic-bezier(.4,0,.1,1)` | `translateY(1px)` |
-| Hover | 70ms | `cubic-bezier(.4,0,.1,1)` | zemin `--surface-2`, görsel ölçek `1.004` |
-| Fiyat flash | 220ms | `linear` | hücrede `--ok`/`--danger` %14 zemin → 0 |
-| Pin / scrub | açık | `scrub 0.35` | grafik bölümü `+70%` mesafe sabitlenir, mum ekseni kaydırılır |
-
-- Ölçülebilir imza: `enter 0.22s / cb(.4,0,.1,1) / 4px / 0.015` · `scroll top 92% / 0.26s / 6px / once:true` · `pin açık scrub 0.35 / +70%` · `hover 70ms / 1.004`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, fiyat flash'ı kapanır, ticker kayması durur (veri güncellenmeye devam eder).
-- Bu stile yasak hareket: yumuşak ease-out, blur geçişi, sürekli nabız, sayaç yuvarlanması.
-
-## Koyu mod
-
-Bu stilin varsayılan zemini zaten koyudur (dealing room); `data-theme="dark"` bloğu daha da derin bir "gece masası" verir: zemin bandı 5 puan aşağı iner, kart bandı 5 puan yukarı çıkar (ölçülen ΔL −13), accent bir kademe parlar.
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#101418` | `#05070a` |
-| `--bg-2` | `#151b20` | `#080d12` |
-| `--surface` | `#161d23` | `#0c131a` |
-| `--surface-2` | `#1c242b` | `#131c26` |
-| `--ink` | `#e8eef2` | `#f2f7f9` |
-| `--ink-soft` | `#9fb3bf` | `#a8bcc7` |
-| `--accent` | `#f2a33c` | `#ffbd6b` |
-| `--accent-ink` | `#171002` | `#1a1104` |
-
-- Koyu modda değişen başka ne var: emir defteri satır çizgileri `--ink` %16 → %20, bid/ask işaretleri aynı kalır; `--line` opaklığı .16 → .18. Ölçüm: `ink/bg` 18.37:1, `accent-ink/accent` 10.59:1.
 
 ## Zorunlu kurallar
 - Satır yüksekliği 24px; tablo, defter ve ticker aynı ritmi kullanır.
@@ -211,14 +179,11 @@ Bu stilin varsayılan zemini zaten koyudur (dealing room); `data-theme="dark"` b
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

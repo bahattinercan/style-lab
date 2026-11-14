@@ -111,15 +111,5 @@ body.scene-landing .hero-visual .visual-row:nth-child(3) { transform: rotateY(2d
 body.scene-landing .hero-visual .visual-row .sq { background: transparent; position: relative; }
 body.scene-landing .hero-visual .visual-row .sq::before { content: '+'; position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
 body.scene-landing .hero-visual .visual-card::after { content: 'x 1.24 · y 0.86 · z 0.42 — 3 katman sabitlendi'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; color: var(--ink-soft); }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 20px; display: grid; align-content: start; gap: 12px; background: color-mix(in srgb, var(--surface) 86%, transparent); }
-body.scene-landing .hero-visual { min-height: 380px; }
-body.scene-landing .hero-visual .visual-card .bar { height: 10px; border-radius: var(--radius); background: color-mix(in srgb, var(--accent) 16%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent); }
-body.scene-landing .hero-visual .visual-rows { gap: 14px; perspective: 900px; }
-body.scene-landing .hero-visual .visual-row { transform: rotateY(4deg); box-shadow: 0 10px 24px color-mix(in srgb, var(--ink) 14%, transparent); background: color-mix(in srgb, var(--surface) 92%, transparent); }
-body.scene-landing .hero-visual .visual-row:nth-child(2) { transform: rotateY(-3deg) translateX(10px); }
-body.scene-landing .hero-visual .visual-row:nth-child(3) { transform: rotateY(2deg) translateX(20px); }
-body.scene-landing .hero-visual .visual-row .sq { background: transparent; position: relative; }
-body.scene-landing .hero-visual .visual-row .sq::before { content: '+'; position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-mono); font-size: 13px; color: var(--accent); }
-body.scene-landing .hero-visual .visual-card::after { content: 'x 1.24 · y 0.86 · z 0.42 — 3 katman sabitlendi'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; color: var(--ink-soft); }`,
-  },
+    },
 };

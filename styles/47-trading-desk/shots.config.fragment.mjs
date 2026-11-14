@@ -114,9 +114,5 @@ export const CONFIG = {
       .visual-row:nth-child(2) .sq { background: var(--danger); }
       .visual-row:nth-child(3) .sq { background: var(--warn); }
       .visual-row .num { text-align: right; font-size: 10px; }`,
-  'dark-landing': `
-      /* koyu mod: defter zemini bir ton daha derin, bid/ask çizgileri daha parlak */
-      .hero-visual { background: color-mix(in srgb, var(--bg-2) 88%, var(--bg)); }
-      .visual-card { border-color: color-mix(in srgb, var(--ok) 40%, var(--line)); }`,
   },
 };

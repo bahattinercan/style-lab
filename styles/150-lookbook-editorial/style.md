@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (açık zeminde ince çizgi ve kiremit küçük puntoda düşer) |
 | **Aile** | Sahne & Prestij (146–151) · **Token** | `kit/tokens.css` → `[data-style="lookbook-editorial"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `type` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,17 @@ Gölge yok. Katman farkı 1px çizgi, kâğıt tonu ve boşlukla kurulur; yüzen
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | salt tipografi: 62px başlık + dev fasikül rakamı, sağda 1 sütun fotoğraf; 2 CTA | `shots/01-landing.png` |
-| Dashboard (koleksiyon) | orta | 3 sayı (parça, sezon, ortalama fiyat) + 8 satırlık koleksiyon listesi | `shots/02-dashboard.png` |
-| Form / randevu | düşük | tek sütun 52px alan, alt çizgi odak; hata 1px `--danger` + 12px açıklama | — |
-| Liste / koleksiyon | yüksek | 52px satır: rakam solda, parça adı, sezon etiketi | — |
-| Boş durum | düşük | "bu sezonda parça yok" + arşiv bağlantısı | — |
-| Onboarding | orta | 2 adım: sezon → ölçü; her adımda tek karar | — |
-| Pricing | orta | iki abonelik; öne çıkanda kiremit 1px üst çizgi | — |
-| Giriş / ödeme | düşük | kart yok, tek sütun, 1px çizgi bölmeli | — |
-| Modal | orta | 4px radius, 1px `--ink` çerçeve, gölge yok | — |
-| Bildirim | orta | 36px toast, sol 3px kiremit şerit, 3.6s | — |
-| Mobil (390px) | orta | başlık 32px, fasikül rakamı 56px, fotoğraf tam kanama | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (letter-stagger) | 0.7s | `cubic-bezier(.4,0,.15,1)` | `opacity` + `translateY(12px)`, 0.09 arayla |
-| Scroll reveal | 0.62s, `top 82%` | aynı | `translateY(14px)`, `once: true` |
-| Pin / scrub | kapalı | doğrusal | bu stil sabit bölüm kullanmaz |
-| Basma | 110ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 160ms | aynı | `scale(1.02)` |
-
-- Ölçülen imza: enter **0.7s · cubic-bezier(.4,0,.15,1) · 12px · stagger 0.09**; scroll **top 82% · 0.62s · 14px · once**; pin **yok**; hover **160ms · 1.02**.
-- undefined
-- `prefers-reduced-motion`: instant.
-- Bu stile yasak hareket: bounce/elastik yay, sonsuz döngü, hover tilt-3d, gölge animasyonu.
-
-## Koyu mod
-
-| Token | Açık (kâğıt) | Koyu (gece baskısı) |
-|---|---|---|
-| `--bg` | `#efebe4` | `#0c0b0a` |
-| `--bg-2` | `#e6e1d8` | `#080706` |
-| `--surface` | `#f7f4ef` | `#151312` |
-| `--surface-2` | `#ffffff` | `#1e1c1a` |
-| `--ink` | `#13110f` | `#f2ede6` |
-| `--ink-soft` | `#5a554e` | `#bcb4aa` |
-| `--ink-faint` | `#857f76` | `#8a837a` |
-| `--accent` | `#a8402a` | `#e0704f` |
-| `--accent-ink` | `#fdf6f2` | `#140703` |
-| `--line` | `rgba(19,17,15,.14)` | `rgba(242,237,230,.16)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **16.89:1** · `ink-soft/bg` **9.60:1** · `accent-ink/accent` **6.22:1** · `ink-faint/bg` **5.25:1** · odak halkası yüzey üzerinde **5.82:1**.
-- Koyu blok bir "gece baskısı": zemin #0c0b0a (nötr-sıcak), kiremit #e0704f (parlaklık +2 kademe) çünkü #a8402a koyu zeminde 4.5:1'in altına düşer; çizgi %14 → %16, surface #151312.
-- `filter: invert()` yasak; koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="lookbook-editorial"]` olarak durur.
+| Landing / hero | orta | salt tipografi: 62px başlık + dev fasikül rakamı, sağda 1 sütun fotoğraf; 2 CTA | `shots/01-page.png` |
+| Dashboard (koleksiyon) | orta | 3 sayı (parça, sezon, ortalama fiyat) + 8 satırlık koleksiyon listesi | `shots/01-page.png` |
+| Form / randevu | düşük | tek sütun 52px alan, alt çizgi odak; hata 1px `--danger` + 12px açıklama | `shots/01-page.png` |
+| Liste / koleksiyon | yüksek | 52px satır: rakam solda, parça adı, sezon etiketi | `shots/01-page.png` |
+| Boş durum | düşük | "bu sezonda parça yok" + arşiv bağlantısı | `shots/01-page.png` |
+| Onboarding | orta | 2 adım: sezon → ölçü; her adımda tek karar | `shots/01-page.png` |
+| Pricing | orta | iki abonelik; öne çıkanda kiremit 1px üst çizgi | `shots/01-page.png` |
+| Giriş / ödeme | düşük | kart yok, tek sütun, 1px çizgi bölmeli | `shots/01-page.png` |
+| Modal | orta | 4px radius, 1px `--ink` çerçeve, gölge yok | `shots/01-page.png` |
+| Bildirim | orta | 36px toast, sol 3px kiremit şerit, 3.6s | `shots/01-page.png` |
+| Mobil (390px) | orta | başlık 32px, fasikül rakamı 56px, fotoğraf tam kanama | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Başlık Fraunces 400 62px (mobil 32px) `1.04`; 104px fasikül rakamı dekoratif ve aria-hidden.
@@ -214,14 +180,11 @@ Gölge yok. Katman farkı 1px çizgi, kâğıt tonu ve boşlukla kurulur; yüzen
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

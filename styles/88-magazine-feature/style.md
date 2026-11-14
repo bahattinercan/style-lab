@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="magazine-feature"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,51 +144,20 @@ Kökeni 1960'ların *Esquire*/*Vogue* feature açılışları ve 2010'ların scr
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 7/12 tam kanama görsel + 5/12 metin, h1 64px, etiket çizgisi | `shots/01-landing.png` |
-| Dashboard | düşük | İçerik takvimi: 3 kart, 14px radius, tek gölge | `shots/02-dashboard.png` |
-| Form | düşük | 44px input, 2px radius, etiket mono 11px | — |
-| Liste / tablo | düşük | 48px satır, 1px hairline, mono tarih | — |
-| Boş durum | orta | 28px Fraunces başlık + tek paragraf 58ch | — |
-| Onboarding | yüksek | İki adım, her adımda 1 görsel kartı; pin yok | — |
-| Pricing | orta | Üç kart, ortadaki accent çizgili; gölge yalnız hover | — |
-| Giriş / ödeme | çok düşük | Tek kolon 400px, 2px radius, görsel yok | — |
-| Modal | orta | 560px, 14px radius, tek gölge, backdrop %45 | — |
-| Bildirim / toast | orta | Sağ alt, 44px, ink zemin + bg metin, 2px radius | — |
-| Hata | düşük | Fraunces 38px başlık + tek paragraf + ikincil buton | — |
-| Profil / ayar | orta | Form 5/12 + görsel 7/12; hairline ayırıcı | — |
+| Landing / hero | yüksek | 7/12 tam kanama görsel + 5/12 metin, h1 64px, etiket çizgisi | `shots/01-page.png` |
+| Dashboard | düşük | İçerik takvimi: 3 kart, 14px radius, tek gölge | `shots/01-page.png` |
+| Form | düşük | 44px input, 2px radius, etiket mono 11px | `shots/01-page.png` |
+| Liste / tablo | düşük | 48px satır, 1px hairline, mono tarih | `shots/01-page.png` |
+| Boş durum | orta | 28px Fraunces başlık + tek paragraf 58ch | `shots/01-page.png` |
+| Onboarding | yüksek | İki adım, her adımda 1 görsel kartı; pin yok | `shots/01-page.png` |
+| Pricing | orta | Üç kart, ortadaki accent çizgili; gölge yalnız hover | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 400px, 2px radius, görsel yok | `shots/01-page.png` |
+| Modal | orta | 560px, 14px radius, tek gölge, backdrop %45 | `shots/01-page.png` |
+| Bildirim / toast | orta | Sağ alt, 44px, ink zemin + bg metin, 2px radius | `shots/01-page.png` |
+| Hata | düşük | Fraunces 38px başlık + tek paragraf + ikincil buton | `shots/01-page.png` |
+| Profil / ayar | orta | Form 5/12 + görsel 7/12; hairline ayırıcı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 140ms | `power2.out` | `transform: scale(.985)` + gölge 0'a düşer |
-| Giriş (enter) | 900ms | `power2.out` | `opacity` + 34px `translateY`, stagger 0.1s (100ms) |
-| Scroll reveal | 1000ms | aynı eğri | `top 77%` tetikleyici, `opacity` + 28px `translateY`, `once: true` |
-| Pin / scrub | — | — | tek pin: scrub 0.9, +110%; mobilde kapalı |
-| Hover | 320ms | aynı eğri | `transform: scale(1.03)` |
-| Ödül / vurgu | 420ms | `power2.out` | pull-quote accent çizgisi 0→100% yükseklik (tek atım) |
-
-- Süre bütçesi: enter 900ms ≤ 1200ms · scroll 1000ms ≤ 1200ms · stagger 0.1s (100ms).
-- Tek pin sahnesi (scrub 0.9, +110%); sayfada ikinci scrub yasak, mobilde pin kapalı.
-- Reveal bir kez (`once: true`); geri kaydırınca tekrar oynamaz.
-- `prefers-reduced-motion`: süreler 0.01ms, pin/scrub kapalı, poster statik kalır.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#faf6f0` | `#161113` |
-| `--surface` | `#fffdf9` | `#1b1417` |
-| `--ink` | `#1a1614` | `#f4ece7` |
-| `--accent` | `#8a2f52` | `#e08aa6` |
-| `--line` | `rgba(26,22,20,.14)` | `rgba(244,236,231,.14)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 16.02:1 · `accent-ink / accent` = 7.56:1.
-- Koyu modda krem zemin sıcak antrasite (`#161113`) döner; accent açık gül (`#e08aa6`) olur.
-- Gölge koyu modda `0 10px 30px rgba(0,0,0,.42)` tek katman; radius değişmez.
-- Grain fotoğrafta kalır, zeminde açılmaz.
 
 ## Zorunlu kurallar
 
@@ -221,14 +190,11 @@ Kökeni 1960'ların *Esquire*/*Vogue* feature açılışları ve 2010'ların scr
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

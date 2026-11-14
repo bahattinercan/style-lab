@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | iyi (yüksek kontrast) / mono yorgunluğu |
 | **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="cybercore"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -132,37 +132,18 @@ Kolon 12 · gutter 16px · container 1240px · bölüm 64/40px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | `>` prompt başlık, log şeridi, HUD panel, tek yeşil CTA | `shots/01-landing.png` |
-| Dashboard | yüksek | Mono metrikler + log listesi + ASCII sparkline | `shots/02-dashboard.png` |
-| Form | düşük | Tek sütun, keskin input, durum etiketi | — |
-| Liste/tablo | yüksek | Yoğun tablo, mono, 1px ayırıcı; zebra yok | — |
-| Boş durum | orta | `[ NO DATA ]` + tek komut önerisi | — |
-| Onboarding | orta | Adım başına 1 komut satırı | — |
-| Pricing | düşük | Tablo formatında karşılaştırma | — |
-| Giriş/ödeme | düşük | Sade form, durum etiketi; süs yok | — |
-| Modal | orta | HUD panel + glow | — |
-| Toast | orta | Durum renkli mono pill | — |
-| Hata | yüksek | `[ ERR ]` + neden + çözüm komutu | — |
-| Profil/ayar | orta | Anahtar-değer listesi | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 90ms | `steps(4)` | `opacity` |
-| Giriş | 240ms | `steps(4, end)` | `opacity` + 8px `translateY`, stagger 20ms |
-| Scroll (`top 90%`) | 520ms | aynı eğri | `opacity` + 20px `translateY`, `once: true` |
-| Hover | 80ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 240ms | `steps(4)` | satır highlight (tek atım) |
-
-- Scanline 12s `linear` (dekor).
-- `prefers-reduced-motion`: scanline durur.
-- Yasak: sürekli akan log, matrix yağmuru, strobe.
-- Pin/parallax yok.
-
-## Koyu mod
-
-Stil zaten koyu. Açık varyant: `--bg` `#f4fbf6` · `--surface` `#ffffff` · `--ink` `#0b1a12` · `--accent` `#0f8a4d` · `--accent-ink` `#ffffff` · glow kaldırılır.
+| Landing/hero | yüksek | `>` prompt başlık, log şeridi, HUD panel, tek yeşil CTA | `shots/01-page.png` |
+| Dashboard | yüksek | Mono metrikler + log listesi + ASCII sparkline | `shots/01-page.png` |
+| Form | düşük | Tek sütun, keskin input, durum etiketi | `shots/01-page.png` |
+| Liste/tablo | yüksek | Yoğun tablo, mono, 1px ayırıcı; zebra yok | `shots/01-page.png` |
+| Boş durum | orta | `[ NO DATA ]` + tek komut önerisi | `shots/01-page.png` |
+| Onboarding | orta | Adım başına 1 komut satırı | `shots/01-page.png` |
+| Pricing | düşük | Tablo formatında karşılaştırma | `shots/01-page.png` |
+| Giriş/ödeme | düşük | Sade form, durum etiketi; süs yok | `shots/01-page.png` |
+| Modal | orta | HUD panel + glow | `shots/01-page.png` |
+| Toast | orta | Durum renkli mono pill | `shots/01-page.png` |
+| Hata | yüksek | `[ ERR ]` + neden + çözüm komutu | `shots/01-page.png` |
+| Profil/ayar | orta | Anahtar-değer listesi | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -175,14 +156,11 @@ Stil zaten koyu. Açık varyant: `--bg` `#f4fbf6` · `--surface` `#ffffff` · `-
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

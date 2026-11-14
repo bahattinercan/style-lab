@@ -16,8 +16,3 @@
   --danger: #8a2b22; --danger-ink: #f8f2e8;
   --ok: #23572f; --warn: #8a5a12;
 }
-
-[data-theme="dark"][data-style="grand-tourer"] {
-  --bg: #14180f; --bg-2: #21241b; --surface: #1d2318; --surface-2: #2e3328;
-  --ink: #efe7da; --ink-soft: #ada99d; --ink-faint: #77756a; --accent: #b7c8a8; --accent-ink: #0d0d0d; --line: rgba(239,231,218,.14);
-}

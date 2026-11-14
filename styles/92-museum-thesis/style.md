@@ -10,7 +10,7 @@
 | **Zorluk** | düşük–orta (boşluğu korumak kolay; tipografi disiplinini bozmamak zor) · **Erişilebilirlik** | iyi (15.40:1 gövde, 7.91:1 accent üstü) |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="museum-thesis"]` |
 | **Kompozisyon** | `type` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,58 +144,21 @@ Klişeye düşmemesi için korunması gereken detay: **geniş kenar ve tek serif
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | düşük | 38px başlık, 96px kenar, sağda künye şeridi | `shots/01-landing.png` |
-| Dashboard | düşük | Levha kartları + künye alt metni; mono envanter no | `shots/02-dashboard.png` |
-| Form | düşük | 46px alanlar, 1px kenar, 1px odak halkası | — |
-| Liste / tablo | orta | 40px satır: dönem, eser, envanter no, künye | — |
-| Boş durum | düşük | Tek cümle + `Fig.` yer tutucusu + 1 buton | — |
-| Onboarding | düşük | 3 numaralı adım (1. / 2. / 3.); ilerleme çizgi değil numara | — |
-| Pricing | orta | 3 levha; önerilen sütunda 1px accent üst kural | — |
-| Giriş / ödeme | çok düşük | Süs sıfır; alan + tek accent buton | — |
-| Modal | orta | 32px padding, mono bölüm numarası başlığı | — |
-| Bildirim / toast | orta | Koyu zemin + 1px accent kural, 4200ms | — |
-| Hata | düşük | `--danger` kenar + açıklama; `Fig.` kullanılmaz | — |
-| Profil / ayar | orta | İki kolon: mono etiket + serif değer, 1px cetvel | — |
+| Landing / hero | düşük | 38px başlık, 96px kenar, sağda künye şeridi | `shots/01-page.png` |
+| Dashboard | düşük | Levha kartları + künye alt metni; mono envanter no | `shots/01-page.png` |
+| Form | düşük | 46px alanlar, 1px kenar, 1px odak halkası | `shots/01-page.png` |
+| Liste / tablo | orta | 40px satır: dönem, eser, envanter no, künye | `shots/01-page.png` |
+| Boş durum | düşük | Tek cümle + `Fig.` yer tutucusu + 1 buton | `shots/01-page.png` |
+| Onboarding | düşük | 3 numaralı adım (1. / 2. / 3.); ilerleme çizgi değil numara | `shots/01-page.png` |
+| Pricing | orta | 3 levha; önerilen sütunda 1px accent üst kural | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Süs sıfır; alan + tek accent buton | `shots/01-page.png` |
+| Modal | orta | 32px padding, mono bölüm numarası başlığı | `shots/01-page.png` |
+| Bildirim / toast | orta | Koyu zemin + 1px accent kural, 4200ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + açıklama; `Fig.` kullanılmaz | `shots/01-page.png` |
+| Profil / ayar | orta | İki kolon: mono etiket + serif değer, 1px cetvel | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — levha (plate) — geniş kenar, künye bloğu, asılı girintili satırlar.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 160ms | `ease-out` | `opacity: .92` (konum kaymaz) |
-| Geçiş / sayfa | 460ms | `cubic-bezier(.35,.02,.28,1)` | `opacity` + `translateY(4px)` |
-| Giriş (enter) | **1100ms** | `cubic-bezier(.35,.02,.28,1)` | `opacity` + `translateY(20px)`, **stagger 110ms** |
-| Kaydırma (scroll) | **1150ms** | `cubic-bezier(.35,.02,.28,1)` | trigger **`top 77%`**, offsetY **18px**, `once: true` |
-| Hover | **460ms** | `ease-out` | görsel ölçek **1.004** (neredeyse sabit) |
-| Pin | açık | `scrub 0.8` | levha sabitlenir, mesafe **+95%** |
-| Ödül / vurgu | 720ms | `cubic-bezier(.35,.02,.28,1)` | dipnot kuralı `scaleX(0→1)`, tek atım |
-
-- İmza ölçüsü: enter **1.1s / 20px / stagger 0.11** · scroll **1.15s / `top 77%` / 18px** · hover **460ms / 1.004** · pin **açık (scrub 0.8 / +95%)** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; pin/scrub kapanır, levha statik kalır.
-- Bu stile yasak hareket: parallax, sürekli döngü, spring/bounce, harf harf animasyon.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f4f2ec` | `#14161a` |
-| `--bg-2` | `#ebe8df` | `#191c21` |
-| `--surface` | `#fbfaf6` | `#1e2228` |
-| `--surface-2` | `#e6e2d8` | `#262b33` |
-| `--ink` | `#191b1f` | `#e9e7e0` |
-| `--ink-soft` | `#4c515a` | `#b6b9bf` |
-| `--ink-faint` | `#787e88` | `#8b9099` |
-| `--accent` | `#3c4a63` | `#9fb0c9` |
-| `--accent-ink` | `#f4f1e8` | `#14161a` |
-| `--line` | `rgba(25,27,31,.16)` | `rgba(233,231,224,.16)` |
-
-- Koyu mod **gece salonu**dur: zemin `#14161a`, levhalar `#1e2228`; accent açılır (`#9fb0c9`) çünkü slate koyu zeminde çerçeveyle karışır.
-- Dipnot kuralı koyuda `--ink` yerine `--ink-soft` (#b6b9bf) kullanır — 1px çizgi koyu zeminde yeterince görünür, saf beyaz fazla sert olur.
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **14.64:1** · `ink-soft/bg` = **9.21:1** · `accent-ink/accent` = **8.22:1** · `ink-faint/bg` = **5.65:1**.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **-:1** açık / **-:1** koyu · `--warn / bg` = **-:1** / **-:1** · `--ok / surface` = -:1 / -:1 (warn) · devre dışı buton metni = **6.53:1** / **8.03:1** · ghost buton kenarı = **3.73:1** / **5.17:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 
@@ -226,14 +189,11 @@ Klişeye düşmemesi için korunması gereken detay: **geniş kenar ve tek serif
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

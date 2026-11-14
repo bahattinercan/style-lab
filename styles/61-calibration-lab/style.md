@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.21:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="calibration-lab"]` |
 | **Kompozisyon** | `split` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -140,52 +140,18 @@ Laboratuvar enstrümanı panelinden (Fluke, Mettler Toledo, Sartorius) ve metrol
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | hero 7/5: solda başlık + tek CTA, sağda kalibrasyon paneli + okuma bandı | `shots/01-landing.png` |
-| Dashboard | çok yüksek | 3 KPI + tolerans çubukları + son ölçümler tablosu | `shots/02-dashboard.png` |
-| Form | orta | tek sütun alanlar, sağda birim etiketi, altta kalibrasyon notu | — |
-| Liste / tablo | çok yüksek | 30px satır, tabular sayı, birim sütunu, sağda durum chip'i | — |
-| Boş durum | düşük | "ölçüm yok" + ilk ölçümü başlat eylemi + referans hatırlatması | — |
-| Onboarding | orta | 3 adım: cihaz bağla → referans gir → tolerans seç | — |
-| Pricing | orta | karşılaştırma tablosu; ölçüm limitleri satır bazında | — |
-| Giriş / ödeme | düşük | tek panel, tek eylem, doğrulama sonrası `geçerli` durumu | — |
-| Modal | orta | ölçüm detayı: değer, birim, tolerans, referans, tarih | — |
-| Bildirim | düşük | 36px toast, sol accent şerit, 4sn | — |
-| Hata | düşük | `--danger` çerçeve + neden + sonraki adım; sayı gizlenmez | — |
-| Profil / ayar | yüksek | anahtar/değer listesi, 30px satır, birim seçimi | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (bölüm) | 420ms | `cubic-bezier(.16,.84,.44,1)` | `opacity` + `translateY(8px)` |
-| Giriş sırası | 45ms arayla | aynı | panel başına 1 kademe |
-| Scroll reveal | 360ms, `top 88%` | aynı | `translateY(12px)`, `once: true` |
-| Basma | 90ms | `cubic-bezier(.16,.84,.44,1)` | `transform` 1px |
-| Hover (görsel) | 140ms | aynı | `scale(1.006)` — fark edilmesi zor, ölçülebilir |
-| Okuma değişimi | 120ms | `linear` | `opacity` (sayı saymaz, sıçrar) |
-| Pin | kapalı | — | — |
-
-- Ölçülen imza: enter **0.42s · cubic-bezier(.16,.84,.44,1) · 8px · stagger 0.045**; scroll **top 88% · 0.36s · 12px · once**; pin **kapalı**; hover **140ms · 1.006**.
-- Kısa hızlanma + uzun oturma: hareket cihazın kendini kalibre etmesi gibi; yay ve sekme yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, okuma anında değişir, hover ölçeği 1.000.
-- Bu stile yasak hareket: sayaç animasyonu, sürekli nabız, parallax, pin/scrub, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#eef1f0` | `#0c1414` |
-| `--bg-2` | `#e5eae9` | `#111b1b` |
-| `--surface` | `#fbfcfc` | `#142020` |
-| `--surface-2` | `#f3f7f6` | `#1a2828` |
-| `--ink` | `#101a1a` | `#e6efee` |
-| `--ink-soft` | `#4a5c5b` | `#a3b6b4` |
-| `--accent` | `#0d5f5c` | `#3fd7cb` |
-| `--accent-ink` | `#f4fbfa` | `#02201d` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **15.94:1** · `ink-soft/bg` **8.80:1** · `accent-ink/accent` **9.61:1** · `ink-faint/bg` **4.71:1**.
-- Koyu modda değişen başka ne var: gölge neredeyse görünmez kalır, bu yüzden panel ayrımı 1px çizgiye ek olarak `--surface` tonuyla kurulur; ızgara opaklığı %15 → %16; accent teal bir ton açılır.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="calibration-lab"]` olarak durur.
+| Landing / hero | yüksek | hero 7/5: solda başlık + tek CTA, sağda kalibrasyon paneli + okuma bandı | `shots/01-page.png` |
+| Dashboard | çok yüksek | 3 KPI + tolerans çubukları + son ölçümler tablosu | `shots/01-page.png` |
+| Form | orta | tek sütun alanlar, sağda birim etiketi, altta kalibrasyon notu | `shots/01-page.png` |
+| Liste / tablo | çok yüksek | 30px satır, tabular sayı, birim sütunu, sağda durum chip'i | `shots/01-page.png` |
+| Boş durum | düşük | "ölçüm yok" + ilk ölçümü başlat eylemi + referans hatırlatması | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: cihaz bağla → referans gir → tolerans seç | `shots/01-page.png` |
+| Pricing | orta | karşılaştırma tablosu; ölçüm limitleri satır bazında | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek panel, tek eylem, doğrulama sonrası `geçerli` durumu | `shots/01-page.png` |
+| Modal | orta | ölçüm detayı: değer, birim, tolerans, referans, tarih | `shots/01-page.png` |
+| Bildirim | düşük | 36px toast, sol accent şerit, 4sn | `shots/01-page.png` |
+| Hata | düşük | `--danger` çerçeve + neden + sonraki adım; sayı gizlenmez | `shots/01-page.png` |
+| Profil / ayar | yüksek | anahtar/değer listesi, 30px satır, birim seçimi | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Tüm sayısal okumalar mono + tabular + sabit ondalık; birim ayrı sütunda (değerin içinde birim yok).
@@ -214,14 +180,11 @@ Laboratuvar enstrümanı panelinden (Fluke, Mettler Toledo, Sartorius) ve metrol
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (kontrast koruma) · **Erişilebilirlik** | **yüksek risk** |
 | **Aile** | Sanatsal (28–34) · **Token** | `kit/tokens.css` → `[data-style="ethereal"]` |
 | **Kompozisyon** | `centered` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -132,36 +132,18 @@ Kolon 12 (içerik 8) · gutter 28px · container 1120px · bölüm 96/56px · br
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | 46px ince serif, 2 sis lekesi, tek cam panel | `shots/01-landing.png` |
-| Dashboard | çok düşük | Sis kapanır, cam yalnız nav; sayılar Inter | `shots/02-dashboard.png` |
-| Form | düşük | Tek cam kart, 460px | — |
-| Liste/tablo | düşük | Cam panel, soluk hairline | — |
-| Boş durum | orta | Tek cümle + cam kart + 1 buton | — |
-| Onboarding | yüksek | Adım başına 1 cam panel, nefes animasyonu | — |
-| Pricing | orta | 2 cam kolon | — |
-| Giriş/ödeme | çok düşük | Sis/blur kapanır, opak kart | — |
-| Modal | orta | Cam + blur 28px | — |
-| Toast | orta | Cam pill | — |
-| Hata | düşük | `--danger` ince kenar + 14px | — |
-| Profil/ayar | orta | Cam liste, soluk ayırıcı | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 160ms | `ease-in-out` | `opacity` |
-| Giriş | 1150ms | `ease-in-out` | `opacity` + 40px `translateY`, stagger 140ms |
-| Scroll (`top 78%`) | 1200ms | aynı eğri | `opacity` + 32px `translateY`, `once: true` |
-| Hover | 380ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 800ms | `ease-in-out` | nefes ölçeği (tek atım) |
-
-- Nefes 6s `ease-in-out` (1–2px, tek öğe, dekor).
-- `prefers-reduced-motion`: nefes durur, süreler 0.01ms.
-- Yasak: hızlı geçiş, çoklu sürekli animasyon.
-
-## Koyu mod
-
-`--bg` `#1a1720` · `--surface` `rgba(255,255,255,.08)` · `--ink` `#ece7f2` · `--accent` `#9d8ae0` · `--accent-ink` `#1a1720` · blur azaltılır, sis opacity .35.
+| Landing/hero | yüksek | 46px ince serif, 2 sis lekesi, tek cam panel | `shots/01-page.png` |
+| Dashboard | çok düşük | Sis kapanır, cam yalnız nav; sayılar Inter | `shots/01-page.png` |
+| Form | düşük | Tek cam kart, 460px | `shots/01-page.png` |
+| Liste/tablo | düşük | Cam panel, soluk hairline | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + cam kart + 1 buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 cam panel, nefes animasyonu | `shots/01-page.png` |
+| Pricing | orta | 2 cam kolon | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Sis/blur kapanır, opak kart | `shots/01-page.png` |
+| Modal | orta | Cam + blur 28px | `shots/01-page.png` |
+| Toast | orta | Cam pill | `shots/01-page.png` |
+| Hata | düşük | `--danger` ince kenar + 14px | `shots/01-page.png` |
+| Profil/ayar | orta | Cam liste, soluk ayırıcı | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -175,14 +157,11 @@ Kolon 12 (içerik 8) · gutter 28px · container 1120px · bölüm 96/56px · br
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

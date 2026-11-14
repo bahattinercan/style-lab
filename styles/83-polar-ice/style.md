@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 5.78:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="polar-ice"]` |
 | **Kompozisyon** | `split` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Kutup araştırma istasyonlarının veri panolarından ve buz çekirdeği (ice c
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 7/5 hero: solda başlık + tek CTA, sağda buz plakası görseli | `shots/01-landing.png` |
-| Dashboard | yüksek | 4×3 veri ızgarası + eşik çizgili grafik + son ölçümler | `shots/02-dashboard.png` |
-| Form | düşük | ölçüm girişi: değer + birim + istasyon + zaman | — |
-| Liste / tablo | yüksek | 34px satır, etiket–değer–birim, sabit birim sütunu | — |
-| Boş durum | düşük | "bu istasyonda ölçüm yok" + cihaz bağla | — |
-| Onboarding | düşük | 3 adım: istasyon seç → sensör ekle → eşik belirle | — |
-| Pricing | orta | plan karşılaştırma; sensör/istasyon limitleri | — |
-| Giriş / ödeme | çok düşük | tek plaka, 40px alanlar, tek eylem | — |
-| Modal | orta | buz çekirdeği kesiti + ölçüm listesi | — |
-| Bildirim | düşük | 36px toast, sol buz şeridi, 3sn | — |
-| Hata | düşük | danger çerçeve + neden + yeniden dene | — |
-| Profil / ayar | orta | istasyon listesi, birim sistemi, eşik değerleri | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (plaka) | 320ms | `cubic-bezier(.15,1,.3,1)` | `opacity` + `translateY(10px)`, 35ms arayla |
-| Scroll reveal | 420ms, `top 90%` | aynı | `translateY(14px)`, `once: false` (yukarı kaydırınca tekrar) |
-| Basma | 100ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 100ms | aynı | `scale(1.010)` |
-| Değer güncellemesi | 240ms | `linear` | `color` (accent → ink) |
-| Pin | kapalı | — | — |
-
-- Ölçülen imza: enter **0.32s · cubic-bezier(.15,1,.3,1) · 10px · stagger 0.035**; scroll **top 90% · 0.42s · 14px · once:false**; pin **kapalı**; hover **100ms · 1.010**.
-- Ani kırılma, hemen oturma: kristal çatlar ve yerine geçer; aşırı düzeltme (overshoot) yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, kar tanesi dönüşü durur, değer anında yazılır.
-- Bu stile yasak hareket: sürekli dönen kar tanesi (yükleme hariç), parallax, bounce, blur/donma geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#eaf3f8` | `#071119` |
-| `--bg-2` | `#dceaf2` | `#0b1a24` |
-| `--surface` | `#f9fcfe` | `#0e2130` |
-| `--surface-2` | `#eef5fa` | `#13293a` |
-| `--ink` | `#0e2733` | `#e8f4fa` |
-| `--ink-soft` | `#45626f` | `#a6c2d0` |
-| `--accent` | `#096d8a` | `#4ecde8` |
-| `--accent-ink` | `#f2fbfd` | `#04212a` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **17.00:1** · `ink-soft/bg` **10.20:1** · `accent-ink/accent` **8.93:1** · `ink-faint/bg` **5.64:1** · accent metin olarak bg'ye **10.17:1**.
-- Koyu modda değişen başka ne var: frost grain `.015` → `.03` (koyu zeminde doku görünür olsun), çizgi %14 → %16, buz mavisi accent bir ton açılır; gölge opaklığı artar.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="polar-ice"]` olarak durur.
+| Landing / hero | orta | 7/5 hero: solda başlık + tek CTA, sağda buz plakası görseli | `shots/01-page.png` |
+| Dashboard | yüksek | 4×3 veri ızgarası + eşik çizgili grafik + son ölçümler | `shots/01-page.png` |
+| Form | düşük | ölçüm girişi: değer + birim + istasyon + zaman | `shots/01-page.png` |
+| Liste / tablo | yüksek | 34px satır, etiket–değer–birim, sabit birim sütunu | `shots/01-page.png` |
+| Boş durum | düşük | "bu istasyonda ölçüm yok" + cihaz bağla | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: istasyon seç → sensör ekle → eşik belirle | `shots/01-page.png` |
+| Pricing | orta | plan karşılaştırma; sensör/istasyon limitleri | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek plaka, 40px alanlar, tek eylem | `shots/01-page.png` |
+| Modal | orta | buz çekirdeği kesiti + ölçüm listesi | `shots/01-page.png` |
+| Bildirim | düşük | 36px toast, sol buz şeridi, 3sn | `shots/01-page.png` |
+| Hata | düşük | danger çerçeve + neden + yeniden dene | `shots/01-page.png` |
+| Profil / ayar | orta | istasyon listesi, birim sistemi, eşik değerleri | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - İki radius: panel 10px, iç kutu/buton 2px; arada değer yok.
@@ -214,14 +181,11 @@ Kutup araştırma istasyonlarının veri panolarından ve buz çekirdeği (ice c
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

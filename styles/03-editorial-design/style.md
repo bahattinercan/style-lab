@@ -10,7 +10,7 @@
 | **Zorluk** | orta-yüksek (tipografi ve ritim bakımı) · **Erişilebilirlik** | iyi |
 | **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="editorial-design"]` |
 | **Kompozisyon** | `type` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -159,46 +159,18 @@ Gazete/dergi tipografisi ve Jan Tschichold'in kolon sistemleri; dijitalde Medium
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 60px serif başlık, altında 66ch lede, sol 3px accent çubuk, sağda kolonlu görsel + caption | `shots/01-landing.png` |
-| Dashboard | düşük | Dergi dili geri çekilir: sans gövde, hairline kural, mono sayılar; serif sadece başlıkta | `shots/02-dashboard.png` |
-| Form | düşük | 520px tek sütun, etiket 12px mono, input alt kenar vurgulu | — |
-| Liste / tablo | düşük | 44px satır, hairline; başlık satırı mono uppercase | — |
-| Boş durum | orta | Tek cümle + tek bağlantı; illüstrasyon yerine hairline kutu | — |
-| Onboarding / makale | yüksek | Drop cap, iki kolon, dipnot numaraları, alıntı bloğu | — |
-| Pricing | orta | 3 kolon, orta kolon 1px accent kenar; fiyat serif 40px | — |
-| Giriş / ödeme | çok düşük | 420px kart, hairline, tek accent buton | — |
-| Modal | orta | 4px radius, 1px kenar, serif başlık | — |
-| Bildirim / toast | düşük | Koyu zemin + serif olmayan 13px metin | — |
-| Hata | düşük | 1px `--danger` kenar + 13px açıklama, utanç vermeyen dil | — |
-| Profil / ayar | orta | 8/4 kolon, bölüm başlıkları serif, ayar satırı 52px | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `ease-out` | `opacity` |
-| Giriş | 550ms | `ease-out` | `opacity` + 10px `translateY`, stagger 60ms |
-| Scroll (`top 88%`) | 650ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 180ms | aynı eğri | `transform: scale(1.015)` |
-| Ödül | 300ms | `ease-in-out` | accent çubuk genişliği 0→100% (tek seferlik) |
-
-- Okuma akışını bozan animasyon yasak (parallax, fade-in her paragrafta).
-- `prefers-reduced-motion`: 0.01ms; accent çubuk anında görünür.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#fdfcf9` | `#14120f` |
-| `--bg-2` | `#f4f1ea` | `#1e1b16` |
-| `--surface` | `#ffffff` | `#1a1714` |
-| `--ink` | `#141414` | `#f0e9dd` |
-| `--ink-soft` | `#56504a` | `#b9b0a2` |
-| `--line` | `rgba(20,20,20,.14)` | `rgba(240,233,221,.18)` |
-| `--accent` | `#b4472f` | `#d76a4c` |
-| `--accent-ink` | `#ffffff` | `#14120f` |
-
-- Koyu modda grain azaltılır (.02), aksi halde lekeli görünür.
+| Landing / hero | yüksek | 60px serif başlık, altında 66ch lede, sol 3px accent çubuk, sağda kolonlu görsel + caption | `shots/01-page.png` |
+| Dashboard | düşük | Dergi dili geri çekilir: sans gövde, hairline kural, mono sayılar; serif sadece başlıkta | `shots/01-page.png` |
+| Form | düşük | 520px tek sütun, etiket 12px mono, input alt kenar vurgulu | `shots/01-page.png` |
+| Liste / tablo | düşük | 44px satır, hairline; başlık satırı mono uppercase | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + tek bağlantı; illüstrasyon yerine hairline kutu | `shots/01-page.png` |
+| Onboarding / makale | yüksek | Drop cap, iki kolon, dipnot numaraları, alıntı bloğu | `shots/01-page.png` |
+| Pricing | orta | 3 kolon, orta kolon 1px accent kenar; fiyat serif 40px | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | 420px kart, hairline, tek accent buton | `shots/01-page.png` |
+| Modal | orta | 4px radius, 1px kenar, serif başlık | `shots/01-page.png` |
+| Bildirim / toast | düşük | Koyu zemin + serif olmayan 13px metin | `shots/01-page.png` |
+| Hata | düşük | 1px `--danger` kenar + 13px açıklama, utanç vermeyen dil | `shots/01-page.png` |
+| Profil / ayar | orta | 8/4 kolon, bölüm başlıkları serif, ayar satırı 52px | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -211,14 +183,11 @@ Gazete/dergi tipografisi ve Jan Tschichold'in kolon sistemleri; dijitalde Medium
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

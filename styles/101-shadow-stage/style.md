@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 5.10:1) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `styles/101-shadow-stage/tokens.json` → `[data-style="shadow-stage"]` |
 | **Kompozisyon** | `sticky` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,58 +139,21 @@ Rönesans chiaroscuro'su (Caravaggio'nun tek kaynak ışığı), tiyatro sahne a
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Işık huzmesi 5/7; başlık en aydınlık öğe, tek CTA accent | `shots/01-landing.png` |
-| Dashboard | düşük | Kartlar tek ışıkla; KPI'lar soluk gölge, tablo gölgesiz | `shots/02-dashboard.png` |
-| Form | düşük | Alanlar `--bg-2`; odak halkası 2px accent | — |
-| Liste / tablo | düşük | 40px satır, gölge yok, hover zemin aydınlanır | — |
-| Boş durum | orta | Boş sahne + tek ışık lekesi + birincil eylem | — |
-| Onboarding | yüksek | Adımlar perde gibi: her adımda tek ışık odağı | — |
-| Pricing | orta | Kartlar aynı gölge yönünde; öne çıkan kart accent çerçeve | — |
-| Giriş / ödeme | çok düşük | Tek panel, ışık üstte; hata satırı `--danger` | — |
-| Modal | orta | %55 örtü, modal tek ışıkla aydınlanır | — |
-| Bildirim / toast | orta | Tek satır mono + soluk gölge | — |
-| Hata | düşük | Başlık `--danger`; gölge azaltılır (hata "sahnede" kalır) | — |
-| Profil / ayar | orta | Işık kaynağı ve tema tercihleri; kontrast önizlemesi | — |
+| Landing / hero | yüksek | Işık huzmesi 5/7; başlık en aydınlık öğe, tek CTA accent | `shots/01-page.png` |
+| Dashboard | düşük | Kartlar tek ışıkla; KPI'lar soluk gölge, tablo gölgesiz | `shots/01-page.png` |
+| Form | düşük | Alanlar `--bg-2`; odak halkası 2px accent | `shots/01-page.png` |
+| Liste / tablo | düşük | 40px satır, gölge yok, hover zemin aydınlanır | `shots/01-page.png` |
+| Boş durum | orta | Boş sahne + tek ışık lekesi + birincil eylem | `shots/01-page.png` |
+| Onboarding | yüksek | Adımlar perde gibi: her adımda tek ışık odağı | `shots/01-page.png` |
+| Pricing | orta | Kartlar aynı gölge yönünde; öne çıkan kart accent çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel, ışık üstte; hata satırı `--danger` | `shots/01-page.png` |
+| Modal | orta | %55 örtü, modal tek ışıkla aydınlanır | `shots/01-page.png` |
+| Bildirim / toast | orta | Tek satır mono + soluk gölge | `shots/01-page.png` |
+| Hata | düşük | Başlık `--danger`; gölge azaltılır (hata "sahnede" kalır) | `shots/01-page.png` |
+| Profil / ayar | orta | Işık kaynağı ve tema tercihleri; kontrast önizlemesi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — sahne — tek ışık konisi, düşen gölge kopyası, zemin çizgisi.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.43s**, y **18px**, stagger **0.075** | `cubic-bezier(.4,.05,.25,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.61s**, trigger **top 79%**, y **20px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **kapalı** (sahne sabittir; ışık kaymaz) | — | — |
-| Hover | **250ms**, görsel scale **1.030** | `ease-out` | `transform` |
-| Basma | 120ms | aynı eğri | `transform` (1px) |
-| Işık sönümü | 220ms | aynı eğri | `opacity` |
-
-- Bu stilin ölçülebilir imzası: `enter 0.43s / cubic-bezier(.4,.05,.25,1) / 18px / 0.075` + `scroll top 79% / 0.61s / 20px` + `pin kapalı` + `hover 250ms / 1.030`. Ne `0.43s` giriş süresi ne de `hover 250ms + 1.030` ikilisi katalogdaki başka bir stilde birlikte geçer.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; ışık lekesi donar, gölge kayması olmaz.
-- Bu stile yasak hareket: çok kaynaklı gölge animasyonu, sürekli ışıma nabzı, parallax, gradient kaydırma.
-
-## Koyu mod
-
-Varsayılan zemin koyu grafittir; `data-theme="dark"` bloğu **sıcak kahve-siyahı** bandına geçer ve altın accent'i parlatır — tek ışık kaynağı metaforu korunur, iki tema yan yana ayırt edilir.
-
-| Token | Açık (sahne) | Koyu (gece sahnesi) |
-|---|---|---|
-| `--bg` | `#12151a` | `#100c08` |
-| `--bg-2` | `#171b21` | `#151009` |
-| `--surface` | `#1b2028` | `#19130c` |
-| `--surface-2` | `#232a33` | `#221a11` |
-| `--ink` | `#eef1f5` | `#f6f3ee` |
-| `--ink-soft` | `#adb6c2` | `#c3b9ad` |
-| `--ink-faint` | `#7e8896` | `#948a7d` |
-| `--accent` | `#e3b341` | `#ffc861` |
-| `--accent-ink` | `#1a1405` | `#1a1206` |
-| `--line` | `rgba(238,241,245,.15)` | `rgba(246,243,238,.18)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **18.47:1** · `ink-soft/bg` = **10.89:1** · `accent-ink/accent` = **11.48:1** · `ink-faint/bg` = **6.20:1**.
-- Koyu modda değişen başka ne var: ışık lekesi %12 → %9, vinyet opaklığı %22 → %26, çizgi .15 → .18.
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="shadow-stage"]`.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **10.29:1** açık / **10.95:1** koyu · `--warn / bg` = **10.61:1** / **11.30:1** · `--ok / surface` = 10.36:1 / 10.69:1 (warn) · devre dışı buton metni = **7.82:1** / **9.43:1** · ghost buton kenarı = **5.56:1** / **5.76:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - Ekran başına **tek** ışık kaynağı; tüm gölgeler aynı yöne düşer.
@@ -218,14 +181,11 @@ Varsayılan zemin koyu grafittir; `data-theme="dark"` bloğu **sıcak kahve-siya
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (kaosu ölçülü tutmak) · **Erişilebilirlik** | orta risk (döndürme + yüksek kontrast + gren) — ölçülen kontrast 15.17:1 / 5.10:1 |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="punk-fanzine"]` |
 | **Kompozisyon** | `index` · `pill` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -143,59 +143,21 @@ Klişeye düşmemesi için korunması gereken detay: **tek renk ve döndürme b�
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Ranson punto başlık + zımba izleri + yarım ton bandı | `shots/01-landing.png` |
-| Dashboard | orta | 2px kenarlı kartlar, mono sayılar; döndürme yok | `shots/02-dashboard.png` |
-| Form | düşük | 2px kenar alanlar, 3px odak halkası, `!` hata işareti | — |
-| Liste / tablo | orta | Line-up tablosu: saat mono, sanatçı daktilo | — |
-| Boş durum | orta | El çizimi `?` + tek cümle + tek buton | — |
-| Onboarding | yüksek | 3 adım, her adımda tek damga kutusu | — |
-| Pricing | orta | 3 kart; destek bandı damga kırmızısı, kesik şerit döndürülmüş | — |
-| Giriş / ödeme | çok düşük | Döndürme ve gren kapanır; 2px kenar + mono form kalır | — |
-| Modal | orta | 3px mürekkep çerçeve + sert gölge, perde %60 | — |
-| Bildirim / toast | orta | Koyu zemin, 8px accent kare, 2400ms | — |
-| Hata | düşük | `--accent` kenar + `!` + mono açıklama | — |
-| Profil / ayar | orta | Ayarlar 2px kartlarda; döndürme yok, mono etiketler | — |
+| Landing / hero | yüksek | Ranson punto başlık + zımba izleri + yarım ton bandı | `shots/01-page.png` |
+| Dashboard | orta | 2px kenarlı kartlar, mono sayılar; döndürme yok | `shots/01-page.png` |
+| Form | düşük | 2px kenar alanlar, 3px odak halkası, `!` hata işareti | `shots/01-page.png` |
+| Liste / tablo | orta | Line-up tablosu: saat mono, sanatçı daktilo | `shots/01-page.png` |
+| Boş durum | orta | El çizimi `?` + tek cümle + tek buton | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım, her adımda tek damga kutusu | `shots/01-page.png` |
+| Pricing | orta | 3 kart; destek bandı damga kırmızısı, kesik şerit döndürülmüş | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Döndürme ve gren kapanır; 2px kenar + mono form kalır | `shots/01-page.png` |
+| Modal | orta | 3px mürekkep çerçeve + sert gölge, perde %60 | `shots/01-page.png` |
+| Bildirim / toast | orta | Koyu zemin, 8px accent kare, 2400ms | `shots/01-page.png` |
+| Hata | düşük | `--accent` kenar + `!` + mono açıklama | `shots/01-page.png` |
+| Profil / ayar | orta | Ayarlar 2px kartlarda; döndürme yok, mono etiketler | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — fotokopi kolaj — kes-yapıştır şerit, damga, eğik kart.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 60ms | `steps(2, end)` | `box-shadow` kalkar, `translate(0,0)` |
-| Geçiş / sayfa | 120ms | `steps(2, end)` | `opacity` (kesik) |
-| Giriş (enter) | **150ms** | `steps(2, end)` | `opacity` + `translateY(30px)`, **stagger 50ms** |
-| Kaydırma (scroll) | **180ms** | `steps(2, end)` | trigger **`top 96%`**, offsetY **34px**, `once: false` |
-| Hover | **60ms** | `linear` | görsel ölçek **1.03** (en kısa hover) |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 200ms | `steps(2, end)` | damga kutusu 2 kademede büyür |
-
-- İmza ölçüsü: enter **0.15s / 30px / stagger 0.05** · scroll **0.18s / `top 96%` / 34px / `once: false`** · hover **60ms / 1.03** · pin **kapalı** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; `once: false` animasyonu durur, toner dokusu ve döndürme statik kalır.
-- Bu stile yasak hareket: yumuşak ease-out/spring, parallax, sürekli döngü, blur geçişi, titreme (jitter) animasyonu.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#e6e4dd` | `#0f0f0f` |
-| `--bg-2` | `#dbd8d0` | `#151514` |
-| `--surface` | `#f2f0e9` | `#1a1a19` |
-| `--surface-2` | `#d2cfc6` | `#242423` |
-| `--ink` | `#0e0e0e` | `#ececea` |
-| `--ink-soft` | `#43433f` | `#adadab` |
-| `--ink-faint` | `#6d6d68` | `#838381` |
-| `--accent` | `#cf1f2b` | `#f0434f` |
-| `--accent-ink` | `#fff7f1` | `#100b0b` |
-| `--line` | `rgba(14,14,14,.24)` | `rgba(236,236,234,.22)` |
-
-- Koyu mod **gece fotokopisi**: zemin `#0f0f0f`, kart `#1a1a19`; accent açılır (`#f0434f`) çünkü koyu kırmızı koyu zeminde kaybolur.
-- Sert ofset gölge koyuda siyah olsaydı görünmezdi: `--shadow-hard` **kâğıt grisine** (`#4b4844`) döner — yazılı istisna, `token-block.css` koyu bloğunda açıkça durur.
-- Gren koyuda `%6` çizgiye düşer (açık opaklık koyu zeminde toner lekesi gibi okunmaz, gürültü olur).
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **16.20:1** · `ink-soft/bg` = **8.53:1** · `accent-ink/accent` = **5.23:1** · `ink-faint/bg` = **5.05:1**.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **-:1** açık / **-:1** koyu · `--warn / bg` = **-:1** / **-:1** · `--ok / surface` = -:1 / -:1 (warn) · devre dışı buton metni = **6.91:1** / **7.59:1** · ghost buton kenarı = **4.01:1** / **5.47:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 
@@ -226,14 +188,11 @@ Klişeye düşmemesi için korunması gereken detay: **tek renk ve döndürme b�
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

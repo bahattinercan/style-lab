@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (taşan tipografi + okunur gövde dengesi) · **Erişilebilirlik** | orta risk (küçük mono etiketler, taşan display) — ölçülen kontrast 17.61:1 / 8.25:1 |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="type-experiment"]` |
 | **Kompozisyon** | `type` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -143,58 +143,21 @@ Klişeye düşmemesi için korunması gereken detay: **ızgara görünür kalmal
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 76px taşan display + ölçü notları + glyph katmanı | `shots/01-landing.png` |
-| Dashboard | düşük | Düz kartlar, mono sayılar; ızgara yalnız zemin | `shots/02-dashboard.png` |
-| Form | düşük | 44px alan, 2px accent halka, mono açıklama | — |
-| Liste / tablo | orta | Glif tablosu: karakter / advance / unicode | — |
-| Boş durum | orta | Tek satır mono açıklama + dev `∅` işareti (%10 opaklık) | — |
-| Onboarding | yüksek | 3 adım, her adımda bir ölçü notu bloğu | — |
-| Pricing | orta | 3 sütun; önerilen sütunda 2px accent üst çizgi | — |
-| Giriş / ödeme | çok düşük | Süs sıfır; mono form + tek accent buton | — |
-| Modal | orta | 2px mürekkep çerçeve, gölgesiz | — |
-| Bildirim / toast | orta | Koyu zemin, 4px accent kare, 2400ms | — |
-| Hata | düşük | `--danger` kenar + mono açıklama; display küçültülür | — |
-| Profil / ayar | orta | Glif tablosu + ölçü notları; ızgara korunur | — |
+| Landing / hero | yüksek | 76px taşan display + ölçü notları + glyph katmanı | `shots/01-page.png` |
+| Dashboard | düşük | Düz kartlar, mono sayılar; ızgara yalnız zemin | `shots/01-page.png` |
+| Form | düşük | 44px alan, 2px accent halka, mono açıklama | `shots/01-page.png` |
+| Liste / tablo | orta | Glif tablosu: karakter / advance / unicode | `shots/01-page.png` |
+| Boş durum | orta | Tek satır mono açıklama + dev `∅` işareti (%10 opaklık) | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım, her adımda bir ölçü notu bloğu | `shots/01-page.png` |
+| Pricing | orta | 3 sütun; önerilen sütunda 2px accent üst çizgi | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Süs sıfır; mono form + tek accent buton | `shots/01-page.png` |
+| Modal | orta | 2px mürekkep çerçeve, gölgesiz | `shots/01-page.png` |
+| Bildirim / toast | orta | Koyu zemin, 4px accent kare, 2400ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + mono açıklama; display küçültülür | `shots/01-page.png` |
+| Profil / ayar | orta | Glif tablosu + ölçü notları; ızgara korunur | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — tipografi numunesi — 8px taban çizgisi ızgarası, ağırlık/metrik notları.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 80ms | `steps(2, end)` | 1px iç çerçeve (konum kaymaz) |
-| Geçiş / sayfa | 140ms | `steps(4, end)` | `opacity` (kademeli) |
-| Giriş (enter) | **220ms** | `steps(4, end)` | `opacity` + `translateY(48px)`, **stagger 15ms** (4 kademe) |
-| Kaydırma (scroll) | **260ms** | `steps(4, end)` | trigger **`top 94%`**, offsetY **56px**, `once: true` |
-| Hover | **80ms** | `linear` | görsel ölçek **1.06** (en yüksek hover ölçeği) |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 260ms | `steps(4, end)` | accent şerit 4 kademede `scaleX(0→1)` |
-
-- İmza ölçüsü: enter **0.22s / 48px / stagger 0.015** · scroll **0.26s / `top 94%` / 56px** · hover **80ms / 1.06** · pin **kapalı** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; kademeli geçiş durur, katmanlar statik kalır.
-- Bu stile yasak hareket: yumuşak ease-out zarafeti, parallax, sürekli döngü, harf harf rotate.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f4f4f0` | `#0b0b0d` |
-| `--bg-2` | `#eaeae4` | `#101013` |
-| `--surface` | `#ffffff` | `#141417` |
-| `--surface-2` | `#efefe9` | `#1b1b1f` |
-| `--ink` | `#0d0d0f` | `#efeff1` |
-| `--ink-soft` | `#47474c` | `#a9a9ae` |
-| `--ink-faint` | `#74747a` | `#7e7e84` |
-| `--accent` | `#2b1de0` | `#7b6cff` |
-| `--accent-ink` | `#f6f5ff` | `#0b0b0d` |
-| `--line` | `rgba(13,13,15,.16)` | `rgba(239,239,241,.16)` |
-
-- Koyu mod **negatif film**: zemin `#0b0b0d`, ızgara beyazdan türetilir; accent açılır (`#7b6cff`) çünkü ultramarin koyu zeminde ızgara çizgisine karışır.
-- Glyph katmanı koyuda opacity .04'e düşer (açık opaklık koyu zeminde fazla parlar).
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **17.12:1** · `ink-soft/bg` = **8.40:1** · `accent-ink/accent` = **5.09:1** · `ink-faint/bg` = **4.87:1**.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **-:1** açık / **-:1** koyu · `--warn / bg` = **-:1** / **-:1** · `--ok / surface` = -:1 / -:1 (warn) · devre dışı buton metni = **8.15:1** / **7.79:1** · ghost buton kenarı = **4.18:1** / **5.56:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 
@@ -225,14 +188,11 @@ Klişeye düşmemesi için korunması gereken detay: **ızgara görünür kalmal
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

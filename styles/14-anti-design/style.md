@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (kaosu ölçmek zor) · **Erişilebilirlik** | **yüksek risk** |
 | **Aile** | Cesur (13–18) · **Token** | `kit/tokens.css` → `[data-style="anti-design"]` |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -153,45 +153,18 @@ Kazandığı şey: hatırlanma ve enerji. Feda ettiği şey: güven ve okunabili
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | çok yüksek | 104px Anton başlık, döndürülmüş panel, asit blok, 2 buton; 3 ihlal sınırı | `shots/01-landing.png` |
-| Dashboard | düşük | İhlal 0–1: sadece başlık Anton; tablo/grafik düz | `shots/02-dashboard.png` |
-| Form | düşük | Rotasyon yok, 3px kenarlık kalır | — |
-| Liste / tablo | düşük | Düz ızgara, 2px ayırıcı | — |
-| Boş durum | yüksek | Dev tipografi + tek satır + tek buton | — |
-| Onboarding | yüksek | Adım numarası 140px, tek fikir/sayfa | — |
-| Pricing | yüksek | 3 döndürülmüş kart (≤1.5°), orta kart asit zemin | — |
-| Giriş / ödeme | **çok düşük** | İhlal 0; düz form, 3px kenarlık yeter | — |
-| Modal | orta | 12px ofset gölge, 32px padding | — |
-| Bildirim / toast | orta | Koyu zemin, 3px kenar | — |
-| Hata | orta | Dev "!" + 15px açıklama | — |
-| Profil / ayar | düşük | Düz liste, Anton yalnız başlıkta | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 90ms | `ease-out` | `translate(4px,4px)` |
-| Giriş | 340ms | `steps(3, end)` | `opacity` + 16px `translateY`, stagger 50ms |
-| Scroll (`top 86%`) | 400ms | aynı eğri | `opacity` + 16px `translateY`, `once: true` |
-| Hover | 110ms | aynı eğri | `transform: scale(1.03)` |
-| Ödül | 240ms | `steps(3)` | rotasyon 0→hedef (basamaklı) |
-
-- Hareket keskin; `steps()` kullanımı bu stilin imzası olabilir.
-- `prefers-reduced-motion`: tüm hareket 0.01ms.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f2e9da` | `#111111` |
-| `--bg-2` | `#d6ff3f` | `#c6ef2e` |
-| `--surface` | `#ffffff` | `#1c1c1c` |
-| `--ink` | `#1b1b1b` | `#f5f1e6` |
-| `--accent` | `#ff3b6b` | `#ff3b6b` |
-| `--accent-ink` | `#1b1b1b` | `#111111` |
-| `--line` | `#1b1b1b` | `#f5f1e6` |
-
-- Koyu modda kenarlık açık renge döner; ofset gölge de açık renk (opaklık .18).
+| Landing / hero | çok yüksek | 104px Anton başlık, döndürülmüş panel, asit blok, 2 buton; 3 ihlal sınırı | `shots/01-page.png` |
+| Dashboard | düşük | İhlal 0–1: sadece başlık Anton; tablo/grafik düz | `shots/01-page.png` |
+| Form | düşük | Rotasyon yok, 3px kenarlık kalır | `shots/01-page.png` |
+| Liste / tablo | düşük | Düz ızgara, 2px ayırıcı | `shots/01-page.png` |
+| Boş durum | yüksek | Dev tipografi + tek satır + tek buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım numarası 140px, tek fikir/sayfa | `shots/01-page.png` |
+| Pricing | yüksek | 3 döndürülmüş kart (≤1.5°), orta kart asit zemin | `shots/01-page.png` |
+| Giriş / ödeme | **çok düşük** | İhlal 0; düz form, 3px kenarlık yeter | `shots/01-page.png` |
+| Modal | orta | 12px ofset gölge, 32px padding | `shots/01-page.png` |
+| Bildirim / toast | orta | Koyu zemin, 3px kenar | `shots/01-page.png` |
+| Hata | orta | Dev "!" + 15px açıklama | `shots/01-page.png` |
+| Profil / ayar | düşük | Düz liste, Anton yalnız başlıkta | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -204,14 +177,11 @@ Kazandığı şey: hatırlanma ve enerji. Feda ettiği şey: güven ve okunabili
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

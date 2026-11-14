@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.00:1) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `kit/tokens.css` → `[data-style="telemetry-grid"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -140,52 +140,20 @@ NASA/Houston telemetri konsolları, uçuş testi veri duvarları ve 2010'lar son
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 8 kolon canlı grafik + 4 kolon son olaylar; ızgara zemin | `shots/01-landing.png` |
-| Dashboard | yüksek | 12 tile (3 satır × 4), üstte zaman aralığı şeridi | `shots/02-dashboard.png` |
-| Form | düşük | aralık/eşik formu, iki kolon, mono yardım metni | — |
-| Liste / tablo | yüksek | servis tablosu 32px satır, durum LED'i + eşik sütunu | — |
-| Boş durum | orta | boş ızgara + "veri kaynağı bağla" tek CTA | — |
-| Onboarding | yüksek | 3 adım: kaynak → panel seç → eşik; her adımda örnek tile | — |
-| Pricing | orta | plan tablosu, metrik satırı olarak fiyat | — |
-| Giriş / ödeme | çok düşük | SSO odaklı dar kart, 34px alanlar | — |
-| Modal | orta | tek grafik + eşik düzenleme, dipnot 11px mono | — |
-| Bildirim / toast | orta | sağ üst, 3px durum şeridi, 5000ms | — |
-| Hata | düşük | "veri yok" ile "hata" ayrı: hata tile'ı kesikli kenar + CRIT LED | — |
-| Profil / ayar | orta | bildirim eşikleri, iki kolon, mono özet | — |
+| Landing / hero | yüksek | 8 kolon canlı grafik + 4 kolon son olaylar; ızgara zemin | `shots/01-page.png` |
+| Dashboard | yüksek | 12 tile (3 satır × 4), üstte zaman aralığı şeridi | `shots/01-page.png` |
+| Form | düşük | aralık/eşik formu, iki kolon, mono yardım metni | `shots/01-page.png` |
+| Liste / tablo | yüksek | servis tablosu 32px satır, durum LED'i + eşik sütunu | `shots/01-page.png` |
+| Boş durum | orta | boş ızgara + "veri kaynağı bağla" tek CTA | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: kaynak → panel seç → eşik; her adımda örnek tile | `shots/01-page.png` |
+| Pricing | orta | plan tablosu, metrik satırı olarak fiyat | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | SSO odaklı dar kart, 34px alanlar | `shots/01-page.png` |
+| Modal | orta | tek grafik + eşik düzenleme, dipnot 11px mono | `shots/01-page.png` |
+| Bildirim / toast | orta | sağ üst, 3px durum şeridi, 5000ms | `shots/01-page.png` |
+| Hata | düşük | "veri yok" ile "hata" ayrı: hata tile'ı kesikli kenar + CRIT LED | `shots/01-page.png` |
+| Profil / ayar | orta | bildirim eşikleri, iki kolon, mono özet | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 280ms | `cubic-bezier(.16,.84,.44,1)` | `opacity` + `translateY(6px)`, tile başına 20ms stagger |
-| Scroll reveal | 320ms | `cubic-bezier(.16,.84,.44,1)` | `top 88%` tetiği, 10px yukarı, `once: false` (panel geri gelince tazelenir) |
-| Basma | 110ms | `cubic-bezier(.16,.84,.44,1)` | `transform: translateY(1px)` |
-| Hover | 110ms | `cubic-bezier(.16,.84,.44,1)` | `translateY(-1px)`, görsel ölçek `1.010` |
-| Pin / scrub | kapalı | — | — (veri paneli sabitlenmez) |
-| Canlı değer | 0ms | — | sayaç yok; sayı tek karede değişir |
-
-- Ölçülebilir imza: `enter 0.28s / cb(.16,.84,.44,1) / 6px / 0.02` · `scroll top 88% / 0.32s / 10px / once:false` · `hover 110ms / 1.010` · `pin kapalı`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; ızgara deseni ve canlı güncelleme kalır, geçiş animasyonu kalkar.
-- Bu stile yasak hareket: sayaç yuvarlanması, nabız atan tile, parallax, pin/scrub, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#eef1f4` | `#0a0f12` |
-| `--bg-2` | `#e5eaee` | `#0e1417` |
-| `--surface` | `#ffffff` | `#101820` |
-| `--surface-2` | `#f6f8fa` | `#162028` |
-| `--ink` | `#10171c` | `#e6eef2` |
-| `--ink-soft` | `#46585f` | `#a3b3bb` |
-| `--accent` | `#0b6e75` | `#3ec6cd` |
-| `--accent-ink` | `#ffffff` | `#04191b` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **16.40:1** · `ink-soft / bg` = **8.92:1** · `accent-ink / accent` = **8.76:1** · `ink-faint / bg` = **4.69:1**.
-- Koyu modda değişen başka ne var: ızgara çizgisi `rgba(230,238,242,.16)` (açıkta .14); tile gölgesi 0'dan `0 1px 2px rgba(0,0,0,.55)`'e çıkar ama görünmez kalır (yalnız yüzen katman aynı gölgeyi büyütür); doygunluk düşmez, durum renkleri açılır (`--danger #ff8f87`, `--ok #5ddb9a`, `--warn #f0c052`).
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 - Tile birimi değişmez: 12px padding, 96px yükseklik, en fazla 3 metin satırı, sol 3px eşik şeridi.
@@ -214,14 +182,11 @@ NASA/Houston telemetri konsolları, uçuş testi veri duvarları ve 2010'lar son
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

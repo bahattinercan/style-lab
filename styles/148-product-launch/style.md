@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (mint accent düşük parlaklıkta okunmaz) |
 | **Aile** | Sahne & Prestij (146–151) · **Token** | `kit/tokens.css` → `[data-style="product-launch"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,17 @@ Derinlik spotlight + panelin üst kenarındaki 1px iç parlaklıktan gelir. Göl
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | split hero: solda 52px başlık + 2 CTA, sağda ürün paneli; sabit spotlight ikisinin arkasında | `shots/01-landing.png` |
-| Dashboard (ürün) | yüksek | 3 KPI + 2 grafik + 6 satırlık tablo; yoğun ama tek accent | `shots/02-dashboard.png` |
-| Form / bekleme listesi | düşük | tek alan + mint buton; hata `--danger` 1px + 12px açıklama | — |
-| Liste / changelog | orta | satır: sürüm no (mono) + başlık + tarih; 56px | — |
-| Boş durum | düşük | "henüz sürüm yok" + ilk adım CTA | — |
-| Onboarding | orta | 3 adım nokta göstergesi, aktif mint hap | — |
-| Pricing | orta | iki plan; öne çıkanda mint 1px çerçeve + glow | — |
-| Giriş / ödeme | düşük | tek panel, tek eylem; spotlight yok | — |
-| Modal | orta | 24px radius, mint %35 çerçeve, `--shadow` | — |
-| Bildirim | orta | 40px toast, sol 3px mint şerit, 3.4s | — |
-| Mobil (390px) | orta | spotlight %80 genişlik, başlık 30px, panel tam kanama | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (scale-settle) | 0.74s | `cubic-bezier(.22,.9,.24,1)` | `opacity` + `translateY(24px)`, 0.05 arayla |
-| Scroll reveal | 0.7s, `top 76%` | aynı | `translateY(18px)`, `once: true` |
-| Pin / scrub | kapalı | doğrusal | bu stil sabit bölüm kullanmaz |
-| Basma | 130ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 220ms | aynı | `scale(1.02)` |
-
-- Ölçülen imza: enter **0.74s · cubic-bezier(.22,.9,.24,1) · 24px · stagger 0.05**; scroll **top 76% · 0.7s · 18px · once**; pin **yok**; hover **220ms · 1.02**.
-- undefined
-- `prefers-reduced-motion`: opacity.
-- Bu stile yasak hareket: bounce/elastik yay (aşmalı cubic-bezier), sonsuz döngü, hareketli gradient/aurora, hover tilt-3d.
-
-## Koyu mod
-
-| Token | Açık (sahne) | Koyu (karanlık sahne) |
-|---|---|---|
-| `--bg` | `#070b14` | `#04070c` |
-| `--bg-2` | `#04070e` | `#020408` |
-| `--surface` | `#0e1522` | `#0a111b` |
-| `--surface-2` | `#16202f` | `#121b27` |
-| `--ink` | `#eef3fb` | `#f2f7fd` |
-| `--ink-soft` | `#b3c1d6` | `#bcc9dc` |
-| `--ink-faint` | `#7d8ba1` | `#8695aa` |
-| `--accent` | `#6fe8b8` | `#8bf2c9` |
-| `--accent-ink` | `#04140d` | `#04140d` |
-| `--line` | `rgba(238,243,251,.12)` | `rgba(242,247,253,.14)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **18.73:1** · `ink-soft/bg` **12.03:1** · `accent-ink/accent` **14.08:1** · `ink-faint/bg` **6.62:1** · odak halkası yüzey üzerinde **14.11:1**.
-- Koyu blokta zemin #04070c'ye iner, mint #8bf2c9'a çıkar: spotlight dışı alan daha da koyulaştığı için mint'in parlaklığı korunmalı, aksi hâlde buton zemine gömülür. Çizgi %12 → %14.
-- `filter: invert()` yasak; koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="product-launch"]` olarak durur.
+| Landing / hero | orta | split hero: solda 52px başlık + 2 CTA, sağda ürün paneli; sabit spotlight ikisinin arkasında | `shots/01-page.png` |
+| Dashboard (ürün) | yüksek | 3 KPI + 2 grafik + 6 satırlık tablo; yoğun ama tek accent | `shots/01-page.png` |
+| Form / bekleme listesi | düşük | tek alan + mint buton; hata `--danger` 1px + 12px açıklama | `shots/01-page.png` |
+| Liste / changelog | orta | satır: sürüm no (mono) + başlık + tarih; 56px | `shots/01-page.png` |
+| Boş durum | düşük | "henüz sürüm yok" + ilk adım CTA | `shots/01-page.png` |
+| Onboarding | orta | 3 adım nokta göstergesi, aktif mint hap | `shots/01-page.png` |
+| Pricing | orta | iki plan; öne çıkanda mint 1px çerçeve + glow | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek panel, tek eylem; spotlight yok | `shots/01-page.png` |
+| Modal | orta | 24px radius, mint %35 çerçeve, `--shadow` | `shots/01-page.png` |
+| Bildirim | orta | 40px toast, sol 3px mint şerit, 3.4s | `shots/01-page.png` |
+| Mobil (390px) | orta | spotlight %80 genişlik, başlık 30px, panel tam kanama | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Hero'da tek sabit spotlight; hareketli gradient yok.
@@ -214,14 +180,11 @@ Derinlik spotlight + panelin üst kenarındaki 1px iç parlaklıktan gelir. Göl
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

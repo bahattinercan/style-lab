@@ -34,45 +34,9 @@ const STYLES_DIR = path.join(ROOT, 'styles');
 const TMP_DIR = path.join(HERE, '.tmp');
 
 const SCENES = [
-  { key: 'landing', file: '01-landing.png', tpl: 'landing.html', width: 1280, height: 900, label: 'Landing' },
-  { key: 'dashboard', file: '02-dashboard.png', tpl: 'dashboard.html', width: 1280, height: 900, label: 'Dashboard' },
-  { key: 'mobile', file: '03-mobile.png', tpl: 'mobile.html', width: 390, height: 844, label: 'Mobil' },
-  { key: 'components', file: '04-components.png', tpl: 'components.html', width: 1280, height: 900, label: 'Bileşenler · temel' },
-  { key: 'form', file: '05-components-form.png', tpl: 'forms.html', width: 1280, height: 900, label: 'Bileşenler · form' },
-  { key: 'overlay', file: '06-components-overlay.png', tpl: 'overlay.html', width: 1280, height: 900, label: 'Bileşenler · katman' },
-  { key: 'data', file: '07-components-data.png', tpl: 'data.html', width: 1280, height: 900, label: 'Bileşenler · veri' },
-  { key: 'nav', file: '08-components-nav.png', tpl: 'nav.html', width: 1280, height: 900, label: 'Bileşenler · gezinme' },
-  { key: 'pricing', file: '09-page-pricing.png', tpl: 'pricing.html', width: 1280, height: 1150, label: 'Sayfa · fiyatlandırma' },
-  { key: 'auth', file: '10-page-auth.png', tpl: 'auth.html', width: 1280, height: 900, label: 'Sayfa · giriş' },
-  { key: 'list', file: '11-page-list.png', tpl: 'list.html', width: 1280, height: 1000, label: 'Sayfa · liste' },
-  { key: 'states', file: '12-page-states.png', tpl: 'states.html', width: 1280, height: 900, label: 'Sayfa · durumlar' },
-  { key: 'settings', file: '13-page-settings.png', tpl: 'settings.html', width: 1280, height: 1000, label: 'Sayfa · ayarlar' },
-  { key: 'checkout', file: '14-page-checkout.png', tpl: 'checkout.html', width: 1280, height: 1000, label: 'Sayfa · ödeme' },
-  { key: 'onboarding', file: '15-page-onboarding.png', tpl: 'onboarding.html', width: 1280, height: 900, label: 'Sayfa · onboarding' },
-  { key: 'article', file: '16-page-article.png', tpl: 'article.html', width: 1280, height: 1100, label: 'Sayfa · makale' },
-  /* ---- emlak (estate) sahneleri: 22–27 ---- */
-  { key: 'estate-landing', file: '22-estate-landing.png', tpl: 'estate.html', width: 1280, height: 2080, label: 'Emlak · landing' },
-  { key: 'estate-detail', file: '23-estate-detail.png', tpl: 'estate-detail.html', width: 1280, height: 1600, label: 'Emlak · ilan detayı' },
-  { key: 'estate-map', file: '24-estate-map.png', tpl: 'estate-map.html', width: 1280, height: 760, label: 'Emlak · harita + filtre' },
-  { key: 'estate-concierge', file: '25-estate-concierge.png', tpl: 'estate-concierge.html', width: 1280, height: 880, label: 'Emlak · concierge' },
-  { key: 'mobile-estate', file: '26-mobile-estate.png', tpl: 'mobile-estate.html', width: 390, height: 844, label: 'Mobil · emlak' },
-  { key: 'motion', file: '27-motion.png', tpl: 'motion.html', width: 1280, height: 900, label: 'Hareket levhası' },
-  { key: 'dark-landing', file: '17-dark-landing.png', tpl: 'dark-landing.html', width: 1280, height: 900, label: 'Koyu mod · landing' },
-  { key: 'dark-dashboard', file: '28-dark-dashboard.png', tpl: 'dark-dashboard.html', width: 1280, height: 900, label: 'Koyu mod · dashboard' },
-  { key: 'dark-components', file: '29-dark-components.png', tpl: 'dark-components.html', width: 1280, height: 900, label: 'Koyu mod · bileşenler' },
-  { key: 'dark-list', file: '30-dark-list.png', tpl: 'dark-list.html', width: 1280, height: 1000, label: 'Koyu mod · liste' },
-  { key: 'dark-mobile', file: '31-dark-mobile.png', tpl: 'dark-mobile.html', width: 390, height: 844, label: 'Koyu mod · mobil' },
-  { key: 'dark-form', file: '18-dark-form.png', tpl: 'dark-form.html', width: 1280, height: 900, label: 'Koyu mod · form' },
-  { key: 'mobile-sheet', file: '19-mobile-sheet.png', tpl: 'mobile-sheet.html', width: 390, height: 844, label: 'Mobil · alt sayfa' },
-  { key: 'mobile-form', file: '20-mobile-form.png', tpl: 'mobile-form.html', width: 390, height: 844, label: 'Mobil · form' },
-  { key: 'mobile-list', file: '21-mobile-list.png', tpl: 'mobile-list.html', width: 390, height: 844, label: 'Mobil · liste' },
-  /* ---- P4b: işlevsel sahneler 32–37 ---- */
-  { key: 'paywall', file: '32-paywall.png', tpl: 'paywall.html', width: 1280, height: 900, label: 'Sayfa · paywall' },
-  { key: 'feed', file: '33-feed.png', tpl: 'feed.html', width: 1280, height: 900, label: 'Sayfa · etkinlik akışı' },
-  { key: 'table-filters', file: '34-table-filters.png', tpl: 'table-filters.html', width: 1280, height: 960, label: 'Sayfa · filtreli tablo' },
-  { key: 'profile', file: '35-profile.png', tpl: 'profile.html', width: 1280, height: 900, label: 'Sayfa · profil' },
-  { key: 'search', file: '36-search.png', tpl: 'search.html', width: 1280, height: 900, label: 'Sayfa · arama' },
-  { key: 'integrations', file: '37-integrations.png', tpl: 'integrations.html', width: 1280, height: 900, label: 'Sayfa · entegrasyonlar' },
+  /* v6 · tek sayfa: her stil için tek uzun sayfa (1280×2400). Koyu mod ve hareket
+     katmanı kaldırıldı; katalog "stili gör" sorusuna tek görselle cevap verir. */
+  { key: 'landing', file: '01-page.png', tpl: 'page.html', width: 1280, height: 2400, label: 'Tek sayfa' },
 ];
 
 const CORE_JSON = path.join(ROOT, 'kit', 'shots.core.json');

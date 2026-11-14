@@ -14,9 +14,3 @@
   --tracking: -0.03em; --blur: 0px; --grain: .05;
   --focus: #e83863;
 }
-
-[data-theme="dark"][data-style="anti-design"] {
-  --bg: #111111; --bg-2: #c6ef2e; --surface: #1c1c1c; --surface-2: #2d2d2c;
-  --ink: #f5f1e6; --ink-soft: #b1aea6; --ink-faint: #787671; --accent: #ff3b6b; --accent-ink: #0d0d0d; --line: #f5f1e6;
-  --focus: #ff3b6b;
-}

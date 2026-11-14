@@ -10,7 +10,7 @@
 | **Zorluk** | orta (kalınlığı ölçülü tutmak: her yeri 3px yapmak gürültü üretir) · **Erişilebilirlik** | iyi (12.25:1 gövde, 5.44:1 accent üstü) |
 | **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="slavic-late-brutalist"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -142,55 +142,20 @@ Klişeye düşmemek için korunması gereken detay: **panel bitişikliği ve gö
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 68px uppercase başlık, damga bloğu, alt bantta tehlike şeridi | `shots/01-landing.png` |
-| Dashboard | düşük | Bitişik KPI panelleri (gap 0), mono sayılar, 3px ızgara | `shots/02-dashboard.png` |
-| Form | düşük | 48px alanlar, iç odak halkası, mono hata metni | — |
-| Liste / tablo | düşük | Hücreler 3px çerçeveli; seçili satır ters video | — |
-| Boş durum | orta | Tek damga bloğu (72px) + 1 cümle + 1 buton | — |
-| Onboarding | yüksek | Adım göstergesi 3 bitişik kare, aktif olan rust | — |
-| Pricing | orta | 3 bitişik panel; orta panelde 3px ink kenar + sert gölge | — |
-| Giriş / ödeme | çok düşük | Şerit yok, doku yok; yalnız alanlar + tek rust buton | — |
-| Modal | orta | 3px ink çerçeve + sert gölge, perde %55 | — |
-| Bildirim / toast | orta | Rust blok + mono metin, 2600ms | — |
-| Hata | düşük | `--danger` kenar + mono açıklama; şerit kullanılmaz | — |
-| Profil / ayar | orta | Künye 5 kolon solda, ayar panelleri 7 kolonda bitişik | — |
+| Landing / hero | yüksek | 68px uppercase başlık, damga bloğu, alt bantta tehlike şeridi | `shots/01-page.png` |
+| Dashboard | düşük | Bitişik KPI panelleri (gap 0), mono sayılar, 3px ızgara | `shots/01-page.png` |
+| Form | düşük | 48px alanlar, iç odak halkası, mono hata metni | `shots/01-page.png` |
+| Liste / tablo | düşük | Hücreler 3px çerçeveli; seçili satır ters video | `shots/01-page.png` |
+| Boş durum | orta | Tek damga bloğu (72px) + 1 cümle + 1 buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım göstergesi 3 bitişik kare, aktif olan rust | `shots/01-page.png` |
+| Pricing | orta | 3 bitişik panel; orta panelde 3px ink kenar + sert gölge | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Şerit yok, doku yok; yalnız alanlar + tek rust buton | `shots/01-page.png` |
+| Modal | orta | 3px ink çerçeve + sert gölge, perde %55 | `shots/01-page.png` |
+| Bildirim / toast | orta | Rust blok + mono metin, 2600ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + mono açıklama; şerit kullanılmaz | `shots/01-page.png` |
+| Profil / ayar | orta | Künye 5 kolon solda, ayar panelleri 7 kolonda bitişik | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 70ms | `cubic-bezier(.85,0,.15,1)` | `box-shadow` kalkar, `translate(0,0)` |
-| Giriş (enter) | **260ms** | `cubic-bezier(.85,0,.15,1)` | `opacity` + `translateY(34px)`, stagger **20ms** |
-| Kaydırma (scroll) | **300ms** | `cubic-bezier(.85,0,.15,1)` | trigger **`top 92%`**, offsetY **40px**, `once: false` (her geçişte tekrar) |
-| Hover | **70ms** | `ease-out` | görsel ölçek **1.000** (görsel büyümez; yalnız gölge/kayma) |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 140ms | `cubic-bezier(.85,0,.15,1)` | rust blok 8px → 12px genişler |
-
-- `prefers-reduced-motion`: tüm süreler 0.01ms; `once: false` animasyonu da durur (hareket sıfırlanır, opaklık 1'de kalır).
-- Bu stile yasak hareket: spring/bounce, parallax, yumuşak ease-out zarafeti, sürekli döngü/nefes.
-- İmza ölçüsü: giriş **0.26s / 34px / stagger .02**, kaydırma **0.3s / top 92% / 40px / once: false**, hover **70ms / 1.000**, pin **kapalı** — `once: false` katalogda bu stile özgüdür.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#d8d6d0` | `#1a1b1c` |
-| `--bg-2` | `#cdcac3` | `#202224` |
-| `--surface` | `#e7e5e0` | `#24262a` |
-| `--surface-2` | `#bfbcb5` | `#2f3236` |
-| `--ink` | `#16181a` | `#e8e6e1` |
-| `--ink-soft` | `#43464a` | `#adaead` |
-| `--ink-faint` | `#6b6f74` | `#83858a` |
-| `--accent` | `#a8431d` | `#d26234` |
-| `--accent-ink` | `#f7f3ea` | `#141414` |
-| `--line` | `rgba(22,24,26,.26)` | `rgba(232,230,225,.22)` |
-
-- Koyu mod **gece betonu**: zemin `#1a1b1c`, paneller `#24262a`; rust açılır (`#d26234`) çünkü koyu rust koyu zeminde kaybolur.
-- Sert ofset gölge koyuda siyah olsaydı görünmezdi: `--shadow-hard` **beton grisine** (`#4c5157`) döner — gölge hâlâ sert, ama okunur. Bu tek istisna `## Koyu mod` bloğunda açıkça yazılır.
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **13.83:1** · `ink-soft/bg` = **7.75:1** · `accent-ink/accent` = **4.86:1** · `ink-faint/bg` = **4.67:1**.
 
 ## Zorunlu kurallar
 
@@ -221,14 +186,11 @@ Klişeye düşmemek için korunması gereken detay: **panel bitişikliği ve gö
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -33,16 +33,3 @@
  --ok: #9dbb72;
  --warn: #e0bb63;
 }
-
-[data-theme="dark"][data-style="boutique-hotel"] {
-  --bg:#0e0a07;
-  --bg-2:#080605;
-  --surface:#17120d;
-  --surface-2:#211a13;
-  --ink:#f8f0e6;
-  --ink-soft:#d3c2ae;
-  --ink-faint:#9e8d79;
-  --accent:#e89567;
-  --accent-ink:#1a0b04;
-  --line:rgba(248,240,230,.16);
-}

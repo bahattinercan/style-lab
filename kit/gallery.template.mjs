@@ -52,7 +52,7 @@ export const shotLabel = (file) =>
 
 /** Çekmece + lightbox + filtrelerin tek veri kaynağı. */
 export function styleData(styles, ctx) {
-  const { familyOf, darkState, hueBucket, KEYWORDS, DEMOS, DEFAULT_DEMO } = ctx;
+  const { familyOf, hueBucket, KEYWORDS, DEMOS, DEFAULT_DEMO } = ctx;
   return styles.map((s) => {
     const industry = (s.tokensJson?.industries ?? [])[0] ?? 'saas';
     const accent = s.tokensJson?.palette?.accent ?? s.vars.accent;
@@ -66,7 +66,6 @@ export function styleData(styles, ctx) {
       tags: KEYWORDS[s.slug] ?? [],
       industry,
       tone: hueBucket(accent),
-      dark: darkState(s.slug),
       shots: s.shots,
       swatch: {
         bg: s.vars.bg,
@@ -98,12 +97,12 @@ function swatchDots(s) {
 }
 
 function card(s) {
-  const cover = s.shots[0] ?? '01-landing.png';
+  const cover = s.shots[0] ?? '01-page.png';
   const rel = `../styles/${s.dir}/shots/${cover}`;
   const label = shotLabel(cover);
   const sub = [s.family, ...s.tags.slice(0, 2)].join(' · ');
   return `
-      <article class="card" data-slug="${esc(s.slug)}" data-family="${esc(s.family)}" data-industry="${esc(s.industry)}" data-tone="${esc(s.tone)}" data-dark="${esc(s.dark)}" tabindex="-1">
+      <article class="card" data-slug="${esc(s.slug)}" data-family="${esc(s.family)}" data-industry="${esc(s.industry)}" data-tone="${esc(s.tone)}" tabindex="-1">
         <a class="cover" href="${rel}" aria-label="${esc(s.name)} — ${esc(label)} görselini büyüt">
           <img src="${rel}" alt="${esc(s.name)} — ${esc(label)}" loading="lazy" decoding="async">
           <span class="cover-l">${esc(label)}</span>
@@ -158,12 +157,6 @@ export function galleryHtml(styles, ctx) {
     .map(([id, n]) => `<button type="button" class="chip" data-tone="${esc(id)}" aria-pressed="false">${esc(TONE_LABELS[id] ?? id)}<i>${n}</i></button>`)
     .join('');
 
-  const sceneFiles = [...new Set(data.flatMap((s) => s.shots))].sort();
-  const scenes = sceneFiles
-    .map((file) => `<button type="button" class="chip scn" data-scene="${esc(file)}" aria-pressed="false">${esc(ctx.sceneLabels?.[file] ?? shotLabel(file))}</button>`)
-    .join('');
-
-  const darkN = data.filter((s) => s.dark === 'applied').length;
 
   return `<!doctype html>
 <html lang="tr">
@@ -184,7 +177,7 @@ export function galleryHtml(styles, ctx) {
           <p>Uygulamaya almak için kök elemana stili yaz:</p>
           <p><code>&lt;html data-style="bento-grid"&gt;</code> + <code>kit/tokens.css</code></p>
           <ul>
-            <li>${data.length} stil · ${darkN} koyu mod · ${sceneFiles.length} sahne tipi</li>
+            <li>${data.length} stil · her stil için tek sayfa görseli (1280×2400)</li>
             <li>Her kartın <b>⊕</b> düğmesi: token CSS, AI brief, tüm kareler</li>
             <li><b>⧉</b> data-style'ı panoya kopyalar, <b>★</b> kısa listeye ekler</li>
           </ul>
@@ -226,12 +219,6 @@ export function galleryHtml(styles, ctx) {
           ${chipRow('fam', 'Aile', fams)}
           ${chipRow('ind', 'Sektör', inds)}
           ${chipRow('tone', 'Ton', tones)}
-          <div class="frow" role="group" aria-label="Kapak sahnesi">
-            <span class="frow-h">Kapak</span>
-            <div class="chips" data-kind="scene">
-              ${scenes}
-            </div>
-          </div>
           <div class="fpanel-f">
             <span id="fsum">Filtre yok</span>
             <button type="button" class="linkbtn" id="fclear">Filtreleri temizle</button>

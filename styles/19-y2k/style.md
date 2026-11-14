@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta (parlama + düşük kontrast riski) |
 | **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="y2k"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -130,36 +130,18 @@ Kolon 12 · gutter 24px · container 1160px · bölüm 72/48px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | 52px Michroma başlık, parlak panel, tek mor CTA, buz mavisi bant | `shots/01-landing.png` |
-| Dashboard | düşük | Parlaklık azalır; kartlar düz beyaz + krom kenar | `shots/02-dashboard.png` |
-| Form | düşük | 480px, pill buton, parlak input | — |
-| Liste/tablo | düşük | Düz beyaz, ince kenar | — |
-| Boş durum | orta | Parlak panel + tek cümle + pill buton | — |
-| Onboarding | yüksek | Adım başına 1 panel, ilerleme pill | — |
-| Pricing | orta | 3 parlak kart, orta kart mor kenar | — |
-| Giriş/ödeme | çok düşük | Parlaklık ve blur kapanır | — |
-| Modal | orta | 28px radius + blur 10px | — |
-| Toast | orta | Mor pill + beyaz metin | — |
-| Hata | düşük | `--danger` kenar + 13px metin | — |
-| Profil/ayar | orta | Kart listesi, krom ayırıcı | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `cubic-bezier(.34,1.4,.64,1)` | `transform: scale(.98)` + parlaklık |
-| Giriş | 400ms | `linear` | `opacity` + 12px `translateY`, stagger 40ms |
-| Scroll (`top 84%`) | 550ms | aynı eğri | `opacity` + 20px `translateY`, `once: true` |
-| Hover | 140ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 300ms | `cubic-bezier(.34,1.4,.64,1)` | parlaklık (tek atım) |
-
-- `prefers-reduced-motion`: yay kapanır, süreler 0.01ms.
-- Yasak: sürekli parıltı, sürekli döngü.
-- Pin/parallax yok: içerik scroll'da bir kez açılır, sabitleme kullanılmaz.
-
-## Koyu mod
-
-`--bg` `#0b1024` · `--surface` `#141a33` · `--ink` `#eaf2ff` · `--accent` `#8b74ff` · `--accent-ink` `#0b1024`. Koyu modda parlaklık %50 azaltılır, blur 8px.
+| Landing/hero | yüksek | 52px Michroma başlık, parlak panel, tek mor CTA, buz mavisi bant | `shots/01-page.png` |
+| Dashboard | düşük | Parlaklık azalır; kartlar düz beyaz + krom kenar | `shots/01-page.png` |
+| Form | düşük | 480px, pill buton, parlak input | `shots/01-page.png` |
+| Liste/tablo | düşük | Düz beyaz, ince kenar | `shots/01-page.png` |
+| Boş durum | orta | Parlak panel + tek cümle + pill buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 panel, ilerleme pill | `shots/01-page.png` |
+| Pricing | orta | 3 parlak kart, orta kart mor kenar | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Parlaklık ve blur kapanır | `shots/01-page.png` |
+| Modal | orta | 28px radius + blur 10px | `shots/01-page.png` |
+| Toast | orta | Mor pill + beyaz metin | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + 13px metin | `shots/01-page.png` |
+| Profil/ayar | orta | Kart listesi, krom ayırıcı | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -172,14 +154,11 @@ Kolon 12 · gutter 24px · container 1160px · bölüm 72/48px · breakpoint 640
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

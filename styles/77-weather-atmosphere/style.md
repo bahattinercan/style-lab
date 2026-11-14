@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (cam yüzey + gradyan; en düşük metin çifti 6.18:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="weather-atmosphere"]` |
 | **Kompozisyon** | `split` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,20 @@ Meteoroloji görselleştirme geleneğinden (katmanlı haritalar, izobar eğriler
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | H1 54px + bulut kütlesi görseli + tek CTA; cam nav | `shots/01-landing.png` |
-| Dashboard | düşük | 4 KPI + tek grafik; gradyan yalnız zeminde | `shots/02-dashboard.png` |
-| Form | düşük | 46px input, tek kolon; hata durumu etiketle | — |
-| Liste / tablo | düşük | 46px satır, hover `--surface-2` | — |
-| Boş durum | orta | bulut illüstrasyonu + "veri bekleniyor" mono etiketi | — |
-| Onboarding | yüksek | 3 adım, her adımda tek soru; cam ilerleme çubuğu | — |
-| Pricing | orta | üç kart; öne çıkan kart accent üst bant | — |
-| Giriş / ödeme | çok düşük | cam kullanılmaz; sade kart + tek CTA | — |
-| Modal | orta | cam yüzey + opak fallback + 24/56 gölge | — |
-| Bildirim / toast | orta | üst-sağ cam şerit + accent nokta | — |
-| Hata | düşük | `--danger` nokta + etiket; zemin değişmez | — |
-| Profil / ayar | orta | iki kolon form, cam yok | — |
+| Landing / hero | yüksek | H1 54px + bulut kütlesi görseli + tek CTA; cam nav | `shots/01-page.png` |
+| Dashboard | düşük | 4 KPI + tek grafik; gradyan yalnız zeminde | `shots/01-page.png` |
+| Form | düşük | 46px input, tek kolon; hata durumu etiketle | `shots/01-page.png` |
+| Liste / tablo | düşük | 46px satır, hover `--surface-2` | `shots/01-page.png` |
+| Boş durum | orta | bulut illüstrasyonu + "veri bekleniyor" mono etiketi | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım, her adımda tek soru; cam ilerleme çubuğu | `shots/01-page.png` |
+| Pricing | orta | üç kart; öne çıkan kart accent üst bant | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | cam kullanılmaz; sade kart + tek CTA | `shots/01-page.png` |
+| Modal | orta | cam yüzey + opak fallback + 24/56 gölge | `shots/01-page.png` |
+| Bildirim / toast | orta | üst-sağ cam şerit + accent nokta | `shots/01-page.png` |
+| Hata | düşük | `--danger` nokta + etiket; zemin değişmez | `shots/01-page.png` |
+| Profil / ayar | orta | iki kolon form, cam yok | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **780ms** | `cubic-bezier(.25,.6,.15,1)` | `opacity` + `translateY(18px)`; stagger **0.065s** |
-| Scroll reveal | **640ms** | aynı eğri | trigger `top 83%`, `translateY(20px)`, `once: true` |
-| Pin / scrub | **1.35** | `transform` + `backdrop-filter` | **açık** — atmosfer panosu `+240%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **180ms** | aynı eğri | `translateY(1px)`, gölge küçülür |
-| Geçiş / sayfa | 360ms | aynı eğri | opacity + 12px |
-| Hover | **260ms** | aynı eğri | görsel ölçek **1.012** |
-| Ödül / vurgu | 780ms | aynı eğri | bulut kütlesi opaklık %0→%100 (tek kez) |
-
-- İmza ölçüleri: `enter = 0.78s / cubic-bezier(.25,.6,.15,1) / 18px / 0.065` · `scroll = top 83% / 0.64s / 20px / once` · `pin = true / scrub 1.35 / +240%` · `hover = 260ms / 1.012`.
-- Bant içi fark: 76'dan (0.68s / 24px / pin yok), 78'den (0.48s / 32px / scrub 0.7), 79'dan (0.83s / 40px / scrub 1.05), 80'den (0.57s / 22px / pin yok) en az dört parametrede ayrışır. Mevcut 72 stil içinde en yakını 08-glassmorphism (`0.8s / power3.out / 24px / 0.06`) — beş parametre farklı; scrub 1.35 bandın en yüksek değeri (bütçe: 1.4 üstü gecikmeli his).
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin kapalı, blur geçişi yok (blur statik kalır).
-- Bu stile yasak hareket: ekran başına 1'den fazla sürekli bulut animasyonu, saniyede 3 üstü flash, yatay kaydırma hijack.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#eef2f7` | `#0e141b` |
-| `--surface` | `#ffffff` | `#18222d` |
-| `--ink` | `#1a2430` | `#e6eef6` |
-| `--accent` | `#2b6491` | `#6fb3e6` |
-| `--ink-soft` | `#4d5b6b` | `#a8b7c6` |
-| `--line` | `rgba(26,36,48,.14)` | `rgba(230,238,246,.16)` |
-
-- Koyu modda değişen başka ne var: gradyanın üst durağı accent %10 → %16 (gece göğü), cam yüzey opaklığı %72 → %64 ama blur 8px korunur (koyu zeminde daha okunur), gölge yerine 1px `--line` öne çıkar.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Zemin atmosfer gradyanı tek mavi ailesinde: en fazla 2 durak (`--bg` → `--bg-2`).
@@ -210,14 +179,11 @@ Meteoroloji görselleştirme geleneğinden (katmanlı haritalar, izobar eğriler
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

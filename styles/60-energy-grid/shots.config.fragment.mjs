@@ -110,9 +110,5 @@ export const CONFIG = {
         box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
       .visual-row .line { height: 1.5px; background: color-mix(in srgb, var(--accent) 40%, transparent); }
       .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--accent); }`,
-  'dark-landing': `
-      /* koyu mod: akış hattı daha parlak, düğüm halkası genişler */
-      .hero-visual::before { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 78%, transparent) 18% 82%, transparent); }
-      .visual-row .sq { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 24%, transparent); }`,
   },
 };

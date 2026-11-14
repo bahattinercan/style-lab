@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (bolluk ≠ kaos) · **Erişilebilirlik** | orta risk |
 | **Aile** | Cesur (13–18) · **Token** | `kit/tokens.css` → `[data-style="maximalism"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -153,44 +153,18 @@ Viktorya dönemi desen sevgisi, 70'ler iç mekân, Gucci/Alessandro Michele dön
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | çok yüksek | 68px serif başlık, desenli sağ panel, hardal blok, bordo CTA | `shots/01-landing.png` |
-| Dashboard | düşük | Desen kapanır; kart gölgeleri kalır, KPI'lar sade | `shots/02-dashboard.png` |
-| Form | düşük | Düz yüzey, 2px kenar, bordo buton | — |
-| Liste / tablo | düşük | Desen yok, 2px ayırıcı, serif sayı | — |
-| Boş durum | orta | Motifli illüstrasyon + tek cümle + buton | — |
-| Onboarding | yüksek | Adım başına 1 büyük görsel + 2 satır | — |
-| Pricing | yüksek | 3 kart, orta kart hardal + bordo çerçeve | — |
-| Giriş / ödeme | çok düşük | Desen ve ofset kapanır; düz form | — |
-| Modal | orta | 10px ofset, serif başlık | — |
-| Bildirim / toast | orta | Bordo zemin + krem metin | — |
-| Hata | düşük | `--danger` çerçeve + 14px metin | — |
-| Profil / ayar | orta | Kart listesi, motif yalnız başlık bandında | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `ease-out` | `translate(4px,4px)` |
-| Giriş | 420ms | `cubic-bezier(.2,.6,.2,1)` | `opacity` + 20px `translateY`, stagger 60ms |
-| Scroll (`top 84%`) | 500ms | aynı eğri | `opacity` + 16px `translateY`, `once: true` |
-| Hover | 140ms | aynı eğri | `transform: scale(1.03)` |
-| Ödül | 360ms | `ease-in-out` | motif katmanı `opacity` 0→.10 |
-
-- Zengin ama temkinli: aynı anda 2'den fazla öğe hareket etmez; motif katmanı yalnız ödülde oynar.
-- `prefers-reduced-motion`: motif animasyonu kapanır.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f6e7d8` | `#1a1310` |
-| `--surface` | `#fffaf3` | `#241a15` |
-| `--surface-2` | `#f2c14e` | `#c79b33` |
-| `--ink` | `#221410` | `#f6e7d8` |
-| `--accent` | `#7a1f3d` | `#a8385a` |
-| `--accent-ink` | `#f6e7d8` | `#1a1310` |
-
-- Koyu modda motif opacity .06'ya düşer (desen gürültü yapar).
+| Landing / hero | çok yüksek | 68px serif başlık, desenli sağ panel, hardal blok, bordo CTA | `shots/01-page.png` |
+| Dashboard | düşük | Desen kapanır; kart gölgeleri kalır, KPI'lar sade | `shots/01-page.png` |
+| Form | düşük | Düz yüzey, 2px kenar, bordo buton | `shots/01-page.png` |
+| Liste / tablo | düşük | Desen yok, 2px ayırıcı, serif sayı | `shots/01-page.png` |
+| Boş durum | orta | Motifli illüstrasyon + tek cümle + buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 büyük görsel + 2 satır | `shots/01-page.png` |
+| Pricing | yüksek | 3 kart, orta kart hardal + bordo çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Desen ve ofset kapanır; düz form | `shots/01-page.png` |
+| Modal | orta | 10px ofset, serif başlık | `shots/01-page.png` |
+| Bildirim / toast | orta | Bordo zemin + krem metin | `shots/01-page.png` |
+| Hata | düşük | `--danger` çerçeve + 14px metin | `shots/01-page.png` |
+| Profil / ayar | orta | Kart listesi, motif yalnız başlık bandında | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -203,14 +177,11 @@ Viktorya dönemi desen sevgisi, 70'ler iç mekân, Gucci/Alessandro Michele dön
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

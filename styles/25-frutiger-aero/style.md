@@ -10,7 +10,7 @@
 | **Zorluk** | orta (parlaklık dozu) · **Erişilebilirlik** | orta (düşük kontrast riski) |
 | **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="frutiger-aero"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -130,36 +130,18 @@ Kolon 12 · gutter 24px · container 1160px · bölüm 72/48px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | 44px başlık, kabarcık motifi, gloss CTA, cam panel | `shots/01-landing.png` |
-| Dashboard | düşük | Gloss azalır; beyaz kart + ince mavi kenar | `shots/02-dashboard.png` |
-| Form | düşük | 480px, yuvarlak input, tek gloss buton | — |
-| Liste/tablo | düşük | Beyaz zemin, açık mavi ayırıcı | — |
-| Boş durum | orta | Kabarcık illüstrasyonu + tek cümle | — |
-| Onboarding | yüksek | Adım başına 1 motif + cam panel | — |
-| Pricing | orta | 3 cam kart, orta kart accent kenar | — |
-| Giriş/ödeme | çok düşük | Gloss minimum; sade beyaz form | — |
-| Modal | orta | Cam panel + blur 6px | — |
-| Toast | orta | Cam pill + koyu metin | — |
-| Hata | düşük | `--danger` kenar + 13px metin | — |
-| Profil/ayar | orta | Beyaz kart listesi | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 140ms | `ease-out` | `transform: scale(.98)` |
-| Giriş | 550ms | `ease-out` | `opacity` + 22px `translateY`, stagger 60ms |
-| Scroll (`top 80%`) | 650ms | aynı eğri | `opacity` + 20px `translateY`, `once: true` |
-| Hover | 240ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 320ms | `ease-out` | parlaklık (tek atım) |
-
-- `prefers-reduced-motion`: 0.01ms.
-- Yasak: sürekli baloncuk animasyonu (en fazla 1, yavaş), strobe.
-- Pin/parallax yok.
-
-## Koyu mod
-
-`--bg` `#0d2233` · `--surface` `linear-gradient(180deg,#15364d,#0f2839)` · `--ink` `#e6f4ff` · `--accent` `#4cb8f0` · `--accent-ink` `#0d2233`. Koyu modda gloss %50 azalır.
+| Landing/hero | yüksek | 44px başlık, kabarcık motifi, gloss CTA, cam panel | `shots/01-page.png` |
+| Dashboard | düşük | Gloss azalır; beyaz kart + ince mavi kenar | `shots/01-page.png` |
+| Form | düşük | 480px, yuvarlak input, tek gloss buton | `shots/01-page.png` |
+| Liste/tablo | düşük | Beyaz zemin, açık mavi ayırıcı | `shots/01-page.png` |
+| Boş durum | orta | Kabarcık illüstrasyonu + tek cümle | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 motif + cam panel | `shots/01-page.png` |
+| Pricing | orta | 3 cam kart, orta kart accent kenar | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Gloss minimum; sade beyaz form | `shots/01-page.png` |
+| Modal | orta | Cam panel + blur 6px | `shots/01-page.png` |
+| Toast | orta | Cam pill + koyu metin | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + 13px metin | `shots/01-page.png` |
+| Profil/ayar | orta | Beyaz kart listesi | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -172,14 +154,11 @@ Kolon 12 · gutter 24px · container 1160px · bölüm 72/48px · breakpoint 640
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

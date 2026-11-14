@@ -10,7 +10,7 @@
 | **Zorluk** | orta (boşluk ve tipografi bakımı) · **Erişilebilirlik** | orta (ince ağırlık riski) |
 | **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="luxury-typography"]` |
 | **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -155,46 +155,18 @@ Moda evi katalogları, Didot/Bodoni geleneği ve İsviçre minimalizminin lüks 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Merkezli 64px serif başlık, altında 46ch tek paragraf, tek çerçeveli CTA, 40px altın hairline | `shots/01-landing.png` |
-| Dashboard | düşük | Lüks geri çekilir: sans gövde 13px, hairline ayırıcı, serif sadece sayfa başlığında | `shots/02-dashboard.png` |
-| Form | düşük | 440px tek sütun, alt çizgili input, tek buton; alan sayısı minimum | — |
-| Liste / tablo | düşük | 56px satır, serif sayılar, hairline; zebra yok | — |
-| Boş durum | orta | Tek cümle + tek bağlantı, 120px üst boşluk | — |
-| Onboarding | yüksek | Sayfa başına tek görsel + tek cümle; ilerleme hairline | — |
-| Pricing | yüksek | 2–3 kolon, orta kolon 1px altın kenar; fiyat serif 44px | — |
-| Giriş / ödeme | düşük | 400px merkezli kart, 2 alan, tek CTA; güven metni 11px | — |
-| Modal | orta | 2px radius, 1px kenar, 40px padding | — |
-| Bildirim / toast | düşük | Koyu zemin + 11px uppercase metin | — |
-| Hata | düşük | 13px sakin dil + alt hairline `--danger` | — |
-| Profil / ayar | orta | 6 kolon içerik, 56px satırlar, serif bölüm başlığı | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 180ms | `ease-out` | `background-color`, `color` |
-| Giriş | 800ms | `cubic-bezier(.2,.7,.2,1)` | `opacity` + 24px `translateY`, stagger 90ms |
-| Scroll (`top 80%`) | 1000ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 320ms | aynı eğri | `transform: scale(1.015)` |
-| Ödül | 400ms | `ease-in-out` | hairline genişliği 0→40px |
-
-- Her şey **yavaş** ve az: 300ms+ geçişler lüksün ritmi.
-- `prefers-reduced-motion`: 0.01ms; görsel ölçek animasyonu kapanır.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f6f1e7` | `#12100e` |
-| `--bg-2` | `#efe7d8` | `#1a1714` |
-| `--surface` | `#fffdf8` | `#171512` |
-| `--ink` | `#1a1815` | `#efe8db` |
-| `--ink-soft` | `#5c554b` | `#b3aa9c` |
-| `--line` | `rgba(26,24,21,.16)` | `rgba(239,232,219,.18)` |
-| `--accent` | `#c6a664` | `#d8bb7d` |
-| `--accent-ink` | `#1a1815` | `#12100e` |
-
-- Koyu modda altın biraz açılır (kontrast için), grain azaltılır.
+| Landing / hero | yüksek | Merkezli 64px serif başlık, altında 46ch tek paragraf, tek çerçeveli CTA, 40px altın hairline | `shots/01-page.png` |
+| Dashboard | düşük | Lüks geri çekilir: sans gövde 13px, hairline ayırıcı, serif sadece sayfa başlığında | `shots/01-page.png` |
+| Form | düşük | 440px tek sütun, alt çizgili input, tek buton; alan sayısı minimum | `shots/01-page.png` |
+| Liste / tablo | düşük | 56px satır, serif sayılar, hairline; zebra yok | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + tek bağlantı, 120px üst boşluk | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına tek görsel + tek cümle; ilerleme hairline | `shots/01-page.png` |
+| Pricing | yüksek | 2–3 kolon, orta kolon 1px altın kenar; fiyat serif 44px | `shots/01-page.png` |
+| Giriş / ödeme | düşük | 400px merkezli kart, 2 alan, tek CTA; güven metni 11px | `shots/01-page.png` |
+| Modal | orta | 2px radius, 1px kenar, 40px padding | `shots/01-page.png` |
+| Bildirim / toast | düşük | Koyu zemin + 11px uppercase metin | `shots/01-page.png` |
+| Hata | düşük | 13px sakin dil + alt hairline `--danger` | `shots/01-page.png` |
+| Profil / ayar | orta | 6 kolon içerik, 56px satırlar, serif bölüm başlığı | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -207,14 +179,11 @@ Moda evi katalogları, Didot/Bodoni geleneği ve İsviçre minimalizminin lüks 
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

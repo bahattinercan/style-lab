@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | iyi |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="optic-prism"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `split` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,51 +144,20 @@ Kökeni optik alet katalogları (Zeiss, Leica objektif çizimleri) ve spektrosko
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 44px Michroma başlık + 7/12 lens kabı (kırılma halkası) + ölçü bandı | `shots/01-landing.png` |
-| Dashboard | orta | Üç metrik kartı, 1px prizma kenar, mono değer | `shots/02-dashboard.png` |
-| Form | düşük | 48px input, 2px radius, 1px kenar | — |
-| Liste / tablo | orta | 44px satır, 1px hairline, sağa hizalı mono | — |
-| Boş durum | orta | Tek çizgi diyagram + "ölçüm yok" etiketi | — |
-| Onboarding | orta | Üç adım: hizala → kalibre → ölç | — |
-| Pricing | orta | Üç paket, 2px radius kart, 1px prizma kenar | — |
-| Giriş / ödeme | çok düşük | Tek kolon 400px, sade form, mono toplam | — |
-| Modal | orta | 520px, 10px radius, 1px kenar, gölge yok | — |
-| Bildirim / toast | orta | Üst orta, 44px, ink zemin + bg metin | — |
-| Hata | düşük | "kırılma hatası" mono etiket + tek cümle | — |
-| Profil / ayar | orta | Kalibrasyon paneli: 3 kaydırıcı + mono değer | — |
+| Landing / hero | orta | 44px Michroma başlık + 7/12 lens kabı (kırılma halkası) + ölçü bandı | `shots/01-page.png` |
+| Dashboard | orta | Üç metrik kartı, 1px prizma kenar, mono değer | `shots/01-page.png` |
+| Form | düşük | 48px input, 2px radius, 1px kenar | `shots/01-page.png` |
+| Liste / tablo | orta | 44px satır, 1px hairline, sağa hizalı mono | `shots/01-page.png` |
+| Boş durum | orta | Tek çizgi diyagram + "ölçüm yok" etiketi | `shots/01-page.png` |
+| Onboarding | orta | Üç adım: hizala → kalibre → ölç | `shots/01-page.png` |
+| Pricing | orta | Üç paket, 2px radius kart, 1px prizma kenar | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 400px, sade form, mono toplam | `shots/01-page.png` |
+| Modal | orta | 520px, 10px radius, 1px kenar, gölge yok | `shots/01-page.png` |
+| Bildirim / toast | orta | Üst orta, 44px, ink zemin + bg metin | `shots/01-page.png` |
+| Hata | düşük | "kırılma hatası" mono etiket + tek cümle | `shots/01-page.png` |
+| Profil / ayar | orta | Kalibrasyon paneli: 3 kaydırıcı + mono değer | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 110ms | `cubic-bezier(.16,.84,.44,1)` | `scale(.99)` + kenar 1px accent |
-| Giriş (enter) | 580ms | `cubic-bezier(.16,.84,.44,1)` | `opacity` + 14px `translateY`, stagger 45ms |
-| Scroll reveal | 720ms | aynı eğri | `top 84%` tetikleyici, `opacity` + 16px `translateY`, `once: true` |
-| Pin / scrub | — | — | tek pin: scrub 0.85, +105%; mobilde kapalı |
-| Hover | 220ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül / vurgu | 320ms | `cubic-bezier(.16,.84,.44,1)` | kırılma halkası 0→1 opacity (tek atım) |
-
-- Süre bütçesi: enter 580ms ≤ 1200ms · scroll 720ms ≤ 1200ms · stagger 45ms.
-- Tek pin sahnesi (lens, scrub 0.85, +105%); sayfada ikinci scrub yok, mobilde statik.
-- Blur animasyonu yok; kırılma halkası opaklıkla açılır.
-- `prefers-reduced-motion`: süreler 0.01ms, pin kapalı, halka statik.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f2f6f7` | `#0a1216` |
-| `--surface` | `#fdfeff` | `#0d161b` |
-| `--ink` | `#101a1f` | `#eef6f8` |
-| `--accent` | `#0d5c63` | `#6fe6dc` |
-| `--line` | `rgba(16,26,31,.14)` | `rgba(238,246,248,.16)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 17.26:1 · `accent-ink / accent` = 12.61:1.
-- Koyu modda soğuk beyaz gece camına (`#0a1216`) döner; accent buz turkuazına (`#6fe6dc`) çekilir.
-- Kırılma halkası koyuda %18 opaklık kazanır (siyahta kaybolmasın).
-- Radius ve kenar 1px değişmez; gölge yine yok.
 
 ## Zorunlu kurallar
 
@@ -220,14 +189,11 @@ Kökeni optik alet katalogları (Zeiss, Leica objektif çizimleri) ve spektrosko
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

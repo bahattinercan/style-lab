@@ -28,16 +28,3 @@
   --blur: 0px;
   --grain: 0.05;
 }
-
-[data-theme="dark"][data-style="slavic-late-brutalist"] {
-  --bg: #1a1b1c;
-  --bg-2: #202224;
-  --surface: #24262a;
-  --surface-2: #2f3236;
-  --ink: #e8e6e1;
-  --ink-soft: #adaead;
-  --ink-faint: #83858a;
-  --accent: #d26234;
-  --accent-ink: #141414;
-  --line: rgba(232,230,225,.22);
-}

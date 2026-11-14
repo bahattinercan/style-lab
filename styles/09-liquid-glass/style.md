@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (performans + fallback) · **Erişilebilirlik** | orta risk (kontrast/parlama) |
 | **Aile** | Yüzey (08–12) · **Token** | `kit/tokens.css` → `[data-style="liquid-glass"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -154,48 +154,18 @@ Apple'ın visionOS ve iOS 26 "Liquid Glass" materyal sistemi; optik kırılma, g
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Arkada medya/gradient, üstte cam nav, hero'da tek cam kontrol kümesi | `shots/01-landing.png` |
-| Dashboard | düşük | Cam yalnızca nav + tek toolbar; KPI kartları **opak** | `shots/02-dashboard.png` |
-| Form | çok düşük | Opak panel içinde pill inputlar; cam yalnızca üst bar | — |
-| Liste / tablo | düşük | Opak yüzey; satır ayrımı beyaz %10 | — |
-| Boş durum | orta | Cam kart + tek cümle + pill buton | — |
-| Onboarding | yüksek | Sayfa başına cam sheet, arkada değişen medya | — |
-| Pricing | orta | 2 cam kolon; orta kolon accent kenar + pill CTA | — |
-| Giriş / ödeme | çok düşük | Opak kart, pill input, tek accent buton; blur minimum | — |
-| Modal | orta | Cam sheet 28px radius, backdrop blur 6px | — |
-| Bildirim / toast | orta | Cam pill, 4sn | — |
-| Hata | düşük | Opak yüzey + `--danger` kenar (cam üstünde hata okunmaz) | — |
-| Profil / ayar | orta | Cam sidebar + opak içerik; iki cam bitişik olmaz | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 140ms | `cubic-bezier(.34,1.4,.64,1)` | `transform: scale(.98)` |
-| Giriş | 900ms | `power4.out` | `opacity` + 28px `translateY`, stagger 70ms |
-| Scroll (`top 82%`) | 1000ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 220ms | aynı eğri | `transform: scale(1.02)` |
-| Segment geçişi | 220ms | `cubic-bezier(.34,1.4,.64,1)` | aktif pill `translateX` + `width` |
-| Ödül | 400ms | `ease-in-out` | specular `opacity` 0→1 |
-
-- Yay eğrisi **hafif** overshoot (`1.4`), abartılı değil. `backdrop-filter` animasyonu yasak.
-- `prefers-reduced-motion`: yay → `ease-out`, süre 0.01ms.
-- `prefers-reduced-transparency`: `--blur: 0`, `--surface: var(--bg-2)`.
-
-## Koyu mod
-
-Bu stil **koyu tabanlı**. Açık tema gerekiyorsa:
-
-| Token | Koyu (varsayılan) | Açık varyant |
-|---|---|---|
-| `--bg` | `#0a0d12` | `#f2f6fb` |
-| `--surface` | `rgba(255,255,255,.10)` | `rgba(255,255,255,.62)` |
-| `--ink` | `#f5f7fa` | `#0b1520` |
-| `--line` | `rgba(255,255,255,.28)` | `rgba(11,21,32,.16)` |
-| `--accent` | `#4cc9f0` | `#0b7fa8` |
-| `--accent-ink` | `#041018` | `#ffffff` |
-
-- Açık varyantta cam daha **opak** olmalı (%62), yoksa beyaz üstünde kaybolur.
+| Landing / hero | yüksek | Arkada medya/gradient, üstte cam nav, hero'da tek cam kontrol kümesi | `shots/01-page.png` |
+| Dashboard | düşük | Cam yalnızca nav + tek toolbar; KPI kartları **opak** | `shots/01-page.png` |
+| Form | çok düşük | Opak panel içinde pill inputlar; cam yalnızca üst bar | `shots/01-page.png` |
+| Liste / tablo | düşük | Opak yüzey; satır ayrımı beyaz %10 | `shots/01-page.png` |
+| Boş durum | orta | Cam kart + tek cümle + pill buton | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına cam sheet, arkada değişen medya | `shots/01-page.png` |
+| Pricing | orta | 2 cam kolon; orta kolon accent kenar + pill CTA | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Opak kart, pill input, tek accent buton; blur minimum | `shots/01-page.png` |
+| Modal | orta | Cam sheet 28px radius, backdrop blur 6px | `shots/01-page.png` |
+| Bildirim / toast | orta | Cam pill, 4sn | `shots/01-page.png` |
+| Hata | düşük | Opak yüzey + `--danger` kenar (cam üstünde hata okunmaz) | `shots/01-page.png` |
+| Profil / ayar | orta | Cam sidebar + opak içerik; iki cam bitişik olmaz | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -208,14 +178,11 @@ Bu stil **koyu tabanlı**. Açık tema gerekiyorsa:
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

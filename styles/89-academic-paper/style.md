@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | yüksek |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="academic-paper"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `type` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,51 +144,20 @@ Kökeni LaTeX article sınıfı ve Chicago/APA dizgi gelenekleridir; ekran karş
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Başlık 34px + özet bloğu (3px sol çizgi) + 2/12 künye (yazar, tarih, DOI) | `shots/01-landing.png` |
-| Dashboard | yüksek | Tablo ağırlıklı: 44px satır, 1px hairline, mono rakam | `shots/02-dashboard.png` |
-| Form | düşük | 44px input, 2px radius, 1px kenar; hata metni ink-soft | — |
-| Liste / tablo | yüksek | 44px satır, sağa hizalı rakam, 1px alt çizgi | — |
-| Boş durum | orta | Tek paragraf 72ch + "veri yok" mono etiket | — |
-| Onboarding | orta | Numaralı üç adım (1 · 2 · 3), kenar notu yok | — |
-| Pricing | düşük | Tablo biçiminde karşılaştırma; kart yok, 1px hairline | — |
-| Giriş / ödeme | çok düşük | Tek kolon 360px, 2px radius, açıklama 12.5px | — |
-| Modal | orta | 520px, 4px radius, 1px kenar, gölge yok | — |
-| Bildirim / toast | orta | Sol alt, 40px, ink zemin + bg metin, 2px radius | — |
-| Hata | düşük | Başlık 24px + tek paragraf + "hata kodu" mono | — |
-| Profil / ayar | orta | Form 8/12 + kenar notu 3/12 | — |
+| Landing / hero | yüksek | Başlık 34px + özet bloğu (3px sol çizgi) + 2/12 künye (yazar, tarih, DOI) | `shots/01-page.png` |
+| Dashboard | yüksek | Tablo ağırlıklı: 44px satır, 1px hairline, mono rakam | `shots/01-page.png` |
+| Form | düşük | 44px input, 2px radius, 1px kenar; hata metni ink-soft | `shots/01-page.png` |
+| Liste / tablo | yüksek | 44px satır, sağa hizalı rakam, 1px alt çizgi | `shots/01-page.png` |
+| Boş durum | orta | Tek paragraf 72ch + "veri yok" mono etiket | `shots/01-page.png` |
+| Onboarding | orta | Numaralı üç adım (1 · 2 · 3), kenar notu yok | `shots/01-page.png` |
+| Pricing | düşük | Tablo biçiminde karşılaştırma; kart yok, 1px hairline | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 360px, 2px radius, açıklama 12.5px | `shots/01-page.png` |
+| Modal | orta | 520px, 4px radius, 1px kenar, gölge yok | `shots/01-page.png` |
+| Bildirim / toast | orta | Sol alt, 40px, ink zemin + bg metin, 2px radius | `shots/01-page.png` |
+| Hata | düşük | Başlık 24px + tek paragraf + "hata kodu" mono | `shots/01-page.png` |
+| Profil / ayar | orta | Form 8/12 + kenar notu 3/12 | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 100ms | `linear` | `opacity` 1 → .92 (kayma yok) |
-| Giriş (enter) | 330ms | `linear` | yalnız `opacity` (kayma yok), stagger 0.04s (40ms) |
-| Scroll reveal | 420ms | aynı eğri | `top 89%` tetikleyici, `opacity` + 10px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 120ms | aynı eğri | `transform: scale(1.000)` |
-| Ödül / vurgu | 300ms | `linear` | diyagram serisi 0→1 opacity (tek atım) |
-
-- Süre bütçesi: enter 330ms ≤ 1200ms · scroll 420ms ≤ 1200ms · stagger 0.04s (40ms).
-- Giriş 0px kayma: yalnız opacity; metin yer değiştirmez (okuma konumu sabit kalır).
-- Pin/parallax yok: makale akışı sabit; scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, diyagram animasyonsuz çizilir.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f8f8f6` | `#101216` |
-| `--surface` | `#fdfdfb` | `#14171c` |
-| `--ink` | `#1b1e23` | `#eef0f2` |
-| `--accent` | `#1f4a7a` | `#86aad6` |
-| `--line` | `rgba(27,30,35,.16)` | `rgba(238,240,242,.14)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 16.41:1 · `accent-ink / accent` = 7.93:1.
-- Koyu modda soğuk beyaz antrasite (`#101216`) döner; accent açık maviye (`#86aad6`) çekilir.
-- Hairline opaklığı .14; radius değişmez; gölge yine yok.
-- Diyagram çizgileri koyu modda 1px kalır, renk `--accant` yerine `--accent` + `--ink-soft`.
 
 ## Zorunlu kurallar
 
@@ -221,14 +190,11 @@ Kökeni LaTeX article sınıfı ve Chicago/APA dizgi gelenekleridir; ekran karş
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

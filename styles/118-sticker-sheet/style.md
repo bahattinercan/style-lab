@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="sticker-sheet"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `index` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -145,51 +145,20 @@ Kökeni 1980'lerin Panini albümleri ve 2010'ların dijital sticker (LINE, Apple
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 44px başlık + 4 çıkartma (6px halka, rotasyonlu) + tek CTA | `shots/01-landing.png` |
-| Dashboard | orta | Koleksiyon: 4 kolon çıkartma ızgarası + mono sayaç | `shots/02-dashboard.png` |
-| Form | düşük | 48px input, 10px radius, 2px kenar | — |
-| Liste / tablo | düşük | 56px satır, 1px hairline, mono kod | — |
-| Boş durum | orta | Boş die-cut halka + "henüz çıkartma yok" | — |
-| Onboarding | yüksek | Üç adım, her adımda 1 çıkartma ödülü | — |
-| Pricing | orta | İki paket: 12'li / 24'lü; her paket çıkartma biçiminde | — |
-| Giriş / ödeme | çok düşük | Tek kolon 380px, 10px radius, çıkartma yok | — |
-| Modal | orta | 520px, 16px radius, die-cut halka; backdrop %45 | — |
-| Bildirim / toast | orta | Sağ alt, 48px, ink zemin + bg metin | — |
-| Hata | düşük | Tek cümle + çıkartma biçiminde "tekrar dene" | — |
-| Profil / ayar | orta | Avatar 72px + koleksiyon özeti | — |
+| Landing / hero | yüksek | 44px başlık + 4 çıkartma (6px halka, rotasyonlu) + tek CTA | `shots/01-page.png` |
+| Dashboard | orta | Koleksiyon: 4 kolon çıkartma ızgarası + mono sayaç | `shots/01-page.png` |
+| Form | düşük | 48px input, 10px radius, 2px kenar | `shots/01-page.png` |
+| Liste / tablo | düşük | 56px satır, 1px hairline, mono kod | `shots/01-page.png` |
+| Boş durum | orta | Boş die-cut halka + "henüz çıkartma yok" | `shots/01-page.png` |
+| Onboarding | yüksek | Üç adım, her adımda 1 çıkartma ödülü | `shots/01-page.png` |
+| Pricing | orta | İki paket: 12'li / 24'lü; her paket çıkartma biçiminde | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 380px, 10px radius, çıkartma yok | `shots/01-page.png` |
+| Modal | orta | 520px, 16px radius, die-cut halka; backdrop %45 | `shots/01-page.png` |
+| Bildirim / toast | orta | Sağ alt, 48px, ink zemin + bg metin | `shots/01-page.png` |
+| Hata | düşük | Tek cümle + çıkartma biçiminde "tekrar dene" | `shots/01-page.png` |
+| Profil / ayar | orta | Avatar 72px + koleksiyon özeti | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 100ms | `back.out(2)` | `scale(.94)` + gölge 0'a düşer (yapıştırma) |
-| Giriş (enter) | 340ms | `back.out(2)` | `opacity` + 12px `translateY`, stagger 30ms |
-| Scroll reveal | 400ms | aynı eğri | `top 88%` tetikleyici, `opacity` + 14px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 160ms | aynı eğri | `transform: scale(1.08)` |
-| Ödül / vurgu | 340ms | `back.out(2)` | yeni çıkartma 0.34s içinde 12px yukarıdan yerleşir (tek atım) |
-
-- Süre bütçesi: enter 340ms ≤ 1200ms · scroll 400ms ≤ 1200ms · stagger 30ms.
-- Sürekli sallanma/dönme yasak; rotasyon statiktir, animasyonla değişmez.
-- Pin/parallax yok: koleksiyon ızgarası sabit; scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, rotasyon statik kalır.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f7f6f2` | `#121210` |
-| `--surface` | `#ffffff` | `#171714` |
-| `--ink` | `#16160f` | `#f4f3ea` |
-| `--accent` | `#b5174e` | `#f472a0` |
-| `--line` | `rgba(22,22,15,.18)` | `rgba(244,243,234,.16)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 16.84:1 · `accent-ink / accent` = 7.09:1.
-- Koyu modda kâğıt beyazı antrasite (`#121210`) döner; die-cut halka `--surface` ile koyulaşır.
-- Ahududu vurgu açık pembeye (`#f472a0`) çekilir; ofset gölge mürekkep siyahına döner.
-- Rotasyon ve halka kalınlığı koyu modda değişmez.
 
 ## Zorunlu kurallar
 
@@ -222,14 +191,11 @@ Kökeni 1980'lerin Panini albümleri ve 2010'ların dijital sticker (LINE, Apple
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

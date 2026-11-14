@@ -10,7 +10,7 @@
 | **Zorluk** | orta-yüksek (katman disiplini ve performans) · **Erişilebilirlik** | orta risk (parallax — kapatılabilir olmalı; gövde 16.63:1) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `kit/tokens.css` → `[data-style="depth-parallax"]` |
 | **Kompozisyon** | `sticky` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,56 +139,21 @@ Parallax, fotoğraf ve animasyonda gerçek derinlik algısının taklidi olarak 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | üç düzlem + 8 kolon orta + 6 kolon yakın kart | `shots/01-landing.png` |
-| Dashboard | düşük | 3 KPI (yakın düzlem) + puslu arka şerit | `shots/02-dashboard.png` |
-| Form | düşük | 46px alanlar + arka puslu kopya ipucu | — |
-| Liste / tablo | orta | 48px satır, hover'da yakın düzleme çıkar | — |
-| Boş durum | orta | puslu boş düzlem + tek CTA | — |
-| Onboarding | orta | 3 adım = 3 düzlem metaforu (uzak→yakın) | — |
-| Pricing | orta | 3 kart; orta kart yakın düzlem | — |
-| Giriş / ödeme | çok düşük | parallax kapalı, tek düzlem | — |
-| Modal | orta | en yakın düzlem, 16px/48px gölge | — |
-| Bildirim / toast | orta | puslu kopyalı kutu, 5000ms | — |
-| Hata | düşük | düzlemler sabitlenir, `--danger` kenar | — |
-| Profil / ayar | orta | "hareketi azalt" + pus yoğunluğu ayarı | — |
+| Landing / hero | orta | üç düzlem + 8 kolon orta + 6 kolon yakın kart | `shots/01-page.png` |
+| Dashboard | düşük | 3 KPI (yakın düzlem) + puslu arka şerit | `shots/01-page.png` |
+| Form | düşük | 46px alanlar + arka puslu kopya ipucu | `shots/01-page.png` |
+| Liste / tablo | orta | 48px satır, hover'da yakın düzleme çıkar | `shots/01-page.png` |
+| Boş durum | orta | puslu boş düzlem + tek CTA | `shots/01-page.png` |
+| Onboarding | orta | 3 adım = 3 düzlem metaforu (uzak→yakın) | `shots/01-page.png` |
+| Pricing | orta | 3 kart; orta kart yakın düzlem | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | parallax kapalı, tek düzlem | `shots/01-page.png` |
+| Modal | orta | en yakın düzlem, 16px/48px gölge | `shots/01-page.png` |
+| Bildirim / toast | orta | puslu kopyalı kutu, 5000ms | `shots/01-page.png` |
+| Hata | düşük | düzlemler sabitlenir, `--danger` kenar | `shots/01-page.png` |
+| Profil / ayar | orta | "hareketi azalt" + pus yoğunluğu ayarı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — üç derinlik düzlemi — ölçek şeridi (0.6× / 1.0× / 1.4×), kademeli kayma.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 1000ms | `cubic-bezier(.16,.6,.3,1)` | `opacity` + `translateY(40px)`, katman başına 130ms stagger |
-| Scroll reveal | 1100ms | `cubic-bezier(.16,.6,.3,1)` | `top 88%` tetiği, 56px, `once: true` |
-| Basma | 360ms | `linear` | `translateY(2px)` + gölge 2px |
-| Hover | 360ms | `cubic-bezier(.16,.6,.3,1)` | gölge büyür, 1px yukarı, görsel ölçek `1.035` |
-| Pin / scrub | açık | `scrub 0.45` | hero bölümü `+320%` mesafede sabitlenir, düzlemler farklı hızda kayar |
-| Parallax | scrub'a bağlı | `linear` | uzak `0.15` · orta `0.4` · yakın `1.0` |
-
-- Ölçülebilir imza: `enter 1.0s / cb(.16,.6,.3,1) / 40px / 0.13` · `scroll top 88% / 1.1s / 56px / once:true` · `pin açık scrub 0.45 / +320%` · `hover 360ms / 1.035`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, parallax ve pin kapanır; pus (statik) kalır.
-- Bu stile yasak hareket: ekran dışına taşan düzlem, 40px üstü dikey parallax, sürekli döngü, blur geçişi.
-
-## Koyu mod
-
-Varsayılan zemin zaten koyudur; `data-theme="dark"` bloğu mavi-siyahtan **derin turkuaz-siyaha** kayar (zemin ton bandı + accent). Böylece iki tema yan yana ayırt edilir, derinlik dili bozulmaz.
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#0b1014` | `#05161a` |
-| `--bg-2` | `#101820` | `#082025` |
-| `--surface` | `#131d26` | `#0a282e` |
-| `--surface-2` | `#1a2732` | `#0f333a` |
-| `--ink` | `#eaf0f4` | `#eef7f8` |
-| `--ink-soft` | `#a8b6c0` | `#aebfc1` |
-| `--accent` | `#5ac8ff` | `#7af0ff` |
-| `--accent-ink` | `#05131a` | `#042022` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **18.29:1** · `ink-soft / bg` = **10.56:1** · `accent-ink / accent` = **12.09:1** · `ink-faint / bg` = **5.58:1**.
-- Koyu modda değişen başka ne var: `--shadow` yayılımı büyür (18px → 24px), `--shadow-hard` de (32px → 40px) — siyah üstünde siyah gölge zayıf okunur; hairline .15 → .18.
-- `filter: invert()` yasak; palet elle yazılır.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **10.80:1** açık / **10.44:1** koyu · `--warn / bg` = **11.25:1** / **10.88:1** · `--ok / surface` = 8.75:1 / 9.12:1 (warn) · devre dışı buton metni = **8.14:1** / **8.21:1** · ghost buton kenarı = **5.56:1** / **5.75:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - En fazla 3 düzlem; parallax katsayıları sabit (0.15 / 0.4 / 1.0), dikey hareket ≤ 40px.
@@ -217,14 +182,11 @@ Varsayılan zemin zaten koyudur; `data-theme="dark"` bloğu mavi-siyahtan **deri
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

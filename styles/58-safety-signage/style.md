@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | orta risk (fotosensitivite; en düşük metin çifti 10.25:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="safety-signage"]` |
 | **Kompozisyon** | `split` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,54 +139,20 @@ ISO 3864 / ISO 7010 piktogram sistemi ve OSHA 1910.145 uyarı kategorilerinden. 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 72px Anton H1 + üstte 8px tehlike bandı + tek CTA | `shots/01-landing.png` |
-| Dashboard | orta | KPI'lar 2px çerçeve; kritik olan accent çerçeve | `shots/02-dashboard.png` |
-| Form | düşük | 48px input, 2px çerçeve, focus'ta accent | — |
-| Liste / tablo | düşük | 44px satır, kritik satır sol 8px `--danger` | — |
-| Boş durum | orta | "KAYIT YOK" 40px Anton + piktogram | — |
-| Onboarding | yüksek | her adım tek uyarı kuralı; ilerleme 4 kare blok | — |
-| Pricing | orta | plan kartları 2px çerçeve; öne çıkan accent çerçeve | — |
-| Giriş / ödeme | düşük | bant yok, 2px çerçeve korunur; süs sıfır | — |
-| Modal | orta | 3px accent çerçeve + üst 12px bant | — |
-| Bildirim / toast | orta | üst-orta, sol uçta 24px piktogram | — |
-| Hata | yüksek | `--danger` çerçeve + piktogram + 40px Anton başlık | — |
-| Profil / ayar | orta | bant yok; talimat kademesi 2px `--ink` | — |
+| Landing / hero | yüksek | 72px Anton H1 + üstte 8px tehlike bandı + tek CTA | `shots/01-page.png` |
+| Dashboard | orta | KPI'lar 2px çerçeve; kritik olan accent çerçeve | `shots/01-page.png` |
+| Form | düşük | 48px input, 2px çerçeve, focus'ta accent | `shots/01-page.png` |
+| Liste / tablo | düşük | 44px satır, kritik satır sol 8px `--danger` | `shots/01-page.png` |
+| Boş durum | orta | "KAYIT YOK" 40px Anton + piktogram | `shots/01-page.png` |
+| Onboarding | yüksek | her adım tek uyarı kuralı; ilerleme 4 kare blok | `shots/01-page.png` |
+| Pricing | orta | plan kartları 2px çerçeve; öne çıkan accent çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | düşük | bant yok, 2px çerçeve korunur; süs sıfır | `shots/01-page.png` |
+| Modal | orta | 3px accent çerçeve + üst 12px bant | `shots/01-page.png` |
+| Bildirim / toast | orta | üst-orta, sol uçta 24px piktogram | `shots/01-page.png` |
+| Hata | yüksek | `--danger` çerçeve + piktogram + 40px Anton başlık | `shots/01-page.png` |
+| Profil / ayar | orta | bant yok; talimat kademesi 2px `--ink` | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **140ms** | `linear` | `opacity` + `translateY(16px)`; stagger **0.06s** |
-| Scroll reveal | **150ms** | `linear` | trigger `top 93%`, `translateY(22px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (uyarı kaymaz) |
-| Basma | **60ms** | `linear` | `translateY(2px)`, renk ters çevrilir |
-| Geçiş / sayfa | 140ms | `linear` | opacity, cross-fade yok |
-| Hover | **80ms** | `linear` | görsel ölçek **1.012** |
-| Ödül / vurgu | 220ms | `linear` | bant 8px→12px, tek kez (döngü yok) |
-
-- İmza ölçüleri: `enter = 0.14s / linear / 16px / 0.06` · `scroll = top 93% / 0.15s / 22px / once` · `pin = false` · `hover = 80ms / 1.012`.
-- Aynı banttaki komşulardan fark: 56'dan (0.36s / bezier / 6px) dört, 57'den (0.26s / overshoot / 4px) dört, 59'dan (0.44s / bezier / 20px) dört, 60'tan (0.58s / bezier / 12px) dört parametrede ayrışır. Mevcut 59 stil içinde en yakını 49-log-stream (7 parametre farkı).
-- `prefers-reduced-motion`: tüm süreler 0.01ms, bant genişlemesi kapanır.
-- Bu stile yasak hareket: yay/overshoot, yumuşak ease, saniyede 3 üstü flash, sürekli yanıp sönen bant, parallax.
-
-## Koyu mod
-
-Koyu modda asfalt zemin daha da koyulaşır (ΔL −9) ve kart bandı yukarı çıkar; sarı accent parlaklığı artar ki tehlike bandı siyahta ayrışsın.
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#12120e` | `#090906` |
-| `--bg-2` | `#1a1a14` | `#0f0f0b` |
-| `--surface` | `#1f1f18` | `#15150e` |
-| `--surface-2` | `#26261d` | `#1d1d15` |
-| `--ink` | `#f6f2e4` | `#fbf8ec` |
-| `--ink-soft` | `#c4c0a9` | `#cdc9b2` |
-| `--accent` | `#ffd52e` | `#fff08a` |
-| `--accent-ink` | `#14140d` | `#14140d` |
-
-- Koyu modda değişen başka ne var: bant opaklığı 1’e sabitlenir, plaka çerçevesine 1px iç accent %40 eklenir; `--line` .20 → .22. Ölçüm: `ink/bg` 18.52:1, `accent-ink/accent` 15.56:1.
 
 ## Zorunlu kurallar
 - Üç kademeli çerçeve sabit: 2px accent (tehlike) · 2px `--ink` (talimat) · 1px `--line` (bilgi).
@@ -213,14 +179,11 @@ Koyu modda asfalt zemin daha da koyulaşır (ΔL −9) ve kart bandı yukarı ç
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

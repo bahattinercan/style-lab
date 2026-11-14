@@ -10,7 +10,7 @@
 | **Zorluk** | düşük-orta · **Erişilebilirlik** | iyi (gövde 15.76:1, accent üstü 10.50:1; faint 3.51:1 yalnız dekoratif) |
 | **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="indian-block-print"]` |
 | **Kompozisyon** | `type` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -138,52 +138,20 @@ Racastan/Gujarat blok baskısı: ahşap blok elle oyulur, boyaya batırılır, k
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 4/4/4 blok tekrarı, 4px izli hero kartı, damga zemini | `shots/01-landing.png` |
-| Dashboard | düşük | 1 birincil KPI (4px iz) + 3 normal kart (1px iz) | `shots/02-dashboard.png` |
-| Form | düşük | 40px alanlar, 1px iz, tek kolon | — |
-| Liste / tablo | orta | 40px satır, sol accent kural, 4. satırda kalın ayırıcı | — |
-| Boş durum | orta | boş damga + tek CTA, iz korunur | — |
-| Onboarding | yüksek | 3 adım: koleksiyon → blok motifi → ilk ürün | — |
-| Pricing | orta | 3 plan kartı; orta plan 4px iz ile öne çıkar | — |
-| Giriş / ödeme | çok düşük | dar kart, 1px iz, damga yalnız üstte | — |
-| Modal | orta | 4px iz, sol üst damga, 22px padding | — |
-| Bildirim / toast | orta | 1px izli kutu, damga bloğu, 3600ms | — |
-| Hata | düşük | danger renkli 1px iz + damga; metin korunur | — |
-| Profil / ayar | orta | 40px satır, sol kural, blok aralığı 20px | — |
+| Landing / hero | yüksek | 4/4/4 blok tekrarı, 4px izli hero kartı, damga zemini | `shots/01-page.png` |
+| Dashboard | düşük | 1 birincil KPI (4px iz) + 3 normal kart (1px iz) | `shots/01-page.png` |
+| Form | düşük | 40px alanlar, 1px iz, tek kolon | `shots/01-page.png` |
+| Liste / tablo | orta | 40px satır, sol accent kural, 4. satırda kalın ayırıcı | `shots/01-page.png` |
+| Boş durum | orta | boş damga + tek CTA, iz korunur | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: koleksiyon → blok motifi → ilk ürün | `shots/01-page.png` |
+| Pricing | orta | 3 plan kartı; orta plan 4px iz ile öne çıkar | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | dar kart, 1px iz, damga yalnız üstte | `shots/01-page.png` |
+| Modal | orta | 4px iz, sol üst damga, 22px padding | `shots/01-page.png` |
+| Bildirim / toast | orta | 1px izli kutu, damga bloğu, 3600ms | `shots/01-page.png` |
+| Hata | düşük | danger renkli 1px iz + damga; metin korunur | `shots/01-page.png` |
+| Profil / ayar | orta | 40px satır, sol kural, blok aralığı 20px | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 300ms | `steps(2, end)` | `opacity` + `translateY(12px)`, öğe başına 35ms stagger |
-| Scroll reveal | 340ms | `steps(2, end)` | `top 90%` tetiği, 14px, `once: true` |
-| Basma | 130ms | `linear` | `translate(4px,4px)` + iz kalkar |
-| Hover | 130ms | `linear` | iz 3px'e iner, zemin %92, görsel ölçek `1.030` |
-| Pin / scrub | kapalı | — | — (baskı düzlemi sabitlenmez) |
-| Damga | 720ms | `steps(4)` | yalnız yükleme göstergesinde 4 kare |
-
-- Ölçülebilir imza: `enter 0.3s / steps(2,end) / 12px / 0.035` · `scroll top 90% / 0.34s / 14px / once:true` · `hover 130ms / 1.030` · `pin kapalı`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; iz ve grain statik kalır.
-- Bu stile yasak hareket: yumuşak ease, bounce, sürekli döngü, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f7f1e2` | `#131519` |
-| `--bg-2` | `#eee6d2` | `#181b20` |
-| `--surface` | `#fffcf3` | `#1c2026` |
-| `--surface-2` | `#f6efdd` | `#24282f` |
-| `--ink` | `#16181d` | `#eceee6` |
-| `--ink-soft` | `#464a55` | `#aeb2b8` |
-| `--accent` | `#26356e` | `#7f97e0` |
-| `--accent-ink` | `#f7f4e9` | `#0f1424` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **15.61:1** · `ink-soft / bg` = **8.58:1** · `accent-ink / accent` = **6.46:1** · `ink-faint / bg` = **4.55:1**.
-- Koyu modda değişen başka ne var: iz rengi opak siyaha kayar (`1px 1px 0 rgba(0,0,0,.5)`); çivit accent açık indigo'ya döner; damga opaklığı .28 → .34.
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 - Her kart 1px iz, birincil yüzey 4px iz taşır; blur yok.
@@ -212,14 +180,11 @@ Racastan/Gujarat blok baskısı: ahşap blok elle oyulur, boyaya batırılır, k
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

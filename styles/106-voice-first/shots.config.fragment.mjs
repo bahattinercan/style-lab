@@ -111,17 +111,5 @@ body.scene-landing .hero-visual .visual-row:nth-child(2) { height: 66%; }
 body.scene-landing .hero-visual .visual-row:nth-child(3) { height: 92%; }
 body.scene-landing .hero-visual .visual-row > * { display: none; }
 body.scene-landing .hero-visual .visual-card::after { content: 'canlı transkript 00:04 — notları özetle, ekibe gönder'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 12px; }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 22px; display: grid; grid-template-rows: auto 1fr; gap: 18px; }
-body.scene-landing .hero-visual { min-height: 360px; }
-body.scene-landing .hero-visual .visual-card .bar { height: 9px; border-radius: 999px; background: var(--accent); border: 0; }
-body.scene-landing .hero-visual .visual-card .bar.w70 { width: 38%; background: color-mix(in srgb, var(--accent) 44%, transparent); }
-body.scene-landing .hero-visual .visual-card .bar.w45 { width: 22%; background: color-mix(in srgb, var(--accent) 22%, transparent); }
-body.scene-landing .hero-visual .visual-rows { display: flex; align-items: center; justify-content: space-between; height: 96px; margin: 0; padding: 0; }
-body.scene-landing .hero-visual .visual-row { display: block; width: 5px; padding: 0; background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 26%, transparent)); border-radius: 999px; }
-body.scene-landing .hero-visual .visual-row:nth-child(1) { height: 32%; }
-body.scene-landing .hero-visual .visual-row:nth-child(2) { height: 66%; }
-body.scene-landing .hero-visual .visual-row:nth-child(3) { height: 92%; }
-body.scene-landing .hero-visual .visual-row > * { display: none; }
-body.scene-landing .hero-visual .visual-card::after { content: 'canlı transkript 00:04 — notları özetle, ekibe gönder'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 12px; }`,
-  },
+    },
 };

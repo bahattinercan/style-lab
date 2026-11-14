@@ -10,7 +10,7 @@
 | **Zorluk** | orta-yüksek (ölçek atlaması + döndürülmüş katman disiplini) · **Erişilebilirlik** | iyi (17.23:1 gövde, 17.29:1 accent üstü; risk tek: rotasyonlu metin) |
 | **Aile** | Tipografik (37) · **Token** | `kit/tokens.css` → `[data-style="kinetic-type"]` |
 | **Kompozisyon** | `type` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -167,55 +167,26 @@ Hareketli tipografi (kinetic typography) 1950'lerin film jeneriklerinden (Saul B
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | display 96px uppercase 2 satır, diagonal accent şerit, 8/4 asimetri, tek CTA | `shots/01-landing.png` |
-| Dashboard | düşük | display 44px'e iner, rotasyon 0°, KPI sayıları Anton 44px, accent ≤%6 | `shots/02-dashboard.png` |
-| Mobil | orta | tek kolon, display `clamp(28px, 9vw, 44px)`, dokunma 44px, şerit yalnız üst bölümde | — |
-| Bileşenler · temel | orta | ölçek levhası (10/15/19/32/96) + radius 2/4 + 1px çizgi; gölge yok | — |
-| Form | çok düşük | rotasyon yok; 50px input, mono etiket, tek sütun 460px | — |
-| Modal / katman | orta | üst 2px accent, radius 4px, backdrop blur'suz; mono başlık izi | — |
-| Veri | düşük | tablo 52px satır, 1px çizgi; çubuklar 2px radius, accent yalnız seri 1 | — |
-| Gezinme | orta | alt 1px kural; aktif mono etiket + 2px accent alt çizgi | — |
-| Pricing | orta | 3 kart; orta kart üst 2px accent + `--surface-2`; fiyat Anton 44px | — |
-| Giriş / ödeme | çok düşük | süs ≤1 şerit; yalnız 1px kenar + 2px radius; güven için sade | — |
-| Liste | düşük | filtre çubuğu 1px alt kural; satır 52px; seçili satır sol 2px accent | — |
-| Boş / hata durumu | orta | 404 rakamı Anton 58px + tek cümle + tek buton; accent yalnız sayı ve CTA'da | — |
-| Ayarlar | düşük | bölüm başlıkları 1px kural + 4px kart; anahtar pill 40×22 | — |
-| Onboarding | yüksek | adım göstergesi mono 10px; display 34px iki satır, rotasyon yok | — |
-| Makale | orta | 54ch ölçü, 24px H2, 1px ayırıcı; display yalnız başlıkta, rotasyon yok | — |
-| Mobil sheet | orta | alt sayfa üst 2px accent, radius 4px üst köşe, 44px tutamaç | — |
-| Mobil form | çok düşük | tam genişlik 50px input, klavye üstü 46px CTA | — |
-| Mobil liste | düşük | 60px satır, monogram kare baş harf (2px radius), 1px ayırıcı | — |
+| Landing / hero | yüksek | display 96px uppercase 2 satır, diagonal accent şerit, 8/4 asimetri, tek CTA | `shots/01-page.png` |
+| Dashboard | düşük | display 44px'e iner, rotasyon 0°, KPI sayıları Anton 44px, accent ≤%6 | `shots/01-page.png` |
+| Mobil | orta | tek kolon, display `clamp(28px, 9vw, 44px)`, dokunma 44px, şerit yalnız üst bölümde | `shots/01-page.png` |
+| Bileşenler · temel | orta | ölçek levhası (10/15/19/32/96) + radius 2/4 + 1px çizgi; gölge yok | `shots/01-page.png` |
+| Form | çok düşük | rotasyon yok; 50px input, mono etiket, tek sütun 460px | `shots/01-page.png` |
+| Modal / katman | orta | üst 2px accent, radius 4px, backdrop blur'suz; mono başlık izi | `shots/01-page.png` |
+| Veri | düşük | tablo 52px satır, 1px çizgi; çubuklar 2px radius, accent yalnız seri 1 | `shots/01-page.png` |
+| Gezinme | orta | alt 1px kural; aktif mono etiket + 2px accent alt çizgi | `shots/01-page.png` |
+| Pricing | orta | 3 kart; orta kart üst 2px accent + `--surface-2`; fiyat Anton 44px | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | süs ≤1 şerit; yalnız 1px kenar + 2px radius; güven için sade | `shots/01-page.png` |
+| Liste | düşük | filtre çubuğu 1px alt kural; satır 52px; seçili satır sol 2px accent | `shots/01-page.png` |
+| Boş / hata durumu | orta | 404 rakamı Anton 58px + tek cümle + tek buton; accent yalnız sayı ve CTA'da | `shots/01-page.png` |
+| Ayarlar | düşük | bölüm başlıkları 1px kural + 4px kart; anahtar pill 40×22 | `shots/01-page.png` |
+| Onboarding | yüksek | adım göstergesi mono 10px; display 34px iki satır, rotasyon yok | `shots/01-page.png` |
+| Makale | orta | 54ch ölçü, 24px H2, 1px ayırıcı; display yalnız başlıkta, rotasyon yok | `shots/01-page.png` |
+| Mobil sheet | orta | alt sayfa üst 2px accent, radius 4px üst köşe, 44px tutamaç | `shots/01-page.png` |
+| Mobil form | çok düşük | tam genişlik 50px input, klavye üstü 46px CTA | `shots/01-page.png` |
+| Mobil liste | düşük | 60px satır, monogram kare baş harf (2px radius), 1px ayırıcı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 90ms | `cubic-bezier(.2,.8,.2,1)` | `transform: translateY(2px)` |
-| Geçiş / sayfa | 220ms | `cubic-bezier(.2,.8,.2,1)` | `clip-path: inset(0 0 100% 0) → inset(0)` + `opacity` |
-| Giriş (enter) | **620ms** | `cubic-bezier(.85,0,.15,1)` | `opacity` + `translateY(40px)`, **stagger 100ms**; dev ölçek atlaması, overshoot yok |
-| Kaydırma (scroll) | **500ms** | `cubic-bezier(.85,0,.15,1)` | trigger **`top 82%`**, offsetY **44px**, `once: true` |
-| Hover | **130ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | kapalı | — | `enabled: false` (`scrub 1.0` / `+120%` kullanılmıyor) |
-| Ödül / vurgu | 320ms | `cubic-bezier(.2,.8,.2,1)` | accent şerit genişliği `0 → 100%`, tek atım (döngü yok) |
-
-- İmza ölçüsü: enter **0.62s / 40px / stagger 0.1** · scroll **0.5s / `top 82%` / 44px** · hover **130ms / 1.02** · pin **kapalı**.
-- `prefers-reduced-motion`: tüm süreler `0.01ms`, `clip-path` ve `transform` sıfırlanır; vurgu şeridi **statik** görünür (bilgi kaybı olmaz), basma geri bildirimi kalır.
-- Bu stile yasak hareket: sürekli kayan yazı (marquee), sonsuz kinetic loop, parallax, harf harf sıçrayan yazı, spring/overshoot, gradyan geçişi, `rotate` animasyonu (statik açı kalır, dönmez).
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#0e0e10` | `#0e0e10` (stil koyu-doğal) |
-| `--surface` | `#1b1b1f` | `#1b1b1f` |
-| `--ink` | `#f4f2ec` | `#f4f2ec` |
-| `--accent` | `#e8ff47` | `#e8ff47` |
-
-- Kinetic Type **tek modlu, koyu-doğal** bir stildir; aydınlık varyant üretilmez (asit vurgu açık zeminde 1.00:1'e düşer, metin olarak okunmaz). Talep gelirse ayrı palet elle yazılır — `filter: invert()` yasak.
-- Koyu mod sahneleri (17/18) bu stil için **üretilmedi**; zemin zaten `#0e0e10` olduğu için koyu ekran ayrı görsel gerektirmez.
-- Açık varyant gerekirse: `--bg: #f4f2ec`, `--surface: #e9e6dd`, `--surface-2: #ded9cc`, `--ink: #0e0e10`, `--accent: #55630a` (accent-ink `#f4f2ec`, 5.91:1) — `--line: rgba(14,14,16,.20)`.
-- Koyu zeminde grain `.05` → `.04` (doku daha görünür olur); `--shadow` her iki modda `none`.
 
 ## Erişilebilirlik
 
@@ -229,14 +200,11 @@ Hareketli tipografi (kinetic typography) 1950'lerin film jeneriklerinden (Saul B
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

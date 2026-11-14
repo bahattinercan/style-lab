@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (boşluğu "boş bırakılmış" değil "ölçülmüş" göstermek) · **Erişilebilirlik** | iyi (16.32:1 gövde, 5.33:1 accent üstü) |
 | **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="japanese-ma"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,55 +141,20 @@ Klişeye düşmemek için korunması gereken detay: **çizgi disiplini ve mühü
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 8/4 bölünme, 64px başlık, mühür karesi, tek çizgi | `shots/01-landing.png` |
-| Dashboard | düşük | KPI kartları gölgesiz 1px; metrik sayısı ≤ 4; sağda 32px boş şerit | `shots/02-dashboard.png` |
-| Form | düşük | Alt çizgi alanlar, 48px yükseklik, 4px offset odak | — |
-| Liste / tablo | düşük | 56px satır, dikey çizgi yok, sütun ayrımı boşlukla | — |
-| Boş durum | orta | Tek satır metin + tek buton; illüstrasyon yerine 64px boşluk | — |
-| Onboarding | yüksek | Adım başına tek cümle; ilerleme = 3 çizgi (1px) | — |
-| Pricing | orta | 3 kart, radius 2px, öne çıkan kart yalnız accent 1px üst çizgi | — |
-| Giriş / ödeme | çok düşük | Süs sıfır; alt çizgi alanlar + tek accent buton | — |
-| Modal | orta | 40px padding, gölgesiz, perde düz `--bg` | — |
-| Bildirim / toast | orta | Üst 1px accent çizgi + metin; kutu yok, 4000ms | — |
-| Hata | düşük | `--danger` alt çizgi + 12px açıklama; ikon yok | — |
-| Profil / ayar | orta | Bölüm başlıkları tek çizgiyle; alanlar 48px | — |
+| Landing / hero | yüksek | 8/4 bölünme, 64px başlık, mühür karesi, tek çizgi | `shots/01-page.png` |
+| Dashboard | düşük | KPI kartları gölgesiz 1px; metrik sayısı ≤ 4; sağda 32px boş şerit | `shots/01-page.png` |
+| Form | düşük | Alt çizgi alanlar, 48px yükseklik, 4px offset odak | `shots/01-page.png` |
+| Liste / tablo | düşük | 56px satır, dikey çizgi yok, sütun ayrımı boşlukla | `shots/01-page.png` |
+| Boş durum | orta | Tek satır metin + tek buton; illüstrasyon yerine 64px boşluk | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına tek cümle; ilerleme = 3 çizgi (1px) | `shots/01-page.png` |
+| Pricing | orta | 3 kart, radius 2px, öne çıkan kart yalnız accent 1px üst çizgi | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Süs sıfır; alt çizgi alanlar + tek accent buton | `shots/01-page.png` |
+| Modal | orta | 40px padding, gölgesiz, perde düz `--bg` | `shots/01-page.png` |
+| Bildirim / toast | orta | Üst 1px accent çizgi + metin; kutu yok, 4000ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` alt çizgi + 12px açıklama; ikon yok | `shots/01-page.png` |
+| Profil / ayar | orta | Bölüm başlıkları tek çizgiyle; alanlar 48px | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 180ms | `cubic-bezier(.25,.1,.25,1)` | `opacity: .88` (konum kaymaz) |
-| Giriş (enter) | **1050ms** | `cubic-bezier(.25,.1,.25,1)` | `opacity` + `translateY(12px)`, stagger **140ms** |
-| Kaydırma (scroll) | **1150ms** | `cubic-bezier(.25,.1,.25,1)` | trigger **`top 76%`**, offsetY **14px**, `once: true` |
-| Hover | **520ms** | `ease-out` | görsel ölçek **1.006** (neredeyse fark edilmez) |
-| Pin | **açık** | `scrub: 0.6` | mesafe **+85%**, hero görseli sabitlenir |
-| Ödül / vurgu | 520ms | `cubic-bezier(.25,.1,.25,1)` | çizgi soldan sağa `scaleX` 0→1 |
-
-- `prefers-reduced-motion`: tüm süreler 0.01ms; pin/scrub devre dışı kalır, hero statik kalır.
-- Bu stile yasak hareket: bounce/spring, parallax, sürekli döngü, renk geçişi animasyonu (yalnız opaklık ve konum).
-- İmza ölçüsü: giriş **1.05s / 12px / stagger .14**, kaydırma **1.15s / top 76% / 14px**, hover **520ms / 1.006**, pin **scrub .6 / +85%** — katalogda bu dörtlü tekrar etmez.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f6f5f1` | `#0f1113` |
-| `--bg-2` | `#ecebe5` | `#141719` |
-| `--surface` | `#ffffff` | `#171a1d` |
-| `--surface-2` | `#f1f0ea` | `#1e2225` |
-| `--ink` | `#16181a` | `#ece9e2` |
-| `--ink-soft` | `#4a4f52` | `#a8adaf` |
-| `--ink-faint` | `#7b8084` | `#7d8286` |
-| `--accent` | `#bf3320` | `#e4674f` |
-| `--accent-ink` | `#fdf7f2` | `#12100f` |
-| `--line` | `rgba(22,24,26,.14)` | `rgba(236,233,226,.15)` |
-
-- Koyu modda değişen başka ne var: accent açılır (`#e4674f`) çünkü koyu kırmızı koyu zeminde kaybolur; `--accent-ink` koyuya döner. `--shadow` her iki temada `none`.
-- Çizgi opaklığı iki temada eşit (.14/.15) — çizgi "görünmez eşik" olarak aynı ağırlıkta kalır.
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **15.61:1** · `ink-soft/bg` = **8.34:1** · `accent-ink/accent` = **5.74:1** · `ink-faint/bg` = **4.87:1**.
 
 ## Zorunlu kurallar
 
@@ -220,14 +185,11 @@ Klişeye düşmemek için korunması gereken detay: **çizgi disiplini ve mühü
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

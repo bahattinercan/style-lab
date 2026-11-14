@@ -14,8 +14,3 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: 0.01em; --blur: 10px; --grain: 0;
 }
-
-[data-theme="dark"][data-style="y2k"] {
-  --bg: #0b1024; --bg-2: #181e31; --surface: #141a33; --surface-2: #252b43;
-  --ink: #eaf2ff; --ink-soft: #a7aebd; --ink-faint: #6f7687; --accent: #8b74ff; --accent-ink: #0d0d0d; --line: rgba(234,242,255,.14);
-}

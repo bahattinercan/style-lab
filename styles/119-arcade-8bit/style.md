@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="arcade-8bit"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -145,51 +145,20 @@ Kökeni 1980'lerin arcade kabinleri (Pac-Man, Street Fighter skor panelleri) ve 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 32px pixel başlık + 1 sprite + "INSERT COIN" CTA | `shots/01-landing.png` |
-| Dashboard | yüksek | Skor tablosu 40px satır, VT323 sayaç | `shots/02-dashboard.png` |
-| Form | düşük | 44px input, 0 radius, 1px kenar, VT323 placeholder | — |
-| Liste / tablo | yüksek | 40px satır, sıra no + ad + skor (sağa hizalı) | — |
-| Boş durum | orta | "NO CREDITS" + tek satır açıklama + CTA | — |
-| Onboarding | yüksek | Üç ekran: 1UP → HI → START; her ekranda 1 tuş | — |
-| Pricing | orta | Üç kredi paketi; kart yerine çerçeveli panel | — |
-| Giriş / ödeme | çok düşük | Tek kolon 360px, "ENTER NAME" akışı | — |
-| Modal | orta | 480px, 2px radius, 1px kenar, backdrop %60 | — |
-| Bildirim / toast | orta | Üst orta, 36px, mint zemin + accent-ink "BONUS" | — |
-| Hata | düşük | "GAME OVER" + tek satır + RETRY butonu | — |
-| Profil / ayar | orta | Oyuncu kartı: 3 harf isim + skor geçmişi | — |
+| Landing / hero | yüksek | 32px pixel başlık + 1 sprite + "INSERT COIN" CTA | `shots/01-page.png` |
+| Dashboard | yüksek | Skor tablosu 40px satır, VT323 sayaç | `shots/01-page.png` |
+| Form | düşük | 44px input, 0 radius, 1px kenar, VT323 placeholder | `shots/01-page.png` |
+| Liste / tablo | yüksek | 40px satır, sıra no + ad + skor (sağa hizalı) | `shots/01-page.png` |
+| Boş durum | orta | "NO CREDITS" + tek satır açıklama + CTA | `shots/01-page.png` |
+| Onboarding | yüksek | Üç ekran: 1UP → HI → START; her ekranda 1 tuş | `shots/01-page.png` |
+| Pricing | orta | Üç kredi paketi; kart yerine çerçeveli panel | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 360px, "ENTER NAME" akışı | `shots/01-page.png` |
+| Modal | orta | 480px, 2px radius, 1px kenar, backdrop %60 | `shots/01-page.png` |
+| Bildirim / toast | orta | Üst orta, 36px, mint zemin + accent-ink "BONUS" | `shots/01-page.png` |
+| Hata | düşük | "GAME OVER" + tek satır + RETRY butonu | `shots/01-page.png` |
+| Profil / ayar | orta | Oyuncu kartı: 3 harf isim + skor geçmişi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 70ms | `steps(2, end)` | `translateY(2px)` + kenar 1px mint |
-| Giriş (enter) | 180ms | `steps(4, end)` | `opacity` + 8px `translateY`, stagger 20ms |
-| Scroll reveal | 220ms | aynı eğri | `top 95%` tetikleyici, `opacity` + 6px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 70ms | aynı eğri | `transform: scale(1.000)` |
-| Ödül / vurgu | 220ms | `steps(4, end)` | "1UP" etiketi 0→1 opacity (tek atım, 4 adım) |
-
-- Süre bütçesi: enter 180ms ≤ 1200ms · scroll 220ms ≤ 1200ms · stagger 20ms.
-- Ölçek animasyonu yok (arcade'de sprite büyümez); yalnız opacity + translate.
-- Pin/parallax yok: skor tablosu sabit; scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, tarama dokusu statik kalır.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#0e1224` | `#010309` |
-| `--surface` | `#121728` | `#04070f` |
-| `--ink` | `#eef4ff` | `#f4f9ff` |
-| `--accent` | `#35e08a` | `#66ffb8` |
-| `--line` | `rgba(238,244,255,.16)` | `rgba(244,249,255,.13)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 18.37:1 · `accent-ink / accent` = 15.10:1.
-- Koyu modda zemin daha derin laciverte (`#070a14`) döner; mint aksan parlaklaşır (`#6bffb0`).
-- Tarama dokusu opaklığı %4'ten %3'e düşer (koyuda gürültü yapar).
-- Köşe kırpma ve çerçeve kalınlığı değişmez.
 
 ## Zorunlu kurallar
 
@@ -220,14 +189,11 @@ Kökeni 1980'lerin arcade kabinleri (Pac-Man, Street Fighter skor panelleri) ve 
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -4,7 +4,8 @@
  *
  * Neden: `kit/styles.index.json` 1 MB (145 × 27 sahne yolu + gömülü token kopyası) — bir ajanın
  * okuyacağı dosya değil. Bu script seçim kararı için gereken **en az** alanı üretir:
- * slug, ad, aile, tek cümle, etiketler, koyu mod durumu, hareket özeti, uyumlu komşular, yollar.
+ * slug, ad, aile, tek cümle, etiketler, kompozisyon, uyumlu komşular, yollar.
+ * v6: koyu mod ve hareket katmanı kaldırıldı; indeks yalnız seçim kararı için gerekeni taşır.
  *
  * Kullanım:
  *   node kit/build-slim-index.mjs           # yaz
@@ -17,7 +18,6 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const FULL = path.join(ROOT, 'kit', 'styles.index.json');
-const MOTION = path.join(ROOT, 'kit', 'dist', 'motion.json');
 const FAMILIES = path.join(ROOT, 'kit', 'families.json');
 const OUT = path.join(ROOT, 'kit', 'dist', 'index.slim.json');
 
@@ -25,43 +25,28 @@ const CHECK = process.argv.includes('--check');
 const JSON_OUT = process.argv.includes('--json');
 
 const full = JSON.parse(fs.readFileSync(FULL, 'utf8'));
-const motion = JSON.parse(fs.readFileSync(MOTION, 'utf8'));
 const families = JSON.parse(fs.readFileSync(FAMILIES, 'utf8'));
 
-const styles = full.styles.map((s) => {
-  const m = motion.styles[s.slug] ?? {};
-  const enter = m.sequences?.enter ?? {};
-  const scroll = m.sequences?.scroll ?? {};
-  const hover = m.sequences?.hover ?? {};
-  return {
-    num: s.num,
-    slug: s.slug,
-    name: s.name,
-    family: s.family,
-    tag: s.tag,
-    tags: s.tags ?? [],
-    dark: s.dark === 'full' || s.dark === true || s.palette?.dark != null,
-    layout: s.layout ? { hero: s.layout.hero, nav: s.layout.nav, density: s.layout.density } : null,
-    motion: {
-      enterMs: enter.durationMs ?? null,
-      ease: enter.curve?.css ?? m.curve?.css ?? null,
-      scrollMs: scroll.durationMs ?? null,
-      hoverMs: hover.durationMs ?? null,
-    },
-    compatible: s.neighbors?.compatible ?? [],
-    forbidden: s.neighbors?.forbidden ?? [],
-  };
-});
+const styles = full.styles.map((s) => ({
+  num: s.num,
+  slug: s.slug,
+  name: s.name,
+  family: s.family,
+  tag: s.tag,
+  tags: s.tags ?? [],
+  layout: s.layout ? { hero: s.layout.hero, nav: s.layout.nav, density: s.layout.density } : null,
+  compatible: s.neighbors?.compatible ?? [],
+  forbidden: s.neighbors?.forbidden ?? [],
+}));
 
 const doc = {
   generatedBy: 'kit/build-slim-index.mjs',
   count: styles.length,
   families: families.families.map((f) => ({ name: f.name, from: f.from, to: f.to })),
   contract: {
-    dir: 'dosya yolu: styles/<num>-<slug>/ (style.md · tokens.json · shots/01-landing.png · shots/17-dark-landing.png)',
+    dir: 'dosya yolu: styles/<num>-<slug>/ (style.md · tokens.json · shots/01-page.png)',
     tag: 'tek cümlelik kimlik',
     tags: '3 etiket (arama/niyet eşleşmesi)',
-    motion: 'normalize edilmiş hareket özeti (ms + eğri)',
     layout: 'kompozisyon arketipi: hero|nav|density (kit/render/layouts.json)',
     compatible: 'garnitür olarak kullanılabilir stiller (baskın değil)',
     forbidden: 'birlikte kullanılmayacak stiller',

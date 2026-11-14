@@ -28,16 +28,3 @@
   --blur: 0px;
   --grain: 0.015;
 }
-
-[data-theme="dark"][data-style="japanese-ma"] {
-  --bg: #0f1113;
-  --bg-2: #141719;
-  --surface: #171a1d;
-  --surface-2: #1e2225;
-  --ink: #ece9e2;
-  --ink-soft: #a8adaf;
-  --ink-faint: #7d8286;
-  --accent: #e4674f;
-  --accent-ink: #12100f;
-  --line: rgba(236,233,226,.15);
-}

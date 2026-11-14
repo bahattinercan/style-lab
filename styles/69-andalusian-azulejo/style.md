@@ -10,7 +10,7 @@
 | **Zorluk** | orta (ızgara disiplinini bozmadan desen kurmak) · **Erişilebilirlik** | iyi (13.22:1 gövde, 7.45:1 accent üstü) |
 | **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="andalusian-azulejo"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -142,55 +142,20 @@ Klişeye düşmemek için korunması gereken detay: **harç oranı ve tek renk**
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Tessellation sağ üstte (%16), kobalt mühür karesi, 2px divider | `shots/01-landing.png` |
-| Dashboard | düşük | KPI kartları 2px harçla bitişik; sayılar Space Mono | `shots/02-dashboard.png` |
-| Form | düşük | 44px alan, 1px radius, halka offset 0 | — |
-| Liste / tablo | düşük | Hücreler arası 2px harç; başlık uppercase mono | — |
-| Boş durum | orta | Tek yıldız motifi (küçük) + 1 cümle + 1 buton | — |
-| Onboarding | yüksek | Adımlar fayans sırası: 3 kare, aktif olan kobalt | — |
-| Pricing | orta | 3 fayans modülü (6/3/3); orta modül 2px kobalt kenar | — |
-| Giriş / ödeme | çok düşük | Süs yok; alanlar 1px radius, tek kobalt buton | — |
-| Modal | orta | 2px kobalt çerçeve, gölge yok, perde koyu | — |
-| Bildirim / toast | orta | Sol uçta 8px kobalt kare, 3200ms | — |
-| Hata | düşük | `--danger` kenar + açıklama; motif kullanılmaz | — |
-| Profil / ayar | orta | Ayarlar fayans listesi; her satır 2px harçla ayrı | — |
+| Landing / hero | yüksek | Tessellation sağ üstte (%16), kobalt mühür karesi, 2px divider | `shots/01-page.png` |
+| Dashboard | düşük | KPI kartları 2px harçla bitişik; sayılar Space Mono | `shots/01-page.png` |
+| Form | düşük | 44px alan, 1px radius, halka offset 0 | `shots/01-page.png` |
+| Liste / tablo | düşük | Hücreler arası 2px harç; başlık uppercase mono | `shots/01-page.png` |
+| Boş durum | orta | Tek yıldız motifi (küçük) + 1 cümle + 1 buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adımlar fayans sırası: 3 kare, aktif olan kobalt | `shots/01-page.png` |
+| Pricing | orta | 3 fayans modülü (6/3/3); orta modül 2px kobalt kenar | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Süs yok; alanlar 1px radius, tek kobalt buton | `shots/01-page.png` |
+| Modal | orta | 2px kobalt çerçeve, gölge yok, perde koyu | `shots/01-page.png` |
+| Bildirim / toast | orta | Sol uçta 8px kobalt kare, 3200ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + açıklama; motif kullanılmaz | `shots/01-page.png` |
+| Profil / ayar | orta | Ayarlar fayans listesi; her satır 2px harçla ayrı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 90ms | `cubic-bezier(.6,.02,.2,1)` | iç 1px `accent-ink` inset |
-| Giriş (enter) | **420ms** | `cubic-bezier(.6,.02,.2,1)` | `opacity` + `translateY(10px)`, stagger **70ms** |
-| Kaydırma (scroll) | **550ms** | `cubic-bezier(.6,.02,.2,1)` | trigger **`top 88%`**, offsetY **12px**, `once: true` |
-| Hover | **150ms** | `ease-out` | görsel ölçek **1.045** |
-| Pin | **açık** | `scrub: 0.9` | mesafe **+60%** (en kısa sabitleme) |
-| Ödül / vurgu | 300ms | `cubic-bezier(.6,.02,.2,1)` | kobalt mühür 1 kare büyür (58→64px) |
-
-- `prefers-reduced-motion`: tüm süreler 0.01ms; tessellation statik, pin devre dışı.
-- Bu stile yasak hareket: spring/bounce, parallax, sürekli döngü, sır parlaması/ışık süpürme.
-- İmza ölçüsü: giriş **0.42s / 10px / stagger .07**, kaydırma **0.55s / top 88% / 12px**, hover **150ms / 1.045**, pin **scrub .9 / +60%** — katalogda tekrar etmez.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#ecebe6` | `#0b1524` |
-| `--bg-2` | `#e2e1da` | `#101c2e` |
-| `--surface` | `#ffffff` | `#142237` |
-| `--surface-2` | `#f5f4ef` | `#1b2c45` |
-| `--ink` | `#14233a` | `#e9f0f8` |
-| `--ink-soft` | `#46566f` | `#a9b7c8` |
-| `--ink-faint` | `#72808f` | `#7d8ea1` |
-| `--accent` | `#1c4ea0` | `#5b93f0` |
-| `--accent-ink` | `#f4f8ff` | `#081120` |
-| `--line` | `rgba(20,35,58,.18)` | `rgba(233,240,248,.16)` |
-
-- Koyu mod **gece çinisi**: zemin lacivert, fayans yüzeyleri `#142237`; kobalt açılır (`#5b93f0`) çünkü koyu mavi koyu zeminde harçla karışır.
-- Harç rengi koyuda beyazdan türetilir (`.16`) — harç açık temada olduğu gibi "görünür ama sessiz" kalır.
-- `--shadow` iki temada da pratikte kullanılmaz; `filter: invert()` yasak, palet elle yazılır.
-- Koyu modda kontrast: `ink/bg` = **15.94:1** · `ink-soft/bg` = **8.98:1** · `accent-ink/accent` = **6.19:1** · `ink-faint/bg` = **5.45:1**.
 
 ## Zorunlu kurallar
 
@@ -220,14 +185,11 @@ Klişeye düşmemek için korunması gereken detay: **harç oranı ve tek renk**
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

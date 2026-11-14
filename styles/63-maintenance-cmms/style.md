@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 7.40:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="maintenance-cmms"]` |
 | **Kompozisyon** | `split` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Bakım atölyesi geleneğinden: daktilo/presli iş emri kâğıdı, makine küny
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 5/7 hero: solda başlık + tek CTA, sağda açık iş emri kartı | `shots/01-landing.png` |
-| Dashboard | çok yüksek | 4 KPI (açık iş, geciken, MTTR, uyum) + iş kuyruğu | `shots/02-dashboard.png` |
-| Form | orta | iş emri formu: makine, öncelik, adımlar, onay kutuları | — |
-| Liste / tablo | yüksek | 44px satır, iş no mono, SLA kalan süre, geciken şerit | — |
-| Boş durum | düşük | "açık iş emri yok" + yeni iş emri + son 3 kapanan iş | — |
-| Onboarding | orta | 3 adım: varlık ekle → bakım planı → ekip ata | — |
-| Pricing | orta | plan karşılaştırma; varlık sayısı sınırları satır bazında | — |
-| Giriş / ödeme | düşük | tek kart, koyu zemin, tek eylem, hata net | — |
-| Modal | orta | iş adımları, ölçüm girişleri, onay kutuları | — |
-| Bildirim | orta | 40px toast + sol turuncu şerit + eylem düğmesi | — |
-| Hata | düşük | danger çerçeve + neden + tekrar dene; veri korunur | — |
-| Profil / ayar | yüksek | varlık listesi, bakım aralığı, bildirim eşikleri | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (kart) | 550ms | `cubic-bezier(.4,0,.2,1)` | `opacity` + `translateY(26px)`, 90ms arayla |
-| Scroll reveal | 620ms, `top 72%` | aynı | `translateY(20px)`, `once: true` |
-| Basma | 120ms | aynı | `translateY(2px)` + gölge 0 |
-| Hover (görsel) | 260ms | aynı | `scale(1.018)` |
-| Adım onayı | 180ms | aynı | onay kutusu dolgu + çizgi çekme |
-| Pin | kapalı | — | — |
-
-- Ölçülen imza: enter **0.55s · cubic-bezier(.4,0,.2,1) · 26px · stagger 0.09**; scroll **top 72% · 0.62s · 20px · once**; pin **kapalı**; hover **260ms · 1.018**.
-- Ağır kalkış, kararlı varış: hareket torna/freze gibi hızlanır ve durur; yay, sekme, geri taşma yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, giriş ve adım animasyonu anında, dönen pul durur.
-- Bu stile yasak hareket: sürekli dönen/pompalayan animasyon, bounce, parallax, ışık süpürmesi.
-
-## Koyu mod
-
-| Token | Açık (atölye) | Koyu (gece vardiyası) |
-|---|---|---|
-| `--bg` | `#17191a` | `#060708` |
-| `--bg-2` | `#1e2122` | `#0a0c0d` |
-| `--surface` | `#222628` | `#0e1112` |
-| `--surface-2` | `#2b3032` | `#161a1c` |
-| `--ink` | `#ece9e3` | `#f7f4ee` |
-| `--ink-soft` | `#a9a8a2` | `#b6b4ae` |
-| `--accent` | `#ff8a3d` | `#ffa066` |
-| `--accent-ink` | `#1a0f05` | `#170b03` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **18.36:1** · `ink-soft/bg` **9.72:1** · `accent-ink/accent` **9.65:1** · `ink-faint/bg` **5.58:1** (ΔL açık→koyu **-0.070**; koyu artık zeminde belirgin olarak daha derin).
-- Koyu modda değişen başka ne var: zemin bandı `#17191a` → `#060708` (ölçülebilir ΔL), yüzeyler bir kademe daha derin, turuncu `#ffa066` ile bir ton açılır, çizgi %16 → %18; koyu zemin ile panel arasında 4 puan ton farkı korunur.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="maintenance-cmms"]` olarak durur.
+| Landing / hero | yüksek | 5/7 hero: solda başlık + tek CTA, sağda açık iş emri kartı | `shots/01-page.png` |
+| Dashboard | çok yüksek | 4 KPI (açık iş, geciken, MTTR, uyum) + iş kuyruğu | `shots/01-page.png` |
+| Form | orta | iş emri formu: makine, öncelik, adımlar, onay kutuları | `shots/01-page.png` |
+| Liste / tablo | yüksek | 44px satır, iş no mono, SLA kalan süre, geciken şerit | `shots/01-page.png` |
+| Boş durum | düşük | "açık iş emri yok" + yeni iş emri + son 3 kapanan iş | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: varlık ekle → bakım planı → ekip ata | `shots/01-page.png` |
+| Pricing | orta | plan karşılaştırma; varlık sayısı sınırları satır bazında | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek kart, koyu zemin, tek eylem, hata net | `shots/01-page.png` |
+| Modal | orta | iş adımları, ölçüm girişleri, onay kutuları | `shots/01-page.png` |
+| Bildirim | orta | 40px toast + sol turuncu şerit + eylem düğmesi | `shots/01-page.png` |
+| Hata | düşük | danger çerçeve + neden + tekrar dene; veri korunur | `shots/01-page.png` |
+| Profil / ayar | yüksek | varlık listesi, bakım aralığı, bildirim eşikleri | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her iş tek kart: iş no (mono) + makine + öncelik + SLA + atanan kişi.
@@ -214,14 +181,11 @@ Bakım atölyesi geleneğinden: daktilo/presli iş emri kâğıdı, makine küny
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

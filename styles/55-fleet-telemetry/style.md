@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.07:1) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `styles/55-fleet-telemetry/tokens.json` → `[data-style="fleet-telemetry"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,55 +137,20 @@ Bedeli: bu stil bir "vitrin" değildir; pazarlama sayfasında büyük başlık v
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Solda tek cümle + 2 CTA, sağda kapsama ızgarası + 3 cihaz satırı önizleme | `shots/01-landing.png` |
-| Dashboard | yüksek | Üstte kapsama paneli (8/4), altta cihaz tablosu + ticker | `shots/02-dashboard.png` |
-| Form | düşük | Cihaz ekleme: kimlik, bölge, profil; 36px alanlar tek sütun | — |
-| Liste / tablo | yüksek | 36px satır, zebra, sinyal çubukları, sağda son görülme | — |
-| Boş durum | orta | Boş kapsama ızgarası + "cihaz bağla" tek eylemi | — |
-| Onboarding | yüksek | 3 adım: bölge → ağ → ilk cihaz; her adımda tek ızgara | — |
-| Pricing | orta | Cihaz sayısı kademeleri tablosu; kapsama küçük önizleme | — |
-| Giriş / ödeme | çok düşük | Tek panel, 36px alanlar, hata sol şeritle | — |
-| Modal | orta | Cihaz detayı: kimlik, durum geçmişi (sparkline), komut düğmeleri | — |
-| Bildirim / toast | orta | "ARIZA · cihaz f-204 · 14:32" mono tek satır | — |
-| Hata | düşük | Satırda `--danger` nokta + durum kodu + yeniden dene | — |
-| Profil / ayar | orta | Ağ profili, ölçüm aralığı, alarm eşiği, ticker tercihi | — |
+| Landing / hero | yüksek | Solda tek cümle + 2 CTA, sağda kapsama ızgarası + 3 cihaz satırı önizleme | `shots/01-page.png` |
+| Dashboard | yüksek | Üstte kapsama paneli (8/4), altta cihaz tablosu + ticker | `shots/01-page.png` |
+| Form | düşük | Cihaz ekleme: kimlik, bölge, profil; 36px alanlar tek sütun | `shots/01-page.png` |
+| Liste / tablo | yüksek | 36px satır, zebra, sinyal çubukları, sağda son görülme | `shots/01-page.png` |
+| Boş durum | orta | Boş kapsama ızgarası + "cihaz bağla" tek eylemi | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: bölge → ağ → ilk cihaz; her adımda tek ızgara | `shots/01-page.png` |
+| Pricing | orta | Cihaz sayısı kademeleri tablosu; kapsama küçük önizleme | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel, 36px alanlar, hata sol şeritle | `shots/01-page.png` |
+| Modal | orta | Cihaz detayı: kimlik, durum geçmişi (sparkline), komut düğmeleri | `shots/01-page.png` |
+| Bildirim / toast | orta | "ARIZA · cihaz f-204 · 14:32" mono tek satır | `shots/01-page.png` |
+| Hata | düşük | Satırda `--danger` nokta + durum kodu + yeniden dene | `shots/01-page.png` |
+| Profil / ayar | orta | Ağ profili, ölçüm aralığı, alarm eşiği, ticker tercihi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.88s**, y **14px**, stagger **0.06** | `cubic-bezier(.2,.8,.2,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.6s**, trigger **top 80%**, y **22px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **0.9**, mesafe **+80%** (kapsama paneli sabitlenir) | scrub doğrusal | `transform` (panel sabit, liste kayar) |
-| Hover | **130ms**, görsel scale **1.015** | `ease-out` | `transform` |
-| Basma | 100ms | aynı eğri | `transform` (1px) |
-| Ticker | 28s döngü, duraklatılabilir | `linear` | `transform: translateX` |
-| Durum noktası | 1.4s nabız (yalnız "aktif", ≤1/s) | `ease-in-out` | `opacity` |
-
-- Bu stilin ölçülebilir imzası: `enter 0.88s / cubic-bezier(.2,.8,.2,1) / 14px / 0.06` + `scroll top 80% / 0.6s / 22px` + `pin scrub 0.9 / +80%` + `hover 130ms / 1.015`. Katalogda `0.88s` giriş süresi ve `cubic-bezier(.2,.8,.2,1)` eğrisi yalnız burada; `top 80%` + `0.6s` ikilisi 60 (0.62s) ve 69 (0.55s) ile çakışmaz.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; ticker durur, durum noktası sabit kalır, pin scrub kapanır.
-- Bu stile yasak hareket: sürekli dönen gösterge, saniyede 1'den fazla yanıp sönme, parallax, bounce, gradient geçişi.
-
-## Koyu mod
-
-| Token | Açık (gündüz konsolu) | Koyu (gece vardiyası) |
-|---|---|---|
-| `--bg` | `#f1f4f7` | `#0d1116` |
-| `--bg-2` | `#e6ebf0` | `#121820` |
-| `--surface` | `#ffffff` | `#161e26` |
-| `--surface-2` | `#edf1f5` | `#1e2731` |
-| `--ink` | `#101820` | `#e9eef3` |
-| `--ink-soft` | `#47555f` | `#a9b6c2` |
-| `--ink-faint` | `#7b8892` | `#7d8b97` |
-| `--accent` | `#a8386f` | `#f07fb4` |
-| `--accent-ink` | `#ffffff` | `#20050f` |
-| `--line` | `rgba(16,24,32,.13)` | `rgba(233,238,243,.16)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **16.22:1** · `ink-soft/bg` = **9.16:1** · `accent-ink/accent` = **7.71:1** · `ink-faint/bg` = **5.42:1**.
-- Koyu modda değişen başka ne var: accent açılır (ahududu → pembe), kapsama noktaları `--line` ile aynı kalır, durum noktası parlaklığı artar.
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="fleet-telemetry"]`.
 
 ## Zorunlu kurallar
 - Kapsama ızgarası ekranın üst yarısında görünür: 20px nokta deseni, cihaz olan hücreler accent.
@@ -215,14 +180,11 @@ Bedeli: bu stil bir "vitrin" değildir; pazarlama sayfasında büyük başlık v
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 8.12:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="volcanic-mineral"]` |
 | **Kompozisyon** | `split` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Jeoloji kesit çizimi ve volkan gözlemevi raporundan: örnek no, kaya türü, k
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 4/8 hero: solda künye, sağda kesit görseli + 15° katman çizgileri | `shots/01-landing.png` |
-| Dashboard | yüksek | örnek ızgarası + mineral dağılımı + sıcaklık profili | `shots/02-dashboard.png` |
-| Form | orta | örnek girişi: kaya türü, katman, mineral %, sıcaklık | — |
-| Liste / tablo | yüksek | 36px satır, mineral % mono sağa hizalı, örnek no | — |
-| Boş durum | düşük | "bu bölgede örnek yok" + yeni örnek ekle | — |
-| Onboarding | orta | 3 adım: saha seç → örnek ekle → kesit tanımla | — |
-| Pricing | orta | plan karşılaştırma; örnek/analiz limitleri | — |
-| Giriş / ödeme | düşük | tek kart, keskin köşe, tek eylem | — |
-| Modal | orta | kesit detayı: katman listesi + ölçümler | — |
-| Bildirim | orta | 36px toast, sol magma şerit, 3.5sn | — |
-| Hata | düşük | danger çerçeve + neden + yeniden dene | — |
-| Profil / ayar | orta | saha listesi, birim sistemi (mm/cm/m), eşikler | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (kart) | 680ms | `cubic-bezier(1,0,.2,1)` | `opacity` + `translateY(12px)`, 150ms arayla |
-| Scroll reveal | 300ms, `top 74%` | aynı | `translateY(64px)`, `once: true` |
-| Pin / scrub | 0.35 scrub, +240% mesafe | doğrusal | kesit sabitlenir, katman çizgileri kayar |
-| Basma | 120ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 460ms | aynı | `scale(1.006)` |
-| Mineral şeridi | 680ms | `steps(5, end)` | şerit dilim dilim dolar |
-
-- Ölçülen imza: enter **0.68s · cubic-bezier(1,0,.2,1) · 12px · stagger 0.15**; scroll **top 74% · 0.3s · 64px · once**; pin **açık · scrub 0.35 · +240%**; hover **460ms · 1.006**.
-- Anında kalkış, sert duruş: patlama gibi başlar, hedefte bir kerede durur; aşırı düzeltme yok.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin/scrub kapalı, şerit anında dolar.
-- Bu stile yasak hareket: sürekli titreşen lav, bounce, yumuşak blur/gradient geçişi, yatay parallax.
-
-## Koyu mod
-
-| Token | Açık (bazalt) | Koyu (derin bazalt) |
-|---|---|---|
-| `--bg` | `#14120f` | `#040403` |
-| `--bg-2` | `#0e0d0b` | `#0b0a08` |
-| `--surface` | `#1c1916` | `#100e0b` |
-| `--surface-2` | `#26221d` | `#191512` |
-| `--ink` | `#f0eae0` | `#f8f3ea` |
-| `--ink-soft` | `#b6a998` | `#b9b0a1` |
-| `--accent` | `#e0572a` | `#ff8a4d` |
-| `--accent-ink` | `#120603` | `#140703` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **18.56:1** · `ink-soft/bg` **9.56:1** · `accent-ink/accent` **8.47:1** · `ink-faint/bg` **5.42:1** · accent metin olarak bg'ye **8.79:1**.
-- Koyu modda değişen başka ne var: bazalt siyaha çöker (`#14120f` → `#040403`, ton bandı Δ≈31) ve ayrımı accent taşır: `#e0572a` → `#ff8a4d` (%50 daha parlak), yüzey kademeleri iki adım koyu, hairline .18 → .22. Açık/koyu ekran yan yana ayırt edilir.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="volcanic-mineral"]` olarak durur.
+| Landing / hero | yüksek | 4/8 hero: solda künye, sağda kesit görseli + 15° katman çizgileri | `shots/01-page.png` |
+| Dashboard | yüksek | örnek ızgarası + mineral dağılımı + sıcaklık profili | `shots/01-page.png` |
+| Form | orta | örnek girişi: kaya türü, katman, mineral %, sıcaklık | `shots/01-page.png` |
+| Liste / tablo | yüksek | 36px satır, mineral % mono sağa hizalı, örnek no | `shots/01-page.png` |
+| Boş durum | düşük | "bu bölgede örnek yok" + yeni örnek ekle | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: saha seç → örnek ekle → kesit tanımla | `shots/01-page.png` |
+| Pricing | orta | plan karşılaştırma; örnek/analiz limitleri | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek kart, keskin köşe, tek eylem | `shots/01-page.png` |
+| Modal | orta | kesit detayı: katman listesi + ölçümler | `shots/01-page.png` |
+| Bildirim | orta | 36px toast, sol magma şerit, 3.5sn | `shots/01-page.png` |
+| Hata | düşük | danger çerçeve + neden + yeniden dene | `shots/01-page.png` |
+| Profil / ayar | orta | saha listesi, birim sistemi (mm/cm/m), eşikler | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Radius 0–2px; yuvarlatılmış köşe ve hap buton yok.
@@ -214,14 +181,11 @@ Jeoloji kesit çizimi ve volkan gözlemevi raporundan: örnek no, kaya türü, k
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

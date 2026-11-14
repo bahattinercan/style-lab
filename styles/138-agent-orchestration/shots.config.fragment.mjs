@@ -77,7 +77,6 @@ export const CONFIG = {
         background-image: linear-gradient(180deg, color-mix(in srgb, var(--accent) 7%, transparent), transparent 60%);
       }
 
-
       /* ===== FIX136 denetim düzeltmeleri ===== */
       /* D1a: "Pasif" butonu. Ölçüm: element opacity .42 (kit inline) → 1.9-3.3:1,
          opacity .6 + ink-soft → 2.1-3.7:1 (eşik altı). Bu yüzden .6 görsel ağırlık

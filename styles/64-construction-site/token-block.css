@@ -33,16 +33,3 @@
   --ok: #2c5c33;
   --warn: #7d5200;
 }
-
-[data-theme="dark"][data-style="construction-site"] {
-  --bg: #14120e;
-  --bg-2: #1c1914;
-  --surface: #211d17;
-  --surface-2: #2a251d;
-  --ink: #f0e9db;
-  --ink-soft: #b1a795;
-  --ink-faint: #82796a;
-  --accent: #df6b4a;
-  --accent-ink: #130a06;
-  --line: rgba(240,233,219,.18);
-}

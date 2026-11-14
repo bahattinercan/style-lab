@@ -15,9 +15,3 @@
   --tracking: 0em; --blur: 0px; --grain: 0;
   --focus: #4262e8;
 }
-
-[data-theme="dark"][data-style="neumorphism"] {
-  --bg: #23262e; --bg-2: #1c1f26; --surface: #23262e; --surface-2: #33363d;
-  --ink: #e6e9ef; --ink-soft: #a7aebc; --ink-faint: #7b7e85; --accent: #4262e8; --accent-ink: #ffffff; --line: rgba(230,233,239,.14);
-  --focus: #4a69e8;
-}

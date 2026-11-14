@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | orta (pastel kontrast riski) |
 | **Aile** | Yüzey (08–12) · **Token** | `kit/tokens.css` → `[data-style="claymorphism"]` |
 | **Kompozisyon** | `centered` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -153,45 +153,18 @@ Kazandığı şey: yaklaşılabilirlik ve oyun hissi — korkutucu olmayan form,
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 44px yuvarlak başlık, tek pastel kart, 2 pill CTA, küçük 3B illüstrasyon | `shots/01-landing.png` |
-| Dashboard | düşük | En fazla 4 şişkin KPI kartı; veri yoğunsa düz tablo | `shots/02-dashboard.png` |
-| Form | düşük | 480px tek sütun, 48px input, tek pill buton | — |
-| Liste / tablo | çok düşük | Gölgeyi kapat, boşluk + kalın sayı; satır 56px | — |
-| Boş durum | yüksek | Sevimli illüstrasyon + tek cümle + pill buton | — |
-| Onboarding | yüksek | Sayfa başına 1 fikir, ilerleme şişkin nokta; ödül animasyonu | — |
-| Pricing | orta | 3 pastel kart, orta kart accent halka + "popüler" chip | — |
-| Giriş / ödeme | çok düşük | Şişkinliği azalt, sade input + tek buton | — |
-| Modal | orta | 32px radius, yumuşak gölge | — |
-| Bildirim / toast | yüksek | Pill toast, koyu metin, hafif yay | — |
-| Hata | düşük | Sevimli ikon + 14px sakin dil (suçlayıcı değil) | — |
-| Profil / ayar | orta | Ayar satırı 56px, pill toggle | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `ease-out` | `transform: scale(.97)` |
-| Giriş | 600ms | `back.out(1.4)` | `opacity` + 18px `translateY`, stagger 80ms |
-| Scroll (`top 84%`) | 700ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 300ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 320ms | `cubic-bezier(.34,1.5,.64,1)` | `scale(1→1.06→1)`, tek sefer |
-
-- Yay hareketi bu stilin imzası; ama ekran başına 1 ödül animasyonu.
-- `prefers-reduced-motion`: ölçek animasyonu kapanır, sadece opacity.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f3efff` | `#1a1630` |
-| `--surface` | `#ffffff` | `#241f3d` |
-| `--surface-2` | `#f6f2ff` | `#2c2649` |
-| `--ink` | `#2b2350` | `#ece7ff` |
-| `--ink-soft` | `#5b5382` | `#b4add6` |
-| `--accent` | `#6f4df0` | `#8b6dff` |
-| `--accent-ink` | `#ffffff` | `#14102a` |
-
-- Koyu modda iç gölge highlight'ı beyaz yerine `%10 beyaz` olur; aksi halde parlar.
+| Landing / hero | yüksek | 44px yuvarlak başlık, tek pastel kart, 2 pill CTA, küçük 3B illüstrasyon | `shots/01-page.png` |
+| Dashboard | düşük | En fazla 4 şişkin KPI kartı; veri yoğunsa düz tablo | `shots/01-page.png` |
+| Form | düşük | 480px tek sütun, 48px input, tek pill buton | `shots/01-page.png` |
+| Liste / tablo | çok düşük | Gölgeyi kapat, boşluk + kalın sayı; satır 56px | `shots/01-page.png` |
+| Boş durum | yüksek | Sevimli illüstrasyon + tek cümle + pill buton | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına 1 fikir, ilerleme şişkin nokta; ödül animasyonu | `shots/01-page.png` |
+| Pricing | orta | 3 pastel kart, orta kart accent halka + "popüler" chip | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Şişkinliği azalt, sade input + tek buton | `shots/01-page.png` |
+| Modal | orta | 32px radius, yumuşak gölge | `shots/01-page.png` |
+| Bildirim / toast | yüksek | Pill toast, koyu metin, hafif yay | `shots/01-page.png` |
+| Hata | düşük | Sevimli ikon + 14px sakin dil (suçlayıcı değil) | `shots/01-page.png` |
+| Profil / ayar | orta | Ayar satırı 56px, pill toggle | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -204,14 +177,11 @@ Kazandığı şey: yaklaşılabilirlik ve oyun hissi — korkutucu olmayan form,
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

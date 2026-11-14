@@ -131,7 +131,7 @@ try {
   check('çekmece açılıyor', d.drawerOpen === true, d.drawerOpen);
   check('çekmecede stil başlığı var', d.drawerTitle.length > 2, d.drawerTitle);
   check('token CSS üretiliyor (≥ 200 karakter)', d.tokenCss.length >= 200 && d.tokenCss.includes('--bg:'), d.tokenCss.length + ' karakter');
-  check('çekmecede tüm kareler listeleniyor', d.drawerShots >= 4, d.drawerShots);
+  check('çekmecede tek sayfa görseli listeleniyor', d.drawerShots >= 1, d.drawerShots);
   check('çekmecede 4 aksiyon (kopyala/favori)', d.drawerActions >= 4, d.drawerActions);
   check('lightbox açılıyor', d.lightboxOpen === true && d.lightboxSrc.length > 0, d.lightboxSrc);
   check('karşılaştırma çubuğu görünür', d.cmpBarVisible === true, d.cmpBarVisible);

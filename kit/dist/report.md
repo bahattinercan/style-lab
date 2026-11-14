@@ -7,169 +7,167 @@
 | Ölçü | Değer |
 |---|---|
 | Stil | 151 |
-| Sahne şablonu (tam set) | 37 |
-| Repoda tutulan sahne | 4 (çekirdek; kalanı `kit/.shots-cache/`) |
-| Dolu sahne | 604 / 604 (%100) |
-| Koyu mod uygulanmış | 151 stil |
-| Koyu mod borcu | 0 stil (`kit/dark-baseline.json`) |
+| Sahne şablonu (tam set) | 1 |
+| Repoda tutulan sahne | 1 (çekirdek; kalanı `kit/.shots-cache/`) |
+| Dolu sahne | 151 / 151 (%100) |
 | Kontrast hatası | 0 stil |
 | Boş tipografi yasak listesi | 20 stil |
 
 ## 2 · Kapsam
 
-| # | Stil | Aile | Sahne | Koyu mod | Token |
-|---|---|---|---|---|---|
-| 1 | [Minimalism](../styles/01-minimalism/style.md) | Sade | 4/4 | ✓ | 20 |
-| 2 | [Swiss Design](../styles/02-swiss-design/style.md) | Sade | 4/4 | ✓ | 20 |
-| 3 | [Editorial Design](../styles/03-editorial-design/style.md) | Sade | 4/4 | ✓ | 20 |
-| 4 | [Luxury Typography](../styles/04-luxury-typography/style.md) | Sade | 4/4 | ✓ | 21 |
-| 5 | [Bento Grid](../styles/05-bento-grid/style.md) | Sade | 4/4 | ✓ | 20 |
-| 6 | [Japandi](../styles/06-japandi/style.md) | Sade | 4/4 | ✓ | 21 |
-| 7 | [Wabi-Sabi](../styles/07-wabi-sabi/style.md) | Sade | 4/4 | ✓ | 20 |
-| 8 | [Glassmorphism](../styles/08-glassmorphism/style.md) | Yüzey | 4/4 | ✓ | 20 |
-| 9 | [Liquid Glass](../styles/09-liquid-glass/style.md) | Yüzey | 4/4 | ✓ | 20 |
-| 10 | [Neumorphism](../styles/10-neumorphism/style.md) | Yüzey | 4/4 | ✓ | 21 |
-| 11 | [Claymorphism](../styles/11-claymorphism/style.md) | Yüzey | 4/4 | ✓ | 20 |
-| 12 | [Aurora UI](../styles/12-aurora-ui/style.md) | Yüzey | 4/4 | ✓ | 20 |
-| 13 | [Neo-Brutalism](../styles/13-neo-brutalism/style.md) | Cesur | 4/4 | ✓ | 21 |
-| 14 | [Anti-Design](../styles/14-anti-design/style.md) | Cesur | 4/4 | ✓ | 21 |
-| 15 | [Acid Graphics](../styles/15-acid-graphics/style.md) | Cesur | 4/4 | ✓ | 20 |
-| 16 | [Memphis](../styles/16-memphis/style.md) | Cesur | 4/4 | ✓ | 20 |
-| 17 | [Maximalism](../styles/17-maximalism/style.md) | Cesur | 4/4 | ✓ | 21 |
-| 18 | [Dopamine UI](../styles/18-dopamine-ui/style.md) | Cesur | 4/4 | ✓ | 20 |
-| 19 | [Y2K](../styles/19-y2k/style.md) | Retro | 4/4 | ✓ | 20 |
-| 20 | [Vaporwave](../styles/20-vaporwave/style.md) | Retro | 4/4 | ✓ | 20 |
-| 21 | [Synthwave](../styles/21-synthwave/style.md) | Retro | 4/4 | ✓ | 20 |
-| 22 | [Cyberpunk](../styles/22-cyberpunk/style.md) | Retro | 4/4 | ✓ | 20 |
-| 23 | [Cybercore](../styles/23-cybercore/style.md) | Retro | 4/4 | ✓ | 20 |
-| 24 | [Pixel Art](../styles/24-pixel-art/style.md) | Retro | 4/4 | ✓ | 20 |
-| 25 | [Frutiger Aero](../styles/25-frutiger-aero/style.md) | Retro | 4/4 | ✓ | 21 |
-| 26 | [Art Deco](../styles/26-art-deco/style.md) | Retro | 4/4 | ✓ | 20 |
-| 27 | [Victorian](../styles/27-victorian/style.md) | Retro | 4/4 | ✓ | 21 |
-| 28 | [Surrealism](../styles/28-surrealism/style.md) | Sanatsal | 4/4 | ✓ | 21 |
-| 29 | [Ethereal](../styles/29-ethereal/style.md) | Sanatsal | 4/4 | ✓ | 20 |
-| 30 | [Bohemian](../styles/30-bohemian/style.md) | Sanatsal | 4/4 | ✓ | 20 |
-| 31 | [Scrapbook](../styles/31-scrapbook/style.md) | Sanatsal | 4/4 | ✓ | 20 |
-| 32 | [Conceptual Sketch](../styles/32-conceptual-sketch/style.md) | Sanatsal | 4/4 | ✓ | 20 |
-| 33 | [Dark Academia](../styles/33-dark-academia/style.md) | Sanatsal | 4/4 | ✓ | 20 |
-| 34 | [Skeuomorphism](../styles/34-skeuomorphism/style.md) | Sanatsal | 4/4 | ✓ | 20 |
-| 35 | [Bauhaus](../styles/35-bauhaus/style.md) | Geometrik | 4/4 | ✓ | 20 |
-| 36 | [Constructivism](../styles/36-constructivism/style.md) | Geometrik | 4/4 | ✓ | 20 |
-| 37 | [Kinetic Type](../styles/37-kinetic-type/style.md) | Tipografik | 4/4 | ✓ | 20 |
-| 38 | [Organic / Biophilic](../styles/38-organic-bio/style.md) | Organik | 4/4 | ✓ | 20 |
-| 39 | [AI-native Mesh](../styles/39-ai-native-mesh/style.md) | Yeni Dalga | 4/4 | ✓ | 20 |
-| 40 | [Scandinavian Dark](../styles/40-scandinavian-dark/style.md) | Yeni Dalga | 4/4 | ✓ | 20 |
-| 41 | [Grand Tourer](../styles/41-grand-tourer/style.md) | Zamansız | 4/4 | ✓ | 28 |
-| 42 | [Grand Tourer Oxblood](../styles/42-grand-tourer-oxblood/style.md) | Zamansız | 4/4 | ✓ | 28 |
-| 43 | [Grand Tourer Midnight](../styles/43-grand-tourer-midnight/style.md) | Zamansız | 4/4 | ✓ | 28 |
-| 44 | [Utility](../styles/44-utility/style.md) | Zamansız | 4/4 | ✓ | 20 |
-| 45 | [Terminal UI](../styles/45-terminal-ui/style.md) | Teknik | 4/4 | ✓ | 24 |
-| 46 | [Telemetry Grid](../styles/46-telemetry-grid/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 47 | [Trading Desk](../styles/47-trading-desk/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 48 | [Executive KPI](../styles/48-executive-kpi/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 49 | [Log Stream](../styles/49-log-stream/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 50 | [Lab Instrument](../styles/50-lab-instrument/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 51 | [Atlas Console](../styles/51-atlas-console/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 52 | [Experiment Split](../styles/52-experiment-split/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 53 | [Ledger Meter](../styles/53-ledger-meter/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 54 | [Vitals Triage](../styles/54-vitals-triage/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 55 | [Fleet Telemetry](../styles/55-fleet-telemetry/style.md) | Veri & Gösterge | 4/4 | ✓ | 24 |
-| 56 | [Blueprint Çizimi](../styles/56-blueprint-drawing/style.md) | Endüstriyel | 4/4 | ✓ | 24 |
-| 57 | [İşlenmiş Metal Panel](../styles/57-machined-metal-panel/style.md) | Endüstriyel | 4/4 | ✓ | 24 |
-| 58 | [Güvenlik Tabelası](../styles/58-safety-signage/style.md) | Endüstriyel | 4/4 | ✓ | 24 |
-| 59 | [Üretim Hattı · MES](../styles/59-mes-production-line/style.md) | Endüstriyel | 4/4 | ✓ | 24 |
-| 60 | [Enerji Şebekesi](../styles/60-energy-grid/style.md) | Endüstriyel | 4/4 | ✓ | 24 |
-| 61 | [Calibration Lab](../styles/61-calibration-lab/style.md) | Endüstriyel | 4/4 | ✓ | 24 |
-| 62 | [Warehouse Flow](../styles/62-warehouse-flow/style.md) | Endüstriyel | 4/4 | ✓ | 25 |
-| 63 | [Maintenance CMMS](../styles/63-maintenance-cmms/style.md) | Endüstriyel | 4/4 | ✓ | 24 |
-| 64 | [Construction Site](../styles/64-construction-site/style.md) | Endüstriyel | 4/4 | ✓ | 24 |
-| 65 | [Cockpit Avionics](../styles/65-cockpit-avionics/style.md) | Endüstriyel | 4/4 | ✓ | 24 |
-| 66 | [Nordic Folk](../styles/66-nordic-folk/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 20 |
-| 67 | [Japanese Ma](../styles/67-japanese-ma/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 20 |
-| 68 | [Levant Calligraphy](../styles/68-levant-calligraphy/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 20 |
-| 69 | [Andalusian Azulejo](../styles/69-andalusian-azulejo/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 20 |
-| 70 | [Slavic Late Brutalist](../styles/70-slavic-late-brutalist/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 20 |
-| 71 | [West African Pattern](../styles/71-west-african-pattern/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 24 |
-| 72 | [Andean Textile](../styles/72-andean-textile/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 24 |
-| 73 | [Indian Block Print](../styles/73-indian-block-print/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 24 |
-| 74 | [Persian Miniature](../styles/74-persian-miniature/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 24 |
-| 75 | [Aegean Island](../styles/75-aegean-island/style.md) | Kültürel & Bölgesel | 4/4 | ✓ | 24 |
-| 76 | [Biyofilik Botanik](../styles/76-biophilic-botanical/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 77 | [Hava Durumu & Atmosfer](../styles/77-weather-atmosphere/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 78 | [Topografya & Arazi](../styles/78-topographic-terrain/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 79 | [Deniz & Akıntı](../styles/79-ocean-current/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 80 | [Mevsim Geçişi](../styles/80-seasonal-shift/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 81 | [Forest Bark](../styles/81-forest-bark/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 82 | [Desert Sand](../styles/82-desert-sand/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 83 | [Polar Ice](../styles/83-polar-ice/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 84 | [Volcanic Mineral](../styles/84-volcanic-mineral/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 85 | [Coral Reef](../styles/85-coral-reef/style.md) | Doğa & Organik | 4/4 | ✓ | 24 |
-| 86 | [Literary Hardcover](../styles/86-literary-hardcover/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 87 | [Broadsheet Daily](../styles/87-broadsheet-daily/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 88 | [Magazine Feature](../styles/88-magazine-feature/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 89 | [Academic Paper](../styles/89-academic-paper/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 90 | [Poetry Chapbook](../styles/90-poetry-chapbook/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 91 | [Product Catalog](../styles/91-product-catalog/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 92 | [Museum & Thesis](../styles/92-museum-thesis/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 93 | [Type Experiment](../styles/93-type-experiment/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 94 | [Encyclopedia](../styles/94-encyclopedia/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 95 | [Punk Fanzine](../styles/95-punk-fanzine/style.md) | Yayın & Tipografi | 4/4 | ✓ | 20 |
-| 96 | [Kinetic Marquee](../styles/96-kinetic-marquee/style.md) | Hareket & Optik | 4/4 | ✓ | 24 |
-| 97 | [Optical Illusion](../styles/97-optical-illusion/style.md) | Hareket & Optik | 4/4 | ✓ | 24 |
-| 98 | [Generative Grid](../styles/98-generative-grid/style.md) | Hareket & Optik | 4/4 | ✓ | 24 |
-| 99 | [Depth Parallax](../styles/99-depth-parallax/style.md) | Hareket & Optik | 4/4 | ✓ | 24 |
-| 100 | [Fluid Simulation](../styles/100-fluid-simulation/style.md) | Hareket & Optik | 4/4 | ✓ | 24 |
-| 101 | [Shadow Stage](../styles/101-shadow-stage/style.md) | Hareket & Optik | 4/4 | ✓ | 24 |
-| 102 | [Moiré Field](../styles/102-moire-field/style.md) | Hareket & Optik | 4/4 | ✓ | 25 |
-| 103 | [Motion Trail](../styles/103-motion-trail/style.md) | Hareket & Optik | 4/4 | ✓ | 24 |
-| 104 | [Stepped Mechanism](../styles/104-stepped-mechanism/style.md) | Hareket & Optik | 4/4 | ✓ | 25 |
-| 105 | [Holographic Layer](../styles/105-holographic-layer/style.md) | Hareket & Optik | 4/4 | ✓ | 24 |
-| 106 | [Ses-Öncelikli](../styles/106-voice-first/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 107 | [Uzamsal AR Katman](../styles/107-spatial-ar-layer/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 108 | [Komut Paleti](../styles/108-command-palette/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 109 | [Zaman Çizelgesi Editörü](../styles/109-timeline-editor/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 110 | [Kanban Akışı](../styles/110-kanban-flow/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 111 | [Adım Sihirbazı](../styles/111-step-wizard/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 112 | [Sıfır Arayüz](../styles/112-zero-ui/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 113 | [Notebook / REPL](../styles/113-notebook-repl/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 114 | [Eşzamanlı İşbirlikçi](../styles/114-multiplayer-presence/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 115 | [Klavye-Öncelikli Komut Arayüzü](../styles/115-keyboard-first/style.md) | Etkileşim | 4/4 | ✓ | 24 |
-| 116 | [Kids Playground](../styles/116-kids-playground/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 117 | [Carnival Festival](../styles/117-carnival-festival/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 118 | [Sticker Sheet](../styles/118-sticker-sheet/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 119 | [Arcade 8-bit](../styles/119-arcade-8bit/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 120 | [Craft Handmade](../styles/120-craft-handmade/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 121 | [Celebration Card](../styles/121-celebration-card/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 122 | [Collectible Card](../styles/122-collectible-card/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 123 | [Comic Story](../styles/123-comic-story/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 124 | [Album Sleeve](../styles/124-album-sleeve/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 125 | [Sports Energy](../styles/125-sports-energy/style.md) | Oyuncul | 4/4 | ✓ | 20 |
-| 126 | [Marble Vein](../styles/126-marble-vein/style.md) | Materyal & Lüks | 4/4 | ✓ | 24 |
-| 127 | [Silk Drape](../styles/127-silk-drape/style.md) | Materyal & Lüks | 4/4 | ✓ | 24 |
-| 128 | [Brass Copper](../styles/128-brass-copper/style.md) | Materyal & Lüks | 4/4 | ✓ | 24 |
-| 129 | [Porcelain Glaze](../styles/129-porcelain-glaze/style.md) | Materyal & Lüks | 4/4 | ✓ | 24 |
-| 130 | [Leather Craft](../styles/130-leather-craft/style.md) | Materyal & Lüks | 4/4 | ✓ | 24 |
-| 131 | [Optic Prism](../styles/131-optic-prism/style.md) | Materyal & Lüks | 4/4 | ✓ | 20 |
-| 132 | [Wood Joinery](../styles/132-wood-joinery/style.md) | Materyal & Lüks | 4/4 | ✓ | 20 |
-| 133 | [Letterpress Print](../styles/133-letterpress-print/style.md) | Materyal & Lüks | 4/4 | ✓ | 20 |
-| 134 | [Concrete Monolith](../styles/134-concrete-monolith/style.md) | Materyal & Lüks | 4/4 | ✓ | 20 |
-| 135 | [Enamel Porcelain](../styles/135-enamel-porcelain/style.md) | Materyal & Lüks | 4/4 | ✓ | 20 |
-| 136 | [Spekülatif Bilim-Kurgu](../styles/136-speculative-scifi/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 24 |
-| 137 | [Hologram & Uzamsal Veri](../styles/137-volumetric-data/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 24 |
-| 138 | [AI-native Ajan Arayüzü](../styles/138-agent-orchestration/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 24 |
-| 139 | [Biyo & Sentetik](../styles/139-bio-synthetic/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 24 |
-| 140 | [Nanoteknik](../styles/140-nanotech/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 24 |
-| 141 | [Planetary Service](../styles/141-planetary-service/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 24 |
-| 142 | [Quantum Lab](../styles/142-quantum-lab/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 25 |
-| 143 | [Retro Future](../styles/143-retro-future/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 24 |
-| 144 | [Virtual Engine](../styles/144-virtual-engine/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 24 |
-| 145 | [Zero Gravity](../styles/145-zero-gravity/style.md) | Deneysel & Gelecek | 4/4 | ✓ | 24 |
-| 146 | [Noir Estate](../styles/146-noir-estate/style.md) | Sahne & Prestij | 4/4 | ✓ | 24 |
-| 147 | [Agency Portfolio](../styles/147-agency-portfolio/style.md) | Sahne & Prestij | 4/4 | ✓ | 24 |
-| 148 | [Product Launch](../styles/148-product-launch/style.md) | Sahne & Prestij | 4/4 | ✓ | 24 |
-| 149 | [Boutique Hotel](../styles/149-boutique-hotel/style.md) | Sahne & Prestij | 4/4 | ✓ | 24 |
-| 150 | [Lookbook Editorial](../styles/150-lookbook-editorial/style.md) | Sahne & Prestij | 4/4 | ✓ | 24 |
-| 151 | [Dark Dashboard](../styles/151-dark-dashboard/style.md) | Sahne & Prestij | 4/4 | ✓ | 24 |
+| # | Stil | Aile | Sahne | Token |
+|---|---|---|---|---|
+| 1 | [Minimalism](../styles/01-minimalism/style.md) | Sade | 1/1 | 20 |
+| 2 | [Swiss Design](../styles/02-swiss-design/style.md) | Sade | 1/1 | 20 |
+| 3 | [Editorial Design](../styles/03-editorial-design/style.md) | Sade | 1/1 | 20 |
+| 4 | [Luxury Typography](../styles/04-luxury-typography/style.md) | Sade | 1/1 | 21 |
+| 5 | [Bento Grid](../styles/05-bento-grid/style.md) | Sade | 1/1 | 20 |
+| 6 | [Japandi](../styles/06-japandi/style.md) | Sade | 1/1 | 21 |
+| 7 | [Wabi-Sabi](../styles/07-wabi-sabi/style.md) | Sade | 1/1 | 20 |
+| 8 | [Glassmorphism](../styles/08-glassmorphism/style.md) | Yüzey | 1/1 | 20 |
+| 9 | [Liquid Glass](../styles/09-liquid-glass/style.md) | Yüzey | 1/1 | 20 |
+| 10 | [Neumorphism](../styles/10-neumorphism/style.md) | Yüzey | 1/1 | 21 |
+| 11 | [Claymorphism](../styles/11-claymorphism/style.md) | Yüzey | 1/1 | 20 |
+| 12 | [Aurora UI](../styles/12-aurora-ui/style.md) | Yüzey | 1/1 | 20 |
+| 13 | [Neo-Brutalism](../styles/13-neo-brutalism/style.md) | Cesur | 1/1 | 21 |
+| 14 | [Anti-Design](../styles/14-anti-design/style.md) | Cesur | 1/1 | 21 |
+| 15 | [Acid Graphics](../styles/15-acid-graphics/style.md) | Cesur | 1/1 | 20 |
+| 16 | [Memphis](../styles/16-memphis/style.md) | Cesur | 1/1 | 20 |
+| 17 | [Maximalism](../styles/17-maximalism/style.md) | Cesur | 1/1 | 21 |
+| 18 | [Dopamine UI](../styles/18-dopamine-ui/style.md) | Cesur | 1/1 | 20 |
+| 19 | [Y2K](../styles/19-y2k/style.md) | Retro | 1/1 | 20 |
+| 20 | [Vaporwave](../styles/20-vaporwave/style.md) | Retro | 1/1 | 20 |
+| 21 | [Synthwave](../styles/21-synthwave/style.md) | Retro | 1/1 | 20 |
+| 22 | [Cyberpunk](../styles/22-cyberpunk/style.md) | Retro | 1/1 | 20 |
+| 23 | [Cybercore](../styles/23-cybercore/style.md) | Retro | 1/1 | 20 |
+| 24 | [Pixel Art](../styles/24-pixel-art/style.md) | Retro | 1/1 | 20 |
+| 25 | [Frutiger Aero](../styles/25-frutiger-aero/style.md) | Retro | 1/1 | 21 |
+| 26 | [Art Deco](../styles/26-art-deco/style.md) | Retro | 1/1 | 20 |
+| 27 | [Victorian](../styles/27-victorian/style.md) | Retro | 1/1 | 21 |
+| 28 | [Surrealism](../styles/28-surrealism/style.md) | Sanatsal | 1/1 | 21 |
+| 29 | [Ethereal](../styles/29-ethereal/style.md) | Sanatsal | 1/1 | 20 |
+| 30 | [Bohemian](../styles/30-bohemian/style.md) | Sanatsal | 1/1 | 20 |
+| 31 | [Scrapbook](../styles/31-scrapbook/style.md) | Sanatsal | 1/1 | 20 |
+| 32 | [Conceptual Sketch](../styles/32-conceptual-sketch/style.md) | Sanatsal | 1/1 | 20 |
+| 33 | [Dark Academia](../styles/33-dark-academia/style.md) | Sanatsal | 1/1 | 20 |
+| 34 | [Skeuomorphism](../styles/34-skeuomorphism/style.md) | Sanatsal | 1/1 | 20 |
+| 35 | [Bauhaus](../styles/35-bauhaus/style.md) | Geometrik | 1/1 | 20 |
+| 36 | [Constructivism](../styles/36-constructivism/style.md) | Geometrik | 1/1 | 20 |
+| 37 | [Kinetic Type](../styles/37-kinetic-type/style.md) | Tipografik | 1/1 | 20 |
+| 38 | [Organic / Biophilic](../styles/38-organic-bio/style.md) | Organik | 1/1 | 20 |
+| 39 | [AI-native Mesh](../styles/39-ai-native-mesh/style.md) | Yeni Dalga | 1/1 | 20 |
+| 40 | [Scandinavian Dark](../styles/40-scandinavian-dark/style.md) | Yeni Dalga | 1/1 | 20 |
+| 41 | [Grand Tourer](../styles/41-grand-tourer/style.md) | Zamansız | 1/1 | 28 |
+| 42 | [Grand Tourer Oxblood](../styles/42-grand-tourer-oxblood/style.md) | Zamansız | 1/1 | 28 |
+| 43 | [Grand Tourer Midnight](../styles/43-grand-tourer-midnight/style.md) | Zamansız | 1/1 | 28 |
+| 44 | [Utility](../styles/44-utility/style.md) | Zamansız | 1/1 | 20 |
+| 45 | [Terminal UI](../styles/45-terminal-ui/style.md) | Teknik | 1/1 | 24 |
+| 46 | [Telemetry Grid](../styles/46-telemetry-grid/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 47 | [Trading Desk](../styles/47-trading-desk/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 48 | [Executive KPI](../styles/48-executive-kpi/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 49 | [Log Stream](../styles/49-log-stream/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 50 | [Lab Instrument](../styles/50-lab-instrument/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 51 | [Atlas Console](../styles/51-atlas-console/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 52 | [Experiment Split](../styles/52-experiment-split/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 53 | [Ledger Meter](../styles/53-ledger-meter/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 54 | [Vitals Triage](../styles/54-vitals-triage/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 55 | [Fleet Telemetry](../styles/55-fleet-telemetry/style.md) | Veri & Gösterge | 1/1 | 24 |
+| 56 | [Blueprint Çizimi](../styles/56-blueprint-drawing/style.md) | Endüstriyel | 1/1 | 24 |
+| 57 | [İşlenmiş Metal Panel](../styles/57-machined-metal-panel/style.md) | Endüstriyel | 1/1 | 24 |
+| 58 | [Güvenlik Tabelası](../styles/58-safety-signage/style.md) | Endüstriyel | 1/1 | 24 |
+| 59 | [Üretim Hattı · MES](../styles/59-mes-production-line/style.md) | Endüstriyel | 1/1 | 24 |
+| 60 | [Enerji Şebekesi](../styles/60-energy-grid/style.md) | Endüstriyel | 1/1 | 24 |
+| 61 | [Calibration Lab](../styles/61-calibration-lab/style.md) | Endüstriyel | 1/1 | 24 |
+| 62 | [Warehouse Flow](../styles/62-warehouse-flow/style.md) | Endüstriyel | 1/1 | 25 |
+| 63 | [Maintenance CMMS](../styles/63-maintenance-cmms/style.md) | Endüstriyel | 1/1 | 24 |
+| 64 | [Construction Site](../styles/64-construction-site/style.md) | Endüstriyel | 1/1 | 24 |
+| 65 | [Cockpit Avionics](../styles/65-cockpit-avionics/style.md) | Endüstriyel | 1/1 | 24 |
+| 66 | [Nordic Folk](../styles/66-nordic-folk/style.md) | Kültürel & Bölgesel | 1/1 | 20 |
+| 67 | [Japanese Ma](../styles/67-japanese-ma/style.md) | Kültürel & Bölgesel | 1/1 | 20 |
+| 68 | [Levant Calligraphy](../styles/68-levant-calligraphy/style.md) | Kültürel & Bölgesel | 1/1 | 20 |
+| 69 | [Andalusian Azulejo](../styles/69-andalusian-azulejo/style.md) | Kültürel & Bölgesel | 1/1 | 20 |
+| 70 | [Slavic Late Brutalist](../styles/70-slavic-late-brutalist/style.md) | Kültürel & Bölgesel | 1/1 | 20 |
+| 71 | [West African Pattern](../styles/71-west-african-pattern/style.md) | Kültürel & Bölgesel | 1/1 | 24 |
+| 72 | [Andean Textile](../styles/72-andean-textile/style.md) | Kültürel & Bölgesel | 1/1 | 24 |
+| 73 | [Indian Block Print](../styles/73-indian-block-print/style.md) | Kültürel & Bölgesel | 1/1 | 24 |
+| 74 | [Persian Miniature](../styles/74-persian-miniature/style.md) | Kültürel & Bölgesel | 1/1 | 24 |
+| 75 | [Aegean Island](../styles/75-aegean-island/style.md) | Kültürel & Bölgesel | 1/1 | 24 |
+| 76 | [Biyofilik Botanik](../styles/76-biophilic-botanical/style.md) | Doğa & Organik | 1/1 | 24 |
+| 77 | [Hava Durumu & Atmosfer](../styles/77-weather-atmosphere/style.md) | Doğa & Organik | 1/1 | 24 |
+| 78 | [Topografya & Arazi](../styles/78-topographic-terrain/style.md) | Doğa & Organik | 1/1 | 24 |
+| 79 | [Deniz & Akıntı](../styles/79-ocean-current/style.md) | Doğa & Organik | 1/1 | 24 |
+| 80 | [Mevsim Geçişi](../styles/80-seasonal-shift/style.md) | Doğa & Organik | 1/1 | 24 |
+| 81 | [Forest Bark](../styles/81-forest-bark/style.md) | Doğa & Organik | 1/1 | 24 |
+| 82 | [Desert Sand](../styles/82-desert-sand/style.md) | Doğa & Organik | 1/1 | 24 |
+| 83 | [Polar Ice](../styles/83-polar-ice/style.md) | Doğa & Organik | 1/1 | 24 |
+| 84 | [Volcanic Mineral](../styles/84-volcanic-mineral/style.md) | Doğa & Organik | 1/1 | 24 |
+| 85 | [Coral Reef](../styles/85-coral-reef/style.md) | Doğa & Organik | 1/1 | 24 |
+| 86 | [Literary Hardcover](../styles/86-literary-hardcover/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 87 | [Broadsheet Daily](../styles/87-broadsheet-daily/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 88 | [Magazine Feature](../styles/88-magazine-feature/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 89 | [Academic Paper](../styles/89-academic-paper/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 90 | [Poetry Chapbook](../styles/90-poetry-chapbook/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 91 | [Product Catalog](../styles/91-product-catalog/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 92 | [Museum & Thesis](../styles/92-museum-thesis/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 93 | [Type Experiment](../styles/93-type-experiment/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 94 | [Encyclopedia](../styles/94-encyclopedia/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 95 | [Punk Fanzine](../styles/95-punk-fanzine/style.md) | Yayın & Tipografi | 1/1 | 20 |
+| 96 | [Kinetic Marquee](../styles/96-kinetic-marquee/style.md) | Hareket & Optik | 1/1 | 24 |
+| 97 | [Optical Illusion](../styles/97-optical-illusion/style.md) | Hareket & Optik | 1/1 | 24 |
+| 98 | [Generative Grid](../styles/98-generative-grid/style.md) | Hareket & Optik | 1/1 | 24 |
+| 99 | [Depth Parallax](../styles/99-depth-parallax/style.md) | Hareket & Optik | 1/1 | 24 |
+| 100 | [Fluid Simulation](../styles/100-fluid-simulation/style.md) | Hareket & Optik | 1/1 | 24 |
+| 101 | [Shadow Stage](../styles/101-shadow-stage/style.md) | Hareket & Optik | 1/1 | 24 |
+| 102 | [Moiré Field](../styles/102-moire-field/style.md) | Hareket & Optik | 1/1 | 25 |
+| 103 | [Motion Trail](../styles/103-motion-trail/style.md) | Hareket & Optik | 1/1 | 24 |
+| 104 | [Stepped Mechanism](../styles/104-stepped-mechanism/style.md) | Hareket & Optik | 1/1 | 25 |
+| 105 | [Holographic Layer](../styles/105-holographic-layer/style.md) | Hareket & Optik | 1/1 | 24 |
+| 106 | [Ses-Öncelikli](../styles/106-voice-first/style.md) | Etkileşim | 1/1 | 24 |
+| 107 | [Uzamsal AR Katman](../styles/107-spatial-ar-layer/style.md) | Etkileşim | 1/1 | 24 |
+| 108 | [Komut Paleti](../styles/108-command-palette/style.md) | Etkileşim | 1/1 | 24 |
+| 109 | [Zaman Çizelgesi Editörü](../styles/109-timeline-editor/style.md) | Etkileşim | 1/1 | 24 |
+| 110 | [Kanban Akışı](../styles/110-kanban-flow/style.md) | Etkileşim | 1/1 | 24 |
+| 111 | [Adım Sihirbazı](../styles/111-step-wizard/style.md) | Etkileşim | 1/1 | 24 |
+| 112 | [Sıfır Arayüz](../styles/112-zero-ui/style.md) | Etkileşim | 1/1 | 24 |
+| 113 | [Notebook / REPL](../styles/113-notebook-repl/style.md) | Etkileşim | 1/1 | 24 |
+| 114 | [Eşzamanlı İşbirlikçi](../styles/114-multiplayer-presence/style.md) | Etkileşim | 1/1 | 24 |
+| 115 | [Klavye-Öncelikli Komut Arayüzü](../styles/115-keyboard-first/style.md) | Etkileşim | 1/1 | 24 |
+| 116 | [Kids Playground](../styles/116-kids-playground/style.md) | Oyuncul | 1/1 | 20 |
+| 117 | [Carnival Festival](../styles/117-carnival-festival/style.md) | Oyuncul | 1/1 | 20 |
+| 118 | [Sticker Sheet](../styles/118-sticker-sheet/style.md) | Oyuncul | 1/1 | 20 |
+| 119 | [Arcade 8-bit](../styles/119-arcade-8bit/style.md) | Oyuncul | 1/1 | 20 |
+| 120 | [Craft Handmade](../styles/120-craft-handmade/style.md) | Oyuncul | 1/1 | 20 |
+| 121 | [Celebration Card](../styles/121-celebration-card/style.md) | Oyuncul | 1/1 | 20 |
+| 122 | [Collectible Card](../styles/122-collectible-card/style.md) | Oyuncul | 1/1 | 20 |
+| 123 | [Comic Story](../styles/123-comic-story/style.md) | Oyuncul | 1/1 | 20 |
+| 124 | [Album Sleeve](../styles/124-album-sleeve/style.md) | Oyuncul | 1/1 | 20 |
+| 125 | [Sports Energy](../styles/125-sports-energy/style.md) | Oyuncul | 1/1 | 20 |
+| 126 | [Marble Vein](../styles/126-marble-vein/style.md) | Materyal & Lüks | 1/1 | 24 |
+| 127 | [Silk Drape](../styles/127-silk-drape/style.md) | Materyal & Lüks | 1/1 | 24 |
+| 128 | [Brass Copper](../styles/128-brass-copper/style.md) | Materyal & Lüks | 1/1 | 24 |
+| 129 | [Porcelain Glaze](../styles/129-porcelain-glaze/style.md) | Materyal & Lüks | 1/1 | 24 |
+| 130 | [Leather Craft](../styles/130-leather-craft/style.md) | Materyal & Lüks | 1/1 | 24 |
+| 131 | [Optic Prism](../styles/131-optic-prism/style.md) | Materyal & Lüks | 1/1 | 20 |
+| 132 | [Wood Joinery](../styles/132-wood-joinery/style.md) | Materyal & Lüks | 1/1 | 20 |
+| 133 | [Letterpress Print](../styles/133-letterpress-print/style.md) | Materyal & Lüks | 1/1 | 20 |
+| 134 | [Concrete Monolith](../styles/134-concrete-monolith/style.md) | Materyal & Lüks | 1/1 | 20 |
+| 135 | [Enamel Porcelain](../styles/135-enamel-porcelain/style.md) | Materyal & Lüks | 1/1 | 20 |
+| 136 | [Spekülatif Bilim-Kurgu](../styles/136-speculative-scifi/style.md) | Deneysel & Gelecek | 1/1 | 24 |
+| 137 | [Hologram & Uzamsal Veri](../styles/137-volumetric-data/style.md) | Deneysel & Gelecek | 1/1 | 24 |
+| 138 | [AI-native Ajan Arayüzü](../styles/138-agent-orchestration/style.md) | Deneysel & Gelecek | 1/1 | 24 |
+| 139 | [Biyo & Sentetik](../styles/139-bio-synthetic/style.md) | Deneysel & Gelecek | 1/1 | 24 |
+| 140 | [Nanoteknik](../styles/140-nanotech/style.md) | Deneysel & Gelecek | 1/1 | 24 |
+| 141 | [Planetary Service](../styles/141-planetary-service/style.md) | Deneysel & Gelecek | 1/1 | 24 |
+| 142 | [Quantum Lab](../styles/142-quantum-lab/style.md) | Deneysel & Gelecek | 1/1 | 25 |
+| 143 | [Retro Future](../styles/143-retro-future/style.md) | Deneysel & Gelecek | 1/1 | 24 |
+| 144 | [Virtual Engine](../styles/144-virtual-engine/style.md) | Deneysel & Gelecek | 1/1 | 24 |
+| 145 | [Zero Gravity](../styles/145-zero-gravity/style.md) | Deneysel & Gelecek | 1/1 | 24 |
+| 146 | [Noir Estate](../styles/146-noir-estate/style.md) | Sahne & Prestij | 1/1 | 24 |
+| 147 | [Agency Portfolio](../styles/147-agency-portfolio/style.md) | Sahne & Prestij | 1/1 | 24 |
+| 148 | [Product Launch](../styles/148-product-launch/style.md) | Sahne & Prestij | 1/1 | 24 |
+| 149 | [Boutique Hotel](../styles/149-boutique-hotel/style.md) | Sahne & Prestij | 1/1 | 24 |
+| 150 | [Lookbook Editorial](../styles/150-lookbook-editorial/style.md) | Sahne & Prestij | 1/1 | 24 |
+| 151 | [Dark Dashboard](../styles/151-dark-dashboard/style.md) | Sahne & Prestij | 1/1 | 24 |
 
 ## 3 · Kontrast (WCAG)
 
@@ -339,9 +337,8 @@ Eşikler: gövde ≥ 4.5, büyük metin ≥ 3, accent üstü metin ≥ 4.5. `fai
 
 ```bash
 bash kit/gates.sh                  # hepsi sırayla
-node kit/check-schema.mjs         # şema + koyu mod paritesi + komşu/refs
+node kit/check-schema.mjs         # şema + üç kopya paritesi + komşu/refs
 node kit/check-contrast.mjs       # WCAG ölçümü
 node kit/export-tokens.mjs --check # dist güncel mi
 node kit/build-gallery.mjs --check # katalog + galeri
-node kit/motion-check.mjs         # hareket sekansı
 ```

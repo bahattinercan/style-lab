@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (en düşük etkileşimli çift 6.13:1) |
 | **Aile** | Veri & Gösterge (46–55) · **Token** | `styles/54-vitals-triage/tokens.json` → `[data-style="vitals-triage"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,54 +137,20 @@ Acil servis triyaj ölçekleri (ESI 5 seviye, Manchester, RETTS), hemşire gözl
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Solda tek cümle + iki CTA, sağda vital kartı yığını (2 kart + halka) | `shots/01-landing.png` |
-| Dashboard | yüksek | Üstte 3 vital kartı, altta triyaj listesi (sol şerit + saat) | `shots/02-dashboard.png` |
-| Form | düşük | Vital girişi: büyük alanlar (48px), birim sabit, tek sütun | — |
-| Liste / tablo | yüksek | 52px satır, sol 4px seviye şeridi, sağda bekleme süresi mono | — |
-| Boş durum | orta | "Şu an bekleyen yok" + nabız halkası (sabit) + tek eylem | — |
-| Onboarding | yüksek | 3 adım: rol → vardiya → bildirim; her adımda tek seçenek grubu | — |
-| Pricing | orta | Klinik plan tablosu; seviye chip'leri ile kapsam gösterilir | — |
-| Giriş / ödeme | çok düşük | Tek panel; 48px alanlar, 3px odak halkası, hata sol şeritle | — |
-| Modal | orta | Hasta detayı sheet: kimlik, seviye chip'i, vital geçmişi | — |
-| Bildirim / toast | orta | "2 · Acil — oda 3 · 14:32" mono saatle, üst orta | — |
-| Hata | düşük | Kart içinde `--danger` sol şerit + "ölçüm alınamadı" + yeniden dene | — |
-| Profil / ayar | orta | Vardiya, bildirim eşiği, referans aralığı birimleri | — |
+| Landing / hero | yüksek | Solda tek cümle + iki CTA, sağda vital kartı yığını (2 kart + halka) | `shots/01-page.png` |
+| Dashboard | yüksek | Üstte 3 vital kartı, altta triyaj listesi (sol şerit + saat) | `shots/01-page.png` |
+| Form | düşük | Vital girişi: büyük alanlar (48px), birim sabit, tek sütun | `shots/01-page.png` |
+| Liste / tablo | yüksek | 52px satır, sol 4px seviye şeridi, sağda bekleme süresi mono | `shots/01-page.png` |
+| Boş durum | orta | "Şu an bekleyen yok" + nabız halkası (sabit) + tek eylem | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: rol → vardiya → bildirim; her adımda tek seçenek grubu | `shots/01-page.png` |
+| Pricing | orta | Klinik plan tablosu; seviye chip'leri ile kapsam gösterilir | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel; 48px alanlar, 3px odak halkası, hata sol şeritle | `shots/01-page.png` |
+| Modal | orta | Hasta detayı sheet: kimlik, seviye chip'i, vital geçmişi | `shots/01-page.png` |
+| Bildirim / toast | orta | "2 · Acil — oda 3 · 14:32" mono saatle, üst orta | `shots/01-page.png` |
+| Hata | düşük | Kart içinde `--danger` sol şerit + "ölçüm alınamadı" + yeniden dene | `shots/01-page.png` |
+| Profil / ayar | orta | Vardiya, bildirim eşiği, referans aralığı birimleri | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.26s**, y **6px**, stagger **0.02** | `cubic-bezier(.16,1,.3,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.28s**, trigger **top 91%**, y **5px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **kapalı** (kritik veri sabitlenmez; pin okuma sırasını böler) | — | — |
-| Hover | **150ms**, görsel scale **1.025** | `ease-out` | `transform` |
-| Basma | 120ms | aynı eğri | `transform` (.98 scale) |
-| Nabız halkası | 1.6s döngü (tek canlı öğe) | `linear` | `transform: rotate` |
-
-- Bu stilin ölçülebilir imzası: `enter 0.26s / cubic-bezier(.16,1,.3,1) / 6px / 0.02` + `scroll top 91% / 0.28s / 5px` + `pin kapalı` + `hover 150ms / 1.025`. Katalogda `top 91%` trigger'ı ve `hover scale 1.025` yalnız bu stilde; `0.26s` giriş + `cubic-bezier(.16,1,.3,1)` ikilisi 47 (0.22s) ve 57 (0.24s) ile çakışmaz.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; nabız halkası durur (sabit yay), EKG çizgisi donar; giriş anında.
-- Bu stile yasak hareket: saniyede 1'den fazla flash, alarm yanıp sönmesi, bounce, parallax, sayı sayan sayaç.
-
-## Koyu mod
-
-| Token | Açık (klinik) | Koyu (gece nöbeti) |
-|---|---|---|
-| `--bg` | `#f4f8f7` | `#0a1413` |
-| `--bg-2` | `#e8f1ef` | `#0f1c1a` |
-| `--surface` | `#ffffff` | `#132220` |
-| `--surface-2` | `#eef5f3` | `#1a2c29` |
-| `--ink` | `#10201f` | `#e9f4f1` |
-| `--ink-soft` | `#47605d` | `#a3bfba` |
-| `--ink-faint` | `#7d938f` | `#79948f` |
-| `--accent` | `#b3341f` | `#ff8a72` |
-| `--accent-ink` | `#ffffff` | `#250a05` |
-| `--line` | `rgba(16,32,31,.11)` | `rgba(233,244,241,.15)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **16.64:1** · `ink-soft/bg` = **9.55:1** · `accent-ink/accent` = **8.12:1** · `ink-faint/bg` = **5.74:1**.
-- Koyu modda değişen başka ne var: accent açılır ve parlaklığı artar, gölge yerine `--line` ağırlığı artar; `--blur` 6px yalnız sheet başlığında kullanılır, koyuda 0px'e düşer.
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="vitals-triage"]`.
 
 ## Zorunlu kurallar
 - Her vital kartı aynı şablonu kullanır: değer (44px mono) + birim + referans aralığı + ölçüm saati.
@@ -215,14 +181,11 @@ Acil servis triyaj ölçekleri (ESI 5 seviye, Manchester, RETTS), hemşire gözl
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

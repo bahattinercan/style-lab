@@ -10,7 +10,7 @@
 | **Zorluk** | orta (mobil kırılganlığı) · **Erişilebilirlik** | iyi |
 | **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="bento-grid"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -151,46 +151,18 @@ Apple/Google'ın widget ekranları, kişisel panolar ve 2022+ ürün sitelerinin
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 1 dev başlık + altında 2×2 kahraman kart + 4 küçük özellik kartı | `shots/01-landing.png` |
-| Dashboard | yüksek | 4 kolon ızgara: KPI 1×1 ×3, grafik 2×1, tablo 2×2; her kartta tek sayı | `shots/02-dashboard.png` |
-| Form | düşük | Bento kullanma; tek kolon form (stil sadece radius/renk) | — |
-| Liste / tablo | düşük | Tablo tek kart içinde 2×2 alan; satırlar hairline | — |
-| Boş durum | orta | 1×1 kartta ikon + tek cümle + buton | — |
-| Onboarding | yüksek | Adım başına 1 büyük kart; ilerleme nokta | — |
-| Pricing | orta | 3 kolon kart, orta kart 2×1 (daha uzun) + accent kenar | — |
-| Giriş / ödeme | çok düşük | Tek 1×1 kart, 2 alan; süs yok | — |
-| Modal | orta | 24px radius, 1 kart içinde içerik | — |
-| Bildirim / toast | orta | 18px radius pill | — |
-| Hata | düşük | Kart içinde ikon + 2 satır | — |
-| Profil / ayar | orta | 2 kolon ızgara; her ayar grubu 1 kart | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `ease-out` | `transform: scale(.99)` |
-| Giriş | 450ms | `cubic-bezier(.2,.6,.2,1)` | `opacity` + 16px `translateY`, stagger 80ms |
-| Scroll (`top 85%`) | 550ms | aynı eğri | `opacity` + 24px `translateY`, `once: true` |
-| Hover | 200ms | aynı eğri | `transform: scale(1.015)` |
-| Ödül | 240ms | `ease-out` | sayı `opacity` 0→1 |
-
-- Kartlar aynı anda hareket etmez: satır bazında 80ms gecikme kabul.
-- `prefers-reduced-motion`: transform kapanır, sadece opacity.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f4f4f2` | `#0e0f0d` |
-| `--bg-2` | `#ececea` | `#151714` |
-| `--surface` | `#ffffff` | `#191b18` |
-| `--surface-2` | `#fafaf9` | `#202320` |
-| `--ink` | `#12130f` | `#f0f1ee` |
-| `--ink-soft` | `#5b5f58` | `#a8ada5` |
-| `--line` | `rgba(18,19,15,.08)` | `rgba(255,255,255,.10)` |
-| `--accent` | `#1f6feb` | `#5b9cff` |
-
-- Koyu modda gölge yerine kart kenarı (`--line`) öne çıkar; gölge opaklığı .5× yapılır.
+| Landing / hero | yüksek | 1 dev başlık + altında 2×2 kahraman kart + 4 küçük özellik kartı | `shots/01-page.png` |
+| Dashboard | yüksek | 4 kolon ızgara: KPI 1×1 ×3, grafik 2×1, tablo 2×2; her kartta tek sayı | `shots/01-page.png` |
+| Form | düşük | Bento kullanma; tek kolon form (stil sadece radius/renk) | `shots/01-page.png` |
+| Liste / tablo | düşük | Tablo tek kart içinde 2×2 alan; satırlar hairline | `shots/01-page.png` |
+| Boş durum | orta | 1×1 kartta ikon + tek cümle + buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 büyük kart; ilerleme nokta | `shots/01-page.png` |
+| Pricing | orta | 3 kolon kart, orta kart 2×1 (daha uzun) + accent kenar | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek 1×1 kart, 2 alan; süs yok | `shots/01-page.png` |
+| Modal | orta | 24px radius, 1 kart içinde içerik | `shots/01-page.png` |
+| Bildirim / toast | orta | 18px radius pill | `shots/01-page.png` |
+| Hata | düşük | Kart içinde ikon + 2 satır | `shots/01-page.png` |
+| Profil / ayar | orta | 2 kolon ızgara; her ayar grubu 1 kart | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -203,14 +175,11 @@ Apple/Google'ın widget ekranları, kişisel panolar ve 2022+ ürün sitelerinin
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | orta risk (sıcak zemin + mor accent; en düşük etkileşimli çift 6.41:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="desert-sand"]` |
 | **Kompozisyon** | `split` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Bedeli: yoğun tablo ve panel ekranlarında bu dil ağır kalır; ekran başına
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 5/7 hero: solda ince serif başlık + tek hap CTA, sağda kumul profili | `shots/01-landing.png` |
-| Dashboard | orta | 3 KPI (sıcaklık, rüzgâr, nem) + bölge dağılımı + ölçüm tablosu | `shots/02-dashboard.png` |
-| Form | düşük | tek sütun, 48px alanlar, birim üst etiket | — |
-| Liste / tablo | orta | 44px satır, bölge chip'i, sağda mono ölçüm | — |
-| Boş durum | düşük | "bu bölgede ölçüm yok" + vaha önerisi | — |
-| Onboarding | düşük | 3 adım: bölge seç → ölçüm ekle → uyarı eşiği | — |
-| Pricing | orta | iki plan, hap butonlar, alan limitleri | — |
-| Giriş / ödeme | çok düşük | tek kart (44px köşe), 48px alanlar | — |
-| Modal | orta | bölge detayı: profil, ölçüm geçmişi, not | — |
-| Bildirim | düşük | hap toast, alt ortada, 4sn | — |
-| Hata | düşük | danger çerçeve + neden + sonraki adım | — |
-| Profil / ayar | orta | birim sistemi (°C/°F), dil, uyarı eşikleri | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (bölüm) | 1150ms | `cubic-bezier(.16,.62,.24,1)` | `opacity` + `translateY(40px)`, 160ms arayla |
-| Scroll reveal | 1150ms, `top 68%` | aynı | `translateY(48px)`, `once: true` |
-| Pin / scrub | 1.35 scrub, +180% mesafe | doğrusal | kumul profili sabitlenir, yükseklik eğrisi kayar |
-| Basma | 160ms | aynı | `translateY(2px)` |
-| Hover (görsel) | 420ms | aynı | `scale(1.038)` |
-| Gölge uzaması | 420ms | aynı | `box-shadow` yayılımı +4px |
-
-- Ölçülen imza: enter **1.15s · cubic-bezier(.16,.62,.24,1) · 40px · stagger 0.16**; scroll **top 68% · 1.15s · 48px · once**; pin **açık · scrub 1.35 · +180%**; hover **420ms · 1.038**.
-- Eğri kumul profili gibi: hızlı kalkar, uzun yavaşlar; hiçbir hareket geri sekmez.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin/scrub kapalı, gölge uzaması anında.
-- Bu stile yasak hareket: sürekli esen kum/parçacık, bounce, yatay parallax, gradient animasyonu.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f0e5cf` | `#191510` |
-| `--bg-2` | `#e6d9be` | `#211b14` |
-| `--surface` | `#faf4e6` | `#251f17` |
-| `--surface-2` | `#efe4cc` | `#2f271d` |
-| `--ink` | `#241f18` | `#f4ecdc` |
-| `--ink-soft` | `#5a4f3e` | `#c0b39c` |
-| `--accent` | `#5f4a8a` | `#b39ae0` |
-| `--accent-ink` | `#f7f1e4` | `#1d1230` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **15.46:1** · `ink-soft/bg` **8.80:1** · `accent-ink/accent` **7.29:1** · `ink-faint/bg` **4.84:1** · accent metin olarak bg'ye **7.45:1**.
-- Koyu modda değişen başka ne var: kum grain `.05` → `.04` (koyu zeminde doku daha görünür olmasın), gölge opaklığı artar ve yayılımı 4px daralır, mor accent bir ton açılır.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="desert-sand"]` olarak durur.
+| Landing / hero | orta | 5/7 hero: solda ince serif başlık + tek hap CTA, sağda kumul profili | `shots/01-page.png` |
+| Dashboard | orta | 3 KPI (sıcaklık, rüzgâr, nem) + bölge dağılımı + ölçüm tablosu | `shots/01-page.png` |
+| Form | düşük | tek sütun, 48px alanlar, birim üst etiket | `shots/01-page.png` |
+| Liste / tablo | orta | 44px satır, bölge chip'i, sağda mono ölçüm | `shots/01-page.png` |
+| Boş durum | düşük | "bu bölgede ölçüm yok" + vaha önerisi | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: bölge seç → ölçüm ekle → uyarı eşiği | `shots/01-page.png` |
+| Pricing | orta | iki plan, hap butonlar, alan limitleri | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek kart (44px köşe), 48px alanlar | `shots/01-page.png` |
+| Modal | orta | bölge detayı: profil, ölçüm geçmişi, not | `shots/01-page.png` |
+| Bildirim | düşük | hap toast, alt ortada, 4sn | `shots/01-page.png` |
+| Hata | düşük | danger çerçeve + neden + sonraki adım | `shots/01-page.png` |
+| Profil / ayar | orta | birim sistemi (°C/°F), dil, uyarı eşikleri | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Köşe ikilisi: hap (999px) veya kumul (24/44px); arada keskin köşe yok.
@@ -214,14 +181,11 @@ Bedeli: yoğun tablo ve panel ekranlarında bu dil ağır kalır; ekran başına
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 7.16:1, accent üstü 7.34:1) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="step-wizard"]` |
 | **Kompozisyon** | `centered` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -133,51 +133,20 @@ Masaüstü kurulum sihirbazlarından (installer) ve kamu hizmeti formlarından g
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | "3 adımda başvuru" + tek başla düğmesi + adım önizlemesi | `shots/01-landing.png` |
-| Dashboard | çok düşük | sihirbaz durumu: `2/5 tamamlandı` + tek devam düğmesi | `shots/02-dashboard.png` |
-| Form | düşük | tek soru + en fazla 4 seçenek; hata alan altında | — |
-| Liste / tablo | düşük | başvuru listesi: 44px satır, sağda adım etiketi | — |
-| Boş durum | orta | "Henüz başvuru yok" + ilk adım CTA'sı | — |
-| Onboarding | yüksek | sihirbazın kendisi: 5 adım, ray + ilerleme | — |
-| Pricing | düşük | iki plan kartı; seçim tek radyo satırı | — |
-| Giriş / ödeme | çok düşük | sadece kimlik alanı + ileri; süs yok | — |
-| Modal | orta | özet onayı: madde listesi + geri/onayla | — |
-| Bildirim / toast | orta | alt-sol, "taslak kaydedildi", geri alma | — |
-| Hata | düşük | hata yalnız ilgili alanın altında, adım bloke olmaz | — |
-| Profil / ayar | orta | hesap ayarları sekmeli, aynı tek-kart ritmi | — |
+| Landing / hero | orta | "3 adımda başvuru" + tek başla düğmesi + adım önizlemesi | `shots/01-page.png` |
+| Dashboard | çok düşük | sihirbaz durumu: `2/5 tamamlandı` + tek devam düğmesi | `shots/01-page.png` |
+| Form | düşük | tek soru + en fazla 4 seçenek; hata alan altında | `shots/01-page.png` |
+| Liste / tablo | düşük | başvuru listesi: 44px satır, sağda adım etiketi | `shots/01-page.png` |
+| Boş durum | orta | "Henüz başvuru yok" + ilk adım CTA'sı | `shots/01-page.png` |
+| Onboarding | yüksek | sihirbazın kendisi: 5 adım, ray + ilerleme | `shots/01-page.png` |
+| Pricing | düşük | iki plan kartı; seçim tek radyo satırı | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | sadece kimlik alanı + ileri; süs yok | `shots/01-page.png` |
+| Modal | orta | özet onayı: madde listesi + geri/onayla | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sol, "taslak kaydedildi", geri alma | `shots/01-page.png` |
+| Hata | düşük | hata yalnız ilgili alanın altında, adım bloke olmaz | `shots/01-page.png` |
+| Profil / ayar | orta | hesap ayarları sekmeli, aynı tek-kart ritmi | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **390ms** | `cubic-bezier(.25,.8,.3,1)` | `opacity` + `translateY(7px)`; stagger **0.048s** |
-| Scroll reveal | **410ms** | aynı eğri | trigger `top 87%`, `translateY(9px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (ray sabit, kaymaz) |
-| Basma | **150ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / adım | **240ms** | aynı eğri | opacity + 7px; çıkış 150ms |
-| Hover | **145ms** | aynı eğri | görsel ölçek **1.008** (seçenek satırı büyümez, yalnız çerçeve) |
-| Ödül / vurgu | 390ms | aynı eğri | ilerleme çubuğu dolar, tek kez |
-
-- İmza ölçüleri: `enter = 0.39s / cubic-bezier(.25,.8,.3,1) / 7px / 0.048` · `scroll = top 87% / 0.41s / 9px / once` · `pin = false` · `hover = 145ms / 1.008`.
-- Bant içi fark: 112'den (1.28s / 3px / 0.185 / top 64%), 113'ten (0.23s / 3px / 0.024), 114'ten (0.63s / 9px / 0.033), 115'ten (0.12s / 0px / 0.008) en az dört parametrede ayrışır. Karşılaştırma örneği 16-memphis (`0.3s / cubic-bezier(.34,1.6,.64,1) / 14px / 0.04`): 8 parametrede ayrışır; katalogdaki tüm imzalarla en az iki parametre farkı makine kontrolüyle doğrulanır.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; adım geçişi anında olur, ilerleme çubuğu animasyonsuz dolar.
-- Bu stile yasak hareket: yatay kaydırmalı adım geçişi (swipe-only), tam sayfa yeniden belirme, blur geçişi, sürekli nabız.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f4f6fa` | `#0c1120` |
-| `--surface` | `#ffffff` | `#172033` |
-| `--ink` | `#101828` | `#eef2fa` |
-| `--accent` | `#3346c9` | `#8fa3ff` |
-| `--ink-soft` | `#46536b` | `#aeb9cd` |
-| `--line` | `rgba(16,24,40,.14)` | `rgba(238,242,250,.16)` |
-
-- Koyu modda değişen başka ne var: gölge görünmez olduğu için kart ayrımı 1px line + `--surface` ton farkına biner; accent bir ton açılır (kontrast 7.96:1), seçili seçenek zemini accent %14'e çıkar.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark` ve `token-block.css` koyu bloğu birebir aynı).
 
 ## Zorunlu kurallar
 - Ekran başına tek soru ve en fazla 4 seçenek; ikinci karar aynı ekrana sığdırılmaz.
@@ -205,14 +174,11 @@ Masaüstü kurulum sihirbazlarından (installer) ve kamu hizmeti formlarından g
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

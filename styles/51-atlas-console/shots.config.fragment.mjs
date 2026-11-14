@@ -135,12 +135,5 @@ export const CONFIG = {
       .visual-row .sq { border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--accent); }
       .visual-row .line { height: 2px; background: color-mix(in srgb, var(--ink) 18%, transparent); }
       .visual-row .num { font-size: 9px; }`,
-  'dark-landing': `
-      /* koyu mod: harita ızgarası daha görünür, waypoint halkası parlar */
-      .hero-visual { background-image:
-        linear-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 1px, transparent 1px),
-        linear-gradient(90deg, color-mix(in srgb, var(--accent) 22%, transparent) 1px, transparent 1px);
-        background-size: 34px 34px, 34px 34px; }
-      .visual-row .sq { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 24%, transparent); }`,
   },
 };

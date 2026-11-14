@@ -13,8 +13,3 @@
   --font-mono: "Courier New", ui-monospace, monospace;
   --tracking: 0.22em; --blur: 0px; --grain: .03;
 }
-
-[data-theme="dark"][data-style="art-deco"] {
-  --bg: #08120f; --bg-2: #0d1a16; --surface: #0b1713; --surface-2: #112420;
-  --ink: #f2ead9; --ink-soft: #c3b9a7; --ink-faint: #918877; --accent: #d8b34f; --accent-ink: #0a1512; --line: rgba(216,179,79,.48);
-}

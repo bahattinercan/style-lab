@@ -4,7 +4,8 @@
  *
  * Neden: katalog token üretiyordu ama tüketen projede "hard-coded renk yok" iddiasını
  * denetleyen bir şey yoktu; katalog referans olarak kalıyordu. Bu araç katalogu sözleşmeye
- * çevirir: seçilen stile göre renk/font/radius/süre literalleri ve reduced-motion eksiği.
+ * çevirir: seçilen stile göre renk/font/radius literalleri ve data-style bağlantısı.
+ * v6: hareket katmanı kaldırıldığı için süre/eğri/reduced-motion kuralları da kaldırıldı.
  *
  * Kullanım:
  *   node kit/style-lint.mjs <dizin> --style terminal-ui
@@ -21,10 +22,6 @@
  *   dart-font-literal    (hata)  Dart'ta fontFamily: '…' literal
  *   radius-literal       (uyarı) stilin radius/radiusLg dışında px border-radius
  *   dart-radius-literal  (uyarı) BorderRadius.circular(<sayı>)
- *   duration-literal     (uyarı) token dışı transition/animation süresi
- *   dart-duration-literal(uyarı) Duration(milliseconds: <sayı>)
- *   default-ease         (uyarı) stilin eğrisi varken ease/linear kullanımı
- *   reduced-motion-missing (uyarı) hareket var ama prefers-reduced-motion bloğu yok
  *   ink-faint-text       (uyarı) --ink-faint metin rengi olarak (yalnız dekoratif)
  *   root-style-missing   (uyarı) hiçbir dosyada data-style="<slug>" yok
  *
@@ -87,10 +84,6 @@ const RULES = {
   'dart-font-literal': { severity: 'error', note: 'font: styleLabTheme / typography' },
   'radius-literal': { severity: 'warn', note: 'radius: var(--radius) / var(--radius-lg)' },
   'dart-radius-literal': { severity: 'warn', note: 'radius: t.radius / t.radiusLg' },
-  'duration-literal': { severity: 'warn', note: 'süre: motion.enter/scroll değerleri' },
-  'dart-duration-literal': { severity: 'warn', note: 'süre: t.motion.enterDurationValue' },
-  'default-ease': { severity: 'warn', note: 'eğri: stilin motion.easing değeri' },
-  'reduced-motion-missing': { severity: 'warn', note: 'prefers-reduced-motion bloğu ekle' },
   'ink-faint-text': { severity: 'warn', note: '--ink-faint yalnız dekoratif' },
   'root-style-missing': { severity: 'warn', note: '<html data-style="<slug>"> ekle' },
 };
@@ -109,19 +102,11 @@ function loadStyle(slug) {
   const typo = tokens.typography ?? {};
   const radius = (tokens.shape?.radius ?? '').trim();
   const radiusLg = (tokens.shape?.radiusLg ?? '').trim();
-  const motion = tokens.motion ?? {};
-  const sequences = motion.sequences ?? {};
   return {
     slug,
     dir,
     fonts: new Set([typo.display, typo.body, typo.mono].filter(Boolean).map((f) => f.toLowerCase())),
     radius: new Set([radius, radiusLg].filter(Boolean)),
-    durations: new Set(
-      [motion.fast, motion.base, motion.slow, sequences.enter?.duration, sequences.scroll?.duration, sequences.hover?.duration]
-        .filter(Boolean)
-        .map((v) => String(v).trim()),
-    ),
-    hasCurve: Boolean(sequences.enter?.ease ?? motion.easing),
   };
 }
 
@@ -167,8 +152,6 @@ function lintFile(file, style, findings) {
       if (font && style?.fonts.size && !style.fonts.has(font[1].toLowerCase())) add('dart-font-literal', lineNo, `stil dışı font: ${font[1]}`);
       const radius = line.match(/BorderRadius\.circular\(\s*([\d.]+)\s*\)/);
       if (radius) add('dart-radius-literal', lineNo, `radius literali: ${radius[1]}`);
-      const duration = line.match(/Duration\(\s*(?:milliseconds|seconds):\s*[\d.]+\s*\)/);
-      if (duration) add('dart-duration-literal', lineNo, `süre literali: ${duration[0]}`);
       continue;
     }
 
@@ -192,50 +175,22 @@ function lintFile(file, style, findings) {
       if (px && !style.radius.has(value) && !['0', '0px'].includes(value)) add('radius-literal', lineNo, `radius literali: ${value}`);
     }
 
-    const timing = line.match(/(?:transition|animation)(?:-duration)?\s*:\s*([^;}]+)/i);
-    if (timing) {
-      const durations = timing[1].match(/[\d.]+m?s/g) ?? [];
-      for (const d of durations) {
-        const ms = d.endsWith('ms') ? d : `${parseFloat(d) * 1000}ms`;
-        if (style?.durations.size && !style.durations.has(d) && !style.durations.has(ms) && parseFloat(ms) > 0) {
-          add('duration-literal', lineNo, `token dışı süre: ${d}`);
-        }
-      }
-      if (style?.hasCurve && /\b(ease|linear)\b(?!-)/.test(timing[1]) && !/cubic-bezier|steps\(/.test(timing[1])) {
-        add('default-ease', lineNo, 'varsayılan eğri (ease/linear)');
-      }
-    }
-
     if (/color\s*:\s*var\(--ink-faint\)/.test(line)) add('ink-faint-text', lineNo, '--ink-faint metin rengi olarak kullanılmış');
   }
 
-  return { hasMotion: /transition|animation|Animated|AnimationController/.test(text), hasReduced: /prefers-reduced-motion|disableAnimations/.test(text), hasRoot: style ? text.includes(`data-style="${style.slug}"`) : false };
+  return { hasRoot: style ? text.includes(`data-style="${style.slug}"`) : false };
 }
 
 function lint(dir, style) {
   const files = walk(dir);
   const findings = [];
-  let anyMotion = false;
-  let anyReduced = false;
   let anyRoot = false;
 
   for (const file of files) {
     const info = lintFile(file, style, findings);
-    anyMotion ||= info.hasMotion;
-    anyReduced ||= info.hasReduced;
     anyRoot ||= info.hasRoot;
   }
 
-  if (style && anyMotion && !anyReduced) {
-    findings.push({
-      file: path.relative(process.cwd(), dir) || '.',
-      line: 0,
-      rule: 'reduced-motion-missing',
-      severity: RULES['reduced-motion-missing'].severity,
-      message: 'hareket var ama prefers-reduced-motion bloğu yok',
-      hint: RULES['reduced-motion-missing'].note,
-    });
-  }
   if (style && !anyRoot) {
     findings.push({
       file: path.relative(process.cwd(), dir) || '.',
@@ -254,7 +209,7 @@ function lint(dir, style) {
 function selfTest() {
   const fixtures = path.join(ROOT, 'kit', 'style-lint', 'fixtures');
   const expectations = [
-    { dir: 'bad', style: 'terminal-ui', expectRules: ['color-literal', 'font-literal', 'radius-literal', 'duration-literal', 'dart-color-literal', 'dart-duration-literal', 'reduced-motion-missing', 'root-style-missing'], expectErrors: true },
+    { dir: 'bad', style: 'terminal-ui', expectRules: ['color-literal', 'font-literal', 'radius-literal', 'dart-color-literal', 'root-style-missing'], expectErrors: true },
     { dir: 'good', style: 'terminal-ui', expectRules: [], expectErrors: false },
   ];
   let failed = 0;

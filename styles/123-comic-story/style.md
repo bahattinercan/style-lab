@@ -10,7 +10,7 @@
 | **Zorluk** | orta (balon/panel dengesi) · **Erişilebilirlik** | iyi (16.87:1 gövde, 4.63:1 accent üstü) |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="comic-story"]` |
 | **Kompozisyon** | `index` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,57 +144,20 @@ Klişeye düşmemesi için korunması gereken detay: **oluk oranı ve efekt büt
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 6/3/3 panel + efekt etiketi + caption | `shots/01-landing.png` |
-| Dashboard | orta | Panel ızgarası, mono sayılar, efekt yok | `shots/02-dashboard.png` |
-| Form | düşük | 46px alanlar, 3px kenar, 3px odak halkası | — |
-| Liste / tablo | orta | 40px satır: kare no, başlık, sayfa no | — |
-| Boş durum | orta | Boş panel + balon ("burada henüz bir kare yok") + 1 buton | — |
-| Onboarding | yüksek | 3 panel: sorun → çözüm → sonuç; her panelde 1 caption | — |
-| Pricing | orta | 3 panel; önerilen panel accent başlık bandı | — |
-| Giriş / ödeme | çok düşük | Efekt/balon yok; 3px kenar + tek accent buton | — |
-| Modal | orta | 3px çerçeve + sert gölge, perde %55 | — |
-| Bildirim / toast | orta | Balon biçimli toast, 2600ms | — |
-| Hata | düşük | `--accent` kenar + `!` + mono açıklama | — |
-| Profil / ayar | orta | Ayar paneli: başlık (Baloo) + satırlar (mono) | — |
+| Landing / hero | yüksek | 6/3/3 panel + efekt etiketi + caption | `shots/01-page.png` |
+| Dashboard | orta | Panel ızgarası, mono sayılar, efekt yok | `shots/01-page.png` |
+| Form | düşük | 46px alanlar, 3px kenar, 3px odak halkası | `shots/01-page.png` |
+| Liste / tablo | orta | 40px satır: kare no, başlık, sayfa no | `shots/01-page.png` |
+| Boş durum | orta | Boş panel + balon ("burada henüz bir kare yok") + 1 buton | `shots/01-page.png` |
+| Onboarding | yüksek | 3 panel: sorun → çözüm → sonuç; her panelde 1 caption | `shots/01-page.png` |
+| Pricing | orta | 3 panel; önerilen panel accent başlık bandı | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Efekt/balon yok; 3px kenar + tek accent buton | `shots/01-page.png` |
+| Modal | orta | 3px çerçeve + sert gölge, perde %55 | `shots/01-page.png` |
+| Bildirim / toast | orta | Balon biçimli toast, 2600ms | `shots/01-page.png` |
+| Hata | düşük | `--accent` kenar + `!` + mono açıklama | `shots/01-page.png` |
+| Profil / ayar | orta | Ayar paneli: başlık (Baloo) + satırlar (mono) | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 80ms | `steps(2, end)` | `box-shadow` kalkar, `translate(0,0)` |
-| Geçiş / sayfa | 120ms | `steps(3, end)` | `opacity` (kare kare) |
-| Giriş (enter) | **280ms** | `steps(3, end)` | `opacity` + `translateY(22px)`, **stagger 45ms** |
-| Kaydırma (scroll) | **340ms** | `steps(3, end)` | trigger **`top 90%`**, offsetY **20px**, `once: true` |
-| Hover | **120ms** | `ease-out` | görsel ölçek **1.016** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 240ms | `steps(3, end)` | efekt etiketi 12° → 6° döner, tek atım |
-
-- İmza ölçüsü: enter **0.28s / 22px / stagger 0.045** · scroll **0.34s / `top 90%` / 20px** · hover **120ms / 1.016** · pin **kapalı** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; kare geçişleri durur, paneller statik kalır.
-- Bu stile yasak hareket: yumuşak ease/spring, parallax, sürekli döngü, harf harf uçuşan yazı.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f8f2e2` | `#121214` |
-| `--bg-2` | `#f0e8d3` | `#17171a` |
-| `--surface` | `#fffdf6` | `#1c1c20` |
-| `--surface-2` | `#ece4cd` | `#26262b` |
-| `--ink` | `#111114` | `#f2eddd` |
-| `--ink-soft` | `#494a45` | `#b5b0a2` |
-| `--ink-faint` | `#75766e` | `#8a857a` |
-| `--accent` | `#d92b1f` | `#ff6a58` |
-| `--accent-ink` | `#fff8f2` | `#180a08` |
-| `--line` | `rgba(17,17,20,.22)` | `rgba(242,237,221,.18)` |
-
-- Koyu mod **gece baskısı**: zemin `#121214`, panel `#1c1c20`; mürekkep kremaya döner, accent açılır (`#ff6a58`).
-- Sert ofset gölge koyuda siyah olsaydı görünmezdi: `--shadow-hard` **kâğıt grisine** (`#4a4741`) döner — yazılı istisna, `token-block.css` koyu bloğunda açıkça durur.
-- Yarım ton nokta koyuda opacity `.20`'ye düşer (açık nokta koyu zeminde gürültü yapar).
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **15.98:1** · `ink-soft/bg` = **8.64:1** · `accent-ink/accent` = **6.87:1** · `ink-faint/bg` = **5.09:1**.
 
 ## Zorunlu kurallar
 
@@ -225,14 +188,11 @@ Klişeye düşmemesi için korunması gereken detay: **oluk oranı ve efekt büt
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

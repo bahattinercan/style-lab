@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (illüzyonu güvenli tutmak) · **Erişilebilirlik** | yüksek risk (desen frekansı ve titreme — bu stilde **desen asla animasyonlanmaz**) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `kit/tokens.css` → `[data-style="optical-illusion"]` |
 | **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,55 +137,21 @@ Op-art (Vasarely, Riley) 1960'larda izleyicinin gözünü desenin içinde "kayd�
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 8/4: moiré paneli + 44px display | `shots/01-landing.png` |
-| Dashboard | orta | 2 kart (biri yarım ton köşeli) + 3 serili grafik | `shots/02-dashboard.png` |
-| Form | düşük | 42px keskin alanlar, desen yalnız üstte | — |
-| Liste / tablo | orta | 38px satır, %4 zebra, mono sayı | — |
-| Boş durum | orta | boş yarım ton blok + tek CTA | — |
-| Onboarding | yüksek | 3 adım, her adımda tek illüzyon | — |
-| Pricing | orta | 3 keskin kart, orta kart 2px accent çerçeve | — |
-| Giriş / ödeme | çok düşük | desen yok, yalnız keskin form | — |
-| Modal | orta | 2px ink çerçeve + 8px bant | — |
-| Bildirim / toast | orta | sol 8px bant, animasyonsuz | — |
-| Hata | düşük | desen durur/kaldırılır, mesaj `--danger` çerçeve | — |
-| Profil / ayar | orta | "desen yoğunluğu: azalt" anahtarı | — |
+| Landing / hero | yüksek | 8/4: moiré paneli + 44px display | `shots/01-page.png` |
+| Dashboard | orta | 2 kart (biri yarım ton köşeli) + 3 serili grafik | `shots/01-page.png` |
+| Form | düşük | 42px keskin alanlar, desen yalnız üstte | `shots/01-page.png` |
+| Liste / tablo | orta | 38px satır, %4 zebra, mono sayı | `shots/01-page.png` |
+| Boş durum | orta | boş yarım ton blok + tek CTA | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım, her adımda tek illüzyon | `shots/01-page.png` |
+| Pricing | orta | 3 keskin kart, orta kart 2px accent çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | desen yok, yalnız keskin form | `shots/01-page.png` |
+| Modal | orta | 2px ink çerçeve + 8px bant | `shots/01-page.png` |
+| Bildirim / toast | orta | sol 8px bant, animasyonsuz | `shots/01-page.png` |
+| Hata | düşük | desen durur/kaldırılır, mesaj `--danger` çerçeve | `shots/01-page.png` |
+| Profil / ayar | orta | "desen yoğunluğu: azalt" anahtarı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — şekil–zemin testi — dönüşümlü terslenen satırlar, moiré perde.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 340ms | `cubic-bezier(.9,0,.1,1)` | `opacity` + `translateY(18px)`, öğe başına 60ms stagger |
-| Scroll reveal | 280ms | `cubic-bezier(.9,0,.1,1)` | `top 82%` tetiği, 8px, `once: false` |
-| Basma | 90ms | `linear` | `translateY(1px)` |
-| Hover | 90ms | `linear` | zemin kırılması + görsel ölçek `1.045` |
-| Pin / scrub | kapalı | — | — (desen sabitlenmez) |
-| Desen | 0ms | — | **statik**; animasyonlu desen yasak |
-| Durdurma | — | — | kullanıcı "desen yoğunluğu: azalt" ile deseni kapatabilir |
-
-- Ölçülebilir imza: `enter 0.34s / cb(.9,0,.1,1) / 18px / 0.06` · `scroll top 82% / 0.28s / 8px / once:false` · `hover 90ms / 1.045` · `pin kapalı`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; desenler zaten statik olduğu için içerik değişmez.
-- Bu stile yasak hareket: desenin kendisinin animasyonu, flicker, sürekli döngü, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#fbfbfb` | `#0a0a0a` |
-| `--bg-2` | `#f1f1f1` | `#121212` |
-| `--surface` | `#ffffff` | `#171717` |
-| `--surface-2` | `#f4f4f4` | `#1f1f1f` |
-| `--ink` | `#0a0a0a` | `#f7f7f7` |
-| `--ink-soft` | `#464646` | `#b0b0b0` |
-| `--accent` | `#b8123f` | `#ff5d7e` |
-| `--accent-ink` | `#ffffff` | `#20040a` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **18.48:1** · `ink-soft / bg` = **9.13:1** · `accent-ink / accent` = **6.57:1** · `ink-faint / bg` = **4.81:1**.
-- Koyu modda değişen başka ne var: desen rengi `--ink` (beyaz) olduğu için moiré kontrastı tersine döner — opaklık .72 → .55 (beyaz çizgi daha agresif); kenar bandı kalınlığı aynı kalır.
-- `filter: invert()` yasak; palet elle yazılır.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **8.80:1** açık / **5.43:1** koyu · `--warn / bg` = **7.79:1** / **5.45:1** · `--ok / surface` = 4.92:1 / 4.93:1 (warn) · devre dışı buton metni = **8.81:1** / **8.27:1** · ghost buton kenarı = **4.39:1** / **5.89:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - Desenler statiktir; hiçbir desen animasyonlanmaz (flicker yasak).
@@ -214,14 +180,11 @@ Op-art (Vasarely, Riley) 1960'larda izleyicinin gözünü desenin içinde "kayd�
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

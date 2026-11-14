@@ -33,16 +33,3 @@
   --ok: #3d5a33;
   --warn: #7d5a12;
 }
-
-[data-theme="dark"][data-style="leather-craft"] {
-  --bg: #1d1510;
-  --bg-2: #160f0b;
-  --surface: #251b14;
-  --surface-2: #2f241b;
-  --ink: #f4ead9;
-  --ink-soft: #c6b39a;
-  --ink-faint: #93826b;
-  --accent: #d59a63;
-  --accent-ink: #1c1007;
-  --line: rgba(244,234,217,.16);
-}

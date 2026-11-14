@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.25:1) |
 | **Aile** | Deneysel & Gelecek (136–145) · **Token** | `styles/143-retro-future/tokens.json` → `[data-style="retro-future"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,54 +139,20 @@ Bedeli: bu stil veri yoğunluğunu taşımaz. Tablolar gerektiğinde zebra yarı
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Afiş paneli 5/7; dev başlık, tek CTA, yörünge yayı | `shots/01-landing.png` |
-| Dashboard | orta | Yuvarlak paneller; tablolar zebra, sayı mono | `shots/02-dashboard.png` |
-| Form | düşük | 44px alanlar, hap buton, hardal odak | — |
-| Liste / tablo | orta | 42px satır, yarım ton zebra, 3px alt kural | — |
-| Boş durum | orta | Boş yörünge yayı + tek CTA | — |
-| Onboarding | yüksek | 3 adım: fikir → yörünge → lansman | — |
-| Pricing | orta | Plan kartları yapıştırılmış kâğıt; öne çıkan hardal kural | — |
-| Giriş / ödeme | çok düşük | Tek panel, yay yok, hap buton | — |
-| Modal | orta | Ortada afiş; üstte yarım yay | — |
-| Bildirim / toast | orta | Hap toast, mono sayaç | — |
-| Hata | düşük | `--danger` kenar + "pencere kapandı" | — |
-| Profil / ayar | orta | Harf aralığı yoğunluğu, yay görünürlüğü | — |
+| Landing / hero | yüksek | Afiş paneli 5/7; dev başlık, tek CTA, yörünge yayı | `shots/01-page.png` |
+| Dashboard | orta | Yuvarlak paneller; tablolar zebra, sayı mono | `shots/01-page.png` |
+| Form | düşük | 44px alanlar, hap buton, hardal odak | `shots/01-page.png` |
+| Liste / tablo | orta | 42px satır, yarım ton zebra, 3px alt kural | `shots/01-page.png` |
+| Boş durum | orta | Boş yörünge yayı + tek CTA | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: fikir → yörünge → lansman | `shots/01-page.png` |
+| Pricing | orta | Plan kartları yapıştırılmış kâğıt; öne çıkan hardal kural | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel, yay yok, hap buton | `shots/01-page.png` |
+| Modal | orta | Ortada afiş; üstte yarım yay | `shots/01-page.png` |
+| Bildirim / toast | orta | Hap toast, mono sayaç | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + "pencere kapandı" | `shots/01-page.png` |
+| Profil / ayar | orta | Harf aralığı yoğunluğu, yay görünürlüğü | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.61s**, y **16px**, stagger **0.09** | `cubic-bezier(.3,1.2,.4,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.7s**, trigger **top 77%**, y **18px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **1.1**, mesafe **+120%** (yörünge yayı büyür) | scrub doğrusal | `transform` (yay ölçeği) |
-| Hover | **340ms**, görsel scale **1.035** | `ease-out` | `transform` |
-| Basma | 140ms | aynı eğri | `transform` (2px) |
-| CTA vurgusu | 240ms | aynı eğri | `transform` (1.02) |
-
-- Bu stilin ölçülebilir imzası: `enter 0.61s / cubic-bezier(.3,1.2,.4,1) / 16px / 0.09` + `scroll top 77% / 0.7s / 18px` + `pin scrub 1.1 / +120%` + `hover 340ms / 1.035`. Bu eğri (hafif aşan) ve `hover 340ms + 1.035` ikilisi katalogda yalnız burada.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; yay ölçeği ve hız çizgileri sabitlenir.
-- Bu stile yasak hareket: sürekli dönen roket/uydu, neon glow nabzı, parallax, gradient geçişi.
-
-## Koyu mod
-
-| Token | Açık (kâğıt afiş) | Koyu (gece afişi) |
-|---|---|---|
-| `--bg` | `#f3ecdd` | `#16130d` |
-| `--bg-2` | `#ece3d0` | `#1c1811` |
-| `--surface` | `#faf5e9` | `#221d14` |
-| `--surface-2` | `#e8dfca` | `#2a241a` |
-| `--ink` | `#1b1710` | `#f4eddc` |
-| `--ink-soft` | `#4f4737` | `#c2b69c` |
-| `--ink-faint` | `#857a63` | `#918872` |
-| `--accent` | `#7a5c04` | `#e8b93f` |
-| `--accent-ink` | `#ffffff` | `#1a1405` |
-| `--line` | `rgba(27,23,16,.16)` | `rgba(244,237,220,.16)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **15.88:1** · `ink-soft/bg` = **9.24:1** · `accent-ink/accent` = **9.98:1** · `ink-faint/bg` = **5.27:1**.
-- Koyu modda değişen başka ne var: accent parlar (hardal → sarı), kâğıt dokusu `--grain` aynı kalır ama alt kural `--ink` korunur.
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="retro-future"]`.
 
 ## Zorunlu kurallar
 - Uzay çağı tipografisi: Jost 600 + 0.1em harf aralığı; başlık 56px üstüne çıkmaz.
@@ -214,14 +180,11 @@ Bedeli: bu stil veri yoğunluğunu taşımaz. Tablolar gerektiğinde zebra yarı
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

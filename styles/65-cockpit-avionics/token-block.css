@@ -33,16 +33,3 @@
   --ok: #4fd98a;
   --warn: #ffb020;
 }
-
-[data-theme="dark"][data-style="cockpit-avionics"] {
-  --bg: #02040a;
-  --bg-2: #05080f;
-  --surface: #080d16;
-  --surface-2: #0d1420;
-  --ink: #f4fbff;
-  --ink-soft: #b0c4d2;
-  --ink-faint: #7e93a3;
-  --accent: #7ff0ff;
-  --accent-ink: #021a22;
-  --line: rgba(244,251,255,.2);
-}

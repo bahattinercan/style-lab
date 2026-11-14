@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | iyi (gövde 17.14:1, accent üstü 5.44:1; faint 3.36:1 yalnız dekoratif) |
 | **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="aegean-island"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,52 +137,20 @@ Kiklad adaları (Santorini, Mykonos, Sifnos) badana geleneği: kireç taşı duv
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 5+5 kemer kartı + 1+1 geçit, hero'da dalga çizgisi | `shots/01-landing.png` |
-| Dashboard | düşük | 2 kemerli KPI + 2 dashed durum kartı | `shots/02-dashboard.png` |
-| Form | düşük | 46px alanlar, kemerli form paneli | — |
-| Liste / tablo | orta | 46px satır, ilk sütunda 3px mavi kural | — |
-| Boş durum | orta | dashed boş kart + kemer işareti + tek CTA | — |
-| Onboarding | yüksek | 3 adım: tarih → oda → onay; her adım kemerli kart | — |
-| Pricing | orta | 3 kemerli plan, orta plan accent kenar | — |
-| Giriş / ödeme | çok düşük | dar kemerli kart, 46px alanlar | — |
-| Modal | orta | kemer köşe + üstte dalga çizgisi | — |
-| Bildirim / toast | orta | dashed kenar, sol 2px mavi, 4200ms | — |
-| Hata | düşük | `--danger` sol şerit + koyu metin; mavi susar | — |
-| Profil / ayar | orta | 46px satır, iki kemerli panel | — |
+| Landing / hero | orta | 5+5 kemer kartı + 1+1 geçit, hero'da dalga çizgisi | `shots/01-page.png` |
+| Dashboard | düşük | 2 kemerli KPI + 2 dashed durum kartı | `shots/01-page.png` |
+| Form | düşük | 46px alanlar, kemerli form paneli | `shots/01-page.png` |
+| Liste / tablo | orta | 46px satır, ilk sütunda 3px mavi kural | `shots/01-page.png` |
+| Boş durum | orta | dashed boş kart + kemer işareti + tek CTA | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: tarih → oda → onay; her adım kemerli kart | `shots/01-page.png` |
+| Pricing | orta | 3 kemerli plan, orta plan accent kenar | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | dar kemerli kart, 46px alanlar | `shots/01-page.png` |
+| Modal | orta | kemer köşe + üstte dalga çizgisi | `shots/01-page.png` |
+| Bildirim / toast | orta | dashed kenar, sol 2px mavi, 4200ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` sol şerit + koyu metin; mavi susar | `shots/01-page.png` |
+| Profil / ayar | orta | 46px satır, iki kemerli panel | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 380ms | `cubic-bezier(.25,.75,.5,1)` | `opacity` + `translateY(8px)`, blok başına 80ms stagger |
-| Scroll reveal | 440ms | `cubic-bezier(.25,.75,.5,1)` | `top 87%` tetiği, 12px, `once: true` |
-| Basma | 280ms | `linear` | `translateY(1px)` |
-| Hover | 280ms | `cubic-bezier(.25,.75,.5,1)` | zemin %92, alt kenarda 2px badana çizgisi, görsel ölçek `1.020` |
-| Pin / scrub | kapalı | — | — (badana yüzeyi sabitlenmez) |
-| Dalga çizgisi | 0ms | — | statik; animasyonlu dalga yasak |
-
-- Ölçülebilir imza: `enter 0.38s / cb(.25,.75,.5,1) / 8px / 0.08` · `scroll top 87% / 0.44s / 12px / once:true` · `hover 280ms / 1.020` · `pin kapalı`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; kemer, dashed kenar ve dalga statik kalır.
-- Bu stile yasak hareket: bounce/yay, parallax, sürekli döngü, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#fbfaf6` | `#0c1418` |
-| `--bg-2` | `#f2f1ea` | `#101a1f` |
-| `--surface` | `#ffffff` | `#131f25` |
-| `--surface-2` | `#f6f6f1` | `#1a282f` |
-| `--ink` | `#12181c` | `#e9f2f4` |
-| `--ink-soft` | `#44545c` | `#a6b6bc` |
-| `--accent` | `#0e6f92` | `#4fb8d4` |
-| `--accent-ink` | `#f7fbfd` | `#04181f` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **16.36:1** · `ink-soft / bg` = **8.89:1** · `accent-ink / accent` = **7.91:1** · `ink-faint / bg` = **4.76:1**.
-- Koyu modda değişen başka ne var: nokta badana dokusu %9 → %6 (koyuda gürültü olur); accent açık deniz mavisine döner; dashed kenar opaklığı `.16`'ya çıkar; gölge 2px → opak siyah 2px.
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 - Kart ve modal köşeleri 22px (kemer); buton/input 14px. 22px üstü yasak.
@@ -211,14 +179,11 @@ Kiklad adaları (Santorini, Mykonos, Sifnos) badana geleneği: kireç taşı duv
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

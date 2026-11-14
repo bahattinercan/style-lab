@@ -10,7 +10,7 @@
 | **Zorluk** | orta (krom kenar disiplini + kadran; yanlış kullanımda "eskimiş" görünür) · **Erişilebilirlik** | iyi (14.15:1 gövde, 10.39:1 accent üstü) |
 | **Aile** | Zamansız (41–44) · **Token** | `kit/tokens.css` → `[data-style="grand-tourer"]` |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -173,25 +173,25 @@ Stilin ikinci taşıyıcısı **gösterge kadranı**dır: landing'de kahraman g�
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 50px Cinzel büyük harf, 7/5 asimetri, tek yeşil CTA, hero görselinde bir kadran, koç çizgili nav | `shots/01-landing.png` |
-| Dashboard | düşük-orta | KPI sayıları mono 22px, başlıklar Cinzel 24px, krom kartlar, yeşil yalnız seri 1 ve aktif satır | `shots/02-dashboard.png` |
-| Mobil | orta | tek kolon, 30px başlık, 44px dokunma hedefi, sekme plakaları 2px, alt bar 56px | — |
-| Bileşenler · temel | orta | palet + tipografi + krom kenar + kadran levhası | — |
-| Form | düşük | tek sütun 460px, input 42px, odak 2px yeşil + 2px offset, süs 0 | — |
-| Modal / katman | orta | 6px radius + krom kenar + yumuşak gölge; backdrop %55; 2 buton sağa | — |
-| Veri | düşük | 52px satır, mono sayaçlar, 4 renkli grafik paleti, ince grid yok | — |
-| Gezinme | orta | koç çizgili nav, plaka chip, ray ikonları, footer'da ceviz damarı | — |
-| Pricing / danışmanlık | orta | 3 kart, orta kart `--surface-2` + üst 2px yeşil; fiyat mono 26px | — |
-| Giriş | çok düşük | süs 0; sol panelde ceviz damarı, tek kart, hata `--danger` 1px | — |
-| Liste (ilan listesi) | düşük-orta | filtre çubuğu + 52px satır, seçili satır `--surface-2` + sol 2px yeşil | — |
-| Boş / hata durumu | orta | tek ikon + tek cümle + tek buton; 404 mono 44px | — |
-| Ayarlar | düşük | bölüm başlığı Cinzel, satır ayırıcı hairline, tehlike bölgesi `--danger` 1px | — |
-| Ödeme | çok düşük | özet sütunu sağda, mono tutarlar, yeşil yalnız "Ödemeyi tamamla" | — |
-| Onboarding | orta | adım noktaları, seçenek kartı 6px + krom kenar, tek ileri CTA | — |
-| Makale / ilan künyesi | orta | 62ch ölçü, Cinzel 24px H2, hairline ayırıcı, mono künye satırı | — |
-| Mobil · alt sayfa | orta | üst köşe 6px, 44px sürükleme tutamacı, butonlar alt yapışkan | — |
-| Mobil · form | çok düşük | tam genişlik input 54px, klavye üstü 46px CTA, etiket mono | — |
-| Mobil · liste | düşük | 64px satır, krom kart, sağda durum plakası | — |
+| Landing / hero | orta | 50px Cinzel büyük harf, 7/5 asimetri, tek yeşil CTA, hero görselinde bir kadran, koç çizgili nav | `shots/01-page.png` |
+| Dashboard | düşük-orta | KPI sayıları mono 22px, başlıklar Cinzel 24px, krom kartlar, yeşil yalnız seri 1 ve aktif satır | `shots/01-page.png` |
+| Mobil | orta | tek kolon, 30px başlık, 44px dokunma hedefi, sekme plakaları 2px, alt bar 56px | `shots/01-page.png` |
+| Bileşenler · temel | orta | palet + tipografi + krom kenar + kadran levhası | `shots/01-page.png` |
+| Form | düşük | tek sütun 460px, input 42px, odak 2px yeşil + 2px offset, süs 0 | `shots/01-page.png` |
+| Modal / katman | orta | 6px radius + krom kenar + yumuşak gölge; backdrop %55; 2 buton sağa | `shots/01-page.png` |
+| Veri | düşük | 52px satır, mono sayaçlar, 4 renkli grafik paleti, ince grid yok | `shots/01-page.png` |
+| Gezinme | orta | koç çizgili nav, plaka chip, ray ikonları, footer'da ceviz damarı | `shots/01-page.png` |
+| Pricing / danışmanlık | orta | 3 kart, orta kart `--surface-2` + üst 2px yeşil; fiyat mono 26px | `shots/01-page.png` |
+| Giriş | çok düşük | süs 0; sol panelde ceviz damarı, tek kart, hata `--danger` 1px | `shots/01-page.png` |
+| Liste (ilan listesi) | düşük-orta | filtre çubuğu + 52px satır, seçili satır `--surface-2` + sol 2px yeşil | `shots/01-page.png` |
+| Boş / hata durumu | orta | tek ikon + tek cümle + tek buton; 404 mono 44px | `shots/01-page.png` |
+| Ayarlar | düşük | bölüm başlığı Cinzel, satır ayırıcı hairline, tehlike bölgesi `--danger` 1px | `shots/01-page.png` |
+| Ödeme | çok düşük | özet sütunu sağda, mono tutarlar, yeşil yalnız "Ödemeyi tamamla" | `shots/01-page.png` |
+| Onboarding | orta | adım noktaları, seçenek kartı 6px + krom kenar, tek ileri CTA | `shots/01-page.png` |
+| Makale / ilan künyesi | orta | 62ch ölçü, Cinzel 24px H2, hairline ayırıcı, mono künye satırı | `shots/01-page.png` |
+| Mobil · alt sayfa | orta | üst köşe 6px, 44px sürükleme tutamacı, butonlar alt yapışkan | `shots/01-page.png` |
+| Mobil · form | çok düşük | tam genişlik input 54px, klavye üstü 46px CTA, etiket mono | `shots/01-page.png` |
+| Mobil · liste | düşük | 64px satır, krom kart, sağda durum plakası | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 
@@ -212,35 +212,6 @@ Aynı stil, emlak vitrininde şu eşlemeyle uygulanır (ekran adları uygulama d
 
 Kural: **fotoğraf ve fiyat aynı kartta yarışmaz** — fotoğraf büyük ve sıcak, fiyat küçük ve mono. Lüks emlakta değer, fiyatın büyüklüğünden değil künyenin düzeninden gelir.
 
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 140ms | `cubic-bezier(.2,.72,.2,1)` | `transform: translateY(1px)` + zemin `--surface-2` |
-| Geçiş / sayfa | 280ms | `cubic-bezier(.2,.72,.2,1)` | `opacity` + `translateY(4px)` (sayfa geçişi 320ms) |
-| Giriş (enter) | **660ms** | `cubic-bezier(.22,.68,.24,1)` | `opacity` + `translateY(18px)`, **stagger 70ms**; başlık maske içinden 0.66s |
-| Kaydırma (scroll) | **850ms** | `cubic-bezier(.22,.68,.24,1)` | trigger **`top 84%`**, offsetY **20px**, stagger 60ms, `once: true` |
-| Hover | **230ms** | `ease-out` | görsel ölçek **1.02** |
-| Pin | açık | `scrub 1.1` | hero sabitlenir, mesafe **+140%**, `scale 1.04 → 1`, mobilde kapalı |
-| Ödül / vurgu | 420ms | `cubic-bezier(.2,.72,.2,1)` | koç çizgisi `scaleX(0→1)` veya kadran iğnesi tek atım |
-
-- İmza ölçüsü: enter **0.66s / 18px / stagger 0.07** · scroll **0.85s / `top 84%` / 20px** · hover **230ms / 1.02** · pin **açık (scrub 1.1 / +140%)**.
-- Hareket "ağır kapı" gibi: hızlı başlar, yavaş oturur; yay/overshoot yok.
-- `prefers-reduced-motion`: tüm süreler `0.01ms`, iğne son konumunda durur, `transform` sıfırlanır, pin/scrub kapanır.
-- Yasak: parallax, marquee, sürekli dönen iğne, nefes alan katman, gradyan kayması, glow animasyonu.
-## Koyu mod
-
-| Token | Açık (sevk edilen) | Koyu (referans) |
-|---|---|---|
-| `--bg` | `#efe7da` | `#14180f` |
-| `--surface` | `#f8f2e8` | `#1d2318` |
-| `--ink` | `#1c1a17` | `#efe7da` |
-| `--accent` | `#1f3b2c` | `#b7c8a8` |
-| `--accent-ink` | `#f4ecdc` | `#14180f` |
-
-- Bu stil **açık tabanlıdır**: koyu tema sevk edilmez, `[data-theme="dark"]` bloğu yazılmaz ve koyu mod sahneleri (17/18) üretilmez. Yukarıdaki koyu sütun yalnız gece vitrini senaryosu içindir; üretilirse `accent-ink/accent` yeniden ölçülür (hedef ≥ 7:1) ve ceviz damarı `%2.5 → %4`'e çıkar (koyu zeminde doku görünmez).
-- `filter: invert()` yasak; palet elle yazılır.
-
 ## Erişilebilirlik
 
 - Ölçülen en düşük metin çifti: `--ink-faint / --bg` **4.51:1** (etiket, sıra no, ipucu). `--ink-faint / --surface-2` **4.12:1** — bu yüzden `--surface-2` üstünde **gövde metni** için kullanılmaz; yalnız 12px+ dekoratif etiket.
@@ -253,14 +224,11 @@ Kural: **fotoğraf ve fiyat aynı kartta yarışmaz** — fotoğraf büyük ve s
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (yoğunluk/okunurluk dengesi) · **Erişilebilirlik** | orta |
 | **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="victorian"]` |
 | **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -132,36 +132,18 @@ Kolon 12 (metin 8) · gutter 32px · container 1080px (okuma 660px) · bölüm 8
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | 50px Playfair, çift kural, drop cap, gravür görsel | `shots/01-landing.png` |
-| Dashboard | çok düşük | Kural çizgileri + serif başlık; süs yok | `shots/02-dashboard.png` |
-| Form | düşük | 480px, serif etiket, alt çizgili input | — |
-| Liste/tablo | düşük | 52px satır, ince kural | — |
-| Boş durum | orta | Ornament + tek cümle + buton | — |
-| Onboarding | yüksek | Adım başına 1 gravür + 2 satır | — |
-| Pricing | orta | 3 kart, orta kart accent çift çerçeve | — |
-| Giriş/ödeme | düşük | Sade form, kural çizgisi | — |
-| Modal | orta | Çift çerçeve, 32px padding | — |
-| Toast | orta | Bordo zemin + krem small caps | — |
-| Hata | düşük | `--danger` alt çizgi + 15px serif metin | — |
-| Profil/ayar | orta | 8/4 kolon, kural ayırıcı | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 140ms | `ease-out` | `opacity` |
-| Giriş | 520ms | `ease-out` | `opacity` + 24px `translateY`, stagger 80ms |
-| Scroll (`top 79%`) | 620ms | aynı eğri | `opacity` + 20px `translateY`, `once: true` |
-| Hover | 300ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 500ms | `ease-out` | ornament `opacity` (tek atım) |
-
-- `prefers-reduced-motion`: 0.01ms.
-- Yasak: süs animasyonu, sürekli döngü.
-- Pin/parallax yok.
-
-## Koyu mod
-
-`--bg` `#1a1713` · `--surface` `#221d18` · `--ink` `#e9dfcc` · `--accent` `#8d3547` · `--accent-ink` `#f7f1e3` · grain .04. Koyu modda gravür illüstrasyon açık renk çizgiye döner.
+| Landing/hero | yüksek | 50px Playfair, çift kural, drop cap, gravür görsel | `shots/01-page.png` |
+| Dashboard | çok düşük | Kural çizgileri + serif başlık; süs yok | `shots/01-page.png` |
+| Form | düşük | 480px, serif etiket, alt çizgili input | `shots/01-page.png` |
+| Liste/tablo | düşük | 52px satır, ince kural | `shots/01-page.png` |
+| Boş durum | orta | Ornament + tek cümle + buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 gravür + 2 satır | `shots/01-page.png` |
+| Pricing | orta | 3 kart, orta kart accent çift çerçeve | `shots/01-page.png` |
+| Giriş/ödeme | düşük | Sade form, kural çizgisi | `shots/01-page.png` |
+| Modal | orta | Çift çerçeve, 32px padding | `shots/01-page.png` |
+| Toast | orta | Bordo zemin + krem small caps | `shots/01-page.png` |
+| Hata | düşük | `--danger` alt çizgi + 15px serif metin | `shots/01-page.png` |
+| Profil/ayar | orta | 8/4 kolon, kural ayırıcı | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -174,14 +156,11 @@ Kolon 12 (metin 8) · gutter 32px · container 1080px (okuma 660px) · bölüm 8
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

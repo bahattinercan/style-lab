@@ -14,8 +14,3 @@
   --font-mono: "SF Mono", ui-monospace, monospace;
   --tracking: -0.01em; --blur: 24px; --grain: 0;
 }
-
-[data-theme="dark"][data-style="liquid-glass"] {
-  --bg: #04060a; --bg-2: #0a1017; --surface: rgba(255,255,255,.08); --surface-2: rgba(255,255,255,.05);
-  --ink: #fbfdff; --ink-soft: rgba(251,253,255,.78); --ink-faint: rgba(251,253,255,.52); --accent: #7fdcff; --accent-ink: #03121a; --line: rgba(255,255,255,.22);
-}

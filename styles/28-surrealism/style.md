@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek (denge) · **Erişilebilirlik** | orta |
 | **Aile** | Sanatsal (28–34) · **Token** | `kit/tokens.css` → `[data-style="surrealism"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -130,35 +130,18 @@ Kolon 12 · gutter 24px · container 1200px · bölüm 88/52px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | çok yüksek | 88px başlık, kadraj taşan görsel, tek turuncu buton | `shots/01-landing.png` |
-| Dashboard | çok düşük | Sürpriz yok; sade tablo + Inter başlık | `shots/02-dashboard.png` |
-| Form | düşük | Tek sütun, sürpriz yok | — |
-| Liste/tablo | düşük | Düz satırlar | — |
-| Boş durum | yüksek | Dev tek kelime + tek satır | — |
-| Onboarding | yüksek | Adım başına 1 sürpriz | — |
-| Pricing | orta | 3 kart, orta kart ölçek 1.04 | — |
-| Giriş/ödeme | çok düşük | Sürpriz sıfır | — |
-| Modal | orta | Geniş gölge, 10px radius | — |
-| Toast | düşük | Sade koyu bar | — |
-| Hata | düşük | Kısa metin + accent alt çizgi | — |
-| Profil/ayar | düşük | Sade liste | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 120ms | `ease-out` | `opacity` |
-| Giriş | 1100ms | `ease-out` | `opacity` + 36px `translateY`, stagger 130ms |
-| Scroll (`top 82%`) | 1050ms | aynı eğri | `opacity` + 32px `translateY`, `once: true` |
-| Hover | 420ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 600ms | `ease-out` | ölçek (tek atım) |
-
-- `prefers-reduced-motion`: 0.01ms, dönüşüm anlık.
-- Yasak: rastgele döndürme, sürekli döngü.
-
-## Koyu mod
-
-`--bg` `#15130f` · `--surface` `#1e1b16` · `--ink` `#ece7de` · `--accent` `#f07a52` · `--accent-ink` `#15130f` · grain .03.
+| Landing/hero | çok yüksek | 88px başlık, kadraj taşan görsel, tek turuncu buton | `shots/01-page.png` |
+| Dashboard | çok düşük | Sürpriz yok; sade tablo + Inter başlık | `shots/01-page.png` |
+| Form | düşük | Tek sütun, sürpriz yok | `shots/01-page.png` |
+| Liste/tablo | düşük | Düz satırlar | `shots/01-page.png` |
+| Boş durum | yüksek | Dev tek kelime + tek satır | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 sürpriz | `shots/01-page.png` |
+| Pricing | orta | 3 kart, orta kart ölçek 1.04 | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Sürpriz sıfır | `shots/01-page.png` |
+| Modal | orta | Geniş gölge, 10px radius | `shots/01-page.png` |
+| Toast | düşük | Sade koyu bar | `shots/01-page.png` |
+| Hata | düşük | Kısa metin + accent alt çizgi | `shots/01-page.png` |
+| Profil/ayar | düşük | Sade liste | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -170,14 +153,11 @@ Kolon 12 · gutter 24px · container 1200px · bölüm 88/52px · breakpoint 640
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

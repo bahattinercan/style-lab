@@ -10,7 +10,7 @@
 | **Zorluk** | orta (yüksek kontrast + kalın kenar dengesi) · **Erişilebilirlik** | iyi (16.68:1 gövde, 5.16:1 accent üstü) |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="sports-energy"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -143,57 +143,20 @@ Klişeye düşmemesi için korunması gereken detay: **tabular skor ve tek vurgu
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 62px manşet + skor tabelası + forma numarası konturu + pist şeritleri | `shots/01-landing.png` |
-| Dashboard | yüksek | Skor kartları + puan tablosu, mono tabular | `shots/02-dashboard.png` |
-| Form | düşük | 46px alanlar, 2px kenar, 3px odak halkası | — |
-| Liste / tablo | yüksek | Puan tablosu: sıra, takım, O/G/M, puan | — |
-| Boş durum | orta | Boş skor tabelası (`– : –`) + tek cümle + 1 buton | — |
-| Onboarding | yüksek | 3 adım: takım seç → bildirim → ilk maç | — |
-| Pricing | orta | 3 paket; önerilen paket 3px accent üst çizgi | — |
-| Giriş / ödeme | düşük | Kontur/pist yok; 2px kenar + tek accent buton | — |
-| Modal | orta | Skor tabelası + olay listesi, 3px çerçeve + sert gölge | — |
-| Bildirim / toast | orta | Canlı bildirim: mono + 8px accent blok, 2400ms | — |
-| Hata | düşük | `--danger` kenar + mono açıklama; pist şeridi yok | — |
-| Profil / ayar | orta | Takım/lig ayarları, mono etiketler, tabular tercihler | — |
+| Landing / hero | yüksek | 62px manşet + skor tabelası + forma numarası konturu + pist şeritleri | `shots/01-page.png` |
+| Dashboard | yüksek | Skor kartları + puan tablosu, mono tabular | `shots/01-page.png` |
+| Form | düşük | 46px alanlar, 2px kenar, 3px odak halkası | `shots/01-page.png` |
+| Liste / tablo | yüksek | Puan tablosu: sıra, takım, O/G/M, puan | `shots/01-page.png` |
+| Boş durum | orta | Boş skor tabelası (`– : –`) + tek cümle + 1 buton | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: takım seç → bildirim → ilk maç | `shots/01-page.png` |
+| Pricing | orta | 3 paket; önerilen paket 3px accent üst çizgi | `shots/01-page.png` |
+| Giriş / ödeme | düşük | Kontur/pist yok; 2px kenar + tek accent buton | `shots/01-page.png` |
+| Modal | orta | Skor tabelası + olay listesi, 3px çerçeve + sert gölge | `shots/01-page.png` |
+| Bildirim / toast | orta | Canlı bildirim: mono + 8px accent blok, 2400ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + mono açıklama; pist şeridi yok | `shots/01-page.png` |
+| Profil / ayar | orta | Takım/lig ayarları, mono etiketler, tabular tercihler | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 60ms | `linear` | `box-shadow` kalkar, `translate(0,0)` |
-| Geçiş / sayfa | 120ms | `cubic-bezier(.9,0,.1,1)` | `opacity` |
-| Giriş (enter) | **240ms** | `cubic-bezier(.9,0,.1,1)` | `opacity` + `translateY(36px)`, **stagger 20ms** (patlama) |
-| Kaydırma (scroll) | **280ms** | `cubic-bezier(.9,0,.1,1)` | trigger **`top 93%`**, offsetY **40px**, `once: false` |
-| Hover | **80ms** | `linear` | görsel ölçek **1.05** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 240ms | `cubic-bezier(.9,0,.1,1)` | ilerleme bandı %0 → %100, tek atım (sayaç döngüsü yok) |
-
-- İmza ölçüsü: enter **0.24s / 36px / stagger 0.02** · scroll **0.28s / `top 93%` / 40px / `once: false`** · hover **80ms / 1.05** · pin **kapalı** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; skor/süre güncellemeleri anında görünür, `once: false` animasyonu durur.
-- Bu stile yasak hareket: parallax, sürekli döngü (sayaç), spring/bounce, yumuşak ease-in-out zarafeti.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f1f3f1` | `#0c100e` |
-| `--bg-2` | `#e7eae7` | `#111612` |
-| `--surface` | `#ffffff` | `#161b18` |
-| `--surface-2` | `#eceee9` | `#1e2420` |
-| `--ink` | `#0f1412` | `#e9efe9` |
-| `--ink-soft` | `#444d47` | `#aebbb2` |
-| `--ink-faint` | `#6f7a73` | `#7f8d84` |
-| `--accent` | `#f24a00` | `#ff6a2e` |
-| `--accent-ink` | `#17100c` | `#100804` |
-| `--line` | `rgba(15,20,18,.18)` | `rgba(233,239,233,.16)` |
-
-- Koyu mod **gece maçı**: zemin çim-siyahı (`#0c100e`), panel `#161b18`; accent açılır (`#ff6a2e`) ve accent üstü metin koyu kalır (kontrast 6.95:1).
-- Sert ofset gölge koyuda siyah olsaydı görünmezdi: `--shadow-hard` **çim grisine** (`#3f4a43`) döner — yazılı istisna, `token-block.css` koyu bloğunda açıkça durur.
-- Forma numarası konturu koyuda 3px açık mürekkeple çizilir; pist şeritleri `--line` (.16) ile aynı ağırlıkta kalır.
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **16.41:1** · `ink-soft/bg` = **9.63:1** · `accent-ink/accent` = **6.95:1** · `ink-faint/bg` = **5.52:1**.
 
 ## Zorunlu kurallar
 
@@ -224,14 +187,11 @@ Klişeye düşmemesi için korunması gereken detay: **tabular skor ve tek vurgu
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

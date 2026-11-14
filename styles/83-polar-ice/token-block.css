@@ -33,16 +33,3 @@
   --ok: #1b6157;
   --warn: #7a5a12;
 }
-
-[data-theme="dark"][data-style="polar-ice"] {
-  --bg: #071119;
-  --bg-2: #0b1a24;
-  --surface: #0e2130;
-  --surface-2: #13293a;
-  --ink: #e8f4fa;
-  --ink-soft: #a6c2d0;
-  --ink-faint: #74909e;
-  --accent: #4ecde8;
-  --accent-ink: #04212a;
-  --line: rgba(232,244,250,.16);
-}

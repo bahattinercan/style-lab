@@ -18,18 +18,3 @@
   --danger: #ff8a72; --danger-ink: #1b0a06;
   --ok: #6fe0b0; --warn: #e8c56a;
 }
-
-[data-theme="dark"][data-style="planetary-service"] {
-  --bg: #010307; --bg-2: #040a12;
-  --surface: #0a1a2b; --surface-2: #102538;
-  --ink: #f5f9fe; --ink-soft: #c0cfdf; --ink-faint: #8ea1b6;
-  --accent: #a8d0ff; --accent-ink: #04101f;
-  --line: rgba(245,249,254,.22);
-  --radius: 0px;
-  --shadow: 0 16px 36px -30px rgba(2,6,12,.95);
-  --font-display: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
-  --tracking: 0.04em; --blur: 0px; --grain: .02;
-  --danger: #ff8a72; --ok: #6fe0b0; --warn: #e8c56a;
-}

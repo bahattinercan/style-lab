@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (cam katmanlar; en düşük etkileşimli çift 6.12:1) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `styles/105-holographic-layer/tokens.json` → `[data-style="holographic-layer"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,58 +139,21 @@ Holografi fiziği (girişim kaydı, katmanlı film), AR/uzamsal arayüz çalış
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | Katman paneli 6/6; arkasında iki kaymış kopya | `shots/01-landing.png` |
-| Dashboard | yüksek | Kartlar opak; yalnız nav ve tabbar cam | `shots/02-dashboard.png` |
-| Form | düşük | 46px alanlar, cam yok, opak `--bg-2` | — |
-| Liste / tablo | orta | 46px satır, zebra, seçili sol accent çizgi | — |
-| Boş durum | orta | Boş katman yığını + tek eylem | — |
-| Onboarding | yüksek | Her adımda bir katman açılır (en fazla 3) | — |
-| Pricing | orta | Plan kartları opak; öne çıkan kart accent çerçeve | — |
-| Giriş / ödeme | çok düşük | Tek panel opak, blur yok | — |
-| Modal | orta | Opak modal, yalnız çerçeve katmanlı | — |
-| Bildirim / toast | orta | Tek katman opak | — |
-| Hata | düşük | `--danger` kenar, katmanlar kapanır (odak) | — |
-| Profil / ayar | orta | Katman sayısı (1–3), blur yoğunluğu, iridesans anahtarı | — |
+| Landing / hero | yüksek | Katman paneli 6/6; arkasında iki kaymış kopya | `shots/01-page.png` |
+| Dashboard | yüksek | Kartlar opak; yalnız nav ve tabbar cam | `shots/01-page.png` |
+| Form | düşük | 46px alanlar, cam yok, opak `--bg-2` | `shots/01-page.png` |
+| Liste / tablo | orta | 46px satır, zebra, seçili sol accent çizgi | `shots/01-page.png` |
+| Boş durum | orta | Boş katman yığını + tek eylem | `shots/01-page.png` |
+| Onboarding | yüksek | Her adımda bir katman açılır (en fazla 3) | `shots/01-page.png` |
+| Pricing | orta | Plan kartları opak; öne çıkan kart accent çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek panel opak, blur yok | `shots/01-page.png` |
+| Modal | orta | Opak modal, yalnız çerçeve katmanlı | `shots/01-page.png` |
+| Bildirim / toast | orta | Tek katman opak | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar, katmanlar kapanır (odak) | `shots/01-page.png` |
+| Profil / ayar | orta | Katman sayısı (1–3), blur yoğunluğu, iridesans anahtarı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — üç katman yığını — 6/12px kayma, opaklık notları, tarama çizgisi.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **0.97s**, y **28px**, stagger **0.11** | `cubic-bezier(.32,.06,.2,1)` | `opacity` + `transform` |
-| Scroll reveal | **0.86s**, trigger **top 76%**, y **24px**, `once: true` | aynı eğri | `opacity` + `transform` |
-| Pin / scrub | **açık**, scrub **1.25**, mesafe **+130%** (katman kayması büyür) | scrub doğrusal | `transform` (offset 12 → 28px) |
-| Hover | **410ms**, görsel scale **1.038** | `ease-out` | `transform` + katman `opacity` |
-| Basma | 160ms | aynı eğri | `transform` (1px) |
-| Katman kayması | 380ms | aynı eğri | `transform` + `opacity` |
-
-- Bu stilin ölçülebilir imzası: `enter 0.97s / cubic-bezier(.32,.06,.2,1) / 28px / 0.11` + `scroll top 76% / 0.86s / 24px` + `pin scrub 1.25 / +130%` + `hover 410ms / 1.038`. `0.97s` giriş + `scrub 1.25` + `hover 410ms` üçlüsü katalogda yalnız burada.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; katman kayması kapanır, tek katman kalır, blur azaltılır.
-- Bu stile yasak hareket: sürekli iridesans (hue-rotate) döngüsü, 3'ten fazla katmanlı paralaks, parlama flash'ı.
-
-## Koyu mod
-
-Varsayılan gece indigodur; `data-theme="dark"` bloğu **erik–mor siyah** bandına kayar, accent lila'ya, katman ışıması menekşeye döner — hologram kimliği korunur, iki tema ayırt edilir.
-
-| Token | Açık (gece hologramı) | Koyu (derin hologram) |
-|---|---|---|
-| `--bg` | `#0e0b16` | `#12081a` |
-| `--bg-2` | `#141020` | `#180c22` |
-| `--surface` | `#181323` | `#1d1029` |
-| `--surface-2` | `#211a2e` | `#261534` |
-| `--ink` | `#f0edf7` | `#f6f1fb` |
-| `--ink-soft` | `#b3aac4` | `#c3b6d2` |
-| `--ink-faint` | `#827896` | `#94899f` |
-| `--accent` | `#8f7bff` | `#d0a8ff` |
-| `--accent-ink` | `#0a0713` | `#150a1f` |
-| `--line` | `rgba(240,237,247,.16)` | `rgba(246,241,251,.18)` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` = **18.63:1** · `ink-soft/bg` = **10.44:1** · `accent-ink/accent` = **9.02:1** · `ink-faint/bg` = **5.61:1**.
-- Koyu modda değişen başka ne var: katman opaklıkları %10/%8 → %12/%9, ışıma %16 → %12, blur 8px → 6px (performans).
-- `filter: invert()` yasak; palet elle yazılır. Koyu blok `token-block.css` içinde `[data-theme="dark"][data-style="holographic-layer"]`.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **12.24:1** açık / **12.27:1** koyu · `--warn / bg` = **11.63:1** / **11.66:1** · `--ok / surface` = 11.39:1 / 10.82:1 (warn) · devre dışı buton metni = **8.11:1** / **9.41:1** · ghost buton kenarı = **5.53:1** / **5.70:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - En fazla **üç** katman: ana katman opak, iki kopya 12px/24px offset, %10/%8 opaklık.
@@ -219,14 +182,11 @@ Varsayılan gece indigodur; `data-theme="dark"` bloğu **erik–mor siyah** band
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

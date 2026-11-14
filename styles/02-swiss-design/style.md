@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | iyi |
 | **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="swiss-design"]` |
 | **Kompozisyon** | `type` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -156,46 +156,18 @@ Josef Müller-Brockmann'ın grid sistemleri ve Neue Grafik dergisi; kurumsal kim
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 64px büyük harf başlık, 6px kırmızı dikey çubuk, 2 buton (kırmızı + çerçeveli), sağda ızgara desenli görsel | `shots/01-landing.png` |
-| Dashboard | düşük | KPI'lar 3 kolon, kalın kural ayırıcı; grafik tek renk kırmızı | `shots/02-dashboard.png` |
-| Form | düşük | Tek sütun 520px, etiket mono uppercase, input 2px çerçeve | — |
-| Liste / tablo | düşük | 48px satır, 1px kural, başlık satırı `--bg-2`; zebra yok | — |
-| Boş durum | orta | Sola dayalı tek cümle + tek buton; illüstrasyon yok | — |
-| Onboarding | yüksek | Adım numarası 01/02/03 dev mono, tek fikir/sayfa | — |
-| Pricing | orta | 3 kolon, orta kolon 3px kırmızı kenar + "önerilen" mono etiket | — |
-| Giriş / ödeme | düşük | 440px form, 2px çerçeve, tek kırmızı buton; süs yok | — |
-| Modal | orta | 3px siyah kenar, gölge yok, başlık büyük harf | — |
-| Bildirim / toast | orta | Siyah zemin + beyaz metin, sol kenarda 4px kırmızı çubuk | — |
-| Hata | düşük | 2px kırmızı kenar + mono "HATA" etiketi + 14px açıklama | — |
-| Profil / ayar | orta | 8/4 kolon; her satır 56px, sağda mono değer | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 90ms | `ease-out` | `opacity` + 1px translate |
-| Giriş | 320ms | `cubic-bezier(.2,.6,.2,1)` | `opacity` (kayma yok), stagger 30ms |
-| Scroll (`top 92%`) | 300ms | aynı eğri | yalnız `opacity` (kayma yok), `once: true` |
-| Hover | 90ms | aynı eğri | `transform: scale(1.015)` |
-| Ödül | — | — | Animasyon yok; vurgu kırmızı blok ile |
-
-- Hareket minimum: renk değişimi + opacity. Kayma/ölçek/parallax yok.
-- `prefers-reduced-motion`: 0.01ms.
-- Yasak: scroll animasyonu, sayaç animasyonu, hover'da büyüme.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#ffffff` | `#0d0d0d` |
-| `--surface` | `#ffffff` | `#141414` |
-| `--ink` | `#0a0a0a` | `#f5f5f5` |
-| `--line` | `#0a0a0a` | `#f5f5f5` |
-| `--accent` | `#e4002b` | `#ff2d4b` |
-| `--accent-ink` | `#ffffff` | `#0d0d0d` |
-
-- Koyu modda kurallar açık renge döner, kalınlık aynı kalır.
-- Gölge yok kuralı koyu modda da geçerli.
+| Landing / hero | yüksek | 64px büyük harf başlık, 6px kırmızı dikey çubuk, 2 buton (kırmızı + çerçeveli), sağda ızgara desenli görsel | `shots/01-page.png` |
+| Dashboard | düşük | KPI'lar 3 kolon, kalın kural ayırıcı; grafik tek renk kırmızı | `shots/01-page.png` |
+| Form | düşük | Tek sütun 520px, etiket mono uppercase, input 2px çerçeve | `shots/01-page.png` |
+| Liste / tablo | düşük | 48px satır, 1px kural, başlık satırı `--bg-2`; zebra yok | `shots/01-page.png` |
+| Boş durum | orta | Sola dayalı tek cümle + tek buton; illüstrasyon yok | `shots/01-page.png` |
+| Onboarding | yüksek | Adım numarası 01/02/03 dev mono, tek fikir/sayfa | `shots/01-page.png` |
+| Pricing | orta | 3 kolon, orta kolon 3px kırmızı kenar + "önerilen" mono etiket | `shots/01-page.png` |
+| Giriş / ödeme | düşük | 440px form, 2px çerçeve, tek kırmızı buton; süs yok | `shots/01-page.png` |
+| Modal | orta | 3px siyah kenar, gölge yok, başlık büyük harf | `shots/01-page.png` |
+| Bildirim / toast | orta | Siyah zemin + beyaz metin, sol kenarda 4px kırmızı çubuk | `shots/01-page.png` |
+| Hata | düşük | 2px kırmızı kenar + mono "HATA" etiketi + 14px açıklama | `shots/01-page.png` |
+| Profil / ayar | orta | 8/4 kolon; her satır 56px, sağda mono değer | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -208,14 +180,11 @@ Josef Müller-Brockmann'ın grid sistemleri ve Neue Grafik dergisi; kurumsal kim
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta (koyu zemin, düşük parlaklık) |
 | **Aile** | Sanatsal (28–34) · **Token** | `kit/tokens.css` → `[data-style="dark-academia"]` |
 | **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -128,37 +128,18 @@ Kolon 12 (metin 8) · gutter 32px · container 1080px (okuma 680px) · bölüm 8
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | 46px Cormorant, drop cap, vignette, tek altın buton | `shots/01-landing.png` |
-| Dashboard | düşük | Süs kapanır; serif başlık + hairline | `shots/02-dashboard.png` |
-| Form | düşük | 480px, serif input, tek buton | — |
-| Liste/tablo | düşük | 52px satır, altın hairline | — |
-| Boş durum | orta | Altın hairline kutu + tek cümle | — |
-| Onboarding | yüksek | Adım başına 1 gravür | — |
-| Pricing | orta | 3 kart, orta kart altın kenar | — |
-| Giriş/ödeme | düşük | Sade form, altın hairline | — |
-| Modal | orta | Derin gölge, altın kenar | — |
-| Toast | orta | Koyu kutu, altın kenar | — |
-| Hata | düşük | `--danger` hairline + 16px serif | — |
-| Profil/ayar | orta | 8/4 kolon, hairline | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 140ms | `ease-in-out` | `transform: translateY(1px)` |
-| Geçiş / sayfa | 400ms | `ease-in-out` (ağır) | `opacity` + `translateY(4px)` |
-| Giriş (enter) | **1050ms** | `cubic-bezier(.5,.05,.35,.95)` | `opacity` + `translateY(22px)`, **stagger 160ms**; maske içinden satır |
-| Kaydırma (scroll) | **1050ms** | `cubic-bezier(.5,.05,.35,.95)` | trigger **`top 78%`**, offsetY **26px**, `once: true` |
-| Hover | **520ms** | `ease-in-out` | görsel ölçek **1.02** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 600ms | `ease-in-out` | altın `opacity` |
-
-- İmza ölçüsü: enter **1.05s / 22px / stagger 0.16** · scroll **1.05s / `top 78%` / 26px** · hover **520ms / 1.02** · pin **kapalı**.
-- `prefers-reduced-motion`: 0.01ms.
-- Bu stile yasak hareket: parlama, sürekli döngü, hızlı geçiş (200ms altı).
-## Koyu mod
-
-Stil zaten koyu. Açık varyant: `--bg` `#efe7d6` · `--surface` `#f7f1e3` · `--ink` `#1c1a17` · `--accent` `#8a6a2f` · `--accent-ink` `#ffffff` · vignette kaldırılır.
+| Landing/hero | yüksek | 46px Cormorant, drop cap, vignette, tek altın buton | `shots/01-page.png` |
+| Dashboard | düşük | Süs kapanır; serif başlık + hairline | `shots/01-page.png` |
+| Form | düşük | 480px, serif input, tek buton | `shots/01-page.png` |
+| Liste/tablo | düşük | 52px satır, altın hairline | `shots/01-page.png` |
+| Boş durum | orta | Altın hairline kutu + tek cümle | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 gravür | `shots/01-page.png` |
+| Pricing | orta | 3 kart, orta kart altın kenar | `shots/01-page.png` |
+| Giriş/ödeme | düşük | Sade form, altın hairline | `shots/01-page.png` |
+| Modal | orta | Derin gölge, altın kenar | `shots/01-page.png` |
+| Toast | orta | Koyu kutu, altın kenar | `shots/01-page.png` |
+| Hata | düşük | `--danger` hairline + 16px serif | `shots/01-page.png` |
+| Profil/ayar | orta | 8/4 kolon, hairline | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -171,14 +152,11 @@ Stil zaten koyu. Açık varyant: `--bg` `#efe7d6` · `--surface` `#f7f1e3` · `-
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

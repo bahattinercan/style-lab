@@ -10,7 +10,7 @@
 | **Zorluk** | düşük–orta (disiplin kolay, karakter zor) · **Erişilebilirlik** | iyi (15.61:1 gövde, 6.54:1 accent üstü) |
 | **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="product-catalog"]` |
 | **Kompozisyon** | `type` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,58 +144,21 @@ Klişeye düşmemesi için korunması gereken detay: **hairline cetveller ve mon
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 44px başlık + alt cetvel; hero görseli yerine 4 ürün kartı | `shots/01-landing.png` |
-| Dashboard | orta | KPI + son eklenen ürün tablosu; mono sayılar | `shots/02-dashboard.png` |
-| Form | düşük | 40px alanlar, 1px radius, açıklama mono | — |
-| Liste / tablo | yüksek | 36px satır, dört sütun, zebra yok | — |
-| Boş durum | düşük | Mono kod + tek cümle + "filtreyi temizle" | — |
-| Onboarding | orta | 3 adım: kategori → ölçü → fiyat aralığı | — |
-| Pricing | orta | 3 sütun fiyat tablosu; accent yalnız önerilen sütun başlığı | — |
-| Giriş / ödeme | çok düşük | Süs sıfır; alan + tek accent buton | — |
-| Modal | orta | 4px radius, üstte mono kod başlığı | — |
-| Bildirim / toast | orta | Koyu zemin + 6px accent kare, 3000ms | — |
-| Hata | düşük | `--danger` kenar + mono açıklama satırı | — |
-| Profil / ayar | orta | İki kolon: etiket (mono) + değer (serif), 1px cetveller | — |
+| Landing / hero | orta | 44px başlık + alt cetvel; hero görseli yerine 4 ürün kartı | `shots/01-page.png` |
+| Dashboard | orta | KPI + son eklenen ürün tablosu; mono sayılar | `shots/01-page.png` |
+| Form | düşük | 40px alanlar, 1px radius, açıklama mono | `shots/01-page.png` |
+| Liste / tablo | yüksek | 36px satır, dört sütun, zebra yok | `shots/01-page.png` |
+| Boş durum | düşük | Mono kod + tek cümle + "filtreyi temizle" | `shots/01-page.png` |
+| Onboarding | orta | 3 adım: kategori → ölçü → fiyat aralığı | `shots/01-page.png` |
+| Pricing | orta | 3 sütun fiyat tablosu; accent yalnız önerilen sütun başlığı | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Süs sıfır; alan + tek accent buton | `shots/01-page.png` |
+| Modal | orta | 4px radius, üstte mono kod başlığı | `shots/01-page.png` |
+| Bildirim / toast | orta | Koyu zemin + 6px accent kare, 3000ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + mono açıklama satırı | `shots/01-page.png` |
+| Profil / ayar | orta | İki kolon: etiket (mono) + değer (serif), 1px cetveller | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — katalog föyü — sütun başlığı, hairline satır cetveli, kare swatch, "01—24" altbilgisi.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (press) | 100ms | `ease-out` | `transform: translateY(1px)` |
-| Geçiş / sayfa | 170ms | `ease-out` | `opacity` |
-| Giriş (enter) | **460ms** | `cubic-bezier(.18,.86,.24,1)` | `opacity` + `translateY(8px)`, **stagger 35ms** |
-| Kaydırma (scroll) | **580ms** | `cubic-bezier(.18,.86,.24,1)` | trigger **`top 87%`**, offsetY **10px**, `once: true` |
-| Hover | **170ms** | `ease-out` | ürün görseli **1.012** |
-| Pin | kapalı | — | `scrub: null`, `distance: null` |
-| Ödül / vurgu | 240ms | `ease-out` | katalog harfi rozeti 26 → 30px, tek atım |
-
-- İmza ölçüsü: enter **0.46s / 8px / stagger 0.035** · scroll **0.58s / `top 87%` / 10px** · hover **170ms / 1.012** · pin **kapalı** — `tokens.json → motion.sequences` ile birebir.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; ürün ızgarası ve swatch'lar statik.
-- Bu stile yasak hareket: parallax, sürekli döngü, spring/bounce, görsel üzerinde zoom-in (kadraj kırpılmaz).
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f6f4ef` | `#121512` |
-| `--bg-2` | `#eeeae0` | `#171b17` |
-| `--surface` | `#fffdf8` | `#1b201b` |
-| `--surface-2` | `#e9e4d8` | `#232a23` |
-| `--ink` | `#1a1c19` | `#e8e6dd` |
-| `--ink-soft` | `#4b5148` | `#b0b5a9` |
-| `--ink-faint` | `#767c72` | `#868c80` |
-| `--accent` | `#16624f` | `#5fb39c` |
-| `--accent-ink` | `#f7f3e8` | `#0d1412` |
-| `--line` | `rgba(26,28,25,.16)` | `rgba(232,230,221,.16)` |
-
-- Koyu modda accent **açılır** (`#5fb39c`) çünkü koyu çam yeşili koyu zeminde harç gibi kaybolur; `--accent-ink` koyuya döner.
-- Ürün fotoğrafının fonu koyu temada `--surface-2` olur (görsel filtresi değil, kadraj fonu); gölge yine yok.
-- `filter: invert()` yasak; palet elle yazılır, `token-block.css` koyu bloğu tek kaynak.
-- Koyu modda kontrast: `ink/bg` = **14.71:1** · `ink-soft/bg` = **8.78:1** · `accent-ink/accent` = **7.47:1** · `ink-faint/bg` = **5.32:1**.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **-:1** açık / **-:1** koyu · `--warn / bg` = **-:1** / **-:1** · `--ok / surface` = -:1 / -:1 (warn) · devre dışı buton metni = **6.81:1** / **7.74:1** · ghost buton kenarı = **3.76:1** / **5.16:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 
@@ -226,14 +189,11 @@ Klişeye düşmemesi için korunması gereken detay: **hairline cetveller ve mon
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük metin çifti 7.18:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="seasonal-shift"]` |
 | **Kompozisyon** | `split` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,20 @@ Fenoloji (mevsim geçişlerinin gözlemlenebilir eşikleri) ve sonbahar yaprak r
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | serif H1 + iki mevsim bölünmüş görsel + tek CTA | `shots/01-landing.png` |
-| Dashboard | düşük | şerit yok; iki ton yalnız grafik serisinde | `shots/02-dashboard.png` |
-| Form | düşük | 44px input, tek kolon; şerit kaldırılır | — |
-| Liste / tablo | düşük | 44px satır, mevsim sütunu mono etiket | — |
-| Boş durum | orta | iki tonlu yaprak illüstrasyonu + tek cümle | — |
-| Onboarding | yüksek | 3 adım, her adım bir mevsim dönemi | — |
-| Pricing | orta | üç kart; öne çıkan kartta iki tonlu şerit | — |
-| Giriş / ödeme | çok düşük | şerit yok; yalnız krem zemin + tek CTA | — |
-| Modal | orta | üst şerit + mono mevsim etiketi | — |
-| Bildirim / toast | orta | alt-sağ, iki renkli nokta | — |
-| Hata | düşük | nokta `--danger`; zemin değişmez | — |
-| Profil / ayar | orta | iki kolon; mevsim tercihi chip ile | — |
+| Landing / hero | yüksek | serif H1 + iki mevsim bölünmüş görsel + tek CTA | `shots/01-page.png` |
+| Dashboard | düşük | şerit yok; iki ton yalnız grafik serisinde | `shots/01-page.png` |
+| Form | düşük | 44px input, tek kolon; şerit kaldırılır | `shots/01-page.png` |
+| Liste / tablo | düşük | 44px satır, mevsim sütunu mono etiket | `shots/01-page.png` |
+| Boş durum | orta | iki tonlu yaprak illüstrasyonu + tek cümle | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım, her adım bir mevsim dönemi | `shots/01-page.png` |
+| Pricing | orta | üç kart; öne çıkan kartta iki tonlu şerit | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | şerit yok; yalnız krem zemin + tek CTA | `shots/01-page.png` |
+| Modal | orta | üst şerit + mono mevsim etiketi | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sağ, iki renkli nokta | `shots/01-page.png` |
+| Hata | düşük | nokta `--danger`; zemin değişmez | `shots/01-page.png` |
+| Profil / ayar | orta | iki kolon; mevsim tercihi chip ile | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **570ms** | `cubic-bezier(.42,.12,.2,1)` | `opacity` + `translateY(22px)`; stagger **0.075s** |
-| Scroll reveal | **570ms** | aynı eğri | trigger `top 96%`, `translateY(44px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (mevsim kaymaz, döner) |
-| Basma | **150ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 300ms | aynı eğri | opacity + 12px |
-| Hover | **220ms** | aynı eğri | görsel ölçek **1.018** |
-| Ödül / vurgu | 570ms | aynı eğri | şerit soldan sağa %0→%100 (tek kez) |
-
-- İmza ölçüleri: `enter = 0.57s / cubic-bezier(.42,.12,.2,1) / 22px / 0.075` · `scroll = top 96% / 0.57s / 44px / once` · `pin = false` · `hover = 220ms / 1.018`.
-- Bant içi fark: 76'dan (0.68s / 24px / 0.085), 77'den (0.78s / 18px / pin 1.6), 78'den (0.48s / 32px / pin 0.7), 79'dan (0.83s / 40px / 0.115) en az dört parametrede ayrışır. Mevcut 72 stil içinde en yakını 19-y2k (`0.5s / linear / 12px / 0.04`) — süre, eğri, offset, trigger (top 96%) ve hover'da farklı.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, şerit animasyonu son kareye atlar.
-- Bu stile yasak hareket: ekran başına 1'den fazla sürekli yaprak/kar animasyonu, saniyede 3 üstü flash, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f6efe2` | `#1a1310` |
-| `--surface` | `#fdf9f1` | `#271d17` |
-| `--ink` | `#2a2018` | `#f0e6d8` |
-| `--accent` | `#a4471f` | `#e88f4a` |
-| `--ink-soft` | `#5c4c3d` | `#c0af9c` |
-| `--line` | `rgba(42,32,24,.14)` | `rgba(240,230,216,.16)` |
-
-- Koyu modda değişen başka ne var: accent bir ton açılır (`#e88f4a`) çünkü koyu zeminde pas turuncusu kaybolur; gölge yerine 1px `--line` öne çıkar; şeridin ok ucu %40 kalır ama opaklık %30'a iner (fazla parlamasın).
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Zemin sıcak krem (`--bg` → `--bg-2`); saf beyaz zemin yok.
@@ -210,14 +179,11 @@ Fenoloji (mevsim geçişlerinin gözlemlenebilir eşikleri) ve sonbahar yaprak r
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

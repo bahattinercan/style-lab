@@ -10,7 +10,7 @@
 | **Zorluk** | düşük (kural az) · **Erişilebilirlik** | iyi (kontrast yüksek, hareket riskli) |
 | **Aile** | Cesur (13–18) · **Token** | `kit/tokens.css` → `[data-style="neo-brutalism"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -159,50 +159,18 @@ Kazandığı şey karakter ve okunurluk: siyah kontur + yüksek kontrast, ekran�
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 64px büyük harf başlık, altında 1 satır gövde, 2 buton (biri accent), sağda sarı çerçeveli görsel bloğu | `shots/01-landing.png` |
-| Dashboard | düşük | KPI kartları 2px kenar + 4px gölge; grafikte sadece 2 renk; tablo satır ayrımı 2px | `shots/02-dashboard.png` |
-| Form | düşük | Tek sütun 520px, input 48px, etiket mono uppercase; hata metni kalın | — |
-| Liste / tablo | düşük | 56px satır, 2px ayırıcı; durum chip'i (aktif accent, pasif sarı) | — |
-| Boş durum | orta | Kalın konturlu kutu + tek cümle + sticker buton | — |
-| Onboarding | yüksek | 3 adım, her adım tam ekran renk bloğu; büyük numara (01/02/03) | — |
-| Pricing | yüksek | 3 kart, orta kart sarı zemin + 8px gölge + "en çok seçilen" şerit | — |
-| Giriş / ödeme | düşük | 440px kart, 2 alan, 1 buton; sticker dekor yok (güven) | — |
-| Modal | orta | 3px kenar, 12px ofset gölge, başlık büyük harf, 2 buton | — |
-| Bildirim / toast | orta | Siyah zemin + beyaz metin + 2px beyaz kenar; 4sn | — |
-| Hata | düşük | Kalın kırmızı kenar + 13/700 açıklama + "tekrar dene" butonu | — |
-| Profil / ayar | orta | Sol nav 2px ayırıcı; ayar satırı 56px, toggle kalın konturlu | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma (buton) | 90ms | `ease-out` | `translate(4px,4px)` + gölge 0 |
-| Giriş | 280ms | `linear` | `opacity` + 8px `translateY`, stagger 20ms |
-| Scroll (`top 88%`) | 320ms | aynı eğri | `opacity` + 16px `translateY`, `once: true` |
-| Hover | 90ms | aynı eğri | `transform: scale(1.03)` |
-| Ödül / vurgu | 240ms | `cubic-bezier(.34,1.4,.64,1)` | chip pop (`scale(1.04)`) tek seferlik |
-
-- Hareket **kesik ve hızlı**; spring uzun süreli olmaz (120ms üstü yay "yumuşak" görünür, stille çelişir).
-- `prefers-reduced-motion`: tüm süreler 0.01ms; basılma efekti `opacity` ile verilir.
-- Yasak: parallax, sürekli döngü, blur animasyonu, sayfa geçişinde slide.
-
-## Koyu mod
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#fffdf5` | `#111111` |
-| `--bg-2` | `#ffe9a8` | `#2a2a1a` |
-| `--surface` | `#ffffff` | `#1b1b1b` |
-| `--surface-2` | `#ffd93d` | `#3a3320` |
-| `--ink` | `#000000` | `#fffdf5` |
-| `--ink-soft` | `#2b2b2b` | `#d8d4c8` |
-| `--ink-faint` | `#6b6b6b` | `#9a958a` |
-| `--accent` | `#ff5c8a` | `#ff5c8a` |
-| `--accent-ink` | `#000000` | `#000000` |
-| `--line` | `#000000` | `#fffdf5` |
-
-- Koyu modda kontur **açık renge** döner; gölge de açık renk ofset olur ama %12 opaklıkla (aksi halde parlar).
-- Accent ve sarı aynı kalır (kimlik), sadece zemin/ink ters çevrilir.
+| Landing / hero | yüksek | 64px büyük harf başlık, altında 1 satır gövde, 2 buton (biri accent), sağda sarı çerçeveli görsel bloğu | `shots/01-page.png` |
+| Dashboard | düşük | KPI kartları 2px kenar + 4px gölge; grafikte sadece 2 renk; tablo satır ayrımı 2px | `shots/01-page.png` |
+| Form | düşük | Tek sütun 520px, input 48px, etiket mono uppercase; hata metni kalın | `shots/01-page.png` |
+| Liste / tablo | düşük | 56px satır, 2px ayırıcı; durum chip'i (aktif accent, pasif sarı) | `shots/01-page.png` |
+| Boş durum | orta | Kalın konturlu kutu + tek cümle + sticker buton | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım, her adım tam ekran renk bloğu; büyük numara (01/02/03) | `shots/01-page.png` |
+| Pricing | yüksek | 3 kart, orta kart sarı zemin + 8px gölge + "en çok seçilen" şerit | `shots/01-page.png` |
+| Giriş / ödeme | düşük | 440px kart, 2 alan, 1 buton; sticker dekor yok (güven) | `shots/01-page.png` |
+| Modal | orta | 3px kenar, 12px ofset gölge, başlık büyük harf, 2 buton | `shots/01-page.png` |
+| Bildirim / toast | orta | Siyah zemin + beyaz metin + 2px beyaz kenar; 4sn | `shots/01-page.png` |
+| Hata | düşük | Kalın kırmızı kenar + 13/700 açıklama + "tekrar dene" butonu | `shots/01-page.png` |
+| Profil / ayar | orta | Sol nav 2px ayırıcı; ayar satırı 56px, toggle kalın konturlu | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -215,14 +183,11 @@ Kazandığı şey karakter ve okunurluk: siyah kontur + yüksek kontrast, ekran�
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

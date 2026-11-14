@@ -10,7 +10,7 @@
 | **Zorluk** | orta (deseni bantta tutmak) · **Erişilebilirlik** | iyi (gövde 15.21:1, accent üstü 7.55:1; faint 4.75:1) |
 | **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="west-african-pattern"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,54 +137,20 @@ Gana/Togo kente dokuması (ipek ve pamuk şeritlerin 8–10 cm'lik bantlar hâli
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 8/4 şerit bölünmesi, hero zemininde dikey dokuma, 40px Archivo Black | `shots/01-landing.png` |
-| Dashboard | düşük | 4 kart (üst bantlı) + çubuk grafik | `shots/02-dashboard.png` |
-| Form | düşük | 40px alanlar, sol şerit, tek kolon | — |
-| Liste / tablo | orta | 40px dokuma zebra, ilk sütunda altın şerit | — |
-| Boş durum | orta | boş bant + tek damga + tek CTA | — |
-| Onboarding | yüksek | 3 adım: koleksiyon → desen → ilk ürün | — |
-| Pricing | orta | 3 plan kartı üst bantlı, fiyat mono | — |
-| Giriş / ödeme | çok düşük | dar kart, 40px alanlar, bant yalnız üstte | — |
-| Modal | orta | 2px altın çerçeve, üstte bant, 24px damga | — |
-| Bildirim / toast | orta | sol 8px bant, tek satır, 4000ms | — |
-| Hata | düşük | `--danger` sol şerit + damga; desen susturulur | — |
-| Profil / ayar | orta | tercih listesi 40px satır, dokuma zebra | — |
+| Landing / hero | yüksek | 8/4 şerit bölünmesi, hero zemininde dikey dokuma, 40px Archivo Black | `shots/01-page.png` |
+| Dashboard | düşük | 4 kart (üst bantlı) + çubuk grafik | `shots/01-page.png` |
+| Form | düşük | 40px alanlar, sol şerit, tek kolon | `shots/01-page.png` |
+| Liste / tablo | orta | 40px dokuma zebra, ilk sütunda altın şerit | `shots/01-page.png` |
+| Boş durum | orta | boş bant + tek damga + tek CTA | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: koleksiyon → desen → ilk ürün | `shots/01-page.png` |
+| Pricing | orta | 3 plan kartı üst bantlı, fiyat mono | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | dar kart, 40px alanlar, bant yalnız üstte | `shots/01-page.png` |
+| Modal | orta | 2px altın çerçeve, üstte bant, 24px damga | `shots/01-page.png` |
+| Bildirim / toast | orta | sol 8px bant, tek satır, 4000ms | `shots/01-page.png` |
+| Hata | düşük | `--danger` sol şerit + damga; desen susturulur | `shots/01-page.png` |
+| Profil / ayar | orta | tercih listesi 40px satır, dokuma zebra | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 500ms | `cubic-bezier(.7,.15,.3,1)` | `opacity` + `translateY(22px)`, öğe başına 55ms stagger |
-| Scroll reveal | 580ms | `cubic-bezier(.7,.15,.3,1)` | `top 84%` tetiği, 16px, `once: true` |
-| Basma | 130ms | `linear` | `translateX(2px)` (atkı kayması) |
-| Hover | 210ms | `cubic-bezier(.7,.15,.3,1)` | zemin %88, `translateX(2px)`, görsel ölçek `1.022` |
-| Pin / scrub | kapalı | — | — (dokuma düzlemi sabitlenmez) |
-| Bant deseni | 0ms | — | desen statik; animasyonlu desen yasak |
-
-- Ölçülebilir imza: `enter 0.5s / cb(.7,.15,.3,1) / 22px / 0.055` · `scroll top 84% / 0.58s / 16px / once:true` · `hover 210ms / 1.022` · `pin kapalı`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; bant ve damga statik kalır.
-- Bu stile yasak hareket: yay/bounce, parallax, sürekli kayan desen, blur geçişi.
-
-## Koyu mod
-
-Varsayılan zemin zaten koyudur; `data-theme="dark"` bloğu gece tezgâhı için daha derin bir zemin verir.
-
-| Token | Açık (varsayılan) | Koyu |
-|---|---|---|
-| `--bg` | `#17120f` | `#0a0705` |
-| `--bg-2` | `#1e1713` | `#0e0a07` |
-| `--surface` | `#241b16` | `#14100c` |
-| `--surface-2` | `#2d221b` | `#1c1711` |
-| `--ink` | `#f3e7d3` | `#fbf2e2` |
-| `--ink-soft` | `#c0ae93` | `#cbbba1` |
-| `--accent` | `#d99a1f` | `#f2b64a` |
-| `--accent-ink` | `#1c1206` | `#1d1204` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **18.08:1** · `ink-soft / bg` = **10.68:1** · `accent-ink / accent` = **10.14:1** · `ink-faint / bg` = **6.04:1** (ΔL açık→koyu **-0.045**; altın `#f2b64a`a açılır).
-- Koyu modda değişen başka ne var: hairline .16 → .18; bant opaklığı .42 → .34 (koyuda desen daha baskın görünür); durum renkleri açılır (`--danger #f2825f`, `--ok #85d492`, `--warn #f0cc63`).
-- `filter: invert()` yasak; palet elle yazılır.
 
 ## Zorunlu kurallar
 - Dokuma ritmi 8px; her beşinci bant 24px desen bloğu. Bant genişliği hiçbir bileşende değişmez.
@@ -213,14 +179,11 @@ Varsayılan zemin zaten koyudur; `data-theme="dark"` bloğu gece tezgâhı için
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

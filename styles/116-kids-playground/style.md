@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="kids-playground"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -145,51 +145,20 @@ Kökeni 1970'lerin oyun alanı tabelaları ve 2010'ların çocuk eğitim uygulam
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 56px başlık + 3 büyük oyun bloğu (18px radius, kalın gölge) | `shots/01-landing.png` |
-| Dashboard | düşük | İlerleme: 3 blok + mono sayaç; ekran başına 3 seçenek | `shots/02-dashboard.png` |
-| Form | düşük | 60px input, 14px radius, 2px kenar | — |
-| Liste / tablo | düşük | 48px satır, 18px radius blok içinde | — |
-| Boş durum | orta | Tek karakter illüstrasyonu + "henüz oyun yok" + birincil buton | — |
-| Onboarding | yüksek | Üç adım, her adımda tek büyük buton | — |
-| Pricing | orta | İki plan: çocuk / aile; kalın gölge, 18px radius | — |
-| Giriş / ödeme | çok düşük | Büyük harf dostu e-posta input + tek buton | — |
-| Modal | orta | 520px, 18px radius, kalın gölge, backdrop %45 | — |
-| Bildirim / toast | orta | Alt orta, 52px, accent zemin + accent-ink | — |
-| Hata | düşük | Tek cümle + büyük tekrar butonu | — |
-| Profil / ayar | orta | Avatar 72px + 3 ayar bloğu | — |
+| Landing / hero | yüksek | 56px başlık + 3 büyük oyun bloğu (18px radius, kalın gölge) | `shots/01-page.png` |
+| Dashboard | düşük | İlerleme: 3 blok + mono sayaç; ekran başına 3 seçenek | `shots/01-page.png` |
+| Form | düşük | 60px input, 14px radius, 2px kenar | `shots/01-page.png` |
+| Liste / tablo | düşük | 48px satır, 18px radius blok içinde | `shots/01-page.png` |
+| Boş durum | orta | Tek karakter illüstrasyonu + "henüz oyun yok" + birincil buton | `shots/01-page.png` |
+| Onboarding | yüksek | Üç adım, her adımda tek büyük buton | `shots/01-page.png` |
+| Pricing | orta | İki plan: çocuk / aile; kalın gölge, 18px radius | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Büyük harf dostu e-posta input + tek buton | `shots/01-page.png` |
+| Modal | orta | 520px, 18px radius, kalın gölge, backdrop %45 | `shots/01-page.png` |
+| Bildirim / toast | orta | Alt orta, 52px, accent zemin + accent-ink | `shots/01-page.png` |
+| Hata | düşük | Tek cümle + büyük tekrar butonu | `shots/01-page.png` |
+| Profil / ayar | orta | Avatar 72px + 3 ayar bloğu | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 110ms | `back.out(1.7)` | `scale(.96)` + gölge 2px'e düşer |
-| Giriş (enter) | 460ms | `back.out(1.7)` | `opacity` + 22px `translateY`, stagger 70ms |
-| Scroll reveal | 520ms | aynı eğri | `top 86%` tetikleyici, `opacity` + 18px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 180ms | aynı eğri | `transform: scale(1.04)` |
-| Ödül / vurgu | 380ms | `back.out(1.7)` | yıldız sayacı 0→3 (tek atım) |
-
-- Süre bütçesi: enter 460ms ≤ 1200ms · scroll 520ms ≤ 1200ms · stagger 70ms.
-- Overshoot 1.7'de durur; 2.0 üstü zıplama "sallanan" his verir.
-- Pin/parallax yok: oyun seçimi sabit; scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, ölçek kapanır, yalnız opacity.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#fdf7ec` | `#141c22` |
-| `--surface` | `#ffffff` | `#18222a` |
-| `--ink` | `#1e2a33` | `#f0f4f2` |
-| `--accent` | `#17607a` | `#7fd3c8` |
-| `--line` | `rgba(30,42,51,.16)` | `rgba(240,244,242,.16)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 15.53:1 · `accent-ink / accent` = 10.58:1.
-- Koyu modda krem zemin gece mavisine (`#141c22`) döner; accent açık turkuaza (`#7fd3c8`) çekilir.
-- Kalın gölge rengi `--line` ile koyulaşır; blur 0 kalır.
-- Zıplama hissi koyu modda da aynı; reduced-motion'da kapanır.
 
 ## Zorunlu kurallar
 
@@ -223,14 +192,11 @@ Kökeni 1970'lerin oyun alanı tabelaları ve 2010'ların çocuk eğitim uygulam
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük metin çifti 6.72:1; accent üstü 5.73:1) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="kanban-flow"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -142,51 +142,20 @@ Toyota üretim sistemindeki kanban kartlarından ve yazılım dünyasındaki gö
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | solda H1 + tek CTA, sağda 3 kolon mini tahta | `shots/01-landing.png` |
-| Dashboard | **yüksek** | 4 kolon + WIP sayaçları; süs yok | `shots/02-dashboard.png` |
-| Form | düşük | 36px input, tek kolon; kart oluşturma formu | — |
-| Liste / tablo | orta | 36px satır, kart şeridi aynı mantık | — |
-| Boş durum | orta | boş kolon + akış oku + "iş yok" etiketi | — |
-| Onboarding | yüksek | 3 adım: kolon kur → kart ekle → WIP limiti | — |
-| Pricing | orta | plan tablosu; ekip limiti mono sayaç | — |
-| Giriş / ödeme | çok düşük | tahta yok; sade form + tek CTA | — |
-| Modal | orta | kart detayı: içerik + yan bilgi kolonu | — |
-| Bildirim / toast | orta | alt-sağ, "kart taşındı" + accent nokta | — |
-| Hata | düşük | kolon sayacı `--danger` + "LİMİT" etiketi | — |
-| Profil / ayar | orta | kolon/WIP ayarları, iki kolon | — |
+| Landing / hero | orta | solda H1 + tek CTA, sağda 3 kolon mini tahta | `shots/01-page.png` |
+| Dashboard | **yüksek** | 4 kolon + WIP sayaçları; süs yok | `shots/01-page.png` |
+| Form | düşük | 36px input, tek kolon; kart oluşturma formu | `shots/01-page.png` |
+| Liste / tablo | orta | 36px satır, kart şeridi aynı mantık | `shots/01-page.png` |
+| Boş durum | orta | boş kolon + akış oku + "iş yok" etiketi | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: kolon kur → kart ekle → WIP limiti | `shots/01-page.png` |
+| Pricing | orta | plan tablosu; ekip limiti mono sayaç | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tahta yok; sade form + tek CTA | `shots/01-page.png` |
+| Modal | orta | kart detayı: içerik + yan bilgi kolonu | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sağ, "kart taşındı" + accent nokta | `shots/01-page.png` |
+| Hata | düşük | kolon sayacı `--danger` + "LİMİT" etiketi | `shots/01-page.png` |
+| Profil / ayar | orta | kolon/WIP ayarları, iki kolon | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **730ms** | `cubic-bezier(.3,.4,.2,1)` | `opacity` + `translateY(19px)`; stagger **0.068s** |
-| Scroll reveal | **690ms** | aynı eğri | trigger `top 70%`, `translateY(22px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (tahta kendi içinde kaydırılır) |
-| Basma | **235ms** | aynı eğri | `translateY(1px)`, gölge küçülür |
-| Geçiş / sayfa | 420ms | aynı eğri | opacity + 10px |
-| Hover | **235ms** | aynı eğri | görsel ölçek **1.024** (kart hafif kalkar) |
-| Ödül / vurgu | 730ms | aynı eğri | kart hedef kolona oturur (tek kez, sekme yok) |
-
-- İmza ölçüleri: `enter = 0.73s / cubic-bezier(.3,.4,.2,1) / 19px / 0.068` · `scroll = top 70% / 0.69s / 22px / once` · `pin = false` · `hover = 235ms / 1.024`.
-- Bant içi fark: 106'dan (0.37s / 2px), 107'den (0.86s / 25px / pin 0.42), 108'den (0.19s / 5px), 109'dan (0.51s / 15px / scrub 1.3) en az dört parametrede ayrışır. Mevcut 93 stil içinde en yakını 72-andean-textile (`0.72s / .5,0,.5,1 / 16px / 0.075`) — süre, eğri, offset, stagger, trigger (top 70%) ve hover'da farklı; `0.69s` scroll süresi ve `top 70%` katalogda yeni.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, kart yerleşimi anlık olur, sürükleme gölgesi korunur (durum bilgisi kaybolmaz).
-- Bu stile yasak hareket: sürekli akan kart animasyonu, yay/overshoot (kart fırlamaz), blur geçişi, yatay kaydırma hijack.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f2f4f7` | `#0f1216` |
-| `--surface` | `#ffffff` | `#191f28` |
-| `--ink` | `#171a20` | `#e9eef4` |
-| `--accent` | `#1a62cc` | `#6fa8ff` |
-| `--ink-soft` | `#4e5663` | `#a9b3c0` |
-| `--line` | `rgba(23,26,32,.14)` | `rgba(233,238,244,.16)` |
-
-- Koyu modda değişen başka ne var: kolon zemini kartdan daha koyu (`bg-2`), gölge görünmediği için kart ayrımı 1px `--line` ile güçlendirilir; accent bir ton açılır (`#6fa8ff`).
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Kolon başlığı sayaç taşır: `ad / limit` biçiminde (mono 11px); limit aşımı `--danger` + "LİMİT" etiketi.
@@ -215,14 +184,11 @@ Toyota üretim sistemindeki kanban kartlarından ve yazılım dünyasındaki gö
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

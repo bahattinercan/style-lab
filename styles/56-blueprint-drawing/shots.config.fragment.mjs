@@ -92,12 +92,5 @@ export const CONFIG = {
       .visual-row .line { height: 1px; background: color-mix(in srgb, var(--ink) 30%, transparent); position: relative; }
       .visual-row .line::after { content: ''; position: absolute; right: -1px; top: -3px; width: 1px; height: 7px; background: var(--accent); }
       .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--accent); }`,
-  'dark-landing': `
-      /* koyu mod: pafta çizgisi parlak, iç çerçeve görünür */
-      .hero-visual { background-image:
-        linear-gradient(color-mix(in srgb, var(--accent) 26%, transparent) 1px, transparent 1px),
-        linear-gradient(90deg, color-mix(in srgb, var(--accent) 26%, transparent) 1px, transparent 1px);
-        background-size: 24px 24px, 24px 24px; }
-      .visual-card { border-color: color-mix(in srgb, var(--accent) 70%, var(--line)); }`,
   },
 };

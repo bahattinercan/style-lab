@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 6.57:1; en düşük eşik accent üstü 5.37:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="mes-production-line"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,20 @@ ISA-95 katman modeli ve OEE/vardiya panolarından; fabrika terminallerinin (doku
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | başlık 34px mono, sağda canlı hat şeridi (3 satır KPI) | `shots/01-landing.png` |
-| Dashboard | **yüksek** | 4 KPI + hat tablosu + vardiya grafiği; süs sıfır | `shots/02-dashboard.png` |
-| Form | düşük | 36px input, etiket üstte 11px mono, tek kolon | — |
-| Liste / tablo | **yüksek** | 32px satır, 6+ satır görünür, toplu işlem çubuğu | — |
-| Boş durum | orta | "Vardiya kaydı yok" + tek eylem; durum şeridi nötr | — |
-| Onboarding | orta | 3 adım; her adımda tek karar, hat seçimi | — |
-| Pricing | orta | plan tablosu (satır bazlı), öne çıkan satır sol 3px accent | — |
-| Giriş / ödeme | çok düşük | konvansiyon; yalnız odak halkası ve hairline | — |
-| Modal | orta | iş emri no başlıkta mono; tek gölge 8/24 | — |
-| Bildirim / toast | orta | alt-sağ, sol 3px durum şeridi + ikon | — |
-| Hata | düşük | `--danger` şerit + ikon + etiket; zemin değişmez | — |
-| Profil / ayar | orta | form + tehlike bölgesi kırmızı çerçeve | — |
+| Landing / hero | orta | başlık 34px mono, sağda canlı hat şeridi (3 satır KPI) | `shots/01-page.png` |
+| Dashboard | **yüksek** | 4 KPI + hat tablosu + vardiya grafiği; süs sıfır | `shots/01-page.png` |
+| Form | düşük | 36px input, etiket üstte 11px mono, tek kolon | `shots/01-page.png` |
+| Liste / tablo | **yüksek** | 32px satır, 6+ satır görünür, toplu işlem çubuğu | `shots/01-page.png` |
+| Boş durum | orta | "Vardiya kaydı yok" + tek eylem; durum şeridi nötr | `shots/01-page.png` |
+| Onboarding | orta | 3 adım; her adımda tek karar, hat seçimi | `shots/01-page.png` |
+| Pricing | orta | plan tablosu (satır bazlı), öne çıkan satır sol 3px accent | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | konvansiyon; yalnız odak halkası ve hairline | `shots/01-page.png` |
+| Modal | orta | iş emri no başlıkta mono; tek gölge 8/24 | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sağ, sol 3px durum şeridi + ikon | `shots/01-page.png` |
+| Hata | düşük | `--danger` şerit + ikon + etiket; zemin değişmez | `shots/01-page.png` |
+| Profil / ayar | orta | form + tehlike bölgesi kırmızı çerçeve | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **440ms** | `cubic-bezier(.12,.94,.24,1)` | `opacity` + `translateY(20px)`; stagger **0.035s** |
-| Scroll reveal | **480ms** | aynı eğri | trigger `top 76%`, `translateY(30px)`, `once: true` |
-| Pin / scrub | **0.95** | `transform` | **açık** — hat şeridi `+170%` mesafede pin + scrub (ekran başına 1) |
-| Basma | **120ms** | `cubic-bezier(.12,.94,.24,1)` | `translateY(1px)` |
-| Geçiş / sayfa | 260ms | aynı eğri | opacity + 8px |
-| Hover | **180ms** | aynı eğri | görsel ölçek **1.016** |
-| Ödül / vurgu | 480ms | aynı eğri | sayaç değeri 0→x sayar (tek kez, 480ms) |
-
-- İmza ölçüleri: `enter = 0.44s / cubic-bezier(.12,.94,.24,1) / 20px / 0.035` · `scroll = top 76% / 0.48s / 30px / once` · `pin = true / scrub 0.95 / +170%` · `hover = 180ms / 1.016`.
-- Aynı banttaki komşulardan fark: 56'dan (0.36s / 6px / pin yok) dört, 57'den (0.26s / 4px / scrub 0.62) dört, 58'den (0.14s / linear / 16px) dört, 60'tan (0.58s / 12px / scrub 1.45) dört parametrede ayrışır. Mevcut 59 stil içinde en yakını 51-atlas-console (8 parametre farkı).
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin devre dışı, sayaç animasyonu son değere atlar.
-- Bu stile yasak hareket: sürekli akan konveyör (ekran başına 1'den fazla), blur geçişi, yay/overshoot (operasyonel ekranda sıçrama güven vermez).
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f2f4f3` | `#101614` |
-| `--surface` | `#ffffff` | `#18201c` |
-| `--ink` | `#17201c` | `#e3ece6` |
-| `--accent` | `#0d7a4f` | `#35c98b` |
-| `--ink-soft` | `#4c5a53` | `#a5b4ab` |
-| `--line` | `rgba(23,32,28,.14)` | `rgba(227,236,230,.16)` |
-
-- Koyu modda değişen başka ne var: gölge yerine kenarlık çalışır (`0 1px 2px` görünmez → hairline %16), accent bir ton açılır, grafik alan dolgusu %12 → %18.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Durum renk kodu sabit: çalışıyor `--accent`, durdu `--danger`, beklemede `--warn`; her zaman ikon + metinle.
@@ -210,14 +179,11 @@ ISA-95 katman modeli ve OEE/vardiya panolarından; fabrika terminallerinin (doku
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

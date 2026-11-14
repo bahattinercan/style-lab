@@ -10,7 +10,7 @@
 | **Zorluk** | orta-yüksek (kaos kontrolü) · **Erişilebilirlik** | orta (neon yorgunluğu) |
 | **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="cyberpunk"]` |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -131,37 +131,18 @@ Kolon 12 · gutter 16px · container 1240px · bölüm 72/44px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | çok yüksek | 56px Chakra Petch, uyarı şeridi, cyan glow panel, mono alt metin | `shots/01-landing.png` |
-| Dashboard | orta | HUD etiketleri + mono tablo; glow yalnız 1 panelde | `shots/02-dashboard.png` |
-| Form | düşük | Keskin kenar, tek sarı buton; şerit yok | — |
-| Liste/tablo | orta | Mono yoğun tablo, cyan ayırıcı | — |
-| Boş durum | orta | `[ NO DATA ]` mono + tek buton | — |
-| Onboarding | yüksek | Adım başına 1 HUD panel | — |
-| Pricing | orta | 3 panel, orta panel sarı kenar | — |
-| Giriş/ödeme | çok düşük | Şerit/glow kapanır; sade koyu form (güven) | — |
-| Modal | orta | Glow'lu panel, koyu backdrop | — |
-| Toast | orta | Sarı pill + siyah metin | — |
-| Hata | orta | `[ ERR ]` mono + sarı şerit | — |
-| Profil/ayar | düşük | Düz liste, mono etiket | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 90ms | `ease-out` | `transform: scale(.98)` |
-| Giriş | 280ms | `steps(3, end)` | `opacity` + 10px `translateY`, stagger 30ms |
-| Scroll (`top 88%`) | 500ms | aynı eğri | `opacity` + 20px `translateY`, `once: true` |
-| Hover | 90ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 240ms | `steps(3)` | glitch (tek atım) |
-
-- Scanline 10s `linear` (dekor).
-- `prefers-reduced-motion`: glitch ve scanline durur.
-- Strobe yasak.
-- Pin/parallax yok.
-
-## Koyu mod
-
-Stil zaten koyu. Açık varyant önerilmez; gerekirse `--bg` `#f2f5f7` · `--surface` `#ffffff` · `--ink` `#0b0b0f` · `--accent` `#a8a000` · `--accent-ink` `#ffffff`.
+| Landing/hero | çok yüksek | 56px Chakra Petch, uyarı şeridi, cyan glow panel, mono alt metin | `shots/01-page.png` |
+| Dashboard | orta | HUD etiketleri + mono tablo; glow yalnız 1 panelde | `shots/01-page.png` |
+| Form | düşük | Keskin kenar, tek sarı buton; şerit yok | `shots/01-page.png` |
+| Liste/tablo | orta | Mono yoğun tablo, cyan ayırıcı | `shots/01-page.png` |
+| Boş durum | orta | `[ NO DATA ]` mono + tek buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 HUD panel | `shots/01-page.png` |
+| Pricing | orta | 3 panel, orta panel sarı kenar | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Şerit/glow kapanır; sade koyu form (güven) | `shots/01-page.png` |
+| Modal | orta | Glow'lu panel, koyu backdrop | `shots/01-page.png` |
+| Toast | orta | Sarı pill + siyah metin | `shots/01-page.png` |
+| Hata | orta | `[ ERR ]` mono + sarı şerit | `shots/01-page.png` |
+| Profil/ayar | düşük | Düz liste, mono etiket | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -174,14 +155,11 @@ Stil zaten koyu. Açık varyant önerilmez; gerekirse `--bg` `#f2f5f7` · `--sur
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta |
 | **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="carnival-festival"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -145,51 +145,20 @@ Kökeni Brezilya karnavalı ve Notting Hill afişleridir: kalın tek satır baş
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 72px bant başlık + 3 şerit + bilet CTA; tek satır başlık | `shots/01-landing.png` |
-| Dashboard | orta | Program tablosu: 56px satır, mono tarih, sahne adı 700 | `shots/02-dashboard.png` |
-| Form | düşük | 48px input, 4px radius, 2px kenar | — |
-| Liste / tablo | orta | 56px satır, 1px hairline, sağda saat mono | — |
-| Boş durum | orta | Tek cümle + şerit bandı + "program yakında" | — |
-| Onboarding | yüksek | Üç adım, her adımda 1 şerit ve tek CTA | — |
-| Pricing | orta | Üç bilet tipi: günlük / hafta / VIP; kesikli bilet kenarı | — |
-| Giriş / ödeme | çok düşük | Tek kolon 400px, 2px kesikli bilet bloğu | — |
-| Modal | orta | 560px, 4px radius, 2px çerçeve; backdrop %50 | — |
-| Bildirim / toast | orta | Üst orta, 48px, accent zemin + accent-ink metin | — |
-| Hata | düşük | Tek satır Anton 22px + tek cümle + tekrar butonu | — |
-| Profil / ayar | orta | Bilet geçmişi listesi 56px satır | — |
+| Landing / hero | yüksek | 72px bant başlık + 3 şerit + bilet CTA; tek satır başlık | `shots/01-page.png` |
+| Dashboard | orta | Program tablosu: 56px satır, mono tarih, sahne adı 700 | `shots/01-page.png` |
+| Form | düşük | 48px input, 4px radius, 2px kenar | `shots/01-page.png` |
+| Liste / tablo | orta | 56px satır, 1px hairline, sağda saat mono | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + şerit bandı + "program yakında" | `shots/01-page.png` |
+| Onboarding | yüksek | Üç adım, her adımda 1 şerit ve tek CTA | `shots/01-page.png` |
+| Pricing | orta | Üç bilet tipi: günlük / hafta / VIP; kesikli bilet kenarı | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 400px, 2px kesikli bilet bloğu | `shots/01-page.png` |
+| Modal | orta | 560px, 4px radius, 2px çerçeve; backdrop %50 | `shots/01-page.png` |
+| Bildirim / toast | orta | Üst orta, 48px, accent zemin + accent-ink metin | `shots/01-page.png` |
+| Hata | düşük | Tek satır Anton 22px + tek cümle + tekrar butonu | `shots/01-page.png` |
+| Profil / ayar | orta | Bilet geçmişi listesi 56px satır | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 90ms | `cubic-bezier(.34,1.56,.64,1)` | `translateY(2px)` + alt şerit genişler |
-| Giriş (enter) | 280ms | `cubic-bezier(.34,1.56,.64,1)` | `opacity` + 30px `translateY`, stagger 50ms |
-| Scroll reveal | 360ms | aynı eğri | `top 91%` tetikleyici, `opacity` + 24px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 120ms | aynı eğri | `transform: scale(1.06)` |
-| Ödül / vurgu | 280ms | `cubic-bezier(.34,1.56,.64,1)` | bilet kodu 0→1 opacity (tek atım) |
-
-- Süre bütçesi: enter 280ms ≤ 1200ms · scroll 360ms ≤ 1200ms · stagger 50ms.
-- Şerit bandı yalnız girişte 30px kayar, sonra durur; sürekli kayan bant yasak.
-- Pin/parallax yok: program akışı sabit; scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, şerit animasyonsuz yerleşir.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#fdf3e3` | `#191009` |
-| `--surface` | `#fffaf0` | `#1e140d` |
-| `--ink` | `#241a12` | `#f8ecdd` |
-| `--accent` | `#b3360f` | `#f0873f` |
-| `--line` | `rgba(36,26,18,.18)` | `rgba(248,236,221,.16)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 16.11:1 · `accent-ink / accent` = 7.35:1.
-- Koyu modda krem zemin gece kahvesine (`#191009`) döner; accent mercan-turuncuya (`#f0873f`) çekilir.
-- Şerit sayısı koyu modda 2'ye iner (gürültüyü azaltır); çerçeve 1px kalır.
-- Sarı şerit koyu modda kullanılmaz.
 
 ## Zorunlu kurallar
 
@@ -221,14 +190,11 @@ Kökeni Brezilya karnavalı ve Notting Hill afişleridir: kalın tek satır baş
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

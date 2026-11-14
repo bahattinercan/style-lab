@@ -10,7 +10,7 @@
 | **Zorluk** | orta (hareketi durdurulabilir ve erişilebilir tutmak) · **Erişilebilirlik** | orta risk (sonsuz akan bant — durdurma zorunlu; gövde 16.06:1) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `kit/tokens.css` → `[data-style="kinetic-marquee"]` |
 | **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -138,56 +138,21 @@ Marquee, 20. yüzyıl baskı ve borsa bantlarından (ticker) gazete binası ceph
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | hero altında 28s bant, 7/5 içerik, skew'li görsel katman | `shots/01-landing.png` |
-| Dashboard | orta | 2 satır kart + üstte ince bant (44s) | `shots/02-dashboard.png` |
-| Form | düşük | 42px alanlar, tek kolon, bant yalnız üstte | — |
-| Liste / tablo | orta | 36px satır, hover'da sağa kayma | — |
-| Boş durum | orta | durmuş bant + tek CTA ("başlat") | — |
-| Onboarding | yüksek | 3 adım, her adımda bant hızı artar (44s → 28s) | — |
-| Pricing | orta | 3 kart, iz çizgisi hover'da uzar | — |
-| Giriş / ödeme | çok düşük | dar kart, bant yok (odak dağılmasın) | — |
-| Modal | orta | sağdan akan giriş, 2px accent kenar | — |
-| Bildirim / toast | orta | tek geçişli metin, hover'da durur | — |
-| Hata | düşük | bant durur, `--danger` sol şerit, statik mesaj | — |
-| Profil / ayar | orta | 36px satır + "hareketi azalt" anahtarı | — |
+| Landing / hero | yüksek | hero altında 28s bant, 7/5 içerik, skew'li görsel katman | `shots/01-page.png` |
+| Dashboard | orta | 2 satır kart + üstte ince bant (44s) | `shots/01-page.png` |
+| Form | düşük | 42px alanlar, tek kolon, bant yalnız üstte | `shots/01-page.png` |
+| Liste / tablo | orta | 36px satır, hover'da sağa kayma | `shots/01-page.png` |
+| Boş durum | orta | durmuş bant + tek CTA ("başlat") | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım, her adımda bant hızı artar (44s → 28s) | `shots/01-page.png` |
+| Pricing | orta | 3 kart, iz çizgisi hover'da uzar | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | dar kart, bant yok (odak dağılmasın) | `shots/01-page.png` |
+| Modal | orta | sağdan akan giriş, 2px accent kenar | `shots/01-page.png` |
+| Bildirim / toast | orta | tek geçişli metin, hover'da durur | `shots/01-page.png` |
+| Hata | düşük | bant durur, `--danger` sol şerit, statik mesaj | `shots/01-page.png` |
+| Profil / ayar | orta | 36px satır + "hareketi azalt" anahtarı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — hız şeritleri — eğik kart, skew çizgiler, döngü etiketi.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 620ms | `cubic-bezier(.12,.9,.2,1)` | `opacity` + yatay akış, `offsetY: 0px`, öğe başına 90ms stagger |
-| Scroll reveal | 500ms | `cubic-bezier(.12,.9,.2,1)` | `top 70%` tetiği, 0px dikey, `once: true` |
-| Basma | 180ms | `linear` | `translateX(2px)` |
-| Hover | 180ms | `cubic-bezier(.12,.9,.2,1)` | `translateX(2px)`, görsel ölçek `1.006` |
-| Pin / scrub | açık | `scrub 0.25` | bant bölümü `+240%` mesafede sabitlenir, bant hızı scrub'a bağlanır |
-| Marquee | 28s / 44s | `linear` | iki hız sınıfı; hover ve reduced-motion'da durur |
-| Skew | 180ms | `cubic-bezier(.12,.9,.2,1)` | en fazla `-6deg`, scroll hızına bağlı |
-| Harf dalgası | 40ms / harf | `linear` | en çok 24 harf, toplam ≤ 1s |
-
-- Ölçülebilir imza: `enter 0.62s / cb(.12,.9,.2,1) / 0px / 0.09` · `scroll top 70% / 0.5s / 0px / once:true` · `pin açık scrub 0.25 / +240%` · `hover 180ms / 1.006`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, bantlar durur, skew 0°, harf dalgası kapalı.
-- Bu stile yasak hareket: rotasyon, diagonal şerit, sürekli jitter, blur geçişi, 3'ten fazla bant.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f4f1ea` | `#0d0f18` |
-| `--bg-2` | `#eae5da` | `#121522` |
-| `--surface` | `#fdfbf6` | `#161a2a` |
-| `--surface-2` | `#f2eee4` | `#1e2338` |
-| `--ink` | `#14161a` | `#eef0f6` |
-| `--ink-soft` | `#4a4d57` | `#a9afc4` |
-| `--accent` | `#2d3ad0` | `#7f88ff` |
-| `--accent-ink` | `#f7f7ff` | `#0a0b18` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **16.78:1** · `ink-soft / bg` = **8.75:1** · `accent-ink / accent` = **6.40:1** · `ink-faint / bg` = **4.87:1**.
-- Koyu modda değişen başka ne var: bant metni accent yerine `--ink` (koyu zeminde indigo titreşir); bant ayırıcı `--line` .14 → .16; kılavuz çizgisi %5 → %7.
-- `filter: invert()` yasak; palet elle yazılır.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **5.77:1** açık / **5.66:1** koyu · `--warn / bg` = **6.05:1** / **5.60:1** · `--ok / surface` = 5.11:1 / 5.06:1 (warn) · devre dışı buton metni = **7.35:1** / **7.83:1** · ghost buton kenarı = **3.86:1** / **5.62:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - Marquee bandı 32px, en fazla 2 bant, hız sınıfları 28s/44s; her bant hover ve reduced-motion'da durur.
@@ -216,14 +181,11 @@ Marquee, 20. yüzyıl baskı ve borsa bantlarından (ticker) gazete binası ceph
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

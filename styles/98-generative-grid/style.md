@@ -10,7 +10,7 @@
 | **Zorluk** | orta-yüksek (desenin gerçekten ızgaraya hizalanması) · **Erişilebilirlik** | iyi (gövde 15.51:1, accent üstü 5.15:1; faint 3.22:1 yalnız dekoratif) |
 | **Aile** | Hareket & Optik (96–105) · **Token** | `kit/tokens.css` → `[data-style="generative-grid"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -137,54 +137,21 @@ Plotter ve vektör çizim geleneği (1960'lar Benson plotter estetiği), Process
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | tam kanama desen paneli (ızgara+düğüm+tarama) + 7/5 içerik | `shots/01-landing.png` |
-| Dashboard | orta | 4 kart, ikisinde koordinat etiketi + 4 serili grafik | `shots/02-dashboard.png` |
-| Form | düşük | 40px alanlar, mono etiket, sağ üst düğüm | — |
-| Liste / tablo | orta | 34px satır, `r01…` numara, cetvel tıkları | — |
-| Boş durum | orta | boş ızgara + `seed 0000` + tek CTA | — |
-| Onboarding | yüksek | 3 adım: tohum → modül → çizim | — |
-| Pricing | orta | 3 kart, orta kart 1px accent çerçeve | — |
-| Giriş / ödeme | çok düşük | desen yok, yalnız mono form | — |
-| Modal | orta | 1px accent çerçeve + 4px dış kılavuz | — |
-| Bildirim / toast | orta | sol 4px düğüm sütunu, mono metin | — |
-| Hata | düşük | `E-01` mono kodu + `--danger` çerçeve | — |
-| Profil / ayar | orta | 34px satır + modül/ızgara ayarı | — |
+| Landing / hero | yüksek | tam kanama desen paneli (ızgara+düğüm+tarama) + 7/5 içerik | `shots/01-page.png` |
+| Dashboard | orta | 4 kart, ikisinde koordinat etiketi + 4 serili grafik | `shots/01-page.png` |
+| Form | düşük | 40px alanlar, mono etiket, sağ üst düğüm | `shots/01-page.png` |
+| Liste / tablo | orta | 34px satır, `r01…` numara, cetvel tıkları | `shots/01-page.png` |
+| Boş durum | orta | boş ızgara + `seed 0000` + tek CTA | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: tohum → modül → çizim | `shots/01-page.png` |
+| Pricing | orta | 3 kart, orta kart 1px accent çerçeve | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | desen yok, yalnız mono form | `shots/01-page.png` |
+| Modal | orta | 1px accent çerçeve + 4px dış kılavuz | `shots/01-page.png` |
+| Bildirim / toast | orta | sol 4px düğüm sütunu, mono metin | `shots/01-page.png` |
+| Hata | düşük | `E-01` mono kodu + `--danger` çerçeve | `shots/01-page.png` |
+| Profil / ayar | orta | 34px satır + modül/ızgara ayarı | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
 - **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — çizim ızgarası — koordinat ekseni, düğüm işaretleri, 24px ızgara.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | 780ms | `cubic-bezier(.3,0,0,1)` | `opacity` + `translateY(10px)`, öğe başına 30ms stagger (çizgi çizilir gibi) |
-| Scroll reveal | 900ms | `cubic-bezier(.3,0,0,1)` | `top 76%` tetiği, 24px, `once: true` |
-| Basma | 150ms | `linear` | `translateY(1px)` |
-| Hover | 150ms | `linear` | köşe düğümü belirir, görsel ölçek `1.012` |
-| Pin / scrub | açık | `scrub 1.6` | desen paneli `+60%` mesafede sabitlenir, düğüm yoğunluğu çizime göre artar |
-| Çizim | 780ms | `cubic-bezier(.3,0,0,1)` | tek seferlik; yay/tarama bir kez "çizilir", döngü yok |
-
-- Ölçülebilir imza: `enter 0.78s / cb(.3,0,0,1) / 10px / 0.03` · `scroll top 76% / 0.9s / 24px / once:true` · `pin açık scrub 1.6 / +60%` · `hover 150ms / 1.012`.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; desen tek karede tamamlanır, pin/scrub kapanır.
-- Bu stile yasak hareket: rastgele/kaotik hareket, sonsuz döngü, blur geçişi, bounce.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#e9edf0` | `#0e1215` |
-| `--bg-2` | `#dfe5e9` | `#131a1e` |
-| `--surface` | `#f7f9fa` | `#172025` |
-| `--surface-2` | `#eef2f4` | `#1f2a30` |
-| `--ink` | `#0f161a` | `#e8f0f3` |
-| `--ink-soft` | `#414b51` | `#a7b6bd` |
-| `--accent` | `#0b7d55` | `#3ddca0` |
-| `--accent-ink` | `#ffffff` | `#04170f` |
-
-- Ölçülen kontrast (koyu): `ink / bg` = **16.30:1** · `ink-soft / bg` = **9.02:1** · `accent-ink / accent` = **10.53:1** · `ink-faint / bg` = **4.91:1**.
-- Koyu modda değişen başka ne var: ızgara opaklığı %8 → %10; koordinat etiketi `--ink-faint` kalır ama 4.91:1 ile okunur; accent açık nane yeşiline döner.
-- `filter: invert()` yasak; palet elle yazılır.
-- **QA dalgası ölçümü (düzeltme sonrası):** `--ok / bg` = **7.17:1** açık / **5.86:1** koyu · `--warn / bg` = **6.44:1** / **6.04:1** · `--ok / surface` = 5.15:1 / 5.31:1 (warn) · devre dışı buton metni = **7.79:1** / **7.91:1** · ghost buton kenarı = **3.86:1** / **5.52:1** (eşik 3:1).
 
 ## Zorunlu kurallar
 - Çizim 24px modüle hizalı; "yaklaşık" hizalama yasak.
@@ -213,14 +180,11 @@ Plotter ve vektör çizim geleneği (1960'lar Benson plotter estetiği), Process
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

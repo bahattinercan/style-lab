@@ -10,7 +10,7 @@
 | **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (en düşük metin çifti 7.00:1, `ink-faint` 3.27:1 yalnız dekoratif) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="zero-ui"]` |
 | **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -133,51 +133,20 @@ Sakin teknoloji (calm technology) ve ortam bilişimi (ambient computing) araşt�
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | çok düşük | tek niyet satırı + tek öneri + tek bağlantı | `shots/01-landing.png` |
-| Dashboard | çok düşük | üç hairline blok: bugün, sırada, not | `shots/02-dashboard.png` |
-| Form | çok düşük | alt çizgili input, etiket mono 11px | — |
-| Liste / tablo | düşük | 40px satır, yalnız hairline ayırıcı | — |
-| Boş durum | düşük | tek cümle + `/` ipucu | — |
-| Onboarding | düşük | üç hairline blok, her biri tek cümle | — |
-| Pricing | düşük | iki kolon, dolu buton yerine alt çizili bağlantı | — |
-| Giriş / ödeme | çok düşük | iki alt çizgili alan + tek eylem | — |
-| Modal | düşük | sayfa yerinde kalır, tek soru satırı öne çıkar | — |
-| Bildirim / toast | düşük | kutusuz tek satır, sol altta | — |
-| Hata | düşük | alt çizgi `--danger` + mono hata satırı | — |
-| Profil / ayar | düşük | hairline bölümler, mono etiket, kaydet düğmesi yok (otomatik) | — |
+| Landing / hero | çok düşük | tek niyet satırı + tek öneri + tek bağlantı | `shots/01-page.png` |
+| Dashboard | çok düşük | üç hairline blok: bugün, sırada, not | `shots/01-page.png` |
+| Form | çok düşük | alt çizgili input, etiket mono 11px | `shots/01-page.png` |
+| Liste / tablo | düşük | 40px satır, yalnız hairline ayırıcı | `shots/01-page.png` |
+| Boş durum | düşük | tek cümle + `/` ipucu | `shots/01-page.png` |
+| Onboarding | düşük | üç hairline blok, her biri tek cümle | `shots/01-page.png` |
+| Pricing | düşük | iki kolon, dolu buton yerine alt çizili bağlantı | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | iki alt çizgili alan + tek eylem | `shots/01-page.png` |
+| Modal | düşük | sayfa yerinde kalır, tek soru satırı öne çıkar | `shots/01-page.png` |
+| Bildirim / toast | düşük | kutusuz tek satır, sol altta | `shots/01-page.png` |
+| Hata | düşük | alt çizgi `--danger` + mono hata satırı | `shots/01-page.png` |
+| Profil / ayar | düşük | hairline bölümler, mono etiket, kaydet düğmesi yok (otomatik) | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **1100ms** | `cubic-bezier(.33,0,.12,1)` | yalnız `opacity` + `translateY(3px)`; stagger **0.185s** |
-| Scroll reveal | **1150ms** | aynı eğri | trigger `top 64%`, `translateY(2px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı |
-| Basma | **220ms** | aynı eğri | alt çizgi kalınlaşır, ölçek değişmez |
-| Geçiş / sayfa | 480ms | aynı eğri | yalnız opacity |
-| Hover | **560ms** | aynı eğri | görsel ölçek **1.000** (hiç büyümez) |
-| Ödül / vurgu | 1100ms | aynı eğri | tek satırın alt çizgisi belirir, tek kez |
-
-- İmza ölçüleri: `enter = 1.10s / cubic-bezier(.33,0,.12,1) / 3px / 0.185` · `scroll = top 64% / 1.15s / 2px / once` · `pin = false` · `hover = 560ms / 1.000`.
-- Bant içi fark: 111'den (0.39s / 7px / 0.048), 113'ten (0.23s / 3px / 0.024 / top 90%), 114'ten (0.63s / 9px / 0.033), 115'ten (0.12s / 0px / 0.008) en az altı parametrede ayrışır. Karşılaştırma örneği 108-command-palette (`0.19s / 5px / 0.018 / top 97%`): süre, eğri, offset, stagger, trigger ve hover'da ayrışır (8 parametre); katalogdaki tüm imzalarla en az iki parametre farkı makine kontrolüyle doğrulanır.
-- `prefers-reduced-motion`: tüm süreler 0.01ms; niyet satırı ve katman anında görünür, hiçbir öğe kaymaz.
-- Bu stile yasak hareket: kaydırma hijack, sürekli hareket eden zemin, izinsiz açılan katman, blur/parlama.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f4f3ee` | `#12130f` |
-| `--surface` | `#fdfcf8` | `#1d1e18` |
-| `--ink` | `#1f211d` | `#eeefe6` |
-| `--accent` | `#26302a` | `#dfe3d3` |
-| `--ink-soft` | `#4f544a` | `#b6b8ab` |
-| `--line` | `rgba(31,33,29,.12)` | `rgba(238,239,230,.14)` |
-
-- Koyu modda değişen başka ne var: accent açık kağıda döner (`#dfe3d3`), dolgu üstü metin koyu olur; hairline opaklığı %12 → %14 (siyahta çizgi erken kayboluyor). Gölge zaten yok, ek kural gerekmez.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`, `token-block.css` koyu blok ve `kit/tokens.css` birebir aynı).
 
 ## Zorunlu kurallar
 - Monokrom: `--accent` = `--ink` ailesi; ikinci bir vurgu tonu eklenmez.
@@ -205,14 +174,11 @@ Sakin teknoloji (calm technology) ve ortam bilişimi (ambient computing) araşt�
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

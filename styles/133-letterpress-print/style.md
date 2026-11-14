@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | iyi |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="letterpress-print"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -144,51 +144,20 @@ Kökeni 15. yüzyıl hareketli metal tip matbaası ve 20. yüzyıl özel baskı 
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 46px Cinzel başlık (deboss) + 4/12 baskı bloğu + edisyon etiketi | `shots/01-landing.png` |
-| Dashboard | orta | Edisyon listesi: 44px satır, mono numara | `shots/02-dashboard.png` |
-| Form | düşük | 46px input, 2px radius, 1px iç gölge | — |
-| Liste / tablo | orta | 44px satır, 1px hairline, sağa hizalı mono | — |
-| Boş durum | orta | "baskı yok" + tek cümle + ikincil buton | — |
-| Onboarding | orta | Üç adım: diz → bas → kurut | — |
-| Pricing | orta | Üç edisyon paketi; 2px radius, 1px iç gölge | — |
-| Giriş / ödeme | çok düşük | Tek kolon 380px, mono sipariş özeti | — |
-| Modal | orta | 480px, 4px radius, 1px iç gölge | — |
-| Bildirim / toast | orta | Alt sol, 40px, ink zemin + bg metin | — |
-| Hata | düşük | "baskı hatası" mono + tek cümle | — |
-| Profil / ayar | orta | Edisyon geçmişi + mono numara | — |
+| Landing / hero | orta | 46px Cinzel başlık (deboss) + 4/12 baskı bloğu + edisyon etiketi | `shots/01-page.png` |
+| Dashboard | orta | Edisyon listesi: 44px satır, mono numara | `shots/01-page.png` |
+| Form | düşük | 46px input, 2px radius, 1px iç gölge | `shots/01-page.png` |
+| Liste / tablo | orta | 44px satır, 1px hairline, sağa hizalı mono | `shots/01-page.png` |
+| Boş durum | orta | "baskı yok" + tek cümle + ikincil buton | `shots/01-page.png` |
+| Onboarding | orta | Üç adım: diz → bas → kurut | `shots/01-page.png` |
+| Pricing | orta | Üç edisyon paketi; 2px radius, 1px iç gölge | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Tek kolon 380px, mono sipariş özeti | `shots/01-page.png` |
+| Modal | orta | 480px, 4px radius, 1px iç gölge | `shots/01-page.png` |
+| Bildirim / toast | orta | Alt sol, 40px, ink zemin + bg metin | `shots/01-page.png` |
+| Hata | düşük | "baskı hatası" mono + tek cümle | `shots/01-page.png` |
+| Profil / ayar | orta | Edisyon geçmişi + mono numara | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 80ms | `cubic-bezier(.7,0,.3,1)` | `translateY(2px)` + iç gölge koyulaşır (pres) |
-| Giriş (enter) | 300ms | `cubic-bezier(.7,0,.3,1)` | `opacity` + 2px `translateY`, stagger 35ms |
-| Scroll reveal | 340ms | aynı eğri | `top 90%` tetikleyici, `opacity` + 6px `translateY`, `once: true` |
-| Pin / scrub | — | — | pin yok (sabit akış) |
-| Hover | 110ms | aynı eğri | `transform: scale(1.005)` |
-| Ödül / vurgu | 280ms | `cubic-bezier(.7,0,.3,1)` | edisyon numarası 0→1 opacity (tek atım) |
-
-- Süre bütçesi: enter 300ms ≤ 1200ms · scroll 340ms ≤ 1200ms · stagger 35ms.
-- Giriş 2px kayma: baskı izi gibi; 8px üstü kayma yasak.
-- Pin/parallax yok: kâğıt sabit; scrub'lı sahne kullanılmaz.
-- `prefers-reduced-motion`: süreler 0.01ms, deboss statik kalır.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f7f4ec` | `#14120f` |
-| `--surface` | `#fdfbf5` | `#191612` |
-| `--ink` | `#191713` | `#f4efe4` |
-| `--accent` | `#2a2c6b` | `#9fa2e8` |
-| `--line` | `rgba(25,23,19,.16)` | `rgba(244,239,228,.16)` |
-
-- Koyu modda ölçülen kontrast: `ink / bg` = 16.31:1 · `accent-ink / accent` = 8.07:1.
-- Koyu modda kâğıt beyazı is mürekkebine (`#14120f`) döner; indigo açık lila-maviye (`#9fa2e8`) çekilir.
-- Deboss ışığı koyuda tersine döner (0 −1px), böylece iz görünür kalır.
-- Elyaf dokusu %2'ye iner; radius değişmez.
 
 ## Zorunlu kurallar
 
@@ -220,14 +189,11 @@ Kökeni 15. yüzyıl hareketli metal tip matbaası ve 20. yüzyıl özel baskı 
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta-yüksek risk (parlama) |
 | **Aile** | Cesur (13–18) · **Token** | `kit/tokens.css` → `[data-style="acid-graphics"]` |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -153,46 +153,18 @@ Kazandığı şey: ani dikkat ve kültürel aidiyet. Feda ettiği şey: konfor v
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | çok yüksek | 88px genişletilmiş başlık, asit blok, glow'lu tek buton, scanline zemin | `shots/01-landing.png` |
-| Dashboard | düşük | Glow ve scanline kapanır; mono sayılar + asit vurgu çizgileri | `shots/02-dashboard.png` |
-| Form | düşük | Siyah panel, asit kenarlı input, tek buton; glitch yok | — |
-| Liste / tablo | düşük | Düz siyah zemin, ince asit ayırıcı | — |
-| Boş durum | orta | Dev mono numara + tek cümle + buton | — |
-| Onboarding | yüksek | Sayfa başına 1 mesaj, büyük tipografi, minimal öğe | — |
-| Pricing | orta | 2–3 panel, orta panel asit kenar ± glow | — |
-| Giriş / ödeme | çok düşük | Glow/scanline kapalı; sade siyah form | — |
-| Modal | orta | Glow'lu panel, siyah backdrop | — |
-| Bildirim / toast | orta | Asit zemin + siyah metin, 3sn | — |
-| Hata | düşük | Asit yerine `--danger`; kısa metin | — |
-| Profil / ayar | düşük | Düz liste, asit yalnız aktif durumda | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 90ms | `ease-out` | `transform: scale(.98)` |
-| Giriş | 250ms | `steps(4, end)` | `opacity` + 4px `translateY`, stagger 30ms |
-| Scroll (`top 90%`) | 240ms | aynı eğri | `opacity` + 16px `translateY`, `once: true` |
-| Hover | 80ms | aynı eğri | `transform: scale(1.03)` |
-| Scanline | 8s | `linear` | `background-position` (çok yavaş) |
-| Ödül / vurgu | 240ms | `steps(2)` | glitch `clip-path` kayması (başlıkta 1 kez) |
-
-- Yanıp sönme (strobe) yasak; frekans < 3Hz ve tek seferlik.
-- `prefers-reduced-motion`: scanline ve glitch kapanır.
-
-## Koyu mod
-
-Bu stil **koyu tabanlı**; açık tema önerilmez. Gerekirse:
-
-| Token | Koyu (varsayılan) | Açık (önerilmez) |
-|---|---|---|
-| `--bg` | `#050505` | `#f2fff0` |
-| `--surface` | `#0e0e0e` | `#ffffff` |
-| `--ink` | `#f2fff0` | `#050505` |
-| `--accent` | `#ccff00` | `#7aa600` |
-| `--accent-ink` | `#050505` | `#ffffff` |
-
-- Açık varyantta asit yeşili koyulaştırılır (kontrast için), glow kaldırılır.
+| Landing / hero | çok yüksek | 88px genişletilmiş başlık, asit blok, glow'lu tek buton, scanline zemin | `shots/01-page.png` |
+| Dashboard | düşük | Glow ve scanline kapanır; mono sayılar + asit vurgu çizgileri | `shots/01-page.png` |
+| Form | düşük | Siyah panel, asit kenarlı input, tek buton; glitch yok | `shots/01-page.png` |
+| Liste / tablo | düşük | Düz siyah zemin, ince asit ayırıcı | `shots/01-page.png` |
+| Boş durum | orta | Dev mono numara + tek cümle + buton | `shots/01-page.png` |
+| Onboarding | yüksek | Sayfa başına 1 mesaj, büyük tipografi, minimal öğe | `shots/01-page.png` |
+| Pricing | orta | 2–3 panel, orta panel asit kenar ± glow | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | Glow/scanline kapalı; sade siyah form | `shots/01-page.png` |
+| Modal | orta | Glow'lu panel, siyah backdrop | `shots/01-page.png` |
+| Bildirim / toast | orta | Asit zemin + siyah metin, 3sn | `shots/01-page.png` |
+| Hata | düşük | Asit yerine `--danger`; kısa metin | `shots/01-page.png` |
+| Profil / ayar | düşük | Düz liste, asit yalnız aktif durumda | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -206,14 +178,11 @@ Bu stil **koyu tabanlı**; açık tema önerilmez. Gerekirse:
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

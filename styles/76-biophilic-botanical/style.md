@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (ölçülen en düşük metin çifti 6.47:1) |
 | **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="biophilic-botanical"]` |
 | **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,20 @@ Biyofilik tasarım araştırmalarından (Terrapin'in 14 deseni: görsel doğa ba
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 7/5: solda H1 + tek CTA, sağda yaprak köşeli görsel kartı | `shots/01-landing.png` |
-| Dashboard | düşük | en fazla 3 KPI kartı; grafik tek, süs yok | `shots/02-dashboard.png` |
-| Form | düşük | 44px input, etiket üstte 11px mono; tek kolon | — |
-| Liste / tablo | düşük | 48px satır (yoğunluk düşük), hover `--surface-2` | — |
-| Boş durum | orta | boş kart + dal çizgisi + tek cümle + tek eylem | — |
-| Onboarding | yüksek | her adım tek fikir, adım 1/3 mono etiketi | — |
-| Pricing | orta | üç kart; öne çıkan kart accent %6 zemin + dal çizgisi | — |
-| Giriş / ödeme | çok düşük | kart sadeleşir, gölge kalır; süs yok | — |
-| Modal | orta | 24px radius + yumuşak gölge, üstte dal çizgisi | — |
-| Bildirim / toast | orta | alt-sol, yaprak noktası + 14px metin | — |
-| Hata | düşük | `--danger` nokta + etiket; zemin değişmez | — |
-| Profil / ayar | orta | iki kolon form, bölüm başlıkları 22px display | — |
+| Landing / hero | yüksek | 7/5: solda H1 + tek CTA, sağda yaprak köşeli görsel kartı | `shots/01-page.png` |
+| Dashboard | düşük | en fazla 3 KPI kartı; grafik tek, süs yok | `shots/01-page.png` |
+| Form | düşük | 44px input, etiket üstte 11px mono; tek kolon | `shots/01-page.png` |
+| Liste / tablo | düşük | 48px satır (yoğunluk düşük), hover `--surface-2` | `shots/01-page.png` |
+| Boş durum | orta | boş kart + dal çizgisi + tek cümle + tek eylem | `shots/01-page.png` |
+| Onboarding | yüksek | her adım tek fikir, adım 1/3 mono etiketi | `shots/01-page.png` |
+| Pricing | orta | üç kart; öne çıkan kart accent %6 zemin + dal çizgisi | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | kart sadeleşir, gölge kalır; süs yok | `shots/01-page.png` |
+| Modal | orta | 24px radius + yumuşak gölge, üstte dal çizgisi | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sol, yaprak noktası + 14px metin | `shots/01-page.png` |
+| Hata | düşük | `--danger` nokta + etiket; zemin değişmez | `shots/01-page.png` |
+| Profil / ayar | orta | iki kolon form, bölüm başlıkları 22px display | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **680ms** | `cubic-bezier(.3,.7,.2,1)` | `opacity` + `translateY(24px)`; stagger **0.085s** |
-| Scroll reveal | **740ms** | aynı eğri | trigger `top 77%`, `translateY(26px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (içerik büyür, sayfa sabitlenmez) |
-| Basma | **160ms** | aynı eğri | `translateY(1px)` + scale .995 |
-| Geçiş / sayfa | 320ms | aynı eğri | opacity + 24px |
-| Hover | **320ms** | aynı eğri | görsel ölçek **1.03** (en yumuşak büyüme) |
-| Ödül / vurgu | 680ms | aynı eğri | dal çizgisi soldan sağa %0→%100 (tek kez) |
-
-- İmza ölçüleri: `enter = 0.68s / cubic-bezier(.3,.7,.2,1) / 24px / 0.085` · `scroll = top 77% / 0.74s / 26px / once` · `pin = false` · `hover = 320ms / 1.03`.
-- Bant içi fark: 77'den (0.78s / 18px / pin 1.6), 78'den (0.48s / 32px / 0.05), 79'dan (0.83s / 40px / 0.115), 80'den (0.57s / 22px) en az dört parametrede ayrışır. Mevcut 72 stil içinde en yakını 38-organic-bio (`1.0s / power2.out / 28px / 0.1`) — beş parametrede farklı.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, dal çizgisi ve büyüme animasyonu son kareye atlar.
-- Bu stile yasak hareket: sürekli salınım (rüzgâr) ekran başına 1'den fazla, kapatılamayan parallax, sert/step geçiş.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f2f4ea` | `#101a12` |
-| `--surface` | `#fbfcf6` | `#1b2a1f` |
-| `--ink` | `#1b2a1f` | `#e6efe2` |
-| `--accent` | `#2f6b3f` | `#7fbf6a` |
-| `--ink-soft` | `#4a5c4a` | `#a9bca6` |
-| `--line` | `rgba(27,42,31,.14)` | `rgba(230,239,226,.16)` |
-
-- Koyu modda değişen başka ne var: radial ışık lekeleri %10 → %14 (koyu zeminde görünmesi için), gölge opaklığı .10 → gece modunda gölge yerine 1px `--line` öne çıkar, accent bir ton açılır (`#7fbf6a`) çünkü koyu zeminde koyu yeşil kaybolur.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Yüzeyler yumuşak: radius 14px (kontrol) / 24px (kart), yaprak köşesi 32/12px; 999px yalnız chip.
@@ -210,14 +179,11 @@ Biyofilik tasarım araştırmalarından (Terrapin'in 14 deseni: görsel doğa ba
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

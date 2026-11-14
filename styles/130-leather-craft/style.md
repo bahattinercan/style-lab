@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | orta risk (tan zemin + koyu metin; en düşük etkileşimli çift 5.68:1) |
 | **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="leather-craft"]` |
 | **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -141,51 +141,18 @@ Deri atölyesi ve tabaklama geleneğinden: deri türü (vejetal, vachetta, süet
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | orta | 6/6 hero: solda başlık + tek CTA, sağda dikiş makro görseli | `shots/01-landing.png` |
-| Dashboard | orta | 4 KPI (açık iş, geciken, ort. kalınlık, teslim) + pano | `shots/02-dashboard.png` |
-| Form | düşük | iş emri: deri türü, kalınlık+mm, dikiş, teslim tarihi | — |
-| Liste / tablo | orta | 42px satır, tür chip'i, sağda mono kalınlık | — |
-| Boş durum | düşük | "tezgâhta iş yok" + yeni iş emri | — |
-| Onboarding | düşük | 3 adım: atölye → deri türü → kalıp | — |
-| Pricing | orta | iki plan, iş/kalıp limitleri | — |
-| Giriş / ödeme | çok düşük | tek kart, 46px alanlar, tek eylem | — |
-| Modal | orta | iş emri: kalıp, dikiş sayısı, teslim | — |
-| Bildirim | düşük | 42px toast, sol kahve şerit, 4.4sn | — |
-| Hata | düşük | kiremit çerçeve + neden + sonraki adım | — |
-| Profil / ayar | orta | atölye listesi, birim (mm/inç), deri türleri | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (iş kartı) | 1080ms | `cubic-bezier(.66,.02,.3,1)` | `opacity` + `translateY(21px)`, 108ms arayla |
-| Scroll reveal | 930ms, `top 64%` | aynı | `translateY(23px)`, `once: true` |
-| Pin / scrub | 0.68 scrub, +155% mesafe | doğrusal | atölye panosu sabitlenir, iş katmanı kayar |
-| Basma | 170ms | aynı | `translateY(1px)` |
-| Hover (görsel) | 430ms | aynı | `scale(1.052)` |
-| Dikiş vurgusu | 400ms | aynı | `border-color` (iç dikiş kahve) |
-
-- Ölçülen imza: enter **1.08s · cubic-bezier(.66,.02,.3,1) · 21px · stagger 0.108**; scroll **top 64% · 0.93s · 23px · once**; pin **açık · scrub 0.68 · +155%**; hover **430ms · 1.052**.
-- El işi: sabırlı kalkış, yavaş oturma; geri sekme yok (deri serttir).
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin/scrub ve dikiş vurgusu kapalı, içerik anında.
-- Bu stile yasak hareket: sürekli dikiş diken animasyon, bounce, yatay parallax, blur geçişi.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#e3cba9` | `#1d1510` |
-| `--bg-2` | `#d7bd98` | `#160f0b` |
-| `--surface` | `#f0e0c6` | `#251b14` |
-| `--surface-2` | `#e9d5b7` | `#2f241b` |
-| `--ink` | `#2b1d12` | `#f4ead9` |
-| `--ink-soft` | `#5d452f` | `#c6b39a` |
-| `--accent` | `#7a3f1d` | `#d59a63` |
-| `--accent-ink` | `#f8ecda` | `#1c1007` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **15.10:1** · `ink-soft/bg` **8.84:1** · `accent-ink/accent` **7.66:1** · `ink-faint/bg` **4.84:1** · accent metin olarak bg'ye **7.40:1**.
-- Koyu modda değişen başka ne var: grain `.06` → `.075` (koyu deride tanecik daha görünür), çizgi %22 → %16, accent açık tan-taba döner, dikiş çizgisi `--ink-soft` üzerinden yeniden hesaplanır.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="leather-craft"]` olarak durur.
+| Landing / hero | orta | 6/6 hero: solda başlık + tek CTA, sağda dikiş makro görseli | `shots/01-page.png` |
+| Dashboard | orta | 4 KPI (açık iş, geciken, ort. kalınlık, teslim) + pano | `shots/01-page.png` |
+| Form | düşük | iş emri: deri türü, kalınlık+mm, dikiş, teslim tarihi | `shots/01-page.png` |
+| Liste / tablo | orta | 42px satır, tür chip'i, sağda mono kalınlık | `shots/01-page.png` |
+| Boş durum | düşük | "tezgâhta iş yok" + yeni iş emri | `shots/01-page.png` |
+| Onboarding | düşük | 3 adım: atölye → deri türü → kalıp | `shots/01-page.png` |
+| Pricing | orta | iki plan, iş/kalıp limitleri | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | tek kart, 46px alanlar, tek eylem | `shots/01-page.png` |
+| Modal | orta | iş emri: kalıp, dikiş sayısı, teslim | `shots/01-page.png` |
+| Bildirim | düşük | 42px toast, sol kahve şerit, 4.4sn | `shots/01-page.png` |
+| Hata | düşük | kiremit çerçeve + neden + sonraki adım | `shots/01-page.png` |
+| Profil / ayar | orta | atölye listesi, birim (mm/inç), deri türleri | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her iş kaydı: deri türü + kalınlık (mm) + dikiş sayısı + teslim tarihi.
@@ -214,14 +181,11 @@ Deri atölyesi ve tabaklama geleneğinden: deri türü (vejetal, vachetta, süet
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

@@ -27,7 +27,7 @@ const KIT_DIR = path.join(ROOT, 'kit');
 const OUT_HTML = path.join(KIT_DIR, 'gallery.html');
 const OUT_INDEX = path.join(KIT_DIR, 'styles.index.json');
 const CHECK = process.argv.includes('--check');
-const MIN_SHOTS = 4;
+const MIN_SHOTS = 1;
 const MANIFEST_PATH = path.join(KIT_DIR, 'shots.manifest.json');
 const MIN_PNG_BYTES = 12_000;
 const SCENE_LABELS = (() => {
@@ -48,33 +48,12 @@ const FAMILIES = (() => {
   return (j.families ?? []).map((f) => [f.name, f.from, f.to]);
 })();
 
-/** Koyu mod durumu: tokens.css bloğu + dark-baseline.json kaydı. */
-const DARK_SLUGS = (() => {
-  try {
-    const css = fs.readFileSync(path.join(KIT_DIR, 'tokens.css'), 'utf8');
-    return new Set([...css.matchAll(/^\[data-theme="dark"\]\[data-style="([a-z0-9-]+)"\]/gm)].map((m) => m[1]));
-  } catch {
-    return new Set();
-  }
-})();
-const DARK_DEBT = (() => {
-  try {
-    const j = JSON.parse(fs.readFileSync(path.join(KIT_DIR, 'dark-baseline.json'), 'utf8'));
-    return new Set(Object.keys(j.slugs ?? {}));
-  } catch {
-    return new Set();
-  }
-})();
-
-/** 'applied' | 'debt' | 'none' */
-const darkState = (slug) => (DARK_SLUGS.has(slug) ? 'applied' : DARK_DEBT.has(slug) ? 'debt' : 'none');
 /** v1 şema: bugün 34 stilin tamamında olan bölümler. */
 const CORE_SECTIONS = [
   'Görsel imza',
   'Renk',
   'Tipografi',
   'Yüzey ve derinlik',
-  'Hareket',
   'Token',
   'Ekran reçeteleri',
   'Tuzaklar',
@@ -89,7 +68,6 @@ const V2_SECTIONS = [
   'Bileşen reçeteleri',
   'Izgara ve boşluk',
   'Görsel dil',
-  'Koyu mod',
   'Erişilebilirlik',
   'Örnek görseller',
   'Referanslar',
@@ -358,13 +336,11 @@ function indexJson(styles) {
         },
         shape: t?.shape ?? { radius: s.vars.radius, radiusLg: s.vars['radius-lg'] },
         layout: t?.layout ?? null,
-        motion: t?.motion ?? { note: 'playbook §6 aile tablosuna bak' },
         must: t?.must ?? [],
         mustNot: t?.mustNot ?? [],
         neighbors: t?.neighbors ?? [],
         refs: t?.refs ?? [],
         docsReady: Boolean(t),
-        dark: darkState(s.slug),
       };
     }),
   };
@@ -405,7 +381,7 @@ function main() {
   checkShotCatalog(styles);
   checkTemplateColors();
   checkReadmeLinks();
-  for (const f of ['gallery.css', 'gallery.js', 'live.html', 'live-styles.js', 'live-motion.js', 'sections.html', 'flows.html', 'gallery.js', 'viewer-nav.js', 'viewer-lightbox.js']) {
+  for (const f of ['gallery.css', 'gallery.js', 'live.html', 'live-styles.js', 'viewer-nav.js', 'viewer-lightbox.js']) {
     if (!fs.existsSync(path.join(KIT_DIR, f))) {
       fail(`kit/${f} yok — canlı önizleme kırılır (node kit/build-gallery.mjs)`);
     }
@@ -423,56 +399,18 @@ function main() {
         JSON.stringify(liveList, null, 2) +
         ';\n',
     );
-    // live-motion.js: canlı önizleme stilin GERÇEK sayı ve desenlerini kullanır (M2)
-    const MOTION_DIST = path.join(KIT_DIR, 'dist', 'motion.json');
-    const motionDist = fs.existsSync(MOTION_DIST) ? JSON.parse(fs.readFileSync(MOTION_DIST, 'utf8')) : { styles: {} };
-    const motionMap = {};
-    for (const x of styles) {
-      const m = motionDist.styles?.[x.slug];
-      if (!m) continue;
-      const ch = x.tokensJson?.motion?.choreography ?? m.choreography ?? null;
-      motionMap[x.slug] = {
-        enter: {
-          pattern: ch?.enter ?? 'fade-rise',
-          durationMs: m.sequences?.enter?.durationMs ?? 500,
-          easeCss: m.sequences?.enter?.curve?.css ?? 'ease-out',
-          offsetY: m.sequences?.enter?.offsetYPx ?? 16,
-          staggerMs: Math.round((m.sequences?.enter?.stagger ?? 0.04) * 1000),
-        },
-        scroll: {
-          pattern: ch?.scroll ?? 'reveal',
-          durationMs: m.sequences?.scroll?.durationMs ?? 600,
-          offsetY: m.sequences?.scroll?.offsetYPx ?? 24,
-        },
-        hover: {
-          pattern: ch?.hover ?? 'scale',
-          durationMs: m.sequences?.hover?.durationMs ?? 160,
-          imageScale: m.sequences?.hover?.imageScale ?? 1.02,
-        },
-        pin: { enabled: Boolean(m.sequences?.pin?.enabled), scrub: m.sequences?.pin?.scrub ?? null },
-        reduced: ch?.reduced ?? 'opacity',
-      };
-    }
-    fs.writeFileSync(
-      path.join(KIT_DIR, 'live-motion.js'),
-      '/* kit/live-motion.js — node kit/build-gallery.mjs üretir; elle düzenleme */\n' +
-        '/* Kaynak: styles/<slug>/tokens.json → motion.choreography + dist/motion.json (ms) */\n' +
-        'window.STYLE_MOTION = ' +
-        JSON.stringify(motionMap, null, 2) +
-        ';\n',
-    );
     fs.writeFileSync(
       OUT_HTML,
-      galleryHtml(styles, { families: FAMILIES, familyOf, darkState, hueBucket, KEYWORDS, DEMOS, DEFAULT_DEMO, sceneLabels: SCENE_LABELS }),
+      galleryHtml(styles, { families: FAMILIES, familyOf, hueBucket, KEYWORDS, DEMOS, DEFAULT_DEMO, sceneLabels: SCENE_LABELS }),
     );
   }
 
   const v2 = styles.filter((s) => s.tokensJson).length;
   const shots = styles.reduce((n, s) => n + s.shots.length, 0);
   console.log(
-    `${styles.length} stil · ${shots} görsel · ${v2} tam şema (v3)` +
+    `${styles.length} stil · ${shots} tek sayfa görseli · ${v2} tam şema (v6)` +
       (filtered ? ' (filtreli)' : ' · kit/styles.index.json güncel') +
-      (CHECK ? '' : ' · kit/gallery.html + live-styles.js + live-motion.js yazıldı'),
+      (CHECK ? '' : ' · kit/gallery.html + live-styles.js yazıldı'),
   );
   if (warnings.length) {
     console.log('\nUyarı:');

@@ -70,17 +70,5 @@ body.scene-landing .hero-visual .visual-row:nth-child(3) { transform: rotate(-2d
 body.scene-landing .hero-visual .visual-row .sq { width: 100%; height: 42px; border-radius: var(--radius); }
 body.scene-landing .hero-visual .visual-row .line { height: 6px; border-radius: 3px; }
 body.scene-landing .hero-visual .visual-card::after { content: '12/24 çıkartma · 6 sayfa · kes-yeri: 1px kesikli çizgi'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; color: var(--ink-soft); }`,
-    'dark-landing': `body.scene-landing .hero-visual .visual-card { width: 100%; min-height: 320px; padding: 20px; display: grid; align-content: start; gap: 12px; background: var(--surface-2); }
-body.scene-landing .hero-visual { min-height: 370px; }
-body.scene-landing .hero-visual .visual-card .bar { height: 10px; border-radius: 999px; border: 0; background: var(--surface); }
-body.scene-landing .hero-visual .visual-card .bar.accent { width: 46%; background: var(--accent); }
-body.scene-landing .hero-visual .visual-rows { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-body.scene-landing .hero-visual .visual-row { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 16px 12px; background: var(--surface); border-radius: var(--radius-lg); border: 6px solid var(--surface); box-shadow: 2px 2px 0 color-mix(in srgb, var(--ink) 18%, transparent); text-align: center; }
-body.scene-landing .hero-visual .visual-row:nth-child(1) { transform: rotate(-4deg); }
-body.scene-landing .hero-visual .visual-row:nth-child(2) { transform: rotate(3deg); }
-body.scene-landing .hero-visual .visual-row:nth-child(3) { transform: rotate(-2deg); }
-body.scene-landing .hero-visual .visual-row .sq { width: 100%; height: 42px; border-radius: var(--radius); }
-body.scene-landing .hero-visual .visual-row .line { height: 6px; border-radius: 3px; }
-body.scene-landing .hero-visual .visual-card::after { content: '12/24 çıkartma · 6 sayfa · kes-yeri: 1px kesikli çizgi'; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; color: var(--ink-soft); }`,
-  },
+    },
 };

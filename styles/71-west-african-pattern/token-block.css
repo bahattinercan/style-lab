@@ -33,16 +33,3 @@
   --ok: #6fbf7a;
   --warn: #e0b84a;
 }
-
-[data-theme="dark"][data-style="west-african-pattern"] {
-  --bg: #0a0705;
-  --bg-2: #0e0a07;
-  --surface: #14100c;
-  --surface-2: #1c1711;
-  --ink: #fbf2e2;
-  --ink-soft: #cbbba1;
-  --ink-faint: #9a8b72;
-  --accent: #f2b64a;
-  --accent-ink: #1d1204;
-  --line: rgba(251,242,226,.2);
-}

@@ -15,8 +15,3 @@
   --danger: #ff6b6b; --danger-ink: #0a0d0a;
   --ok: #58e08a; --warn: #e0c058;
 }
-
-[data-theme="dark"][data-style="terminal-ui"] {
-  --bg: #050705; --bg-2: #080b08; --surface: #0b0f0b; --surface-2: #101510;
-  --ink: #e6f1e2; --ink-soft: #a8bda2; --ink-faint: #78896f; --accent: #6ff09c; --accent-ink: #03150a; --line: rgba(230,241,226,.18);
-}

@@ -3,10 +3,10 @@
  * kit/report.mjs — katalogdan markdown rapor üretir (veri okur, hiçbir şeyi değiştirmez).
  *
  * Çıktı (varsayılan kit/dist/report.md):
- *   1. Özet sayılar (stil, sahne, dolu slot, koyu mod kapsamı)
- *   2. Kapsam tablosu: stil başına sahne, koyu mod durumu, token sayısı
+ *   1. Özet sayılar (stil, tek sayfa sahnesi, dolu slot)
+ *   2. Kapsam tablosu: stil başına sau, token sayısı
  *   3. Kontrast tablosu: ink/bg, ink-soft/bg, ink-faint/bg, accent-ink/accent, ink/surface
- *   4. Borç listesi: koyu mod borcu (kit/dark-baseline.json), eksik tipografi yasağı, kısa referans
+ *   4. Borç listesi: eksik tipografi yasağı, kısa referans
  *   5. Kapı komutları
  *
  * Kullanım:
@@ -42,18 +42,12 @@ function tokensCss() {
   const rootMatch = css.match(/:root\s*\{([\s\S]*?)\n\}/);
   if (rootMatch) for (const v of rootMatch[1].matchAll(/--([a-z0-9-]+)\s*:\s*([^;]+);/gi)) root[v[1]] = v[2].trim();
   const light = {};
-  const dark = {};
   for (const m of css.matchAll(/^\[data-style="([a-z0-9-]+)"\]\s*\{([\s\S]*?)^\}/gm)) {
     const vars = {};
     for (const v of m[2].matchAll(/--([a-z0-9-]+)\s*:\s*([^;]+);/gi)) vars[v[1]] = v[2].trim();
     light[m[1]] = vars;
   }
-  for (const m of css.matchAll(/^\[data-theme="dark"\]\[data-style="([a-z0-9-]+)"\]\s*\{([\s\S]*?)^\}/gm)) {
-    const vars = {};
-    for (const v of m[2].matchAll(/--([a-z0-9-]+)\s*:\s*([^;]+);/gi)) vars[v[1]] = v[2].trim();
-    dark[m[1]] = vars;
-  }
-  return { root, light, dark };
+  return { root, light };
 }
 
 /**
@@ -68,13 +62,12 @@ const familyOf = (num) => FAMILIES.find(([lo, hi]) => num >= lo && num <= hi)?.[
 const f2 = (n) => (n === null || n === undefined ? '—' : n.toFixed(2));
 
 function main() {
-  const { root, light, dark } = tokensCss();
+  const { root, light } = tokensCss();
   const manifest = readJson(path.join(KIT, 'shots.manifest.json'), { scenes: [] });
   // Repoda tutulan çekirdek sahneler (kit/shots.core.json). Kalan sahneler kit/.shots-cache/ (üretilen).
   const coreFiles = readJson(path.join(KIT, 'shots.core.json'), { files: [] }).files ?? [];
   const scenes = coreFiles.length ? coreFiles : (manifest.scenes ?? []).map((s) => s.file);
   const allTemplates = (manifest.scenes ?? []).length;
-  const darkBaseline = readJson(path.join(KIT, 'dark-baseline.json'), { slugs: {} });
   const contrastBaseline = readJson(path.join(KIT, 'contrast-baseline.json'), {});
 
   const dirs = fs
@@ -90,7 +83,6 @@ function main() {
     const shotsDir = path.join(STYLES_DIR, dirName, 'shots');
     const shots = fs.existsSync(shotsDir) ? fs.readdirSync(shotsDir).filter((f) => f.endsWith('.png')) : [];
     const v = { ...root, ...(light[slug] ?? {}) };
-    const darkState = dark[slug] ? 'uygulandı' : darkBaseline.slugs?.[slug] ? 'borç' : 'yok';
     return {
       dirName,
       slug,
@@ -98,7 +90,6 @@ function main() {
       name: t?.name ?? slug,
       family: familyOf(num),
       scenes: shots.length,
-      darkState,
       tokens: Object.keys(light[slug] ?? {}).length,
       contrast: {
         body: contrastRatio(v['ink'], v['bg']),
@@ -109,15 +100,12 @@ function main() {
       },
       forbiddenMissing: !Array.isArray(t?.typography?.forbidden) || t.typography.forbidden.length === 0,
       refs: Array.isArray(t?.refs) ? t.refs.length : 0,
-      debtNote: darkBaseline.slugs?.[slug] ?? null,
       contrastDebt: contrastBaseline[slug] ?? null,
     };
   });
 
   const filled = rows.reduce((n, r) => n + r.scenes, 0);
   const slots = rows.length * scenes.length;
-  const darkDone = rows.filter((r) => r.darkState === 'uygulandı').length;
-  const darkDebt = rows.filter((r) => r.darkState === 'borç').length;
   const contrastIssues = rows.filter((r) => (r.contrast.body ?? 9) < 4.5 || (r.contrast.accent ?? 9) < 4.5);
 
   const lines = [];
@@ -133,21 +121,17 @@ function main() {
   lines.push(`| Sahne şablonu (tam set) | ${allTemplates} |`);
   lines.push(`| Repoda tutulan sahne | ${scenes.length} (çekirdek; kalanı \`kit/.shots-cache/\`) |`);
   lines.push(`| Dolu sahne | ${filled} / ${slots} (%${Math.round((filled / slots) * 100)}) |`);
-  lines.push(`| Koyu mod uygulanmış | ${darkDone} stil |`);
-  lines.push(`| Koyu mod borcu | ${darkDebt} stil (\`kit/dark-baseline.json\`) |`);
   lines.push(`| Kontrast hatası | ${contrastIssues.length} stil |`);
   lines.push(`| Boş tipografi yasak listesi | ${rows.filter((r) => r.forbiddenMissing).length} stil |`);
   lines.push('');
 
   lines.push('## 2 · Kapsam');
   lines.push('');
-  lines.push('| # | Stil | Aile | Sahne | Koyu mod | Token |');
-  lines.push('|---|---|---|---|---|---|');
+  lines.push('| # | Stil | Aile | Sahne | Token |');
+  lines.push('|---|---|---|---|---|');
   for (const r of rows) {
     lines.push(
-      `| ${r.num} | [${r.name}](../styles/${r.dirName}/style.md) | ${r.family} | ${r.scenes}/${scenes.length} | ${
-        r.darkState === 'uygulandı' ? '✓' : r.darkState === 'borç' ? 'borç' : '—'
-      } | ${r.tokens} |`,
+      `| ${r.num} | [${r.name}](../styles/${r.dirName}/style.md) | ${r.family} | ${r.scenes}/${scenes.length} | ${r.tokens} |`,
     );
   }
   lines.push('');
@@ -174,16 +158,6 @@ function main() {
 
   lines.push('## 4 · Borçlar');
   lines.push('');
-  if (darkDebt) {
-    lines.push(`### Koyu mod (${darkDebt})`);
-    lines.push('');
-    lines.push('`tokens.json` içinde `palette.dark` var; `kit/tokens.css` bloğu ve `shots/17-18` üretilmedi. Kapatma: koyu bloğu ekle → `node kit/render/render-shots.mjs --styles <slug> --force` → kaydı `kit/dark-baseline.json`’dan sil.');
-    lines.push('');
-    lines.push('| Stil | Not |');
-    lines.push('|---|---|');
-    for (const r of rows.filter((x) => x.darkState === 'borç')) lines.push(`| ${r.slug} | ${r.debtNote ?? ''} |`);
-    lines.push('');
-  }
   if (rows.some((r) => r.forbiddenMissing)) {
     lines.push('### Boş `typography.forbidden`');
     lines.push('');
@@ -196,7 +170,7 @@ function main() {
     lines.push(rows.filter((r) => r.refs < 3).map((r) => `\`${r.slug}\` (${r.refs})`).join(' · '));
     lines.push('');
   }
-  if (!darkDebt && !rows.some((r) => r.forbiddenMissing) && !rows.filter((r) => r.refs < 3).length) {
+  if (!rows.some((r) => r.forbiddenMissing) && !rows.filter((r) => r.refs < 3).length) {
     lines.push('Borç yok.');
     lines.push('');
   }
@@ -205,11 +179,10 @@ function main() {
   lines.push('');
   lines.push('```bash');
   lines.push('bash kit/gates.sh                  # hepsi sırayla');
-  lines.push('node kit/check-schema.mjs         # şema + koyu mod paritesi + komşu/refs');
+  lines.push('node kit/check-schema.mjs         # şema + üç kopya paritesi + komşu/refs');
   lines.push('node kit/check-contrast.mjs       # WCAG ölçümü');
   lines.push('node kit/export-tokens.mjs --check # dist güncel mi');
   lines.push('node kit/build-gallery.mjs --check # katalog + galeri');
-  lines.push('node kit/motion-check.mjs         # hareket sekansı');
   lines.push('```');
   lines.push('');
 
@@ -233,8 +206,7 @@ function main() {
   fs.writeFileSync(OUT, md);
   if (!QUIET) {
     console.log(
-      `rapor: ${path.relative(ROOT, OUT)} · ${rows.length} stil · ${filled}/${slots} sahne · ` +
-        `koyu mod ${darkDone} uygulandı / ${darkDebt} borç`,
+      `rapor: ${path.relative(ROOT, OUT)} · ${rows.length} stil · ${filled}/${slots} tek sayfa görseli`,
     );
   }
   return 0;

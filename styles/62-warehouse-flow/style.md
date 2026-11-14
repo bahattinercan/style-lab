@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta risk (sarı metin olarak kullanılamaz, en düşük etkileşimli çift 6.96:1) |
 | **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="warehouse-flow"]` |
 | **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -140,51 +140,18 @@ Depo raf etiketleri, sevkiyat manifestoları ve forklift kabini uyarı dilinden:
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | yüksek | 8/4 hero: Archivo Black başlık + sağda canlı sevkiyat rayı | `shots/01-landing.png` |
-| Dashboard | çok yüksek | 4 KPI + iş kuyruğu tablosu + raf doluluk çubukları | `shots/02-dashboard.png` |
-| Form | orta | tek sütun, barkod alanı, 44px hedefler | — |
-| Liste / tablo | çok yüksek | 40px satır, sıra kutusu, durum chip'i, toplu işlem çubuğu | — |
-| Boş durum | orta | "bekleyen iş yok" + sayaç sıfır + tarama başlat | — |
-| Onboarding | yüksek | 3 adım: depo seç → raf haritası → ilk sayım | — |
-| Pricing | orta | karşılaştırma tablosu, öne çıkan plan accent şeritli | — |
-| Giriş / ödeme | düşük | tek kart, 44px alanlar, hata durumu net | — |
-| Modal | orta | iş detayı: ürün, raf, miktar, son hareket | — |
-| Bildirim | orta | 44px toast + sol durum şeridi, 3.5sn | — |
-| Hata | düşük | kırmızı çerçeve + neden + tekrar dene | — |
-| Profil / ayar | orta | anahtar/değer listesi, 40px satır, depo seçici | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (kart/satır) | 300ms | `cubic-bezier(.34,1.56,.64,1)` | `opacity` + `translateY(18px)`, 20ms arayla |
-| Scroll reveal | 500ms, `top 78%` | aynı | `translateY(40px)`, `once: false` (yukarı kaydırınca tekrar) |
-| Pin / scrub | 0.65 scrub, +80% mesafe | doğrusal | raf yüksekliği hissi: 3 raf katmanı sabitlenir |
-| Basma | 110ms | aynı | ofset gölge 4px → 2px → 0 |
-| Hover (görsel) | 110ms | aynı | `scale(1.045)` |
-| Sayaç | 900ms | `steps(6, end)` | rakam atlaması (yalnız KPI sayacı) |
-
-- Ölçülen imza: enter **0.30s · cubic-bezier(.34,1.56,.64,1) · 18px · stagger 0.02**; scroll **top 78% · 0.5s · 40px · once:false**; pin **açık · scrub 0.65 · +80%**; hover **110ms · 1.045**.
-- Geri taşan varış (back-out) konveyörün duruşu gibi: hızlı gelir, 1–2px taşar, oturur. 0.3s'ten uzun sürmez.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, pin/scrub kapalı, sayaç anında son değeri gösterir.
-- Bu stile yasak hareket: sürekli kayan bant, sonsuz nabız, parallax, çok katmanlı blur zinciri.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#f3f1ec` | `#14130f` |
-| `--bg-2` | `#e7e4dc` | `#1c1a14` |
-| `--surface` | `#fcfbf8` | `#211f18` |
-| `--surface-2` | `#f0ede5` | `#2a271d` |
-| `--ink` | `#17150f` | `#f2efe4` |
-| `--ink-soft` | `#56523f` | `#ada695` |
-| `--accent` | `#f2b705` | `#ffc728` |
-| `--accent-ink` | `#1a1608` | `#1a1608` |
-
-- Ölçülen koyu kontrastlar: `ink/bg` **16.15:1** · `ink-soft/bg` **7.67:1** · `accent-ink/accent` **11.57:1** · `ink-faint/bg` **4.17:1**.
-- Koyu modda değişen başka ne var: sert ofset gölge siyah yerine `--ink` üstünde koyu tona döner (gölge rengi `rgba(0,0,0,.55)`), çizgi opaklığı %22 → %16, sarı bir ton açılır.
-- `filter: invert()` yasak; palet elle yazılır, koyu blok `kit/tokens.css` içinde `[data-theme="dark"][data-style="warehouse-flow"]` olarak durur.
+| Landing / hero | yüksek | 8/4 hero: Archivo Black başlık + sağda canlı sevkiyat rayı | `shots/01-page.png` |
+| Dashboard | çok yüksek | 4 KPI + iş kuyruğu tablosu + raf doluluk çubukları | `shots/01-page.png` |
+| Form | orta | tek sütun, barkod alanı, 44px hedefler | `shots/01-page.png` |
+| Liste / tablo | çok yüksek | 40px satır, sıra kutusu, durum chip'i, toplu işlem çubuğu | `shots/01-page.png` |
+| Boş durum | orta | "bekleyen iş yok" + sayaç sıfır + tarama başlat | `shots/01-page.png` |
+| Onboarding | yüksek | 3 adım: depo seç → raf haritası → ilk sayım | `shots/01-page.png` |
+| Pricing | orta | karşılaştırma tablosu, öne çıkan plan accent şeritli | `shots/01-page.png` |
+| Giriş / ödeme | düşük | tek kart, 44px alanlar, hata durumu net | `shots/01-page.png` |
+| Modal | orta | iş detayı: ürün, raf, miktar, son hareket | `shots/01-page.png` |
+| Bildirim | orta | 44px toast + sol durum şeridi, 3.5sn | `shots/01-page.png` |
+| Hata | düşük | kırmızı çerçeve + neden + tekrar dene | `shots/01-page.png` |
+| Profil / ayar | orta | anahtar/değer listesi, 40px satır, depo seçici | `shots/01-page.png` |
 
 ## Zorunlu kurallar
 - Her satır: ürün adı + konum (raf/bin) + miktar + durum. Eksik satır yasak.
@@ -213,14 +180,11 @@ Depo raf etiketleri, sevkiyat manifestoları ve forklift kabini uyarı dilinden:
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

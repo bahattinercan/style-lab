@@ -10,7 +10,7 @@
 | **Zorluk** | orta · **Erişilebilirlik** | orta (düşük kontrast + parlama) |
 | **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="vaporwave"]` |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -130,37 +130,18 @@ Kolon 12 · gutter 28px · container 1120px · bölüm 88/52px · breakpoint 640
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing/hero | yüksek | 46px Michroma, güneş motifi, tek cam panel, yavaş geçiş | `shots/01-landing.png` |
-| Dashboard | düşük | Motif kapanır, cam yalnız nav; sayılar mono | `shots/02-dashboard.png` |
-| Form | düşük | Cam panel, tek sütun 460px | — |
-| Liste/tablo | düşük | Cam panel içinde düz tablo; motif yok | — |
-| Boş durum | orta | Tek cümle + cam kart + pembe buton | — |
-| Onboarding | yüksek | Adım başına 1 cam panel, motif değişir | — |
-| Pricing | orta | 2-3 cam kolon, orta kolon pembe kenar | — |
-| Giriş/ödeme | çok düşük | Cam ve motif kapanır; opak mor kart | — |
-| Modal | orta | Cam + blur 16px | — |
-| Toast | orta | Pembe pill + koyu metin | — |
-| Hata | düşük | `--danger` kenar + 13px metin | — |
-| Profil/ayar | orta | Cam liste, motif minimal | — |
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Basma | 160ms | `ease-in-out` | `opacity` |
-| Giriş | 650ms | `ease-in-out` | `opacity` + 20px `translateY`, stagger 70ms |
-| Scroll (`top 78%`) | 700ms | aynı eğri | `opacity` + 20px `translateY`, `once: true` |
-| Hover | 260ms | aynı eğri | `transform: scale(1.02)` |
-| Ödül | 600ms | `ease-in-out` | parlaklık (tek atım) |
-
-- Izgara kayması ≤4px/20s yavaş döngü (dekor; imza parametresi değil).
-- `prefers-reduced-motion`: motif durur, süreler 0.01ms.
-- Yasak: 600ms altı büyük geçiş, hızlı animasyon, parlama patlaması.
-- Pin/parallax yok.
-
-## Koyu mod
-
-Stil zaten koyu. Açık varyant: `--bg` `#f4eefc` · `--surface` `rgba(255,255,255,.6)` · `--ink` `#241a3d` · `--accent` `#b3527a` · `--accent-ink` `#ffffff`.
+| Landing/hero | yüksek | 46px Michroma, güneş motifi, tek cam panel, yavaş geçiş | `shots/01-page.png` |
+| Dashboard | düşük | Motif kapanır, cam yalnız nav; sayılar mono | `shots/01-page.png` |
+| Form | düşük | Cam panel, tek sütun 460px | `shots/01-page.png` |
+| Liste/tablo | düşük | Cam panel içinde düz tablo; motif yok | `shots/01-page.png` |
+| Boş durum | orta | Tek cümle + cam kart + pembe buton | `shots/01-page.png` |
+| Onboarding | yüksek | Adım başına 1 cam panel, motif değişir | `shots/01-page.png` |
+| Pricing | orta | 2-3 cam kolon, orta kolon pembe kenar | `shots/01-page.png` |
+| Giriş/ödeme | çok düşük | Cam ve motif kapanır; opak mor kart | `shots/01-page.png` |
+| Modal | orta | Cam + blur 16px | `shots/01-page.png` |
+| Toast | orta | Pembe pill + koyu metin | `shots/01-page.png` |
+| Hata | düşük | `--danger` kenar + 13px metin | `shots/01-page.png` |
+| Profil/ayar | orta | Cam liste, motif minimal | `shots/01-page.png` |
 
 ## Erişilebilirlik
 
@@ -173,14 +154,11 @@ Stil zaten koyu. Açık varyant: `--bg` `#f4eefc` · `--surface` `rgba(255,255,2
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 

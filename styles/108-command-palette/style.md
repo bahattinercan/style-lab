@@ -10,7 +10,7 @@
 | **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük metin çifti 8.58:1; accent üstü 15.15:1) |
 | **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="command-palette"]` |
 | **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/17-dark-landing.png` |
+| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 
 ## Öz
 
@@ -139,51 +139,20 @@ Editör komut paletlerinden (VS Code, Sublime) ve 2020'lerin "launcher" uygulama
 
 | Ekran | Yoğunluk | Uygulama | Görsel |
 |---|---|---|---|
-| Landing / hero | düşük | H1 30px mono + tek "⌘K ile başla" CTA; görsel yok | `shots/01-landing.png` |
-| Dashboard | düşük | palet katmanı açılır; arka plan blur + %60 karartma | `shots/02-dashboard.png` |
-| Form | düşük | 52px arama + 44px satır; klavye ile tam gezinme | — |
-| Liste / tablo | düşük | 8 satır sınırı, sağda kısayol kolonu | — |
-| Boş durum | orta | "Komut bulunamadı" + önerilen 3 komut | — |
-| Onboarding | orta | ⌘K tanıtımı: 3 kısayol kartı | — |
-| Pricing | orta | plan tablosu satır bazlı; öne çıkan satır accent dolgu | — |
-| Giriş / ödeme | çok düşük | palet yok; sade form, kısayol ipuçları | — |
-| Modal | orta | palet modalı: arama + liste + alt kısayol şeridi | — |
-| Bildirim / toast | orta | alt-sağ, mono kısa metin | — |
-| Hata | düşük | `--danger` metin + nokta; palet kapanmaz | — |
-| Profil / ayar | orta | kısayol eşleme tablosu (mono) | — |
+| Landing / hero | düşük | H1 30px mono + tek "⌘K ile başla" CTA; görsel yok | `shots/01-page.png` |
+| Dashboard | düşük | palet katmanı açılır; arka plan blur + %60 karartma | `shots/01-page.png` |
+| Form | düşük | 52px arama + 44px satır; klavye ile tam gezinme | `shots/01-page.png` |
+| Liste / tablo | düşük | 8 satır sınırı, sağda kısayol kolonu | `shots/01-page.png` |
+| Boş durum | orta | "Komut bulunamadı" + önerilen 3 komut | `shots/01-page.png` |
+| Onboarding | orta | ⌘K tanıtımı: 3 kısayol kartı | `shots/01-page.png` |
+| Pricing | orta | plan tablosu satır bazlı; öne çıkan satır accent dolgu | `shots/01-page.png` |
+| Giriş / ödeme | çok düşük | palet yok; sade form, kısayol ipuçları | `shots/01-page.png` |
+| Modal | orta | palet modalı: arama + liste + alt kısayol şeridi | `shots/01-page.png` |
+| Bildirim / toast | orta | alt-sağ, mono kısa metin | `shots/01-page.png` |
+| Hata | düşük | `--danger` metin + nokta; palet kapanmaz | `shots/01-page.png` |
+| Profil / ayar | orta | kısayol eşleme tablosu (mono) | `shots/01-page.png` |
 
 > `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-
-## Hareket
-
-| Durum | Süre | Easing | Özellik |
-|---|---|---|---|
-| Giriş (enter) | **190ms** | `cubic-bezier(.05,.9,.1,1)` | `opacity` + `translateY(5px)`; stagger **0.018s** |
-| Scroll reveal | **170ms** | aynı eğri | trigger `top 97%`, `translateY(4px)`, `once: true` |
-| Pin / scrub | yok | — | pin kapalı (palet yüzer, sayfa sabitlenmez) |
-| Basma | **65ms** | aynı eğri | `translateY(1px)` |
-| Geçiş / sayfa | 120ms | aynı eğri | opacity, cross-fade yok |
-| Hover | **65ms** | aynı eğri | görsel ölçek **1.000** (palet büyümez) |
-| Ödül / vurgu | 260ms | aynı eğri | seçim satırı dolgusu soldan sağa %0→%100 |
-
-- İmza ölçüleri: `enter = 0.19s / cubic-bezier(.05,.9,.1,1) / 5px / 0.018` · `scroll = top 97% / 0.17s / 4px / once` · `pin = false` · `hover = 65ms / 1.000`.
-- Bant içi fark: 106'dan (0.37s / 2px / 0.022), 107'den (0.86s / 25px / pin 0.42), 109'dan (0.51s / 15px), 110'den (0.73s / 19px) en az dört parametrede ayrışır. Mevcut 93 stil içinde en yakını 49-log-stream (`0.16s / steps(4,end) / 0px / 0.012`) — süre, eğri, offset, trigger (top 97%), hover ve pin'de farklı; 1.000 ölçek yalnız 45 ve 70'te var, ikisinden de süre/eğri/offset ile ayrışır.
-- `prefers-reduced-motion`: tüm süreler 0.01ms, palet animasyonsuz açılır (anlık).
-- Bu stile yasak hareket: yay/overshoot, blur geçişi, saniyede 3 üstü flash, sürekli döngü.
-
-## Koyu mod
-
-| Token | Açık | Koyu |
-|---|---|---|
-| `--bg` | `#111318` | `#020305` |
-| `--surface` | `#1b1f26` | `#0a0c11` |
-| `--ink` | `#eef0f3` | `#f8fafd` |
-| `--accent` | `#e8ecf2` | `#cfe0ff` |
-| `--ink-soft` | `#a9b1bc` | `#b6bec9` |
-| `--line` | `rgba(238,240,243,.14)` | `rgba(248,250,253,.12)` |
-
-- Koyu mod "gece paleti": zemin `#111318` → `#020305` (bg çifti ΔE 5.8), yüzey bandı ΔE 8.8, tebeşir accent soğuk beyaza kayar (`#e8ecf2` → `#cfe0ff`, ΔE 14.3). Eski blok (`#0b0d11`) açık moddan ayırt edilemiyordu.
-- `filter: invert()` yasak; palet elle yazılır (`palette.dark`).
 
 ## Zorunlu kurallar
 - Klavye öncelikli: her eylem bir kısayolla erişilebilir ve kısayol satırda görünür.
@@ -211,14 +180,11 @@ Editör komut paletlerinden (VS Code, Sublime) ve 2020'lerin "launcher" uygulama
 
 ## Örnek görseller
 
-Aynı içerik, 34 stilde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
 
 | Görsel | Neye bak |
 |---|---|
-| `shots/01-landing.png` | Landing — Hero hiyerarşisi, imza motif, tek CTA; süsün en yüksek olduğu kare. |
-| `shots/02-dashboard.png` | Dashboard — Süsün geri çekildiği operasyonel ekran; KPI ve tablo okunurluğu. |
-| `shots/04-components.png` | Bileşenler · temel — Renk, tipografi, yüzey, boşluk ritmi — temel levha. |
-| `shots/17-dark-landing.png` | Koyu mod · landing — Koyu mod · landing |
+| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
 
 ## Tuzaklar
 
