@@ -1,7 +1,7 @@
-# Aile bantları (21 band)
+# Aile bantları (31 band)
 
-Band tablosunun **tek kaynağı** `kit/families.json`'dır: 1–151 kesintisiz ve çakışmasız.
-`kit/build-gallery.mjs`, `kit/report.mjs` ve `kit/apply-fragments.mjs` bu dosyayı okur;
+Band tablosunun **tek kaynağı** `kit/families.json`'dır: 1–251 kesintisiz ve çakışmasız.
+`kit/build-gallery.mjs`, `kit/report.mjs`, `kit/build-catalog-doc.mjs` ve `kit/apply-fragments.mjs` bu dosyayı okur;
 `node kit/apply-fragments.mjs --check` aralıkların bütünlüğünü doğrular.
 
 Örnek slug'lar ve "3 tipik kullanım" kolonları bu skill'in yorumudur; bandın adı, aralığı ve
@@ -32,8 +32,17 @@ Tek stilli bandlar tek numara olarak yazılır (37 = 37–37 · 38 = 38–38 · 
 | 126–135 | Materyal & Lüks | 10 | `marble-vein` · `leather-craft` · `letterpress-print` | mücevap/moda vitrini · butik hizmet · premium ambalaj |
 | 136–145 | Deneysel & Gelecek | 10 | `speculative-scifi` · `agent-orchestration` · `quantum-lab` | konsept/lansman denemesi · AI ajan ve veri hacmi vitrini · bilim kurgu/gelecek anlatısı |
 | 146–151 | Sahne & Prestij | 6 | `noir-estate` · `agency-portfolio` · `product-launch` · `boutique-hotel` · `lookbook-editorial` · `dark-dashboard` | sinematik emlak/prestij · ajans vitrini · ürün lansmanı · butik otel · editoryal lookbook · koyu ürün paneli |
+| 152–171 | Oyun & Etkileşim | 20 | `game-hud` · `game-sci-fi-cockpit` · `game-card-tcg` | oyun içi HUD/menü · espor/turnuva sayfası · kart/koleksiyon vitrini |
+| 172–181 | Operasyon & Veri | 10 | `incident-response` · `finops-cost` · `slo-budget` | olay müdahale konsolu · maliyet/güvenilirlik panosu · denetim raporu |
+| 182–191 | Ticaret & Vitrin | 10 | `grocery-delivery` · `luxury-atelier` · `electronics-spec` | market/teslimat · butik lüks vitrin · teknik ürün spec |
+| 192–201 | Kültür & Yayın | 10 | `museum-exhibition` · `film-festival` · `library-archive` | müze/sergi · festival programı · arşiv/katalog |
+| 202–211 | Sağlık & Bilim | 10 | `clinical-trial` · `mental-wellness` · `genomics-lab` | klinik protokol · randevu/form · laboratuvar paneli |
+| 212–221 | Öğrenme & Oyunlaştırma | 10 | `language-app` · `skill-tree` · `exam-prep` | dil/kod öğrenme · müfredat haritası · sınav hazırlık |
+| 222–231 | Materyal & Zanaat | 10 | `terrazzo-stone` · `linocut-print` · `raw-steel` | malzeme kataloğu · baskı atölyesi · endüstriyel ürün |
+| 232–241 | Tipografi Denemeleri | 10 | `variable-weight` · `justified-book` · `uppercase-only` | ajans vitrini · yayınevi sayfası · kültürel kimlik |
+| 242–251 | Gelecek & Spekülatif | 10 | `agent-console` · `quantum-dashboard` · `climate-model` | ajan/otomasyon konsolu · model izleme · senaryo raporu |
 
-Toplam: **21 band · 145 stil**.
+Toplam: **31 band · 251 stil**.
 
 ## İki etiket, iki iş (karıştırma)
 
