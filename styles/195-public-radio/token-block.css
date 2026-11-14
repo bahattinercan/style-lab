@@ -1,0 +1,15 @@
+/* 195 · Public Radio — token bloğu (kaynak: styles/195-public-radio/tokens.json) */
+
+[data-style="public-radio"] {
+  --bg: #fcfaf6; --bg-2: #f1ece2;
+  --surface: #ffffff; --surface-2: #f7f3ec;
+  --ink: #15171b; --ink-soft: #484d55; --ink-faint: #7c8189;
+  --accent: #1b4f7a; --accent-ink: #f6faff;
+  --line: rgba(21,23,27,.14);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Lora", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

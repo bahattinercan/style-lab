@@ -1,0 +1,15 @@
+/* 206 · Mental Wellness — token bloğu (kaynak: styles/206-mental-wellness/tokens.json) */
+
+[data-style="mental-wellness"] {
+  --bg: #faf8fd; --bg-2: #f0ebf7;
+  --surface: #ffffff; --surface-2: #f5f1fa;
+  --ink: #171322; --ink-soft: #4c4459; --ink-faint: #7f768c;
+  --accent: #5b3f8f; --accent-ink: #faf7ff;
+  --line: rgba(23,19,34,.12);
+  --radius: 14px; --radius-lg: 20px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Jost", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

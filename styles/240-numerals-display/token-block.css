@@ -1,0 +1,15 @@
+/* 240 · Numerals Display — token bloğu (kaynak: styles/240-numerals-display/tokens.json) */
+
+[data-style="numerals-display"] {
+  --bg: #f7f8f9; --bg-2: #eceef0;
+  --surface: #ffffff; --surface-2: #f3f5f6;
+  --ink: #0f1215; --ink-soft: #454b51; --ink-faint: #767c83;
+  --accent: #12506e; --accent-ink: #f6fbfe;
+  --line: rgba(15,18,21,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

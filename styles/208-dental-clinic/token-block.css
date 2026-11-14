@@ -1,0 +1,15 @@
+/* 208 · Dental Clinic — token bloğu (kaynak: styles/208-dental-clinic/tokens.json) */
+
+[data-style="dental-clinic"] {
+  --bg: #fbfdfe; --bg-2: #eaf6fa;
+  --surface: #ffffff; --surface-2: #f2fafc;
+  --ink: #101619; --ink-soft: #42535a; --ink-faint: #778a92;
+  --accent: #0d6b86; --accent-ink: #f5fdff;
+  --line: rgba(16,22,25,.12);
+  --radius: 10px; --radius-lg: 14px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

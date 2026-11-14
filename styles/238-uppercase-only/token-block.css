@@ -1,0 +1,15 @@
+/* 238 · Uppercase Only — token bloğu (kaynak: styles/238-uppercase-only/tokens.json) */
+
+[data-style="uppercase-only"] {
+  --bg: #f4f4f1; --bg-2: #e8e8e3;
+  --surface: #ffffff; --surface-2: #f0f0ec;
+  --ink: #101012; --ink-soft: #47474a; --ink-faint: #78787b;
+  --accent: #1f4b3a; --accent-ink: #f6fdfa;
+  --line: rgba(16,16,18,.16);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

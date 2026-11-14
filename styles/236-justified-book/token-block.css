@@ -1,0 +1,15 @@
+/* 236 · Justified Book — token bloğu (kaynak: styles/236-justified-book/tokens.json) */
+
+[data-style="justified-book"] {
+  --bg: #fbf8f1; --bg-2: #f2ece0;
+  --surface: #fffdf7; --surface-2: #f6f1e6;
+  --ink: #16130e; --ink-soft: #4d463b; --ink-faint: #827a6a;
+  --accent: #5a2f6b; --accent-ink: #fbf7fd;
+  --line: rgba(22,19,14,.14);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif;
+  --font-body: "EB Garamond", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

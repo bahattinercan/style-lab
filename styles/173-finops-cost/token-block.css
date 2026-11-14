@@ -1,0 +1,15 @@
+/* 173 · FinOps Cost — token bloğu (kaynak: styles/173-finops-cost/tokens.json) */
+
+[data-style="finops-cost"] {
+  --bg: #f8faf9; --bg-2: #eef4f1;
+  --surface: #ffffff; --surface-2: #f1f6f3;
+  --ink: #121a17; --ink-soft: #455a52; --ink-faint: #7b8f87;
+  --accent: #1f6b4f; --accent-ink: #f6fdf9;
+  --line: rgba(18,26,23,.12);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.005em; --blur: 0px; --grain: 0;
+}

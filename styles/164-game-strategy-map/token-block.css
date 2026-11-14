@@ -1,0 +1,15 @@
+/* 164 · Strategy Map — token bloğu (kaynak: styles/164-game-strategy-map/tokens.json) */
+
+[data-style="game-strategy-map"] {
+  --bg: #f4efe4; --bg-2: #eae2d2;
+  --surface: #fffdf8; --surface-2: #f2ebdd;
+  --ink: #1d1a15; --ink-soft: #574f43; --ink-faint: #8b8171;
+  --accent: #1f5f8b; --accent-ink: #f7fbfe;
+  --line: rgba(29,26,21,.16);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "EB Garamond", system-ui, sans-serif;
+  --font-body: "EB Garamond", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
+}

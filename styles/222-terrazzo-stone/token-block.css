@@ -1,0 +1,15 @@
+/* 222 · Terrazzo Stone — token bloğu (kaynak: styles/222-terrazzo-stone/tokens.json) */
+
+[data-style="terrazzo-stone"] {
+  --bg: #f6f4ef; --bg-2: #ece9e1;
+  --surface: #fffefb; --surface-2: #f3f0e9;
+  --ink: #1a1915; --ink-soft: #514e46; --ink-faint: #847f74;
+  --accent: #8a4a3c; --accent-ink: #fdf7f5;
+  --line: rgba(26,25,21,.14);
+  --radius: 0px; --radius-lg: 4px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Jost", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0em; --blur: 0px; --grain: 0.05;
+}

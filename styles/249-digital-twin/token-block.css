@@ -1,0 +1,15 @@
+/* 249 · Digital Twin — token bloğu (kaynak: styles/249-digital-twin/tokens.json) */
+
+[data-style="digital-twin"] {
+  --bg: #0b1013; --bg-2: #0f1619;
+  --surface: #131b20; --surface-2: #1b252b;
+  --ink: #e8f1f4; --ink-soft: #a2b5bd; --ink-faint: #788b94;
+  --accent: #46c9c0; --accent-ink: #041717;
+  --line: rgba(232,241,244,.14);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+}

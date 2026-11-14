@@ -1363,3 +1363,903 @@
   --font-display: "Michroma", "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: .16em;
   --blur: 8px; --grain: .01;
 }
+
+/* 152 · Game HUD */
+[data-style="game-hud"] {
+  --bg: #0b1118; --bg-2: #0e161f; --surface: #121c26; --surface-2: #182430; --ink: #e9f2fa; --ink-soft: #a9bccd; --ink-faint: #7f93a5; --accent: #38e8c0; --accent-ink: #04140f; --line: rgba(233,242,250,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Chakra Petch", system-ui, sans-serif; --font-body: "Chakra Petch", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 153 · Game Racing */
+[data-style="game-racing"] {
+  --bg: #121010; --bg-2: #171313; --surface: #1c1817; --surface-2: #241f1d; --ink: #f5efe6; --ink-soft: #b6a89c; --ink-faint: #8a7c72; --accent: #ff6a2b; --accent-ink: #1a0a03; --line: rgba(245,239,230,.14);
+  --radius: 0px; --radius-lg: 6px;
+  --shadow: 0 1px 0 rgba(0,0,0,.4); --shadow-hard: none;
+  --font-display: "Rajdhani", system-ui, sans-serif; --font-body: "Chakra Petch", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0.04em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 154 · Fantasy RPG */
+[data-style="game-fantasy-rpg"] {
+  --bg: #14100c; --bg-2: #1a150f; --surface: #201a13; --surface-2: #2a2219; --ink: #f1e6d2; --ink-soft: #c3b499; --ink-faint: #94886f; --accent: #d4a24c; --accent-ink: #1a1206; --line: rgba(241,230,210,.16);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.04em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 155 · Sci-Fi Cockpit */
+[data-style="game-sci-fi-cockpit"] {
+  --bg: #050a10; --bg-2: #08121b; --surface: #0b1622; --surface-2: #101f2e; --ink: #d9ecff; --ink-soft: #94b3cf; --ink-faint: #6d8ca8; --accent: #4aa8ff; --accent-ink: #04121f; --line: rgba(217,236,255,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Michroma", system-ui, sans-serif; --font-body: "Rajdhani", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0.1em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 156 · Retro Console */
+[data-style="game-retro-console"] {
+  --bg: #101418; --bg-2: #151b21; --surface: #1a222a; --surface-2: #222d37; --ink: #e6eef4; --ink-soft: #a4b6c4; --ink-faint: #7d8f9d; --accent: #f2c434; --accent-ink: #1a1403; --line: rgba(230,238,244,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Press Start 2P", ui-monospace, monospace; --font-body: "Chakra Petch", system-ui, sans-serif; --font-mono: "VT323", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 157 · Esports League */
+[data-style="game-esports-league"] {
+  --bg: #0d0b14; --bg-2: #120f1c; --surface: #171326; --surface-2: #1f1a30; --ink: #f0ecff; --ink-soft: #b2a8cf; --ink-faint: #8b81a8; --accent: #b07cff; --accent-ink: #120720; --line: rgba(240,236,255,.15);
+  --radius: 0px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Anton", system-ui, sans-serif; --font-body: "Chakra Petch", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: 0.03em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 158 · Indie Pixel */
+[data-style="game-indie-pixel"] {
+  --bg: #1a1526; --bg-2: #211b30; --surface: #271f38; --surface-2: #332945; --ink: #f2e9ff; --ink-soft: #bfb0d8; --ink-faint: #988bb5; --accent: #63d471; --accent-ink: #04170a; --line: rgba(242,233,255,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Silkscreen", ui-monospace, monospace; --font-body: "Space Grotesk", system-ui, sans-serif; --font-mono: "VT323", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 159 · Card TCG */
+[data-style="game-card-tcg"] {
+  --bg: #171313; --bg-2: #1d1918; --surface: #241f1d; --surface-2: #2e2825; --ink: #f4e9dc; --ink-soft: #c0ae9c; --ink-faint: #93847a; --accent: #e0463c; --accent-ink: #1c0805; --line: rgba(244,233,220,.16);
+  --radius: 4px; --radius-lg: 10px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 160 · Survival Craft */
+[data-style="game-survival-craft"] {
+  --bg: #12140f; --bg-2: #181b14; --surface: #1e2218; --surface-2: #282d20; --ink: #e9ecdf; --ink-soft: #b3b9a4; --ink-faint: #8a9079; --accent: #b8c26a; --accent-ink: #12160a; --line: rgba(233,236,223,.16);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Baloo 2", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 161 · Mobile Casual */
+[data-style="game-mobile-casual"] {
+  --bg: #fff5f0; --bg-2: #ffe9df; --surface: #ffffff; --surface-2: #fff1ea; --ink: #241a17; --ink-soft: #6b4f45; --ink-faint: #9b8177; --accent: #c9341f; --accent-ink: #ffffff; --line: rgba(36,26,23,.12);
+  --radius: 14px; --radius-lg: 20px;
+  --shadow: 0 6px 16px rgba(36,26,23,.10); --shadow-hard: none;
+  --font-display: "Baloo 2", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 162 · Horror Occult */
+[data-style="game-horror-occult"] {
+  --bg: #0a0909; --bg-2: #100e0e; --surface: #151212; --surface-2: #1d1919; --ink: #eae2dd; --ink-soft: #a89c95; --ink-faint: #7d726c; --accent: #c8322b; --accent-ink: #f7ece8; --line: rgba(234,226,221,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0.03;
+}
+
+/* 163 · Racing Neon */
+[data-style="game-racing-neon"] {
+  --bg: #08080f; --bg-2: #0c0c18; --surface: #121224; --surface-2: #1a1a33; --ink: #eaf6ff; --ink-soft: #9fb3d1; --ink-faint: #71839f; --accent: #31e1f5; --accent-ink: #04141a; --line: rgba(234,246,255,.16);
+  --radius: 0px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Rajdhani", system-ui, sans-serif; --font-body: "Chakra Petch", system-ui, sans-serif; --font-mono: "VT323", ui-monospace, monospace; --tracking: 0.05em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 164 · Strategy Map */
+[data-style="game-strategy-map"] {
+  --bg: #f4efe4; --bg-2: #eae2d2; --surface: #fffdf8; --surface-2: #f2ebdd; --ink: #1d1a15; --ink-soft: #574f43; --ink-faint: #8b8171; --accent: #1f5f8b; --accent-ink: #f7fbfe; --line: rgba(29,26,21,.16);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "EB Garamond", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 165 · Sim Builder */
+[data-style="game-sim-builder"] {
+  --bg: #0f1613; --bg-2: #131d19; --surface: #18241f; --surface-2: #203028; --ink: #e7f2ec; --ink-soft: #a8c2b4; --ink-faint: #7f9a8c; --accent: #3fbfa0; --accent-ink: #04140f; --line: rgba(231,242,236,.15);
+  --radius: 6px; --radius-lg: 12px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Jost", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 166 · Arcade Cabinet */
+[data-style="game-arcade-cabinet"] {
+  --bg: #141a2e; --bg-2: #1a2240; --surface: #1e2848; --surface-2: #27345a; --ink: #fdf3d8; --ink-soft: #c3c0a8; --ink-faint: #92917f; --accent: #ffce3d; --accent-ink: #1a1403; --line: rgba(253,243,216,.2);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "Chakra Petch", system-ui, sans-serif; --font-mono: "VT323", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 167 · Stealth Tactical */
+[data-style="game-stealth-tactical"] {
+  --bg: #12150f; --bg-2: #171b13; --surface: #1c2118; --surface-2: #252b1e; --ink: #e9ecd9; --ink-soft: #adb39a; --ink-faint: #858b74; --accent: #c8a45a; --accent-ink: #151004; --line: rgba(233,236,217,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Chakra Petch", system-ui, sans-serif; --font-body: "Rajdhani", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0.06em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 168 · Puzzle Light */
+[data-style="game-puzzle-light"] {
+  --bg: #f7f9fc; --bg-2: #eef3fa; --surface: #ffffff; --surface-2: #f1f6fc; --ink: #151a22; --ink-soft: #4d5665; --ink-faint: #7d8798; --accent: #2f5aa8; --accent-ink: #f9fbff; --line: rgba(21,26,34,.12);
+  --radius: 12px; --radius-lg: 18px;
+  --shadow: 0 4px 14px rgba(21,26,34,.08); --shadow-hard: none;
+  --font-display: "Poppins", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 169 · MMO Guild */
+[data-style="game-mmo-guild"] {
+  --bg: #12101a; --bg-2: #171423; --surface: #1c1829; --surface-2: #262034; --ink: #efe9f7; --ink-soft: #bcb0cf; --ink-faint: #918aa6; --accent: #c8a24e; --accent-ink: #161004; --line: rgba(239,233,247,.15);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif; --font-body: "Fraunces", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.03em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 170 · Franchise Sports */
+[data-style="game-franchise-sports"] {
+  --bg: #0e0f12; --bg-2: #131418; --surface: #181a1f; --surface-2: #22252b; --ink: #f4f6f9; --ink-soft: #b0b6c0; --ink-faint: #858c98; --accent: #e8322f; --accent-ink: #1a0303; --line: rgba(244,246,249,.15);
+  --radius: 0px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Anton", system-ui, sans-serif; --font-body: "Space Grotesk", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 171 · Pinball Neon */
+[data-style="game-pinball-neon"] {
+  --bg: #0a0b14; --bg-2: #0e0f1c; --surface: #141527; --surface-2: #1c1e34; --ink: #eef2ff; --ink-soft: #a3acc9; --ink-faint: #79839f; --accent: #3ad1ff; --accent-ink: #03141a; --line: rgba(238,242,255,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "Poppins", system-ui, sans-serif; --font-mono: "VT323", ui-monospace, monospace; --tracking: 0.02em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 172 · Incident Response */
+[data-style="incident-response"] {
+  --bg: #0f1216; --bg-2: #131820; --surface: #171d26; --surface-2: #1f2833; --ink: #e9eef5; --ink-soft: #a8b4c2; --ink-faint: #7f8c9c; --accent: #f08b3c; --accent-ink: #1a0d03; --line: rgba(233,238,245,.14);
+  --radius: 4px; --radius-lg: 6px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Chakra Petch", system-ui, sans-serif; --font-body: "Chakra Petch", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 173 · FinOps Cost */
+[data-style="finops-cost"] {
+  --bg: #f8faf9; --bg-2: #eef4f1; --surface: #ffffff; --surface-2: #f1f6f3; --ink: #121a17; --ink-soft: #455a52; --ink-faint: #7b8f87; --accent: #1f6b4f; --accent-ink: #f6fdf9; --line: rgba(18,26,23,.12);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 174 · Fleet Dispatch */
+[data-style="fleet-dispatch"] {
+  --bg: #0c1116; --bg-2: #111820; --surface: #151d27; --surface-2: #1d2733; --ink: #e8eef6; --ink-soft: #a5b3c3; --ink-faint: #7b8a9c; --accent: #4d9dff; --accent-ink: #04101f; --line: rgba(232,238,246,.14);
+  --radius: 4px; --radius-lg: 6px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Rajdhani", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 175 · Fraud Review */
+[data-style="fraud-review"] {
+  --bg: #0f0e14; --bg-2: #14131c; --surface: #191826; --surface-2: #22202f; --ink: #ece9f5; --ink-soft: #b0a9c6; --ink-faint: #877f9e; --accent: #9d7bf0; --accent-ink: #0d0618; --line: rgba(236,233,245,.14);
+  --radius: 6px; --radius-lg: 8px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 176 · SLO Budget */
+[data-style="slo-budget"] {
+  --bg: #0b1018; --bg-2: #0f1621; --surface: #131c28; --surface-2: #1b2635; --ink: #e7eef8; --ink-soft: #a2b1c4; --ink-faint: #78879a; --accent: #37a3e0; --accent-ink: #03121c; --line: rgba(231,238,248,.14);
+  --radius: 6px; --radius-lg: 8px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 177 · Data Lineage */
+[data-style="data-lineage"] {
+  --bg: #0d1216; --bg-2: #12191f; --surface: #162028; --surface-2: #1e2b34; --ink: #e8f1f6; --ink-soft: #a4b7c3; --ink-faint: #7b8e99; --accent: #54c8d8; --accent-ink: #04181c; --line: rgba(232,241,246,.14);
+  --radius: 4px; --radius-lg: 6px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "IBM Plex Mono", ui-monospace, monospace; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 178 · Access Audit */
+[data-style="access-audit"] {
+  --bg: #f6f6f7; --bg-2: #ededf0; --surface: #ffffff; --surface-2: #f3f3f5; --ink: #14161a; --ink-soft: #4c5159; --ink-faint: #7f858e; --accent: #8a1f1f; --accent-ink: #fdf6f6; --line: rgba(20,22,26,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 179 · Release Train */
+[data-style="release-train"] {
+  --bg: #101118; --bg-2: #15161f; --surface: #1a1b26; --surface-2: #23242f; --ink: #ececf5; --ink-soft: #b0b1c6; --ink-faint: #85869c; --accent: #8f7bf0; --accent-ink: #0b0518; --line: rgba(236,236,245,.14);
+  --radius: 6px; --radius-lg: 8px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 180 · Support Inbox */
+[data-style="support-inbox"] {
+  --bg: #fbf9f6; --bg-2: #f2eee8; --surface: #ffffff; --surface-2: #f7f3ee; --ink: #1b1815; --ink-soft: #54504a; --ink-faint: #857f76; --accent: #8a5b12; --accent-ink: #fffaf2; --line: rgba(27,24,21,.12);
+  --radius: 8px; --radius-lg: 10px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 181 · Regulatory Report */
+[data-style="regulatory-report"] {
+  --bg: #fffdf9; --bg-2: #f4f1ea; --surface: #ffffff; --surface-2: #f8f5ef; --ink: #16181c; --ink-soft: #4a5057; --ink-faint: #7c838b; --accent: #1d3a6b; --accent-ink: #f7faff; --line: rgba(22,24,28,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Lora", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.005em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 182 · Grocery Delivery */
+[data-style="grocery-delivery"] {
+  --bg: #fbfdf9; --bg-2: #eef6ea; --surface: #ffffff; --surface-2: #f4faf1; --ink: #16201a; --ink-soft: #4a5b4f; --ink-faint: #7b8d80; --accent: #1f7a3d; --accent-ink: #f4fdf6; --line: rgba(22,32,26,.12);
+  --radius: 10px; --radius-lg: 14px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Poppins", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 183 · Marketplace Multi */
+[data-style="marketplace-multi"] {
+  --bg: #f7f8fa; --bg-2: #eceef2; --surface: #ffffff; --surface-2: #f2f4f7; --ink: #141821; --ink-soft: #4a515e; --ink-faint: #7c8492; --accent: #1f4fa8; --accent-ink: #f6f9ff; --line: rgba(20,24,33,.12);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 184 · Luxury Atelier */
+[data-style="luxury-atelier"] {
+  --bg: #f6f2ea; --bg-2: #efe9dd; --surface: #fffdf9; --surface-2: #f5f0e6; --ink: #1c1812; --ink-soft: #574f43; --ink-faint: #8b8171; --accent: #6b4a1f; --accent-ink: #fdf9f2; --line: rgba(28,24,18,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif; --font-body: "Jost", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0.02;
+}
+
+/* 185 · Subscription Box */
+[data-style="subscription-box"] {
+  --bg: #fdf8f4; --bg-2: #f7ece4; --surface: #ffffff; --surface-2: #fbf1ea; --ink: #1f1815; --ink-soft: #57463e; --ink-faint: #8b776d; --accent: #a83c1f; --accent-ink: #fff7f3; --line: rgba(31,24,21,.12);
+  --radius: 12px; --radius-lg: 16px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 186 · Sneaker Drop */
+[data-style="sneaker-drop"] {
+  --bg: #0d0d0f; --bg-2: #121215; --surface: #17171b; --surface-2: #202027; --ink: #f2f2f5; --ink-soft: #adaeb8; --ink-faint: #81828d; --accent: #ffd23f; --accent-ink: #141003; --line: rgba(242,242,245,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 187 · Wine Cellar */
+[data-style="wine-cellar"] {
+  --bg: #1a1013; --bg-2: #20141a; --surface: #261821; --surface-2: #30202a; --ink: #f2e8e6; --ink-soft: #c2aaa6; --ink-faint: #947f7c; --accent: #c9a227; --accent-ink: #150f02; --line: rgba(242,232,230,.15);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 188 · Furniture Studio */
+[data-style="furniture-studio"] {
+  --bg: #faf6f0; --bg-2: #f1e9dd; --surface: #ffffff; --surface-2: #f7f1e8; --ink: #1d1811; --ink-soft: #544b40; --ink-faint: #867b6d; --accent: #7a4b22; --accent-ink: #fdf8f2; --line: rgba(29,24,17,.13);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Jost", system-ui, sans-serif; --font-body: "Jost", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 189 · Electronics Spec */
+[data-style="electronics-spec"] {
+  --bg: #f8fafc; --bg-2: #eef2f7; --surface: #ffffff; --surface-2: #f3f6fa; --ink: #12161c; --ink-soft: #48515d; --ink-faint: #7a8492; --accent: #1a4fa0; --accent-ink: #f6f9ff; --line: rgba(18,22,28,.12);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 190 · Pharmacy Store */
+[data-style="pharmacy-store"] {
+  --bg: #f9fbfd; --bg-2: #eef4f9; --surface: #ffffff; --surface-2: #f3f8fc; --ink: #111820; --ink-soft: #46525f; --ink-faint: #78848f; --accent: #0f6b4a; --accent-ink: #f4fdf8; --line: rgba(17,24,32,.12);
+  --radius: 8px; --radius-lg: 12px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 191 · Farmers Market */
+[data-style="farmers-market"] {
+  --bg: #f8f5ee; --bg-2: #efe9dc; --surface: #fffdf7; --surface-2: #f5efe3; --ink: #1e1a13; --ink-soft: #524a3c; --ink-faint: #857a68; --accent: #5f6b1f; --accent-ink: #fbfdf2; --line: rgba(30,26,19,.14);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 192 · Museum Exhibition */
+[data-style="museum-exhibition"] {
+  --bg: #f7f5f0; --bg-2: #efece4; --surface: #fffdfa; --surface-2: #f4f1ea; --ink: #1a1917; --ink-soft: #514e48; --ink-faint: #847f76; --accent: #7a2f2f; --accent-ink: #fdf7f7; --line: rgba(26,25,23,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 193 · Theatre Season */
+[data-style="theatre-season"] {
+  --bg: #14100f; --bg-2: #1a1413; --surface: #211a18; --surface-2: #2b2220; --ink: #f4ebe4; --ink-soft: #c4b2a6; --ink-faint: #95857a; --accent: #c99a3f; --accent-ink: #171004; --line: rgba(244,235,228,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Playfair Display", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 194 · Film Festival */
+[data-style="film-festival"] {
+  --bg: #0c0c0e; --bg-2: #121215; --surface: #17171b; --surface-2: #202027; --ink: #f3f1f0; --ink-soft: #ada9a7; --ink-faint: #807c7a; --accent: #e04a3f; --accent-ink: #170302; --line: rgba(243,241,240,.15);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Anton", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 195 · Public Radio */
+[data-style="public-radio"] {
+  --bg: #fcfaf6; --bg-2: #f1ece2; --surface: #ffffff; --surface-2: #f7f3ec; --ink: #15171b; --ink-soft: #484d55; --ink-faint: #7c8189; --accent: #1b4f7a; --accent-ink: #f6faff; --line: rgba(21,23,27,.14);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Lora", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 196 · Podcast Network */
+[data-style="podcast-network"] {
+  --bg: #111114; --bg-2: #16161b; --surface: #1b1b21; --surface-2: #24242c; --ink: #f0eef4; --ink-soft: #b1adbb; --ink-faint: #85818f; --accent: #a37bf5; --accent-ink: #0d0618; --line: rgba(240,238,244,.14);
+  --radius: 8px; --radius-lg: 10px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 197 · Indie Cinema */
+[data-style="indie-cinema"] {
+  --bg: #0e0e0e; --bg-2: #141414; --surface: #1a1a1a; --surface-2: #232323; --ink: #f5f5f3; --ink-soft: #b4b4b0; --ink-faint: #878783; --accent: #f5d648; --accent-ink: #141103; --line: rgba(245,245,243,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 198 · Library Archive */
+[data-style="library-archive"] {
+  --bg: #f9f7f1; --bg-2: #efeade; --surface: #ffffff; --surface-2: #f5f1e7; --ink: #171a1f; --ink-soft: #4a4f57; --ink-faint: #7c828b; --accent: #1f3f73; --accent-ink: #f7faff; --line: rgba(23,26,31,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "EB Garamond", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 199 · Comic Bookstore */
+[data-style="comic-bookstore"] {
+  --bg: #fdf6e3; --bg-2: #f7ecd2; --surface: #fffdf4; --surface-2: #fbefd6; --ink: #1a1410; --ink-soft: #544538; --ink-faint: #8a7761; --accent: #b3301f; --accent-ink: #fff8f6; --line: rgba(26,20,16,.2);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "Space Grotesk", system-ui, sans-serif; --font-mono: "VT323", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 200 · Opera House */
+[data-style="opera-house"] {
+  --bg: #0f1420; --bg-2: #141a28; --surface: #1a2130; --surface-2: #232c3d; --ink: #eef1f7; --ink-soft: #b2bccc; --ink-faint: #8792a4; --accent: #c9b37e; --accent-ink: #151106; --line: rgba(238,241,247,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Playfair Display", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 201 · Street Festival */
+[data-style="street-festival"] {
+  --bg: #fdf7ef; --bg-2: #fae9d6; --surface: #fffdf9; --surface-2: #fdeedd; --ink: #1c1409; --ink-soft: #55402a; --ink-faint: #8a7055; --accent: #a83a0d; --accent-ink: #fff6f1; --line: rgba(28,20,9,.16);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "Space Grotesk", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 202 · Clinical Trial */
+[data-style="clinical-trial"] {
+  --bg: #fafbfc; --bg-2: #eef1f4; --surface: #ffffff; --surface-2: #f3f6f8; --ink: #121519; --ink-soft: #48505a; --ink-faint: #79828d; --accent: #125a86; --accent-ink: #f7fbff; --line: rgba(18,21,25,.13);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 203 · Lab Protocol */
+[data-style="lab-protocol"] {
+  --bg: #0f1214; --bg-2: #131719; --surface: #182023; --surface-2: #202a2e; --ink: #e8f0f2; --ink-soft: #a6b6ba; --ink-faint: #7d8d91; --accent: #4fc3a1; --accent-ink: #04160f; --line: rgba(232,240,242,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 204 · Pharmacy Labels */
+[data-style="pharmacy-labels"] {
+  --bg: #ffffff; --bg-2: #f2f4f6; --surface: #ffffff; --surface-2: #f6f8fa; --ink: #0f1317; --ink-soft: #414a53; --ink-faint: #71797f; --accent: #8a1b1b; --accent-ink: #fff7f7; --line: rgba(15,19,23,.18);
+  --radius: 4px; --radius-lg: 6px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 205 · Physiotherapy */
+[data-style="physiotherapy"] {
+  --bg: #f7fbf8; --bg-2: #e9f4ed; --surface: #ffffff; --surface-2: #f1f8f3; --ink: #121a16; --ink-soft: #45564c; --ink-faint: #798b80; --accent: #166b45; --accent-ink: #f4fdf8; --line: rgba(18,26,22,.12);
+  --radius: 12px; --radius-lg: 16px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Nunito", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 206 · Mental Wellness */
+[data-style="mental-wellness"] {
+  --bg: #faf8fd; --bg-2: #f0ebf7; --surface: #ffffff; --surface-2: #f5f1fa; --ink: #171322; --ink-soft: #4c4459; --ink-faint: #7f768c; --accent: #5b3f8f; --accent-ink: #faf7ff; --line: rgba(23,19,34,.12);
+  --radius: 14px; --radius-lg: 20px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Jost", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 207 · Nutrition Plan */
+[data-style="nutrition-plan"] {
+  --bg: #fcfdf8; --bg-2: #eef5e4; --surface: #ffffff; --surface-2: #f4f9ee; --ink: #151a11; --ink-soft: #45503c; --ink-faint: #79856e; --accent: #3f6b1a; --accent-ink: #f9fdf4; --line: rgba(21,26,17,.12);
+  --radius: 12px; --radius-lg: 16px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Poppins", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 208 · Dental Clinic */
+[data-style="dental-clinic"] {
+  --bg: #fbfdfe; --bg-2: #eaf6fa; --surface: #ffffff; --surface-2: #f2fafc; --ink: #101619; --ink-soft: #42535a; --ink-faint: #778a92; --accent: #0d6b86; --accent-ink: #f5fdff; --line: rgba(16,22,25,.12);
+  --radius: 10px; --radius-lg: 14px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 209 · Public Health */
+[data-style="public-health"] {
+  --bg: #ffffff; --bg-2: #eef2f7; --surface: #ffffff; --surface-2: #f5f8fb; --ink: #0c1116; --ink-soft: #3f4852; --ink-faint: #6f7883; --accent: #0b4f9c; --accent-ink: #f6faff; --line: rgba(12,17,22,.16);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 210 · Genomics Lab */
+[data-style="genomics-lab"] {
+  --bg: #0b0d14; --bg-2: #10131c; --surface: #141824; --surface-2: #1c2130; --ink: #e8ecf7; --ink-soft: #a4aec4; --ink-faint: #7a859c; --accent: #45d6c8; --accent-ink: #04171a; --line: rgba(232,236,247,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "IBM Plex Mono", ui-monospace, monospace; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 211 · Veterinary Care */
+[data-style="veterinary-care"] {
+  --bg: #fdfaf4; --bg-2: #f4ecdf; --surface: #ffffff; --surface-2: #faf4eb; --ink: #1a1712; --ink-soft: #544b3f; --ink-faint: #877c6d; --accent: #7a4a1e; --accent-ink: #fdf8f2; --line: rgba(26,23,18,.13);
+  --radius: 12px; --radius-lg: 16px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Nunito", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 212 · Language App */
+[data-style="language-app"] {
+  --bg: #fbfdff; --bg-2: #eaf3fc; --surface: #ffffff; --surface-2: #f2f8fe; --ink: #111a24; --ink-soft: #445565; --ink-faint: #78899a; --accent: #12558f; --accent-ink: #f6fbff; --line: rgba(17,26,36,.12);
+  --radius: 12px; --radius-lg: 16px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Poppins", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 213 · Skill Tree */
+[data-style="skill-tree"] {
+  --bg: #0f1018; --bg-2: #141520; --surface: #191a28; --surface-2: #222333; --ink: #eceaf7; --ink-soft: #aca8c4; --ink-faint: #82809a; --accent: #8f7bf0; --accent-ink: #0c0619; --line: rgba(236,234,247,.14);
+  --radius: 8px; --radius-lg: 10px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 214 · University Portal */
+[data-style="university-portal"] {
+  --bg: #f8f9fb; --bg-2: #e9edf3; --surface: #ffffff; --surface-2: #f2f5f9; --ink: #111721; --ink-soft: #454f5d; --ink-faint: #77828f; --accent: #1a3a6b; --accent-ink: #f7faff; --line: rgba(17,23,33,.13);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 215 · Coding Bootcamp */
+[data-style="coding-bootcamp"] {
+  --bg: #0c1110; --bg-2: #111715; --surface: #161d1b; --surface-2: #1e2725; --ink: #e9f2ef; --ink-soft: #a6b8b3; --ink-faint: #7d8f8a; --accent: #43d17a; --accent-ink: #04170c; --line: rgba(233,242,239,.14);
+  --radius: 4px; --radius-lg: 6px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 216 · Kids Classroom */
+[data-style="kids-classroom"] {
+  --bg: #fffdf5; --bg-2: #fff4d6; --surface: #ffffff; --surface-2: #fff8e6; --ink: #1c1710; --ink-soft: #564a36; --ink-faint: #8b7d63; --accent: #8c5a06; --accent-ink: #fffaf0; --line: rgba(28,23,16,.14);
+  --radius: 16px; --radius-lg: 22px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Baloo 2", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 217 · Exam Prep */
+[data-style="exam-prep"] {
+  --bg: #f9fafc; --bg-2: #edf0f5; --surface: #ffffff; --surface-2: #f4f6fa; --ink: #12161c; --ink-soft: #49515c; --ink-faint: #7b838f; --accent: #234a7a; --accent-ink: #f7faff; --line: rgba(18,22,28,.12);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 218 · Music Lesson */
+[data-style="music-lesson"] {
+  --bg: #fbf7f1; --bg-2: #f3e9dc; --surface: #ffffff; --surface-2: #f8f1e7; --ink: #1b1610; --ink-soft: #544a3c; --ink-faint: #877a68; --accent: #7a2e2a; --accent-ink: #fdf7f6; --line: rgba(27,22,16,.13);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 219 · Lab Simulation */
+[data-style="lab-simulation"] {
+  --bg: #0d1114; --bg-2: #11161a; --surface: #161d22; --surface-2: #1e272d; --ink: #e8f1f5; --ink-soft: #a4b4bc; --ink-faint: #7b8b93; --accent: #3fb6c9; --accent-ink: #041619; --line: rgba(232,241,245,.14);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 220 · Peer Study */
+[data-style="peer-study"] {
+  --bg: #faf9fc; --bg-2: #f0eef5; --surface: #ffffff; --surface-2: #f5f3f9; --ink: #17151e; --ink-soft: #4d4859; --ink-faint: #7f788c; --accent: #5a3f8a; --accent-ink: #faf7ff; --line: rgba(23,21,30,.12);
+  --radius: 10px; --radius-lg: 14px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 221 · Certificate Wallet */
+[data-style="certificate-wallet"] {
+  --bg: #0c1120; --bg-2: #111830; --surface: #161f3a; --surface-2: #1f2a4a; --ink: #eaf0fb; --ink-soft: #a6b4d2; --ink-faint: #7c8bab; --accent: #c9a25c; --accent-ink: #141003; --line: rgba(234,240,251,.15);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 222 · Terrazzo Stone */
+[data-style="terrazzo-stone"] {
+  --bg: #f6f4ef; --bg-2: #ece9e1; --surface: #fffefb; --surface-2: #f3f0e9; --ink: #1a1915; --ink-soft: #514e46; --ink-faint: #847f74; --accent: #8a4a3c; --accent-ink: #fdf7f5; --line: rgba(26,25,21,.14);
+  --radius: 0px; --radius-lg: 4px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Jost", system-ui, sans-serif; --font-body: "Jost", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0.05;
+}
+
+/* 223 · Linocut Print */
+[data-style="linocut-print"] {
+  --bg: #f7f3e8; --bg-2: #ece5d4; --surface: #fffdf6; --surface-2: #f4eeda; --ink: #161310; --ink-soft: #4f483d; --ink-faint: #847a68; --accent: #9c2b1d; --accent-ink: #fff7f4; --line: rgba(22,19,16,.2);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0.04;
+}
+
+/* 224 · Risograph Print */
+[data-style="risograph-print"] {
+  --bg: #fbf7f2; --bg-2: #f3ece2; --surface: #fffdfa; --surface-2: #f7f0e7; --ink: #1a1522; --ink-soft: #4e4759; --ink-faint: #817a8b; --accent: #1f5f8c; --accent-ink: #f7fbfe; --line: rgba(26,21,34,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Space Grotesk", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0.05;
+}
+
+/* 225 · Denim Textile */
+[data-style="denim-textile"] {
+  --bg: #f2f4f7; --bg-2: #e6eaf0; --surface: #ffffff; --surface-2: #eef1f6; --ink: #121821; --ink-soft: #454e5c; --ink-faint: #78818e; --accent: #1b3f6b; --accent-ink: #f6faff; --line: rgba(18,24,33,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 226 · Cork Oak */
+[data-style="cork-oak"] {
+  --bg: #faf5ee; --bg-2: #f0e5d7; --surface: #fffcf7; --surface-2: #f7eddf; --ink: #1c1710; --ink-soft: #544636; --ink-faint: #87775f; --accent: #6b4413; --accent-ink: #fdf9f3; --line: rgba(28,23,16,.14);
+  --radius: 8px; --radius-lg: 14px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif; --font-body: "Nunito", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0.04;
+}
+
+/* 227 · Cast Concrete */
+[data-style="cast-concrete"] {
+  --bg: #eef0f1; --bg-2: #e2e5e7; --surface: #f8f9fa; --surface-2: #eaedee; --ink: #14171a; --ink-soft: #464d53; --ink-faint: #767d84; --accent: #3d4b57; --accent-ink: #f7fafc; --line: rgba(20,23,26,.18);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 228 · Enamel Jewel */
+[data-style="enamel-jewel"] {
+  --bg: #120f1a; --bg-2: #171322; --surface: #1d1829; --surface-2: #272032; --ink: #f3eef9; --ink-soft: #c0b4d0; --ink-faint: #8e8499; --accent: #d0a95c; --accent-ink: #161003; --line: rgba(243,238,249,.15);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif; --font-body: "Jost", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 229 · Hand-thrown Ceramic */
+[data-style="hand-thrown-ceramic"] {
+  --bg: #faf7f1; --bg-2: #f1eade; --surface: #fffdf8; --surface-2: #f7f1e6; --ink: #1d1811; --ink-soft: #544b3c; --ink-faint: #877b66; --accent: #2f5d4a; --accent-ink: #f5fdf9; --line: rgba(29,24,17,.13);
+  --radius: 10px; --radius-lg: 16px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0.03;
+}
+
+/* 230 · Raw Steel */
+[data-style="raw-steel"] {
+  --bg: #e9ecee; --bg-2: #dde1e4; --surface: #f6f8f9; --surface-2: #e4e8ea; --ink: #101417; --ink-soft: #434b51; --ink-faint: #737b82; --accent: #2a3d4d; --accent-ink: #f5f9fc; --line: rgba(16,20,23,.2);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Chakra Petch", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 231 · Recycled Paper */
+[data-style="recycled-paper"] {
+  --bg: #f7f5ef; --bg-2: #eeebe2; --surface: #fffef9; --surface-2: #f4f1e8; --ink: #1b1913; --ink-soft: #514c40; --ink-faint: #847e6c; --accent: #4d5a1f; --accent-ink: #fbfdf2; --line: rgba(27,25,19,.16);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
+  --font-display: "Lora", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0em;
+  --blur: 0px; --grain: 0.05;
+}
+
+/* 232 · Condensed News */
+[data-style="condensed-news"] {
+  --bg: #fdfcf8; --bg-2: #f2f0e8; --surface: #ffffff; --surface-2: #f6f4ee; --ink: #121212; --ink-soft: #4a4a46; --ink-faint: #7d7d77; --accent: #8c1a1a; --accent-ink: #fdf7f6; --line: rgba(18,18,18,.2);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Anton", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 233 · Monospace Editorial */
+[data-style="monospace-editorial"] {
+  --bg: #fbfbfa; --bg-2: #f0f0ee; --surface: #ffffff; --surface-2: #f5f5f3; --ink: #141414; --ink-soft: #4b4b49; --ink-faint: #7c7c79; --accent: #1f5f4f; --accent-ink: #f5fdfa; --line: rgba(20,20,20,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "IBM Plex Mono", ui-monospace, monospace; --font-body: "IBM Plex Mono", ui-monospace, monospace; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 234 · Blackletter Modern */
+[data-style="blackletter-modern"] {
+  --bg: #100e0c; --bg-2: #15120f; --surface: #1b1714; --surface-2: #241f1b; --ink: #f2ece4; --ink-soft: #bdb2a5; --ink-faint: #8d8377; --accent: #c43a2f; --accent-ink: #fdf6f4; --line: rgba(242,236,228,.15);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 235 · Variable Weight */
+[data-style="variable-weight"] {
+  --bg: #f7f7f5; --bg-2: #ececea; --surface: #ffffff; --surface-2: #f2f2f0; --ink: #101010; --ink-soft: #474747; --ink-faint: #787878; --accent: #1a3fd0; --accent-ink: #f6f8ff; --line: rgba(16,16,16,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 236 · Justified Book */
+[data-style="justified-book"] {
+  --bg: #fbf8f1; --bg-2: #f2ece0; --surface: #fffdf7; --surface-2: #f6f1e6; --ink: #16130e; --ink-soft: #4d463b; --ink-faint: #827a6a; --accent: #5a2f6b; --accent-ink: #fbf7fd; --line: rgba(22,19,14,.14);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 237 · Stencil Display */
+[data-style="stencil-display"] {
+  --bg: #15181c; --bg-2: #1b1f24; --surface: #22262c; --surface-2: #2b3037; --ink: #eef1f4; --ink-soft: #b0b7bf; --ink-faint: #858d96; --accent: #e5b23c; --accent-ink: #161003; --line: rgba(238,241,244,.15);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "Chakra Petch", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 238 · Uppercase Only */
+[data-style="uppercase-only"] {
+  --bg: #f4f4f1; --bg-2: #e8e8e3; --surface: #ffffff; --surface-2: #f0f0ec; --ink: #101012; --ink-soft: #47474a; --ink-faint: #78787b; --accent: #1f4b3a; --accent-ink: #f6fdfa; --line: rgba(16,16,18,.16);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Space Grotesk", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 239 · Italic Accent */
+[data-style="italic-accent"] {
+  --bg: #fbf9f4; --bg-2: #f2ede3; --surface: #fffefa; --surface-2: #f7f2e9; --ink: #14120e; --ink-soft: #4b463c; --ink-faint: #807a6c; --accent: #8a4a2f; --accent-ink: #fdf8f5; --line: rgba(20,18,14,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif; --font-body: "Lora", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 240 · Numerals Display */
+[data-style="numerals-display"] {
+  --bg: #f7f8f9; --bg-2: #eceef0; --surface: #ffffff; --surface-2: #f3f5f6; --ink: #0f1215; --ink-soft: #454b51; --ink-faint: #767c83; --accent: #12506e; --accent-ink: #f6fbfe; --line: rgba(15,18,21,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Space Mono", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 241 · Small Caps Ledger */
+[data-style="small-caps-ledger"] {
+  --bg: #fbfaf5; --bg-2: #f1efe6; --surface: #fffef9; --surface-2: #f6f4ec; --ink: #15140f; --ink-soft: #4c4940; --ink-faint: #7f7b6d; --accent: #6b2f2f; --accent-ink: #fdf7f7; --line: rgba(21,20,15,.16);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "EB Garamond", system-ui, sans-serif; --font-body: "EB Garamond", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: -0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 242 · Agent Console */
+[data-style="agent-console"] {
+  --bg: #0a0e12; --bg-2: #0e1319; --surface: #121922; --surface-2: #1a232e; --ink: #e8f1f7; --ink-soft: #a3b4c1; --ink-faint: #798b98; --accent: #4fd8e8; --accent-ink: #04171b; --line: rgba(232,241,247,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "IBM Plex Mono", ui-monospace, monospace; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 243 · Spatial Workspace */
+[data-style="spatial-workspace"] {
+  --bg: #0d0f14; --bg-2: #12151c; --surface: #171b24; --surface-2: #1f2430; --ink: #eaeef6; --ink-soft: #a9b2c4; --ink-faint: #7f8899; --accent: #9678f0; --accent-ink: #0b0618; --line: rgba(234,238,246,.14);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 244 · Bio Lab Interface */
+[data-style="bio-lab-interface"] {
+  --bg: #0a100d; --bg-2: #0e1511; --surface: #121b16; --surface-2: #1a251e; --ink: #e9f4ec; --ink-soft: #a4bdaa; --ink-faint: #7b9382; --accent: #7ce86b; --accent-ink: #061505; --line: rgba(233,244,236,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 245 · Climate Model */
+[data-style="climate-model"] {
+  --bg: #f6f9fb; --bg-2: #e9f0f5; --surface: #ffffff; --surface-2: #f1f6fa; --ink: #101820; --ink-soft: #41505d; --ink-faint: #74828e; --accent: #12557f; --accent-ink: #f5fbff; --line: rgba(16,24,32,.13);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 246 · Orbital Logistics */
+[data-style="orbital-logistics"] {
+  --bg: #080b14; --bg-2: #0c101b; --surface: #101623; --surface-2: #182030; --ink: #e9eefb; --ink-soft: #a5b0c9; --ink-faint: #7b869e; --accent: #5fa8ff; --accent-ink: #04101f; --line: rgba(233,238,251,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Chakra Petch", system-ui, sans-serif; --font-body: "Rajdhani", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 247 · Synthetic Media */
+[data-style="synthetic-media"] {
+  --bg: #0e1013; --bg-2: #121519; --surface: #181c22; --surface-2: #21262e; --ink: #edf0f4; --ink-soft: #adb4bf; --ink-faint: #828a96; --accent: #3fd4c2; --accent-ink: #041614; --line: rgba(237,240,244,.14);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 248 · Quantum Dashboard */
+[data-style="quantum-dashboard"] {
+  --bg: #0a0a16; --bg-2: #0f0f1f; --surface: #141428; --surface-2: #1d1d36; --ink: #eae9fa; --ink-soft: #a9a6c9; --ink-faint: #7f7ca0; --accent: #c9a94a; --accent-ink: #151003; --line: rgba(234,233,250,.15);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Michroma", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 249 · Digital Twin */
+[data-style="digital-twin"] {
+  --bg: #0b1013; --bg-2: #0f1619; --surface: #131b20; --surface-2: #1b252b; --ink: #e8f1f4; --ink-soft: #a2b5bd; --ink-faint: #788b94; --accent: #46c9c0; --accent-ink: #041717; --line: rgba(232,241,244,.14);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Share Tech Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 250 · Neural Canvas */
+[data-style="neural-canvas"] {
+  --bg: #0b0b12; --bg-2: #101018; --surface: #15151f; --surface-2: #1d1d29; --ink: #eeeaf7; --ink-soft: #b0aac4; --ink-faint: #847f99; --accent: #a97bf0; --accent-ink: #0c0618; --line: rgba(238,234,247,.14);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}
+
+/* 251 · Post-screen Voice */
+[data-style="post-screen-voice"] {
+  --bg: #f6f5f2; --bg-2: #ecebe6; --surface: #ffffff; --surface-2: #f3f2ee; --ink: #141412; --ink-soft: #4a4a45; --ink-faint: #7c7c75; --accent: #2f5d4a; --accent-ink: #f5fdf9; --line: rgba(20,20,18,.14);
+  --radius: 10px; --radius-lg: 14px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.01em;
+  --blur: 0px; --grain: 0;
+}

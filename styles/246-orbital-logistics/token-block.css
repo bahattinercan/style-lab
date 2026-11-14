@@ -1,0 +1,15 @@
+/* 246 · Orbital Logistics — token bloğu (kaynak: styles/246-orbital-logistics/tokens.json) */
+
+[data-style="orbital-logistics"] {
+  --bg: #080b14; --bg-2: #0c101b;
+  --surface: #101623; --surface-2: #182030;
+  --ink: #e9eefb; --ink-soft: #a5b0c9; --ink-faint: #7b869e;
+  --accent: #5fa8ff; --accent-ink: #04101f;
+  --line: rgba(233,238,251,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-body: "Rajdhani", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+}

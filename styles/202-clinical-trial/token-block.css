@@ -1,0 +1,15 @@
+/* 202 · Clinical Trial — token bloğu (kaynak: styles/202-clinical-trial/tokens.json) */
+
+[data-style="clinical-trial"] {
+  --bg: #fafbfc; --bg-2: #eef1f4;
+  --surface: #ffffff; --surface-2: #f3f6f8;
+  --ink: #121519; --ink-soft: #48505a; --ink-faint: #79828d;
+  --accent: #125a86; --accent-ink: #f7fbff;
+  --line: rgba(18,21,25,.13);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

@@ -1,0 +1,15 @@
+/* 163 · Racing Neon — token bloğu (kaynak: styles/163-game-racing-neon/tokens.json) */
+
+[data-style="game-racing-neon"] {
+  --bg: #08080f; --bg-2: #0c0c18;
+  --surface: #121224; --surface-2: #1a1a33;
+  --ink: #eaf6ff; --ink-soft: #9fb3d1; --ink-faint: #71839f;
+  --accent: #31e1f5; --accent-ink: #04141a;
+  --line: rgba(234,246,255,.16);
+  --radius: 0px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Rajdhani", system-ui, sans-serif;
+  --font-body: "Chakra Petch", system-ui, sans-serif;
+  --font-mono: "VT323", ui-monospace, monospace;
+  --tracking: 0.05em; --blur: 0px; --grain: 0;
+}

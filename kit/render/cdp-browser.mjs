@@ -231,15 +231,57 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
   }
 
   /** Görüntü yakalar (PNG/WebP). Boş/yarım kare (paint yarışı) 3 kez yeniden denenir. */
+  /**
+   * Yakalama öncesi viewport doğrulaması: sekme havuzunda bir sekme başka bir kareye
+   * (ör. dar mobil görünüm) ayarlanmışsa sayfa yanlış genişlikte düzenlenir ve
+   * ekran görüntüsü boş/tek sütun çıkar. Bu yüzden metrikler yeniden uygulanır ve
+   * innerWidth/innerHeight eşleşene kadar beklenir.
+   */
+  async function ensureViewport(tab, width, height) {
+    for (let i = 0; i < 4; i += 1) {
+      const r = await tab
+        .send('Runtime.evaluate', { expression: 'JSON.stringify([innerWidth, innerHeight])', returnByValue: true })
+        .catch(() => null);
+      let got = null;
+      try {
+        got = JSON.parse(r?.result?.value ?? 'null');
+      } catch {
+        got = null;
+      }
+      if (got && Math.abs(got[0] - width) <= 1 && Math.abs(got[1] - height) <= 1) return true;
+      await tab
+        .send('Emulation.setDeviceMetricsOverride', {
+          width,
+          height,
+          deviceScaleFactor: 1,
+          mobile: false,
+          screenWidth: width,
+          screenHeight: height,
+        })
+        .catch(() => {});
+      await sleep(60);
+    }
+    return false;
+  }
+
+  /** PNG IHDR: 16..20 genişlik, 20..24 yükseklik. Format png değilse null. */
+  function pngSize(buf) {
+    if (!buf || buf.length < 24 || buf[0] !== 0x89 || buf[1] !== 0x50) return null;
+    return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+  }
+
   async function captureOn(tab, target, opts = {}) {
     const { format = 'png', quality = 88 } = opts;
-    const area = (opts.width ?? 1280) * (opts.height ?? 900);
+    const width = opts.width ?? 1280;
+    const height = opts.height ?? 900;
+    const area = width * height;
     const auto = format === 'png' ? (area > 300_000 ? 12_000 : 4_000) : 2_500;
     // CDP_MIN_BYTES: test/kıyas için eşiği geçersiz kılar (yeniden deneme yolunu kanıtlamak için)
     const minBytes = Number(process.env.CDP_MIN_BYTES) || auto;
     let last = null;
     for (let attempt = 1; attempt <= 3; attempt += 1) {
       await prepare(tab, target, opts);
+      const okViewport = await ensureViewport(tab, width, height);
       // fotoğraflı sayfalarda arka sekme compositing'i askıya alabiliyor: yakalamadan önce öne al
       await tab.send('Page.bringToFront').catch(() => {});
       const shot = await tab.send('Page.captureScreenshot', {
@@ -249,6 +291,13 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
         fromSurface: true,
       });
       last = Buffer.from(shot.data, 'base64');
+      const size = pngSize(last);
+      const sizeOk = !size || (size.width === width && size.height >= height - 2);
+      if (!okViewport || !sizeOk) {
+        process.emitWarning(`viewport uyuşmadı: ${path.basename(String(target))} — yeniden deneniyor`);
+        await sleep(120);
+        continue;
+      }
       if (last.length >= minBytes) return last;
       await sleep(150);
     }

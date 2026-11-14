@@ -1,0 +1,15 @@
+/* 234 · Blackletter Modern — token bloğu (kaynak: styles/234-blackletter-modern/tokens.json) */
+
+[data-style="blackletter-modern"] {
+  --bg: #100e0c; --bg-2: #15120f;
+  --surface: #1b1714; --surface-2: #241f1b;
+  --ink: #f2ece4; --ink-soft: #bdb2a5; --ink-faint: #8d8377;
+  --accent: #c43a2f; --accent-ink: #fdf6f4;
+  --line: rgba(242,236,228,.15);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif;
+  --font-body: "EB Garamond", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

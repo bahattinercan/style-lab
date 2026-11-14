@@ -1,0 +1,15 @@
+/* 237 · Stencil Display — token bloğu (kaynak: styles/237-stencil-display/tokens.json) */
+
+[data-style="stencil-display"] {
+  --bg: #15181c; --bg-2: #1b1f24;
+  --surface: #22262c; --surface-2: #2b3037;
+  --ink: #eef1f4; --ink-soft: #b0b7bf; --ink-faint: #858d96;
+  --accent: #e5b23c; --accent-ink: #161003;
+  --line: rgba(238,241,244,.15);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "Chakra Petch", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

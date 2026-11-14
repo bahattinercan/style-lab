@@ -1,0 +1,15 @@
+/* 203 · Lab Protocol — token bloğu (kaynak: styles/203-lab-protocol/tokens.json) */
+
+[data-style="lab-protocol"] {
+  --bg: #0f1214; --bg-2: #131719;
+  --surface: #182023; --surface-2: #202a2e;
+  --ink: #e8f0f2; --ink-soft: #a6b6ba; --ink-faint: #7d8d91;
+  --accent: #4fc3a1; --accent-ink: #04160f;
+  --line: rgba(232,240,242,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

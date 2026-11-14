@@ -1,0 +1,15 @@
+/* 192 · Museum Exhibition — token bloğu (kaynak: styles/192-museum-exhibition/tokens.json) */
+
+[data-style="museum-exhibition"] {
+  --bg: #f7f5f0; --bg-2: #efece4;
+  --surface: #fffdfa; --surface-2: #f4f1ea;
+  --ink: #1a1917; --ink-soft: #514e48; --ink-faint: #847f76;
+  --accent: #7a2f2f; --accent-ink: #fdf7f7;
+  --line: rgba(26,25,23,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif;
+  --font-body: "EB Garamond", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

@@ -1,0 +1,15 @@
+/* 245 · Climate Model — token bloğu (kaynak: styles/245-climate-model/tokens.json) */
+
+[data-style="climate-model"] {
+  --bg: #f6f9fb; --bg-2: #e9f0f5;
+  --surface: #ffffff; --surface-2: #f1f6fa;
+  --ink: #101820; --ink-soft: #41505d; --ink-faint: #74828e;
+  --accent: #12557f; --accent-ink: #f5fbff;
+  --line: rgba(16,24,32,.13);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+}

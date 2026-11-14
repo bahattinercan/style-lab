@@ -1,0 +1,15 @@
+/* 171 · Pinball Neon — token bloğu (kaynak: styles/171-game-pinball-neon/tokens.json) */
+
+[data-style="game-pinball-neon"] {
+  --bg: #0a0b14; --bg-2: #0e0f1c;
+  --surface: #141527; --surface-2: #1c1e34;
+  --ink: #eef2ff; --ink-soft: #a3acc9; --ink-faint: #79839f;
+  --accent: #3ad1ff; --accent-ink: #03141a;
+  --line: rgba(238,242,255,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+  --font-mono: "VT323", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
+}

@@ -1,0 +1,15 @@
+/* 218 · Music Lesson — token bloğu (kaynak: styles/218-music-lesson/tokens.json) */
+
+[data-style="music-lesson"] {
+  --bg: #fbf7f1; --bg-2: #f3e9dc;
+  --surface: #ffffff; --surface-2: #f8f1e7;
+  --ink: #1b1610; --ink-soft: #544a3c; --ink-faint: #877a68;
+  --accent: #7a2e2a; --accent-ink: #fdf7f6;
+  --line: rgba(27,22,16,.13);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif;
+  --font-body: "Lora", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

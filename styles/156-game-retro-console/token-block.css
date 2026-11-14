@@ -1,0 +1,15 @@
+/* 156 · Retro Console — token bloğu (kaynak: styles/156-game-retro-console/tokens.json) */
+
+[data-style="game-retro-console"] {
+  --bg: #101418; --bg-2: #151b21;
+  --surface: #1a222a; --surface-2: #222d37;
+  --ink: #e6eef4; --ink-soft: #a4b6c4; --ink-faint: #7d8f9d;
+  --accent: #f2c434; --accent-ink: #1a1403;
+  --line: rgba(230,238,244,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Press Start 2P", ui-monospace, monospace;
+  --font-body: "Chakra Petch", system-ui, sans-serif;
+  --font-mono: "VT323", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
+}

@@ -1,0 +1,15 @@
+/* 242 · Agent Console — token bloğu (kaynak: styles/242-agent-console/tokens.json) */
+
+[data-style="agent-console"] {
+  --bg: #0a0e12; --bg-2: #0e1319;
+  --surface: #121922; --surface-2: #1a232e;
+  --ink: #e8f1f7; --ink-soft: #a3b4c1; --ink-faint: #798b98;
+  --accent: #4fd8e8; --accent-ink: #04171b;
+  --line: rgba(232,241,247,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "IBM Plex Mono", ui-monospace, monospace;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+}

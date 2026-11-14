@@ -1,0 +1,15 @@
+/* 191 · Farmers Market — token bloğu (kaynak: styles/191-farmers-market/tokens.json) */
+
+[data-style="farmers-market"] {
+  --bg: #f8f5ee; --bg-2: #efe9dc;
+  --surface: #fffdf7; --surface-2: #f5efe3;
+  --ink: #1e1a13; --ink-soft: #524a3c; --ink-faint: #857a68;
+  --accent: #5f6b1f; --accent-ink: #fbfdf2;
+  --line: rgba(30,26,19,.14);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif;
+  --font-body: "Lora", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

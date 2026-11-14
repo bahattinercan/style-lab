@@ -1,6 +1,6 @@
 {
  "generatedBy": "kit/build-slim-index.mjs",
- "count": 151,
+ "count": 251,
  "families": [
   {
    "name": "Sade",
@@ -111,6 +111,51 @@
    "name": "Sahne & Prestij",
    "from": 146,
    "to": 151
+  },
+  {
+   "name": "Oyun & Etkileşim",
+   "from": 152,
+   "to": 171
+  },
+  {
+   "name": "Operasyon & Veri",
+   "from": 172,
+   "to": 181
+  },
+  {
+   "name": "Ticaret & Vitrin",
+   "from": 182,
+   "to": 191
+  },
+  {
+   "name": "Kültür & Yayın",
+   "from": 192,
+   "to": 201
+  },
+  {
+   "name": "Sağlık & Bilim",
+   "from": 202,
+   "to": 211
+  },
+  {
+   "name": "Öğrenme & Oyunlaştırma",
+   "from": 212,
+   "to": 221
+  },
+  {
+   "name": "Materyal & Zanaat",
+   "from": 222,
+   "to": 231
+  },
+  {
+   "name": "Tipografi Denemeleri",
+   "from": 232,
+   "to": 241
+  },
+  {
+   "name": "Gelecek & Spekülatif",
+   "from": 242,
+   "to": 251
   }
  ],
  "contract": {
@@ -4191,6 +4236,2505 @@
     "glassmorphism",
     "neumorphism",
     "noir-estate"
+   ]
+  },
+  {
+   "num": "152",
+   "slug": "game-hud",
+   "name": "Game HUD",
+   "family": "Oyun & Etkileşim",
+   "tag": "Oyun içi katmanın okunur hâli: keskin köşe, tabular rakam, tek sinyal rengi ve durum odaklı hiyerarşi.",
+   "tags": [
+    "oyun",
+    "hud",
+    "koyu panel"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "game-racing",
+    "arcade-8bit"
+   ],
+   "forbidden": [
+    "japandi",
+    "wabi-sabi"
+   ]
+  },
+  {
+   "num": "153",
+   "slug": "game-racing",
+   "name": "Game Racing",
+   "family": "Oyun & Etkileşim",
+   "tag": "Hız göstergesi dilinde arayüz: dar rakamlar, sıcak accent, eğimli kesim ve yarış telemetrisi hiyerarşisi.",
+   "tags": [
+    "oyun",
+    "yarış",
+    "telemetri"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "game-hud",
+    "sports-energy"
+   ],
+   "forbidden": [
+    "japandi",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "154",
+   "slug": "game-fantasy-rpg",
+   "name": "Fantasy RPG",
+   "family": "Oyun & Etkileşim",
+   "tag": "Ortaçağ el yazması ile oyun menüsünün kesişimi: altın vurgu, kitabe başlık ve envanter ızgarası.",
+   "tags": [
+    "oyun",
+    "fantastik",
+    "altın vurgu"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "game-card-tcg",
+    "collectible-card"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "memphis"
+   ]
+  },
+  {
+   "num": "155",
+   "slug": "game-sci-fi-cockpit",
+   "name": "Sci-Fi Cockpit",
+   "family": "Oyun & Etkileşim",
+   "tag": "Kokpit paneli dili: geniş harf aralıklı teknik başlık, mavi sinyal accent ve ölçüm şeritleri.",
+   "tags": [
+    "oyun",
+    "kokpit",
+    "telemetri"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "compatible": [
+    "game-hud",
+    "terminal-ui"
+   ],
+   "forbidden": [
+    "japandi",
+    "memphis"
+   ]
+  },
+  {
+   "num": "156",
+   "slug": "game-retro-console",
+   "name": "Retro Console",
+   "family": "Oyun & Etkileşim",
+   "tag": "Kartuş dönemi konsolu: pixel başlık, amber accent, 0 köşe ve dar ekran ritmi.",
+   "tags": [
+    "oyun",
+    "retro",
+    "pixel"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "arcade-8bit",
+    "game-indie-pixel"
+   ],
+   "forbidden": [
+    "japandi",
+    "utility"
+   ]
+  },
+  {
+   "num": "157",
+   "slug": "game-esports-league",
+   "name": "Esports League",
+   "family": "Oyun & Etkileşim",
+   "tag": "Yayın grafiği dili: dev başlık, mor accent, maç kartı ve sağa hizalı skor tabloları.",
+   "tags": [
+    "oyun",
+    "espor",
+    "turnuva"
+   ],
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "game-hud",
+    "sports-energy"
+   ],
+   "forbidden": [
+    "japandi",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "158",
+   "slug": "game-indie-pixel",
+   "name": "Indie Pixel",
+   "family": "Oyun & Etkileşim",
+   "tag": "Bağımsız oyun vitrini: pixel etiket, yeşil accent, düşük kontrastlı panel ve el yapımı düzensizlik.",
+   "tags": [
+    "oyun",
+    "bağımsız",
+    "pixel"
+   ],
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "game-retro-console",
+    "arcade-8bit"
+   ],
+   "forbidden": [
+    "luxury-typography",
+    "japandi"
+   ]
+  },
+  {
+   "num": "159",
+   "slug": "game-card-tcg",
+   "name": "Card TCG",
+   "family": "Oyun & Etkileşim",
+   "tag": "Koleksiyon kartı dili: nadirlik çerçevesi, kırmızı mühür, dar sütun ve mono künye.",
+   "tags": [
+    "oyun",
+    "koleksiyon",
+    "kart"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "collectible-card",
+    "game-fantasy-rpg"
+   ],
+   "forbidden": [
+    "bento-grid",
+    "glassmorphism"
+   ]
+  },
+  {
+   "num": "160",
+   "slug": "game-survival-craft",
+   "name": "Survival Craft",
+   "family": "Oyun & Etkileşim",
+   "tag": "Hayatta kalma arayüzü: kirli yeşil accent, kalın mono etiket, dayanıklılık çubukları ve kaba kesim.",
+   "tags": [
+    "oyun",
+    "hayatta kalma",
+    "zanaat"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "compatible": [
+    "game-mobile-casual",
+    "biophilic-botanical"
+   ],
+   "forbidden": [
+    "luxury-typography",
+    "liquid-glass"
+   ]
+  },
+  {
+   "num": "161",
+   "slug": "game-mobile-casual",
+   "name": "Mobile Casual",
+   "family": "Oyun & Etkileşim",
+   "tag": "Mobil oyun dilinde açık tema: mercan accent, yumuşak yuvarlak kart ve tek dokunuşla anlaşılan hiyerarşi.",
+   "tags": [
+    "oyun",
+    "mobil",
+    "açık tema"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "kids-playground",
+    "game-survival-craft"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "neo-brutalism"
+   ]
+  },
+  {
+   "num": "162",
+   "slug": "game-horror-occult",
+   "name": "Horror Occult",
+   "family": "Oyun & Etkileşim",
+   "tag": "Korku arayüzü: kan kırmızısı mühür, ince serif başlık, geniş siyah boşluk ve mono uyarı satırları.",
+   "tags": [
+    "oyun",
+    "korku",
+    "koyu"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "dark-academia",
+    "noir-estate"
+   ],
+   "forbidden": [
+    "kids-playground",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "163",
+   "slug": "game-racing-neon",
+   "name": "Racing Neon",
+   "family": "Oyun & Etkileşim",
+   "tag": "Gece yarışı dili: camgöbeği sinyal, magenta ikinci ton, dev eğik başlık ve hız şeritleri.",
+   "tags": [
+    "oyun",
+    "neon",
+    "gece"
+   ],
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "compatible": [
+    "game-racing",
+    "synthwave"
+   ],
+   "forbidden": [
+    "japandi",
+    "scandinavian-dark"
+   ]
+  },
+  {
+   "num": "164",
+   "slug": "game-strategy-map",
+   "name": "Strategy Map",
+   "family": "Oyun & Etkileşim",
+   "tag": "Strateji haritası dili: parşömen zemin, çini mavisi accent, altıgen ızgara ve mono künye tabloları.",
+   "tags": [
+    "oyun",
+    "strateji",
+    "harita"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "game-survival-craft",
+    "academic-paper"
+   ],
+   "forbidden": [
+    "synthwave",
+    "game-racing-neon"
+   ]
+  },
+  {
+   "num": "165",
+   "slug": "game-sim-builder",
+   "name": "Sim Builder",
+   "family": "Oyun & Etkileşim",
+   "tag": "Şehir kurma arayüzü: turkuaz accent, ölçülü yuvarlak panel, kaynak sayaçları ve sakin yoğunluk.",
+   "tags": [
+    "oyun",
+    "simülasyon",
+    "planlama"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "game-survival-craft",
+    "kanban-flow"
+   ],
+   "forbidden": [
+    "neo-brutalism",
+    "game-horror-occult"
+   ]
+  },
+  {
+   "num": "166",
+   "slug": "game-arcade-cabinet",
+   "name": "Arcade Cabinet",
+   "family": "Oyun & Etkileşim",
+   "tag": "Kabin sanatı dili: sarı üstüne kırmızı-mavi, kalın kontur, kutu içinde kutu ve coin-op ritmi.",
+   "tags": [
+    "oyun",
+    "arcade",
+    "retro"
+   ],
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "compatible": [
+    "arcade-8bit",
+    "game-retro-console"
+   ],
+   "forbidden": [
+    "japandi",
+    "glassmorphism"
+   ]
+  },
+  {
+   "num": "167",
+   "slug": "game-stealth-tactical",
+   "name": "Stealth Tactical",
+   "family": "Oyun & Etkileşim",
+   "tag": "Taktik arayüz: zeytin zemin, soluk amber accent, risk göstergesi ve monospace brifing.",
+   "tags": [
+    "oyun",
+    "taktik",
+    "koyu"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "game-sci-fi-cockpit",
+    "terminal-ui"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "kids-playground"
+   ]
+  },
+  {
+   "num": "168",
+   "slug": "game-puzzle-light",
+   "name": "Puzzle Light",
+   "family": "Oyun & Etkileşim",
+   "tag": "Bulmaca oyunu için açık, sakin arayüz: yumuşak mavi accent, geniş boşluk ve tek adımlık ilerleme.",
+   "tags": [
+    "oyun",
+    "bulmaca",
+    "açık tema"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "game-mobile-casual",
+    "minimalism"
+   ],
+   "forbidden": [
+    "game-horror-occult",
+    "cyberpunk"
+   ]
+  },
+  {
+   "num": "169",
+   "slug": "game-mmo-guild",
+   "name": "MMO Guild",
+   "family": "Oyun & Etkileşim",
+   "tag": "Lonca arayüzü: derin mor zemin, pirinç accent, kitabe başlık ve üye tablosu.",
+   "tags": [
+    "oyun",
+    "mmo",
+    "topluluk"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "game-fantasy-rpg",
+    "dark-academia"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "minimalism"
+   ]
+  },
+  {
+   "num": "170",
+   "slug": "game-franchise-sports",
+   "name": "Franchise Sports",
+   "family": "Oyun & Etkileşim",
+   "tag": "Spor oyunu menüsü: kırmızı-beyaz blok, dev başlık, oyuncu kartı ve sağa hizalı istatistik.",
+   "tags": [
+    "oyun",
+    "spor",
+    "sezon"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "sports-energy",
+    "game-esports-league"
+   ],
+   "forbidden": [
+    "japandi",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "171",
+   "slug": "game-pinball-neon",
+   "name": "Pinball Neon",
+   "family": "Oyun & Etkileşim",
+   "tag": "Pinball makinesi dili: elektrik mavisi accent, sarı ikinci ton, çapraz çizgi ve skor tabelası.",
+   "tags": [
+    "oyun",
+    "pinball",
+    "neon"
+   ],
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "compatible": [
+    "synthwave",
+    "game-racing-neon"
+   ],
+   "forbidden": [
+    "japandi",
+    "minimalism"
+   ]
+  },
+  {
+   "num": "172",
+   "slug": "incident-response",
+   "name": "Incident Response",
+   "family": "Operasyon & Veri",
+   "tag": "Olay müdahale konsolu: zaman çizelgesi, turuncu uyarı, tek sahiplik ve durum etiketleriyle sakin bir kriz ekranı.",
+   "tags": [
+    "operasyon",
+    "olay",
+    "kriz"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "compatible": [
+    "log-stream",
+    "access-audit"
+   ],
+   "forbidden": [
+    "luxury-typography",
+    "carnival-festival"
+   ]
+  },
+  {
+   "num": "173",
+   "slug": "finops-cost",
+   "name": "FinOps Cost",
+   "family": "Operasyon & Veri",
+   "tag": "Bulut maliyet paneli: yeşil tasarruf göstergesi, sağa hizalı tutarlar ve bütçe eşiği çizgileri.",
+   "tags": [
+    "operasyon",
+    "maliyet",
+    "finans"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "ledger-meter",
+    "regulatory-report"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "game-pinball-neon"
+   ]
+  },
+  {
+   "num": "174",
+   "slug": "fleet-dispatch",
+   "name": "Fleet Dispatch",
+   "family": "Operasyon & Veri",
+   "tag": "Filo sevk ekranı: harita üstünde araç kartları, mavi rota accent ve mono ETA sütunları.",
+   "tags": [
+    "operasyon",
+    "lojistik",
+    "harita"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "warehouse-flow",
+    "incident-response"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "175",
+   "slug": "fraud-review",
+   "name": "Fraud Review",
+   "family": "Operasyon & Veri",
+   "tag": "Risk inceleme kuyruğu: mor uyarı, kanıt paneli ve tek karar düğmesiyle temkinli bir inceleme ekranı.",
+   "tags": [
+    "operasyon",
+    "risk",
+    "uyum"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "access-audit",
+    "regulatory-report"
+   ],
+   "forbidden": [
+    "kids-playground",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "176",
+   "slug": "slo-budget",
+   "name": "SLO Budget",
+   "family": "Operasyon & Veri",
+   "tag": "Hata bütçesi panosu: mavi eşik çizgisi, kalan bütçe göstergesi ve mono hata oranı sütunları.",
+   "tags": [
+    "operasyon",
+    "güvenilirlik",
+    "slo"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "compatible": [
+    "telemetry-grid",
+    "incident-response"
+   ],
+   "forbidden": [
+    "lookbook-editorial",
+    "carnival-festival"
+   ]
+  },
+  {
+   "num": "177",
+   "slug": "data-lineage",
+   "name": "Data Lineage",
+   "family": "Operasyon & Veri",
+   "tag": "Veri soy ağacı ekranı: düğüm çizgileri, soluk camgöbeği accent ve mono şema etiketleri.",
+   "tags": [
+    "operasyon",
+    "veri",
+    "şema"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "compatible": [
+    "blueprint-drawing",
+    "atlas-console"
+   ],
+   "forbidden": [
+    "carnival-festival",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "178",
+   "slug": "access-audit",
+   "name": "Access Audit",
+   "family": "Operasyon & Veri",
+   "tag": "Erişim denetimi: gri tablo, kırmızı yalnız ihlal, mono kimlik ve değişmezlik vurgusu.",
+   "tags": [
+    "operasyon",
+    "denetim",
+    "uyum"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "compatible": [
+    "fraud-review",
+    "regulatory-report"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "game-mobile-casual"
+   ]
+  },
+  {
+   "num": "179",
+   "slug": "release-train",
+   "name": "Release Train",
+   "family": "Operasyon & Veri",
+   "tag": "Sürüm takvimi: haftalık tren çizgisi, mor durum etiketi ve mono sürüm numaraları.",
+   "tags": [
+    "operasyon",
+    "sürüm",
+    "planlama"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "compatible": [
+    "kanban-flow",
+    "slo-budget"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "poetry-chapbook"
+   ]
+  },
+  {
+   "num": "180",
+   "slug": "support-inbox",
+   "name": "Support Inbox",
+   "family": "Operasyon & Veri",
+   "tag": "Destek gelen kutusu: üç kolon, sarı öncelik, kısa yanıt şablonları ve mono SLA sayacı.",
+   "tags": [
+    "operasyon",
+    "destek",
+    "kuyruk"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "compatible": [
+    "kanban-flow",
+    "release-train"
+   ],
+   "forbidden": [
+    "game-horror-occult",
+    "synthwave"
+   ]
+  },
+  {
+   "num": "181",
+   "slug": "regulatory-report",
+   "name": "Regulatory Report",
+   "family": "Operasyon & Veri",
+   "tag": "Uyum raporu: serif başlık, numaralı bölüm, gri tablo ve tek lacivert accent ile resmî belge düzeni.",
+   "tags": [
+    "operasyon",
+    "uyum",
+    "rapor"
+   ],
+   "layout": {
+    "hero": "sticky",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "academic-paper",
+    "access-audit"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "sticker-sheet"
+   ]
+  },
+  {
+   "num": "182",
+   "slug": "grocery-delivery",
+   "name": "Grocery Delivery",
+   "family": "Ticaret & Vitrin",
+   "tag": "Market teslimat vitrini: yeşil fiyat accent, ürün ızgarası ve mono sepet özetiyle hızlı alışveriş.",
+   "tags": [
+    "ticaret",
+    "market",
+    "teslimat"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "pill",
+    "density": "dense"
+   },
+   "compatible": [
+    "farmers-market",
+    "pharmacy-store"
+   ],
+   "forbidden": [
+    "noir-estate",
+    "game-horror-occult"
+   ]
+  },
+  {
+   "num": "183",
+   "slug": "marketplace-multi",
+   "name": "Marketplace Multi",
+   "family": "Ticaret & Vitrin",
+   "tag": "Çok satıcılı pazar yeri: gri filtre rayı, satıcı etiketi ve yıldız yerine metin puanlama.",
+   "tags": [
+    "ticaret",
+    "pazar yeri",
+    "filtre"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "compatible": [
+    "product-catalog",
+    "electronics-spec"
+   ],
+   "forbidden": [
+    "lookbook-editorial",
+    "noir-estate"
+   ]
+  },
+  {
+   "num": "184",
+   "slug": "luxury-atelier",
+   "name": "Luxury Atelier",
+   "family": "Ticaret & Vitrin",
+   "tag": "Atölye lüksü: kemik zemin, bronz accent, geniş boşluk ve tek ürün odaklı sütun.",
+   "tags": [
+    "ticaret",
+    "lüks",
+    "atölye"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "boutique-hotel",
+    "lookbook-editorial"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "grocery-delivery"
+   ]
+  },
+  {
+   "num": "185",
+   "slug": "subscription-box",
+   "name": "Subscription Box",
+   "family": "Ticaret & Vitrin",
+   "tag": "Kutu aboneliği: üç plan kartı, aylık vurgu ve mono kargo takvimi.",
+   "tags": [
+    "ticaret",
+    "abonelik",
+    "plan"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "compatible": [
+    "grocery-delivery",
+    "wine-cellar"
+   ],
+   "forbidden": [
+    "access-audit",
+    "terminal-ui"
+   ]
+  },
+  {
+   "num": "186",
+   "slug": "sneaker-drop",
+   "name": "Sneaker Drop",
+   "family": "Ticaret & Vitrin",
+   "tag": "Sınırlı sürüm ayakkabı vitrini: siyah zemin, sarı accent, geri sayım yerine sabit tarih ve mono numara.",
+   "tags": [
+    "ticaret",
+    "sneaker",
+    "drop"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "compatible": [
+    "sports-energy",
+    "electronics-spec"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "japandi"
+   ]
+  },
+  {
+   "num": "187",
+   "slug": "wine-cellar",
+   "name": "Wine Cellar",
+   "family": "Ticaret & Vitrin",
+   "tag": "Şarap mahzeni kataloğu: bordo zemin, pirinç accent, yıl-etiket tabloları ve serif künye.",
+   "tags": [
+    "ticaret",
+    "şarap",
+    "koleksiyon"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "noir-estate",
+    "grand-tourer-oxblood"
+   ],
+   "forbidden": [
+    "kids-playground",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "188",
+   "slug": "furniture-studio",
+   "name": "Furniture Studio",
+   "family": "Ticaret & Vitrin",
+   "tag": "Mobilya stüdyosu: sıcak meşe paleti, geniş ürün fotoğrafı, ölçü tablosu ve sade fiyat satırı.",
+   "tags": [
+    "ticaret",
+    "mobilya",
+    "ölçü"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "compatible": [
+    "japandi",
+    "boutique-hotel"
+   ],
+   "forbidden": [
+    "cyberpunk",
+    "game-racing-neon"
+   ]
+  },
+  {
+   "num": "189",
+   "slug": "electronics-spec",
+   "name": "Electronics Spec",
+   "family": "Ticaret & Vitrin",
+   "tag": "Elektronik ürün sayfası: teknik tablo, mavi accent, karşılaştırma satırı ve mono birimler.",
+   "tags": [
+    "ticaret",
+    "elektronik",
+    "spec"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "compatible": [
+    "marketplace-multi",
+    "blueprint-drawing"
+   ],
+   "forbidden": [
+    "lookbook-editorial",
+    "boutique-hotel"
+   ]
+  },
+  {
+   "num": "190",
+   "slug": "pharmacy-store",
+   "name": "Pharmacy Store",
+   "family": "Ticaret & Vitrin",
+   "tag": "Eczane vitrini: beyaz-mavi zemin, yeşil reçete accent, açık doz bilgisi ve güven satırları.",
+   "tags": [
+    "ticaret",
+    "eczane",
+    "sağlık"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "compatible": [
+    "grocery-delivery",
+    "luxury-atelier"
+   ],
+   "forbidden": [
+    "game-horror-occult",
+    "synthwave"
+   ]
+  },
+  {
+   "num": "191",
+   "slug": "farmers-market",
+   "name": "Farmers Market",
+   "family": "Ticaret & Vitrin",
+   "tag": "Üretici pazarı: toprak tonları, el yazısı etiket yerine serif, sezon takvimi ve üretici künyesi.",
+   "tags": [
+    "ticaret",
+    "yerel",
+    "sezon"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "compatible": [
+    "grocery-delivery",
+    "nordic-folk"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "cyberpunk"
+   ]
+  },
+  {
+   "num": "192",
+   "slug": "museum-exhibition",
+   "name": "Museum Exhibition",
+   "family": "Kültür & Yayın",
+   "tag": "Sergi sayfası: kemik zemin, ince hairline, tarih-sıra künyesi ve geniş kenar boşluğu.",
+   "tags": [
+    "kültür",
+    "müze",
+    "sergi"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "pill",
+    "density": "dense"
+   },
+   "compatible": [
+    "museum-thesis",
+    "library-archive"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "game-racing-neon"
+   ]
+  },
+  {
+   "num": "193",
+   "slug": "theatre-season",
+   "name": "Theatre Season",
+   "family": "Kültür & Yayın",
+   "tag": "Tiyatro sezonu: derin bordo, altın çizgi, program tablosu ve sahne fotoğrafı.",
+   "tags": [
+    "kültür",
+    "tiyatro",
+    "sezon"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "opera-house",
+    "grand-tourer-oxblood"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "194",
+   "slug": "film-festival",
+   "name": "Film Festival",
+   "family": "Kültür & Yayın",
+   "tag": "Film festivali: siyah zemin, kırmızı program accent, seans ızgarası ve mono süre bilgisi.",
+   "tags": [
+    "kültür",
+    "film",
+    "festival"
+   ],
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "indie-cinema",
+    "noir-estate"
+   ],
+   "forbidden": [
+    "japandi",
+    "marketplace-multi"
+   ]
+  },
+  {
+   "num": "195",
+   "slug": "public-radio",
+   "name": "Public Radio",
+   "family": "Kültür & Yayın",
+   "tag": "Kamu radyosu: kâğıt zemin, mavi accent, program kuşağı tablosu ve ses süresi bilgisi.",
+   "tags": [
+    "kültür",
+    "radyo",
+    "program"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "podcast-network",
+    "broadsheet-daily"
+   ],
+   "forbidden": [
+    "game-pinball-neon",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "196",
+   "slug": "podcast-network",
+   "name": "Podcast Network",
+   "family": "Kültür & Yayın",
+   "tag": "Podcast ağı: koyu grafit, mor accent, bölüm listesi ve mono süre-dinlenme metrikleri.",
+   "tags": [
+    "kültür",
+    "podcast",
+    "arşiv"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "compatible": [
+    "public-radio",
+    "voice-first"
+   ],
+   "forbidden": [
+    "regulatory-report",
+    "ledger-meter"
+   ]
+  },
+  {
+   "num": "197",
+   "slug": "indie-cinema",
+   "name": "Indie Cinema",
+   "family": "Kültür & Yayın",
+   "tag": "Bağımsız sinema: siyah-beyaz kontrast, tek sarı accent, gösterim takvimi ve bilet notu.",
+   "tags": [
+    "kültür",
+    "sinema",
+    "gösterim"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "film-festival",
+    "punk-fanzine"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "198",
+   "slug": "library-archive",
+   "name": "Library Archive",
+   "family": "Kültür & Yayın",
+   "tag": "Kütüphane arşivi: kâğıt zemin, lacivert accent, numaralı kayıt ve mono yer numarası.",
+   "tags": [
+    "kültür",
+    "arşiv",
+    "katalog"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "compatible": [
+    "museum-exhibition",
+    "academic-paper"
+   ],
+   "forbidden": [
+    "game-pinball-neon",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "199",
+   "slug": "comic-bookstore",
+   "name": "Comic Bookstore",
+   "family": "Kültür & Yayın",
+   "tag": "Çizgi roman dükkânı: sarı konuşma balonu accent, kalın kontur ve sayı-salı takvimi.",
+   "tags": [
+    "kültür",
+    "çizgi roman",
+    "yayın"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "pill",
+    "density": "dense"
+   },
+   "compatible": [
+    "comic-story",
+    "punk-fanzine"
+   ],
+   "forbidden": [
+    "minimalism",
+    "ledger-meter"
+   ]
+  },
+  {
+   "num": "200",
+   "slug": "opera-house",
+   "name": "Opera House",
+   "family": "Kültür & Yayın",
+   "tag": "Opera evi: gece mavisi, gümüş çizgi, sezon künyesi ve geniş serif başlık.",
+   "tags": [
+    "kültür",
+    "opera",
+    "sezon"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "compatible": [
+    "theatre-season",
+    "grand-tourer-midnight"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "sticker-sheet"
+   ]
+  },
+  {
+   "num": "201",
+   "slug": "street-festival",
+   "name": "Street Festival",
+   "family": "Kültür & Yayın",
+   "tag": "Sokak festivali: doygun turuncu accent, kalın tipografi, sahne programı ve harita bloğu.",
+   "tags": [
+    "kültür",
+    "festival",
+    "sokak"
+   ],
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "compatible": [
+    "carnival-festival",
+    "comic-bookstore"
+   ],
+   "forbidden": [
+    "regulatory-report",
+    "access-audit"
+   ]
+  },
+  {
+   "num": "202",
+   "slug": "clinical-trial",
+   "name": "Clinical Trial",
+   "family": "Sağlık & Bilim",
+   "tag": "Klinik çalışma protokolü: beyaz-gri düzen, tek mavi accent, faz etiketi ve katılımcı tablosu.",
+   "tags": [
+    "sağlık",
+    "klinik",
+    "protokol"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "lab-protocol",
+    "regulatory-report"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "carnival-festival"
+   ]
+  },
+  {
+   "num": "203",
+   "slug": "lab-protocol",
+   "name": "Lab Protocol",
+   "family": "Sağlık & Bilim",
+   "tag": "Laboratuvar protokolü: numaralı adımlar, monospace zaman damgası ve uyarı bloğu.",
+   "tags": [
+    "sağlık",
+    "laboratuvar",
+    "protokol"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "clinical-trial",
+    "terminal-ui"
+   ],
+   "forbidden": [
+    "lookbook-editorial",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "204",
+   "slug": "pharmacy-labels",
+   "name": "Pharmacy Labels",
+   "family": "Sağlık & Bilim",
+   "tag": "İlaç etiketi okunurluğu: yüksek kontrast, büyük punto, doz tablosu ve net uyarı şeridi.",
+   "tags": [
+    "sağlık",
+    "ilaç",
+    "okunurluk"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "pharmacy-store",
+    "nutrition-plan"
+   ],
+   "forbidden": [
+    "game-horror-occult",
+    "synthwave"
+   ]
+  },
+  {
+   "num": "205",
+   "slug": "physiotherapy",
+   "name": "Physiotherapy",
+   "family": "Sağlık & Bilim",
+   "tag": "Fizyoterapi planı: yumuşak yeşil, egzersiz kartları, set/tekrar tablosu ve ilerleme çubuğu.",
+   "tags": [
+    "sağlık",
+    "fizyoterapi",
+    "egzersiz"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "mental-wellness",
+    "nutrition-plan"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "game-horror-occult"
+   ]
+  },
+  {
+   "num": "206",
+   "slug": "mental-wellness",
+   "name": "Mental Wellness",
+   "family": "Sağlık & Bilim",
+   "tag": "Zihin sağlığı uygulaması: sakin leylak, yumuşak geçiş, günlük check-in ve nefes ritmi bloğu.",
+   "tags": [
+    "sağlık",
+    "zihin",
+    "sakin"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "physiotherapy",
+    "ethereal"
+   ],
+   "forbidden": [
+    "game-esports-league",
+    "access-audit"
+   ]
+  },
+  {
+   "num": "207",
+   "slug": "nutrition-plan",
+   "name": "Nutrition Plan",
+   "family": "Sağlık & Bilim",
+   "tag": "Beslenme planı: sebze yeşili accent, öğün kartları, makro halkaları ve mono porsiyon.",
+   "tags": [
+    "sağlık",
+    "beslenme",
+    "öğün"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "physiotherapy",
+    "grocery-delivery"
+   ],
+   "forbidden": [
+    "game-horror-occult",
+    "synthwave"
+   ]
+  },
+  {
+   "num": "208",
+   "slug": "dental-clinic",
+   "name": "Dental Clinic",
+   "family": "Sağlık & Bilim",
+   "tag": "Diş kliniği: ferah beyaz, camgöbeği accent, randevu formu ve tedavi süresi tablosu.",
+   "tags": [
+    "sağlık",
+    "klinik",
+    "randevu"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "pharmacy-store",
+    "physiotherapy"
+   ],
+   "forbidden": [
+    "game-pinball-neon",
+    "synthwave"
+   ]
+  },
+  {
+   "num": "209",
+   "slug": "public-health",
+   "name": "Public Health",
+   "family": "Sağlık & Bilim",
+   "tag": "Halk sağlığı bilgilendirmesi: yüksek kontrast, büyük rakamlar, kaynak dipnotu ve sade dil.",
+   "tags": [
+    "sağlık",
+    "kamu",
+    "istatistik"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "clinical-trial",
+    "regulatory-report"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "boutique-hotel"
+   ]
+  },
+  {
+   "num": "210",
+   "slug": "genomics-lab",
+   "name": "Genomics Lab",
+   "family": "Sağlık & Bilim",
+   "tag": "Genom laboratuvarı: koyu mor zemin, turkuaz accent, dizileme tablosu ve mono baz etiketleri.",
+   "tags": [
+    "sağlık",
+    "genom",
+    "laboratuvar"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "lab-protocol",
+    "data-lineage"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "211",
+   "slug": "veterinary-care",
+   "name": "Veterinary Care",
+   "family": "Sağlık & Bilim",
+   "tag": "Veteriner klinik: sıcak krem zemin, kahve accent, aşı takvimi ve hasta kartı.",
+   "tags": [
+    "sağlık",
+    "veteriner",
+    "takvim"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "dental-clinic",
+    "physiotherapy"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "game-pinball-neon"
+   ]
+  },
+  {
+   "num": "212",
+   "slug": "language-app",
+   "name": "Language App",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Dil öğrenme uygulaması: canlı mavi accent, günlük seri, kelime kartı ve telaffuz satırı.",
+   "tags": [
+    "öğrenme",
+    "dil",
+    "alıştırma"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "skill-tree",
+    "game-puzzle-light"
+   ],
+   "forbidden": [
+    "access-audit",
+    "regulatory-report"
+   ]
+  },
+  {
+   "num": "213",
+   "slug": "skill-tree",
+   "name": "Skill Tree",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Yetenek ağacı: mor accent, düğüm haritası, kilit durumları ve mono ilerleme puanı.",
+   "tags": [
+    "öğrenme",
+    "yol haritası",
+    "yetenek"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "language-app",
+    "kanban-flow"
+   ],
+   "forbidden": [
+    "regulatory-report",
+    "boutique-hotel"
+   ]
+  },
+  {
+   "num": "214",
+   "slug": "university-portal",
+   "name": "University Portal",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Üniversite portalı: kurumsal lacivert, kayıt dönemi şeridi, ders kataloğu ve mono kredi.",
+   "tags": [
+    "öğrenme",
+    "üniversite",
+    "katalog"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "library-archive",
+    "academic-paper"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "game-pinball-neon"
+   ]
+  },
+  {
+   "num": "215",
+   "slug": "coding-bootcamp",
+   "name": "Coding Bootcamp",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Kod bootcamp'i: terminal yeşili accent, müfredat haftaları, mono süre ve proje kartı.",
+   "tags": [
+    "öğrenme",
+    "kod",
+    "müfredat"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "skill-tree",
+    "lab-simulation"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "lookbook-editorial"
+   ]
+  },
+  {
+   "num": "216",
+   "slug": "kids-classroom",
+   "name": "Kids Classroom",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Çocuk sınıfı: yumuşak sarı-mavi, büyük dokunma hedefleri, görev kartları ve yıldız yerine metin ödül.",
+   "tags": [
+    "öğrenme",
+    "çocuk",
+    "sınıf"
+   ],
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "kids-playground",
+    "language-app"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "access-audit"
+   ]
+  },
+  {
+   "num": "217",
+   "slug": "exam-prep",
+   "name": "Exam Prep",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Sınav hazırlığı: gri-mavi düzen, soru sayacı, konu ağırlığı ve mono süre planı.",
+   "tags": [
+    "öğrenme",
+    "sınav",
+    "plan"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "university-portal",
+    "coding-bootcamp"
+   ],
+   "forbidden": [
+    "carnival-festival",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "218",
+   "slug": "music-lesson",
+   "name": "Music Lesson",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Müzik dersi: sıcak ahşap zemin, bordo accent, nota satırı ve mono tempo bilgisi.",
+   "tags": [
+    "öğrenme",
+    "müzik",
+    "pratik"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "theatre-season",
+    "podcast-network"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "access-audit"
+   ]
+  },
+  {
+   "num": "219",
+   "slug": "lab-simulation",
+   "name": "Lab Simulation",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Sanal laboratuvar: koyu zemin, camgöbeği ölçüm, adım kaydırıcıları ve sonuç tablosu.",
+   "tags": [
+    "öğrenme",
+    "simülasyon",
+    "laboratuvar"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "lab-protocol",
+    "coding-bootcamp"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "220",
+   "slug": "peer-study",
+   "name": "Peer Study",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Akran çalışma grubu: sıcak gri, mor accent, oturum kartları ve mono katılımcı sayısı.",
+   "tags": [
+    "öğrenme",
+    "akran",
+    "oturum"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "language-app",
+    "podcast-network"
+   ],
+   "forbidden": [
+    "access-audit",
+    "regulatory-report"
+   ]
+  },
+  {
+   "num": "221",
+   "slug": "certificate-wallet",
+   "name": "Certificate Wallet",
+   "family": "Öğrenme & Oyunlaştırma",
+   "tag": "Sertifika cüzdanı: koyu mavi zemin, altın mühür, doğrulama kodu ve mono tarih.",
+   "tags": [
+    "öğrenme",
+    "sertifika",
+    "doğrulama"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "university-portal",
+    "exam-prep"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "carnival-festival"
+   ]
+  },
+  {
+   "num": "222",
+   "slug": "terrazzo-stone",
+   "name": "Terrazzo Stone",
+   "family": "Materyal & Zanaat",
+   "tag": "Terrazzo yüzey: taş kırıntısı doku, kireç zemin, tek kiremit accent ve sade künye.",
+   "tags": [
+    "materyal",
+    "taş",
+    "doku"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "cast-concrete",
+    "wood-joinery"
+   ],
+   "forbidden": [
+    "synthwave",
+    "game-racing-neon"
+   ]
+  },
+  {
+   "num": "223",
+   "slug": "linocut-print",
+   "name": "Linocut Print",
+   "family": "Materyal & Zanaat",
+   "tag": "Linol baskı: mürekkep siyahı, kırık kenar, tek kırmızı vurgu ve el dizgisi ritmi.",
+   "tags": [
+    "materyal",
+    "baskı",
+    "zanaat"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "compatible": [
+    "letterpress-print",
+    "risograph-print"
+   ],
+   "forbidden": [
+    "liquid-glass",
+    "synthwave"
+   ]
+  },
+  {
+   "num": "224",
+   "slug": "risograph-print",
+   "name": "Risograph Print",
+   "family": "Materyal & Zanaat",
+   "tag": "Riso baskı: iki mürekkep (mavi-pembe), kayma efekti, kâğıt dokusu ve mono adet.",
+   "tags": [
+    "materyal",
+    "riso",
+    "baskı"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "linocut-print",
+    "punk-fanzine"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "boutique-hotel"
+   ]
+  },
+  {
+   "num": "225",
+   "slug": "denim-textile",
+   "name": "Denim Textile",
+   "family": "Materyal & Zanaat",
+   "tag": "Denim dokusu: çivit mavisi, çift dikiş çizgisi, keten zemin ve mono beden tablosu.",
+   "tags": [
+    "materyal",
+    "tekstil",
+    "denim"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "raw-steel"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "226",
+   "slug": "cork-oak",
+   "name": "Cork Oak",
+   "family": "Materyal & Zanaat",
+   "tag": "Mantar meşesi: sıcak kahve zemin, taneli doku, yuvarlak hat ve mono üretim notu.",
+   "tags": [
+    "materyal",
+    "mantar",
+    "sürdürülebilir"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "wood-joinery",
+    "terrazzo-stone"
+   ],
+   "forbidden": [
+    "cyberpunk",
+    "game-racing-neon"
+   ]
+  },
+  {
+   "num": "227",
+   "slug": "cast-concrete",
+   "name": "Cast Concrete",
+   "family": "Materyal & Zanaat",
+   "tag": "Beton döküm: gri skala, kalıp izi, keskin blok ve mono dayanım sınıfı.",
+   "tags": [
+    "materyal",
+    "beton",
+    "mimarlık"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "concrete-monolith",
+    "raw-steel"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "kids-classroom"
+   ]
+  },
+  {
+   "num": "228",
+   "slug": "enamel-jewel",
+   "name": "Enamel Jewel",
+   "family": "Materyal & Zanaat",
+   "tag": "Mineli mücevher: gece moru, altın çizgi, küçük ölçek ve mono taş bilgisi.",
+   "tags": [
+    "materyal",
+    "mücevher",
+    "mine"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "compatible": [
+    "luxury-atelier",
+    "marble-vein"
+   ],
+   "forbidden": [
+    "kids-playground",
+    "grocery-delivery"
+   ]
+  },
+  {
+   "num": "229",
+   "slug": "hand-thrown-ceramic",
+   "name": "Hand-thrown Ceramic",
+   "family": "Materyal & Zanaat",
+   "tag": "El yapımı seramik: kil beyazı zemin, sır yeşili accent, düzensiz kenar ve mono fırın notu.",
+   "tags": [
+    "materyal",
+    "seramik",
+    "el yapımı"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
+   },
+   "compatible": [
+    "porcelain-glaze",
+    "cork-oak"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "game-racing-neon"
+   ]
+  },
+  {
+   "num": "230",
+   "slug": "raw-steel",
+   "name": "Raw Steel",
+   "family": "Materyal & Zanaat",
+   "tag": "Ham çelik: soğuk gri, haddelenmiş yüzey, teknik etiket ve mono tolerans.",
+   "tags": [
+    "materyal",
+    "çelik",
+    "endüstri"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "compatible": [
+    "machined-metal-panel",
+    "cast-concrete"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "kids-classroom"
+   ]
+  },
+  {
+   "num": "231",
+   "slug": "recycled-paper",
+   "name": "Recycled Paper",
+   "family": "Materyal & Zanaat",
+   "tag": "Geri dönüşüm kâğıdı: kirli beyaz, zeytin accent, kenar izleri ve mono geri dönüşüm oranı.",
+   "tags": [
+    "materyal",
+    "kâğıt",
+    "geri dönüşüm"
+   ],
+   "layout": {
+    "hero": "fullbleed",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "compatible": [
+    "cork-oak",
+    "letterpress-print"
+   ],
+   "forbidden": [
+    "synthwave",
+    "liquid-glass"
+   ]
+  },
+  {
+   "num": "232",
+   "slug": "condensed-news",
+   "name": "Condensed News",
+   "family": "Tipografi Denemeleri",
+   "tag": "Sıkı gazete tipografisi: dar başlık, çok kolon, hairline ve mono tarih-imza.",
+   "tags": [
+    "tipografi",
+    "haber",
+    "gazete"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
+   },
+   "compatible": [
+    "broadsheet-daily",
+    "justified-book"
+   ],
+   "forbidden": [
+    "glassmorphism",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "233",
+   "slug": "monospace-editorial",
+   "name": "Monospace Editorial",
+   "family": "Tipografi Denemeleri",
+   "tag": "Monospace editoryal: kod ritmi, tek accent, uzun ölçü ve mono etiket hiyerarşisi.",
+   "tags": [
+    "tipografi",
+    "mono",
+    "dokümantasyon"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "terminal-ui",
+    "academic-paper"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "carnival-festival"
+   ]
+  },
+  {
+   "num": "234",
+   "slug": "blackletter-modern",
+   "name": "Blackletter Modern",
+   "family": "Tipografi Denemeleri",
+   "tag": "Modern gotik: ağır serif başlık, gece zemin, tek kan rengi ve sade gövde.",
+   "tags": [
+    "tipografi",
+    "gotik",
+    "mühür"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "victorian",
+    "theatre-season"
+   ],
+   "forbidden": [
+    "minimalism",
+    "kids-classroom"
+   ]
+  },
+  {
+   "num": "235",
+   "slug": "variable-weight",
+   "name": "Variable Weight",
+   "family": "Tipografi Denemeleri",
+   "tag": "Değişken ağırlık: aynı ailede 300–900, kontrast sıçraması ve ölçü ritmi.",
+   "tags": [
+    "tipografi",
+    "ağırlık",
+    "ajans"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "swiss-design",
+    "condensed-news"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "kids-classroom"
+   ]
+  },
+  {
+   "num": "236",
+   "slug": "justified-book",
+   "name": "Justified Book",
+   "family": "Tipografi Denemeleri",
+   "tag": "Kitap dizgisi: iki yana yaslı serif, 66ch ölçü, bölüm numarası ve mono kolofon.",
+   "tags": [
+    "tipografi",
+    "kitap",
+    "dizgi"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "literary-hardcover",
+    "academic-paper"
+   ],
+   "forbidden": [
+    "game-esports-league",
+    "dopamine-ui"
+   ]
+  },
+  {
+   "num": "237",
+   "slug": "stencil-display",
+   "name": "Stencil Display",
+   "family": "Tipografi Denemeleri",
+   "tag": "Şablon harf: askerî kalıp, sarı accent, blok başlık ve mono kod etiketi.",
+   "tags": [
+    "tipografi",
+    "şablon",
+    "endüstri"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "constructivism",
+    "raw-steel"
+   ],
+   "forbidden": [
+    "japandi",
+    "ethereal"
+   ]
+  },
+  {
+   "num": "238",
+   "slug": "uppercase-only",
+   "name": "Uppercase Only",
+   "family": "Tipografi Denemeleri",
+   "tag": "Yalnız büyük harf: geniş tracking, kısa satır, tek accent ve mimari boşluk.",
+   "tags": [
+    "tipografi",
+    "büyük harf",
+    "mimarlık"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "swiss-design",
+    "variable-weight"
+   ],
+   "forbidden": [
+    "literary-hardcover",
+    "poetry-chapbook"
+   ]
+  },
+  {
+   "num": "239",
+   "slug": "italic-accent",
+   "name": "Italic Accent",
+   "family": "Tipografi Denemeleri",
+   "tag": "İtalik vurgu: düz gövde içinde eğik başlık, ince serif kontrast ve tek sıcak accent.",
+   "tags": [
+    "tipografi",
+    "italik",
+    "edebiyat"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "poetry-chapbook",
+    "justified-book"
+   ],
+   "forbidden": [
+    "terminal-ui",
+    "access-audit"
+   ]
+  },
+  {
+   "num": "240",
+   "slug": "numerals-display",
+   "name": "Numerals Display",
+   "family": "Tipografi Denemeleri",
+   "tag": "Rakam odaklı tipografi: dev sayılar, mono hizalama, birim etiketi ve ince çizgi.",
+   "tags": [
+    "tipografi",
+    "rakam",
+    "rapor"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "inline",
+    "density": "sparse"
+   },
+   "compatible": [
+    "ledger-meter",
+    "variable-weight"
+   ],
+   "forbidden": [
+    "kids-classroom",
+    "carnival-festival"
+   ]
+  },
+  {
+   "num": "241",
+   "slug": "small-caps-ledger",
+   "name": "Small Caps Ledger",
+   "family": "Tipografi Denemeleri",
+   "tag": "Küçük kapsüllü defter: başlıklarda small-caps, ince çizgili tablo ve mono toplam.",
+   "tags": [
+    "tipografi",
+    "defter",
+    "muhasebe"
+   ],
+   "layout": {
+    "hero": "type",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "ledger-meter",
+    "library-archive"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "game-pinball-neon"
+   ]
+  },
+  {
+   "num": "242",
+   "slug": "agent-console",
+   "name": "Agent Console",
+   "family": "Gelecek & Spekülatif",
+   "tag": "Ajan konsolu: izleme kaydı, camgöbeği sinyal, araç çağrısı tablosu ve mono gecikme.",
+   "tags": [
+    "gelecek",
+    "ajan",
+    "konsol"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "agent-orchestration",
+    "data-lineage"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "carnival-festival"
+   ]
+  },
+  {
+   "num": "243",
+   "slug": "spatial-workspace",
+   "name": "Spatial Workspace",
+   "family": "Gelecek & Spekülatif",
+   "tag": "Uzamsal çalışma alanı: derin gri, katman çizgileri, mor accent ve mono koordinat.",
+   "tags": [
+    "gelecek",
+    "uzamsal",
+    "katman"
+   ],
+   "layout": {
+    "hero": "index",
+    "nav": "pill",
+    "density": "dense"
+   },
+   "compatible": [
+    "volumetric-data",
+    "digital-twin"
+   ],
+   "forbidden": [
+    "ledger-meter",
+    "regulatory-report"
+   ]
+  },
+  {
+   "num": "244",
+   "slug": "bio-lab-interface",
+   "name": "Bio Lab Interface",
+   "family": "Gelecek & Spekülatif",
+   "tag": "Biyolojik laboratuvar arayüzü: koyu yeşil, asit accent, kültür tablosu ve mono sıcaklık.",
+   "tags": [
+    "gelecek",
+    "biyoteknoloji",
+    "laboratuvar"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "genomics-lab",
+    "lab-simulation"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "carnival-festival"
+   ]
+  },
+  {
+   "num": "245",
+   "slug": "climate-model",
+   "name": "Climate Model",
+   "family": "Gelecek & Spekülatif",
+   "tag": "İklim modeli panosu: soğuk mavi, senaryo şeritleri, yıl ekseni ve mono sapma değeri.",
+   "tags": [
+    "gelecek",
+    "iklim",
+    "senaryo"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "volumetric-data",
+    "public-health"
+   ],
+   "forbidden": [
+    "dopamine-ui",
+    "carnival-festival"
+   ]
+  },
+  {
+   "num": "246",
+   "slug": "orbital-logistics",
+   "name": "Orbital Logistics",
+   "family": "Gelecek & Spekülatif",
+   "tag": "Yörünge lojistiği: gece mavisi, yörünge çizgileri, manifest tablosu ve mono pencere saati.",
+   "tags": [
+    "gelecek",
+    "uzay",
+    "lojistik"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
+   },
+   "compatible": [
+    "fleet-dispatch",
+    "planetary-service"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "kids-classroom"
+   ]
+  },
+  {
+   "num": "247",
+   "slug": "synthetic-media",
+   "name": "Synthetic Media",
+   "family": "Gelecek & Spekülatif",
+   "tag": "Sentetik medya: grafit zemin, turkuaz accent, kaynak etiketi ve mono üretim parametresi.",
+   "tags": [
+    "gelecek",
+    "sentetik",
+    "medya"
+   ],
+   "layout": {
+    "hero": "split-reverse",
+    "nav": "inline",
+    "density": "dense"
+   },
+   "compatible": [
+    "agent-console",
+    "neural-canvas"
+   ],
+   "forbidden": [
+    "regulatory-report",
+    "access-audit"
+   ]
+  },
+  {
+   "num": "248",
+   "slug": "quantum-dashboard",
+   "name": "Quantum Dashboard",
+   "family": "Gelecek & Spekülatif",
+   "tag": "Kuantum panosu: mor-lacivert, durum vektörü tablosu, altın accent ve mono olasılık.",
+   "tags": [
+    "gelecek",
+    "kuantum",
+    "olasılık"
+   ],
+   "layout": {
+    "hero": "product",
+    "nav": "rail",
+    "density": "dense"
+   },
+   "compatible": [
+    "volumetric-data",
+    "lab-instrument"
+   ],
+   "forbidden": [
+    "kids-classroom",
+    "boutique-hotel"
+   ]
+  },
+  {
+   "num": "249",
+   "slug": "digital-twin",
+   "name": "Digital Twin",
+   "family": "Gelecek & Spekülatif",
+   "tag": "Dijital ikiz: şema-durum eşleşmesi, camgöbeği canlı accent ve mono sensör değeri.",
+   "tags": [
+    "gelecek",
+    "ikiz",
+    "sensör"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
+   },
+   "compatible": [
+    "telemetry-grid",
+    "spatial-workspace"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "poetry-chapbook"
+   ]
+  },
+  {
+   "num": "250",
+   "slug": "neural-canvas",
+   "name": "Neural Canvas",
+   "family": "Gelecek & Spekülatif",
+   "tag": "Sinir ağı tuvali: katman düğümleri, mor accent, ince bağlantılar ve mono katman boyutu.",
+   "tags": [
+    "gelecek",
+    "model",
+    "katman"
+   ],
+   "layout": {
+    "hero": "centered",
+    "nav": "split",
+    "density": "sparse"
+   },
+   "compatible": [
+    "agent-console",
+    "volumetric-data"
+   ],
+   "forbidden": [
+    "boutique-hotel",
+    "regulatory-report"
+   ]
+  },
+  {
+   "num": "251",
+   "slug": "post-screen-voice",
+   "name": "Post-screen Voice",
+   "family": "Gelecek & Spekülatif",
+   "tag": "Ekran sonrası ses arayüzü: sıcak gri, dalga çizgisi, transkript satırı ve mono süre.",
+   "tags": [
+    "gelecek",
+    "ses",
+    "transkript"
+   ],
+   "layout": {
+    "hero": "split",
+    "nav": "split",
+    "density": "balanced"
+   },
+   "compatible": [
+    "voice-first",
+    "podcast-network"
+   ],
+   "forbidden": [
+    "regulatory-report",
+    "access-audit"
    ]
   }
  ]

@@ -56,7 +56,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1055448
+        "bytes": 1110830
       }
     },
     "wabi-sabi": {
@@ -216,7 +216,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1988178
+        "bytes": 1993232
       }
     },
     "victorian": {
@@ -320,7 +320,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1212129
+        "bytes": 1213049
       }
     },
     "scandinavian-dark": {
@@ -384,7 +384,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 428120
+        "bytes": 427388
       }
     },
     "executive-kpi": {
@@ -512,7 +512,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 117189
+        "bytes": 409045
       }
     },
     "construction-site": {
@@ -616,7 +616,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 3567453
+        "bytes": 3568450
       }
     },
     "weather-atmosphere": {
@@ -656,7 +656,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 166656
+        "bytes": 3237693
       }
     },
     "desert-sand": {
@@ -768,7 +768,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 3618114
+        "bytes": 3623622
       }
     },
     "kinetic-marquee": {
@@ -840,7 +840,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1810377
+        "bytes": 2387386
       }
     },
     "holographic-layer": {
@@ -856,7 +856,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1050738
+        "bytes": 1050778
       }
     },
     "spatial-ar-layer": {
@@ -864,7 +864,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1895916
+        "bytes": 3364976
       }
     },
     "command-palette": {
@@ -968,7 +968,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1857801
+        "bytes": 1859672
       }
     },
     "celebration-card": {
@@ -1000,7 +1000,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1107703
+        "bytes": 1110226
       }
     },
     "sports-energy": {
@@ -1016,7 +1016,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 652330
+        "bytes": 878550
       }
     },
     "silk-drape": {
@@ -1032,7 +1032,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 2288290
+        "bytes": 2288790
       }
     },
     "porcelain-glaze": {
@@ -1128,7 +1128,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1486770
+        "bytes": 2363246
       }
     },
     "planetary-service": {
@@ -1168,7 +1168,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 572448
+        "bytes": 572553
       }
     },
     "noir-estate": {
@@ -1184,7 +1184,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 417675
+        "bytes": 417691
       }
     },
     "product-launch": {
@@ -1217,6 +1217,806 @@
         "w": 1280,
         "h": 2400,
         "bytes": 1061541
+      }
+    },
+    "game-hud": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 445333
+      }
+    },
+    "game-racing": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 327057
+      }
+    },
+    "game-fantasy-rpg": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 385239
+      }
+    },
+    "game-sci-fi-cockpit": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 291064
+      }
+    },
+    "game-retro-console": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 399891
+      }
+    },
+    "game-esports-league": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 351538
+      }
+    },
+    "game-indie-pixel": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 344206
+      }
+    },
+    "game-card-tcg": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 373141
+      }
+    },
+    "game-survival-craft": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 668154
+      }
+    },
+    "game-mobile-casual": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 483500
+      }
+    },
+    "game-horror-occult": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 739171
+      }
+    },
+    "game-racing-neon": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 335940
+      }
+    },
+    "game-strategy-map": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 371691
+      }
+    },
+    "game-sim-builder": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 465900
+      }
+    },
+    "game-arcade-cabinet": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 345018
+      }
+    },
+    "game-stealth-tactical": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 305170
+      }
+    },
+    "game-puzzle-light": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 366827
+      }
+    },
+    "game-mmo-guild": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 367267
+      }
+    },
+    "game-franchise-sports": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 463587
+      }
+    },
+    "game-pinball-neon": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 360860
+      }
+    },
+    "support-inbox": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 300868
+      }
+    },
+    "grocery-delivery": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 387573
+      }
+    },
+    "marketplace-multi": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 379658
+      }
+    },
+    "luxury-atelier": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 557302
+      }
+    },
+    "subscription-box": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 395980
+      }
+    },
+    "sneaker-drop": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 375335
+      }
+    },
+    "wine-cellar": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 670619
+      }
+    },
+    "furniture-studio": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 285146
+      }
+    },
+    "electronics-spec": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 378746
+      }
+    },
+    "pharmacy-store": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 385864
+      }
+    },
+    "farmers-market": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 405224
+      }
+    },
+    "clinical-trial": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 485929
+      }
+    },
+    "lab-protocol": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 488208
+      }
+    },
+    "pharmacy-labels": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 475639
+      }
+    },
+    "physiotherapy": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 366092
+      }
+    },
+    "mental-wellness": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 380302
+      }
+    },
+    "nutrition-plan": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 474728
+      }
+    },
+    "dental-clinic": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 482621
+      }
+    },
+    "public-health": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 480157
+      }
+    },
+    "genomics-lab": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 483092
+      }
+    },
+    "veterinary-care": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 474533
+      }
+    },
+    "language-app": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 374425
+      }
+    },
+    "skill-tree": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 384256
+      }
+    },
+    "university-portal": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 372815
+      }
+    },
+    "coding-bootcamp": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 383823
+      }
+    },
+    "kids-classroom": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 386563
+      }
+    },
+    "exam-prep": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 378207
+      }
+    },
+    "music-lesson": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 396820
+      }
+    },
+    "lab-simulation": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 387065
+      }
+    },
+    "peer-study": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 385856
+      }
+    },
+    "certificate-wallet": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 353596
+      }
+    },
+    "street-festival": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 366157
+      }
+    },
+    "terrazzo-stone": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 1450071
+      }
+    },
+    "linocut-print": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 980422
+      }
+    },
+    "risograph-print": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 1081818
+      }
+    },
+    "denim-textile": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 628694
+      }
+    },
+    "cork-oak": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 1326156
+      }
+    },
+    "cast-concrete": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 641852
+      }
+    },
+    "enamel-jewel": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 555495
+      }
+    },
+    "hand-thrown-ceramic": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 936134
+      }
+    },
+    "raw-steel": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 612074
+      }
+    },
+    "recycled-paper": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 1526855
+      }
+    },
+    "condensed-news": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 340308
+      }
+    },
+    "monospace-editorial": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 323125
+      }
+    },
+    "blackletter-modern": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 359852
+      }
+    },
+    "variable-weight": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 349720
+      }
+    },
+    "justified-book": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 189885
+      }
+    },
+    "stencil-display": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 331162
+      }
+    },
+    "uppercase-only": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 370629
+      }
+    },
+    "italic-accent": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 361032
+      }
+    },
+    "numerals-display": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 357724
+      }
+    },
+    "small-caps-ledger": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 357128
+      }
+    },
+    "agent-console": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 355515
+      }
+    },
+    "spatial-workspace": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 374734
+      }
+    },
+    "bio-lab-interface": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 375140
+      }
+    },
+    "climate-model": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 366794
+      }
+    },
+    "orbital-logistics": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 295526
+      }
+    },
+    "synthetic-media": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 371061
+      }
+    },
+    "quantum-dashboard": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 311382
+      }
+    },
+    "digital-twin": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 372839
+      }
+    },
+    "neural-canvas": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 481242
+      }
+    },
+    "post-screen-voice": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 367973
+      }
+    },
+    "access-audit": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 298989
+      }
+    },
+    "theatre-season": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 364271
+      }
+    },
+    "podcast-network": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 371387
+      }
+    },
+    "incident-response": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 274765
+      }
+    },
+    "finops-cost": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 354484
+      }
+    },
+    "fleet-dispatch": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 328656
+      }
+    },
+    "fraud-review": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 384641
+      }
+    },
+    "slo-budget": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 316960
+      }
+    },
+    "data-lineage": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 310767
+      }
+    },
+    "release-train": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 312128
+      }
+    },
+    "regulatory-report": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 335606
+      }
+    },
+    "museum-exhibition": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 340074
+      }
+    },
+    "film-festival": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 354649
+      }
+    },
+    "public-radio": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 356426
+      }
+    },
+    "indie-cinema": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 278175
+      }
+    },
+    "library-archive": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 343871
+      }
+    },
+    "comic-bookstore": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 352265
+      }
+    },
+    "opera-house": {
+      "01-page.png": {
+        "key": "landing",
+        "w": 1280,
+        "h": 2400,
+        "bytes": 352160
       }
     }
   }

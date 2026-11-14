@@ -4349,6 +4349,9 @@ body .sig > * { pointer-events: none; }
    Kural: hard-coded renk yok; yalnız var(--…) token'ları.
    ============================================================ */
 .page { display: block; overflow-x: clip; }
+/* Sabit 1280px tuval: dekoratif taşmalar (pseudo katman, döndürülmüş blok) yatay kaydırma
+   üretmesin. Gerçek taşma `--measure` kapısında blok kırpılması olarak yakalanır. */
+html:has(> body.page) { overflow-x: clip; }
 .page .pg { display: flex; flex-direction: column; }
 .page .nav { padding: 18px 56px; }
 .page .hero { padding: 46px 56px 30px; }

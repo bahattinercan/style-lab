@@ -1,0 +1,15 @@
+/* 198 · Library Archive — token bloğu (kaynak: styles/198-library-archive/tokens.json) */
+
+[data-style="library-archive"] {
+  --bg: #f9f7f1; --bg-2: #efeade;
+  --surface: #ffffff; --surface-2: #f5f1e7;
+  --ink: #171a1f; --ink-soft: #4a4f57; --ink-faint: #7c828b;
+  --accent: #1f3f73; --accent-ink: #f7faff;
+  --line: rgba(23,26,31,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "EB Garamond", system-ui, sans-serif;
+  --font-body: "EB Garamond", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

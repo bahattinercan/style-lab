@@ -1,0 +1,2621 @@
+[
+  {
+    "num": "222",
+    "slug": "terrazzo-stone",
+    "name": "Terrazzo Stone",
+    "band": "materyal",
+    "tagline": "Terrazzo yüzey: taş kırıntısı doku, kireç zemin, tek kiremit accent ve sade künye.",
+    "feeling": "serin, dokulu, \"taş cilalı\"",
+    "best": "mimarlık/iç mekân, malzeme kataloğu, döşeme ürünü",
+    "avoid": "yazılım paneli",
+    "palette": {
+      "bg": "#f6f4ef",
+      "bg2": "#ece9e1",
+      "surface": "#fffefb",
+      "surface2": "#f3f0e9",
+      "ink": "#1a1915",
+      "inkSoft": "#514e46",
+      "inkFaint": "#847f74",
+      "accent": "#8a4a3c",
+      "accentInk": "#fdf7f5",
+      "line": "rgba(26,25,21,.14)"
+    },
+    "fonts": [
+      "Jost",
+      "Jost",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "0px",
+      "4px"
+    ],
+    "motif": "paper",
+    "grain": 0.05,
+    "signature": [
+      "**Taş kırıntısı:** yalnız görsel kutuda noktasal doku.",
+      "**Kireç zemin:** sıcak nötr, tek accent.",
+      "**Keskin kenar:** 0–4px.",
+      "**Numune künyesi:** mono kalınlık/ölçü."
+    ],
+    "must": [
+      "Her numunede ölçü ve yüzey bitişi.",
+      "Doku yalnız görsel katmanda.",
+      "Metin opak yüzeyde."
+    ],
+    "mustNot": [
+      "Taklit taş düğme.",
+      "Çok renkli terrazzo paleti.",
+      "Yuvarlak 12px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "cast-concrete",
+        "wood-joinery"
+      ],
+      "forbidden": [
+        "synthwave",
+        "game-racing-neon"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Terrazzo (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Terrazzo",
+        "use": "malzeme bağlamı"
+      },
+      {
+        "label": "Jost (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Jost",
+        "use": "başlık ve gövde"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "ölçü"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "taş",
+      "doku"
+    ],
+    "industries": [
+      "mimarlik",
+      "eticaret"
+    ],
+    "essence": "Terrazzo Stone, malzemenin kendisini gösterir: doku fotoğrafta, sayı künyede.",
+    "brief": "Terrazzo malzeme kataloğu tasarla: kireç zemin, noktasal doku yalnız görselde, mono ölçü künyesi.",
+    "extraCss": "h1 { font-size: 48px; font-weight: 400; max-width: 24ch; }\nh2 { font-size: 26px; }\n.pg-card, .pg-media { border-radius: 2px; }"
+  },
+  {
+    "num": "223",
+    "slug": "linocut-print",
+    "name": "Linocut Print",
+    "band": "materyal",
+    "tagline": "Linol baskı: mürekkep siyahı, kırık kenar, tek kırmızı vurgu ve el dizgisi ritmi.",
+    "feeling": "zanaat, baskı, \"kalıptan çıktı\"",
+    "best": "baskı atölyesi, sanat baskı, poster satışı",
+    "avoid": "kurumsal SaaS",
+    "palette": {
+      "bg": "#f7f3e8",
+      "bg2": "#ece5d4",
+      "surface": "#fffdf6",
+      "surface2": "#f4eeda",
+      "ink": "#161310",
+      "inkSoft": "#4f483d",
+      "inkFaint": "#847a68",
+      "accent": "#9c2b1d",
+      "accentInk": "#fff7f4",
+      "line": "rgba(22,19,16,.2)"
+    },
+    "fonts": [
+      "Archivo Black",
+      "EB Garamond",
+      "Courier Prime"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "paper",
+    "grain": 0.04,
+    "signature": [
+      "**Kırık kenar:** görsel kutusunda 2px düzensiz çerçeve.",
+      "**Mürekkep siyahı:** gövde saf siyaha yakın.",
+      "**Tek kırmızı:** yalnız baskı numarası ve CTA.",
+      "**El dizgisi:** başlık sıkı, gövde serif."
+    ],
+    "must": [
+      "Her baskıda numara ve baskı adedi (12/30).",
+      "Kâğıt gramajı mono.",
+      "Kenar çerçevesi 2px."
+    ],
+    "mustNot": [
+      "Dijital gradyan.",
+      "Üçten fazla mürekkep rengi.",
+      "Yuvarlak köşe."
+    ],
+    "neighbors": {
+      "compatible": [
+        "letterpress-print",
+        "risograph-print"
+      ],
+      "forbidden": [
+        "liquid-glass",
+        "synthwave"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Linocut (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Linocut",
+        "use": "baskı tekniği"
+      },
+      {
+        "label": "Archivo Black (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Archivo+Black",
+        "use": "kalın başlık"
+      },
+      {
+        "label": "EB Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/EB+Garamond",
+        "use": "gövde serif"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "baskı",
+      "zanaat"
+    ],
+    "industries": [
+      "kultur",
+      "eticaret"
+    ],
+    "essence": "Linocut Print, baskının sınırlılığını gösterir: az renk, kalın çizgi, numaralı adet.",
+    "brief": "Linol baskı atölyesi sayfası tasarla: kâğıt zemin, mürekkep siyahı, tek kırmızı vurgu, numaralı baskı künyesi.",
+    "extraCss": "h1 { font-size: 50px; line-height: .98; max-width: 20ch; }\n.pg-media { border: 2px solid var(--ink); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+  },
+  {
+    "num": "224",
+    "slug": "risograph-print",
+    "name": "Risograph Print",
+    "band": "materyal",
+    "tagline": "Riso baskı: iki mürekkep (mavi-pembe), kayma efekti, kâğıt dokusu ve mono adet.",
+    "feeling": "deneysel, ucuza lüks, \"iki renk yeter\"",
+    "best": "bağımsız yayın, poster/zine, sanat baskı",
+    "avoid": "kurumsal banka",
+    "palette": {
+      "bg": "#fbf7f2",
+      "bg2": "#f3ece2",
+      "surface": "#fffdfa",
+      "surface2": "#f7f0e7",
+      "ink": "#1a1522",
+      "inkSoft": "#4e4759",
+      "inkFaint": "#817a8b",
+      "accent": "#1f5f8c",
+      "accentInk": "#f7fbfe",
+      "line": "rgba(26,21,34,.16)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Space Grotesk",
+      "Space Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "paper",
+    "grain": 0.05,
+    "signature": [
+      "**İki mürekkep:** mavi accent + %40 opaklık pembe ikinci ton.",
+      "**Kayma:** görselde 2px ofset gölge (accent %30).",
+      "**Kâğıt dokusu:** %5 grain.",
+      "**Mono adet:** baskı numarası."
+    ],
+    "must": [
+      "En fazla iki mürekkep; ikinci ton %40 opaklığı geçmez.",
+      "Baskı adedi mono.",
+      "Kayma efekti yalnız görselde."
+    ],
+    "mustNot": [
+      "Dört renkli CMYK fotoğraf.",
+      "Gradyan.",
+      "Yuvarlak köşe."
+    ],
+    "neighbors": {
+      "compatible": [
+        "linocut-print",
+        "punk-fanzine"
+      ],
+      "forbidden": [
+        "glassmorphism",
+        "boutique-hotel"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Risograph (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Risograph",
+        "use": "iki mürekkep mantığı"
+      },
+      {
+        "label": "Space Grotesk (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk",
+        "use": "başlık ve gövde"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "adet/künye"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "riso",
+      "baskı"
+    ],
+    "industries": [
+      "kultur",
+      "eticaret"
+    ],
+    "essence": "Risograph Print, kısıtı estetik yapar: iki mürekkep, kayma ve kâğıt.",
+    "brief": "Riso baskı sayfası tasarla: kâğıt zemin, mavi accent + %40 pembe, 2px kayma, mono baskı adedi.",
+    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-media { box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 30%, transparent); }"
+  },
+  {
+    "num": "225",
+    "slug": "denim-textile",
+    "name": "Denim Textile",
+    "band": "materyal",
+    "tagline": "Denim dokusu: çivit mavisi, çift dikiş çizgisi, keten zemin ve mono beden tablosu.",
+    "feeling": "dayanıklı, gündelik, \"dikiş izi\"",
+    "best": "tekstil/denim marka, beden tablosu, ürün detayı",
+    "avoid": "lüks mücevher",
+    "palette": {
+      "bg": "#f2f4f7",
+      "bg2": "#e6eaf0",
+      "surface": "#ffffff",
+      "surface2": "#eef1f6",
+      "ink": "#121821",
+      "inkSoft": "#454e5c",
+      "inkFaint": "#78818e",
+      "accent": "#1b3f6b",
+      "accentInk": "#f6faff",
+      "line": "rgba(18,24,33,.14)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "Courier Prime"
+    ],
+    "radius": [
+      "2px",
+      "4px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Çift dikiş:** bölüm ayırıcı 1px + 4px aralıklı ikinci çizgi.",
+      "**Çivit accent:** yalnız beden ve CTA.",
+      "**Beden tablosu:** mono ölçü, cm.",
+      "**Keskin kenar:** 2–4px."
+    ],
+    "must": [
+      "Beden tablosu cm ve mono.",
+      "Kumaş içeriği yazılır.",
+      "Dikiş çizgisi dekoratif, metne değmez."
+    ],
+    "mustNot": [
+      "Kot pantolon ikonu yığını.",
+      "Beş renkli yıkama paleti.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "denim-textile",
+        "raw-steel"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "ethereal"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Denim (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Denim",
+        "use": "kumaş/dikiş bağlamı"
+      },
+      {
+        "label": "Space Grotesk (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk",
+        "use": "başlık ailesi"
+      },
+      {
+        "label": "Courier Prime (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Courier+Prime",
+        "use": "beden tablosu"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "tekstil",
+      "denim"
+    ],
+    "industries": [
+      "moda",
+      "eticaret"
+    ],
+    "essence": "Denim Textile, kumaşın dayanıklılığını dikiş çizgisi ve ölçü tablosuyla anlatır.",
+    "brief": "Denim ürün sayfası tasarla: keten-mavi zemin, çift dikiş çizgisi, mono cm beden tablosu, çivit accent.",
+    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-sec { border-bottom: 1px solid var(--line); box-shadow: 0 3px 0 -2px var(--line); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+  },
+  {
+    "num": "226",
+    "slug": "cork-oak",
+    "name": "Cork Oak",
+    "band": "materyal",
+    "tagline": "Mantar meşesi: sıcak kahve zemin, taneli doku, yuvarlak hat ve mono üretim notu.",
+    "feeling": "doğal, hafif, \"dokunulabilir\"",
+    "best": "sürdürülebilir ürün, doğal malzeme, ambalaj",
+    "avoid": "neon teknoloji",
+    "palette": {
+      "bg": "#faf5ee",
+      "bg2": "#f0e5d7",
+      "surface": "#fffcf7",
+      "surface2": "#f7eddf",
+      "ink": "#1c1710",
+      "inkSoft": "#544636",
+      "inkFaint": "#87775f",
+      "accent": "#6b4413",
+      "accentInk": "#fdf9f3",
+      "line": "rgba(28,23,16,.14)"
+    },
+    "fonts": [
+      "Fraunces",
+      "Nunito",
+      "Space Mono"
+    ],
+    "radius": [
+      "8px",
+      "14px"
+    ],
+    "motif": "blob",
+    "grain": 0.04,
+    "signature": [
+      "**Taneli doku:** yalnız görselde, %4 grain.",
+      "**Yuvarlak hat:** 8/14px, yumuşak.",
+      "**Kahve accent:** tek sıcak vurgu.",
+      "**Üretim notu:** mono sertifika kodu."
+    ],
+    "must": [
+      "Sertifika/izlenebilirlik kodu mono.",
+      "Malzeme kalınlığı yazılır.",
+      "Doku metnin arkasında kullanılmaz."
+    ],
+    "mustNot": [
+      "Yapay ahşap deseni.",
+      "Dört renkli doğa paleti.",
+      "Keskin 0px köşe."
+    ],
+    "neighbors": {
+      "compatible": [
+        "wood-joinery",
+        "terrazzo-stone"
+      ],
+      "forbidden": [
+        "cyberpunk",
+        "game-racing-neon"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Cork (material) (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Cork_(material)",
+        "use": "malzeme özellikleri"
+      },
+      {
+        "label": "Fraunces (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Fraunces",
+        "use": "başlık serif"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "üretim notu"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "mantar",
+      "sürdürülebilir"
+    ],
+    "industries": [
+      "mimarlik",
+      "eticaret"
+    ],
+    "essence": "Cork Oak, malzemenin hafifliğini anlatır: doku, kalınlık ve izlenebilirlik.",
+    "brief": "Mantar malzeme sayfası tasarla: sıcak zemin, yuvarlak hat, %4 taneli doku, mono üretim kodu.",
+    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-card, .pg-media { border-radius: 14px; }"
+  },
+  {
+    "num": "227",
+    "slug": "cast-concrete",
+    "name": "Cast Concrete",
+    "band": "materyal",
+    "tagline": "Beton döküm: gri skala, kalıp izi, keskin blok ve mono dayanım sınıfı.",
+    "feeling": "ağır, yapısal, \"C30/37\"",
+    "best": "mimarlık, yapı malzemesi, inşaat portfolyosu",
+    "avoid": "çocuk uygulaması",
+    "palette": {
+      "bg": "#eef0f1",
+      "bg2": "#e2e5e7",
+      "surface": "#f8f9fa",
+      "surface2": "#eaedee",
+      "ink": "#14171a",
+      "inkSoft": "#464d53",
+      "inkFaint": "#767d84",
+      "accent": "#3d4b57",
+      "accentInk": "#f7fafc",
+      "line": "rgba(20,23,26,.18)"
+    },
+    "fonts": [
+      "Archivo Black",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "0px",
+      "0px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Kalıp izi:** kart üstünde 1px yatay çizgi dizisi.",
+      "**Kalın blok:** kartlar arasında 2px boşluk, gölge yok.",
+      "**Gri skala:** accent koyu gri-mavi, dekoratif renk yok.",
+      "**Dayanım:** mono `C30/37`."
+    ],
+    "must": [
+      "Her blokta ölçü ve dayanım sınıfı.",
+      "Kenar 0px, gölge yok.",
+      "Görsel S/B veya düşük doygunluk."
+    ],
+    "mustNot": [
+      "Renkli degrade.",
+      "Yuvarlak köşe.",
+      "Süs illüstrasyon."
+    ],
+    "neighbors": {
+      "compatible": [
+        "concrete-monolith",
+        "raw-steel"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "kids-classroom"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Concrete (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Concrete",
+        "use": "dayanım sınıfı"
+      },
+      {
+        "label": "Archivo Black (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Archivo+Black",
+        "use": "blok başlık"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "sınıf/ölçü"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "beton",
+      "mimarlık"
+    ],
+    "industries": [
+      "mimarlik",
+      "insaat"
+    ],
+    "essence": "Cast Concrete, yapıyı rakamla anlatır: sınıf, ölçü, tolerans.",
+    "brief": "Beton malzeme sayfası tasarla: gri skala, keskin blok, kalıp izi çizgisi, mono dayanım sınıfı.",
+    "extraCss": "h1 { font-size: 48px; max-width: 22ch; }\n.panel, .pg-card, .pg-media { border-radius: 0; box-shadow: none; }\n.pg-card { border-top: 4px solid var(--ink); }"
+  },
+  {
+    "num": "228",
+    "slug": "enamel-jewel",
+    "name": "Enamel Jewel",
+    "band": "materyal",
+    "tagline": "Mineli mücevher: gece moru, altın çizgi, küçük ölçek ve mono taş bilgisi.",
+    "feeling": "parlak, değerli, \"tek taş\"",
+    "best": "mücevher, saat, sınırlı koleksiyon",
+    "avoid": "hızlı tüketim",
+    "palette": {
+      "bg": "#120f1a",
+      "bg2": "#171322",
+      "surface": "#1d1829",
+      "surface2": "#272032",
+      "ink": "#f3eef9",
+      "inkSoft": "#c0b4d0",
+      "inkFaint": "#8e8499",
+      "accent": "#d0a95c",
+      "accentInk": "#161003",
+      "line": "rgba(243,238,249,.15)"
+    },
+    "fonts": [
+      "Cormorant Garamond",
+      "Jost",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "rings",
+    "signature": [
+      "**Altın çizgi:** 1px accent, %70 opaklık.",
+      "**Küçük ölçek:** gövde 14px, başlık 40px — mücevher gibi ölçülü.",
+      "**Taş bilgisi:** mono karat/kesim.",
+      "**Gece moru:** tek zemin."
+    ],
+    "must": [
+      "Her parçada taş, karat ve maden.",
+      "Görsel 1:1, tek nesne.",
+      "Accent yalnız çizgi ve fiyat."
+    ],
+    "mustNot": [
+      "Parıltı efekti.",
+      "Beş renkli taş paleti.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "luxury-atelier",
+        "marble-vein"
+      ],
+      "forbidden": [
+        "kids-playground",
+        "grocery-delivery"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Vitreous enamel (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Vitreous_enamel",
+        "use": "malzeme bağlamı"
+      },
+      {
+        "label": "Cormorant Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cormorant+Garamond",
+        "use": "ince serif"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "taş bilgisi"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "mücevher",
+      "mine"
+    ],
+    "industries": [
+      "moda",
+      "eticaret"
+    ],
+    "essence": "Enamel Jewel, küçük ölçekte lüks kurar: az metin, tek nesne, net malzeme bilgisi.",
+    "brief": "Mineli mücevher sayfası tasarla: gece moru zemin, altın ince çizgi, tek nesne görseli, mono karat/kesim.",
+    "extraCss": "h1 { font-size: 40px; font-weight: 300; max-width: 24ch; }\n.pg-media { aspect-ratio: 1 / 1; border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line)); }"
+  },
+  {
+    "num": "229",
+    "slug": "hand-thrown-ceramic",
+    "name": "Hand-thrown Ceramic",
+    "band": "materyal",
+    "tagline": "El yapımı seramik: kil beyazı zemin, sır yeşili accent, düzensiz kenar ve mono fırın notu.",
+    "feeling": "sıcak, el emeği, \"tek tek\"",
+    "best": "seramik atölyesi, el yapımı ürün, sınırlı parti",
+    "avoid": "endüstriyel panel",
+    "palette": {
+      "bg": "#faf7f1",
+      "bg2": "#f1eade",
+      "surface": "#fffdf8",
+      "surface2": "#f7f1e6",
+      "ink": "#1d1811",
+      "inkSoft": "#544b3c",
+      "inkFaint": "#877b66",
+      "accent": "#2f5d4a",
+      "accentInk": "#f5fdf9",
+      "line": "rgba(29,24,17,.13)"
+    },
+    "fonts": [
+      "Fraunces",
+      "Lora",
+      "Courier Prime"
+    ],
+    "radius": [
+      "10px",
+      "16px"
+    ],
+    "motif": "blob",
+    "grain": 0.03,
+    "signature": [
+      "**Düzensiz kenar:** görselde 8px yarıçap farkı (10/18).",
+      "**Kil beyazı:** sıcak zemin.",
+      "**Sır yeşili:** tek accent.",
+      "**Fırın notu:** mono sıcaklık ve parti."
+    ],
+    "must": [
+      "Her üründe parti no ve fırın sıcaklığı.",
+      "Ölçü ml/cm mono.",
+      "Fotoğraf tek nesne, gölge yumuşak."
+    ],
+    "mustNot": [
+      "Kusursuz vektör küp.",
+      "Parlak seramik efekti.",
+      "Beş renkli sır paleti."
+    ],
+    "neighbors": {
+      "compatible": [
+        "porcelain-glaze",
+        "cork-oak"
+      ],
+      "forbidden": [
+        "terminal-ui",
+        "game-racing-neon"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Pottery (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Pottery",
+        "use": "fırın/parti kavramı"
+      },
+      {
+        "label": "Fraunces (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Fraunces",
+        "use": "başlık serif"
+      },
+      {
+        "label": "Courier Prime (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Courier+Prime",
+        "use": "fırın notu"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "seramik",
+      "el yapımı"
+    ],
+    "industries": [
+      "eticaret",
+      "kultur"
+    ],
+    "essence": "Hand-thrown Ceramic, partiyi ve fırını gösterir: her parça tekrar edilemez.",
+    "brief": "Seramik atölyesi sayfası tasarla: kil beyazı zemin, sır yeşili accent, düzensiz köşe, mono fırın notu.",
+    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-media { border-radius: 18px 12px 16px 10px; }\n.pg-card { border-radius: 16px 12px 14px 10px; }"
+  },
+  {
+    "num": "230",
+    "slug": "raw-steel",
+    "name": "Raw Steel",
+    "band": "materyal",
+    "tagline": "Ham çelik: soğuk gri, haddelenmiş yüzey, teknik etiket ve mono tolerans.",
+    "feeling": "endüstriyel, hassas, \"±0.05 mm\"",
+    "best": "metal işleme, endüstriyel ürün, teknik katalog",
+    "avoid": "çocuk eğitimi",
+    "palette": {
+      "bg": "#e9ecee",
+      "bg2": "#dde1e4",
+      "surface": "#f6f8f9",
+      "surface2": "#e4e8ea",
+      "ink": "#101417",
+      "inkSoft": "#434b51",
+      "inkFaint": "#737b82",
+      "accent": "#2a3d4d",
+      "accentInk": "#f5f9fc",
+      "line": "rgba(16,20,23,.2)"
+    },
+    "fonts": [
+      "Chakra Petch",
+      "Inter",
+      "Share Tech Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Haddelenmiş yüzey:** 1px yatay çizgi dizisi, %8.",
+      "**Teknik etiket:** mono büyük harf.",
+      "**Tolerans:** ± değer mono.",
+      "**Keskin kenar:** 0–2px."
+    ],
+    "must": [
+      "Her parçada malzeme sınıfı ve tolerans.",
+      "Yüzey işlemi yazılır.",
+      "Görsel düşük doygunluk."
+    ],
+    "mustNot": [
+      "Pas/çürük dekoru.",
+      "Renkli metalik gradyan.",
+      "Yuvarlak köşe."
+    ],
+    "neighbors": {
+      "compatible": [
+        "machined-metal-panel",
+        "cast-concrete"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "kids-classroom"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Steel (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Steel",
+        "use": "malzeme sınıfı"
+      },
+      {
+        "label": "Chakra Petch (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Chakra+Petch",
+        "use": "teknik başlık"
+      },
+      {
+        "label": "Share Tech Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Share+Tech+Mono",
+        "use": "tolerans"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "çelik",
+      "endüstri"
+    ],
+    "industries": [
+      "insaat",
+      "teknoloji"
+    ],
+    "essence": "Raw Steel, toleransı öne çıkarır: sınıf, ölçü, yüzey ve sapma.",
+    "brief": "Ham çelik katalog sayfası tasarla: soğuk gri, 1px yüzey çizgileri, mono tolerans, keskin kenar.",
+    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 8%, transparent) 0 1px, transparent 1px 8px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+  },
+  {
+    "num": "231",
+    "slug": "recycled-paper",
+    "name": "Recycled Paper",
+    "band": "materyal",
+    "tagline": "Geri dönüşüm kâğıdı: kirli beyaz, zeytin accent, kenar izleri ve mono geri dönüşüm oranı.",
+    "feeling": "dürüst, sade, \"%100 geri dönüşüm\"",
+    "best": "sürdürülebilir marka, ambalaj, kurumsal sorumluluk",
+    "avoid": "neon teknoloji",
+    "palette": {
+      "bg": "#f7f5ef",
+      "bg2": "#eeebe2",
+      "surface": "#fffef9",
+      "surface2": "#f4f1e8",
+      "ink": "#1b1913",
+      "inkSoft": "#514c40",
+      "inkFaint": "#847e6c",
+      "accent": "#4d5a1f",
+      "accentInk": "#fbfdf2",
+      "line": "rgba(27,25,19,.16)"
+    },
+    "fonts": [
+      "Lora",
+      "Lora",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "2px",
+      "4px"
+    ],
+    "motif": "paper",
+    "grain": 0.05,
+    "signature": [
+      "**Kirli beyaz:** mürekkep emmiş kâğıt tonu.",
+      "**Zeytin accent:** tek doğal vurgu.",
+      "**Kenar izi:** bölüm ayırıcı kesikli 1px.",
+      "**Oran etiketi:** mono `%100`."
+    ],
+    "must": [
+      "Geri dönüşüm oranı ve sertifika yazılır.",
+      "Kâğıt gramajı mono.",
+      "Kesikli çizgi yalnız ayırıcı."
+    ],
+    "mustNot": [
+      "Yaprak ikonu yığını.",
+      "Parlak yeşil.",
+      "Yuvarlak 12px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "cork-oak",
+        "letterpress-print"
+      ],
+      "forbidden": [
+        "synthwave",
+        "liquid-glass"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Recycling (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Recycling",
+        "use": "oran/sertifika dili"
+      },
+      {
+        "label": "Lora (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Lora",
+        "use": "gövde serif"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "gramaj/oran"
+      }
+    ],
+    "keywords": [
+      "materyal",
+      "kâğıt",
+      "geri dönüşüm"
+    ],
+    "industries": [
+      "surdulebilirlik",
+      "eticaret"
+    ],
+    "essence": "Recycled Paper, iddiayı sayıyla verir: oran, gramaj, sertifika.",
+    "brief": "Geri dönüşüm kâğıdı sayfası tasarla: kirli beyaz zemin, zeytin accent, kesikli ayırıcı, mono %, gramaj.",
+    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-sec { border-bottom: 1px dashed var(--line); padding-bottom: 34px; }"
+  },
+  {
+    "num": "232",
+    "slug": "condensed-news",
+    "name": "Condensed News",
+    "band": "tipografi",
+    "tagline": "Sıkı gazete tipografisi: dar başlık, çok kolon, hairline ve mono tarih-imza.",
+    "feeling": "haber, baskı, \"manşet\"",
+    "best": "haber sitesi, köşe yazısı, günlük bülten",
+    "avoid": "yavaş lüks vitrin",
+    "palette": {
+      "bg": "#fdfcf8",
+      "bg2": "#f2f0e8",
+      "surface": "#ffffff",
+      "surface2": "#f6f4ee",
+      "ink": "#121212",
+      "inkSoft": "#4a4a46",
+      "inkFaint": "#7d7d77",
+      "accent": "#8c1a1a",
+      "accentInk": "#fdf7f6",
+      "line": "rgba(18,18,18,.2)"
+    },
+    "fonts": [
+      "Anton",
+      "EB Garamond",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "0px",
+      "0px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Dar başlık:** Anton, 0.98 satır aralığı, 3 satıra kadar.",
+      "**Çok kolon:** 4 kolon gövde, 2 kolon alıntı.",
+      "**Hairline:** kolon ayırıcı 1px.",
+      "**Manşet kırmızısı:** yalnız etiket."
+    ],
+    "must": [
+      "Başlık en fazla 3 satır.",
+      "Her metinde tarih ve imza mono.",
+      "Kolon ayırıcı 1px."
+    ],
+    "mustNot": [
+      "Yuvarlak köşe.",
+      "Dekoratif görsel.",
+      "Üçten fazla font."
+    ],
+    "neighbors": {
+      "compatible": [
+        "broadsheet-daily",
+        "justified-book"
+      ],
+      "forbidden": [
+        "glassmorphism",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Newspaper (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Newspaper",
+        "use": "kolon/manşet düzeni"
+      },
+      {
+        "label": "Anton (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Anton",
+        "use": "manşet"
+      },
+      {
+        "label": "EB Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/EB+Garamond",
+        "use": "gövde serif"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "haber",
+      "gazete"
+    ],
+    "industries": [
+      "medya",
+      "kultur"
+    ],
+    "essence": "Condensed News, sayfayı bir gazete gibi doldurur: manşet, kolon, tarih ve imza.",
+    "brief": "Haber sayfası tasarla: dar Anton manşet, 4 kolon gövde, hairline ayırıcı, mono tarih-imza.",
+    "extraCss": "h1 { font-size: 58px; line-height: .96; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-sec { border-top: 2px solid var(--ink); padding-top: 16px; }"
+  },
+  {
+    "num": "233",
+    "slug": "monospace-editorial",
+    "name": "Monospace Editorial",
+    "band": "tipografi",
+    "tagline": "Monospace editoryal: kod ritmi, tek accent, uzun ölçü ve mono etiket hiyerarşisi.",
+    "feeling": "teknik, dürüst, \"her şey hizalı\"",
+    "best": "teknik blog, dokümantasyon, geliştirici yayını",
+    "avoid": "lüks vitrin",
+    "palette": {
+      "bg": "#fbfbfa",
+      "bg2": "#f0f0ee",
+      "surface": "#ffffff",
+      "surface2": "#f5f5f3",
+      "ink": "#141414",
+      "inkSoft": "#4b4b49",
+      "inkFaint": "#7c7c79",
+      "accent": "#1f5f4f",
+      "accentInk": "#f5fdfa",
+      "line": "rgba(20,20,20,.16)"
+    },
+    "fonts": [
+      "IBM Plex Mono",
+      "IBM Plex Mono",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Tek aile:** başlık ve gövde aynı mono; hiyerarşi punto ve ağırlıkla.",
+      "**Kod ritmi:** satır aralığı 1.7, ölçü 72ch.",
+      "**Tek accent:** yalnız bağlantı ve inline kod.",
+      "**Keskin kenar:** 0–2px."
+    ],
+    "must": [
+      "Hiyerarşi yalnız punto/ağırlıkla kurulur.",
+      "Kod blokları yatay kaymaz.",
+      "Satır uzunluğu 72ch."
+    ],
+    "mustNot": [
+      "İkinci font ailesi.",
+      "Gradyan.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "terminal-ui",
+        "academic-paper"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "carnival-festival"
+      ]
+    },
+    "refs": [
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "tek aile"
+      },
+      {
+        "label": "MDN Web Docs",
+        "url": "https://developer.mozilla.org/",
+        "use": "kod blok biçimi"
+      },
+      {
+        "label": "WCAG 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "use": "okunurluk"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "mono",
+      "dokümantasyon"
+    ],
+    "industries": [
+      "teknoloji",
+      "medya"
+    ],
+    "essence": "Monospace Editorial, tek aileyle hiyerarşi kurar: punto, ağırlık ve boşluk yeter.",
+    "brief": "Monospace editoryal sayfa tasarla: tek mono aile, 72ch ölçü, inline kod accent, keskin kenar.",
+    "extraCss": "h1 { font-size: 42px; line-height: 1.1; max-width: 26ch; font-weight: 700; }\nh2 { font-size: 24px; font-weight: 600; }\nbody, .lede, .pg-p { font-family: var(--font-mono); font-size: 15px; line-height: 1.72; }"
+  },
+  {
+    "num": "234",
+    "slug": "blackletter-modern",
+    "name": "Blackletter Modern",
+    "band": "tipografi",
+    "tagline": "Modern gotik: ağır serif başlık, gece zemin, tek kan rengi ve sade gövde.",
+    "feeling": "kadim, güçlü, \"mühür\"",
+    "best": "etkinlik/kulüp kimliği, bira/viski etiketi, kültür programı",
+    "avoid": "çocuk eğitimi",
+    "palette": {
+      "bg": "#100e0c",
+      "bg2": "#15120f",
+      "surface": "#1b1714",
+      "surface2": "#241f1b",
+      "ink": "#f2ece4",
+      "inkSoft": "#bdb2a5",
+      "inkFaint": "#8d8377",
+      "accent": "#c43a2f",
+      "accentInk": "#fdf6f4",
+      "line": "rgba(242,236,228,.15)"
+    },
+    "fonts": [
+      "Cinzel",
+      "EB Garamond",
+      "Courier Prime"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "paper",
+    "signature": [
+      "**Ağır serif başlık:** Cinzel 54px, harf aralığı geniş.",
+      "**Tek kan rengi:** accent yalnız mühür ve CTA.",
+      "**Sade gövde:** EB Garamond 16px.",
+      "**Kenar yok:** hairline dışında çizgi yok."
+    ],
+    "must": [
+      "Gotik başlık yalnız H1/H2.",
+      "Gövde serif ve okunur; süslenmez.",
+      "Accent tek."
+    ],
+    "mustNot": [
+      "Gerçek blackletter font (okunmaz).",
+      "Dört renkli ortaçağ paleti.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "victorian",
+        "theatre-season"
+      ],
+      "forbidden": [
+        "minimalism",
+        "kids-classroom"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Blackletter (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Blackletter",
+        "use": "harf geleneği"
+      },
+      {
+        "label": "Cinzel (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cinzel",
+        "use": "gotik esinli başlık"
+      },
+      {
+        "label": "EB Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/EB+Garamond",
+        "use": "gövde"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "gotik",
+      "mühür"
+    ],
+    "industries": [
+      "kultur",
+      "etkinlik"
+    ],
+    "essence": "Blackletter Modern, gotik harfin ağırlığını modern ölçekle dengeler: başlık ağır, gövde sakin.",
+    "brief": "Modern gotik kimlik sayfası tasarla: gece zemin, ağır serif başlık, tek kan rengi, sade gövde.",
+    "extraCss": "h1 { font-size: 54px; letter-spacing: .04em; max-width: 22ch; }\nh2 { font-size: 30px; letter-spacing: .03em; }\n.pg-card, .pg-media { border-radius: 0; }"
+  },
+  {
+    "num": "235",
+    "slug": "variable-weight",
+    "name": "Variable Weight",
+    "band": "tipografi",
+    "tagline": "Değişken ağırlık: aynı ailede 300–900, kontrast sıçraması ve ölçü ritmi.",
+    "feeling": "dinamik, kontrollü, \"ağırlıkla konuşur\"",
+    "best": "ajans/kreatif stüdyo, tipografi denemesi",
+    "avoid": "resmî denetim raporu",
+    "palette": {
+      "bg": "#f7f7f5",
+      "bg2": "#ececea",
+      "surface": "#ffffff",
+      "surface2": "#f2f2f0",
+      "ink": "#101010",
+      "inkSoft": "#474747",
+      "inkFaint": "#787878",
+      "accent": "#1a3fd0",
+      "accentInk": "#f6f8ff",
+      "line": "rgba(16,16,16,.14)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "Space Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Ağırlık sıçraması:** H1 800, H2 400, gövde 400.",
+      "**Tek renk:** accent yalnız bağlantı.",
+      "**Ölçü ritmi:** 72/40/16/12.",
+      "**Keskin kenar:** 0–2px."
+    ],
+    "must": [
+      "Ağırlık farkı en az 300 birim.",
+      "Başlık ve gövde aynı aile.",
+      "Accent yalnız bağlantı."
+    ],
+    "mustNot": [
+      "Dörtten fazla ağırlık.",
+      "Dekoratif gölge.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "swiss-design",
+        "condensed-news"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "kids-classroom"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Variable font (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Variable_font",
+        "use": "ağırlık ekseni"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "değişken ağırlık"
+      },
+      {
+        "label": "MDN · font-weight",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight",
+        "use": "ağırlık aralığı"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "ağırlık",
+      "ajans"
+    ],
+    "industries": [
+      "ajans",
+      "teknoloji"
+    ],
+    "essence": "Variable Weight, tek aileyle dramaturji kurar: ağırlık ve ölçek değişir, renk değişmez.",
+    "brief": "Değişken ağırlıkla ajans sayfası tasarla: H1 800, H2 400, 72/40/16/12 ölçek, tek accent.",
+    "extraCss": "h1 { font-size: 72px; line-height: .96; font-weight: 800; max-width: 16ch; }\nh2 { font-size: 40px; font-weight: 400; }\nh3 { font-size: 16px; font-weight: 700; }"
+  },
+  {
+    "num": "236",
+    "slug": "justified-book",
+    "name": "Justified Book",
+    "band": "tipografi",
+    "tagline": "Kitap dizgisi: iki yana yaslı serif, 66ch ölçü, bölüm numarası ve mono kolofon.",
+    "feeling": "edebî, sakin, \"sayfa çevir\"",
+    "best": "kitap/uzun okuma, yayınevi, edebiyat dergisi",
+    "avoid": "hızlı dashboard",
+    "palette": {
+      "bg": "#fbf8f1",
+      "bg2": "#f2ece0",
+      "surface": "#fffdf7",
+      "surface2": "#f6f1e6",
+      "ink": "#16130e",
+      "inkSoft": "#4d463b",
+      "inkFaint": "#827a6a",
+      "accent": "#5a2f6b",
+      "accentInk": "#fbf7fd",
+      "line": "rgba(22,19,14,.14)"
+    },
+    "fonts": [
+      "Cormorant Garamond",
+      "EB Garamond",
+      "Courier Prime"
+    ],
+    "radius": [
+      "0px",
+      "0px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**İki yana yaslı:** `text-align: justify; hyphens: auto`.",
+      "**66ch ölçü:** satır uzunluğu sabit.",
+      "**Bölüm numarası:** mono, sol üstte.",
+      "**Kolofon:** mono 11px, alt bilgi."
+    ],
+    "must": [
+      "Gövde justify + hyphenation.",
+      "Bölüm numarası ve başlık hiyerarşisi.",
+      "Satır aralığı 1.65."
+    ],
+    "mustNot": [
+      "Geniş ekran gövde (90ch+).",
+      "Kart galerisi.",
+      "Yuvarlak köşe."
+    ],
+    "neighbors": {
+      "compatible": [
+        "literary-hardcover",
+        "academic-paper"
+      ],
+      "forbidden": [
+        "game-esports-league",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Justification (typesetting) (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Justification_(typesetting)",
+        "use": "dizgi kuralı"
+      },
+      {
+        "label": "EB Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/EB+Garamond",
+        "use": "gövde serif"
+      },
+      {
+        "label": "Courier Prime (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Courier+Prime",
+        "use": "kolofon"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "kitap",
+      "dizgi"
+    ],
+    "industries": [
+      "medya",
+      "kultur"
+    ],
+    "essence": "Justified Book, ekranı bir sayfa gibi dizeler: ölçü, justification ve sessiz hiyerarşi.",
+    "brief": "Kitap sayfası tasarla: iki yana yaslı serif gövde, 66ch ölçü, mono bölüm numarası, kolofon.",
+    "extraCss": "h1 { font-size: 44px; font-weight: 400; max-width: 24ch; }\nbody, .lede, .pg-p { font-size: 17px; line-height: 1.68; text-align: justify; hyphens: auto; max-width: 66ch; }"
+  },
+  {
+    "num": "237",
+    "slug": "stencil-display",
+    "name": "Stencil Display",
+    "band": "tipografi",
+    "tagline": "Şablon harf: askerî kalıp, sarı accent, blok başlık ve mono kod etiketi.",
+    "feeling": "endüstriyel, kesik, \"kasa no\"",
+    "best": "etkinlik/afiş, ambalaj, endüstriyel marka",
+    "avoid": "sağlık formu",
+    "palette": {
+      "bg": "#15181c",
+      "bg2": "#1b1f24",
+      "surface": "#22262c",
+      "surface2": "#2b3037",
+      "ink": "#eef1f4",
+      "inkSoft": "#b0b7bf",
+      "inkFaint": "#858d96",
+      "accent": "#e5b23c",
+      "accentInk": "#161003",
+      "line": "rgba(238,241,244,.15)"
+    },
+    "fonts": [
+      "Archivo Black",
+      "Chakra Petch",
+      "Share Tech Mono"
+    ],
+    "radius": [
+      "0px",
+      "0px"
+    ],
+    "motif": "grid",
+    "upper": true,
+    "signature": [
+      "**Blok başlık:** Archivo Black 50px, harfler arası sıkı.",
+      "**Şablon hissi:** başlıkta 2px `text-shadow` yok; sadece keskin.",
+      "**Sarı accent:** yalnız kod etiketi.",
+      "**Kod etiketi:** mono, 12px, büyük harf."
+    ],
+    "must": [
+      "Kod etiketi mono ve tekil.",
+      "Başlık uppercase; gövde cümle düzeninde.",
+      "Kenar 0px."
+    ],
+    "mustNot": [
+      "Gerçek şablon font (okunmaz).",
+      "Üçten fazla renk.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "constructivism",
+        "raw-steel"
+      ],
+      "forbidden": [
+        "japandi",
+        "ethereal"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Stencil (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Stencil",
+        "use": "harf kesim mantığı"
+      },
+      {
+        "label": "Archivo Black (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Archivo+Black",
+        "use": "blok başlık"
+      },
+      {
+        "label": "Share Tech Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Share+Tech+Mono",
+        "use": "kod"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "şablon",
+      "endüstri"
+    ],
+    "industries": [
+      "etkinlik",
+      "insaat"
+    ],
+    "essence": "Stencil Display, kalıp harfin kesikliğini modern blokla taşır: az renk, çok ağırlık.",
+    "brief": "Şablon harf afişi tasarla: koyu zemin, Archivo Black blok başlık, sarı kod etiketi, keskin kenar.",
+    "extraCss": "h1 { font-size: 50px; line-height: .98; max-width: 18ch; letter-spacing: -.01em; }\nh2 { font-size: 28px; }"
+  },
+  {
+    "num": "238",
+    "slug": "uppercase-only",
+    "name": "Uppercase Only",
+    "band": "tipografi",
+    "tagline": "Yalnız büyük harf: geniş tracking, kısa satır, tek accent ve mimari boşluk.",
+    "feeling": "buyurgan, net, \"başlık gibi\"",
+    "best": "kültür kurumu, mimarlık ofisi, etkinlik kimliği",
+    "avoid": "uzun okuma metni",
+    "palette": {
+      "bg": "#f4f4f1",
+      "bg2": "#e8e8e3",
+      "surface": "#ffffff",
+      "surface2": "#f0f0ec",
+      "ink": "#101012",
+      "inkSoft": "#47474a",
+      "inkFaint": "#78787b",
+      "accent": "#1f4b3a",
+      "accentInk": "#f6fdfa",
+      "line": "rgba(16,16,18,.16)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Space Grotesk",
+      "Space Mono"
+    ],
+    "radius": [
+      "0px",
+      "0px"
+    ],
+    "motif": "none",
+    "upper": true,
+    "signature": [
+      "**Tamamı büyük harf:** başlık ve gövde; okunurluk için 0.02em tracking.",
+      "**Kısa satır:** maksimum 42ch.",
+      "**Geniş boşluk:** bölüm 88px.",
+      "**Tek accent:** yalnız etiket."
+    ],
+    "must": [
+      "Satır uzunluğu 42ch'i geçmez.",
+      "Tracking 0.02em altına inmez.",
+      "Başlık ve gövde aynı aile."
+    ],
+    "mustNot": [
+      "Uzun paragraf (8 satır+).",
+      "Üçten fazla punto.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "swiss-design",
+        "variable-weight"
+      ],
+      "forbidden": [
+        "literary-hardcover",
+        "poetry-chapbook"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Letter case (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Letter_case",
+        "use": "büyük harf okunurluğu"
+      },
+      {
+        "label": "Space Grotesk (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk",
+        "use": "tek aile"
+      },
+      {
+        "label": "WCAG 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "use": "okunurluk ölçütleri"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "büyük harf",
+      "mimarlık"
+    ],
+    "industries": [
+      "mimarlik",
+      "kultur"
+    ],
+    "essence": "Uppercase Only, kısa ve emredici cümlelerle çalışır: uzun metin bu dilin düşmanıdır.",
+    "brief": "Yalnız büyük harf kimlik sayfası tasarla: geniş tracking, 42ch satır, mimari boşluk, tek accent.",
+    "extraCss": "h1, h2, h3, body, .lede, .pg-p, .pg-foot-col, .pg-list li { text-transform: uppercase; }\nh1 { font-size: 46px; letter-spacing: .04em; max-width: 18ch; }\n.pg-p, .lede { max-width: 42ch; letter-spacing: .02em; }"
+  },
+  {
+    "num": "239",
+    "slug": "italic-accent",
+    "name": "Italic Accent",
+    "band": "tipografi",
+    "tagline": "İtalik vurgu: düz gövde içinde eğik başlık, ince serif kontrast ve tek sıcak accent.",
+    "feeling": "edebî, zarif, \"vurgu eğik\"",
+    "best": "yayınevi, edebiyat dergisi, kültür programı",
+    "avoid": "yoğun veri tablosu",
+    "palette": {
+      "bg": "#fbf9f4",
+      "bg2": "#f2ede3",
+      "surface": "#fffefa",
+      "surface2": "#f7f2e9",
+      "ink": "#14120e",
+      "inkSoft": "#4b463c",
+      "inkFaint": "#807a6c",
+      "accent": "#8a4a2f",
+      "accentInk": "#fdf8f5",
+      "line": "rgba(20,18,14,.14)"
+    },
+    "fonts": [
+      "Cormorant Garamond",
+      "Lora",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Eğik başlık:** H1/H2 italic, gövde düz.",
+      "**İnce/kalın kontrast:** serif display 38px, gövde 16px.",
+      "**Sıcak accent:** yalnız bağlantı.",
+      "**Hairline:** ayırıcı 1px."
+    ],
+    "must": [
+      "İtalik yalnız başlık ve alıntı.",
+      "Gövde düz serif.",
+      "Ölçü 66ch."
+    ],
+    "mustNot": [
+      "Tüm metni italik.",
+      "Üçten fazla vurgu.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "poetry-chapbook",
+        "justified-book"
+      ],
+      "forbidden": [
+        "terminal-ui",
+        "access-audit"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Italic type (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Italic_type",
+        "use": "vurgu kullanımı"
+      },
+      {
+        "label": "Cormorant Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cormorant+Garamond",
+        "use": "başlık serif"
+      },
+      {
+        "label": "Lora (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Lora",
+        "use": "gövde serif"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "italik",
+      "edebiyat"
+    ],
+    "industries": [
+      "medya",
+      "kultur"
+    ],
+    "essence": "Italic Accent, vurguyu tek bir eğik başlıkla kurar; gerisi düz ve sakin.",
+    "brief": "Editoryal sayfa tasarla: eğik serif başlık, düz gövde, tek sıcak accent, hairline ayırıcı.",
+    "extraCss": "h1, h2 { font-style: italic; font-weight: 400; }\nh1 { font-size: 46px; max-width: 22ch; }\nblockquote, .pg-media .pg-cap { font-style: italic; }"
+  },
+  {
+    "num": "240",
+    "slug": "numerals-display",
+    "name": "Numerals Display",
+    "band": "tipografi",
+    "tagline": "Rakam odaklı tipografi: dev sayılar, mono hizalama, birim etiketi ve ince çizgi.",
+    "feeling": "ölçülü, veri, \"sayı konuşur\"",
+    "best": "yıllık rapor, veri hikâyesi, ölçüm panosu",
+    "avoid": "çocuk uygulaması",
+    "palette": {
+      "bg": "#f7f8f9",
+      "bg2": "#eceef0",
+      "surface": "#ffffff",
+      "surface2": "#f3f5f6",
+      "ink": "#0f1215",
+      "inkSoft": "#454b51",
+      "inkFaint": "#767c83",
+      "accent": "#12506e",
+      "accentInk": "#f6fbfe",
+      "line": "rgba(15,18,21,.14)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "Space Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Dev rakam:** 96px display, tabular.",
+      "**Birim etiketi:** mono 11px, rakamın yanında.",
+      "**İnce çizgi:** rakam altında 1px.",
+      "**Az metin:** başlık iki satır sınırı."
+    ],
+    "must": [
+      "Tüm rakamlar tabular ve hizalı.",
+      "Birim her zaman yazılır.",
+      "Basamak gruplama nokta/virgül tutarlı."
+    ],
+    "mustNot": [
+      "Animasyonlu sayaç.",
+      "Dekoratif grafik.",
+      "Üçten fazla rakam boyutu."
+    ],
+    "neighbors": {
+      "compatible": [
+        "ledger-meter",
+        "variable-weight"
+      ],
+      "forbidden": [
+        "kids-classroom",
+        "carnival-festival"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Numeral system (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Numeral_system",
+        "use": "sayı biçimi"
+      },
+      {
+        "label": "Space Grotesk (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk",
+        "use": "display ailesi"
+      },
+      {
+        "label": "MDN · tabular-nums",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric",
+        "use": "hizalama"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "rakam",
+      "rapor"
+    ],
+    "industries": [
+      "finans",
+      "kultur"
+    ],
+    "essence": "Numerals Display, sayıyı başrole koyar: rakam büyük, birim net, gerisi sessiz.",
+    "brief": "Rakam odaklı rapor sayfası tasarla: 96px tabular rakamlar, mono birim, ince çizgi, az metin.",
+    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-band b { font-size: 72px; font-variant-numeric: tabular-nums; line-height: .9; }\n.pg-band span { font-family: var(--font-mono); font-size: 10.5px; }"
+  },
+  {
+    "num": "241",
+    "slug": "small-caps-ledger",
+    "name": "Small Caps Ledger",
+    "band": "tipografi",
+    "tagline": "Küçük kapsüllü defter: başlıklarda small-caps, ince çizgili tablo ve mono toplam.",
+    "feeling": "kayıt, titiz, \"deftere yazıldı\"",
+    "best": "muhasebe/defter, üyelik kaydı, envanter listesi",
+    "avoid": "gençlik kampanyası",
+    "palette": {
+      "bg": "#fbfaf5",
+      "bg2": "#f1efe6",
+      "surface": "#fffef9",
+      "surface2": "#f6f4ec",
+      "ink": "#15140f",
+      "inkSoft": "#4c4940",
+      "inkFaint": "#7f7b6d",
+      "accent": "#6b2f2f",
+      "accentInk": "#fdf7f7",
+      "line": "rgba(21,20,15,.16)"
+    },
+    "fonts": [
+      "EB Garamond",
+      "EB Garamond",
+      "Courier Prime"
+    ],
+    "radius": [
+      "0px",
+      "0px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Small-caps başlık:** `font-variant: small-caps`, 20px.",
+      "**İnce tablo:** yalnız yatay 1px çizgi.",
+      "**Mono toplam:** sağ alt, tabular.",
+      "**Defter dokusu:** hafif çizgi arka plan, %4."
+    ],
+    "must": [
+      "Her satırda tarih ve tutar.",
+      "Toplamlar tabular ve sağa hizalı.",
+      "Small-caps yalnız başlıklarda."
+    ],
+    "mustNot": [
+      "Renkli satır vurgusu.",
+      "Yuvarlak kart.",
+      "Üçten fazla rakam biçimi."
+    ],
+    "neighbors": {
+      "compatible": [
+        "ledger-meter",
+        "library-archive"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "game-pinball-neon"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Small caps (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Small_caps",
+        "use": "başlık biçimi"
+      },
+      {
+        "label": "EB Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/EB+Garamond",
+        "use": "serif aile"
+      },
+      {
+        "label": "Courier Prime (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Courier+Prime",
+        "use": "toplam"
+      }
+    ],
+    "keywords": [
+      "tipografi",
+      "defter",
+      "muhasebe"
+    ],
+    "industries": [
+      "finans",
+      "eticaret"
+    ],
+    "essence": "Small Caps Ledger, defteri ekranda tutar: small-caps başlık, ince çizgi, mono toplam.",
+    "brief": "Defter/muhasebe sayfası tasarla: small-caps başlıklar, ince çizgili tablo, mono toplamlar.",
+    "extraCss": "h1, h2, h3 { font-variant: small-caps; font-weight: 600; letter-spacing: .02em; }\nh1 { font-size: 44px; }\n.pg-table th { font-variant: small-caps; font-size: 11px; letter-spacing: .06em; }\n.pg-table td:last-child { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }"
+  },
+  {
+    "num": "242",
+    "slug": "agent-console",
+    "name": "Agent Console",
+    "band": "gelecek",
+    "tagline": "Ajan konsolu: izleme kaydı, camgöbeği sinyal, araç çağrısı tablosu ve mono gecikme.",
+    "feeling": "otonom, şeffaf, \"hangi adımda\"",
+    "best": "AI ajan ürünü, otomasyon konsolu, çalıştırma kaydı",
+    "avoid": "lüks vitrin",
+    "palette": {
+      "bg": "#0a0e12",
+      "bg2": "#0e1319",
+      "surface": "#121922",
+      "surface2": "#1a232e",
+      "ink": "#e8f1f7",
+      "inkSoft": "#a3b4c1",
+      "inkFaint": "#798b98",
+      "accent": "#4fd8e8",
+      "accentInk": "#04171b",
+      "line": "rgba(232,241,247,.14)"
+    },
+    "fonts": [
+      "IBM Plex Mono",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "2px",
+      "4px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**İzleme kaydı:** her adım 01/02, araç adı mono.",
+      "**Camgöbeği sinyal:** yalnız çalışan adım.",
+      "**Gecikme:** ms mono, sağa hizalı.",
+      "**Keskin panel:** 2–4px."
+    ],
+    "must": [
+      "Her adımda araç adı, süre ve sonuç.",
+      "Hata adımı metinle işaretlenir.",
+      "Gizli adım yok; kayıt tam."
+    ],
+    "mustNot": [
+      "Animasyonlu akış.",
+      "Beş renkli durum.",
+      "Yuvarlak 12px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "agent-orchestration",
+        "data-lineage"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "carnival-festival"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Intelligent agent (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Intelligent_agent",
+        "use": "adım/araç modeli"
+      },
+      {
+        "label": "OpenTelemetry",
+        "url": "https://opentelemetry.io/",
+        "use": "izleme alanları"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "kayıt biçimi"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "ajan",
+      "konsol"
+    ],
+    "industries": [
+      "teknoloji",
+      "saas"
+    ],
+    "essence": "Agent Console, otonom işi denetlenebilir kılar: her adım, araç ve süre kayıtta.",
+    "brief": "AI ajan konsolu tasarla: koyu zemin, adım kaydı, camgöbeği yalnız çalışan adımda, mono gecikme.",
+    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+  },
+  {
+    "num": "243",
+    "slug": "spatial-workspace",
+    "name": "Spatial Workspace",
+    "band": "gelecek",
+    "tagline": "Uzamsal çalışma alanı: derin gri, katman çizgileri, mor accent ve mono koordinat.",
+    "feeling": "mekânsal, katmanlı, \"derinlikte çalış\"",
+    "best": "AR/VR iş alanı, 3D işbirliği, uzamsal arayüz",
+    "avoid": "muhasebe defteri",
+    "palette": {
+      "bg": "#0d0f14",
+      "bg2": "#12151c",
+      "surface": "#171b24",
+      "surface2": "#1f2430",
+      "ink": "#eaeef6",
+      "inkSoft": "#a9b2c4",
+      "inkFaint": "#7f8899",
+      "accent": "#9678f0",
+      "accentInk": "#0b0618",
+      "line": "rgba(234,238,246,.14)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "JetBrains Mono"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Katman çizgileri:** eş merkezli 1px çerçeveler, %10.",
+      "**Mor accent:** seçili katman.",
+      "**Koordinat:** mono x/y/z.",
+      "**Derinlik:** gölge yerine çizgi."
+    ],
+    "must": [
+      "Her katmanda ad ve koordinat.",
+      "Seçim tek katman.",
+      "Odak halkası her yüzeyde."
+    ],
+    "mustNot": [
+      "Ağır 3D illüstrasyon.",
+      "Gradyan derinlik.",
+      "Yuvarlak 20px+ panel."
+    ],
+    "neighbors": {
+      "compatible": [
+        "volumetric-data",
+        "digital-twin"
+      ],
+      "forbidden": [
+        "ledger-meter",
+        "regulatory-report"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Spatial computing (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Spatial_computing",
+        "use": "katman/uzam modeli"
+      },
+      {
+        "label": "WebXR Device API",
+        "url": "https://www.w3.org/TR/webxr/",
+        "use": "uzamsal arayüz bağlamı"
+      },
+      {
+        "label": "JetBrains Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/JetBrains+Mono",
+        "use": "koordinat"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "uzamsal",
+      "katman"
+    ],
+    "industries": [
+      "teknoloji",
+      "tasarim"
+    ],
+    "essence": "Spatial Workspace, katmanları görünür kılar: ne nerede, hangi derinlikte.",
+    "brief": "Uzamsal çalışma alanı tasarla: derin gri, katman çerçeveleri, mor accent seçimde, mono koordinat.",
+    "extraCss": "h1 { font-size: 40px; max-width: 24ch; }\n.pg-media { background-image: repeating-radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 40px); }"
+  },
+  {
+    "num": "244",
+    "slug": "bio-lab-interface",
+    "name": "Bio Lab Interface",
+    "band": "gelecek",
+    "tagline": "Biyolojik laboratuvar arayüzü: koyu yeşil, asit accent, kültür tablosu ve mono sıcaklık.",
+    "feeling": "canlı, kontrollü, \"37.0 °C\"",
+    "best": "biyoteknoloji, kültür takibi, laboratuvar otomasyonu",
+    "avoid": "moda kampanyası",
+    "palette": {
+      "bg": "#0a100d",
+      "bg2": "#0e1511",
+      "surface": "#121b16",
+      "surface2": "#1a251e",
+      "ink": "#e9f4ec",
+      "inkSoft": "#a4bdaa",
+      "inkFaint": "#7b9382",
+      "accent": "#7ce86b",
+      "accentInk": "#061505",
+      "line": "rgba(233,244,236,.14)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "Share Tech Mono"
+    ],
+    "radius": [
+      "2px",
+      "4px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Kültür tablosu:** örnek, sıcaklık, süre mono.",
+      "**Asit yeşili:** yalnız canlı/aktif örnek.",
+      "**Nokta dokusu:** hücre benzeri, %6.",
+      "**Keskin panel:** 2–4px."
+    ],
+    "must": [
+      "Her örnekte sıcaklık, pH ve süre.",
+      "Aktif durum metinle.",
+      "Birimler mono."
+    ],
+    "mustNot": [
+      "Animasyonlu hücre.",
+      "Neon degradeler.",
+      "Okunamayan 9px etiket."
+    ],
+    "neighbors": {
+      "compatible": [
+        "genomics-lab",
+        "lab-simulation"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "carnival-festival"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Biotechnology (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Biotechnology",
+        "use": "kültür/ölçüm alanları"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      },
+      {
+        "label": "Share Tech Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Share+Tech+Mono",
+        "use": "ölçüm"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "biyoteknoloji",
+      "laboratuvar"
+    ],
+    "industries": [
+      "bilim",
+      "saglik"
+    ],
+    "essence": "Bio Lab Interface, canlı örneği tabloyla yönetir: sıcaklık, pH, süre ve durum.",
+    "brief": "Biyoteknoloji arayüzü tasarla: koyu yeşil zemin, asit yeşili yalnız aktif örnekte, mono ölçümler.",
+    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+  },
+  {
+    "num": "245",
+    "slug": "climate-model",
+    "name": "Climate Model",
+    "band": "gelecek",
+    "tagline": "İklim modeli panosu: soğuk mavi, senaryo şeritleri, yıl ekseni ve mono sapma değeri.",
+    "feeling": "bilimsel, uzun vadeli, \"+1.5 °C\"",
+    "best": "iklim/sürdürülebilirlik raporu, senaryo analizi",
+    "avoid": "hype kampanya",
+    "palette": {
+      "bg": "#f6f9fb",
+      "bg2": "#e9f0f5",
+      "surface": "#ffffff",
+      "surface2": "#f1f6fa",
+      "ink": "#101820",
+      "inkSoft": "#41505d",
+      "inkFaint": "#74828e",
+      "accent": "#12557f",
+      "accentInk": "#f5fbff",
+      "line": "rgba(16,24,32,.13)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Senaryo şeritleri:** 3 yatay bant, farklı opaklık.",
+      "**Yıl ekseni:** mono, 10'ar yıl.",
+      "**Sapma değeri:** mono, +/− işaretli.",
+      "**Soğuk palet:** accent tek."
+    ],
+    "must": [
+      "Her senaryoda referans yılı ve sapma.",
+      "Eksen etiketleri ve birim.",
+      "Kaynak dipnotu."
+    ],
+    "mustNot": [
+      "Korku odaklı görsel.",
+      "Renk geçişli ısı haritası (7+ ton).",
+      "Kaynaksız iddia."
+    ],
+    "neighbors": {
+      "compatible": [
+        "volumetric-data",
+        "public-health"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "carnival-festival"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Climate model (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Climate_model",
+        "use": "senaryo yapısı"
+      },
+      {
+        "label": "IPCC",
+        "url": "https://www.ipcc.ch/",
+        "use": "rapor dili"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "eksen/değer"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "iklim",
+      "senaryo"
+    ],
+    "industries": [
+      "bilim",
+      "kamu"
+    ],
+    "essence": "Climate Model, senaryoları karşılaştırır: aynı eksen, aynı birim, aynı referans.",
+    "brief": "İklim senaryo panosu tasarla: soğuk mavi, yıl ekseni mono, senaryo şeritleri, sapma değerleri.",
+    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-chart i:nth-child(odd) { opacity: .55; }"
+  },
+  {
+    "num": "246",
+    "slug": "orbital-logistics",
+    "name": "Orbital Logistics",
+    "band": "gelecek",
+    "tagline": "Yörünge lojistiği: gece mavisi, yörünge çizgileri, manifest tablosu ve mono pencere saati.",
+    "feeling": "operasyonel uzay, \"fırlatma penceresi\"",
+    "best": "uzay lojistiği, uydu operasyonu, manifest planı",
+    "avoid": "market vitrini",
+    "palette": {
+      "bg": "#080b14",
+      "bg2": "#0c101b",
+      "surface": "#101623",
+      "surface2": "#182030",
+      "ink": "#e9eefb",
+      "inkSoft": "#a5b0c9",
+      "inkFaint": "#7b869e",
+      "accent": "#5fa8ff",
+      "accentInk": "#04101f",
+      "line": "rgba(233,238,251,.14)"
+    },
+    "fonts": [
+      "Chakra Petch",
+      "Rajdhani",
+      "Share Tech Mono"
+    ],
+    "radius": [
+      "2px",
+      "4px"
+    ],
+    "motif": "rings",
+    "upper": true,
+    "signature": [
+      "**Yörünge çizgileri:** eş merkezli elipsler, %12.",
+      "**Manifest tablosu:** yük, kütle, pencere mono.",
+      "**Mavi accent:** yalnız aktif pencere.",
+      "**Pencere saati:** mono, UTC."
+    ],
+    "must": [
+      "Her yükte kütle ve hedef yörünge.",
+      "Saatler UTC ve mono.",
+      "Durum metinle."
+    ],
+    "mustNot": [
+      "Fotoğrafik uzay arka planı.",
+      "Animasyonlu yörünge.",
+      "Okunamayan 9px."
+    ],
+    "neighbors": {
+      "compatible": [
+        "fleet-dispatch",
+        "planetary-service"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "kids-classroom"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Orbital mechanics (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Orbital_mechanics",
+        "use": "yörünge/pencere kavramı"
+      },
+      {
+        "label": "Chakra Petch (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Chakra+Petch",
+        "use": "teknik başlık"
+      },
+      {
+        "label": "Share Tech Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Share+Tech+Mono",
+        "use": "manifest/saat"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "uzay",
+      "lojistik"
+    ],
+    "industries": [
+      "bilim",
+      "teknoloji"
+    ],
+    "essence": "Orbital Logistics, fırlatma penceresini planlar: ne, ne zaman, hangi yörüngeye.",
+    "brief": "Yörünge lojistiği manifesti tasarla: gece mavisi, yörünge çizgileri, mono UTC pencere, manifest tablosu.",
+    "extraCss": "h1 { font-size: 40px; letter-spacing: .04em; max-width: 24ch; }\n.pg-media { background-image: repeating-radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--accent) 12%, transparent) 0 1px, transparent 1px 36px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+  },
+  {
+    "num": "247",
+    "slug": "synthetic-media",
+    "name": "Synthetic Media",
+    "band": "gelecek",
+    "tagline": "Sentetik medya: grafit zemin, turkuaz accent, kaynak etiketi ve mono üretim parametresi.",
+    "feeling": "deneysel, şeffaf, \"üretildi\"",
+    "best": "AI medya ürünü, içerik doğrulama, model kartı",
+    "avoid": "resmî belge",
+    "palette": {
+      "bg": "#0e1013",
+      "bg2": "#121519",
+      "surface": "#181c22",
+      "surface2": "#21262e",
+      "ink": "#edf0f4",
+      "inkSoft": "#adb4bf",
+      "inkFaint": "#828a96",
+      "accent": "#3fd4c2",
+      "accentInk": "#041614",
+      "line": "rgba(237,240,244,.14)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Kaynak etiketi:** her medyada \"synthetic\" mono etiketi.",
+      "**Turkuaz accent:** yalnız doğrulama durumu.",
+      "**Parametre listesi:** mono anahtar/değer.",
+      "**Grafit zemin:** tek ton."
+    ],
+    "must": [
+      "Her medyada üretim kaynağı ve model adı.",
+      "Doğrulama durumu metinle.",
+      "Parametreler mono ve birimli."
+    ],
+    "mustNot": [
+      "Gizlenen kaynak etiketi.",
+      "Animasyonlu örnek üretim.",
+      "Üçten fazla accent."
+    ],
+    "neighbors": {
+      "compatible": [
+        "agent-console",
+        "neural-canvas"
+      ],
+      "forbidden": [
+        "regulatory-report",
+        "access-audit"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Generative artificial intelligence (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+        "use": "model/kaynak etiketi"
+      },
+      {
+        "label": "C2PA",
+        "url": "https://c2pa.org/",
+        "use": "içerik kaynağı standardı"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "parametre"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "sentetik",
+      "medya"
+    ],
+    "industries": [
+      "teknoloji",
+      "medya"
+    ],
+    "essence": "Synthetic Media, üretilmiş içeriği işaretler: kaynak, model ve parametre görünür.",
+    "brief": "Sentetik medya ürünü tasarla: grafit zemin, turkuaz doğrulama accent, mono kaynak/parametre listesi.",
+    "extraCss": "h1 { font-size: 40px; max-width: 24ch; }\n.pg-card { border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); }"
+  },
+  {
+    "num": "248",
+    "slug": "quantum-dashboard",
+    "name": "Quantum Dashboard",
+    "band": "gelecek",
+    "tagline": "Kuantum panosu: mor-lacivert, durum vektörü tablosu, altın accent ve mono olasılık.",
+    "feeling": "soyut, hassas, \"%50.2\"",
+    "best": "kuantum hesaplama, olasılık paneli, araştırma arayüzü",
+    "avoid": "tüketici vitrini",
+    "palette": {
+      "bg": "#0a0a16",
+      "bg2": "#0f0f1f",
+      "surface": "#141428",
+      "surface2": "#1d1d36",
+      "ink": "#eae9fa",
+      "inkSoft": "#a9a6c9",
+      "inkFaint": "#7f7ca0",
+      "accent": "#c9a94a",
+      "accentInk": "#151003",
+      "line": "rgba(234,233,250,.15)"
+    },
+    "fonts": [
+      "Michroma",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "2px",
+      "4px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Olasılık tablosu:** iki ondalık, mono.",
+      "**Altın accent:** yalnız ölçülen durum.",
+      "**Vektör gösterimi:** `|0⟩` biçimi mono.",
+      "**Koyu mor:** tek zemin."
+    ],
+    "must": [
+      "Olasılıklar iki ondalık ve toplam 100.",
+      "Durum gösterimi mono.",
+      "Birim/her normalizasyon yazılır."
+    ],
+    "mustNot": [
+      "Süs atom illüstrasyonu.",
+      "Animasyonlu dalga fonksiyonu.",
+      "On renkli kübit paleti."
+    ],
+    "neighbors": {
+      "compatible": [
+        "volumetric-data",
+        "lab-instrument"
+      ],
+      "forbidden": [
+        "kids-classroom",
+        "boutique-hotel"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Quantum computing (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Quantum_computing",
+        "use": "durum/ölçüm dili"
+      },
+      {
+        "label": "Michroma (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Michroma",
+        "use": "teknik başlık"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "olasılık"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "kuantum",
+      "olasılık"
+    ],
+    "industries": [
+      "bilim",
+      "teknoloji"
+    ],
+    "essence": "Quantum Dashboard, olasılığı tabloyla verir: durum, genlik, olasılık ve toplam.",
+    "brief": "Kuantum panosu tasarla: mor-lacivert zemin, altın accent ölçümde, mono olasılık tablosu, |0⟩ gösterimi.",
+    "extraCss": "h1 { font-size: 38px; letter-spacing: .06em; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+  },
+  {
+    "num": "249",
+    "slug": "digital-twin",
+    "name": "Digital Twin",
+    "band": "gelecek",
+    "tagline": "Dijital ikiz: şema-durum eşleşmesi, camgöbeği canlı accent ve mono sensör değeri.",
+    "feeling": "eşzamanlı, izlenen, \"gerçek zamanlı\"",
+    "best": "dijital ikiz, tesis izleme, sensör panosu",
+    "avoid": "editoryal vitrin",
+    "palette": {
+      "bg": "#0b1013",
+      "bg2": "#0f1619",
+      "surface": "#131b20",
+      "surface2": "#1b252b",
+      "ink": "#e8f1f4",
+      "inkSoft": "#a2b5bd",
+      "inkFaint": "#788b94",
+      "accent": "#46c9c0",
+      "accentInk": "#041717",
+      "line": "rgba(232,241,244,.14)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "Share Tech Mono"
+    ],
+    "radius": [
+      "2px",
+      "6px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Şema + değer:** sol diyagram, sağ sensör tablosu.",
+      "**Camgöbeği canlı:** yalnız aktif sensör.",
+      "**Sensör değeri:** mono, birim + zaman.",
+      "**Keskin panel:** 2–6px."
+    ],
+    "must": [
+      "Her sensörde birim ve son güncelleme.",
+      "Eşik aşımı metinle.",
+      "Diyagram etiketleri okunur."
+    ],
+    "mustNot": [
+      "Animasyonlu 3B model.",
+      "Sekiz renkli sensör durumu.",
+      "Birimsiz değer."
+    ],
+    "neighbors": {
+      "compatible": [
+        "telemetry-grid",
+        "spatial-workspace"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "poetry-chapbook"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Digital twin (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Digital_twin",
+        "use": "eşleme modeli"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      },
+      {
+        "label": "Share Tech Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Share+Tech+Mono",
+        "use": "sensör değeri"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "ikiz",
+      "sensör"
+    ],
+    "industries": [
+      "teknoloji",
+      "insaat"
+    ],
+    "essence": "Digital Twin, fiziksel durumu tabloyla eşler: sensör, birim, eşik ve zaman.",
+    "brief": "Dijital ikiz ekranı tasarla: koyu zemin, sol diyagram, sağ sensör tablosu, camgöbeği yalnız aktifte.",
+    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 9%, transparent) 0 1px, transparent 1px 26px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 9%, transparent) 0 1px, transparent 1px 26px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+  },
+  {
+    "num": "250",
+    "slug": "neural-canvas",
+    "name": "Neural Canvas",
+    "band": "gelecek",
+    "tagline": "Sinir ağı tuvali: katman düğümleri, mor accent, ince bağlantılar ve mono katman boyutu.",
+    "feeling": "keşif, deneysel, \"katman 3: 512\"",
+    "best": "model görselleştirme, eğitim izleme, araştırma notu",
+    "avoid": "muhasebe defteri",
+    "palette": {
+      "bg": "#0b0b12",
+      "bg2": "#101018",
+      "surface": "#15151f",
+      "surface2": "#1d1d29",
+      "ink": "#eeeaf7",
+      "inkSoft": "#b0aac4",
+      "inkFaint": "#847f99",
+      "accent": "#a97bf0",
+      "accentInk": "#0c0618",
+      "line": "rgba(238,234,247,.14)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "JetBrains Mono"
+    ],
+    "radius": [
+      "2px",
+      "6px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Katman düğümleri:** her katman bir sütun, düğüm sayısı mono.",
+      "**İnce bağlantı:** 1px, %20 opaklık.",
+      "**Mor accent:** yalnız seçili katman.",
+      "**Aktivasyon notu:** mono kısa etiket."
+    ],
+    "must": [
+      "Her katmanda boyut ve aktivasyon.",
+      "Bağlantılar dekoratif değil, katman ilişkisi.",
+      "Parametre sayısı mono."
+    ],
+    "mustNot": [
+      "Animasyonlu eğitim.",
+      "Sekiz renkli düğüm.",
+      "Okunamayan etiket."
+    ],
+    "neighbors": {
+      "compatible": [
+        "agent-console",
+        "volumetric-data"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "regulatory-report"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Artificial neural network (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Neural_network_(machine_learning)",
+        "use": "katman kavramı"
+      },
+      {
+        "label": "Space Grotesk (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk",
+        "use": "başlık ailesi"
+      },
+      {
+        "label": "JetBrains Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/JetBrains+Mono",
+        "use": "katman/parametre"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "model",
+      "katman"
+    ],
+    "industries": [
+      "teknoloji",
+      "bilim"
+    ],
+    "essence": "Neural Canvas, modeli katman katman gösterir: boyut, aktivasyon ve parametre.",
+    "brief": "Sinir ağı tuvali tasarla: koyu zemin, katman sütunları, ince bağlantılar, mono boyut/parametre.",
+    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-media { background-image: radial-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 1.5px, transparent 1.6px); background-size: 22px 22px; }"
+  },
+  {
+    "num": "251",
+    "slug": "post-screen-voice",
+    "name": "Post-screen Voice",
+    "band": "gelecek",
+    "tagline": "Ekran sonrası ses arayüzü: sıcak gri, dalga çizgisi, transkript satırı ve mono süre.",
+    "feeling": "konuşma, akış, \"dinliyorum\"",
+    "best": "sesli asistan, transkript ürünü, çağrı analizi",
+    "avoid": "resmî denetim raporu",
+    "palette": {
+      "bg": "#f6f5f2",
+      "bg2": "#ecebe6",
+      "surface": "#ffffff",
+      "surface2": "#f3f2ee",
+      "ink": "#141412",
+      "inkSoft": "#4a4a45",
+      "inkFaint": "#7c7c75",
+      "accent": "#2f5d4a",
+      "accentInk": "#f5fdf9",
+      "line": "rgba(20,20,18,.14)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "10px",
+      "14px"
+    ],
+    "motif": "bars",
+    "signature": [
+      "**Dalga çizgisi:** statik 40 çubuk, %30–70 yükseklik.",
+      "**Transkript satırı:** konuşmacı mono, metin düz.",
+      "**Süre:** mono, satır başında.",
+      "**Sıcak gri:** tek zemin."
+    ],
+    "must": [
+      "Her transkript satırında konuşmacı ve süre.",
+      "Dalga statik (animasyon yok).",
+      "Dokunma hedefi ≥ 44px."
+    ],
+    "mustNot": [
+      "Animasyonlu dalga.",
+      "Beş renkli konuşmacı.",
+      "Yuvarlak 20px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "voice-first",
+        "podcast-network"
+      ],
+      "forbidden": [
+        "regulatory-report",
+        "access-audit"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Speech recognition (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Speech_recognition",
+        "use": "transkript yapısı"
+      },
+      {
+        "label": "Web Speech API",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API",
+        "use": "ses arayüzü bağlamı"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "süre/konuşmacı"
+      }
+    ],
+    "keywords": [
+      "gelecek",
+      "ses",
+      "transkript"
+    ],
+    "industries": [
+      "teknoloji",
+      "medya"
+    ],
+    "essence": "Post-screen Voice, konuşmayı satırlara böler: kim, ne zaman, ne dedi.",
+    "brief": "Sesli asistan transkript ekranı tasarla: sıcak gri, statik dalga çizgisi, mono konuşmacı/süre.",
+    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 26%, transparent) 0 3px, transparent 3px 12px); background-size: auto 60%; background-position: center; background-repeat: repeat-x; }\n.pg-card { border-radius: 14px; }"
+  }
+]

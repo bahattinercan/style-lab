@@ -6,10 +6,10 @@
 
 | Ölçü | Değer |
 |---|---|
-| Stil | 151 |
+| Stil | 251 |
 | Sahne şablonu (tam set) | 1 |
 | Repoda tutulan sahne | 1 (çekirdek; kalanı `kit/.shots-cache/`) |
-| Dolu sahne | 151 / 151 (%100) |
+| Dolu sahne | 251 / 251 (%100) |
 | Kontrast hatası | 0 stil |
 | Boş tipografi yasak listesi | 20 stil |
 
@@ -168,6 +168,106 @@
 | 149 | [Boutique Hotel](../styles/149-boutique-hotel/style.md) | Sahne & Prestij | 1/1 | 24 |
 | 150 | [Lookbook Editorial](../styles/150-lookbook-editorial/style.md) | Sahne & Prestij | 1/1 | 24 |
 | 151 | [Dark Dashboard](../styles/151-dark-dashboard/style.md) | Sahne & Prestij | 1/1 | 24 |
+| 152 | [Game HUD](../styles/152-game-hud/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 153 | [Game Racing](../styles/153-game-racing/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 154 | [Fantasy RPG](../styles/154-game-fantasy-rpg/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 155 | [Sci-Fi Cockpit](../styles/155-game-sci-fi-cockpit/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 156 | [Retro Console](../styles/156-game-retro-console/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 157 | [Esports League](../styles/157-game-esports-league/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 158 | [Indie Pixel](../styles/158-game-indie-pixel/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 159 | [Card TCG](../styles/159-game-card-tcg/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 160 | [Survival Craft](../styles/160-game-survival-craft/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 161 | [Mobile Casual](../styles/161-game-mobile-casual/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 162 | [Horror Occult](../styles/162-game-horror-occult/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 163 | [Racing Neon](../styles/163-game-racing-neon/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 164 | [Strategy Map](../styles/164-game-strategy-map/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 165 | [Sim Builder](../styles/165-game-sim-builder/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 166 | [Arcade Cabinet](../styles/166-game-arcade-cabinet/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 167 | [Stealth Tactical](../styles/167-game-stealth-tactical/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 168 | [Puzzle Light](../styles/168-game-puzzle-light/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 169 | [MMO Guild](../styles/169-game-mmo-guild/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 170 | [Franchise Sports](../styles/170-game-franchise-sports/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 171 | [Pinball Neon](../styles/171-game-pinball-neon/style.md) | Oyun & Etkileşim | 1/1 | 20 |
+| 172 | [Incident Response](../styles/172-incident-response/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 173 | [FinOps Cost](../styles/173-finops-cost/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 174 | [Fleet Dispatch](../styles/174-fleet-dispatch/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 175 | [Fraud Review](../styles/175-fraud-review/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 176 | [SLO Budget](../styles/176-slo-budget/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 177 | [Data Lineage](../styles/177-data-lineage/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 178 | [Access Audit](../styles/178-access-audit/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 179 | [Release Train](../styles/179-release-train/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 180 | [Support Inbox](../styles/180-support-inbox/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 181 | [Regulatory Report](../styles/181-regulatory-report/style.md) | Operasyon & Veri | 1/1 | 20 |
+| 182 | [Grocery Delivery](../styles/182-grocery-delivery/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 183 | [Marketplace Multi](../styles/183-marketplace-multi/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 184 | [Luxury Atelier](../styles/184-luxury-atelier/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 185 | [Subscription Box](../styles/185-subscription-box/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 186 | [Sneaker Drop](../styles/186-sneaker-drop/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 187 | [Wine Cellar](../styles/187-wine-cellar/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 188 | [Furniture Studio](../styles/188-furniture-studio/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 189 | [Electronics Spec](../styles/189-electronics-spec/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 190 | [Pharmacy Store](../styles/190-pharmacy-store/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 191 | [Farmers Market](../styles/191-farmers-market/style.md) | Ticaret & Vitrin | 1/1 | 20 |
+| 192 | [Museum Exhibition](../styles/192-museum-exhibition/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 193 | [Theatre Season](../styles/193-theatre-season/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 194 | [Film Festival](../styles/194-film-festival/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 195 | [Public Radio](../styles/195-public-radio/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 196 | [Podcast Network](../styles/196-podcast-network/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 197 | [Indie Cinema](../styles/197-indie-cinema/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 198 | [Library Archive](../styles/198-library-archive/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 199 | [Comic Bookstore](../styles/199-comic-bookstore/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 200 | [Opera House](../styles/200-opera-house/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 201 | [Street Festival](../styles/201-street-festival/style.md) | Kültür & Yayın | 1/1 | 20 |
+| 202 | [Clinical Trial](../styles/202-clinical-trial/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 203 | [Lab Protocol](../styles/203-lab-protocol/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 204 | [Pharmacy Labels](../styles/204-pharmacy-labels/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 205 | [Physiotherapy](../styles/205-physiotherapy/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 206 | [Mental Wellness](../styles/206-mental-wellness/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 207 | [Nutrition Plan](../styles/207-nutrition-plan/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 208 | [Dental Clinic](../styles/208-dental-clinic/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 209 | [Public Health](../styles/209-public-health/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 210 | [Genomics Lab](../styles/210-genomics-lab/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 211 | [Veterinary Care](../styles/211-veterinary-care/style.md) | Sağlık & Bilim | 1/1 | 20 |
+| 212 | [Language App](../styles/212-language-app/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 213 | [Skill Tree](../styles/213-skill-tree/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 214 | [University Portal](../styles/214-university-portal/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 215 | [Coding Bootcamp](../styles/215-coding-bootcamp/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 216 | [Kids Classroom](../styles/216-kids-classroom/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 217 | [Exam Prep](../styles/217-exam-prep/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 218 | [Music Lesson](../styles/218-music-lesson/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 219 | [Lab Simulation](../styles/219-lab-simulation/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 220 | [Peer Study](../styles/220-peer-study/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 221 | [Certificate Wallet](../styles/221-certificate-wallet/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
+| 222 | [Terrazzo Stone](../styles/222-terrazzo-stone/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 223 | [Linocut Print](../styles/223-linocut-print/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 224 | [Risograph Print](../styles/224-risograph-print/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 225 | [Denim Textile](../styles/225-denim-textile/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 226 | [Cork Oak](../styles/226-cork-oak/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 227 | [Cast Concrete](../styles/227-cast-concrete/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 228 | [Enamel Jewel](../styles/228-enamel-jewel/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 229 | [Hand-thrown Ceramic](../styles/229-hand-thrown-ceramic/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 230 | [Raw Steel](../styles/230-raw-steel/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 231 | [Recycled Paper](../styles/231-recycled-paper/style.md) | Materyal & Zanaat | 1/1 | 20 |
+| 232 | [Condensed News](../styles/232-condensed-news/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 233 | [Monospace Editorial](../styles/233-monospace-editorial/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 234 | [Blackletter Modern](../styles/234-blackletter-modern/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 235 | [Variable Weight](../styles/235-variable-weight/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 236 | [Justified Book](../styles/236-justified-book/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 237 | [Stencil Display](../styles/237-stencil-display/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 238 | [Uppercase Only](../styles/238-uppercase-only/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 239 | [Italic Accent](../styles/239-italic-accent/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 240 | [Numerals Display](../styles/240-numerals-display/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 241 | [Small Caps Ledger](../styles/241-small-caps-ledger/style.md) | Tipografi Denemeleri | 1/1 | 20 |
+| 242 | [Agent Console](../styles/242-agent-console/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 243 | [Spatial Workspace](../styles/243-spatial-workspace/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 244 | [Bio Lab Interface](../styles/244-bio-lab-interface/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 245 | [Climate Model](../styles/245-climate-model/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 246 | [Orbital Logistics](../styles/246-orbital-logistics/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 247 | [Synthetic Media](../styles/247-synthetic-media/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 248 | [Quantum Dashboard](../styles/248-quantum-dashboard/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 249 | [Digital Twin](../styles/249-digital-twin/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 250 | [Neural Canvas](../styles/250-neural-canvas/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 251 | [Post-screen Voice](../styles/251-post-screen-voice/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
 
 ## 3 · Kontrast (WCAG)
 
@@ -326,6 +426,106 @@ Eşikler: gövde ≥ 4.5, büyük metin ≥ 3, accent üstü metin ≥ 4.5. `fai
 | boutique-hotel | 15.63 | 9.61 | 5.12 | 6.49 | 14.32 |
 | lookbook-editorial | 15.85 | 6.21 | 3.34 | 5.72 | 17.17 |
 | dark-dashboard | 16.68 | 9.41 | 4.89 | 9.88 | 15.58 |
+| game-hud | 16.74 | 9.72 | 5.98 | 12.11 | 15.20 |
+| game-racing | 16.59 | 8.19 | 4.70 | 6.75 | 15.41 |
+| game-fantasy-rpg | 15.32 | 9.29 | 5.42 | 8.01 | 13.94 |
+| game-sci-fi-cockpit | 16.45 | 9.09 | 5.64 | 7.50 | 15.10 |
+| game-retro-console | 15.77 | 8.87 | 5.54 | 11.11 | 13.70 |
+| game-esports-league | 16.88 | 8.74 | 5.40 | 6.66 | 15.68 |
+| game-indie-pixel | 15.16 | 8.83 | 5.68 | 9.88 | 13.35 |
+| game-card-tcg | 15.40 | 8.58 | 5.11 | 4.70 | 13.61 |
+| game-survival-craft | 15.48 | 9.18 | 5.60 | 9.58 | 13.51 |
+| game-mobile-casual | 15.85 | 6.92 | 3.37 | 5.26 | 17.00 |
+| game-horror-occult | 15.55 | 7.44 | 4.26 | 4.59 | 14.57 |
+| game-racing-neon | 18.18 | 9.36 | 5.18 | 11.80 | 16.81 |
+| game-strategy-map | 15.12 | 7.03 | 3.34 | 6.58 | 17.06 |
+| game-sim-builder | 16.00 | 9.65 | 6.03 | 8.25 | 13.97 |
+| game-arcade-cabinet | 15.60 | 9.39 | 5.41 | 12.35 | 13.07 |
+| game-stealth-tactical | 15.32 | 8.50 | 5.21 | 8.05 | 13.64 |
+| game-puzzle-light | 16.55 | 7.02 | 3.44 | 6.44 | 17.46 |
+| game-mmo-guild | 15.85 | 9.19 | 5.73 | 7.87 | 14.58 |
+| game-franchise-sports | 17.70 | 9.40 | 5.66 | 4.66 | 16.08 |
+| game-pinball-neon | 17.54 | 8.69 | 5.19 | 10.50 | 16.10 |
+| incident-response | 16.11 | 8.92 | 5.48 | 7.67 | 14.52 |
+| finops-cost | 16.89 | 7.06 | 3.27 | 6.21 | 17.71 |
+| fleet-dispatch | 16.25 | 8.88 | 5.38 | 6.90 | 14.55 |
+| fraud-review | 16.04 | 8.54 | 5.09 | 6.18 | 14.62 |
+| slo-budget | 16.33 | 8.74 | 5.20 | 6.75 | 14.69 |
+| data-lineage | 16.45 | 9.09 | 5.53 | 9.22 | 14.43 |
+| access-audit | 16.77 | 7.40 | 3.44 | 8.57 | 18.11 |
+| release-train | 16.03 | 8.92 | 5.28 | 5.97 | 14.55 |
+| support-inbox | 16.82 | 7.62 | 3.77 | 5.64 | 17.68 |
+| regulatory-report | 17.49 | 8.02 | 3.77 | 10.74 | 17.77 |
+| grocery-delivery | 16.34 | 7.07 | 3.44 | 5.17 | 16.72 |
+| marketplace-multi | 16.71 | 7.51 | 3.55 | 7.26 | 17.76 |
+| luxury-atelier | 15.82 | 7.22 | 3.43 | 7.62 | 17.39 |
+| subscription-box | 16.60 | 8.47 | 4.02 | 5.96 | 17.50 |
+| sneaker-drop | 17.38 | 8.81 | 5.10 | 13.16 | 16.00 |
+| wine-cellar | 15.49 | 8.51 | 4.95 | 7.88 | 14.14 |
+| furniture-studio | 16.38 | 7.94 | 3.85 | 6.96 | 17.63 |
+| electronics-spec | 17.34 | 7.69 | 3.62 | 7.46 | 18.15 |
+| pharmacy-store | 17.22 | 7.69 | 3.68 | 6.29 | 17.87 |
+| farmers-market | 15.91 | 8.02 | 3.87 | 5.66 | 17.03 |
+| museum-exhibition | 16.12 | 7.61 | 3.65 | 8.71 | 17.30 |
+| theatre-season | 16.07 | 9.24 | 5.32 | 7.35 | 14.56 |
+| film-festival | 17.36 | 8.38 | 4.73 | 4.97 | 15.88 |
+| public-radio | 17.21 | 8.16 | 3.76 | 8.19 | 17.94 |
+| podcast-network | 16.37 | 8.58 | 4.97 | 6.35 | 14.89 |
+| indie-cinema | 17.68 | 9.28 | 5.35 | 13.13 | 15.94 |
+| library-archive | 16.28 | 7.70 | 3.61 | 9.95 | 17.44 |
+| comic-bookstore | 16.91 | 8.52 | 3.98 | 5.96 | 17.90 |
+| opera-house | 16.26 | 9.60 | 5.85 | 9.18 | 14.23 |
+| street-festival | 17.10 | 9.16 | 4.36 | 6.01 | 17.92 |
+| clinical-trial | 17.67 | 7.88 | 3.76 | 7.13 | 18.31 |
+| lab-protocol | 16.27 | 8.97 | 5.45 | 8.57 | 14.32 |
+| pharmacy-labels | 18.65 | 9.02 | 4.43 | 8.83 | 18.65 |
+| physiotherapy | 16.97 | 7.48 | 3.46 | 6.28 | 17.72 |
+| mental-wellness | 17.27 | 8.74 | 4.09 | 7.76 | 18.22 |
+| nutrition-plan | 17.30 | 8.33 | 3.81 | 6.12 | 17.68 |
+| dental-clinic | 17.89 | 7.87 | 3.53 | 5.88 | 18.25 |
+| public-health | 18.96 | 9.29 | 4.48 | 7.67 | 18.96 |
+| genomics-lab | 16.43 | 8.72 | 5.23 | 10.24 | 14.99 |
+| veterinary-care | 17.15 | 8.21 | 3.93 | 7.04 | 17.87 |
+| language-app | 17.21 | 7.54 | 3.52 | 7.41 | 17.54 |
+| skill-tree | 15.96 | 8.26 | 4.97 | 5.93 | 14.49 |
+| university-portal | 17.06 | 7.88 | 3.71 | 10.78 | 17.97 |
+| coding-bootcamp | 16.69 | 9.18 | 5.59 | 9.39 | 15.02 |
+| kids-classroom | 17.48 | 8.49 | 3.96 | 5.64 | 17.81 |
+| exam-prep | 17.38 | 7.69 | 3.67 | 8.61 | 18.15 |
+| music-lesson | 16.83 | 8.12 | 3.92 | 8.80 | 17.97 |
+| lab-simulation | 16.55 | 8.88 | 5.38 | 7.71 | 14.87 |
+| peer-study | 17.22 | 8.39 | 4.03 | 7.89 | 18.07 |
+| certificate-wallet | 16.44 | 9.03 | 5.50 | 7.97 | 14.22 |
+| terrazzo-stone | 16.00 | 7.56 | 3.63 | 6.33 | 17.44 |
+| linocut-print | 16.69 | 8.14 | 3.81 | 7.15 | 18.18 |
+| risograph-print | 16.77 | 8.31 | 3.87 | 6.57 | 17.61 |
+| denim-textile | 16.17 | 7.63 | 3.58 | 10.17 | 17.82 |
+| cork-oak | 16.42 | 8.39 | 4.00 | 8.13 | 17.40 |
+| cast-concrete | 15.74 | 7.51 | 3.65 | 8.55 | 17.07 |
+| enamel-jewel | 16.60 | 9.63 | 5.33 | 8.57 | 15.15 |
+| hand-thrown-ceramic | 16.49 | 8.02 | 3.88 | 7.29 | 17.34 |
+| raw-steel | 15.60 | 7.49 | 3.62 | 10.59 | 17.38 |
+| recycled-paper | 16.12 | 7.84 | 3.72 | 7.30 | 17.40 |
+| condensed-news | 18.25 | 8.67 | 4.03 | 8.70 | 18.73 |
+| monospace-editorial | 17.79 | 8.44 | 4.04 | 7.23 | 18.42 |
+| blackletter-modern | 16.41 | 9.24 | 5.18 | 4.92 | 15.17 |
+| variable-weight | 17.74 | 8.66 | 4.12 | 7.42 | 19.03 |
+| justified-book | 17.47 | 8.78 | 4.01 | 9.65 | 18.21 |
+| stencil-display | 15.71 | 8.79 | 5.30 | 9.70 | 13.41 |
+| uppercase-only | 17.25 | 8.40 | 3.99 | 9.57 | 19.01 |
+| italic-accent | 17.78 | 8.91 | 4.06 | 6.42 | 18.54 |
+| numerals-display | 17.67 | 8.30 | 3.96 | 8.40 | 18.79 |
+| small-caps-ledger | 17.64 | 8.61 | 4.05 | 9.56 | 18.26 |
+| agent-console | 16.93 | 9.09 | 5.50 | 10.77 | 15.45 |
+| spatial-workspace | 16.48 | 8.99 | 5.37 | 5.92 | 14.82 |
+| bio-lab-interface | 17.03 | 9.55 | 5.80 | 12.18 | 15.59 |
+| climate-model | 16.92 | 7.85 | 3.73 | 7.65 | 17.89 |
+| orbital-logistics | 16.93 | 9.04 | 5.38 | 7.76 | 15.58 |
+| synthetic-media | 16.67 | 9.13 | 5.47 | 10.10 | 14.96 |
+| quantum-dashboard | 16.42 | 8.41 | 4.96 | 8.36 | 15.11 |
+| digital-twin | 16.69 | 9.00 | 5.39 | 9.10 | 15.20 |
+| neural-canvas | 16.57 | 8.77 | 5.11 | 6.43 | 15.31 |
+| post-screen-voice | 16.92 | 8.17 | 3.85 | 7.29 | 18.44 |
 
 ## 4 · Borçlar
 

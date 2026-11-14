@@ -1,0 +1,15 @@
+/* 182 · Grocery Delivery — token bloğu (kaynak: styles/182-grocery-delivery/tokens.json) */
+
+[data-style="grocery-delivery"] {
+  --bg: #fbfdf9; --bg-2: #eef6ea;
+  --surface: #ffffff; --surface-2: #f4faf1;
+  --ink: #16201a; --ink-soft: #4a5b4f; --ink-faint: #7b8d80;
+  --accent: #1f7a3d; --accent-ink: #f4fdf6;
+  --line: rgba(22,32,26,.12);
+  --radius: 10px; --radius-lg: 14px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

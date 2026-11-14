@@ -1,0 +1,15 @@
+/* 168 · Puzzle Light — token bloğu (kaynak: styles/168-game-puzzle-light/tokens.json) */
+
+[data-style="game-puzzle-light"] {
+  --bg: #f7f9fc; --bg-2: #eef3fa;
+  --surface: #ffffff; --surface-2: #f1f6fc;
+  --ink: #151a22; --ink-soft: #4d5665; --ink-faint: #7d8798;
+  --accent: #2f5aa8; --accent-ink: #f9fbff;
+  --line: rgba(21,26,34,.12);
+  --radius: 12px; --radius-lg: 18px;
+  --shadow: 0 4px 14px rgba(21,26,34,.08); --shadow-hard: none;
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
+}

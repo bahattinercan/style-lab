@@ -1,0 +1,15 @@
+/* 161 · Mobile Casual — token bloğu (kaynak: styles/161-game-mobile-casual/tokens.json) */
+
+[data-style="game-mobile-casual"] {
+  --bg: #fff5f0; --bg-2: #ffe9df;
+  --surface: #ffffff; --surface-2: #fff1ea;
+  --ink: #241a17; --ink-soft: #6b4f45; --ink-faint: #9b8177;
+  --accent: #c9341f; --accent-ink: #ffffff;
+  --line: rgba(36,26,23,.12);
+  --radius: 14px; --radius-lg: 20px;
+  --shadow: 0 6px 16px rgba(36,26,23,.10); --shadow-hard: none;
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
+}

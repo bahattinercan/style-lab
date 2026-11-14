@@ -1,0 +1,15 @@
+/* 166 · Arcade Cabinet — token bloğu (kaynak: styles/166-game-arcade-cabinet/tokens.json) */
+
+[data-style="game-arcade-cabinet"] {
+  --bg: #141a2e; --bg-2: #1a2240;
+  --surface: #1e2848; --surface-2: #27345a;
+  --ink: #fdf3d8; --ink-soft: #c3c0a8; --ink-faint: #92917f;
+  --accent: #ffce3d; --accent-ink: #1a1403;
+  --line: rgba(253,243,216,.2);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "Chakra Petch", system-ui, sans-serif;
+  --font-mono: "VT323", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
+}

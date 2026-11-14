@@ -3173,6 +3173,2106 @@
   --tracking-display: .16em;
 }
 
+/* ---- 152 · Game HUD ---- */
+@theme {
+  --color-bg: #0b1118;
+  --color-bg-2: #0e161f;
+  --color-surface: #121c26;
+  --color-surface-2: #182430;
+  --color-ink: #e9f2fa;
+  --color-ink-soft: #a9bccd;
+  --color-ink-faint: #7f93a5;
+  --color-accent: #38e8c0;
+  --color-accent-ink: #04140f;
+  --color-line: rgba(233,242,250,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Chakra Petch, system-ui, sans-serif;
+  --font-body: Chakra Petch, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 153 · Game Racing ---- */
+@theme {
+  --color-bg: #121010;
+  --color-bg-2: #171313;
+  --color-surface: #1c1817;
+  --color-surface-2: #241f1d;
+  --color-ink: #f5efe6;
+  --color-ink-soft: #b6a89c;
+  --color-ink-faint: #8a7c72;
+  --color-accent: #ff6a2b;
+  --color-accent-ink: #1a0a03;
+  --color-line: rgba(245,239,230,.14);
+  --radius-control: 0px;
+  --radius-card: 6px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.4);
+  --font-display: Rajdhani, system-ui, sans-serif;
+  --font-body: Chakra Petch, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.04em;
+}
+
+/* ---- 154 · Fantasy RPG ---- */
+@theme {
+  --color-bg: #14100c;
+  --color-bg-2: #1a150f;
+  --color-surface: #201a13;
+  --color-surface-2: #2a2219;
+  --color-ink: #f1e6d2;
+  --color-ink-soft: #c3b499;
+  --color-ink-faint: #94886f;
+  --color-accent: #d4a24c;
+  --color-accent-ink: #1a1206;
+  --color-line: rgba(241,230,210,.16);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Cinzel, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.04em;
+}
+
+/* ---- 155 · Sci-Fi Cockpit ---- */
+@theme {
+  --color-bg: #050a10;
+  --color-bg-2: #08121b;
+  --color-surface: #0b1622;
+  --color-surface-2: #101f2e;
+  --color-ink: #d9ecff;
+  --color-ink-soft: #94b3cf;
+  --color-ink-faint: #6d8ca8;
+  --color-accent: #4aa8ff;
+  --color-accent-ink: #04121f;
+  --color-line: rgba(217,236,255,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Michroma, system-ui, sans-serif;
+  --font-body: Rajdhani, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.1em;
+}
+
+/* ---- 156 · Retro Console ---- */
+@theme {
+  --color-bg: #101418;
+  --color-bg-2: #151b21;
+  --color-surface: #1a222a;
+  --color-surface-2: #222d37;
+  --color-ink: #e6eef4;
+  --color-ink-soft: #a4b6c4;
+  --color-ink-faint: #7d8f9d;
+  --color-accent: #f2c434;
+  --color-accent-ink: #1a1403;
+  --color-line: rgba(230,238,244,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Press Start 2P, ui-monospace, monospace;
+  --font-body: Chakra Petch, system-ui, sans-serif;
+  --font-mono: VT323, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 157 · Esports League ---- */
+@theme {
+  --color-bg: #0d0b14;
+  --color-bg-2: #120f1c;
+  --color-surface: #171326;
+  --color-surface-2: #1f1a30;
+  --color-ink: #f0ecff;
+  --color-ink-soft: #b2a8cf;
+  --color-ink-faint: #8b81a8;
+  --color-accent: #b07cff;
+  --color-accent-ink: #120720;
+  --color-line: rgba(240,236,255,.15);
+  --radius-control: 0px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Anton, system-ui, sans-serif;
+  --font-body: Chakra Petch, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0.03em;
+}
+
+/* ---- 158 · Indie Pixel ---- */
+@theme {
+  --color-bg: #1a1526;
+  --color-bg-2: #211b30;
+  --color-surface: #271f38;
+  --color-surface-2: #332945;
+  --color-ink: #f2e9ff;
+  --color-ink-soft: #bfb0d8;
+  --color-ink-faint: #988bb5;
+  --color-accent: #63d471;
+  --color-accent-ink: #04170a;
+  --color-line: rgba(242,233,255,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Silkscreen, ui-monospace, monospace;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: VT323, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 159 · Card TCG ---- */
+@theme {
+  --color-bg: #171313;
+  --color-bg-2: #1d1918;
+  --color-surface: #241f1d;
+  --color-surface-2: #2e2825;
+  --color-ink: #f4e9dc;
+  --color-ink-soft: #c0ae9c;
+  --color-ink-faint: #93847a;
+  --color-accent: #e0463c;
+  --color-accent-ink: #1c0805;
+  --color-line: rgba(244,233,220,.16);
+  --radius-control: 4px;
+  --radius-card: 10px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Cinzel, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 160 · Survival Craft ---- */
+@theme {
+  --color-bg: #12140f;
+  --color-bg-2: #181b14;
+  --color-surface: #1e2218;
+  --color-surface-2: #282d20;
+  --color-ink: #e9ecdf;
+  --color-ink-soft: #b3b9a4;
+  --color-ink-faint: #8a9079;
+  --color-accent: #b8c26a;
+  --color-accent-ink: #12160a;
+  --color-line: rgba(233,236,223,.16);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Baloo 2, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 161 · Mobile Casual ---- */
+@theme {
+  --color-bg: #fff5f0;
+  --color-bg-2: #ffe9df;
+  --color-surface: #ffffff;
+  --color-surface-2: #fff1ea;
+  --color-ink: #241a17;
+  --color-ink-soft: #6b4f45;
+  --color-ink-faint: #9b8177;
+  --color-accent: #c9341f;
+  --color-accent-ink: #ffffff;
+  --color-line: rgba(36,26,23,.12);
+  --radius-control: 14px;
+  --radius-card: 20px;
+  --shadow-control: 0 6px 16px rgba(36,26,23,.10);
+  --font-display: Baloo 2, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 162 · Horror Occult ---- */
+@theme {
+  --color-bg: #0a0909;
+  --color-bg-2: #100e0e;
+  --color-surface: #151212;
+  --color-surface-2: #1d1919;
+  --color-ink: #eae2dd;
+  --color-ink-soft: #a89c95;
+  --color-ink-faint: #7d726c;
+  --color-accent: #c8322b;
+  --color-accent-ink: #f7ece8;
+  --color-line: rgba(234,226,221,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Cormorant Garamond, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 163 · Racing Neon ---- */
+@theme {
+  --color-bg: #08080f;
+  --color-bg-2: #0c0c18;
+  --color-surface: #121224;
+  --color-surface-2: #1a1a33;
+  --color-ink: #eaf6ff;
+  --color-ink-soft: #9fb3d1;
+  --color-ink-faint: #71839f;
+  --color-accent: #31e1f5;
+  --color-accent-ink: #04141a;
+  --color-line: rgba(234,246,255,.16);
+  --radius-control: 0px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Rajdhani, system-ui, sans-serif;
+  --font-body: Chakra Petch, system-ui, sans-serif;
+  --font-mono: VT323, ui-monospace, monospace;
+  --tracking-display: 0.05em;
+}
+
+/* ---- 164 · Strategy Map ---- */
+@theme {
+  --color-bg: #f4efe4;
+  --color-bg-2: #eae2d2;
+  --color-surface: #fffdf8;
+  --color-surface-2: #f2ebdd;
+  --color-ink: #1d1a15;
+  --color-ink-soft: #574f43;
+  --color-ink-faint: #8b8171;
+  --color-accent: #1f5f8b;
+  --color-accent-ink: #f7fbfe;
+  --color-line: rgba(29,26,21,.16);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: EB Garamond, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 165 · Sim Builder ---- */
+@theme {
+  --color-bg: #0f1613;
+  --color-bg-2: #131d19;
+  --color-surface: #18241f;
+  --color-surface-2: #203028;
+  --color-ink: #e7f2ec;
+  --color-ink-soft: #a8c2b4;
+  --color-ink-faint: #7f9a8c;
+  --color-accent: #3fbfa0;
+  --color-accent-ink: #04140f;
+  --color-line: rgba(231,242,236,.15);
+  --radius-control: 6px;
+  --radius-card: 12px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Jost, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 166 · Arcade Cabinet ---- */
+@theme {
+  --color-bg: #141a2e;
+  --color-bg-2: #1a2240;
+  --color-surface: #1e2848;
+  --color-surface-2: #27345a;
+  --color-ink: #fdf3d8;
+  --color-ink-soft: #c3c0a8;
+  --color-ink-faint: #92917f;
+  --color-accent: #ffce3d;
+  --color-accent-ink: #1a1403;
+  --color-line: rgba(253,243,216,.2);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Chakra Petch, system-ui, sans-serif;
+  --font-mono: VT323, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 167 · Stealth Tactical ---- */
+@theme {
+  --color-bg: #12150f;
+  --color-bg-2: #171b13;
+  --color-surface: #1c2118;
+  --color-surface-2: #252b1e;
+  --color-ink: #e9ecd9;
+  --color-ink-soft: #adb39a;
+  --color-ink-faint: #858b74;
+  --color-accent: #c8a45a;
+  --color-accent-ink: #151004;
+  --color-line: rgba(233,236,217,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Chakra Petch, system-ui, sans-serif;
+  --font-body: Rajdhani, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.06em;
+}
+
+/* ---- 168 · Puzzle Light ---- */
+@theme {
+  --color-bg: #f7f9fc;
+  --color-bg-2: #eef3fa;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f6fc;
+  --color-ink: #151a22;
+  --color-ink-soft: #4d5665;
+  --color-ink-faint: #7d8798;
+  --color-accent: #2f5aa8;
+  --color-accent-ink: #f9fbff;
+  --color-line: rgba(21,26,34,.12);
+  --radius-control: 12px;
+  --radius-card: 18px;
+  --shadow-control: 0 4px 14px rgba(21,26,34,.08);
+  --font-display: Poppins, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 169 · MMO Guild ---- */
+@theme {
+  --color-bg: #12101a;
+  --color-bg-2: #171423;
+  --color-surface: #1c1829;
+  --color-surface-2: #262034;
+  --color-ink: #efe9f7;
+  --color-ink-soft: #bcb0cf;
+  --color-ink-faint: #918aa6;
+  --color-accent: #c8a24e;
+  --color-accent-ink: #161004;
+  --color-line: rgba(239,233,247,.15);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Cinzel, system-ui, sans-serif;
+  --font-body: Fraunces, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.03em;
+}
+
+/* ---- 170 · Franchise Sports ---- */
+@theme {
+  --color-bg: #0e0f12;
+  --color-bg-2: #131418;
+  --color-surface: #181a1f;
+  --color-surface-2: #22252b;
+  --color-ink: #f4f6f9;
+  --color-ink-soft: #b0b6c0;
+  --color-ink-faint: #858c98;
+  --color-accent: #e8322f;
+  --color-accent-ink: #1a0303;
+  --color-line: rgba(244,246,249,.15);
+  --radius-control: 0px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Anton, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 171 · Pinball Neon ---- */
+@theme {
+  --color-bg: #0a0b14;
+  --color-bg-2: #0e0f1c;
+  --color-surface: #141527;
+  --color-surface-2: #1c1e34;
+  --color-ink: #eef2ff;
+  --color-ink-soft: #a3acc9;
+  --color-ink-faint: #79839f;
+  --color-accent: #3ad1ff;
+  --color-accent-ink: #03141a;
+  --color-line: rgba(238,242,255,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 0 0 1px rgba(0,0,0,.35);
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Poppins, system-ui, sans-serif;
+  --font-mono: VT323, ui-monospace, monospace;
+  --tracking-display: 0.02em;
+}
+
+/* ---- 172 · Incident Response ---- */
+@theme {
+  --color-bg: #0f1216;
+  --color-bg-2: #131820;
+  --color-surface: #171d26;
+  --color-surface-2: #1f2833;
+  --color-ink: #e9eef5;
+  --color-ink-soft: #a8b4c2;
+  --color-ink-faint: #7f8c9c;
+  --color-accent: #f08b3c;
+  --color-accent-ink: #1a0d03;
+  --color-line: rgba(233,238,245,.14);
+  --radius-control: 4px;
+  --radius-card: 6px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: Chakra Petch, system-ui, sans-serif;
+  --font-body: Chakra Petch, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 173 · FinOps Cost ---- */
+@theme {
+  --color-bg: #f8faf9;
+  --color-bg-2: #eef4f1;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f6f3;
+  --color-ink: #121a17;
+  --color-ink-soft: #455a52;
+  --color-ink-faint: #7b8f87;
+  --color-accent: #1f6b4f;
+  --color-accent-ink: #f6fdf9;
+  --color-line: rgba(18,26,23,.12);
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 174 · Fleet Dispatch ---- */
+@theme {
+  --color-bg: #0c1116;
+  --color-bg-2: #111820;
+  --color-surface: #151d27;
+  --color-surface-2: #1d2733;
+  --color-ink: #e8eef6;
+  --color-ink-soft: #a5b3c3;
+  --color-ink-faint: #7b8a9c;
+  --color-accent: #4d9dff;
+  --color-accent-ink: #04101f;
+  --color-line: rgba(232,238,246,.14);
+  --radius-control: 4px;
+  --radius-card: 6px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: Rajdhani, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 175 · Fraud Review ---- */
+@theme {
+  --color-bg: #0f0e14;
+  --color-bg-2: #14131c;
+  --color-surface: #191826;
+  --color-surface-2: #22202f;
+  --color-ink: #ece9f5;
+  --color-ink-soft: #b0a9c6;
+  --color-ink-faint: #877f9e;
+  --color-accent: #9d7bf0;
+  --color-accent-ink: #0d0618;
+  --color-line: rgba(236,233,245,.14);
+  --radius-control: 6px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 176 · SLO Budget ---- */
+@theme {
+  --color-bg: #0b1018;
+  --color-bg-2: #0f1621;
+  --color-surface: #131c28;
+  --color-surface-2: #1b2635;
+  --color-ink: #e7eef8;
+  --color-ink-soft: #a2b1c4;
+  --color-ink-faint: #78879a;
+  --color-accent: #37a3e0;
+  --color-accent-ink: #03121c;
+  --color-line: rgba(231,238,248,.14);
+  --radius-control: 6px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 177 · Data Lineage ---- */
+@theme {
+  --color-bg: #0d1216;
+  --color-bg-2: #12191f;
+  --color-surface: #162028;
+  --color-surface-2: #1e2b34;
+  --color-ink: #e8f1f6;
+  --color-ink-soft: #a4b7c3;
+  --color-ink-faint: #7b8e99;
+  --color-accent: #54c8d8;
+  --color-accent-ink: #04181c;
+  --color-line: rgba(232,241,246,.14);
+  --radius-control: 4px;
+  --radius-card: 6px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: IBM Plex Mono, ui-monospace, monospace;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 178 · Access Audit ---- */
+@theme {
+  --color-bg: #f6f6f7;
+  --color-bg-2: #ededf0;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f3f5;
+  --color-ink: #14161a;
+  --color-ink-soft: #4c5159;
+  --color-ink-faint: #7f858e;
+  --color-accent: #8a1f1f;
+  --color-accent-ink: #fdf6f6;
+  --color-line: rgba(20,22,26,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 179 · Release Train ---- */
+@theme {
+  --color-bg: #101118;
+  --color-bg-2: #15161f;
+  --color-surface: #1a1b26;
+  --color-surface-2: #23242f;
+  --color-ink: #ececf5;
+  --color-ink-soft: #b0b1c6;
+  --color-ink-faint: #85869c;
+  --color-accent: #8f7bf0;
+  --color-accent-ink: #0b0518;
+  --color-line: rgba(236,236,245,.14);
+  --radius-control: 6px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 180 · Support Inbox ---- */
+@theme {
+  --color-bg: #fbf9f6;
+  --color-bg-2: #f2eee8;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f3ee;
+  --color-ink: #1b1815;
+  --color-ink-soft: #54504a;
+  --color-ink-faint: #857f76;
+  --color-accent: #8a5b12;
+  --color-accent-ink: #fffaf2;
+  --color-line: rgba(27,24,21,.12);
+  --radius-control: 8px;
+  --radius-card: 10px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 181 · Regulatory Report ---- */
+@theme {
+  --color-bg: #fffdf9;
+  --color-bg-2: #f4f1ea;
+  --color-surface: #ffffff;
+  --color-surface-2: #f8f5ef;
+  --color-ink: #16181c;
+  --color-ink-soft: #4a5057;
+  --color-ink-faint: #7c838b;
+  --color-accent: #1d3a6b;
+  --color-accent-ink: #f7faff;
+  --color-line: rgba(22,24,28,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 1px 0 rgba(0,0,0,.2);
+  --font-display: Lora, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.005em;
+}
+
+/* ---- 182 · Grocery Delivery ---- */
+@theme {
+  --color-bg: #fbfdf9;
+  --color-bg-2: #eef6ea;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4faf1;
+  --color-ink: #16201a;
+  --color-ink-soft: #4a5b4f;
+  --color-ink-faint: #7b8d80;
+  --color-accent: #1f7a3d;
+  --color-accent-ink: #f4fdf6;
+  --color-line: rgba(22,32,26,.12);
+  --radius-control: 10px;
+  --radius-card: 14px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Poppins, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 183 · Marketplace Multi ---- */
+@theme {
+  --color-bg: #f7f8fa;
+  --color-bg-2: #eceef2;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2f4f7;
+  --color-ink: #141821;
+  --color-ink-soft: #4a515e;
+  --color-ink-faint: #7c8492;
+  --color-accent: #1f4fa8;
+  --color-accent-ink: #f6f9ff;
+  --color-line: rgba(20,24,33,.12);
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 184 · Luxury Atelier ---- */
+@theme {
+  --color-bg: #f6f2ea;
+  --color-bg-2: #efe9dd;
+  --color-surface: #fffdf9;
+  --color-surface-2: #f5f0e6;
+  --color-ink: #1c1812;
+  --color-ink-soft: #574f43;
+  --color-ink-faint: #8b8171;
+  --color-accent: #6b4a1f;
+  --color-accent-ink: #fdf9f2;
+  --color-line: rgba(28,24,18,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Cormorant Garamond, system-ui, sans-serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 185 · Subscription Box ---- */
+@theme {
+  --color-bg: #fdf8f4;
+  --color-bg-2: #f7ece4;
+  --color-surface: #ffffff;
+  --color-surface-2: #fbf1ea;
+  --color-ink: #1f1815;
+  --color-ink-soft: #57463e;
+  --color-ink-faint: #8b776d;
+  --color-accent: #a83c1f;
+  --color-accent-ink: #fff7f3;
+  --color-line: rgba(31,24,21,.12);
+  --radius-control: 12px;
+  --radius-card: 16px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Fraunces, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 186 · Sneaker Drop ---- */
+@theme {
+  --color-bg: #0d0d0f;
+  --color-bg-2: #121215;
+  --color-surface: #17171b;
+  --color-surface-2: #202027;
+  --color-ink: #f2f2f5;
+  --color-ink-soft: #adaeb8;
+  --color-ink-faint: #81828d;
+  --color-accent: #ffd23f;
+  --color-accent-ink: #141003;
+  --color-line: rgba(242,242,245,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 187 · Wine Cellar ---- */
+@theme {
+  --color-bg: #1a1013;
+  --color-bg-2: #20141a;
+  --color-surface: #261821;
+  --color-surface-2: #30202a;
+  --color-ink: #f2e8e6;
+  --color-ink-soft: #c2aaa6;
+  --color-ink-faint: #947f7c;
+  --color-accent: #c9a227;
+  --color-accent-ink: #150f02;
+  --color-line: rgba(242,232,230,.15);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Cinzel, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 188 · Furniture Studio ---- */
+@theme {
+  --color-bg: #faf6f0;
+  --color-bg-2: #f1e9dd;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f1e8;
+  --color-ink: #1d1811;
+  --color-ink-soft: #544b40;
+  --color-ink-faint: #867b6d;
+  --color-accent: #7a4b22;
+  --color-accent-ink: #fdf8f2;
+  --color-line: rgba(29,24,17,.13);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Jost, system-ui, sans-serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 189 · Electronics Spec ---- */
+@theme {
+  --color-bg: #f8fafc;
+  --color-bg-2: #eef2f7;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f6fa;
+  --color-ink: #12161c;
+  --color-ink-soft: #48515d;
+  --color-ink-faint: #7a8492;
+  --color-accent: #1a4fa0;
+  --color-accent-ink: #f6f9ff;
+  --color-line: rgba(18,22,28,.12);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 190 · Pharmacy Store ---- */
+@theme {
+  --color-bg: #f9fbfd;
+  --color-bg-2: #eef4f9;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f8fc;
+  --color-ink: #111820;
+  --color-ink-soft: #46525f;
+  --color-ink-faint: #78848f;
+  --color-accent: #0f6b4a;
+  --color-accent-ink: #f4fdf8;
+  --color-line: rgba(17,24,32,.12);
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 191 · Farmers Market ---- */
+@theme {
+  --color-bg: #f8f5ee;
+  --color-bg-2: #efe9dc;
+  --color-surface: #fffdf7;
+  --color-surface-2: #f5efe3;
+  --color-ink: #1e1a13;
+  --color-ink-soft: #524a3c;
+  --color-ink-faint: #857a68;
+  --color-accent: #5f6b1f;
+  --color-accent-ink: #fbfdf2;
+  --color-line: rgba(30,26,19,.14);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 2px 8px rgba(0,0,0,.10);
+  --font-display: Fraunces, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 192 · Museum Exhibition ---- */
+@theme {
+  --color-bg: #f7f5f0;
+  --color-bg-2: #efece4;
+  --color-surface: #fffdfa;
+  --color-surface-2: #f4f1ea;
+  --color-ink: #1a1917;
+  --color-ink-soft: #514e48;
+  --color-ink-faint: #847f76;
+  --color-accent: #7a2f2f;
+  --color-accent-ink: #fdf7f7;
+  --color-line: rgba(26,25,23,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Cormorant Garamond, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 193 · Theatre Season ---- */
+@theme {
+  --color-bg: #14100f;
+  --color-bg-2: #1a1413;
+  --color-surface: #211a18;
+  --color-surface-2: #2b2220;
+  --color-ink: #f4ebe4;
+  --color-ink-soft: #c4b2a6;
+  --color-ink-faint: #95857a;
+  --color-accent: #c99a3f;
+  --color-accent-ink: #171004;
+  --color-line: rgba(244,235,228,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Playfair Display, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 194 · Film Festival ---- */
+@theme {
+  --color-bg: #0c0c0e;
+  --color-bg-2: #121215;
+  --color-surface: #17171b;
+  --color-surface-2: #202027;
+  --color-ink: #f3f1f0;
+  --color-ink-soft: #ada9a7;
+  --color-ink-faint: #807c7a;
+  --color-accent: #e04a3f;
+  --color-accent-ink: #170302;
+  --color-line: rgba(243,241,240,.15);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Anton, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 195 · Public Radio ---- */
+@theme {
+  --color-bg: #fcfaf6;
+  --color-bg-2: #f1ece2;
+  --color-surface: #ffffff;
+  --color-surface-2: #f7f3ec;
+  --color-ink: #15171b;
+  --color-ink-soft: #484d55;
+  --color-ink-faint: #7c8189;
+  --color-accent: #1b4f7a;
+  --color-accent-ink: #f6faff;
+  --color-line: rgba(21,23,27,.14);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: none;
+  --font-display: Lora, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 196 · Podcast Network ---- */
+@theme {
+  --color-bg: #111114;
+  --color-bg-2: #16161b;
+  --color-surface: #1b1b21;
+  --color-surface-2: #24242c;
+  --color-ink: #f0eef4;
+  --color-ink-soft: #b1adbb;
+  --color-ink-faint: #85818f;
+  --color-accent: #a37bf5;
+  --color-accent-ink: #0d0618;
+  --color-line: rgba(240,238,244,.14);
+  --radius-control: 8px;
+  --radius-card: 10px;
+  --shadow-control: none;
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 197 · Indie Cinema ---- */
+@theme {
+  --color-bg: #0e0e0e;
+  --color-bg-2: #141414;
+  --color-surface: #1a1a1a;
+  --color-surface-2: #232323;
+  --color-ink: #f5f5f3;
+  --color-ink-soft: #b4b4b0;
+  --color-ink-faint: #878783;
+  --color-accent: #f5d648;
+  --color-accent-ink: #141103;
+  --color-line: rgba(245,245,243,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 198 · Library Archive ---- */
+@theme {
+  --color-bg: #f9f7f1;
+  --color-bg-2: #efeade;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f1e7;
+  --color-ink: #171a1f;
+  --color-ink-soft: #4a4f57;
+  --color-ink-faint: #7c828b;
+  --color-accent: #1f3f73;
+  --color-accent-ink: #f7faff;
+  --color-line: rgba(23,26,31,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: EB Garamond, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 199 · Comic Bookstore ---- */
+@theme {
+  --color-bg: #fdf6e3;
+  --color-bg-2: #f7ecd2;
+  --color-surface: #fffdf4;
+  --color-surface-2: #fbefd6;
+  --color-ink: #1a1410;
+  --color-ink-soft: #544538;
+  --color-ink-faint: #8a7761;
+  --color-accent: #b3301f;
+  --color-accent-ink: #fff8f6;
+  --color-line: rgba(26,20,16,.2);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: VT323, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 200 · Opera House ---- */
+@theme {
+  --color-bg: #0f1420;
+  --color-bg-2: #141a28;
+  --color-surface: #1a2130;
+  --color-surface-2: #232c3d;
+  --color-ink: #eef1f7;
+  --color-ink-soft: #b2bccc;
+  --color-ink-faint: #8792a4;
+  --color-accent: #c9b37e;
+  --color-accent-ink: #151106;
+  --color-line: rgba(238,241,247,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Playfair Display, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 201 · Street Festival ---- */
+@theme {
+  --color-bg: #fdf7ef;
+  --color-bg-2: #fae9d6;
+  --color-surface: #fffdf9;
+  --color-surface-2: #fdeedd;
+  --color-ink: #1c1409;
+  --color-ink-soft: #55402a;
+  --color-ink-faint: #8a7055;
+  --color-accent: #a83a0d;
+  --color-accent-ink: #fff6f1;
+  --color-line: rgba(28,20,9,.16);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: none;
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 202 · Clinical Trial ---- */
+@theme {
+  --color-bg: #fafbfc;
+  --color-bg-2: #eef1f4;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f6f8;
+  --color-ink: #121519;
+  --color-ink-soft: #48505a;
+  --color-ink-faint: #79828d;
+  --color-accent: #125a86;
+  --color-accent-ink: #f7fbff;
+  --color-line: rgba(18,21,25,.13);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 203 · Lab Protocol ---- */
+@theme {
+  --color-bg: #0f1214;
+  --color-bg-2: #131719;
+  --color-surface: #182023;
+  --color-surface-2: #202a2e;
+  --color-ink: #e8f0f2;
+  --color-ink-soft: #a6b6ba;
+  --color-ink-faint: #7d8d91;
+  --color-accent: #4fc3a1;
+  --color-accent-ink: #04160f;
+  --color-line: rgba(232,240,242,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 204 · Pharmacy Labels ---- */
+@theme {
+  --color-bg: #ffffff;
+  --color-bg-2: #f2f4f6;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f8fa;
+  --color-ink: #0f1317;
+  --color-ink-soft: #414a53;
+  --color-ink-faint: #71797f;
+  --color-accent: #8a1b1b;
+  --color-accent-ink: #fff7f7;
+  --color-line: rgba(15,19,23,.18);
+  --radius-control: 4px;
+  --radius-card: 6px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 205 · Physiotherapy ---- */
+@theme {
+  --color-bg: #f7fbf8;
+  --color-bg-2: #e9f4ed;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f8f3;
+  --color-ink: #121a16;
+  --color-ink-soft: #45564c;
+  --color-ink-faint: #798b80;
+  --color-accent: #166b45;
+  --color-accent-ink: #f4fdf8;
+  --color-line: rgba(18,26,22,.12);
+  --radius-control: 12px;
+  --radius-card: 16px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: Nunito, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 206 · Mental Wellness ---- */
+@theme {
+  --color-bg: #faf8fd;
+  --color-bg-2: #f0ebf7;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f1fa;
+  --color-ink: #171322;
+  --color-ink-soft: #4c4459;
+  --color-ink-faint: #7f768c;
+  --color-accent: #5b3f8f;
+  --color-accent-ink: #faf7ff;
+  --color-line: rgba(23,19,34,.12);
+  --radius-control: 14px;
+  --radius-card: 20px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: Jost, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 207 · Nutrition Plan ---- */
+@theme {
+  --color-bg: #fcfdf8;
+  --color-bg-2: #eef5e4;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f9ee;
+  --color-ink: #151a11;
+  --color-ink-soft: #45503c;
+  --color-ink-faint: #79856e;
+  --color-accent: #3f6b1a;
+  --color-accent-ink: #f9fdf4;
+  --color-line: rgba(21,26,17,.12);
+  --radius-control: 12px;
+  --radius-card: 16px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: Poppins, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 208 · Dental Clinic ---- */
+@theme {
+  --color-bg: #fbfdfe;
+  --color-bg-2: #eaf6fa;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2fafc;
+  --color-ink: #101619;
+  --color-ink-soft: #42535a;
+  --color-ink-faint: #778a92;
+  --color-accent: #0d6b86;
+  --color-accent-ink: #f5fdff;
+  --color-line: rgba(16,22,25,.12);
+  --radius-control: 10px;
+  --radius-card: 14px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 209 · Public Health ---- */
+@theme {
+  --color-bg: #ffffff;
+  --color-bg-2: #eef2f7;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f8fb;
+  --color-ink: #0c1116;
+  --color-ink-soft: #3f4852;
+  --color-ink-faint: #6f7883;
+  --color-accent: #0b4f9c;
+  --color-accent-ink: #f6faff;
+  --color-line: rgba(12,17,22,.16);
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 210 · Genomics Lab ---- */
+@theme {
+  --color-bg: #0b0d14;
+  --color-bg-2: #10131c;
+  --color-surface: #141824;
+  --color-surface-2: #1c2130;
+  --color-ink: #e8ecf7;
+  --color-ink-soft: #a4aec4;
+  --color-ink-faint: #7a859c;
+  --color-accent: #45d6c8;
+  --color-accent-ink: #04171a;
+  --color-line: rgba(232,236,247,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: IBM Plex Mono, ui-monospace, monospace;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 211 · Veterinary Care ---- */
+@theme {
+  --color-bg: #fdfaf4;
+  --color-bg-2: #f4ecdf;
+  --color-surface: #ffffff;
+  --color-surface-2: #faf4eb;
+  --color-ink: #1a1712;
+  --color-ink-soft: #544b3f;
+  --color-ink-faint: #877c6d;
+  --color-accent: #7a4a1e;
+  --color-accent-ink: #fdf8f2;
+  --color-line: rgba(26,23,18,.13);
+  --radius-control: 12px;
+  --radius-card: 16px;
+  --shadow-control: 0 1px 3px rgba(0,0,0,.10);
+  --font-display: Nunito, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 212 · Language App ---- */
+@theme {
+  --color-bg: #fbfdff;
+  --color-bg-2: #eaf3fc;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2f8fe;
+  --color-ink: #111a24;
+  --color-ink-soft: #445565;
+  --color-ink-faint: #78899a;
+  --color-accent: #12558f;
+  --color-accent-ink: #f6fbff;
+  --color-line: rgba(17,26,36,.12);
+  --radius-control: 12px;
+  --radius-card: 16px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Poppins, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 213 · Skill Tree ---- */
+@theme {
+  --color-bg: #0f1018;
+  --color-bg-2: #141520;
+  --color-surface: #191a28;
+  --color-surface-2: #222333;
+  --color-ink: #eceaf7;
+  --color-ink-soft: #aca8c4;
+  --color-ink-faint: #82809a;
+  --color-accent: #8f7bf0;
+  --color-accent-ink: #0c0619;
+  --color-line: rgba(236,234,247,.14);
+  --radius-control: 8px;
+  --radius-card: 10px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 214 · University Portal ---- */
+@theme {
+  --color-bg: #f8f9fb;
+  --color-bg-2: #e9edf3;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2f5f9;
+  --color-ink: #111721;
+  --color-ink-soft: #454f5d;
+  --color-ink-faint: #77828f;
+  --color-accent: #1a3a6b;
+  --color-accent-ink: #f7faff;
+  --color-line: rgba(17,23,33,.13);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 215 · Coding Bootcamp ---- */
+@theme {
+  --color-bg: #0c1110;
+  --color-bg-2: #111715;
+  --color-surface: #161d1b;
+  --color-surface-2: #1e2725;
+  --color-ink: #e9f2ef;
+  --color-ink-soft: #a6b8b3;
+  --color-ink-faint: #7d8f8a;
+  --color-accent: #43d17a;
+  --color-accent-ink: #04170c;
+  --color-line: rgba(233,242,239,.14);
+  --radius-control: 4px;
+  --radius-card: 6px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 216 · Kids Classroom ---- */
+@theme {
+  --color-bg: #fffdf5;
+  --color-bg-2: #fff4d6;
+  --color-surface: #ffffff;
+  --color-surface-2: #fff8e6;
+  --color-ink: #1c1710;
+  --color-ink-soft: #564a36;
+  --color-ink-faint: #8b7d63;
+  --color-accent: #8c5a06;
+  --color-accent-ink: #fffaf0;
+  --color-line: rgba(28,23,16,.14);
+  --radius-control: 16px;
+  --radius-card: 22px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Baloo 2, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 217 · Exam Prep ---- */
+@theme {
+  --color-bg: #f9fafc;
+  --color-bg-2: #edf0f5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f6fa;
+  --color-ink: #12161c;
+  --color-ink-soft: #49515c;
+  --color-ink-faint: #7b838f;
+  --color-accent: #234a7a;
+  --color-accent-ink: #f7faff;
+  --color-line: rgba(18,22,28,.12);
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 218 · Music Lesson ---- */
+@theme {
+  --color-bg: #fbf7f1;
+  --color-bg-2: #f3e9dc;
+  --color-surface: #ffffff;
+  --color-surface-2: #f8f1e7;
+  --color-ink: #1b1610;
+  --color-ink-soft: #544a3c;
+  --color-ink-faint: #877a68;
+  --color-accent: #7a2e2a;
+  --color-accent-ink: #fdf7f6;
+  --color-line: rgba(27,22,16,.13);
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Fraunces, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 219 · Lab Simulation ---- */
+@theme {
+  --color-bg: #0d1114;
+  --color-bg-2: #11161a;
+  --color-surface: #161d22;
+  --color-surface-2: #1e272d;
+  --color-ink: #e8f1f5;
+  --color-ink-soft: #a4b4bc;
+  --color-ink-faint: #7b8b93;
+  --color-accent: #3fb6c9;
+  --color-accent-ink: #041619;
+  --color-line: rgba(232,241,245,.14);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 220 · Peer Study ---- */
+@theme {
+  --color-bg: #faf9fc;
+  --color-bg-2: #f0eef5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f3f9;
+  --color-ink: #17151e;
+  --color-ink-soft: #4d4859;
+  --color-ink-faint: #7f788c;
+  --color-accent: #5a3f8a;
+  --color-accent-ink: #faf7ff;
+  --color-line: rgba(23,21,30,.12);
+  --radius-control: 10px;
+  --radius-card: 14px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 221 · Certificate Wallet ---- */
+@theme {
+  --color-bg: #0c1120;
+  --color-bg-2: #111830;
+  --color-surface: #161f3a;
+  --color-surface-2: #1f2a4a;
+  --color-ink: #eaf0fb;
+  --color-ink-soft: #a6b4d2;
+  --color-ink-faint: #7c8bab;
+  --color-accent: #c9a25c;
+  --color-accent-ink: #141003;
+  --color-line: rgba(234,240,251,.15);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 2px 0 rgba(0,0,0,.12);
+  --font-display: Cinzel, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 222 · Terrazzo Stone ---- */
+@theme {
+  --color-bg: #f6f4ef;
+  --color-bg-2: #ece9e1;
+  --color-surface: #fffefb;
+  --color-surface-2: #f3f0e9;
+  --color-ink: #1a1915;
+  --color-ink-soft: #514e46;
+  --color-ink-faint: #847f74;
+  --color-accent: #8a4a3c;
+  --color-accent-ink: #fdf7f5;
+  --color-line: rgba(26,25,21,.14);
+  --radius-control: 0px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Jost, system-ui, sans-serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 223 · Linocut Print ---- */
+@theme {
+  --color-bg: #f7f3e8;
+  --color-bg-2: #ece5d4;
+  --color-surface: #fffdf6;
+  --color-surface-2: #f4eeda;
+  --color-ink: #161310;
+  --color-ink-soft: #4f483d;
+  --color-ink-faint: #847a68;
+  --color-accent: #9c2b1d;
+  --color-accent-ink: #fff7f4;
+  --color-line: rgba(22,19,16,.2);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 224 · Risograph Print ---- */
+@theme {
+  --color-bg: #fbf7f2;
+  --color-bg-2: #f3ece2;
+  --color-surface: #fffdfa;
+  --color-surface-2: #f7f0e7;
+  --color-ink: #1a1522;
+  --color-ink-soft: #4e4759;
+  --color-ink-faint: #817a8b;
+  --color-accent: #1f5f8c;
+  --color-accent-ink: #f7fbfe;
+  --color-line: rgba(26,21,34,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 225 · Denim Textile ---- */
+@theme {
+  --color-bg: #f2f4f7;
+  --color-bg-2: #e6eaf0;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef1f6;
+  --color-ink: #121821;
+  --color-ink-soft: #454e5c;
+  --color-ink-faint: #78818e;
+  --color-accent: #1b3f6b;
+  --color-accent-ink: #f6faff;
+  --color-line: rgba(18,24,33,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 226 · Cork Oak ---- */
+@theme {
+  --color-bg: #faf5ee;
+  --color-bg-2: #f0e5d7;
+  --color-surface: #fffcf7;
+  --color-surface-2: #f7eddf;
+  --color-ink: #1c1710;
+  --color-ink-soft: #544636;
+  --color-ink-faint: #87775f;
+  --color-accent: #6b4413;
+  --color-accent-ink: #fdf9f3;
+  --color-line: rgba(28,23,16,.14);
+  --radius-control: 8px;
+  --radius-card: 14px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Fraunces, system-ui, sans-serif;
+  --font-body: Nunito, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 227 · Cast Concrete ---- */
+@theme {
+  --color-bg: #eef0f1;
+  --color-bg-2: #e2e5e7;
+  --color-surface: #f8f9fa;
+  --color-surface-2: #eaedee;
+  --color-ink: #14171a;
+  --color-ink-soft: #464d53;
+  --color-ink-faint: #767d84;
+  --color-accent: #3d4b57;
+  --color-accent-ink: #f7fafc;
+  --color-line: rgba(20,23,26,.18);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 228 · Enamel Jewel ---- */
+@theme {
+  --color-bg: #120f1a;
+  --color-bg-2: #171322;
+  --color-surface: #1d1829;
+  --color-surface-2: #272032;
+  --color-ink: #f3eef9;
+  --color-ink-soft: #c0b4d0;
+  --color-ink-faint: #8e8499;
+  --color-accent: #d0a95c;
+  --color-accent-ink: #161003;
+  --color-line: rgba(243,238,249,.15);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Cormorant Garamond, system-ui, sans-serif;
+  --font-body: Jost, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 229 · Hand-thrown Ceramic ---- */
+@theme {
+  --color-bg: #faf7f1;
+  --color-bg-2: #f1eade;
+  --color-surface: #fffdf8;
+  --color-surface-2: #f7f1e6;
+  --color-ink: #1d1811;
+  --color-ink-soft: #544b3c;
+  --color-ink-faint: #877b66;
+  --color-accent: #2f5d4a;
+  --color-accent-ink: #f5fdf9;
+  --color-line: rgba(29,24,17,.13);
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Fraunces, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 230 · Raw Steel ---- */
+@theme {
+  --color-bg: #e9ecee;
+  --color-bg-2: #dde1e4;
+  --color-surface: #f6f8f9;
+  --color-surface-2: #e4e8ea;
+  --color-ink: #101417;
+  --color-ink-soft: #434b51;
+  --color-ink-faint: #737b82;
+  --color-accent: #2a3d4d;
+  --color-accent-ink: #f5f9fc;
+  --color-line: rgba(16,20,23,.2);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Chakra Petch, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 231 · Recycled Paper ---- */
+@theme {
+  --color-bg: #f7f5ef;
+  --color-bg-2: #eeebe2;
+  --color-surface: #fffef9;
+  --color-surface-2: #f4f1e8;
+  --color-ink: #1b1913;
+  --color-ink-soft: #514c40;
+  --color-ink-faint: #847e6c;
+  --color-accent: #4d5a1f;
+  --color-accent-ink: #fbfdf2;
+  --color-line: rgba(27,25,19,.16);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 1px 2px rgba(0,0,0,.16);
+  --font-display: Lora, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0em;
+}
+
+/* ---- 232 · Condensed News ---- */
+@theme {
+  --color-bg: #fdfcf8;
+  --color-bg-2: #f2f0e8;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f4ee;
+  --color-ink: #121212;
+  --color-ink-soft: #4a4a46;
+  --color-ink-faint: #7d7d77;
+  --color-accent: #8c1a1a;
+  --color-accent-ink: #fdf7f6;
+  --color-line: rgba(18,18,18,.2);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Anton, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 233 · Monospace Editorial ---- */
+@theme {
+  --color-bg: #fbfbfa;
+  --color-bg-2: #f0f0ee;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f5f3;
+  --color-ink: #141414;
+  --color-ink-soft: #4b4b49;
+  --color-ink-faint: #7c7c79;
+  --color-accent: #1f5f4f;
+  --color-accent-ink: #f5fdfa;
+  --color-line: rgba(20,20,20,.16);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: IBM Plex Mono, ui-monospace, monospace;
+  --font-body: IBM Plex Mono, ui-monospace, monospace;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 234 · Blackletter Modern ---- */
+@theme {
+  --color-bg: #100e0c;
+  --color-bg-2: #15120f;
+  --color-surface: #1b1714;
+  --color-surface-2: #241f1b;
+  --color-ink: #f2ece4;
+  --color-ink-soft: #bdb2a5;
+  --color-ink-faint: #8d8377;
+  --color-accent: #c43a2f;
+  --color-accent-ink: #fdf6f4;
+  --color-line: rgba(242,236,228,.15);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Cinzel, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 235 · Variable Weight ---- */
+@theme {
+  --color-bg: #f7f7f5;
+  --color-bg-2: #ececea;
+  --color-surface: #ffffff;
+  --color-surface-2: #f2f2f0;
+  --color-ink: #101010;
+  --color-ink-soft: #474747;
+  --color-ink-faint: #787878;
+  --color-accent: #1a3fd0;
+  --color-accent-ink: #f6f8ff;
+  --color-line: rgba(16,16,16,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 236 · Justified Book ---- */
+@theme {
+  --color-bg: #fbf8f1;
+  --color-bg-2: #f2ece0;
+  --color-surface: #fffdf7;
+  --color-surface-2: #f6f1e6;
+  --color-ink: #16130e;
+  --color-ink-soft: #4d463b;
+  --color-ink-faint: #827a6a;
+  --color-accent: #5a2f6b;
+  --color-accent-ink: #fbf7fd;
+  --color-line: rgba(22,19,14,.14);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Cormorant Garamond, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 237 · Stencil Display ---- */
+@theme {
+  --color-bg: #15181c;
+  --color-bg-2: #1b1f24;
+  --color-surface: #22262c;
+  --color-surface-2: #2b3037;
+  --color-ink: #eef1f4;
+  --color-ink-soft: #b0b7bf;
+  --color-ink-faint: #858d96;
+  --color-accent: #e5b23c;
+  --color-accent-ink: #161003;
+  --color-line: rgba(238,241,244,.15);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Archivo Black, system-ui, sans-serif;
+  --font-body: Chakra Petch, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 238 · Uppercase Only ---- */
+@theme {
+  --color-bg: #f4f4f1;
+  --color-bg-2: #e8e8e3;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0f0ec;
+  --color-ink: #101012;
+  --color-ink-soft: #47474a;
+  --color-ink-faint: #78787b;
+  --color-accent: #1f4b3a;
+  --color-accent-ink: #f6fdfa;
+  --color-line: rgba(16,16,18,.16);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Space Grotesk, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 239 · Italic Accent ---- */
+@theme {
+  --color-bg: #fbf9f4;
+  --color-bg-2: #f2ede3;
+  --color-surface: #fffefa;
+  --color-surface-2: #f7f2e9;
+  --color-ink: #14120e;
+  --color-ink-soft: #4b463c;
+  --color-ink-faint: #807a6c;
+  --color-accent: #8a4a2f;
+  --color-accent-ink: #fdf8f5;
+  --color-line: rgba(20,18,14,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Cormorant Garamond, system-ui, sans-serif;
+  --font-body: Lora, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 240 · Numerals Display ---- */
+@theme {
+  --color-bg: #f7f8f9;
+  --color-bg-2: #eceef0;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f5f6;
+  --color-ink: #0f1215;
+  --color-ink-soft: #454b51;
+  --color-ink-faint: #767c83;
+  --color-accent: #12506e;
+  --color-accent-ink: #f6fbfe;
+  --color-line: rgba(15,18,21,.14);
+  --radius-control: 0px;
+  --radius-card: 2px;
+  --shadow-control: none;
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Space Mono, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 241 · Small Caps Ledger ---- */
+@theme {
+  --color-bg: #fbfaf5;
+  --color-bg-2: #f1efe6;
+  --color-surface: #fffef9;
+  --color-surface-2: #f6f4ec;
+  --color-ink: #15140f;
+  --color-ink-soft: #4c4940;
+  --color-ink-faint: #7f7b6d;
+  --color-accent: #6b2f2f;
+  --color-accent-ink: #fdf7f7;
+  --color-line: rgba(21,20,15,.16);
+  --radius-control: 0px;
+  --radius-card: 0px;
+  --shadow-control: none;
+  --font-display: EB Garamond, system-ui, sans-serif;
+  --font-body: EB Garamond, system-ui, sans-serif;
+  --font-mono: Courier Prime, ui-monospace, monospace;
+  --tracking-display: -0.01em;
+}
+
+/* ---- 242 · Agent Console ---- */
+@theme {
+  --color-bg: #0a0e12;
+  --color-bg-2: #0e1319;
+  --color-surface: #121922;
+  --color-surface-2: #1a232e;
+  --color-ink: #e8f1f7;
+  --color-ink-soft: #a3b4c1;
+  --color-ink-faint: #798b98;
+  --color-accent: #4fd8e8;
+  --color-accent-ink: #04171b;
+  --color-line: rgba(232,241,247,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: IBM Plex Mono, ui-monospace, monospace;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 243 · Spatial Workspace ---- */
+@theme {
+  --color-bg: #0d0f14;
+  --color-bg-2: #12151c;
+  --color-surface: #171b24;
+  --color-surface-2: #1f2430;
+  --color-ink: #eaeef6;
+  --color-ink-soft: #a9b2c4;
+  --color-ink-faint: #7f8899;
+  --color-accent: #9678f0;
+  --color-accent-ink: #0b0618;
+  --color-line: rgba(234,238,246,.14);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 244 · Bio Lab Interface ---- */
+@theme {
+  --color-bg: #0a100d;
+  --color-bg-2: #0e1511;
+  --color-surface: #121b16;
+  --color-surface-2: #1a251e;
+  --color-ink: #e9f4ec;
+  --color-ink-soft: #a4bdaa;
+  --color-ink-faint: #7b9382;
+  --color-accent: #7ce86b;
+  --color-accent-ink: #061505;
+  --color-line: rgba(233,244,236,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 245 · Climate Model ---- */
+@theme {
+  --color-bg: #f6f9fb;
+  --color-bg-2: #e9f0f5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f6fa;
+  --color-ink: #101820;
+  --color-ink-soft: #41505d;
+  --color-ink-faint: #74828e;
+  --color-accent: #12557f;
+  --color-accent-ink: #f5fbff;
+  --color-line: rgba(16,24,32,.13);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 246 · Orbital Logistics ---- */
+@theme {
+  --color-bg: #080b14;
+  --color-bg-2: #0c101b;
+  --color-surface: #101623;
+  --color-surface-2: #182030;
+  --color-ink: #e9eefb;
+  --color-ink-soft: #a5b0c9;
+  --color-ink-faint: #7b869e;
+  --color-accent: #5fa8ff;
+  --color-accent-ink: #04101f;
+  --color-line: rgba(233,238,251,.14);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: Chakra Petch, system-ui, sans-serif;
+  --font-body: Rajdhani, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 247 · Synthetic Media ---- */
+@theme {
+  --color-bg: #0e1013;
+  --color-bg-2: #121519;
+  --color-surface: #181c22;
+  --color-surface-2: #21262e;
+  --color-ink: #edf0f4;
+  --color-ink-soft: #adb4bf;
+  --color-ink-faint: #828a96;
+  --color-accent: #3fd4c2;
+  --color-accent-ink: #041614;
+  --color-line: rgba(237,240,244,.14);
+  --radius-control: 4px;
+  --radius-card: 8px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 248 · Quantum Dashboard ---- */
+@theme {
+  --color-bg: #0a0a16;
+  --color-bg-2: #0f0f1f;
+  --color-surface: #141428;
+  --color-surface-2: #1d1d36;
+  --color-ink: #eae9fa;
+  --color-ink-soft: #a9a6c9;
+  --color-ink-faint: #7f7ca0;
+  --color-accent: #c9a94a;
+  --color-accent-ink: #151003;
+  --color-line: rgba(234,233,250,.15);
+  --radius-control: 2px;
+  --radius-card: 4px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: Michroma, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 249 · Digital Twin ---- */
+@theme {
+  --color-bg: #0b1013;
+  --color-bg-2: #0f1619;
+  --color-surface: #131b20;
+  --color-surface-2: #1b252b;
+  --color-ink: #e8f1f4;
+  --color-ink-soft: #a2b5bd;
+  --color-ink-faint: #788b94;
+  --color-accent: #46c9c0;
+  --color-accent-ink: #041717;
+  --color-line: rgba(232,241,244,.14);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: Share Tech Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 250 · Neural Canvas ---- */
+@theme {
+  --color-bg: #0b0b12;
+  --color-bg-2: #101018;
+  --color-surface: #15151f;
+  --color-surface-2: #1d1d29;
+  --color-ink: #eeeaf7;
+  --color-ink-soft: #b0aac4;
+  --color-ink-faint: #847f99;
+  --color-accent: #a97bf0;
+  --color-accent-ink: #0c0618;
+  --color-line: rgba(238,234,247,.14);
+  --radius-control: 2px;
+  --radius-card: 6px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: JetBrains Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
+/* ---- 251 · Post-screen Voice ---- */
+@theme {
+  --color-bg: #f6f5f2;
+  --color-bg-2: #ecebe6;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f2ee;
+  --color-ink: #141412;
+  --color-ink-soft: #4a4a45;
+  --color-ink-faint: #7c7c75;
+  --color-accent: #2f5d4a;
+  --color-accent-ink: #f5fdf9;
+  --color-line: rgba(20,20,18,.14);
+  --radius-control: 10px;
+  --radius-card: 14px;
+  --shadow-control: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+  --font-display: Space Grotesk, system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-mono: IBM Plex Mono, ui-monospace, monospace;
+  --tracking-display: 0.01em;
+}
+
 /* ---- boşluk: katalog ölçeği = Tailwind 4px tabanı
    --space-1 4px → p-1
    --space-2 8px → p-2

@@ -1,0 +1,879 @@
+[
+  {
+    "num": "154",
+    "slug": "game-fantasy-rpg",
+    "name": "Fantasy RPG",
+    "band": "oyun",
+    "tagline": "Ortaçağ el yazması ile oyun menüsünün kesişimi: altın vurgu, kitabe başlık ve envanter ızgarası.",
+    "feeling": "destansı, ağır, \"kadim kayıt\" hissi",
+    "best": "RPG menüleri, karakter sayfası, envanter ve görev günlüğü",
+    "avoid": "hızlı operasyon panelleri, yoğun tablo ekranları",
+    "palette": {
+      "bg": "#14100c",
+      "bg2": "#1a150f",
+      "surface": "#201a13",
+      "surface2": "#2a2219",
+      "ink": "#f1e6d2",
+      "inkSoft": "#c3b499",
+      "inkFaint": "#94886f",
+      "accent": "#d4a24c",
+      "accentInk": "#1a1206",
+      "line": "rgba(241,230,210,.16)"
+    },
+    "fonts": [
+      "Cinzel",
+      "EB Garamond",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "2px",
+      "6px"
+    ],
+    "motif": "rings",
+    "tracking": "0.04em",
+    "signature": [
+      "**Kitabe başlık:** Cinzel, geniş tracking, uppercase; başlık bir levha gibi durur.",
+      "**Altın tek accent:** altın yalnız değerli eylem ve nadirlik etiketi; ikinci sıcak renk yok.",
+      "**Envanter ızgarası:** 4 kolon, eşit kutu oranı, nadirlik etiketi mono.",
+      "**İnce çift çizgi:** bölüm ayırıcı 1px + %40 opaklık ikinci çizgi."
+    ],
+    "must": [
+      "Başlıklar uppercase ve display ailede; gövde serif ve cümle düzeninde.",
+      "Accent yalnız nadirlik ve birincil eylem.",
+      "Kartlarda köşe ≤ 6px; süs çerçeve çizgisi tek."
+    ],
+    "mustNot": [
+      "El yazısı/dekoratif script font.",
+      "Animasyonlu parıltı (v6 kapsam dışı).",
+      "Üçten fazla nadirlik rengi."
+    ],
+    "neighbors": {
+      "compatible": [
+        "game-card-tcg",
+        "collectible-card"
+      ],
+      "forbidden": [
+        "neo-brutalism",
+        "memphis"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Cinzel (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cinzel",
+        "use": "kitabe başlık ailesi"
+      },
+      {
+        "label": "Illuminated manuscript (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Illuminated_manuscript",
+        "use": "altın vurgu ve çerçeve dili"
+      },
+      {
+        "label": "EB Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/EB+Garamond",
+        "use": "gövde serif ölçeği"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "fantastik",
+      "altın vurgu"
+    ],
+    "industries": [
+      "oyun"
+    ],
+    "essence": "Fantasy RPG, bir envanterin ve görev günlüğünün okunabilir kalması için süsü tek çizgiye indirir; ağırlık tipografiden gelir.",
+    "brief": "Fantastik RPG karakter sayfası tasarla: altın vurgu yalnız nadirlik ve ana eylem; kitabe başlık, serif gövde, 4 kolon envanter.",
+    "extraCss": "h1 { font-size: 46px; letter-spacing: .04em; max-width: 24ch; }\nh2 { font-size: 26px; letter-spacing: .03em; }\n.panel, .pg-card { background-image: linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%); }\n.pg-card { border-top-width: 1px; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line)); }"
+  },
+  {
+    "num": "155",
+    "slug": "game-sci-fi-cockpit",
+    "name": "Sci-Fi Cockpit",
+    "band": "oyun",
+    "tagline": "Kokpit paneli dili: geniş harf aralıklı teknik başlık, mavi sinyal accent ve ölçüm şeritleri.",
+    "feeling": "soğuk, ölçülü, \"sistem çalışıyor\" güveni",
+    "best": "uzay/araç oyunu HUD'ı, sistem izleme, telemetri",
+    "avoid": "sıcak marka dilleri, eğlence vitrinleri",
+    "palette": {
+      "bg": "#050a10",
+      "bg2": "#08121b",
+      "surface": "#0b1622",
+      "surface2": "#101f2e",
+      "ink": "#d9ecff",
+      "inkSoft": "#94b3cf",
+      "inkFaint": "#6d8ca8",
+      "accent": "#4aa8ff",
+      "accentInk": "#04121f",
+      "line": "rgba(217,236,255,.14)"
+    },
+    "fonts": [
+      "Michroma",
+      "Rajdhani",
+      "Share Tech Mono"
+    ],
+    "radius": [
+      "2px",
+      "4px"
+    ],
+    "motif": "grid",
+    "tracking": "0.1em",
+    "signature": [
+      "**Geniş tracking:** Michroma başlıkta 0.1em; teknik etiket hissi.",
+      "**Mavi sinyal:** accent yalnız aktif sistem ve ölçüm; dolgu yerine çizgi.",
+      "**Ölçüm şeridi:** 4px yüksekliğinde göstergeler, mono etiket sağda.",
+      "**Keskin panel:** 2px köşe, 1px kenar, gölge yok."
+    ],
+    "must": [
+      "Accent çizgi/etiket olarak kullanılır, geniş zemin olarak değil.",
+      "Tüm ölçümler birim ve zaman aralığı ile yazılır.",
+      "Panel köşesi ≤ 4px; gölge yerine kenar."
+    ],
+    "mustNot": [
+      "Neon turuncu-mavi karışımı.",
+      "Animasyonlu tarama/parlama.",
+      "Yuvarlak 12px+ panel."
+    ],
+    "neighbors": {
+      "compatible": [
+        "game-hud",
+        "terminal-ui"
+      ],
+      "forbidden": [
+        "japandi",
+        "memphis"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Michroma (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Michroma",
+        "use": "teknik display ailesi"
+      },
+      {
+        "label": "Flight instrument panel (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Flight_instruments",
+        "use": "gösterge hiyerarşisi"
+      },
+      {
+        "label": "Share Tech Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Share+Tech+Mono",
+        "use": "ölçüm etiketi"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "kokpit",
+      "telemetri"
+    ],
+    "industries": [
+      "oyun",
+      "teknoloji"
+    ],
+    "essence": "Sci-Fi Cockpit, bir kokpitin ölçüm disiplinini korur: her gösterge bir eşiğe bağlıdır ve yalnız tehlikede renk değiştirir.",
+    "brief": "Uzay aracı kokpiti paneli tasarla: geniş tracking teknik başlık, mavi sinyal accent yalnız ölçüm ve aktif sistemde, keskin panel.",
+    "extraCss": "h1 { font-size: 40px; letter-spacing: .06em; max-width: 26ch; }\nh2 { font-size: 22px; letter-spacing: .05em; }\n.panel, .pg-card { border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line)); }\n.pg-band { background: color-mix(in srgb, var(--accent) 5%, var(--bg-2)); }\n.pg-bars i { height: 4px; border-radius: 0; }"
+  },
+  {
+    "num": "156",
+    "slug": "game-retro-console",
+    "name": "Retro Console",
+    "band": "oyun",
+    "tagline": "Kartuş dönemi konsolu: pixel başlık, amber accent, 0 köşe ve dar ekran ritmi.",
+    "feeling": "nostaljik, sıcak, \"kumanda elinde\"",
+    "best": "retro oyun menüleri, arşiv/vitrin, etkinlik sayfası",
+    "avoid": "uzun okuma, kurumsal form akışları",
+    "palette": {
+      "bg": "#101418",
+      "bg2": "#151b21",
+      "surface": "#1a222a",
+      "surface2": "#222d37",
+      "ink": "#e6eef4",
+      "inkSoft": "#a4b6c4",
+      "inkFaint": "#7d8f9d",
+      "accent": "#f2c434",
+      "accentInk": "#1a1403",
+      "line": "rgba(230,238,244,.16)"
+    },
+    "fonts": [
+      "Press Start 2P",
+      "Chakra Petch",
+      "VT323"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "grid",
+    "upper": true,
+    "tracking": "0.02em",
+    "signature": [
+      "**Pixel display:** Press Start 2P yalnız başlık ve buton; 3 satırdan fazla kullanılmaz.",
+      "**Amber accent:** tek sıcak renk; mavi ikinci renk olarak eklenmez.",
+      "**Sıfır köşe:** tüm kutular 0–2px; gölge yok.",
+      "**Dar satır:** gövde 14–15px, satır aralığı 1.7 — pixel fontun okunurluk açığı kapatılır."
+    ],
+    "must": [
+      "Pixel font yalnız başlık/etiket; gövde okunur bir sans-serif.",
+      "Başlık en fazla 3 satır, uppercase.",
+      "Köşe 0–2px; gölge kullanılmaz."
+    ],
+    "mustNot": [
+      "Pixel fontu gövde metnine koymak.",
+      "Animasyonlu CRT taraması.",
+      "Üçten fazla renk."
+    ],
+    "neighbors": {
+      "compatible": [
+        "arcade-8bit",
+        "game-indie-pixel"
+      ],
+      "forbidden": [
+        "japandi",
+        "utility"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Press Start 2P (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Press+Start+2P",
+        "use": "pixel başlık"
+      },
+      {
+        "label": "16-bit era (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/History_of_video_game_consoles",
+        "use": "kartuş dönemi referansı"
+      },
+      {
+        "label": "VT323 (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/VT323",
+        "use": "terminal etiket"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "retro",
+      "pixel"
+    ],
+    "industries": [
+      "oyun"
+    ],
+    "essence": "Retro Console, pixel estetiğini okunurluk sınırında tutar: başlık pixel, gövde sakin; nostalji süs değil ritimdir.",
+    "brief": "16-bit konsol menüsü tasarla: pixel başlık yalnız üç satır, amber accent tek, keskin köşe, gövde okunur sans.",
+    "extraCss": "h1 { font-size: 26px; line-height: 1.5; font-weight: 400; max-width: 24ch; }\nh2 { font-size: 18px; line-height: 1.4; font-weight: 400; }\nh3 { font-size: 15px; }\n.btn { font-family: var(--font-display); font-size: 10px; text-transform: uppercase; }\n.pg-num { font-family: var(--font-mono); }"
+  },
+  {
+    "num": "157",
+    "slug": "game-esports-league",
+    "name": "Esports League",
+    "band": "oyun",
+    "tagline": "Yayın grafiği dili: dev başlık, mor accent, maç kartı ve sağa hizalı skor tabloları.",
+    "feeling": "rekabetçi, yüksek enerji, \"canlı yayın\"",
+    "best": "espor ligi, turnuva sayfası, canlı skor paneli",
+    "avoid": "sakin kurumsal ürün sayfaları, uzun makaleler",
+    "palette": {
+      "bg": "#0d0b14",
+      "bg2": "#120f1c",
+      "surface": "#171326",
+      "surface2": "#1f1a30",
+      "ink": "#f0ecff",
+      "inkSoft": "#b2a8cf",
+      "inkFaint": "#8b81a8",
+      "accent": "#b07cff",
+      "accentInk": "#120720",
+      "line": "rgba(240,236,255,.15)"
+    },
+    "fonts": [
+      "Anton",
+      "Chakra Petch",
+      "Space Mono"
+    ],
+    "radius": [
+      "0px",
+      "4px"
+    ],
+    "motif": "bars",
+    "upper": true,
+    "tracking": "0.03em",
+    "signature": [
+      "**Dev display:** Anton 56px, sıkı satır aralığı, uppercase — poster etkisi.",
+      "**Mor accent:** tek enerji rengi; turuncu rakip renk olarak kullanılmaz.",
+      "**Maç kartı:** iki takım bloğu, ortada VS, altta mono skor.",
+      "**Skor tablosu:** sağa hizalı sayılar, zebra yerine hairline."
+    ],
+    "must": [
+      "Skor ve sıralama sayıları tabular ve sağa hizalı.",
+      "Accent yalnız kazanan/canlı durum ve CTA.",
+      "Başlık uppercase, gövde cümle düzeninde."
+    ],
+    "mustNot": [
+      "Animasyonlu skor geçişi.",
+      "Üçten fazla takım rengi.",
+      "Yuvarlak 12px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "game-hud",
+        "sports-energy"
+      ],
+      "forbidden": [
+        "japandi",
+        "ethereal"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Anton (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Anton",
+        "use": "poster display ailesi"
+      },
+      {
+        "label": "Esports (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Esports",
+        "use": "lig/turnuva yapısı"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "skor ve etiket"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "espor",
+      "turnuva"
+    ],
+    "industries": [
+      "oyun",
+      "spor"
+    ],
+    "essence": "Esports League, bir yayın grafiğinin hiyerarşisini kullanır: izleyici iki saniyede kimin önde olduğunu görmeli.",
+    "brief": "Espor turnuva sayfası tasarla: dev uppercase başlık, mor accent yalnız kazanan ve CTA, maç kartı + sağa hizalı skor tablosu.",
+    "extraCss": "h1 { font-size: 56px; line-height: .96; letter-spacing: .01em; max-width: 18ch; }\nh2 { font-size: 30px; line-height: 1.04; }\n.brand { font-family: var(--font-display); letter-spacing: .1em; }\n.pg-band b { font-family: var(--font-display); font-size: 38px; }"
+  },
+  {
+    "num": "158",
+    "slug": "game-indie-pixel",
+    "name": "Indie Pixel",
+    "band": "oyun",
+    "tagline": "Bağımsız oyun vitrini: pixel etiket, yeşil accent, düşük kontrastlı panel ve el yapımı düzensizlik.",
+    "feeling": "samimi, deneysel, \"tek kişilik stüdyo\"",
+    "best": "bağımsız oyun tanıtımı, geliştirici günlüğü, jam sayfası",
+    "avoid": "kurumsal ürün sayfaları, yüksek yoğunluklu tablo",
+    "palette": {
+      "bg": "#1a1526",
+      "bg2": "#211b30",
+      "surface": "#271f38",
+      "surface2": "#332945",
+      "ink": "#f2e9ff",
+      "inkSoft": "#bfb0d8",
+      "inkFaint": "#988bb5",
+      "accent": "#63d471",
+      "accentInk": "#04170a",
+      "line": "rgba(242,233,255,.16)"
+    },
+    "fonts": [
+      "Silkscreen",
+      "Space Grotesk",
+      "VT323"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "dots",
+    "tracking": "0.01em",
+    "signature": [
+      "**Pixel etiket:** Silkscreen yalnız nav, etiket ve buton; gövde Space Grotesk.",
+      "**Yeşil accent:** canlılık rengi; mor zeminle tek kontrast.",
+      "**Keskin kutu:** 0–2px köşe, 1px kenar.",
+      "**Elle dizilmiş düzensizlik:** kart aralıkları eşit değil (14/18px), ızgara bilinçli kırılır."
+    ],
+    "must": [
+      "Pixel font yalnız etiket/buton; gövde okunur ailede.",
+      "Accent tek; durum bilgisi metinle de verilir.",
+      "Köşe 0–2px."
+    ],
+    "mustNot": [
+      "Pixel fontu paragrafta kullanmak.",
+      "Sekiz renkli palet.",
+      "Yuvarlak buton."
+    ],
+    "neighbors": {
+      "compatible": [
+        "game-retro-console",
+        "arcade-8bit"
+      ],
+      "forbidden": [
+        "luxury-typography",
+        "japandi"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Silkscreen (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Silkscreen",
+        "use": "pixel etiket ailesi"
+      },
+      {
+        "label": "Indie game (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Indie_game",
+        "use": "bağımsız oyun bağlamı"
+      },
+      {
+        "label": "Space Grotesk (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk",
+        "use": "gövde ailesi"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "bağımsız",
+      "pixel"
+    ],
+    "industries": [
+      "oyun"
+    ],
+    "essence": "Indie Pixel, büyük stüdyo cilası yerine el yapımı düzensizliği korur; ama okunurluk ve hiyerarşi pazarlıksızdır.",
+    "brief": "Bağımsız oyun tanıtım sayfası tasarla: pixel etiketler, yeşil accent, keskin kutu, bilinçli düzensiz kart aralığı.",
+    "extraCss": "h1 { font-size: 44px; line-height: 1.12; max-width: 24ch; }\nh2 { font-size: 26px; }\n.eyebrow, .label, .pg-cap { font-family: var(--font-display); text-transform: uppercase; }\n.pg-trio { gap: 18px; }\n.pg-trio .pg-card:nth-child(2) { margin-top: 10px; }\n.pg-media { border-style: dashed; }"
+  },
+  {
+    "num": "159",
+    "slug": "game-card-tcg",
+    "name": "Card TCG",
+    "band": "oyun",
+    "tagline": "Koleksiyon kartı dili: nadirlik çerçevesi, kırmızı mühür, dar sütun ve mono künye.",
+    "feeling": "koleksiyon, dokunma isteği, \"kartı çevir\"",
+    "best": "kart oyunu, koleksiyon galerisi, sınırlı sürüm vitrini",
+    "avoid": "yoğun veri panelleri, uzun formlar",
+    "palette": {
+      "bg": "#171313",
+      "bg2": "#1d1918",
+      "surface": "#241f1d",
+      "surface2": "#2e2825",
+      "ink": "#f4e9dc",
+      "inkSoft": "#c0ae9c",
+      "inkFaint": "#93847a",
+      "accent": "#e0463c",
+      "accentInk": "#1c0805",
+      "line": "rgba(244,233,220,.16)"
+    },
+    "fonts": [
+      "Cinzel",
+      "Lora",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "4px",
+      "10px"
+    ],
+    "motif": "paper",
+    "tracking": "0.02em",
+    "signature": [
+      "**Nadirlik çerçevesi:** kart kenarı 1px accent %34; nadirlik arttıkça yalnız kenar opaklığı artar.",
+      "**Kırmızı mühür:** accent yalnız nadirlik ve ana eylem; geniş zemin yok.",
+      "**Dar sütun:** kart metni 32ch, künye mono 10.5px.",
+      "**Kâğıt dokusu:** %3 grain, yalnız büyük yüzeyde."
+    ],
+    "must": [
+      "Kart metni 34ch'i geçmez; künye mono ve tabular.",
+      "Nadirlik yalnız kenar opaklığıyla değil etiketle de yazılır.",
+      "Accent geniş zemin olarak kullanılmaz."
+    ],
+    "mustNot": [
+      "Dönen/parıldayan kart efekti.",
+      "Dörtten fazla nadirlik rengi.",
+      "Kart içinde 3'ten fazla punto."
+    ],
+    "neighbors": {
+      "compatible": [
+        "collectible-card",
+        "game-fantasy-rpg"
+      ],
+      "forbidden": [
+        "bento-grid",
+        "glassmorphism"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Trading card game (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Collectible_card_game",
+        "use": "kart ve nadirlik yapısı"
+      },
+      {
+        "label": "Cinzel (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cinzel",
+        "use": "kart başlığı"
+      },
+      {
+        "label": "Lora (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Lora",
+        "use": "gövde serif"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "koleksiyon",
+      "kart"
+    ],
+    "industries": [
+      "oyun"
+    ],
+    "essence": "Card TCG, bir kartın iki saniyede okunmasını sağlar: ad, nadirlik, sayı ve kural aynı sütun ritmini izler.",
+    "brief": "Koleksiyon kartı galerisi tasarla: nadirlik çerçevesi, kırmızı mühür accent, 32ch kart metni, mono künye.",
+    "extraCss": "h1 { font-size: 42px; letter-spacing: .03em; max-width: 22ch; }\nh2 { font-size: 24px; letter-spacing: .02em; }\n.pg-card { border-radius: 10px; border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }\n.pg-media { border-radius: 10px; }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+  },
+  {
+    "num": "160",
+    "slug": "game-survival-craft",
+    "name": "Survival Craft",
+    "band": "oyun",
+    "tagline": "Hayatta kalma arayüzü: kirli yeşil accent, kalın mono etiket, dayanıklılık çubukları ve kaba kesim.",
+    "feeling": "ham, işlevsel, \"malzeme sayısı belli\"",
+    "best": "crafting/survival oyunu, envanter, kaynak paneli",
+    "avoid": "lüks vitrin, ince editoryal düzen",
+    "palette": {
+      "bg": "#12140f",
+      "bg2": "#181b14",
+      "surface": "#1e2218",
+      "surface2": "#282d20",
+      "ink": "#e9ecdf",
+      "inkSoft": "#b3b9a4",
+      "inkFaint": "#8a9079",
+      "accent": "#b8c26a",
+      "accentInk": "#12160a",
+      "line": "rgba(233,236,223,.16)"
+    },
+    "fonts": [
+      "Baloo 2",
+      "Nunito",
+      "Courier Prime"
+    ],
+    "radius": [
+      "2px",
+      "6px"
+    ],
+    "motif": "blob",
+    "tracking": "0.02em",
+    "signature": [
+      "**Kalın gövde:** Nunito 16px/1.7 — uzun envanter listelerinde yorulmaz.",
+      "**Kirli yeşil accent:** doğa referansı; parlak neon değil.",
+      "**Dayanıklılık çubukları:** 6px, accent dolgu, mono yüzde etiketi.",
+      "**Kaba kesim:** 2/6px köşe, 1px kenar, gölge yok."
+    ],
+    "must": [
+      "Kaynak sayıları mono ve tabular; birim her zaman yazılır.",
+      "Accent yalnız durum ve dolum çubuğu.",
+      "Köşe ≤ 6px."
+    ],
+    "mustNot": [
+      "Parlak neon yeşil.",
+      "Animasyonlu envanter.",
+      "Yuvarlak 16px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "game-mobile-casual",
+        "biophilic-botanical"
+      ],
+      "forbidden": [
+        "luxury-typography",
+        "liquid-glass"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Survival game (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Survival_game",
+        "use": "kaynak/envanter akışı"
+      },
+      {
+        "label": "Baloo 2 (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Baloo+2",
+        "use": "sıcak başlık ailesi"
+      },
+      {
+        "label": "Courier Prime (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Courier+Prime",
+        "use": "mono etiket"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "hayatta kalma",
+      "zanaat"
+    ],
+    "industries": [
+      "oyun"
+    ],
+    "essence": "Survival Craft, envanteri bir hikâye gibi okutur: her satırda ne var, kaç tane var ve neye yarar.",
+    "brief": "Hayatta kalma oyunu envanteri tasarla: kirli yeşil accent, kalın gövde, dayanıklılık çubukları ve mono kaynak sayıları.",
+    "extraCss": "h1 { font-size: 44px; line-height: 1.1; max-width: 24ch; }\nh2 { font-size: 26px; }\n.pg-bars i { height: 8px; border-radius: 2px; }\n.pg-list li::before { border-radius: 2px; }\n.pg-media { border-style: solid; border-width: 2px; }"
+  },
+  {
+    "num": "161",
+    "slug": "game-mobile-casual",
+    "name": "Mobile Casual",
+    "band": "oyun",
+    "tagline": "Mobil oyun dilinde açık tema: mercan accent, yumuşak yuvarlak kart ve tek dokunuşla anlaşılan hiyerarşi.",
+    "feeling": "neşeli, kolay, \"iki dokunuşta başla\"",
+    "best": "mobil oyun menüsü, günlük görev, ödül ekranı",
+    "avoid": "yoğun masaüstü tabloları, kurumsal raporlar",
+    "palette": {
+      "bg": "#fff5f0",
+      "bg2": "#ffe9df",
+      "surface": "#ffffff",
+      "surface2": "#fff1ea",
+      "ink": "#241a17",
+      "inkSoft": "#6b4f45",
+      "inkFaint": "#9b8177",
+      "accent": "#c9341f",
+      "accentInk": "#ffffff",
+      "line": "rgba(36,26,23,.12)"
+    },
+    "fonts": [
+      "Baloo 2",
+      "Nunito",
+      "Space Mono"
+    ],
+    "radius": [
+      "14px",
+      "20px"
+    ],
+    "motif": "dots",
+    "shadow": "0 6px 16px rgba(36,26,23,.10)",
+    "signature": [
+      "**Yumuşak kart:** 14/20px köşe, tek seviye gölge; mobil dokunma hedefi 48px.",
+      "**Mercan accent:** kahverengi-kırmızı ton; pembe-mor çocuk paleti yok.",
+      "**Tek dokunuş:** ekran başına tek birincil eylem.",
+      "**Yuvarlak ikon:** 24px kutu, 2px çizgi."
+    ],
+    "must": [
+      "Dokunma hedefi ≥ 48px; butonlar tam genişlik.",
+      "Ekran başına tek birincil eylem.",
+      "Kontrast gövde ≥ 4.5:1 (açık temada accent koyulaştırılır)."
+    ],
+    "mustNot": [
+      "Beş renkli ödül patlaması.",
+      "Animasyonlu kutlama.",
+      "12px altı etiket."
+    ],
+    "neighbors": {
+      "compatible": [
+        "kids-playground",
+        "game-survival-craft"
+      ],
+      "forbidden": [
+        "terminal-ui",
+        "neo-brutalism"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Baloo 2 (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Baloo+2",
+        "use": "yuvarlak başlık ailesi"
+      },
+      {
+        "label": "Mobile game (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Mobile_game",
+        "use": "mobil oyun akışı"
+      },
+      {
+        "label": "Nunito (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Nunito",
+        "use": "gövde ailesi"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "mobil",
+      "açık tema"
+    ],
+    "industries": [
+      "oyun"
+    ],
+    "essence": "Mobile Casual, başparmakla kullanılan bir ekranda hiyerarşiyi tek sütuna indirir; renk sevinç taşır, karmaşa taşımaz.",
+    "brief": "Mobil oyun günlük görev ekranı tasarla: açık zemin, mercan accent tek, 48px dokunma hedefi, yuvarlak kart.",
+    "extraCss": "h1 { font-size: 40px; line-height: 1.12; max-width: 20ch; }\nh2 { font-size: 24px; }\n.btn { border-radius: 999px; padding: 0 24px; }\n.btn.ghost, .btn.soft { border-radius: 999px; }\n.field { border-radius: 14px; }\n.chip { border-radius: 999px; }\n.pg-media, .pg-card { border-radius: 20px; }"
+  },
+  {
+    "num": "162",
+    "slug": "game-horror-occult",
+    "name": "Horror Occult",
+    "band": "oyun",
+    "tagline": "Korku arayüzü: kan kırmızısı mühür, ince serif başlık, geniş siyah boşluk ve mono uyarı satırları.",
+    "feeling": "tedirgin, ağır, \"bir şey eksik\"",
+    "best": "korku oyunu menüsü, hikâye arşivi, tematik etkinlik",
+    "avoid": "neşeli ürün sayfaları, açık tema",
+    "palette": {
+      "bg": "#0a0909",
+      "bg2": "#100e0e",
+      "surface": "#151212",
+      "surface2": "#1d1919",
+      "ink": "#eae2dd",
+      "inkSoft": "#a89c95",
+      "inkFaint": "#7d726c",
+      "accent": "#c8322b",
+      "accentInk": "#f7ece8",
+      "line": "rgba(234,226,221,.14)"
+    },
+    "fonts": [
+      "Cormorant Garamond",
+      "Lora",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "paper",
+    "grain": 0.03,
+    "signature": [
+      "**İnce serif:** Cormorant 48px/400; başlık fısıldar, bağırmaz.",
+      "**Kan kırmızısı:** accent yalnız uyarı ve ana eylem; dekoratif kullanım yok.",
+      "**Geniş siyah boşluk:** bölüm aralığı 88px; boşluk tehdit hissi kurar.",
+      "**Mono uyarı:** 11px, %70 opaklık; kurumsal değil, kayıt notu gibi."
+    ],
+    "must": [
+      "Accent yalnız uyarı/eylem; metin gövdelerinde kullanılmaz.",
+      "Başlık serif ve ince; gövde 16px/1.7.",
+      "Bölüm aralığı ≥ 72px; sıkışık düzen yasak."
+    ],
+    "mustNot": [
+      "Damlayan/akan efekt.",
+      "Korku klişesi olarak kırmızı üstüne kırmızı metin.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "dark-academia",
+        "noir-estate"
+      ],
+      "forbidden": [
+        "kids-playground",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Cormorant Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cormorant+Garamond",
+        "use": "ince serif başlık"
+      },
+      {
+        "label": "Horror fiction (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Horror_fiction",
+        "use": "atmosfer referansı"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "uyarı ve künye"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "korku",
+      "koyu"
+    ],
+    "industries": [
+      "oyun",
+      "medya"
+    ],
+    "essence": "Horror Occult, korkuyu süsle değil boşluk ve suskunlukla kurar: sayfa ne kadar az konuşursa o kadar tedirgin eder.",
+    "brief": "Korku oyunu menüsü tasarla: siyah zemin, ince serif başlık, kan kırmızısı yalnız uyarıda, geniş boşluk.",
+    "extraCss": "h1 { font-size: 52px; font-weight: 300; line-height: 1.06; letter-spacing: .01em; max-width: 22ch; }\nh2 { font-size: 28px; font-weight: 400; }\n.pg-sec { padding: 40px 56px; }\n.pg-foot, .pg-cta { border-color: color-mix(in srgb, var(--accent) 18%, var(--line)); }\n.pg-media { filter: saturate(.7) contrast(1.05); }"
+  },
+  {
+    "num": "163",
+    "slug": "game-racing-neon",
+    "name": "Racing Neon",
+    "band": "oyun",
+    "tagline": "Gece yarışı dili: camgöbeği sinyal, magenta ikinci ton, dev eğik başlık ve hız şeritleri.",
+    "feeling": "elektrik, gece, \"son viraj\"",
+    "best": "arcade yarış oyunu, gece etkinliği, müzik/oyun kampanyası",
+    "avoid": "kurumsal doküman, açık tema",
+    "palette": {
+      "bg": "#08080f",
+      "bg2": "#0c0c18",
+      "surface": "#121224",
+      "surface2": "#1a1a33",
+      "ink": "#eaf6ff",
+      "inkSoft": "#9fb3d1",
+      "inkFaint": "#71839f",
+      "accent": "#31e1f5",
+      "accentInk": "#04141a",
+      "line": "rgba(234,246,255,.16)"
+    },
+    "fonts": [
+      "Rajdhani",
+      "Chakra Petch",
+      "VT323"
+    ],
+    "radius": [
+      "0px",
+      "4px"
+    ],
+    "motif": "bars",
+    "upper": true,
+    "tracking": "0.05em",
+    "signature": [
+      "**Camgöbeği accent:** tek sinyal rengi; magenta yalnız ikincil etiket (accent %40).",
+      "**Eğik başlık:** `skewX(-6deg)` yalnız H1; gövde düz kalır.",
+      "**Hız şeritleri:** 1px yatay çizgiler, %8 opaklık, statik.",
+      "**Keskin köşe:** 0–4px; buton 0px."
+    ],
+    "must": [
+      "Tek accent (camgöbeği); ikinci renk %40 opaklıkla sınırlı.",
+      "Sayılar tabular ve mono.",
+      "Eğiklik yalnız başlıkta; metin gövdesi düz."
+    ],
+    "mustNot": [
+      "Animasyonlu hız çizgileri.",
+      "Neon metin gölgesi (glow).",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "game-racing",
+        "synthwave"
+      ],
+      "forbidden": [
+        "japandi",
+        "scandinavian-dark"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Rajdhani (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Rajdhani",
+        "use": "dar display ailesi"
+      },
+      {
+        "label": "Synthwave (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Synthwave",
+        "use": "gece neon estetiği bağlamı"
+      },
+      {
+        "label": "VT323 (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/VT323",
+        "use": "terminal etiket"
+      }
+    ],
+    "keywords": [
+      "oyun",
+      "neon",
+      "gece"
+    ],
+    "industries": [
+      "oyun",
+      "muzik"
+    ],
+    "essence": "Racing Neon, neonu ölçülü kullanır: tek camgöbeği sinyal, statik çizgiler ve keskin tipografi; glow efekti yok.",
+    "brief": "Gece yarışı oyunu sayfası tasarla: siyah zemin, camgöbeği tek accent, eğik dev başlık, statik hız çizgileri.",
+    "extraCss": "h1 { font-size: 54px; transform: skewX(-6deg); transform-origin: left; letter-spacing: .01em; max-width: 18ch; }\nh2 { font-size: 28px; }\n.panel, .pg-card { border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--line)); }\n.pg-band { background: color-mix(in srgb, var(--accent) 7%, var(--bg-2)); }"
+  }
+]

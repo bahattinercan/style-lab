@@ -53,6 +53,15 @@ const BY_FAMILY = {
   'Materyal & Lüks': ['emlak', 'dergi'],
   'Deneysel & Gelecek': ['ajans', 'saas'],
   'Sahne & Prestij': ['emlak', 'ajans', 'saas', 'dergi'],
+  'Oyun & Etkileşim': ['egitim', 'eticaret', 'ajans'],
+  'Operasyon & Veri': ['saas', 'danismanlik'],
+  'Ticaret & Vitrin': ['eticaret', 'emlak', 'dergi'],
+  'Kültür & Yayın': ['dergi', 'ajans', 'egitim'],
+  'Sağlık & Bilim': ['saglik', 'egitim'],
+  'Öğrenme & Oyunlaştırma': ['egitim', 'saas'],
+  'Materyal & Zanaat': ['emlak', 'dergi', 'eticaret'],
+  'Tipografi Denemeleri': ['dergi', 'ajans'],
+  'Gelecek & Spekülatif': ['saas', 'ajans', 'danismanlik'],
   Diğer: ['saas'],
 };
 

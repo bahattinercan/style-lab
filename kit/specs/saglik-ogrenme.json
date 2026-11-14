@@ -1,0 +1,1734 @@
+[
+  {
+    "num": "202",
+    "slug": "clinical-trial",
+    "name": "Clinical Trial",
+    "band": "saglik",
+    "tagline": "Klinik çalışma protokolü: beyaz-gri düzen, tek mavi accent, faz etiketi ve katılımcı tablosu.",
+    "feeling": "protokol, titiz, \"faz II\"",
+    "best": "klinik çalışma, hasta bilgilendirme, araştırma protokolü",
+    "avoid": "neşeli tüketici kampanyası",
+    "palette": {
+      "bg": "#fafbfc",
+      "bg2": "#eef1f4",
+      "surface": "#ffffff",
+      "surface2": "#f3f6f8",
+      "ink": "#121519",
+      "inkSoft": "#48505a",
+      "inkFaint": "#79828d",
+      "accent": "#125a86",
+      "accentInk": "#f7fbff",
+      "line": "rgba(18,21,25,.13)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Faz etiketi:** mono `FAZ II`, sağ üstte.",
+      "**Protokol tablosu:** kolon başlıkları mono, satır 40px.",
+      "**Tek mavi accent:** yalnız onay ve bağlantı.",
+      "**Beyaz düzen:** gölge yok, kenar var."
+    ],
+    "must": [
+      "Her bölümde protokol no ve versiyon.",
+      "Katılımcı sayıları tabular.",
+      "Onam/uyarı metni 14px altına inmez."
+    ],
+    "mustNot": [
+      "Sağlık sonucu vaadi.",
+      "Animasyon.",
+      "Koyu tema varyantı."
+    ],
+    "neighbors": {
+      "compatible": [
+        "lab-protocol",
+        "regulatory-report"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "carnival-festival"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Clinical trial (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Clinical_trial",
+        "use": "faz/protokol yapısı"
+      },
+      {
+        "label": "ICH Guidelines",
+        "url": "https://www.ich.org/page/efficacy-guidelines",
+        "use": "protokol dili"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "protokol etiketi"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "klinik",
+      "protokol"
+    ],
+    "industries": [
+      "saglik",
+      "bilim"
+    ],
+    "essence": "Clinical Trial, bir protokolü ekranda okutur: faz, no, katılımcı ve sonlanım noktası.",
+    "brief": "Klinik çalışma sayfası tasarla: beyaz-gri düzen, mono faz etiketi, protokol tablosu, tek mavi accent.",
+    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }"
+  },
+  {
+    "num": "203",
+    "slug": "lab-protocol",
+    "name": "Lab Protocol",
+    "band": "saglik",
+    "tagline": "Laboratuvar protokolü: numaralı adımlar, monospace zaman damgası ve uyarı bloğu.",
+    "feeling": "disiplinli, tekrarlanabilir, \"adım 4'te bekle\"",
+    "best": "laboratuvar protokolü, deney kaydı, cihaz prosedürü",
+    "avoid": "marka vitrini",
+    "palette": {
+      "bg": "#0f1214",
+      "bg2": "#131719",
+      "surface": "#182023",
+      "surface2": "#202a2e",
+      "ink": "#e8f0f2",
+      "inkSoft": "#a6b6ba",
+      "inkFaint": "#7d8d91",
+      "accent": "#4fc3a1",
+      "accentInk": "#04160f",
+      "line": "rgba(232,240,242,.14)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "JetBrains Mono"
+    ],
+    "radius": [
+      "2px",
+      "4px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Numaralı adım:** 01/02 mono, adım başlığı 17px.",
+      "**Zaman damgası:** mono, sağ sütun.",
+      "**Uyarı bloğu:** sol 2px accent, zemin --surface-2.",
+      "**Tek accent:** yalnız uyarı ve onay."
+    ],
+    "must": [
+      "Her adımda süre ve cihaz bilgisi.",
+      "Uyarılar adımın içinde, ayrı bölümde değil.",
+      "Birimler mono."
+    ],
+    "mustNot": [
+      "Animasyonlu sayaç.",
+      "Süslü illüstrasyon.",
+      "On adımdan fazla tek ekranda."
+    ],
+    "neighbors": {
+      "compatible": [
+        "clinical-trial",
+        "terminal-ui"
+      ],
+      "forbidden": [
+        "lookbook-editorial",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Laboratory (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Laboratory",
+        "use": "protokol akışı"
+      },
+      {
+        "label": "JetBrains Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/JetBrains+Mono",
+        "use": "zaman/birim"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "laboratuvar",
+      "protokol"
+    ],
+    "industries": [
+      "bilim",
+      "saglik"
+    ],
+    "essence": "Lab Protocol, tekrarlanabilirliği görselleştirir: her adım numaralı, süreli ve uyarılı.",
+    "brief": "Laboratuvar protokolü tasarla: koyu zemin, numaralı adımlar, mono zaman damgası, sol accent uyarı bloğu.",
+    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-card { border-left: 2px solid color-mix(in srgb, var(--accent) 44%, var(--line)); }"
+  },
+  {
+    "num": "204",
+    "slug": "pharmacy-labels",
+    "name": "Pharmacy Labels",
+    "band": "saglik",
+    "tagline": "İlaç etiketi okunurluğu: yüksek kontrast, büyük punto, doz tablosu ve net uyarı şeridi.",
+    "feeling": "açık, güvenli, \"günde iki kez\"",
+    "best": "ilaç kullanım bilgisi, doz takvimi, hasta eğitimi",
+    "avoid": "dekoratif lüks tema",
+    "palette": {
+      "bg": "#ffffff",
+      "bg2": "#f2f4f6",
+      "surface": "#ffffff",
+      "surface2": "#f6f8fa",
+      "ink": "#0f1317",
+      "inkSoft": "#414a53",
+      "inkFaint": "#71797f",
+      "accent": "#8a1b1b",
+      "accentInk": "#fff7f7",
+      "line": "rgba(15,19,23,.18)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "4px",
+      "6px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Büyük punto:** gövde 17px, doz 24px; punto düşürülmez.",
+      "**Kırmızı uyarı şeridi:** yalnız kritik uyarı.",
+      "**Doz tablosu:** sabah/öğle/akşam mono.",
+      "**Maksimum kontrast:** ink 18:1 üstü."
+    ],
+    "must": [
+      "Doz ve sıklık 17px altına inmez.",
+      "Uyarı şeridi metinle ve ikonla.",
+      "Okunurluk için satır uzunluğu 60ch."
+    ],
+    "mustNot": [
+      "Dekoratif görsel.",
+      "Renkli gradyan.",
+      "Küçük punto ile yasal metin."
+    ],
+    "neighbors": {
+      "compatible": [
+        "pharmacy-store",
+        "nutrition-plan"
+      ],
+      "forbidden": [
+        "game-horror-occult",
+        "synthwave"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Prescription drug (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Prescription_drug",
+        "use": "doz/kullanım alanları"
+      },
+      {
+        "label": "WCAG 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "use": "kontrast ve punto ölçütleri"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "doz tablosu"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "ilaç",
+      "okunurluk"
+    ],
+    "industries": [
+      "saglik"
+    ],
+    "essence": "Pharmacy Labels, okunurluğu tek ölçüt yapar: punto büyük, kontrast yüksek, uyarı net.",
+    "brief": "İlaç kullanım bilgisi sayfası tasarla: beyaz zemin, 17px gövde, mono doz tablosu, kırmızı uyarı şeridi.",
+    "extraCss": "h1 { font-size: 44px; max-width: 24ch; }\nbody, .lede, .pg-p { font-size: 17px; line-height: 1.68; }\n.pg-table td { font-size: 14px; }"
+  },
+  {
+    "num": "205",
+    "slug": "physiotherapy",
+    "name": "Physiotherapy",
+    "band": "saglik",
+    "tagline": "Fizyoterapi planı: yumuşak yeşil, egzersiz kartları, set/tekrar tablosu ve ilerleme çubuğu.",
+    "feeling": "destekleyici, adım adım, \"bugün 3 set\"",
+    "best": "fizyoterapi/rehabilitasyon, egzersiz planı, takip",
+    "avoid": "koyu teknik panel, agresif rekabet ekranı",
+    "palette": {
+      "bg": "#f7fbf8",
+      "bg2": "#e9f4ed",
+      "surface": "#ffffff",
+      "surface2": "#f1f8f3",
+      "ink": "#121a16",
+      "inkSoft": "#45564c",
+      "inkFaint": "#798b80",
+      "accent": "#166b45",
+      "accentInk": "#f4fdf8",
+      "line": "rgba(18,26,22,.12)"
+    },
+    "fonts": [
+      "Nunito",
+      "Nunito",
+      "Space Mono"
+    ],
+    "radius": [
+      "12px",
+      "16px"
+    ],
+    "motif": "blob",
+    "signature": [
+      "**Egzersiz kartı:** ad, set×tekrar, süre; 12px köşe.",
+      "**İlerleme çubuğu:** 8px, yeşil dolgu.",
+      "**Set tablosu:** mono, gün bazlı.",
+      "**Yumuşak dil:** yuvarlak köşe, tek gölge."
+    ],
+    "must": [
+      "Her egzersizde set, tekrar ve dinlenme.",
+      "Ağrı skalası 0–10 metinle.",
+      "Dokunma hedefi ≥ 48px."
+    ],
+    "mustNot": [
+      "Animasyonlu hareket gösterimi.",
+      "Kırmızı ceza dili.",
+      "Sekiz renkli kategori."
+    ],
+    "neighbors": {
+      "compatible": [
+        "mental-wellness",
+        "nutrition-plan"
+      ],
+      "forbidden": [
+        "terminal-ui",
+        "game-horror-occult"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Physical therapy (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Physical_therapy",
+        "use": "egzersiz planı yapısı"
+      },
+      {
+        "label": "Nunito (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Nunito",
+        "use": "yumuşak gövde"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "set/tekrar"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "fizyoterapi",
+      "egzersiz"
+    ],
+    "industries": [
+      "saglik",
+      "spor"
+    ],
+    "essence": "Physiotherapy, planı küçük ve tamamlanabilir adımlara böler: set, tekrar, dinlenme.",
+    "brief": "Fizyoterapi egzersiz planı tasarla: yumuşak yeşil, egzersiz kartları, mono set/tekrar tablosu, ilerleme çubuğu.",
+    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-media { border-radius: 16px; }"
+  },
+  {
+    "num": "206",
+    "slug": "mental-wellness",
+    "name": "Mental Wellness",
+    "band": "saglik",
+    "tagline": "Zihin sağlığı uygulaması: sakin leylak, yumuşak geçiş, günlük check-in ve nefes ritmi bloğu.",
+    "feeling": "sakin, yargısız, \"bugün nasılsın\"",
+    "best": "zihin sağlığı, meditasyon, günlük check-in",
+    "avoid": "rekabetçi lig, kırmızı uyarı dili",
+    "palette": {
+      "bg": "#faf8fd",
+      "bg2": "#f0ebf7",
+      "surface": "#ffffff",
+      "surface2": "#f5f1fa",
+      "ink": "#171322",
+      "inkSoft": "#4c4459",
+      "inkFaint": "#7f768c",
+      "accent": "#5b3f8f",
+      "accentInk": "#faf7ff",
+      "line": "rgba(23,19,34,.12)"
+    },
+    "fonts": [
+      "Jost",
+      "Nunito",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "14px",
+      "20px"
+    ],
+    "motif": "blob",
+    "signature": [
+      "**Günlük check-in:** 5 ölçekli, tek satır, 48px hedef.",
+      "**Leylak accent:** yalnız seçili ruh hali ve CTA.",
+      "**Nefes bloğu:** statik halka + süre metni.",
+      "**Yumuşak yüzey:** 14/20px, düşük gölge."
+    ],
+    "must": [
+      "Duygu seçimi her zaman metin etiketli.",
+      "Gizlilik notu görünür.",
+      "Acil durum bağlantısı alt bilgi."
+    ],
+    "mustNot": [
+      "Animasyonlu nefes halkası (v6: statik).",
+      "Suçlayıcı dil.",
+      "Seri/streak baskısı."
+    ],
+    "neighbors": {
+      "compatible": [
+        "physiotherapy",
+        "ethereal"
+      ],
+      "forbidden": [
+        "game-esports-league",
+        "access-audit"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Mental health (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Mental_health",
+        "use": "dil ve çerçeve"
+      },
+      {
+        "label": "Jost (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Jost",
+        "use": "başlık ailesi"
+      },
+      {
+        "label": "Nunito (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Nunito",
+        "use": "gövde ailesi"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "zihin",
+      "sakin"
+    ],
+    "industries": [
+      "saglik"
+    ],
+    "essence": "Mental Wellness, arayüzü yavaşlatır: az seçenek, yumuşak dil, tek adım.",
+    "brief": "Zihin sağlığı check-in ekranı tasarla: sakin leylak, yuvarlak kart, 5 ölçekli duygu seçimi, gizlilik notu.",
+    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card, .pg-media { border-radius: 20px; }\n.pg-list li::before { border-radius: 2px; }"
+  },
+  {
+    "num": "207",
+    "slug": "nutrition-plan",
+    "name": "Nutrition Plan",
+    "band": "saglik",
+    "tagline": "Beslenme planı: sebze yeşili accent, öğün kartları, makro halkaları ve mono porsiyon.",
+    "feeling": "taze, planlı, \"bugünün tabağı\"",
+    "best": "beslenme/diyet planı, öğün takibi, tarif",
+    "avoid": "koyu oyun teması",
+    "palette": {
+      "bg": "#fcfdf8",
+      "bg2": "#eef5e4",
+      "surface": "#ffffff",
+      "surface2": "#f4f9ee",
+      "ink": "#151a11",
+      "inkSoft": "#45503c",
+      "inkFaint": "#79856e",
+      "accent": "#3f6b1a",
+      "accentInk": "#f9fdf4",
+      "line": "rgba(21,26,17,.12)"
+    },
+    "fonts": [
+      "Poppins",
+      "Nunito",
+      "Space Mono"
+    ],
+    "radius": [
+      "12px",
+      "16px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Öğün kartı:** kahvaltı/öğle/akşam, 3 kolon.",
+      "**Makro halkası:** 3 halka (protein/karb/yağ), accent dolgu.",
+      "**Porsiyon mono:** gram cinsinden.",
+      "**Sebze yeşili:** tek accent."
+    ],
+    "must": [
+      "Her öğünde kalori ve makro.",
+      "Porsiyonlar gram/ml mono.",
+      "Alerjen bilgisi görünür."
+    ],
+    "mustNot": [
+      "Kalori utandırma dili.",
+      "Animasyonlu halka.",
+      "On iki renkli besin grubu."
+    ],
+    "neighbors": {
+      "compatible": [
+        "physiotherapy",
+        "grocery-delivery"
+      ],
+      "forbidden": [
+        "game-horror-occult",
+        "synthwave"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Nutrition (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Nutrition",
+        "use": "makro/öğün yapısı"
+      },
+      {
+        "label": "Poppins (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Poppins",
+        "use": "başlık ailesi"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "porsiyon"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "beslenme",
+      "öğün"
+    ],
+    "industries": [
+      "saglik",
+      "gida"
+    ],
+    "essence": "Nutrition Plan, tabağı bir plan gibi gösterir: ne, ne kadar, hangi makro.",
+    "brief": "Beslenme planı tasarla: açık zemin, sebze yeşili accent, 3 öğün kartı, mono porsiyon, makro göstergesi.",
+    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-band { background: color-mix(in srgb, var(--accent) 7%, var(--bg-2)); }"
+  },
+  {
+    "num": "208",
+    "slug": "dental-clinic",
+    "name": "Dental Clinic",
+    "band": "saglik",
+    "tagline": "Diş kliniği: ferah beyaz, camgöbeği accent, randevu formu ve tedavi süresi tablosu.",
+    "feeling": "temiz, güvenli, \"randevu al\"",
+    "best": "klinik randevu, tedavi bilgisi, hasta formu",
+    "avoid": "koyu teknik panel",
+    "palette": {
+      "bg": "#fbfdfe",
+      "bg2": "#eaf6fa",
+      "surface": "#ffffff",
+      "surface2": "#f2fafc",
+      "ink": "#101619",
+      "inkSoft": "#42535a",
+      "inkFaint": "#778a92",
+      "accent": "#0d6b86",
+      "accentInk": "#f5fdff",
+      "line": "rgba(16,22,25,.12)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "10px",
+      "14px"
+    ],
+    "motif": "rings",
+    "signature": [
+      "**Randevu formu:** 2 kolon, 3 alan, tek buton.",
+      "**Tedavi süresi:** dakika mono, tablo.",
+      "**Camgöbeği accent:** CTA ve seçili saat.",
+      "**Ferah boşluk:** bölüm 72px."
+    ],
+    "must": [
+      "Randevu formunda tarih/saat seçimi tek adım.",
+      "Tedavi süresi ve fiyat aralığı tabloda.",
+      "Acil durum notu görünür."
+    ],
+    "mustNot": [
+      "Animasyonlu diş ikonu.",
+      "Beş renkli hizmet paleti.",
+      "Yuvarlak 20px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "pharmacy-store",
+        "physiotherapy"
+      ],
+      "forbidden": [
+        "game-pinball-neon",
+        "synthwave"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Dentistry (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Dentistry",
+        "use": "tedavi listesi"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      },
+      {
+        "label": "WCAG 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "use": "form erişilebilirliği"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "klinik",
+      "randevu"
+    ],
+    "industries": [
+      "saglik"
+    ],
+    "essence": "Dental Clinic, randevuyu üç alana indirir: kim, ne zaman, hangi tedavi.",
+    "brief": "Diş kliniği sayfası tasarla: ferah beyaz, camgöbeği accent, 3 alanlı randevu formu, mono tedavi süresi tablosu.",
+    "extraCss": "h1 { font-size: 44px; max-width: 22ch; }\n.pg-card { border-radius: 14px; }\n.pg-media { border-radius: 14px; }"
+  },
+  {
+    "num": "209",
+    "slug": "public-health",
+    "name": "Public Health",
+    "band": "saglik",
+    "tagline": "Halk sağlığı bilgilendirmesi: yüksek kontrast, büyük rakamlar, kaynak dipnotu ve sade dil.",
+    "feeling": "açık, otoriter, \"herkes için\"",
+    "best": "halk sağlığı kampanyası, istatistik bilgilendirme, aşı takvimi",
+    "avoid": "lüks marka dili",
+    "palette": {
+      "bg": "#ffffff",
+      "bg2": "#eef2f7",
+      "surface": "#ffffff",
+      "surface2": "#f5f8fb",
+      "ink": "#0c1116",
+      "inkSoft": "#3f4852",
+      "inkFaint": "#6f7883",
+      "accent": "#0b4f9c",
+      "accentInk": "#f6faff",
+      "line": "rgba(12,17,22,.16)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "6px",
+      "10px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Büyük rakam:** 48px display, mono değil ama tabular.",
+      "**Kaynak dipnotu:** her istatistikte 11px.",
+      "**Mavi accent:** yalnız bağlantı ve birincil eylem.",
+      "**Sade dil:** cümle 20 kelimeyi geçmez."
+    ],
+    "must": [
+      "Her sayı için kaynak ve tarih.",
+      "Okuma seviyesi sade; kısaltma açıklanır.",
+      "Kontrast AA üstü."
+    ],
+    "mustNot": [
+      "Korku odaklı görsel.",
+      "Kaynaksız iddia.",
+      "Animasyon."
+    ],
+    "neighbors": {
+      "compatible": [
+        "clinical-trial",
+        "regulatory-report"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "boutique-hotel"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Public health (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Public_health",
+        "use": "bilgilendirme yapısı"
+      },
+      {
+        "label": "WHO",
+        "url": "https://www.who.int/",
+        "use": "kaynak/dil referansı"
+      },
+      {
+        "label": "WCAG 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "use": "erişilebilirlik"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "kamu",
+      "istatistik"
+    ],
+    "industries": [
+      "saglik",
+      "kamu"
+    ],
+    "essence": "Public Health, sayıyı ve kaynağını yan yana koyar; ikna değil bilgi verir.",
+    "brief": "Halk sağlığı bilgilendirme sayfası tasarla: beyaz zemin, büyük tabular rakamlar, kaynak dipnotu, sade dil.",
+    "extraCss": "h1 { font-size: 46px; max-width: 24ch; }\n.pg-band b { font-size: 42px; font-variant-numeric: tabular-nums; }"
+  },
+  {
+    "num": "210",
+    "slug": "genomics-lab",
+    "name": "Genomics Lab",
+    "band": "saglik",
+    "tagline": "Genom laboratuvarı: koyu mor zemin, turkuaz accent, dizileme tablosu ve mono baz etiketleri.",
+    "feeling": "ileri teknoloji, hassas, \"ACGT\"",
+    "best": "genomik/biyoinformatik, dizileme paneli, örnek takibi",
+    "avoid": "tüketici vitrini",
+    "palette": {
+      "bg": "#0b0d14",
+      "bg2": "#10131c",
+      "surface": "#141824",
+      "surface2": "#1c2130",
+      "ink": "#e8ecf7",
+      "inkSoft": "#a4aec4",
+      "inkFaint": "#7a859c",
+      "accent": "#45d6c8",
+      "accentInk": "#04171a",
+      "line": "rgba(232,236,247,.14)"
+    },
+    "fonts": [
+      "IBM Plex Mono",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "2px",
+      "4px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Baz şeridi:** ACGT harfleri mono, renk yok.",
+      "**Örnek tablosu:** kimlik, kalite, tarih mono.",
+      "**Turkuaz accent:** yalnız seçili örnek.",
+      "**Koyu ızgara:** 24px arka plan çizgisi %6."
+    ],
+    "must": [
+      "Kalite metrikleri iki ondalık ve birimli.",
+      "Örnek kimlikleri mono ve tekil.",
+      "Renk körlüğü için baz renklendirmesi yok."
+    ],
+    "mustNot": [
+      "Sarmal DNA illüstrasyonu.",
+      "Animasyonlu dizileme akışı.",
+      "Neon degrade."
+    ],
+    "neighbors": {
+      "compatible": [
+        "lab-protocol",
+        "data-lineage"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Genomics (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Genomics",
+        "use": "örnek/metrik alanları"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "baz/örnek kimliği"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "genom",
+      "laboratuvar"
+    ],
+    "industries": [
+      "bilim",
+      "saglik"
+    ],
+    "essence": "Genomics Lab, veriyi süslemeden gösterir: baz, kalite, örnek ve tarih.",
+    "brief": "Genom laboratuvarı paneli tasarla: koyu zemin, turkuaz yalnız seçili örnekte, mono baz şeridi ve örnek tablosu.",
+    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+  },
+  {
+    "num": "211",
+    "slug": "veterinary-care",
+    "name": "Veterinary Care",
+    "band": "saglik",
+    "tagline": "Veteriner klinik: sıcak krem zemin, kahve accent, aşı takvimi ve hasta kartı.",
+    "feeling": "şefkatli, düzenli, \"kontrol zamanı\"",
+    "best": "veteriner klinik, aşı takvimi, hasta kaydı",
+    "avoid": "koyu teknik panel",
+    "palette": {
+      "bg": "#fdfaf4",
+      "bg2": "#f4ecdf",
+      "surface": "#ffffff",
+      "surface2": "#faf4eb",
+      "ink": "#1a1712",
+      "inkSoft": "#544b3f",
+      "inkFaint": "#877c6d",
+      "accent": "#7a4a1e",
+      "accentInk": "#fdf8f2",
+      "line": "rgba(26,23,18,.13)"
+    },
+    "fonts": [
+      "Nunito",
+      "Nunito",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "12px",
+      "16px"
+    ],
+    "motif": "blob",
+    "signature": [
+      "**Hasta kartı:** ad, tür, yaş, sahip; 4 satır.",
+      "**Aşı takvimi:** ay ızgarası, mono tarih.",
+      "**Kahve accent:** yalnız yaklaşan kontrol.",
+      "**Sıcak krem:** tek zemin tonu."
+    ],
+    "must": [
+      "Her kayıtta tür, yaş ve sahip.",
+      "Aşı tarihleri ay/gün mono.",
+      "Acil iletişim görünür."
+    ],
+    "mustNot": [
+      "Sevimli illüstrasyon yığını.",
+      "Animasyonlu pati.",
+      "Yuvarlak 24px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "dental-clinic",
+        "physiotherapy"
+      ],
+      "forbidden": [
+        "terminal-ui",
+        "game-pinball-neon"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Veterinary medicine (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Veterinary_medicine",
+        "use": "klinik akışı"
+      },
+      {
+        "label": "Nunito (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Nunito",
+        "use": "yumuşak gövde"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "tarih"
+      }
+    ],
+    "keywords": [
+      "sağlık",
+      "veteriner",
+      "takvim"
+    ],
+    "industries": [
+      "saglik"
+    ],
+    "essence": "Veterinary Care, sahibin aklındaki üç soruyu cevaplar: ne zaman, ne yapılacak, ne kadar.",
+    "brief": "Veteriner klinik sayfası tasarla: sıcak krem zemin, hasta kartları, mono aşı takvimi, kahve accent.",
+    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }"
+  },
+  {
+    "num": "212",
+    "slug": "language-app",
+    "name": "Language App",
+    "band": "ogrenme",
+    "tagline": "Dil öğrenme uygulaması: canlı mavi accent, günlük seri, kelime kartı ve telaffuz satırı.",
+    "feeling": "oyunlu ama disiplinli, \"beş dakika\"",
+    "best": "dil uygulaması, kelime kartı, günlük alıştırma",
+    "avoid": "resmî denetim raporu",
+    "palette": {
+      "bg": "#fbfdff",
+      "bg2": "#eaf3fc",
+      "surface": "#ffffff",
+      "surface2": "#f2f8fe",
+      "ink": "#111a24",
+      "inkSoft": "#445565",
+      "inkFaint": "#78899a",
+      "accent": "#12558f",
+      "accentInk": "#f6fbff",
+      "line": "rgba(17,26,36,.12)"
+    },
+    "fonts": [
+      "Poppins",
+      "Nunito",
+      "Space Mono"
+    ],
+    "radius": [
+      "12px",
+      "16px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Kelime kartı:** büyük kelime + çeviri + örnek cümle.",
+      "**Günlük seri:** 7 hücreli ızgara, accent dolu.",
+      "**Telaffuz satırı:** mono IPA.",
+      "**Tek accent:** mavi, eylem ve ilerleme."
+    ],
+    "must": [
+      "Her kartta örnek cümle ve telaffuz.",
+      "Seri bilgisi metinle.",
+      "Dokunma hedefi ≥ 48px."
+    ],
+    "mustNot": [
+      "Animasyonlu konfeti.",
+      "Kırmızı ceza.",
+      "On iki renkli seviye."
+    ],
+    "neighbors": {
+      "compatible": [
+        "skill-tree",
+        "game-puzzle-light"
+      ],
+      "forbidden": [
+        "access-audit",
+        "regulatory-report"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Language acquisition (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Language_acquisition",
+        "use": "alıştırma döngüsü"
+      },
+      {
+        "label": "Poppins (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Poppins",
+        "use": "başlık ailesi"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "telaffuz"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "dil",
+      "alıştırma"
+    ],
+    "industries": [
+      "egitim"
+    ],
+    "essence": "Language App, günlük beş dakikayı kurar: bir kelime, bir cümle, bir telaffuz.",
+    "brief": "Dil öğrenme ekranı tasarla: açık zemin, mavi accent, kelime kartı, günlük seri ızgarası, mono telaffuz.",
+    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-chart i { border-radius: 8px; }"
+  },
+  {
+    "num": "213",
+    "slug": "skill-tree",
+    "name": "Skill Tree",
+    "band": "ogrenme",
+    "tagline": "Yetenek ağacı: mor accent, düğüm haritası, kilit durumları ve mono ilerleme puanı.",
+    "feeling": "haritalı, motive edici, \"sıradaki düğüm\"",
+    "best": "müfredat haritası, yetkinlik modeli, öğrenme yolu",
+    "avoid": "kurumsal form",
+    "palette": {
+      "bg": "#0f1018",
+      "bg2": "#141520",
+      "surface": "#191a28",
+      "surface2": "#222333",
+      "ink": "#eceaf7",
+      "inkSoft": "#aca8c4",
+      "inkFaint": "#82809a",
+      "accent": "#8f7bf0",
+      "accentInk": "#0c0619",
+      "line": "rgba(236,234,247,.14)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "JetBrains Mono"
+    ],
+    "radius": [
+      "8px",
+      "10px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Düğüm haritası:** 3 sütun, bağlantı çizgileri 1px.",
+      "**Kilit durumu:** kilitli düğüm %40 opak + metin.",
+      "**Mor accent:** tamamlanan yol.",
+      "**Puan:** mono, sağ üstte."
+    ],
+    "must": [
+      "Her düğümde ön koşul yazılır.",
+      "Kilitli/tamam durumu metinle.",
+      "Yol çizgileri dekoratif değil, ilişki gösterir."
+    ],
+    "mustNot": [
+      "Animasyonlu ışıma.",
+      "Beş durum rengi.",
+      "Bağlantısız düğüm."
+    ],
+    "neighbors": {
+      "compatible": [
+        "language-app",
+        "kanban-flow"
+      ],
+      "forbidden": [
+        "regulatory-report",
+        "boutique-hotel"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Skill (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Skill",
+        "use": "yetkinlik modeli"
+      },
+      {
+        "label": "Space Grotesk (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk",
+        "use": "başlık ailesi"
+      },
+      {
+        "label": "JetBrains Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/JetBrains+Mono",
+        "use": "puan"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "yol haritası",
+      "yetenek"
+    ],
+    "industries": [
+      "egitim",
+      "teknoloji"
+    ],
+    "essence": "Skill Tree, öğrenme yolunu haritalandırır: hangi düğüm, hangi ön koşul, ne kadar kaldı.",
+    "brief": "Yetenek ağacı ekranı tasarla: koyu zemin, mor accent tamamlanan yolda, düğüm haritası, mono puan.",
+    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 28px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 28px); }"
+  },
+  {
+    "num": "214",
+    "slug": "university-portal",
+    "name": "University Portal",
+    "band": "ogrenme",
+    "tagline": "Üniversite portalı: kurumsal lacivert, kayıt dönemi şeridi, ders kataloğu ve mono kredi.",
+    "feeling": "kurumsal, güvenilir, \"dönem kaydı\"",
+    "best": "üniversite portalı, ders kataloğu, öğrenci işleri",
+    "avoid": "hype kampanya",
+    "palette": {
+      "bg": "#f8f9fb",
+      "bg2": "#e9edf3",
+      "surface": "#ffffff",
+      "surface2": "#f2f5f9",
+      "ink": "#111721",
+      "inkSoft": "#454f5d",
+      "inkFaint": "#77828f",
+      "accent": "#1a3a6b",
+      "accentInk": "#f7faff",
+      "line": "rgba(17,23,33,.13)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Kayıt şeridi:** üstte tek satır duyuru, accent zemin.",
+      "**Ders kataloğu:** kod mono, kredi sağa hizalı.",
+      "**Lacivert accent:** bağlantı ve birincil eylem.",
+      "**Kurumsal düzen:** 8 kolon, az süs."
+    ],
+    "must": [
+      "Her derste kod, kredi ve dönem.",
+      "Takvim tarihleri net.",
+      "Bağlantılar altı çizili değil, renkli."
+    ],
+    "mustNot": [
+      "Animasyonlu banner.",
+      "Öğrenci fotoğrafı zorunluluğu.",
+      "Beş renkli fakülte paleti."
+    ],
+    "neighbors": {
+      "compatible": [
+        "library-archive",
+        "academic-paper"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "game-pinball-neon"
+      ]
+    },
+    "refs": [
+      {
+        "label": "University (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/University",
+        "use": "portal yapısı"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "ders kodu"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "üniversite",
+      "katalog"
+    ],
+    "industries": [
+      "egitim",
+      "kamu"
+    ],
+    "essence": "University Portal, kayıt dönemini netleştirir: hangi ders, kaç kredi, son tarih ne.",
+    "brief": "Üniversite portalı tasarla: kurumsal lacivert accent, üstte kayıt şeridi, ders kataloğu mono kodlu.",
+    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }\n.pg-band { background: var(--accent); color: var(--accentInk); }\n.pg-band span { color: var(--accentInk); opacity: .84; }"
+  },
+  {
+    "num": "215",
+    "slug": "coding-bootcamp",
+    "name": "Coding Bootcamp",
+    "band": "ogrenme",
+    "tagline": "Kod bootcamp'i: terminal yeşili accent, müfredat haftaları, mono süre ve proje kartı.",
+    "feeling": "yoğun, pratik, \"12 hafta\"",
+    "best": "bootcamp, teknik eğitim, müfredat tanıtımı",
+    "avoid": "lüks vitrin",
+    "palette": {
+      "bg": "#0c1110",
+      "bg2": "#111715",
+      "surface": "#161d1b",
+      "surface2": "#1e2725",
+      "ink": "#e9f2ef",
+      "inkSoft": "#a6b8b3",
+      "inkFaint": "#7d8f8a",
+      "accent": "#43d17a",
+      "accentInk": "#04170c",
+      "line": "rgba(233,242,239,.14)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "JetBrains Mono"
+    ],
+    "radius": [
+      "4px",
+      "6px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Hafta şeridi:** 12 hafta, 3 kolon, mono numara.",
+      "**Yeşil accent:** tamamlanan ve CTA.",
+      "**Proje kartı:** repo adı mono, süre etiketi.",
+      "**Terminal dokusu:** 1px çizgi zemin, %5."
+    ],
+    "must": [
+      "Her haftada konu ve çıktı.",
+      "Süre ve ön koşul yazılır.",
+      "Kod örnekleri mono, yatay kaydırma yok."
+    ],
+    "mustNot": [
+      "Animasyonlu terminal yazımı.",
+      "On iki renkli hafta paleti.",
+      "Yuvarlak 12px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "skill-tree",
+        "lab-simulation"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "lookbook-editorial"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Coding bootcamp (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Coding_bootcamp",
+        "use": "müfredat yapısı"
+      },
+      {
+        "label": "MDN Web Docs",
+        "url": "https://developer.mozilla.org/",
+        "use": "kod örneği biçimi"
+      },
+      {
+        "label": "JetBrains Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/JetBrains+Mono",
+        "use": "kod ve süre"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "kod",
+      "müfredat"
+    ],
+    "industries": [
+      "egitim",
+      "teknoloji"
+    ],
+    "essence": "Coding Bootcamp, müfredatı haftalara böler ve her haftanın çıktısını gösterir.",
+    "brief": "Kod bootcamp müfredatı tasarla: koyu zemin, terminal yeşili accent, 12 hafta ızgarası, mono süre ve proje kartı.",
+    "extraCss": "h1 { font-size: 42px; max-width: 24ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+  },
+  {
+    "num": "216",
+    "slug": "kids-classroom",
+    "name": "Kids Classroom",
+    "band": "ogrenme",
+    "tagline": "Çocuk sınıfı: yumuşak sarı-mavi, büyük dokunma hedefleri, görev kartları ve yıldız yerine metin ödül.",
+    "feeling": "neşeli, güvenli, \"görevini tamamla\"",
+    "best": "ilkokul/çocuk eğitimi, sınıf görevleri",
+    "avoid": "koyu teknik panel, finans tabloları",
+    "palette": {
+      "bg": "#fffdf5",
+      "bg2": "#fff4d6",
+      "surface": "#ffffff",
+      "surface2": "#fff8e6",
+      "ink": "#1c1710",
+      "inkSoft": "#564a36",
+      "inkFaint": "#8b7d63",
+      "accent": "#8c5a06",
+      "accentInk": "#fffaf0",
+      "line": "rgba(28,23,16,.14)"
+    },
+    "fonts": [
+      "Baloo 2",
+      "Nunito",
+      "Space Mono"
+    ],
+    "radius": [
+      "16px",
+      "22px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Büyük hedef:** buton 52px, kart 16/22px köşe.",
+      "**Metin ödül:** yıldız ikonu yerine \"tamamlandı\" etiketi.",
+      "**Görev kartı:** başlık 22px, 2 satır açıklama.",
+      "**Sarı-mavi denge:** accent tek, ikinci ton %20 dolgu."
+    ],
+    "must": [
+      "Dokunma hedefi ≥ 52px.",
+      "Her görevde süre ve adım sayısı.",
+      "Okuma seviyesi kısa cümle."
+    ],
+    "mustNot": [
+      "Yanıp sönen ödül.",
+      "Kırmızı hata cezası.",
+      "On iki renkli rozet."
+    ],
+    "neighbors": {
+      "compatible": [
+        "kids-playground",
+        "language-app"
+      ],
+      "forbidden": [
+        "terminal-ui",
+        "access-audit"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Primary education (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Primary_education",
+        "use": "görev/gün yapısı"
+      },
+      {
+        "label": "Baloo 2 (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Baloo+2",
+        "use": "yuvarlak başlık"
+      },
+      {
+        "label": "Nunito (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Nunito",
+        "use": "gövde ailesi"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "çocuk",
+      "sınıf"
+    ],
+    "industries": [
+      "egitim"
+    ],
+    "essence": "Kids Classroom, görevi tek ekranda bitirir: bir hedef, iki adım, net ödül.",
+    "brief": "Çocuk sınıfı görev ekranı tasarla: yumuşak sarı zemin, büyük hedefler, görev kartları, metin ödül.",
+    "extraCss": "h1 { font-size: 42px; max-width: 20ch; }\n.pg-card { border-radius: 22px; }\n.btn { border-radius: 999px; min-height: 52px; }"
+  },
+  {
+    "num": "217",
+    "slug": "exam-prep",
+    "name": "Exam Prep",
+    "band": "ogrenme",
+    "tagline": "Sınav hazırlığı: gri-mavi düzen, soru sayacı, konu ağırlığı ve mono süre planı.",
+    "feeling": "odaklı, ölçülü, \"kaç soru kaldı\"",
+    "best": "sınav hazırlığı, soru bankası, deneme takibi",
+    "avoid": "eğlence uygulaması",
+    "palette": {
+      "bg": "#f9fafc",
+      "bg2": "#edf0f5",
+      "surface": "#ffffff",
+      "surface2": "#f4f6fa",
+      "ink": "#12161c",
+      "inkSoft": "#49515c",
+      "inkFaint": "#7b838f",
+      "accent": "#234a7a",
+      "accentInk": "#f7faff",
+      "line": "rgba(18,22,28,.12)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "JetBrains Mono"
+    ],
+    "radius": [
+      "6px",
+      "10px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Soru sayacı:** mono, sağ üstte sabit.",
+      "**Konu ağırlığı:** yatay çubuk, yüzde metni.",
+      "**Süre planı:** dakika bazlı tablo.",
+      "**Nötr palet:** accent yalnız doğru/ilerleme."
+    ],
+    "must": [
+      "Her konuda soru sayısı ve hedef süre.",
+      "Doğru/yanlış yüzdeleri tabular.",
+      "Deneme sonucu tarihli."
+    ],
+    "mustNot": [
+      "Animasyonlu sayaç.",
+      "Kırmızı utanç grafiği.",
+      "Sekiz renkli konu paleti."
+    ],
+    "neighbors": {
+      "compatible": [
+        "university-portal",
+        "coding-bootcamp"
+      ],
+      "forbidden": [
+        "carnival-festival",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Test preparation (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Test_preparation",
+        "use": "konu/soru planı"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      },
+      {
+        "label": "JetBrains Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/JetBrains+Mono",
+        "use": "sayaç"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "sınav",
+      "plan"
+    ],
+    "industries": [
+      "egitim"
+    ],
+    "essence": "Exam Prep, çalışmayı ölçülebilir kılar: konu, soru, süre ve sonuç.",
+    "brief": "Sınav hazırlık paneli tasarla: nötr gri-mavi, mono soru sayacı, konu ağırlık çubukları, süre tablosu.",
+    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }"
+  },
+  {
+    "num": "218",
+    "slug": "music-lesson",
+    "name": "Music Lesson",
+    "band": "ogrenme",
+    "tagline": "Müzik dersi: sıcak ahşap zemin, bordo accent, nota satırı ve mono tempo bilgisi.",
+    "feeling": "atölye, ritmik, \"metronom 92\"",
+    "best": "müzik okulu, enstrüman dersi, pratik takibi",
+    "avoid": "kurumsal SaaS paneli",
+    "palette": {
+      "bg": "#fbf7f1",
+      "bg2": "#f3e9dc",
+      "surface": "#ffffff",
+      "surface2": "#f8f1e7",
+      "ink": "#1b1610",
+      "inkSoft": "#544a3c",
+      "inkFaint": "#877a68",
+      "accent": "#7a2e2a",
+      "accentInk": "#fdf7f6",
+      "line": "rgba(27,22,16,.13)"
+    },
+    "fonts": [
+      "Fraunces",
+      "Lora",
+      "Courier Prime"
+    ],
+    "radius": [
+      "6px",
+      "10px"
+    ],
+    "motif": "paper",
+    "signature": [
+      "**Nota satırı:** 5 çizgi, %12 opaklık, dekoratif.",
+      "**Tempo bilgisi:** mono `92 BPM`.",
+      "**Ders kartı:** enstrüman, seviye, süre.",
+      "**Bordo accent:** yalnız aktif ders."
+    ],
+    "must": [
+      "Her derste enstrüman, seviye ve süre.",
+      "Tempo/ölçü bilgisi mono.",
+      "Pratik süresi dakika."
+    ],
+    "mustNot": [
+      "Animasyonlu nota.",
+      "Beş renkli enstrüman paleti.",
+      "Yuvarlak 20px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "theatre-season",
+        "podcast-network"
+      ],
+      "forbidden": [
+        "terminal-ui",
+        "access-audit"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Music education (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Music_education",
+        "use": "ders/seviye yapısı"
+      },
+      {
+        "label": "Fraunces (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Fraunces",
+        "use": "başlık serif"
+      },
+      {
+        "label": "Courier Prime (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Courier+Prime",
+        "use": "tempo"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "müzik",
+      "pratik"
+    ],
+    "industries": [
+      "egitim",
+      "muzik"
+    ],
+    "essence": "Music Lesson, pratiği ölçülebilir kılar: enstrüman, seviye, tempo ve dakika.",
+    "brief": "Müzik dersi sayfası tasarla: sıcak ahşap zemin, bordo accent, nota çizgisi, mono tempo bilgisi.",
+    "extraCss": "h1 { font-size: 44px; max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 10%, transparent) 0 1px, transparent 1px 16px); }"
+  },
+  {
+    "num": "219",
+    "slug": "lab-simulation",
+    "name": "Lab Simulation",
+    "band": "ogrenme",
+    "tagline": "Sanal laboratuvar: koyu zemin, camgöbeği ölçüm, adım kaydırıcıları ve sonuç tablosu.",
+    "feeling": "deney, kontrollü, \"değişkeni değiştir\"",
+    "best": "fen eğitimi, sanal laboratuvar, simülasyon dersi",
+    "avoid": "lüks vitrin",
+    "palette": {
+      "bg": "#0d1114",
+      "bg2": "#11161a",
+      "surface": "#161d22",
+      "surface2": "#1e272d",
+      "ink": "#e8f1f5",
+      "inkSoft": "#a4b4bc",
+      "inkFaint": "#7b8b93",
+      "accent": "#3fb6c9",
+      "accentInk": "#041619",
+      "line": "rgba(232,241,245,.14)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "JetBrains Mono"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "grid",
+    "signature": [
+      "**Değişken kaydırıcı:** 3 adet, değer mono sağda.",
+      "**Ölçüm tablosu:** birim + belirsizlik.",
+      "**Camgöbeği accent:** yalnız aktif ölçüm.",
+      "**Adım kaydı:** 01–04 mono."
+    ],
+    "must": [
+      "Her ölçümde birim ve belirsizlik.",
+      "Değişken aralığı yazılır.",
+      "Sonuç tablosu tarihli."
+    ],
+    "mustNot": [
+      "Animasyonlu deney.",
+      "Süs illüstrasyon.",
+      "Birimsiz sayı."
+    ],
+    "neighbors": {
+      "compatible": [
+        "lab-protocol",
+        "coding-bootcamp"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Simulation (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Simulation",
+        "use": "değişken/ölçüm modeli"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      },
+      {
+        "label": "JetBrains Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/JetBrains+Mono",
+        "use": "ölçüm"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "simülasyon",
+      "laboratuvar"
+    ],
+    "industries": [
+      "egitim",
+      "bilim"
+    ],
+    "essence": "Lab Simulation, deneyi parametreler üzerinden öğretir: değiştir, ölç, karşılaştır.",
+    "brief": "Sanal laboratuvar ekranı tasarla: koyu zemin, camgöbeği ölçüm accent, 3 değişken kaydırıcı, mono sonuç tablosu.",
+    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+  },
+  {
+    "num": "220",
+    "slug": "peer-study",
+    "name": "Peer Study",
+    "band": "ogrenme",
+    "tagline": "Akran çalışma grubu: sıcak gri, mor accent, oturum kartları ve mono katılımcı sayısı.",
+    "feeling": "birlikte, esnek, \"bu akşam 20:00\"",
+    "best": "çalışma grubu, akran öğrenmesi, oturum planı",
+    "avoid": "kurumsal portal",
+    "palette": {
+      "bg": "#faf9fc",
+      "bg2": "#f0eef5",
+      "surface": "#ffffff",
+      "surface2": "#f5f3f9",
+      "ink": "#17151e",
+      "inkSoft": "#4d4859",
+      "inkFaint": "#7f788c",
+      "accent": "#5a3f8a",
+      "accentInk": "#faf7ff",
+      "line": "rgba(23,21,30,.12)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "Space Mono"
+    ],
+    "radius": [
+      "10px",
+      "14px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Oturum kartı:** konu, saat, katılımcı sayısı.",
+      "**Saat:** mono, gün adı kısa.",
+      "**Mor accent:** katıl ve seçili oturum.",
+      "**Sıcak gri:** nötr zemin, tek accent."
+    ],
+    "must": [
+      "Her oturumda konu, saat ve kontenjan.",
+      "Katılım tek tık; durum metinle.",
+      "Saat dilimi yazılır."
+    ],
+    "mustNot": [
+      "Animasyonlu avatar yığını.",
+      "Beş renkli konu paleti.",
+      "Yuvarlak 20px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "language-app",
+        "podcast-network"
+      ],
+      "forbidden": [
+        "access-audit",
+        "regulatory-report"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Peer learning (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Peer_learning",
+        "use": "oturum modeli"
+      },
+      {
+        "label": "Space Grotesk (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk",
+        "use": "başlık ailesi"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "saat/kontenjan"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "akran",
+      "oturum"
+    ],
+    "industries": [
+      "egitim"
+    ],
+    "essence": "Peer Study, ortak çalışmayı planlar: ne zaman, kiminle, kaç kişi.",
+    "brief": "Akran çalışma grubu sayfası tasarla: sıcak gri zemin, mor accent, oturum kartları, mono saat ve kontenjan.",
+    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 14px; }"
+  },
+  {
+    "num": "221",
+    "slug": "certificate-wallet",
+    "name": "Certificate Wallet",
+    "band": "ogrenme",
+    "tagline": "Sertifika cüzdanı: koyu mavi zemin, altın mühür, doğrulama kodu ve mono tarih.",
+    "feeling": "kazanılmış, resmî, \"doğrulanabilir\"",
+    "best": "sertifika/rozet, yetkinlik kaydı, doğrulama sayfası",
+    "avoid": "kampanya vitrini",
+    "palette": {
+      "bg": "#0c1120",
+      "bg2": "#111830",
+      "surface": "#161f3a",
+      "surface2": "#1f2a4a",
+      "ink": "#eaf0fb",
+      "inkSoft": "#a6b4d2",
+      "inkFaint": "#7c8bab",
+      "accent": "#c9a25c",
+      "accentInk": "#141003",
+      "line": "rgba(234,240,251,.15)"
+    },
+    "fonts": [
+      "Cinzel",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "rings",
+    "signature": [
+      "**Mühür:** 1px accent halka + mono kod.",
+      "**Doğrulama:** her sertifikada tekil kod.",
+      "**Altın accent:** yalnız mühür ve doğrulama.",
+      "**Resmî düzen:** serif başlık, sade gövde."
+    ],
+    "must": [
+      "Sertifika kodu ve tarih mono.",
+      "Veren kurum ve kapsam yazılır.",
+      "Doğrulama bağlantısı görünür."
+    ],
+    "mustNot": [
+      "Süs madalyon illüstrasyonu.",
+      "Animasyonlu parıltı.",
+      "Kodsuz sertifika."
+    ],
+    "neighbors": {
+      "compatible": [
+        "university-portal",
+        "exam-prep"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "carnival-festival"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Digital credential (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Digital_credential",
+        "use": "doğrulama modeli"
+      },
+      {
+        "label": "Cinzel (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cinzel",
+        "use": "resmî başlık"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "kod/tarih"
+      }
+    ],
+    "keywords": [
+      "öğrenme",
+      "sertifika",
+      "doğrulama"
+    ],
+    "industries": [
+      "egitim",
+      "kamu"
+    ],
+    "essence": "Certificate Wallet, kazanımı doğrulanabilir kılar: kod, tarih, kapsam ve veren kurum.",
+    "brief": "Sertifika cüzdanı tasarla: koyu mavi zemin, altın mühür halkası, mono doğrulama kodu, serif başlık.",
+    "extraCss": "h1 { font-size: 42px; letter-spacing: .03em; max-width: 24ch; }\n.pg-card { border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }"
+  }
+]

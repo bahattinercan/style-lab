@@ -1,0 +1,15 @@
+/* 247 · Synthetic Media — token bloğu (kaynak: styles/247-synthetic-media/tokens.json) */
+
+[data-style="synthetic-media"] {
+  --bg: #0e1013; --bg-2: #121519;
+  --surface: #181c22; --surface-2: #21262e;
+  --ink: #edf0f4; --ink-soft: #adb4bf; --ink-faint: #828a96;
+  --accent: #3fd4c2; --accent-ink: #041614;
+  --line: rgba(237,240,244,.14);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+}

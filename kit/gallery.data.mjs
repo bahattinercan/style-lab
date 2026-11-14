@@ -992,6 +992,506 @@ export const KEYWORDS = {
     "cyan veri vurgusu",
     "grafit ızgara",
   ],
+  "game-hud": [
+    "oyun",
+    "hud",
+    "koyu panel",
+  ],
+  "game-racing": [
+    "oyun",
+    "yarış",
+    "telemetri",
+  ],
+  "game-fantasy-rpg": [
+    "oyun",
+    "fantastik",
+    "altın vurgu",
+  ],
+  "game-sci-fi-cockpit": [
+    "oyun",
+    "kokpit",
+    "telemetri",
+  ],
+  "game-retro-console": [
+    "oyun",
+    "retro",
+    "pixel",
+  ],
+  "game-esports-league": [
+    "oyun",
+    "espor",
+    "turnuva",
+  ],
+  "game-indie-pixel": [
+    "oyun",
+    "bağımsız",
+    "pixel",
+  ],
+  "game-card-tcg": [
+    "oyun",
+    "koleksiyon",
+    "kart",
+  ],
+  "game-survival-craft": [
+    "oyun",
+    "hayatta kalma",
+    "zanaat",
+  ],
+  "game-mobile-casual": [
+    "oyun",
+    "mobil",
+    "açık tema",
+  ],
+  "game-horror-occult": [
+    "oyun",
+    "korku",
+    "koyu",
+  ],
+  "game-racing-neon": [
+    "oyun",
+    "neon",
+    "gece",
+  ],
+  "game-strategy-map": [
+    "oyun",
+    "strateji",
+    "harita",
+  ],
+  "game-sim-builder": [
+    "oyun",
+    "simülasyon",
+    "planlama",
+  ],
+  "game-arcade-cabinet": [
+    "oyun",
+    "arcade",
+    "retro",
+  ],
+  "game-stealth-tactical": [
+    "oyun",
+    "taktik",
+    "koyu",
+  ],
+  "game-puzzle-light": [
+    "oyun",
+    "bulmaca",
+    "açık tema",
+  ],
+  "game-mmo-guild": [
+    "oyun",
+    "mmo",
+    "topluluk",
+  ],
+  "game-franchise-sports": [
+    "oyun",
+    "spor",
+    "sezon",
+  ],
+  "game-pinball-neon": [
+    "oyun",
+    "pinball",
+    "neon",
+  ],
+  "incident-response": [
+    "operasyon",
+    "olay",
+    "kriz",
+  ],
+  "finops-cost": [
+    "operasyon",
+    "maliyet",
+    "finans",
+  ],
+  "fleet-dispatch": [
+    "operasyon",
+    "lojistik",
+    "harita",
+  ],
+  "fraud-review": [
+    "operasyon",
+    "risk",
+    "uyum",
+  ],
+  "slo-budget": [
+    "operasyon",
+    "güvenilirlik",
+    "slo",
+  ],
+  "data-lineage": [
+    "operasyon",
+    "veri",
+    "şema",
+  ],
+  "access-audit": [
+    "operasyon",
+    "denetim",
+    "uyum",
+  ],
+  "release-train": [
+    "operasyon",
+    "sürüm",
+    "planlama",
+  ],
+  "support-inbox": [
+    "operasyon",
+    "destek",
+    "kuyruk",
+  ],
+  "regulatory-report": [
+    "operasyon",
+    "uyum",
+    "rapor",
+  ],
+  "grocery-delivery": [
+    "ticaret",
+    "market",
+    "teslimat",
+  ],
+  "marketplace-multi": [
+    "ticaret",
+    "pazar yeri",
+    "filtre",
+  ],
+  "luxury-atelier": [
+    "ticaret",
+    "lüks",
+    "atölye",
+  ],
+  "subscription-box": [
+    "ticaret",
+    "abonelik",
+    "plan",
+  ],
+  "sneaker-drop": [
+    "ticaret",
+    "sneaker",
+    "drop",
+  ],
+  "wine-cellar": [
+    "ticaret",
+    "şarap",
+    "koleksiyon",
+  ],
+  "furniture-studio": [
+    "ticaret",
+    "mobilya",
+    "ölçü",
+  ],
+  "electronics-spec": [
+    "ticaret",
+    "elektronik",
+    "spec",
+  ],
+  "pharmacy-store": [
+    "ticaret",
+    "eczane",
+    "sağlık",
+  ],
+  "farmers-market": [
+    "ticaret",
+    "yerel",
+    "sezon",
+  ],
+  "museum-exhibition": [
+    "kültür",
+    "müze",
+    "sergi",
+  ],
+  "theatre-season": [
+    "kültür",
+    "tiyatro",
+    "sezon",
+  ],
+  "film-festival": [
+    "kültür",
+    "film",
+    "festival",
+  ],
+  "public-radio": [
+    "kültür",
+    "radyo",
+    "program",
+  ],
+  "podcast-network": [
+    "kültür",
+    "podcast",
+    "arşiv",
+  ],
+  "indie-cinema": [
+    "kültür",
+    "sinema",
+    "gösterim",
+  ],
+  "library-archive": [
+    "kültür",
+    "arşiv",
+    "katalog",
+  ],
+  "comic-bookstore": [
+    "kültür",
+    "çizgi roman",
+    "yayın",
+  ],
+  "opera-house": [
+    "kültür",
+    "opera",
+    "sezon",
+  ],
+  "street-festival": [
+    "kültür",
+    "festival",
+    "sokak",
+  ],
+  "clinical-trial": [
+    "sağlık",
+    "klinik",
+    "protokol",
+  ],
+  "lab-protocol": [
+    "sağlık",
+    "laboratuvar",
+    "protokol",
+  ],
+  "pharmacy-labels": [
+    "sağlık",
+    "ilaç",
+    "okunurluk",
+  ],
+  "physiotherapy": [
+    "sağlık",
+    "fizyoterapi",
+    "egzersiz",
+  ],
+  "mental-wellness": [
+    "sağlık",
+    "zihin",
+    "sakin",
+  ],
+  "nutrition-plan": [
+    "sağlık",
+    "beslenme",
+    "öğün",
+  ],
+  "dental-clinic": [
+    "sağlık",
+    "klinik",
+    "randevu",
+  ],
+  "public-health": [
+    "sağlık",
+    "kamu",
+    "istatistik",
+  ],
+  "genomics-lab": [
+    "sağlık",
+    "genom",
+    "laboratuvar",
+  ],
+  "veterinary-care": [
+    "sağlık",
+    "veteriner",
+    "takvim",
+  ],
+  "language-app": [
+    "öğrenme",
+    "dil",
+    "alıştırma",
+  ],
+  "skill-tree": [
+    "öğrenme",
+    "yol haritası",
+    "yetenek",
+  ],
+  "university-portal": [
+    "öğrenme",
+    "üniversite",
+    "katalog",
+  ],
+  "coding-bootcamp": [
+    "öğrenme",
+    "kod",
+    "müfredat",
+  ],
+  "kids-classroom": [
+    "öğrenme",
+    "çocuk",
+    "sınıf",
+  ],
+  "exam-prep": [
+    "öğrenme",
+    "sınav",
+    "plan",
+  ],
+  "music-lesson": [
+    "öğrenme",
+    "müzik",
+    "pratik",
+  ],
+  "lab-simulation": [
+    "öğrenme",
+    "simülasyon",
+    "laboratuvar",
+  ],
+  "peer-study": [
+    "öğrenme",
+    "akran",
+    "oturum",
+  ],
+  "certificate-wallet": [
+    "öğrenme",
+    "sertifika",
+    "doğrulama",
+  ],
+  "terrazzo-stone": [
+    "materyal",
+    "taş",
+    "doku",
+  ],
+  "linocut-print": [
+    "materyal",
+    "baskı",
+    "zanaat",
+  ],
+  "risograph-print": [
+    "materyal",
+    "riso",
+    "baskı",
+  ],
+  "denim-textile": [
+    "materyal",
+    "tekstil",
+    "denim",
+  ],
+  "cork-oak": [
+    "materyal",
+    "mantar",
+    "sürdürülebilir",
+  ],
+  "cast-concrete": [
+    "materyal",
+    "beton",
+    "mimarlık",
+  ],
+  "enamel-jewel": [
+    "materyal",
+    "mücevher",
+    "mine",
+  ],
+  "hand-thrown-ceramic": [
+    "materyal",
+    "seramik",
+    "el yapımı",
+  ],
+  "raw-steel": [
+    "materyal",
+    "çelik",
+    "endüstri",
+  ],
+  "recycled-paper": [
+    "materyal",
+    "kâğıt",
+    "geri dönüşüm",
+  ],
+  "condensed-news": [
+    "tipografi",
+    "haber",
+    "gazete",
+  ],
+  "monospace-editorial": [
+    "tipografi",
+    "mono",
+    "dokümantasyon",
+  ],
+  "blackletter-modern": [
+    "tipografi",
+    "gotik",
+    "mühür",
+  ],
+  "variable-weight": [
+    "tipografi",
+    "ağırlık",
+    "ajans",
+  ],
+  "justified-book": [
+    "tipografi",
+    "kitap",
+    "dizgi",
+  ],
+  "stencil-display": [
+    "tipografi",
+    "şablon",
+    "endüstri",
+  ],
+  "uppercase-only": [
+    "tipografi",
+    "büyük harf",
+    "mimarlık",
+  ],
+  "italic-accent": [
+    "tipografi",
+    "italik",
+    "edebiyat",
+  ],
+  "numerals-display": [
+    "tipografi",
+    "rakam",
+    "rapor",
+  ],
+  "small-caps-ledger": [
+    "tipografi",
+    "defter",
+    "muhasebe",
+  ],
+  "agent-console": [
+    "gelecek",
+    "ajan",
+    "konsol",
+  ],
+  "spatial-workspace": [
+    "gelecek",
+    "uzamsal",
+    "katman",
+  ],
+  "bio-lab-interface": [
+    "gelecek",
+    "biyoteknoloji",
+    "laboratuvar",
+  ],
+  "climate-model": [
+    "gelecek",
+    "iklim",
+    "senaryo",
+  ],
+  "orbital-logistics": [
+    "gelecek",
+    "uzay",
+    "lojistik",
+  ],
+  "synthetic-media": [
+    "gelecek",
+    "sentetik",
+    "medya",
+  ],
+  "quantum-dashboard": [
+    "gelecek",
+    "kuantum",
+    "olasılık",
+  ],
+  "digital-twin": [
+    "gelecek",
+    "ikiz",
+    "sensör",
+  ],
+  "neural-canvas": [
+    "gelecek",
+    "model",
+    "katman",
+  ],
+  "post-screen-voice": [
+    "gelecek",
+    "ses",
+    "transkript",
+  ],
   /* <<< apply-fragments:keywords <<< */
 
 };

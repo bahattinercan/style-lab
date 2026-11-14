@@ -1,0 +1,15 @@
+/* 180 · Support Inbox — token bloğu (kaynak: styles/180-support-inbox/tokens.json) */
+
+[data-style="support-inbox"] {
+  --bg: #fbf9f6; --bg-2: #f2eee8;
+  --surface: #ffffff; --surface-2: #f7f3ee;
+  --ink: #1b1815; --ink-soft: #54504a; --ink-faint: #857f76;
+  --accent: #8a5b12; --accent-ink: #fffaf2;
+  --line: rgba(27,24,21,.12);
+  --radius: 8px; --radius-lg: 10px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.005em; --blur: 0px; --grain: 0;
+}

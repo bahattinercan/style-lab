@@ -1,0 +1,15 @@
+/* 159 · Card TCG — token bloğu (kaynak: styles/159-game-card-tcg/tokens.json) */
+
+[data-style="game-card-tcg"] {
+  --bg: #171313; --bg-2: #1d1918;
+  --surface: #241f1d; --surface-2: #2e2825;
+  --ink: #f4e9dc; --ink-soft: #c0ae9c; --ink-faint: #93847a;
+  --accent: #e0463c; --accent-ink: #1c0805;
+  --line: rgba(244,233,220,.16);
+  --radius: 4px; --radius-lg: 10px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif;
+  --font-body: "Lora", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
+}

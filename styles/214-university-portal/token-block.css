@@ -1,0 +1,15 @@
+/* 214 · University Portal — token bloğu (kaynak: styles/214-university-portal/tokens.json) */
+
+[data-style="university-portal"] {
+  --bg: #f8f9fb; --bg-2: #e9edf3;
+  --surface: #ffffff; --surface-2: #f2f5f9;
+  --ink: #111721; --ink-soft: #454f5d; --ink-faint: #77828f;
+  --accent: #1a3a6b; --accent-ink: #f7faff;
+  --line: rgba(17,23,33,.13);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

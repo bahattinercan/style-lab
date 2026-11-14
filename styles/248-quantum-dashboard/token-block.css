@@ -1,0 +1,15 @@
+/* 248 · Quantum Dashboard — token bloğu (kaynak: styles/248-quantum-dashboard/tokens.json) */
+
+[data-style="quantum-dashboard"] {
+  --bg: #0a0a16; --bg-2: #0f0f1f;
+  --surface: #141428; --surface-2: #1d1d36;
+  --ink: #eae9fa; --ink-soft: #a9a6c9; --ink-faint: #7f7ca0;
+  --accent: #c9a94a; --accent-ink: #151003;
+  --line: rgba(234,233,250,.15);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Michroma", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+}

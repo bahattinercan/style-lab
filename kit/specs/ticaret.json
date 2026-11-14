@@ -1,0 +1,872 @@
+[
+  {
+    "num": "182",
+    "slug": "grocery-delivery",
+    "name": "Grocery Delivery",
+    "band": "ticaret",
+    "tagline": "Market teslimat vitrini: yeşil fiyat accent, ürün ızgarası ve mono sepet özetiyle hızlı alışveriş.",
+    "feeling": "taze, hızlı, \"bu akşam kapında\"",
+    "best": "market/teslimat, hızlı tüketim, sepet akışı",
+    "avoid": "lüks butik, koyu gece teması",
+    "palette": {
+      "bg": "#fbfdf9",
+      "bg2": "#eef6ea",
+      "surface": "#ffffff",
+      "surface2": "#f4faf1",
+      "ink": "#16201a",
+      "inkSoft": "#4a5b4f",
+      "inkFaint": "#7b8d80",
+      "accent": "#1f7a3d",
+      "accentInk": "#f4fdf6",
+      "line": "rgba(22,32,26,.12)"
+    },
+    "fonts": [
+      "Poppins",
+      "Nunito",
+      "Space Mono"
+    ],
+    "radius": [
+      "10px",
+      "14px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Yeşil fiyat accent:** fiyat ve stok; indirim kırmızısı yok.",
+      "**Ürün ızgarası:** 3 kolon, 1:1 görsel, 12px padding.",
+      "**Mono sepet:** satır 44px, adet stepper, ara toplam sağa hizalı.",
+      "**Taze palet:** açık zemin, tek accent."
+    ],
+    "must": [
+      "Fiyatlar tabular ve sağa hizalı; birim fiyat ayrı satır.",
+      "Sepet toplamı her zaman görünür.",
+      "Dokunma hedefi ≥ 44px."
+    ],
+    "mustNot": [
+      "Kırmızı indirim patlaması.",
+      "Otomatik oynayan ürün videosu.",
+      "Sekiz renkli kategori paleti."
+    ],
+    "neighbors": {
+      "compatible": [
+        "farmers-market",
+        "pharmacy-store"
+      ],
+      "forbidden": [
+        "noir-estate",
+        "game-horror-occult"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Poppins (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Poppins",
+        "use": "başlık ailesi"
+      },
+      {
+        "label": "Online grocer (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Online_grocer",
+        "use": "sepet/teslimat akışı"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "fiyat ve toplam"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "market",
+      "teslimat"
+    ],
+    "industries": [
+      "eticaret",
+      "gida"
+    ],
+    "essence": "Grocery Delivery, fiyat ve sepete giden yolu kısaltır: ürün kartı tek bakışta okunur, toplam hep görünür.",
+    "brief": "Market teslimat vitrini tasarla: açık zemin, yeşil fiyat accent, 3 kolon ürün ızgarası, mono sepet özeti.",
+    "extraCss": "h1 { font-size: 40px; max-width: 22ch; }\n.pg-card { border-radius: 14px; }\n.pg-chart i { border-radius: 6px 6px 0 0; }"
+  },
+  {
+    "num": "183",
+    "slug": "marketplace-multi",
+    "name": "Marketplace Multi",
+    "band": "ticaret",
+    "tagline": "Çok satıcılı pazar yeri: gri filtre rayı, satıcı etiketi ve yıldız yerine metin puanlama.",
+    "feeling": "geniş, karşılaştırmalı, \"hangi satıcı\"",
+    "best": "pazar yeri, listeleme, karşılaştırma",
+    "avoid": "tek markalı lüks vitrin",
+    "palette": {
+      "bg": "#f7f8fa",
+      "bg2": "#eceef2",
+      "surface": "#ffffff",
+      "surface2": "#f2f4f7",
+      "ink": "#141821",
+      "inkSoft": "#4a515e",
+      "inkFaint": "#7c8492",
+      "accent": "#1f4fa8",
+      "accentInk": "#f6f9ff",
+      "line": "rgba(20,24,33,.12)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "6px",
+      "10px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Filtre rayı:** 240px, bölüm başlıkları mono.",
+      "**Satıcı etiketi:** her kartta satıcı adı + puan metni.",
+      "**Karşılaştırma:** seçili kartlarda sol 2px accent.",
+      "**Nötr arayüz:** ürün görseli rengi taşır, arayüz taşımaz."
+    ],
+    "must": [
+      "Her kartta satıcı ve puan metinle yazılır.",
+      "Filtre sayısı görünür; sıfırlama tek tık.",
+      "Fiyat tabular."
+    ],
+    "mustNot": [
+      "Yıldız ikonları tek başına anlam.",
+      "On iki filtre chip'i tek satırda.",
+      "Reklam kartıyla organik kart ayrımsız."
+    ],
+    "neighbors": {
+      "compatible": [
+        "product-catalog",
+        "electronics-spec"
+      ],
+      "forbidden": [
+        "lookbook-editorial",
+        "noir-estate"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Online marketplace (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Online_marketplace",
+        "use": "çok satıcı modeli"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      },
+      {
+        "label": "MDN · CSS Grid",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
+        "use": "listeleme ızgarası"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "pazar yeri",
+      "filtre"
+    ],
+    "industries": [
+      "eticaret"
+    ],
+    "essence": "Marketplace Multi, karşılaştırmayı kolaylaştırır: aynı bilgi alanları her kartta aynı yerde durur.",
+    "brief": "Pazar yeri listeleme sayfası tasarla: gri filtre rayı, satıcı etiketli kartlar, mono fiyat, nötr arayüz.",
+    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-table td { font-size: 12px; }"
+  },
+  {
+    "num": "184",
+    "slug": "luxury-atelier",
+    "name": "Luxury Atelier",
+    "band": "ticaret",
+    "tagline": "Atölye lüksü: kemik zemin, bronz accent, geniş boşluk ve tek ürün odaklı sütun.",
+    "feeling": "sessiz lüks, \"tek parça\"",
+    "best": "atölye/butik marka, sınırlı koleksiyon",
+    "avoid": "indirim odaklı pazar yeri",
+    "palette": {
+      "bg": "#f6f2ea",
+      "bg2": "#efe9dd",
+      "surface": "#fffdf9",
+      "surface2": "#f5f0e6",
+      "ink": "#1c1812",
+      "inkSoft": "#574f43",
+      "inkFaint": "#8b8171",
+      "accent": "#6b4a1f",
+      "accentInk": "#fdf9f2",
+      "line": "rgba(28,24,18,.14)"
+    },
+    "fonts": [
+      "Cormorant Garamond",
+      "Jost",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "paper",
+    "grain": 0.02,
+    "signature": [
+      "**Tek ürün:** bölüm başına bir nesne, geniş çevre boşluğu.",
+      "**Bronz accent:** yalnız fiyat ve eylem.",
+      "**Serif ince:** Cormorant 56px/300, harf aralığı geniş.",
+      "**Kenar yok:** kart çerçevesi yerine boşluk."
+    ],
+    "must": [
+      "Bölüm başına tek ana görsel.",
+      "Fiyat mono değil; serif + tabular.",
+      "Kenar çizgisi ve gölge kullanılmaz."
+    ],
+    "mustNot": [
+      "İndirim etiketi.",
+      "Üç kolonlu ürün ızgarası.",
+      "Yuvarlak köşe."
+    ],
+    "neighbors": {
+      "compatible": [
+        "boutique-hotel",
+        "lookbook-editorial"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "grocery-delivery"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Cormorant Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cormorant+Garamond",
+        "use": "ince display serif"
+      },
+      {
+        "label": "Luxury goods (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Luxury_goods",
+        "use": "konumlandırma dili"
+      },
+      {
+        "label": "Jost (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Jost",
+        "use": "gövde ailesi"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "lüks",
+      "atölye"
+    ],
+    "industries": [
+      "eticaret",
+      "moda"
+    ],
+    "essence": "Luxury Atelier, az sayıda nesneyi büyük boşlukla sunar; fiyat utangaç değil ama bağırmaz.",
+    "brief": "Atölye lüks vitrini tasarla: kemik zemin, ince serif başlık, tek ürün, bronz accent yalnız fiyat ve eylem.",
+    "extraCss": "h1 { font-size: 58px; font-weight: 300; line-height: 1.02; max-width: 20ch; }\nh2 { font-size: 32px; font-weight: 400; }\n.pg-card, .pg-media { border-radius: 0; box-shadow: none; }\n.pg-sec { padding: 42px 56px; }"
+  },
+  {
+    "num": "185",
+    "slug": "subscription-box",
+    "name": "Subscription Box",
+    "band": "ticaret",
+    "tagline": "Kutu aboneliği: üç plan kartı, aylık vurgu ve mono kargo takvimi.",
+    "feeling": "meraklı, düzenli, \"her ay bir kutu\"",
+    "best": "abonelik kutusu, üyelik planı, kargo takvimi",
+    "avoid": "tek seferlik lüks parça",
+    "palette": {
+      "bg": "#fdf8f4",
+      "bg2": "#f7ece4",
+      "surface": "#ffffff",
+      "surface2": "#fbf1ea",
+      "ink": "#1f1815",
+      "inkSoft": "#57463e",
+      "inkFaint": "#8b776d",
+      "accent": "#a83c1f",
+      "accentInk": "#fff7f3",
+      "line": "rgba(31,24,21,.12)"
+    },
+    "fonts": [
+      "Fraunces",
+      "Nunito",
+      "Space Mono"
+    ],
+    "radius": [
+      "12px",
+      "16px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Plan kartı:** üç kolon, orta kart accent kenar.",
+      "**Aylık vurgu:** fiyat 30px, dönem mono.",
+      "**Kargo takvimi:** 4 duraklı yatay çizgi.",
+      "**Sıcak zemin:** kâğıt tonu, tek accent."
+    ],
+    "must": [
+      "Fiyat ve dönem birlikte yazılır; sonraki ödeme tarihi görünür.",
+      "İptal koşulu tek satır, açık dilde.",
+      "Plan farkları tablo ile karşılaştırılır."
+    ],
+    "mustNot": [
+      "Karanlık desen (gizli iptal).",
+      "Animasyonlu geri sayım.",
+      "Beş plan kartı."
+    ],
+    "neighbors": {
+      "compatible": [
+        "grocery-delivery",
+        "wine-cellar"
+      ],
+      "forbidden": [
+        "access-audit",
+        "terminal-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Subscription business model (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Subscription_business_model",
+        "use": "plan/iptal akışı"
+      },
+      {
+        "label": "Fraunces (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Fraunces",
+        "use": "başlık serif"
+      },
+      {
+        "label": "Nunito (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Nunito",
+        "use": "gövde ailesi"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "abonelik",
+      "plan"
+    ],
+    "industries": [
+      "eticaret"
+    ],
+    "essence": "Subscription Box, üyeliği şeffaf kurar: ne gelir, ne zaman gelir, ne zaman ödenir.",
+    "brief": "Kutu aboneliği sayfası tasarla: üç plan kartı, aylık fiyat vurgusu, mono kargo takvimi, açık iptal koşulu.",
+    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-trio .pg-card:nth-child(2) { border-color: var(--accent); }"
+  },
+  {
+    "num": "186",
+    "slug": "sneaker-drop",
+    "name": "Sneaker Drop",
+    "band": "ticaret",
+    "tagline": "Sınırlı sürüm ayakkabı vitrini: siyah zemin, sarı accent, geri sayım yerine sabit tarih ve mono numara.",
+    "feeling": "acil, kültürel, \"sıra sende\"",
+    "best": "sneaker/streetwear drop, sınırlı sürüm, hype ürün",
+    "avoid": "kurumsal katalog",
+    "palette": {
+      "bg": "#0d0d0f",
+      "bg2": "#121215",
+      "surface": "#17171b",
+      "surface2": "#202027",
+      "ink": "#f2f2f5",
+      "inkSoft": "#adaeb8",
+      "inkFaint": "#81828d",
+      "accent": "#ffd23f",
+      "accentInk": "#141003",
+      "line": "rgba(242,242,245,.14)"
+    },
+    "fonts": [
+      "Archivo Black",
+      "Inter",
+      "JetBrains Mono"
+    ],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "bars",
+    "upper": true,
+    "signature": [
+      "**Sabit tarih:** geri sayım yok; saat ve tarih mono yazılır.",
+      "**Sarı accent:** yalnız drop etiketi ve CTA.",
+      "**Ürün numarası:** stil kodu mono, sağ üstte.",
+      "**Keskin köşe:** 0–2px."
+    ],
+    "must": [
+      "Tarih ve saat net, mono; saat dilimi yazılır.",
+      "Stok adedi metinle belirtilir.",
+      "Boyut seçimi 44px hedef."
+    ],
+    "mustNot": [
+      "Animasyonlu geri sayım.",
+      "Stok yokken aktif görünen buton.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "sports-energy",
+        "electronics-spec"
+      ],
+      "forbidden": [
+        "boutique-hotel",
+        "japandi"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Sneaker culture (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Sneaker_collecting",
+        "use": "drop kültürü"
+      },
+      {
+        "label": "Archivo Black (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Archivo+Black",
+        "use": "kalın başlık"
+      },
+      {
+        "label": "JetBrains Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/JetBrains+Mono",
+        "use": "stil kodu ve tarih"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "sneaker",
+      "drop"
+    ],
+    "industries": [
+      "eticaret",
+      "moda"
+    ],
+    "essence": "Sneaker Drop, aciliyeti animasyonla değil bilgiyle kurar: tarih, saat, adet ve boyut net.",
+    "brief": "Sınırlı sürüm ayakkabı sayfası tasarla: siyah zemin, sarı accent drop etiketinde, sabit tarih mono, keskin köşe.",
+    "extraCss": "h1 { font-size: 50px; line-height: .98; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }"
+  },
+  {
+    "num": "187",
+    "slug": "wine-cellar",
+    "name": "Wine Cellar",
+    "band": "ticaret",
+    "tagline": "Şarap mahzeni kataloğu: bordo zemin, pirinç accent, yıl-etiket tabloları ve serif künye.",
+    "feeling": "olgun, koleksiyon, \"yıl ve bağ\"",
+    "best": "şarap/spirituoz kataloğu, mahzen, tadım notu",
+    "avoid": "hızlı tüketim kampanyası",
+    "palette": {
+      "bg": "#1a1013",
+      "bg2": "#20141a",
+      "surface": "#261821",
+      "surface2": "#30202a",
+      "ink": "#f2e8e6",
+      "inkSoft": "#c2aaa6",
+      "inkFaint": "#947f7c",
+      "accent": "#c9a227",
+      "accentInk": "#150f02",
+      "line": "rgba(242,232,230,.15)"
+    },
+    "fonts": [
+      "Cinzel",
+      "Lora",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "2px",
+      "6px"
+    ],
+    "motif": "paper",
+    "signature": [
+      "**Yıl vurgusu:** her satırda yıl mono ve sağa hizalı.",
+      "**Pirinç accent:** yalnız seçili künye ve fiyat.",
+      "**Serif künye:** Lora 15px/1.65, bağ adı büyük harf.",
+      "**Mahzen tonu:** bordo zemin, sıcak metin."
+    ],
+    "must": [
+      "Yıl, bağ ve bölge her satırda yazılır.",
+      "Fiyat tabular; koli adedi ayrı sütun.",
+      "Tadım notu 2 satırla sınırlı."
+    ],
+    "mustNot": [
+      "Neon etiket.",
+      "Beş renkli üzüm paleti.",
+      "Yuvarlak 12px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "noir-estate",
+        "grand-tourer-oxblood"
+      ],
+      "forbidden": [
+        "kids-playground",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Wine (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Wine",
+        "use": "künye alanları"
+      },
+      {
+        "label": "Cinzel (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cinzel",
+        "use": "etiket başlığı"
+      },
+      {
+        "label": "Lora (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Lora",
+        "use": "gövde serif"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "şarap",
+      "koleksiyon"
+    ],
+    "industries": [
+      "eticaret",
+      "gida"
+    ],
+    "essence": "Wine Cellar, bir etiketi okutur: yıl, bağ, bölge ve fiyat; gerisi süs.",
+    "brief": "Şarap kataloğu sayfası tasarla: bordo zemin, serif künye, mono yıl sütunu, pirinç accent yalnız seçimde.",
+    "extraCss": "h1 { font-size: 46px; letter-spacing: .03em; max-width: 22ch; }\nh2 { font-size: 26px; }\n.pg-table td { font-size: 12.5px; }"
+  },
+  {
+    "num": "188",
+    "slug": "furniture-studio",
+    "name": "Furniture Studio",
+    "band": "ticaret",
+    "tagline": "Mobilya stüdyosu: sıcak meşe paleti, geniş ürün fotoğrafı, ölçü tablosu ve sade fiyat satırı.",
+    "feeling": "sakin, dokunsal, \"ölçüp alacağım\"",
+    "best": "mobilya/dekorasyon, ürün detayı, ölçü seçimi",
+    "avoid": "hype drop, koyu gece teması",
+    "palette": {
+      "bg": "#faf6f0",
+      "bg2": "#f1e9dd",
+      "surface": "#ffffff",
+      "surface2": "#f7f1e8",
+      "ink": "#1d1811",
+      "inkSoft": "#544b40",
+      "inkFaint": "#867b6d",
+      "accent": "#7a4b22",
+      "accentInk": "#fdf8f2",
+      "line": "rgba(29,24,17,.13)"
+    },
+    "fonts": [
+      "Jost",
+      "Jost",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Ölçü tablosu:** genişlik/derinlik/yükseklik mm, mono.",
+      "**Meşe accent:** yalnız seçili varyant ve fiyat.",
+      "**Geniş fotoğraf:** ürün 4:3, gölge yumuşak.",
+      "**Sade fiyat:** tek satır, kdv notu mono."
+    ],
+    "must": [
+      "Ölçüler mm ve mono; kumaş/renk varyantı ayrı satır.",
+      "Teslim süresi metinle yazılır.",
+      "Fotoğraf oranı 4:3, kırpma tutarlı."
+    ],
+    "mustNot": [
+      "Animasyonlu 360° döndürme.",
+      "On iki varyant chip'i.",
+      "Yuvarlak 20px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "japandi",
+        "boutique-hotel"
+      ],
+      "forbidden": [
+        "cyberpunk",
+        "game-racing-neon"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Furniture (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Furniture",
+        "use": "ölçü/varyant alanları"
+      },
+      {
+        "label": "Jost (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Jost",
+        "use": "başlık ve gövde"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "ölçü ve fiyat notu"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "mobilya",
+      "ölçü"
+    ],
+    "industries": [
+      "eticaret",
+      "dekorasyon"
+    ],
+    "essence": "Furniture Studio, satın alma kararını ölçüyle destekler: fotoğraf büyük, sayılar net.",
+    "brief": "Mobilya ürün detayı tasarla: sıcak zemin, geniş 4:3 fotoğraf, mono ölçü tablosu, tek accent fiyat.",
+    "extraCss": "h1 { font-size: 44px; max-width: 24ch; }\n.pg-media { aspect-ratio: 4 / 3; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+  },
+  {
+    "num": "189",
+    "slug": "electronics-spec",
+    "name": "Electronics Spec",
+    "band": "ticaret",
+    "tagline": "Elektronik ürün sayfası: teknik tablo, mavi accent, karşılaştırma satırı ve mono birimler.",
+    "feeling": "teknik, güvenilir, \"karşılaştır ve al\"",
+    "best": "elektronik/teknik ürün, spec tablosu, karşılaştırma",
+    "avoid": "duygusal lüks vitrin",
+    "palette": {
+      "bg": "#f8fafc",
+      "bg2": "#eef2f7",
+      "surface": "#ffffff",
+      "surface2": "#f3f6fa",
+      "ink": "#12161c",
+      "inkSoft": "#48515d",
+      "inkFaint": "#7a8492",
+      "accent": "#1a4fa0",
+      "accentInk": "#f6f9ff",
+      "line": "rgba(18,22,28,.12)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "IBM Plex Mono"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Spec tablosu:** iki kolon (etiket/değer), 36px satır.",
+      "**Mavi accent:** yalnız seçili model ve CTA.",
+      "**Karşılaştırma:** 3 kolon, fark satırı vurgulu.",
+      "**Mono birim:** tüm birimler mono ve küçük harf."
+    ],
+    "must": [
+      "Her spec değerinde birim yazılır.",
+      "Karşılaştırmada fark satırı işaretlenir.",
+      "Fiyat ve stok ayrı satır."
+    ],
+    "mustNot": [
+      "Süslü render görseli.",
+      "Tablo içinde 3'ten fazla renk.",
+      "Gizli kargo maliyeti."
+    ],
+    "neighbors": {
+      "compatible": [
+        "marketplace-multi",
+        "blueprint-drawing"
+      ],
+      "forbidden": [
+        "lookbook-editorial",
+        "boutique-hotel"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      },
+      {
+        "label": "MDN · CSS Grid",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
+        "use": "spec/karşılaştırma yerleşimi"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "birim ve değer"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "elektronik",
+      "spec"
+    ],
+    "industries": [
+      "eticaret",
+      "teknoloji"
+    ],
+    "essence": "Electronics Spec, teknik kararı kolaylaştırır: aynı satırda aynı ölçü, aynı birim, aynı sıra.",
+    "brief": "Elektronik ürün sayfası tasarla: açık zemin, iki kolon spec tablosu, mono birimler, mavi accent yalnız seçimde.",
+    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }\n.pg-table td:first-child { color: var(--ink-soft); }\n.pg-table td:last-child { font-family: var(--font-mono); }"
+  },
+  {
+    "num": "190",
+    "slug": "pharmacy-store",
+    "name": "Pharmacy Store",
+    "band": "ticaret",
+    "tagline": "Eczane vitrini: beyaz-mavi zemin, yeşil reçete accent, açık doz bilgisi ve güven satırları.",
+    "feeling": "güvenli, temiz, \"doğru bilgi\"",
+    "best": "eczane, sağlık ürünü, reçete/danışmanlık",
+    "avoid": "hype kampanya, koyu tema",
+    "palette": {
+      "bg": "#f9fbfd",
+      "bg2": "#eef4f9",
+      "surface": "#ffffff",
+      "surface2": "#f3f8fc",
+      "ink": "#111820",
+      "inkSoft": "#46525f",
+      "inkFaint": "#78848f",
+      "accent": "#0f6b4a",
+      "accentInk": "#f4fdf8",
+      "line": "rgba(17,24,32,.12)"
+    },
+    "fonts": [
+      "Inter",
+      "Inter",
+      "Space Mono"
+    ],
+    "radius": [
+      "8px",
+      "12px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Reçete accent:** yeşil yalnız reçeteli ürün ve eylem.",
+      "**Doz bilgisi:** kutu altında mono 12px.",
+      "**Güven şeridi:** 3 madde, ikon + metin.",
+      "**Temiz ızgara:** 3 kolon, 1:1 görsel."
+    ],
+    "must": [
+      "Doz/kullanım bilgisi her ürün kartında.",
+      "Reçeteli ürün işareti metinle belirtilir.",
+      "Fiyat ve KDV ayrı satır."
+    ],
+    "mustNot": [
+      "Sağlık iddiası veren görsel.",
+      "Kırmızı indirim etiketi.",
+      "Animasyonlu banner."
+    ],
+    "neighbors": {
+      "compatible": [
+        "grocery-delivery",
+        "luxury-atelier"
+      ],
+      "forbidden": [
+        "game-horror-occult",
+        "synthwave"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Pharmacy (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Pharmacy",
+        "use": "reçete/danışmanlık dili"
+      },
+      {
+        "label": "Inter (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "use": "gövde ailesi"
+      },
+      {
+        "label": "WCAG 2.2",
+        "url": "https://www.w3.org/TR/WCAG22/",
+        "use": "erişilebilirlik ölçütleri"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "eczane",
+      "sağlık"
+    ],
+    "industries": [
+      "saglik",
+      "eticaret"
+    ],
+    "essence": "Pharmacy Store, ürünü değil bilgiyi öne çıkarır: doz, kullanım ve reçete durumu her kartta.",
+    "brief": "Eczane vitrini tasarla: açık zemin, yeşil yalnız reçeteli üründe, mono doz bilgisi, güven şeridi.",
+    "extraCss": "h1 { font-size: 40px; max-width: 24ch; }\n.pg-card { border-radius: 12px; }"
+  },
+  {
+    "num": "191",
+    "slug": "farmers-market",
+    "name": "Farmers Market",
+    "band": "ticaret",
+    "tagline": "Üretici pazarı: toprak tonları, el yazısı etiket yerine serif, sezon takvimi ve üretici künyesi.",
+    "feeling": "yerel, mevsimlik, \"bugün ne var\"",
+    "best": "üretici pazarı, çiftlik kutusu, sezon takvimi",
+    "avoid": "kurumsal market zinciri",
+    "palette": {
+      "bg": "#f8f5ee",
+      "bg2": "#efe9dc",
+      "surface": "#fffdf7",
+      "surface2": "#f5efe3",
+      "ink": "#1e1a13",
+      "inkSoft": "#524a3c",
+      "inkFaint": "#857a68",
+      "accent": "#5f6b1f",
+      "accentInk": "#fbfdf2",
+      "line": "rgba(30,26,19,.14)"
+    },
+    "fonts": [
+      "Fraunces",
+      "Lora",
+      "Courier Prime"
+    ],
+    "radius": [
+      "4px",
+      "8px"
+    ],
+    "motif": "paper",
+    "signature": [
+      "**Sezon takvimi:** 12 hücreli mono ızgara, aktif ay accent.",
+      "**Üretici künyesi:** Lora 14px, çiftlik adı büyük.",
+      "**Toprak paleti:** yeşil-kahve, pastel yok.",
+      "**Kâğıt kenarı:** 1px, 4px köşe."
+    ],
+    "must": [
+      "Her üründe üretici adı ve bölge.",
+      "Mevsim dışı ürün işaretlenir.",
+      "Fiyatlar birimle (kg/adet)."
+    ],
+    "mustNot": [
+      "El yazısı font yığını.",
+      "Yıl boyu aynı ürün listesi.",
+      "Parlak doygun renk."
+    ],
+    "neighbors": {
+      "compatible": [
+        "grocery-delivery",
+        "nordic-folk"
+      ],
+      "forbidden": [
+        "terminal-ui",
+        "cyberpunk"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Farmers' market (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Farmers%27_market",
+        "use": "üretici/sezon modeli"
+      },
+      {
+        "label": "Fraunces (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Fraunces",
+        "use": "başlık serif"
+      },
+      {
+        "label": "Lora (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Lora",
+        "use": "gövde serif"
+      }
+    ],
+    "keywords": [
+      "ticaret",
+      "yerel",
+      "sezon"
+    ],
+    "industries": [
+      "gida",
+      "eticaret"
+    ],
+    "essence": "Farmers Market, mevsimi bir takvim gibi gösterir: hangi ürün ne zaman ve kimden.",
+    "brief": "Üretici pazarı sayfası tasarla: toprak tonları, serif başlık, sezon takvimi ızgarası, üretici künyesi.",
+    "extraCss": "h1 { font-size: 44px; max-width: 22ch; }\nh2 { font-size: 26px; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }"
+  }
+]

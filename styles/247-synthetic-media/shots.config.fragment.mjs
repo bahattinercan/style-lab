@@ -1,0 +1,20 @@
+/**
+ * 247 · Synthetic Media — render imzası.
+ * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
+ */
+export const CONFIG = {
+  motif: 'dots',
+  bodyClass: '',
+  extraCss: `
+h1 { font-size: 54px; max-width: 22ch; }
+.panel, .pg-card { border-radius: 6px; }
+.pg-media { border-radius: 6px; }
+.btn { border-radius: 4px; letter-spacing: .04em; }
+.field { border-radius: 4px; font-family: var(--font-mono); font-size: 13px; }
+.chip { border-radius: 3px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .12em; }
+.pg-cap { letter-spacing: .22em; }
+.pg-band { background: color-mix(in srgb, var(--accent) 6%, var(--bg-2)); }
+h1 { font-size: 40px; max-width: 24ch; }
+.pg-card { border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); }
+  `,
+};

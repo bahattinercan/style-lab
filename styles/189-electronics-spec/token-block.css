@@ -1,0 +1,15 @@
+/* 189 · Electronics Spec — token bloğu (kaynak: styles/189-electronics-spec/tokens.json) */
+
+[data-style="electronics-spec"] {
+  --bg: #f8fafc; --bg-2: #eef2f7;
+  --surface: #ffffff; --surface-2: #f3f6fa;
+  --ink: #12161c; --ink-soft: #48515d; --ink-faint: #7a8492;
+  --accent: #1a4fa0; --accent-ink: #f6f9ff;
+  --line: rgba(18,22,28,.12);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

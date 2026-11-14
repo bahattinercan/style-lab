@@ -1,0 +1,15 @@
+/* 197 · Indie Cinema — token bloğu (kaynak: styles/197-indie-cinema/tokens.json) */
+
+[data-style="indie-cinema"] {
+  --bg: #0e0e0e; --bg-2: #141414;
+  --surface: #1a1a1a; --surface-2: #232323;
+  --ink: #f5f5f3; --ink-soft: #b4b4b0; --ink-faint: #878783;
+  --accent: #f5d648; --accent-ink: #141103;
+  --line: rgba(245,245,243,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

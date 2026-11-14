@@ -1,0 +1,15 @@
+/* 196 · Podcast Network — token bloğu (kaynak: styles/196-podcast-network/tokens.json) */
+
+[data-style="podcast-network"] {
+  --bg: #111114; --bg-2: #16161b;
+  --surface: #1b1b21; --surface-2: #24242c;
+  --ink: #f0eef4; --ink-soft: #b1adbb; --ink-faint: #85818f;
+  --accent: #a37bf5; --accent-ink: #0d0618;
+  --line: rgba(240,238,244,.14);
+  --radius: 8px; --radius-lg: 10px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

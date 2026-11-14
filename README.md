@@ -1,598 +1,225 @@
-# Design Style Library (style-lab)
+# Design Style Library (style-lab) · v6
 
 > **Languages:** [English](README.md) · [Türkçe](README.tr.md)
 > **Repository:** https://github.com/bahattinercan/style-lab
-> **Gates:** `bash kit/gates.sh` (38 steps) · **Install:** `bash kit/install-hooks.sh` (pre-commit gates)
-> **Interactive:** `kit/gallery.html` (search · filter · drawer · shortlist · compare) · `kit/live.html?style=<slug>` · `kit/motion-lab.html`
-> **Catalog index:** [`docs/katalog.md`](docs/katalog.md) (151 styles, 22 families) · **Report:** `kit/dist/report.md` · **Composition:** `kit/dist/composition.md`
+> **Gates:** `bash kit/gates.sh` (27 steps) · **Install hook:** `bash kit/install-hooks.sh`
+> **Interactive:** `kit/gallery.html` (search · filter · drawer · compare) · `kit/live.html?style=<slug>`
+> **Catalog index:** [`docs/katalog.md`](docs/katalog.md) (251 styles, 31 families) · **Report:** `kit/dist/report.md`
 
-A catalog against uniform design: **151 visual styles**, each with **37 scene templates**
-(`kit/shots.manifest.json` scene list), a visual signature, a token set, screen + component
-recipes, a **measurable motion signature**, pitfalls and an **AI brief**.
+A catalog against uniform design: **251 visual styles** in **31 family bands**. Every style ships
+**one single-page mock-up** (1280×2400: nav, hero, three content sections, component grid,
+form + data, CTA, footer), a token set, component recipes, pitfalls and an AI brief.
 
-**Scene policy (v5):** the repo keeps **4 core scenes per style** (`kit/shots.core.json`:
-landing · dashboard · components · dark-landing = **604 PNG, ≈195.2 MiB**). The remaining
-**33 scenes × 151 = 4983** images are generated output and live under `kit/.shots-cache/`
-(gitignored). Single command: `node kit/render/render-shots.mjs --styles <slug>` (full set:
-`--all`). Rationale and measurements: `docs/v5-revizyon-raporu.md` §0.2.
+**v6 scope (deliberate reductions):**
 
-> **Status: v5 catalog.** 151/151 styles on full schema **v3** (composition axis included) · **604/604 core scenes in repo** · **dark mode 151/151, debt 0**
-> · 8 hero × 5 nav × 3 density archetypes; **16 distinct hero|nav fingerprints**, uniformity index **16%** (100% in v4)
-> · 151 distinct motion signatures (0 in-family copies) · verification: `bash kit/gates.sh`
-> · Core PNGs: **604 files, 195.2 MiB** of file data (`du`: 197 MiB disk usage) · `kit/.shots-cache/` holds the generated scenes covered by gitignore.
-> · machine-readable entry: `kit/styles.index.json` (`docsReady: true` = 151) · scene list: `kit/shots.manifest.json`.
+| Kept | Removed |
+|---|---|
+| One long page per style (`01-page.png`) | 37 scene templates (dashboard, mobile, estate, …) |
+| Light palette only | Dark mode (`palette.dark`, dark token block, dark scenes) |
+| Static design (no animation) | Motion system (`motion.*`, motion lab/exports/checks) |
+| CSS · Tailwind · Figma exports | Flutter/React token emitters |
+
+Rationale and measurements: [`docs/v6-sadelestirme-raporu.md`](docs/v6-sadelestirme-raporu.md).
+
+## Status
+
+- 251/251 styles render a single page; **251 PNG, 223 MiB total** (`du -ch styles/*/shots/01-page.png`).
+- 251/251 on schema **v6** (`tokens.json` version 6, no `palette.dark`, no `motion`).
+- 31 family bands, 1–251 contiguous (`kit/families.json`).
+- 16 distinct `hero|nav` fingerprints; largest cluster 36 styles (**14%**), cap 25%.
+- 0 contrast errors (`--strict-soft`), 19 documented soft warnings (decorative `--ink-faint`, low APCA in 3 very-dark palettes).
+- Verification: `bash kit/gates.sh` → last line `kapılar: temiz`.
 
 ## Folder map
 
 ```
 style-lab/
-├── README.md                  # selection guide (English, this file)
-├── README.tr.md               # selection guide (Türkçe)
-├── docs/katalog.md            # family-by-family index of the 151 styles (generated reading list)
-├── docs/animasyon-referanslari.md # award-winning animated sites → pattern mapping + CSS recipes
-├── playbook.md                # breaking uniformity + §6.2 motion signature + §17 dark mode + §18 export
-├── styles/<nn-slug>/
-│   ├── style.md               # schema v3 document (Sections → AI brief → Tokens)
-│   ├── tokens.json            # machine-readable: palette (light+dark), typography, motion signature, recipes
-│   ├── token-block.css        # CSS variable blocks (151/151; single source for apply-fragments)
-│   ├── shots.config.fragment.mjs # motif + signature CSS + scenes.landing (151/151)
-│   ├── keywords.json          # gallery tags (151/151)
-│   └── shots/                 # 27 PNGs (generated; never edited by hand)
+├── README.md / README.tr.md      # this file (bilingual pair)
+├── AGENTS.md                     # binding rules for agents working in this repo
+├── docs/katalog.md               # generated index of 251 styles (build-catalog-doc.mjs)
+├── docs/v6-sadelestirme-raporu.md# v6 decisions + measurements
+├── playbook.md                   # design recipes (typography, spacing, color, a11y)
 ├── kit/
-│   ├── tokens.css             # variable sets for all 151 styles (generated by apply-fragments, not hand-written)
-│   ├── families.json          # 22 family bands (single source: build-gallery + report)
-│   ├── apply-fragments.mjs    # fragment → tokens.css / shots.config.mjs / gallery.data.mjs (idempotent)
-│   ├── styles.index.json      # AI entry point: summary + paths for all 151 styles
-│   ├── lib/tokens.mjs         # color/duration/curve/px/em/% parsers (target-agnostic)
-│   ├── normalize-motion.mjs   # motion prose → dist/motion.json (gate: --check)
-│   ├── export/flutter.mjs     # dist/flutter/style_lab_tokens.dart + pubspec.fonts.yaml (gate: --verify)
-│   ├── fetch-fonts.mjs        # downloads kit/fonts/ttf/*.ttf + INDEX.json (gate: --check)
-│   ├── dist/                  # generated: tokens.all.css · tailwind.theme.css · figma.variables.json · motion.json · flutter/ · report.md · composition.md
-│   ├── check-schema.mjs       # schema v3 + dark mode + three-copy parity (json ⇄ fragment ⇄ css)
-│   ├── assign-layouts.mjs     # assigns a composition archetype to 151 styles (deterministic, gate: --check)
-│   ├── assign-motion.mjs      # assigns motion choreography to 151 styles (pattern axis, --check)
-│   ├── motion-audit.mjs       # dist/motion.md (pattern distribution, archetype×pin, document drift)
-│   ├── check-layout.mjs       # composition variety + archetype liveness + template parity (+ --self-test)
-│   ├── composition-report.mjs # dist/composition.md (uniformity index, per-family variety)
-│   ├── check-contrast.mjs     # WCAG + APCA + focus ring (light + dark blocks)
-│   ├── motion-check.mjs       # motion signature + variety + budget + self-test
-│   ├── export-tokens.mjs      # dist output (--check in the gates)
-│   ├── dark-fill.mjs          # completes half-finished dark palettes by formula (+ --sync)
-│   ├── report.mjs             # dist/report.md (coverage + contrast + debt)
-│   ├── color.mjs              # color parsing + contrast (single source)
-│   ├── build-gallery.mjs      # gallery + index.json generation and verification
-│   ├── gallery.template.mjs   # gallery HTML skeleton + card markup (server side)
-│   ├── gallery.js            # gallery interaction: search/filter/sort/drawer/URL state
-│   ├── gallery.css           # gallery look (neutral chrome, themed demo area)
-│   ├── viewer-nav.js         # shared switch bar for live/section/flow viewers
-│   ├── viewer-lightbox.js    # enlarge section/flow cards: click→open · ←→ browse · 1:1 zoom · Esc
-│   ├── check-gallery-ui.mjs  # gallery usability gate (card, filter, drawer, mobile, URL)
-│   ├── fonts/                 # embedded woff2 (offline render) + ttf/ (Flutter assets, 30 families)
-│   └── render/
-│       ├── layouts.json       # single source of the COMPOSITION AXIS: 8 hero · 5 nav · 3 density · 12 sections
-│       ├── motion/patterns.json # MOTION VOCABULARY: 20 patterns (7 enter · 9 scroll · 3 hover · 1 page) + reduced strategies
-│       ├── motion/policy.json   # forbidden patterns + teachingOnly rationale (lab ↔ production)
-│       ├── partials/          # hero-<id>.html + nav-<id>.html (13 partials; landing templates embed them)
-│       ├── render-shots.mjs   # Chrome/Edge headless (single browser + CDP), 37 scene templates
-│       ├── cdp-browser.mjs    # connection pool: N tabs in parallel, PNG/WebP, animation freezing
-│       ├── shots.core.json    # core scenes kept in the repo (single source)
-│       ├── optimize-shots.mjs # lossless PNG compression (--verify: pixel-identical)
-│       ├── baseline.mjs       # visual regression baseline (--write/--status/--clean)
-│       ├── scene.css          # shared skeleton for scenes (var() only)
-│       └── shots.config.mjs   # per-style signature settings (generated by apply-fragments)
-├── skills/style-lab-catalog/  # agent procedure: SKILL.md + references/{families,workflow}.md
-└── _templates/style-template.md
+│   ├── specs/bands.json          # family band templates (shared prose/CSS)
+│   ├── specs/*.json              # style SPECs → sources (100 v6 styles live here)
+│   ├── add-style.mjs             # spec → 5 sources → assign → render → index (one command)
+│   ├── lib/style-spec.mjs        # generator: tokens.json · token-block.css · style.md · fragment · keywords
+│   ├── apply-fragments.mjs       # sources → kit/tokens.css + shots.config.mjs + gallery.data.mjs
+│   ├── check-schema.mjs          # schema/parity gate
+│   ├── check-contrast.mjs        # WCAG + APCA + focus ring
+│   ├── check-layout.mjs          # composition diversity gate
+│   ├── build-gallery.mjs         # gallery.html + styles.index.json
+│   ├── build-catalog-doc.mjs     # docs/katalog.md
+│   ├── export-tokens.mjs         # dist/tokens.all.css · tailwind.theme.css · figma.variables.json
+│   ├── render/
+│   │   ├── page.html             # THE single page template
+│   │   ├── scene.css             # page skeleton (.pg-*) + component classes
+│   │   ├── partials/             # 8 hero × 5 nav partials
+│   │   ├── render-shots.mjs      # page renderer (CDP, overflow measurement, empty-frame retry)
+│   │   └── optimize-shots.mjs    # PNG quantisation (pixel-preserving)
+│   ├── migrations/v6-*.mjs       # one-shot source migrations (v5 → v6)
+│   └── gates.sh                  # 27-step verification gate
+└── styles/<nn-slug>/
+    ├── style.md                  # document (≥18 sections + AI brief)
+    ├── tokens.json               # machine source (palette, typography, shape, spacing, components, refs)
+    ├── token-block.css           # CSS variable block (source for apply-fragments)
+    ├── shots.config.fragment.mjs # scene signature (motif + signature CSS)
+    ├── keywords.json             # 3 gallery tags
+    └── shots/01-page.png         # 1280×2400 single page (generated, never hand-edited)
 ```
 
 ## Pick in 10 seconds
 
-| Need | Style |
+| Need | Start with |
 |---|---|
-| Focus, speed, data-dense panel | `01 minimalism`, `02 swiss-design`, `46 telemetry-grid`, `47 trading-desk` |
-| Content/magazine/blog | `03 editorial-design`, `86 poetry-chapbook`, `87 zine-collage` |
-| Premium, expensive feel | `04 luxury-typography`, `26 art-deco`, `41 grand-tourer`, `128 brass-copper` |
-| Luxury real-estate showcase | `42 grand-tourer-oxblood` + `22–27` real-estate scenes |
-| Dashboard layout | `05 bento-grid`, `48 executive-kpi`, `109 kanban-flow` |
-| Calm, sustainable | `06 japandi`, `07 wabi-sabi`, `78 biophilic-botanical` |
-| Layer over media | `08 glassmorphism`, `09 liquid-glass`, `98 generative-grid` |
-| Playful, kids/wellness | `11 claymorphism`, `18 dopamine-ui`, `116 kids-playground` |
-| Bold, indie | `13 neo-brutalism`, `14 anti-design`, `15 acid-graphics` |
-| Nostalgia, games, music | `19 y2k`, `21 synthwave`, `119 arcade-8bit`, `124 album-sleeve` |
-| Technical, terminal, hacker | `22 cyberpunk`, `23 cybercore`, `45 terminal-ui` |
-| Keyboard-first, dev tool | `45 terminal-ui`, `108 command-palette`, `115 keyboard-first` |
-| Agent/automation product | `137 agent-orchestration`, `113 notebook-repl`, `112 zero-ui` |
-| Academic, archive, book | `33 dark-academia`, `27 victorian`, `89 library-index` |
-| Material/luxe texture | `126 marble-vein`, `127 silk-drape`, `130 leather-craft`, `135 enamel-porcelain` |
-| Experimental, speculative future | `136 speculative-scifi`, `140 nanotech`, `145 zero-gravity` |
+| Calm product UI | 01 minimalism · 02 swiss-design · 06 japandi · 168 game-puzzle-light |
+| Maximum character | 13 neo-brutalism · 17 maximalism · 166 game-arcade-cabinet · 235 variable-weight |
+| Trust / finance / ops | 172 incident-response · 173 finops-cost · 176 slo-budget · 181 regulatory-report |
+| Retail / commerce | 182 grocery-delivery · 184 luxury-atelier · 187 wine-cellar · 189 electronics-spec |
+| Games | 152 game-hud · 155 game-sci-fi-cockpit · 159 game-card-tcg · 165 game-sim-builder |
+| Culture / editorial | 192 museum-exhibition · 194 film-festival · 232 condensed-news · 236 justified-book |
+| Materials / craft | 222 terrazzo-stone · 223 linocut-print · 227 cast-concrete · 230 raw-steel |
+| Future / research | 242 agent-console · 245 climate-model · 248 quantum-dashboard · 250 neural-canvas |
 
-Full list (slug + one-liner + tags): [`docs/katalog.md`](docs/katalog.md).
+Full list with one-line identities: [`docs/katalog.md`](docs/katalog.md).
 
-## Family bands (21)
+## Family bands (31)
 
-Single source `kit/families.json`; 1–151 uninterrupted. `tokens.json → motion.family` names the sub-band on some styles.
-
-| Band | Family | Styles | Typical use |
+| Band | Range | Band | Range |
 |---|---|---|---|
-| 01–07 | Plain | 7 | product UI, documentation, reading |
-| 08–12 | Surface | 5 | layering, glass, glow, soft controls |
-| 13–18 | Bold | 6 | indie brand, event, campaign |
-| 19–27 | Retro | 9 | nostalgia, games, culture |
-| 28–34 | Artistic | 7 | art, personal, experimental showcase |
-| 35–36 | Geometric | 2 | culture/agency showcase |
-| 37 | Typographic | 1 | typography-led poster/landing |
-| 38 | Organic | 1 | nature/product story |
-| 39–40 | New Wave | 2 | AI product, mesh/gradient showcase |
-| 41–44 | Timeless | 4 | premium, corporate, luxury real estate |
-| 45 | Technical | 1 | TUI, CI panel, logs |
-| 46–55 | Data & Instrument | 10 | telemetry, finance, KPI, logs, IoT |
-| 56–65 | Industrial | 10 | blueprint, MES, field, cockpit |
-| 66–75 | Cultural & Regional | 10 | regional heritage, pattern, craft |
-| 76–85 | Nature & Organic | 10 | biophilic, weather, terrain, sea |
-| 86–95 | Publishing & Typography | 10 | book, newspaper, catalog, fanzine |
-| 96–105 | Motion & Optics | 10 | kinetic, illusion, generative, holographic |
-| 106–115 | Interaction | 10 | voice, AR, command palette, wizard |
-| 116–125 | Playful | 10 | kids, festival, sticker, arcade |
-| 126–135 | Material & Luxe | 10 | marble, silk, brass, leather, glass |
-| 136–145 | Experimental & Future | 10 | speculative, AI-native, orbital |
-| 146–151 | Stage & Prestige | 6 | cinematic real estate, agency showcase, launch, boutique hotel, lookbook, dark panel |
+| Sade | 1–7 | Endüstriyel | 56–65 |
+| Yüzey | 8–12 | Kültürel & Bölgesel | 66–75 |
+| Cesur | 13–18 | Doğa & Organik | 76–85 |
+| Retro | 19–27 | Yayın & Tipografi | 86–95 |
+| Sanatsal | 28–34 | Hareket & Optik | 96–105 |
+| Geometrik | 35–36 | Etkileşim | 106–115 |
+| Tipografik | 37 | Oyuncul | 116–125 |
+| Organik | 38 | Materyal & Lüks | 126–135 |
+| Yeni Dalga | 39–40 | Deneysel & Gelecek | 136–145 |
+| Zamansız | 41–44 | Sahne & Prestij | 146–151 |
+| Teknik | 45 | **Oyun & Etkileşim** | **152–171** |
+| Veri & Gösterge | 46–55 | **Operasyon & Veri** | **172–181** |
+| **Ticaret & Vitrin** | **182–191** | **Kültür & Yayın** | **192–201** |
+| **Sağlık & Bilim** | **202–211** | **Öğrenme & Oyunlaştırma** | **212–221** |
+| **Materyal & Zanaat** | **222–231** | **Tipografi Denemeleri** | **232–241** |
+| **Gelecek & Spekülatif** | **242–251** | | |
+
+Bold bands are the v6 additions (100 styles). Bands are defined once in `kit/families.json`;
+`apply-fragments`, `build-gallery`, `report` and `build-catalog-doc` all read that file.
 
 ## How to use it
 
-1. **Pick** — by intent take **1 dominant + at most 1 accent** style (`playbook.md` §2). Candidate list: `docs/katalog.md`.
-2. **Look** — `styles/<nn-slug>/shots/01-landing.png`, `02-dashboard.png`, `04-components.png`. If the document contradicts the image, **the image wins**.
-3. **Read** — `style.md` (§ Visual signature, § Required rules, § Forbidden, § Component recipes, § Pitfalls, § AI brief) + `tokens.json`.
-4. **Apply** — take tokens from the `[data-style="<slug>"]` block in `kit/tokens.css` (or the ready-made `kit/dist/tokens.all.css`); dark mode is `[data-theme="dark"]`. No hard-coded color/radius/shadow in component code.
-5. **Set up motion** — `tokens.json → motion.sequences` is that style's signature (see below). `prefers-reduced-motion` is mandatory.
-6. **Verify** — render your own screen with `node kit/render/render-shots.mjs --styles <slug> --force` and compare against the images; in this repo run `bash kit/gates.sh`.
-7. **Compare** — `kit/gallery.html`: pick 2–4 styles with **⇄** on the cards → **Compare** opens the same scene side by side.
-   The **Cover** chips switch every card to the same scene; **dark mode** status shows as a badge in the drawer.
-   Card actions: **⧉** copies `data-style` · **★** adds to the shortlist · **⊕** opens the detail drawer
-   (token CSS, AI brief, all frames, live component). Keyboard: `/` search · `f` filter · `j`/`k` browse ·
-   `Enter` detail · `c` copy · `s` star · `Esc` close. Filters live in the URL (`?fam=&q=&scene=`), so links are shareable.
-8. **See it live** — `kit/live.html?style=<slug>`: masked intro → scroll reveal → pin+scrub → counter → hover;
-   `motion: on/off` shows the reduced-motion counterpart, `❙❙` shows the poster loop.
-9. **Inspect** — `kit/sections.html?style=<slug>` (12 sections) and `kit/flows.html?style=<slug>` (3 flows):
-   click a card → full-screen review; `←`/`→` to browse, click or `z` for 1:1 zoom, `↗ open` in a new tab, `Esc` to close.
+1. Open `kit/gallery.html` (works over `file://`; use a server for URL state/search tests).
+2. Find a style, copy its `data-style` slug.
+3. In your project: `<html data-style="game-hud">` + copy `kit/tokens.css` (or `kit/dist/tokens.all.css`).
+4. Build components with the contract variables only: `--bg --bg-2 --surface --surface-2 --ink
+   --ink-soft --ink-faint --accent --accent-ink --line --radius --radius-lg --shadow --font-* --space-*`.
+5. Verify with `node kit/style-lint.mjs src --style <slug>` (no color/font/radius literals).
 
-## Motion system (per-style signature)
+## Composition axis (schema v6)
 
-Every style carries **one signature** defined by 7 parameters:
-`enter {duration, ease, offsetY, stagger}` · `scroll {trigger, duration, offsetY, once}` · `hover {duration, imageScale}` (+ `pin`).
+Each `tokens.json` carries `layout: { hero, nav, density }` picked from `kit/render/layouts.json`
+(8 heroes × 5 navs × 3 densities). `assign-layouts.mjs` scores slug + family + tags deterministically,
+so adding a style never requires hand-picking a layout.
 
-| Rule | Measure |
-|---|---|
-| In-family variety | Two styles must differ in **≥2 of the 7** parameters (`kit/motion-check.mjs`) |
-| Duration budget | `enter ≤ 1.2s`, `scroll ≤ 1.2s`; `pin.scrub > 1.4` warns |
-| Curve | The style's `motion.easing` is authoritative; CSS defaults (`ease`/`linear`) only as a deliberate choice. **Curve counts are never hand-written**, they are measured from `kit/dist/motion.md` §1 (normalized curves + `steps()`) |
-| reduced-motion | Mandatory; opacity instead of movement |
-| Exemptions | **None.** The rule applies to all 151 styles without exception; `--self-test` proves it is not a no-op |
-
-Status: **151 distinct signatures / 151 styles**, in-family copies **0**. Details: `playbook.md` §6.2.
-
-## Composition axis (schema v3)
-
-Color and typography set two styles apart, but **the same skeleton** does not separate two sites. So every style
-carries a composition archetype under `tokens.json → layout`:
-
-| Axis | Values | Where |
-|---|---|---|
-| `hero` | `split` · `split-reverse` · `centered` · `type` · `fullbleed` · `product` · `index` · `sticky` | `kit/render/partials/hero-<id>.html` |
-| `nav` | `inline` · `pill` · `split` · `utility` · `rail` | `kit/render/partials/nav-<id>.html` |
-| `density` | `sparse` · `balanced` · `dense` | `kit/render/scene.css` (`.density-*`) |
-
-Single source `kit/render/layouts.json` (with a "when" rationale per archetype). Templates carry
-`<!-- HERO -->` / `<!-- NAV -->` placeholders; `render-shots.mjs` embeds the partial matching the style's
-layout. Archetype selectors are qualified with `[data-layout]` / `[data-nav]`, so the **skeleton** wins and the
-style's `extraCss` keeps painting inner elements (card, button, heading color).
-
-| Rule | Measure | Gate |
-|---|---|---|
-| Family variety | if a family has ≥8 styles → **≥3 distinct heroes**, ≥1 distinct fingerprint set | `check-layout.mjs` |
-| Fingerprint ceiling | a single `hero|nav` combination ≤ **25%**, a single hero ≤ **35%** | `check-layout.mjs` |
-| Archetype liveness | every archetype is used by ≥4 styles (no dead archetype) | `check-layout.mjs` |
-| Template parity | `landing.html` ⇄ `dark-landing.html` differ only by `data-theme` | `check-layout.mjs` |
-| Assignment stability | `assign-layouts --check` → identical to the tokens.json proposal | `assign-layouts.mjs` |
-
-Status: **16 distinct hero|nav fingerprints**, uniformity index **16%** (100% in v4), average **2.9** distinct
-heroes per family. Distribution: [`kit/dist/composition.md`](kit/dist/composition.md).
-
-```bash
-node kit/assign-layouts.mjs --dry          # see the proposal (slug+family+tag scoring, deterministic)
-node kit/assign-layouts.mjs --apply        # write into the 151 tokens.json files (schema v3)
-node kit/check-layout.mjs --report         # distribution table
-node kit/composition-report.mjs            # dist/composition.md
-```
-
-Adding an archetype: register it in `layouts.json` → add `partials/<type>-<id>.html` → add a
-`[data-layout='<id>']` block in `scene.css` → add keywords to the `assign-layouts.mjs` dictionary → `--apply` → render.
-
-## Motion vocabulary (schema v4, M1)
-
-The numeric signature (duration/curve/offset) alone does not produce expressive variety: in the v5 measurement
-110/151 styles were only `opacity+transform`, 94/151 scroll was `reveal`, and the busiest fingerprint was 51%.
-So every style now also carries a **pattern**: `tokens.json → motion.choreography`.
-
-| Axis | Patterns (single source `kit/render/motion/patterns.json`) |
-|---|---|
-| `enter` | `fade-rise` · `line-mask` · `clip-curtain` · `blur-in` · `scale-settle` · `letter-stagger` · `split-slide` |
-| `scroll` | `reveal` · `grid-stagger` · `pin-scrub` · `parallax` · `counter` · `mask-wipe` · `stack-pin` · `velocity-skew` · `scroll-zoom` |
-| `hover` | `scale` · `underline-draw` · `tilt-3d` |
-| `page` | `crossfade` (falls back to cross-fade when View Transitions are unavailable) |
-| `reduced` | `opacity` · `instant` · `static-frame` |
-
-| Rule | Measure | Gate |
-|---|---|---|
-| Family variety | if a family has ≥4 styles → **≥3 distinct** `enter` patterns | `motion-check` |
-| Pattern ceiling | a single `enter` pattern ≤ **30%** of styles; every pattern alive in ≥3 styles | `motion-check` |
-| Archetype rule | `sticky ⇒ pin-scrub`, `index ⇒ grid-stagger` | `motion-check` |
-| Family ↔ pattern | `tilt-3d` forbidden in the `Plain` family | `motion-check` |
-| Assignment stability | `assign-motion --check` → identical to the tokens.json proposal | `assign-motion.mjs` |
-| Vocabulary is not a no-op | 6 synthetic violations (missing, undefined id, uniform, dead pattern, archetype, hover) | `motion-check --self-test` |
-| Runtime parity | computed duration ↔ tokens **±20ms/2%**; in reduced mode **0** real animations; p95 frame ≤32ms | `motion-measure` (CDP) |
-| Live preview | `live.html` contains no hard-coded durations, uses `data-motion` + `--mi/--ms/--mh` variables | `motion-check` |
-| Storyboard | 151 strips: 5 frames (0-100%) + a reduced frame, ms-labelled | `motion-strip` |
-| Lab ↔ catalog | every pattern has ≥1 demo, every link resolves | `build-motion-lab --check` |
-
-Status: **20 patterns · 78 distinct motion fingerprints**, busiest 6%, `choreography` coverage 151/151.
-Patterns derived from award-winning site techniques (which site → which style → which CSS):
-[`docs/animasyon-referanslari.md`](docs/animasyon-referanslari.md).
-Distribution: [`kit/dist/motion.md`](kit/dist/motion.md). Policy (patterns forbidden in production):
-[`kit/motion/policy.json`](kit/motion/policy.json) — the lab shows them only with a `teachingOnly` rationale.
-
-```bash
-node kit/assign-motion.mjs --dry | --apply | --check   # deterministic choreography assignment
-node kit/motion-check.mjs --self-test                  # prove the rule set with synthetic violations
-node kit/motion-audit.mjs                              # dist/motion.md (pattern distribution)
-node kit/render/motion-measure.mjs --sample 8          # duration parity + reduced + p95 frame in the browser
-node kit/render/motion-measure.mjs --all               # 151 styles (~2 min)
-node kit/render/motion-strip.mjs --all                # 151 storyboards (kit/.shots-cache/*/27-motion.png, ~80 s)
-```
-
-## Discovery and agent access (P5)
-
-The gallery is now searched by intent: **family · industry · tone · scene** chips plus search (tone is the hue
-bucket of the accent color: warm/cool/green/neutral). Cards link to `▶ live`, `▦ section`, `⇢ flow`.
-
-Two entry points for agents:
-
-| Tool | What it gives you |
-|---|---|
-| `node kit/pick.mjs --intent "premium real estate"` | ranked candidates + matched terms (deterministic) |
-| `node kit/brief.mjs --intent "…"` | single-file actionable brief: style + industry + layout + choreography + photo + token block + evidence paths + forbidden list |
-| `node kit/mcp-server.mjs` | **MCP (stdio, JSON-RPC)**: `pick` · `style` · `tokens` · `shots` · `sections` · `flows` · `brief` |
-
-```bash
-node kit/brief.mjs --intent "premium real estate" --out brief.md
-node kit/mcp-server.mjs --list       # 7 tools + descriptions
-node kit/mcp-server.mjs --self-test  # gate
-```
-
-MCP registration (Claude/Codex/Cursor): working directory = repo root, command `node`, argument `kit/mcp-server.mjs`.
-
-## Flow strips (P4)
-
-Refero's value is not a screen but a **flow**; the catalog carries 3 flows × 3 steps per style in a single strip:
-`kit/.shots-cache/<dir>/flows/<id>.png`. Viewer: `kit/flows.html?style=<slug>`.
-
-| Flow | Steps | What it proves |
-|---|---|---|
-| `onboarding` | Goal → Team → Invite | option card, fields, progress dots |
-| `checkout` | Cart → Payment → Confirm | amount rows, card field, success state |
-| `invite` | Role → Message → Send | role picker, multi-recipient chips |
-
-```bash
-node kit/render/render-flows.mjs --styles y2k      # one style, 3 flows
-node kit/render/render-flows.mjs --all             # 151 × 3 = 453 (~80 s)
-node kit/render/render-flows.mjs --sample 3 --measure  # are there 3 steps, is anything overflowing (CDP)
-```
-
-Gate: **3 steps** per flow, horizontal overflow ≤2px, no step outside the viewport, no empty frame.
-Gallery cards link to `▦ section` and `⇢ flow`.
-
-## Section library (P3)
-
-A **section** library instead of full pages: 12 archetypes × 151 styles = **1812 section** images.
-Viewer: `kit/sections.html?style=<slug>` (pick a style → 12 sections).
-
-| # | Section | What it proves |
-|---|---|---|
-| 01 | `hero` | heading hierarchy + CTA + trust line |
-| 02 | `logo-wall` | typography of the social-proof strip |
-| 03 | `feature-trio` | three-feature rhythm |
-| 04 | `bento` | mixed-size box grid |
-| 05 | `how-it-works` | numbered 3-step flow |
-| 06 | `testimonial` | one strong quote + identity |
-| 07 | `stats` | scale of 4 large numbers |
-| 08 | `pricing-table` | plan comparison + highlighted card |
-| 09 | `faq` | objection-breaking block |
-| 10 | `cta` | closing action |
-| 11 | `footer` | sitemap + legal |
-| 12 | `og-card` | 1200×630 share image |
-
-Scene templates (37): 01 landing · 02 dashboard · 03–08 components · 09–16 pages ·
-17–21 dark+mobile · 22–27 real estate+motion sheet · 28–31 dark lists · **32 paywall · 33 flow ·
-34 filtered table · 35 profile · 36 search · 37 integrations**. `12-page-states` now shows
-**5 variants** (empty · skeleton · error · 404 · filled).
-
-```bash
-node kit/render/render-sections.mjs --styles y2k        # one style, 12 sections
-node kit/render/render-sections.mjs --all               # 151 × 12 = 1812 (~5 min)
-node kit/render/render-sections.mjs --sample 3 --measure # overflow/measure gate (CDP)
-```
-
-Output lands in `kit/.shots-cache/<dir>/sections/<id>.png` (generated; not kept in the repo). Gate: horizontal
-overflow ≤2px, no element outside the viewport, no text under 9px, no empty frame (measured via PNG color variety).
-
-## Industry content layer (P1)
-
-The same fictional SaaS copy used to show up in every style; now each style has an **industry** with its own
-copy pack: `tokens.json → industries[]` (the first entry is used at render time) → `kit/content/<id>.json`.
-
-| Industry | Sample headline | Typical styles |
-|---|---|---|
-| `saas` | "A calm workspace for your product team" | panel/tool/data styles |
-| `emlak` (real estate) | "Low-rise, calm living with a sea view" | showcase, luxury, `fullbleed` |
-| `danismanlik` (consulting) | "Base the decision on evidence, not on a hunch" | plain/corporate |
-| `egitim` (education) | "A classroom where everyone can learn" | playful, interaction |
-| `eticaret` (e-commerce) | "The plainest pieces of the season" | bold, retro |
-| `dergi` (magazine) | "Long reads, short sentences" | publishing, typographic, `type` |
-| `ajans` (agency) | "Work that tells the brand without decoration" | artistic, motion |
-| `saglik` (health) | "What you should know before the appointment" | organic, surface |
-
-Templates carry no literal copy: `__COPY_H1__`, `__COPY_LEDE__`, `__COPY_PROOF1..3__`,
-`__COPY_LOGO1..5__`, `__COPY_TILE1..4__` — `render-shots.mjs` fills them from the pack.
-
-| Rule | Measure | Gate |
-|---|---|---|
-| Assignment | `industries[0]` is valid and follows the family/archetype rule | `assign-content --check` |
-| Pack liveness | every pack is used by ≥3 styles (no dead pack), none exceeds the 35% ceiling | `check-content` |
-| Text limits | `h1 ≤ 56`, `lede ≤ 120`, `cta ≤ 26` characters (overflow prevention) | `check-content` |
-| Template | no literal demo copy; every `__COPY_*__` key has a counterpart | `check-content` |
-
-```bash
-node kit/assign-content.mjs --apply   # industries[] for 151 styles (family + archetype + balance)
-node kit/check-content.mjs            # gate
-```
-
-Distribution (151): magazine 31 · real estate 31 · saas 23 · agency 22 · consulting 13 · e-commerce 13 · education 11 · health 7.
-
-## Imagery layer (P2)
-
-Photography is part of the catalog now: 24 licence-clean frames (`kit/images/`, Unsplash License — attribution
-not required, source URLs kept in `INDEX.json` for provenance) and every style is assigned **one photo + one
-treatment** (`tokens.json → imagery.photo|treatment`). Photos are used only in the `fullbleed` and `centered`
-archetypes; the copy sits in its own column, never on top of the photo.
-
-| Axis | Values | Where |
-|---|---|---|
-| `imagery.photo` | `arch-*` · `int-*` · `nat-*` · `tex-*` · `obj-*` · `urb-*` · `por-*` | `kit/images/INDEX.json` |
-| `imagery.treatment` | `plain` (0) · `scrim` (0.3–0.55) · `duotone` (accent blend) · `grain` (texture) | `kit/render/scene.css` |
-
-| Rule | Measure | Gate |
-|---|---|---|
-| Source integrity | file exists, ≥40 KB, INDEX record complete, no orphan files | `fetch-images --check` |
-| Assignment stability | `assign-imagery --check` → identical to the tokens.json proposal | `assign-imagery.mjs` |
-| Treatment consistency | `plain ⇒ strength 0`, others `>0`; photo required for fullbleed/centered styles | `check-imagery.mjs` |
-| Template contract | `hero-fullbleed.html` + `hero-centered.html` carry `__PHOTO__` | `check-imagery.mjs` |
-
-```bash
-node kit/fetch-images.mjs --all      # download missing images (24 frames ≈ 7 MB)
-node kit/assign-imagery.mjs --apply  # assign photo + treatment to 151 styles
-node kit/check-imagery.mjs           # gate: coverage + treatment + template
-```
+Gates: `check-layout.mjs` (no fingerprint above 25%, every archetype used, ≥3 distinct
+`hero|nav` per family band) and `check-composition.mjs` (DOM isolation of neighbouring styles).
 
 ## Variable contract
 
-Every style fills the same names; component code does not change when the style changes.
+20 variables, identical names in every style — a component never changes when the style does:
 
-| Variable | Job |
+| Group | Variables |
 |---|---|
-| `--bg`, `--bg-2` · `--surface`, `--surface-2` | ground / surface layers |
-| `--ink`, `--ink-soft`, `--ink-faint` | text layers (`--ink-faint` is decorative only) |
-| `--accent`, `--accent-ink` | accent + the text drawn on top of it |
-| `--line` | border |
-| `--radius`, `--radius-lg` | corners |
-| `--shadow`, `--shadow-hard` | soft / hard shadow |
-| `--font-display`, `--font-body`, `--font-mono` | typography |
-| `--tracking`, `--blur`, `--grain` | letter spacing, glass blur, texture |
-| `--focus` | focus ring (defaults to `--accent`; a derived value for 3:1 in 13 styles) |
-| `--danger`, `--danger-ink`, `--ok`, `--warn` | status colors (a style may override them) |
-| `--space-1 … --space-8` | 4/8/12/16/24/32/48/64 px |
-| `--data-1 … --data-4` | chart series |
+| Surface | `--bg` `--bg-2` `--surface` `--surface-2` |
+| Text | `--ink` `--ink-soft` `--ink-faint` |
+| Accent | `--accent` `--accent-ink` |
+| Line / shape | `--line` `--radius` `--radius-lg` |
+| Depth | `--shadow` `--shadow-hard` |
+| Type | `--font-display` `--font-body` `--font-mono` `--tracking` |
+| Texture | `--blur` `--grain` |
+| Spacing | `--space-1…8` (4 · 8 · 12 · 16 · 24 · 32 · 48 · 64) |
 
-## Dark mode
-
-**151/151 styles implemented, debt 0.** Every style has `palette.dark` (10 colors) + a dark block in
-`tokens.css` + a `shots/17-18` render; all three are cross-checked by `kit/check-schema.mjs`.
-
-```bash
-node kit/dark-fill.mjs --styles <slug> --dry  # missing keys + contrast preview
-node kit/dark-fill.mjs --styles <slug>        # complete the palette + write the dark block (never writes failing contrast)
-node kit/dark-fill.mjs --sync                 # sync tokens.json ↔ tokens.css blocks
-```
-
-The derivation formulas (bg2 6%, surface2 8%, inkSoft 70% of ink, inkFaint 45% of ink, line = ink at 14% alpha,
-accentInk = highest-contrast candidate) are documented at the top of `kit/dark-fill.mjs`; no value is written
-without passing the contrast gate. Details: `playbook.md` §17.
+Three copies must stay in parity (`check-schema.mjs`): `tokens.json` ⇄ `token-block.css` ⇄ `kit/tokens.css`.
 
 ## Verification (gates)
 
 ```bash
-bash kit/gates.sh                     # 38 steps: gallery → slim index → fragment sync → schema → contrast → tables → choreography assignment → motion CSS → motion gate → motion measurement → motion lab → motion measurement (browser) → motion storyboard → motion normalize → export → font TTF → flutter → react → style-lint → layout assignment → composition variety → composition self-test → DOM composition → report up to date → composition report up to date → visual signature → visual regression
-node kit/apply-fragments.mjs --check    # fragment → tokens.css / shots.config / gallery.data in sync
-node kit/check-schema.mjs               # schema v3 + layout + dark mode + three-copy parity + neighbours/refs + missing scenes
-node kit/assign-layouts.mjs --check      # tokens.json layout matches the proposal (drift gate)
-node kit/assign-motion.mjs --check       # motion.choreography matches the proposal
-node kit/build-motion-css.mjs --check    # patterns.json → patterns.css in sync
-node kit/fetch-images.mjs --check        # image sources (24 frames, consistent INDEX)
-node kit/assign-imagery.mjs --check      # imagery.photo/treatment match the proposal
-node kit/check-imagery.mjs               # treatment consistency + photo archetype coverage
-node kit/assign-content.mjs --check      # industries[] match the proposal
-node kit/check-content.mjs               # industry packs + template placeholders + overflow limits
-node kit/render/render-sections.mjs --sample 3 --measure  # section library overflow measurement
-node kit/render/render-flows.mjs --sample 3 --measure     # flow strips (3 steps, overflow) measurement
-node kit/render/render-shots.mjs --sample 3 --measure     # 37 scenes: horizontal overflow + bottom clipping
-node kit/check-viewers.mjs                                # do sections.html / flows.html images load
-node kit/brief.mjs --intent "premium real estate" --out brief.md  # actionable brief (also as an MCP tool)
-node kit/mcp-server.mjs --self-test                       # do the MCP tools (7 tools) work
-node kit/motion-audit.mjs --check        # is kit/dist/motion.md stale
-node kit/build-motion-lab.mjs --check    # lab ↔ policy (rationale for forbidden patterns)
-node kit/check-layout.mjs               # composition variety + fingerprint ceiling + template parity
-node kit/check-layout.mjs --self-test   # proves the rule set is not a no-op
-node kit/check-contrast.mjs             # WCAG + APCA + 3:1 focus ring (light AND dark blocks)
-node kit/motion-check.mjs               # signature variety + duration budget + self-test
-node kit/export-tokens.mjs --check      # is kit/dist current
-node kit/render/optimize-shots.mjs --all --verify   # are the PNGs lossless (pixel diff 0)
-node kit/report.mjs --check             # is kit/dist/report.md stale
-node kit/composition-report.mjs --check # is kit/dist/composition.md stale
+bash kit/gates.sh        # 27 steps: parity → catalog → assignments → measurement → exports → visual signature
 ```
 
-### CI
+Fast subsets:
 
-`.github/workflows/gates.yml` — the same gates split into three jobs (data · flutter · visual signature).
-The local hook protects one machine; CI protects the server side. `flutter-version: 3.47.9` is pinned,
-Node 22. The visual job produces `--json` output (which scene, how many bits differ).
-The repo keeps 604 core PNGs; the full set is not committed and visual regression runs on the core set.
+```bash
+node kit/check-schema.mjs && node kit/apply-fragments.mjs --check     # source parity
+node kit/check-contrast.mjs --strict-soft                            # WCAG + APCA
+node kit/build-gallery.mjs --check && node kit/build-catalog-doc.mjs --check
+node kit/render/render-shots.mjs --sample 8 --measure                 # layout overflow / clipped blocks
+node kit/render/phash.mjs --check                                    # perceptual signature of 251 PNGs
+```
 
-**Visual signature regression** (in the gates, **604 core scenes**): `node kit/render/phash.mjs --check` (full set: `--cache`) —
-a 256-bit dHash + mean color per scene, baseline `kit/render/visual-baseline.json` **368 KB**.
-Threshold: hash ≤ 8/256 bits, color Δ ≤ 10. Sensitivity is proven by `--self-test` (15% brightness, negative, 24px shift are caught).
-Pixel-by-pixel baseline on demand: `node kit/render/baseline.mjs --write` (core set; include the cache for the full set).
-
-**Artifacts generated in a clean clone (gitignored):**
-- `kit/.shots-cache/<dir>/27-motion.png` — motion storyboard strips; `node kit/render/motion-strip.mjs --sample 6 --check` (or `--ensure`) generates missing strips in a headless browser and verifies presence/size, skipping visibly with a `↷` line when no browser is found (full set: `--all`).
-- `kit/.shots-cache/<dir>/sections/*.png` (12 sections) and `flows/*.png` (3 flows) — section/flow viewer images; `node kit/check-viewers.mjs` (`--ensure`) and `render-sections.mjs` / `render-flows.mjs --check --ensure` generate and verify missing PNGs in a headless browser in a clean clone, skipping visibly with a `↷` line when no browser is found (full set: `--all`).
-- `kit/render/.baseline/` — pixel-by-pixel visual regression reference; created by `node kit/render/baseline.mjs --write`, and if the directory is absent the `gates.sh` step skips with `↷ visual regression (no baseline, skipped)`.
-- The 33 non-core scenes under `kit/.shots-cache/<dir>/` — generated on demand with `node kit/render/render-shots.mjs`.
-
-**Debt ledgers:** `kit/contrast-baseline.json` (accepted contrast exceptions) and
-`kit/dark-baseline.json` (dark mode debt). A new violation that is not on the list is an **error**.
+"Done" means `bash kit/gates.sh` ends with `kapılar: temiz`. Commit hook runs the same gate
+(`.git/hooks/pre-commit`); the full run can exceed a 120 s tool timeout, so run it separately.
 
 ## Token export
 
 ```bash
-node kit/export-tokens.mjs              # dist/{tokens.all.css,tailwind.theme.css,figma.variables.json,index.json}
-node kit/export-tokens.mjs --styles utility --split   # plus a per-style file
-node kit/export-tokens.mjs --check      # gate
+node kit/export-tokens.mjs            # kit/dist/*.css · figma.variables.json · index.json
+node kit/export-tokens.mjs --check    # gate: are dist files current?
 ```
 
-| Output | What it is for |
+| File | Use |
 |---|---|
-| `dist/tokens.all.css` | `:root` + 151 `[data-style]` + dark blocks — copied straight into a project |
-| `dist/tailwind.theme.css` | Tailwind v4 `@theme` (color/font/radius/shadow) + 8 spacing steps → `p-1…p-16` |
-| `dist/figma.variables.json` | Figma variables: `Color System` (Light/Dark) + `Radius` + `Spacing` + `Typography` |
-| `dist/report.md` | coverage + contrast + debt report |
-| `dist/motion.json` | normalized motion signature of the 151 styles (ms + `{kind, points}` curves) |
-| `dist/flutter/` | `style_lab_tokens.dart` (ThemeExtension + 151 light/151 dark), `pubspec.fonts.yaml`, usage README |
-| `dist/react/` | `styleLabTokens.js` + `.d.ts` (151 styles, light/dark, motion), `styleLabCssVars`, `applyStyleLab`, ThemeProvider recipe |
-| `dist/index.slim.json` | compact agent index (slug/name/family/tags/motion/neighbours) — the source for `kit/pick.mjs` |
-
-## Flutter / React
-
-Both target outputs come from the same source (`tokens.json` + `dist/motion.json`); non-CSS targets need
-**numbers**, not prose. Adding a target = writing `kit/export/<target>.mjs` (the parsers are ready in
-`kit/lib/tokens.mjs`).
-
-```bash
-node kit/normalize-motion.mjs                 # prose → dist/motion.json (prerequisite)
-node kit/fetch-fonts.mjs                      # kit/fonts/ttf/ (30 families, OFL) + INDEX.json
-node kit/export/flutter.mjs                   # dist/flutter/*
-node kit/export/flutter.mjs --verify          # + dart analyze + flutter test (fixture)
-```
-
-**Flutter.** `cp kit/dist/flutter/style_lab_tokens.dart lib/theme/` →
-`MaterialApp(theme: styleLabTheme(slug: 'terminal-ui'), darkTheme: styleLabTheme(slug: 'terminal-ui', brightness: Brightness.dark))`.
-Reach the tokens through `context.styleLab` (`t.surface`, `t.padding(3)`, `t.h2`, `t.motion.enterDurationValue`).
-Dark mode only swaps the palette; typography/shape/motion stay the same. `pubspec.fonts.yaml` lists only the
-TTFs that are actually downloaded (11 families are missing some weights on Google Fonts — Flutter falls back to
-the nearest declared weight; 11 system fonts are deliberately not bundled).
-
-**Accent style in dark mode.** Dark blocks use a compound selector (`[data-theme="dark"][data-style="Y"]`),
-which requires both attributes on the same element: `<div data-style="Y" data-theme="dark">`. With only
-`data-style` the accent style is painted with the light palette (gate: `kit/check-composition.mjs --browser`).
-
-**React.** `dist/tokens.all.css` + `dist/tailwind.theme.css` are enough: `<html data-style="<slug>" data-theme="dark">`.
-All values are CSS variables; component code does not change when the style changes. For the JS side (charts,
-canvas, inline styles, tests) run `node kit/export/react.mjs` → `dist/react/styleLabTokens.js` + `.d.ts`:
-`styleLabTokens[slug].light|dark`, `styleLabCssVars(slug, theme)`, `applyStyleLab(slug, {theme})`.
-The ThemeProvider recipe lives in `dist/react/README.md` (no dependencies, with SSR notes).
-
-Proof: the `kit/export/flutter/fixture/` package has 11 tests (`dart analyze` 0 issues) — palette/typography/motion
-values are compared against `tokens.json`, and the `ThemeData` bridge plus the `StyleLabSteps` curve are tested.
+| `kit/dist/tokens.all.css` | all 251 `[data-style]` blocks + `:root` fallback |
+| `kit/dist/tailwind.theme.css` | `@theme` per style (Tailwind v4) |
+| `kit/dist/figma.variables.json` | Figma variable collections (colour / radius / spacing / type) |
+| `kit/dist/index.json`, `index.slim.json` | machine-readable catalog (slim = agent-friendly) |
+| `kit/dist/report.md`, `composition.md` | measured catalog report |
 
 ## Auditing applied code (style-lint)
 
-The catalog produces tokens; `kit/style-lint.mjs` audits that a consuming project **actually uses** them:
-
 ```bash
-node kit/style-lint.mjs src --style terminal-ui            # exit 1 on errors
-node kit/style-lint.mjs src --style terminal-ui --json     # machine-readable
-node kit/style-lint.mjs src --style terminal-ui --strict    # warnings become errors
-node kit/style-lint.mjs --list-rules                        # 12 rules
-node kit/style-lint.mjs --self-test                         # prove the rules with fixtures
+node kit/style-lint.mjs src --style terminal-ui            # errors + warnings
+node kit/style-lint.mjs src --style terminal-ui --strict   # warnings fail too
+node kit/style-lint.mjs --list-rules
 ```
 
-| Rule | Severity | What it catches |
-|---|---|---|
-| `color-literal`, `dart-color-literal` | error | `#fff`, `rgba(…)`, `Color(0x…)`, `Colors.red` — should be `var(--…)` / `context.styleLab` |
-| `font-literal`, `dart-font-literal` | error | `font-family` / `fontFamily:` outside the style's fonts |
-| `radius-literal`, `dart-radius-literal` | warning | `border-radius: 7px`, `BorderRadius.circular(7)` — use `var(--radius)` / `t.radius` |
-| `duration-literal`, `dart-duration-literal` | warning | durations outside the tokens (`320ms`, `Duration(milliseconds: 123)`) |
-| `default-ease` | warning | `ease`/`linear` when the style has its own curve |
-| `reduced-motion-missing` | warning | motion present without `prefers-reduced-motion` / `disableAnimations` |
-| `ink-faint-text` | warning | `--ink-faint` used as a text color (decorative only) |
-| `root-style-missing` | warning | `data-style="<slug>"` appears in no file |
+Rules: `color-literal`, `font-literal`, `radius-literal`, `dart-color-literal`, `dart-font-literal`,
+`dart-radius-literal`, `ink-faint-text`, `root-style-missing`. Generated files
+(`tokens.css`, `tokens.all.css`, `tailwind.theme.css`, `node_modules`, `dist`, `.dart_tool`) are skipped.
 
-Exemption: a `style-lint-allow` comment on the line (or the line above); `--allow-color "#fff"` list.
-Generated files (`tokens.css`, `style_lab_tokens.dart`, `styleLabTokens.js`…) and
-`node_modules/dist/build/.dart_tool` are skipped.
+## Adding a new style (v6: one command)
 
-## Adding a new style
+```bash
+# 1) write a SPEC (see kit/specs/*.json) — palette, fonts, radius, signature, must/mustNot, refs, brief
+# 2) generate everything:
+node kit/add-style.mjs kit/specs/my-batch.json
+```
 
-1. `_templates/style-template.md` → `styles/146-<slug>/style.md` (`# 146 · Name` + `> **In one sentence:**`).
-2. `token-block.css` — light + dark blocks, every contract variable.
-3. `tokens.json` — palette (light + dark), typography, **motion signature** (≥2 parameters different within the family), **`layout` (hero/nav/density, schema v3)**, 3 references.
-4. `shots.config.fragment.mjs` — `motif`, `bodyClass`, `extraCss`, `scenes: { landing }` (style-specific hero).
-5. `keywords.json` (3 tags) + add its band to `kit/families.json` (keep the range uninterrupted).
-6. `node kit/apply-fragments.mjs --apply` → `--check` (generates tokens.css / shots.config / gallery.data);
-   `node kit/assign-layouts.mjs --apply` → `--check` (assigns the composition archetype).
-7. `node kit/render/render-shots.mjs --styles <slug> --force --jobs 2` → `node kit/sync-shot-tables.mjs --write --styles <slug>`.
-8. `node kit/render/optimize-shots.mjs --styles <slug>` → `node kit/build-gallery.mjs` → `bash kit/gates.sh` until clean.
+The command validates the SPEC (contrast, fonts, neighbours, band), writes five sources, runs
+`apply-fragments`, layout/imagery/content assignment, renders the page, syncs doc tables, and
+refreshes gallery, index, exports, reports and the visual baseline. Flags:
+`--dry` (validate only), `--check` (drift), `--no-render`, `--styles a,b`.
 
-`tokens.css`, `shots.config.mjs` and `gallery.data.mjs` are **never edited by hand**; `apply-fragments --check` catches hand edits as drift.
+New family band: add a contiguous range to `kit/families.json`, add a template to
+`kit/specs/bands.json`, then generate. `apply-fragments` fails on gaps/overlaps.
 
 ## For agents
 
-Ready-made procedure: **[`skills/style-lab-catalog/SKILL.md`](skills/style-lab-catalog/SKILL.md)** — picks a style by
-intent, applies the `[data-style]` token block, sets up the `motion.sequences` signature, applies the
-`scenes`/`Pitfalls` list and verifies with the gates.
-References: `families.md` (family → use), `workflow.md` (new style flow).
-
-**Agent support.** This repo is developed with agents. Canonical procedures live under `skills/`; they can be
-linked into the user-level discovery path (`~/.agents/skills/`) of compatible tools:
-
-```bash
-node kit/link-skill.mjs status    # check link, target and SKILL.md frontmatter
-node kit/link-skill.mjs install   # create a junction/symlink — no copies, no drift
-node kit/link-skill.mjs remove    # removes only the link, never touches the target folder
-```
-
-Frontmatter validation looks for an installed `yaml` package first. An extra search directory can be selected
-with `STYLE_LAB_YAML_RELEASES`; the default is the existing agent installation for compatibility. Whether an
-agent discovers and reloads the procedures depends on the tool you use.
-
-Three steps for an agent session: **pick** with `kit/styles.index.json` → **read** `style.md` + `tokens.json` →
-**look** at `shots/01…04`. Do not memorize catalog numbers; measure with `bash kit/gates.sh` and `kit/dist/report.md`.
-
-## License
-
-The project is distributed under the [MIT license](LICENSE). Fonts: [OFL 1.1 and the family list](kit/fonts/LICENSES.md),
-the design resource catalog: [upstream MIT license](refs/design-resources/LICENSE-upstream.txt),
-photographs: the license information under `kit/images/` applies.
+1. Read `AGENTS.md` (binding), then `kit/dist/index.slim.json` for candidates.
+2. `node kit/pick.mjs --intent "..." --limit 3` scores styles for an intent.
+3. `kit/mcp-server.mjs` exposes `pick`, `style`, `tokens`, `shots`, `render`, `brief` over stdio MCP.
+4. `node kit/brief.mjs --intent "..." --style <slug>` prints a copy-paste brief.
 
 ## Known limits
 
-- **2 non-blocking warnings:** `60-energy-grid` scrub 1.45 and `98-generative-grid` scrub 1.6 (>1.4) — not a duration budget breach, but a "feels delayed" warning.
-- **`typography.forbidden` is empty in 20 styles** (schema warning, not an error).
-- **PNG-heavy catalog:** PNG for text sharpness; compressed losslessly, so `optimize-shots --all` must run after generating new scenes.
-- Style descriptions are prepared from design research; catalog previews are generated from the token and scene sources in the repo.
+- Headless rendering uses SwiftShader: the screenshots do not measure GPU performance.
+- `file://` blocks `history.replaceState`, so gallery URL-state tests need a server.
+- Screens are a fixed 1280×2400 canvas — no responsive/mobile frames in v6.
+- `optimize-shots.mjs` changes bytes, not pixels; `phash --check` guards the signature after re-encoding.
+- Font coverage: 29 Google Fonts families are vendored; styles pick from that list only.
+
+## License
+
+Code and tokens: MIT (see `LICENSE`). Vendored fonts: OFL (`kit/fonts/LICENSES.md`).
+Photography: Unsplash License (`kit/images/LICENSES.md`).

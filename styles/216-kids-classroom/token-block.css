@@ -1,0 +1,15 @@
+/* 216 · Kids Classroom — token bloğu (kaynak: styles/216-kids-classroom/tokens.json) */
+
+[data-style="kids-classroom"] {
+  --bg: #fffdf5; --bg-2: #fff4d6;
+  --surface: #ffffff; --surface-2: #fff8e6;
+  --ink: #1c1710; --ink-soft: #564a36; --ink-faint: #8b7d63;
+  --accent: #8c5a06; --accent-ink: #fffaf0;
+  --line: rgba(28,23,16,.14);
+  --radius: 16px; --radius-lg: 22px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

@@ -1,0 +1,15 @@
+/* 200 · Opera House — token bloğu (kaynak: styles/200-opera-house/tokens.json) */
+
+[data-style="opera-house"] {
+  --bg: #0f1420; --bg-2: #141a28;
+  --surface: #1a2130; --surface-2: #232c3d;
+  --ink: #eef1f7; --ink-soft: #b2bccc; --ink-faint: #8792a4;
+  --accent: #c9b37e; --accent-ink: #151106;
+  --line: rgba(238,241,247,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Playfair Display", system-ui, sans-serif;
+  --font-body: "EB Garamond", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

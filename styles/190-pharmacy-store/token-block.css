@@ -1,0 +1,15 @@
+/* 190 · Pharmacy Store — token bloğu (kaynak: styles/190-pharmacy-store/tokens.json) */
+
+[data-style="pharmacy-store"] {
+  --bg: #f9fbfd; --bg-2: #eef4f9;
+  --surface: #ffffff; --surface-2: #f3f8fc;
+  --ink: #111820; --ink-soft: #46525f; --ink-faint: #78848f;
+  --accent: #0f6b4a; --accent-ink: #f4fdf8;
+  --line: rgba(17,24,32,.12);
+  --radius: 8px; --radius-lg: 12px;
+  --shadow: 0 2px 8px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

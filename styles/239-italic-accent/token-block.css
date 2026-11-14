@@ -1,0 +1,15 @@
+/* 239 · Italic Accent — token bloğu (kaynak: styles/239-italic-accent/tokens.json) */
+
+[data-style="italic-accent"] {
+  --bg: #fbf9f4; --bg-2: #f2ede3;
+  --surface: #fffefa; --surface-2: #f7f2e9;
+  --ink: #14120e; --ink-soft: #4b463c; --ink-faint: #807a6c;
+  --accent: #8a4a2f; --accent-ink: #fdf8f5;
+  --line: rgba(20,18,14,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif;
+  --font-body: "Lora", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

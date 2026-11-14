@@ -1,0 +1,15 @@
+/* 160 · Survival Craft — token bloğu (kaynak: styles/160-game-survival-craft/tokens.json) */
+
+[data-style="game-survival-craft"] {
+  --bg: #12140f; --bg-2: #181b14;
+  --surface: #1e2218; --surface-2: #282d20;
+  --ink: #e9ecdf; --ink-soft: #b3b9a4; --ink-faint: #8a9079;
+  --accent: #b8c26a; --accent-ink: #12160a;
+  --line: rgba(233,236,223,.16);
+  --radius: 2px; --radius-lg: 6px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
+}

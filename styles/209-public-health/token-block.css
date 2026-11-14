@@ -1,0 +1,15 @@
+/* 209 · Public Health — token bloğu (kaynak: styles/209-public-health/tokens.json) */
+
+[data-style="public-health"] {
+  --bg: #ffffff; --bg-2: #eef2f7;
+  --surface: #ffffff; --surface-2: #f5f8fb;
+  --ink: #0c1116; --ink-soft: #3f4852; --ink-faint: #6f7883;
+  --accent: #0b4f9c; --accent-ink: #f6faff;
+  --line: rgba(12,17,22,.16);
+  --radius: 6px; --radius-lg: 10px;
+  --shadow: 0 1px 3px rgba(0,0,0,.10); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

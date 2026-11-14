@@ -1,0 +1,15 @@
+/* 170 · Franchise Sports — token bloğu (kaynak: styles/170-game-franchise-sports/tokens.json) */
+
+[data-style="game-franchise-sports"] {
+  --bg: #0e0f12; --bg-2: #131418;
+  --surface: #181a1f; --surface-2: #22252b;
+  --ink: #f4f6f9; --ink-soft: #b0b6c0; --ink-faint: #858c98;
+  --accent: #e8322f; --accent-ink: #1a0303;
+  --line: rgba(244,246,249,.15);
+  --radius: 0px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Anton", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+}

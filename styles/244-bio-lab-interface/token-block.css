@@ -1,0 +1,15 @@
+/* 244 · Bio Lab Interface — token bloğu (kaynak: styles/244-bio-lab-interface/tokens.json) */
+
+[data-style="bio-lab-interface"] {
+  --bg: #0a100d; --bg-2: #0e1511;
+  --surface: #121b16; --surface-2: #1a251e;
+  --ink: #e9f4ec; --ink-soft: #a4bdaa; --ink-faint: #7b9382;
+  --accent: #7ce86b; --accent-ink: #061505;
+  --line: rgba(233,244,236,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+}

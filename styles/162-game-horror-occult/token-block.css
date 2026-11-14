@@ -1,0 +1,15 @@
+/* 162 · Horror Occult — token bloğu (kaynak: styles/162-game-horror-occult/tokens.json) */
+
+[data-style="game-horror-occult"] {
+  --bg: #0a0909; --bg-2: #100e0e;
+  --surface: #151212; --surface-2: #1d1919;
+  --ink: #eae2dd; --ink-soft: #a89c95; --ink-faint: #7d726c;
+  --accent: #c8322b; --accent-ink: #f7ece8;
+  --line: rgba(234,226,221,.14);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif;
+  --font-body: "Lora", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0.03;
+}

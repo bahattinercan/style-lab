@@ -9,43 +9,43 @@
 
 | Ölçü | Değer | Hedef |
 |---|---|---|
-| Stil | 151 | — |
+| Stil | 251 | — |
 | Farklı hero|nav parmak izi | 16 | ≥ 12 |
-| **Tekdüzelik endeksi** (en kalabalık parmak izi) | 24/151 = %16 | <%30 |
-| En kalabalık tek hero | split = 42/151 = %28 | <%35 |
-| Aile başına ortalama farklı hero | 3.0 | ≥ 2 |
+| **Tekdüzelik endeksi** (en kalabalık parmak izi) | 36/251 = %14 | <%30 |
+| En kalabalık tek hero | split = 67/251 = %27 | <%35 |
+| Aile başına ortalama farklı hero | 3.1 | ≥ 2 |
 | Kullanılan arketip | 8 hero · 5 nav · 3 yoğunluk | tümü |
 
 ## 2 · Hero arketipleri
 
 | Arketip | Ne zaman | Stil | Örnekler |
 |---|---|---|---|
-| `split` · Split | kopya solda, ürün görseli sağda; dengeli, nötr varsayılan | 42 (%28) | `glassmorphism`, `liquid-glass`, `memphis` |
-| `split-reverse` · Split (ters) | görsel solda, kopya sağda; okuma akışını kırar, cesur ailelerde ritim | 19 (%13) | `neo-brutalism`, `anti-design`, `acid-graphics` |
-| `centered` · Merkezlenmiş | tek mesaj + geniş görsel bandı; sakin, seyrek markalar | 12 (%8) | `minimalism`, `japandi`, `wabi-sabi` |
-| `type` · Salt tipografi | görsel yok; başlık ekranın kendisi. Poster/dergi/ajans vitrini | 15 (%10) | `swiss-design`, `editorial-design`, `scrapbook` |
-| `fullbleed` · Tam kenar medya | medya sol kenara taşar (kart yok), kopya sağda nefes alır; vitrin/lüks | 18 (%12) | `luxury-typography`, `art-deco`, `victorian` |
-| `product` · Ürün ekranı | kopya üstte küçük, dev ürün paneli altta; araç iddiası | 24 (%16) | `bento-grid`, `terminal-ui`, `telemetry-grid` |
-| `index` · Dizin ızgarası | kopya solda dar, sağda 2×2 iş/kayıt ızgarası; portfolyo, arşiv | 8 (%5) | `constructivism`, `atlas-console`, `punk-fanzine` |
-| `sticky` · Yapışkan anlatı | solda yapışkan kopya, sağda kayan 3 panelli hikâye şeridi; uzun sayfa | 13 (%9) | `ai-native-mesh`, `grand-tourer-oxblood`, `utility` |
+| `split` · Split | kopya solda, ürün görseli sağda; dengeli, nötr varsayılan | 67 (%27) | `glassmorphism`, `liquid-glass`, `memphis` |
+| `split-reverse` · Split (ters) | görsel solda, kopya sağda; okuma akışını kırar, cesur ailelerde ritim | 28 (%11) | `neo-brutalism`, `anti-design`, `acid-graphics` |
+| `centered` · Merkezlenmiş | tek mesaj + geniş görsel bandı; sakin, seyrek markalar | 26 (%10) | `minimalism`, `japandi`, `wabi-sabi` |
+| `type` · Salt tipografi | görsel yok; başlık ekranın kendisi. Poster/dergi/ajans vitrini | 29 (%12) | `swiss-design`, `editorial-design`, `scrapbook` |
+| `fullbleed` · Tam kenar medya | medya sol kenara taşar (kart yok), kopya sağda nefes alır; vitrin/lüks | 28 (%11) | `luxury-typography`, `art-deco`, `victorian` |
+| `product` · Ürün ekranı | kopya üstte küçük, dev ürün paneli altta; araç iddiası | 38 (%15) | `bento-grid`, `terminal-ui`, `telemetry-grid` |
+| `index` · Dizin ızgarası | kopya solda dar, sağda 2×2 iş/kayıt ızgarası; portfolyo, arşiv | 21 (%8) | `constructivism`, `atlas-console`, `punk-fanzine` |
+| `sticky` · Yapışkan anlatı | solda yapışkan kopya, sağda kayan 3 panelli hikâye şeridi; uzun sayfa | 14 (%6) | `ai-native-mesh`, `grand-tourer-oxblood`, `utility` |
 
 ## 3 · Nav arketipleri
 
 | Arketip | Ne zaman | Stil | Örnekler |
 |---|---|---|---|
-| `inline` · Satır içi | marka + linkler + iki buton; nötr varsayılan | 58 (%38) | `swiss-design`, `editorial-design`, `glassmorphism` |
-| `pill` · Yüzen hap | sayfadan kopuk, ortada linkler; yüzey/cam ve vitrin aileleri | 25 (%17) | `luxury-typography`, `japandi`, `wabi-sabi` |
-| `split` · Bölünmüş | marka solda, linkler sağda, tek metin CTA; editoryal ve tipografik | 35 (%23) | `minimalism`, `claymorphism`, `frutiger-aero` |
-| `utility` · Yardımcı satırlı | üstte ince yardımcı satır, altta ana gezinme; kurumsal, veri, endüstri | 22 (%15) | `bento-grid`, `anti-design`, `acid-graphics` |
-| `rail` · Yan ray | solda dikey gezinme rayı; uygulama hissi, komut paleti, araç aileleri | 11 (%7) | `telemetry-grid`, `experiment-split`, `vitals-triage` |
+| `inline` · Satır içi | marka + linkler + iki buton; nötr varsayılan | 84 (%33) | `swiss-design`, `editorial-design`, `glassmorphism` |
+| `pill` · Yüzen hap | sayfadan kopuk, ortada linkler; yüzey/cam ve vitrin aileleri | 41 (%16) | `luxury-typography`, `japandi`, `wabi-sabi` |
+| `split` · Bölünmüş | marka solda, linkler sağda, tek metin CTA; editoryal ve tipografik | 75 (%30) | `minimalism`, `claymorphism`, `frutiger-aero` |
+| `utility` · Yardımcı satırlı | üstte ince yardımcı satır, altta ana gezinme; kurumsal, veri, endüstri | 32 (%13) | `bento-grid`, `anti-design`, `acid-graphics` |
+| `rail` · Yan ray | solda dikey gezinme rayı; uygulama hissi, komut paleti, araç aileleri | 19 (%8) | `telemetry-grid`, `experiment-split`, `vitals-triage` |
 
 ## 4 · Yoğunluk
 
 | Yoğunluk | Ne zaman | Stil |
 |---|---|---|
-| `sparse` · Seyrek | ekran başına ≤5 öğe, geniş boşluk | 51 (%34) |
-| `balanced` · Dengeli | standart bilgi yoğunluğu | 41 (%27) |
-| `dense` · Yoğun | çok öğe, küçük boşluk, veri hissi | 59 (%39) |
+| `sparse` · Seyrek | ekran başına ≤5 öğe, geniş boşluk | 89 (%35) |
+| `balanced` · Dengeli | standart bilgi yoğunluğu | 67 (%27) |
+| `dense` · Yoğun | çok öğe, küçük boşluk, veri hissi | 95 (%38) |
 
 ## 5 · Aile bazlı çeşitlilik
 
@@ -73,27 +73,36 @@
 | Materyal & Lüks | 10 | 3 | 4 | `fullbleed` (8) |
 | Deneysel & Gelecek | 10 | 3 | 5 | `split` (6) |
 | Sahne & Prestij | 6 | 5 | 5 | `fullbleed` (2) |
+| Oyun & Etkileşim | 20 | 5 | 8 | `split` (8) |
+| Operasyon & Veri | 10 | 3 | 4 | `product` (8) |
+| Ticaret & Vitrin | 10 | 3 | 4 | `index` (8) |
+| Kültür & Yayın | 10 | 3 | 6 | `type` (5) |
+| Sağlık & Bilim | 10 | 3 | 4 | `centered` (8) |
+| Öğrenme & Oyunlaştırma | 10 | 3 | 4 | `split` (8) |
+| Materyal & Zanaat | 10 | 3 | 4 | `fullbleed` (8) |
+| Tipografi Denemeleri | 10 | 3 | 4 | `type` (8) |
+| Gelecek & Spekülatif | 10 | 5 | 7 | `split` (4) |
 
 ## 6 · Parmak izleri
 
 | hero|nav | Stil | Pay |
 |---|---|---|
-| `split|inline` | 24 | %16 |
-| `split|split` | 18 | %12 |
-| `product|utility` | 13 | %9 |
-| `product|rail` | 11 | %7 |
-| `split-reverse|inline` | 10 | %7 |
-| `type|inline` | 9 | %6 |
-| `fullbleed|pill` | 9 | %6 |
-| `split-reverse|utility` | 9 | %6 |
-| `fullbleed|inline` | 9 | %6 |
-| `sticky|pill` | 7 | %5 |
-| `centered|split` | 6 | %4 |
-| `centered|pill` | 6 | %4 |
-| `type|split` | 6 | %4 |
-| `sticky|inline` | 6 | %4 |
-| `index|split` | 5 | %3 |
-| `index|pill` | 3 | %2 |
+| `split|inline` | 36 | %14 |
+| `split|split` | 31 | %12 |
+| `product|utility` | 19 | %8 |
+| `product|rail` | 19 | %8 |
+| `type|split` | 16 | %6 |
+| `fullbleed|pill` | 15 | %6 |
+| `split-reverse|inline` | 15 | %6 |
+| `centered|split` | 14 | %6 |
+| `index|split` | 14 | %6 |
+| `type|inline` | 13 | %5 |
+| `split-reverse|utility` | 13 | %5 |
+| `fullbleed|inline` | 13 | %5 |
+| `centered|pill` | 12 | %5 |
+| `sticky|pill` | 7 | %3 |
+| `index|pill` | 7 | %3 |
+| `sticky|inline` | 7 | %3 |
 
 ## 7 · Kalan eksenler (henüz ölçülmüyor)
 

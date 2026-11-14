@@ -1,0 +1,15 @@
+/* 155 · Sci-Fi Cockpit — token bloğu (kaynak: styles/155-game-sci-fi-cockpit/tokens.json) */
+
+[data-style="game-sci-fi-cockpit"] {
+  --bg: #050a10; --bg-2: #08121b;
+  --surface: #0b1622; --surface-2: #101f2e;
+  --ink: #d9ecff; --ink-soft: #94b3cf; --ink-faint: #6d8ca8;
+  --accent: #4aa8ff; --accent-ink: #04121f;
+  --line: rgba(217,236,255,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Michroma", system-ui, sans-serif;
+  --font-body: "Rajdhani", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: 0.1em; --blur: 0px; --grain: 0;
+}

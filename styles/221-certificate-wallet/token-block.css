@@ -1,0 +1,15 @@
+/* 221 · Certificate Wallet — token bloğu (kaynak: styles/221-certificate-wallet/tokens.json) */
+
+[data-style="certificate-wallet"] {
+  --bg: #0c1120; --bg-2: #111830;
+  --surface: #161f3a; --surface-2: #1f2a4a;
+  --ink: #eaf0fb; --ink-soft: #a6b4d2; --ink-faint: #7c8bab;
+  --accent: #c9a25c; --accent-ink: #141003;
+  --line: rgba(234,240,251,.15);
+  --radius: 4px; --radius-lg: 8px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

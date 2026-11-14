@@ -1,0 +1,15 @@
+/* 152 · Game HUD — token bloğu (kaynak: styles/152-game-hud/tokens.json) */
+
+[data-style="game-hud"] {
+  --bg: #0b1118; --bg-2: #0e161f;
+  --surface: #121c26; --surface-2: #182430;
+  --ink: #e9f2fa; --ink-soft: #a9bccd; --ink-faint: #7f93a5;
+  --accent: #38e8c0; --accent-ink: #04140f;
+  --line: rgba(233,242,250,.14);
+  --radius: 2px; --radius-lg: 4px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-body: "Chakra Petch", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
+}

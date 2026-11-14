@@ -1,0 +1,15 @@
+/* 158 · Indie Pixel — token bloğu (kaynak: styles/158-game-indie-pixel/tokens.json) */
+
+[data-style="game-indie-pixel"] {
+  --bg: #1a1526; --bg-2: #211b30;
+  --surface: #271f38; --surface-2: #332945;
+  --ink: #f2e9ff; --ink-soft: #bfb0d8; --ink-faint: #988bb5;
+  --accent: #63d471; --accent-ink: #04170a;
+  --line: rgba(242,233,255,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: 0 0 0 1px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "Silkscreen", ui-monospace, monospace;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "VT323", ui-monospace, monospace;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
+}

@@ -1,0 +1,15 @@
+/* 220 · Peer Study — token bloğu (kaynak: styles/220-peer-study/tokens.json) */
+
+[data-style="peer-study"] {
+  --bg: #faf9fc; --bg-2: #f0eef5;
+  --surface: #ffffff; --surface-2: #f5f3f9;
+  --ink: #17151e; --ink-soft: #4d4859; --ink-faint: #7f788c;
+  --accent: #5a3f8a; --accent-ink: #faf7ff;
+  --line: rgba(23,21,30,.12);
+  --radius: 10px; --radius-lg: 14px;
+  --shadow: 0 2px 0 rgba(0,0,0,.12); --shadow-hard: none;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

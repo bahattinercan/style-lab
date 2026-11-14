@@ -87,6 +87,7 @@ run_gate "kontrast denetimi" node kit/check-contrast.mjs --strict-soft
 run_gate "galeri denetimi" node kit/build-gallery.mjs --check
 run_gate "slim indeks" node kit/build-slim-index.mjs --check
 run_gate "ekran tabloları senkronu" node kit/sync-shot-tables.mjs --check
+run_gate "katalog dokümanı" node kit/build-catalog-doc.mjs --check
 
 # --- kompozisyon ve içerik atamaları ---------------------------------------
 run_gate "layout ataması" node kit/assign-layouts.mjs --check

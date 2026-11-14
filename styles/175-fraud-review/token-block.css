@@ -1,0 +1,15 @@
+/* 175 · Fraud Review — token bloğu (kaynak: styles/175-fraud-review/tokens.json) */
+
+[data-style="fraud-review"] {
+  --bg: #0f0e14; --bg-2: #14131c;
+  --surface: #191826; --surface-2: #22202f;
+  --ink: #ece9f5; --ink-soft: #b0a9c6; --ink-faint: #877f9e;
+  --accent: #9d7bf0; --accent-ink: #0d0618;
+  --line: rgba(236,233,245,.14);
+  --radius: 6px; --radius-lg: 8px;
+  --shadow: 0 1px 0 rgba(0,0,0,.2); --shadow-hard: none;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.005em; --blur: 0px; --grain: 0;
+}

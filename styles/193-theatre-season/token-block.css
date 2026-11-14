@@ -1,0 +1,15 @@
+/* 193 · Theatre Season — token bloğu (kaynak: styles/193-theatre-season/tokens.json) */
+
+[data-style="theatre-season"] {
+  --bg: #14100f; --bg-2: #1a1413;
+  --surface: #211a18; --surface-2: #2b2220;
+  --ink: #f4ebe4; --ink-soft: #c4b2a6; --ink-faint: #95857a;
+  --accent: #c99a3f; --accent-ink: #171004;
+  --line: rgba(244,235,228,.16);
+  --radius: 0px; --radius-lg: 2px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Playfair Display", system-ui, sans-serif;
+  --font-body: "Lora", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

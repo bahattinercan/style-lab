@@ -1,0 +1,15 @@
+/* 241 · Small Caps Ledger — token bloğu (kaynak: styles/241-small-caps-ledger/tokens.json) */
+
+[data-style="small-caps-ledger"] {
+  --bg: #fbfaf5; --bg-2: #f1efe6;
+  --surface: #fffef9; --surface-2: #f6f4ec;
+  --ink: #15140f; --ink-soft: #4c4940; --ink-faint: #7f7b6d;
+  --accent: #6b2f2f; --accent-ink: #fdf7f7;
+  --line: rgba(21,20,15,.16);
+  --radius: 0px; --radius-lg: 0px;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "EB Garamond", system-ui, sans-serif;
+  --font-body: "EB Garamond", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
+}

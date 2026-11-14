@@ -905,5 +905,605 @@ window.LIVE_STYLES = [
     "slug": "dark-dashboard",
     "name": "Dark Dashboard",
     "family": "Sahne & Prestij"
+  },
+  {
+    "num": "152",
+    "slug": "game-hud",
+    "name": "Game HUD",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "153",
+    "slug": "game-racing",
+    "name": "Game Racing",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "154",
+    "slug": "game-fantasy-rpg",
+    "name": "Fantasy RPG",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "155",
+    "slug": "game-sci-fi-cockpit",
+    "name": "Sci-Fi Cockpit",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "156",
+    "slug": "game-retro-console",
+    "name": "Retro Console",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "157",
+    "slug": "game-esports-league",
+    "name": "Esports League",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "158",
+    "slug": "game-indie-pixel",
+    "name": "Indie Pixel",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "159",
+    "slug": "game-card-tcg",
+    "name": "Card TCG",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "160",
+    "slug": "game-survival-craft",
+    "name": "Survival Craft",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "161",
+    "slug": "game-mobile-casual",
+    "name": "Mobile Casual",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "162",
+    "slug": "game-horror-occult",
+    "name": "Horror Occult",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "163",
+    "slug": "game-racing-neon",
+    "name": "Racing Neon",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "164",
+    "slug": "game-strategy-map",
+    "name": "Strategy Map",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "165",
+    "slug": "game-sim-builder",
+    "name": "Sim Builder",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "166",
+    "slug": "game-arcade-cabinet",
+    "name": "Arcade Cabinet",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "167",
+    "slug": "game-stealth-tactical",
+    "name": "Stealth Tactical",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "168",
+    "slug": "game-puzzle-light",
+    "name": "Puzzle Light",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "169",
+    "slug": "game-mmo-guild",
+    "name": "MMO Guild",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "170",
+    "slug": "game-franchise-sports",
+    "name": "Franchise Sports",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "171",
+    "slug": "game-pinball-neon",
+    "name": "Pinball Neon",
+    "family": "Oyun & Etkileşim"
+  },
+  {
+    "num": "172",
+    "slug": "incident-response",
+    "name": "Incident Response",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "173",
+    "slug": "finops-cost",
+    "name": "FinOps Cost",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "174",
+    "slug": "fleet-dispatch",
+    "name": "Fleet Dispatch",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "175",
+    "slug": "fraud-review",
+    "name": "Fraud Review",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "176",
+    "slug": "slo-budget",
+    "name": "SLO Budget",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "177",
+    "slug": "data-lineage",
+    "name": "Data Lineage",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "178",
+    "slug": "access-audit",
+    "name": "Access Audit",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "179",
+    "slug": "release-train",
+    "name": "Release Train",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "180",
+    "slug": "support-inbox",
+    "name": "Support Inbox",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "181",
+    "slug": "regulatory-report",
+    "name": "Regulatory Report",
+    "family": "Operasyon & Veri"
+  },
+  {
+    "num": "182",
+    "slug": "grocery-delivery",
+    "name": "Grocery Delivery",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "183",
+    "slug": "marketplace-multi",
+    "name": "Marketplace Multi",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "184",
+    "slug": "luxury-atelier",
+    "name": "Luxury Atelier",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "185",
+    "slug": "subscription-box",
+    "name": "Subscription Box",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "186",
+    "slug": "sneaker-drop",
+    "name": "Sneaker Drop",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "187",
+    "slug": "wine-cellar",
+    "name": "Wine Cellar",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "188",
+    "slug": "furniture-studio",
+    "name": "Furniture Studio",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "189",
+    "slug": "electronics-spec",
+    "name": "Electronics Spec",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "190",
+    "slug": "pharmacy-store",
+    "name": "Pharmacy Store",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "191",
+    "slug": "farmers-market",
+    "name": "Farmers Market",
+    "family": "Ticaret & Vitrin"
+  },
+  {
+    "num": "192",
+    "slug": "museum-exhibition",
+    "name": "Museum Exhibition",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "193",
+    "slug": "theatre-season",
+    "name": "Theatre Season",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "194",
+    "slug": "film-festival",
+    "name": "Film Festival",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "195",
+    "slug": "public-radio",
+    "name": "Public Radio",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "196",
+    "slug": "podcast-network",
+    "name": "Podcast Network",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "197",
+    "slug": "indie-cinema",
+    "name": "Indie Cinema",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "198",
+    "slug": "library-archive",
+    "name": "Library Archive",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "199",
+    "slug": "comic-bookstore",
+    "name": "Comic Bookstore",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "200",
+    "slug": "opera-house",
+    "name": "Opera House",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "201",
+    "slug": "street-festival",
+    "name": "Street Festival",
+    "family": "Kültür & Yayın"
+  },
+  {
+    "num": "202",
+    "slug": "clinical-trial",
+    "name": "Clinical Trial",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "203",
+    "slug": "lab-protocol",
+    "name": "Lab Protocol",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "204",
+    "slug": "pharmacy-labels",
+    "name": "Pharmacy Labels",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "205",
+    "slug": "physiotherapy",
+    "name": "Physiotherapy",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "206",
+    "slug": "mental-wellness",
+    "name": "Mental Wellness",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "207",
+    "slug": "nutrition-plan",
+    "name": "Nutrition Plan",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "208",
+    "slug": "dental-clinic",
+    "name": "Dental Clinic",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "209",
+    "slug": "public-health",
+    "name": "Public Health",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "210",
+    "slug": "genomics-lab",
+    "name": "Genomics Lab",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "211",
+    "slug": "veterinary-care",
+    "name": "Veterinary Care",
+    "family": "Sağlık & Bilim"
+  },
+  {
+    "num": "212",
+    "slug": "language-app",
+    "name": "Language App",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "213",
+    "slug": "skill-tree",
+    "name": "Skill Tree",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "214",
+    "slug": "university-portal",
+    "name": "University Portal",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "215",
+    "slug": "coding-bootcamp",
+    "name": "Coding Bootcamp",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "216",
+    "slug": "kids-classroom",
+    "name": "Kids Classroom",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "217",
+    "slug": "exam-prep",
+    "name": "Exam Prep",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "218",
+    "slug": "music-lesson",
+    "name": "Music Lesson",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "219",
+    "slug": "lab-simulation",
+    "name": "Lab Simulation",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "220",
+    "slug": "peer-study",
+    "name": "Peer Study",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "221",
+    "slug": "certificate-wallet",
+    "name": "Certificate Wallet",
+    "family": "Öğrenme & Oyunlaştırma"
+  },
+  {
+    "num": "222",
+    "slug": "terrazzo-stone",
+    "name": "Terrazzo Stone",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "223",
+    "slug": "linocut-print",
+    "name": "Linocut Print",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "224",
+    "slug": "risograph-print",
+    "name": "Risograph Print",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "225",
+    "slug": "denim-textile",
+    "name": "Denim Textile",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "226",
+    "slug": "cork-oak",
+    "name": "Cork Oak",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "227",
+    "slug": "cast-concrete",
+    "name": "Cast Concrete",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "228",
+    "slug": "enamel-jewel",
+    "name": "Enamel Jewel",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "229",
+    "slug": "hand-thrown-ceramic",
+    "name": "Hand-thrown Ceramic",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "230",
+    "slug": "raw-steel",
+    "name": "Raw Steel",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "231",
+    "slug": "recycled-paper",
+    "name": "Recycled Paper",
+    "family": "Materyal & Zanaat"
+  },
+  {
+    "num": "232",
+    "slug": "condensed-news",
+    "name": "Condensed News",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "233",
+    "slug": "monospace-editorial",
+    "name": "Monospace Editorial",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "234",
+    "slug": "blackletter-modern",
+    "name": "Blackletter Modern",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "235",
+    "slug": "variable-weight",
+    "name": "Variable Weight",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "236",
+    "slug": "justified-book",
+    "name": "Justified Book",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "237",
+    "slug": "stencil-display",
+    "name": "Stencil Display",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "238",
+    "slug": "uppercase-only",
+    "name": "Uppercase Only",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "239",
+    "slug": "italic-accent",
+    "name": "Italic Accent",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "240",
+    "slug": "numerals-display",
+    "name": "Numerals Display",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "241",
+    "slug": "small-caps-ledger",
+    "name": "Small Caps Ledger",
+    "family": "Tipografi Denemeleri"
+  },
+  {
+    "num": "242",
+    "slug": "agent-console",
+    "name": "Agent Console",
+    "family": "Gelecek & Spekülatif"
+  },
+  {
+    "num": "243",
+    "slug": "spatial-workspace",
+    "name": "Spatial Workspace",
+    "family": "Gelecek & Spekülatif"
+  },
+  {
+    "num": "244",
+    "slug": "bio-lab-interface",
+    "name": "Bio Lab Interface",
+    "family": "Gelecek & Spekülatif"
+  },
+  {
+    "num": "245",
+    "slug": "climate-model",
+    "name": "Climate Model",
+    "family": "Gelecek & Spekülatif"
+  },
+  {
+    "num": "246",
+    "slug": "orbital-logistics",
+    "name": "Orbital Logistics",
+    "family": "Gelecek & Spekülatif"
+  },
+  {
+    "num": "247",
+    "slug": "synthetic-media",
+    "name": "Synthetic Media",
+    "family": "Gelecek & Spekülatif"
+  },
+  {
+    "num": "248",
+    "slug": "quantum-dashboard",
+    "name": "Quantum Dashboard",
+    "family": "Gelecek & Spekülatif"
+  },
+  {
+    "num": "249",
+    "slug": "digital-twin",
+    "name": "Digital Twin",
+    "family": "Gelecek & Spekülatif"
+  },
+  {
+    "num": "250",
+    "slug": "neural-canvas",
+    "name": "Neural Canvas",
+    "family": "Gelecek & Spekülatif"
+  },
+  {
+    "num": "251",
+    "slug": "post-screen-voice",
+    "name": "Post-screen Voice",
+    "family": "Gelecek & Spekülatif"
   }
 ];

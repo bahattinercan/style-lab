@@ -25,7 +25,7 @@ import { promisify } from 'node:util';
 import { configFor } from './shots.config.mjs';
 import { launch as launchCdp } from './cdp-browser.mjs';
 import { icon } from './icons.mjs';
-import { cropPngTop } from './png.mjs';
+import { cropPngTop, decodePng } from './png.mjs';
 
 const run = promisify(execFile);
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -324,6 +324,31 @@ const MEASURE = process.argv.includes('--measure');
 const problems = [];
 const warnings = [];
 
+/**
+ * Boş/tek renk kare tespiti: sayfanın alt %60'ında renk varyansı yoksa render yarım kalmıştır
+ * (viewport yarışı, font blokajı). Kare yazılmaz; bir kez daha denenir.
+ */
+function isEmptyFrame(buf) {
+  let img;
+  try {
+    img = decodePng(buf);
+  } catch {
+    return false;
+  }
+  const { width, height, channels, pixels } = img;
+  let min = 255;
+  let max = 0;
+  for (let y = Math.floor(height * 0.4); y < height; y += 11) {
+    for (let x = 0; x < width; x += 13) {
+      const i = (y * width + x) * channels;
+      const v = (pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3;
+      if (v < min) min = v;
+      if (v > max) max = v;
+    }
+  }
+  return max - min < 6;
+}
+
 async function shoot(cdp, htmlPath, png, scene, slug) {
   if (LEGACY_SPAWN) return shootSpawn(cdp.browserPath ?? cdp.browser, htmlPath, png, scene, slug);
   if (MEASURE) {
@@ -334,8 +359,23 @@ async function shoot(cdp, htmlPath, png, scene, slug) {
     if (!process.env.SHOTS_KEEP_TMP) fs.rmSync(htmlPath, { force: true });
     return;
   }
-  const buf = await cdp.capture(htmlPath, { width: scene.width, height: scene.height, format: 'png' });
-  fs.writeFileSync(png, buf);
+  let buf = await cdp.capture(htmlPath, { width: scene.width, height: scene.height, format: 'png' });
+  if (isEmptyFrame(buf)) {
+    warnings.push(`${slug}/${scene.key}: boş kare — yeniden yakalandı`);
+    await new Promise((r) => setTimeout(r, 150));
+    buf = await cdp.capture(htmlPath, { width: scene.width, height: scene.height, format: 'png' });
+    if (isEmptyFrame(buf)) problems.push(`${slug}/${scene.key}: boş kare (iki denemede de)`);
+  }
+  // Windows'ta antivirüs/indeksleyici dosyayı kilitleyebiliyor: 4 denemeye kadar yaz.
+  for (let i = 0; ; i += 1) {
+    try {
+      fs.writeFileSync(png, buf);
+      break;
+    } catch (err) {
+      if (i >= 3) throw err;
+      await new Promise((r) => setTimeout(r, 200 * (i + 1)));
+    }
+  }
 }
 
 async function pool(items, limit, worker) {
@@ -681,7 +721,7 @@ async function runAll(getCdp, browser) {
     }
   }
   for (const f of fs.existsSync(HERE) ? fs.readdirSync(HERE) : []) {
-    if (ownHtml.has(f)) fs.rmSync(path.join(HERE, f), { force: true, maxRetries: 3, retryDelay: 200 });
+    if (ownHtml.has(f) && !process.env.SHOTS_KEEP_TMP) fs.rmSync(path.join(HERE, f), { force: true, maxRetries: 3, retryDelay: 200 });
   }
   for (const f of fs.existsSync(TMP_DIR) ? fs.readdirSync(TMP_DIR) : []) {
     if (ownProfiles.has(f)) fs.rmSync(path.join(TMP_DIR, f), { recursive: true, force: true, maxRetries: 3, retryDelay: 200 });
