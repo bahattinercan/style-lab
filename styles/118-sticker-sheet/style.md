@@ -8,7 +8,7 @@
 | **En iyi** | Dijital çıkartma paketi, sohbet uygulaması eklentisi, koleksiyon vitrini, genç marka lansmanı |
 | **Kaçın** | Resmi doküman, kurumsal rapor, uzun okuma metni |
 | **Zorluk** | orta · **Erişilebilirlik** | orta |
-| **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="sticker-sheet"]` (bu klasördeki `token-block.css`) |
+| **Aile** | Oyuncu & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="sticker-sheet"]` (bu klasördeki `token-block.css`) |
 | **Kompozisyon** | `index` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
 | **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 

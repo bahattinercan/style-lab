@@ -28,7 +28,7 @@ Tek stilli bandlar tek numara olarak yazılır (37 = 37–37 · 38 = 38–38 · 
 | 86–95 | Yayın & Tipografi | 10 | `literary-hardcover` · `broadsheet-daily` · `encyclopedia` | yayınevi/kitap okuma · katalog & ürün listesi · akademik referans |
 | 96–105 | Hareket & Optik | 10 | `kinetic-marquee` · `depth-parallax` · `holographic-layer` | marka manifestosu hero · vitrin/portfolyo · lansman teaser'ı |
 | 106–115 | Etkileşim | 10 | `command-palette` · `timeline-editor` · `kanban-flow` | araç/IDE arayüzü · zaman çizelgesi editörü · görev panosu |
-| 116–125 | Oyuncul | 10 | `kids-playground` · `celebration-card` · `collectible-card` | çocuk/oyun ürünü · festival ve kutlama akışı · koleksiyon/hikâye anlatımı |
+| 116–125 | Oyuncu | 10 | `kids-playground` · `celebration-card` · `collectible-card` | çocuk/oyun ürünü · festival ve kutlama akışı · koleksiyon/hikâye anlatımı |
 | 126–135 | Materyal & Lüks | 10 | `marble-vein` · `leather-craft` · `letterpress-print` | mücevap/moda vitrini · butik hizmet · premium ambalaj |
 | 136–145 | Deneysel & Gelecek | 10 | `speculative-scifi` · `agent-orchestration` · `quantum-lab` | konsept/lansman denemesi · AI ajan ve veri hacmi vitrini · bilim kurgu/gelecek anlatısı |
 | 146–151 | Sahne & Prestij | 6 | `noir-estate` · `agency-portfolio` · `product-launch` · `boutique-hotel` · `lookbook-editorial` · `dark-dashboard` | sinematik emlak/prestij · ajans vitrini · ürün lansmanı · butik otel · editoryal lookbook · koyu ürün paneli |
@@ -75,7 +75,7 @@ Niyet → önce bakılacak bandlar (2–3 aday seç, sonra tek stile in):
 | Okuma/uzun metin | Sade (01–07) · Yayın & Tipografi (86–95) |
 | Veri/operasyon yoğunluğu | Veri & Gösterge (46–55) · Endüstriyel (56–65) |
 | Sahada/üretimde kullanım | Endüstriyel (56–65) · Veri & Gösterge (46–55) |
-| Yüksek enerji, kampanya | Cesur (13–18) · Oyuncul (116–125) |
+| Yüksek enerji, kampanya | Cesur (13–18) · Oyuncu (116–125) |
 | Kültürel kimlik, zanaat | Kültürel & Bölgesel (66–75) · Materyal & Lüks (126–135) |
 | Doğa/iklim anlatısı | Doğa & Organik (76–85) · Organik (38) |
 | Vitrin, marka manifestosu | Hareket & Optik (96–105) · Cesur (13–18) |

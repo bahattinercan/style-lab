@@ -68,7 +68,7 @@ const SYNONYMS = {
   luks: ['luxury', 'zamansiz', 'materyal', 'marble', 'brass', 'silk', 'grand-tourer', 'premium'],
   premium: ['luxury', 'grand-tourer', 'marble', 'brass', 'art-deco'],
   emlak: ['estate', 'grand-tourer', 'luxury', 'emlak', 'vitrin'],
-  oyun: ['oyuncul', 'kids', 'dopamine', 'carnival', 'arcade', 'sticker', 'playground'],
+  oyun: ['oyuncu', 'kids', 'dopamine', 'carnival', 'arcade', 'sticker', 'playground'],
   cocuk: ['kids', 'playground', 'dopamine', 'carnival', 'sticker'],
   eglence: ['dopamine', 'carnival', 'sticker', 'memphis', 'maximalism', 'celebration'],
   terminal: ['teknik', 'terminal', 'command-palette', 'keyboard', 'log', 'mono'],
@@ -111,7 +111,7 @@ const FAMILY_SYNONYMS = {
   yayin: ['Yayın & Tipografi'],
   hareket: ['Hareket & Optik'],
   etkilesim: ['Etkileşim'],
-  oyuncul: ['Oyuncul'],
+  oyuncu: ['Oyuncu'],
   materyal: ['Materyal & Lüks'],
   deneysel: ['Deneysel & Gelecek'],
   // niyet → aile eşlemesi (katalogda o niyetin evi olan bantlar)

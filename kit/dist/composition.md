@@ -11,32 +11,32 @@
 |---|---|---|
 | Stil | 251 | — |
 | Farklı hero|nav parmak izi | 16 | ≥ 12 |
-| **Tekdüzelik endeksi** (en kalabalık parmak izi) | 36/251 = %14 | <%30 |
-| En kalabalık tek hero | split = 67/251 = %27 | <%35 |
-| Aile başına ortalama farklı hero | 3.1 | ≥ 2 |
+| **Tekdüzelik endeksi** (en kalabalık parmak izi) | 30/251 = %12 | <%30 |
+| En kalabalık tek hero | split = 60/251 = %24 | <%35 |
+| Aile başına ortalama farklı hero | 3.2 | ≥ 2 |
 | Kullanılan arketip | 8 hero · 5 nav · 3 yoğunluk | tümü |
 
 ## 2 · Hero arketipleri
 
 | Arketip | Ne zaman | Stil | Örnekler |
 |---|---|---|---|
-| `split` · Split | kopya solda, ürün görseli sağda; dengeli, nötr varsayılan | 67 (%27) | `glassmorphism`, `liquid-glass`, `memphis` |
-| `split-reverse` · Split (ters) | görsel solda, kopya sağda; okuma akışını kırar, cesur ailelerde ritim | 28 (%11) | `neo-brutalism`, `anti-design`, `acid-graphics` |
-| `centered` · Merkezlenmiş | tek mesaj + geniş görsel bandı; sakin, seyrek markalar | 26 (%10) | `minimalism`, `japandi`, `wabi-sabi` |
-| `type` · Salt tipografi | görsel yok; başlık ekranın kendisi. Poster/dergi/ajans vitrini | 29 (%12) | `swiss-design`, `editorial-design`, `scrapbook` |
+| `split` · Split | kopya solda, ürün görseli sağda; dengeli, nötr varsayılan | 60 (%24) | `glassmorphism`, `liquid-glass`, `frutiger-aero` |
+| `split-reverse` · Split (ters) | görsel solda, kopya sağda; okuma akışını kırar, cesur ailelerde ritim | 27 (%11) | `neo-brutalism`, `anti-design`, `acid-graphics` |
+| `centered` · Merkezlenmiş | tek mesaj + geniş görsel bandı; sakin, seyrek markalar | 27 (%11) | `minimalism`, `japandi`, `wabi-sabi` |
+| `type` · Salt tipografi | görsel yok; başlık ekranın kendisi. Poster/dergi/ajans vitrini | 28 (%11) | `swiss-design`, `editorial-design`, `scrapbook` |
 | `fullbleed` · Tam kenar medya | medya sol kenara taşar (kart yok), kopya sağda nefes alır; vitrin/lüks | 28 (%11) | `luxury-typography`, `art-deco`, `victorian` |
-| `product` · Ürün ekranı | kopya üstte küçük, dev ürün paneli altta; araç iddiası | 38 (%15) | `bento-grid`, `terminal-ui`, `telemetry-grid` |
-| `index` · Dizin ızgarası | kopya solda dar, sağda 2×2 iş/kayıt ızgarası; portfolyo, arşiv | 21 (%8) | `constructivism`, `atlas-console`, `punk-fanzine` |
-| `sticky` · Yapışkan anlatı | solda yapışkan kopya, sağda kayan 3 panelli hikâye şeridi; uzun sayfa | 14 (%6) | `ai-native-mesh`, `grand-tourer-oxblood`, `utility` |
+| `product` · Ürün ekranı | kopya üstte küçük, dev ürün paneli altta; araç iddiası | 37 (%15) | `bento-grid`, `terminal-ui`, `telemetry-grid` |
+| `index` · Dizin ızgarası | kopya solda dar, sağda 2×2 iş/kayıt ızgarası; portfolyo, arşiv | 22 (%9) | `memphis`, `atlas-console`, `punk-fanzine` |
+| `sticky` · Yapışkan anlatı | solda yapışkan kopya, sağda kayan 3 panelli hikâye şeridi; uzun sayfa | 22 (%9) | `constructivism`, `ai-native-mesh`, `grand-tourer-oxblood` |
 
 ## 3 · Nav arketipleri
 
 | Arketip | Ne zaman | Stil | Örnekler |
 |---|---|---|---|
-| `inline` · Satır içi | marka + linkler + iki buton; nötr varsayılan | 84 (%33) | `swiss-design`, `editorial-design`, `glassmorphism` |
-| `pill` · Yüzen hap | sayfadan kopuk, ortada linkler; yüzey/cam ve vitrin aileleri | 41 (%16) | `luxury-typography`, `japandi`, `wabi-sabi` |
-| `split` · Bölünmüş | marka solda, linkler sağda, tek metin CTA; editoryal ve tipografik | 75 (%30) | `minimalism`, `claymorphism`, `frutiger-aero` |
-| `utility` · Yardımcı satırlı | üstte ince yardımcı satır, altta ana gezinme; kurumsal, veri, endüstri | 32 (%13) | `bento-grid`, `anti-design`, `acid-graphics` |
+| `inline` · Satır içi | marka + linkler + iki buton; nötr varsayılan | 82 (%33) | `swiss-design`, `editorial-design`, `glassmorphism` |
+| `pill` · Yüzen hap | sayfadan kopuk, ortada linkler; yüzey/cam ve vitrin aileleri | 45 (%18) | `luxury-typography`, `japandi`, `wabi-sabi` |
+| `split` · Bölünmüş | marka solda, linkler sağda, tek metin CTA; editoryal ve tipografik | 74 (%29) | `minimalism`, `claymorphism`, `memphis` |
+| `utility` · Yardımcı satırlı | üstte ince yardımcı satır, altta ana gezinme; kurumsal, veri, endüstri | 31 (%12) | `bento-grid`, `anti-design`, `acid-graphics` |
 | `rail` · Yan ray | solda dikey gezinme rayı; uygulama hissi, komut paleti, araç aileleri | 19 (%8) | `telemetry-grid`, `experiment-split`, `vitals-triage` |
 
 ## 4 · Yoğunluk
@@ -44,8 +44,8 @@
 | Yoğunluk | Ne zaman | Stil |
 |---|---|---|
 | `sparse` · Seyrek | ekran başına ≤5 öğe, geniş boşluk | 89 (%35) |
-| `balanced` · Dengeli | standart bilgi yoğunluğu | 67 (%27) |
-| `dense` · Yoğun | çok öğe, küçük boşluk, veri hissi | 95 (%38) |
+| `balanced` · Dengeli | standart bilgi yoğunluğu | 66 (%26) |
+| `dense` · Yoğun | çok öğe, küçük boşluk, veri hissi | 96 (%38) |
 
 ## 5 · Aile bazlı çeşitlilik
 
@@ -69,7 +69,7 @@
 | Yayın & Tipografi | 10 | 3 | 4 | `type` (8) |
 | Hareket & Optik | 10 | 3 | 4 | `sticky` (8) |
 | Etkileşim | 10 | 4 | 8 | `product` (4) |
-| Oyuncul | 10 | 3 | 5 | `split-reverse` (6) |
+| Oyuncu | 10 | 4 | 7 | `split-reverse` (3) |
 | Materyal & Lüks | 10 | 3 | 4 | `fullbleed` (8) |
 | Deneysel & Gelecek | 10 | 3 | 5 | `split` (6) |
 | Sahne & Prestij | 6 | 5 | 5 | `fullbleed` (2) |
@@ -87,22 +87,22 @@
 
 | hero|nav | Stil | Pay |
 |---|---|---|
-| `split|inline` | 36 | %14 |
-| `split|split` | 31 | %12 |
-| `product|utility` | 19 | %8 |
+| `split|inline` | 30 | %12 |
+| `split|split` | 30 | %12 |
 | `product|rail` | 19 | %8 |
+| `product|utility` | 18 | %7 |
 | `type|split` | 16 | %6 |
 | `fullbleed|pill` | 15 | %6 |
-| `split-reverse|inline` | 15 | %6 |
 | `centered|split` | 14 | %6 |
+| `split-reverse|inline` | 14 | %6 |
 | `index|split` | 14 | %6 |
-| `type|inline` | 13 | %5 |
+| `centered|pill` | 13 | %5 |
 | `split-reverse|utility` | 13 | %5 |
+| `sticky|inline` | 13 | %5 |
 | `fullbleed|inline` | 13 | %5 |
-| `centered|pill` | 12 | %5 |
-| `sticky|pill` | 7 | %3 |
-| `index|pill` | 7 | %3 |
-| `sticky|inline` | 7 | %3 |
+| `type|inline` | 12 | %5 |
+| `sticky|pill` | 9 | %4 |
+| `index|pill` | 8 | %3 |
 
 ## 7 · Kalan eksenler (henüz ölçülmüyor)
 

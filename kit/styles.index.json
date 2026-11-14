@@ -175,7 +175,7 @@
       "to": 115
     },
     {
-      "name": "Oyuncul",
+      "name": "Oyuncu",
       "from": 116,
       "to": 125
     },
@@ -2185,8 +2185,8 @@
         "shadowOffset": "3px 3px 0"
       },
       "layout": {
-        "hero": "split",
-        "nav": "inline",
+        "hero": "index",
+        "nav": "split",
         "density": "dense",
         "family": "Cesur"
       },
@@ -4683,9 +4683,9 @@
         "rule": "Bölüm ayırıcı 6px; hairline (1px) yasak; iç tablo çizgisi 1px rgba(17,16,15,.18)"
       },
       "layout": {
-        "hero": "index",
-        "nav": "split",
-        "density": "dense",
+        "hero": "sticky",
+        "nav": "inline",
+        "density": "balanced",
         "family": "Geometrik"
       },
       "must": [
@@ -6278,7 +6278,7 @@
         "maxRadius": "4px"
       },
       "layout": {
-        "hero": "split",
+        "hero": "sticky",
         "nav": "inline",
         "density": "dense",
         "family": "Veri & Gösterge"
@@ -11670,7 +11670,7 @@
         "rule": "Radius 2px (buton/input/chip) ve 14px (görsel kartı/modal); 14px üstü yasak; avatar 50%; tablo satırı 0."
       },
       "layout": {
-        "hero": "split",
+        "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
         "family": "Yayın & Tipografi"
@@ -13928,9 +13928,9 @@
         "maxRadius": "28px"
       },
       "layout": {
-        "hero": "split",
-        "nav": "split",
-        "density": "balanced",
+        "hero": "index",
+        "nav": "pill",
+        "density": "dense",
         "family": "Hareket & Optik"
       },
       "must": [
@@ -15289,7 +15289,7 @@
       "num": "116",
       "slug": "kids-playground",
       "name": "Kids Playground",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "Çocuk oyun alanı mantığı: 18px yuvarlak köşe, kalın tek gölge, 4 renkli ama %12 sınırlı bloklar ve 0.46s zıplayan giriş — güvenli, cesur, dokunulabilir.",
       "tags": [
         "çocuk oyun alanı",
@@ -15366,7 +15366,7 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Baloo 2 700 56px/1.06 başlık (mobil 34px); Nunito 17px/1.65/54ch gövde",
@@ -15433,7 +15433,7 @@
       "num": "117",
       "slug": "carnival-festival",
       "name": "Carnival Festival",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "Karnaval afişi mantığı: Anton 72px bant başlık, 30px kayma, 0.28s snap giriş ve hareketli renk şeritleri — müzik, ışık ve kalabalık aynı karede.",
       "tags": [
         "karnaval afişi",
@@ -15509,7 +15509,7 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Anton 72px/0.94/−0.01em bant başlık, tek satır (mobil 40px); gövde Poppins 16.5px/1.6/52ch",
@@ -15574,7 +15574,7 @@
       "num": "118",
       "slug": "sticker-sheet",
       "name": "Sticker Sheet",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "Çıkartma sayfası mantığı: 6px beyaz die-cut halka, 2px ofset gölge ve 12px kayma — her blok sayfadan \"soyulabiliyormuş\" gibi durur.",
       "tags": [
         "çıkartma sayfası",
@@ -15650,7 +15650,7 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Nunito 900 44px/1.1 başlık (mobil 28px); gövde Poppins 16.5px/1.6/58ch",
@@ -15716,7 +15716,7 @@
       "num": "119",
       "slug": "arcade-8bit",
       "name": "Arcade 8-bit",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "Modern arcade kabini: Press Start 2P 32px skor başlığı, CRT tarama dokusu, 0.18s steps(4) giriş ve tek neon aksan — nostalji, ama okunur ve klavye erişilebilir.",
       "tags": [
         "arcade kabin",
@@ -15792,7 +15792,7 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Press Start 2P 32px/1.4 başlık, en fazla 3 satır (mobil 20px); gövde Space Grotesk 16px/1.62/68ch",
@@ -15856,7 +15856,7 @@
       "num": "120",
       "slug": "craft-handmade",
       "name": "Craft Handmade",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "El yapımı zanaat: kraft kâğıt dokusu, Caveat 52px el yazısı başlık, 1px kesikli dikiş çizgisi ve 0.82s ağır giriş — her blok \"elle yerleştirilmiş\" gibi durur.",
       "tags": [
         "el yapımı",
@@ -15931,7 +15931,7 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Caveat 700 52px/1.08 başlık (mobil 32px); gövde Nunito 16.5px/1.72/48ch",
@@ -15996,7 +15996,7 @@
       "num": "121",
       "slug": "celebration-card",
       "name": "Celebration Card",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "",
       "tags": [
         "die-cut kart",
@@ -16066,10 +16066,10 @@
         "maxRadius": "22px"
       },
       "layout": {
-        "hero": "split-reverse",
-        "nav": "utility",
+        "hero": "split",
+        "nav": "inline",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Kart kâğıt gibidir: radius-lg 22px + üst kenarda 9px dalgalı die-cut maskesi; köşe yuvarlaması süs değil biçimdir",
@@ -16127,7 +16127,7 @@
       "num": "122",
       "slug": "collectible-card",
       "name": "Collectible Card",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "",
       "tags": [
         "2.5:3.5 kart",
@@ -16197,10 +16197,10 @@
         "maxRadius": "16px"
       },
       "layout": {
-        "hero": "split-reverse",
-        "nav": "utility",
+        "hero": "split",
+        "nav": "inline",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Kart oranı sabit 5:7 (2.5×3.5 inç kart); kart hiçbir breakpoint'te kareye dönmez",
@@ -16258,7 +16258,7 @@
       "num": "123",
       "slug": "comic-story",
       "name": "Comic Story",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "",
       "tags": [
         "panel ızgarası",
@@ -16331,7 +16331,7 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Panel çerçevesi 3px mürekkep; 1px ince kenar bu stilde yok",
@@ -16389,7 +16389,7 @@
       "num": "124",
       "slug": "album-sleeve",
       "name": "Album Sleeve",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "",
       "tags": [
         "plak kılıfı",
@@ -16462,7 +16462,7 @@
         "hero": "index",
         "nav": "pill",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Kılıf 1:1 kare; kapak kartı hiçbir breakpoint'te farklı orana geçmez",
@@ -16520,7 +16520,7 @@
       "num": "125",
       "slug": "sports-energy",
       "name": "Sports Energy",
-      "family": "Oyuncul",
+      "family": "Oyuncu",
       "tag": "",
       "tags": [
         "skor tabelası",
@@ -16590,10 +16590,10 @@
         "maxRadius": "6px"
       },
       "layout": {
-        "hero": "split-reverse",
-        "nav": "inline",
+        "hero": "split",
+        "nav": "split",
         "density": "dense",
-        "family": "Oyuncul"
+        "family": "Oyuncu"
       },
       "must": [
         "Skor tabelası: rakamlar mono `tabular-nums`, 40px, sağa dayalı; skorlar orantılı yazılmaz",
@@ -17114,8 +17114,8 @@
         "maxRadius": "28px"
       },
       "layout": {
-        "hero": "index",
-        "nav": "split",
+        "hero": "split-reverse",
+        "nav": "utility",
         "density": "dense",
         "family": "Materyal & Lüks"
       },
@@ -17379,7 +17379,7 @@
         "rule": "Radius 2px (buton/input/chip) ve 10px (görsel kabı/modal); 12px üstü yasak; tablo satırı 0; avatar 50%."
       },
       "layout": {
-        "hero": "split",
+        "hero": "sticky",
         "nav": "inline",
         "density": "sparse",
         "family": "Materyal & Lüks"
@@ -22873,7 +22873,7 @@
         "rule": "Köşe 4–6px; 8px üstü yumuşak yuvarlatma operasyonel tabloyla çelişir."
       },
       "layout": {
-        "hero": "split",
+        "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
         "family": "Operasyon & Veri"
@@ -23575,9 +23575,9 @@
         "rule": "Köşe 4–6px; 8px üstü yumuşak yuvarlatma operasyonel tabloyla çelişir."
       },
       "layout": {
-        "hero": "sticky",
-        "nav": "inline",
-        "density": "balanced",
+        "hero": "split-reverse",
+        "nav": "utility",
+        "density": "dense",
         "family": "Operasyon & Veri"
       },
       "must": [
@@ -23926,8 +23926,8 @@
         "rule": "Kart 10–14px, buton 6–10px; tam daire yalnız chip/rozet."
       },
       "layout": {
-        "hero": "split",
-        "nav": "split",
+        "hero": "sticky",
+        "nav": "pill",
         "density": "balanced",
         "family": "Ticaret & Vitrin"
       },
@@ -26383,8 +26383,8 @@
         "rule": "Köşe 8–12px; form alanları 10px. Keskin 0px köşe klinik dilde sert kalır."
       },
       "layout": {
-        "hero": "product",
-        "nav": "utility",
+        "hero": "index",
+        "nav": "split",
         "density": "dense",
         "family": "Sağlık & Bilim"
       },
@@ -26500,7 +26500,7 @@
         "rule": "Köşe 8–12px; form alanları 10px. Keskin 0px köşe klinik dilde sert kalır."
       },
       "layout": {
-        "hero": "split",
+        "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
         "family": "Sağlık & Bilim"
@@ -28489,9 +28489,9 @@
         "rule": "Köşe 0–6px; malzeme kenarı keskin kalır, yumuşak yuvarlatma dokuyu zayıflatır."
       },
       "layout": {
-        "hero": "type",
-        "nav": "inline",
-        "density": "sparse",
+        "hero": "sticky",
+        "nav": "pill",
+        "density": "balanced",
         "family": "Materyal & Zanaat"
       },
       "must": [
@@ -28606,9 +28606,9 @@
         "rule": "Köşe 0–6px; malzeme kenarı keskin kalır, yumuşak yuvarlatma dokuyu zayıflatır."
       },
       "layout": {
-        "hero": "split",
-        "nav": "inline",
-        "density": "balanced",
+        "hero": "centered",
+        "nav": "pill",
+        "density": "sparse",
         "family": "Materyal & Zanaat"
       },
       "must": [
@@ -29775,7 +29775,7 @@
         "rule": "Köşe 0px — tipografik denemede geometri metne hizmet eder."
       },
       "layout": {
-        "hero": "split",
+        "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
         "family": "Tipografi Denemeleri"

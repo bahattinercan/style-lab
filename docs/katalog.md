@@ -214,7 +214,7 @@ Aile bantları 1–251 kesintisizdir.
 | 114 | [Eşzamanlı İşbirlikçi](../styles/114-multiplayer-presence/style.md) | canlı imleç · avatar yığını · uzak seçim | Aynı belgede çalışan herkesi canlı imleç, avatar yığını ve uzak seçim vurgusuyla görünür kılan çok kişili çalışma stili. |
 | 115 | [Klavye-Öncelikli Komut Arayüzü](../styles/115-keyboard-first/style.md) | tuş ipucu · komut satırı · odak halkası | Her eylemin tuş ipucunu yanında taşıyan, sabit komut satırı ve 2px odak halkasıyla klavyeden hiç ayrılmadan çalışılan komut yüzeyi stili. |
 
-## Oyuncul (116–125) · 10 stil
+## Oyuncu (116–125) · 10 stil
 
 | # | Stil | Etiketler | Tek cümle |
 |---|---|---|---|

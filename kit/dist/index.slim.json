@@ -93,7 +93,7 @@
    "to": 115
   },
   {
-   "name": "Oyuncul",
+   "name": "Oyuncu",
    "from": 116,
    "to": 125
   },
@@ -584,8 +584,8 @@
     "kalın kontur"
    ],
    "layout": {
-    "hero": "split",
-    "nav": "inline",
+    "hero": "index",
+    "nav": "split",
     "density": "dense"
    },
    "compatible": [
@@ -1124,9 +1124,9 @@
     "aşırı tipografi"
    ],
    "layout": {
-    "hero": "index",
-    "nav": "split",
-    "density": "dense"
+    "hero": "sticky",
+    "nav": "inline",
+    "density": "balanced"
    },
    "compatible": [
     "bauhaus",
@@ -1439,7 +1439,7 @@
     "tick yoğunluğu"
    ],
    "layout": {
-    "hero": "split",
+    "hero": "sticky",
     "nav": "inline",
     "density": "dense"
    },
@@ -2537,7 +2537,7 @@
     "tam kanama görsel"
    ],
    "layout": {
-    "hero": "split",
+    "hero": "sticky",
     "nav": "inline",
     "density": "balanced"
    },
@@ -2996,9 +2996,9 @@
     "iridesan kenar"
    ],
    "layout": {
-    "hero": "split",
-    "nav": "split",
-    "density": "balanced"
+    "hero": "index",
+    "nav": "pill",
+    "density": "dense"
    },
    "compatible": [
     "glassmorphism",
@@ -3275,7 +3275,7 @@
    "num": "116",
    "slug": "kids-playground",
    "name": "Kids Playground",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "Çocuk oyun alanı mantığı: 18px yuvarlak köşe, kalın tek gölge, 4 renkli ama %12 sınırlı bloklar ve 0.46s zıplayan giriş — güvenli, cesur, dokunulabilir.",
    "tags": [
     "çocuk oyun alanı",
@@ -3302,7 +3302,7 @@
    "num": "117",
    "slug": "carnival-festival",
    "name": "Carnival Festival",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "Karnaval afişi mantığı: Anton 72px bant başlık, 30px kayma, 0.28s snap giriş ve hareketli renk şeritleri — müzik, ışık ve kalabalık aynı karede.",
    "tags": [
     "karnaval afişi",
@@ -3329,7 +3329,7 @@
    "num": "118",
    "slug": "sticker-sheet",
    "name": "Sticker Sheet",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "Çıkartma sayfası mantığı: 6px beyaz die-cut halka, 2px ofset gölge ve 12px kayma — her blok sayfadan \"soyulabiliyormuş\" gibi durur.",
    "tags": [
     "çıkartma sayfası",
@@ -3356,7 +3356,7 @@
    "num": "119",
    "slug": "arcade-8bit",
    "name": "Arcade 8-bit",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "Modern arcade kabini: Press Start 2P 32px skor başlığı, CRT tarama dokusu, 0.18s steps(4) giriş ve tek neon aksan — nostalji, ama okunur ve klavye erişilebilir.",
    "tags": [
     "arcade kabin",
@@ -3383,7 +3383,7 @@
    "num": "120",
    "slug": "craft-handmade",
    "name": "Craft Handmade",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "El yapımı zanaat: kraft kâğıt dokusu, Caveat 52px el yazısı başlık, 1px kesikli dikiş çizgisi ve 0.82s ağır giriş — her blok \"elle yerleştirilmiş\" gibi durur.",
    "tags": [
     "el yapımı",
@@ -3410,7 +3410,7 @@
    "num": "121",
    "slug": "celebration-card",
    "name": "Celebration Card",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "",
    "tags": [
     "die-cut kart",
@@ -3418,8 +3418,8 @@
     "folyo kurdele"
    ],
    "layout": {
-    "hero": "split-reverse",
-    "nav": "utility",
+    "hero": "split",
+    "nav": "inline",
     "density": "dense"
    },
    "compatible": [
@@ -3437,7 +3437,7 @@
    "num": "122",
    "slug": "collectible-card",
    "name": "Collectible Card",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "",
    "tags": [
     "2.5:3.5 kart",
@@ -3445,8 +3445,8 @@
     "nadirlik taşı"
    ],
    "layout": {
-    "hero": "split-reverse",
-    "nav": "utility",
+    "hero": "split",
+    "nav": "inline",
     "density": "dense"
    },
    "compatible": [
@@ -3464,7 +3464,7 @@
    "num": "123",
    "slug": "comic-story",
    "name": "Comic Story",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "",
    "tags": [
     "panel ızgarası",
@@ -3491,7 +3491,7 @@
    "num": "124",
    "slug": "album-sleeve",
    "name": "Album Sleeve",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "",
    "tags": [
     "plak kılıfı",
@@ -3518,7 +3518,7 @@
    "num": "125",
    "slug": "sports-energy",
    "name": "Sports Energy",
-   "family": "Oyuncul",
+   "family": "Oyuncu",
    "tag": "",
    "tags": [
     "skor tabelası",
@@ -3526,8 +3526,8 @@
     "pist şeritleri"
    ],
    "layout": {
-    "hero": "split-reverse",
-    "nav": "inline",
+    "hero": "split",
+    "nav": "split",
     "density": "dense"
    },
    "compatible": [
@@ -3634,8 +3634,8 @@
     "çap ve ağırlık"
    ],
    "layout": {
-    "hero": "index",
-    "nav": "split",
+    "hero": "split-reverse",
+    "nav": "utility",
     "density": "dense"
    },
    "compatible": [
@@ -3688,7 +3688,7 @@
     "ölçü bandı"
    ],
    "layout": {
-    "hero": "split",
+    "hero": "sticky",
     "nav": "inline",
     "density": "sparse"
    },
@@ -4825,7 +4825,7 @@
     "uyum"
    ],
    "layout": {
-    "hero": "split",
+    "hero": "sticky",
     "nav": "inline",
     "density": "balanced"
    },
@@ -4975,9 +4975,9 @@
     "rapor"
    ],
    "layout": {
-    "hero": "sticky",
-    "nav": "inline",
-    "density": "balanced"
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
    },
    "compatible": [
     "academic-paper",
@@ -5050,8 +5050,8 @@
     "atölye"
    ],
    "layout": {
-    "hero": "split",
-    "nav": "split",
+    "hero": "sticky",
+    "nav": "pill",
     "density": "balanced"
    },
    "compatible": [
@@ -5575,8 +5575,8 @@
     "egzersiz"
    ],
    "layout": {
-    "hero": "product",
-    "nav": "utility",
+    "hero": "index",
+    "nav": "split",
     "density": "dense"
    },
    "compatible": [
@@ -5600,7 +5600,7 @@
     "sakin"
    ],
    "layout": {
-    "hero": "split",
+    "hero": "sticky",
     "nav": "inline",
     "density": "balanced"
    },
@@ -6025,9 +6025,9 @@
     "zanaat"
    ],
    "layout": {
-    "hero": "type",
-    "nav": "inline",
-    "density": "sparse"
+    "hero": "sticky",
+    "nav": "pill",
+    "density": "balanced"
    },
    "compatible": [
     "letterpress-print",
@@ -6050,9 +6050,9 @@
     "baskı"
    ],
    "layout": {
-    "hero": "split",
-    "nav": "inline",
-    "density": "balanced"
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
    },
    "compatible": [
     "linocut-print",
@@ -6299,7 +6299,7 @@
     "mühür"
    ],
    "layout": {
-    "hero": "split",
+    "hero": "sticky",
     "nav": "inline",
     "density": "balanced"
    },

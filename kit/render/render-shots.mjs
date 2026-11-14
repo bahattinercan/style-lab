@@ -317,7 +317,24 @@ const MEASURE_EXPR = `(() => {
       if (fs && fs < 8.5) tiny++;
     }
   }
-  return { overflowX: de.scrollWidth - de.clientWidth, clipped, tiny };
+  // nav içeriğin üstüne biniyor mu: mutlak/ray nav varsa içerik onun sağından başlamalı
+  const nav = document.querySelector('.nav');
+  const navPos = nav ? getComputedStyle(nav).position : '';
+  let navOverlap = 0;
+  if (nav && (navPos === 'absolute' || navPos === 'fixed')) {
+    const nr = nav.getBoundingClientRect();
+    // border box değil içerik kutusu: ray itmesi padding ile yapılır
+    const contentLeft = (el) => el.getBoundingClientRect().left + parseFloat(getComputedStyle(el).paddingLeft || '0');
+    const content = [document.querySelector('.hero-copy, .hero'), document.querySelector('main.pg')].filter(Boolean);
+    for (const el of content) {
+      const r = el.getBoundingClientRect();
+      const left = contentLeft(el);
+      if (r.width > 0 && left < nr.right - 1 && r.top < nr.bottom && r.bottom > nr.top) {
+        navOverlap = Math.max(navOverlap, Math.round(nr.right - left));
+      }
+    }
+  }
+  return { overflowX: de.scrollWidth - de.clientWidth, clipped, tiny, navOverlap };
 })()`;
 
 const MEASURE = process.argv.includes('--measure');
@@ -355,6 +372,7 @@ async function shoot(cdp, htmlPath, png, scene, slug) {
     const m = await cdp.evaluate(htmlPath, { width: scene.width, height: scene.height, expression: MEASURE_EXPR });
     if (m.overflowX > 2) problems.push(`${slug}/${scene.key}: yatay taşma ${m.overflowX}px`);
     if (m.clipped) problems.push(`${slug}/${scene.key}: ${m.clipped} blok alttan kırpılıyor`);
+    if (m.navOverlap > 0) problems.push(`${slug}/${scene.key}: içerik nav'ın ${m.navOverlap}px altında kalıyor`);
     if (m.tiny > 3) warnings.push(`${slug}/${scene.key}: ${m.tiny} öğe 8,5px altı`);
     if (!process.env.SHOTS_KEEP_TMP) fs.rmSync(htmlPath, { force: true });
     return;

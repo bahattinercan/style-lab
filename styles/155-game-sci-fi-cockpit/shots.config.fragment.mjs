@@ -21,5 +21,9 @@ h2 { font-size: 22px; letter-spacing: .05em; }
 .panel, .pg-card { border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line)); }
 .pg-band { background: color-mix(in srgb, var(--accent) 5%, var(--bg-2)); }
 .pg-bars i { height: 4px; border-radius: 0; }
+/* Michroma'nın % glifi '0/0' gibi okunuyor: ölçüm/rakam vurgusu monoya geçer (kokpit dili). */
+.pg-band b, .pg-band strong, .pg-table .num, .kpi .v, .pg-meter-c { font-family: var(--font-mono); letter-spacing: .01em; }
+/* Michroma geniş: tek harflik marka kutusunda harf taşmasın */
+.mark { font-size: 11px; letter-spacing: 0; }
   `,
 };

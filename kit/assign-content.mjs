@@ -49,7 +49,7 @@ const BY_FAMILY = {
   'Yayın & Tipografi': ['dergi'],
   'Hareket & Optik': ['ajans', 'eticaret'],
   Etkileşim: ['saas', 'egitim'],
-  Oyuncul: ['egitim', 'eticaret'],
+  Oyuncu: ['egitim', 'eticaret'],
   'Materyal & Lüks': ['emlak', 'dergi'],
   'Deneysel & Gelecek': ['ajans', 'saas'],
   'Sahne & Prestij': ['emlak', 'ajans', 'saas', 'dergi'],

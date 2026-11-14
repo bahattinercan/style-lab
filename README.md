@@ -93,7 +93,7 @@ Full list with one-line identities: [`docs/katalog.md`](docs/katalog.md).
 | Retro | 19–27 | Yayın & Tipografi | 86–95 |
 | Sanatsal | 28–34 | Hareket & Optik | 96–105 |
 | Geometrik | 35–36 | Etkileşim | 106–115 |
-| Tipografik | 37 | Oyuncul | 116–125 |
+| Tipografik | 37 | Oyuncu | 116–125 |
 | Organik | 38 | Materyal & Lüks | 126–135 |
 | Yeni Dalga | 39–40 | Deneysel & Gelecek | 136–145 |
 | Zamansız | 41–44 | Sahne & Prestij | 146–151 |

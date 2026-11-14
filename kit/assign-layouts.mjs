@@ -39,8 +39,12 @@ const ONLY = (() => {
   return list.length ? new Set(list) : null;
 })();
 
+/** Tavanlar katalog büyüklüğüne göre hesaplanır (sabit 145 tuzağı: stil ekleyince kapı kayar). */
 const MAX_SHARE = 0.25;
-const MAX_FINGERPRINT = Math.max(4, Math.floor(145 * MAX_SHARE));
+const styleCount = fs
+  .readdirSync(STYLES_DIR, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && fs.existsSync(path.join(STYLES_DIR, d.name, 'tokens.json'))).length;
+const MAX_FINGERPRINT = Math.max(4, Math.floor(styleCount * MAX_SHARE));
 
 /**
  * Hero puanlama sözlüğü. Sıra önemli: ilk eşleşen kural +3, sonrakiler +1 puan.
@@ -99,7 +103,7 @@ const NAV_OF_HERO = {
 const DENSITY_OF_FAMILY = {
   'Veri & Gösterge': 'dense',
   Endüstriyel: 'dense',
-  Oyuncul: 'dense',
+  Oyuncu: 'dense',
   Cesur: 'dense',
   Teknik: 'dense',
   'Materyal & Lüks': 'sparse',
@@ -239,6 +243,7 @@ function computeAssignments(styles) {
     for (let guard = 0; guard < 40; guard += 1) {
       const usedHeroes = new Set(list.map((o) => o.hero));
       if (usedHeroes.size >= target) break;
+      const fpNow = count((o) => `${o.hero}|${navChoice(o)}`);
       const local = new Map();
       for (const o of list) local.set(o.hero, [...(local.get(o.hero) ?? []), o]);
       const crowded = [...local.entries()].sort((a, b) => b[1].length - a[1].length)[0];
@@ -247,15 +252,17 @@ function computeAssignments(styles) {
       const victim = crowded[1]
         .slice()
         .sort((a, b) => a.scores[a.hero] - b.scores[b.hero] || hash(a.style.slug) - hash(b.style.slug))[0];
-      const unused = victim.candidates.find((c) => !usedHeroes.has(c));
-      if (!unused) break;
-      // kaliteyi koru: belirgin bir eşleşmeyi (≥2) sıfır puanlı arketipe düşürme
+      // aile içinde kullanılmayan, global olarak en az kalabalık arketipi seç
+      const spare = victim.candidates
+        .filter((c) => !usedHeroes.has(c))
+        .map((c) => ({ c, load: fpNow.get(`${c}|${navChoice({ ...victim, hero: c })}`) ?? 0 }))
+        .sort((a, b) => a.load - b.load || hash(a.c + victim.style.slug) - hash(b.c + victim.style.slug));
+      if (!spare.length) break;
       // kaliteyi koru: belirgin eşleşmeyi (≥2) sıfır puanlı arketipe düşürme — yalnız
-      // kalabalık ailede (≥8) ve tek bir kez zorunlu çeşitlilik için izin verilir.
-      if (victim.scores[victim.hero] >= 2 && victim.scores[unused] === 0 && list.length < 8) break;
-      victim.hero = unused;
-      const fp = count((o) => `${o.hero}|${navChoice(o)}`);
-      if ((fp.get(`${victim.hero}|${navChoice(victim)}`) ?? 0) > MAX_FINGERPRINT) victim.hero = crowded[0];
+      // kalabalık ailede (≥8) zorunlu çeşitlilik için izin verilir.
+      const pick = spare.find((x) => !(victim.scores[victim.hero] >= 2 && victim.scores[x.c] === 0 && list.length < 8));
+      if (!pick) break;
+      victim.hero = pick.c;
     }
   }
 

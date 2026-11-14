@@ -132,16 +132,16 @@
 | 113 | [Notebook / REPL](../styles/113-notebook-repl/style.md) | Etkileşim | 1/1 | 24 |
 | 114 | [Eşzamanlı İşbirlikçi](../styles/114-multiplayer-presence/style.md) | Etkileşim | 1/1 | 24 |
 | 115 | [Klavye-Öncelikli Komut Arayüzü](../styles/115-keyboard-first/style.md) | Etkileşim | 1/1 | 24 |
-| 116 | [Kids Playground](../styles/116-kids-playground/style.md) | Oyuncul | 1/1 | 20 |
-| 117 | [Carnival Festival](../styles/117-carnival-festival/style.md) | Oyuncul | 1/1 | 20 |
-| 118 | [Sticker Sheet](../styles/118-sticker-sheet/style.md) | Oyuncul | 1/1 | 20 |
-| 119 | [Arcade 8-bit](../styles/119-arcade-8bit/style.md) | Oyuncul | 1/1 | 20 |
-| 120 | [Craft Handmade](../styles/120-craft-handmade/style.md) | Oyuncul | 1/1 | 20 |
-| 121 | [Celebration Card](../styles/121-celebration-card/style.md) | Oyuncul | 1/1 | 20 |
-| 122 | [Collectible Card](../styles/122-collectible-card/style.md) | Oyuncul | 1/1 | 20 |
-| 123 | [Comic Story](../styles/123-comic-story/style.md) | Oyuncul | 1/1 | 20 |
-| 124 | [Album Sleeve](../styles/124-album-sleeve/style.md) | Oyuncul | 1/1 | 20 |
-| 125 | [Sports Energy](../styles/125-sports-energy/style.md) | Oyuncul | 1/1 | 20 |
+| 116 | [Kids Playground](../styles/116-kids-playground/style.md) | Oyuncu | 1/1 | 20 |
+| 117 | [Carnival Festival](../styles/117-carnival-festival/style.md) | Oyuncu | 1/1 | 20 |
+| 118 | [Sticker Sheet](../styles/118-sticker-sheet/style.md) | Oyuncu | 1/1 | 20 |
+| 119 | [Arcade 8-bit](../styles/119-arcade-8bit/style.md) | Oyuncu | 1/1 | 20 |
+| 120 | [Craft Handmade](../styles/120-craft-handmade/style.md) | Oyuncu | 1/1 | 20 |
+| 121 | [Celebration Card](../styles/121-celebration-card/style.md) | Oyuncu | 1/1 | 20 |
+| 122 | [Collectible Card](../styles/122-collectible-card/style.md) | Oyuncu | 1/1 | 20 |
+| 123 | [Comic Story](../styles/123-comic-story/style.md) | Oyuncu | 1/1 | 20 |
+| 124 | [Album Sleeve](../styles/124-album-sleeve/style.md) | Oyuncu | 1/1 | 20 |
+| 125 | [Sports Energy](../styles/125-sports-energy/style.md) | Oyuncu | 1/1 | 20 |
 | 126 | [Marble Vein](../styles/126-marble-vein/style.md) | Materyal & Lüks | 1/1 | 24 |
 | 127 | [Silk Drape](../styles/127-silk-drape/style.md) | Materyal & Lüks | 1/1 | 24 |
 | 128 | [Brass Copper](../styles/128-brass-copper/style.md) | Materyal & Lüks | 1/1 | 24 |

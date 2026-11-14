@@ -8,7 +8,7 @@
 | **En iyi** | tebrik/kutlama akışı (sipariş sonrası, doğum günü, yıl dönümü), davetiye ve RSVP, hediye kartı satışı, ekip kutlaması duyurusu |
 | **Kaçın** | finansal işlem onayı, kurumsal denetim paneli, klinik/teknik form, üzücü haber bildirimi |
 | **Zorluk** | düşük–orta (sevimli olmak kolay, zevkli kalmak zor) · **Erişilebilirlik** | iyi (13.75:1 gövde, 5.60:1 accent üstü) |
-| **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="celebration-card"]` |
+| **Aile** | Oyuncu & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="celebration-card"]` |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
 | **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 

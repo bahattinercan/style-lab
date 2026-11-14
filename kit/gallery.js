@@ -37,6 +37,11 @@
   const favcount = $('#favcount');
   const sortSel = $('#sort');
   const toastEl = $('#toast');
+  const pager = $('#pager');
+  const pNums = $('#pNums');
+  const pPrev = $('#pPrev');
+  const pNext = $('#pNext');
+  const pInfo = $('#pInfo');
 
   const chipBtns = $$('.chip[data-fam], .chip[data-ind], .chip[data-tone], .chip[data-scene]');
 
@@ -74,7 +79,9 @@
   };
 
   /* ------------------------------------------------------------------ durum */
-  const state = { q: '', fam: '', ind: '', ton: '', scene: '', sort: 'num', fav: false };
+  const state = { q: '', fam: '', ind: '', ton: '', scene: '', sort: 'num', fav: false, page: 1 };
+  /** Sayfa başına kart: 251 stil tek ızgarada 100'den fazla kartla kaydırma yerine sayfalanır. */
+  const PAGE_SIZE = 60;
 
   const FILTER_KEYS = ['fam', 'ind', 'ton'];
   const activeCount = () =>
@@ -110,9 +117,9 @@
   };
 
   /* ------------------------------------------------------------ filtre */
-  function apply({ writeUrl = true } = {}) {
+  function apply({ writeUrl = true, keepPage = false } = {}) {
     const query = parseQuery(state.q);
-    let shown = 0;
+    const matched = [];
     for (const c of cards) {
       const s = bySlug.get(c.dataset.slug);
       const ok =
@@ -121,12 +128,24 @@
         (!state.ind || s.industry === state.ind) &&
         (!state.ton || s.tone === state.ton) &&
         (!state.fav || favs.has(s.slug));
-      c.hidden = !ok;
+      c.hidden = true;
       c.style.order = String(rank.get(s.slug));
-      if (ok) shown += 1;
+      if (ok) matched.push(c);
     }
 
+    // sayfalama: filtre değişince 1. sayfaya dön, sayfa sınırını kırp
+    const pages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
+    if (!keepPage) state.page = 1;
+    state.page = Math.min(Math.max(1, state.page), pages);
+    const from = (state.page - 1) * PAGE_SIZE;
+    const slice = matched.slice(from, from + PAGE_SIZE);
+    for (const c of slice) c.hidden = false;
+
+    renderPager(matched.length, pages, from, slice.length);
+
+    const shown = matched.length;
     count.textContent = shown + ' / ' + cards.length;
+    count.title = shown ? `sayfa ${state.page}/${pages}` : '';
     count.dataset.state = shown ? 'ok' : 'empty';
     empty.hidden = shown > 0;
     qclear.hidden = state.q === '';
@@ -150,6 +169,44 @@
     renderActive();
     syncFavButtons();
     if (writeUrl) writeUrlState();
+  }
+
+  function renderPager(total, pages, from, sliceLen) {
+    pager.hidden = pages <= 1;
+    if (pages <= 1) {
+      pNums.innerHTML = '';
+      pInfo.textContent = '';
+      return;
+    }
+    pPrev.disabled = state.page <= 1;
+    pNext.disabled = state.page >= pages;
+    pInfo.textContent = `${from + 1}–${from + sliceLen} / ${total} · sayfa ${state.page}/${pages}`;
+
+    // 1 … 4 5 6 … 5 — dar ekranda da kısa kalır
+    const nums = [];
+    const push = (p) => nums.push(p);
+    const near = [state.page - 1, state.page, state.page + 1].filter((p) => p >= 1 && p <= pages);
+    push(1);
+    if (near[0] > 2) nums.push('…');
+    for (const p of near) if (!nums.includes(p)) push(p);
+    if (near[near.length - 1] < pages - 1) nums.push('…');
+    if (pages > 1 && !nums.includes(pages)) push(pages);
+
+    pNums.innerHTML = nums
+      .map((p) =>
+        p === '…'
+          ? '<span class="pnum gap" aria-hidden="true">…</span>'
+          : `<button type="button" class="pnum" data-page="${p}"${p === state.page ? ' aria-current="page"' : ''} aria-label="${p}. sayfa">${p}</button>`,
+      )
+      .join('');
+  }
+
+  function goPage(p) {
+    state.page = p;
+    apply({ keepPage: true });
+    grid.scrollIntoView({ block: 'start', behavior: 'auto' });
+    const firstCard = cards.find((c) => !c.hidden);
+    if (firstCard) firstCard.focus({ preventScroll: true });
   }
 
   function renderActive() {
@@ -207,6 +264,7 @@
 
   /* --------------------------------------------------------------- URL */
   const URL_KEYS = ['q', 'fam', 'ind', 'ton', 'scene', 'sort', 'fav'];
+  const pageParam = () => (state.page > 1 ? String(state.page) : '');
 
   function writeUrlState() {
     const p = new URLSearchParams();
@@ -214,6 +272,8 @@
       const v = k === 'fav' ? (state.fav ? '1' : '') : state[k];
       if (v && !(k === 'sort' && v === 'num')) p.set(k, v);
     }
+    const pg = pageParam();
+    if (pg) p.set('page', pg);
     const styleParam = new URLSearchParams(location.search).get('style');
     if (styleParam) p.set('style', styleParam);
     const qs = p.toString();
@@ -231,6 +291,7 @@
     state.scene = p.get('scene') ?? '';
     state.sort = p.get('sort') ?? 'num';
     state.fav = p.get('fav') === '1';
+    state.page = Math.max(1, Number.parseInt(p.get('page') ?? '1', 10) || 1);
     if (!['num', 'name', 'family'].includes(state.sort)) state.sort = 'num';
     sortSel.value = state.sort;
   }
@@ -617,6 +678,13 @@
     q.focus();
   });
 
+  pPrev.addEventListener('click', () => goPage(state.page - 1));
+  pNext.addEventListener('click', () => goPage(state.page + 1));
+  pNums.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-page]');
+    if (b) goPage(Number(b.dataset.page));
+  });
+
   fbtn.addEventListener('click', togglePanel);
   $('#fclose').addEventListener('click', () => {
     closePanel();
@@ -752,6 +820,14 @@
     } else if (e.key === 'f' || e.key === 'F') {
       e.preventDefault();
       togglePanel();
+    } else if (e.key === '[' || e.key === 'ArrowLeft') {
+      if (pager.hidden || state.page <= 1) return;
+      e.preventDefault();
+      goPage(state.page - 1);
+    } else if (e.key === ']' || e.key === 'ArrowRight') {
+      if (pager.hidden) return;
+      e.preventDefault();
+      goPage(state.page + 1);
     } else if (e.key === 'j' || e.key === 'ArrowDown') {
       const i = focusIdx();
       if (i < 0) return;
@@ -779,7 +855,7 @@
 
   addEventListener('popstate', () => {
     readUrlState();
-    apply({ writeUrl: false });
+    apply({ writeUrl: false, keepPage: true });
     if (state.scene) setScene(state.scene);
   });
 
@@ -794,7 +870,7 @@
   /* --------------------------------------------------------------- başlat */
   readUrlState();
   const hashStyle = new URLSearchParams(location.search).get('style');
-  apply({ writeUrl: false });
+  apply({ writeUrl: false, keepPage: true });
   if (state.scene) setScene(state.scene);
   syncCmp();
   syncFavButtons();

@@ -181,9 +181,10 @@ export function galleryHtml(styles, ctx) {
             <li>Her kartın <b>⊕</b> düğmesi: token CSS, AI brief, tüm kareler</li>
             <li><b>⧉</b> data-style'ı panoya kopyalar, <b>★</b> kısa listeye ekler</li>
             <li>Arama kutusu numara da kabul eder: <code>152</code> tek stili, <code>152-171</code> aralığı süzer</li>
+            <li>Katalog sayfalanır: sayfa başına 60 kart, altta sayfa numaraları (URL: <code>?page=2</code>)</li>
           </ul>
           <p class="kbd-hint">
-            <kbd>/</kbd> ara · <kbd>f</kbd> filtre · <kbd>j</kbd><kbd>k</kbd> gez ·
+            <kbd>/</kbd> ara · <kbd>f</kbd> filtre · <kbd>j</kbd><kbd>k</kbd> gez · <kbd>[</kbd><kbd>]</kbd> sayfa ·
             <kbd>Enter</kbd> detay · <kbd>c</kbd> kopyala · <kbd>s</kbd> yıldız · <kbd>Esc</kbd> kapat
           </p>
         </div>
@@ -234,6 +235,12 @@ export function galleryHtml(styles, ctx) {
   <main class="wrap">
     <div class="grid" id="grid">${data.map(card).join('\n')}
     </div>
+    <nav class="pager" id="pager" aria-label="Sayfalama" hidden>
+      <button type="button" class="pbtn" id="pPrev" aria-label="Önceki sayfa">←</button>
+      <div class="pnums" id="pNums"></div>
+      <button type="button" class="pbtn" id="pNext" aria-label="Sonraki sayfa">→</button>
+      <span class="pinfo" id="pInfo" role="status" aria-live="polite"></span>
+    </nav>
     <p class="empty" id="empty" hidden>
       Eşleşen stil yok. <button type="button" class="linkbtn" id="emptyReset">Filtreleri temizle</button>
     </p>

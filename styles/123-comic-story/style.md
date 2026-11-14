@@ -8,7 +8,7 @@
 | **En iyi** | hikâye/serial okuma, çizgi roman ve webtoon vitrini, çocuk-gençlik ürünü, eğitim içeriğinde adım anlatımı |
 | **Kaçın** | finansal işlem, kurumsal veri paneli, resmi form, uzun teknik dokümantasyon |
 | **Zorluk** | orta (balon/panel dengesi) · **Erişilebilirlik** | iyi (16.87:1 gövde, 4.63:1 accent üstü) |
-| **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="comic-story"]` |
+| **Aile** | Oyuncu & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="comic-story"]` |
 | **Kompozisyon** | `index` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
 | **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 

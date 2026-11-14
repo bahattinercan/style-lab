@@ -694,61 +694,61 @@ window.LIVE_STYLES = [
     "num": "116",
     "slug": "kids-playground",
     "name": "Kids Playground",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "117",
     "slug": "carnival-festival",
     "name": "Carnival Festival",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "118",
     "slug": "sticker-sheet",
     "name": "Sticker Sheet",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "119",
     "slug": "arcade-8bit",
     "name": "Arcade 8-bit",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "120",
     "slug": "craft-handmade",
     "name": "Craft Handmade",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "121",
     "slug": "celebration-card",
     "name": "Celebration Card",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "122",
     "slug": "collectible-card",
     "name": "Collectible Card",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "123",
     "slug": "comic-story",
     "name": "Comic Story",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "124",
     "slug": "album-sleeve",
     "name": "Album Sleeve",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "125",
     "slug": "sports-energy",
     "name": "Sports Energy",
-    "family": "Oyuncul"
+    "family": "Oyuncu"
   },
   {
     "num": "126",

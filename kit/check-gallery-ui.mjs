@@ -108,6 +108,31 @@ const DESKTOP = `(async () => {
   await wait();
   m.cmpViewOpen = !document.getElementById('cmpview').hidden;
   m.cmpFigures = document.querySelectorAll('#cmpGrid figure').length;
+
+  /* --- sayfalama  (önce filtreleri temizle: 7 karta inmiş ızgarada sayfalama gizli) --- */
+  document.getElementById('fclear').click();
+  await wait();
+  const PAGE = 60;
+  const pages = Math.ceil(cards.length / PAGE);
+  m.pagerVisible = !document.getElementById('pager').hidden;
+  m.page1Visible = cards.filter((c) => !c.hidden).length;
+  m.page1Info = document.getElementById('pInfo').textContent;
+  document.getElementById('pNext').click();
+  await wait();
+  m.page2Visible = cards.filter((c) => !c.hidden).length;
+  m.page2Info = document.getElementById('pInfo').textContent;
+  m.page2Url = location.search;
+  m.pageNums = document.querySelectorAll('#pNums .pnum').length;
+  m.pageCurrent = document.querySelector('#pNums [aria-current]')?.textContent ?? '';
+  const nums = [...document.querySelectorAll('#pNums [data-page]')];
+  nums[nums.length - 1].click();
+  await wait();
+  m.lastPageVisible = cards.filter((c) => !c.hidden).length;
+  m.lastInfo = document.getElementById('pInfo').textContent;
+  m.lastExpected = cards.length - PAGE * (pages - 1);
+  document.querySelector('#pNums [data-page="1"]').click();
+  await wait();
+  m.backToFirst = cards.filter((c) => !c.hidden).length;
   return m;
 })()`;
 
@@ -122,6 +147,23 @@ const MOBILE = `(() => {
   const r = fbtn.getBoundingClientRect();
   m.filterButton = Math.round(r.width) + 'x' + Math.round(r.height);
   return m;
+})()`;
+
+const FILTERPAGE = `(async () => {
+  const wait = (ms = 60) => new Promise((r) => setTimeout(r, ms));
+  const cards = Array.from(document.querySelectorAll('.card'));
+  document.getElementById('pNext').click();
+  await wait();
+  const q = document.getElementById('q');
+  q.value = 'oyun';
+  q.dispatchEvent(new Event('input'));
+  await wait();
+  return {
+    visible: cards.filter((c) => !c.hidden).length,
+    pagerHidden: document.getElementById('pager').hidden,
+    url: location.search,
+    page: document.querySelector('#pNums [aria-current]')?.textContent ?? '',
+  };
 })()`;
 
 const URLSTATE = `(() => {
@@ -173,6 +215,13 @@ try {
   check('karşılaştırma 2 stille etkin', d.cmpEnabled === true, d.cmpEnabled);
   check('karşılaştırma görünümü açılıyor', d.cmpViewOpen === true && d.cmpFigures === 2, d.cmpFigures + ' figür');
 
+  check('sayfalama görünür (60 kart/sayfa)', d.pagerVisible === true && d.page1Visible === 60, d.page1Info);
+  check('2. sayfa 60 kart gösteriyor', d.page2Visible === 60 && /^61–120 /.test(d.page2Info), d.page2Info);
+  check("sayfa URL'e yazılıyor (page=2)", /(^|[?&])page=2(&|$)/.test(d.page2Url), d.page2Url);
+  check('sayfa numaraları + aktif sayfa', d.pageNums >= 5 && d.pageCurrent === '2', d.pageNums + ' numara · aktif ' + d.pageCurrent);
+  check('son sayfa kalan kartları gösteriyor', d.lastPageVisible === d.lastExpected, d.lastInfo + ' · beklenen ' + d.lastExpected);
+  check('1. sayfaya dönüş', d.backToFirst === 60, d.backToFirst + ' kart');
+
   const mob = await cdp.evaluate(TARGET, { width: 375, height: 780, expression: MOBILE });
   check('mobilde yatay taşma yok', mob.scrollWidth <= mob.innerWidth + 1, mob.scrollWidth + ' ≤ ' + mob.innerWidth);
   check('mobilde kart aksiyonları taşmıyor', mob.actionOverflow === 0, mob.actionOverflow + ' taşan kart');
@@ -186,6 +235,10 @@ try {
     expression: URLSTATE,
   });
   check('URL durumu geri yükleniyor (fam+sort+q)', u.sort === 'name' && u.query === 'minimal' && u.visible === 1, JSON.stringify(u));
+
+  const fp = await cdp.evaluate(TARGET, { width: 1440, height: 900, expression: FILTERPAGE });
+  check("filtre sayfayı 1'e döndürüyor", fp.pagerHidden === true || fp.page === '1', JSON.stringify(fp));
+  check("filtre sonrası URL'de page yok", !/(^|[?&])page=/.test(fp.url), fp.url);
 
   const uNum = await cdp.evaluate(TARGET, {
     width: 1440,

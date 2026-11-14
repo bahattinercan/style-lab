@@ -8,7 +8,7 @@
 | **En iyi** | canlı skor/maç takibi, spor kulübü vitrini, antrenman uygulaması, sezon kampanyası, etkinlik geri sayımı |
 | **Kaçın** | sakin okuma sayfası, sağlık raporu, kurumsal form, uzun dokümantasyon |
 | **Zorluk** | orta (yüksek kontrast + kalın kenar dengesi) · **Erişilebilirlik** | iyi (16.68:1 gövde, 5.16:1 accent üstü) |
-| **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="sports-energy"]` |
+| **Aile** | Oyuncu & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="sports-energy"]` |
 | **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
 | **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 

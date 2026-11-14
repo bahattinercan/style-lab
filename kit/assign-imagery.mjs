@@ -63,7 +63,7 @@ const BY_FAMILY = {
   'Yayın & Tipografi': { pool: ['int-01.jpg', 'int-04.jpg', 'tex-01.jpg'], treatment: { mode: 'plain', strength: 0 } },
   'Hareket & Optik': { pool: ['tex-02.jpg', 'nat-02.jpg', 'obj-03.jpg'], treatment: { mode: 'duotone', strength: 0.4 } },
   Etkileşim: { pool: ['obj-03.jpg', 'urb-02.jpg', 'int-02.jpg'], treatment: { mode: 'scrim', strength: 0.4 } },
-  Oyuncul: { pool: ['obj-02.jpg', 'obj-04.jpg', 'tex-02.jpg'], treatment: { mode: 'duotone', strength: 0.3 } },
+  Oyuncu: { pool: ['obj-02.jpg', 'obj-04.jpg', 'tex-02.jpg'], treatment: { mode: 'duotone', strength: 0.3 } },
   'Materyal & Lüks': { pool: ['arch-01.jpg', 'tex-03.jpg', 'int-01.jpg'], treatment: { mode: 'grain', strength: 0.25 } },
   'Deneysel & Gelecek': { pool: ['nat-02.jpg', 'tex-02.jpg', 'urb-02.jpg'], treatment: { mode: 'grain', strength: 0.45 } },
   'Sahne & Prestij': { pool: ['arch-01.jpg', 'arch-04.jpg', 'int-01.jpg', 'int-02.jpg'], treatment: { mode: 'scrim', strength: 0.4 } },

@@ -8,7 +8,7 @@
 | **En iyi** | koleksiyon kartı ürünü (dijital kart, oyun envanteri), albüm/koleksiyon yönetimi, nadirlik vitrini, turnuva/sezon ödülü |
 | **Kaçın** | bankacılık işlem onayı, sağlık formu, uzun okuma sayfası, sade kurumsal vitrin |
 | **Zorluk** | orta (kart oranı + katman disiplini) · **Erişilebilirlik** | iyi (16.04:1 gövde, 6.44:1 accent üstü) |
-| **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="collectible-card"]` |
+| **Aile** | Oyuncu & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="collectible-card"]` |
 | **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
 | **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 

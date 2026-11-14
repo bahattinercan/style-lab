@@ -8,7 +8,7 @@
 | **En iyi** | müzik/albüm yayını, sanatçı diskografisi, podcast/season kapağı, sınırlı baskı satışı, plak mağazası |
 | **Kaçın** | yoğun işlem formu, kurumsal dashboard, sağlık/random veri ekranı, hızlı kampanya sayfası |
 | **Zorluk** | düşük–orta (oran ve sırt disiplini) · **Erişilebilirlik** | iyi (15.40:1 gövde, 4.66:1 accent üstü) |
-| **Aile** | Oyuncul & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="album-sleeve"]` |
+| **Aile** | Oyuncu & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="album-sleeve"]` |
 | **Kompozisyon** | `index` · `pill` · `dense` (bkz. `kit/render/layouts.json`) |
 | **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
 

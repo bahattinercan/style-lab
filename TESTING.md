@@ -49,9 +49,12 @@ Port doluysa `8000` yerine `8080` yaz. Bitirmek için terminalde `Ctrl+C`.
 | `Enter` | detay çekmecesi |
 | `c` | `data-style`'ı panoya kopyala |
 | `s` | kısa listeye ekle/çıkar |
+| `[` `]` · ← → | önceki / sonraki sayfa |
 | `Esc` | kapat |
 
 Kart düğmeleri: **⊕** token/brief/kareler · **⧉** kopyala · **★** kısa liste · **⇄** karşılaştır (2–4 stil).
+Katalog **sayfalanır**: sayfa başına 60 kart, altta `← 1 2 … 5 →` ve `1–60 / 251` bilgisi.
+Sayfa URL'e yazılır (`?page=2`); filtre/arama değişince 1. sayfaya döner.
 Arama kutusuna numara yazınca numaraya göre filtreler: `152` (tek stil), `#9`, `152-171` / `171..152`
 (aralık, ters de olur). Numara + aile/sektör/ton çipleri birlikte çalışır.
 Filtre + arama + sahne seçimi URL'e yazılır → bağlantı paylaşılabilir (`?q=152-171`). (`file://`'de bazı tarayıcılar
