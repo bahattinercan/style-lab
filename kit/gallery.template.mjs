@@ -102,7 +102,7 @@ function card(s) {
   const label = shotLabel(cover);
   const sub = [s.family, ...s.tags.slice(0, 2)].join(' · ');
   return `
-      <article class="card" data-slug="${esc(s.slug)}" data-family="${esc(s.family)}" data-industry="${esc(s.industry)}" data-tone="${esc(s.tone)}" tabindex="-1">
+      <article class="card" data-slug="${esc(s.slug)}" data-num="${esc(s.num)}" data-family="${esc(s.family)}" data-industry="${esc(s.industry)}" data-tone="${esc(s.tone)}" tabindex="-1">
         <a class="cover" href="${rel}" aria-label="${esc(s.name)} — ${esc(label)} görselini büyüt">
           <img src="${rel}" alt="${esc(s.name)} — ${esc(label)}" loading="lazy" decoding="async">
           <span class="cover-l">${esc(label)}</span>
@@ -180,6 +180,7 @@ export function galleryHtml(styles, ctx) {
             <li>${data.length} stil · her stil için tek sayfa görseli (1280×2400)</li>
             <li>Her kartın <b>⊕</b> düğmesi: token CSS, AI brief, tüm kareler</li>
             <li><b>⧉</b> data-style'ı panoya kopyalar, <b>★</b> kısa listeye ekler</li>
+            <li>Arama kutusu numara da kabul eder: <code>152</code> tek stili, <code>152-171</code> aralığı süzer</li>
           </ul>
           <p class="kbd-hint">
             <kbd>/</kbd> ara · <kbd>f</kbd> filtre · <kbd>j</kbd><kbd>k</kbd> gez ·
@@ -195,7 +196,7 @@ export function galleryHtml(styles, ctx) {
       <div class="bar-row">
         <div class="search">
           <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6"></circle><path d="M13.4 13.4 17 17"></path></svg>
-          <input id="q" type="search" placeholder="Stil, his veya etiket ara…" aria-label="Stil ara" autocomplete="off" spellcheck="false">
+          <input id="q" type="search" placeholder="Stil, etiket veya numara (152 · 152-171) ara…" aria-label="Stil ara: isim, etiket, numara veya numara aralığı" autocomplete="off" spellcheck="false">
           <button type="button" class="qclear" id="qclear" hidden aria-label="Aramayı temizle">×</button>
           <kbd class="search-kbd" aria-hidden="true">/</kbd>
         </div>
@@ -221,6 +222,7 @@ export function galleryHtml(styles, ctx) {
           ${chipRow('tone', 'Ton', tones)}
           <div class="fpanel-f">
             <span id="fsum">Filtre yok</span>
+            <span class="fhint">Numara: arama kutusuna <b>152</b> veya <b>152-171</b> yaz</span>
             <button type="button" class="linkbtn" id="fclear">Filtreleri temizle</button>
             <button type="button" class="linkbtn" id="fclose">Kapat</button>
           </div>

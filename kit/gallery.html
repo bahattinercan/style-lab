@@ -20,6 +20,7 @@
             <li>251 stil · her stil için tek sayfa görseli (1280×2400)</li>
             <li>Her kartın <b>⊕</b> düğmesi: token CSS, AI brief, tüm kareler</li>
             <li><b>⧉</b> data-style'ı panoya kopyalar, <b>★</b> kısa listeye ekler</li>
+            <li>Arama kutusu numara da kabul eder: <code>152</code> tek stili, <code>152-171</code> aralığı süzer</li>
           </ul>
           <p class="kbd-hint">
             <kbd>/</kbd> ara · <kbd>f</kbd> filtre · <kbd>j</kbd><kbd>k</kbd> gez ·
@@ -35,7 +36,7 @@
       <div class="bar-row">
         <div class="search">
           <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6"></circle><path d="M13.4 13.4 17 17"></path></svg>
-          <input id="q" type="search" placeholder="Stil, his veya etiket ara…" aria-label="Stil ara" autocomplete="off" spellcheck="false">
+          <input id="q" type="search" placeholder="Stil, etiket veya numara (152 · 152-171) ara…" aria-label="Stil ara: isim, etiket, numara veya numara aralığı" autocomplete="off" spellcheck="false">
           <button type="button" class="qclear" id="qclear" hidden aria-label="Aramayı temizle">×</button>
           <kbd class="search-kbd" aria-hidden="true">/</kbd>
         </div>
@@ -73,6 +74,7 @@
           </div>
           <div class="fpanel-f">
             <span id="fsum">Filtre yok</span>
+            <span class="fhint">Numara: arama kutusuna <b>152</b> veya <b>152-171</b> yaz</span>
             <button type="button" class="linkbtn" id="fclear">Filtreleri temizle</button>
             <button type="button" class="linkbtn" id="fclose">Kapat</button>
           </div>
@@ -83,7 +85,7 @@
 
   <main class="wrap">
     <div class="grid" id="grid">
-      <article class="card" data-slug="minimalism" data-family="Sade" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="minimalism" data-num="01" data-family="Sade" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/01-minimalism/shots/01-page.png" aria-label="Minimalism — Landing görselini büyüt">
           <img src="../styles/01-minimalism/shots/01-page.png" alt="Minimalism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -104,7 +106,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="swiss-design" data-family="Sade" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="swiss-design" data-num="02" data-family="Sade" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/02-swiss-design/shots/01-page.png" aria-label="Swiss Design — Landing görselini büyüt">
           <img src="../styles/02-swiss-design/shots/01-page.png" alt="Swiss Design — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -125,7 +127,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="editorial-design" data-family="Sade" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="editorial-design" data-num="03" data-family="Sade" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/03-editorial-design/shots/01-page.png" aria-label="Editorial Design — Landing görselini büyüt">
           <img src="../styles/03-editorial-design/shots/01-page.png" alt="Editorial Design — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -146,7 +148,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="luxury-typography" data-family="Sade" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="luxury-typography" data-num="04" data-family="Sade" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/04-luxury-typography/shots/01-page.png" aria-label="Luxury Typography — Landing görselini büyüt">
           <img src="../styles/04-luxury-typography/shots/01-page.png" alt="Luxury Typography — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -167,7 +169,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="bento-grid" data-family="Sade" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="bento-grid" data-num="05" data-family="Sade" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/05-bento-grid/shots/01-page.png" aria-label="Bento Grid — Landing görselini büyüt">
           <img src="../styles/05-bento-grid/shots/01-page.png" alt="Bento Grid — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -188,7 +190,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="japandi" data-family="Sade" data-industry="dergi" data-tone="notr" tabindex="-1">
+      <article class="card" data-slug="japandi" data-num="06" data-family="Sade" data-industry="dergi" data-tone="notr" tabindex="-1">
         <a class="cover" href="../styles/06-japandi/shots/01-page.png" aria-label="Japandi — Landing görselini büyüt">
           <img src="../styles/06-japandi/shots/01-page.png" alt="Japandi — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -209,7 +211,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="wabi-sabi" data-family="Sade" data-industry="saas" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="wabi-sabi" data-num="07" data-family="Sade" data-industry="saas" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/07-wabi-sabi/shots/01-page.png" aria-label="Wabi-Sabi — Landing görselini büyüt">
           <img src="../styles/07-wabi-sabi/shots/01-page.png" alt="Wabi-Sabi — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -230,7 +232,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="glassmorphism" data-family="Yüzey" data-industry="saglik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="glassmorphism" data-num="08" data-family="Yüzey" data-industry="saglik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/08-glassmorphism/shots/01-page.png" aria-label="Glassmorphism — Landing görselini büyüt">
           <img src="../styles/08-glassmorphism/shots/01-page.png" alt="Glassmorphism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -251,7 +253,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="liquid-glass" data-family="Yüzey" data-industry="saglik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="liquid-glass" data-num="09" data-family="Yüzey" data-industry="saglik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/09-liquid-glass/shots/01-page.png" aria-label="Liquid Glass — Landing görselini büyüt">
           <img src="../styles/09-liquid-glass/shots/01-page.png" alt="Liquid Glass — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -272,7 +274,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="neumorphism" data-family="Yüzey" data-industry="saglik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="neumorphism" data-num="10" data-family="Yüzey" data-industry="saglik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/10-neumorphism/shots/01-page.png" aria-label="Neumorphism — Landing görselini büyüt">
           <img src="../styles/10-neumorphism/shots/01-page.png" alt="Neumorphism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -293,7 +295,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="claymorphism" data-family="Yüzey" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="claymorphism" data-num="11" data-family="Yüzey" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/11-claymorphism/shots/01-page.png" aria-label="Claymorphism — Landing görselini büyüt">
           <img src="../styles/11-claymorphism/shots/01-page.png" alt="Claymorphism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -314,7 +316,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="aurora-ui" data-family="Yüzey" data-industry="saglik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="aurora-ui" data-num="12" data-family="Yüzey" data-industry="saglik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/12-aurora-ui/shots/01-page.png" aria-label="Aurora UI — Landing görselini büyüt">
           <img src="../styles/12-aurora-ui/shots/01-page.png" alt="Aurora UI — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -335,7 +337,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="neo-brutalism" data-family="Cesur" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="neo-brutalism" data-num="13" data-family="Cesur" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/13-neo-brutalism/shots/01-page.png" aria-label="Neo-Brutalism — Landing görselini büyüt">
           <img src="../styles/13-neo-brutalism/shots/01-page.png" alt="Neo-Brutalism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -356,7 +358,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="anti-design" data-family="Cesur" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="anti-design" data-num="14" data-family="Cesur" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/14-anti-design/shots/01-page.png" aria-label="Anti-Design — Landing görselini büyüt">
           <img src="../styles/14-anti-design/shots/01-page.png" alt="Anti-Design — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -377,7 +379,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="acid-graphics" data-family="Cesur" data-industry="eticaret" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="acid-graphics" data-num="15" data-family="Cesur" data-industry="eticaret" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/15-acid-graphics/shots/01-page.png" aria-label="Acid Graphics — Landing görselini büyüt">
           <img src="../styles/15-acid-graphics/shots/01-page.png" alt="Acid Graphics — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -398,7 +400,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="memphis" data-family="Cesur" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="memphis" data-num="16" data-family="Cesur" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/16-memphis/shots/01-page.png" aria-label="Memphis — Landing görselini büyüt">
           <img src="../styles/16-memphis/shots/01-page.png" alt="Memphis — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -419,7 +421,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="maximalism" data-family="Cesur" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="maximalism" data-num="17" data-family="Cesur" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/17-maximalism/shots/01-page.png" aria-label="Maximalism — Landing görselini büyüt">
           <img src="../styles/17-maximalism/shots/01-page.png" alt="Maximalism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -440,7 +442,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="dopamine-ui" data-family="Cesur" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="dopamine-ui" data-num="18" data-family="Cesur" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/18-dopamine-ui/shots/01-page.png" aria-label="Dopamine UI — Landing görselini büyüt">
           <img src="../styles/18-dopamine-ui/shots/01-page.png" alt="Dopamine UI — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -461,7 +463,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="y2k" data-family="Retro" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="y2k" data-num="19" data-family="Retro" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/19-y2k/shots/01-page.png" aria-label="Y2K — Landing görselini büyüt">
           <img src="../styles/19-y2k/shots/01-page.png" alt="Y2K — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -482,7 +484,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="vaporwave" data-family="Retro" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="vaporwave" data-num="20" data-family="Retro" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/20-vaporwave/shots/01-page.png" aria-label="Vaporwave — Landing görselini büyüt">
           <img src="../styles/20-vaporwave/shots/01-page.png" alt="Vaporwave — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -503,7 +505,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="synthwave" data-family="Retro" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="synthwave" data-num="21" data-family="Retro" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/21-synthwave/shots/01-page.png" aria-label="Synthwave — Landing görselini büyüt">
           <img src="../styles/21-synthwave/shots/01-page.png" alt="Synthwave — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -524,7 +526,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="cyberpunk" data-family="Retro" data-industry="eticaret" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="cyberpunk" data-num="22" data-family="Retro" data-industry="eticaret" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/22-cyberpunk/shots/01-page.png" aria-label="Cyberpunk — Landing görselini büyüt">
           <img src="../styles/22-cyberpunk/shots/01-page.png" alt="Cyberpunk — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -545,7 +547,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="cybercore" data-family="Retro" data-industry="ajans" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="cybercore" data-num="23" data-family="Retro" data-industry="ajans" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/23-cybercore/shots/01-page.png" aria-label="Cybercore — Landing görselini büyüt">
           <img src="../styles/23-cybercore/shots/01-page.png" alt="Cybercore — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -566,7 +568,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="pixel-art" data-family="Retro" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="pixel-art" data-num="24" data-family="Retro" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/24-pixel-art/shots/01-page.png" aria-label="Pixel Art — Landing görselini büyüt">
           <img src="../styles/24-pixel-art/shots/01-page.png" alt="Pixel Art — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -587,7 +589,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="frutiger-aero" data-family="Retro" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="frutiger-aero" data-num="25" data-family="Retro" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/25-frutiger-aero/shots/01-page.png" aria-label="Frutiger Aero — Landing görselini büyüt">
           <img src="../styles/25-frutiger-aero/shots/01-page.png" alt="Frutiger Aero — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -608,7 +610,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="art-deco" data-family="Retro" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="art-deco" data-num="26" data-family="Retro" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/26-art-deco/shots/01-page.png" aria-label="Art Deco — Landing görselini büyüt">
           <img src="../styles/26-art-deco/shots/01-page.png" alt="Art Deco — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -629,7 +631,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="victorian" data-family="Retro" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="victorian" data-num="27" data-family="Retro" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/27-victorian/shots/01-page.png" aria-label="Victorian — Landing görselini büyüt">
           <img src="../styles/27-victorian/shots/01-page.png" alt="Victorian — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -650,7 +652,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="surrealism" data-family="Sanatsal" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="surrealism" data-num="28" data-family="Sanatsal" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/28-surrealism/shots/01-page.png" aria-label="Surrealism — Landing görselini büyüt">
           <img src="../styles/28-surrealism/shots/01-page.png" alt="Surrealism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -671,7 +673,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="ethereal" data-family="Sanatsal" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="ethereal" data-num="29" data-family="Sanatsal" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/29-ethereal/shots/01-page.png" aria-label="Ethereal — Landing görselini büyüt">
           <img src="../styles/29-ethereal/shots/01-page.png" alt="Ethereal — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -692,7 +694,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="bohemian" data-family="Sanatsal" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="bohemian" data-num="30" data-family="Sanatsal" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/30-bohemian/shots/01-page.png" aria-label="Bohemian — Landing görselini büyüt">
           <img src="../styles/30-bohemian/shots/01-page.png" alt="Bohemian — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -713,7 +715,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="scrapbook" data-family="Sanatsal" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="scrapbook" data-num="31" data-family="Sanatsal" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/31-scrapbook/shots/01-page.png" aria-label="Scrapbook — Landing görselini büyüt">
           <img src="../styles/31-scrapbook/shots/01-page.png" alt="Scrapbook — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -734,7 +736,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="conceptual-sketch" data-family="Sanatsal" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="conceptual-sketch" data-num="32" data-family="Sanatsal" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/32-conceptual-sketch/shots/01-page.png" aria-label="Conceptual Sketch — Landing görselini büyüt">
           <img src="../styles/32-conceptual-sketch/shots/01-page.png" alt="Conceptual Sketch — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -755,7 +757,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="dark-academia" data-family="Sanatsal" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="dark-academia" data-num="33" data-family="Sanatsal" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/33-dark-academia/shots/01-page.png" aria-label="Dark Academia — Landing görselini büyüt">
           <img src="../styles/33-dark-academia/shots/01-page.png" alt="Dark Academia — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -776,7 +778,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="skeuomorphism" data-family="Sanatsal" data-industry="dergi" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="skeuomorphism" data-num="34" data-family="Sanatsal" data-industry="dergi" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/34-skeuomorphism/shots/01-page.png" aria-label="Skeuomorphism — Landing görselini büyüt">
           <img src="../styles/34-skeuomorphism/shots/01-page.png" alt="Skeuomorphism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -797,7 +799,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="bauhaus" data-family="Geometrik" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="bauhaus" data-num="35" data-family="Geometrik" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/35-bauhaus/shots/01-page.png" aria-label="Bauhaus — Landing görselini büyüt">
           <img src="../styles/35-bauhaus/shots/01-page.png" alt="Bauhaus — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -818,7 +820,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="constructivism" data-family="Geometrik" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="constructivism" data-num="36" data-family="Geometrik" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/36-constructivism/shots/01-page.png" aria-label="Constructivism — Landing görselini büyüt">
           <img src="../styles/36-constructivism/shots/01-page.png" alt="Constructivism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -839,7 +841,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="kinetic-type" data-family="Tipografik" data-industry="dergi" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="kinetic-type" data-num="37" data-family="Tipografik" data-industry="dergi" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/37-kinetic-type/shots/01-page.png" aria-label="Kinetic Type — Landing görselini büyüt">
           <img src="../styles/37-kinetic-type/shots/01-page.png" alt="Kinetic Type — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -860,7 +862,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="organic-bio" data-family="Organik" data-industry="emlak" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="organic-bio" data-num="38" data-family="Organik" data-industry="emlak" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/38-organic-bio/shots/01-page.png" aria-label="Organic / Biophilic — Landing görselini büyüt">
           <img src="../styles/38-organic-bio/shots/01-page.png" alt="Organic / Biophilic — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -881,7 +883,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="ai-native-mesh" data-family="Yeni Dalga" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="ai-native-mesh" data-num="39" data-family="Yeni Dalga" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/39-ai-native-mesh/shots/01-page.png" aria-label="AI-native Mesh — Landing görselini büyüt">
           <img src="../styles/39-ai-native-mesh/shots/01-page.png" alt="AI-native Mesh — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -902,7 +904,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="scandinavian-dark" data-family="Yeni Dalga" data-industry="ajans" data-tone="notr" tabindex="-1">
+      <article class="card" data-slug="scandinavian-dark" data-num="40" data-family="Yeni Dalga" data-industry="ajans" data-tone="notr" tabindex="-1">
         <a class="cover" href="../styles/40-scandinavian-dark/shots/01-page.png" aria-label="Scandinavian Dark — Landing görselini büyüt">
           <img src="../styles/40-scandinavian-dark/shots/01-page.png" alt="Scandinavian Dark — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -923,7 +925,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="grand-tourer" data-family="Zamansız" data-industry="emlak" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="grand-tourer" data-num="41" data-family="Zamansız" data-industry="emlak" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/41-grand-tourer/shots/01-page.png" aria-label="Grand Tourer — Landing görselini büyüt">
           <img src="../styles/41-grand-tourer/shots/01-page.png" alt="Grand Tourer — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -944,7 +946,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="grand-tourer-oxblood" data-family="Zamansız" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="grand-tourer-oxblood" data-num="42" data-family="Zamansız" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/42-grand-tourer-oxblood/shots/01-page.png" aria-label="Grand Tourer Oxblood — Landing görselini büyüt">
           <img src="../styles/42-grand-tourer-oxblood/shots/01-page.png" alt="Grand Tourer Oxblood — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -965,7 +967,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="grand-tourer-midnight" data-family="Zamansız" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="grand-tourer-midnight" data-num="43" data-family="Zamansız" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/43-grand-tourer-midnight/shots/01-page.png" aria-label="Grand Tourer Midnight — Landing görselini büyüt">
           <img src="../styles/43-grand-tourer-midnight/shots/01-page.png" alt="Grand Tourer Midnight — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -986,7 +988,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="utility" data-family="Zamansız" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="utility" data-num="44" data-family="Zamansız" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/44-utility/shots/01-page.png" aria-label="Utility — Landing görselini büyüt">
           <img src="../styles/44-utility/shots/01-page.png" alt="Utility — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1007,7 +1009,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="terminal-ui" data-family="Teknik" data-industry="saas" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="terminal-ui" data-num="45" data-family="Teknik" data-industry="saas" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/45-terminal-ui/shots/01-page.png" aria-label="Terminal UI — Landing görselini büyüt">
           <img src="../styles/45-terminal-ui/shots/01-page.png" alt="Terminal UI — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1028,7 +1030,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="telemetry-grid" data-family="Veri &amp; Gösterge" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="telemetry-grid" data-num="46" data-family="Veri &amp; Gösterge" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/46-telemetry-grid/shots/01-page.png" aria-label="Telemetry Grid — Landing görselini büyüt">
           <img src="../styles/46-telemetry-grid/shots/01-page.png" alt="Telemetry Grid — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1049,7 +1051,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="trading-desk" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="trading-desk" data-num="47" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/47-trading-desk/shots/01-page.png" aria-label="Trading Desk — Landing görselini büyüt">
           <img src="../styles/47-trading-desk/shots/01-page.png" alt="Trading Desk — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1070,7 +1072,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="executive-kpi" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="executive-kpi" data-num="48" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/48-executive-kpi/shots/01-page.png" aria-label="Executive KPI — Landing görselini büyüt">
           <img src="../styles/48-executive-kpi/shots/01-page.png" alt="Executive KPI — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1091,7 +1093,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="log-stream" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="log-stream" data-num="49" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/49-log-stream/shots/01-page.png" aria-label="Log Stream — Landing görselini büyüt">
           <img src="../styles/49-log-stream/shots/01-page.png" alt="Log Stream — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1112,7 +1114,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="lab-instrument" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="lab-instrument" data-num="50" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/50-lab-instrument/shots/01-page.png" aria-label="Lab Instrument — Landing görselini büyüt">
           <img src="../styles/50-lab-instrument/shots/01-page.png" alt="Lab Instrument — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1133,7 +1135,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="atlas-console" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="atlas-console" data-num="51" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/51-atlas-console/shots/01-page.png" aria-label="Atlas Console — Landing görselini büyüt">
           <img src="../styles/51-atlas-console/shots/01-page.png" alt="Atlas Console — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1154,7 +1156,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="experiment-split" data-family="Veri &amp; Gösterge" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="experiment-split" data-num="52" data-family="Veri &amp; Gösterge" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/52-experiment-split/shots/01-page.png" aria-label="Experiment Split — Landing görselini büyüt">
           <img src="../styles/52-experiment-split/shots/01-page.png" alt="Experiment Split — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1175,7 +1177,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="ledger-meter" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="ledger-meter" data-num="53" data-family="Veri &amp; Gösterge" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/53-ledger-meter/shots/01-page.png" aria-label="Ledger Meter — Landing görselini büyüt">
           <img src="../styles/53-ledger-meter/shots/01-page.png" alt="Ledger Meter — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1196,7 +1198,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="vitals-triage" data-family="Veri &amp; Gösterge" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="vitals-triage" data-num="54" data-family="Veri &amp; Gösterge" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/54-vitals-triage/shots/01-page.png" aria-label="Vitals Triage — Landing görselini büyüt">
           <img src="../styles/54-vitals-triage/shots/01-page.png" alt="Vitals Triage — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1217,7 +1219,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="fleet-telemetry" data-family="Veri &amp; Gösterge" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="fleet-telemetry" data-num="55" data-family="Veri &amp; Gösterge" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/55-fleet-telemetry/shots/01-page.png" aria-label="Fleet Telemetry — Landing görselini büyüt">
           <img src="../styles/55-fleet-telemetry/shots/01-page.png" alt="Fleet Telemetry — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1238,7 +1240,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="blueprint-drawing" data-family="Endüstriyel" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="blueprint-drawing" data-num="56" data-family="Endüstriyel" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/56-blueprint-drawing/shots/01-page.png" aria-label="Blueprint Çizimi — Landing görselini büyüt">
           <img src="../styles/56-blueprint-drawing/shots/01-page.png" alt="Blueprint Çizimi — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1259,7 +1261,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="machined-metal-panel" data-family="Endüstriyel" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="machined-metal-panel" data-num="57" data-family="Endüstriyel" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/57-machined-metal-panel/shots/01-page.png" aria-label="İşlenmiş Metal Panel — Landing görselini büyüt">
           <img src="../styles/57-machined-metal-panel/shots/01-page.png" alt="İşlenmiş Metal Panel — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1280,7 +1282,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="safety-signage" data-family="Endüstriyel" data-industry="saas" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="safety-signage" data-num="58" data-family="Endüstriyel" data-industry="saas" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/58-safety-signage/shots/01-page.png" aria-label="Güvenlik Tabelası — Landing görselini büyüt">
           <img src="../styles/58-safety-signage/shots/01-page.png" alt="Güvenlik Tabelası — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1301,7 +1303,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="mes-production-line" data-family="Endüstriyel" data-industry="danismanlik" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="mes-production-line" data-num="59" data-family="Endüstriyel" data-industry="danismanlik" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/59-mes-production-line/shots/01-page.png" aria-label="Üretim Hattı · MES — Landing görselini büyüt">
           <img src="../styles/59-mes-production-line/shots/01-page.png" alt="Üretim Hattı · MES — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1322,7 +1324,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="energy-grid" data-family="Endüstriyel" data-industry="saas" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="energy-grid" data-num="60" data-family="Endüstriyel" data-industry="saas" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/60-energy-grid/shots/01-page.png" aria-label="Enerji Şebekesi — Landing görselini büyüt">
           <img src="../styles/60-energy-grid/shots/01-page.png" alt="Enerji Şebekesi — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1343,7 +1345,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="calibration-lab" data-family="Endüstriyel" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="calibration-lab" data-num="61" data-family="Endüstriyel" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/61-calibration-lab/shots/01-page.png" aria-label="Calibration Lab — Landing görselini büyüt">
           <img src="../styles/61-calibration-lab/shots/01-page.png" alt="Calibration Lab — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1364,7 +1366,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="warehouse-flow" data-family="Endüstriyel" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="warehouse-flow" data-num="62" data-family="Endüstriyel" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/62-warehouse-flow/shots/01-page.png" aria-label="Warehouse Flow — Landing görselini büyüt">
           <img src="../styles/62-warehouse-flow/shots/01-page.png" alt="Warehouse Flow — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1385,7 +1387,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="maintenance-cmms" data-family="Endüstriyel" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="maintenance-cmms" data-num="63" data-family="Endüstriyel" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/63-maintenance-cmms/shots/01-page.png" aria-label="Maintenance CMMS — Landing görselini büyüt">
           <img src="../styles/63-maintenance-cmms/shots/01-page.png" alt="Maintenance CMMS — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1406,7 +1408,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="construction-site" data-family="Endüstriyel" data-industry="saas" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="construction-site" data-num="64" data-family="Endüstriyel" data-industry="saas" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/64-construction-site/shots/01-page.png" aria-label="Construction Site — Landing görselini büyüt">
           <img src="../styles/64-construction-site/shots/01-page.png" alt="Construction Site — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1427,7 +1429,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="cockpit-avionics" data-family="Endüstriyel" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="cockpit-avionics" data-num="65" data-family="Endüstriyel" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/65-cockpit-avionics/shots/01-page.png" aria-label="Cockpit Avionics — Landing görselini büyüt">
           <img src="../styles/65-cockpit-avionics/shots/01-page.png" alt="Cockpit Avionics — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1448,7 +1450,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="nordic-folk" data-family="Kültürel &amp; Bölgesel" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="nordic-folk" data-num="66" data-family="Kültürel &amp; Bölgesel" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/66-nordic-folk/shots/01-page.png" aria-label="Nordic Folk — Landing görselini büyüt">
           <img src="../styles/66-nordic-folk/shots/01-page.png" alt="Nordic Folk — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1469,7 +1471,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="japanese-ma" data-family="Kültürel &amp; Bölgesel" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="japanese-ma" data-num="67" data-family="Kültürel &amp; Bölgesel" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/67-japanese-ma/shots/01-page.png" aria-label="Japanese Ma — Landing görselini büyüt">
           <img src="../styles/67-japanese-ma/shots/01-page.png" alt="Japanese Ma — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1490,7 +1492,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="levant-calligraphy" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="levant-calligraphy" data-num="68" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/68-levant-calligraphy/shots/01-page.png" aria-label="Levant Calligraphy — Landing görselini büyüt">
           <img src="../styles/68-levant-calligraphy/shots/01-page.png" alt="Levant Calligraphy — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1511,7 +1513,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="andalusian-azulejo" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="andalusian-azulejo" data-num="69" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/69-andalusian-azulejo/shots/01-page.png" aria-label="Andalusian Azulejo — Landing görselini büyüt">
           <img src="../styles/69-andalusian-azulejo/shots/01-page.png" alt="Andalusian Azulejo — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1532,7 +1534,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="slavic-late-brutalist" data-family="Kültürel &amp; Bölgesel" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="slavic-late-brutalist" data-num="70" data-family="Kültürel &amp; Bölgesel" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/70-slavic-late-brutalist/shots/01-page.png" aria-label="Slavic Late Brutalist — Landing görselini büyüt">
           <img src="../styles/70-slavic-late-brutalist/shots/01-page.png" alt="Slavic Late Brutalist — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1553,7 +1555,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="west-african-pattern" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="west-african-pattern" data-num="71" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/71-west-african-pattern/shots/01-page.png" aria-label="West African Pattern — Landing görselini büyüt">
           <img src="../styles/71-west-african-pattern/shots/01-page.png" alt="West African Pattern — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1574,7 +1576,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="andean-textile" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="andean-textile" data-num="72" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/72-andean-textile/shots/01-page.png" aria-label="Andean Textile — Landing görselini büyüt">
           <img src="../styles/72-andean-textile/shots/01-page.png" alt="Andean Textile — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1595,7 +1597,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="indian-block-print" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="indian-block-print" data-num="73" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/73-indian-block-print/shots/01-page.png" aria-label="Indian Block Print — Landing görselini büyüt">
           <img src="../styles/73-indian-block-print/shots/01-page.png" alt="Indian Block Print — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1616,7 +1618,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="persian-miniature" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="persian-miniature" data-num="74" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/74-persian-miniature/shots/01-page.png" aria-label="Persian Miniature — Landing görselini büyüt">
           <img src="../styles/74-persian-miniature/shots/01-page.png" alt="Persian Miniature — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1637,7 +1639,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="aegean-island" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="aegean-island" data-num="75" data-family="Kültürel &amp; Bölgesel" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/75-aegean-island/shots/01-page.png" aria-label="Aegean Island — Landing görselini büyüt">
           <img src="../styles/75-aegean-island/shots/01-page.png" alt="Aegean Island — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1658,7 +1660,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="biophilic-botanical" data-family="Doğa &amp; Organik" data-industry="saglik" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="biophilic-botanical" data-num="76" data-family="Doğa &amp; Organik" data-industry="saglik" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/76-biophilic-botanical/shots/01-page.png" aria-label="Biyofilik Botanik — Landing görselini büyüt">
           <img src="../styles/76-biophilic-botanical/shots/01-page.png" alt="Biyofilik Botanik — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1679,7 +1681,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="weather-atmosphere" data-family="Doğa &amp; Organik" data-industry="saglik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="weather-atmosphere" data-num="77" data-family="Doğa &amp; Organik" data-industry="saglik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/77-weather-atmosphere/shots/01-page.png" aria-label="Hava Durumu &amp; Atmosfer — Landing görselini büyüt">
           <img src="../styles/77-weather-atmosphere/shots/01-page.png" alt="Hava Durumu &amp; Atmosfer — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1700,7 +1702,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="topographic-terrain" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="topographic-terrain" data-num="78" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/78-topographic-terrain/shots/01-page.png" aria-label="Topografya &amp; Arazi — Landing görselini büyüt">
           <img src="../styles/78-topographic-terrain/shots/01-page.png" alt="Topografya &amp; Arazi — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1721,7 +1723,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="ocean-current" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="ocean-current" data-num="79" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/79-ocean-current/shots/01-page.png" aria-label="Deniz &amp; Akıntı — Landing görselini büyüt">
           <img src="../styles/79-ocean-current/shots/01-page.png" alt="Deniz &amp; Akıntı — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1742,7 +1744,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="seasonal-shift" data-family="Doğa &amp; Organik" data-industry="saglik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="seasonal-shift" data-num="80" data-family="Doğa &amp; Organik" data-industry="saglik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/80-seasonal-shift/shots/01-page.png" aria-label="Mevsim Geçişi — Landing görselini büyüt">
           <img src="../styles/80-seasonal-shift/shots/01-page.png" alt="Mevsim Geçişi — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1763,7 +1765,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="forest-bark" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="forest-bark" data-num="81" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/81-forest-bark/shots/01-page.png" aria-label="Forest Bark — Landing görselini büyüt">
           <img src="../styles/81-forest-bark/shots/01-page.png" alt="Forest Bark — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1784,7 +1786,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="desert-sand" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="desert-sand" data-num="82" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/82-desert-sand/shots/01-page.png" aria-label="Desert Sand — Landing görselini büyüt">
           <img src="../styles/82-desert-sand/shots/01-page.png" alt="Desert Sand — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1805,7 +1807,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="polar-ice" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="polar-ice" data-num="83" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/83-polar-ice/shots/01-page.png" aria-label="Polar Ice — Landing görselini büyüt">
           <img src="../styles/83-polar-ice/shots/01-page.png" alt="Polar Ice — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1826,7 +1828,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="volcanic-mineral" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="volcanic-mineral" data-num="84" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/84-volcanic-mineral/shots/01-page.png" aria-label="Volcanic Mineral — Landing görselini büyüt">
           <img src="../styles/84-volcanic-mineral/shots/01-page.png" alt="Volcanic Mineral — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1847,7 +1849,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="coral-reef" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="coral-reef" data-num="85" data-family="Doğa &amp; Organik" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/85-coral-reef/shots/01-page.png" aria-label="Coral Reef — Landing görselini büyüt">
           <img src="../styles/85-coral-reef/shots/01-page.png" alt="Coral Reef — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1868,7 +1870,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="literary-hardcover" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="literary-hardcover" data-num="86" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/86-literary-hardcover/shots/01-page.png" aria-label="Literary Hardcover — Landing görselini büyüt">
           <img src="../styles/86-literary-hardcover/shots/01-page.png" alt="Literary Hardcover — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1889,7 +1891,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="broadsheet-daily" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="broadsheet-daily" data-num="87" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/87-broadsheet-daily/shots/01-page.png" aria-label="Broadsheet Daily — Landing görselini büyüt">
           <img src="../styles/87-broadsheet-daily/shots/01-page.png" alt="Broadsheet Daily — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1910,7 +1912,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="magazine-feature" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="magazine-feature" data-num="88" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/88-magazine-feature/shots/01-page.png" aria-label="Magazine Feature — Landing görselini büyüt">
           <img src="../styles/88-magazine-feature/shots/01-page.png" alt="Magazine Feature — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1931,7 +1933,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="academic-paper" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="academic-paper" data-num="89" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/89-academic-paper/shots/01-page.png" aria-label="Academic Paper — Landing görselini büyüt">
           <img src="../styles/89-academic-paper/shots/01-page.png" alt="Academic Paper — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1952,7 +1954,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="poetry-chapbook" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="poetry-chapbook" data-num="90" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/90-poetry-chapbook/shots/01-page.png" aria-label="Poetry Chapbook — Landing görselini büyüt">
           <img src="../styles/90-poetry-chapbook/shots/01-page.png" alt="Poetry Chapbook — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1973,7 +1975,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="product-catalog" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="product-catalog" data-num="91" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/91-product-catalog/shots/01-page.png" aria-label="Product Catalog — Landing görselini büyüt">
           <img src="../styles/91-product-catalog/shots/01-page.png" alt="Product Catalog — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -1994,7 +1996,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="museum-thesis" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="museum-thesis" data-num="92" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/92-museum-thesis/shots/01-page.png" aria-label="Museum &amp; Thesis — Landing görselini büyüt">
           <img src="../styles/92-museum-thesis/shots/01-page.png" alt="Museum &amp; Thesis — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2015,7 +2017,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="type-experiment" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="type-experiment" data-num="93" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/93-type-experiment/shots/01-page.png" aria-label="Type Experiment — Landing görselini büyüt">
           <img src="../styles/93-type-experiment/shots/01-page.png" alt="Type Experiment — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2036,7 +2038,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="encyclopedia" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="encyclopedia" data-num="94" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/94-encyclopedia/shots/01-page.png" aria-label="Encyclopedia — Landing görselini büyüt">
           <img src="../styles/94-encyclopedia/shots/01-page.png" alt="Encyclopedia — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2057,7 +2059,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="punk-fanzine" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="punk-fanzine" data-num="95" data-family="Yayın &amp; Tipografi" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/95-punk-fanzine/shots/01-page.png" aria-label="Punk Fanzine — Landing görselini büyüt">
           <img src="../styles/95-punk-fanzine/shots/01-page.png" alt="Punk Fanzine — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2078,7 +2080,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="kinetic-marquee" data-family="Hareket &amp; Optik" data-industry="eticaret" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="kinetic-marquee" data-num="96" data-family="Hareket &amp; Optik" data-industry="eticaret" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/96-kinetic-marquee/shots/01-page.png" aria-label="Kinetic Marquee — Landing görselini büyüt">
           <img src="../styles/96-kinetic-marquee/shots/01-page.png" alt="Kinetic Marquee — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2099,7 +2101,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="optical-illusion" data-family="Hareket &amp; Optik" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="optical-illusion" data-num="97" data-family="Hareket &amp; Optik" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/97-optical-illusion/shots/01-page.png" aria-label="Optical Illusion — Landing görselini büyüt">
           <img src="../styles/97-optical-illusion/shots/01-page.png" alt="Optical Illusion — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2120,7 +2122,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="generative-grid" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="generative-grid" data-num="98" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/98-generative-grid/shots/01-page.png" aria-label="Generative Grid — Landing görselini büyüt">
           <img src="../styles/98-generative-grid/shots/01-page.png" alt="Generative Grid — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2141,7 +2143,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="depth-parallax" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="depth-parallax" data-num="99" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/99-depth-parallax/shots/01-page.png" aria-label="Depth Parallax — Landing görselini büyüt">
           <img src="../styles/99-depth-parallax/shots/01-page.png" alt="Depth Parallax — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2162,7 +2164,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="fluid-simulation" data-family="Hareket &amp; Optik" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="fluid-simulation" data-num="100" data-family="Hareket &amp; Optik" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/100-fluid-simulation/shots/01-page.png" aria-label="Fluid Simulation — Landing görselini büyüt">
           <img src="../styles/100-fluid-simulation/shots/01-page.png" alt="Fluid Simulation — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2183,7 +2185,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="shadow-stage" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="shadow-stage" data-num="101" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/101-shadow-stage/shots/01-page.png" aria-label="Shadow Stage — Landing görselini büyüt">
           <img src="../styles/101-shadow-stage/shots/01-page.png" alt="Shadow Stage — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2204,7 +2206,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="moire-field" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="moire-field" data-num="102" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/102-moire-field/shots/01-page.png" aria-label="Moiré Field — Landing görselini büyüt">
           <img src="../styles/102-moire-field/shots/01-page.png" alt="Moiré Field — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2225,7 +2227,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="motion-trail" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="motion-trail" data-num="103" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/103-motion-trail/shots/01-page.png" aria-label="Motion Trail — Landing görselini büyüt">
           <img src="../styles/103-motion-trail/shots/01-page.png" alt="Motion Trail — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2246,7 +2248,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="stepped-mechanism" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="stepped-mechanism" data-num="104" data-family="Hareket &amp; Optik" data-industry="ajans" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/104-stepped-mechanism/shots/01-page.png" aria-label="Stepped Mechanism — Landing görselini büyüt">
           <img src="../styles/104-stepped-mechanism/shots/01-page.png" alt="Stepped Mechanism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2267,7 +2269,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="holographic-layer" data-family="Hareket &amp; Optik" data-industry="eticaret" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="holographic-layer" data-num="105" data-family="Hareket &amp; Optik" data-industry="eticaret" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/105-holographic-layer/shots/01-page.png" aria-label="Holographic Layer — Landing görselini büyüt">
           <img src="../styles/105-holographic-layer/shots/01-page.png" alt="Holographic Layer — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2288,7 +2290,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="voice-first" data-family="Etkileşim" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="voice-first" data-num="106" data-family="Etkileşim" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/106-voice-first/shots/01-page.png" aria-label="Ses-Öncelikli — Landing görselini büyüt">
           <img src="../styles/106-voice-first/shots/01-page.png" alt="Ses-Öncelikli — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2309,7 +2311,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="spatial-ar-layer" data-family="Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="spatial-ar-layer" data-num="107" data-family="Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/107-spatial-ar-layer/shots/01-page.png" aria-label="Uzamsal AR Katman — Landing görselini büyüt">
           <img src="../styles/107-spatial-ar-layer/shots/01-page.png" alt="Uzamsal AR Katman — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2330,7 +2332,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="command-palette" data-family="Etkileşim" data-industry="saas" data-tone="notr" tabindex="-1">
+      <article class="card" data-slug="command-palette" data-num="108" data-family="Etkileşim" data-industry="saas" data-tone="notr" tabindex="-1">
         <a class="cover" href="../styles/108-command-palette/shots/01-page.png" aria-label="Komut Paleti — Landing görselini büyüt">
           <img src="../styles/108-command-palette/shots/01-page.png" alt="Komut Paleti — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2351,7 +2353,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="timeline-editor" data-family="Etkileşim" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="timeline-editor" data-num="109" data-family="Etkileşim" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/109-timeline-editor/shots/01-page.png" aria-label="Zaman Çizelgesi Editörü — Landing görselini büyüt">
           <img src="../styles/109-timeline-editor/shots/01-page.png" alt="Zaman Çizelgesi Editörü — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2372,7 +2374,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="kanban-flow" data-family="Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="kanban-flow" data-num="110" data-family="Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/110-kanban-flow/shots/01-page.png" aria-label="Kanban Akışı — Landing görselini büyüt">
           <img src="../styles/110-kanban-flow/shots/01-page.png" alt="Kanban Akışı — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2393,7 +2395,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="step-wizard" data-family="Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="step-wizard" data-num="111" data-family="Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/111-step-wizard/shots/01-page.png" aria-label="Adım Sihirbazı — Landing görselini büyüt">
           <img src="../styles/111-step-wizard/shots/01-page.png" alt="Adım Sihirbazı — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2414,7 +2416,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="zero-ui" data-family="Etkileşim" data-industry="saas" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="zero-ui" data-num="112" data-family="Etkileşim" data-industry="saas" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/112-zero-ui/shots/01-page.png" aria-label="Sıfır Arayüz — Landing görselini büyüt">
           <img src="../styles/112-zero-ui/shots/01-page.png" alt="Sıfır Arayüz — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2435,7 +2437,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="notebook-repl" data-family="Etkileşim" data-industry="saas" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="notebook-repl" data-num="113" data-family="Etkileşim" data-industry="saas" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/113-notebook-repl/shots/01-page.png" aria-label="Notebook / REPL — Landing görselini büyüt">
           <img src="../styles/113-notebook-repl/shots/01-page.png" alt="Notebook / REPL — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2456,7 +2458,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="multiplayer-presence" data-family="Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="multiplayer-presence" data-num="114" data-family="Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/114-multiplayer-presence/shots/01-page.png" aria-label="Eşzamanlı İşbirlikçi — Landing görselini büyüt">
           <img src="../styles/114-multiplayer-presence/shots/01-page.png" alt="Eşzamanlı İşbirlikçi — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2477,7 +2479,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="keyboard-first" data-family="Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="keyboard-first" data-num="115" data-family="Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/115-keyboard-first/shots/01-page.png" aria-label="Klavye-Öncelikli Komut Arayüzü — Landing görselini büyüt">
           <img src="../styles/115-keyboard-first/shots/01-page.png" alt="Klavye-Öncelikli Komut Arayüzü — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2498,7 +2500,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="kids-playground" data-family="Oyuncul" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="kids-playground" data-num="116" data-family="Oyuncul" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/116-kids-playground/shots/01-page.png" aria-label="Kids Playground — Landing görselini büyüt">
           <img src="../styles/116-kids-playground/shots/01-page.png" alt="Kids Playground — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2519,7 +2521,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="carnival-festival" data-family="Oyuncul" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="carnival-festival" data-num="117" data-family="Oyuncul" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/117-carnival-festival/shots/01-page.png" aria-label="Carnival Festival — Landing görselini büyüt">
           <img src="../styles/117-carnival-festival/shots/01-page.png" alt="Carnival Festival — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2540,7 +2542,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="sticker-sheet" data-family="Oyuncul" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="sticker-sheet" data-num="118" data-family="Oyuncul" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/118-sticker-sheet/shots/01-page.png" aria-label="Sticker Sheet — Landing görselini büyüt">
           <img src="../styles/118-sticker-sheet/shots/01-page.png" alt="Sticker Sheet — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2561,7 +2563,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="arcade-8bit" data-family="Oyuncul" data-industry="eticaret" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="arcade-8bit" data-num="119" data-family="Oyuncul" data-industry="eticaret" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/119-arcade-8bit/shots/01-page.png" aria-label="Arcade 8-bit — Landing görselini büyüt">
           <img src="../styles/119-arcade-8bit/shots/01-page.png" alt="Arcade 8-bit — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2582,7 +2584,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="craft-handmade" data-family="Oyuncul" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="craft-handmade" data-num="120" data-family="Oyuncul" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/120-craft-handmade/shots/01-page.png" aria-label="Craft Handmade — Landing görselini büyüt">
           <img src="../styles/120-craft-handmade/shots/01-page.png" alt="Craft Handmade — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2603,7 +2605,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="celebration-card" data-family="Oyuncul" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="celebration-card" data-num="121" data-family="Oyuncul" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/121-celebration-card/shots/01-page.png" aria-label="Celebration Card — Landing görselini büyüt">
           <img src="../styles/121-celebration-card/shots/01-page.png" alt="Celebration Card — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2624,7 +2626,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="collectible-card" data-family="Oyuncul" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="collectible-card" data-num="122" data-family="Oyuncul" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/122-collectible-card/shots/01-page.png" aria-label="Collectible Card — Landing görselini büyüt">
           <img src="../styles/122-collectible-card/shots/01-page.png" alt="Collectible Card — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2645,7 +2647,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="comic-story" data-family="Oyuncul" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="comic-story" data-num="123" data-family="Oyuncul" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/123-comic-story/shots/01-page.png" aria-label="Comic Story — Landing görselini büyüt">
           <img src="../styles/123-comic-story/shots/01-page.png" alt="Comic Story — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2666,7 +2668,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="album-sleeve" data-family="Oyuncul" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="album-sleeve" data-num="124" data-family="Oyuncul" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/124-album-sleeve/shots/01-page.png" aria-label="Album Sleeve — Landing görselini büyüt">
           <img src="../styles/124-album-sleeve/shots/01-page.png" alt="Album Sleeve — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2687,7 +2689,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="sports-energy" data-family="Oyuncul" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="sports-energy" data-num="125" data-family="Oyuncul" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/125-sports-energy/shots/01-page.png" aria-label="Sports Energy — Landing görselini büyüt">
           <img src="../styles/125-sports-energy/shots/01-page.png" alt="Sports Energy — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2708,7 +2710,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="marble-vein" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="marble-vein" data-num="126" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/126-marble-vein/shots/01-page.png" aria-label="Marble Vein — Landing görselini büyüt">
           <img src="../styles/126-marble-vein/shots/01-page.png" alt="Marble Vein — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2729,7 +2731,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="silk-drape" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="silk-drape" data-num="127" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/127-silk-drape/shots/01-page.png" aria-label="Silk Drape — Landing görselini büyüt">
           <img src="../styles/127-silk-drape/shots/01-page.png" alt="Silk Drape — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2750,7 +2752,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="brass-copper" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="brass-copper" data-num="128" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/128-brass-copper/shots/01-page.png" aria-label="Brass Copper — Landing görselini büyüt">
           <img src="../styles/128-brass-copper/shots/01-page.png" alt="Brass Copper — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2771,7 +2773,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="porcelain-glaze" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="porcelain-glaze" data-num="129" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/129-porcelain-glaze/shots/01-page.png" aria-label="Porcelain Glaze — Landing görselini büyüt">
           <img src="../styles/129-porcelain-glaze/shots/01-page.png" alt="Porcelain Glaze — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2792,7 +2794,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="leather-craft" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="leather-craft" data-num="130" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/130-leather-craft/shots/01-page.png" aria-label="Leather Craft — Landing görselini büyüt">
           <img src="../styles/130-leather-craft/shots/01-page.png" alt="Leather Craft — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2813,7 +2815,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="optic-prism" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="optic-prism" data-num="131" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/131-optic-prism/shots/01-page.png" aria-label="Optic Prism — Landing görselini büyüt">
           <img src="../styles/131-optic-prism/shots/01-page.png" alt="Optic Prism — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2834,7 +2836,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="wood-joinery" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="wood-joinery" data-num="132" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/132-wood-joinery/shots/01-page.png" aria-label="Wood Joinery — Landing görselini büyüt">
           <img src="../styles/132-wood-joinery/shots/01-page.png" alt="Wood Joinery — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2855,7 +2857,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="letterpress-print" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="letterpress-print" data-num="133" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/133-letterpress-print/shots/01-page.png" aria-label="Letterpress Print — Landing görselini büyüt">
           <img src="../styles/133-letterpress-print/shots/01-page.png" alt="Letterpress Print — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2876,7 +2878,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="concrete-monolith" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="concrete-monolith" data-num="134" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/134-concrete-monolith/shots/01-page.png" aria-label="Concrete Monolith — Landing görselini büyüt">
           <img src="../styles/134-concrete-monolith/shots/01-page.png" alt="Concrete Monolith — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2897,7 +2899,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="enamel-porcelain" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="enamel-porcelain" data-num="135" data-family="Materyal &amp; Lüks" data-industry="emlak" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/135-enamel-porcelain/shots/01-page.png" aria-label="Enamel Porcelain — Landing görselini büyüt">
           <img src="../styles/135-enamel-porcelain/shots/01-page.png" alt="Enamel Porcelain — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2918,7 +2920,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="speculative-scifi" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="speculative-scifi" data-num="136" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/136-speculative-scifi/shots/01-page.png" aria-label="Spekülatif Bilim-Kurgu — Landing görselini büyüt">
           <img src="../styles/136-speculative-scifi/shots/01-page.png" alt="Spekülatif Bilim-Kurgu — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2939,7 +2941,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="volumetric-data" data-family="Deneysel &amp; Gelecek" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="volumetric-data" data-num="137" data-family="Deneysel &amp; Gelecek" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/137-volumetric-data/shots/01-page.png" aria-label="Hologram &amp; Uzamsal Veri — Landing görselini büyüt">
           <img src="../styles/137-volumetric-data/shots/01-page.png" alt="Hologram &amp; Uzamsal Veri — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2960,7 +2962,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="agent-orchestration" data-family="Deneysel &amp; Gelecek" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="agent-orchestration" data-num="138" data-family="Deneysel &amp; Gelecek" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/138-agent-orchestration/shots/01-page.png" aria-label="AI-native Ajan Arayüzü — Landing görselini büyüt">
           <img src="../styles/138-agent-orchestration/shots/01-page.png" alt="AI-native Ajan Arayüzü — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -2981,7 +2983,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="bio-synthetic" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="bio-synthetic" data-num="139" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/139-bio-synthetic/shots/01-page.png" aria-label="Biyo &amp; Sentetik — Landing görselini büyüt">
           <img src="../styles/139-bio-synthetic/shots/01-page.png" alt="Biyo &amp; Sentetik — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3002,7 +3004,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="nanotech" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="nanotech" data-num="140" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/140-nanotech/shots/01-page.png" aria-label="Nanoteknik — Landing görselini büyüt">
           <img src="../styles/140-nanotech/shots/01-page.png" alt="Nanoteknik — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3023,7 +3025,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="planetary-service" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="planetary-service" data-num="141" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/141-planetary-service/shots/01-page.png" aria-label="Planetary Service — Landing görselini büyüt">
           <img src="../styles/141-planetary-service/shots/01-page.png" alt="Planetary Service — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3044,7 +3046,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="quantum-lab" data-family="Deneysel &amp; Gelecek" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="quantum-lab" data-num="142" data-family="Deneysel &amp; Gelecek" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/142-quantum-lab/shots/01-page.png" aria-label="Quantum Lab — Landing görselini büyüt">
           <img src="../styles/142-quantum-lab/shots/01-page.png" alt="Quantum Lab — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3065,7 +3067,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="retro-future" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="retro-future" data-num="143" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/143-retro-future/shots/01-page.png" aria-label="Retro Future — Landing görselini büyüt">
           <img src="../styles/143-retro-future/shots/01-page.png" alt="Retro Future — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3086,7 +3088,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="virtual-engine" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="virtual-engine" data-num="144" data-family="Deneysel &amp; Gelecek" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/144-virtual-engine/shots/01-page.png" aria-label="Virtual Engine — Landing görselini büyüt">
           <img src="../styles/144-virtual-engine/shots/01-page.png" alt="Virtual Engine — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3107,7 +3109,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="zero-gravity" data-family="Deneysel &amp; Gelecek" data-industry="ajans" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="zero-gravity" data-num="145" data-family="Deneysel &amp; Gelecek" data-industry="ajans" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/145-zero-gravity/shots/01-page.png" aria-label="Zero Gravity — Landing görselini büyüt">
           <img src="../styles/145-zero-gravity/shots/01-page.png" alt="Zero Gravity — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3128,7 +3130,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="noir-estate" data-family="Sahne &amp; Prestij" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="noir-estate" data-num="146" data-family="Sahne &amp; Prestij" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/146-noir-estate/shots/01-page.png" aria-label="Noir Estate — Landing görselini büyüt">
           <img src="../styles/146-noir-estate/shots/01-page.png" alt="Noir Estate — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3149,7 +3151,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="agency-portfolio" data-family="Sahne &amp; Prestij" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="agency-portfolio" data-num="147" data-family="Sahne &amp; Prestij" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/147-agency-portfolio/shots/01-page.png" aria-label="Agency Portfolio — Landing görselini büyüt">
           <img src="../styles/147-agency-portfolio/shots/01-page.png" alt="Agency Portfolio — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3170,7 +3172,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="product-launch" data-family="Sahne &amp; Prestij" data-industry="emlak" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="product-launch" data-num="148" data-family="Sahne &amp; Prestij" data-industry="emlak" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/148-product-launch/shots/01-page.png" aria-label="Product Launch — Landing görselini büyüt">
           <img src="../styles/148-product-launch/shots/01-page.png" alt="Product Launch — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3191,7 +3193,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="boutique-hotel" data-family="Sahne &amp; Prestij" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="boutique-hotel" data-num="149" data-family="Sahne &amp; Prestij" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/149-boutique-hotel/shots/01-page.png" aria-label="Boutique Hotel — Landing görselini büyüt">
           <img src="../styles/149-boutique-hotel/shots/01-page.png" alt="Boutique Hotel — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3212,7 +3214,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="lookbook-editorial" data-family="Sahne &amp; Prestij" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="lookbook-editorial" data-num="150" data-family="Sahne &amp; Prestij" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/150-lookbook-editorial/shots/01-page.png" aria-label="Lookbook Editorial — Landing görselini büyüt">
           <img src="../styles/150-lookbook-editorial/shots/01-page.png" alt="Lookbook Editorial — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3233,7 +3235,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="dark-dashboard" data-family="Sahne &amp; Prestij" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="dark-dashboard" data-num="151" data-family="Sahne &amp; Prestij" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/151-dark-dashboard/shots/01-page.png" aria-label="Dark Dashboard — Landing görselini büyüt">
           <img src="../styles/151-dark-dashboard/shots/01-page.png" alt="Dark Dashboard — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3254,7 +3256,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-hud" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="game-hud" data-num="152" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/152-game-hud/shots/01-page.png" aria-label="Game HUD — Landing görselini büyüt">
           <img src="../styles/152-game-hud/shots/01-page.png" alt="Game HUD — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3275,7 +3277,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-racing" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-racing" data-num="153" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/153-game-racing/shots/01-page.png" aria-label="Game Racing — Landing görselini büyüt">
           <img src="../styles/153-game-racing/shots/01-page.png" alt="Game Racing — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3296,7 +3298,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-fantasy-rpg" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-fantasy-rpg" data-num="154" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/154-game-fantasy-rpg/shots/01-page.png" aria-label="Fantasy RPG — Landing görselini büyüt">
           <img src="../styles/154-game-fantasy-rpg/shots/01-page.png" alt="Fantasy RPG — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3317,7 +3319,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-sci-fi-cockpit" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="game-sci-fi-cockpit" data-num="155" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/155-game-sci-fi-cockpit/shots/01-page.png" aria-label="Sci-Fi Cockpit — Landing görselini büyüt">
           <img src="../styles/155-game-sci-fi-cockpit/shots/01-page.png" alt="Sci-Fi Cockpit — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3338,7 +3340,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-retro-console" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-retro-console" data-num="156" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/156-game-retro-console/shots/01-page.png" aria-label="Retro Console — Landing görselini büyüt">
           <img src="../styles/156-game-retro-console/shots/01-page.png" alt="Retro Console — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3359,7 +3361,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-esports-league" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="game-esports-league" data-num="157" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/157-game-esports-league/shots/01-page.png" aria-label="Esports League — Landing görselini büyüt">
           <img src="../styles/157-game-esports-league/shots/01-page.png" alt="Esports League — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3380,7 +3382,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-indie-pixel" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="game-indie-pixel" data-num="158" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/158-game-indie-pixel/shots/01-page.png" aria-label="Indie Pixel — Landing görselini büyüt">
           <img src="../styles/158-game-indie-pixel/shots/01-page.png" alt="Indie Pixel — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3401,7 +3403,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-card-tcg" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-card-tcg" data-num="159" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/159-game-card-tcg/shots/01-page.png" aria-label="Card TCG — Landing görselini büyüt">
           <img src="../styles/159-game-card-tcg/shots/01-page.png" alt="Card TCG — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3422,7 +3424,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-survival-craft" data-family="Oyun &amp; Etkileşim" data-industry="emlak" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="game-survival-craft" data-num="160" data-family="Oyun &amp; Etkileşim" data-industry="emlak" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/160-game-survival-craft/shots/01-page.png" aria-label="Survival Craft — Landing görselini büyüt">
           <img src="../styles/160-game-survival-craft/shots/01-page.png" alt="Survival Craft — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3443,7 +3445,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-mobile-casual" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-mobile-casual" data-num="161" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/161-game-mobile-casual/shots/01-page.png" aria-label="Mobile Casual — Landing görselini büyüt">
           <img src="../styles/161-game-mobile-casual/shots/01-page.png" alt="Mobile Casual — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3464,7 +3466,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-horror-occult" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-horror-occult" data-num="162" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/162-game-horror-occult/shots/01-page.png" aria-label="Horror Occult — Landing görselini büyüt">
           <img src="../styles/162-game-horror-occult/shots/01-page.png" alt="Horror Occult — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3485,7 +3487,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-racing-neon" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="game-racing-neon" data-num="163" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/163-game-racing-neon/shots/01-page.png" aria-label="Racing Neon — Landing görselini büyüt">
           <img src="../styles/163-game-racing-neon/shots/01-page.png" alt="Racing Neon — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3506,7 +3508,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-strategy-map" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="game-strategy-map" data-num="164" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/164-game-strategy-map/shots/01-page.png" aria-label="Strategy Map — Landing görselini büyüt">
           <img src="../styles/164-game-strategy-map/shots/01-page.png" alt="Strategy Map — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3527,7 +3529,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-sim-builder" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="game-sim-builder" data-num="165" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/165-game-sim-builder/shots/01-page.png" aria-label="Sim Builder — Landing görselini büyüt">
           <img src="../styles/165-game-sim-builder/shots/01-page.png" alt="Sim Builder — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3548,7 +3550,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-arcade-cabinet" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-arcade-cabinet" data-num="166" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/166-game-arcade-cabinet/shots/01-page.png" aria-label="Arcade Cabinet — Landing görselini büyüt">
           <img src="../styles/166-game-arcade-cabinet/shots/01-page.png" alt="Arcade Cabinet — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3569,7 +3571,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-stealth-tactical" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-stealth-tactical" data-num="167" data-family="Oyun &amp; Etkileşim" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/167-game-stealth-tactical/shots/01-page.png" aria-label="Stealth Tactical — Landing görselini büyüt">
           <img src="../styles/167-game-stealth-tactical/shots/01-page.png" alt="Stealth Tactical — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3590,7 +3592,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-puzzle-light" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="game-puzzle-light" data-num="168" data-family="Oyun &amp; Etkileşim" data-industry="eticaret" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/168-game-puzzle-light/shots/01-page.png" aria-label="Puzzle Light — Landing görselini büyüt">
           <img src="../styles/168-game-puzzle-light/shots/01-page.png" alt="Puzzle Light — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3611,7 +3613,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-mmo-guild" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-mmo-guild" data-num="169" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/169-game-mmo-guild/shots/01-page.png" aria-label="MMO Guild — Landing görselini büyüt">
           <img src="../styles/169-game-mmo-guild/shots/01-page.png" alt="MMO Guild — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3632,7 +3634,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-franchise-sports" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="game-franchise-sports" data-num="170" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/170-game-franchise-sports/shots/01-page.png" aria-label="Franchise Sports — Landing görselini büyüt">
           <img src="../styles/170-game-franchise-sports/shots/01-page.png" alt="Franchise Sports — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3653,7 +3655,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="game-pinball-neon" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="game-pinball-neon" data-num="171" data-family="Oyun &amp; Etkileşim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/171-game-pinball-neon/shots/01-page.png" aria-label="Pinball Neon — Landing görselini büyüt">
           <img src="../styles/171-game-pinball-neon/shots/01-page.png" alt="Pinball Neon — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3674,7 +3676,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="incident-response" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="incident-response" data-num="172" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/172-incident-response/shots/01-page.png" aria-label="Incident Response — Landing görselini büyüt">
           <img src="../styles/172-incident-response/shots/01-page.png" alt="Incident Response — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3695,7 +3697,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="finops-cost" data-family="Operasyon &amp; Veri" data-industry="saas" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="finops-cost" data-num="173" data-family="Operasyon &amp; Veri" data-industry="saas" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/173-finops-cost/shots/01-page.png" aria-label="FinOps Cost — Landing görselini büyüt">
           <img src="../styles/173-finops-cost/shots/01-page.png" alt="FinOps Cost — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3716,7 +3718,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="fleet-dispatch" data-family="Operasyon &amp; Veri" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="fleet-dispatch" data-num="174" data-family="Operasyon &amp; Veri" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/174-fleet-dispatch/shots/01-page.png" aria-label="Fleet Dispatch — Landing görselini büyüt">
           <img src="../styles/174-fleet-dispatch/shots/01-page.png" alt="Fleet Dispatch — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3737,7 +3739,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="fraud-review" data-family="Operasyon &amp; Veri" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="fraud-review" data-num="175" data-family="Operasyon &amp; Veri" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/175-fraud-review/shots/01-page.png" aria-label="Fraud Review — Landing görselini büyüt">
           <img src="../styles/175-fraud-review/shots/01-page.png" alt="Fraud Review — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3758,7 +3760,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="slo-budget" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="slo-budget" data-num="176" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/176-slo-budget/shots/01-page.png" aria-label="SLO Budget — Landing görselini büyüt">
           <img src="../styles/176-slo-budget/shots/01-page.png" alt="SLO Budget — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3779,7 +3781,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="data-lineage" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="data-lineage" data-num="177" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/177-data-lineage/shots/01-page.png" aria-label="Data Lineage — Landing görselini büyüt">
           <img src="../styles/177-data-lineage/shots/01-page.png" alt="Data Lineage — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3800,7 +3802,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="access-audit" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="access-audit" data-num="178" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/178-access-audit/shots/01-page.png" aria-label="Access Audit — Landing görselini büyüt">
           <img src="../styles/178-access-audit/shots/01-page.png" alt="Access Audit — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3821,7 +3823,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="release-train" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="release-train" data-num="179" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/179-release-train/shots/01-page.png" aria-label="Release Train — Landing görselini büyüt">
           <img src="../styles/179-release-train/shots/01-page.png" alt="Release Train — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3842,7 +3844,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="support-inbox" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="support-inbox" data-num="180" data-family="Operasyon &amp; Veri" data-industry="danismanlik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/180-support-inbox/shots/01-page.png" aria-label="Support Inbox — Landing görselini büyüt">
           <img src="../styles/180-support-inbox/shots/01-page.png" alt="Support Inbox — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3863,7 +3865,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="regulatory-report" data-family="Operasyon &amp; Veri" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="regulatory-report" data-num="181" data-family="Operasyon &amp; Veri" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/181-regulatory-report/shots/01-page.png" aria-label="Regulatory Report — Landing görselini büyüt">
           <img src="../styles/181-regulatory-report/shots/01-page.png" alt="Regulatory Report — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3884,7 +3886,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="grocery-delivery" data-family="Ticaret &amp; Vitrin" data-industry="dergi" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="grocery-delivery" data-num="182" data-family="Ticaret &amp; Vitrin" data-industry="dergi" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/182-grocery-delivery/shots/01-page.png" aria-label="Grocery Delivery — Landing görselini büyüt">
           <img src="../styles/182-grocery-delivery/shots/01-page.png" alt="Grocery Delivery — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3905,7 +3907,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="marketplace-multi" data-family="Ticaret &amp; Vitrin" data-industry="eticaret" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="marketplace-multi" data-num="183" data-family="Ticaret &amp; Vitrin" data-industry="eticaret" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/183-marketplace-multi/shots/01-page.png" aria-label="Marketplace Multi — Landing görselini büyüt">
           <img src="../styles/183-marketplace-multi/shots/01-page.png" alt="Marketplace Multi — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3926,7 +3928,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="luxury-atelier" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="luxury-atelier" data-num="184" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/184-luxury-atelier/shots/01-page.png" aria-label="Luxury Atelier — Landing görselini büyüt">
           <img src="../styles/184-luxury-atelier/shots/01-page.png" alt="Luxury Atelier — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3947,7 +3949,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="subscription-box" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="subscription-box" data-num="185" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/185-subscription-box/shots/01-page.png" aria-label="Subscription Box — Landing görselini büyüt">
           <img src="../styles/185-subscription-box/shots/01-page.png" alt="Subscription Box — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3968,7 +3970,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="sneaker-drop" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="sneaker-drop" data-num="186" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/186-sneaker-drop/shots/01-page.png" aria-label="Sneaker Drop — Landing görselini büyüt">
           <img src="../styles/186-sneaker-drop/shots/01-page.png" alt="Sneaker Drop — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -3989,7 +3991,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="wine-cellar" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="wine-cellar" data-num="187" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/187-wine-cellar/shots/01-page.png" aria-label="Wine Cellar — Landing görselini büyüt">
           <img src="../styles/187-wine-cellar/shots/01-page.png" alt="Wine Cellar — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4010,7 +4012,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="furniture-studio" data-family="Ticaret &amp; Vitrin" data-industry="eticaret" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="furniture-studio" data-num="188" data-family="Ticaret &amp; Vitrin" data-industry="eticaret" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/188-furniture-studio/shots/01-page.png" aria-label="Furniture Studio — Landing görselini büyüt">
           <img src="../styles/188-furniture-studio/shots/01-page.png" alt="Furniture Studio — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4031,7 +4033,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="electronics-spec" data-family="Ticaret &amp; Vitrin" data-industry="eticaret" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="electronics-spec" data-num="189" data-family="Ticaret &amp; Vitrin" data-industry="eticaret" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/189-electronics-spec/shots/01-page.png" aria-label="Electronics Spec — Landing görselini büyüt">
           <img src="../styles/189-electronics-spec/shots/01-page.png" alt="Electronics Spec — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4052,7 +4054,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="pharmacy-store" data-family="Ticaret &amp; Vitrin" data-industry="eticaret" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="pharmacy-store" data-num="190" data-family="Ticaret &amp; Vitrin" data-industry="eticaret" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/190-pharmacy-store/shots/01-page.png" aria-label="Pharmacy Store — Landing görselini büyüt">
           <img src="../styles/190-pharmacy-store/shots/01-page.png" alt="Pharmacy Store — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4073,7 +4075,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="farmers-market" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="farmers-market" data-num="191" data-family="Ticaret &amp; Vitrin" data-industry="emlak" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/191-farmers-market/shots/01-page.png" aria-label="Farmers Market — Landing görselini büyüt">
           <img src="../styles/191-farmers-market/shots/01-page.png" alt="Farmers Market — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4094,7 +4096,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="museum-exhibition" data-family="Kültür &amp; Yayın" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="museum-exhibition" data-num="192" data-family="Kültür &amp; Yayın" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/192-museum-exhibition/shots/01-page.png" aria-label="Museum Exhibition — Landing görselini büyüt">
           <img src="../styles/192-museum-exhibition/shots/01-page.png" alt="Museum Exhibition — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4115,7 +4117,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="theatre-season" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="theatre-season" data-num="193" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/193-theatre-season/shots/01-page.png" aria-label="Theatre Season — Landing görselini büyüt">
           <img src="../styles/193-theatre-season/shots/01-page.png" alt="Theatre Season — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4136,7 +4138,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="film-festival" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="film-festival" data-num="194" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/194-film-festival/shots/01-page.png" aria-label="Film Festival — Landing görselini büyüt">
           <img src="../styles/194-film-festival/shots/01-page.png" alt="Film Festival — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4157,7 +4159,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="public-radio" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="public-radio" data-num="195" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/195-public-radio/shots/01-page.png" aria-label="Public Radio — Landing görselini büyüt">
           <img src="../styles/195-public-radio/shots/01-page.png" alt="Public Radio — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4178,7 +4180,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="podcast-network" data-family="Kültür &amp; Yayın" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="podcast-network" data-num="196" data-family="Kültür &amp; Yayın" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/196-podcast-network/shots/01-page.png" aria-label="Podcast Network — Landing görselini büyüt">
           <img src="../styles/196-podcast-network/shots/01-page.png" alt="Podcast Network — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4199,7 +4201,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="indie-cinema" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="indie-cinema" data-num="197" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/197-indie-cinema/shots/01-page.png" aria-label="Indie Cinema — Landing görselini büyüt">
           <img src="../styles/197-indie-cinema/shots/01-page.png" alt="Indie Cinema — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4220,7 +4222,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="library-archive" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="library-archive" data-num="198" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/198-library-archive/shots/01-page.png" aria-label="Library Archive — Landing görselini büyüt">
           <img src="../styles/198-library-archive/shots/01-page.png" alt="Library Archive — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4241,7 +4243,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="comic-bookstore" data-family="Kültür &amp; Yayın" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="comic-bookstore" data-num="199" data-family="Kültür &amp; Yayın" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/199-comic-bookstore/shots/01-page.png" aria-label="Comic Bookstore — Landing görselini büyüt">
           <img src="../styles/199-comic-bookstore/shots/01-page.png" alt="Comic Bookstore — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4262,7 +4264,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="opera-house" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="opera-house" data-num="200" data-family="Kültür &amp; Yayın" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/200-opera-house/shots/01-page.png" aria-label="Opera House — Landing görselini büyüt">
           <img src="../styles/200-opera-house/shots/01-page.png" alt="Opera House — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4283,7 +4285,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="street-festival" data-family="Kültür &amp; Yayın" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="street-festival" data-num="201" data-family="Kültür &amp; Yayın" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/201-street-festival/shots/01-page.png" aria-label="Street Festival — Landing görselini büyüt">
           <img src="../styles/201-street-festival/shots/01-page.png" alt="Street Festival — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4304,7 +4306,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="clinical-trial" data-family="Sağlık &amp; Bilim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="clinical-trial" data-num="202" data-family="Sağlık &amp; Bilim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/202-clinical-trial/shots/01-page.png" aria-label="Clinical Trial — Landing görselini büyüt">
           <img src="../styles/202-clinical-trial/shots/01-page.png" alt="Clinical Trial — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4325,7 +4327,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="lab-protocol" data-family="Sağlık &amp; Bilim" data-industry="egitim" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="lab-protocol" data-num="203" data-family="Sağlık &amp; Bilim" data-industry="egitim" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/203-lab-protocol/shots/01-page.png" aria-label="Lab Protocol — Landing görselini büyüt">
           <img src="../styles/203-lab-protocol/shots/01-page.png" alt="Lab Protocol — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4346,7 +4348,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="pharmacy-labels" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="pharmacy-labels" data-num="204" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/204-pharmacy-labels/shots/01-page.png" aria-label="Pharmacy Labels — Landing görselini büyüt">
           <img src="../styles/204-pharmacy-labels/shots/01-page.png" alt="Pharmacy Labels — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4367,7 +4369,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="physiotherapy" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="physiotherapy" data-num="205" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/205-physiotherapy/shots/01-page.png" aria-label="Physiotherapy — Landing görselini büyüt">
           <img src="../styles/205-physiotherapy/shots/01-page.png" alt="Physiotherapy — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4388,7 +4390,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="mental-wellness" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="mental-wellness" data-num="206" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/206-mental-wellness/shots/01-page.png" aria-label="Mental Wellness — Landing görselini büyüt">
           <img src="../styles/206-mental-wellness/shots/01-page.png" alt="Mental Wellness — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4409,7 +4411,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="nutrition-plan" data-family="Sağlık &amp; Bilim" data-industry="egitim" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="nutrition-plan" data-num="207" data-family="Sağlık &amp; Bilim" data-industry="egitim" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/207-nutrition-plan/shots/01-page.png" aria-label="Nutrition Plan — Landing görselini büyüt">
           <img src="../styles/207-nutrition-plan/shots/01-page.png" alt="Nutrition Plan — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4430,7 +4432,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="dental-clinic" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="dental-clinic" data-num="208" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/208-dental-clinic/shots/01-page.png" aria-label="Dental Clinic — Landing görselini büyüt">
           <img src="../styles/208-dental-clinic/shots/01-page.png" alt="Dental Clinic — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4451,7 +4453,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="public-health" data-family="Sağlık &amp; Bilim" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="public-health" data-num="209" data-family="Sağlık &amp; Bilim" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/209-public-health/shots/01-page.png" aria-label="Public Health — Landing görselini büyüt">
           <img src="../styles/209-public-health/shots/01-page.png" alt="Public Health — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4472,7 +4474,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="genomics-lab" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="genomics-lab" data-num="210" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/210-genomics-lab/shots/01-page.png" aria-label="Genomics Lab — Landing görselini büyüt">
           <img src="../styles/210-genomics-lab/shots/01-page.png" alt="Genomics Lab — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4493,7 +4495,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="veterinary-care" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="veterinary-care" data-num="211" data-family="Sağlık &amp; Bilim" data-industry="saglik" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/211-veterinary-care/shots/01-page.png" aria-label="Veterinary Care — Landing görselini büyüt">
           <img src="../styles/211-veterinary-care/shots/01-page.png" alt="Veterinary Care — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4514,7 +4516,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="language-app" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="language-app" data-num="212" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/212-language-app/shots/01-page.png" aria-label="Language App — Landing görselini büyüt">
           <img src="../styles/212-language-app/shots/01-page.png" alt="Language App — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4535,7 +4537,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="skill-tree" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="skill-tree" data-num="213" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/213-skill-tree/shots/01-page.png" aria-label="Skill Tree — Landing görselini büyüt">
           <img src="../styles/213-skill-tree/shots/01-page.png" alt="Skill Tree — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4556,7 +4558,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="university-portal" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="university-portal" data-num="214" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/214-university-portal/shots/01-page.png" aria-label="University Portal — Landing görselini büyüt">
           <img src="../styles/214-university-portal/shots/01-page.png" alt="University Portal — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4577,7 +4579,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="coding-bootcamp" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="coding-bootcamp" data-num="215" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/215-coding-bootcamp/shots/01-page.png" aria-label="Coding Bootcamp — Landing görselini büyüt">
           <img src="../styles/215-coding-bootcamp/shots/01-page.png" alt="Coding Bootcamp — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4598,7 +4600,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="kids-classroom" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="kids-classroom" data-num="216" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/216-kids-classroom/shots/01-page.png" aria-label="Kids Classroom — Landing görselini büyüt">
           <img src="../styles/216-kids-classroom/shots/01-page.png" alt="Kids Classroom — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4619,7 +4621,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="exam-prep" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="exam-prep" data-num="217" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/217-exam-prep/shots/01-page.png" aria-label="Exam Prep — Landing görselini büyüt">
           <img src="../styles/217-exam-prep/shots/01-page.png" alt="Exam Prep — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4640,7 +4642,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="music-lesson" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="music-lesson" data-num="218" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/218-music-lesson/shots/01-page.png" aria-label="Music Lesson — Landing görselini büyüt">
           <img src="../styles/218-music-lesson/shots/01-page.png" alt="Music Lesson — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4661,7 +4663,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="lab-simulation" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="lab-simulation" data-num="219" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/219-lab-simulation/shots/01-page.png" aria-label="Lab Simulation — Landing görselini büyüt">
           <img src="../styles/219-lab-simulation/shots/01-page.png" alt="Lab Simulation — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4682,7 +4684,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="peer-study" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="peer-study" data-num="220" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="saas" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/220-peer-study/shots/01-page.png" aria-label="Peer Study — Landing görselini büyüt">
           <img src="../styles/220-peer-study/shots/01-page.png" alt="Peer Study — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4703,7 +4705,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="certificate-wallet" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="certificate-wallet" data-num="221" data-family="Öğrenme &amp; Oyunlaştırma" data-industry="egitim" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/221-certificate-wallet/shots/01-page.png" aria-label="Certificate Wallet — Landing görselini büyüt">
           <img src="../styles/221-certificate-wallet/shots/01-page.png" alt="Certificate Wallet — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4724,7 +4726,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="terrazzo-stone" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="terrazzo-stone" data-num="222" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/222-terrazzo-stone/shots/01-page.png" aria-label="Terrazzo Stone — Landing görselini büyüt">
           <img src="../styles/222-terrazzo-stone/shots/01-page.png" alt="Terrazzo Stone — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4745,7 +4747,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="linocut-print" data-family="Materyal &amp; Zanaat" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="linocut-print" data-num="223" data-family="Materyal &amp; Zanaat" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/223-linocut-print/shots/01-page.png" aria-label="Linocut Print — Landing görselini büyüt">
           <img src="../styles/223-linocut-print/shots/01-page.png" alt="Linocut Print — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4766,7 +4768,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="risograph-print" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="risograph-print" data-num="224" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/224-risograph-print/shots/01-page.png" aria-label="Risograph Print — Landing görselini büyüt">
           <img src="../styles/224-risograph-print/shots/01-page.png" alt="Risograph Print — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4787,7 +4789,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="denim-textile" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="denim-textile" data-num="225" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/225-denim-textile/shots/01-page.png" aria-label="Denim Textile — Landing görselini büyüt">
           <img src="../styles/225-denim-textile/shots/01-page.png" alt="Denim Textile — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4808,7 +4810,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="cork-oak" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="cork-oak" data-num="226" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/226-cork-oak/shots/01-page.png" aria-label="Cork Oak — Landing görselini büyüt">
           <img src="../styles/226-cork-oak/shots/01-page.png" alt="Cork Oak — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4829,7 +4831,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="cast-concrete" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="cast-concrete" data-num="227" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/227-cast-concrete/shots/01-page.png" aria-label="Cast Concrete — Landing görselini büyüt">
           <img src="../styles/227-cast-concrete/shots/01-page.png" alt="Cast Concrete — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4850,7 +4852,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="enamel-jewel" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="enamel-jewel" data-num="228" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/228-enamel-jewel/shots/01-page.png" aria-label="Enamel Jewel — Landing görselini büyüt">
           <img src="../styles/228-enamel-jewel/shots/01-page.png" alt="Enamel Jewel — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4871,7 +4873,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="hand-thrown-ceramic" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="hand-thrown-ceramic" data-num="229" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/229-hand-thrown-ceramic/shots/01-page.png" aria-label="Hand-thrown Ceramic — Landing görselini büyüt">
           <img src="../styles/229-hand-thrown-ceramic/shots/01-page.png" alt="Hand-thrown Ceramic — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4892,7 +4894,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="raw-steel" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="raw-steel" data-num="230" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/230-raw-steel/shots/01-page.png" aria-label="Raw Steel — Landing görselini büyüt">
           <img src="../styles/230-raw-steel/shots/01-page.png" alt="Raw Steel — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4913,7 +4915,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="recycled-paper" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="recycled-paper" data-num="231" data-family="Materyal &amp; Zanaat" data-industry="emlak" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/231-recycled-paper/shots/01-page.png" aria-label="Recycled Paper — Landing görselini büyüt">
           <img src="../styles/231-recycled-paper/shots/01-page.png" alt="Recycled Paper — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4934,7 +4936,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="condensed-news" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="condensed-news" data-num="232" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/232-condensed-news/shots/01-page.png" aria-label="Condensed News — Landing görselini büyüt">
           <img src="../styles/232-condensed-news/shots/01-page.png" alt="Condensed News — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4955,7 +4957,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="monospace-editorial" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="monospace-editorial" data-num="233" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/233-monospace-editorial/shots/01-page.png" aria-label="Monospace Editorial — Landing görselini büyüt">
           <img src="../styles/233-monospace-editorial/shots/01-page.png" alt="Monospace Editorial — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4976,7 +4978,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="blackletter-modern" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="blackletter-modern" data-num="234" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/234-blackletter-modern/shots/01-page.png" aria-label="Blackletter Modern — Landing görselini büyüt">
           <img src="../styles/234-blackletter-modern/shots/01-page.png" alt="Blackletter Modern — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -4997,7 +4999,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="variable-weight" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="variable-weight" data-num="235" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/235-variable-weight/shots/01-page.png" aria-label="Variable Weight — Landing görselini büyüt">
           <img src="../styles/235-variable-weight/shots/01-page.png" alt="Variable Weight — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5018,7 +5020,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="justified-book" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="justified-book" data-num="236" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/236-justified-book/shots/01-page.png" aria-label="Justified Book — Landing görselini büyüt">
           <img src="../styles/236-justified-book/shots/01-page.png" alt="Justified Book — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5039,7 +5041,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="stencil-display" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="stencil-display" data-num="237" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/237-stencil-display/shots/01-page.png" aria-label="Stencil Display — Landing görselini büyüt">
           <img src="../styles/237-stencil-display/shots/01-page.png" alt="Stencil Display — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5060,7 +5062,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="uppercase-only" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="uppercase-only" data-num="238" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/238-uppercase-only/shots/01-page.png" aria-label="Uppercase Only — Landing görselini büyüt">
           <img src="../styles/238-uppercase-only/shots/01-page.png" alt="Uppercase Only — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5081,7 +5083,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="italic-accent" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="italic-accent" data-num="239" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/239-italic-accent/shots/01-page.png" aria-label="Italic Accent — Landing görselini büyüt">
           <img src="../styles/239-italic-accent/shots/01-page.png" alt="Italic Accent — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5102,7 +5104,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="numerals-display" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="numerals-display" data-num="240" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/240-numerals-display/shots/01-page.png" aria-label="Numerals Display — Landing görselini büyüt">
           <img src="../styles/240-numerals-display/shots/01-page.png" alt="Numerals Display — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5123,7 +5125,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="small-caps-ledger" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="small-caps-ledger" data-num="241" data-family="Tipografi Denemeleri" data-industry="dergi" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/241-small-caps-ledger/shots/01-page.png" aria-label="Small Caps Ledger — Landing görselini büyüt">
           <img src="../styles/241-small-caps-ledger/shots/01-page.png" alt="Small Caps Ledger — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5144,7 +5146,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="agent-console" data-family="Gelecek &amp; Spekülatif" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="agent-console" data-num="242" data-family="Gelecek &amp; Spekülatif" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/242-agent-console/shots/01-page.png" aria-label="Agent Console — Landing görselini büyüt">
           <img src="../styles/242-agent-console/shots/01-page.png" alt="Agent Console — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5165,7 +5167,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="spatial-workspace" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="spatial-workspace" data-num="243" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/243-spatial-workspace/shots/01-page.png" aria-label="Spatial Workspace — Landing görselini büyüt">
           <img src="../styles/243-spatial-workspace/shots/01-page.png" alt="Spatial Workspace — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5186,7 +5188,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="bio-lab-interface" data-family="Gelecek &amp; Spekülatif" data-industry="danismanlik" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="bio-lab-interface" data-num="244" data-family="Gelecek &amp; Spekülatif" data-industry="danismanlik" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/244-bio-lab-interface/shots/01-page.png" aria-label="Bio Lab Interface — Landing görselini büyüt">
           <img src="../styles/244-bio-lab-interface/shots/01-page.png" alt="Bio Lab Interface — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5207,7 +5209,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="climate-model" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="climate-model" data-num="245" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/245-climate-model/shots/01-page.png" aria-label="Climate Model — Landing görselini büyüt">
           <img src="../styles/245-climate-model/shots/01-page.png" alt="Climate Model — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5228,7 +5230,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="orbital-logistics" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="orbital-logistics" data-num="246" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/246-orbital-logistics/shots/01-page.png" aria-label="Orbital Logistics — Landing görselini büyüt">
           <img src="../styles/246-orbital-logistics/shots/01-page.png" alt="Orbital Logistics — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5249,7 +5251,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="synthetic-media" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="synthetic-media" data-num="247" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/247-synthetic-media/shots/01-page.png" aria-label="Synthetic Media — Landing görselini büyüt">
           <img src="../styles/247-synthetic-media/shots/01-page.png" alt="Synthetic Media — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5270,7 +5272,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="quantum-dashboard" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="sicak" tabindex="-1">
+      <article class="card" data-slug="quantum-dashboard" data-num="248" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="sicak" tabindex="-1">
         <a class="cover" href="../styles/248-quantum-dashboard/shots/01-page.png" aria-label="Quantum Dashboard — Landing görselini büyüt">
           <img src="../styles/248-quantum-dashboard/shots/01-page.png" alt="Quantum Dashboard — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5291,7 +5293,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="digital-twin" data-family="Gelecek &amp; Spekülatif" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="digital-twin" data-num="249" data-family="Gelecek &amp; Spekülatif" data-industry="danismanlik" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/249-digital-twin/shots/01-page.png" aria-label="Digital Twin — Landing görselini büyüt">
           <img src="../styles/249-digital-twin/shots/01-page.png" alt="Digital Twin — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5312,7 +5314,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="neural-canvas" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
+      <article class="card" data-slug="neural-canvas" data-num="250" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="soguk" tabindex="-1">
         <a class="cover" href="../styles/250-neural-canvas/shots/01-page.png" aria-label="Neural Canvas — Landing görselini büyüt">
           <img src="../styles/250-neural-canvas/shots/01-page.png" alt="Neural Canvas — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>
@@ -5333,7 +5335,7 @@
         </div>
       </article>
 
-      <article class="card" data-slug="post-screen-voice" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="yesil" tabindex="-1">
+      <article class="card" data-slug="post-screen-voice" data-num="251" data-family="Gelecek &amp; Spekülatif" data-industry="ajans" data-tone="yesil" tabindex="-1">
         <a class="cover" href="../styles/251-post-screen-voice/shots/01-page.png" aria-label="Post-screen Voice — Landing görselini büyüt">
           <img src="../styles/251-post-screen-voice/shots/01-page.png" alt="Post-screen Voice — Landing" loading="lazy" decoding="async">
           <span class="cover-l">Landing</span>

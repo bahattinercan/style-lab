@@ -43,7 +43,7 @@ Port doluysa `8000` yerine `8080` yaz. Bitirmek için terminalde `Ctrl+C`.
 
 | Tuş | İş |
 |---|---|
-| `/` | aramaya odaklan |
+| `/` | aramaya odaklan (isim, etiket, `152`, `#152`, `152-171`) |
 | `f` | filtre paneli |
 | `j` `k` | kartlar arasında gez |
 | `Enter` | detay çekmecesi |
@@ -52,7 +52,9 @@ Port doluysa `8000` yerine `8080` yaz. Bitirmek için terminalde `Ctrl+C`.
 | `Esc` | kapat |
 
 Kart düğmeleri: **⊕** token/brief/kareler · **⧉** kopyala · **★** kısa liste · **⇄** karşılaştır (2–4 stil).
-Filtre + arama + sahne seçimi URL'e yazılır → bağlantı paylaşılabilir. (`file://`'de bazı tarayıcılar
+Arama kutusuna numara yazınca numaraya göre filtreler: `152` (tek stil), `#9`, `152-171` / `171..152`
+(aralık, ters de olur). Numara + aile/sektör/ton çipleri birlikte çalışır.
+Filtre + arama + sahne seçimi URL'e yazılır → bağlantı paylaşılabilir (`?q=152-171`). (`file://`'de bazı tarayıcılar
 `replaceState`'i engeller; URL durumu testi için §2'deki sunucuyu kullan.)
 
 ## 5 · Otomatik kapılar

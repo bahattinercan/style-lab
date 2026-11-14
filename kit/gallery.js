@@ -89,14 +89,34 @@
   const ordered = [...DATA].sort((a, b) => (sortValue(a) < sortValue(b) ? -1 : sortValue(a) > sortValue(b) ? 1 : 0));
   const rank = new Map(ordered.map((s, i) => [s.slug, i]));
 
+  /* -------------------------------------------------- numara sorgusu
+   * Arama kutusu numara da kabul eder: "152" (tek), "#152", "152-171" /
+   * "152..171" (aralık). Diğer her şey metin aramasıdır (hay dizini). */
+  function parseQuery(raw) {
+    const t = raw.trim().replace(/^#/, '');
+    const range = t.match(/^(\d{1,3})\s*(?:-|–|\.\.)\s*(\d{1,3})$/);
+    if (range) {
+      const a = Number(range[1]);
+      const b = Number(range[2]);
+      return { kind: 'range', from: Math.min(a, b), to: Math.max(a, b) };
+    }
+    if (/^\d{1,3}$/.test(t)) return { kind: 'num', num: Number(t) };
+    return { kind: 'text', term: norm(raw.trim()) };
+  }
+  const matchesQuery = (s, query) => {
+    if (query.kind === 'num') return Number(s.num) === query.num;
+    if (query.kind === 'range') return Number(s.num) >= query.from && Number(s.num) <= query.to;
+    return !query.term || hay.get(s.slug).includes(query.term);
+  };
+
   /* ------------------------------------------------------------ filtre */
   function apply({ writeUrl = true } = {}) {
-    const term = norm(state.q.trim());
+    const query = parseQuery(state.q);
     let shown = 0;
     for (const c of cards) {
       const s = bySlug.get(c.dataset.slug);
       const ok =
-        (!term || hay.get(s.slug).includes(term)) &&
+        matchesQuery(s, query) &&
         (!state.fam || s.family === state.fam) &&
         (!state.ind || s.industry === state.ind) &&
         (!state.ton || s.tone === state.ton) &&
@@ -134,7 +154,12 @@
 
   function renderActive() {
     const parts = [];
-    if (state.q) parts.push(chip('q', '“' + state.q + '”'));
+    if (state.q) {
+      const q = parseQuery(state.q);
+      const label =
+        q.kind === 'num' ? 'No ' + q.num : q.kind === 'range' ? 'No ' + q.from + '–' + q.to : '“' + state.q + '”';
+      parts.push(chip('q', label));
+    }
     for (const k of FILTER_KEYS) if (state[k]) parts.push(chip(k, labelOf(k, state[k])));
     if (state.scene) parts.push(chip('scene', labelOf('scene', state.scene)));
     if (state.fav) parts.push(chip('fav', '★ favoriler'));

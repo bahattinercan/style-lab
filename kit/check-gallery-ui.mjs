@@ -49,6 +49,29 @@ const DESKTOP = `(async () => {
   m.searchDiacritic = document.getElementById('count').textContent;
   q.value = '';
   q.dispatchEvent(new Event('input'));
+  const numOf = (c) => Number(c.dataset.num);
+  const counts = (pred) => cards.filter((c) => pred(numOf(c))).length + ' / ' + cards.length;
+  q.value = '152';
+  q.dispatchEvent(new Event('input'));
+  await wait();
+  m.searchNum = document.getElementById('count').textContent;
+  m.searchNumExpected = counts((n) => n === 152);
+  q.value = '#9';
+  q.dispatchEvent(new Event('input'));
+  await wait();
+  m.searchHash = document.getElementById('count').textContent;
+  m.searchHashExpected = counts((n) => n === 9);
+  q.value = '152-171';
+  q.dispatchEvent(new Event('input'));
+  await wait();
+  m.searchRange = document.getElementById('count').textContent;
+  m.searchRangeExpected = counts((n) => n >= 152 && n <= 171);
+  q.value = '171..152';
+  q.dispatchEvent(new Event('input'));
+  await wait();
+  m.searchRangeRev = document.getElementById('count').textContent;
+  q.value = '';
+  q.dispatchEvent(new Event('input'));
 
   document.getElementById('fbtn').click();
   await wait();
@@ -105,6 +128,14 @@ const URLSTATE = `(() => {
   const cards = Array.from(document.querySelectorAll('.card'));
   return {
     visible: cards.filter((c) => !c.hidden).length,
+    rangeVisible: cards.filter((c) => {
+      const n = Number(c.dataset.num);
+      return !c.hidden && n >= 152 && n <= 171;
+    }).length,
+    rangeTotal: cards.filter((c) => {
+      const n = Number(c.dataset.num);
+      return n >= 152 && n <= 171;
+    }).length,
     sort: document.getElementById('sort').value,
     chips: document.querySelectorAll('#active .achip').length,
     query: document.getElementById('q').value,
@@ -124,6 +155,10 @@ try {
   check('araç çubuğu sticky', d.stickyBar === 'sticky', d.stickyBar);
   check('arama "minimal" daraltıyor', new RegExp(`^[1-9]\\d? / ${STYLE_COUNT}$`).test(d.searchMatch), d.searchMatch);
   check('arama diakritik duyarsız ("gölge" ← "golge")', Number(d.searchDiacritic.split(' ')[0]) > 0, d.searchDiacritic);
+  check('numara araması ("152") tek stile indiriyor', d.searchNum === d.searchNumExpected && d.searchNum.startsWith('1 /'), d.searchNum + ' · beklenen ' + d.searchNumExpected);
+  check('numara araması "#9" çalışıyor', d.searchHash === d.searchHashExpected, d.searchHash);
+  check('numara aralığı ("152-171") süzüyor', d.searchRange === d.searchRangeExpected && !d.searchRange.startsWith('0 /'), d.searchRange + ' · beklenen ' + d.searchRangeExpected);
+  check('ters aralık ("171..152") de çalışıyor', d.searchRangeRev === d.searchRangeExpected, d.searchRangeRev);
   check('filtre paneli açılıyor', d.panelOpen === true, d.panelOpen);
   check('aile filtresi 7 stile indiriyor', d.afterFam === `7 / ${STYLE_COUNT}`, d.afterFam);
   check('aktif filtre çipleri görünür', d.activeChips >= 2, d.activeChips);
@@ -151,6 +186,14 @@ try {
     expression: URLSTATE,
   });
   check('URL durumu geri yükleniyor (fam+sort+q)', u.sort === 'name' && u.query === 'minimal' && u.visible === 1, JSON.stringify(u));
+
+  const uNum = await cdp.evaluate(TARGET, {
+    width: 1440,
+    height: 900,
+    query: 'q=152-171',
+    expression: URLSTATE,
+  });
+  check('numara aralığı URL\'den geri yükleniyor', uNum.query === '152-171' && uNum.visible === uNum.rangeTotal && uNum.rangeVisible === uNum.rangeTotal, JSON.stringify(uNum));
 } finally {
   await cdp.close();
 }
