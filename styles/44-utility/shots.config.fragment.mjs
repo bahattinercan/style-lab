@@ -2,8 +2,7 @@ export const CONFIG = {
   motif: 'grid',
   extraCss: `
     /* imza: hairline yüzey · gradyan başlık · tek accent · 680px ölçü · 4'ün katı boşluk */
-    h1, h2, h3, h4 { font-weight: 600; letter-spacing: 0; }
-    h1 { font-size: 60px; line-height: 1; max-width: 680px; }
+    h1, h2, h3, h4 { font-weight: 600; letter-spacing: 0; }h1 { font-size: var(--type-h1); line-height: 1; max-width: 680px; }
     h2 { font-size: 48px; line-height: 1; max-width: 680px; }
     h3 { font-size: 36px; line-height: 1.11; }
     .hero h1 {

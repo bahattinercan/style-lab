@@ -52,7 +52,7 @@ Endüstriyel operatör panelleri (buton kademeleri, seçici anahtarlar), film pr
 
 | Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
 |---|---|---|---|
-| `--bg` | `#a0a6aa` | sayfa zemini (orta gri metal) | kart zemini |
+| `--bg` | `#adb3b7` | sayfa zemini (orta gri metal) | kart zemini |
 | `--bg-2` | `#979da1` | bölüm ayırıcı, kademe ızgarası | panel yüzeyi |
 | `--surface` | `#abb1b5` | panel, kart (bir ton açık) | sayfa zemini |
 | `--surface-2` | `#8b9195` | ikincil yüzey, chip, zebra | birincil panel |
@@ -226,7 +226,7 @@ Stil: Stepped Mechanism (styles/104-stepped-mechanism/style.md, tokens.json)
 Token: sadece [data-style="stepped-mechanism"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: display Share Tech Mono 400 (yalnız başlık), gövde Inter 400/600, etiket IBM Plex Mono.
   Ölçek 11/12/13/14/18/24/38; gövde ölçü 72ch.
-Yüzey: orta gri metal (#a0a6aa); radius 8/16px; ana kenarlık 1px var(--ink), alt kural 2px.
+Yüzey: orta gri metal (#adb3b7); radius 8/16px; ana kenarlık 1px var(--ink), alt kural 2px.
 Imza: 8px kademe ızgarası + 4 çentikli kademe göstergesi + kilit çizgisi (2px aşağı kalır).
 Renk: accent #1f6b3d yalnız kilitli/tamamlanan durum; orta ton nedeniyle ink-faint etkileşimde yok.
 Hareket: enter .36s steps(4, end) y0 stagger .05; scroll top 73% .31s y12 once;
@@ -248,7 +248,7 @@ Yasak: yumuşak ease/spring, sürekli dönen çark, 16px üstü radius, gradient
 
 ```css
 [data-style="stepped-mechanism"] {
-  --bg: #a0a6aa; --bg-2: #979da1;
+  --bg: #adb3b7; --bg-2: #979da1;
   --surface: #abb1b5; --surface-2: #8b9195;
   --ink: #0f1417; --ink-soft: #2b3238; --ink-faint: #485056;
   --accent: #1f6b3d; --accent-ink: #ffffff;

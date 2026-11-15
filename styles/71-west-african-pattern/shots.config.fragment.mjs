@@ -6,8 +6,7 @@ export const CONFIG = {
     h1, h2, h3, h4 {
       font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking);
       text-transform: uppercase;
-    }
-    h1 { font-size: 40px; line-height: 1.1; max-width: 20ch; }
+    }h1 { font-size: var(--type-h1); line-height: 1.1; max-width: 20ch; }
     h2 { font-size: 26px; line-height: 1.24; }
     h3 { font-size: 20px; line-height: 1.3; }
     .eyebrow, .label, .mono {

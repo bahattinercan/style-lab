@@ -69,7 +69,7 @@ Kazandığı şey: sıcaklık ve aidiyet. Feda ettiği şey: kurumsal netlik; do
 | `--surface-2` | `#f0e0c4` | ikincil |
 | `--ink` | `#2e2620` | metin (12.34:1) |
 | `--ink-soft` | `#5f5347` | açıklama (6.20:1) |
-| `--ink-faint` | `#91857a` | dekoratif (2.99:1) |
+| `--ink-faint` | `#90847a` | dekoratif (2.99:1) |
 | `--accent` | `#b45634` | CTA |
 | `--accent-ink` | `#fff8ee` | accent üstü (**4.61:1**) |
 | `--line` | `rgba(46,38,32,.18)` | kenar |
@@ -203,7 +203,7 @@ Yasak: simetrik radius, 3+ desen, neon/gradient/cam, 12px altı metin, yoğun ta
 [data-style="bohemian"] {
   --bg: #f3e9d8; --bg-2: #e8d9c0;
   --surface: #fbf4e6; --surface-2: #f0e0c4;
-  --ink: #2e2620; --ink-soft: #5f5347; --ink-faint: #91857a;
+  --ink: #2e2620; --ink-soft: #5f5347; --ink-faint: #90847a;
   --accent: #b45634; --accent-ink: #fff8ee;
   --line: rgba(46,38,32,.18);
   --radius: 14px; --radius-lg: 22px;

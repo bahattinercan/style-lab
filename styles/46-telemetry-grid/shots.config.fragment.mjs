@@ -4,8 +4,7 @@ export const CONFIG = {
   extraCss: `
     /* imza: 24px ölçüm ızgarası · hairline tile · eşik şeridi · tabular rakam */
     body { font-variant-numeric: tabular-nums; }
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking); }
-    h1 { font-size: 34px; line-height: 1.14; max-width: 24ch; }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking); }h1 { font-size: var(--type-h1); line-height: 1.14; max-width: 24ch; }
     h2 { font-size: 22px; line-height: 1.28; }
     h3 { font-size: 17px; line-height: 1.32; }
     .eyebrow, .label, .mono {

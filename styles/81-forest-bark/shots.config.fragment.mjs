@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Lora başlık · EB Garamond gövde · mono ölçü ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }
-      h1 { font-size: 52px; line-height: 1.04; letter-spacing: -.01em; max-width: 19ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; }h1  { font-size: var(--type-h1); line-height: 1.04; letter-spacing: -.01em; max-width: 19ch; }
       h2 { font-size: 32px; line-height: 1.14; max-width: 26ch; }
       h3 { font-size: 22px; line-height: 1.2; }
       h4 { font-size: 17px; line-height: 1.3; }
@@ -139,7 +138,7 @@ export const CONFIG = {
       body.scene-dashboard .trow { font-variant-numeric: tabular-nums; }
 
       @media (max-width: 900px) {
-        h1 { font-size: 30px; max-width: 20ch; }
+        h1  { font-size: var(--type-h1); max-width: 20ch; }
         h2 { font-size: 24px; }
         .lede { font-size: 16px; }
         body.scene-dashboard .kpis { grid-template-columns: 1fr; }

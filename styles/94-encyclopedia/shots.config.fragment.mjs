@@ -5,19 +5,16 @@
 export const CONFIG = {
   motif: 'none',
   bodyClass: '',
-  extraCss: `
-      /* imza: madde başı + telaffuz · numaralı tanımlar · çapraz referans oku · alan/tip tablosu */
-      h1 { font-size: 42px; line-height: 1.08; letter-spacing: -.005em; font-weight: 700; max-width: 20ch; }
+  extraCss: `/* imza: madde başı + telaffuz · numaralı tanımlar · çapraz referans oku · alan/tip tablosu */
+      h1   { font-size: var(--type-h1); line-height: 1.08; letter-spacing: -.005em; font-weight: 700; max-width: 20ch; }
       h2 { font-size: 26px; line-height: 1.16; font-weight: 700; }
       h3 { font-size: 18px; line-height: 1.3; font-weight: 700; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; }
       .brand { font-family: var(--font-display); font-size: 19px; font-weight: 700; letter-spacing: 0; }
-      .lede { font-size: 14.5px; line-height: 1.62; max-width: 56ch; }
-
-      /* madde başı: h1 yanında mono telaffuz + kalın accent ilk harf bloğu */
-      .hero-copy h1::after {
+      .lede { font-size: 14.5px; line-height: 1.62; max-width: 56ch; }/* madde başı: h1 yanında mono telaffuz + kalın accent ilk harf bloğu */
+      .hero-copy h1::after   {
         content: attr(data-pron); display: block; margin-top: 8px;
-        font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em; color: var(--ink-soft); font-weight: 400;
+        font-family: var(--font-mono); font-size: var(--type-h1); letter-spacing: .04em; color: var(--ink-soft); font-weight: 400;
       }
       .nav { border-bottom: 1px solid var(--ink); padding: 16px 36px; }
       .nav-links a { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; }
@@ -72,7 +69,7 @@ export const CONFIG = {
         background: var(--accent); padding: 2px 4px;
       }
       @media (max-width: 900px) {
-        h1 { font-size: 30px; }
+        h1  { font-size: var(--type-h1); }
         .art-body, .comp-card-demo p, .co-note, .sec { columns: 1; column-rule: 0; }
         body.scene-landing .sig::before { font-size: 10px; letter-spacing: .1em; }
       }

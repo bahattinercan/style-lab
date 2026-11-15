@@ -2171,7 +2171,7 @@ html:has(> body.page) { overflow-x: clip; }
 .page .pg { display: flex; flex-direction: column; }
 .page .nav { padding: 18px 56px; }
 .page .hero { padding: 46px 56px 30px; }
-.page .hero h1 { font-size: clamp(38px, 4.2vw, 62px); }
+.page .hero h1 { font-size: clamp(min(var(--type-h1-mobile, 28px), var(--type-h1, 62px)), 4.2vw, var(--type-h1, 62px)); }
 
 .pg-logos {
   display: flex;
@@ -2190,7 +2190,7 @@ html:has(> body.page) { overflow-x: clip; }
 
 .pg-sec { padding: 18px 56px; }
 .pg-head { display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
-.pg-head h2 { font-size: 26px; max-width: 30ch; }
+.pg-head h2 { font-size: var(--type-h2, 26px); max-width: 30ch; }
 .pg-head-row { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 20px; }
 .pg-head-row > div { display: flex; flex-direction: column; gap: 6px; }
 .pg-cap {

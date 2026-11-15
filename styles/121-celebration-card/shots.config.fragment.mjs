@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'dots',
   bodyClass: '',
-  extraCss: `
-      /* imza: die-cut dalgali kenar · folyo bant · konfeti · kurdele seridi · imza satiri */
-      h1 { font-size: 52px; line-height: 1.02; letter-spacing: -.01em; font-weight: 700; max-width: 20ch; }
+  extraCss: `/* imza: die-cut dalgali kenar · folyo bant · konfeti · kurdele seridi · imza satiri */
+      h1   { font-size: var(--type-h1); line-height: 1.02; letter-spacing: -.01em; font-weight: 700; max-width: 20ch; }
       h2 { font-size: 30px; line-height: 1.1; font-weight: 700; }
       h3 { font-size: 20px; line-height: 1.28; font-weight: 700; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; }
@@ -31,9 +30,9 @@ export const CONFIG = {
 
       /* folyo bant: 6px accent serit, ust kenarda (gradient accent turevi) */
       .hero-copy h1 { border-top: 6px solid var(--accent); padding-top: 18px; }
-      .hero-copy h1::after {
+      .hero-copy h1::after  {
         content: "TEBRIKLER"; display: inline-block; margin-top: 14px;
-        font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .22em;
+        font-family: var(--font-mono); font-size: var(--type-h1); letter-spacing: .22em;
         color: var(--accent-ink); background: var(--accent); padding: 5px 9px; border-radius: 999px;
       }
       .chip { border-radius: 999px; background: var(--surface-2); border-color: var(--line); font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; }
@@ -63,7 +62,7 @@ export const CONFIG = {
         background: var(--accent); transform: rotate(-12deg); opacity: .9;
       }
       @media (max-width: 900px) {
-        h1 { font-size: 34px; max-width: 18ch; }
+        h1  { font-size: var(--type-h1); max-width: 18ch; }
         body.scene-landing .sig::before { width: 70vw; height: 34vh; opacity: .45; }
         body.scene-landing .sig::after { width: 70vw; height: 8px; }
       }

@@ -71,7 +71,7 @@ Kazandığı şey: dokunsal, sakin bir "cihaz" hissi. Feda ettiği şey: erişil
 | `--surface-2` | `#e9edf3` | hafif açık alan | vurgu |
 | `--ink` | `#333a45` | tüm metin | — |
 | `--ink-soft` | `#5d6674` | açıklama (4.72:1) | 12px altı |
-| `--ink-faint` | `#8b93a1` | dekoratif (2.52:1) | **gövde metni yasak** |
+| `--ink-faint` | `#7e8593` | dekoratif (2.52:1) | **gövde metni yasak** |
 | `--accent` | `#4262e8` | aktif durum, tek buton, odak | geniş zemin |
 | `--accent-ink` | `#ffffff` | accent üstü metin (5.07:1) | — |
 | `--line` | `transparent` | — | kenarlık çizmek |
@@ -236,7 +236,7 @@ Yasak: kenarlık, gradient, doku, farklı gölge açıları, 2px altı ofset, d�
 [data-style="neumorphism"] {
   --bg: #e4e8ef; --bg-2: #dde2ea;
   --surface: #e4e8ef; --surface-2: #e9edf3;
-  --ink: #333a45; --ink-soft: #5d6674; --ink-faint: #8b93a1;
+  --ink: #333a45; --ink-soft: #5d6674; --ink-faint: #7e8593;
   --accent: #4262e8; --accent-ink: #ffffff;
   --line: transparent;
   --radius: 16px; --radius-lg: 24px;

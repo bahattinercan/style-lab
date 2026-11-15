@@ -3,7 +3,7 @@
 [data-style="ethereal"] {
   --bg: #f7f4f8; --bg-2: #efe9f4;
   --surface: rgba(255,255,255,.55); --surface-2: rgba(255,255,255,.35);
-  --ink: #3b3542; --ink-soft: #635c6e; --ink-faint: #968fa3;
+  --ink: #3b3542; --ink-soft: #635c6e; --ink-faint: #928b9f;
   --accent: #7a63bd; --accent-ink: #ffffff;
   --line: rgba(59,53,66,.10);
   --radius: 20px; --radius-lg: 28px;

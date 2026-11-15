@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'paper',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: fotokopi greni · kes-yapıştır şerit · zımba izleri · ranson punto · tek damga rengi */
-      h1 { font-family: var(--font-display); font-size: 46px; line-height: 1.04; letter-spacing: .01em; font-weight: 700; max-width: 18ch; transform: rotate(-.6deg); }
+  extraCss: `/* imza: fotokopi greni · kes-yapıştır şerit · zımba izleri · ranson punto · tek damga rengi */
+      h1   { font-family: var(--font-display); font-size: var(--type-h1); line-height: 1.04; letter-spacing: .01em; font-weight: 700; max-width: 18ch; transform: rotate(-.6deg); }
       h2 { font-family: var(--font-display); font-size: 28px; line-height: 1.1; font-weight: 700; }
       h3 { font-family: var(--font-display); font-size: 19px; line-height: 1.2; font-weight: 700; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; }
@@ -59,7 +58,7 @@ export const CONFIG = {
         mask-image: linear-gradient(200deg, var(--ink) 0 30%, transparent 78%);
       }
       @media (max-width: 900px) {
-        h1 { font-size: 30px; max-width: 15ch; }
+        h1  { font-size: var(--type-h1); max-width: 15ch; }
         body.scene-landing .sig::before { box-shadow: 0 44px 0 var(--ink); }
         body.scene-landing .sig::after { width: 46vw; height: 26vh; }
       }

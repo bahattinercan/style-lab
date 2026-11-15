@@ -8,8 +8,7 @@ export const CONFIG = {
   bodyClass: '',
   extraCss: `
       /* imza: durum şeridi · tabular sayaç · 1px hairline kart · yoğun tablo ritmi */
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.01em; }
-      h1 { font-size: 34px; line-height: 1.16; max-width: 26ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.01em; }h1 { font-size: var(--type-h1); line-height: 1.16; max-width: 26ch; }
       h2 { font-size: 24px; line-height: 1.3; }
       h3 { font-size: 18px; line-height: 1.35; }
       .lede { font-family: var(--font-body); font-size: 15px; line-height: 1.55; max-width: 62ch; color: var(--ink-soft); }

@@ -52,7 +52,7 @@ Kuantum bilişim laboratuvarları (kubit ölçüm kayıtları), deneysel fizik d
 
 | Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
 |---|---|---|---|
-| `--bg` | `#9b99a3` | laboratuvar zemini (orta ton) | kart zemini |
+| `--bg` | `#b3b1bb` | laboratuvar zemini (orta ton) | kart zemini |
 | `--bg-2` | `#92909a` | bölüm ayırıcı, bulut zemini | input zemini |
 | `--surface` | `#a6a4ae` | kart, tablo (bir ton açık) | sayfa zemini |
 | `--surface-2` | `#86848e` | chip, zebra, ikincil yüzey | birincil kart |
@@ -225,7 +225,7 @@ Stil: Quantum Lab (styles/142-quantum-lab/style.md, tokens.json)
 Token: sadece [data-style="quantum-lab"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: display Courier Prime 400 (yalnız başlık), gövde Inter 400/600, sayı JetBrains Mono.
   Ölçek 11/12/13/15/19/25/40; gövde ölçü 68ch; olasılıklar 3 hane + %.
-Yüzey: orta gri tezgâh (#9b99a3); radius DAİMA 0; ana kenarlık 1px var(--ink); gölge yok.
+Yüzey: orta gri tezgâh (#b3b1bb); radius DAİMA 0; ana kenarlık 1px var(--ink); gölge yok.
 Imza: olasılık nokta bulutu (14/22px) + iki katmanlı histogram çubukları + toplam 100 satırı;
   kubit durumu çip + renk + metin (|0⟩, |1⟩, süperpozisyon).
 Renk: tek accent #5b3fa8 (ölçülen durum); orta ton nedeniyle ink-faint etkileşimde yok.
@@ -248,7 +248,7 @@ Yasak: yuvarlak köşe, gölge/blur, 4+ hane ondalık, yükseklik animasyonu, fo
 
 ```css
 [data-style="quantum-lab"] {
-  --bg: #9b99a3; --bg-2: #92909a;
+  --bg: #b3b1bb; --bg-2: #92909a;
   --surface: #a6a4ae; --surface-2: #86848e;
   --ink: #14121a; --ink-soft: #2f2c38; --ink-faint: #4a4753;
   --accent: #5b3fa8; --accent-ink: #ffffff;

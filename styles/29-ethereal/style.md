@@ -71,7 +71,7 @@ Meditasyon/uyku uygulamaları, ambient müzik kapakları ve "soft digital" dalga
 | `--surface-2` | `rgba(255,255,255,.35)` | ikincil cam |
 | `--ink` | `#3b3542` | metin (10.85:1) |
 | `--ink-soft` | `#635c6e` | açıklama (5.86:1) |
-| `--ink-faint` | `#968fa3` | dekoratif (2.85:1) |
+| `--ink-faint` | `#928b9f` | dekoratif (2.85:1) |
 | `--accent` | `#7a63bd` | CTA, aktif |
 | `--accent-ink` | `#ffffff` | accent üstü (**4.83:1**) |
 | `--line` | `rgba(59,53,66,.10)` | hairline |
@@ -213,7 +213,7 @@ Yasak: soluk zeminde soluk metin, sert gölge, koyu zemin, hızlı/çoklu animas
 [data-style="ethereal"] {
   --bg: #f7f4f8; --bg-2: #efe9f4;
   --surface: rgba(255,255,255,.55); --surface-2: rgba(255,255,255,.35);
-  --ink: #3b3542; --ink-soft: #635c6e; --ink-faint: #968fa3;
+  --ink: #3b3542; --ink-soft: #635c6e; --ink-faint: #928b9f;
   --accent: #7a63bd; --accent-ink: #ffffff;
   --line: rgba(59,53,66,.10);
   --radius: 20px; --radius-lg: 28px;

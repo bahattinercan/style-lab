@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Cormorant 300 başlık · Jost gövde ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 300; }
-      h1 { font-size: 58px; line-height: 1; letter-spacing: .01em; max-width: 17ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 300; }h1  { font-size: var(--type-h1); line-height: 1; letter-spacing: .01em; max-width: 17ch; }
       h2 { font-size: 30px; line-height: 1.12; letter-spacing: .02em; max-width: 28ch; }
       h3, h4 { font-family: var(--font-body); font-weight: 600; letter-spacing: .01em; }
       h3 { font-size: 20px; line-height: 1.3; }
@@ -143,7 +142,7 @@ export const CONFIG = {
       body.scene-dashboard .side { background: var(--bg-2); }
 
       @media (max-width: 900px) {
-        h1 { font-size: 32px; max-width: 18ch; }
+        h1  { font-size: var(--type-h1); max-width: 18ch; }
         h2 { font-size: 24px; }
         .lede { font-size: 15px; }
         .plan, .comp-card-demo, .state-card, .m-tile { padding: 20px; }

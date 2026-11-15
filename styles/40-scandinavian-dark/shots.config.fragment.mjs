@@ -6,8 +6,7 @@ export const CONFIG = {
     .nav { border-bottom: 1px solid var(--line); padding: 24px 48px; }
     .brand { font-family: var(--font-display); font-size: 15px; letter-spacing: var(--tracking); text-transform: none; }
     .nav-links a { font-family: var(--font-body); font-size: 13px; letter-spacing: .01em; text-transform: none; color: var(--ink-soft); }
-    .nav-links a:first-child { color: var(--ink); }
-    h1 { font-family: var(--font-display); font-weight: 400; font-size: 44px; line-height: 1.12; letter-spacing: var(--tracking); max-width: 21ch; text-transform: none; }
+    .nav-links a:first-child { color: var(--ink); }h1   { font-family: var(--font-display); font-weight: 400; font-size: var(--type-h1); line-height: 1.12; letter-spacing: var(--tracking); max-width: 21ch; text-transform: none; }
     h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.2; letter-spacing: var(--tracking); text-transform: none; }
     h3 { font-weight: 500; letter-spacing: 0; }
     h4 { font-weight: 500; }
@@ -55,7 +54,7 @@ export const CONFIG = {
       opacity: .07; pointer-events: none;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 30px; max-width: 22ch; }
+      h1  { font-size: var(--type-h1); max-width: 22ch; }
       .panel, .panel-2, .comp-card { padding: 20px; }
       body.scene-landing .sig::before { opacity: .05; }
     }

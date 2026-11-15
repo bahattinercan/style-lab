@@ -4,11 +4,10 @@
 export const CONFIG = {
   motif: 'none',
   bodyClass: 'upper',
-  extraCss: `
-    /* imza: üç kademeli iz kopyası (%40/%20/%8) + Anton başlık + hap kontrol */
+  extraCss: `/* imza: üç kademeli iz kopyası (%40/%20/%8) + Anton başlık + hap kontrol */
     /* imza motifi yok: izin kendisi motiftir; hız şeritleri aşağıdaki sig kurallarında. */
 
-    h1 { font-family: var(--font-display); font-weight: 400; font-size: 52px; line-height: 1.02; letter-spacing: var(--tracking); max-width: 20ch; }
+    h1   { font-family: var(--font-display); font-weight: 400; font-size: var(--type-h1); line-height: 1.02; letter-spacing: var(--tracking); max-width: 20ch; }
     h2 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.16; letter-spacing: -.005em; }
     h3 { font-family: var(--font-body); font-weight: 600; font-size: 20px; line-height: 1.3; letter-spacing: 0; text-transform: none; }
     h4 { font-family: var(--font-body); font-weight: 600; font-size: 15px; text-transform: none; }
@@ -84,7 +83,7 @@ export const CONFIG = {
       opacity: .28;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 32px; max-width: 20ch; }
+      h1  { font-size: var(--type-h1); max-width: 20ch; }
       .hero-visual::before { transform: translate(-10px, 0); }
       .hero-visual::after { transform: translate(-5px, 0); }
       .table .trow:hover, tr:hover { transform: none; }

@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Baloo 2 başlık · Nunito gövde · Courier Prime kayıt ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 600; }
-      h1 { font-size: 46px; line-height: 1.08; letter-spacing: 0; max-width: 20ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 600; }h1  { font-size: var(--type-h1); line-height: 1.08; letter-spacing: 0; max-width: 20ch; }
       h2 { font-size: 28px; line-height: 1.2; max-width: 26ch; }
       h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing: 0; }
       h3 { font-size: 20px; line-height: 1.3; }
@@ -148,7 +147,7 @@ export const CONFIG = {
       body.scene-dashboard .trow { font-variant-numeric: tabular-nums; }
 
       @media (max-width: 900px) {
-        h1 { font-size: 30px; max-width: 20ch; }
+        h1  { font-size: var(--type-h1); max-width: 20ch; }
         h2 { font-size: 22px; }
         .lede { font-size: 15px; }
         .plan, .comp-card-demo, .state-card, .m-tile, .auth-card, .ob-card { padding: 18px; }

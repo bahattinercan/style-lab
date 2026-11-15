@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Playfair 400 başlık · Nunito gövde · IBM Plex künye ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: none; }
-      h1 { font-size: 46px; line-height: 1.12; letter-spacing: 0; max-width: 20ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: none; }h1  { font-size: var(--type-h1); line-height: 1.12; letter-spacing: 0; max-width: 20ch; }
       h2 { font-size: 30px; line-height: 1.2; letter-spacing: 0; max-width: 28ch; }
       h3 { font-family: var(--font-display); font-weight: 400; font-size: 21px; line-height: 1.3; max-width: 32ch; }
       h4 { font-family: var(--font-body); font-weight: 700; font-size: 15px; line-height: 1.35; letter-spacing: 0; }
@@ -113,7 +112,7 @@ export const CONFIG = {
       body.scene-dashboard .trow:hover { background: var(--surface-2); }
 
       @media (max-width: 900px) {
-        h1 { font-size: 32px; max-width: 18ch; }
+        h1  { font-size: var(--type-h1); max-width: 18ch; }
         h2 { font-size: 24px; }
         h3 { font-size: 19px; }
         .lede { font-size: 15px; }

@@ -70,7 +70,7 @@ Apple/Google'ın widget ekranları, kişisel panolar ve 2022+ ürün sitelerinin
 | `--surface-2` | `#fafaf9` | ikincil kart, hover | vurgu |
 | `--ink` | `#12130f` | başlık, sayı | — |
 | `--ink-soft` | `#5b5f58` | kart açıklaması | sayı |
-| `--ink-faint` | `#9aa096` | mono etiket | gövde metni |
+| `--ink-faint` | `#8a8f86` | mono etiket | gövde metni |
 | `--accent` | `#1f6feb` | tek vurgu, grafik, aktif | geniş zemin |
 | `--accent-ink` | `#ffffff` | accent üstü metin | — |
 | `--line` | `rgba(18,19,15,.08)` | kart kenarı (opsiyonel) | metin |
@@ -234,7 +234,7 @@ Yasak: kart içinde kart, koyu gölge, 4+ ölçü, değişken gutter, mobilde 2 
 [data-style="bento-grid"] {
   --bg: #f4f4f2; --bg-2: #ececea;
   --surface: #ffffff; --surface-2: #fafaf9;
-  --ink: #12130f; --ink-soft: #5b5f58; --ink-faint: #9aa096;
+  --ink: #12130f; --ink-soft: #5b5f58; --ink-faint: #8a8f86;
   --accent: #1f6feb; --accent-ink: #ffffff;
   --line: rgba(18,19,15,.08);
   --radius: 18px; --radius-lg: 24px;

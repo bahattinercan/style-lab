@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Cormorant 300 başlık · Poppins gövde ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 300; }
-      h1 { font-size: 60px; line-height: 1.02; letter-spacing: .02em; max-width: 16ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 300; }h1  { font-size: var(--type-h1); line-height: 1.02; letter-spacing: .02em; max-width: 16ch; }
       h2 { font-size: 32px; line-height: 1.14; letter-spacing: .01em; max-width: 26ch; }
       h3, h4 { font-family: var(--font-body); font-weight: 600; letter-spacing: 0; }
       h3 { font-size: 20px; line-height: 1.3; }
@@ -141,7 +140,7 @@ export const CONFIG = {
       body.scene-dashboard .trow { font-variant-numeric: tabular-nums; }
 
       @media (max-width: 900px) {
-        h1 { font-size: 34px; max-width: 18ch; }
+        h1  { font-size: var(--type-h1); max-width: 18ch; }
         h2 { font-size: 24px; }
         .lede { font-size: 14px; }
         .plan, .comp-card-demo, .state-card, .m-tile { padding: 20px; }

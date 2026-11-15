@@ -68,11 +68,11 @@ Kazandığı şey: hatırlanma ve enerji. Feda ettiği şey: güven ve okunabili
 | `--bg` | `#f2e9da` | sayfa (kâğıt) | kart |
 | `--bg-2` | `#d6ff3f` | asit blok, ikinci bölüm zemini | metin zemini (uzun) |
 | `--surface` | `#ffffff` | kart | sayfa |
-| `--surface-2` | `#ff3b6b` | vurgu bloğu (accent ile aynı aile) | geniş zemin |
+| `--surface-2` | `#fa3667` | vurgu bloğu (accent ile aynı aile) | geniş zemin |
 | `--ink` | `#1b1b1b` | metin + kenarlık | — |
 | `--ink-soft` | `#4a4a4a` | açıklama | başlık |
 | `--ink-faint` | `#7b7b7b` | dekoratif (3.52:1) | gövde metni |
-| `--accent` | `#ff3b6b` | CTA, vurgu | metin rengi açık zeminde |
+| `--accent` | `#fa3667` | CTA, vurgu | metin rengi açık zeminde |
 | `--accent-ink` | `#1b1b1b` | accent üstü metin | — |
 | `--line` | `#1b1b1b` | 3px kenarlık | metin |
 
@@ -215,7 +215,7 @@ Token: yalnızca kit/tokens.css [data-style="anti-design"]; hard-coded renk/öl�
 Okunurluk tabanı: metin blokları 0°, gövde 15px, kontrast ≥ 4.5:1, hedef 52px.
 Tipografi: Anton display (104/0.86 uppercase) + Space Grotesk gövde 15/1.55; etiket mono 11 uppercase.
 Yüzey: radius 0, 3px ink kenarlık, blur'suz ofset gölge (8px hero / 4px küçük).
-Renk: kâğıt #f2e9da + asit #d6ff3f + pembe #ff3b6b; asit üstünde SİYAH metin.
+Renk: kâğıt #f2e9da + asit #d6ff3f + pembe #fa3667; asit üstünde SİYAH metin.
 Hareket: 90–240ms, steps(3) serbest; reduced-motion'da 0.01ms.
 Yasak: metni döndürmek, 3+ ihlal, düşük kontrast, blur/cam, ödeme ekranında ihlal.
 Çıktı: kod + tek paragraf not (hangi 3 ihlali seçtin, okunurluğu nasıl korudun).
@@ -234,9 +234,9 @@ Yasak: metni döndürmek, 3+ ihlal, düşük kontrast, blur/cam, ödeme ekranın
 ```css
 [data-style="anti-design"] {
   --bg: #f2e9da; --bg-2: #d6ff3f;
-  --surface: #ffffff; --surface-2: #ff3b6b;
+  --surface: #ffffff; --surface-2: #fa3667;
   --ink: #1b1b1b; --ink-soft: #4a4a4a; --ink-faint: #7b7b7b;
-  --accent: #ff3b6b; --accent-ink: #1b1b1b;
+  --accent: #fa3667; --accent-ink: #1b1b1b;
   --line: #1b1b1b;
   --radius: 0px; --radius-lg: 0px;
   --shadow: none; --shadow-hard: 8px 8px 0 #1b1b1b;

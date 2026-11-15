@@ -56,7 +56,7 @@ Depo raf etiketleri, sevkiyat manifestoları ve forklift kabini uyarı dilinden:
 | `--ink` | `#17150f` | metin, 2px çerçeve, tablo başlığı | büyük dekoratif dolgu |
 | `--ink-soft` | `#56523f` | ikincil metin, etiket | accent üstü |
 | `--ink-faint` | `#807b66` | kod ikincil sütunu, dekoratif ayırıcı | gövde, etkileşimli metin |
-| `--accent` | `#f2b705` | **yalnız dolgu**: birincil buton, aktif şerit, seçili satır | **metin rengi olarak yasak** (bg'ye 1.6:1) |
+| `--accent` | `#b98000` | **yalnız dolgu**: birincil buton, aktif şerit, seçili satır | **metin rengi olarak yasak** (bg'ye 1.6:1) |
 | `--accent-ink` | `#1a1608` | accent dolgu üstü metin | accent olmayan zemin |
 | `--line` | `rgba(23,21,15,.22)` | 1px çerçeve, satır ayırıcı | 2px vurgu çizgisi |
 
@@ -254,7 +254,7 @@ Yasak: hap buton, yumuşak gölge, cam, sarı metin, sürekli kayan bant, parall
   --bg: #f3f1ec; --bg-2: #e7e4dc;
   --surface: #fcfbf8; --surface-2: #f0ede5;
   --ink: #17150f; --ink-soft: #56523f; --ink-faint: #807b66;
-  --accent: #f2b705; --accent-ink: #1a1608;
+  --accent: #b98000; --accent-ink: #1a1608;
   --line: rgba(23,21,15,.22);
   --radius: 2px; --radius-lg: 8px;
   --shadow: 0 1px 0 rgba(23,21,15,.10); --shadow-hard: 4px 4px 0 rgba(23,21,15,.88);

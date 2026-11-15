@@ -7,7 +7,7 @@
 
 /* 01 · Minimalism */
 [data-style="minimalism"] {
-  --bg: #fafaf9; --bg-2: #f2f2f0; --surface: #ffffff; --surface-2: #f7f7f5; --ink: #101112; --ink-soft: #5a5f66; --ink-faint: #9aa0a6; --accent: #2563eb; --accent-ink: #ffffff; --line: rgba(16,17,18,.10);
+  --bg: #fafaf9; --bg-2: #f2f2f0; --surface: #ffffff; --surface-2: #f7f7f5; --ink: #101112; --ink-soft: #5a5f66; --ink-faint: #8d9298; --accent: #2563eb; --accent-ink: #ffffff; --line: rgba(16,17,18,.10);
   --radius: 8px; --radius-lg: 12px;
   --shadow: 0 1px 2px rgba(16,17,18,.06); --shadow-hard: none;
   --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.02em;
@@ -34,7 +34,7 @@
 
 /* 04 · Luxury Typography */
 [data-style="luxury-typography"] {
-  --bg: #f6f1e7; --bg-2: #efe7d8; --surface: #fffdf8; --surface-2: #f3ecdf; --ink: #1a1815; --ink-soft: #5c554b; --ink-faint: #9a9184; --accent: #c6a664; --accent-ink: #1a1815; --line: rgba(26,24,21,.16);
+  --bg: #f6f1e7; --bg-2: #efe7d8; --surface: #fffdf8; --surface-2: #f3ecdf; --ink: #1a1815; --ink-soft: #5c554b; --ink-faint: #938a7e; --accent: #a78746; --accent-ink: #1a1815; --line: rgba(26,24,21,.16);
   --radius: 0px; --radius-lg: 2px;
   --shadow: none; --shadow-hard: none;
   --font-display: "Cormorant Garamond", "Didot", Georgia, serif; --font-body: "Jost", "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: 0.02em;
@@ -43,7 +43,7 @@
 
 /* 05 · Bento Grid */
 [data-style="bento-grid"] {
-  --bg: #f4f4f2; --bg-2: #ececea; --surface: #ffffff; --surface-2: #fafaf9; --ink: #12130f; --ink-soft: #5b5f58; --ink-faint: #9aa096; --accent: #1f6feb; --accent-ink: #ffffff; --line: rgba(18,19,15,.08);
+  --bg: #f4f4f2; --bg-2: #ececea; --surface: #ffffff; --surface-2: #fafaf9; --ink: #12130f; --ink-soft: #5b5f58; --ink-faint: #8a8f86; --accent: #1f6feb; --accent-ink: #ffffff; --line: rgba(18,19,15,.08);
   --radius: 18px; --radius-lg: 24px;
   --shadow: 0 1px 2px rgba(18,19,15,.05), 0 8px 24px rgba(18,19,15,.04); --shadow-hard: none;
   --font-display: "Inter", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.02em;
@@ -52,7 +52,7 @@
 
 /* 06 · Japandi */
 [data-style="japandi"] {
-  --bg: #f4efe7; --bg-2: #ebe4d9; --surface: #fbf8f3; --surface-2: #f2ece2; --ink: #2c2925; --ink-soft: #635c53; --ink-faint: #918a80; --accent: #8a9b84; --accent-ink: #2c2925; --line: rgba(44,41,37,.10);
+  --bg: #f4efe7; --bg-2: #ebe4d9; --surface: #fbf8f3; --surface-2: #f2ece2; --ink: #2c2925; --ink-soft: #635c53; --ink-faint: #908980; --accent: #7f8f79; --accent-ink: #262420; --line: rgba(44,41,37,.10);
   --radius: 10px; --radius-lg: 14px;
   --shadow: 0 1px 2px rgba(44,41,37,.04); --shadow-hard: none;
   --font-display: "Lora", "Iowan Old Style", Georgia, serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.01em;
@@ -61,7 +61,7 @@
 
 /* 07 · Wabi-Sabi */
 [data-style="wabi-sabi"] {
-  --bg: #ede6da; --bg-2: #e3d9c9; --surface: #f6f1e6; --surface-2: #eadfce; --ink: #2a2724; --ink-soft: #5f574d; --ink-faint: #8f8779; --accent: #a85831; --accent-ink: #fff8ef; --line: rgba(42,39,36,.18);
+  --bg: #ede6da; --bg-2: #e3d9c9; --surface: #f6f1e6; --surface-2: #eadfce; --ink: #2a2724; --ink-soft: #5f574d; --ink-faint: #8b8376; --accent: #a85831; --accent-ink: #fff8ef; --line: rgba(42,39,36,.18);
   --radius: 3px; --radius-lg: 18px;
   --shadow: 0 1px 0 rgba(42,39,36,.06); --shadow-hard: 2px 2px 0 rgba(42,39,36,.12);
   --font-display: "Fraunces", "Lora", Georgia, serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Courier New", ui-monospace, monospace; --tracking: 0em;
@@ -88,7 +88,7 @@
 
 /* 10 · Neumorphism */
 [data-style="neumorphism"] {
-  --bg: #e4e8ef; --bg-2: #dde2ea; --surface: #e4e8ef; --surface-2: #e9edf3; --ink: #333a45; --ink-soft: #5d6674; --ink-faint: #8b93a1; --accent: #4262e8; --accent-ink: #ffffff; --line: transparent;
+  --bg: #e4e8ef; --bg-2: #dde2ea; --surface: #e4e8ef; --surface-2: #e9edf3; --ink: #333a45; --ink-soft: #5d6674; --ink-faint: #7e8593; --accent: #4262e8; --accent-ink: #ffffff; --line: transparent;
   --radius: 16px; --radius-lg: 24px;
   --shadow: 6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff; --shadow-hard: inset 6px 6px 12px #cfd4dd, inset -6px -6px 12px #f8fbff;
   --font-display: "Nunito Sans", "Inter", system-ui, sans-serif; --font-body: "Nunito Sans", "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0em;
@@ -97,7 +97,7 @@
 
 /* 11 · Claymorphism */
 [data-style="claymorphism"] {
-  --bg: #f3efff; --bg-2: #e9e3ff; --surface: #ffffff; --surface-2: #f6f2ff; --ink: #2b2350; --ink-soft: #5b5382; --ink-faint: #8d87ad; --accent: #6f4df0; --accent-ink: #ffffff; --line: rgba(255,255,255,.7);
+  --bg: #f3efff; --bg-2: #e9e3ff; --surface: #ffffff; --surface-2: #f6f2ff; --ink: #2b2350; --ink-soft: #5b5382; --ink-faint: #8d87ac; --accent: #6f4df0; --accent-ink: #ffffff; --line: rgba(255,255,255,.7);
   --radius: 24px; --radius-lg: 32px;
   --shadow: 0 12px 24px rgba(124,92,255,.18), inset -6px -8px 16px rgba(43,35,80,.10), inset 6px 8px 16px rgba(255,255,255,.65); --shadow-hard: 0 16px 28px rgba(124,92,255,.22);
   --font-display: "Baloo 2", "Poppins", "Nunito", system-ui, sans-serif; --font-body: "Nunito", "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0em;
@@ -115,7 +115,7 @@
 
 /* 13 · Neo-Brutalism */
 [data-style="neo-brutalism"] {
-  --bg: #fffdf5; --bg-2: #ffe9a8; --surface: #ffffff; --surface-2: #ffd93d; --ink: #000000; --ink-soft: #2b2b2b; --ink-faint: #6b6b6b; --accent: #ff5c8a; --accent-ink: #000000; --line: #000000;
+  --bg: #fffdf5; --bg-2: #ffe9a8; --surface: #ffffff; --surface-2: #ffd93d; --ink: #000000; --ink-soft: #2b2b2b; --ink-faint: #6b6b6b; --accent: #fb5887; --accent-ink: #000000; --line: #000000;
   --radius: 0px; --radius-lg: 4px;
   --shadow: 4px 4px 0 #000000; --shadow-hard: 0 0 0 #000000;
   --font-display: "Archivo Black", "Space Grotesk", system-ui, sans-serif; --font-body: "Space Grotesk", "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.02em;
@@ -124,7 +124,7 @@
 
 /* 14 · Anti-Design */
 [data-style="anti-design"] {
-  --bg: #f2e9da; --bg-2: #d6ff3f; --surface: #ffffff; --surface-2: #ff3b6b; --ink: #1b1b1b; --ink-soft: #4a4a4a; --ink-faint: #7b7b7b; --accent: #ff3b6b; --accent-ink: #1b1b1b; --line: #1b1b1b;
+  --bg: #f2e9da; --bg-2: #d6ff3f; --surface: #ffffff; --surface-2: #ff3b6b; --ink: #1b1b1b; --ink-soft: #4a4a4a; --ink-faint: #7b7b7b; --accent: #fa3667; --accent-ink: #1b1b1b; --line: #1b1b1b;
   --radius: 0px; --radius-lg: 0px;
   --shadow: none; --shadow-hard: 8px 8px 0 #1b1b1b;
   --font-display: "Anton", "Archivo Black", Impact, sans-serif; --font-body: "Space Grotesk", "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.03em;
@@ -169,7 +169,7 @@
 
 /* 19 · Y2K */
 [data-style="y2k"] {
-  --bg: #eaf4ff; --bg-2: #d9e9ff; --surface: #ffffff; --surface-2: #e6f0ff; --ink: #1b2340; --ink-soft: #4b557a; --ink-faint: #8b94b5; --accent: #6f4de8; --accent-ink: #ffffff; --line: rgba(90,120,220,.35);
+  --bg: #eaf4ff; --bg-2: #d9e9ff; --surface: #ffffff; --surface-2: #e6f0ff; --ink: #1b2340; --ink-soft: #4b557a; --ink-faint: #838bac; --accent: #6f4de8; --accent-ink: #ffffff; --line: rgba(90,120,220,.35);
   --radius: 20px; --radius-lg: 28px;
   --shadow: 0 6px 18px rgba(120,150,255,.35), inset 0 1px 0 #ffffff; --shadow-hard: none;
   --font-display: "Michroma", "Eurostile", "Inter", sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0.01em;
@@ -223,7 +223,7 @@
 
 /* 25 · Frutiger Aero */
 [data-style="frutiger-aero"] {
-  --bg: #dff1ff; --bg-2: #bfe3ff; --surface: linear-gradient(180deg, #ffffff, #d6ecff); --surface-2: #eaf6ff; --ink: #0d2b45; --ink-soft: #365a75; --ink-faint: #6f8fa8; --accent: #2f9be0; --accent-ink: #0d2b45; --line: rgba(255,255,255,.85);
+  --bg: #dff1ff; --bg-2: #bfe3ff; --surface: linear-gradient(180deg, #ffffff, #d6ecff); --surface-2: #eaf6ff; --ink: #0d2b45; --ink-soft: #365a75; --ink-faint: #6e8da6; --accent: #2090d5; --accent-ink: #06243e; --line: rgba(255,255,255,.85);
   --radius: 14px; --radius-lg: 22px;
   --shadow: 0 8px 20px rgba(47,155,224,.28), inset 0 1px 0 #ffffff; --shadow-hard: none;
   --font-display: "Segoe UI", "Frutiger", system-ui, sans-serif; --font-body: "Segoe UI", "Myriad Pro", system-ui, sans-serif; --font-mono: "Consolas", ui-monospace, monospace; --tracking: 0em;
@@ -250,7 +250,7 @@
 
 /* 28 · Surrealism */
 [data-style="surrealism"] {
-  --bg: #e7e2da; --bg-2: #d9d2c7; --surface: #fbf9f5; --surface-2: #efeae1; --ink: #1e1c1a; --ink-soft: #56514a; --ink-faint: #8d877e; --accent: #e4572e; --accent-ink: #1e1c1a; --line: rgba(30,28,26,.12);
+  --bg: #e7e2da; --bg-2: #d9d2c7; --surface: #fbf9f5; --surface-2: #efeae1; --ink: #1e1c1a; --ink-soft: #56514a; --ink-faint: #868178; --accent: #df5329; --accent-ink: #1b1918; --line: rgba(30,28,26,.12);
   --radius: 4px; --radius-lg: 10px;
   --shadow: 0 24px 60px rgba(30,28,26,.16); --shadow-hard: none;
   --font-display: "Inter", "Helvetica Neue", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, monospace; --tracking: -0.02em;
@@ -259,7 +259,7 @@
 
 /* 29 · Ethereal */
 [data-style="ethereal"] {
-  --bg: #f7f4f8; --bg-2: #efe9f4; --surface: rgba(255,255,255,.55); --surface-2: rgba(255,255,255,.35); --ink: #3b3542; --ink-soft: #635c6e; --ink-faint: #968fa3; --accent: #7a63bd; --accent-ink: #ffffff; --line: rgba(59,53,66,.10);
+  --bg: #f7f4f8; --bg-2: #efe9f4; --surface: rgba(255,255,255,.55); --surface-2: rgba(255,255,255,.35); --ink: #3b3542; --ink-soft: #635c6e; --ink-faint: #928b9f; --accent: #7a63bd; --accent-ink: #ffffff; --line: rgba(59,53,66,.10);
   --radius: 20px; --radius-lg: 28px;
   --shadow: 0 20px 50px rgba(143,123,214,.16); --shadow-hard: none;
   --font-display: "Cormorant Garamond", "Lora", Georgia, serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0.03em;
@@ -268,7 +268,7 @@
 
 /* 30 · Bohemian */
 [data-style="bohemian"] {
-  --bg: #f3e9d8; --bg-2: #e8d9c0; --surface: #fbf4e6; --surface-2: #f0e0c4; --ink: #2e2620; --ink-soft: #5f5347; --ink-faint: #91857a; --accent: #b45634; --accent-ink: #fff8ee; --line: rgba(46,38,32,.18);
+  --bg: #f3e9d8; --bg-2: #e8d9c0; --surface: #fbf4e6; --surface-2: #f0e0c4; --ink: #2e2620; --ink-soft: #5f5347; --ink-faint: #90847a; --accent: #b45634; --accent-ink: #fff8ee; --line: rgba(46,38,32,.18);
   --radius: 14px; --radius-lg: 22px;
   --shadow: 0 10px 24px rgba(46,38,32,.12); --shadow-hard: 4px 4px 0 rgba(46,38,32,.15);
   --font-display: "Fraunces", "Lora", Georgia, serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Courier New", ui-monospace, monospace; --tracking: 0em;
@@ -277,7 +277,7 @@
 
 /* 31 · Scrapbook */
 [data-style="scrapbook"] {
-  --bg: #f7f1e4; --bg-2: #efe6d2; --surface: #fffdf7; --surface-2: #fdf3dc; --ink: #1f2b3a; --ink-soft: #4e5a68; --ink-faint: #858e99; --accent: #c63d2f; --accent-ink: #fffdf7; --line: rgba(31,43,58,.18);
+  --bg: #f7f1e4; --bg-2: #efe6d2; --surface: #fffdf7; --surface-2: #fdf3dc; --ink: #1f2b3a; --ink-soft: #4e5a68; --ink-faint: #848c97; --accent: #c63d2f; --accent-ink: #fffdf7; --line: rgba(31,43,58,.18);
   --radius: 3px; --radius-lg: 8px;
   --shadow: 0 2px 6px rgba(31,43,58,.18); --shadow-hard: 6px 6px 0 rgba(31,43,58,.12);
   --font-display: "Caveat", "Kalam", cursive; --font-body: "Inter", system-ui, sans-serif; --font-mono: "Courier Prime", ui-monospace, monospace; --tracking: 0em;
@@ -304,7 +304,7 @@
 
 /* 34 · Skeuomorphism */
 [data-style="skeuomorphism"] {
-  --bg: #cfc6b8; --bg-2: #bdb2a1; --surface: #f2ebdd; --surface-2: #e6ddcb; --ink: #2f2a24; --ink-soft: #5d554a; --ink-faint: #8b8173; --accent: #2f6b4f; --accent-ink: #f7f3e8; --line: rgba(47,42,36,.35);
+  --bg: #cfc6b8; --bg-2: #bdb2a1; --surface: #f2ebdd; --surface-2: #e6ddcb; --ink: #2f2a24; --ink-soft: #5a5248; --ink-faint: #776d60; --accent: #2f6b4f; --accent-ink: #f7f3e8; --line: rgba(47,42,36,.35);
   --radius: 6px; --radius-lg: 10px;
   --shadow: 0 2px 4px rgba(47,42,36,.35), inset 0 1px 0 rgba(255,255,255,.75); --shadow-hard: inset 0 2px 6px rgba(47,42,36,.45);
   --font-display: "Helvetica Neue", "Segoe UI", system-ui, sans-serif; --font-body: "Helvetica Neue", "Segoe UI", system-ui, sans-serif; --font-mono: "Menlo", ui-monospace, monospace; --tracking: 0em;
@@ -394,7 +394,7 @@
 
 /* 44 · Utility */
 [data-style="utility"] {
-  --bg: #ffffff; --bg-2: #f6f6f7; --surface: #ffffff; --surface-2: #fafafa; --ink: #111112; --ink-soft: #5a5f66; --ink-faint: #9298a0; --accent: #1d4ed8; --accent-ink: #ffffff; --line: rgba(17,17,18,.10);
+  --bg: #ffffff; --bg-2: #f6f6f7; --surface: #ffffff; --surface-2: #fafafa; --ink: #111112; --ink-soft: #5a5f66; --ink-faint: #90959d; --accent: #1d4ed8; --accent-ink: #ffffff; --line: rgba(17,17,18,.10);
   --radius: 8px; --radius-lg: 12px;
   --shadow: 0 1px 2px rgba(17,17,18,.06); --shadow-hard: none;
   --font-display: "Poppins", system-ui, sans-serif; --font-body: "Poppins", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: 0em;
@@ -556,7 +556,7 @@
 
 /* 62 · Warehouse Flow */
 [data-style="warehouse-flow"] {
-  --bg: #f3f1ec; --bg-2: #e7e4dc; --surface: #fcfbf8; --surface-2: #f0ede5; --ink: #17150f; --ink-soft: #56523f; --ink-faint: #807b66; --accent: #f2b705; --accent-ink: #1a1608; --line: rgba(23,21,15,.22);
+  --bg: #f3f1ec; --bg-2: #e7e4dc; --surface: #fcfbf8; --surface-2: #f0ede5; --ink: #17150f; --ink-soft: #56523f; --ink-faint: #807b66; --accent: #b98000; --accent-ink: #1a1608; --line: rgba(23,21,15,.22);
   --radius: 2px; --radius-lg: 8px;
   --shadow: 0 1px 0 rgba(23,21,15,.10); --shadow-hard: 4px 4px 0 rgba(23,21,15,.88);
   --font-display: "Archivo Black", system-ui, sans-serif; --font-body: "Inter", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -.02em;
@@ -916,7 +916,7 @@
 
 /* 102 · Moiré Field */
 [data-style="moire-field"] {
-  --bg: #a6a29b; --bg-2: #9c9891; --surface: #b1ada6; --surface-2: #8e8a84; --ink: #12130f; --ink-soft: #2b2c28; --ink-faint: #45463f; --accent: #9c2e6e; --accent-ink: #ffffff; --line: rgba(18,19,15,.22);
+  --bg: #b6b2ab; --bg-2: #9c9891; --surface: #b1ada6; --surface-2: #8e8a84; --ink: #12130f; --ink-soft: #2b2c28; --ink-faint: #45463f; --accent: #9c2e6e; --accent-ink: #ffffff; --line: rgba(18,19,15,.22);
   --radius: 0px; --radius-lg: 0px;
   --shadow: none; --shadow-hard: 0 0 0 1px var(--ink);
   --font-display: "Silkscreen", ui-monospace, monospace; --font-body: "Inter", ui-sans-serif, system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace; --tracking: 0.02em;
@@ -934,7 +934,7 @@
 
 /* 104 · Stepped Mechanism */
 [data-style="stepped-mechanism"] {
-  --bg: #a0a6aa; --bg-2: #979da1; --surface: #abb1b5; --surface-2: #8b9195; --ink: #0f1417; --ink-soft: #2b3238; --ink-faint: #485056; --accent: #1f6b3d; --accent-ink: #ffffff; --line: rgba(15,20,23,.22);
+  --bg: #adb3b7; --bg-2: #979da1; --surface: #abb1b5; --surface-2: #8b9195; --ink: #0f1417; --ink-soft: #2b3238; --ink-faint: #485056; --accent: #1f6b3d; --accent-ink: #ffffff; --line: rgba(15,20,23,.22);
   --radius: 8px; --radius-lg: 16px;
   --shadow: 0 8px 18px -14px rgba(15,20,23,.5); --shadow-hard: 0 2px 0 var(--ink);
   --font-display: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace; --font-body: "Inter", ui-sans-serif, system-ui, sans-serif; --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace; --tracking: 0.03em;
@@ -1276,7 +1276,7 @@
 
 /* 142 · Quantum Lab */
 [data-style="quantum-lab"] {
-  --bg: #9b99a3; --bg-2: #92909a; --surface: #a6a4ae; --surface-2: #86848e; --ink: #14121a; --ink-soft: #2f2c38; --ink-faint: #4a4753; --accent: #5b3fa8; --accent-ink: #ffffff; --line: rgba(20,18,26,.24);
+  --bg: #b3b1bb; --bg-2: #92909a; --surface: #a6a4ae; --surface-2: #86848e; --ink: #14121a; --ink-soft: #2f2c38; --ink-faint: #4a4753; --accent: #5b3fa8; --accent-ink: #ffffff; --line: rgba(20,18,26,.24);
   --radius: 0px; --radius-lg: 0px;
   --shadow: none; --shadow-hard: 0 0 0 1px var(--ink);
   --font-display: "Courier Prime", ui-monospace, SFMono-Regular, monospace; --font-body: "Inter", ui-sans-serif, system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace; --tracking: 0.01em;

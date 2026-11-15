@@ -3634,8 +3634,8 @@
     "çap ve ağırlık"
    ],
    "layout": {
-    "hero": "split-reverse",
-    "nav": "utility",
+    "hero": "index",
+    "nav": "split",
     "density": "dense"
    },
    "compatible": [
@@ -5050,9 +5050,9 @@
     "atölye"
    ],
    "layout": {
-    "hero": "sticky",
+    "hero": "index",
     "nav": "pill",
-    "density": "balanced"
+    "density": "dense"
    },
    "compatible": [
     "boutique-hotel",
@@ -5175,8 +5175,8 @@
     "spec"
    ],
    "layout": {
-    "hero": "index",
-    "nav": "split",
+    "hero": "product",
+    "nav": "utility",
     "density": "dense"
    },
    "compatible": [
@@ -5200,9 +5200,9 @@
     "sağlık"
    ],
    "layout": {
-    "hero": "index",
-    "nav": "split",
-    "density": "dense"
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
    },
    "compatible": [
     "grocery-delivery",
@@ -5575,9 +5575,9 @@
     "egzersiz"
    ],
    "layout": {
-    "hero": "index",
-    "nav": "split",
-    "density": "dense"
+    "hero": "sticky",
+    "nav": "inline",
+    "density": "balanced"
    },
    "compatible": [
     "mental-wellness",
@@ -5600,9 +5600,9 @@
     "sakin"
    ],
    "layout": {
-    "hero": "sticky",
-    "nav": "inline",
-    "density": "balanced"
+    "hero": "index",
+    "nav": "split",
+    "density": "dense"
    },
    "compatible": [
     "physiotherapy",
@@ -6050,9 +6050,9 @@
     "baskı"
    ],
    "layout": {
-    "hero": "centered",
-    "nav": "pill",
-    "density": "sparse"
+    "hero": "split-reverse",
+    "nav": "utility",
+    "density": "dense"
    },
    "compatible": [
     "linocut-print",

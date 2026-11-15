@@ -6,15 +6,13 @@ export const CONFIG = {
     .nav { border-bottom: 1px solid var(--line); padding: 0 40px; }
     /* hero 1.6fr / 1fr ≈ 8 / 5 — dev tipografiye geniş kolon */
     body.scene-landing .hero { grid-template-columns: 1.6fr 1fr; gap: 44px; }
-    .brand, .nav-links a { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
-    h1 { font-size: clamp(28px, 7vw, 96px); line-height: .95; letter-spacing: -.03em; text-transform: uppercase; max-width: 15ch; }
+    .brand, .nav-links a { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }h1   { font-size: var(--type-h1); line-height: .95; letter-spacing: -.03em; text-transform: uppercase; max-width: 15ch; }
     /* Anton tek ağırlık: sentetik kalınlaştırma harfleri bulandırır */
     h1, h2, .type-scale .line b, .kpi .v, .kpi .num-big, .big404 { font-weight: 400; }
     .big404 { font-size: 58px; line-height: .9; letter-spacing: -.03em; }
     h2 { font-size: 32px; line-height: 1.0; letter-spacing: -.02em; text-transform: uppercase; }
-    .art-main h2 { font-size: 24px; line-height: 1.12; letter-spacing: -.02em; }
-    .auth-card h1 { font-size: 26px; line-height: 1.1; margin-bottom: 4px; }
-    .ob-card h1 { font-size: 34px; line-height: 1.06; }
+    .art-main h2 { font-size: 24px; line-height: 1.12; letter-spacing: -.02em; }.auth-card h1   { font-size: var(--type-h1); line-height: 1.1; margin-bottom: 4px; }
+    .ob-card h1  { font-size: var(--type-h1); line-height: 1.06; }
     .art-main blockquote { font-size: 22px; line-height: 1.16; letter-spacing: -.01em; border-left-width: 4px; }
     .app-bar h2 { font-size: 26px; line-height: 1.0; }
     h3 { font-family: var(--font-body); font-size: 19px; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; }
@@ -54,7 +52,7 @@ export const CONFIG = {
       color: var(--ink-faint); text-transform: uppercase; transform: rotate(-6deg); opacity: .42;
     }
     @media (max-width: 900px) {
-      h1 { font-size: clamp(28px, 9vw, 44px); max-width: 18ch; }
+      h1  { font-size: var(--type-h1); max-width: 18ch; }
       .hero-visual::after { height: 8px; top: 54%; }
       .hero-visual::before { font-size: 26px; bottom: 9%; }
     }

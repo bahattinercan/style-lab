@@ -10,7 +10,7 @@
  *
  * Not: APCA eşik olarak kullanılmaz (WCAG 3 taslak, algoritma belirlenmedi); yalnız bilgi amaçlı.
  */
-import { contrastRatio, parseColor } from '../color.mjs';
+import { apcaContrast, contrastRatio, parseColor } from '../color.mjs';
 
 /* ------------------------------------------------------------------ renk uzayı */
 
@@ -133,6 +133,48 @@ export function deriveNeutrals(palette) {
   };
 }
 
+/** APCA hedefi için seed hue/chroma'sını koruyarak en yakın okunabilir açıklığı seç. */
+export function solveApcaContrast({ from, against, target = 60 }) {
+  const seed = parseColor(from);
+  if (!seed || !parseColor(against)) throw new Error(`APCA çözücü: geçersiz renk ${from} / ${against}`);
+  const base = srgbToOklch(toUnit(seed));
+  let best = null;
+  for (let i = 0; i <= 1000; i += 1) {
+    const L = i / 1000;
+    const color = hex(oklchToSrgb({ L, C: base.C, h: base.h }));
+    const lc = Math.abs(apcaContrast(color, against) ?? 0);
+    const distance = Math.abs(L - base.L);
+    if (lc >= target && (!best || distance < best.distance)) best = { hex: color, contrast: lc, distance };
+  }
+  if (!best) throw new Error(`APCA çözücü: ${from} → ${against} Lc ${target} hedefi ulaşılamıyor`);
+  return best;
+}
+
+export const CORE_PALETTE_TARGETS = Object.freeze({ ink: 4.5, inkSoft: 4.5, inkFaint: 3, accentInk: 4.5, focus: 3, apca: 60 });
+
+/** Palette seeds stay editable; only colors below their contract targets are adjusted. */
+export function deriveCorePalette(seeds, targets = CORE_PALETTE_TARGETS) {
+  const palette = { ...seeds };
+  const solveWcag = (key, against, target) => {
+    if (contrastRatio(palette[key], against) < target) {
+      palette[key] = solveContrast({ from: palette[key], against, target }).hex;
+    }
+  };
+  if (Math.abs(apcaContrast(palette.ink, palette.bg) ?? 0) < (targets.apca ?? 60)) {
+    try {
+      palette.ink = solveApcaContrast({ from: palette.ink, against: palette.bg, target: targets.apca ?? 60 }).hex;
+    } catch {
+      palette.bg = solveApcaContrast({ from: palette.bg, against: palette.ink, target: targets.apca ?? 60 }).hex;
+    }
+  }
+  solveWcag('ink', palette.bg, targets.ink ?? 4.5);
+  solveWcag('inkSoft', palette.bg, targets.inkSoft ?? 4.5);
+  solveWcag('inkFaint', palette.bg, targets.inkFaint ?? 3);
+  solveWcag('accent', palette.bg, targets.focus ?? 3);
+  solveWcag('accentInk', palette.accent, targets.accentInk ?? 4.5);
+  return palette;
+}
+
 /* ------------------------------------------------------------------ self-test */
 
 function selfTest() {
@@ -160,6 +202,18 @@ function selfTest() {
     if (!okInk) failed += 1;
     console.log(`${okInk ? '✓' : '×'} durum ${key}-ink: ${status[`${key}Ink`]} → ${inkR.toFixed(2)}:1 (hedef 4.5)`);
   }
+  const seeded = deriveCorePalette({
+    bg: '#fafaf9', bg2: '#f2f2f0', surface: '#ffffff', surface2: '#f7f7f5',
+    ink: '#101112', inkSoft: '#5a5f66', inkFaint: '#9aa0a6', accent: '#2563eb',
+    accentInk: '#ffffff', line: 'rgba(16,17,18,.10)',
+  });
+  const seededOk = contrastRatio(seeded.inkFaint, seeded.bg) >= 3 && seeded.inkFaint !== '#9aa0a6';
+  if (!seededOk) failed += 1;
+  console.log(`${seededOk ? '✓' : '×'} seed palet düşük ink-faint hedefini düzeltir`);
+  const apca = solveApcaContrast({ from: '#a6a29b', against: '#12130f', target: 60 });
+  const apcaOk = apca.contrast >= 60;
+  if (!apcaOk) failed += 1;
+  console.log(`${apcaOk ? '✓' : '×'} APCA çözücü Lc ${apca.contrast.toFixed(1)} hedefini tutturuyor`);
   // çözücü gerilemez: hedefe ulaşılamayan istek hata verir
   let threw = false;
   try {

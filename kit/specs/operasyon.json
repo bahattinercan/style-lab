@@ -84,7 +84,30 @@
     ],
     "essence": "Incident Response, kriz anında okunurluğu korur: tek zaman çizelgesi, tek sahip, tek sonraki adım.",
     "brief": "Olay müdahale ekranı tasarla: koyu zemin, zaman çizelgesi, turuncu yalnız açık olayda, 4 KPI sınırı, mono saat.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-table td { font-size: 13px; }\n.pg-card { border-left: 2px solid color-mix(in srgb, var(--accent) 40%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-size: 13px; }\n.pg-card { border-left: 2px solid color-mix(in srgb, var(--accent) 40%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#0f1216",
+      "bg2": "#131820",
+      "surface": "#171d26",
+      "surface2": "#1f2833",
+      "ink": "#e9eef5",
+      "inkSoft": "#a8b4c2",
+      "inkFaint": "#7f8c9c",
+      "accent": "#f08b3c",
+      "accentInk": "#1a0d03",
+      "line": "rgba(233,238,245,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "173",
@@ -171,7 +194,30 @@
     ],
     "essence": "FinOps Cost, her tutarı bir karar sorusuna bağlar: ne kadar, hangi ekip, bütçeye göre nerede.",
     "brief": "Bulut maliyet paneli tasarla: açık zemin, sağa hizalı tabular tutarlar, yeşil accent tasarrufta, kesikli bütçe eşiği.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-chart i { border-radius: 4px 4px 0 0; }\n.pg-table td.num { font-variant-numeric: tabular-nums; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-chart i { border-radius: 4px 4px 0 0; }\n.pg-table td.num { font-variant-numeric: tabular-nums; }",
+    "paletteSeeds": {
+      "bg": "#f8faf9",
+      "bg2": "#eef4f1",
+      "surface": "#ffffff",
+      "surface2": "#f1f6f3",
+      "ink": "#121a17",
+      "inkSoft": "#455a52",
+      "inkFaint": "#7b8f87",
+      "accent": "#1f6b4f",
+      "accentInk": "#f6fdf9",
+      "line": "rgba(18,26,23,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "174",
@@ -258,7 +304,30 @@
     ],
     "essence": "Fleet Dispatch, haritayı süs değil tablo olarak kullanır: her araç bir satır, her satır bir ETA.",
     "brief": "Filo sevk ekranı tasarla: koyu zemin, sol harita paneli, sağ araç listesi, mavi accent yalnız aktif rota, mono ETA.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 10%, transparent) 0 1px, transparent 1px 32px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, transparent) 0 1px, transparent 1px 32px); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 10%, transparent) 0 1px, transparent 1px 32px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, transparent) 0 1px, transparent 1px 32px); }",
+    "paletteSeeds": {
+      "bg": "#0c1116",
+      "bg2": "#111820",
+      "surface": "#151d27",
+      "surface2": "#1d2733",
+      "ink": "#e8eef6",
+      "inkSoft": "#a5b3c3",
+      "inkFaint": "#7b8a9c",
+      "accent": "#4d9dff",
+      "accentInk": "#04101f",
+      "line": "rgba(232,238,246,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "175",
@@ -345,7 +414,30 @@
     ],
     "essence": "Fraud Review, kararı hızlandırmaz; kanıtı düzenler. Her sinyal tek satır, her karar tek gerekçe.",
     "brief": "Dolandırıcılık inceleme ekranı tasarla: koyu zemin, sol sinyal listesi, sağ işlem özeti, mor accent inceleme durumu, tek karar düğmesi.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-card { border-top: 2px solid color-mix(in srgb, var(--accent) 44%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-card { border-top: 2px solid color-mix(in srgb, var(--accent) 44%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#0f0e14",
+      "bg2": "#14131c",
+      "surface": "#191826",
+      "surface2": "#22202f",
+      "ink": "#ece9f5",
+      "inkSoft": "#b0a9c6",
+      "inkFaint": "#877f9e",
+      "accent": "#9d7bf0",
+      "accentInk": "#0d0618",
+      "line": "rgba(236,233,245,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "176",
@@ -432,7 +524,30 @@
     ],
     "essence": "SLO Budget, soyut güvenilirliği tek bir sayıya indirir: kalan hata bütçesi ve onu tüketen servisler.",
     "brief": "SLO panosu tasarla: koyu zemin, tek büyük bütçe yüzdesi, eşik çizgili grafik, mono hata oranı tablosu.",
-    "extraCss": "h1 { font-size: 40px; max-width: 24ch; }\n.pg-band b { font-family: var(--font-mono); font-size: 28px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-band b { font-family: var(--font-mono); font-size: 28px; }",
+    "paletteSeeds": {
+      "bg": "#0b1018",
+      "bg2": "#0f1621",
+      "surface": "#131c28",
+      "surface2": "#1b2635",
+      "ink": "#e7eef8",
+      "inkSoft": "#a2b1c4",
+      "inkFaint": "#78879a",
+      "accent": "#37a3e0",
+      "accentInk": "#03121c",
+      "line": "rgba(231,238,248,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "177",
@@ -519,7 +634,30 @@
     ],
     "essence": "Data Lineage, veri akışını harita gibi okutur: kutu, çizgi ve rol etiketi; süs yok.",
     "brief": "Veri soy ağacı ekranı tasarla: koyu zemin, kutu düğümler, camgöbeği yalnız seçili yolda, mono şema etiketleri.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
+    "paletteSeeds": {
+      "bg": "#0d1216",
+      "bg2": "#12191f",
+      "surface": "#162028",
+      "surface2": "#1e2b34",
+      "ink": "#e8f1f6",
+      "inkSoft": "#a4b7c3",
+      "inkFaint": "#7b8e99",
+      "accent": "#54c8d8",
+      "accentInk": "#04181c",
+      "line": "rgba(232,241,246,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "178",
@@ -606,7 +744,30 @@
     ],
     "essence": "Access Audit, bir tabloyu kanıt haline getirir: her satır kim, ne zaman, hangi kaynaktan ve hangi kural.",
     "brief": "Erişim denetim ekranı tasarla: nötr gri arayüz, 40px sabit satır, mono zaman damgası, kırmızı yalnız ihlalde.",
-    "extraCss": "h1 { font-size: 36px; max-width: 28ch; }\n.pg-table td, .pg-table th { font-size: 11.5px; }\n.pg-table tr:nth-child(even) { background: var(--surface-2); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 28ch; }\n.pg-table td, .pg-table th { font-size: 11.5px; }\n.pg-table tr:nth-child(even) { background: var(--surface-2); }",
+    "paletteSeeds": {
+      "bg": "#f6f6f7",
+      "bg2": "#ededf0",
+      "surface": "#ffffff",
+      "surface2": "#f3f3f5",
+      "ink": "#14161a",
+      "inkSoft": "#4c5159",
+      "inkFaint": "#7f858e",
+      "accent": "#8a1f1f",
+      "accentInk": "#fdf6f6",
+      "line": "rgba(20,22,26,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "179",
@@ -693,7 +854,30 @@
     ],
     "essence": "Release Train, yayın ritmini bir hat üzerinde gösterir: her durak bir sürüm, her sürüm bir tarih.",
     "brief": "Sürüm takvimi ekranı tasarla: koyu zemin, yatay tren hattı, mor yalnız sıradaki durakta, mono semver etiketleri.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-meter { height: 4px; }\n.pg-list li::before { border-radius: 2px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-meter { height: 4px; }\n.pg-list li::before { border-radius: 2px; }",
+    "paletteSeeds": {
+      "bg": "#101118",
+      "bg2": "#15161f",
+      "surface": "#1a1b26",
+      "surface2": "#23242f",
+      "ink": "#ececf5",
+      "inkSoft": "#b0b1c6",
+      "inkFaint": "#85869c",
+      "accent": "#8f7bf0",
+      "accentInk": "#0b0518",
+      "line": "rgba(236,236,245,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "180",
@@ -780,7 +964,30 @@
     ],
     "essence": "Support Inbox, tek ekranda üç soruyu cevaplar: kim bekliyor, ne kadar bekledi, ne cevap verilecek.",
     "brief": "Destek gelen kutusu tasarla: üç kolon, sarı-kahve accent öncelikte, mono SLA sayacı, şablon çipleri.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-card { box-shadow: 0 1px 2px rgba(27,24,21,.06); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-card { box-shadow: 0 1px 2px rgba(27,24,21,.06); }",
+    "paletteSeeds": {
+      "bg": "#fbf9f6",
+      "bg2": "#f2eee8",
+      "surface": "#ffffff",
+      "surface2": "#f7f3ee",
+      "ink": "#1b1815",
+      "inkSoft": "#54504a",
+      "inkFaint": "#857f76",
+      "accent": "#8a5b12",
+      "accentInk": "#fffaf2",
+      "line": "rgba(27,24,21,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "181",
@@ -867,6 +1074,29 @@
     ],
     "essence": "Regulatory Report, bir belgeyi ekranda da belge gibi tutar: numaralı bölüm, kaynak dipnotu, ölçülü serif.",
     "brief": "Uyum raporu sayfası tasarla: serif gövde, numaralı bölümler, lacivert accent yalnız bağlantıda, gri kenar çizgili tablo.",
-    "extraCss": "h1 { font-size: 44px; font-weight: 600; max-width: 24ch; }\nh2 { font-size: 26px; font-weight: 600; }\nbody, .lede, .pg-p { font-size: 16px; line-height: 1.7; }\n.pg-card { border-radius: 0; box-shadow: none; }"
+    "extraCss": "h1 { font-size: var(--type-h1); font-weight: 600; max-width: 24ch; }\nh2 { font-size: 26px; font-weight: 600; }\nbody, .lede, .pg-p { font-size: 16px; line-height: 1.7; }\n.pg-card { border-radius: 0; box-shadow: none; }",
+    "paletteSeeds": {
+      "bg": "#fffdf9",
+      "bg2": "#f4f1ea",
+      "surface": "#ffffff",
+      "surface2": "#f8f5ef",
+      "ink": "#16181c",
+      "inkSoft": "#4a5057",
+      "inkFaint": "#7c838b",
+      "accent": "#1d3a6b",
+      "accentInk": "#f7faff",
+      "line": "rgba(22,24,28,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   }
 ]

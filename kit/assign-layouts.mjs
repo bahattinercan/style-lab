@@ -144,6 +144,8 @@ const FAMILY_OF = (num) => FAMILIES.find((f) => num >= f.from && num <= f.to)?.n
 const HERO_IDS = LAYOUTS.heroes.map((h) => h.id);
 const NAV_IDS = LAYOUTS.navs.map((n) => n.id);
 const DENSITY_IDS = LAYOUTS.densities.map((d) => d.id);
+const SECTION_PLAN_IDS = LAYOUTS.sections.map((s) => s.id);
+const HERO_OVERRIDES = { 'electronics-spec': 'product', 'pharmacy-store': 'fullbleed', 'subscription-box': 'fullbleed' };
 
 function discover() {
   return fs
@@ -183,6 +185,8 @@ function heroScores(style) {
   if (style.family === 'Tipografik') scores.type += 3;
   if (style.family === 'Etkileşim') scores.product += 1;
   if (style.family === 'Geometrik') scores.index += 1;
+  const override = HERO_OVERRIDES[style.slug];
+  if (override) scores[override] = Math.max(...Object.values(scores)) + 5;
   return scores;
 }
 
@@ -273,6 +277,7 @@ function computeAssignments(styles) {
     hero: o.hero,
     nav: navChoice(o),
     density: densityChoice(o),
+    sectionPlan: SECTION_PLAN_IDS[hash(o.style.slug) % SECTION_PLAN_IDS.length],
     scores: o.scores,
   }));
 }
@@ -312,8 +317,8 @@ function main() {
   for (const a of scoped) {
     const style = styles.find((s) => s.slug === a.slug);
     const cur = style.tokens.layout ?? null;
-    const want = { hero: a.hero, nav: a.nav, density: a.density };
-    if (!cur || cur.hero !== want.hero || cur.nav !== want.nav || cur.density !== want.density) {
+    const want = { hero: a.hero, nav: a.nav, density: a.density, sectionPlan: a.sectionPlan };
+    if (!cur || Object.entries(want).some(([key, value]) => cur[key] !== value)) {
       drift.push({ slug: a.slug, dir: a.dirName, current: cur, want });
     }
   }
@@ -321,7 +326,7 @@ function main() {
   if (APPLY) {
     for (const a of scoped) {
       const style = styles.find((s) => s.slug === a.slug);
-      const next = withLayout(style.tokens, { hero: a.hero, nav: a.nav, density: a.density, family: style.family });
+      const next = withLayout(style.tokens, { hero: a.hero, nav: a.nav, density: a.density, sectionPlan: a.sectionPlan, family: style.family, ...(style.tokens.layout?.fit ? { fit: style.tokens.layout.fit } : {}) });
       fs.writeFileSync(style.path, JSON.stringify(next, null, 2) + '\n');
     }
     console.log(`yazıldı: ${scoped.length} tokens.json (şema v3, layout eklendi)`);

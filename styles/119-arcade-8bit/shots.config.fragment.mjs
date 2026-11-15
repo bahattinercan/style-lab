@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'grid',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: pixel display (≤3 satır) · 4px köşe kırpma · statik CRT taraması · tek neon mint */
-      h1 { font-size: 32px; line-height: 1.4; letter-spacing: 0; font-weight: 400; font-family: var(--font-display); max-width: 22ch; }
+  extraCss: `/* imza: pixel display (≤3 satır) · 4px köşe kırpma · statik CRT taraması · tek neon mint */
+      h1   { font-size: var(--type-h1); line-height: 1.4; letter-spacing: 0; font-weight: 400; font-family: var(--font-display); max-width: 22ch; }
       h2 { font-size: 24px; line-height: 1.4; font-weight: 400; }
       h3 { font-size: 20px; line-height: 1.35; font-weight: 500; }
       p, .lede, .copy { font-family: var(--font-body); }
@@ -37,7 +36,7 @@ export const CONFIG = {
       .nav { border-bottom: 1px solid var(--line); min-height: 56px; }
       .nav-links a { font-family: var(--font-display); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
       @media (max-width: 900px) {
-        h1 { font-size: 20px; }
+        h1  { font-size: var(--type-h1); }
         h2 { font-size: 16px; }
         .sec, .art-body { background-image: none; }
       }

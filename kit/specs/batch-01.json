@@ -98,7 +98,30 @@
     "essence": "Game HUD, oyuncunun ekranda gördüğü her sayının bir karar anına bağlı olduğu varsayımıyla kurulur: skor, can, süre ve hedef aynı ızgarada hizalanır. Süs yok; kontrast ve keskinlik var.",
     "origin": "Arcade kokpitleri, konsol HUD'ları ve PC oyun menüleri; 2010'lardan sonra espor yayın panelleriyle sadeleşti.",
     "brief": "Oyun içi bir kontrol paneli tasarla. Skor, can ve süre aynı yatay şeritte; ana eylem tek buton. Rakamlar mono ve tabular, köşeler 2px, accent yalnız canlı durum için. Süs, gölge ve animasyon yok; hiyerarşi puntodan gelir.",
-    "extraCss": "h1 { font-size: 46px; line-height: 1.12; max-width: 24ch; }\nh2 { font-size: 26px; }\n.brand { text-transform: uppercase; letter-spacing: .16em; font-size: 13px; }\n.pg-media { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%); }\n.pg-num { color: var(--accent); }\n.pg-meter { border-radius: 0; }\n.pg-meter i { border-radius: 0; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.12; max-width: 24ch; }\nh2 { font-size: 26px; }\n.brand { text-transform: uppercase; letter-spacing: .16em; font-size: 13px; }\n.pg-media { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%); }\n.pg-num { color: var(--accent); }\n.pg-meter { border-radius: 0; }\n.pg-meter i { border-radius: 0; }",
+    "paletteSeeds": {
+      "bg": "#0b1118",
+      "bg2": "#0e161f",
+      "surface": "#121c26",
+      "surface2": "#182430",
+      "ink": "#e9f2fa",
+      "inkSoft": "#a9bccd",
+      "inkFaint": "#7f93a5",
+      "accent": "#38e8c0",
+      "accentInk": "#04140f",
+      "line": "rgba(233,242,250,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "46px"
+    }
   },
   {
     "num": "153",
@@ -195,6 +218,29 @@
     "essence": "Game Racing, yarış kokpitinin gösterge mantığını arayüze taşır: her sayı bir karar (fren, vites, sıra) ve her karar tek bakışta okunmalıdır.",
     "origin": "Yarış oyunu menüleri, motor sporları yayın grafikleri ve analog gösterge panelleri.",
     "brief": "Yarış oyunu menüsü tasarla: tur, sıralama ve süre aynı şeritte; kartlar çapraz kesimli; accent turuncu yalnız hız vurgusu. Rakamlar dar ve tabular. Animasyon yok, süs yok.",
-    "extraCss": "h1 { font-size: 50px; line-height: 1.06; max-width: 22ch; }\n.panel, .pg-card { clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }\n.btn { clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px)); }\n.pg-band b { font-family: var(--font-mono); font-size: 30px; }\n.pg-chart i { border-radius: 0; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.06; max-width: 22ch; }\n.panel, .pg-card { clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }\n.btn { clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px)); }\n.pg-band b { font-family: var(--font-mono); font-size: 30px; }\n.pg-chart i { border-radius: 0; }",
+    "paletteSeeds": {
+      "bg": "#121010",
+      "bg2": "#171313",
+      "surface": "#1c1817",
+      "surface2": "#241f1d",
+      "ink": "#f5efe6",
+      "inkSoft": "#b6a89c",
+      "inkFaint": "#8a7c72",
+      "accent": "#ff6a2b",
+      "accentInk": "#1a0a03",
+      "line": "rgba(245,239,230,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   }
 ]

@@ -84,7 +84,30 @@
     ],
     "essence": "Grocery Delivery, fiyat ve sepete giden yolu kısaltır: ürün kartı tek bakışta okunur, toplam hep görünür.",
     "brief": "Market teslimat vitrini tasarla: açık zemin, yeşil fiyat accent, 3 kolon ürün ızgarası, mono sepet özeti.",
-    "extraCss": "h1 { font-size: 40px; max-width: 22ch; }\n.pg-card { border-radius: 14px; }\n.pg-chart i { border-radius: 6px 6px 0 0; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card { border-radius: 14px; }\n.pg-chart i { border-radius: 6px 6px 0 0; }",
+    "paletteSeeds": {
+      "bg": "#fbfdf9",
+      "bg2": "#eef6ea",
+      "surface": "#ffffff",
+      "surface2": "#f4faf1",
+      "ink": "#16201a",
+      "inkSoft": "#4a5b4f",
+      "inkFaint": "#7b8d80",
+      "accent": "#1f7a3d",
+      "accentInk": "#f4fdf6",
+      "line": "rgba(22,32,26,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "183",
@@ -170,7 +193,30 @@
     ],
     "essence": "Marketplace Multi, karşılaştırmayı kolaylaştırır: aynı bilgi alanları her kartta aynı yerde durur.",
     "brief": "Pazar yeri listeleme sayfası tasarla: gri filtre rayı, satıcı etiketli kartlar, mono fiyat, nötr arayüz.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-table td { font-size: 12px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-size: 12px; }",
+    "paletteSeeds": {
+      "bg": "#f7f8fa",
+      "bg2": "#eceef2",
+      "surface": "#ffffff",
+      "surface2": "#f2f4f7",
+      "ink": "#141821",
+      "inkSoft": "#4a515e",
+      "inkFaint": "#7c8492",
+      "accent": "#1f4fa8",
+      "accentInk": "#f6f9ff",
+      "line": "rgba(20,24,33,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "38px"
+    }
   },
   {
     "num": "184",
@@ -258,7 +304,30 @@
     ],
     "essence": "Luxury Atelier, az sayıda nesneyi büyük boşlukla sunar; fiyat utangaç değil ama bağırmaz.",
     "brief": "Atölye lüks vitrini tasarla: kemik zemin, ince serif başlık, tek ürün, bronz accent yalnız fiyat ve eylem.",
-    "extraCss": "h1 { font-size: 58px; font-weight: 300; line-height: 1.02; max-width: 20ch; }\nh2 { font-size: 32px; font-weight: 400; }\n.pg-card, .pg-media { border-radius: 0; box-shadow: none; }\n.pg-sec { padding: 42px 56px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); font-weight: 300; line-height: 1.02; max-width: 20ch; }\nh2 { font-size: 32px; font-weight: 400; }\n.pg-card, .pg-media { border-radius: 0; box-shadow: none; }\n.pg-sec { padding: 42px 56px; }",
+    "paletteSeeds": {
+      "bg": "#f6f2ea",
+      "bg2": "#efe9dd",
+      "surface": "#fffdf9",
+      "surface2": "#f5f0e6",
+      "ink": "#1c1812",
+      "inkSoft": "#574f43",
+      "inkFaint": "#8b8171",
+      "accent": "#6b4a1f",
+      "accentInk": "#fdf9f2",
+      "line": "rgba(28,24,18,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
     "num": "185",
@@ -344,7 +413,30 @@
     ],
     "essence": "Subscription Box, üyeliği şeffaf kurar: ne gelir, ne zaman gelir, ne zaman ödenir.",
     "brief": "Kutu aboneliği sayfası tasarla: üç plan kartı, aylık fiyat vurgusu, mono kargo takvimi, açık iptal koşulu.",
-    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-trio .pg-card:nth-child(2) { border-color: var(--accent); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-trio .pg-card:nth-child(2) { border-color: var(--accent); }",
+    "paletteSeeds": {
+      "bg": "#fdf8f4",
+      "bg2": "#f7ece4",
+      "surface": "#ffffff",
+      "surface2": "#fbf1ea",
+      "ink": "#1f1815",
+      "inkSoft": "#57463e",
+      "inkFaint": "#8b776d",
+      "accent": "#a83c1f",
+      "accentInk": "#fff7f3",
+      "line": "rgba(31,24,21,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "42px"
+    }
   },
   {
     "num": "186",
@@ -432,7 +524,30 @@
     ],
     "essence": "Sneaker Drop, aciliyeti animasyonla değil bilgiyle kurar: tarih, saat, adet ve boyut net.",
     "brief": "Sınırlı sürüm ayakkabı sayfası tasarla: siyah zemin, sarı accent drop etiketinde, sabit tarih mono, keskin köşe.",
-    "extraCss": "h1 { font-size: 50px; line-height: .98; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: .98; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#0d0d0f",
+      "bg2": "#121215",
+      "surface": "#17171b",
+      "surface2": "#202027",
+      "ink": "#f2f2f5",
+      "inkSoft": "#adaeb8",
+      "inkFaint": "#81828d",
+      "accent": "#ffd23f",
+      "accentInk": "#141003",
+      "line": "rgba(242,242,245,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "187",
@@ -519,7 +634,30 @@
     ],
     "essence": "Wine Cellar, bir etiketi okutur: yıl, bağ, bölge ve fiyat; gerisi süs.",
     "brief": "Şarap kataloğu sayfası tasarla: bordo zemin, serif künye, mono yıl sütunu, pirinç accent yalnız seçimde.",
-    "extraCss": "h1 { font-size: 46px; letter-spacing: .03em; max-width: 22ch; }\nh2 { font-size: 26px; }\n.pg-table td { font-size: 12.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .03em; max-width: 22ch; }\nh2 { font-size: 26px; }\n.pg-table td { font-size: 12.5px; }",
+    "paletteSeeds": {
+      "bg": "#1a1013",
+      "bg2": "#20141a",
+      "surface": "#261821",
+      "surface2": "#30202a",
+      "ink": "#f2e8e6",
+      "inkSoft": "#c2aaa6",
+      "inkFaint": "#947f7c",
+      "accent": "#c9a227",
+      "accentInk": "#150f02",
+      "line": "rgba(242,232,230,.15)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "46px"
+    }
   },
   {
     "num": "188",
@@ -606,7 +744,30 @@
     ],
     "essence": "Furniture Studio, satın alma kararını ölçüyle destekler: fotoğraf büyük, sayılar net.",
     "brief": "Mobilya ürün detayı tasarla: sıcak zemin, geniş 4:3 fotoğraf, mono ölçü tablosu, tek accent fiyat.",
-    "extraCss": "h1 { font-size: 44px; max-width: 24ch; }\n.pg-media { aspect-ratio: 4 / 3; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-media { aspect-ratio: 4 / 3; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
+    "paletteSeeds": {
+      "bg": "#faf6f0",
+      "bg2": "#f1e9dd",
+      "surface": "#ffffff",
+      "surface2": "#f7f1e8",
+      "ink": "#1d1811",
+      "inkSoft": "#544b40",
+      "inkFaint": "#867b6d",
+      "accent": "#7a4b22",
+      "accentInk": "#fdf8f2",
+      "line": "rgba(29,24,17,.13)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "44px"
+    }
   },
   {
     "num": "189",
@@ -693,7 +854,30 @@
     ],
     "essence": "Electronics Spec, teknik kararı kolaylaştırır: aynı satırda aynı ölçü, aynı birim, aynı sıra.",
     "brief": "Elektronik ürün sayfası tasarla: açık zemin, iki kolon spec tablosu, mono birimler, mavi accent yalnız seçimde.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }\n.pg-table td:first-child { color: var(--ink-soft); }\n.pg-table td:last-child { font-family: var(--font-mono); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }\n.pg-table td:first-child { color: var(--ink-soft); }\n.pg-table td:last-child { font-family: var(--font-mono); }",
+    "paletteSeeds": {
+      "bg": "#f8fafc",
+      "bg2": "#eef2f7",
+      "surface": "#ffffff",
+      "surface2": "#f3f6fa",
+      "ink": "#12161c",
+      "inkSoft": "#48515d",
+      "inkFaint": "#7a8492",
+      "accent": "#1a4fa0",
+      "accentInk": "#f6f9ff",
+      "line": "rgba(18,22,28,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "190",
@@ -780,7 +964,30 @@
     ],
     "essence": "Pharmacy Store, ürünü değil bilgiyi öne çıkarır: doz, kullanım ve reçete durumu her kartta.",
     "brief": "Eczane vitrini tasarla: açık zemin, yeşil yalnız reçeteli üründe, mono doz bilgisi, güven şeridi.",
-    "extraCss": "h1 { font-size: 40px; max-width: 24ch; }\n.pg-card { border-radius: 12px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-card { border-radius: 12px; }",
+    "paletteSeeds": {
+      "bg": "#f9fbfd",
+      "bg2": "#eef4f9",
+      "surface": "#ffffff",
+      "surface2": "#f3f8fc",
+      "ink": "#111820",
+      "inkSoft": "#46525f",
+      "inkFaint": "#78848f",
+      "accent": "#0f6b4a",
+      "accentInk": "#f4fdf8",
+      "line": "rgba(17,24,32,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "191",
@@ -867,6 +1074,29 @@
     ],
     "essence": "Farmers Market, mevsimi bir takvim gibi gösterir: hangi ürün ne zaman ve kimden.",
     "brief": "Üretici pazarı sayfası tasarla: toprak tonları, serif başlık, sezon takvimi ızgarası, üretici künyesi.",
-    "extraCss": "h1 { font-size: 44px; max-width: 22ch; }\nh2 { font-size: 26px; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\nh2 { font-size: 26px; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }",
+    "paletteSeeds": {
+      "bg": "#f8f5ee",
+      "bg2": "#efe9dc",
+      "surface": "#fffdf7",
+      "surface2": "#f5efe3",
+      "ink": "#1e1a13",
+      "inkSoft": "#524a3c",
+      "inkFaint": "#857a68",
+      "accent": "#5f6b1f",
+      "accentInk": "#fbfdf2",
+      "line": "rgba(30,26,19,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "44px"
+    }
   }
 ]

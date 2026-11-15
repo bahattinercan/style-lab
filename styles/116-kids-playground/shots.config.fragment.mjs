@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'blob',
   bodyClass: '',
-  extraCss: `
-      /* imza: 18px yuvarlak blok · tek kalın gölge (blur 0) · 60px hedef · renk blokları ≤%12 */
-      h1 { font-size: 56px; line-height: 1.06; font-weight: 700; font-family: var(--font-display); letter-spacing: 0; max-width: 18ch; }
+  extraCss: `/* imza: 18px yuvarlak blok · tek kalın gölge (blur 0) · 60px hedef · renk blokları ≤%12 */
+      h1   { font-size: var(--type-h1); line-height: 1.06; font-weight: 700; font-family: var(--font-display); letter-spacing: 0; max-width: 18ch; }
       h2 { font-size: 34px; line-height: 1.14; font-weight: 700; }
       h3 { font-size: 22px; line-height: 1.28; font-weight: 700; }
       p, .lede, .copy { font-family: var(--font-body); }
@@ -34,7 +33,7 @@ export const CONFIG = {
       .nav { border-bottom: 2px solid var(--line); min-height: 72px; }
       .nav-links a { font-weight: 700; font-size: 15px; }
       @media (max-width: 900px) {
-        h1 { font-size: 34px; }
+        h1  { font-size: var(--type-h1); }
         h2 { font-size: 26px; }
         .btn, .field, input, select, textarea { min-height: 56px; }
         .m-grid, .data-grid, .comp-grid, .quad, .plan-grid { gap: 14px; }

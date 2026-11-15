@@ -1,7 +1,6 @@
 export const CONFIG = {
   motif: 'bars',
-  extraCss: `
-    h1 { font-size: 66px; line-height: .92; }
+  extraCss: `h1 { font-size: var(--type-h1); line-height: .92; }
     .hero-copy { max-width: 40ch; }
     .panel { border: 2px solid var(--ink); }
     .sig::before {

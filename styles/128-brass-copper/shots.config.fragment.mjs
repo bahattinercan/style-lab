@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Cinzel gravür başlık · Jost gövde · Courier künye ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; }
-      h1 { font-size: 44px; line-height: 1.1; letter-spacing: .12em; max-width: 20ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; }h1  { font-size: var(--type-h1); line-height: 1.1; letter-spacing: .12em; max-width: 20ch; }
       h2 { font-size: 26px; line-height: 1.2; letter-spacing: .08em; max-width: 28ch; }
       h3, h4 { font-family: var(--font-body); font-weight: 600; letter-spacing: 0; }
       h3 { font-size: 19px; line-height: 1.25; }
@@ -148,7 +147,7 @@ export const CONFIG = {
       body.scene-dashboard .trow { font-variant-numeric: tabular-nums; }
 
       @media (max-width: 900px) {
-        h1 { font-size: 28px; max-width: 20ch; }
+        h1  { font-size: var(--type-h1); max-width: 20ch; }
         h2 { font-size: 20px; }
         .lede { font-size: 14px; }
         body.scene-dashboard .kpis { grid-template-columns: 1fr; }

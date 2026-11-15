@@ -210,14 +210,16 @@ Yasak: sert gölge, siyah kontur, koyu zemin, açık mavi üstünde açık metin
 [data-style="frutiger-aero"] {
   --bg: #dff1ff; --bg-2: #bfe3ff;
   --surface: linear-gradient(180deg, #ffffff, #d6ecff); --surface-2: #eaf6ff;
-  --ink: #0d2b45; --ink-soft: #365a75; --ink-faint: #6f8fa8;
-  --accent: #2f9be0; --accent-ink: #0d2b45;
+  --ink: #0d2b45; --ink-soft: #365a75; --ink-faint: #6e8da6;
+  --accent: #2090d5; --accent-ink: #06243e;
   --line: rgba(255,255,255,.85);
   --radius: 14px; --radius-lg: 22px;
-  --shadow: 0 8px 20px rgba(47,155,224,.28), inset 0 1px 0 #ffffff; --shadow-hard: none;
+  --shadow: 0 8px 20px rgba(47,155,224,.28), inset 0 1px 0 #ffffff;
+  --shadow-hard: none;
   --font-display: "Segoe UI", "Frutiger", system-ui, sans-serif;
   --font-body: "Segoe UI", "Myriad Pro", system-ui, sans-serif;
   --font-mono: "Consolas", ui-monospace, monospace;
   --tracking: 0em; --blur: 6px; --grain: 0;
+  --focus: #2a8ac9;
 }
 ```

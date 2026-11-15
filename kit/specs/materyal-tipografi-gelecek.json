@@ -85,7 +85,30 @@
     ],
     "essence": "Terrazzo Stone, malzemenin kendisini gösterir: doku fotoğrafta, sayı künyede.",
     "brief": "Terrazzo malzeme kataloğu tasarla: kireç zemin, noktasal doku yalnız görselde, mono ölçü künyesi.",
-    "extraCss": "h1 { font-size: 48px; font-weight: 400; max-width: 24ch; }\nh2 { font-size: 26px; }\n.pg-card, .pg-media { border-radius: 2px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); font-weight: 400; max-width: 24ch; }\nh2 { font-size: 26px; }\n.pg-card, .pg-media { border-radius: 2px; }",
+    "paletteSeeds": {
+      "bg": "#f6f4ef",
+      "bg2": "#ece9e1",
+      "surface": "#fffefb",
+      "surface2": "#f3f0e9",
+      "ink": "#1a1915",
+      "inkSoft": "#514e46",
+      "inkFaint": "#847f74",
+      "accent": "#8a4a3c",
+      "accentInk": "#fdf7f5",
+      "line": "rgba(26,25,21,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "223",
@@ -173,7 +196,30 @@
     ],
     "essence": "Linocut Print, baskının sınırlılığını gösterir: az renk, kalın çizgi, numaralı adet.",
     "brief": "Linol baskı atölyesi sayfası tasarla: kâğıt zemin, mürekkep siyahı, tek kırmızı vurgu, numaralı baskı künyesi.",
-    "extraCss": "h1 { font-size: 50px; line-height: .98; max-width: 20ch; }\n.pg-media { border: 2px solid var(--ink); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: .98; max-width: 20ch; }\n.pg-media { border: 2px solid var(--ink); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
+    "paletteSeeds": {
+      "bg": "#f7f3e8",
+      "bg2": "#ece5d4",
+      "surface": "#fffdf6",
+      "surface2": "#f4eeda",
+      "ink": "#161310",
+      "inkSoft": "#4f483d",
+      "inkFaint": "#847a68",
+      "accent": "#9c2b1d",
+      "accentInk": "#fff7f4",
+      "line": "rgba(22,19,16,.2)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "224",
@@ -261,7 +307,30 @@
     ],
     "essence": "Risograph Print, kısıtı estetik yapar: iki mürekkep, kayma ve kâğıt.",
     "brief": "Riso baskı sayfası tasarla: kâğıt zemin, mavi accent + %40 pembe, 2px kayma, mono baskı adedi.",
-    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-media { box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 30%, transparent); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-media { box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 30%, transparent); }",
+    "paletteSeeds": {
+      "bg": "#fbf7f2",
+      "bg2": "#f3ece2",
+      "surface": "#fffdfa",
+      "surface2": "#f7f0e7",
+      "ink": "#1a1522",
+      "inkSoft": "#4e4759",
+      "inkFaint": "#817a8b",
+      "accent": "#1f5f8c",
+      "accentInk": "#f7fbfe",
+      "line": "rgba(26,21,34,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "225",
@@ -347,7 +416,30 @@
     ],
     "essence": "Denim Textile, kumaşın dayanıklılığını dikiş çizgisi ve ölçü tablosuyla anlatır.",
     "brief": "Denim ürün sayfası tasarla: keten-mavi zemin, çift dikiş çizgisi, mono cm beden tablosu, çivit accent.",
-    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-sec { border-bottom: 1px solid var(--line); box-shadow: 0 3px 0 -2px var(--line); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-sec { border-bottom: 1px solid var(--line); box-shadow: 0 3px 0 -2px var(--line); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
+    "paletteSeeds": {
+      "bg": "#f2f4f7",
+      "bg2": "#e6eaf0",
+      "surface": "#ffffff",
+      "surface2": "#eef1f6",
+      "ink": "#121821",
+      "inkSoft": "#454e5c",
+      "inkFaint": "#78818e",
+      "accent": "#1b3f6b",
+      "accentInk": "#f6faff",
+      "line": "rgba(18,24,33,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "226",
@@ -435,7 +527,30 @@
     ],
     "essence": "Cork Oak, malzemenin hafifliğini anlatır: doku, kalınlık ve izlenebilirlik.",
     "brief": "Mantar malzeme sayfası tasarla: sıcak zemin, yuvarlak hat, %4 taneli doku, mono üretim kodu.",
-    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-card, .pg-media { border-radius: 14px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card, .pg-media { border-radius: 14px; }",
+    "paletteSeeds": {
+      "bg": "#faf5ee",
+      "bg2": "#f0e5d7",
+      "surface": "#fffcf7",
+      "surface2": "#f7eddf",
+      "ink": "#1c1710",
+      "inkSoft": "#544636",
+      "inkFaint": "#87775f",
+      "accent": "#6b4413",
+      "accentInk": "#fdf9f3",
+      "line": "rgba(28,23,16,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "227",
@@ -522,7 +637,30 @@
     ],
     "essence": "Cast Concrete, yapıyı rakamla anlatır: sınıf, ölçü, tolerans.",
     "brief": "Beton malzeme sayfası tasarla: gri skala, keskin blok, kalıp izi çizgisi, mono dayanım sınıfı.",
-    "extraCss": "h1 { font-size: 48px; max-width: 22ch; }\n.panel, .pg-card, .pg-media { border-radius: 0; box-shadow: none; }\n.pg-card { border-top: 4px solid var(--ink); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.panel, .pg-card, .pg-media { border-radius: 0; box-shadow: none; }\n.pg-card { border-top: 4px solid var(--ink); }",
+    "paletteSeeds": {
+      "bg": "#eef0f1",
+      "bg2": "#e2e5e7",
+      "surface": "#f8f9fa",
+      "surface2": "#eaedee",
+      "ink": "#14171a",
+      "inkSoft": "#464d53",
+      "inkFaint": "#767d84",
+      "accent": "#3d4b57",
+      "accentInk": "#f7fafc",
+      "line": "rgba(20,23,26,.18)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "228",
@@ -609,7 +747,30 @@
     ],
     "essence": "Enamel Jewel, küçük ölçekte lüks kurar: az metin, tek nesne, net malzeme bilgisi.",
     "brief": "Mineli mücevher sayfası tasarla: gece moru zemin, altın ince çizgi, tek nesne görseli, mono karat/kesim.",
-    "extraCss": "h1 { font-size: 40px; font-weight: 300; max-width: 24ch; }\n.pg-media { aspect-ratio: 1 / 1; border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); font-weight: 300; max-width: 24ch; }\n.pg-media { aspect-ratio: 1 / 1; border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#120f1a",
+      "bg2": "#171322",
+      "surface": "#1d1829",
+      "surface2": "#272032",
+      "ink": "#f3eef9",
+      "inkSoft": "#c0b4d0",
+      "inkFaint": "#8e8499",
+      "accent": "#d0a95c",
+      "accentInk": "#161003",
+      "line": "rgba(243,238,249,.15)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "229",
@@ -697,7 +858,30 @@
     ],
     "essence": "Hand-thrown Ceramic, partiyi ve fırını gösterir: her parça tekrar edilemez.",
     "brief": "Seramik atölyesi sayfası tasarla: kil beyazı zemin, sır yeşili accent, düzensiz köşe, mono fırın notu.",
-    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-media { border-radius: 18px 12px 16px 10px; }\n.pg-card { border-radius: 16px 12px 14px 10px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-media { border-radius: 18px 12px 16px 10px; }\n.pg-card { border-radius: 16px 12px 14px 10px; }",
+    "paletteSeeds": {
+      "bg": "#faf7f1",
+      "bg2": "#f1eade",
+      "surface": "#fffdf8",
+      "surface2": "#f7f1e6",
+      "ink": "#1d1811",
+      "inkSoft": "#544b3c",
+      "inkFaint": "#877b66",
+      "accent": "#2f5d4a",
+      "accentInk": "#f5fdf9",
+      "line": "rgba(29,24,17,.13)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "230",
@@ -784,7 +968,30 @@
     ],
     "essence": "Raw Steel, toleransı öne çıkarır: sınıf, ölçü, yüzey ve sapma.",
     "brief": "Ham çelik katalog sayfası tasarla: soğuk gri, 1px yüzey çizgileri, mono tolerans, keskin kenar.",
-    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 8%, transparent) 0 1px, transparent 1px 8px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 8%, transparent) 0 1px, transparent 1px 8px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
+    "paletteSeeds": {
+      "bg": "#e9ecee",
+      "bg2": "#dde1e4",
+      "surface": "#f6f8f9",
+      "surface2": "#e4e8ea",
+      "ink": "#101417",
+      "inkSoft": "#434b51",
+      "inkFaint": "#737b82",
+      "accent": "#2a3d4d",
+      "accentInk": "#f5f9fc",
+      "line": "rgba(16,20,23,.2)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "231",
@@ -872,7 +1079,30 @@
     ],
     "essence": "Recycled Paper, iddiayı sayıyla verir: oran, gramaj, sertifika.",
     "brief": "Geri dönüşüm kâğıdı sayfası tasarla: kirli beyaz zemin, zeytin accent, kesikli ayırıcı, mono %, gramaj.",
-    "extraCss": "h1 { font-size: 46px; max-width: 22ch; }\n.pg-sec { border-bottom: 1px dashed var(--line); padding-bottom: 34px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-sec { border-bottom: 1px dashed var(--line); padding-bottom: 34px; }",
+    "paletteSeeds": {
+      "bg": "#f7f5ef",
+      "bg2": "#eeebe2",
+      "surface": "#fffef9",
+      "surface2": "#f4f1e8",
+      "ink": "#1b1913",
+      "inkSoft": "#514c40",
+      "inkFaint": "#847e6c",
+      "accent": "#4d5a1f",
+      "accentInk": "#fbfdf2",
+      "line": "rgba(27,25,19,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "232",
@@ -959,7 +1189,30 @@
     ],
     "essence": "Condensed News, sayfayı bir gazete gibi doldurur: manşet, kolon, tarih ve imza.",
     "brief": "Haber sayfası tasarla: dar Anton manşet, 4 kolon gövde, hairline ayırıcı, mono tarih-imza.",
-    "extraCss": "h1 { font-size: 58px; line-height: .96; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-sec { border-top: 2px solid var(--ink); padding-top: 16px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: .96; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-sec { border-top: 2px solid var(--ink); padding-top: 16px; }",
+    "paletteSeeds": {
+      "bg": "#fdfcf8",
+      "bg2": "#f2f0e8",
+      "surface": "#ffffff",
+      "surface2": "#f6f4ee",
+      "ink": "#121212",
+      "inkSoft": "#4a4a46",
+      "inkFaint": "#7d7d77",
+      "accent": "#8c1a1a",
+      "accentInk": "#fdf7f6",
+      "line": "rgba(18,18,18,.2)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "233",
@@ -1046,7 +1299,30 @@
     ],
     "essence": "Monospace Editorial, tek aileyle hiyerarşi kurar: punto, ağırlık ve boşluk yeter.",
     "brief": "Monospace editoryal sayfa tasarla: tek mono aile, 72ch ölçü, inline kod accent, keskin kenar.",
-    "extraCss": "h1 { font-size: 42px; line-height: 1.1; max-width: 26ch; font-weight: 700; }\nh2 { font-size: 24px; font-weight: 600; }\nbody, .lede, .pg-p { font-family: var(--font-mono); font-size: 15px; line-height: 1.72; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.1; max-width: 26ch; font-weight: 700; }\nh2 { font-size: 24px; font-weight: 600; }\nbody, .lede, .pg-p { font-family: var(--font-mono); font-size: 15px; line-height: 1.72; }",
+    "paletteSeeds": {
+      "bg": "#fbfbfa",
+      "bg2": "#f0f0ee",
+      "surface": "#ffffff",
+      "surface2": "#f5f5f3",
+      "ink": "#141414",
+      "inkSoft": "#4b4b49",
+      "inkFaint": "#7c7c79",
+      "accent": "#1f5f4f",
+      "accentInk": "#f5fdfa",
+      "line": "rgba(20,20,20,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "234",
@@ -1133,7 +1409,30 @@
     ],
     "essence": "Blackletter Modern, gotik harfin ağırlığını modern ölçekle dengeler: başlık ağır, gövde sakin.",
     "brief": "Modern gotik kimlik sayfası tasarla: gece zemin, ağır serif başlık, tek kan rengi, sade gövde.",
-    "extraCss": "h1 { font-size: 54px; letter-spacing: .04em; max-width: 22ch; }\nh2 { font-size: 30px; letter-spacing: .03em; }\n.pg-card, .pg-media { border-radius: 0; }"
+    "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .04em; max-width: 22ch; }\nh2 { font-size: 30px; letter-spacing: .03em; }\n.pg-card, .pg-media { border-radius: 0; }",
+    "paletteSeeds": {
+      "bg": "#100e0c",
+      "bg2": "#15120f",
+      "surface": "#1b1714",
+      "surface2": "#241f1b",
+      "ink": "#f2ece4",
+      "inkSoft": "#bdb2a5",
+      "inkFaint": "#8d8377",
+      "accent": "#c43a2f",
+      "accentInk": "#fdf6f4",
+      "line": "rgba(242,236,228,.15)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "235",
@@ -1220,7 +1519,30 @@
     ],
     "essence": "Variable Weight, tek aileyle dramaturji kurar: ağırlık ve ölçek değişir, renk değişmez.",
     "brief": "Değişken ağırlıkla ajans sayfası tasarla: H1 800, H2 400, 72/40/16/12 ölçek, tek accent.",
-    "extraCss": "h1 { font-size: 72px; line-height: .96; font-weight: 800; max-width: 16ch; }\nh2 { font-size: 40px; font-weight: 400; }\nh3 { font-size: 16px; font-weight: 700; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: .96; font-weight: 800; max-width: 16ch; }\nh2 { font-size: 40px; font-weight: 400; }\nh3 { font-size: 16px; font-weight: 700; }",
+    "paletteSeeds": {
+      "bg": "#f7f7f5",
+      "bg2": "#ececea",
+      "surface": "#ffffff",
+      "surface2": "#f2f2f0",
+      "ink": "#101010",
+      "inkSoft": "#474747",
+      "inkFaint": "#787878",
+      "accent": "#1a3fd0",
+      "accentInk": "#f6f8ff",
+      "line": "rgba(16,16,16,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "236",
@@ -1307,7 +1629,30 @@
     ],
     "essence": "Justified Book, ekranı bir sayfa gibi dizeler: ölçü, justification ve sessiz hiyerarşi.",
     "brief": "Kitap sayfası tasarla: iki yana yaslı serif gövde, 66ch ölçü, mono bölüm numarası, kolofon.",
-    "extraCss": "h1 { font-size: 44px; font-weight: 400; max-width: 24ch; }\nbody, .lede, .pg-p { font-size: 17px; line-height: 1.68; text-align: justify; hyphens: auto; max-width: 66ch; }"
+    "extraCss": "h1 { font-size: var(--type-h1); font-weight: 400; max-width: 24ch; }\nbody, .lede, .pg-p { font-size: 17px; line-height: 1.68; text-align: justify; hyphens: auto; max-width: 66ch; }",
+    "paletteSeeds": {
+      "bg": "#fbf8f1",
+      "bg2": "#f2ece0",
+      "surface": "#fffdf7",
+      "surface2": "#f6f1e6",
+      "ink": "#16130e",
+      "inkSoft": "#4d463b",
+      "inkFaint": "#827a6a",
+      "accent": "#5a2f6b",
+      "accentInk": "#fbf7fd",
+      "line": "rgba(22,19,14,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "237",
@@ -1395,7 +1740,30 @@
     ],
     "essence": "Stencil Display, kalıp harfin kesikliğini modern blokla taşır: az renk, çok ağırlık.",
     "brief": "Şablon harf afişi tasarla: koyu zemin, Archivo Black blok başlık, sarı kod etiketi, keskin kenar.",
-    "extraCss": "h1 { font-size: 50px; line-height: .98; max-width: 18ch; letter-spacing: -.01em; }\nh2 { font-size: 28px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: .98; max-width: 18ch; letter-spacing: -.01em; }\nh2 { font-size: 28px; }",
+    "paletteSeeds": {
+      "bg": "#15181c",
+      "bg2": "#1b1f24",
+      "surface": "#22262c",
+      "surface2": "#2b3037",
+      "ink": "#eef1f4",
+      "inkSoft": "#b0b7bf",
+      "inkFaint": "#858d96",
+      "accent": "#e5b23c",
+      "accentInk": "#161003",
+      "line": "rgba(238,241,244,.15)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "238",
@@ -1483,7 +1851,30 @@
     ],
     "essence": "Uppercase Only, kısa ve emredici cümlelerle çalışır: uzun metin bu dilin düşmanıdır.",
     "brief": "Yalnız büyük harf kimlik sayfası tasarla: geniş tracking, 42ch satır, mimari boşluk, tek accent.",
-    "extraCss": "h1, h2, h3, body, .lede, .pg-p, .pg-foot-col, .pg-list li { text-transform: uppercase; }\nh1 { font-size: 46px; letter-spacing: .04em; max-width: 18ch; }\n.pg-p, .lede { max-width: 42ch; letter-spacing: .02em; }"
+    "extraCss": "h1, h2, h3, body, .lede, .pg-p, .pg-foot-col, .pg-list li { text-transform: uppercase; }h1 { font-size: var(--type-h1); letter-spacing: .04em; max-width: 18ch; }\n.pg-p, .lede { max-width: 42ch; letter-spacing: .02em; }",
+    "paletteSeeds": {
+      "bg": "#f4f4f1",
+      "bg2": "#e8e8e3",
+      "surface": "#ffffff",
+      "surface2": "#f0f0ec",
+      "ink": "#101012",
+      "inkSoft": "#47474a",
+      "inkFaint": "#78787b",
+      "accent": "#1f4b3a",
+      "accentInk": "#f6fdfa",
+      "line": "rgba(16,16,18,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "239",
@@ -1570,7 +1961,30 @@
     ],
     "essence": "Italic Accent, vurguyu tek bir eğik başlıkla kurar; gerisi düz ve sakin.",
     "brief": "Editoryal sayfa tasarla: eğik serif başlık, düz gövde, tek sıcak accent, hairline ayırıcı.",
-    "extraCss": "h1, h2 { font-style: italic; font-weight: 400; }\nh1 { font-size: 46px; max-width: 22ch; }\nblockquote, .pg-media .pg-cap { font-style: italic; }"
+    "extraCss": "h1, h2 { font-style: italic; font-weight: 400; }h1 { font-size: var(--type-h1); max-width: 22ch; }\nblockquote, .pg-media .pg-cap { font-style: italic; }",
+    "paletteSeeds": {
+      "bg": "#fbf9f4",
+      "bg2": "#f2ede3",
+      "surface": "#fffefa",
+      "surface2": "#f7f2e9",
+      "ink": "#14120e",
+      "inkSoft": "#4b463c",
+      "inkFaint": "#807a6c",
+      "accent": "#8a4a2f",
+      "accentInk": "#fdf8f5",
+      "line": "rgba(20,18,14,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "240",
@@ -1657,7 +2071,30 @@
     ],
     "essence": "Numerals Display, sayıyı başrole koyar: rakam büyük, birim net, gerisi sessiz.",
     "brief": "Rakam odaklı rapor sayfası tasarla: 96px tabular rakamlar, mono birim, ince çizgi, az metin.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-band b { font-size: 72px; font-variant-numeric: tabular-nums; line-height: .9; }\n.pg-band span { font-family: var(--font-mono); font-size: 10.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-band b { font-size: 72px; font-variant-numeric: tabular-nums; line-height: .9; }\n.pg-band span { font-family: var(--font-mono); font-size: 10.5px; }",
+    "paletteSeeds": {
+      "bg": "#f7f8f9",
+      "bg2": "#eceef0",
+      "surface": "#ffffff",
+      "surface2": "#f3f5f6",
+      "ink": "#0f1215",
+      "inkSoft": "#454b51",
+      "inkFaint": "#767c83",
+      "accent": "#12506e",
+      "accentInk": "#f6fbfe",
+      "line": "rgba(15,18,21,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "241",
@@ -1744,7 +2181,30 @@
     ],
     "essence": "Small Caps Ledger, defteri ekranda tutar: small-caps başlık, ince çizgi, mono toplam.",
     "brief": "Defter/muhasebe sayfası tasarla: small-caps başlıklar, ince çizgili tablo, mono toplamlar.",
-    "extraCss": "h1, h2, h3 { font-variant: small-caps; font-weight: 600; letter-spacing: .02em; }\nh1 { font-size: 44px; }\n.pg-table th { font-variant: small-caps; font-size: 11px; letter-spacing: .06em; }\n.pg-table td:last-child { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }"
+    "extraCss": "h1, h2, h3 { font-variant: small-caps; font-weight: 600; letter-spacing: .02em; }h1 { font-size: var(--type-h1); }\n.pg-table th { font-variant: small-caps; font-size: 11px; letter-spacing: .06em; }\n.pg-table td:last-child { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }",
+    "paletteSeeds": {
+      "bg": "#fbfaf5",
+      "bg2": "#f1efe6",
+      "surface": "#fffef9",
+      "surface2": "#f6f4ec",
+      "ink": "#15140f",
+      "inkSoft": "#4c4940",
+      "inkFaint": "#7f7b6d",
+      "accent": "#6b2f2f",
+      "accentInk": "#fdf7f7",
+      "line": "rgba(21,20,15,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "72px"
+    }
   },
   {
     "num": "242",
@@ -1831,7 +2291,30 @@
     ],
     "essence": "Agent Console, otonom işi denetlenebilir kılar: her adım, araç ve süre kayıtta.",
     "brief": "AI ajan konsolu tasarla: koyu zemin, adım kaydı, camgöbeği yalnız çalışan adımda, mono gecikme.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
+    "paletteSeeds": {
+      "bg": "#0a0e12",
+      "bg2": "#0e1319",
+      "surface": "#121922",
+      "surface2": "#1a232e",
+      "ink": "#e8f1f7",
+      "inkSoft": "#a3b4c1",
+      "inkFaint": "#798b98",
+      "accent": "#4fd8e8",
+      "accentInk": "#04171b",
+      "line": "rgba(232,241,247,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   },
   {
     "num": "243",
@@ -1918,7 +2401,30 @@
     ],
     "essence": "Spatial Workspace, katmanları görünür kılar: ne nerede, hangi derinlikte.",
     "brief": "Uzamsal çalışma alanı tasarla: derin gri, katman çerçeveleri, mor accent seçimde, mono koordinat.",
-    "extraCss": "h1 { font-size: 40px; max-width: 24ch; }\n.pg-media { background-image: repeating-radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 40px); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-media { background-image: repeating-radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 40px); }",
+    "paletteSeeds": {
+      "bg": "#0d0f14",
+      "bg2": "#12151c",
+      "surface": "#171b24",
+      "surface2": "#1f2430",
+      "ink": "#eaeef6",
+      "inkSoft": "#a9b2c4",
+      "inkFaint": "#7f8899",
+      "accent": "#9678f0",
+      "accentInk": "#0b0618",
+      "line": "rgba(234,238,246,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   },
   {
     "num": "244",
@@ -2005,7 +2511,30 @@
     ],
     "essence": "Bio Lab Interface, canlı örneği tabloyla yönetir: sıcaklık, pH, süre ve durum.",
     "brief": "Biyoteknoloji arayüzü tasarla: koyu yeşil zemin, asit yeşili yalnız aktif örnekte, mono ölçümler.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
+    "paletteSeeds": {
+      "bg": "#0a100d",
+      "bg2": "#0e1511",
+      "surface": "#121b16",
+      "surface2": "#1a251e",
+      "ink": "#e9f4ec",
+      "inkSoft": "#a4bdaa",
+      "inkFaint": "#7b9382",
+      "accent": "#7ce86b",
+      "accentInk": "#061505",
+      "line": "rgba(233,244,236,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   },
   {
     "num": "245",
@@ -2092,7 +2621,30 @@
     ],
     "essence": "Climate Model, senaryoları karşılaştırır: aynı eksen, aynı birim, aynı referans.",
     "brief": "İklim senaryo panosu tasarla: soğuk mavi, yıl ekseni mono, senaryo şeritleri, sapma değerleri.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-chart i:nth-child(odd) { opacity: .55; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-chart i:nth-child(odd) { opacity: .55; }",
+    "paletteSeeds": {
+      "bg": "#f6f9fb",
+      "bg2": "#e9f0f5",
+      "surface": "#ffffff",
+      "surface2": "#f1f6fa",
+      "ink": "#101820",
+      "inkSoft": "#41505d",
+      "inkFaint": "#74828e",
+      "accent": "#12557f",
+      "accentInk": "#f5fbff",
+      "line": "rgba(16,24,32,.13)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   },
   {
     "num": "246",
@@ -2180,7 +2732,30 @@
     ],
     "essence": "Orbital Logistics, fırlatma penceresini planlar: ne, ne zaman, hangi yörüngeye.",
     "brief": "Yörünge lojistiği manifesti tasarla: gece mavisi, yörünge çizgileri, mono UTC pencere, manifest tablosu.",
-    "extraCss": "h1 { font-size: 40px; letter-spacing: .04em; max-width: 24ch; }\n.pg-media { background-image: repeating-radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--accent) 12%, transparent) 0 1px, transparent 1px 36px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .04em; max-width: 24ch; }\n.pg-media { background-image: repeating-radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--accent) 12%, transparent) 0 1px, transparent 1px 36px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
+    "paletteSeeds": {
+      "bg": "#080b14",
+      "bg2": "#0c101b",
+      "surface": "#101623",
+      "surface2": "#182030",
+      "ink": "#e9eefb",
+      "inkSoft": "#a5b0c9",
+      "inkFaint": "#7b869e",
+      "accent": "#5fa8ff",
+      "accentInk": "#04101f",
+      "line": "rgba(233,238,251,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   },
   {
     "num": "247",
@@ -2267,7 +2842,30 @@
     ],
     "essence": "Synthetic Media, üretilmiş içeriği işaretler: kaynak, model ve parametre görünür.",
     "brief": "Sentetik medya ürünü tasarla: grafit zemin, turkuaz doğrulama accent, mono kaynak/parametre listesi.",
-    "extraCss": "h1 { font-size: 40px; max-width: 24ch; }\n.pg-card { border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-card { border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#0e1013",
+      "bg2": "#121519",
+      "surface": "#181c22",
+      "surface2": "#21262e",
+      "ink": "#edf0f4",
+      "inkSoft": "#adb4bf",
+      "inkFaint": "#828a96",
+      "accent": "#3fd4c2",
+      "accentInk": "#041614",
+      "line": "rgba(237,240,244,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   },
   {
     "num": "248",
@@ -2354,7 +2952,30 @@
     ],
     "essence": "Quantum Dashboard, olasılığı tabloyla verir: durum, genlik, olasılık ve toplam.",
     "brief": "Kuantum panosu tasarla: mor-lacivert zemin, altın accent ölçümde, mono olasılık tablosu, |0⟩ gösterimi.",
-    "extraCss": "h1 { font-size: 38px; letter-spacing: .06em; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .06em; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
+    "paletteSeeds": {
+      "bg": "#0a0a16",
+      "bg2": "#0f0f1f",
+      "surface": "#141428",
+      "surface2": "#1d1d36",
+      "ink": "#eae9fa",
+      "inkSoft": "#a9a6c9",
+      "inkFaint": "#7f7ca0",
+      "accent": "#c9a94a",
+      "accentInk": "#151003",
+      "line": "rgba(234,233,250,.15)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   },
   {
     "num": "249",
@@ -2441,7 +3062,30 @@
     ],
     "essence": "Digital Twin, fiziksel durumu tabloyla eşler: sensör, birim, eşik ve zaman.",
     "brief": "Dijital ikiz ekranı tasarla: koyu zemin, sol diyagram, sağ sensör tablosu, camgöbeği yalnız aktifte.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 9%, transparent) 0 1px, transparent 1px 26px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 9%, transparent) 0 1px, transparent 1px 26px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 9%, transparent) 0 1px, transparent 1px 26px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 9%, transparent) 0 1px, transparent 1px 26px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
+    "paletteSeeds": {
+      "bg": "#0b1013",
+      "bg2": "#0f1619",
+      "surface": "#131b20",
+      "surface2": "#1b252b",
+      "ink": "#e8f1f4",
+      "inkSoft": "#a2b5bd",
+      "inkFaint": "#788b94",
+      "accent": "#46c9c0",
+      "accentInk": "#041717",
+      "line": "rgba(232,241,244,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   },
   {
     "num": "250",
@@ -2528,7 +3172,30 @@
     ],
     "essence": "Neural Canvas, modeli katman katman gösterir: boyut, aktivasyon ve parametre.",
     "brief": "Sinir ağı tuvali tasarla: koyu zemin, katman sütunları, ince bağlantılar, mono boyut/parametre.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-media { background-image: radial-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 1.5px, transparent 1.6px); background-size: 22px 22px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: radial-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 1.5px, transparent 1.6px); background-size: 22px 22px; }",
+    "paletteSeeds": {
+      "bg": "#0b0b12",
+      "bg2": "#101018",
+      "surface": "#15151f",
+      "surface2": "#1d1d29",
+      "ink": "#eeeaf7",
+      "inkSoft": "#b0aac4",
+      "inkFaint": "#847f99",
+      "accent": "#a97bf0",
+      "accentInk": "#0c0618",
+      "line": "rgba(238,234,247,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   },
   {
     "num": "251",
@@ -2615,6 +3282,29 @@
     ],
     "essence": "Post-screen Voice, konuşmayı satırlara böler: kim, ne zaman, ne dedi.",
     "brief": "Sesli asistan transkript ekranı tasarla: sıcak gri, statik dalga çizgisi, mono konuşmacı/süre.",
-    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 26%, transparent) 0 3px, transparent 3px 12px); background-size: auto 60%; background-position: center; background-repeat: repeat-x; }\n.pg-card { border-radius: 14px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 26%, transparent) 0 3px, transparent 3px 12px); background-size: auto 60%; background-position: center; background-repeat: repeat-x; }\n.pg-card { border-radius: 14px; }",
+    "paletteSeeds": {
+      "bg": "#f6f5f2",
+      "bg2": "#ecebe6",
+      "surface": "#ffffff",
+      "surface2": "#f3f2ee",
+      "ink": "#141412",
+      "inkSoft": "#4a4a45",
+      "inkFaint": "#7c7c75",
+      "accent": "#2f5d4a",
+      "accentInk": "#f5fdf9",
+      "line": "rgba(20,20,18,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   }
 ]

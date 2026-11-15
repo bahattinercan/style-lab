@@ -9,8 +9,7 @@ export const CONFIG = {
   bodyClass: '',
   extraCss: `
       /* ---------- tipografi: Chakra Petch başlık · Space Grotesk gövde · Courier Prime künye ---------- */
-      h1, h2 { font-family: var(--font-display); font-weight: 600; }
-      h1 { font-size: 38px; line-height: 1.08; letter-spacing: 0; max-width: 21ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 600; }h1  { font-size: var(--type-h1); line-height: 1.08; letter-spacing: 0; max-width: 21ch; }
       h2 { font-size: 24px; line-height: 1.2; letter-spacing: .01em; }
       h3, h4 { font-family: var(--font-body); font-weight: 700; }
       h3 { font-size: 18px; line-height: 1.25; }
@@ -134,7 +133,7 @@ export const CONFIG = {
       body.scene-dashboard .kpi:nth-child(2) { box-shadow: inset 3px 0 0 var(--accent); }
 
       @media (max-width: 900px) {
-        h1 { font-size: 26px; max-width: 20ch; }
+        h1  { font-size: var(--type-h1); max-width: 20ch; }
         h2 { font-size: 20px; }
         .lede { font-size: 14px; }
         body.scene-dashboard .kpis { grid-template-columns: 1fr; }

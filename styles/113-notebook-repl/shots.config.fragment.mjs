@@ -9,8 +9,7 @@ export const CONFIG = {
   extraCss: `
       /* imza: In[n] oluğu · Out bloğu · kernel noktası · mono kod */
       body { background-image: none; }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em; }
-      h1 { font-size: 36px; line-height: 1.16; max-width: 24ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em; }h1 { font-size: var(--type-h1); line-height: 1.16; max-width: 24ch; }
       h2 { font-size: 26px; line-height: 1.22; }
       h3 { font-size: 19px; line-height: 1.28; }
       .lede { font-size: 15px; line-height: 1.58; max-width: 66ch; color: var(--ink-soft); }

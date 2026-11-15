@@ -2,8 +2,7 @@ export const CONFIG = {
   motif: 'bars',
   bodyClass: 'upper',
   extraCss: `
-    .nav { border-bottom: 3px solid var(--ink); }
-    h1 { max-width: 15ch; font-size: 58px; line-height: .98; }
+    .nav { border-bottom: 3px solid var(--ink); }h1 { max-width: 15ch; font-size: var(--type-h1); line-height: .98; }
     .hero-copy { border-left: 3px solid var(--accent); padding-left: 20px; }
     .btn { border: 2px solid var(--ink); box-shadow: none; }
     .btn:not(.ghost):not(.soft) { box-shadow: none; }

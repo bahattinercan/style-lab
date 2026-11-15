@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Space Grotesk 700 · Poppins gövde · IBM Plex etiket ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-transform: none; }
-      h1 { font-size: 52px; line-height: 1.06; letter-spacing: -.01em; max-width: 20ch; }
+      h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-transform: none; }h1  { font-size: var(--type-h1); line-height: 1.06; letter-spacing: -.01em; max-width: 20ch; }
       h2 { font-size: 32px; line-height: 1.14; letter-spacing: -.005em; max-width: 26ch; }
       h3 { font-size: 22px; line-height: 1.2; max-width: 32ch; }
       h4 { font-family: var(--font-body); font-weight: 600; font-size: 16px; letter-spacing: 0; }
@@ -120,7 +119,7 @@ export const CONFIG = {
       body.scene-dashboard .side { border-radius: 0; }
 
       @media (max-width: 900px) {
-        h1 { font-size: 30px; max-width: 20ch; }
+        h1  { font-size: var(--type-h1); max-width: 20ch; }
         h2 { font-size: 24px; }
         h3 { font-size: 19px; }
         .lede { font-size: 15px; }

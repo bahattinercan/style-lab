@@ -55,7 +55,7 @@ Bunun bedeli kişiliksizleşme riskidir; Utility'yi "jenerik" olmaktan kurtaran 
 | `--surface-2` | `#fafafa` | ikincil panel, tablo başlığı | birincil CTA |
 | `--ink` | `#111112` | başlık, gövde | devre dışı metin |
 | `--ink-soft` | `#5a5f66` | ikincil metin, açıklama | başlık |
-| `--ink-faint` | `#9298a0` | dekoratif etiket, ayırıcı | etkileşimli metin |
+| `--ink-faint` | `#90959d` | dekoratif etiket, ayırıcı | etkileşimli metin |
 | `--accent` | `#1d4ed8` | birincil buton, aktif durum, odak halkası | dekorasyon, ikinci vurgu |
 | `--line` | `rgba(17,17,18,.10)` | kart/panel/tablo kenarlığı | metin rengi |
 
@@ -286,7 +286,7 @@ Yasak: ikinci vurgu rengi, tek taraflı kenarlık, italik, 900 ağırlık, Mater
 [data-style="utility"] {
   --bg: #ffffff; --bg-2: #f6f6f7;
   --surface: #ffffff; --surface-2: #fafafa;
-  --ink: #111112; --ink-soft: #5a5f66; --ink-faint: #9298a0;
+  --ink: #111112; --ink-soft: #5a5f66; --ink-faint: #90959d;
   --accent: #1d4ed8; --accent-ink: #ffffff;
   --line: rgba(17,17,18,.10);
   --radius: 8px; --radius-lg: 12px;

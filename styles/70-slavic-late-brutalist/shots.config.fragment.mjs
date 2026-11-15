@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'bars',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: bitişik beton panel · 3px kenar · sert ofset gölge · tehlike şeridi */
-      h1 { font-size: 68px; line-height: .94; letter-spacing: .01em; font-weight: 400; max-width: 16ch; }
+  extraCss: `/* imza: bitişik beton panel · 3px kenar · sert ofset gölge · tehlike şeridi */
+      h1   { font-size: var(--type-h1); line-height: .94; letter-spacing: .01em; font-weight: 400; max-width: 16ch; }
       h2 { font-size: 34px; line-height: 1.02; letter-spacing: .01em; font-weight: 400; }
       h3 { font-size: 21px; line-height: 1.18; letter-spacing: .015em; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); letter-spacing: .16em; font-size: 11px; }
@@ -52,7 +51,7 @@ export const CONFIG = {
         box-shadow: var(--shadow-hard);
       }
       @media (max-width: 900px) {
-        h1 { font-size: 40px; max-width: 14ch; }
+        h1  { font-size: var(--type-h1); max-width: 14ch; }
         body.scene-landing .sig::after { width: 72px; height: 72px; top: 70px; }
         body.scene-landing .sig::before { height: 16px; }
       }

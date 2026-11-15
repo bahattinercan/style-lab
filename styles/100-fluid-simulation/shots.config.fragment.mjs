@@ -3,8 +3,7 @@ export const CONFIG = {
   bodyClass: '',
   extraCss: `
     /* imza: asimetrik damla kosesi · 999px pill · yumusak blob (blur 6px) · dalga ayirici · viskoz hareket */
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking); }
-    h1 { font-size: 44px; line-height: 1.14; max-width: 22ch; }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking); }h1 { font-size: var(--type-h1); line-height: 1.14; max-width: 22ch; }
     h2 { font-size: 28px; line-height: 1.3; }
     h3 { font-size: 21px; line-height: 1.34; }
     .eyebrow, .label, .mono {

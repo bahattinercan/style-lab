@@ -23,6 +23,8 @@ import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import { configFor } from './shots.config.mjs';
+import { inlineTypeScale } from '../lib/type-scale.mjs';
+import { applySectionPlan } from '../lib/section-plan.mjs';
 import { launch as launchCdp } from './cdp-browser.mjs';
 import { icon } from './icons.mjs';
 import { cropPngTop, decodePng } from './png.mjs';
@@ -169,7 +171,11 @@ function layoutFor(dirName) {
     const hero = LAYOUT_DEFS.heroes.some((h) => h.id === l.hero) ? l.hero : DEFAULT_LAYOUT.hero;
     const nav = LAYOUT_DEFS.navs.some((n) => n.id === l.nav) ? l.nav : DEFAULT_LAYOUT.nav;
     const density = LAYOUT_DEFS.densities.some((d) => d.id === l.density) ? l.density : DEFAULT_LAYOUT.density;
-    layout = { hero, nav, density };
+    const sectionPlan = LAYOUT_DEFS.sections.some((section) => section.id === l.sectionPlan)
+      ? l.sectionPlan
+      : LAYOUT_DEFS.sections[0].id;
+    const fit = ['0', '1', '2', '3'].includes(String(l.fit)) ? String(l.fit) : null;
+    layout = { hero, nav, density, sectionPlan, fit, typeScale: tokens.typography?.scale ?? {} };
   } catch (err) {
     console.warn(`uyarı: ${dirName}/tokens.json okunamadı (${err.message}); varsayılan kompozisyon`);
   }
@@ -243,6 +249,10 @@ function fill(tpl, slug, cfg, num, vars, sceneKey, layout = DEFAULT_LAYOUT, imag
     __LAYOUT_HERO__: layout.hero,
     __LAYOUT_NAV__: layout.nav,
     __DENSITY__: layout.density,
+    __SECTION_PLAN__: layout.sectionPlan,
+    __FIT__: REFIT ? '0' : (layout.fit ?? '0'),
+    __FIT_LOCKED__: REFIT || layout.fit == null ? 'false' : 'true',
+    __TYPE_SCALE__: inlineTypeScale(layout.typeScale ?? {}),
     __PHOTO__: imagery?.photo ? `../images/${imagery.photo}` : '',
     __PHOTO_ATTRS__: imagery?.photo
       ? `data-photo="${imagery.treatment?.mode ?? 'plain'}" style="--photo-strength:${imagery.treatment?.strength ?? 0}"`
@@ -268,6 +278,8 @@ function fill(tpl, slug, cfg, num, vars, sceneKey, layout = DEFAULT_LAYOUT, imag
     __COPY_TILE4__: copy?.tiles?.[3]?.cap ?? '',
   };
   for (const [k, v] of Object.entries(map)) html = html.split(k).join(v);
+  const sectionPlan = LAYOUT_DEFS.sections.find((plan) => plan.id === layout.sectionPlan);
+  if (sectionPlan) html = applySectionPlan(html, sectionPlan);
   html = html.replace(/__ICON:([a-z0-9-]+):(\d+)__/g, (_m, name, size) => icon(name, Number(size)));
   return html.replace(
     '<style id="extra"></style>',
@@ -320,13 +332,14 @@ const FIT_BODY = `
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   const de = document.documentElement;
   if (document.fonts?.ready) { try { await document.fonts.ready; } catch {} }
-  let fitTier = '0';
-  for (const tier of ['0', '1', '2', '3']) {
-    if (tier === '0') delete document.body.dataset.fit;
-    else document.body.dataset.fit = tier;
-    await wait(80);
-    fitTier = tier;
-    if (de.scrollHeight <= de.clientHeight + 1) break;
+  let fitTier = document.body.dataset.fit || '0';
+  if (document.body.dataset.fitLocked !== 'true') {
+    for (const tier of ['0', '1', '2', '3']) {
+      document.body.dataset.fit = tier;
+      await wait(80);
+      fitTier = tier;
+      if (de.scrollHeight <= de.clientHeight + 1) break;
+    }
   }
   await wait(60);
 `;
@@ -389,11 +402,28 @@ const FIT_APPLY_EXPR = `(async () => { ${FIT_BODY} return fitTier; })()`;
 
 const MEASURE = process.argv.includes('--measure');
 const FIT_JSON = process.argv.includes('--fit-json');
+const REFIT = process.argv.includes('--fit');
 /** Görsel punto tabanı: gövde 10px altına düşerse okunurluk ve WCAG 1.4.4 ölçeği bozulur. */
 const MIN_VISUAL_FONT = 10;
 const problems = [];
 const warnings = [];
 const fitRows = [];
+
+function persistFit(rows) {
+  if (!REFIT) return;
+  if (rows.some((row) => row.pageOverflow > 2 || row.overflowX > 2 || row.clipped)) {
+    throw new Error('--fit: ölçümde taşma/kırpılma var; kalıcı kademe yazılmadı');
+  }
+  const tiers = new Map(rows.map((row) => [row.slug, row.fitTier]));
+  for (const dirName of allStyleDirs()) {
+    const slug = dirName.replace(/^\d+-/, '');
+    if (!tiers.has(slug)) continue;
+    const file = path.join(STYLES_DIR, dirName, 'tokens.json');
+    const tokens = JSON.parse(fs.readFileSync(file, 'utf8'));
+    tokens.layout = { ...tokens.layout, fit: tiers.get(slug) };
+    fs.writeFileSync(file, JSON.stringify(tokens, null, 2) + '\n');
+  }
+}
 
 /**
  * Boş/tek renk kare tespiti: sayfanın alt %60'ında renk varyansı yoksa render yarım kalmıştır
@@ -824,6 +854,7 @@ async function runAll(getCdp, browser) {
   });
   if (MEASURE) {
     const fit = summarizeFit(fitRows);
+    persistFit(fitRows);
     for (const pr of problems.slice(0, 25)) console.log(`× ${pr}`);
     if (problems.length > 25) console.log(`× … ${problems.length - 25} sorun daha`);
     for (const w of warnings.slice(0, 8)) console.log(`! ${w}`);
@@ -836,6 +867,7 @@ async function runAll(getCdp, browser) {
         `içerik ${fit.minHeight}–${fit.maxHeight}px · en yüksek: ${fit.worst.map((w) => `${w.slug}:${w.h}`).join(' ')}`,
     );
     if (FIT_JSON) console.log(JSON.stringify({ summary: fit, rows: fitRows }, null, 2));
+    if (REFIT) console.log(`kalıcı sığdırma: ${new Set(fitRows.map((row) => row.slug)).size} stil · layout.fit yazıldı`);
     if (problems.length) process.exitCode = 1;
     return;
   }

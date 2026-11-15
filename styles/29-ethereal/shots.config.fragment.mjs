@@ -3,8 +3,8 @@ export const CONFIG = {
   extraCss: `
     body {
       background:
-        radial-gradient(60% 52% at 18% 8%, #efe6fb 0%, transparent 68%),
-        radial-gradient(52% 52% at 86% 82%, #fde8ee 0%, transparent 68%),
+        radial-gradient(60% 52% at 18% 8%, color-mix(in srgb, var(--accent) 10%, var(--surface)) 0%, transparent 68%),
+        radial-gradient(52% 52% at 86% 82%, color-mix(in srgb, var(--accent) 18%, var(--surface)) 0%, transparent 68%),
         var(--bg);
       background-attachment: fixed;
     }

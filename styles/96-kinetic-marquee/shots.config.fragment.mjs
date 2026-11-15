@@ -5,8 +5,7 @@ export const CONFIG = {
     /* imza: 32px marquee bandı · hıza bağlı skew · harf dalgası · rotasyon YOK */
     h1, h2, h3, h4 {
       font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking);
-    }
-    h1 { font-size: 56px; line-height: 1.04; max-width: 20ch; }
+    }h1 { font-size: var(--type-h1); line-height: 1.04; max-width: 20ch; }
     h2 { font-size: 24px; line-height: 1.18; }
     h3 { font-size: 18px; line-height: 1.3; }
     .eyebrow, .label, .mono {

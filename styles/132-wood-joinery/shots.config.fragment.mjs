@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'paper',
   bodyClass: '',
-  extraCss: `
-      /* imza: 1px geçme çizgisi (en fazla 2) · ahşap damarı %3 · 4px radius · gölge yok */
-      h1 { font-size: 48px; line-height: 1.1; letter-spacing: -.005em; font-weight: 600; font-family: var(--font-display); max-width: 20ch; }
+  extraCss: `/* imza: 1px geçme çizgisi (en fazla 2) · ahşap damarı %3 · 4px radius · gölge yok */
+      h1   { font-size: var(--type-h1); line-height: 1.1; letter-spacing: -.005em; font-weight: 600; font-family: var(--font-display); max-width: 20ch; }
       h2 { font-size: 30px; line-height: 1.14; letter-spacing: 0; font-weight: 600; }
       h3 { font-size: 22px; line-height: 1.22; font-weight: 600; }
       p, .lede, .copy { font-family: var(--font-body); }
@@ -38,7 +37,7 @@ export const CONFIG = {
       .nav { border-bottom: 1px solid var(--line); min-height: 64px; }
       .nav-links a { font-size: 13px; font-weight: 500; }
       @media (max-width: 900px) {
-        h1 { font-size: 30px; }
+        h1  { font-size: var(--type-h1); }
         h2 { font-size: 24px; }
         .sec, .art-body, .auth-aside { background-image: none; }
       }

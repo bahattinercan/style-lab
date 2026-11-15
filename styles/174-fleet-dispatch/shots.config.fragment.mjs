@@ -6,7 +6,7 @@ export const CONFIG = {
   motif: 'grid',
   bodyClass: '',
   extraCss: `
-h1 { font-size: 40px; max-width: 24ch; }
+h1   { font-size: var(--type-h1); max-width: 24ch; }
 h2 { font-size: 24px; }
 h3 { font-size: 17px; }
 body { font-size: 14px; }
@@ -18,7 +18,7 @@ body { font-size: 14px; }
 .pg-sec { padding: 22px 56px; }
 .pg-trio .pg-card { border-top-width: 1px; }
 .mono, .num, .pg-cap { font-variant-numeric: tabular-nums; }
-h1 { font-size: 40px; max-width: 26ch; }
+h1 { font-size: var(--type-h1); max-width: 26ch; }
 .pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 10%, transparent) 0 1px, transparent 1px 32px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, transparent) 0 1px, transparent 1px 32px); }
   `,
 };

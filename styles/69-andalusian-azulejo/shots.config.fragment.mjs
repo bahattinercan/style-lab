@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'grid',
   bodyClass: '',
-  extraCss: `
-      /* imza: 2px harç ızgarası · sekiz köşeli yıldız tekrarı · ince seramik display */
-      h1 { font-size: 52px; line-height: 1.1; letter-spacing: .02em; font-weight: 400; max-width: 21ch; }
+  extraCss: `/* imza: 2px harç ızgarası · sekiz köşeli yıldız tekrarı · ince seramik display */
+      h1   { font-size: var(--type-h1); line-height: 1.1; letter-spacing: .02em; font-weight: 400; max-width: 21ch; }
       h2 { font-size: 28px; line-height: 1.2; letter-spacing: .015em; font-weight: 400; }
       h3 { font-size: 19px; line-height: 1.32; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); letter-spacing: .14em; font-size: 11px; text-transform: uppercase; }
@@ -54,7 +53,7 @@ export const CONFIG = {
         box-shadow: inset 0 0 0 5px var(--bg), inset 0 0 0 6px var(--accent);
       }
       @media (max-width: 900px) {
-        h1 { font-size: 34px; }
+        h1  { font-size: var(--type-h1); }
         body.scene-landing .sig::before { opacity: .12; }
         body.scene-landing .sig::after { width: 40px; height: 40px; right: 6vw; bottom: 8vh; }
       }

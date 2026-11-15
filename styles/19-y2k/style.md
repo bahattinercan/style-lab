@@ -70,7 +70,7 @@ Kazandığı şey: nostalji + dikkat. Feda ettiği şey: okunurluk payı (parlak
 | `--surface-2` | `#e6f0ff` | ikincil, hover | CTA |
 | `--ink` | `#1b2340` | metin | — |
 | `--ink-soft` | `#4b557a` | açıklama | 12px altı |
-| `--ink-faint` | `#8b94b5` | dekoratif (2.70:1) | gövde |
+| `--ink-faint` | `#838bac` | dekoratif (2.70:1) | gövde |
 | `--accent` | `#6f4de8` | CTA, aktif | geniş zemin |
 | `--accent-ink` | `#ffffff` | accent üstü (**5.38:1**) | — |
 | `--line` | `rgba(90,120,220,.35)` | krom kenar | metin |
@@ -208,7 +208,7 @@ Yoğun ekran (form/tablo/ödeme): parlaklık ve blur kapanır.
 [data-style="y2k"] {
   --bg: #eaf4ff; --bg-2: #d9e9ff;
   --surface: #ffffff; --surface-2: #e6f0ff;
-  --ink: #1b2340; --ink-soft: #4b557a; --ink-faint: #8b94b5;
+  --ink: #1b2340; --ink-soft: #4b557a; --ink-faint: #838bac;
   --accent: #6f4de8; --accent-ink: #ffffff;
   --line: rgba(90,120,220,.35);
   --radius: 20px; --radius-lg: 28px;

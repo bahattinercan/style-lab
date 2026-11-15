@@ -4,9 +4,8 @@
 export const CONFIG = {
   motif: 'dots',
   bodyClass: '',
-  extraCss: `
-    /* imza: iki eşit panel + sol renk bandı + mono delta rozeti */
-    h1 { font-size: 54px; font-weight: 700; line-height: 1.03; letter-spacing: var(--tracking); max-width: 22ch; }
+  extraCss: `/* imza: iki eşit panel + sol renk bandı + mono delta rozeti */
+    h1   { font-size: var(--type-h1); font-weight: 700; line-height: 1.03; letter-spacing: var(--tracking); max-width: 22ch; }
     h2 { font-size: 29px; font-weight: 700; line-height: 1.16; letter-spacing: -.015em; }
     h3 { font-size: 20px; font-weight: 600; line-height: 1.3; letter-spacing: 0; }
     .lede { max-width: 58ch; font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
@@ -75,7 +74,7 @@ export const CONFIG = {
       background: var(--line); pointer-events: none;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 32px; max-width: 20ch; }
+      h1  { font-size: var(--type-h1); max-width: 20ch; }
       body.scene-dashboard .kpis { grid-template-columns: 1fr; }
       body.scene-dashboard .kpis > .kpi { border-width: 1px 0 0 3px; }
       body.scene-landing .sig::after { left: 0; right: 0; top: 50%; bottom: auto; width: auto; height: 1px; }

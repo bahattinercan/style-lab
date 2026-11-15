@@ -15,8 +15,7 @@ export const CONFIG = {
           transparent 1px 3px
         );
       }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: .06em; text-transform: uppercase; }
-      h1 { font-size: 38px; line-height: 1.14; max-width: 24ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: .06em; text-transform: uppercase; }h1 { font-size: var(--type-h1); line-height: 1.14; max-width: 24ch; }
       h2 { font-size: 26px; line-height: 1.2; }
       h3 { font-size: 19px; line-height: 1.3; letter-spacing: .04em; }
       .lede { font-size: 16px; line-height: 1.58; max-width: 58ch; color: var(--ink-soft); }

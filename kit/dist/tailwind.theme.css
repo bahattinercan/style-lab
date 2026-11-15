@@ -10,7 +10,7 @@
   --color-surface-2: #f7f7f5;
   --color-ink: #101112;
   --color-ink-soft: #5a5f66;
-  --color-ink-faint: #9aa0a6;
+  --color-ink-faint: #8d9298;
   --color-accent: #2563eb;
   --color-accent-ink: #ffffff;
   --color-line: rgba(16,17,18,.10);
@@ -73,8 +73,8 @@
   --color-surface-2: #f3ecdf;
   --color-ink: #1a1815;
   --color-ink-soft: #5c554b;
-  --color-ink-faint: #9a9184;
-  --color-accent: #c6a664;
+  --color-ink-faint: #938a7e;
+  --color-accent: #a78746;
   --color-accent-ink: #1a1815;
   --color-line: rgba(26,24,21,.16);
   --radius-control: 0px;
@@ -94,7 +94,7 @@
   --color-surface-2: #fafaf9;
   --color-ink: #12130f;
   --color-ink-soft: #5b5f58;
-  --color-ink-faint: #9aa096;
+  --color-ink-faint: #8a8f86;
   --color-accent: #1f6feb;
   --color-accent-ink: #ffffff;
   --color-line: rgba(18,19,15,.08);
@@ -115,9 +115,9 @@
   --color-surface-2: #f2ece2;
   --color-ink: #2c2925;
   --color-ink-soft: #635c53;
-  --color-ink-faint: #918a80;
-  --color-accent: #8a9b84;
-  --color-accent-ink: #2c2925;
+  --color-ink-faint: #908980;
+  --color-accent: #7f8f79;
+  --color-accent-ink: #262420;
   --color-line: rgba(44,41,37,.10);
   --radius-control: 10px;
   --radius-card: 14px;
@@ -136,7 +136,7 @@
   --color-surface-2: #eadfce;
   --color-ink: #2a2724;
   --color-ink-soft: #5f574d;
-  --color-ink-faint: #8f8779;
+  --color-ink-faint: #8b8376;
   --color-accent: #a85831;
   --color-accent-ink: #fff8ef;
   --color-line: rgba(42,39,36,.18);
@@ -199,7 +199,7 @@
   --color-surface-2: #e9edf3;
   --color-ink: #333a45;
   --color-ink-soft: #5d6674;
-  --color-ink-faint: #8b93a1;
+  --color-ink-faint: #7e8593;
   --color-accent: #4262e8;
   --color-accent-ink: #ffffff;
   --color-line: transparent;
@@ -220,7 +220,7 @@
   --color-surface-2: #f6f2ff;
   --color-ink: #2b2350;
   --color-ink-soft: #5b5382;
-  --color-ink-faint: #8d87ad;
+  --color-ink-faint: #8d87ac;
   --color-accent: #6f4df0;
   --color-accent-ink: #ffffff;
   --color-line: rgba(255,255,255,.7);
@@ -263,7 +263,7 @@
   --color-ink: #000000;
   --color-ink-soft: #2b2b2b;
   --color-ink-faint: #6b6b6b;
-  --color-accent: #ff5c8a;
+  --color-accent: #fb5887;
   --color-accent-ink: #000000;
   --color-line: #000000;
   --radius-control: 0px;
@@ -284,7 +284,7 @@
   --color-ink: #1b1b1b;
   --color-ink-soft: #4a4a4a;
   --color-ink-faint: #7b7b7b;
-  --color-accent: #ff3b6b;
+  --color-accent: #fa3667;
   --color-accent-ink: #1b1b1b;
   --color-line: #1b1b1b;
   --radius-control: 0px;
@@ -388,7 +388,7 @@
   --color-surface-2: #e6f0ff;
   --color-ink: #1b2340;
   --color-ink-soft: #4b557a;
-  --color-ink-faint: #8b94b5;
+  --color-ink-faint: #838bac;
   --color-accent: #6f4de8;
   --color-accent-ink: #ffffff;
   --color-line: rgba(90,120,220,.35);
@@ -514,9 +514,9 @@
   --color-surface-2: #eaf6ff;
   --color-ink: #0d2b45;
   --color-ink-soft: #365a75;
-  --color-ink-faint: #6f8fa8;
-  --color-accent: #2f9be0;
-  --color-accent-ink: #0d2b45;
+  --color-ink-faint: #6e8da6;
+  --color-accent: #2090d5;
+  --color-accent-ink: #06243e;
   --color-line: rgba(255,255,255,.85);
   --radius-control: 14px;
   --radius-card: 22px;
@@ -577,9 +577,9 @@
   --color-surface-2: #efeae1;
   --color-ink: #1e1c1a;
   --color-ink-soft: #56514a;
-  --color-ink-faint: #8d877e;
-  --color-accent: #e4572e;
-  --color-accent-ink: #1e1c1a;
+  --color-ink-faint: #868178;
+  --color-accent: #df5329;
+  --color-accent-ink: #1b1918;
   --color-line: rgba(30,28,26,.12);
   --radius-control: 4px;
   --radius-card: 10px;
@@ -598,7 +598,7 @@
   --color-surface-2: rgba(255,255,255,.35);
   --color-ink: #3b3542;
   --color-ink-soft: #635c6e;
-  --color-ink-faint: #968fa3;
+  --color-ink-faint: #928b9f;
   --color-accent: #7a63bd;
   --color-accent-ink: #ffffff;
   --color-line: rgba(59,53,66,.10);
@@ -619,7 +619,7 @@
   --color-surface-2: #f0e0c4;
   --color-ink: #2e2620;
   --color-ink-soft: #5f5347;
-  --color-ink-faint: #91857a;
+  --color-ink-faint: #90847a;
   --color-accent: #b45634;
   --color-accent-ink: #fff8ee;
   --color-line: rgba(46,38,32,.18);
@@ -640,7 +640,7 @@
   --color-surface-2: #fdf3dc;
   --color-ink: #1f2b3a;
   --color-ink-soft: #4e5a68;
-  --color-ink-faint: #858e99;
+  --color-ink-faint: #848c97;
   --color-accent: #c63d2f;
   --color-accent-ink: #fffdf7;
   --color-line: rgba(31,43,58,.18);
@@ -702,8 +702,8 @@
   --color-surface: #f2ebdd;
   --color-surface-2: #e6ddcb;
   --color-ink: #2f2a24;
-  --color-ink-soft: #5d554a;
-  --color-ink-faint: #8b8173;
+  --color-ink-soft: #5a5248;
+  --color-ink-faint: #776d60;
   --color-accent: #2f6b4f;
   --color-accent-ink: #f7f3e8;
   --color-line: rgba(47,42,36,.35);
@@ -913,7 +913,7 @@
   --color-surface-2: #fafafa;
   --color-ink: #111112;
   --color-ink-soft: #5a5f66;
-  --color-ink-faint: #9298a0;
+  --color-ink-faint: #90959d;
   --color-accent: #1d4ed8;
   --color-accent-ink: #ffffff;
   --color-line: rgba(17,17,18,.10);
@@ -1292,7 +1292,7 @@
   --color-ink: #17150f;
   --color-ink-soft: #56523f;
   --color-ink-faint: #807b66;
-  --color-accent: #f2b705;
+  --color-accent: #b98000;
   --color-accent-ink: #1a1608;
   --color-line: rgba(23,21,15,.22);
   --radius-control: 2px;
@@ -2125,7 +2125,7 @@
 
 /* ---- 102 · Moiré Field ---- */
 @theme {
-  --color-bg: #a6a29b;
+  --color-bg: #b6b2ab;
   --color-bg-2: #9c9891;
   --color-surface: #b1ada6;
   --color-surface-2: #8e8a84;
@@ -2167,7 +2167,7 @@
 
 /* ---- 104 · Stepped Mechanism ---- */
 @theme {
-  --color-bg: #a0a6aa;
+  --color-bg: #adb3b7;
   --color-bg-2: #979da1;
   --color-surface: #abb1b5;
   --color-surface-2: #8b9195;
@@ -2965,7 +2965,7 @@
 
 /* ---- 142 · Quantum Lab ---- */
 @theme {
-  --color-bg: #9b99a3;
+  --color-bg: #b3b1bb;
   --color-bg-2: #92909a;
   --color-surface: #a6a4ae;
   --color-surface-2: #86848e;

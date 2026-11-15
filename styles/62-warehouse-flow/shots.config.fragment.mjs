@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Archivo Black blok başlık + mono kod ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; }
-      h1 { font-size: 56px; line-height: .96; letter-spacing: -.02em; max-width: 18ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; }h1  { font-size: var(--type-h1); line-height: .96; letter-spacing: -.02em; max-width: 18ch; }
       h2 { font-size: 30px; line-height: 1.1; letter-spacing: -.01em; max-width: 22ch; }
       h3, h4 { font-family: var(--font-body); font-weight: 600; letter-spacing: 0; }
       h3 { font-size: 20px; line-height: 1.25; }
@@ -143,7 +142,7 @@ export const CONFIG = {
       body.scene-dashboard .side { border-right: 2px solid var(--ink); }
 
       @media (max-width: 900px) {
-        h1 { font-size: 32px; max-width: 16ch; }
+        h1  { font-size: var(--type-h1); max-width: 16ch; }
         h2 { font-size: 22px; }
         .lede { font-size: 14px; }
         .hero-visual { box-shadow: 3px 3px 0 var(--ink); }

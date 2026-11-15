@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Fraunces display · Inter gövde · JetBrains etiket ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: none; }
-      h1 { font-size: 62px; line-height: 1.04; letter-spacing: -.01em; max-width: 20ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: none; }h1  { font-size: var(--type-h1); line-height: 1.04; letter-spacing: -.01em; max-width: 20ch; }
       h2 { font-size: 38px; line-height: 1.14; letter-spacing: 0; max-width: 26ch; }
       h3 { font-family: var(--font-display); font-weight: 400; font-size: 24px; line-height: 1.3; max-width: 34ch; }
       h4 { font-family: var(--font-body); font-weight: 600; font-size: 14px; line-height: 1.4; letter-spacing: .02em; text-transform: uppercase; }
@@ -106,7 +105,7 @@ export const CONFIG = {
       body.scene-dashboard .trow { font-variant-numeric: tabular-nums; }
 
       @media (max-width: 900px) {
-        h1 { font-size: 32px; max-width: 20ch; }
+        h1  { font-size: var(--type-h1); max-width: 20ch; }
         h2 { font-size: 26px; }
         h3 { font-size: 20px; }
         .lede { font-size: 16px; }

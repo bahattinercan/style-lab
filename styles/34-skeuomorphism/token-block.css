@@ -3,7 +3,7 @@
 [data-style="skeuomorphism"] {
   --bg: #cfc6b8; --bg-2: #bdb2a1;
   --surface: #f2ebdd; --surface-2: #e6ddcb;
-  --ink: #2f2a24; --ink-soft: #5d554a; --ink-faint: #8b8173;
+  --ink: #2f2a24; --ink-soft: #5a5248; --ink-faint: #776d60;
   --accent: #2f6b4f; --accent-ink: #f7f3e8;
   --line: rgba(47,42,36,.35);
   --radius: 6px; --radius-lg: 10px;

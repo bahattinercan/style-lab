@@ -15,8 +15,7 @@ export const CONFIG = {
       background-position: 0 62%, 0 74%, 0 84%;
       background-repeat: no-repeat;
       opacity: .5;
-    }
-    h1 { font-family: var(--font-display); font-weight: 600; font-size: 56px; line-height: 1.04; letter-spacing: var(--tracking); max-width: 22ch; text-transform: uppercase; }
+    }h1   { font-family: var(--font-display); font-weight: 600; font-size: var(--type-h1); line-height: 1.04; letter-spacing: var(--tracking); max-width: 22ch; text-transform: uppercase; }
     h2 { font-family: var(--font-display); font-weight: 600; font-size: 30px; line-height: 1.16; letter-spacing: .06em; text-transform: uppercase; }
     h3 { font-family: var(--font-body); font-weight: 600; font-size: 21px; line-height: 1.28; letter-spacing: 0; text-transform: none; }
     h4 { font-family: var(--font-body); font-weight: 600; font-size: 15px; text-transform: none; }
@@ -92,7 +91,7 @@ export const CONFIG = {
       opacity: .18;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 32px; max-width: 20ch; }
+      h1  { font-size: var(--type-h1); max-width: 20ch; }
       body.scene-landing .sig::before { bottom: -22vh; }
       body.scene-landing .sig::after { display: none; }
     }

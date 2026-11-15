@@ -14,8 +14,7 @@ export const CONFIG = {
         background-size: 25% 100%;
         background-position: 0 0;
       }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: -.01em; }
-      h1 { font-size: 40px; line-height: 1.1; max-width: 22ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: -.01em; }h1 { font-size: var(--type-h1); line-height: 1.1; max-width: 22ch; }
       h2 { font-size: 28px; line-height: 1.16; }
       h3 { font-size: 20px; line-height: 1.26; }
       .lede { font-size: 16px; line-height: 1.6; max-width: 56ch; color: var(--ink-soft); }

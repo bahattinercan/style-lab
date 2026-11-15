@@ -6,7 +6,7 @@ export const CONFIG = {
   motif: 'paper',
   bodyClass: '',
   extraCss: `
-h1 { font-size: 58px; line-height: 1.04; max-width: 20ch; }
+h1   { font-size: var(--type-h1); line-height: 1.04; max-width: 20ch; }
 h2 { font-size: 32px; font-weight: 400; }
 h3 { font-size: 22px; font-weight: 500; }
 body, .lede { font-size: 17px; line-height: 1.68; }
@@ -16,7 +16,7 @@ body, .lede { font-size: 17px; line-height: 1.68; }
 .field { border-radius: 0; }
 .chip { border-radius: 0; }
 .pg-sec { padding: 34px 56px; }
-h1 { font-size: 50px; line-height: 1; max-width: 20ch; }
+h1 { font-size: var(--type-h1); line-height: 1; max-width: 20ch; }
 .pg-media img { filter: grayscale(1) contrast(1.05); }
 .pg-table td { font-family: var(--font-mono); font-size: 11.5px; }
   `,

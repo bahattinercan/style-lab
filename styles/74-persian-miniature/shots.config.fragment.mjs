@@ -3,8 +3,7 @@ export const CONFIG = {
   bodyClass: '',
   extraCss: `
     /* imza: çift altın çerçeve · madalyon kemeri · gece laciverti · 58ch metin bloğu */
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking); }
-    h1 { font-size: 42px; line-height: 1.14; max-width: 20ch; }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--tracking); }h1 { font-size: var(--type-h1); line-height: 1.14; max-width: 20ch; }
     h2 { font-size: 28px; line-height: 1.3; }
     h3 { font-size: 20px; line-height: 1.34; }
     .eyebrow, .label, .mono {

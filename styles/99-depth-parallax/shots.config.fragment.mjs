@@ -3,8 +3,7 @@ export const CONFIG = {
   bodyClass: '',
   extraCss: `
     /* imza: 3 derinlik duzlemi · atmosferik pus (blur 2px) · kaydirma hizi farki · golge hiyerarsisi */
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: var(--tracking); }
-    h1 { font-size: 48px; line-height: 1.1; max-width: 20ch; }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: var(--tracking); }h1 { font-size: var(--type-h1); line-height: 1.1; max-width: 20ch; }
     h2 { font-size: 30px; line-height: 1.24; }
     h3 { font-size: 20px; line-height: 1.3; }
     .eyebrow, .label, .mono {

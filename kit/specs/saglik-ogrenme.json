@@ -84,7 +84,30 @@
     ],
     "essence": "Clinical Trial, bir protokolü ekranda okutur: faz, no, katılımcı ve sonlanım noktası.",
     "brief": "Klinik çalışma sayfası tasarla: beyaz-gri düzen, mono faz etiketi, protokol tablosu, tek mavi accent.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }",
+    "paletteSeeds": {
+      "bg": "#fafbfc",
+      "bg2": "#eef1f4",
+      "surface": "#ffffff",
+      "surface2": "#f3f6f8",
+      "ink": "#121519",
+      "inkSoft": "#48505a",
+      "inkFaint": "#79828d",
+      "accent": "#125a86",
+      "accentInk": "#f7fbff",
+      "line": "rgba(18,21,25,.13)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "203",
@@ -171,7 +194,30 @@
     ],
     "essence": "Lab Protocol, tekrarlanabilirliği görselleştirir: her adım numaralı, süreli ve uyarılı.",
     "brief": "Laboratuvar protokolü tasarla: koyu zemin, numaralı adımlar, mono zaman damgası, sol accent uyarı bloğu.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-card { border-left: 2px solid color-mix(in srgb, var(--accent) 44%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-card { border-left: 2px solid color-mix(in srgb, var(--accent) 44%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#0f1214",
+      "bg2": "#131719",
+      "surface": "#182023",
+      "surface2": "#202a2e",
+      "ink": "#e8f0f2",
+      "inkSoft": "#a6b6ba",
+      "inkFaint": "#7d8d91",
+      "accent": "#4fc3a1",
+      "accentInk": "#04160f",
+      "line": "rgba(232,240,242,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "204",
@@ -257,7 +303,30 @@
     ],
     "essence": "Pharmacy Labels, okunurluğu tek ölçüt yapar: punto büyük, kontrast yüksek, uyarı net.",
     "brief": "İlaç kullanım bilgisi sayfası tasarla: beyaz zemin, 17px gövde, mono doz tablosu, kırmızı uyarı şeridi.",
-    "extraCss": "h1 { font-size: 44px; max-width: 24ch; }\nbody, .lede, .pg-p { font-size: 17px; line-height: 1.68; }\n.pg-table td { font-size: 14px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\nbody, .lede, .pg-p { font-size: 17px; line-height: 1.68; }\n.pg-table td { font-size: 14px; }",
+    "paletteSeeds": {
+      "bg": "#ffffff",
+      "bg2": "#f2f4f6",
+      "surface": "#ffffff",
+      "surface2": "#f6f8fa",
+      "ink": "#0f1317",
+      "inkSoft": "#414a53",
+      "inkFaint": "#71797f",
+      "accent": "#8a1b1b",
+      "accentInk": "#fff7f7",
+      "line": "rgba(15,19,23,.18)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "205",
@@ -344,7 +413,30 @@
     ],
     "essence": "Physiotherapy, planı küçük ve tamamlanabilir adımlara böler: set, tekrar, dinlenme.",
     "brief": "Fizyoterapi egzersiz planı tasarla: yumuşak yeşil, egzersiz kartları, mono set/tekrar tablosu, ilerleme çubuğu.",
-    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-media { border-radius: 16px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-media { border-radius: 16px; }",
+    "paletteSeeds": {
+      "bg": "#f7fbf8",
+      "bg2": "#e9f4ed",
+      "surface": "#ffffff",
+      "surface2": "#f1f8f3",
+      "ink": "#121a16",
+      "inkSoft": "#45564c",
+      "inkFaint": "#798b80",
+      "accent": "#166b45",
+      "accentInk": "#f4fdf8",
+      "line": "rgba(18,26,22,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "206",
@@ -430,7 +522,30 @@
     ],
     "essence": "Mental Wellness, arayüzü yavaşlatır: az seçenek, yumuşak dil, tek adım.",
     "brief": "Zihin sağlığı check-in ekranı tasarla: sakin leylak, yuvarlak kart, 5 ölçekli duygu seçimi, gizlilik notu.",
-    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card, .pg-media { border-radius: 20px; }\n.pg-list li::before { border-radius: 2px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card, .pg-media { border-radius: 20px; }\n.pg-list li::before { border-radius: 2px; }",
+    "paletteSeeds": {
+      "bg": "#faf8fd",
+      "bg2": "#f0ebf7",
+      "surface": "#ffffff",
+      "surface2": "#f5f1fa",
+      "ink": "#171322",
+      "inkSoft": "#4c4459",
+      "inkFaint": "#7f768c",
+      "accent": "#5b3f8f",
+      "accentInk": "#faf7ff",
+      "line": "rgba(23,19,34,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "207",
@@ -517,7 +632,30 @@
     ],
     "essence": "Nutrition Plan, tabağı bir plan gibi gösterir: ne, ne kadar, hangi makro.",
     "brief": "Beslenme planı tasarla: açık zemin, sebze yeşili accent, 3 öğün kartı, mono porsiyon, makro göstergesi.",
-    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-band { background: color-mix(in srgb, var(--accent) 7%, var(--bg-2)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-band { background: color-mix(in srgb, var(--accent) 7%, var(--bg-2)); }",
+    "paletteSeeds": {
+      "bg": "#fcfdf8",
+      "bg2": "#eef5e4",
+      "surface": "#ffffff",
+      "surface2": "#f4f9ee",
+      "ink": "#151a11",
+      "inkSoft": "#45503c",
+      "inkFaint": "#79856e",
+      "accent": "#3f6b1a",
+      "accentInk": "#f9fdf4",
+      "line": "rgba(21,26,17,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "208",
@@ -603,7 +741,30 @@
     ],
     "essence": "Dental Clinic, randevuyu üç alana indirir: kim, ne zaman, hangi tedavi.",
     "brief": "Diş kliniği sayfası tasarla: ferah beyaz, camgöbeği accent, 3 alanlı randevu formu, mono tedavi süresi tablosu.",
-    "extraCss": "h1 { font-size: 44px; max-width: 22ch; }\n.pg-card { border-radius: 14px; }\n.pg-media { border-radius: 14px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card { border-radius: 14px; }\n.pg-media { border-radius: 14px; }",
+    "paletteSeeds": {
+      "bg": "#fbfdfe",
+      "bg2": "#eaf6fa",
+      "surface": "#ffffff",
+      "surface2": "#f2fafc",
+      "ink": "#101619",
+      "inkSoft": "#42535a",
+      "inkFaint": "#778a92",
+      "accent": "#0d6b86",
+      "accentInk": "#f5fdff",
+      "line": "rgba(16,22,25,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "209",
@@ -690,7 +851,30 @@
     ],
     "essence": "Public Health, sayıyı ve kaynağını yan yana koyar; ikna değil bilgi verir.",
     "brief": "Halk sağlığı bilgilendirme sayfası tasarla: beyaz zemin, büyük tabular rakamlar, kaynak dipnotu, sade dil.",
-    "extraCss": "h1 { font-size: 46px; max-width: 24ch; }\n.pg-band b { font-size: 42px; font-variant-numeric: tabular-nums; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-band b { font-size: 42px; font-variant-numeric: tabular-nums; }",
+    "paletteSeeds": {
+      "bg": "#ffffff",
+      "bg2": "#eef2f7",
+      "surface": "#ffffff",
+      "surface2": "#f5f8fb",
+      "ink": "#0c1116",
+      "inkSoft": "#3f4852",
+      "inkFaint": "#6f7883",
+      "accent": "#0b4f9c",
+      "accentInk": "#f6faff",
+      "line": "rgba(12,17,22,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "210",
@@ -777,7 +961,30 @@
     ],
     "essence": "Genomics Lab, veriyi süslemeden gösterir: baz, kalite, örnek ve tarih.",
     "brief": "Genom laboratuvarı paneli tasarla: koyu zemin, turkuaz yalnız seçili örnekte, mono baz şeridi ve örnek tablosu.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
+    "paletteSeeds": {
+      "bg": "#0b0d14",
+      "bg2": "#10131c",
+      "surface": "#141824",
+      "surface2": "#1c2130",
+      "ink": "#e8ecf7",
+      "inkSoft": "#a4aec4",
+      "inkFaint": "#7a859c",
+      "accent": "#45d6c8",
+      "accentInk": "#04171a",
+      "line": "rgba(232,236,247,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "211",
@@ -863,7 +1070,30 @@
     ],
     "essence": "Veterinary Care, sahibin aklındaki üç soruyu cevaplar: ne zaman, ne yapılacak, ne kadar.",
     "brief": "Veteriner klinik sayfası tasarla: sıcak krem zemin, hasta kartları, mono aşı takvimi, kahve accent.",
-    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card { border-radius: 16px; }",
+    "paletteSeeds": {
+      "bg": "#fdfaf4",
+      "bg2": "#f4ecdf",
+      "surface": "#ffffff",
+      "surface2": "#faf4eb",
+      "ink": "#1a1712",
+      "inkSoft": "#544b3f",
+      "inkFaint": "#877c6d",
+      "accent": "#7a4a1e",
+      "accentInk": "#fdf8f2",
+      "line": "rgba(26,23,18,.13)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "48px"
+    }
   },
   {
     "num": "212",
@@ -949,7 +1179,30 @@
     ],
     "essence": "Language App, günlük beş dakikayı kurar: bir kelime, bir cümle, bir telaffuz.",
     "brief": "Dil öğrenme ekranı tasarla: açık zemin, mavi accent, kelime kartı, günlük seri ızgarası, mono telaffuz.",
-    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-chart i { border-radius: 8px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card { border-radius: 16px; }\n.pg-chart i { border-radius: 8px; }",
+    "paletteSeeds": {
+      "bg": "#fbfdff",
+      "bg2": "#eaf3fc",
+      "surface": "#ffffff",
+      "surface2": "#f2f8fe",
+      "ink": "#111a24",
+      "inkSoft": "#445565",
+      "inkFaint": "#78899a",
+      "accent": "#12558f",
+      "accentInk": "#f6fbff",
+      "line": "rgba(17,26,36,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "213",
@@ -1036,7 +1289,30 @@
     ],
     "essence": "Skill Tree, öğrenme yolunu haritalandırır: hangi düğüm, hangi ön koşul, ne kadar kaldı.",
     "brief": "Yetenek ağacı ekranı tasarla: koyu zemin, mor accent tamamlanan yolda, düğüm haritası, mono puan.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 28px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 28px); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 28px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 28px); }",
+    "paletteSeeds": {
+      "bg": "#0f1018",
+      "bg2": "#141520",
+      "surface": "#191a28",
+      "surface2": "#222333",
+      "ink": "#eceaf7",
+      "inkSoft": "#aca8c4",
+      "inkFaint": "#82809a",
+      "accent": "#8f7bf0",
+      "accentInk": "#0c0619",
+      "line": "rgba(236,234,247,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "214",
@@ -1123,7 +1399,30 @@
     ],
     "essence": "University Portal, kayıt dönemini netleştirir: hangi ders, kaç kredi, son tarih ne.",
     "brief": "Üniversite portalı tasarla: kurumsal lacivert accent, üstte kayıt şeridi, ders kataloğu mono kodlu.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }\n.pg-band { background: var(--accent); color: var(--accentInk); }\n.pg-band span { color: var(--accentInk); opacity: .84; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }\n.pg-band { background: var(--accent); color: var(--accentInk); }\n.pg-band span { color: var(--accentInk); opacity: .84; }",
+    "paletteSeeds": {
+      "bg": "#f8f9fb",
+      "bg2": "#e9edf3",
+      "surface": "#ffffff",
+      "surface2": "#f2f5f9",
+      "ink": "#111721",
+      "inkSoft": "#454f5d",
+      "inkFaint": "#77828f",
+      "accent": "#1a3a6b",
+      "accentInk": "#f7faff",
+      "line": "rgba(17,23,33,.13)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "215",
@@ -1210,7 +1509,30 @@
     ],
     "essence": "Coding Bootcamp, müfredatı haftalara böler ve her haftanın çıktısını gösterir.",
     "brief": "Kod bootcamp müfredatı tasarla: koyu zemin, terminal yeşili accent, 12 hafta ızgarası, mono süre ve proje kartı.",
-    "extraCss": "h1 { font-size: 42px; max-width: 24ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
+    "paletteSeeds": {
+      "bg": "#0c1110",
+      "bg2": "#111715",
+      "surface": "#161d1b",
+      "surface2": "#1e2725",
+      "ink": "#e9f2ef",
+      "inkSoft": "#a6b8b3",
+      "inkFaint": "#7d8f8a",
+      "accent": "#43d17a",
+      "accentInk": "#04170c",
+      "line": "rgba(233,242,239,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "216",
@@ -1296,7 +1618,30 @@
     ],
     "essence": "Kids Classroom, görevi tek ekranda bitirir: bir hedef, iki adım, net ödül.",
     "brief": "Çocuk sınıfı görev ekranı tasarla: yumuşak sarı zemin, büyük hedefler, görev kartları, metin ödül.",
-    "extraCss": "h1 { font-size: 42px; max-width: 20ch; }\n.pg-card { border-radius: 22px; }\n.btn { border-radius: 999px; min-height: 52px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 20ch; }\n.pg-card { border-radius: 22px; }\n.btn { border-radius: 999px; min-height: 52px; }",
+    "paletteSeeds": {
+      "bg": "#fffdf5",
+      "bg2": "#fff4d6",
+      "surface": "#ffffff",
+      "surface2": "#fff8e6",
+      "ink": "#1c1710",
+      "inkSoft": "#564a36",
+      "inkFaint": "#8b7d63",
+      "accent": "#8c5a06",
+      "accentInk": "#fffaf0",
+      "line": "rgba(28,23,16,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "217",
@@ -1382,7 +1727,30 @@
     ],
     "essence": "Exam Prep, çalışmayı ölçülebilir kılar: konu, soru, süre ve sonuç.",
     "brief": "Sınav hazırlık paneli tasarla: nötr gri-mavi, mono soru sayacı, konu ağırlık çubukları, süre tablosu.",
-    "extraCss": "h1 { font-size: 40px; max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-size: 12.5px; }",
+    "paletteSeeds": {
+      "bg": "#f9fafc",
+      "bg2": "#edf0f5",
+      "surface": "#ffffff",
+      "surface2": "#f4f6fa",
+      "ink": "#12161c",
+      "inkSoft": "#49515c",
+      "inkFaint": "#7b838f",
+      "accent": "#234a7a",
+      "accentInk": "#f7faff",
+      "line": "rgba(18,22,28,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "218",
@@ -1469,7 +1837,30 @@
     ],
     "essence": "Music Lesson, pratiği ölçülebilir kılar: enstrüman, seviye, tempo ve dakika.",
     "brief": "Müzik dersi sayfası tasarla: sıcak ahşap zemin, bordo accent, nota çizgisi, mono tempo bilgisi.",
-    "extraCss": "h1 { font-size: 44px; max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 10%, transparent) 0 1px, transparent 1px 16px); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 10%, transparent) 0 1px, transparent 1px 16px); }",
+    "paletteSeeds": {
+      "bg": "#fbf7f1",
+      "bg2": "#f3e9dc",
+      "surface": "#ffffff",
+      "surface2": "#f8f1e7",
+      "ink": "#1b1610",
+      "inkSoft": "#544a3c",
+      "inkFaint": "#877a68",
+      "accent": "#7a2e2a",
+      "accentInk": "#fdf7f6",
+      "line": "rgba(27,22,16,.13)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "219",
@@ -1556,7 +1947,30 @@
     ],
     "essence": "Lab Simulation, deneyi parametreler üzerinden öğretir: değiştir, ölç, karşılaştır.",
     "brief": "Sanal laboratuvar ekranı tasarla: koyu zemin, camgöbeği ölçüm accent, 3 değişken kaydırıcı, mono sonuç tablosu.",
-    "extraCss": "h1 { font-size: 38px; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
+    "paletteSeeds": {
+      "bg": "#0d1114",
+      "bg2": "#11161a",
+      "surface": "#161d22",
+      "surface2": "#1e272d",
+      "ink": "#e8f1f5",
+      "inkSoft": "#a4b4bc",
+      "inkFaint": "#7b8b93",
+      "accent": "#3fb6c9",
+      "accentInk": "#041619",
+      "line": "rgba(232,241,245,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "220",
@@ -1642,7 +2056,30 @@
     ],
     "essence": "Peer Study, ortak çalışmayı planlar: ne zaman, kiminle, kaç kişi.",
     "brief": "Akran çalışma grubu sayfası tasarla: sıcak gri zemin, mor accent, oturum kartları, mono saat ve kontenjan.",
-    "extraCss": "h1 { font-size: 42px; max-width: 22ch; }\n.pg-card { border-radius: 14px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card { border-radius: 14px; }",
+    "paletteSeeds": {
+      "bg": "#faf9fc",
+      "bg2": "#f0eef5",
+      "surface": "#ffffff",
+      "surface2": "#f5f3f9",
+      "ink": "#17151e",
+      "inkSoft": "#4d4859",
+      "inkFaint": "#7f788c",
+      "accent": "#5a3f8a",
+      "accentInk": "#faf7ff",
+      "line": "rgba(23,21,30,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   },
   {
     "num": "221",
@@ -1729,6 +2166,29 @@
     ],
     "essence": "Certificate Wallet, kazanımı doğrulanabilir kılar: kod, tarih, kapsam ve veren kurum.",
     "brief": "Sertifika cüzdanı tasarla: koyu mavi zemin, altın mühür halkası, mono doğrulama kodu, serif başlık.",
-    "extraCss": "h1 { font-size: 42px; letter-spacing: .03em; max-width: 24ch; }\n.pg-card { border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .03em; max-width: 24ch; }\n.pg-card { border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#0c1120",
+      "bg2": "#111830",
+      "surface": "#161f3a",
+      "surface2": "#1f2a4a",
+      "ink": "#eaf0fb",
+      "inkSoft": "#a6b4d2",
+      "inkFaint": "#7c8bab",
+      "accent": "#c9a25c",
+      "accentInk": "#141003",
+      "line": "rgba(234,240,251,.15)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "50px"
+    }
   }
 ]

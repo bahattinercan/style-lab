@@ -8,7 +8,7 @@
  * v6 sözleşmesi: koyu mod (palette.dark) YOK, hareket (motion) YOK, sahne tek (01-page.png).
  */
 import { contrastRatio, contrastOnSurface, apcaContrast, parseColor } from '../color.mjs';
-import { deriveStatusColors } from './palette.mjs';
+import { CORE_PALETTE_TARGETS, deriveCorePalette, deriveStatusColors } from './palette.mjs';
 
 const hex = (v) => String(v).trim();
 
@@ -92,7 +92,9 @@ export function validateSpec(spec, ctx) {
   need(typeof spec.tagline === 'string' && spec.tagline.length > 20, `${spec.slug}: tagline yok/kısa`);
   if (spec.tagline && spec.tagline.length > 170) warnings.push(`${spec.slug}: tagline ${spec.tagline.length} karakter (>170)`);
 
-  const palette = spec.palette ?? {};
+  const palette = spec.paletteSeeds
+    ? deriveCorePalette(spec.paletteSeeds, spec.paletteTargets)
+    : spec.palette ?? {};
   for (const [json] of CSS_KEYS) need(parseColor(palette[json]) !== null, `${spec.slug}: palette.${json} eksik/geçersiz`);
   const fonts = spec.fonts ?? [];
   need(fonts.length === 3, `${spec.slug}: fonts [display, body, mono] üçlüsü olmalı`);
@@ -111,7 +113,7 @@ export function validateSpec(spec, ctx) {
   need(Boolean(ctx.band), `${spec.slug}: band "${spec.band}" kit/specs/bands.json içinde yok`);
 
   if (!errors.length) {
-    const c = inspectPalette(spec.palette);
+    const c = inspectPalette(palette);
     if (c.body < 4.5) errors.push(`${spec.slug}: ink/bg ${c.body}:1 < 4.5`);
     if (c.soft < 4.5) errors.push(`${spec.slug}: ink-soft/bg ${c.soft}:1 < 4.5 (--strict-soft)`);
     if (c.accentInk < 4.5) errors.push(`${spec.slug}: accent-ink/accent ${c.accentInk}:1 < 4.5`);
@@ -163,6 +165,8 @@ export function tokensJson(spec, ctx) {
     version: 6,
     css,
     palette: Object.fromEntries(CSS_KEYS.map(([json]) => [json, hex(p[json])])),
+    paletteSeeds: spec.paletteSeeds ?? spec.palette,
+    paletteTargets: spec.paletteTargets ?? CORE_PALETTE_TARGETS,
     status: statusOf(spec),
     typography: {
       display: fonts[0],
@@ -516,20 +520,23 @@ ${tokenBlock}
 
 /** Üretilecek tüm dosyalar: yol → içerik. */
 export function buildStyle(spec, ctx) {
-  const dir = dirOf(spec);
-  const c = inspectPalette(spec.palette);
+  const resolved = spec.paletteSeeds
+    ? { ...spec, palette: deriveCorePalette(spec.paletteSeeds, spec.paletteTargets) }
+    : spec;
+  const dir = dirOf(resolved);
+  const c = inspectPalette(resolved.palette);
   const styleCtx = {
     ...ctx,
-    screens: spec.screens ?? ctx.band.screens,
-    traps: spec.traps ?? ctx.band.traps,
+    screens: resolved.screens ?? ctx.band.screens,
+    traps: resolved.traps ?? ctx.band.traps,
   };
   return {
     files: {
-      [`styles/${dir}/tokens.json`]: JSON.stringify(tokensJson(spec, ctx), null, 2) + '\n',
-      [`styles/${dir}/token-block.css`]: tokenBlockCss(spec, ctx),
-      [`styles/${dir}/shots.config.fragment.mjs`]: fragmentModule(spec, ctx),
-      [`styles/${dir}/keywords.json`]: JSON.stringify(spec.keywords, null, 2) + '\n',
-      [`styles/${dir}/style.md`]: styleMarkdown(spec, styleCtx),
+      [`styles/${dir}/tokens.json`]: JSON.stringify(tokensJson(resolved, ctx), null, 2) + '\n',
+      [`styles/${dir}/token-block.css`]: tokenBlockCss(resolved, ctx),
+      [`styles/${dir}/shots.config.fragment.mjs`]: fragmentModule(resolved, ctx),
+      [`styles/${dir}/keywords.json`]: JSON.stringify(resolved.keywords, null, 2) + '\n',
+      [`styles/${dir}/style.md`]: styleMarkdown(resolved, styleCtx),
     },
     metrics: c,
   };

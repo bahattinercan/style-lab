@@ -84,7 +84,30 @@
     ],
     "essence": "Fantasy RPG, bir envanterin ve görev günlüğünün okunabilir kalması için süsü tek çizgiye indirir; ağırlık tipografiden gelir.",
     "brief": "Fantastik RPG karakter sayfası tasarla: altın vurgu yalnız nadirlik ve ana eylem; kitabe başlık, serif gövde, 4 kolon envanter.",
-    "extraCss": "h1 { font-size: 46px; letter-spacing: .04em; max-width: 24ch; }\nh2 { font-size: 26px; letter-spacing: .03em; }\n.panel, .pg-card { background-image: linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%); }\n.pg-card { border-top-width: 1px; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .04em; max-width: 24ch; }\nh2 { font-size: 26px; letter-spacing: .03em; }\n.panel, .pg-card { background-image: linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%); }\n.pg-card { border-top-width: 1px; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#14100c",
+      "bg2": "#1a150f",
+      "surface": "#201a13",
+      "surface2": "#2a2219",
+      "ink": "#f1e6d2",
+      "inkSoft": "#c3b499",
+      "inkFaint": "#94886f",
+      "accent": "#d4a24c",
+      "accentInk": "#1a1206",
+      "line": "rgba(241,230,210,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "46px"
+    }
   },
   {
     "num": "155",
@@ -172,7 +195,30 @@
     ],
     "essence": "Sci-Fi Cockpit, bir kokpitin ölçüm disiplinini korur: her gösterge bir eşiğe bağlıdır ve yalnız tehlikede renk değiştirir.",
     "brief": "Uzay aracı kokpiti paneli tasarla: geniş tracking teknik başlık, mavi sinyal accent yalnız ölçüm ve aktif sistemde, keskin panel.",
-    "extraCss": "h1 { font-size: 40px; letter-spacing: .06em; max-width: 26ch; }\nh2 { font-size: 22px; letter-spacing: .05em; }\n.panel, .pg-card { border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line)); }\n.pg-band { background: color-mix(in srgb, var(--accent) 5%, var(--bg-2)); }\n.pg-bars i { height: 4px; border-radius: 0; }"
+    "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .06em; max-width: 26ch; }\nh2 { font-size: 22px; letter-spacing: .05em; }\n.panel, .pg-card { border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line)); }\n.pg-band { background: color-mix(in srgb, var(--accent) 5%, var(--bg-2)); }\n.pg-bars i { height: 4px; border-radius: 0; }",
+    "paletteSeeds": {
+      "bg": "#050a10",
+      "bg2": "#08121b",
+      "surface": "#0b1622",
+      "surface2": "#101f2e",
+      "ink": "#d9ecff",
+      "inkSoft": "#94b3cf",
+      "inkFaint": "#6d8ca8",
+      "accent": "#4aa8ff",
+      "accentInk": "#04121f",
+      "line": "rgba(217,236,255,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "156",
@@ -260,7 +306,30 @@
     ],
     "essence": "Retro Console, pixel estetiğini okunurluk sınırında tutar: başlık pixel, gövde sakin; nostalji süs değil ritimdir.",
     "brief": "16-bit konsol menüsü tasarla: pixel başlık yalnız üç satır, amber accent tek, keskin köşe, gövde okunur sans.",
-    "extraCss": "h1 { font-size: 26px; line-height: 1.5; font-weight: 400; max-width: 24ch; }\nh2 { font-size: 18px; line-height: 1.4; font-weight: 400; }\nh3 { font-size: 15px; }\n.btn { font-family: var(--font-display); font-size: 10px; text-transform: uppercase; }\n.pg-num { font-family: var(--font-mono); }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.5; font-weight: 400; max-width: 24ch; }\nh2 { font-size: 18px; line-height: 1.4; font-weight: 400; }\nh3 { font-size: 15px; }\n.btn { font-family: var(--font-display); font-size: 10px; text-transform: uppercase; }\n.pg-num { font-family: var(--font-mono); }",
+    "paletteSeeds": {
+      "bg": "#101418",
+      "bg2": "#151b21",
+      "surface": "#1a222a",
+      "surface2": "#222d37",
+      "ink": "#e6eef4",
+      "inkSoft": "#a4b6c4",
+      "inkFaint": "#7d8f9d",
+      "accent": "#f2c434",
+      "accentInk": "#1a1403",
+      "line": "rgba(230,238,244,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "26px"
+    }
   },
   {
     "num": "157",
@@ -349,7 +418,30 @@
     ],
     "essence": "Esports League, bir yayın grafiğinin hiyerarşisini kullanır: izleyici iki saniyede kimin önde olduğunu görmeli.",
     "brief": "Espor turnuva sayfası tasarla: dev uppercase başlık, mor accent yalnız kazanan ve CTA, maç kartı + sağa hizalı skor tablosu.",
-    "extraCss": "h1 { font-size: 56px; line-height: .96; letter-spacing: .01em; max-width: 18ch; }\nh2 { font-size: 30px; line-height: 1.04; }\n.brand { font-family: var(--font-display); letter-spacing: .1em; }\n.pg-band b { font-family: var(--font-display); font-size: 38px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: .96; letter-spacing: .01em; max-width: 18ch; }\nh2 { font-size: 30px; line-height: 1.04; }\n.brand { font-family: var(--font-display); letter-spacing: .1em; }\n.pg-band b { font-family: var(--font-display); font-size: 38px; }",
+    "paletteSeeds": {
+      "bg": "#0d0b14",
+      "bg2": "#120f1c",
+      "surface": "#171326",
+      "surface2": "#1f1a30",
+      "ink": "#f0ecff",
+      "inkSoft": "#b2a8cf",
+      "inkFaint": "#8b81a8",
+      "accent": "#b07cff",
+      "accentInk": "#120720",
+      "line": "rgba(240,236,255,.15)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "56px"
+    }
   },
   {
     "num": "158",
@@ -436,7 +528,30 @@
     ],
     "essence": "Indie Pixel, büyük stüdyo cilası yerine el yapımı düzensizliği korur; ama okunurluk ve hiyerarşi pazarlıksızdır.",
     "brief": "Bağımsız oyun tanıtım sayfası tasarla: pixel etiketler, yeşil accent, keskin kutu, bilinçli düzensiz kart aralığı.",
-    "extraCss": "h1 { font-size: 44px; line-height: 1.12; max-width: 24ch; }\nh2 { font-size: 26px; }\n.eyebrow, .label, .pg-cap { font-family: var(--font-display); text-transform: uppercase; }\n.pg-trio { gap: 18px; }\n.pg-trio .pg-card:nth-child(2) { margin-top: 10px; }\n.pg-media { border-style: dashed; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.12; max-width: 24ch; }\nh2 { font-size: 26px; }\n.eyebrow, .label, .pg-cap { font-family: var(--font-display); text-transform: uppercase; }\n.pg-trio { gap: 18px; }\n.pg-trio .pg-card:nth-child(2) { margin-top: 10px; }\n.pg-media { border-style: dashed; }",
+    "paletteSeeds": {
+      "bg": "#1a1526",
+      "bg2": "#211b30",
+      "surface": "#271f38",
+      "surface2": "#332945",
+      "ink": "#f2e9ff",
+      "inkSoft": "#bfb0d8",
+      "inkFaint": "#988bb5",
+      "accent": "#63d471",
+      "accentInk": "#04170a",
+      "line": "rgba(242,233,255,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "44px"
+    }
   },
   {
     "num": "159",
@@ -523,7 +638,30 @@
     ],
     "essence": "Card TCG, bir kartın iki saniyede okunmasını sağlar: ad, nadirlik, sayı ve kural aynı sütun ritmini izler.",
     "brief": "Koleksiyon kartı galerisi tasarla: nadirlik çerçevesi, kırmızı mühür accent, 32ch kart metni, mono künye.",
-    "extraCss": "h1 { font-size: 42px; letter-spacing: .03em; max-width: 22ch; }\nh2 { font-size: 24px; letter-spacing: .02em; }\n.pg-card { border-radius: 10px; border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }\n.pg-media { border-radius: 10px; }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .03em; max-width: 22ch; }\nh2 { font-size: 24px; letter-spacing: .02em; }\n.pg-card { border-radius: 10px; border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }\n.pg-media { border-radius: 10px; }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
+    "paletteSeeds": {
+      "bg": "#171313",
+      "bg2": "#1d1918",
+      "surface": "#241f1d",
+      "surface2": "#2e2825",
+      "ink": "#f4e9dc",
+      "inkSoft": "#c0ae9c",
+      "inkFaint": "#93847a",
+      "accent": "#e0463c",
+      "accentInk": "#1c0805",
+      "line": "rgba(244,233,220,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "42px"
+    }
   },
   {
     "num": "160",
@@ -610,7 +748,30 @@
     ],
     "essence": "Survival Craft, envanteri bir hikâye gibi okutur: her satırda ne var, kaç tane var ve neye yarar.",
     "brief": "Hayatta kalma oyunu envanteri tasarla: kirli yeşil accent, kalın gövde, dayanıklılık çubukları ve mono kaynak sayıları.",
-    "extraCss": "h1 { font-size: 44px; line-height: 1.1; max-width: 24ch; }\nh2 { font-size: 26px; }\n.pg-bars i { height: 8px; border-radius: 2px; }\n.pg-list li::before { border-radius: 2px; }\n.pg-media { border-style: solid; border-width: 2px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.1; max-width: 24ch; }\nh2 { font-size: 26px; }\n.pg-bars i { height: 8px; border-radius: 2px; }\n.pg-list li::before { border-radius: 2px; }\n.pg-media { border-style: solid; border-width: 2px; }",
+    "paletteSeeds": {
+      "bg": "#12140f",
+      "bg2": "#181b14",
+      "surface": "#1e2218",
+      "surface2": "#282d20",
+      "ink": "#e9ecdf",
+      "inkSoft": "#b3b9a4",
+      "inkFaint": "#8a9079",
+      "accent": "#b8c26a",
+      "accentInk": "#12160a",
+      "line": "rgba(233,236,223,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "44px"
+    }
   },
   {
     "num": "161",
@@ -697,7 +858,30 @@
     ],
     "essence": "Mobile Casual, başparmakla kullanılan bir ekranda hiyerarşiyi tek sütuna indirir; renk sevinç taşır, karmaşa taşımaz.",
     "brief": "Mobil oyun günlük görev ekranı tasarla: açık zemin, mercan accent tek, 48px dokunma hedefi, yuvarlak kart.",
-    "extraCss": "h1 { font-size: 40px; line-height: 1.12; max-width: 20ch; }\nh2 { font-size: 24px; }\n.btn { border-radius: 999px; padding: 0 24px; }\n.btn.ghost, .btn.soft { border-radius: 999px; }\n.field { border-radius: 14px; }\n.chip { border-radius: 999px; }\n.pg-media, .pg-card { border-radius: 20px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.12; max-width: 20ch; }\nh2 { font-size: 24px; }\n.btn { border-radius: 999px; padding: 0 24px; }\n.btn.ghost, .btn.soft { border-radius: 999px; }\n.field { border-radius: 14px; }\n.chip { border-radius: 999px; }\n.pg-media, .pg-card { border-radius: 20px; }",
+    "paletteSeeds": {
+      "bg": "#fff5f0",
+      "bg2": "#ffe9df",
+      "surface": "#ffffff",
+      "surface2": "#fff1ea",
+      "ink": "#241a17",
+      "inkSoft": "#6b4f45",
+      "inkFaint": "#9b8177",
+      "accent": "#c9341f",
+      "accentInk": "#ffffff",
+      "line": "rgba(36,26,23,.12)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "40px"
+    }
   },
   {
     "num": "162",
@@ -785,7 +969,30 @@
     ],
     "essence": "Horror Occult, korkuyu süsle değil boşluk ve suskunlukla kurar: sayfa ne kadar az konuşursa o kadar tedirgin eder.",
     "brief": "Korku oyunu menüsü tasarla: siyah zemin, ince serif başlık, kan kırmızısı yalnız uyarıda, geniş boşluk.",
-    "extraCss": "h1 { font-size: 52px; font-weight: 300; line-height: 1.06; letter-spacing: .01em; max-width: 22ch; }\nh2 { font-size: 28px; font-weight: 400; }\n.pg-sec { padding: 40px 56px; }\n.pg-foot, .pg-cta { border-color: color-mix(in srgb, var(--accent) 18%, var(--line)); }\n.pg-media { filter: saturate(.7) contrast(1.05); }"
+    "extraCss": "h1 { font-size: var(--type-h1); font-weight: 300; line-height: 1.06; letter-spacing: .01em; max-width: 22ch; }\nh2 { font-size: 28px; font-weight: 400; }\n.pg-sec { padding: 40px 56px; }\n.pg-foot, .pg-cta { border-color: color-mix(in srgb, var(--accent) 18%, var(--line)); }\n.pg-media { filter: saturate(.7) contrast(1.05); }",
+    "paletteSeeds": {
+      "bg": "#0a0909",
+      "bg2": "#100e0e",
+      "surface": "#151212",
+      "surface2": "#1d1919",
+      "ink": "#eae2dd",
+      "inkSoft": "#a89c95",
+      "inkFaint": "#7d726c",
+      "accent": "#c8322b",
+      "accentInk": "#f7ece8",
+      "line": "rgba(234,226,221,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "52px"
+    }
   },
   {
     "num": "163",
@@ -874,6 +1081,29 @@
     ],
     "essence": "Racing Neon, neonu ölçülü kullanır: tek camgöbeği sinyal, statik çizgiler ve keskin tipografi; glow efekti yok.",
     "brief": "Gece yarışı oyunu sayfası tasarla: siyah zemin, camgöbeği tek accent, eğik dev başlık, statik hız çizgileri.",
-    "extraCss": "h1 { font-size: 54px; transform: skewX(-6deg); transform-origin: left; letter-spacing: .01em; max-width: 18ch; }\nh2 { font-size: 28px; }\n.panel, .pg-card { border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--line)); }\n.pg-band { background: color-mix(in srgb, var(--accent) 7%, var(--bg-2)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); transform: skewX(-6deg); transform-origin: left; letter-spacing: .01em; max-width: 18ch; }\nh2 { font-size: 28px; }\n.panel, .pg-card { border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--line)); }\n.pg-band { background: color-mix(in srgb, var(--accent) 7%, var(--bg-2)); }",
+    "paletteSeeds": {
+      "bg": "#08080f",
+      "bg2": "#0c0c18",
+      "surface": "#121224",
+      "surface2": "#1a1a33",
+      "ink": "#eaf6ff",
+      "inkSoft": "#9fb3d1",
+      "inkFaint": "#71839f",
+      "accent": "#31e1f5",
+      "accentInk": "#04141a",
+      "line": "rgba(234,246,255,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "54px"
+    }
   }
 ]

@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Michroma yalnız display · Inter gövde · JetBrains sayı ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: none; }
-      h1 { font-size: 34px; line-height: 1.15; letter-spacing: -.01em; max-width: 24ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: none; }h1  { font-size: var(--type-h1); line-height: 1.15; letter-spacing: -.01em; max-width: 24ch; }
       h2 { font-size: 26px; line-height: 1.22; letter-spacing: 0; max-width: 32ch; }
       h3 { font-family: var(--font-body); font-weight: 600; font-size: 20px; line-height: 1.3; letter-spacing: -.005em; }
       h4 { font-family: var(--font-body); font-weight: 600; font-size: 14px; line-height: 1.35; letter-spacing: 0; }
@@ -121,7 +120,7 @@ export const CONFIG = {
       body.scene-dashboard .side { border-radius: 0; }
 
       @media (max-width: 900px) {
-        h1 { font-size: 24px; max-width: 22ch; }
+        h1  { font-size: var(--type-h1); max-width: 22ch; }
         h2 { font-size: 20px; }
         h3 { font-size: 17px; }
         .lede { font-size: 13px; }

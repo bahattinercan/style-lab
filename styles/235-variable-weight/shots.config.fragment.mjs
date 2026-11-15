@@ -6,7 +6,7 @@ export const CONFIG = {
   motif: 'none',
   bodyClass: '',
   extraCss: `
-h1 { font-size: 72px; line-height: .98; letter-spacing: -.035em; max-width: 18ch; }
+h1   { font-size: var(--type-h1); line-height: .98; letter-spacing: -.035em; max-width: 18ch; }
 h2 { font-size: 32px; line-height: 1.08; }
 h3 { font-size: 20px; }
 .panel, .pg-card, .pg-media { border-radius: 0; box-shadow: none; }
@@ -15,7 +15,7 @@ h3 { font-size: 20px; }
 .chip { border-radius: 0; font-family: var(--font-mono); }
 .pg-sec { padding: 32px 56px; }
 .pg-logos-row { font-family: var(--font-display); font-size: 18px; }
-h1 { font-size: 72px; line-height: .96; font-weight: 800; max-width: 16ch; }
+h1 { font-size: var(--type-h1); line-height: .96; font-weight: 800; max-width: 16ch; }
 h2 { font-size: 40px; font-weight: 400; }
 h3 { font-size: 16px; font-weight: 700; }
   `,

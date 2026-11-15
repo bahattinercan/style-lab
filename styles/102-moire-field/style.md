@@ -52,7 +52,7 @@ Baskı öncesi tram hataları, televizyon ekranı girişimi, op-art (Bridget Ril
 
 | Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
 |---|---|---|---|
-| `--bg` | `#a6a29b` | sayfa zemini (orta ton) | kart zemini |
+| `--bg` | `#b6b2ab` | sayfa zemini (orta ton) | kart zemini |
 | `--bg-2` | `#9c9891` | bölüm ayırıcı, perde zemini | metin zemini |
 | `--surface` | `#b1ada6` | kart, panel (bir ton açık) | sayfa zemini |
 | `--surface-2` | `#8e8a84` | ikincil yüzey, chip, zebra | birincil kart |
@@ -227,7 +227,7 @@ Stil: Moiré Field (styles/102-moire-field/style.md, tokens.json)
 Token: sadece [data-style="moire-field"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: display Silkscreen 400 (yalnız başlık/etiket), gövde Inter 400/600, sayı JetBrains Mono.
   Ölçek 11/12/13/15/18/24/38; gövde ölçü 70ch ve kısa bloklar.
-Yüzey: orta ton gri (#a6a29b); radius DAİMA 0; ana kenarlık 1px var(--ink); gölge yok.
+Yüzey: orta ton gri (#b6b2ab); radius DAİMA 0; ana kenarlık 1px var(--ink); gölge yok.
 Imza: iki çizgi perdesi (4° / 11°, aralık 5px / 7px, opaklık <= .18) + girişim tepelerinde
   accent magenta noktalar; metin daima opak katmanda.
 Renk: tek accent #9c2e6e; orta ton zemin nedeniyle ink-faint etkileşimli metinde kullanılmaz.
@@ -250,7 +250,7 @@ Yasak: üçüncü perde, saniyede 1+ desen kayması, gradient/blur/gölge, yuvar
 
 ```css
 [data-style="moire-field"] {
-  --bg: #a6a29b; --bg-2: #9c9891;
+  --bg: #b6b2ab; --bg-2: #9c9891;
   --surface: #b1ada6; --surface-2: #8e8a84;
   --ink: #12130f; --ink-soft: #2b2c28; --ink-faint: #45463f;
   --accent: #9c2e6e; --accent-ink: #ffffff;

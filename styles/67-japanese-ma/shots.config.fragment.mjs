@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'none',
   bodyClass: '',
-  extraCss: `
-      /* imza: ölçülmüş boşluk · tek yatay çizgi · mühür kırmızısı nokta */
-      h1 { font-size: 64px; line-height: 1.02; letter-spacing: -.03em; font-weight: 400; max-width: 17ch; }
+  extraCss: `/* imza: ölçülmüş boşluk · tek yatay çizgi · mühür kırmızısı nokta */
+      h1   { font-size: var(--type-h1); line-height: 1.02; letter-spacing: -.03em; font-weight: 400; max-width: 17ch; }
       h2 { font-size: 26px; line-height: 1.2; letter-spacing: -.02em; font-weight: 400; }
       h3 { font-size: 17px; line-height: 1.35; letter-spacing: -.01em; }
       .eyebrow, .label, .mono { letter-spacing: .22em; font-size: 11px; text-transform: uppercase; }
@@ -45,7 +44,7 @@ export const CONFIG = {
       /* kimlik: başlık üstü tek 1px çizgi (başka süs yok) */
       .hero-copy h1 { border-top: 1px solid var(--line); padding-top: 28px; }
       @media (max-width: 900px) {
-        h1 { font-size: 40px; max-width: 15ch; }
+        h1  { font-size: var(--type-h1); max-width: 15ch; }
         .lede { max-width: 34ch; }
         body.scene-landing .sig::after { display: none; }
         body.scene-landing .sig::before { top: 92px; left: auto; right: 6vw; width: 20px; height: 20px; }

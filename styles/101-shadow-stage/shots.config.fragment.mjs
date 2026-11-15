@@ -13,8 +13,7 @@ export const CONFIG = {
         radial-gradient(40% 38% at 78% 82%, var(--ink) 0%, transparent 72%);
       opacity: .16;
       filter: blur(24px);
-    }
-    h1 { font-family: var(--font-display); font-weight: 400; font-size: 50px; line-height: 1.08; letter-spacing: var(--tracking); max-width: 22ch; }
+    }h1   { font-family: var(--font-display); font-weight: 400; font-size: var(--type-h1); line-height: 1.08; letter-spacing: var(--tracking); max-width: 22ch; }
     h2 { font-family: var(--font-display); font-weight: 400; font-size: 27px; line-height: 1.22; letter-spacing: .02em; }
     h3 { font-family: var(--font-body); font-weight: 600; font-size: 19px; line-height: 1.3; letter-spacing: 0; }
     h4 { font-family: var(--font-body); font-weight: 600; font-size: 14px; }
@@ -80,7 +79,7 @@ export const CONFIG = {
       opacity: .22;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 30px; max-width: 22ch; }
+      h1  { font-size: var(--type-h1); max-width: 22ch; }
       body.scene-landing .sig::before { opacity: .14; }
     }
   

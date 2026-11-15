@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Anton plaka başlık · Jost gövde · Space Mono metraj ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; }
-      h1 { font-size: 64px; line-height: .92; letter-spacing: .01em; max-width: 16ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; }h1  { font-size: var(--type-h1); line-height: .92; letter-spacing: .01em; max-width: 16ch; }
       h2 { font-size: 30px; line-height: 1.05; letter-spacing: 0; max-width: 24ch; }
       h3, h4 { font-family: var(--font-body); font-weight: 600; letter-spacing: 0; }
       h3 { font-size: 21px; line-height: 1.25; }
@@ -145,7 +144,7 @@ export const CONFIG = {
       body.scene-dashboard .kpi .v { font-family: var(--font-mono); }
 
       @media (max-width: 900px) {
-        h1 { font-size: 34px; max-width: 18ch; }
+        h1  { font-size: var(--type-h1); max-width: 18ch; }
         h2 { font-size: 22px; }
         .lede { font-size: 15px; }
         .btn { min-height: 48px; box-shadow: 4px 4px 0 var(--ink); }

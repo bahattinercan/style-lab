@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'grid',
   bodyClass: '',
-  extraCss: `
-      /* imza: numaralı başlık · özet bloğu (3px sol çizgi) · kenar notu · dipnot çizgisi */
-      h1 { font-size: 34px; line-height: 1.18; letter-spacing: -0.005em; font-weight: 600; font-family: var(--font-display); max-width: 28ch; }
+  extraCss: `/* imza: numaralı başlık · özet bloğu (3px sol çizgi) · kenar notu · dipnot çizgisi */
+      h1   { font-size: var(--type-h1); line-height: 1.18; letter-spacing: -0.005em; font-weight: 600; font-family: var(--font-display); max-width: 28ch; }
       h2 { font-size: 24px; line-height: 1.24; letter-spacing: -0.005em; font-weight: 600; }
       h2::before { content: counter(sec) ". "; color: var(--ink-soft); }
       h3 { font-size: 18px; line-height: 1.3; font-weight: 600; }
@@ -33,7 +32,7 @@ export const CONFIG = {
       table th { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-align: left; border-bottom: 1px solid var(--ink); }
       table td { border-bottom: 1px solid var(--line); }
       @media (max-width: 900px) {
-        h1 { font-size: 26px; }
+        h1  { font-size: var(--type-h1); }
         .quad, .m-grid { grid-template-columns: 1fr; }
       }
     

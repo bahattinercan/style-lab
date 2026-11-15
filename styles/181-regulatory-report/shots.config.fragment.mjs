@@ -6,7 +6,7 @@ export const CONFIG = {
   motif: 'none',
   bodyClass: '',
   extraCss: `
-h1 { font-size: 40px; max-width: 24ch; }
+h1   { font-size: var(--type-h1); max-width: 24ch; }
 h2 { font-size: 24px; }
 h3 { font-size: 17px; }
 body { font-size: 14px; }
@@ -18,7 +18,7 @@ body { font-size: 14px; }
 .pg-sec { padding: 22px 56px; }
 .pg-trio .pg-card { border-top-width: 1px; }
 .mono, .num, .pg-cap { font-variant-numeric: tabular-nums; }
-h1 { font-size: 44px; font-weight: 600; max-width: 24ch; }
+h1 { font-size: var(--type-h1); font-weight: 600; max-width: 24ch; }
 h2 { font-size: 26px; font-weight: 600; }
 body, .lede, .pg-p { font-size: 16px; line-height: 1.7; }
 .pg-card { border-radius: 0; box-shadow: none; }

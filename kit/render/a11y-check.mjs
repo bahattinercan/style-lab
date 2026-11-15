@@ -8,10 +8,10 @@
  * denetlenir. npm bağımlılığı yok, şablonlar kalıcı olarak değiştirilmez.
  *
  * Kullanım:
- *   node kit/render/a11y-check.mjs --styles 01-minimalism,08-glassmorphism --scene form
- *   node kit/render/a11y-check.mjs --scene form            # tüm stiller
- *   node kit/render/a11y-check.mjs --styles y2k --scene form --json
- *   node kit/render/a11y-check.mjs --styles y2k --scene form --warn-only
+ *   node kit/render/a11y-check.mjs --styles 01-minimalism,08-glassmorphism --scene landing
+ *   node kit/render/a11y-check.mjs --scene landing            # tüm stiller
+ *   node kit/render/a11y-check.mjs --styles y2k --scene landing --json
+ *   node kit/render/a11y-check.mjs --styles y2k --scene landing --warn-only
  *
  * Denetimler (her biri sayı + örnek):
  *   1 h1        : <h1> sayısı tam 1 mi
@@ -22,10 +22,6 @@
  *
  * Çıkış kodu: kritik ihlal (1-4) varsa 1; yalnız 5 varsa 0; --warn-only her durumda 0.
  *
- * DURUM (v6): bu denetim silinen sahne şablonlarına (form/dashboard/mobile) yazıldı. Tek sayfa
- * şablonu (`page.html`) nav/hero partial'larını render sırasında eklediği için ham şablonda <h1>
- * görünmüyor → yanlış pozitif. Bu yüzden `kit/gates.sh` içine BAĞLANMADI; yeniden bağlamak için
- * önce partial'ları çözen bir adım gerekir.
  * Tarayıcı: BROWSER ortam değişkeni veya render-shots.mjs'deki aday yollar.
  */
 import fs from 'node:fs';
@@ -34,6 +30,9 @@ import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import { icon } from './icons.mjs';
+import { configFor } from './shots.config.mjs';
+import { inlineTypeScale } from '../lib/type-scale.mjs';
+import { applySectionPlan } from '../lib/section-plan.mjs';
 
 const run = promisify(execFile);
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -107,9 +106,70 @@ function styleDirs(only) {
  * doldurulur (stil kimliği + ikonlar). Renk/radius/font yerleştirmesi erişilebilirlik
  * denetimi için gereksiz; tokens.css ve scene.css linkleri şablonda olduğu gibi kalır.
  */
-function fill(tpl, slug, num) {
+function fill(tpl, slug, dirName) {
+  if (arg('scene', 'landing') === 'landing') {
+    const styleDir = path.join(STYLES_DIR, dirName);
+    const tokens = JSON.parse(fs.readFileSync(path.join(styleDir, 'tokens.json'), 'utf8'));
+    const layoutDefs = JSON.parse(fs.readFileSync(path.join(HERE, 'layouts.json'), 'utf8'));
+    const layout = {
+      hero: layoutDefs.heroes.some((item) => item.id === tokens.layout?.hero) ? tokens.layout.hero : 'split',
+      nav: layoutDefs.navs.some((item) => item.id === tokens.layout?.nav) ? tokens.layout.nav : 'inline',
+      density: layoutDefs.densities.some((item) => item.id === tokens.layout?.density) ? tokens.layout.density : 'balanced',
+      sectionPlan: layoutDefs.sections.some((item) => item.id === tokens.layout?.sectionPlan) ? tokens.layout.sectionPlan : layoutDefs.sections[0].id,
+    };
+    const industry = tokens.industries?.[0] ?? 'saas';
+    const contentPath = path.join(ROOT, 'kit', 'content', `${industry}.json`);
+    const copy = fs.existsSync(contentPath) ? JSON.parse(fs.readFileSync(contentPath, 'utf8')) : {};
+    const partial = (name) => fs.readFileSync(path.join(HERE, 'partials', `${name}.html`), 'utf8');
+    const config = configFor(slug);
+    const h1 = copy.hero?.h1 ?? '';
+    const words = h1.split(/\s+/);
+    const perLine = Math.ceil(words.length / 3);
+    const h1Lines = words.length <= 3
+      ? words.join('<br>')
+      : [0, 1, 2].map((i) => words.slice(i * perLine, (i + 1) * perLine).join(' ')).filter(Boolean).join('<br>');
+    const map = {
+      __STYLE__: slug,
+      __BODY_CLASS__: config.bodyClass ?? '',
+      __MOTIF__: `motif-${config.motif ?? 'rings'}`,
+      __LAYOUT_HERO__: layout.hero,
+      __LAYOUT_NAV__: layout.nav,
+      __DENSITY__: layout.density,
+      __SECTION_PLAN__: layout.sectionPlan,
+      __TYPE_SCALE__: inlineTypeScale(tokens.typography?.scale ?? {}),
+      __COPY_EYEBROW__: copy.hero?.eyebrow ?? '',
+      __COPY_H1__: h1,
+      __COPY_H1_LINES__: h1Lines,
+      __COPY_LEDE__: copy.hero?.lede ?? '',
+      __COPY_CTA1__: copy.hero?.ctaPrimary ?? '',
+      __COPY_CTA2__: copy.hero?.ctaSecondary ?? '',
+      __COPY_PROOF1__: copy.proofs?.[0] ?? '',
+      __COPY_PROOF2__: copy.proofs?.[1] ?? '',
+      __COPY_PROOF3__: copy.proofs?.[2] ?? '',
+      __COPY_LOGO_LABEL__: copy.logoLabel ?? '',
+      __COPY_LOGO1__: copy.logos?.[0] ?? '',
+      __COPY_LOGO2__: copy.logos?.[1] ?? '',
+      __COPY_LOGO3__: copy.logos?.[2] ?? '',
+      __COPY_LOGO4__: copy.logos?.[3] ?? '',
+      __COPY_LOGO5__: copy.logos?.[4] ?? '',
+      __COPY_TILE1__: copy.tiles?.[0]?.cap ?? '',
+      __COPY_TILE2__: copy.tiles?.[1]?.cap ?? '',
+      __COPY_TILE3__: copy.tiles?.[2]?.cap ?? '',
+      __COPY_TILE4__: copy.tiles?.[3]?.cap ?? '',
+    };
+    let html = tpl
+      .replace(/<!--\s*NAV\s*-->/, () => partial(`nav-${layout.nav}`))
+      .replace(/<!--\s*HERO\s*-->/, () => partial(`hero-${layout.hero}`));
+    for (const [key, value] of Object.entries(map)) html = html.split(key).join(value);
+    const sectionPlan = layoutDefs.sections.find((plan) => plan.id === layout.sectionPlan);
+    if (sectionPlan) html = applySectionPlan(html, sectionPlan);
+    return html
+      .replace(/<style id="extra"><\/style>/, `<style>${config.extraCss ?? ''}</style>`)
+      .replace(/__ICON:([a-z0-9-]+):(\d+)__/g, (_m, name, size) => icon(name, Number(size)))
+      .replace(/__[A-Z0-9_]+__/g, '');
+  }
   const family = (() => {
-    const n = parseInt(num, 10);
+    const n = parseInt(dirName, 10);
     if (n <= 7) return 'Sade';
     if (n <= 12) return 'Yüzey';
     if (n <= 18) return 'Cesur';
@@ -307,7 +367,7 @@ export function audit(html) {
 }
 
 async function main() {
-  const sceneArg = arg('scene', 'form');
+  const sceneArg = arg('scene', 'landing');
   const tpl = templateFor(sceneArg);
   const dirs = styleDirs(arg('styles', ''));
   const browser = findBrowser();
@@ -324,7 +384,7 @@ async function main() {
       const slug = dirName.replace(/^\d+-/, '');
       const template = fs.readFileSync(tpl.file, 'utf8');
       const htmlPath = path.join(tmpDir, `${dirName}-${sceneArg}.html`);
-      fs.writeFileSync(htmlPath, fill(template, slug, dirName.slice(0, 2)));
+      fs.writeFileSync(htmlPath, fill(template, slug, dirName));
       const dom = await dumpDom(browser, htmlPath, profile);
       rows.push({ slug, dir: dirName, ...audit(dom) });
     }

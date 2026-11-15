@@ -9,8 +9,7 @@ export const CONFIG = {
     .motif-dots::before {
       background-image: radial-gradient(var(--line) 1.4px, transparent 1.4px);
       background-size: 20px 20px;
-    }
-    h1 { font-family: var(--font-display); font-weight: 400; font-size: 36px; line-height: 1.12; letter-spacing: var(--tracking); max-width: 30ch; }
+    }h1   { font-family: var(--font-display); font-weight: 400; font-size: var(--type-h1); line-height: 1.12; letter-spacing: var(--tracking); max-width: 30ch; }
     h2 { font-family: var(--font-display); font-weight: 400; font-size: 23px; line-height: 1.24; letter-spacing: .02em; }
     h3 { font-family: var(--font-body); font-weight: 600; font-size: 18px; line-height: 1.3; letter-spacing: 0; }
     h4 { font-family: var(--font-body); font-weight: 600; font-size: 14px; }
@@ -113,7 +112,7 @@ export const CONFIG = {
       opacity: .5; pointer-events: none;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 22px; max-width: 26ch; }
+      h1  { font-size: var(--type-h1); max-width: 26ch; }
       .table .trow, .trow, tr { height: 44px; }
       body.scene-landing .sig::after { height: 20px; }
     }

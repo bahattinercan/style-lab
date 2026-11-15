@@ -71,8 +71,8 @@ Moda evi katalogları, Didot/Bodoni geleneği ve İsviçre minimalizminin lüks 
 | `--surface-2` | `#f3ecdf` | hover | vurgu |
 | `--ink` | `#1a1815` | metin | — |
 | `--ink-soft` | `#5c554b` | paragraf | başlık |
-| `--ink-faint` | `#9a9184` | mikro etiket | gövde metni |
-| `--accent` | `#c6a664` | hairline, mikro etiket, bağlantı | geniş zemin, buton dolgusu |
+| `--ink-faint` | `#938a7e` | mikro etiket | gövde metni |
+| `--accent` | `#a78746` | hairline, mikro etiket, bağlantı | geniş zemin, buton dolgusu |
 | `--accent-ink` | `#1a1815` | accent üstü metin | — |
 | `--line` | `rgba(26,24,21,.16)` | hairline | metin |
 
@@ -171,7 +171,7 @@ Moda evi katalogları, Didot/Bodoni geleneği ve İsviçre minimalizminin lüks 
 ## Erişilebilirlik
 
 - Gövde 15.74:1, açıklama 6.53:1 → güvenli. `--ink-faint` 2.76:1 → **asla gövde metni**.
-- Altını metin olarak kullanma: `#c6a664` krem üzerinde ~2.0:1 — sadece çizgi/ikon.
+- Altını metin olarak kullanma: `#a78746` krem üzerinde ~2.0:1 — sadece çizgi/ikon.
 - İnce ağırlık (300) 32px altında okunmaz; küçük puntoda 400+ kullan.
 - 14px gövde + geniş tracking okuma hızını düşürür: paragrafları 3 satırla sınırla.
 - Odak halkası 2px altın, offset 3px; krem zeminde 3:1 üstü.
@@ -192,7 +192,7 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Pahalı değil, boş görünüyor | Boşluk var ama ölçek yok | Display 64px + mikro etiket 10px zıplaması |
 | Ucuz görünüyor | Gölge/radius/dolu buton | Gölgeyi sil, radius 0, ince çerçeve |
 | Okunmuyor | 300 ağırlık + 12px | 400 ağırlık, 14px, 1.75 satır |
-| Altın "sarıya" kaçtı | Doygun altın (#FFD700) | `#c6a664` gibi soluk metalik ton |
+| Altın "sarıya" kaçtı | Doygun altın (#FFD700) | `#a78746` gibi soluk metalik ton |
 | Bilgi eksik hissi | 3+ CTA, çok bölüm | Tek CTA, ekran başına 2 bölüm |
 | Mobilde sıkışma | 112px bölüm boşluğu korunmuş | Mobilde 64px'e indir |
 
@@ -217,7 +217,7 @@ Token: yalnızca kit/tokens.css [data-style="luxury-typography"]; hard-coded ren
 Tipografi: Cormorant display 300–400 (52–72px, 1.1, 0.01em) + Jost gövde 14/1.75; mikro etiket 10px uppercase 0.3em.
 Yerleşim: ekran başına 1 başlık + 1 paragraf + 1 CTA; hero üst boşluk ≥ 96px; içerik ≤ 1040px.
 Yüzey: radius 0–2px, gölge YOK; ayrım 1px --line veya --accent hairline.
-Altın (#c6a664): yalnızca hairline/ikon/mikro etiket çerçevesi — metin rengi olarak kullanma.
+Altın (#a78746): yalnızca hairline/ikon/mikro etiket çerçevesi — metin rengi olarak kullanma.
 Hareket: 300–400ms ease-out, sadece opacity/transform/renk.
 Yasak: gölge, gradient, kalın display, dolu accent buton, çoklu CTA, 12px altı metin, 3+ bölüm.
 Çıktı: kod + tek paragraf not (boşluk oranını ve tipografik zıplamayı nasıl kurdun).
@@ -237,8 +237,8 @@ Yasak: gölge, gradient, kalın display, dolu accent buton, çoklu CTA, 12px alt
 [data-style="luxury-typography"] {
   --bg: #f6f1e7; --bg-2: #efe7d8;
   --surface: #fffdf8; --surface-2: #f3ecdf;
-  --ink: #1a1815; --ink-soft: #5c554b; --ink-faint: #9a9184;
-  --accent: #c6a664; --accent-ink: #1a1815;
+  --ink: #1a1815; --ink-soft: #5c554b; --ink-faint: #938a7e;
+  --accent: #a78746; --accent-ink: #1a1815;
   --line: rgba(26,24,21,.16);
   --radius: 0px; --radius-lg: 2px;
   --shadow: none; --shadow-hard: none;

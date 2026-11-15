@@ -12,8 +12,7 @@ export const CONFIG = {
           var(--accent) 104px 105px, transparent 105px 168px, var(--line) 168px 169px, transparent 169px 236px,
           var(--accent) 236px 237px, transparent 237px);
       opacity: .85;
-    }
-    h1 { font-family: var(--font-display); font-weight: 600; font-size: 42px; line-height: 1.1; letter-spacing: var(--tracking); max-width: 24ch; }
+    }h1   { font-family: var(--font-display); font-weight: 600; font-size: var(--type-h1); line-height: 1.1; letter-spacing: var(--tracking); max-width: 24ch; }
     h2 { font-family: var(--font-display); font-weight: 600; font-size: 24px; line-height: 1.24; letter-spacing: .02em; }
     h3 { font-family: var(--font-body); font-weight: 600; font-size: 18px; line-height: 1.3; letter-spacing: 0; text-transform: none; }
     h4 { font-family: var(--font-body); font-weight: 600; font-size: 13px; text-transform: none; }
@@ -97,7 +96,7 @@ export const CONFIG = {
       border: 1px solid var(--accent); opacity: .18;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 26px; max-width: 24ch; }
+      h1  { font-size: var(--type-h1); max-width: 24ch; }
       .hero-visual::after { width: 120px; height: 120px; }
       body.scene-landing .sig::after { display: none; }
     }

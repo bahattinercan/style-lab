@@ -14,8 +14,7 @@ export const CONFIG = {
           repeating-radial-gradient(circle at 84% 78%, color-mix(in srgb, var(--accent) 12%, transparent) 0 1px, transparent 1px 26px);
         background-repeat: no-repeat;
       }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: .01em; }
-      h1 { font-size: 46px; line-height: 1.06; max-width: 22ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: .01em; }h1 { font-size: var(--type-h1); line-height: 1.06; max-width: 22ch; }
       h2 { font-size: 30px; line-height: 1.16; letter-spacing: .02em; }
       h3 { font-size: 20px; line-height: 1.28; }
       .lede { font-family: var(--font-body); font-size: 16px; line-height: 1.6; max-width: 62ch; color: var(--ink-soft); }

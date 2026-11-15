@@ -5,8 +5,7 @@ export const CONFIG = {
     /* imza: kalın diagonal çubuk + 3px siyah kural + uppercase display */
     .nav { border-bottom: 3px solid var(--line); }
     .nav-links a { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
-    .brand { font-family: var(--font-mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
-    h1 { font-size: 62px; line-height: .94; letter-spacing: -.01em; max-width: 16ch; }
+    .brand { font-family: var(--font-mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }h1   { font-size: var(--type-h1); line-height: .94; letter-spacing: -.01em; max-width: 16ch; }
     h2 { font-size: 27px; line-height: 1.02; letter-spacing: 0; }
     .eyebrow { color: var(--accent); letter-spacing: .22em; }
     .lede { max-width: 44ch; }
@@ -50,7 +49,7 @@ export const CONFIG = {
       background: var(--line); opacity: .16;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 34px; max-width: 18ch; }
+      h1  { font-size: var(--type-h1); max-width: 18ch; }
       body.scene-landing .sig::before { width: 12px; }
       body.scene-landing .sig::after { display: none; }      }
   `,

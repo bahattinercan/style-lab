@@ -23,6 +23,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { isDeepStrictEqual } from 'node:util';
 
 import { buildStyle, validateSpec, mergeBand } from './lib/style-spec.mjs';
 
@@ -82,6 +83,15 @@ function main() {
     return 2;
   }
 
+  if (path.basename(specFile) === 'legacy-01-151.json') {
+    if (!CHECK) {
+      console.error('legacy kaynaklar çıkarılmış durumda; denetim için --check kullan');
+      return 2;
+    }
+    execFileSync(process.execPath, [path.join(ROOT, 'kit', 'extract-spec.mjs'), '--check'], { cwd: ROOT, stdio: 'inherit' });
+    return 0;
+  }
+
   const bands = readJson(BANDS_FILE);
   const families = readJson(FAMILIES_FILE).families ?? [];
   const fonts = fontsAvailable();
@@ -138,10 +148,30 @@ function main() {
   const drift = [];
   for (const { spec, band, familyLabel } of queue) {
     const { files, metrics } = buildStyle(spec, { band, familyLabel });
-    for (const [rel, content] of Object.entries(files)) {
+    for (const [rel, generated] of Object.entries(files)) {
       const abs = path.join(ROOT, rel);
       const before = fs.existsSync(abs) ? read(abs) : null;
-      if (before === content) {
+      let content = generated;
+      if (before && rel.endsWith('/tokens.json')) {
+        const current = JSON.parse(before);
+        const next = JSON.parse(generated);
+        if (current.layout?.fit !== undefined) {
+          next.layout = { ...next.layout, fit: current.layout.fit };
+          content = JSON.stringify(next, null, 2) + '\n';
+        }
+      }
+      if (CHECK && before && rel.endsWith('/tokens.json')) {
+        const expected = JSON.parse(generated);
+        const current = JSON.parse(before);
+        // Assignment tools own these fields after initial SPEC generation; their dedicated --check gates validate them.
+        for (const key of ['layout', 'industries']) if (current[key] !== undefined) expected[key] = current[key];
+        for (const key of ['photo', 'treatment']) {
+          if (current.imagery?.[key] !== undefined) expected.imagery[key] = current.imagery[key];
+        }
+        content = JSON.stringify(expected, null, 2) + '\n';
+      }
+      const same = before === content || (CHECK && before && rel.endsWith('/tokens.json') && isDeepStrictEqual(JSON.parse(before), JSON.parse(content)));
+      if (same) {
         unchanged += 1;
         continue;
       }

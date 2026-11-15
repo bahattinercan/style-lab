@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Jost başlık + mono etiket, iki punto gövde ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking); }
-      h1 { font-size: 44px; line-height: 1.06; max-width: 20ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking); }h1  { font-size: var(--type-h1); line-height: 1.06; max-width: 20ch; }
       h2 { font-size: 26px; line-height: 1.16; }
       h3 { font-size: 19px; line-height: 1.3; }
       .big404, .kpi .v, .kpi .num-big, .plan .price b, .sum-total b {
@@ -130,7 +129,7 @@ export const CONFIG = {
       body.scene-dashboard .kpi:last-child { border-right: 0; }
 
       @media (max-width: 900px) {
-        h1 { font-size: 28px; max-width: 22ch; }
+        h1  { font-size: var(--type-h1); max-width: 22ch; }
         h2 { font-size: 21px; }
         .lede { font-size: 14px; }
         .hero-visual::after { height: 40px; }

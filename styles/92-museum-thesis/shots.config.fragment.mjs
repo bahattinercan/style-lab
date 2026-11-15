@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'none',
   bodyClass: '',
-  extraCss: `
-      /* imza: geniş kenar · numaralı bölüm · asılı girinti · duvar etiketi · levha çerçevesi */
-      h1 { font-size: 38px; line-height: 1.14; letter-spacing: -.005em; font-weight: 500; max-width: 24ch; }
+  extraCss: `/* imza: geniş kenar · numaralı bölüm · asılı girinti · duvar etiketi · levha çerçevesi */
+      h1  { font-size: var(--type-h1); line-height: 1.14; letter-spacing: -.005em; font-weight: 500; max-width: 24ch; }
       h2 { font-size: 25px; line-height: 1.2; font-weight: 500; }
       h3 { font-size: 18px; line-height: 1.34; font-weight: 500; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; }
@@ -63,8 +62,7 @@ export const CONFIG = {
         content: ""; position: absolute; top: 96px; right: 12vw; width: 96px; height: 1px; background: var(--accent);
       }
       @media (max-width: 900px) {
-        .nav { padding: 16px 24px; }
-        h1 { font-size: 28px; }
+        .nav { padding: 16px 24px; }h1  { font-size: var(--type-h1); }
         p, .lede, .art-body p { padding-left: 1.2em; text-indent: -1.2em; }
         body.scene-landing .sig::before, body.scene-landing .sig::after { display: none; }
       }

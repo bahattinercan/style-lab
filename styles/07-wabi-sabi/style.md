@@ -71,7 +71,7 @@ Japon çay seremonisi estetiği (侘寂): geçicilik, kusur, tamamlanmamışlık
 | `--surface-2` | `#eadfce` | hover, ikincil | vurgu |
 | `--ink` | `#2a2724` | metin | — |
 | `--ink-soft` | `#5f574d` | açıklama | başlık |
-| `--ink-faint` | `#8f8779` | dekoratif etiket | gövde |
+| `--ink-faint` | `#8b8376` | dekoratif etiket | gövde |
 | `--accent` | `#a85831` | damga, ikon noktası, tek buton | geniş zemin |
 | `--accent-ink` | `#fff8ef` | accent üstü metin | — |
 | `--line` | `rgba(42,39,36,.18)` | elle çizilmiş hissi veren kontur | metin |
@@ -235,7 +235,7 @@ Yasak: simetrik eşit kart ızgarası, parlak renk/gradient/cam, dönen metin, >
 [data-style="wabi-sabi"] {
   --bg: #ede6da; --bg-2: #e3d9c9;
   --surface: #f6f1e6; --surface-2: #eadfce;
-  --ink: #2a2724; --ink-soft: #5f574d; --ink-faint: #8f8779;
+  --ink: #2a2724; --ink-soft: #5f574d; --ink-faint: #8b8376;
   --accent: #a85831; --accent-ink: #fff8ef;
   --line: rgba(42,39,36,.18);
   --radius: 3px; --radius-lg: 18px;

@@ -6,7 +6,7 @@ export const CONFIG = {
     .panel { border-color: rgba(5,217,232,.35); }
     .sig::before {
       content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px;
-      background: repeating-linear-gradient(90deg, var(--accent) 0 14px, #0b0b0f 14px 28px);
+      background: repeating-linear-gradient(90deg, var(--accent) 0 14px, var(--bg) 14px 28px);
       opacity: .85;
     }
     .sig::after {

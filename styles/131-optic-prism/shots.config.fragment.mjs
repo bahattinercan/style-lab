@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'rings',
   bodyClass: '',
-  extraCss: `
-      /* imza: 1px prizma (conic) kenar · ölçü bandı · 2px radius · blur 0 */
-      h1 { font-size: 44px; line-height: 1.3; letter-spacing: .02em; font-weight: 400; font-family: var(--font-display); max-width: 22ch; }
+  extraCss: `/* imza: 1px prizma (conic) kenar · ölçü bandı · 2px radius · blur 0 */
+      h1   { font-size: var(--type-h1); line-height: 1.3; letter-spacing: .02em; font-weight: 400; font-family: var(--font-display); max-width: 22ch; }
       h2 { font-size: 26px; line-height: 1.3; letter-spacing: .01em; font-weight: 400; }
       h3 { font-size: 20px; line-height: 1.35; font-weight: 400; }
       p, .lede, .copy { font-family: var(--font-body); }
@@ -36,7 +35,7 @@ export const CONFIG = {
       .nav { border-bottom: 1px solid var(--line); min-height: 60px; }
       .nav-links a { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
       @media (max-width: 900px) {
-        h1 { font-size: 26px; }
+        h1  { font-size: var(--type-h1); }
         h2 { font-size: 20px; }
         .spec-band > * { padding: 8px 10px; font-size: 10px; }
       }

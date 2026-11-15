@@ -58,7 +58,7 @@ Kazandığı şey karakter ve okunurluk: siyah kontur + yüksek kontrast, ekran�
 - **Ofset gölge:** `4px 4px 0 #000` (küçük öğe), `8px 8px 0 #000` (hero/kart). Blur **0**.
 - **Radius:** 0 (`--radius`), büyük yüzeylerde en fazla 4px (`--radius-lg`).
 - **Display:** Archivo Black / Anton, büyük harf, `-0.02em` tracking, satır aralığı 0.95–1.0.
-- **Renk bloğu:** accent pembe `#ff5c8a`, sticker sarısı `#ffd93d` (yüzey-2), zemin kırık beyaz `#fffdf5`.
+- **Renk bloğu:** accent pembe `#fb5887`, sticker sarısı `#ffd93d` (yüzey-2), zemin kırık beyaz `#fffdf5`.
 - **Etkileşim:** hover'da gölge **kaybolur**, öğe 4px sağ-alt'a gider (`translate(4px,4px)`) — "basıldı" hissi. Ters yön (gölge büyür) yanlıştır.
 - **Doku:** yok (`--grain: 0`); kağıt hissi istenirse tek katman %3 grain, fazlası konturu kirletir.
 
@@ -73,7 +73,7 @@ Kazandığı şey karakter ve okunurluk: siyah kontur + yüksek kontrast, ekran�
 | `--ink` | `#000000` | tüm metin + tüm kontur | — |
 | `--ink-soft` | `#2b2b2b` | açıklama metni | kontur |
 | `--ink-faint` | `#6b6b6b` | dekoratif etiket | gövde metni |
-| `--accent` | `#ff5c8a` | birincil aksiyon, aktif durum | geniş metin zemini |
+| `--accent` | `#fb5887` | birincil aksiyon, aktif durum | geniş metin zemini |
 | `--accent-ink` | `#000000` | accent üstü metin | — |
 | `--line` | `#000000` | **tüm** kenarlıklar, ayırıcılar | metin rengi (ink kullan) |
 
@@ -223,7 +223,7 @@ Kontur: 2px solid var(--line) tüm bileşenlerde; büyük yüzeylerde 3px. Kalı
 Gölge: var(--shadow) = 4px 4px 0 var(--ink), blur yok. Hero/kart 8px. Hover'da gölge KÜÇÜLÜR, öğe gölge yönüne kayar.
 Radius: --radius 0 (buton/input/chip), --radius-lg 4px (kart/modal).
 Tipografi: Archivo Black H1/H2 uppercase -0.02em; gövde Space Grotesk 16/1.55 (uppercase YOK); etiket mono 11 uppercase.
-Renk: bg #fffdf5, surface #fff, sticker #ffd93d, accent #ff5c8a; 4. doygun renk ekleme.
+Renk: bg #fffdf5, surface #fff, sticker #ffd93d, accent #fb5887; 4. doygun renk ekleme.
 Hareket: 90–180ms ease-out, translate + opacity; spring/parallax yasak.
 Yasak: gradient, blur, cam, yumuşak gölge, 4px üstü radius, gövdede uppercase.
 Çıktı: kod + tek paragraf not (kontur/gölge tutarlılığını nasıl korudun).
@@ -244,7 +244,7 @@ Yasak: gradient, blur, cam, yumuşak gölge, 4px üstü radius, gövdede upperca
   --bg: #fffdf5; --bg-2: #ffe9a8;
   --surface: #ffffff; --surface-2: #ffd93d;
   --ink: #000000; --ink-soft: #2b2b2b; --ink-faint: #6b6b6b;
-  --accent: #ff5c8a; --accent-ink: #000000;
+  --accent: #fb5887; --accent-ink: #000000;
   --line: #000000;
   --radius: 0px; --radius-lg: 4px;
   --shadow: 4px 4px 0 #000000; --shadow-hard: 0 0 0 #000000;

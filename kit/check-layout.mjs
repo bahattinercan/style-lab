@@ -36,6 +36,8 @@ const REPORT = ARGV.includes('--report');
 const HERO_IDS = LAYOUTS.heroes.map((h) => h.id);
 const NAV_IDS = LAYOUTS.navs.map((n) => n.id);
 const DENSITY_IDS = LAYOUTS.densities.map((d) => d.id);
+const SECTION_PLAN_IDS = LAYOUTS.sections.map((s) => s.id);
+const SECTION_MARKERS = ['logo-wall', 'how-it-works', 'feature-media', 'stats', 'components', 'form-data', 'cta', 'footer', 'footer-base'];
 const MAX_FP_SHARE = 0.25;
 const MAX_HERO_SHARE = 0.35;
 const MIN_ARCHETYPE_USES = 4;
@@ -72,6 +74,14 @@ export function checkLayout(rows) {
   const warnings = [];
   const n = rows.length;
 
+  for (const plan of LAYOUTS.sections) {
+    if (!Array.isArray(plan.order) || plan.order.length !== SECTION_MARKERS.length ||
+      new Set(plan.order).size !== SECTION_MARKERS.length ||
+      SECTION_MARKERS.some((section) => !plan.order.includes(section))) {
+      errors.push(`section plan "${plan.id}" page.html bölümlerini tam ve tekil sıralamalı`);
+    }
+  }
+
   for (const r of rows) {
     if (!r.layout) {
       errors.push(`${r.dirName}: layout yok (şema v3 zorunlu) — node kit/assign-layouts.mjs --apply`);
@@ -81,6 +91,7 @@ export function checkLayout(rows) {
     if (!HERO_IDS.includes(hero)) errors.push(`${r.dirName}: layout.hero "${hero}" tanımsız`);
     if (!NAV_IDS.includes(nav)) errors.push(`${r.dirName}: layout.nav "${nav}" tanımsız`);
     if (!DENSITY_IDS.includes(density)) errors.push(`${r.dirName}: layout.density "${density}" tanımsız`);
+    if (!SECTION_PLAN_IDS.includes(r.layout.sectionPlan)) errors.push(`${r.dirName}: layout.sectionPlan "${r.layout.sectionPlan}" tanımsız`);
     const heroPartial = path.join(ROOT, 'kit', 'render', 'partials', `hero-${hero}.html`);
     if (HERO_IDS.includes(hero) && !fs.existsSync(heroPartial)) errors.push(`${r.dirName}: hero partial yok (hero-${hero}.html)`);
     const navPartial = path.join(ROOT, 'kit', 'render', 'partials', `nav-${nav}.html`);
@@ -100,6 +111,7 @@ export function checkLayout(rows) {
   const heroes = countBy((r) => r.layout.hero);
   const navs = countBy((r) => r.layout.nav);
   const densities = countBy((r) => r.layout.density);
+  const sectionPlans = countBy((r) => r.layout.sectionPlan);
   const fingerprints = countBy((r) => `${r.layout.hero}|${r.layout.nav}`);
 
   // tavan: tek parmak izi / tek hero tek başına katalogu domine etmesin
@@ -122,6 +134,11 @@ export function checkLayout(rows) {
   for (const id of NAV_IDS) {
     const v = navs.get(id) ?? 0;
     if (v < MIN_ARCHETYPE_USES) errors.push(`nav "${id}" yalnız ${v} stilde — en az ${MIN_ARCHETYPE_USES} (ölü arketip)`);
+  }
+  for (const plan of LAYOUTS.sections) {
+    const used = sectionPlans.get(plan.id) ?? 0;
+    if (used < MIN_ARCHETYPE_USES) errors.push(`section plan "${plan.id}" yalnız ${used} stilde — en az ${MIN_ARCHETYPE_USES}`);
+    if (used / n > 0.35) errors.push(`section plan "${plan.id}" ${used}/${n} stil (%${Math.round((used / n) * 100)}) — tavan %35`);
   }
 
   // aile içi çeşitlilik
@@ -165,6 +182,7 @@ export function checkLayout(rows) {
       heroes: [...heroes.entries()].sort((a, b) => b[1] - a[1]),
       navs: [...navs.entries()].sort((a, b) => b[1] - a[1]),
       densities: [...densities.entries()].sort((a, b) => b[1] - a[1]),
+      sectionPlans: [...sectionPlans.entries()].sort((a, b) => b[1] - a[1]),
       fingerprints: [...fingerprints.entries()].sort((a, b) => b[1] - a[1]),
       families: [...families.entries()].map(([f, list]) => ({
         family: f,

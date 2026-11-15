@@ -70,7 +70,7 @@ Analog fotoğraf albümleri, bullet journal ve moodboard kültürü; kişisel ü
 | `--surface-2` | `#fdf3dc` | bant, ikincil |
 | `--ink` | `#1f2b3a` | metin (12.74:1) |
 | `--ink-soft` | `#4e5a68` | açıklama (6.25:1) |
-| `--ink-faint` | `#858e99` | dekoratif (2.95:1) |
+| `--ink-faint` | `#848c97` | dekoratif (2.95:1) |
 | `--accent` | `#c63d2f` | damga, buton |
 | `--accent-ink` | `#fffdf7` | accent üstü (**5.02:1**) |
 | `--line` | `rgba(31,43,58,.18)` | kenar |
@@ -208,7 +208,7 @@ Yasak: dönen metin, 3°+ eğiklik, 4+ renk, modern blur gölge tek başına.
 [data-style="scrapbook"] {
   --bg: #f7f1e4; --bg-2: #efe6d2;
   --surface: #fffdf7; --surface-2: #fdf3dc;
-  --ink: #1f2b3a; --ink-soft: #4e5a68; --ink-faint: #858e99;
+  --ink: #1f2b3a; --ink-soft: #4e5a68; --ink-faint: #848c97;
   --accent: #c63d2f; --accent-ink: #fffdf7;
   --line: rgba(31,43,58,.18);
   --radius: 3px; --radius-lg: 8px;

@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'paper',
   bodyClass: '',
-  extraCss: `
-      /* imza: sol kenarda 1px kesikli el dikişi · dar ölçü (46ch) · italik dize · mono bölüm numarası */
-      h1 { font-size: 44px; line-height: 1.14; letter-spacing: .01em; font-weight: 500; font-family: var(--font-display); max-width: 18ch; }
+  extraCss: `/* imza: sol kenarda 1px kesikli el dikişi · dar ölçü (46ch) · italik dize · mono bölüm numarası */
+      h1   { font-size: var(--type-h1); line-height: 1.14; letter-spacing: .01em; font-weight: 500; font-family: var(--font-display); max-width: 18ch; }
       h2 { font-size: 28px; line-height: 1.26; font-weight: 500; }
       h3 { font-size: 20px; line-height: 1.36; font-weight: 500; }
       p, .lede, .copy { font-family: var(--font-body); font-size: 16.5px; line-height: 1.78; max-width: 46ch; }
@@ -35,7 +34,7 @@ export const CONFIG = {
         background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 18%, transparent) 0 1px, transparent 1px 5px);
       }
       @media (max-width: 900px) {
-        h1 { font-size: 30px; }
+        h1  { font-size: var(--type-h1); }
         .sig::before { display: none; }
       }
     

@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'dots',
   bodyClass: '',
-  extraCss: `
-      /* imza: düz boyanmış zemin · 2px boyalı çift kural · rosemaling nokta şeridi */
-      h1 { font-size: 54px; line-height: 1.04; letter-spacing: -.015em; max-width: 20ch; }
+  extraCss: `/* imza: düz boyanmış zemin · 2px boyalı çift kural · rosemaling nokta şeridi */
+      h1   { font-size: var(--type-h1); line-height: 1.04; letter-spacing: -.015em; max-width: 20ch; }
       h2 { font-size: 30px; line-height: 1.16; }
       h3 { font-size: 20px; line-height: 1.28; }
       .eyebrow, .label, .mono { letter-spacing: .18em; }
@@ -54,7 +53,7 @@ export const CONFIG = {
         background-size: 18px 6px; background-repeat: repeat-x; background-position: bottom;
       }
       @media (max-width: 900px) {
-        h1 { font-size: 34px; max-width: 22ch; }
+        h1  { font-size: var(--type-h1); max-width: 22ch; }
         body.scene-landing .sig::after { width: 84px; height: 84px; right: 4vw; }
       }
 

@@ -6,56 +6,90 @@
       "id": "split",
       "label": "Split",
       "when": "kopya solda, ürün görseli sağda; dengeli, nötr varsayılan",
-      "strengths": ["SaaS", "araç", "kurumsal"],
+      "strengths": [
+        "SaaS",
+        "araç",
+        "kurumsal"
+      ],
       "densityBias": "balanced"
     },
     {
       "id": "split-reverse",
       "label": "Split (ters)",
       "when": "görsel solda, kopya sağda; okuma akışını kırar, cesur ailelerde ritim",
-      "strengths": ["indie", "etkinlik", "kampanya"],
+      "strengths": [
+        "indie",
+        "etkinlik",
+        "kampanya"
+      ],
       "densityBias": "dense"
     },
     {
       "id": "centered",
       "label": "Merkezlenmiş",
       "when": "tek mesaj + geniş görsel bandı; sakin, seyrek markalar",
-      "strengths": ["minimal", "japandi", "kişisel marka"],
+      "strengths": [
+        "minimal",
+        "japandi",
+        "kişisel marka"
+      ],
       "densityBias": "sparse"
     },
     {
       "id": "type",
       "label": "Salt tipografi",
       "when": "görsel yok; başlık ekranın kendisi. Poster/dergi/ajans vitrini",
-      "strengths": ["tipografi", "kültür", "ajans"],
+      "strengths": [
+        "tipografi",
+        "kültür",
+        "ajans"
+      ],
       "densityBias": "sparse"
     },
     {
       "id": "fullbleed",
       "label": "Tam kenar medya",
       "when": "medya sol kenara taşar (kart yok), kopya sağda nefes alır; vitrin/lüks",
-      "strengths": ["emlak", "otel", "mücevher", "moda"],
+      "strengths": [
+        "emlak",
+        "otel",
+        "mücevher",
+        "moda"
+      ],
       "densityBias": "sparse"
     },
     {
       "id": "product",
       "label": "Ürün ekranı",
       "when": "kopya üstte küçük, dev ürün paneli altta; araç iddiası",
-      "strengths": ["SaaS", "dashboard", "developer tool"],
+      "strengths": [
+        "SaaS",
+        "dashboard",
+        "developer tool"
+      ],
       "densityBias": "dense"
     },
     {
       "id": "index",
       "label": "Dizin ızgarası",
       "when": "kopya solda dar, sağda 2×2 iş/kayıt ızgarası; portfolyo, arşiv",
-      "strengths": ["ajans", "portfolyo", "arşiv", "müze"],
+      "strengths": [
+        "ajans",
+        "portfolyo",
+        "arşiv",
+        "müze"
+      ],
       "densityBias": "dense"
     },
     {
       "id": "sticky",
       "label": "Yapışkan anlatı",
       "when": "solda yapışkan kopya, sağda kayan 3 panelli hikâye şeridi; uzun sayfa",
-      "strengths": ["hikâye", "ürün anlatısı", "spekülatif"],
+      "strengths": [
+        "hikâye",
+        "ürün anlatısı",
+        "spekülatif"
+      ],
       "densityBias": "balanced"
     }
   ],
@@ -87,22 +121,174 @@
     }
   ],
   "densities": [
-    { "id": "sparse", "label": "Seyrek", "when": "ekran başına ≤5 öğe, geniş boşluk" },
-    { "id": "balanced", "label": "Dengeli", "when": "standart bilgi yoğunluğu" },
-    { "id": "dense", "label": "Yoğun", "when": "çok öğe, küçük boşluk, veri hissi" }
+    {
+      "id": "sparse",
+      "label": "Seyrek",
+      "when": "ekran başına ≤5 öğe, geniş boşluk"
+    },
+    {
+      "id": "balanced",
+      "label": "Dengeli",
+      "when": "standart bilgi yoğunluğu"
+    },
+    {
+      "id": "dense",
+      "label": "Yoğun",
+      "when": "çok öğe, küçük boşluk, veri hissi"
+    }
   ],
   "sections": [
-    { "id": "hero", "label": "Hero", "when": "giriş sahnesi (heroes[] arketiplerinden biri)" },
-    { "id": "logo-wall", "label": "Güvenen ekipler", "when": "sosyal kanıt şeridi" },
-    { "id": "feature-trio", "label": "Üç özellik", "when": "eşit ağırlıklı üç değer önerisi" },
-    { "id": "bento", "label": "Bento", "when": "farklı boyutlu kutu ızgarası" },
-    { "id": "how-it-works", "label": "Nasıl çalışır", "when": "3 adım, numaralı akış" },
-    { "id": "testimonial", "label": "Referans", "when": "tek güçlü alıntı + kimlik" },
-    { "id": "stats", "label": "İstatistik", "when": "3–4 büyük sayı" },
-    { "id": "pricing", "label": "Fiyat tablosu", "when": "plan karşılaştırma" },
-    { "id": "faq", "label": "SSS", "when": "itiraz kırma" },
-    { "id": "cta", "label": "Kapanış CTA", "when": "son eylem bloğu" },
-    { "id": "footer", "label": "Footer", "when": "site haritası + yasal" },
-    { "id": "og-card", "label": "OG kartı", "when": "1200×630 paylaşım görseli" }
+    {
+      "id": "classic",
+      "label": "Klasik ak??",
+      "order": [
+        "logo-wall",
+        "how-it-works",
+        "feature-media",
+        "stats",
+        "components",
+        "form-data",
+        "cta",
+        "footer",
+        "footer-base"
+      ]
+    },
+    {
+      "id": "editorial",
+      "label": "Editoryal ak??",
+      "order": [
+        "feature-media",
+        "logo-wall",
+        "how-it-works",
+        "components",
+        "stats",
+        "form-data",
+        "cta",
+        "footer",
+        "footer-base"
+      ]
+    },
+    {
+      "id": "proof-first",
+      "label": "Kan?t ?nce",
+      "order": [
+        "stats",
+        "logo-wall",
+        "feature-media",
+        "how-it-works",
+        "components",
+        "form-data",
+        "cta",
+        "footer",
+        "footer-base"
+      ]
+    },
+    {
+      "id": "feature-first",
+      "label": "?zellik ?nce",
+      "order": [
+        "how-it-works",
+        "feature-media",
+        "logo-wall",
+        "components",
+        "stats",
+        "form-data",
+        "cta",
+        "footer",
+        "footer-base"
+      ]
+    },
+    {
+      "id": "data-first",
+      "label": "Veri ?nce",
+      "order": [
+        "stats",
+        "form-data",
+        "components",
+        "feature-media",
+        "how-it-works",
+        "logo-wall",
+        "cta",
+        "footer",
+        "footer-base"
+      ]
+    },
+    {
+      "id": "campaign",
+      "label": "Kampanya ak???",
+      "order": [
+        "logo-wall",
+        "feature-media",
+        "stats",
+        "how-it-works",
+        "form-data",
+        "components",
+        "cta",
+        "footer",
+        "footer-base"
+      ]
+    }
+  ],
+  "sectionTypes": [
+    {
+      "id": "hero",
+      "label": "Hero",
+      "when": "giriş sahnesi (heroes[] arketiplerinden biri)"
+    },
+    {
+      "id": "logo-wall",
+      "label": "Güvenen ekipler",
+      "when": "sosyal kanıt şeridi"
+    },
+    {
+      "id": "feature-trio",
+      "label": "Üç özellik",
+      "when": "eşit ağırlıklı üç değer önerisi"
+    },
+    {
+      "id": "bento",
+      "label": "Bento",
+      "when": "farklı boyutlu kutu ızgarası"
+    },
+    {
+      "id": "how-it-works",
+      "label": "Nasıl çalışır",
+      "when": "3 adım, numaralı akış"
+    },
+    {
+      "id": "testimonial",
+      "label": "Referans",
+      "when": "tek güçlü alıntı + kimlik"
+    },
+    {
+      "id": "stats",
+      "label": "İstatistik",
+      "when": "3–4 büyük sayı"
+    },
+    {
+      "id": "pricing",
+      "label": "Fiyat tablosu",
+      "when": "plan karşılaştırma"
+    },
+    {
+      "id": "faq",
+      "label": "SSS",
+      "when": "itiraz kırma"
+    },
+    {
+      "id": "cta",
+      "label": "Kapanış CTA",
+      "when": "son eylem bloğu"
+    },
+    {
+      "id": "footer",
+      "label": "Footer",
+      "when": "site haritası + yasal"
+    },
+    {
+      "id": "og-card",
+      "label": "OG kartı",
+      "when": "1200×630 paylaşım görseli"
+    }
   ]
 }

@@ -9,8 +9,7 @@ export const CONFIG = {
   extraCss: `
       /* imza: çapraz tehlike bandı · 2px uyarı çerçevesi · Anton büyük harf · piktogram */
       body { background: var(--bg); }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; }
-      h1 { font-size: 72px; line-height: .94; max-width: 18ch; letter-spacing: .01em; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; }h1 { font-size: var(--type-h1); line-height: .94; max-width: 18ch; letter-spacing: .01em; }
       h2 { font-size: 40px; line-height: 1.02; }
       h3 { font-size: 24px; line-height: 1.12; }
       .lede { font-family: var(--font-body); font-size: 17px; font-weight: 500; line-height: 1.45; max-width: 46ch; color: var(--ink-soft); }

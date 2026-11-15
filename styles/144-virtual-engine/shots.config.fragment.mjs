@@ -4,9 +4,8 @@
 export const CONFIG = {
   motif: 'none',
   bodyClass: 'upper',
-  extraCss: `
-    /* imza: ortografik dünya ızgarası (hero + sayfa zemininde) + viewport/denetçi üçlüsü + konsol */
-    h1 { font-family: var(--font-display); font-weight: 400; font-size: 46px; line-height: 1.08; letter-spacing: var(--tracking); max-width: 28ch; }
+  extraCss: `/* imza: ortografik dünya ızgarası (hero + sayfa zemininde) + viewport/denetçi üçlüsü + konsol */
+    h1   { font-family: var(--font-display); font-weight: 400; font-size: var(--type-h1); line-height: 1.08; letter-spacing: var(--tracking); max-width: 28ch; }
     h2 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.2; letter-spacing: .01em; }
     h3 { font-family: var(--font-body); font-weight: 600; font-size: 20px; line-height: 1.3; letter-spacing: 0; text-transform: none; }
     h4 { font-family: var(--font-body); font-weight: 600; font-size: 14px; text-transform: none; }
@@ -93,7 +92,7 @@ export const CONFIG = {
       opacity: .45;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 28px; max-width: 24ch; }
+      h1  { font-size: var(--type-h1); max-width: 24ch; }
       .hero-visual::after { width: 32%; height: 28%; }
       body.scene-landing .sig::after { height: 18px; }
     }

@@ -1,10 +1,9 @@
 export const CONFIG = {
   motif: 'rings',
   bodyClass: 'upper',
-  extraCss: `
-    h1 { letter-spacing: .02em; font-size: 52px; }
+  extraCss: `h1 { letter-spacing: .02em; font-size: var(--type-h1); }
     .panel { background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(214,236,255,.8)); }
-    .hero-visual { background: linear-gradient(160deg, #ffffff, #cfe8ff 55%, #a9d4ff); }
+    .hero-visual { background: linear-gradient(160deg, var(--surface), color-mix(in srgb, var(--accent) 16%, var(--surface)) 55%, color-mix(in srgb, var(--accent) 32%, var(--surface))); }
     .sig::before {
       content: ""; position: absolute; inset: 0;
       background:

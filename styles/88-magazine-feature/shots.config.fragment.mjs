@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'rings',
   bodyClass: '',
-  extraCss: `
-      /* imza: 7/5 asimetri · tam kanama görsel · pull-quote (3px accent çizgi) · 14px radius */
-      h1 { font-size: 64px; line-height: 1.04; letter-spacing: -0.02em; font-weight: 600; font-family: var(--font-display); max-width: 14ch; }
+  extraCss: `/* imza: 7/5 asimetri · tam kanama görsel · pull-quote (3px accent çizgi) · 14px radius */
+      h1   { font-size: var(--type-h1); line-height: 1.04; letter-spacing: -0.02em; font-weight: 600; font-family: var(--font-display); max-width: 14ch; }
       h2 { font-size: 38px; line-height: 1.10; letter-spacing: -0.01em; font-weight: 600; }
       h3 { font-size: 24px; line-height: 1.20; letter-spacing: -0.01em; font-weight: 500; }
       p, .lede, .copy { font-family: var(--font-body); }
@@ -34,7 +33,7 @@ export const CONFIG = {
       .chip { border-radius: var(--radius); background: var(--bg-2); border: 1px solid var(--line); font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
       .kpi strong, .counter { font-family: var(--font-display); font-size: 34px; letter-spacing: -0.01em; }
       @media (max-width: 900px) {
-        h1 { font-size: 36px; max-width: 16ch; }
+        h1  { font-size: var(--type-h1); max-width: 16ch; }
         h2 { font-size: 26px; }
         .quad, .m-grid { grid-template-columns: 1fr; }
         .quote, blockquote { font-size: 22px; padding-left: 20px; }

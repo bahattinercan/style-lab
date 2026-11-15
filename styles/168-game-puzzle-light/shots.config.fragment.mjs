@@ -16,7 +16,7 @@ h1, h2, h3 { text-transform: uppercase; }
 .pg-band { border-color: color-mix(in srgb, var(--accent) 26%, var(--line)); }
 .eyebrow, .label, .mono, .pg-cap { font-variant-numeric: tabular-nums; }
 .kpi strong, .num, .pg-band b { font-variant-numeric: tabular-nums; }
-h1 { font-size: 42px; line-height: 1.14; max-width: 22ch; }
+h1 { font-size: var(--type-h1); line-height: 1.14; max-width: 22ch; }
 h2 { font-size: 24px; }
 .pg-media { border-radius: 18px; }
 .pg-chart i { border-radius: 6px 6px 0 0; }

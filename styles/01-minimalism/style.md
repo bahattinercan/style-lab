@@ -63,7 +63,7 @@ Kazandığı şey odak: kullanıcı ekranda ne yapacağını 1 saniyede görür.
 | `--surface-2` | `#f7f7f5` | pasif chip, hover zemini | birincil buton |
 | `--ink` | `#101112` | başlık, gövde, ikon | dev zemin |
 | `--ink-soft` | `#5a5f66` | ikincil metin, açıklama | 11px altı metin (kontrast düşer) |
-| `--ink-faint` | `#9aa0a6` | dekoratif etiket, ayırıcı metin | etkileşimli metin, placeholder dışında |
+| `--ink-faint` | `#8d9298` | dekoratif etiket, ayırıcı metin | etkileşimli metin, placeholder dışında |
 | `--accent` | `#2563eb` | birincil buton, bağlantı, aktif durum | geniş zemin, grafik dolgusu (opaklık 0.12 ile) |
 | `--accent-ink` | `#ffffff` | accent üstü metin | accent olmayan zeminde |
 | `--line` | `rgba(16,17,18,.10)` | tüm kenarlıklar | metin rengi olarak |
@@ -245,7 +245,7 @@ Yasak: gradient, blur, doku, ikinci aksan rengi, 16px üstü radius, gölge çe�
 [data-style="minimalism"] {
   --bg: #fafaf9; --bg-2: #f2f2f0;
   --surface: #ffffff; --surface-2: #f7f7f5;
-  --ink: #101112; --ink-soft: #5a5f66; --ink-faint: #9aa0a6;
+  --ink: #101112; --ink-soft: #5a5f66; --ink-faint: #8d9298;
   --accent: #2563eb; --accent-ink: #ffffff;
   --line: rgba(16,17,18,.10);
   --radius: 8px; --radius-lg: 12px;

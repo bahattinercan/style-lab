@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'none',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: 2.5:3.5 kart orani · holo bant · nadirlik tasi · stat seridi · katmanli cerceve */
-      h1 { font-size: 48px; line-height: 1.02; letter-spacing: .01em; font-weight: 600; max-width: 20ch; }
+  extraCss: `/* imza: 2.5:3.5 kart orani · holo bant · nadirlik tasi · stat seridi · katmanli cerceve */
+      h1   { font-size: var(--type-h1); line-height: 1.02; letter-spacing: .01em; font-weight: 600; max-width: 20ch; }
       h2 { font-size: 28px; line-height: 1.1; letter-spacing: .01em; font-weight: 600; }
       h3 { font-size: 19px; line-height: 1.24; font-weight: 600; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; }
@@ -57,7 +56,7 @@ export const CONFIG = {
         transform: rotate(-3deg);
       }
       @media (max-width: 900px) {
-        h1 { font-size: 32px; }
+        h1  { font-size: var(--type-h1); }
         body.scene-landing .sig::after { width: 104px; height: 146px; right: 6vw; bottom: 8vh; }
         body.scene-landing .sig::before { top: 78px; width: 16px; height: 16px; }
       }

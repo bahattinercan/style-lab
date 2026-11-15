@@ -19,8 +19,7 @@ export const CONFIG = {
       background: radial-gradient(58% 54% at 70% 24%, var(--accent) 0%, transparent 68%);
       opacity: .16;
       filter: blur(var(--blur));
-    }
-    h1 { font-family: var(--font-display); font-weight: 400; font-size: 44px; line-height: 1.14; letter-spacing: var(--tracking); max-width: 24ch; }
+    }h1   { font-family: var(--font-display); font-weight: 400; font-size: var(--type-h1); line-height: 1.14; letter-spacing: var(--tracking); max-width: 24ch; }
     h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.24; letter-spacing: .01em; }
     h3 { font-family: var(--font-body); font-weight: 600; font-size: 19px; line-height: 1.3; letter-spacing: 0; }
     h4 { font-family: var(--font-body); font-weight: 600; font-size: 14px; }
@@ -118,7 +117,7 @@ export const CONFIG = {
       opacity: .14; filter: blur(28px);
     }
     @media (max-width: 900px) {
-      h1 { font-size: 27px; max-width: 22ch; }
+      h1  { font-size: var(--type-h1); max-width: 22ch; }
       .hero-visual::before { transform: translate(8px, 8px); }
       .hero-visual::after { transform: translate(16px, 16px); }
       body.scene-landing .sig::after { opacity: .10; }

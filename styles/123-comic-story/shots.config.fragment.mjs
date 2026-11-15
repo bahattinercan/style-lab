@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'dots',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: 3px murekkep panel cercevesi · 6px oluk · yarim ton · konusma balonu · efekt etiketi */
-      h1 { font-family: var(--font-display); font-size: 50px; line-height: 1.0; letter-spacing: .005em; font-weight: 600; max-width: 19ch; }
+  extraCss: `/* imza: 3px murekkep panel cercevesi · 6px oluk · yarim ton · konusma balonu · efekt etiketi */
+      h1   { font-family: var(--font-display); font-size: var(--type-h1); line-height: 1.0; letter-spacing: .005em; font-weight: 600; max-width: 19ch; }
       h2 { font-family: var(--font-display); font-size: 30px; line-height: 1.08; font-weight: 600; }
       h3 { font-family: var(--font-display); font-size: 20px; line-height: 1.2; font-weight: 600; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; }
@@ -70,7 +69,7 @@ export const CONFIG = {
         content: ""; position: absolute; top: 0; bottom: 0; right: 34vw; width: 3px; background: var(--ink); opacity: .9;
       }
       @media (max-width: 900px) {
-        h1 { font-size: 32px; }
+        h1  { font-size: var(--type-h1); }
         body.scene-landing .sig::before { font-size: 15px; padding: 4px 8px; top: 74px; }
         body.scene-landing .sig::after { display: none; }
       }

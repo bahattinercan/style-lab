@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'rings',
   bodyClass: '',
-  extraCss: `
-      /* imza: 6px die-cut halka · 2px ofset gölge · −10°…40° rotasyon · hover'da 8px kalkma */
-      h1 { font-size: 44px; line-height: 1.1; letter-spacing: -.01em; font-weight: 900; font-family: var(--font-display); max-width: 20ch; }
+  extraCss: `/* imza: 6px die-cut halka · 2px ofset gölge · −10°…40° rotasyon · hover'da 8px kalkma */
+      h1   { font-size: var(--type-h1); line-height: 1.1; letter-spacing: -.01em; font-weight: 900; font-family: var(--font-display); max-width: 20ch; }
       h2 { font-size: 26px; line-height: 1.16; font-weight: 900; }
       h3 { font-size: 20px; line-height: 1.28; font-weight: 700; }
       p, .lede, .copy { font-family: var(--font-body); }
@@ -43,7 +42,7 @@ export const CONFIG = {
       .nav { border-bottom: 2px solid var(--line); min-height: 64px; }
       .nav-links a { font-weight: 700; font-size: 15px; }
       @media (max-width: 900px) {
-        h1 { font-size: 28px; }
+        h1  { font-size: var(--type-h1); }
         h2 { font-size: 22px; }
         .panel, .comp-card, .plan, .kpi, .visual-card, .m-tile { border-width: 4px; }
         .m-tile { transform: none; }

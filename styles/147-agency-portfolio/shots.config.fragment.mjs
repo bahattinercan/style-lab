@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Archivo Black display · Inter gövde · Space Mono indeks ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: none; }
-      h1 { font-size: 72px; line-height: 1.02; letter-spacing: -.02em; max-width: 22ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: none; }h1  { font-size: var(--type-h1); line-height: 1.02; letter-spacing: -.02em; max-width: 22ch; }
       h2 { font-size: 36px; line-height: 1.1; letter-spacing: -.01em; max-width: 28ch; }
       h3 { font-family: var(--font-body); font-weight: 600; font-size: 24px; line-height: 1.2; letter-spacing: -.01em; }
       h4 { font-family: var(--font-body); font-weight: 600; font-size: 16px; line-height: 1.3; letter-spacing: 0; }
@@ -110,7 +109,7 @@ export const CONFIG = {
       body.scene-dashboard .trow:nth-child(odd) { background: var(--bg-2); }
 
       @media (max-width: 900px) {
-        h1 { font-size: 36px; max-width: 18ch; }
+        h1  { font-size: var(--type-h1); max-width: 18ch; }
         h2 { font-size: 24px; }
         h3 { font-size: 19px; }
         .lede { font-size: 15px; }

@@ -3,8 +3,8 @@
 [data-style="surrealism"] {
   --bg: #e7e2da; --bg-2: #d9d2c7;
   --surface: #fbf9f5; --surface-2: #efeae1;
-  --ink: #1e1c1a; --ink-soft: #56514a; --ink-faint: #8d877e;
-  --accent: #e4572e; --accent-ink: #1e1c1a;
+  --ink: #1e1c1a; --ink-soft: #56514a; --ink-faint: #868178;
+  --accent: #df5329; --accent-ink: #1b1918;
   --line: rgba(30,28,26,.12);
   --radius: 4px; --radius-lg: 10px;
   --shadow: 0 24px 60px rgba(30,28,26,.16); --shadow-hard: none;

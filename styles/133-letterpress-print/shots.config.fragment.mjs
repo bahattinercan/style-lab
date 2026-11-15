@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'paper',
   bodyClass: '',
-  extraCss: `
-      /* imza: 1px deboss (yalnız başlık) · 1px iç gölge (basınç izi) · kâğıt elyafı %3 · 2px radius */
-      h1 { font-size: 46px; line-height: 1.12; letter-spacing: .06em; font-weight: 600; font-family: var(--font-display); text-transform: uppercase;
+  extraCss: `/* imza: 1px deboss (yalnız başlık) · 1px iç gölge (basınç izi) · kâğıt elyafı %3 · 2px radius */
+      h1   { font-size: var(--type-h1); line-height: 1.12; letter-spacing: .06em; font-weight: 600; font-family: var(--font-display); text-transform: uppercase;
         text-shadow: 0 1px 0 color-mix(in srgb, var(--surface) 90%, transparent); max-width: 20ch; }
       h2 { font-size: 28px; line-height: 1.18; letter-spacing: .04em; font-weight: 600; text-transform: uppercase; }
       h3 { font-size: 22px; line-height: 1.24; letter-spacing: .02em; font-weight: 600; }
@@ -38,7 +37,7 @@ export const CONFIG = {
       .nav { border-bottom: 1px solid var(--line); min-height: 60px; }
       .nav-links a { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
       @media (max-width: 900px) {
-        h1 { font-size: 28px; }
+        h1  { font-size: var(--type-h1); }
         h2 { font-size: 22px; }
         .sec, .art-body, .auth-aside, .foot-demo { background-image: none; }
       }

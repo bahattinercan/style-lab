@@ -81,6 +81,7 @@ run_visual_regression() {
 # --- kaynak paritesi (json ⇄ token-block ⇄ tokens.css) -----------------------
 run_gate "fragment senkronu" node kit/apply-fragments.mjs --check
 run_gate "şema kapısı" node kit/check-schema.mjs
+run_gate "legacy SPEC paritesi" node kit/add-style.mjs kit/specs/legacy-01-151.json --check
 run_gate "kontrast denetimi" node kit/check-contrast.mjs --strict-soft
 
 # --- katalog (galeri, indeks, doküman tabloları) ----------------------------
@@ -100,6 +101,7 @@ run_gate "kompozisyon çeşitliliği" node kit/check-layout.mjs
 run_gate "kompozisyon self-test" node kit/check-layout.mjs --self-test
 run_gate "kompozisyon" node kit/check-composition.mjs --browser
 run_gate "kompozisyon raporu güncel" node kit/composition-report.mjs --check
+run_gate "erişilebilirlik" node kit/render/a11y-check.mjs --scene landing
 
 # --- tek sayfa ölçümü -------------------------------------------------------
 # Sığdırma kademesi, zoom yasağı, yatay/blok taşma ve 10px altı punto: sayfa 1280×2400
@@ -115,8 +117,9 @@ run_gate "font TTF" node kit/fetch-fonts.mjs --check
 run_gate "rapor güncel" node kit/report.mjs --check
 
 # --- araç doğrulaması -------------------------------------------------------
-run_gate "birim testleri" node --test kit/render/render-shots.test.mjs kit/render/cdp-browser.test.mjs
+run_gate "birim testleri" node --test kit/render/render-shots.test.mjs kit/render/cdp-browser.test.mjs kit/render/object-region.test.mjs kit/lib/css-cascade.test.mjs kit/lib/type-scale.test.mjs kit/lib/section-plan.test.mjs
 run_gate "style-lint kuralları" node kit/style-lint.mjs --self-test
+run_gate "imza CSS lint kuralları" node kit/check-signature.mjs --self-test
 run_gate "galeri arayüzü" node kit/check-gallery-ui.mjs
 run_gate "brief üretimi" node kit/brief.mjs --self-test
 run_gate "mcp sunucusu" node kit/mcp-server.mjs --self-test
@@ -129,6 +132,8 @@ run_gate "site duman testi" node kit/check-site.mjs
 
 # --- görsel imza ------------------------------------------------------------
 run_gate "görsel imza" node kit/render/phash.mjs --check
+run_gate "stil ayırt edilebilirliği" node kit/check-distinctness.mjs
+run_gate "ayırt edilebilirlik self-test" node kit/check-distinctness.mjs --self-test
 run_visual_regression || exit 1
 
 echo "kapılar: temiz"

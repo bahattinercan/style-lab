@@ -12,8 +12,7 @@ export const CONFIG = {
         linear-gradient(90deg, var(--line) 1px, transparent 1px);
       background-size: 8px 8px;
       opacity: .7;
-    }
-    h1 { font-family: var(--font-display); font-weight: 400; font-size: 38px; line-height: 1.1; letter-spacing: var(--tracking); max-width: 28ch; }
+    }h1   { font-family: var(--font-display); font-weight: 400; font-size: var(--type-h1); line-height: 1.1; letter-spacing: var(--tracking); max-width: 28ch; }
     h2 { font-family: var(--font-display); font-weight: 400; font-size: 24px; line-height: 1.24; letter-spacing: .02em; }
     h3 { font-family: var(--font-body); font-weight: 600; font-size: 18px; line-height: 1.3; letter-spacing: 0; text-transform: none; }
     h4 { font-family: var(--font-body); font-weight: 600; font-size: 13px; text-transform: none; }
@@ -95,7 +94,7 @@ export const CONFIG = {
       opacity: .5;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 24px; max-width: 26ch; }
+      h1  { font-size: var(--type-h1); max-width: 26ch; }
       body.scene-landing .sig::before { opacity: .3; }
     }
   

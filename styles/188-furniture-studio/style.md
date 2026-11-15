@@ -67,7 +67,7 @@ Basılı katalog, mağaza vitrini ve pazar yeri listeleme düzenlerinin ekran ka
 
 | Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Jost) | 46px (mobil 30px) | 600 | 1.06 | -0.02em |
+| Display / H1 | `--font-display` (Jost) | 44px (mobil 30px) | 600 | 1.06 | -0.02em |
 | H2 | aynı | 26px | 600 | 1.18 | -0.015em |
 | H3 | aynı | 18px | 600 | 1.3 | 0 |
 | Gövde | `--font-body` (Jost) | 15px | 400 | 1.6 | 0 |

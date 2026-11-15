@@ -8,8 +8,7 @@ export const CONFIG = {
   bodyClass: '',
   extraCss: `
       /* imza: numaralı iz rayı · onay kapısı (2px accent) · gerekçe/atıf şeridi */
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.01em; }
-      h1 { font-size: 34px; line-height: 1.16; max-width: 26ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.01em; }h1 { font-size: var(--type-h1); line-height: 1.16; max-width: 26ch; }
       h2 { font-size: 24px; line-height: 1.26; }
       h3 { font-size: 18px; line-height: 1.32; }
       .lede { font-family: var(--font-body); font-size: 14px; line-height: 1.55; max-width: 66ch; color: var(--ink-soft); }

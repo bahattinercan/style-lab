@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'dots',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: tek satır Anton bant başlık · 8px renk şeridi · bilet perforasyonu · 0–4px radius */
-      h1 { font-size: 72px; line-height: .94; letter-spacing: -.01em; font-weight: 400; font-family: var(--font-display); text-transform: uppercase; max-width: 20ch; }
+  extraCss: `/* imza: tek satır Anton bant başlık · 8px renk şeridi · bilet perforasyonu · 0–4px radius */
+      h1   { font-size: var(--type-h1); line-height: .94; letter-spacing: -.01em; font-weight: 400; font-family: var(--font-display); text-transform: uppercase; max-width: 20ch; }
       h2 { font-size: 40px; line-height: 1.0; letter-spacing: 0; font-weight: 400; text-transform: uppercase; }
       h3 { font-size: 22px; line-height: 1.16; font-weight: 700; }
       p, .lede, .copy { font-family: var(--font-body); }
@@ -39,7 +38,7 @@ export const CONFIG = {
       .nav-links a { font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
       .sec { padding-top: 28px; }
       @media (max-width: 900px) {
-        h1 { font-size: 40px; max-width: 16ch; }
+        h1  { font-size: var(--type-h1); max-width: 16ch; }
         h2 { font-size: 26px; }
         .sig::before, .sec::before { height: 6px; }
       }

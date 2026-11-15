@@ -14,8 +14,7 @@ export const CONFIG = {
           repeating-linear-gradient(96deg, color-mix(in srgb, var(--accent) 7%, transparent) 0 1px, transparent 1px 46px);
         background-repeat: no-repeat;
       }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: .005em; }
-      h1 { font-size: 56px; line-height: 1.04; max-width: 19ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: .005em; }h1 { font-size: var(--type-h1); line-height: 1.04; max-width: 19ch; }
       h2 { font-size: 36px; line-height: 1.14; }
       h3 { font-size: 24px; line-height: 1.26; }
       .lede { font-family: var(--font-body); font-size: 16px; line-height: 1.75; max-width: 56ch; color: var(--ink-soft); }

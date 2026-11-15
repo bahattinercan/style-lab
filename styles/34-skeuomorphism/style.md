@@ -70,8 +70,8 @@ Erken GUI (Mac OS Classic, Win 95/XP), audio ekipman panelleri; bugün niş ür�
 | `--surface` | `#f2ebdd` | panel (kâğıt/kumaş) |
 | `--surface-2` | `#e6ddcb` | ikincil panel |
 | `--ink` | `#2f2a24` | metin (8.41:1) |
-| `--ink-soft` | `#5d554a` | açıklama (4.34:1, ≥18px) |
-| `--ink-faint` | `#8b8173` | dekoratif (2.26:1) |
+| `--ink-soft` | `#5a5248` | açıklama (4.34:1, ≥18px) |
+| `--ink-faint` | `#776d60` | dekoratif (2.26:1) |
 | `--accent` | `#2f6b4f` | buton (yeşil metal) |
 | `--accent-ink` | `#f7f3e8` | accent üstü (**5.68:1**) |
 | `--line` | `rgba(47,42,36,.35)` | bevel/kenar |
@@ -211,7 +211,7 @@ Radius 6/10px, bevel 1px highlight. Hareket: 120–300ms, basılma inset→outse
 [data-style="skeuomorphism"] {
   --bg: #cfc6b8; --bg-2: #bdb2a1;
   --surface: #f2ebdd; --surface-2: #e6ddcb;
-  --ink: #2f2a24; --ink-soft: #5d554a; --ink-faint: #8b8173;
+  --ink: #2f2a24; --ink-soft: #5a5248; --ink-faint: #776d60;
   --accent: #2f6b4f; --accent-ink: #f7f3e8;
   --line: rgba(47,42,36,.35);
   --radius: 6px; --radius-lg: 10px;

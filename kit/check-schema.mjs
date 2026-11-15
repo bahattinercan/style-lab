@@ -20,6 +20,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { pairsToMap, parsePairs, readBlock } from './lib/css-block.mjs';
+import { CORE_PALETTE_TARGETS, deriveCorePalette } from './lib/palette.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
@@ -217,6 +218,22 @@ function checkStyle(dirName, ctx) {
 
   const palette = t.palette ?? {};
   for (const key of REQUIRED_PALETTE) if (!(key in palette)) E(`${tag}: palette.${key} eksik`);
+  const seeds = t.paletteSeeds ?? {};
+  for (const key of REQUIRED_PALETTE) if (!(key in seeds)) E(`${tag}: paletteSeeds.${key} eksik`);
+  const targets = t.paletteTargets ?? {};
+  for (const key of Object.keys(CORE_PALETTE_TARGETS)) {
+    if (typeof targets[key] !== 'number' || targets[key] <= 0) E(`${tag}: paletteTargets.${key} pozitif sayı olmalı`);
+  }
+  if (REQUIRED_PALETTE.every((key) => key in seeds)) {
+    try {
+      const derived = deriveCorePalette(seeds, targets);
+      for (const key of REQUIRED_PALETTE) {
+        if (derived[key] !== palette[key]) E(`${tag}: palette.${key} seed/hedef sonucuyla aynı değil (${derived[key]} beklenir)`);
+      }
+    } catch (error) {
+      E(`${tag}: seed paleti çözülemedi (${error.message})`);
+    }
+  }
 
   /* v6: koyu mod ve hareket kaldırıldı — geri gelirlerse kapı kırmızı. */
   if ('dark' in palette) E(`${tag}: palette.dark v6'da yasak (koyu mod kaldırıldı)`);

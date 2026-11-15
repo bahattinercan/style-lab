@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Space Grotesk başlık · Inter gövde · Space Mono ölçüm ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2 { font-family: var(--font-display); font-weight: 700; }
-      h1 { font-size: 40px; line-height: 1.08; letter-spacing: -.02em; max-width: 24ch; }
+      h1, h2 { font-family: var(--font-display); font-weight: 700; }h1  { font-size: var(--type-h1); line-height: 1.08; letter-spacing: -.02em; max-width: 24ch; }
       h2 { font-size: 24px; line-height: 1.18; letter-spacing: -.01em; }
       h3, h4 { font-family: var(--font-body); font-weight: 600; letter-spacing: 0; }
       h3 { font-size: 18px; line-height: 1.3; }
@@ -142,7 +141,7 @@ export const CONFIG = {
       body.scene-dashboard .side { background: var(--bg-2); }
 
       @media (max-width: 900px) {
-        h1 { font-size: 26px; max-width: 22ch; }
+        h1  { font-size: var(--type-h1); max-width: 22ch; }
         h2 { font-size: 20px; }
         .lede { font-size: 14px; }
         body.scene-dashboard .kpis { grid-template-columns: 1fr 1fr; gap: 8px; }

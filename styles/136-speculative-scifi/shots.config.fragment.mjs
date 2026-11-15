@@ -14,8 +14,7 @@ export const CONFIG = {
           linear-gradient(90deg, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px);
         background-size: 32px 32px, 32px 32px;
       }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: .02em; }
-      h1 { font-size: 46px; line-height: 1.06; max-width: 22ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: .02em; }h1 { font-size: var(--type-h1); line-height: 1.06; max-width: 22ch; }
       h2 { font-size: 30px; line-height: 1.14; letter-spacing: .04em; }
       h3 { font-size: 21px; line-height: 1.26; letter-spacing: .04em; }
       .lede { font-family: var(--font-body); font-size: 16px; line-height: 1.58; max-width: 58ch; color: var(--ink-soft); }

@@ -3,8 +3,7 @@ export const CONFIG = {
   extraCss: `
     /* imza: mono ızgara · 1px çerçeve · ters video · efekt yok */
     body { font-variant-numeric: tabular-nums; }
-    h1, h2, h3, h4 { font-family: var(--font-mono); font-weight: 600; letter-spacing: 0; }
-    h1 { font-size: 40px; line-height: 1.15; max-width: 26ch; }
+    h1, h2, h3, h4 { font-family: var(--font-mono); font-weight: 600; letter-spacing: 0; }h1 { font-size: var(--type-h1); line-height: 1.15; max-width: 26ch; }
     h2 { font-size: 24px; line-height: 1.3; }
     h3 { font-size: 18px; line-height: 1.35; }
     .lede { font-size: 14px; line-height: 1.55; max-width: 72ch; color: var(--ink-soft); }

@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'bars',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: skor tabelasi (tabular rakam) · forma numarasi konturu · pist seritleri · hiz kirigi */
-      h1 { font-size: 62px; line-height: .9; letter-spacing: .005em; font-weight: 700; max-width: 16ch; }
+  extraCss: `/* imza: skor tabelasi (tabular rakam) · forma numarasi konturu · pist seritleri · hiz kirigi */
+      h1   { font-size: var(--type-h1); line-height: .9; letter-spacing: .005em; font-weight: 700; max-width: 16ch; }
       h2 { font-size: 32px; line-height: .98; letter-spacing: .005em; font-weight: 700; }
       h3 { font-size: 20px; line-height: 1.16; font-weight: 600; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; }
@@ -65,7 +64,7 @@ export const CONFIG = {
       .cmp .row, .cmp .row.head { border-bottom: 2px solid var(--line); }
       .cmp .row.head { background: var(--ink); color: var(--bg); }
       @media (max-width: 900px) {
-        h1 { font-size: 36px; max-width: 13ch; }
+        h1  { font-size: var(--type-h1); max-width: 13ch; }
         body.scene-landing .sig::before { font-size: 76px; top: 54px; -webkit-text-stroke-width: 2px; }
         body.scene-landing .sig::after { height: 36px; }
       }

@@ -4,9 +4,8 @@
 export const CONFIG = {
   motif: 'rings',
   bodyClass: '',
-  extraCss: `
-    /* imza: yuvarlak vital kartı + sol seviye şeridi + nabız halkası */
-    h1 { font-family: var(--font-display); font-weight: 600; font-size: 44px; line-height: 1.06; letter-spacing: var(--tracking); max-width: 22ch; }
+  extraCss: `/* imza: yuvarlak vital kartı + sol seviye şeridi + nabız halkası */
+    h1   { font-family: var(--font-display); font-weight: 600; font-size: var(--type-h1); line-height: 1.06; letter-spacing: var(--tracking); max-width: 22ch; }
     h2 { font-family: var(--font-display); font-weight: 600; font-size: 27px; line-height: 1.2; letter-spacing: -.005em; }
     h3 { font-family: var(--font-body); font-weight: 700; font-size: 20px; line-height: 1.32; }
     h4 { font-family: var(--font-body); font-weight: 700; font-size: 15px; }
@@ -83,7 +82,7 @@ export const CONFIG = {
       opacity: .6;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 28px; max-width: 22ch; }
+      h1  { font-size: var(--type-h1); max-width: 22ch; }
       .kpi, .panel { padding: 18px; }
       body.scene-landing .sig::before, body.scene-dashboard .sig::before { opacity: .35; }
     }

@@ -16,7 +16,7 @@ h1, h2, h3 { text-transform: uppercase; }
 .pg-band { border-color: color-mix(in srgb, var(--accent) 26%, var(--line)); }
 .eyebrow, .label, .mono, .pg-cap { font-variant-numeric: tabular-nums; }
 .kpi strong, .num, .pg-band b { font-variant-numeric: tabular-nums; }
-h1 { font-size: 46px; letter-spacing: .04em; max-width: 24ch; }
+h1 { font-size: var(--type-h1); letter-spacing: .04em; max-width: 24ch; }
 h2 { font-size: 26px; letter-spacing: .03em; }
 .panel, .pg-card { background-image: linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%); }
 .pg-card { border-top-width: 1px; }

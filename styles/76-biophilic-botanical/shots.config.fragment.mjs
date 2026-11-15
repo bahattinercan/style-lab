@@ -14,8 +14,7 @@ export const CONFIG = {
           radial-gradient(50% 40% at 100% 100%, color-mix(in srgb, var(--ok) 8%, transparent) 0%, transparent 70%);
         background-repeat: no-repeat;
       }
-      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: -.01em; }
-      h1 { font-size: 48px; line-height: 1.08; max-width: 20ch; }
+      h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: -.01em; }h1 { font-size: var(--type-h1); line-height: 1.08; max-width: 20ch; }
       h2 { font-size: 32px; line-height: 1.14; }
       h3 { font-size: 22px; line-height: 1.28; }
       .lede { font-size: 16px; line-height: 1.65; max-width: 58ch; color: var(--ink-soft); }

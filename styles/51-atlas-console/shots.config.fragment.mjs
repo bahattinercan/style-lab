@@ -12,8 +12,7 @@ export const CONFIG = {
         linear-gradient(90deg, var(--line) 1px, transparent 1px);
       background-size: 32px 32px;
       opacity: .9;
-    }
-    h1 { font-family: var(--font-display); font-size: 48px; font-weight: 600; line-height: 1.08; letter-spacing: var(--tracking); max-width: 22ch; }
+    }h1   { font-family: var(--font-display); font-size: var(--type-h1); font-weight: 600; line-height: 1.08; letter-spacing: var(--tracking); max-width: 22ch; }
     h2 { font-family: var(--font-display); font-size: 26px; font-weight: 600; line-height: 1.22; letter-spacing: .03em; }
     h3 { font-family: var(--font-body); font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: 0; }
     .lede { max-width: 60ch; font-size: 15px; line-height: 1.58; color: var(--ink-soft); }
@@ -100,7 +99,7 @@ export const CONFIG = {
       opacity: .10;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 28px; max-width: 24ch; }
+      h1  { font-size: var(--type-h1); max-width: 24ch; }
       body.scene-landing .sig::after { display: none; }
       .hero-visual::after { height: 16px; }
     }

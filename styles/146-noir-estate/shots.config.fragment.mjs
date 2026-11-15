@@ -10,8 +10,7 @@ export const CONFIG = {
   extraCss: `
       /* ---------- tipografi: Cormorant 300 başlık · Jost gövde · JetBrains künye ---------- */
       body { font-variant-numeric: tabular-nums; }
-      h1, h2, h3 { font-family: var(--font-display); font-weight: 300; text-transform: none; }
-      h1 { font-size: 56px; line-height: 1.06; letter-spacing: .01em; max-width: 18ch; }
+      h1, h2, h3 { font-family: var(--font-display); font-weight: 300; text-transform: none; }h1  { font-size: var(--type-h1); line-height: 1.06; letter-spacing: .01em; max-width: 18ch; }
       h2 { font-size: 38px; line-height: 1.12; letter-spacing: .01em; max-width: 24ch; }
       h3 { font-size: 24px; line-height: 1.2; font-weight: 500; max-width: 28ch; }
       h4 { font-family: var(--font-body); font-weight: 600; font-size: 15px; letter-spacing: 0; }
@@ -133,7 +132,7 @@ export const CONFIG = {
       body.scene-dashboard .trow { font-variant-numeric: tabular-nums; }
 
       @media (max-width: 900px) {
-        h1 { font-size: 32px; max-width: 20ch; }
+        h1  { font-size: var(--type-h1); max-width: 20ch; }
         h2 { font-size: 26px; }
         h3 { font-size: 19px; }
         .lede { font-size: 14px; }

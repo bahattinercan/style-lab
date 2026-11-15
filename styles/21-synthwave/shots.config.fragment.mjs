@@ -7,7 +7,7 @@ export const CONFIG = {
     .sig::before {
       content: ""; position: absolute; inset: 0;
       background:
-        radial-gradient(circle at 50% 76%, #ff2a6d 0 96px, #ff9e00 96px 132px, transparent 133px),
+        radial-gradient(circle at 50% 76%, var(--accent) 0 96px, color-mix(in srgb, var(--accent) 45%, var(--warn)) 96px 132px, transparent 133px),
         repeating-linear-gradient(0deg, rgba(255,42,109,.45) 0 2px, transparent 2px 34px);
       opacity: .55;
     }

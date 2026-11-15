@@ -27,6 +27,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parsePairs, readBlock } from './lib/css-block.mjs';
+import { replaceObjectRegion } from './lib/object-region.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
@@ -262,7 +263,11 @@ function main() {
   const keywordsContent = region(MARKS.keywords, fragments.map((f) => renderKeywordEntry(f.slug, f.tags)));
 
   const nextCss = stripDarkSection(upsertRegion(css, MARKS.light, lightContent, LIGHT_ANCHOR, '\n\n'));
-  const nextShots = upsertRegion(shots, MARKS.styles, stylesContent, STYLES_ANCHOR, '\n');
+  let nextShots = replaceObjectRegion(shots, 'export const STYLES = {', STYLES_ANCHOR, stylesContent);
+  if (!nextShots.includes("import { normalizeCss } from '../lib/css-cascade.mjs';")) {
+    nextShots = nextShots.replace('export const STYLES = {', "import { normalizeCss } from '../lib/css-cascade.mjs';\n\nexport const STYLES = {");
+  }
+  nextShots = nextShots.replace('return { ...DEFAULTS, ...(STYLES[slug] ?? {}) };', "const config = { ...DEFAULTS, ...(STYLES[slug] ?? {}) };\n  return { ...config, extraCss: normalizeCss(config.extraCss ?? '') };");
   const nextGallery = upsertRegion(gallery, MARKS.keywords, keywordsContent, KEYWORDS_ANCHOR, '\n', { comma: true });
 
   const braces = (s) => (s.match(/\{/g) ?? []).length - (s.match(/\}/g) ?? []).length;

@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'paper',
   bodyClass: '',
-  extraCss: `
-      /* imza: tezhip iç çerçeve · kalın-ince kalem kuralı · sağ omurga */
-      h1 { font-size: 58px; line-height: 1.08; letter-spacing: -.005em; font-weight: 500; max-width: 22ch; }
+  extraCss: `/* imza: tezhip iç çerçeve · kalın-ince kalem kuralı · sağ omurga */
+      h1   { font-size: var(--type-h1); line-height: 1.08; letter-spacing: -.005em; font-weight: 500; max-width: 22ch; }
       h2 { font-size: 31px; line-height: 1.14; font-weight: 500; }
       h3 { font-size: 20px; line-height: 1.3; font-weight: 500; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); letter-spacing: .12em; font-size: 11px; }
@@ -60,7 +59,7 @@ export const CONFIG = {
       .hero-copy .lede { margin-left: auto; }
       .art-side, .auth-aside { border-right: 1px solid var(--line); }
       @media (max-width: 900px) {
-        h1 { font-size: 36px; }
+        h1  { font-size: var(--type-h1); }
         .hero-copy { text-align: left; }
         body.scene-landing .sig::before, body.scene-landing .sig::after { width: 104px; height: 104px; top: 64px; }
       }

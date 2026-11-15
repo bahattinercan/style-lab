@@ -16,7 +16,7 @@ h1, h2, h3 { text-transform: uppercase; }
 .pg-band { border-color: color-mix(in srgb, var(--accent) 26%, var(--line)); }
 .eyebrow, .label, .mono, .pg-cap { font-variant-numeric: tabular-nums; }
 .kpi strong, .num, .pg-band b { font-variant-numeric: tabular-nums; }
-h1 { font-size: 46px; line-height: 1.12; max-width: 24ch; }
+h1 { font-size: var(--type-h1); line-height: 1.12; max-width: 24ch; }
 h2 { font-size: 26px; }
 .brand { text-transform: uppercase; letter-spacing: .16em; font-size: 13px; }
 .pg-media { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%); }

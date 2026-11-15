@@ -4,7 +4,7 @@
    (kit/build-gallery.mjs norm() karşılaştırması geçer). */
 
 [data-style="quantum-lab"] {
-  --bg: #9b99a3; --bg-2: #92909a;
+  --bg: #b3b1bb; --bg-2: #92909a;
   --surface: #a6a4ae; --surface-2: #86848e;
   --ink: #14121a; --ink-soft: #2f2c38; --ink-faint: #4a4753;
   --accent: #5b3fa8; --accent-ink: #ffffff;

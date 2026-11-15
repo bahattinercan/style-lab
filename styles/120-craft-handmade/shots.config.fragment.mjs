@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'paper',
   bodyClass: '',
-  extraCss: `
-      /* imza: kraft doku · sol kenarda kesikli dikiş · 4px radius · gölgesiz katman */
-      h1 { font-size: 52px; line-height: 1.08; letter-spacing: .01em; font-weight: 700; font-family: var(--font-display); max-width: 16ch; }
+  extraCss: `/* imza: kraft doku · sol kenarda kesikli dikiş · 4px radius · gölgesiz katman */
+      h1   { font-size: var(--type-h1); line-height: 1.08; letter-spacing: .01em; font-weight: 700; font-family: var(--font-display); max-width: 16ch; }
       h2 { font-size: 32px; line-height: 1.16; letter-spacing: 0; font-weight: 700; }
       h3 { font-size: 20px; line-height: 1.3; font-weight: 700; }
       p, .lede, .copy { font-family: var(--font-body); }
@@ -43,7 +42,7 @@ export const CONFIG = {
       .nav { border-bottom: 1px solid var(--line); min-height: 64px; }
       .nav-links a { font-family: var(--font-mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
       @media (max-width: 900px) {
-        h1 { font-size: 32px; }
+        h1  { font-size: var(--type-h1); }
         .sig::before { left: 16px; border-left-width: 1px; }
       }
           /* === QA dalgası 106–120: okunurluk + çakışma düzeltmeleri === */

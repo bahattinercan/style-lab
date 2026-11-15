@@ -1,202 +1,1105 @@
 [
   {
-    "num": "192", "slug": "museum-exhibition", "name": "Museum Exhibition", "band": "kultur",
+    "num": "192",
+    "slug": "museum-exhibition",
+    "name": "Museum Exhibition",
+    "band": "kultur",
     "tagline": "Sergi sayfası: kemik zemin, ince hairline, tarih-sıra künyesi ve geniş kenar boşluğu.",
-    "feeling": "sakin, arşivli, \"salon 2 sağda\"", "best": "müze/galeri sergisi, koleksiyon, ziyaret bilgisi", "avoid": "kampanya afişi, neon",
-    "palette": { "bg": "#f7f5f0", "bg2": "#efece4", "surface": "#fffdfa", "surface2": "#f4f1ea", "ink": "#1a1917", "inkSoft": "#514e48", "inkFaint": "#847f76", "accent": "#7a2f2f", "accentInk": "#fdf7f7", "line": "rgba(26,25,23,.16)" },
-    "fonts": ["Cormorant Garamond", "EB Garamond", "IBM Plex Mono"], "radius": ["0px", "2px"], "motif": "paper",
-    "signature": ["**Tarih-sıra künyesi:** mono, sol tarafta sabit sütun.", "**Hairline:** bölüm ayırıcı 1px, gölge yok.", "**Geniş kenar:** 56px, tek asimetri (7/5).", "**Koyu kırmızı accent:** yalnız sergi etiketi."],
-    "must": ["Tarih aralığı ve salon numarası her bölümde.", "Metin 68ch, başlık geniş ölçekli.", "Görsel altı künye zorunlu."],
-    "mustNot": ["Animasyonlu galeri.", "Beş renkli kategori.", "Yuvarlak köşe."],
-    "neighbors": { "compatible": ["museum-thesis", "library-archive"], "forbidden": ["dopamine-ui", "game-racing-neon"] },
-    "refs": [
-      { "label": "Cormorant Garamond (Google Fonts)", "url": "https://fonts.google.com/specimen/Cormorant+Garamond", "use": "başlık serif" },
-      { "label": "Art exhibition (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Art_exhibition", "use": "sergi künyesi" },
-      { "label": "IBM Plex Mono (Google Fonts)", "url": "https://fonts.google.com/specimen/IBM+Plex+Mono", "use": "tarih/sıra" }
+    "feeling": "sakin, arşivli, \"salon 2 sağda\"",
+    "best": "müze/galeri sergisi, koleksiyon, ziyaret bilgisi",
+    "avoid": "kampanya afişi, neon",
+    "palette": {
+      "bg": "#f7f5f0",
+      "bg2": "#efece4",
+      "surface": "#fffdfa",
+      "surface2": "#f4f1ea",
+      "ink": "#1a1917",
+      "inkSoft": "#514e48",
+      "inkFaint": "#847f76",
+      "accent": "#7a2f2f",
+      "accentInk": "#fdf7f7",
+      "line": "rgba(26,25,23,.16)"
+    },
+    "fonts": [
+      "Cormorant Garamond",
+      "EB Garamond",
+      "IBM Plex Mono"
     ],
-    "keywords": ["kültür", "müze", "sergi"], "industries": ["kultur", "egitim"],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "paper",
+    "signature": [
+      "**Tarih-sıra künyesi:** mono, sol tarafta sabit sütun.",
+      "**Hairline:** bölüm ayırıcı 1px, gölge yok.",
+      "**Geniş kenar:** 56px, tek asimetri (7/5).",
+      "**Koyu kırmızı accent:** yalnız sergi etiketi."
+    ],
+    "must": [
+      "Tarih aralığı ve salon numarası her bölümde.",
+      "Metin 68ch, başlık geniş ölçekli.",
+      "Görsel altı künye zorunlu."
+    ],
+    "mustNot": [
+      "Animasyonlu galeri.",
+      "Beş renkli kategori.",
+      "Yuvarlak köşe."
+    ],
+    "neighbors": {
+      "compatible": [
+        "museum-thesis",
+        "library-archive"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "game-racing-neon"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Cormorant Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Cormorant+Garamond",
+        "use": "başlık serif"
+      },
+      {
+        "label": "Art exhibition (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Art_exhibition",
+        "use": "sergi künyesi"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "tarih/sıra"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "müze",
+      "sergi"
+    ],
+    "industries": [
+      "kultur",
+      "egitim"
+    ],
     "essence": "Museum Exhibition, eseri öne alır: arayüz ince bir künye gibi davranır, görselle yarışmaz.",
     "brief": "Müze sergi sayfası tasarla: kemik zemin, hairline ayırıcılar, mono tarih-sıra künyesi, geniş kenar boşluğu.",
-    "extraCss": "h1 { font-size: 56px; font-weight: 400; max-width: 22ch; }\nh2 { font-size: 30px; font-weight: 400; }\n.pg-card, .pg-media { border-radius: 0; box-shadow: none; }"
+    "extraCss": "h1 { font-size: var(--type-h1); font-weight: 400; max-width: 22ch; }\nh2 { font-size: 30px; font-weight: 400; }\n.pg-card, .pg-media { border-radius: 0; box-shadow: none; }",
+    "paletteSeeds": {
+      "bg": "#f7f5f0",
+      "bg2": "#efece4",
+      "surface": "#fffdfa",
+      "surface2": "#f4f1ea",
+      "ink": "#1a1917",
+      "inkSoft": "#514e48",
+      "inkFaint": "#847f76",
+      "accent": "#7a2f2f",
+      "accentInk": "#fdf7f7",
+      "line": "rgba(26,25,23,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
-    "num": "193", "slug": "theatre-season", "name": "Theatre Season", "band": "kultur",
+    "num": "193",
+    "slug": "theatre-season",
+    "name": "Theatre Season",
+    "band": "kultur",
     "tagline": "Tiyatro sezonu: derin bordo, altın çizgi, program tablosu ve sahne fotoğrafı.",
-    "feeling": "törensel, akşam, \"perde açılıyor\"", "best": "tiyatro/opera sezonu, bilet programı, sahne tanıtımı", "avoid": "teknoloji ürün sayfası",
-    "palette": { "bg": "#14100f", "bg2": "#1a1413", "surface": "#211a18", "surface2": "#2b2220", "ink": "#f4ebe4", "inkSoft": "#c4b2a6", "inkFaint": "#95857a", "accent": "#c99a3f", "accentInk": "#171004", "line": "rgba(244,235,228,.16)" },
-    "fonts": ["Playfair Display", "Lora", "IBM Plex Mono"], "radius": ["0px", "2px"], "motif": "paper",
-    "signature": ["**Altın çizgi:** başlık altı 1px accent, %60 opaklık.", "**Program tablosu:** tarih/saat mono, oyun adı serif.", "**Sahne fotoğrafı:** 16:9, koyu vinyet.", "**Törensel boşluk:** bölüm aralığı 80px."],
-    "must": ["Her oyun satırında tarih, saat ve salon.", "Bilet fiyatı ve indirim koşulu yazılır.", "Accent yalnız başlık çizgisi ve CTA."],
-    "mustNot": ["Animasyonlu perde efekti.", "Üçten fazla serif ailesi.", "Yuvarlak kart."],
-    "neighbors": { "compatible": ["opera-house", "grand-tourer-oxblood"], "forbidden": ["terminal-ui", "dopamine-ui"] },
-    "refs": [
-      { "label": "Playfair Display (Google Fonts)", "url": "https://fonts.google.com/specimen/Playfair+Display", "use": "törensel başlık" },
-      { "label": "Theatre (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Theatre", "use": "sezon/program yapısı" },
-      { "label": "Lora (Google Fonts)", "url": "https://fonts.google.com/specimen/Lora", "use": "gövde serif" }
+    "feeling": "törensel, akşam, \"perde açılıyor\"",
+    "best": "tiyatro/opera sezonu, bilet programı, sahne tanıtımı",
+    "avoid": "teknoloji ürün sayfası",
+    "palette": {
+      "bg": "#14100f",
+      "bg2": "#1a1413",
+      "surface": "#211a18",
+      "surface2": "#2b2220",
+      "ink": "#f4ebe4",
+      "inkSoft": "#c4b2a6",
+      "inkFaint": "#95857a",
+      "accent": "#c99a3f",
+      "accentInk": "#171004",
+      "line": "rgba(244,235,228,.16)"
+    },
+    "fonts": [
+      "Playfair Display",
+      "Lora",
+      "IBM Plex Mono"
     ],
-    "keywords": ["kültür", "tiyatro", "sezon"], "industries": ["kultur", "etkinlik"],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "paper",
+    "signature": [
+      "**Altın çizgi:** başlık altı 1px accent, %60 opaklık.",
+      "**Program tablosu:** tarih/saat mono, oyun adı serif.",
+      "**Sahne fotoğrafı:** 16:9, koyu vinyet.",
+      "**Törensel boşluk:** bölüm aralığı 80px."
+    ],
+    "must": [
+      "Her oyun satırında tarih, saat ve salon.",
+      "Bilet fiyatı ve indirim koşulu yazılır.",
+      "Accent yalnız başlık çizgisi ve CTA."
+    ],
+    "mustNot": [
+      "Animasyonlu perde efekti.",
+      "Üçten fazla serif ailesi.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "opera-house",
+        "grand-tourer-oxblood"
+      ],
+      "forbidden": [
+        "terminal-ui",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Playfair Display (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Playfair+Display",
+        "use": "törensel başlık"
+      },
+      {
+        "label": "Theatre (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Theatre",
+        "use": "sezon/program yapısı"
+      },
+      {
+        "label": "Lora (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Lora",
+        "use": "gövde serif"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "tiyatro",
+      "sezon"
+    ],
+    "industries": [
+      "kultur",
+      "etkinlik"
+    ],
     "essence": "Theatre Season, bir programı afiş gibi değil sahne defteri gibi sunar: tarih, oyun, salon.",
     "brief": "Tiyatro sezonu sayfası tasarla: derin bordo zemin, altın ince çizgi, serif başlık, mono program tablosu.",
-    "extraCss": "h1 { font-size: 52px; max-width: 22ch; }\nh2 { font-size: 30px; }\n.pg-card { border-radius: 0; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\nh2 { font-size: 30px; }\n.pg-card { border-radius: 0; }\n.pg-media { border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#14100f",
+      "bg2": "#1a1413",
+      "surface": "#211a18",
+      "surface2": "#2b2220",
+      "ink": "#f4ebe4",
+      "inkSoft": "#c4b2a6",
+      "inkFaint": "#95857a",
+      "accent": "#c99a3f",
+      "accentInk": "#171004",
+      "line": "rgba(244,235,228,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
-    "num": "194", "slug": "film-festival", "name": "Film Festival", "band": "kultur",
+    "num": "194",
+    "slug": "film-festival",
+    "name": "Film Festival",
+    "band": "kultur",
     "tagline": "Film festivali: siyah zemin, kırmızı program accent, seans ızgarası ve mono süre bilgisi.",
-    "feeling": "yoğun, sinemasal, \"üç salon aynı anda\"", "best": "film festivali, program, bilet/seans", "avoid": "sakin kurumsal rapor",
-    "palette": { "bg": "#0c0c0e", "bg2": "#121215", "surface": "#17171b", "surface2": "#202027", "ink": "#f3f1f0", "inkSoft": "#ada9a7", "inkFaint": "#807c7a", "accent": "#e04a3f", "accentInk": "#170302", "line": "rgba(243,241,240,.15)" },
-    "fonts": ["Anton", "Inter", "Space Mono"], "radius": ["0px", "2px"], "motif": "bars", "upper": true,
-    "signature": ["**Seans ızgarası:** 3 salon × saat, mono saat.", "**Kırmızı accent:** yalnız canlı/biten seans.", "**Dev film başlığı:** Anton, tek satır hedefi.", "**Süre bilgisi:** mono, dakika."],
-    "must": ["Her seansta salon, saat ve süre.", "Bilet durumu metinle yazılır (boş/az/kapalı).", "Uppercase yalnız başlıkta."],
-    "mustNot": ["Animasyonlu fragman.", "Altıdan fazla kategori rengi.", "Yuvarlak kart."],
-    "neighbors": { "compatible": ["indie-cinema", "noir-estate"], "forbidden": ["japandi", "marketplace-multi"] },
-    "refs": [
-      { "label": "Film festival (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Film_festival", "use": "program yapısı" },
-      { "label": "Anton (Google Fonts)", "url": "https://fonts.google.com/specimen/Anton", "use": "afiş başlığı" },
-      { "label": "Space Mono (Google Fonts)", "url": "https://fonts.google.com/specimen/Space+Mono", "use": "saat/süre" }
+    "feeling": "yoğun, sinemasal, \"üç salon aynı anda\"",
+    "best": "film festivali, program, bilet/seans",
+    "avoid": "sakin kurumsal rapor",
+    "palette": {
+      "bg": "#0c0c0e",
+      "bg2": "#121215",
+      "surface": "#17171b",
+      "surface2": "#202027",
+      "ink": "#f3f1f0",
+      "inkSoft": "#ada9a7",
+      "inkFaint": "#807c7a",
+      "accent": "#e04a3f",
+      "accentInk": "#170302",
+      "line": "rgba(243,241,240,.15)"
+    },
+    "fonts": [
+      "Anton",
+      "Inter",
+      "Space Mono"
     ],
-    "keywords": ["kültür", "film", "festival"], "industries": ["kultur", "medya"],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "bars",
+    "upper": true,
+    "signature": [
+      "**Seans ızgarası:** 3 salon × saat, mono saat.",
+      "**Kırmızı accent:** yalnız canlı/biten seans.",
+      "**Dev film başlığı:** Anton, tek satır hedefi.",
+      "**Süre bilgisi:** mono, dakika."
+    ],
+    "must": [
+      "Her seansta salon, saat ve süre.",
+      "Bilet durumu metinle yazılır (boş/az/kapalı).",
+      "Uppercase yalnız başlıkta."
+    ],
+    "mustNot": [
+      "Animasyonlu fragman.",
+      "Altıdan fazla kategori rengi.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "indie-cinema",
+        "noir-estate"
+      ],
+      "forbidden": [
+        "japandi",
+        "marketplace-multi"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Film festival (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Film_festival",
+        "use": "program yapısı"
+      },
+      {
+        "label": "Anton (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Anton",
+        "use": "afiş başlığı"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "saat/süre"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "film",
+      "festival"
+    ],
+    "industries": [
+      "kultur",
+      "medya"
+    ],
     "essence": "Film Festival, üç paralel programı tek ızgarada okutur: salon, saat, süre ve durum.",
     "brief": "Film festivali programı tasarla: siyah zemin, Anton dev başlık, mono seans ızgarası, kırmızı yalnız canlı seansta.",
-    "extraCss": "h1 { font-size: 54px; line-height: .98; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: .98; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
+    "paletteSeeds": {
+      "bg": "#0c0c0e",
+      "bg2": "#121215",
+      "surface": "#17171b",
+      "surface2": "#202027",
+      "ink": "#f3f1f0",
+      "inkSoft": "#ada9a7",
+      "inkFaint": "#807c7a",
+      "accent": "#e04a3f",
+      "accentInk": "#170302",
+      "line": "rgba(243,241,240,.15)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
-    "num": "195", "slug": "public-radio", "name": "Public Radio", "band": "kultur",
+    "num": "195",
+    "slug": "public-radio",
+    "name": "Public Radio",
+    "band": "kultur",
     "tagline": "Kamu radyosu: kâğıt zemin, mavi accent, program kuşağı tablosu ve ses süresi bilgisi.",
-    "feeling": "güvenilir, sakin, \"kuşak başlıyor\"", "best": "radyo, podcast ağı, program rehberi", "avoid": "hype müzik kampanyası",
-    "palette": { "bg": "#fcfaf6", "bg2": "#f1ece2", "surface": "#ffffff", "surface2": "#f7f3ec", "ink": "#15171b", "inkSoft": "#484d55", "inkFaint": "#7c8189", "accent": "#1b4f7a", "accentInk": "#f6faff", "line": "rgba(21,23,27,.14)" },
-    "fonts": ["Lora", "Inter", "IBM Plex Mono"], "radius": ["2px", "6px"], "motif": "none",
-    "signature": ["**Kuşak tablosu:** saat aralığı mono, program adı serif.", "**Mavi accent:** yalnız canlı yayın etiketi.", "**Kâğıt zemin:** sıcak nötr; gradient yok.", "**Süre bilgisi:** dakika mono."],
-    "must": ["Her programda saat aralığı ve süre.", "Canlı yayın etiketi metinle yazılır.", "Dinleme bağlantısı tek satır."],
-    "mustNot": ["Dalga formu animasyonu.", "Reklam bandı karmaşası.", "Yuvarlak 12px+ kart."],
-    "neighbors": { "compatible": ["podcast-network", "broadsheet-daily"], "forbidden": ["game-pinball-neon", "dopamine-ui"] },
-    "refs": [
-      { "label": "Public broadcasting (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Public_broadcasting", "use": "kuşak yayıncılığı" },
-      { "label": "Lora (Google Fonts)", "url": "https://fonts.google.com/specimen/Lora", "use": "program adı serif" },
-      { "label": "IBM Plex Mono (Google Fonts)", "url": "https://fonts.google.com/specimen/IBM+Plex+Mono", "use": "saat/süre" }
+    "feeling": "güvenilir, sakin, \"kuşak başlıyor\"",
+    "best": "radyo, podcast ağı, program rehberi",
+    "avoid": "hype müzik kampanyası",
+    "palette": {
+      "bg": "#fcfaf6",
+      "bg2": "#f1ece2",
+      "surface": "#ffffff",
+      "surface2": "#f7f3ec",
+      "ink": "#15171b",
+      "inkSoft": "#484d55",
+      "inkFaint": "#7c8189",
+      "accent": "#1b4f7a",
+      "accentInk": "#f6faff",
+      "line": "rgba(21,23,27,.14)"
+    },
+    "fonts": [
+      "Lora",
+      "Inter",
+      "IBM Plex Mono"
     ],
-    "keywords": ["kültür", "radyo", "program"], "industries": ["medya", "kultur"],
+    "radius": [
+      "2px",
+      "6px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Kuşak tablosu:** saat aralığı mono, program adı serif.",
+      "**Mavi accent:** yalnız canlı yayın etiketi.",
+      "**Kâğıt zemin:** sıcak nötr; gradient yok.",
+      "**Süre bilgisi:** dakika mono."
+    ],
+    "must": [
+      "Her programda saat aralığı ve süre.",
+      "Canlı yayın etiketi metinle yazılır.",
+      "Dinleme bağlantısı tek satır."
+    ],
+    "mustNot": [
+      "Dalga formu animasyonu.",
+      "Reklam bandı karmaşası.",
+      "Yuvarlak 12px+ kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "podcast-network",
+        "broadsheet-daily"
+      ],
+      "forbidden": [
+        "game-pinball-neon",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Public broadcasting (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Public_broadcasting",
+        "use": "kuşak yayıncılığı"
+      },
+      {
+        "label": "Lora (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Lora",
+        "use": "program adı serif"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "saat/süre"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "radyo",
+      "program"
+    ],
+    "industries": [
+      "medya",
+      "kultur"
+    ],
     "essence": "Public Radio, yayın akışını bir tarife gibi gösterir: ne zaman, kim, kaç dakika.",
     "brief": "Kamu radyosu program rehberi tasarla: kâğıt zemin, serif program adları, mono saat sütunu, mavi canlı etiketi.",
-    "extraCss": "h1 { font-size: 46px; max-width: 24ch; }\nh2 { font-size: 26px; }\n.pg-table td { font-size: 12.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\nh2 { font-size: 26px; }\n.pg-table td { font-size: 12.5px; }",
+    "paletteSeeds": {
+      "bg": "#fcfaf6",
+      "bg2": "#f1ece2",
+      "surface": "#ffffff",
+      "surface2": "#f7f3ec",
+      "ink": "#15171b",
+      "inkSoft": "#484d55",
+      "inkFaint": "#7c8189",
+      "accent": "#1b4f7a",
+      "accentInk": "#f6faff",
+      "line": "rgba(21,23,27,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
-    "num": "196", "slug": "podcast-network", "name": "Podcast Network", "band": "kultur",
+    "num": "196",
+    "slug": "podcast-network",
+    "name": "Podcast Network",
+    "band": "kultur",
     "tagline": "Podcast ağı: koyu grafit, mor accent, bölüm listesi ve mono süre-dinlenme metrikleri.",
-    "feeling": "kişisel, ritmik, \"sıradaki bölüm\"", "best": "podcast ağı, bölüm arşivi, dinleme listesi", "avoid": "resmî denetim raporu",
-    "palette": { "bg": "#111114", "bg2": "#16161b", "surface": "#1b1b21", "surface2": "#24242c", "ink": "#f0eef4", "inkSoft": "#b1adbb", "inkFaint": "#85818f", "accent": "#a37bf5", "accentInk": "#0d0618", "line": "rgba(240,238,244,.14)" },
-    "fonts": ["Space Grotesk", "Inter", "Space Mono"], "radius": ["8px", "10px"], "motif": "dots",
-    "signature": ["**Bölüm listesi:** 56px satır, süre mono sağda.", "**Mor accent:** çalma düğmesi ve aktif bölüm.", "**Künye:** sunucu adı + tarih, 12px.", "**Yuvarlak köşe:** 8–10px, tek seviye gölge."],
-    "must": ["Her bölümde süre ve yayın tarihi.", "Çalma düğmesi tek, metin etiketli.", "Bölüm numarası mono."],
-    "mustNot": ["Otomatik çalan ses.", "Sonsuz kaydırma grafiği.", "On renkli kategori."],
-    "neighbors": { "compatible": ["public-radio", "voice-first"], "forbidden": ["regulatory-report", "ledger-meter"] },
-    "refs": [
-      { "label": "Podcast (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Podcast", "use": "bölüm/arşiv yapısı" },
-      { "label": "Space Grotesk (Google Fonts)", "url": "https://fonts.google.com/specimen/Space+Grotesk", "use": "başlık ailesi" },
-      { "label": "Space Mono (Google Fonts)", "url": "https://fonts.google.com/specimen/Space+Mono", "use": "süre/tarih" }
+    "feeling": "kişisel, ritmik, \"sıradaki bölüm\"",
+    "best": "podcast ağı, bölüm arşivi, dinleme listesi",
+    "avoid": "resmî denetim raporu",
+    "palette": {
+      "bg": "#111114",
+      "bg2": "#16161b",
+      "surface": "#1b1b21",
+      "surface2": "#24242c",
+      "ink": "#f0eef4",
+      "inkSoft": "#b1adbb",
+      "inkFaint": "#85818f",
+      "accent": "#a37bf5",
+      "accentInk": "#0d0618",
+      "line": "rgba(240,238,244,.14)"
+    },
+    "fonts": [
+      "Space Grotesk",
+      "Inter",
+      "Space Mono"
     ],
-    "keywords": ["kültür", "podcast", "arşiv"], "industries": ["medya"],
+    "radius": [
+      "8px",
+      "10px"
+    ],
+    "motif": "dots",
+    "signature": [
+      "**Bölüm listesi:** 56px satır, süre mono sağda.",
+      "**Mor accent:** çalma düğmesi ve aktif bölüm.",
+      "**Künye:** sunucu adı + tarih, 12px.",
+      "**Yuvarlak köşe:** 8–10px, tek seviye gölge."
+    ],
+    "must": [
+      "Her bölümde süre ve yayın tarihi.",
+      "Çalma düğmesi tek, metin etiketli.",
+      "Bölüm numarası mono."
+    ],
+    "mustNot": [
+      "Otomatik çalan ses.",
+      "Sonsuz kaydırma grafiği.",
+      "On renkli kategori."
+    ],
+    "neighbors": {
+      "compatible": [
+        "public-radio",
+        "voice-first"
+      ],
+      "forbidden": [
+        "regulatory-report",
+        "ledger-meter"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Podcast (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Podcast",
+        "use": "bölüm/arşiv yapısı"
+      },
+      {
+        "label": "Space Grotesk (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Grotesk",
+        "use": "başlık ailesi"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "süre/tarih"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "podcast",
+      "arşiv"
+    ],
+    "industries": [
+      "medya"
+    ],
     "essence": "Podcast Network, dinleme kararını hızlandırır: konu, süre ve tarih tek satırda.",
     "brief": "Podcast ağı sayfası tasarla: koyu grafit zemin, mor accent çalmada, bölüm listesi, mono süre.",
-    "extraCss": "h1 { font-size: 44px; max-width: 24ch; }\n.pg-card { border-radius: 10px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-card { border-radius: 10px; }",
+    "paletteSeeds": {
+      "bg": "#111114",
+      "bg2": "#16161b",
+      "surface": "#1b1b21",
+      "surface2": "#24242c",
+      "ink": "#f0eef4",
+      "inkSoft": "#b1adbb",
+      "inkFaint": "#85818f",
+      "accent": "#a37bf5",
+      "accentInk": "#0d0618",
+      "line": "rgba(240,238,244,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
-    "num": "197", "slug": "indie-cinema", "name": "Indie Cinema", "band": "kultur",
+    "num": "197",
+    "slug": "indie-cinema",
+    "name": "Indie Cinema",
+    "band": "kultur",
     "tagline": "Bağımsız sinema: siyah-beyaz kontrast, tek sarı accent, gösterim takvimi ve bilet notu.",
-    "feeling": "sahici, gece, \"bu hafta iki film\"", "best": "bağımsız sinema, gösterim takvimi, film kulübü", "avoid": "kurumsal SaaS sayfası",
-    "palette": { "bg": "#0e0e0e", "bg2": "#141414", "surface": "#1a1a1a", "surface2": "#232323", "ink": "#f5f5f3", "inkSoft": "#b4b4b0", "inkFaint": "#878783", "accent": "#f5d648", "accentInk": "#141103", "line": "rgba(245,245,243,.16)" },
-    "fonts": ["Archivo Black", "Inter", "Courier Prime"], "radius": ["0px", "2px"], "motif": "paper", "upper": true,
-    "signature": ["**S/B kontrast:** görseller siyah-beyaz, accent sarı.", "**Takvim bloğu:** gün/saat mono, film adı büyük.", "**Bilet notu:** mono 11px, alt satır.", "**Keskin köşe:** 0–2px."],
-    "must": ["Her gösterimde gün, saat ve salon.", "Bilet fiyatı ve indirim notu.", "Görseller siyah-beyaz (tek istisna afiş)."],
-    "mustNot": ["Renkli afiş kolajı.", "Animasyonlu fragman.", "Yuvarlak kart."],
-    "neighbors": { "compatible": ["film-festival", "punk-fanzine"], "forbidden": ["glassmorphism", "dopamine-ui"] },
-    "refs": [
-      { "label": "Independent cinema (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Independent_film", "use": "gösterim modeli" },
-      { "label": "Archivo Black (Google Fonts)", "url": "https://fonts.google.com/specimen/Archivo+Black", "use": "afiş başlığı" },
-      { "label": "Courier Prime (Google Fonts)", "url": "https://fonts.google.com/specimen/Courier+Prime", "use": "takvim notu" }
+    "feeling": "sahici, gece, \"bu hafta iki film\"",
+    "best": "bağımsız sinema, gösterim takvimi, film kulübü",
+    "avoid": "kurumsal SaaS sayfası",
+    "palette": {
+      "bg": "#0e0e0e",
+      "bg2": "#141414",
+      "surface": "#1a1a1a",
+      "surface2": "#232323",
+      "ink": "#f5f5f3",
+      "inkSoft": "#b4b4b0",
+      "inkFaint": "#878783",
+      "accent": "#f5d648",
+      "accentInk": "#141103",
+      "line": "rgba(245,245,243,.16)"
+    },
+    "fonts": [
+      "Archivo Black",
+      "Inter",
+      "Courier Prime"
     ],
-    "keywords": ["kültür", "sinema", "gösterim"], "industries": ["kultur", "medya"],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "paper",
+    "upper": true,
+    "signature": [
+      "**S/B kontrast:** görseller siyah-beyaz, accent sarı.",
+      "**Takvim bloğu:** gün/saat mono, film adı büyük.",
+      "**Bilet notu:** mono 11px, alt satır.",
+      "**Keskin köşe:** 0–2px."
+    ],
+    "must": [
+      "Her gösterimde gün, saat ve salon.",
+      "Bilet fiyatı ve indirim notu.",
+      "Görseller siyah-beyaz (tek istisna afiş)."
+    ],
+    "mustNot": [
+      "Renkli afiş kolajı.",
+      "Animasyonlu fragman.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "film-festival",
+        "punk-fanzine"
+      ],
+      "forbidden": [
+        "glassmorphism",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Independent cinema (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Independent_film",
+        "use": "gösterim modeli"
+      },
+      {
+        "label": "Archivo Black (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Archivo+Black",
+        "use": "afiş başlığı"
+      },
+      {
+        "label": "Courier Prime (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Courier+Prime",
+        "use": "takvim notu"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "sinema",
+      "gösterim"
+    ],
+    "industries": [
+      "kultur",
+      "medya"
+    ],
     "essence": "Indie Cinema, programı bir bilet gişesi gibi okutur: gün, saat, film, fiyat.",
     "brief": "Bağımsız sinema takvimi tasarla: siyah-beyaz, tek sarı accent, mono gün/saat, kalın film adları.",
-    "extraCss": "h1 { font-size: 50px; line-height: 1; max-width: 20ch; }\n.pg-media img { filter: grayscale(1) contrast(1.05); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: 1; max-width: 20ch; }\n.pg-media img { filter: grayscale(1) contrast(1.05); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
+    "paletteSeeds": {
+      "bg": "#0e0e0e",
+      "bg2": "#141414",
+      "surface": "#1a1a1a",
+      "surface2": "#232323",
+      "ink": "#f5f5f3",
+      "inkSoft": "#b4b4b0",
+      "inkFaint": "#878783",
+      "accent": "#f5d648",
+      "accentInk": "#141103",
+      "line": "rgba(245,245,243,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
-    "num": "198", "slug": "library-archive", "name": "Library Archive", "band": "kultur",
+    "num": "198",
+    "slug": "library-archive",
+    "name": "Library Archive",
+    "band": "kultur",
     "tagline": "Kütüphane arşivi: kâğıt zemin, lacivert accent, numaralı kayıt ve mono yer numarası.",
-    "feeling": "düzenli, sessiz, \"raf numarası belli\"", "best": "kütüphane kataloğu, arşiv arama, kayıt defteri", "avoid": "hype ürün lansmanı",
-    "palette": { "bg": "#f9f7f1", "bg2": "#efeade", "surface": "#ffffff", "surface2": "#f5f1e7", "ink": "#171a1f", "inkSoft": "#4a4f57", "inkFaint": "#7c828b", "accent": "#1f3f73", "accentInk": "#f7faff", "line": "rgba(23,26,31,.14)" },
-    "fonts": ["EB Garamond", "EB Garamond", "IBM Plex Mono"], "radius": ["0px", "2px"], "motif": "none",
-    "signature": ["**Kayıt numarası:** mono, sol sütun sabit.", "**Raf bilgisi:** mono, sağ sütun.", "**Serif gövde:** EB Garamond 17px/1.7.", "**Lacivert accent:** yalnız bağlantı ve filtre."],
-    "must": ["Her kayıtta numara, yıl ve yer bilgisi.", "Arama ve filtre tek satırda.", "Uzun metin 68ch."],
-    "mustNot": ["Kart galerisi (arşiv listesi).", "Dekoratif görsel.", "Yuvarlak köşe."],
-    "neighbors": { "compatible": ["museum-exhibition", "academic-paper"], "forbidden": ["game-pinball-neon", "dopamine-ui"] },
-    "refs": [
-      { "label": "Library catalog (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Library_catalog", "use": "kayıt alanları" },
-      { "label": "EB Garamond (Google Fonts)", "url": "https://fonts.google.com/specimen/EB+Garamond", "use": "serif gövde" },
-      { "label": "IBM Plex Mono (Google Fonts)", "url": "https://fonts.google.com/specimen/IBM+Plex+Mono", "use": "numara/raf" }
+    "feeling": "düzenli, sessiz, \"raf numarası belli\"",
+    "best": "kütüphane kataloğu, arşiv arama, kayıt defteri",
+    "avoid": "hype ürün lansmanı",
+    "palette": {
+      "bg": "#f9f7f1",
+      "bg2": "#efeade",
+      "surface": "#ffffff",
+      "surface2": "#f5f1e7",
+      "ink": "#171a1f",
+      "inkSoft": "#4a4f57",
+      "inkFaint": "#7c828b",
+      "accent": "#1f3f73",
+      "accentInk": "#f7faff",
+      "line": "rgba(23,26,31,.14)"
+    },
+    "fonts": [
+      "EB Garamond",
+      "EB Garamond",
+      "IBM Plex Mono"
     ],
-    "keywords": ["kültür", "arşiv", "katalog"], "industries": ["kultur", "egitim"],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "none",
+    "signature": [
+      "**Kayıt numarası:** mono, sol sütun sabit.",
+      "**Raf bilgisi:** mono, sağ sütun.",
+      "**Serif gövde:** EB Garamond 17px/1.7.",
+      "**Lacivert accent:** yalnız bağlantı ve filtre."
+    ],
+    "must": [
+      "Her kayıtta numara, yıl ve yer bilgisi.",
+      "Arama ve filtre tek satırda.",
+      "Uzun metin 68ch."
+    ],
+    "mustNot": [
+      "Kart galerisi (arşiv listesi).",
+      "Dekoratif görsel.",
+      "Yuvarlak köşe."
+    ],
+    "neighbors": {
+      "compatible": [
+        "museum-exhibition",
+        "academic-paper"
+      ],
+      "forbidden": [
+        "game-pinball-neon",
+        "dopamine-ui"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Library catalog (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Library_catalog",
+        "use": "kayıt alanları"
+      },
+      {
+        "label": "EB Garamond (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/EB+Garamond",
+        "use": "serif gövde"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "numara/raf"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "arşiv",
+      "katalog"
+    ],
+    "industries": [
+      "kultur",
+      "egitim"
+    ],
     "essence": "Library Archive, kaydı görselden önce koyar: numara, yıl, raf ve konu.",
     "brief": "Kütüphane arşiv kataloğu tasarla: kâğıt zemin, serif gövde, mono kayıt/raf sütunları, lacivert accent.",
-    "extraCss": "h1 { font-size: 44px; max-width: 24ch; }\n.pg-table td { font-size: 12.5px; }\n.pg-table td:first-child, .pg-table td:last-child { font-family: var(--font-mono); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-table td { font-size: 12.5px; }\n.pg-table td:first-child, .pg-table td:last-child { font-family: var(--font-mono); }",
+    "paletteSeeds": {
+      "bg": "#f9f7f1",
+      "bg2": "#efeade",
+      "surface": "#ffffff",
+      "surface2": "#f5f1e7",
+      "ink": "#171a1f",
+      "inkSoft": "#4a4f57",
+      "inkFaint": "#7c828b",
+      "accent": "#1f3f73",
+      "accentInk": "#f7faff",
+      "line": "rgba(23,26,31,.14)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
-    "num": "199", "slug": "comic-bookstore", "name": "Comic Bookstore", "band": "kultur",
+    "num": "199",
+    "slug": "comic-bookstore",
+    "name": "Comic Bookstore",
+    "band": "kultur",
     "tagline": "Çizgi roman dükkânı: sarı konuşma balonu accent, kalın kontur ve sayı-salı takvimi.",
-    "feeling": "hareketli, kâğıt, \"yeni sayı çıktı\"", "best": "çizgi roman/çizgi dergi, sayı takvimi, raf vitrini", "avoid": "kurumsal finans paneli",
-    "palette": { "bg": "#fdf6e3", "bg2": "#f7ecd2", "surface": "#fffdf4", "surface2": "#fbefd6", "ink": "#1a1410", "inkSoft": "#544538", "inkFaint": "#8a7761", "accent": "#b3301f", "accentInk": "#fff8f6", "line": "rgba(26,20,16,.2)" },
-    "fonts": ["Archivo Black", "Space Grotesk", "VT323"], "radius": ["0px", "2px"], "motif": "dots", "upper": true,
-    "signature": ["**Kalın kontur:** kart ve buton 2px ink; gölge yerine ofset 2px.", "**Kırmızı accent:** yalnız yeni sayı ve CTA.", "**Sayı takvimi:** gün adları mono, 44px hücre.", "**Panel dili:** kartlar birbirine 4px ofset gölge."],
-    "must": ["Her sayıda seri adı, sayı no ve çıkış tarihi.", "Fiyat ve stok metinle.", "Kontur 2px, gölge ofset tek yönlü."],
-    "mustNot": ["Animasyonlu sayfa çevirme.", "Dörtten fazla doygun renk.", "Yuvarlak köşe."],
-    "neighbors": { "compatible": ["comic-story", "punk-fanzine"], "forbidden": ["minimalism", "ledger-meter"] },
-    "refs": [
-      { "label": "Comic book (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Comic_book", "use": "sayı/seri yapısı" },
-      { "label": "Archivo Black (Google Fonts)", "url": "https://fonts.google.com/specimen/Archivo+Black", "use": "balon başlığı" },
-      { "label": "VT323 (Google Fonts)", "url": "https://fonts.google.com/specimen/VT323", "use": "sayı etiketi" }
+    "feeling": "hareketli, kâğıt, \"yeni sayı çıktı\"",
+    "best": "çizgi roman/çizgi dergi, sayı takvimi, raf vitrini",
+    "avoid": "kurumsal finans paneli",
+    "palette": {
+      "bg": "#fdf6e3",
+      "bg2": "#f7ecd2",
+      "surface": "#fffdf4",
+      "surface2": "#fbefd6",
+      "ink": "#1a1410",
+      "inkSoft": "#544538",
+      "inkFaint": "#8a7761",
+      "accent": "#b3301f",
+      "accentInk": "#fff8f6",
+      "line": "rgba(26,20,16,.2)"
+    },
+    "fonts": [
+      "Archivo Black",
+      "Space Grotesk",
+      "VT323"
     ],
-    "keywords": ["kültür", "çizgi roman", "yayın"], "industries": ["kultur", "eticaret"],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "dots",
+    "upper": true,
+    "signature": [
+      "**Kalın kontur:** kart ve buton 2px ink; gölge yerine ofset 2px.",
+      "**Kırmızı accent:** yalnız yeni sayı ve CTA.",
+      "**Sayı takvimi:** gün adları mono, 44px hücre.",
+      "**Panel dili:** kartlar birbirine 4px ofset gölge."
+    ],
+    "must": [
+      "Her sayıda seri adı, sayı no ve çıkış tarihi.",
+      "Fiyat ve stok metinle.",
+      "Kontur 2px, gölge ofset tek yönlü."
+    ],
+    "mustNot": [
+      "Animasyonlu sayfa çevirme.",
+      "Dörtten fazla doygun renk.",
+      "Yuvarlak köşe."
+    ],
+    "neighbors": {
+      "compatible": [
+        "comic-story",
+        "punk-fanzine"
+      ],
+      "forbidden": [
+        "minimalism",
+        "ledger-meter"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Comic book (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Comic_book",
+        "use": "sayı/seri yapısı"
+      },
+      {
+        "label": "Archivo Black (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Archivo+Black",
+        "use": "balon başlığı"
+      },
+      {
+        "label": "VT323 (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/VT323",
+        "use": "sayı etiketi"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "çizgi roman",
+      "yayın"
+    ],
+    "industries": [
+      "kultur",
+      "eticaret"
+    ],
     "essence": "Comic Bookstore, rafı bir sayı takvimi gibi gösterir: hangi seri, hangi sayı, ne zaman.",
     "brief": "Çizgi roman dükkânı vitrini tasarla: kâğıt zemin, 2px kontur, ofset gölge, mono sayı takvimi, kırmızı accent.",
-    "extraCss": "h1 { font-size: 46px; line-height: 1; max-width: 20ch; }\n.panel, .pg-card, .btn, .field, .chip { border: 2px solid var(--ink); }\n.pg-card { box-shadow: 4px 4px 0 var(--ink); }\n.pg-media { border: 2px solid var(--ink); }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: 1; max-width: 20ch; }\n.panel, .pg-card, .btn, .field, .chip { border: 2px solid var(--ink); }\n.pg-card { box-shadow: 4px 4px 0 var(--ink); }\n.pg-media { border: 2px solid var(--ink); }",
+    "paletteSeeds": {
+      "bg": "#fdf6e3",
+      "bg2": "#f7ecd2",
+      "surface": "#fffdf4",
+      "surface2": "#fbefd6",
+      "ink": "#1a1410",
+      "inkSoft": "#544538",
+      "inkFaint": "#8a7761",
+      "accent": "#b3301f",
+      "accentInk": "#fff8f6",
+      "line": "rgba(26,20,16,.2)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
-    "num": "200", "slug": "opera-house", "name": "Opera House", "band": "kultur",
+    "num": "200",
+    "slug": "opera-house",
+    "name": "Opera House",
+    "band": "kultur",
     "tagline": "Opera evi: gece mavisi, gümüş çizgi, sezon künyesi ve geniş serif başlık.",
-    "feeling": "törensel, akustik, \"salon açılıyor\"", "best": "opera/klasik müzik, sezon programı, salon bilgisi", "avoid": "gençlik markası, drop kültürü",
-    "palette": { "bg": "#0f1420", "bg2": "#141a28", "surface": "#1a2130", "surface2": "#232c3d", "ink": "#eef1f7", "inkSoft": "#b2bccc", "inkFaint": "#8792a4", "accent": "#c9b37e", "accentInk": "#151106", "line": "rgba(238,241,247,.16)" },
-    "fonts": ["Playfair Display", "EB Garamond", "IBM Plex Mono"], "radius": ["0px", "2px"], "motif": "paper",
-    "signature": ["**Gümüş-altın çizgi:** 1px accent, yalnız başlık ve tablo başı.", "**Sezon künyesi:** eser, besteci, salon mono.", "**Geniş serif:** Playfair 54px/400, ölçü 24ch.", "**Gece mavisi:** tek zemin, gradient yok."],
-    "must": ["Her etkinlikte besteci, eser, salon ve saat.", "Bilet kategorileri tablo ile.", "Accent yalnız çizgi ve CTA."],
-    "mustNot": ["Animasyonlu ışık.", "Üçten fazla serif.", "Yuvarlak kart."],
-    "neighbors": { "compatible": ["theatre-season", "grand-tourer-midnight"], "forbidden": ["dopamine-ui", "sticker-sheet"] },
-    "refs": [
-      { "label": "Opera (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Opera", "use": "sezon yapısı" },
-      { "label": "Playfair Display (Google Fonts)", "url": "https://fonts.google.com/specimen/Playfair+Display", "use": "törensel serif" },
-      { "label": "IBM Plex Mono (Google Fonts)", "url": "https://fonts.google.com/specimen/IBM+Plex+Mono", "use": "salon/saat" }
+    "feeling": "törensel, akustik, \"salon açılıyor\"",
+    "best": "opera/klasik müzik, sezon programı, salon bilgisi",
+    "avoid": "gençlik markası, drop kültürü",
+    "palette": {
+      "bg": "#0f1420",
+      "bg2": "#141a28",
+      "surface": "#1a2130",
+      "surface2": "#232c3d",
+      "ink": "#eef1f7",
+      "inkSoft": "#b2bccc",
+      "inkFaint": "#8792a4",
+      "accent": "#c9b37e",
+      "accentInk": "#151106",
+      "line": "rgba(238,241,247,.16)"
+    },
+    "fonts": [
+      "Playfair Display",
+      "EB Garamond",
+      "IBM Plex Mono"
     ],
-    "keywords": ["kültür", "opera", "sezon"], "industries": ["kultur", "etkinlik"],
+    "radius": [
+      "0px",
+      "2px"
+    ],
+    "motif": "paper",
+    "signature": [
+      "**Gümüş-altın çizgi:** 1px accent, yalnız başlık ve tablo başı.",
+      "**Sezon künyesi:** eser, besteci, salon mono.",
+      "**Geniş serif:** Playfair 54px/400, ölçü 24ch.",
+      "**Gece mavisi:** tek zemin, gradient yok."
+    ],
+    "must": [
+      "Her etkinlikte besteci, eser, salon ve saat.",
+      "Bilet kategorileri tablo ile.",
+      "Accent yalnız çizgi ve CTA."
+    ],
+    "mustNot": [
+      "Animasyonlu ışık.",
+      "Üçten fazla serif.",
+      "Yuvarlak kart."
+    ],
+    "neighbors": {
+      "compatible": [
+        "theatre-season",
+        "grand-tourer-midnight"
+      ],
+      "forbidden": [
+        "dopamine-ui",
+        "sticker-sheet"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Opera (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Opera",
+        "use": "sezon yapısı"
+      },
+      {
+        "label": "Playfair Display (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Playfair+Display",
+        "use": "törensel serif"
+      },
+      {
+        "label": "IBM Plex Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+        "use": "salon/saat"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "opera",
+      "sezon"
+    ],
+    "industries": [
+      "kultur",
+      "etkinlik"
+    ],
     "essence": "Opera House, programı bir davetiyе gibi sunar: eser, besteci, salon, saat.",
     "brief": "Opera evi sezon sayfası tasarla: gece mavisi zemin, ince altın çizgi, geniş serif başlık, mono salon/saat.",
-    "extraCss": "h1 { font-size: 54px; max-width: 22ch; }\nh2 { font-size: 30px; }\n.pg-card, .pg-media { border-radius: 0; }\n.pg-table th { border-bottom-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\nh2 { font-size: 30px; }\n.pg-card, .pg-media { border-radius: 0; }\n.pg-table th { border-bottom-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }",
+    "paletteSeeds": {
+      "bg": "#0f1420",
+      "bg2": "#141a28",
+      "surface": "#1a2130",
+      "surface2": "#232c3d",
+      "ink": "#eef1f7",
+      "inkSoft": "#b2bccc",
+      "inkFaint": "#8792a4",
+      "accent": "#c9b37e",
+      "accentInk": "#151106",
+      "line": "rgba(238,241,247,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   },
   {
-    "num": "201", "slug": "street-festival", "name": "Street Festival", "band": "kultur",
+    "num": "201",
+    "slug": "street-festival",
+    "name": "Street Festival",
+    "band": "kultur",
     "tagline": "Sokak festivali: doygun turuncu accent, kalın tipografi, sahne programı ve harita bloğu.",
-    "feeling": "kalabalık, gündüz, \"sahne 2'de başlıyor\"", "best": "sokak festivali, açık hava etkinliği, sahne programı", "avoid": "kurumsal yıllık rapor",
-    "palette": { "bg": "#fdf7ef", "bg2": "#fae9d6", "surface": "#fffdf9", "surface2": "#fdeedd", "ink": "#1c1409", "inkSoft": "#55402a", "inkFaint": "#8a7055", "accent": "#a83a0d", "accentInk": "#fff6f1", "line": "rgba(28,20,9,.16)" },
-    "fonts": ["Archivo Black", "Space Grotesk", "Space Mono"], "radius": ["2px", "6px"], "motif": "dots", "upper": true,
-    "signature": ["**Sahne programı:** saat mono, sahne adı kalın, 3 sütun.", "**Turuncu accent:** yalnız saat ve CTA.", "**Harita bloğu:** koyu zemin, açık çizgi.", "**Kalın başlık:** Archivo Black, iki satır sınırı."],
-    "must": ["Her etkinlikte sahne, saat ve süre.", "Harita üzerinde 3 nokta (giriş, sahne, wc).", "Fiyat/ücretsiz bilgisi açık."],
-    "mustNot": ["Animasyonlu konfeti.", "Altıdan fazla kategori rengi.", "Okunamayan ince yazı."],
-    "neighbors": { "compatible": ["carnival-festival", "comic-bookstore"], "forbidden": ["regulatory-report", "access-audit"] },
-    "refs": [
-      { "label": "Street festival (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Street_festival", "use": "sahne/program yapısı" },
-      { "label": "Archivo Black (Google Fonts)", "url": "https://fonts.google.com/specimen/Archivo+Black", "use": "kalın başlık" },
-      { "label": "Space Mono (Google Fonts)", "url": "https://fonts.google.com/specimen/Space+Mono", "use": "saat" }
+    "feeling": "kalabalık, gündüz, \"sahne 2'de başlıyor\"",
+    "best": "sokak festivali, açık hava etkinliği, sahne programı",
+    "avoid": "kurumsal yıllık rapor",
+    "palette": {
+      "bg": "#fdf7ef",
+      "bg2": "#fae9d6",
+      "surface": "#fffdf9",
+      "surface2": "#fdeedd",
+      "ink": "#1c1409",
+      "inkSoft": "#55402a",
+      "inkFaint": "#8a7055",
+      "accent": "#a83a0d",
+      "accentInk": "#fff6f1",
+      "line": "rgba(28,20,9,.16)"
+    },
+    "fonts": [
+      "Archivo Black",
+      "Space Grotesk",
+      "Space Mono"
     ],
-    "keywords": ["kültür", "festival", "sokak"], "industries": ["etkinlik", "kultur"],
+    "radius": [
+      "2px",
+      "6px"
+    ],
+    "motif": "dots",
+    "upper": true,
+    "signature": [
+      "**Sahne programı:** saat mono, sahne adı kalın, 3 sütun.",
+      "**Turuncu accent:** yalnız saat ve CTA.",
+      "**Harita bloğu:** koyu zemin, açık çizgi.",
+      "**Kalın başlık:** Archivo Black, iki satır sınırı."
+    ],
+    "must": [
+      "Her etkinlikte sahne, saat ve süre.",
+      "Harita üzerinde 3 nokta (giriş, sahne, wc).",
+      "Fiyat/ücretsiz bilgisi açık."
+    ],
+    "mustNot": [
+      "Animasyonlu konfeti.",
+      "Altıdan fazla kategori rengi.",
+      "Okunamayan ince yazı."
+    ],
+    "neighbors": {
+      "compatible": [
+        "carnival-festival",
+        "comic-bookstore"
+      ],
+      "forbidden": [
+        "regulatory-report",
+        "access-audit"
+      ]
+    },
+    "refs": [
+      {
+        "label": "Street festival (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Street_festival",
+        "use": "sahne/program yapısı"
+      },
+      {
+        "label": "Archivo Black (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Archivo+Black",
+        "use": "kalın başlık"
+      },
+      {
+        "label": "Space Mono (Google Fonts)",
+        "url": "https://fonts.google.com/specimen/Space+Mono",
+        "use": "saat"
+      }
+    ],
+    "keywords": [
+      "kültür",
+      "festival",
+      "sokak"
+    ],
+    "industries": [
+      "etkinlik",
+      "kultur"
+    ],
     "essence": "Street Festival, kalabalıkta yön bulmayı sağlar: sahne, saat ve harita aynı sayfada.",
     "brief": "Sokak festivali sayfası tasarla: sıcak zemin, turuncu accent, kalın başlık, mono sahne programı ve harita bloğu.",
-    "extraCss": "h1 { font-size: 48px; line-height: .98; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-band { background: color-mix(in srgb, var(--accent) 8%, var(--bg-2)); }"
+    "extraCss": "h1 { font-size: var(--type-h1); line-height: .98; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-band { background: color-mix(in srgb, var(--accent) 8%, var(--bg-2)); }",
+    "paletteSeeds": {
+      "bg": "#fdf7ef",
+      "bg2": "#fae9d6",
+      "surface": "#fffdf9",
+      "surface2": "#fdeedd",
+      "ink": "#1c1409",
+      "inkSoft": "#55402a",
+      "inkFaint": "#8a7055",
+      "accent": "#a83a0d",
+      "accentInk": "#fff6f1",
+      "line": "rgba(28,20,9,.16)"
+    },
+    "paletteTargets": {
+      "ink": 4.5,
+      "inkSoft": 4.5,
+      "inkFaint": 3,
+      "accentInk": 4.5,
+      "focus": 3,
+      "apca": 60
+    },
+    "scale": {
+      "h1": "58px"
+    }
   }
 ]

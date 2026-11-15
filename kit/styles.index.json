@@ -264,7 +264,7 @@
         "surface2": "#f7f7f5",
         "ink": "#101112",
         "inkSoft": "#5a5f66",
-        "inkFaint": "#9aa0a6",
+        "inkFaint": "#8d9298",
         "accent": "#2563eb",
         "accentInk": "#ffffff",
         "line": "rgba(16,17,18,.10)"
@@ -315,7 +315,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Sade"
+        "sectionPlan": "feature-first",
+        "family": "Sade",
+        "fit": "1"
       },
       "must": [
         "Tek vurgu rengi; gerisi 5–7 tonluk nötr skala",
@@ -446,7 +448,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Sade"
+        "sectionPlan": "campaign",
+        "family": "Sade",
+        "fit": "0"
       },
       "must": [
         "12 kolonlu ızgara; bloklar kolon hattına oturur",
@@ -567,7 +571,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Sade"
+        "sectionPlan": "campaign",
+        "family": "Sade",
+        "fit": "0"
       },
       "must": [
         "Serif display + sans gövde ayrımı",
@@ -640,8 +646,8 @@
         "surface2": "#f3ecdf",
         "ink": "#1a1815",
         "inkSoft": "#5c554b",
-        "inkFaint": "#9a9184",
-        "accent": "#c6a664",
+        "inkFaint": "#938a7e",
+        "accent": "#a78746",
         "accentInk": "#1a1815",
         "line": "rgba(26,24,21,.16)"
       },
@@ -691,7 +697,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Sade"
+        "sectionPlan": "data-first",
+        "family": "Sade",
+        "fit": "1"
       },
       "must": [
         "Ekran başına 1 başlık + 1 paragraf + 1 CTA",
@@ -763,7 +771,7 @@
         "surface2": "#fafaf9",
         "ink": "#12130f",
         "inkSoft": "#5b5f58",
-        "inkFaint": "#9aa096",
+        "inkFaint": "#8a8f86",
         "accent": "#1f6feb",
         "accentInk": "#ffffff",
         "line": "rgba(18,19,15,.08)"
@@ -810,7 +818,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Sade"
+        "sectionPlan": "proof-first",
+        "family": "Sade",
+        "fit": "1"
       },
       "must": [
         "Değişken kart boyutu (en az 3 ölçü), satır başına ≤ 1 kahraman kart",
@@ -882,9 +892,9 @@
         "surface2": "#f2ece2",
         "ink": "#2c2925",
         "inkSoft": "#635c53",
-        "inkFaint": "#918a80",
-        "accent": "#8a9b84",
-        "accentInk": "#2c2925",
+        "inkFaint": "#908980",
+        "accent": "#7f8f79",
+        "accentInk": "#262420",
         "line": "rgba(44,41,37,.10)"
       },
       "fonts": {
@@ -929,7 +939,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Sade"
+        "sectionPlan": "proof-first",
+        "family": "Sade",
+        "fit": "1"
       },
       "must": [
         "Sıcak krem zemin + toprak tonlu metin (soğuk gri yok)",
@@ -1001,7 +1013,7 @@
         "surface2": "#eadfce",
         "ink": "#2a2724",
         "inkSoft": "#5f574d",
-        "inkFaint": "#8f8779",
+        "inkFaint": "#8b8376",
         "accent": "#a85831",
         "accentInk": "#fff8ef",
         "line": "rgba(42,39,36,.18)"
@@ -1049,7 +1061,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Sade"
+        "sectionPlan": "data-first",
+        "family": "Sade",
+        "fit": "1"
       },
       "must": [
         "Hizasızlık kontrollü: ≤ 3 öğe 0.5–1.5°, metin blokları 0°",
@@ -1182,7 +1196,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Yüzey"
+        "sectionPlan": "data-first",
+        "family": "Yüzey",
+        "fit": "0"
       },
       "must": [
         "Cam arkasında renk/görsel; düz zeminde cam kullanılmaz",
@@ -1313,7 +1329,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Yüzey"
+        "sectionPlan": "data-first",
+        "family": "Yüzey",
+        "fit": "0"
       },
       "must": [
         "blur + saturate(150%) birlikte",
@@ -1385,7 +1403,7 @@
         "surface2": "#e9edf3",
         "ink": "#333a45",
         "inkSoft": "#5d6674",
-        "inkFaint": "#8b93a1",
+        "inkFaint": "#7e8593",
         "accent": "#4262e8",
         "accentInk": "#ffffff",
         "line": "transparent"
@@ -1434,7 +1452,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Yüzey"
+        "sectionPlan": "proof-first",
+        "family": "Yüzey",
+        "fit": "1"
       },
       "must": [
         "Zemin ve kart aynı renk; ayrım yalnızca çift gölge",
@@ -1505,7 +1525,7 @@
         "surface2": "#f6f2ff",
         "ink": "#2b2350",
         "inkSoft": "#5b5382",
-        "inkFaint": "#8d87ad",
+        "inkFaint": "#8d87ac",
         "accent": "#6f4df0",
         "accentInk": "#ffffff",
         "line": "rgba(255,255,255,.7)"
@@ -1553,7 +1573,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Yüzey"
+        "sectionPlan": "editorial",
+        "family": "Yüzey",
+        "fit": "1"
       },
       "must": [
         "Hacim üçlüsü: dış gölge + inset koyu + inset açık",
@@ -1679,7 +1701,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Yüzey"
+        "sectionPlan": "data-first",
+        "family": "Yüzey",
+        "fit": "1"
       },
       "must": [
         "2–3 blob (opaklık ≤ .30, blur 40px) + grain .06",
@@ -1752,7 +1776,7 @@
         "ink": "#000000",
         "inkSoft": "#2b2b2b",
         "inkFaint": "#6b6b6b",
-        "accent": "#ff5c8a",
+        "accent": "#fb5887",
         "accentInk": "#000000",
         "line": "#000000"
       },
@@ -1810,7 +1834,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Cesur"
+        "sectionPlan": "editorial",
+        "family": "Cesur",
+        "fit": "0"
       },
       "must": [
         "Tüm bileşenlerde aynı kenarlık kalınlığı (2px, büyük yüzeyde 3px)",
@@ -1883,7 +1909,7 @@
         "ink": "#1b1b1b",
         "inkSoft": "#4a4a4a",
         "inkFaint": "#7b7b7b",
-        "accent": "#ff3b6b",
+        "accent": "#fa3667",
         "accentInk": "#1b1b1b",
         "line": "#1b1b1b"
       },
@@ -1939,7 +1965,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Cesur"
+        "sectionPlan": "classic",
+        "family": "Cesur",
+        "fit": "0"
       },
       "must": [
         "İhlal bütçesi: ekran başına ≤ 3 ihlal",
@@ -2069,7 +2097,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Cesur"
+        "sectionPlan": "proof-first",
+        "family": "Cesur",
+        "fit": "1"
       },
       "must": [
         "Tek vurgu asit yeşili (#ccff00), asit üstünde siyah metin",
@@ -2188,7 +2218,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Cesur"
+        "sectionPlan": "proof-first",
+        "family": "Cesur",
+        "fit": "0"
       },
       "must": [
         "3px siyah kontur, tüm bileşenlerde aynı",
@@ -2276,7 +2308,7 @@
           "body": "16px",
           "quote": "22px",
           "h2": "40px",
-          "h1": "68px",
+          "h1": "66px",
           "h1Mobile": "36px"
         },
         "weights": {
@@ -2308,7 +2340,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Cesur"
+        "sectionPlan": "editorial",
+        "family": "Cesur",
+        "fit": "0"
       },
       "must": [
         "Motif bütçesi: 1 baskın + ≤ 1 ikincil desen",
@@ -2427,7 +2461,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Cesur"
+        "sectionPlan": "editorial",
+        "family": "Cesur",
+        "fit": "0"
       },
       "must": [
         "Accent ≤ %20 ekran alanı, tek doygun hue",
@@ -2499,7 +2535,7 @@
         "surface2": "#e6f0ff",
         "ink": "#1b2340",
         "inkSoft": "#4b557a",
-        "inkFaint": "#8b94b5",
+        "inkFaint": "#838bac",
         "accent": "#6f4de8",
         "accentInk": "#ffffff",
         "line": "rgba(90,120,220,.35)"
@@ -2551,7 +2587,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Retro"
+        "sectionPlan": "campaign",
+        "family": "Retro",
+        "fit": "1"
       },
       "must": [
         "Soğuk palet: buz mavisi + mor; sıcak renk yok",
@@ -2680,7 +2718,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Retro"
+        "sectionPlan": "classic",
+        "family": "Retro",
+        "fit": "1"
       },
       "must": [
         "Koyu mor zemin + soluk pembe accent; doygun renk yok",
@@ -2809,7 +2849,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Retro"
+        "sectionPlan": "classic",
+        "family": "Retro",
+        "fit": "1"
       },
       "must": [
         "İki neon (pembe ana + cyan ikincil), üçüncü doygun renk yok",
@@ -2939,7 +2981,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Retro"
+        "sectionPlan": "proof-first",
+        "family": "Retro",
+        "fit": "1"
       },
       "must": [
         "İki neon rolü: sarı = uyarı/CTA, cyan = teknik/kenar",
@@ -3067,7 +3111,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Retro"
+        "sectionPlan": "editorial",
+        "family": "Retro",
+        "fit": "1"
       },
       "must": [
         "Tek aile mono (JetBrains Mono); gövde ≥ 15px",
@@ -3162,7 +3208,7 @@
           "body": "16px",
           "h3": "12px",
           "h2": "18px",
-          "h1": "28px",
+          "h1": "30px",
           "h1Mobile": "18px"
         },
         "weights": {
@@ -3198,7 +3244,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Retro"
+        "sectionPlan": "campaign",
+        "family": "Retro",
+        "fit": "1"
       },
       "must": [
         "Radius 0 (istisna yok)",
@@ -3270,9 +3318,9 @@
         "surface2": "#eaf6ff",
         "ink": "#0d2b45",
         "inkSoft": "#365a75",
-        "inkFaint": "#6f8fa8",
-        "accent": "#2f9be0",
-        "accentInk": "#0d2b45",
+        "inkFaint": "#6e8da6",
+        "accent": "#2090d5",
+        "accentInk": "#06243e",
         "line": "rgba(255,255,255,.85)"
       },
       "fonts": {
@@ -3318,7 +3366,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Retro"
+        "sectionPlan": "editorial",
+        "family": "Retro",
+        "fit": "0"
       },
       "must": [
         "Parlaklık üçlüsü: gradient + inset beyaz + yumuşak mavi gölge",
@@ -3449,7 +3499,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Retro"
+        "sectionPlan": "proof-first",
+        "family": "Retro",
+        "fit": "2"
       },
       "must": [
         "Simetrik yerleşim (merkez eksen)",
@@ -3578,7 +3630,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Retro"
+        "sectionPlan": "data-first",
+        "family": "Retro",
+        "fit": "1"
       },
       "must": [
         "Çift kural (3px double) bölüm ayırıcı",
@@ -3650,9 +3704,9 @@
         "surface2": "#efeae1",
         "ink": "#1e1c1a",
         "inkSoft": "#56514a",
-        "inkFaint": "#8d877e",
-        "accent": "#e4572e",
-        "accentInk": "#1e1c1a",
+        "inkFaint": "#868178",
+        "accent": "#df5329",
+        "accentInk": "#1b1918",
         "line": "rgba(30,28,26,.12)"
       },
       "fonts": {
@@ -3666,7 +3720,7 @@
           "body": "15px",
           "h3": "20px",
           "h2": "40px",
-          "h1": "88px",
+          "h1": "72px",
           "h1Mobile": "40px"
         },
         "weights": {
@@ -3697,7 +3751,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Sanatsal"
+        "sectionPlan": "proof-first",
+        "family": "Sanatsal",
+        "fit": "0"
       },
       "must": [
         "Ekran başına 1 ölçek/bağlam sürprizi",
@@ -3769,7 +3825,7 @@
         "surface2": "rgba(255,255,255,.35)",
         "ink": "#3b3542",
         "inkSoft": "#635c6e",
-        "inkFaint": "#968fa3",
+        "inkFaint": "#928b9f",
         "accent": "#7a63bd",
         "accentInk": "#ffffff",
         "line": "rgba(59,53,66,.10)"
@@ -3819,7 +3875,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Sanatsal"
+        "sectionPlan": "feature-first",
+        "family": "Sanatsal",
+        "fit": "1"
       },
       "must": [
         "Gövde metni --ink (10.85:1); --ink-faint yalnız dekoratif",
@@ -3891,7 +3949,7 @@
         "surface2": "#f0e0c4",
         "ink": "#2e2620",
         "inkSoft": "#5f5347",
-        "inkFaint": "#91857a",
+        "inkFaint": "#90847a",
         "accent": "#b45634",
         "accentInk": "#fff8ee",
         "line": "rgba(46,38,32,.18)"
@@ -3939,7 +3997,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Sanatsal"
+        "sectionPlan": "proof-first",
+        "family": "Sanatsal",
+        "fit": "0"
       },
       "must": [
         "Asimetrik radius (22px 22px 22px 4px) kart/görselde",
@@ -4011,7 +4071,7 @@
         "surface2": "#fdf3dc",
         "ink": "#1f2b3a",
         "inkSoft": "#4e5a68",
-        "inkFaint": "#858e99",
+        "inkFaint": "#848c97",
         "accent": "#c63d2f",
         "accentInk": "#fffdf7",
         "line": "rgba(31,43,58,.18)"
@@ -4062,7 +4122,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Sanatsal"
+        "sectionPlan": "editorial",
+        "family": "Sanatsal",
+        "fit": "0"
       },
       "must": [
         "Bant + polaroid + el yazısı üçlüsü",
@@ -4185,7 +4247,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Sanatsal"
+        "sectionPlan": "proof-first",
+        "family": "Sanatsal",
+        "fit": "0"
       },
       "must": [
         "Kesikli çerçeve dekoratif; kritik kenar tam çizgi",
@@ -4315,7 +4379,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Sanatsal"
+        "sectionPlan": "editorial",
+        "family": "Sanatsal",
+        "fit": "0"
       },
       "must": [
         "Koyu kahve zemin (#1b1714) + tek vignette",
@@ -4386,8 +4452,8 @@
         "surface": "#f2ebdd",
         "surface2": "#e6ddcb",
         "ink": "#2f2a24",
-        "inkSoft": "#5d554a",
-        "inkFaint": "#8b8173",
+        "inkSoft": "#5a5248",
+        "inkFaint": "#776d60",
         "accent": "#2f6b4f",
         "accentInk": "#f7f3e8",
         "line": "rgba(47,42,36,.35)"
@@ -4438,7 +4504,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Sanatsal"
+        "sectionPlan": "campaign",
+        "family": "Sanatsal",
+        "fit": "0"
       },
       "must": [
         "Tek ışık yönü; panel outset, buton/input inset",
@@ -4526,7 +4594,7 @@
           "body": "15.5px",
           "h3": "19px",
           "h2": "24px",
-          "h1": "46px",
+          "h1": "58px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -4562,7 +4630,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Geometrik"
+        "sectionPlan": "data-first",
+        "family": "Geometrik",
+        "fit": "1"
       },
       "must": [
         "Ekran başına 3–5 geometrik şekil, her biri işlevli",
@@ -4649,7 +4719,7 @@
           "body": "15.5px",
           "h3": "19px",
           "h2": "27px",
-          "h1": "72px",
+          "h1": "34px",
           "h1Mobile": "34px"
         },
         "weights": {
@@ -4686,7 +4756,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Geometrik"
+        "sectionPlan": "data-first",
+        "family": "Geometrik",
+        "fit": "3"
       },
       "must": [
         "Ekran başına 1–3 kalın diagonal çubuk (24–40px), tek açı ailesi (58° veya −32°)",
@@ -4788,7 +4860,7 @@
           "h3": "19px",
           "h2": "32px",
           "kpi": "44px",
-          "h1": "96px",
+          "h1": "clamp(28px, 9vw, 44px)",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -4827,7 +4899,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Tipografik"
+        "sectionPlan": "campaign",
+        "family": "Tipografik",
+        "fit": "0"
       },
       "must": [
         "Ölçek atlaması: display clamp(28px,7vw,96px)/0.95/-0.03em, gövde 15px/1.55; toplam 6 punto basamağı",
@@ -4930,7 +5004,7 @@
           "body": "16px",
           "h3": "19px",
           "h2": "30px",
-          "h1": "54px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -4968,7 +5042,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Organik"
+        "sectionPlan": "feature-first",
+        "family": "Organik",
+        "fit": "1"
       },
       "must": [
         "Radius çifti 18/26px; büyük yüzeyde asimetrik tek köşe 6–8px; 0 radius yasak",
@@ -5071,7 +5147,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "26px",
-          "h1": "40px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -5112,7 +5188,9 @@
         "hero": "sticky",
         "nav": "pill",
         "density": "balanced",
-        "family": "Yeni Dalga"
+        "sectionPlan": "campaign",
+        "family": "Yeni Dalga",
+        "fit": "3"
       },
       "must": [
         "Atmosfer bütçesi: mesh iki katman (2 radial + 1 conic), tek renk ailesi (accent + ink), sayfa opacity ≤ .16, kart içi ≤ .50; radial katman blur 16px, conic katman blur 22px",
@@ -5227,7 +5305,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "28px",
-          "h1": "44px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -5267,7 +5345,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Yeni Dalga"
+        "sectionPlan": "campaign",
+        "family": "Yeni Dalga",
+        "fit": "0"
       },
       "must": [
         "Mat kural: kart box-shadow: none; derinlik 1px var(--line) + ton kademesi (%5–%8 parlaklık); --shadow yalnız yüzen katmanda",
@@ -5417,7 +5497,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Zamansız"
+        "sectionPlan": "feature-first",
+        "family": "Zamansız",
+        "fit": "2"
       },
       "must": [
         "Krom kenar = dış 1px var(--line) + iç 1px rgba(255,255,255,.6); toplam 2px, üçüncü çizgi yok",
@@ -5570,7 +5652,9 @@
         "hero": "sticky",
         "nav": "pill",
         "density": "balanced",
-        "family": "Zamansız"
+        "sectionPlan": "campaign",
+        "family": "Zamansız",
+        "fit": "3"
       },
       "must": [
         "Krom kenar = dış 1px var(--line) + iç 1px rgba(255,255,255,.6); toplam 2px, üçüncü çizgi yok",
@@ -5729,7 +5813,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Zamansız"
+        "sectionPlan": "proof-first",
+        "family": "Zamansız",
+        "fit": "2"
       },
       "must": [
         "Krom kenar = dış 1px var(--line) + iç 1px rgba(255,255,255,.6); toplam 2px, üçüncü çizgi yok",
@@ -5826,7 +5912,7 @@
         "surface2": "#fafafa",
         "ink": "#111112",
         "inkSoft": "#5a5f66",
-        "inkFaint": "#9298a0",
+        "inkFaint": "#90959d",
         "accent": "#1d4ed8",
         "accentInk": "#ffffff",
         "line": "rgba(17,17,18,.10)"
@@ -5879,7 +5965,9 @@
         "hero": "sticky",
         "nav": "pill",
         "density": "balanced",
-        "family": "Zamansız"
+        "sectionPlan": "feature-first",
+        "family": "Zamansız",
+        "fit": "3"
       },
       "must": [
         "Tek typeface (Poppins); mono yalnız kod/veri/rakam",
@@ -6014,7 +6102,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Teknik"
+        "sectionPlan": "proof-first",
+        "family": "Teknik",
+        "fit": "3"
       },
       "must": [
         "Tek aile: JetBrains Mono; display = body = mono",
@@ -6145,7 +6235,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "editorial",
+        "family": "Veri & Gösterge",
+        "fit": "1"
       },
       "must": [
         "Her tile aynı birim ölçüyü kullanır: 12px padding, 1 birim yükseklik, tile başına en fazla 3 metin satırı",
@@ -6281,7 +6373,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "proof-first",
+        "family": "Veri & Gösterge",
+        "fit": "3"
       },
       "must": [
         "Her sayı mono + tabular; fiyat 2, hacim 0 ondalık — ondalık basamak sembole göre sabit",
@@ -6412,7 +6506,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "data-first",
+        "family": "Veri & Gösterge",
+        "fit": "3"
       },
       "must": [
         "Ekran başına en fazla 4 KPI; her KPI tek cümlelik yorumla birlikte durur",
@@ -6543,7 +6639,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "classic",
+        "family": "Veri & Gösterge",
+        "fit": "2"
       },
       "must": [
         "Zaman damgası sabit 88px sütunda, `HH:MM:SS.mmm` biçiminde ve mono; saniye altı her zaman görünür",
@@ -6674,7 +6772,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "data-first",
+        "family": "Veri & Gösterge",
+        "fit": "2"
       },
       "must": [
         "Her ölçüm değeri birim + tolerans ile yazılır (`24,81 mV ±0,02`); birimsiz sayı yok",
@@ -6767,7 +6867,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -6805,7 +6905,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "proof-first",
+        "family": "Veri & Gösterge",
+        "fit": "0"
       },
       "must": [
         "Harita zeminin üstünde değil, arayüzün kendisidir: sol panel + harita + sağ lejant",
@@ -6898,7 +7000,7 @@
           "body": "15px",
           "h3": "20px",
           "h2": "29px",
-          "h1": "54px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -6936,7 +7038,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "feature-first",
+        "family": "Veri & Gösterge",
+        "fit": "1"
       },
       "must": [
         "Her karşılaştırma iki panel: kontrol (nötr) ve varyant (accent) — etiketleri zorunlu",
@@ -7029,7 +7133,7 @@
           "body": "15px",
           "h3": "20px",
           "h2": "29px",
-          "h1": "48px",
+          "h1": "29px",
           "h1Mobile": "29px"
         },
         "weights": {
@@ -7068,7 +7172,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "proof-first",
+        "family": "Veri & Gösterge",
+        "fit": "2"
       },
       "must": [
         "Tablolar defter çizgisine oturur: 34px satır, 28px doku ızgarası",
@@ -7161,7 +7267,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "27px",
-          "h1": "44px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -7199,7 +7305,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "feature-first",
+        "family": "Veri & Gösterge",
+        "fit": "1"
       },
       "must": [
         "Her vital kartı: değer (büyük mono), birim, referans aralığı, ölçüm saati",
@@ -7292,7 +7400,7 @@
           "body": "14px",
           "h3": "18px",
           "h2": "23px",
-          "h1": "36px",
+          "h1": "22px",
           "h1Mobile": "22px"
         },
         "weights": {
@@ -7330,7 +7438,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Veri & Gösterge"
+        "sectionPlan": "editorial",
+        "family": "Veri & Gösterge",
+        "fit": "1"
       },
       "must": [
         "Kapsama ızgarası: 20px hex/nokta deseni; cihaz kimliği + sinyal + son görülme tek satır",
@@ -7463,7 +7573,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "feature-first",
+        "family": "Endüstriyel",
+        "fit": "0"
       },
       "must": [
         "Zemin cyanotype; 8px minor / 64px major çizim ızgarası her ekranda görünür",
@@ -7593,7 +7705,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "editorial",
+        "family": "Endüstriyel",
+        "fit": "3"
       },
       "must": [
         "Yüzey bevel formülü: inset üst 1px açık + inset alt 1px koyu; dış gölge yalnız yüzen katmanda",
@@ -7723,7 +7837,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "data-first",
+        "family": "Endüstriyel",
+        "fit": "0"
       },
       "must": [
         "Uyarı hiyerarşisi sabit: 2px accent çerçeve = yasak/tehlike, 2px ink = talimat, 1px line = bilgi",
@@ -7853,7 +7969,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "editorial",
+        "family": "Endüstriyel",
+        "fit": "1"
       },
       "must": [
         "Durum renk kodu sabit: çalışıyor = --accent, durdu = --danger, beklemede = --warn; her zaman ikon + metinle",
@@ -7983,7 +8101,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "classic",
+        "family": "Endüstriyel",
+        "fit": "3"
       },
       "must": [
         "Zemin 8px nokta ızgarası; şema çizgileri 1.5px, düğümler 3px dolu",
@@ -8075,7 +8195,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "44px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -8113,7 +8233,9 @@
         "hero": "split",
         "nav": "split",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "campaign",
+        "family": "Endüstriyel",
+        "fit": "0"
       },
       "must": [
         "Her sayısal değer mono, tabular ve sabit ondalıkla; birim ayrı sütunda",
@@ -8191,7 +8313,7 @@
         "ink": "#17150f",
         "inkSoft": "#56523f",
         "inkFaint": "#807b66",
-        "accent": "#f2b705",
+        "accent": "#b98000",
         "accentInk": "#1a1608",
         "line": "rgba(23,21,15,.22)"
       },
@@ -8206,7 +8328,7 @@
           "body": "15px",
           "h3": "20px",
           "h2": "30px",
-          "h1": "56px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -8243,7 +8365,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "editorial",
+        "family": "Endüstriyel",
+        "fit": "2"
       },
       "must": [
         "Her satır bir iş birimini temsil eder: ürün + konum (raf/bin) + miktar + durum",
@@ -8336,7 +8460,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "24px",
-          "h1": "38px",
+          "h1": "26px",
           "h1Mobile": "26px"
         },
         "weights": {
@@ -8374,7 +8498,9 @@
         "hero": "split",
         "nav": "split",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "editorial",
+        "family": "Endüstriyel",
+        "fit": "0"
       },
       "must": [
         "Her iş emri tek kart: iş no + makine + öncelik + SLA + atanan kişi",
@@ -8467,7 +8593,7 @@
           "body": "16px",
           "h3": "21px",
           "h2": "30px",
-          "h1": "64px",
+          "h1": "34px",
           "h1Mobile": "34px"
         },
         "weights": {
@@ -8505,7 +8631,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "data-first",
+        "family": "Endüstriyel",
+        "fit": "1"
       },
       "must": [
         "Blok/no disiplini: her bölüm 32×32 kutu içinde numara taşır (Anton)",
@@ -8598,7 +8726,7 @@
           "body": "14px",
           "h3": "17px",
           "h2": "22px",
-          "h1": "34px",
+          "h1": "24px",
           "h1Mobile": "24px"
         },
         "weights": {
@@ -8636,7 +8764,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Endüstriyel"
+        "sectionPlan": "campaign",
+        "family": "Endüstriyel",
+        "fit": "1"
       },
       "must": [
         "Her gösterge üçlüsü: etiket (10px mono, üstte) + değer (mono, sağa hizalı) + birim (ayrı)",
@@ -8729,7 +8859,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "30px",
-          "h1": "54px",
+          "h1": "34px",
           "h1Mobile": "34px"
         },
         "weights": {
@@ -8767,7 +8897,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "campaign",
+        "family": "Kültürel & Bölgesel",
+        "fit": "1"
       },
       "must": [
         "Düz boyanmış zemin: renk bloğu tek parça, gradient ve cam yok (--blur: 0)",
@@ -8860,7 +8992,7 @@
           "body": "16px",
           "h3": "17px",
           "h2": "26px",
-          "h1": "64px",
+          "h1": "40px",
           "h1Mobile": "40px"
         },
         "weights": {
@@ -8898,7 +9030,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "feature-first",
+        "family": "Kültürel & Bölgesel",
+        "fit": "1"
       },
       "must": [
         "Boşluk baskın: bölüm dikey 160px (mobil 88px), içerik 12 kolonun 8'inde, sağ 4 kolon boş",
@@ -8991,7 +9125,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "31px",
-          "h1": "58px",
+          "h1": "36px",
           "h1Mobile": "36px"
         },
         "weights": {
@@ -9029,7 +9163,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "data-first",
+        "family": "Kültürel & Bölgesel",
+        "fit": "1"
       },
       "must": [
         "Tezhip çerçevesi: kart/panel içinde 14px içeri çekilmiş 1px altın kural; tek çerçeve, çift çerçeve yok",
@@ -9122,7 +9258,7 @@
           "body": "16px",
           "h3": "19px",
           "h2": "28px",
-          "h1": "52px",
+          "h1": "34px",
           "h1Mobile": "34px"
         },
         "weights": {
@@ -9160,7 +9296,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "proof-first",
+        "family": "Kültürel & Bölgesel",
+        "fit": "1"
       },
       "must": [
         "Harç ızgarası: bitişik kartlar/hücreler arasında tam 2px boşluk ve bu boşluk `--line` renginde (gölge değil)",
@@ -9253,7 +9391,7 @@
           "body": "16px",
           "h3": "21px",
           "h2": "34px",
-          "h1": "68px",
+          "h1": "40px",
           "h1Mobile": "40px"
         },
         "weights": {
@@ -9291,7 +9429,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "feature-first",
+        "family": "Kültürel & Bölgesel",
+        "fit": "1"
       },
       "must": [
         "Kalın kenar: panel, buton, input 3px; 1px hairline bu stilde yok",
@@ -9422,7 +9562,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "proof-first",
+        "family": "Kültürel & Bölgesel",
+        "fit": "1"
       },
       "must": [
         "Dokuma ritmi 8px: bant genişlikleri 8px ve her beşinci bant 24px desen bloğudur",
@@ -9553,7 +9695,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "data-first",
+        "family": "Kültürel & Bölgesel",
+        "fit": "1"
       },
       "must": [
         "Basamak (escalera) motifi 4px adım birimiyle çizilir; adım yüksekliği her yerde aynı",
@@ -9684,7 +9828,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "proof-first",
+        "family": "Kültürel & Bölgesel",
+        "fit": "0"
       },
       "must": [
         "Her kart 1px ofset 'kayma izi' taşır; birincil yüzey 4px ofset",
@@ -9815,7 +9961,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "classic",
+        "family": "Kültürel & Bölgesel",
+        "fit": "1"
       },
       "must": [
         "Her panel çift altın çerçeve taşır: dış 1px + 4px aralık + iç 1px (accent)",
@@ -9946,7 +10094,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Kültürel & Bölgesel"
+        "sectionPlan": "proof-first",
+        "family": "Kültürel & Bölgesel",
+        "fit": "1"
       },
       "must": [
         "Kemer formu: kart ve modal üst köşeleri 22px, alt köşeler de 22px — yarım daire hissi",
@@ -10077,7 +10227,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "proof-first",
+        "family": "Doğa & Organik",
+        "fit": "1"
       },
       "must": [
         "Yüzeyler yumuşak: radius 14px (kontrol) / 24px (kart), hap biçimli radius yalnız chip",
@@ -10207,7 +10359,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "proof-first",
+        "family": "Doğa & Organik",
+        "fit": "0"
       },
       "must": [
         "Zemin atmosfer gradyanı: tek mavi ailesi, en fazla 2 durak (--bg → --bg-2)",
@@ -10337,7 +10491,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "campaign",
+        "family": "Doğa & Organik",
+        "fit": "1"
       },
       "must": [
         "Eş yükselti (kontur) çizgisi imza öğedir: en az bir bölümde 1px halka dizisi görünür",
@@ -10467,7 +10623,9 @@
         "hero": "split",
         "nav": "split",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "campaign",
+        "family": "Doğa & Organik",
+        "fit": "0"
       },
       "must": [
         "Zemin derin su (--bg teal); katmanlar arasında 4–6 puan parlaklık farkı",
@@ -10597,7 +10755,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "proof-first",
+        "family": "Doğa & Organik",
+        "fit": "0"
       },
       "must": [
         "Zemin sıcak krem (--bg); saf beyaz yok, gölge yumuşak tek katman",
@@ -10689,7 +10849,7 @@
           "body": "17px",
           "h3": "22px",
           "h2": "32px",
-          "h1": "52px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -10727,7 +10887,9 @@
         "hero": "split",
         "nav": "split",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "campaign",
+        "family": "Doğa & Organik",
+        "fit": "0"
       },
       "must": [
         "Her tür kaydı: Latince ad (italik) + Türkçe ad + yükseklik/çap + mevsim",
@@ -10820,7 +10982,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "30px",
-          "h1": "58px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -10858,7 +11020,9 @@
         "hero": "split",
         "nav": "split",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "campaign",
+        "family": "Doğa & Organik",
+        "fit": "1"
       },
       "must": [
         "Kumul eğrisi dili: kart ve görsel köşeleri 24/44px, buton ve chip hap (999px)",
@@ -10951,7 +11115,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "24px",
-          "h1": "40px",
+          "h1": "26px",
           "h1Mobile": "26px"
         },
         "weights": {
@@ -10989,7 +11153,9 @@
         "hero": "split",
         "nav": "split",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "campaign",
+        "family": "Doğa & Organik",
+        "fit": "0"
       },
       "must": [
         "Her ölçüm üçlüsü: etiket (10px mono) + değer (mono, sağa hizalı) + birim (°C, m, km/s)",
@@ -11082,7 +11248,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "28px",
-          "h1": "48px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -11120,7 +11286,9 @@
         "hero": "split",
         "nav": "split",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "feature-first",
+        "family": "Doğa & Organik",
+        "fit": "1"
       },
       "must": [
         "Keskin köşe: radius 0 (kart, buton, input) veya 2px (panel dışı yüzen katman); ara değer yok",
@@ -11213,7 +11381,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "28px",
-          "h1": "46px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -11251,7 +11419,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Doğa & Organik"
+        "sectionPlan": "campaign",
+        "family": "Doğa & Organik",
+        "fit": "1"
       },
       "must": [
         "Her tür kaydı: tür adı + resif bölgesi (chip) + derinlik (m) + su sıcaklığı (°C)",
@@ -11345,7 +11515,7 @@
           "body": "17px",
           "h3": "22px",
           "h2": "34px",
-          "h1": "58px",
+          "h1": "34px",
           "h1Mobile": "34px"
         },
         "weights": {
@@ -11387,7 +11557,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "classic",
+        "family": "Yayın & Tipografi",
+        "fit": "0"
       },
       "must": [
         "Tek aile kuralı: display = body = Lora; mono yalnız künye, sayfa numarası ve etikette",
@@ -11489,7 +11661,7 @@
           "body": "16.5px",
           "h3": "20px",
           "h2": "30px",
-          "h1": "46px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -11530,7 +11702,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "data-first",
+        "family": "Yayın & Tipografi",
+        "fit": "0"
       },
       "must": [
         "Masthead tek satır Archivo Black 46px uppercase −0.02em (mobil 32px); altında 3px + 1px çift kural",
@@ -11631,7 +11805,7 @@
           "body": "17px",
           "h3": "24px",
           "h2": "38px",
-          "h1": "64px",
+          "h1": "36px",
           "h1Mobile": "36px"
         },
         "weights": {
@@ -11673,7 +11847,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "data-first",
+        "family": "Yayın & Tipografi",
+        "fit": "3"
       },
       "must": [
         "Display Fraunces 600 64px/1.04/−0.02em (mobil 36px); gövde Jost 17px/1.66/58ch",
@@ -11774,7 +11950,7 @@
           "body": "15.5px",
           "h3": "18px",
           "h2": "24px",
-          "h1": "34px",
+          "h1": "26px",
           "h1Mobile": "26px"
         },
         "weights": {
@@ -11816,7 +11992,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "feature-first",
+        "family": "Yayın & Tipografi",
+        "fit": "0"
       },
       "must": [
         "Gövde EB Garamond 15.5px/1.66/72ch; ana kolon 8/12, kenar notu 3/12 (ekran başına 1)",
@@ -11917,7 +12095,7 @@
           "body": "16.5px",
           "h3": "20px",
           "h2": "28px",
-          "h1": "44px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -11959,7 +12137,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "proof-first",
+        "family": "Yayın & Tipografi",
+        "fit": "0"
       },
       "must": [
         "Display Cormorant Garamond 500 44px/1.14 (mobil 30px); gövde 16.5px/1.78/46ch",
@@ -12059,7 +12239,7 @@
           "body": "15.5px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "44px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -12097,7 +12277,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "proof-first",
+        "family": "Yayın & Tipografi",
+        "fit": "0"
       },
       "must": [
         "Her ürün satırı dört alan: kod (mono), ad (serif), ölçü (mono), fiyat (mono, sağa dayalı)",
@@ -12228,7 +12410,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "data-first",
+        "family": "Yayın & Tipografi",
+        "fit": "0"
       },
       "must": [
         "Geniş kenar: bölüm çevresi 96px (mobil 56px), metin 66ch; sayfa \"duvar\" gibi nefes alır",
@@ -12321,7 +12505,7 @@
           "body": "14px",
           "h3": "20px",
           "h2": "34px",
-          "h1": "76px",
+          "h1": "40px",
           "h1Mobile": "40px"
         },
         "weights": {
@@ -12359,7 +12543,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "campaign",
+        "family": "Yayın & Tipografi",
+        "fit": "0"
       },
       "must": [
         "8px taban çizgisi ızgarası yalnız sayfa zemininde; kart/panel/form yüzeyi temiz kalır",
@@ -12452,7 +12638,7 @@
           "body": "14.5px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "42px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -12490,7 +12676,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "feature-first",
+        "family": "Yayın & Tipografi",
+        "fit": "0"
       },
       "must": [
         "Madde başı serif (Lora 700) + mono telaffuz satırı; her madde bu ikiliyle açılır",
@@ -12583,7 +12771,7 @@
           "body": "14.5px",
           "h3": "19px",
           "h2": "28px",
-          "h1": "46px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -12621,7 +12809,9 @@
         "hero": "index",
         "nav": "pill",
         "density": "dense",
-        "family": "Yayın & Tipografi"
+        "sectionPlan": "editorial",
+        "family": "Yayın & Tipografi",
+        "fit": "0"
       },
       "must": [
         "Fotokopi greni: `--grain: .12` + 3px yatay tarama zemin katmanında; kart yüzeyi temiz kalır",
@@ -12752,7 +12942,9 @@
         "hero": "sticky",
         "nav": "pill",
         "density": "balanced",
-        "family": "Hareket & Optik"
+        "sectionPlan": "editorial",
+        "family": "Hareket & Optik",
+        "fit": "3"
       },
       "must": [
         "Marquee bandı 32px yükseklik, en çok 2 bant; hız sınıfları 28s ve 44s döngü",
@@ -12883,7 +13075,9 @@
         "hero": "sticky",
         "nav": "pill",
         "density": "balanced",
-        "family": "Hareket & Optik"
+        "sectionPlan": "feature-first",
+        "family": "Hareket & Optik",
+        "fit": "3"
       },
       "must": [
         "Desenler statiktir: moiré, yarım ton ve kenar bandı hiç animasyonlanmaz",
@@ -13014,7 +13208,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Hareket & Optik"
+        "sectionPlan": "data-first",
+        "family": "Hareket & Optik",
+        "fit": "3"
       },
       "must": [
         "Izgara modülü 24px; tüm çizim (yay, düğüm, tarama) bu modüle hizalı",
@@ -13145,7 +13341,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Hareket & Optik"
+        "sectionPlan": "data-first",
+        "family": "Hareket & Optik",
+        "fit": "3"
       },
       "must": [
         "En fazla 3 derinlik düzlemi: uzak (blur 2px, %55), orta (blur 0), yakın (gölge + %2 ölçek)",
@@ -13276,7 +13474,9 @@
         "hero": "sticky",
         "nav": "pill",
         "density": "balanced",
-        "family": "Hareket & Optik"
+        "sectionPlan": "feature-first",
+        "family": "Hareket & Optik",
+        "fit": "3"
       },
       "must": [
         "Kart köşeleri asimetrik: bir köşe 12px, diğerleri 28px — damla yönü okunur",
@@ -13369,7 +13569,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "27px",
-          "h1": "50px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -13407,7 +13607,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Hareket & Optik"
+        "sectionPlan": "data-first",
+        "family": "Hareket & Optik",
+        "fit": "3"
       },
       "must": [
         "Ekran başına tek ışık kaynağı; tüm gölgeler aynı yöne (üst-sol) düşer",
@@ -13478,7 +13680,7 @@
         "styles/102-moire-field/shots/01-page.png"
       ],
       "palette": {
-        "bg": "#a6a29b",
+        "bg": "#b6b2ab",
         "bg2": "#9c9891",
         "surface": "#b1ada6",
         "surface2": "#8e8a84",
@@ -13500,7 +13702,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "24px",
-          "h1": "38px",
+          "h1": "24px",
           "h1Mobile": "24px"
         },
         "weights": {
@@ -13538,7 +13740,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Hareket & Optik"
+        "sectionPlan": "data-first",
+        "family": "Hareket & Optik",
+        "fit": "3"
       },
       "must": [
         "İki perde kuralı: iki çizgi ızgarası 4–7° farkla üst üste bindirilir",
@@ -13631,7 +13835,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "28px",
-          "h1": "52px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -13669,7 +13873,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Hareket & Optik"
+        "sectionPlan": "classic",
+        "family": "Hareket & Optik",
+        "fit": "3"
       },
       "must": [
         "İz en fazla üç kopya: %40 / %20 / %8 opaklık, hareket yönünde 8/16/24px offset",
@@ -13740,7 +13946,7 @@
         "styles/104-stepped-mechanism/shots/01-page.png"
       ],
       "palette": {
-        "bg": "#a0a6aa",
+        "bg": "#adb3b7",
         "bg2": "#979da1",
         "surface": "#abb1b5",
         "surface2": "#8b9195",
@@ -13762,7 +13968,7 @@
           "body": "14px",
           "h3": "18px",
           "h2": "24px",
-          "h1": "38px",
+          "h1": "24px",
           "h1Mobile": "24px"
         },
         "weights": {
@@ -13800,7 +14006,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Hareket & Optik"
+        "sectionPlan": "proof-first",
+        "family": "Hareket & Optik",
+        "fit": "3"
       },
       "must": [
         "Her geçiş 4 kademede tamamlanır; `steps(4, end)` zorunlu, ara değer yok",
@@ -13893,7 +14101,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "44px",
+          "h1": "27px",
           "h1Mobile": "27px"
         },
         "weights": {
@@ -13931,7 +14139,9 @@
         "hero": "index",
         "nav": "pill",
         "density": "dense",
-        "family": "Hareket & Optik"
+        "sectionPlan": "campaign",
+        "family": "Hareket & Optik",
+        "fit": "1"
       },
       "must": [
         "En fazla üç katman: ana katman opak, iki dekoratif kopya 12px offset ve %6–%10 opaklık",
@@ -14062,7 +14272,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Etkileşim"
+        "sectionPlan": "data-first",
+        "family": "Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Ekranın tek odağı dinleme halidir: halka + dalga formu; ikinci bir görsel odak yok",
@@ -14192,7 +14404,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Etkileşim"
+        "sectionPlan": "campaign",
+        "family": "Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Üç derinlik düzlemi zorunlu: arka (z=0, gölgesiz), orta (z=1, 0 8px 20px), ön (z=2, 0 18px 40px)",
@@ -14322,7 +14536,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Etkileşim"
+        "sectionPlan": "proof-first",
+        "family": "Etkileşim",
+        "fit": "2"
       },
       "must": [
         "Klavye öncelikli: her eylem bir kısayolla erişilebilir ve kısayol satırda görünür",
@@ -14452,7 +14668,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Etkileşim"
+        "sectionPlan": "proof-first",
+        "family": "Etkileşim",
+        "fit": "3"
       },
       "must": [
         "Kanallar 32px şerit yüksekliğinde; zaman kodu mono ve tabular (00:00:12:04)",
@@ -14582,7 +14800,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Etkileşim"
+        "sectionPlan": "editorial",
+        "family": "Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Kolon başlığı sayaç taşır: `GELEN 7/10` biçiminde adet + WIP limiti (mono)",
@@ -14712,7 +14932,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Etkileşim"
+        "sectionPlan": "editorial",
+        "family": "Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Ekran başına tek karar: bir adımda en fazla 4 seçenek, tek soru (h1)",
@@ -14842,7 +15064,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Etkileşim"
+        "sectionPlan": "proof-first",
+        "family": "Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Görünür kontrol sayısı ekran başına en fazla 3: niyet satırı, tek öneri, tek geri bağlantısı",
@@ -14972,7 +15196,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Etkileşim"
+        "sectionPlan": "proof-first",
+        "family": "Etkileşim",
+        "fit": "3"
       },
       "must": [
         "Her yürütülebilir blok `In [n]:` numarası taşır; numara hücrenin sol oluğunda mono yazılır",
@@ -15102,7 +15328,9 @@
         "hero": "sticky",
         "nav": "pill",
         "density": "balanced",
-        "family": "Etkileşim"
+        "sectionPlan": "campaign",
+        "family": "Etkileşim",
+        "fit": "3"
       },
       "must": [
         "Her çevrimiçi kişi görünür: 28px avatar + ad baş harfi; avatar yığını en fazla 4, fazlası `+3`",
@@ -15232,7 +15460,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Etkileşim"
+        "sectionPlan": "editorial",
+        "family": "Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Her eylemin görünür tuş ipucu vardır: tuş başlığı (kbd) etiketin yanında veya sağında",
@@ -15324,7 +15554,7 @@
           "body": "17px",
           "h3": "22px",
           "h2": "34px",
-          "h1": "56px",
+          "h1": "34px",
           "h1Mobile": "34px"
         },
         "weights": {
@@ -15366,7 +15596,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "data-first",
+        "family": "Oyuncu",
+        "fit": "3"
       },
       "must": [
         "Baloo 2 700 56px/1.06 başlık (mobil 34px); Nunito 17px/1.65/54ch gövde",
@@ -15468,7 +15700,7 @@
           "body": "16.5px",
           "h3": "22px",
           "h2": "40px",
-          "h1": "72px",
+          "h1": "40px",
           "h1Mobile": "40px"
         },
         "weights": {
@@ -15509,7 +15741,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "proof-first",
+        "family": "Oyuncu",
+        "fit": "1"
       },
       "must": [
         "Anton 72px/0.94/−0.01em bant başlık, tek satır (mobil 40px); gövde Poppins 16.5px/1.6/52ch",
@@ -15609,7 +15843,7 @@
           "body": "16.5px",
           "h3": "20px",
           "h2": "26px",
-          "h1": "44px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -15650,7 +15884,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "proof-first",
+        "family": "Oyuncu",
+        "fit": "1"
       },
       "must": [
         "Nunito 900 44px/1.1 başlık (mobil 28px); gövde Poppins 16.5px/1.6/58ch",
@@ -15751,7 +15987,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "24px",
-          "h1": "32px",
+          "h1": "20px",
           "h1Mobile": "20px"
         },
         "weights": {
@@ -15792,7 +16028,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "feature-first",
+        "family": "Oyuncu",
+        "fit": "1"
       },
       "must": [
         "Press Start 2P 32px/1.4 başlık, en fazla 3 satır (mobil 20px); gövde Space Grotesk 16px/1.62/68ch",
@@ -15891,7 +16129,7 @@
           "body": "16.5px",
           "h3": "20px",
           "h2": "32px",
-          "h1": "52px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -15931,7 +16169,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "classic",
+        "family": "Oyuncu",
+        "fit": "2"
       },
       "must": [
         "Caveat 700 52px/1.08 başlık (mobil 32px); gövde Nunito 16.5px/1.72/48ch",
@@ -16031,7 +16271,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "30px",
-          "h1": "52px",
+          "h1": "34px",
           "h1Mobile": "34px"
         },
         "weights": {
@@ -16069,7 +16309,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "classic",
+        "family": "Oyuncu",
+        "fit": "1"
       },
       "must": [
         "Kart kâğıt gibidir: radius-lg 22px + üst kenarda 9px dalgalı die-cut maskesi; köşe yuvarlaması süs değil biçimdir",
@@ -16162,7 +16404,7 @@
           "body": "15.5px",
           "h3": "19px",
           "h2": "28px",
-          "h1": "48px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -16200,7 +16442,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "data-first",
+        "family": "Oyuncu",
+        "fit": "3"
       },
       "must": [
         "Kart oranı sabit 5:7 (2.5×3.5 inç kart); kart hiçbir breakpoint'te kareye dönmez",
@@ -16293,7 +16537,7 @@
           "body": "15.5px",
           "h3": "20px",
           "h2": "30px",
-          "h1": "50px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -16331,7 +16575,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "proof-first",
+        "family": "Oyuncu",
+        "fit": "0"
       },
       "must": [
         "Panel çerçevesi 3px mürekkep; 1px ince kenar bu stilde yok",
@@ -16424,7 +16670,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "34px",
-          "h1": "66px",
+          "h1": "40px",
           "h1Mobile": "40px"
         },
         "weights": {
@@ -16462,7 +16708,9 @@
         "hero": "index",
         "nav": "pill",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "editorial",
+        "family": "Oyuncu",
+        "fit": "0"
       },
       "must": [
         "Kılıf 1:1 kare; kapak kartı hiçbir breakpoint'te farklı orana geçmez",
@@ -16555,7 +16803,7 @@
           "body": "15.5px",
           "h3": "20px",
           "h2": "32px",
-          "h1": "62px",
+          "h1": "36px",
           "h1Mobile": "36px"
         },
         "weights": {
@@ -16593,7 +16841,9 @@
         "hero": "split",
         "nav": "split",
         "density": "dense",
-        "family": "Oyuncu"
+        "sectionPlan": "editorial",
+        "family": "Oyuncu",
+        "fit": "0"
       },
       "must": [
         "Skor tabelası: rakamlar mono `tabular-nums`, 40px, sağa dayalı; skorlar orantılı yazılmaz",
@@ -16686,7 +16936,7 @@
           "body": "16px",
           "h3": "21px",
           "h2": "30px",
-          "h1": "54px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -16724,7 +16974,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "feature-first",
+        "family": "Materyal & Lüks",
+        "fit": "1"
       },
       "must": [
         "Her taş kaydı: tür + yüzey (mat/parlak) + kalınlık (mm) + ağırlık (kg)",
@@ -16817,7 +17069,7 @@
           "body": "15px",
           "h3": "20px",
           "h2": "32px",
-          "h1": "60px",
+          "h1": "34px",
           "h1Mobile": "34px"
         },
         "weights": {
@@ -16855,7 +17107,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "campaign",
+        "family": "Materyal & Lüks",
+        "fit": "1"
       },
       "must": [
         "Her kumaş kaydı: iplik türü + gramaj (g/m²) + en (cm) + renk/boya adı",
@@ -16948,7 +17202,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "44px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -16986,7 +17240,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "classic",
+        "family": "Materyal & Lüks",
+        "fit": "1"
       },
       "must": [
         "Her alaşım kaydı: alaşım adı + bileşim (%) + ağırlık (g) + parti no",
@@ -17079,7 +17335,7 @@
           "body": "16px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -17114,10 +17370,12 @@
         "maxRadius": "28px"
       },
       "layout": {
-        "hero": "split-reverse",
-        "nav": "utility",
+        "hero": "index",
+        "nav": "split",
         "density": "dense",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "proof-first",
+        "family": "Materyal & Lüks",
+        "fit": "1"
       },
       "must": [
         "Her parça kaydı: tür + sır adı + çap/yükseklik (cm) + ağırlık (g)",
@@ -17210,7 +17468,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "28px",
-          "h1": "50px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -17248,7 +17506,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "editorial",
+        "family": "Materyal & Lüks",
+        "fit": "1"
       },
       "must": [
         "Her iş kaydı: deri türü + kalınlık (mm) + dikiş sayısı + teslim tarihi",
@@ -17341,7 +17601,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "26px",
-          "h1": "44px",
+          "h1": "26px",
           "h1Mobile": "26px"
         },
         "weights": {
@@ -17382,7 +17642,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "classic",
+        "family": "Materyal & Lüks",
+        "fit": "3"
       },
       "must": [
         "Michroma 44px/1.3/0.02em display (mobil 26px); gövde Inter 16px/1.62/68ch",
@@ -17482,7 +17744,7 @@
           "body": "16.5px",
           "h3": "22px",
           "h2": "30px",
-          "h1": "48px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -17523,7 +17785,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "feature-first",
+        "family": "Materyal & Lüks",
+        "fit": "1"
       },
       "must": [
         "Fraunces 600 48px/1.1 başlık (mobil 30px); gövde Jost 16.5px/1.66/62ch",
@@ -17622,7 +17886,7 @@
           "body": "16.5px",
           "h3": "22px",
           "h2": "28px",
-          "h1": "46px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -17663,7 +17927,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "proof-first",
+        "family": "Materyal & Lüks",
+        "fit": "3"
       },
       "must": [
         "Cinzel 600 46px/1.12/0.06em başlık (mobil 28px); gövde Lora 16.5px/1.7/58ch",
@@ -17763,7 +18029,7 @@
           "body": "16px",
           "h3": "20px",
           "h2": "30px",
-          "h1": "56px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -17804,7 +18070,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "campaign",
+        "family": "Materyal & Lüks",
+        "fit": "1"
       },
       "must": [
         "Archivo Black 56px/1.02/−0.02em majüskül başlık (mobil 32px); gövde Inter 16px/1.6/66ch",
@@ -17905,7 +18173,7 @@
           "body": "16px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "40px",
+          "h1": "26px",
           "h1Mobile": "26px"
         },
         "weights": {
@@ -17946,7 +18214,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Lüks"
+        "sectionPlan": "editorial",
+        "family": "Materyal & Lüks",
+        "fit": "1"
       },
       "must": [
         "Poiret One 400 40px/1.2/0.08em display (mobil 26px); gövde Nunito 16px/1.66/62ch",
@@ -18084,7 +18354,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "feature-first",
+        "family": "Deneysel & Gelecek",
+        "fit": "0"
       },
       "must": [
         "Her yüzey gravür plakadır: dış 1px çerçeve + 4px iç çerçeve, gölge yok",
@@ -18214,7 +18486,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "data-first",
+        "family": "Deneysel & Gelecek",
+        "fit": "3"
       },
       "must": [
         "Nokta bulutu yoğunluk haritası imza öğedir: 8px nokta ızgarası, yoğunluk accent opaklığıyla okunur",
@@ -18344,7 +18618,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "data-first",
+        "family": "Deneysel & Gelecek",
+        "fit": "2"
       },
       "must": [
         "Her ajan eylemi iz kaydında numaralı satır olarak görünür (araç adı + süre + sonuç)",
@@ -18474,7 +18750,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "feature-first",
+        "family": "Deneysel & Gelecek",
+        "fit": "0"
       },
       "must": [
         "Yüzeyler yumuşak: radius 20px kontrol / 32px kart; buton ve input hap (999px)",
@@ -18604,7 +18882,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "campaign",
+        "family": "Deneysel & Gelecek",
+        "fit": "0"
       },
       "must": [
         "Monokrom taban: zemin neredeyse beyaz, accent \"karbon\" koyu; tek renk vurgu",
@@ -18696,7 +18976,7 @@
           "body": "14px",
           "h3": "18px",
           "h2": "24px",
-          "h1": "42px",
+          "h1": "26px",
           "h1Mobile": "26px"
         },
         "weights": {
@@ -18734,7 +19014,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "campaign",
+        "family": "Deneysel & Gelecek",
+        "fit": "0"
       },
       "must": [
         "Her görev satırı: görev kimliği (mono), aşama, pencere sayacı, UTC damgası",
@@ -18805,7 +19087,7 @@
         "styles/142-quantum-lab/shots/01-page.png"
       ],
       "palette": {
-        "bg": "#9b99a3",
+        "bg": "#b3b1bb",
         "bg2": "#92909a",
         "surface": "#a6a4ae",
         "surface2": "#86848e",
@@ -18827,7 +19109,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "25px",
-          "h1": "40px",
+          "h1": "25px",
           "h1Mobile": "25px"
         },
         "weights": {
@@ -18865,7 +19147,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "data-first",
+        "family": "Deneysel & Gelecek",
+        "fit": "0"
       },
       "must": [
         "Her olasılık değeri 3 hane + birim (%); toplam 100 ± 0.5 kuralı görünür",
@@ -18958,7 +19242,7 @@
           "body": "16px",
           "h3": "21px",
           "h2": "30px",
-          "h1": "56px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -18996,7 +19280,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "editorial",
+        "family": "Deneysel & Gelecek",
+        "fit": "1"
       },
       "must": [
         "Uzay çağı tipografisi: Jost 600 + 0.1em harf aralığı; başlık asla 56px üstüne çıkmaz",
@@ -19089,7 +19375,7 @@
           "body": "14px",
           "h3": "20px",
           "h2": "28px",
-          "h1": "46px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -19127,7 +19413,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "editorial",
+        "family": "Deneysel & Gelecek",
+        "fit": "1"
       },
       "must": [
         "Viewport ekranın en az %55'i; denetçi paneli sağda sabit",
@@ -19220,7 +19508,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "27px",
-          "h1": "48px",
+          "h1": "28px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -19258,7 +19546,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Deneysel & Gelecek"
+        "sectionPlan": "proof-first",
+        "family": "Deneysel & Gelecek",
+        "fit": "1"
       },
       "must": [
         "Kartlar dikeyde 4–8px kademeli kayar; gölge yönü hep aşağı (yüzme hissi)",
@@ -19351,7 +19641,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "56px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -19389,7 +19679,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Sahne & Prestij"
+        "sectionPlan": "classic",
+        "family": "Sahne & Prestij",
+        "fit": "1"
       },
       "must": [
         "Hero tam kanama gece fotoğrafı + scrim; metin sol altta 5/12 kolonda.",
@@ -19482,7 +19774,7 @@
           "body": "16px",
           "h3": "24px",
           "h2": "36px",
-          "h1": "72px",
+          "h1": "36px",
           "h1Mobile": "36px"
         },
         "weights": {
@@ -19520,7 +19812,9 @@
         "hero": "index",
         "nav": "pill",
         "density": "dense",
-        "family": "Sahne & Prestij"
+        "sectionPlan": "campaign",
+        "family": "Sahne & Prestij",
+        "fit": "1"
       },
       "must": [
         "Başlık Archivo Black 72px (mobil 36px), `-0.02em`; büyük harfe çevrilmez.",
@@ -19613,7 +19907,7 @@
           "body": "16px",
           "h3": "22px",
           "h2": "32px",
-          "h1": "52px",
+          "h1": "30px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -19651,7 +19945,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Sahne & Prestij"
+        "sectionPlan": "proof-first",
+        "family": "Sahne & Prestij",
+        "fit": "1"
       },
       "must": [
         "Hero'da tek sabit spotlight; hareketli gradient yok.",
@@ -19744,7 +20040,7 @@
           "body": "16px",
           "h3": "21px",
           "h2": "30px",
-          "h1": "46px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -19782,7 +20078,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Sahne & Prestij"
+        "sectionPlan": "data-first",
+        "family": "Sahne & Prestij",
+        "fit": "2"
       },
       "must": [
         "Hero tam kanama oda fotoğrafı + tek scrim; metin sol altta 5/12.",
@@ -19875,7 +20173,7 @@
           "body": "17px",
           "h3": "24px",
           "h2": "38px",
-          "h1": "62px",
+          "h1": "32px",
           "h1Mobile": "32px"
         },
         "weights": {
@@ -19913,7 +20211,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Sahne & Prestij"
+        "sectionPlan": "campaign",
+        "family": "Sahne & Prestij",
+        "fit": "1"
       },
       "must": [
         "Başlık Fraunces 400 62px (mobil 32px) `1.04`; 104px fasikül rakamı dekoratif ve aria-hidden.",
@@ -20006,7 +20306,7 @@
           "body": "14px",
           "h3": "20px",
           "h2": "26px",
-          "h1": "34px",
+          "h1": "24px",
           "h1Mobile": "24px"
         },
         "weights": {
@@ -20044,7 +20344,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Sahne & Prestij"
+        "sectionPlan": "classic",
+        "family": "Sahne & Prestij",
+        "fit": "2"
       },
       "must": [
         "Sidebar 240px, aktif öğede 2px cyan şerit.",
@@ -20137,7 +20439,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "46px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -20174,7 +20476,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "campaign",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Accent sayısı bir; durum bilgisi metin veya ikonla da verilir.",
@@ -20262,7 +20566,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "50px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -20299,7 +20603,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "proof-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Kart ve buton kesimi aynı çapraz açıyla (8–12px) kırpılır.",
@@ -20382,7 +20688,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "46px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -20419,7 +20725,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "data-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "0"
       },
       "must": [
         "Başlıklar uppercase ve display ailede; gövde serif ve cümle düzeninde.",
@@ -20499,7 +20807,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "40px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -20536,7 +20844,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "feature-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Accent çizgi/etiket olarak kullanılır, geniş zemin olarak değil.",
@@ -20616,7 +20926,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "26px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -20653,7 +20963,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "classic",
+        "family": "Oyun & Etkileşim",
+        "fit": "3"
       },
       "must": [
         "Pixel font yalnız başlık/etiket; gövde okunur bir sans-serif.",
@@ -20733,7 +21045,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "56px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -20770,7 +21082,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "proof-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Skor ve sıralama sayıları tabular ve sağa hizalı.",
@@ -20850,7 +21164,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "44px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -20887,7 +21201,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "proof-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Pixel font yalnız etiket/buton; gövde okunur ailede.",
@@ -20967,7 +21283,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "42px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -21004,7 +21320,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "feature-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Kart metni 34ch'i geçmez; künye mono ve tabular.",
@@ -21084,7 +21402,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "44px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -21121,7 +21439,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "feature-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Kaynak sayıları mono ve tabular; birim her zaman yazılır.",
@@ -21201,7 +21521,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "40px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -21238,7 +21558,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "data-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Dokunma hedefi ≥ 48px; butonlar tam genişlik.",
@@ -21318,7 +21640,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "52px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -21355,7 +21677,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "editorial",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Accent yalnız uyarı/eylem; metin gövdelerinde kullanılmaz.",
@@ -21435,7 +21759,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "54px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -21472,7 +21796,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "feature-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Tek accent (camgöbeği); ikinci renk %40 opaklıkla sınırlı.",
@@ -21552,7 +21878,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "46px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -21589,7 +21915,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "classic",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Kaynak sayıları mono ve tabular; birim yazılır.",
@@ -21669,7 +21997,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "44px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -21706,7 +22034,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "feature-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Kaynak ve üretim değerleri tabular; delta (+/−) gösterilir.",
@@ -21823,7 +22153,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "editorial",
+        "family": "Oyun & Etkileşim",
+        "fit": "0"
       },
       "must": [
         "Kart/buton kenarı 2px ve keskin; gölge kullanılmaz.",
@@ -21903,7 +22235,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "40px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -21940,7 +22272,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "campaign",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Risk seviyesi her zaman metinle yazılır, yalnız renkle değil.",
@@ -22020,7 +22354,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "42px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -22057,7 +22391,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "editorial",
+        "family": "Oyun & Etkileşim",
+        "fit": "0"
       },
       "must": [
         "Ekran başına tek hedef ve tek ilerleme göstergesi.",
@@ -22137,7 +22473,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "44px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -22174,7 +22510,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "feature-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Rütbe ve tarih sütunları mono.",
@@ -22254,7 +22592,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "58px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -22291,7 +22629,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "feature-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "İstatistikler tabular ve sağa hizalı.",
@@ -22371,7 +22711,7 @@
           "body": "15px",
           "h3": "19px",
           "h2": "26px",
-          "h1": "48px",
+          "h1": "52px",
           "h1Mobile": "28px"
         },
         "weights": {
@@ -22408,7 +22748,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Oyun & Etkileşim"
+        "sectionPlan": "feature-first",
+        "family": "Oyun & Etkileşim",
+        "fit": "1"
       },
       "must": [
         "Skorlar 6 hane hizalı mono.",
@@ -22525,7 +22867,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "campaign",
+        "family": "Operasyon & Veri",
+        "fit": "1"
       },
       "must": [
         "Her olay satırında saat, sahip ve durum yazılır.",
@@ -22642,7 +22986,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "proof-first",
+        "family": "Operasyon & Veri",
+        "fit": "1"
       },
       "must": [
         "Tutarlar tabular ve sağa hizalı; para birimi her satırda.",
@@ -22759,7 +23105,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "data-first",
+        "family": "Operasyon & Veri",
+        "fit": "2"
       },
       "must": [
         "ETA ve mesafe mono; birim yazılır.",
@@ -22876,7 +23224,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "classic",
+        "family": "Operasyon & Veri",
+        "fit": "3"
       },
       "must": [
         "Risk puanı ve gerekçe birlikte gösterilir.",
@@ -22993,7 +23343,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "feature-first",
+        "family": "Operasyon & Veri",
+        "fit": "1"
       },
       "must": [
         "Hedef ve sınır aynı grafikte etiketlenir.",
@@ -23110,7 +23462,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "editorial",
+        "family": "Operasyon & Veri",
+        "fit": "1"
       },
       "must": [
         "Tablo ve sütun adları mono ve okunur (≥11px).",
@@ -23227,7 +23581,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "campaign",
+        "family": "Operasyon & Veri",
+        "fit": "1"
       },
       "must": [
         "Zaman damgası ISO biçiminde ve mono.",
@@ -23344,7 +23700,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "editorial",
+        "family": "Operasyon & Veri",
+        "fit": "1"
       },
       "must": [
         "Sürüm numarası semver ve mono.",
@@ -23461,7 +23819,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "editorial",
+        "family": "Operasyon & Veri",
+        "fit": "1"
       },
       "must": [
         "Her ticket satırında bekleme süresi mono.",
@@ -23578,7 +23938,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Operasyon & Veri"
+        "sectionPlan": "data-first",
+        "family": "Operasyon & Veri",
+        "fit": "1"
       },
       "must": [
         "Bölüm numaraları ve başlıklar tutarlı.",
@@ -23658,7 +24020,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "40px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -23695,7 +24057,9 @@
         "hero": "index",
         "nav": "pill",
         "density": "dense",
-        "family": "Ticaret & Vitrin"
+        "sectionPlan": "campaign",
+        "family": "Ticaret & Vitrin",
+        "fit": "0"
       },
       "must": [
         "Fiyatlar tabular ve sağa hizalı; birim fiyat ayrı satır.",
@@ -23775,7 +24139,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "38px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -23812,7 +24176,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Ticaret & Vitrin"
+        "sectionPlan": "classic",
+        "family": "Ticaret & Vitrin",
+        "fit": "0"
       },
       "must": [
         "Her kartta satıcı ve puan metinle yazılır.",
@@ -23892,7 +24258,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "58px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -23926,10 +24292,12 @@
         "rule": "Kart 10–14px, buton 6–10px; tam daire yalnız chip/rozet."
       },
       "layout": {
-        "hero": "sticky",
+        "hero": "index",
         "nav": "pill",
-        "density": "balanced",
-        "family": "Ticaret & Vitrin"
+        "density": "dense",
+        "sectionPlan": "editorial",
+        "family": "Ticaret & Vitrin",
+        "fit": "0"
       },
       "must": [
         "Bölüm başına tek ana görsel.",
@@ -24009,7 +24377,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "42px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -24046,7 +24414,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Ticaret & Vitrin"
+        "sectionPlan": "data-first",
+        "family": "Ticaret & Vitrin",
+        "fit": "0"
       },
       "must": [
         "Fiyat ve dönem birlikte yazılır; sonraki ödeme tarihi görünür.",
@@ -24126,7 +24496,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "50px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -24163,7 +24533,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Ticaret & Vitrin"
+        "sectionPlan": "data-first",
+        "family": "Ticaret & Vitrin",
+        "fit": "0"
       },
       "must": [
         "Tarih ve saat net, mono; saat dilimi yazılır.",
@@ -24280,7 +24652,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Ticaret & Vitrin"
+        "sectionPlan": "proof-first",
+        "family": "Ticaret & Vitrin",
+        "fit": "1"
       },
       "must": [
         "Yıl, bağ ve bölge her satırda yazılır.",
@@ -24360,7 +24734,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "44px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -24397,7 +24771,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Ticaret & Vitrin"
+        "sectionPlan": "classic",
+        "family": "Ticaret & Vitrin",
+        "fit": "0"
       },
       "must": [
         "Ölçüler mm ve mono; kumaş/renk varyantı ayrı satır.",
@@ -24477,7 +24853,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "40px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -24511,10 +24887,12 @@
         "rule": "Kart 10–14px, buton 6–10px; tam daire yalnız chip/rozet."
       },
       "layout": {
-        "hero": "index",
-        "nav": "split",
+        "hero": "product",
+        "nav": "utility",
         "density": "dense",
-        "family": "Ticaret & Vitrin"
+        "sectionPlan": "classic",
+        "family": "Ticaret & Vitrin",
+        "fit": "2"
       },
       "must": [
         "Her spec değerinde birim yazılır.",
@@ -24594,7 +24972,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "40px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -24628,10 +25006,12 @@
         "rule": "Kart 10–14px, buton 6–10px; tam daire yalnız chip/rozet."
       },
       "layout": {
-        "hero": "index",
-        "nav": "split",
-        "density": "dense",
-        "family": "Ticaret & Vitrin"
+        "hero": "fullbleed",
+        "nav": "pill",
+        "density": "sparse",
+        "sectionPlan": "classic",
+        "family": "Ticaret & Vitrin",
+        "fit": "1"
       },
       "must": [
         "Doz/kullanım bilgisi her ürün kartında.",
@@ -24711,7 +25091,7 @@
           "body": "15px",
           "h3": "18px",
           "h2": "26px",
-          "h1": "46px",
+          "h1": "44px",
           "h1Mobile": "30px"
         },
         "weights": {
@@ -24748,7 +25128,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Ticaret & Vitrin"
+        "sectionPlan": "data-first",
+        "family": "Ticaret & Vitrin",
+        "fit": "0"
       },
       "must": [
         "Her üründe üretici adı ve bölge.",
@@ -24865,7 +25247,9 @@
         "hero": "index",
         "nav": "pill",
         "density": "dense",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "campaign",
+        "family": "Kültür & Yayın",
+        "fit": "1"
       },
       "must": [
         "Tarih aralığı ve salon numarası her bölümde.",
@@ -24982,7 +25366,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "classic",
+        "family": "Kültür & Yayın",
+        "fit": "1"
       },
       "must": [
         "Her oyun satırında tarih, saat ve salon.",
@@ -25099,7 +25485,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "classic",
+        "family": "Kültür & Yayın",
+        "fit": "1"
       },
       "must": [
         "Her seansta salon, saat ve süre.",
@@ -25216,7 +25604,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "data-first",
+        "family": "Kültür & Yayın",
+        "fit": "1"
       },
       "must": [
         "Her programda saat aralığı ve süre.",
@@ -25333,7 +25723,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "data-first",
+        "family": "Kültür & Yayın",
+        "fit": "0"
       },
       "must": [
         "Her bölümde süre ve yayın tarihi.",
@@ -25450,7 +25842,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "classic",
+        "family": "Kültür & Yayın",
+        "fit": "1"
       },
       "must": [
         "Her gösterimde gün, saat ve salon.",
@@ -25567,7 +25961,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "feature-first",
+        "family": "Kültür & Yayın",
+        "fit": "1"
       },
       "must": [
         "Her kayıtta numara, yıl ve yer bilgisi.",
@@ -25684,7 +26080,9 @@
         "hero": "index",
         "nav": "pill",
         "density": "dense",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "editorial",
+        "family": "Kültür & Yayın",
+        "fit": "1"
       },
       "must": [
         "Her sayıda seri adı, sayı no ve çıkış tarihi.",
@@ -25801,7 +26199,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "campaign",
+        "family": "Kültür & Yayın",
+        "fit": "1"
       },
       "must": [
         "Her etkinlikte besteci, eser, salon ve saat.",
@@ -25918,7 +26318,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Kültür & Yayın"
+        "sectionPlan": "editorial",
+        "family": "Kültür & Yayın",
+        "fit": "1"
       },
       "must": [
         "Her etkinlikte sahne, saat ve süre.",
@@ -26035,7 +26437,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Sağlık & Bilim"
+        "sectionPlan": "feature-first",
+        "family": "Sağlık & Bilim",
+        "fit": "1"
       },
       "must": [
         "Her bölümde protokol no ve versiyon.",
@@ -26152,7 +26556,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Sağlık & Bilim"
+        "sectionPlan": "editorial",
+        "family": "Sağlık & Bilim",
+        "fit": "1"
       },
       "must": [
         "Her adımda süre ve cihaz bilgisi.",
@@ -26269,7 +26675,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Sağlık & Bilim"
+        "sectionPlan": "proof-first",
+        "family": "Sağlık & Bilim",
+        "fit": "2"
       },
       "must": [
         "Doz ve sıklık 17px altına inmez.",
@@ -26383,10 +26791,12 @@
         "rule": "Köşe 8–12px; form alanları 10px. Keskin 0px köşe klinik dilde sert kalır."
       },
       "layout": {
-        "hero": "index",
-        "nav": "split",
-        "density": "dense",
-        "family": "Sağlık & Bilim"
+        "hero": "sticky",
+        "nav": "inline",
+        "density": "balanced",
+        "sectionPlan": "proof-first",
+        "family": "Sağlık & Bilim",
+        "fit": "3"
       },
       "must": [
         "Her egzersizde set, tekrar ve dinlenme.",
@@ -26500,10 +26910,12 @@
         "rule": "Köşe 8–12px; form alanları 10px. Keskin 0px köşe klinik dilde sert kalır."
       },
       "layout": {
-        "hero": "sticky",
-        "nav": "inline",
-        "density": "balanced",
-        "family": "Sağlık & Bilim"
+        "hero": "index",
+        "nav": "split",
+        "density": "dense",
+        "sectionPlan": "classic",
+        "family": "Sağlık & Bilim",
+        "fit": "0"
       },
       "must": [
         "Duygu seçimi her zaman metin etiketli.",
@@ -26620,7 +27032,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Sağlık & Bilim"
+        "sectionPlan": "editorial",
+        "family": "Sağlık & Bilim",
+        "fit": "1"
       },
       "must": [
         "Her öğünde kalori ve makro.",
@@ -26737,7 +27151,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Sağlık & Bilim"
+        "sectionPlan": "classic",
+        "family": "Sağlık & Bilim",
+        "fit": "1"
       },
       "must": [
         "Randevu formunda tarih/saat seçimi tek adım.",
@@ -26854,7 +27270,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Sağlık & Bilim"
+        "sectionPlan": "editorial",
+        "family": "Sağlık & Bilim",
+        "fit": "1"
       },
       "must": [
         "Her sayı için kaynak ve tarih.",
@@ -26971,7 +27389,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Sağlık & Bilim"
+        "sectionPlan": "proof-first",
+        "family": "Sağlık & Bilim",
+        "fit": "2"
       },
       "must": [
         "Kalite metrikleri iki ondalık ve birimli.",
@@ -27088,7 +27508,9 @@
         "hero": "centered",
         "nav": "pill",
         "density": "sparse",
-        "family": "Sağlık & Bilim"
+        "sectionPlan": "proof-first",
+        "family": "Sağlık & Bilim",
+        "fit": "1"
       },
       "must": [
         "Her kayıtta tür, yaş ve sahip.",
@@ -27205,7 +27627,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "editorial",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "0"
       },
       "must": [
         "Her kartta örnek cümle ve telaffuz.",
@@ -27322,7 +27746,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "feature-first",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "0"
       },
       "must": [
         "Her düğümde ön koşul yazılır.",
@@ -27439,7 +27865,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "classic",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "0"
       },
       "must": [
         "Her derste kod, kredi ve dönem.",
@@ -27556,7 +27984,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "campaign",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "0"
       },
       "must": [
         "Her haftada konu ve çıktı.",
@@ -27673,7 +28103,9 @@
         "hero": "split-reverse",
         "nav": "utility",
         "density": "dense",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "data-first",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "1"
       },
       "must": [
         "Dokunma hedefi ≥ 52px.",
@@ -27790,7 +28222,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "data-first",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "0"
       },
       "must": [
         "Her konuda soru sayısı ve hedef süre.",
@@ -27907,7 +28341,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "campaign",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "0"
       },
       "must": [
         "Her derste enstrüman, seviye ve süre.",
@@ -28024,7 +28460,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "proof-first",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "0"
       },
       "must": [
         "Her ölçümde birim ve belirsizlik.",
@@ -28141,7 +28579,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "campaign",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "0"
       },
       "must": [
         "Her oturumda konu, saat ve kontenjan.",
@@ -28258,7 +28698,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Öğrenme & Oyunlaştırma"
+        "sectionPlan": "data-first",
+        "family": "Öğrenme & Oyunlaştırma",
+        "fit": "3"
       },
       "must": [
         "Sertifika kodu ve tarih mono.",
@@ -28375,7 +28817,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Materyal & Zanaat"
+        "sectionPlan": "proof-first",
+        "family": "Materyal & Zanaat",
+        "fit": "1"
       },
       "must": [
         "Her numunede ölçü ve yüzey bitişi.",
@@ -28492,7 +28936,9 @@
         "hero": "sticky",
         "nav": "pill",
         "density": "balanced",
-        "family": "Materyal & Zanaat"
+        "sectionPlan": "feature-first",
+        "family": "Materyal & Zanaat",
+        "fit": "3"
       },
       "must": [
         "Her baskıda numara ve baskı adedi (12/30).",
@@ -28606,10 +29052,12 @@
         "rule": "Köşe 0–6px; malzeme kenarı keskin kalır, yumuşak yuvarlatma dokuyu zayıflatır."
       },
       "layout": {
-        "hero": "centered",
-        "nav": "pill",
-        "density": "sparse",
-        "family": "Materyal & Zanaat"
+        "hero": "split-reverse",
+        "nav": "utility",
+        "density": "dense",
+        "sectionPlan": "classic",
+        "family": "Materyal & Zanaat",
+        "fit": "1"
       },
       "must": [
         "En fazla iki mürekkep; ikinci ton %40 opaklığı geçmez.",
@@ -28726,7 +29174,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Materyal & Zanaat"
+        "sectionPlan": "proof-first",
+        "family": "Materyal & Zanaat",
+        "fit": "1"
       },
       "must": [
         "Beden tablosu cm ve mono.",
@@ -28842,7 +29292,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Materyal & Zanaat"
+        "sectionPlan": "proof-first",
+        "family": "Materyal & Zanaat",
+        "fit": "1"
       },
       "must": [
         "Sertifika/izlenebilirlik kodu mono.",
@@ -28959,7 +29411,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Materyal & Zanaat"
+        "sectionPlan": "proof-first",
+        "family": "Materyal & Zanaat",
+        "fit": "1"
       },
       "must": [
         "Her blokta ölçü ve dayanım sınıfı.",
@@ -29076,7 +29530,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Zanaat"
+        "sectionPlan": "campaign",
+        "family": "Materyal & Zanaat",
+        "fit": "1"
       },
       "must": [
         "Her parçada taş, karat ve maden.",
@@ -29193,7 +29649,9 @@
         "hero": "fullbleed",
         "nav": "pill",
         "density": "sparse",
-        "family": "Materyal & Zanaat"
+        "sectionPlan": "classic",
+        "family": "Materyal & Zanaat",
+        "fit": "1"
       },
       "must": [
         "Her üründe parti no ve fırın sıcaklığı.",
@@ -29310,7 +29768,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Zanaat"
+        "sectionPlan": "campaign",
+        "family": "Materyal & Zanaat",
+        "fit": "1"
       },
       "must": [
         "Her parçada malzeme sınıfı ve tolerans.",
@@ -29427,7 +29887,9 @@
         "hero": "fullbleed",
         "nav": "inline",
         "density": "sparse",
-        "family": "Materyal & Zanaat"
+        "sectionPlan": "feature-first",
+        "family": "Materyal & Zanaat",
+        "fit": "1"
       },
       "must": [
         "Geri dönüşüm oranı ve sertifika yazılır.",
@@ -29544,7 +30006,9 @@
         "hero": "index",
         "nav": "split",
         "density": "dense",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "classic",
+        "family": "Tipografi Denemeleri",
+        "fit": "0"
       },
       "must": [
         "Başlık en fazla 3 satır.",
@@ -29661,7 +30125,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "data-first",
+        "family": "Tipografi Denemeleri",
+        "fit": "1"
       },
       "must": [
         "Hiyerarşi yalnız punto/ağırlıkla kurulur.",
@@ -29778,7 +30244,9 @@
         "hero": "sticky",
         "nav": "inline",
         "density": "balanced",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "data-first",
+        "family": "Tipografi Denemeleri",
+        "fit": "3"
       },
       "must": [
         "Gotik başlık yalnız H1/H2.",
@@ -29895,7 +30363,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "proof-first",
+        "family": "Tipografi Denemeleri",
+        "fit": "0"
       },
       "must": [
         "Ağırlık farkı en az 300 birim.",
@@ -30012,7 +30482,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "data-first",
+        "family": "Tipografi Denemeleri",
+        "fit": "2"
       },
       "must": [
         "Gövde justify + hyphenation.",
@@ -30129,7 +30601,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "classic",
+        "family": "Tipografi Denemeleri",
+        "fit": "0"
       },
       "must": [
         "Kod etiketi mono ve tekil.",
@@ -30246,7 +30720,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "proof-first",
+        "family": "Tipografi Denemeleri",
+        "fit": "0"
       },
       "must": [
         "Satır uzunluğu 42ch'i geçmez.",
@@ -30363,7 +30839,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "data-first",
+        "family": "Tipografi Denemeleri",
+        "fit": "0"
       },
       "must": [
         "İtalik yalnız başlık ve alıntı.",
@@ -30480,7 +30958,9 @@
         "hero": "type",
         "nav": "inline",
         "density": "sparse",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "editorial",
+        "family": "Tipografi Denemeleri",
+        "fit": "1"
       },
       "must": [
         "Tüm rakamlar tabular ve hizalı.",
@@ -30597,7 +31077,9 @@
         "hero": "type",
         "nav": "split",
         "density": "sparse",
-        "family": "Tipografi Denemeleri"
+        "sectionPlan": "classic",
+        "family": "Tipografi Denemeleri",
+        "fit": "0"
       },
       "must": [
         "Her satırda tarih ve tutar.",
@@ -30714,7 +31196,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "proof-first",
+        "family": "Gelecek & Spekülatif",
+        "fit": "3"
       },
       "must": [
         "Her adımda araç adı, süre ve sonuç.",
@@ -30831,7 +31315,9 @@
         "hero": "index",
         "nav": "pill",
         "density": "dense",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "editorial",
+        "family": "Gelecek & Spekülatif",
+        "fit": "0"
       },
       "must": [
         "Her katmanda ad ve koordinat.",
@@ -30948,7 +31434,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "campaign",
+        "family": "Gelecek & Spekülatif",
+        "fit": "0"
       },
       "must": [
         "Her örnekte sıcaklık, pH ve süre.",
@@ -31065,7 +31553,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "data-first",
+        "family": "Gelecek & Spekülatif",
+        "fit": "0"
       },
       "must": [
         "Her senaryoda referans yılı ve sapma.",
@@ -31182,7 +31672,9 @@
         "hero": "product",
         "nav": "utility",
         "density": "dense",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "data-first",
+        "family": "Gelecek & Spekülatif",
+        "fit": "2"
       },
       "must": [
         "Her yükte kütle ve hedef yörünge.",
@@ -31299,7 +31791,9 @@
         "hero": "split-reverse",
         "nav": "inline",
         "density": "dense",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "editorial",
+        "family": "Gelecek & Spekülatif",
+        "fit": "0"
       },
       "must": [
         "Her medyada üretim kaynağı ve model adı.",
@@ -31416,7 +31910,9 @@
         "hero": "product",
         "nav": "rail",
         "density": "dense",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "editorial",
+        "family": "Gelecek & Spekülatif",
+        "fit": "1"
       },
       "must": [
         "Olasılıklar iki ondalık ve toplam 100.",
@@ -31533,7 +32029,9 @@
         "hero": "split",
         "nav": "inline",
         "density": "balanced",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "proof-first",
+        "family": "Gelecek & Spekülatif",
+        "fit": "0"
       },
       "must": [
         "Her sensörde birim ve son güncelleme.",
@@ -31650,7 +32148,9 @@
         "hero": "centered",
         "nav": "split",
         "density": "sparse",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "editorial",
+        "family": "Gelecek & Spekülatif",
+        "fit": "1"
       },
       "must": [
         "Her katmanda boyut ve aktivasyon.",
@@ -31767,7 +32267,9 @@
         "hero": "split",
         "nav": "split",
         "density": "balanced",
-        "family": "Gelecek & Spekülatif"
+        "sectionPlan": "editorial",
+        "family": "Gelecek & Spekülatif",
+        "fit": "0"
       },
       "must": [
         "Her transkript satırında konuşmacı ve süre.",

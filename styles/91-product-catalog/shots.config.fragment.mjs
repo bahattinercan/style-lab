@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'paper',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: katalog sütun başlığı · hairline cetvel · swatch kareleri · katalog harfi */
-      h1 { font-size: 44px; line-height: 1.04; letter-spacing: -.01em; font-weight: 600; max-width: 22ch; }
+  extraCss: `/* imza: katalog sütun başlığı · hairline cetvel · swatch kareleri · katalog harfi */
+      h1   { font-size: var(--type-h1); line-height: 1.04; letter-spacing: -.01em; font-weight: 600; max-width: 22ch; }
       h2 { font-size: 26px; line-height: 1.12; letter-spacing: -.005em; font-weight: 600; }
       h3 { font-size: 18px; line-height: 1.28; font-weight: 600; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); letter-spacing: .12em; font-size: 11px; }
@@ -53,7 +52,7 @@ export const CONFIG = {
         content: ""; position: absolute; top: 0; bottom: 0; right: 12vw; width: 1px; background: var(--line);
       }
       @media (max-width: 900px) {
-        h1 { font-size: 30px; max-width: 18ch; }
+        h1  { font-size: var(--type-h1); max-width: 18ch; }
         body.scene-landing .sig::after { display: none; }
         body.scene-landing .sig::before { top: 66px; font-size: 11px; padding: 4px 7px; }
       }

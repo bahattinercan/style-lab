@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'none',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: kenarlık YOK · gölge YOK · radius 0 · kütle yalnız tonla · kalıp izi (1 kez) */
-      h1 { font-size: 56px; line-height: 1.02; letter-spacing: -.02em; font-weight: 400; font-family: var(--font-display); text-transform: uppercase; max-width: 18ch; }
+  extraCss: `/* imza: kenarlık YOK · gölge YOK · radius 0 · kütle yalnız tonla · kalıp izi (1 kez) */
+      h1   { font-size: var(--type-h1); line-height: 1.02; letter-spacing: -.02em; font-weight: 400; font-family: var(--font-display); text-transform: uppercase; max-width: 18ch; }
       h2 { font-size: 30px; line-height: 1.08; letter-spacing: -.01em; font-weight: 400; text-transform: uppercase; }
       h3 { font-size: 20px; line-height: 1.2; letter-spacing: 0; font-weight: 500; }
       p, .lede, .copy { font-family: var(--font-body); }
@@ -40,7 +39,7 @@ export const CONFIG = {
       .nav { border: 0; min-height: 72px; }
       .nav-links a { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
       @media (max-width: 900px) {
-        h1 { font-size: 32px; }
+        h1  { font-size: var(--type-h1); }
         h2 { font-size: 22px; }
         .m-grid, .data-grid, .comp-grid, .quad, .plan-grid { gap: 24px; }
         body.scene-landing .sig::before { display: none; }

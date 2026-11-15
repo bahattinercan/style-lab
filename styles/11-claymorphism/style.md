@@ -71,7 +71,7 @@ Kazandığı şey: yaklaşılabilirlik ve oyun hissi — korkutucu olmayan form,
 | `--surface-2` | `#f6f2ff` | ikincil kart, hover | birincil buton |
 | `--ink` | `#2b2350` | tüm metin (koyu mor) | — |
 | `--ink-soft` | `#5b5382` | açıklama | 12px altı |
-| `--ink-faint` | `#8d87ad` | dekoratif etiket (3.00:1) | gövde metni |
+| `--ink-faint` | `#8d87ac` | dekoratif etiket (3.00:1) | gövde metni |
 | `--accent` | `#6f4df0` | CTA, aktif, ikon | geniş zemin |
 | `--accent-ink` | `#ffffff` | accent üstü metin (**5.26:1**) | — |
 | `--line` | `rgba(255,255,255,.7)` | iç kenar highlight | metin |
@@ -234,7 +234,7 @@ Yasak: radius <16px, sadece dış gölge, doygun/neon renk, siyah metin, keskin 
 [data-style="claymorphism"] {
   --bg: #f3efff; --bg-2: #e9e3ff;
   --surface: #ffffff; --surface-2: #f6f2ff;
-  --ink: #2b2350; --ink-soft: #5b5382; --ink-faint: #8d87ad;
+  --ink: #2b2350; --ink-soft: #5b5382; --ink-faint: #8d87ac;
   --accent: #6f4df0; --accent-ink: #ffffff;
   --line: rgba(255,255,255,.7);
   --radius: 24px; --radius-lg: 32px;

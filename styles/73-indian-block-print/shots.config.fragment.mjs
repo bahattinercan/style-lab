@@ -3,8 +3,7 @@ export const CONFIG = {
   bodyClass: '',
   extraCss: `
     /* imza: 1px kayma izi · 4px ofset birincil yüzey · blok damga · çift baskı çizgisi */
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking); }
-    h1 { font-size: 36px; line-height: 1.16; max-width: 22ch; }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking); }h1 { font-size: var(--type-h1); line-height: 1.16; max-width: 22ch; }
     h2 { font-size: 24px; line-height: 1.28; }
     h3 { font-size: 18px; line-height: 1.32; }
     .eyebrow, .label, .mono {

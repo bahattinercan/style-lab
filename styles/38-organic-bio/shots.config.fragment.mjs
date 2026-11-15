@@ -6,8 +6,7 @@ export const CONFIG = {
     .mark {
       border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
       background: var(--accent); color: var(--accent-ink);
-    }
-    h1 { font-size: 54px; line-height: 1.06; letter-spacing: -.01em; max-width: 19ch; }
+    }h1   { font-size: var(--type-h1); line-height: 1.06; letter-spacing: -.01em; max-width: 19ch; }
     h2 { font-size: 30px; line-height: 1.16; }
     h3 { font-size: 18px; }
     .lede { max-width: 46ch; font-size: 16px; line-height: 1.68; }
@@ -60,7 +59,7 @@ export const CONFIG = {
       background: repeating-radial-gradient(circle at 50% 50%, transparent 0 18px, var(--line) 18px 19px, transparent 19px 40px);
     }
     @media (max-width: 900px) {
-      h1 { font-size: 32px; max-width: 20ch; }
+      h1  { font-size: var(--type-h1); max-width: 20ch; }
       .panel, .hero-visual { border-radius: 22px 22px 22px 8px; }
       body.scene-landing .sig::after { display: none; }
     }

@@ -6,7 +6,7 @@ export const CONFIG = {
   motif: 'rings',
   bodyClass: '',
   extraCss: `
-h1 { font-size: 52px; font-weight: 400; }
+h1   { font-size: var(--type-h1); font-weight: 400; }
 h2 { font-size: 28px; font-weight: 400; }
 .panel, .pg-card { border-radius: 2px; }
 .pg-media { border-radius: 2px; }
@@ -14,7 +14,7 @@ h2 { font-size: 28px; font-weight: 400; }
 .field { border-radius: 2px; }
 .chip { border-radius: 2px; }
 .pg-media::after { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(color-mix(in srgb, var(--ink) 18%, transparent) .5px, transparent .5px); background-size: 4px 4px; opacity: .5; }
-h1 { font-size: 40px; font-weight: 300; max-width: 24ch; }
+h1 { font-size: var(--type-h1); font-weight: 300; max-width: 24ch; }
 .pg-media { aspect-ratio: 1 / 1; border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line)); }
   `,
 };

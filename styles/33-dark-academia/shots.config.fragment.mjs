@@ -3,7 +3,7 @@ export const CONFIG = {
   extraCss: `
     body {
       background:
-        radial-gradient(72% 62% at 26% 14%, #2a231c 0%, #1b1714 62%),
+        radial-gradient(72% 62% at 26% 14%, var(--bg) 0%, color-mix(in srgb, var(--bg) 75%, var(--ink)) 62%),
         var(--bg);
       background-attachment: fixed;
     }

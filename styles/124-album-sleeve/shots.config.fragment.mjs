@@ -5,9 +5,8 @@
 export const CONFIG = {
   motif: 'none',
   bodyClass: 'upper',
-  extraCss: `
-      /* imza: 1:1 kilif · sirt seridi + dikey yazi · A/B parca listesi · katalog no · barkod */
-      h1 { font-family: var(--font-display); font-size: 66px; line-height: .92; letter-spacing: -.015em; font-weight: 400; max-width: 13ch; }
+  extraCss: `/* imza: 1:1 kilif · sirt seridi + dikey yazi · A/B parca listesi · katalog no · barkod */
+      h1   { font-family: var(--font-display); font-size: var(--type-h1); line-height: .92; letter-spacing: -.015em; font-weight: 400; max-width: 13ch; }
       h2 { font-family: var(--font-display); font-size: 34px; line-height: .98; letter-spacing: -.01em; font-weight: 400; }
       h3 { font-family: var(--font-body); font-size: 19px; line-height: 1.24; font-weight: 500; }
       .eyebrow, .label, .mono { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; }
@@ -63,7 +62,7 @@ export const CONFIG = {
         box-shadow: inset 0 0 0 0 transparent;
       }
       @media (max-width: 900px) {
-        h1 { font-size: 40px; max-width: 14ch; }
+        h1  { font-size: var(--type-h1); max-width: 14ch; }
         .hero-visual::before { width: 20px; font-size: 10px; }
         body.scene-landing .sig::after { display: none; }
       }

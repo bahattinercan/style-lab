@@ -12,7 +12,7 @@ export const CONFIG = {
 .pg-media { border-radius: 12px; }
 .price, .num { font-variant-numeric: tabular-nums; }
 .pg-table td { padding: 9px 0; }
-h1 { font-size: 50px; line-height: .98; max-width: 18ch; }
+h1 { font-size: var(--type-h1); line-height: .98; max-width: 18ch; }
 h2 { font-size: 28px; }
 .pg-media { border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }
   `,

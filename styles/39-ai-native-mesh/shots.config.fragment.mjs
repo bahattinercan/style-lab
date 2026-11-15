@@ -1,8 +1,7 @@
 export const CONFIG = {
   motif: 'mesh',
-  extraCss: `
-    /* imza: iki katmanlı mesh atmosfer + cam kart + tek üst iç parlaklık */
-    h1 { font-size: 40px; font-weight: 600; line-height: 1.14; letter-spacing: var(--tracking); max-width: 24ch; }
+  extraCss: `/* imza: iki katmanlı mesh atmosfer + cam kart + tek üst iç parlaklık */
+    h1   { font-size: var(--type-h1); font-weight: 600; line-height: 1.14; letter-spacing: var(--tracking); max-width: 24ch; }
     h2 { font-size: 26px; font-weight: 600; line-height: 1.2; letter-spacing: var(--tracking); }
     h3 { font-size: 20px; font-weight: 500; letter-spacing: -.005em; }
     .eyebrow, .label, .mono { letter-spacing: .1em; }
@@ -107,7 +106,7 @@ export const CONFIG = {
       opacity: .10; filter: blur(30px); pointer-events: none;
     }
     @media (max-width: 900px) {
-      h1 { font-size: 28px; max-width: 22ch; }
+      h1  { font-size: var(--type-h1); max-width: 22ch; }
       .panel, .visual-card { border-radius: var(--radius-lg); }
       body.scene-landing .sig::after, body.scene-dashboard .sig::before { display: none; }
       body.scene-landing .sig::before { opacity: .12; }

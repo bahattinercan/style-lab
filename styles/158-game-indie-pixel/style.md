@@ -68,7 +68,7 @@ Arcade kokpitleri, konsol HUD'ları ve PC oyun menülerinin ekran tipografisi ge
 
 | Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Silkscreen) | 48px (mobil 28px) | 700 | 1.1 | 0.01em |
+| Display / H1 | `--font-display` (Silkscreen) | 44px (mobil 28px) | 700 | 1.1 | 0.01em |
 | H2 | aynı | 26px | 600 | 1.2 | 0.01em |
 | H3 | aynı | 19px | 600 | 1.3 | 0 |
 | Gövde | `--font-body` (Space Grotesk) | 15px | 400 | 1.62 | 0 |

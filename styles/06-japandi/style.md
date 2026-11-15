@@ -235,8 +235,8 @@ Yasak: saf beyaz zemin, saf siyah metin, soğuk gri, doygun accent, 700 büyük 
 [data-style="japandi"] {
   --bg: #f4efe7; --bg-2: #ebe4d9;
   --surface: #fbf8f3; --surface-2: #f2ece2;
-  --ink: #2c2925; --ink-soft: #635c53; --ink-faint: #918a80;
-  --accent: #8a9b84; --accent-ink: #2c2925;
+  --ink: #2c2925; --ink-soft: #635c53; --ink-faint: #908980;
+  --accent: #7f8f79; --accent-ink: #262420;
   --line: rgba(44,41,37,.10);
   --radius: 10px; --radius-lg: 14px;
   --shadow: 0 1px 2px rgba(44,41,37,.04); --shadow-hard: none;
@@ -244,5 +244,6 @@ Yasak: saf beyaz zemin, saf siyah metin, soğuk gri, doygun accent, 700 büyük 
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: -0.01em; --blur: 0px; --grain: .03;
+  --focus: #7c8a76;
 }
 ```
