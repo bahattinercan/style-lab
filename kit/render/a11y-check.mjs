@@ -190,14 +190,20 @@ function fill(tpl, slug, dirName) {
 }
 
 /**
- * DOM'u `--dump-dom` ile alır. İki varyant denenir: varsayılan (virtual-time-budget
- * ile) ve bütçesiz. İkisi de DOM vermezse hata fırlatılır (STOP kuralı).
+ * Fetches the rendered DOM with `--dump-dom`. Two variants are tried: the default
+ * (with virtual-time-budget) and without it. If neither yields a DOM, an error is
+ * thrown (STOP rule) carrying the browser's own stderr, so CI failures are diagnosable.
+ *
+ * `--no-sandbox` and `--disable-dev-shm-usage` are required on GitHub Actions runners:
+ * without them the sandbox and the small /dev/shm make Chrome exit before dumping DOM.
  */
 async function dumpDom(browser, htmlPath, profile) {
   const url = 'file:///' + encodeURI(htmlPath.replace(/\\/g, '/'));
   const base = [
     '--headless=new',
     '--disable-gpu',
+    '--no-sandbox',
+    '--disable-dev-shm-usage',
     '--no-first-run',
     '--no-default-browser-check',
     '--disable-extensions',
@@ -208,17 +214,32 @@ async function dumpDom(browser, htmlPath, profile) {
   const variants = [['--virtual-time-budget=4000'], []];
   const problems = [];
   for (const extra of variants) {
-    const { stdout } = await run(browser, [...base, ...extra, '--dump-dom', url], {
-      timeout: 90_000,
-      maxBuffer: 32 * 1024 * 1024,
-      windowsHide: true,
-    }).catch((err) => ({ stdout: err.stdout ?? '' }));
-    const html = String(stdout ?? '');
-    if (/<body[\s>]/i.test(html)) return html;
-    problems.push(extra.length ? 'virtual-time-budget' : 'bütçesiz');
+    const label = extra.length ? 'virtual-time-budget' : 'bütçesiz';
+    let stdout = '';
+    let stderr = '';
+    try {
+      const res = await run(browser, [...base, ...extra, '--dump-dom', url], {
+        timeout: 90_000,
+        maxBuffer: 32 * 1024 * 1024,
+        windowsHide: true,
+      });
+      stdout = res.stdout ?? '';
+      stderr = res.stderr ?? '';
+    } catch (err) {
+      stdout = err.stdout ?? '';
+      stderr = err.stderr ?? String(err.message ?? '');
+    }
+    if (/<body[\s>]/i.test(String(stdout))) return String(stdout);
+    const detail = String(stderr)
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .slice(-3)
+      .join(' | ');
+    problems.push(detail ? `${label}: ${detail}` : `${label}: çıktı yok`);
   }
   throw new Error(
-    `${path.basename(htmlPath)}: --dump-dom DOM vermedi (denenen varyant: ${problems.join(', ')}) — ` +
+    `${path.basename(htmlPath)}: --dump-dom DOM vermedi (${problems.join(' · ')}) — ` +
       'STOP: tarayıcı/DOM sorununu bildirin',
   );
 }
