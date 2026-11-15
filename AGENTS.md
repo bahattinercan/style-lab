@@ -36,7 +36,7 @@ kit/fonts/           29 Google Fonts families (woff2, OFL)
 kit/site/thumbs/     GENERATED: card/full-size WebP derivatives + manifest.json (in the repo)
 _site/               GENERATED site (git-ignored) → GitHub Pages artifact
 .github/workflows/   gates.yml (gates) · pages.yml (static site publishing)
-docs/                katalog.md (generated) · v6-sadelestirme-raporu.md · v5-revizyon-raporu.md · stage-lab-plani.md
+docs/                catalog.md (generated) · v6-simplification-report.md · v5-revision-report.md · stage-lab-plan.md
 playbook.md          design recipes
 TESTING.md           opening + testing the site
 ```
@@ -45,7 +45,7 @@ TESTING.md           opening + testing the site
 
 1. **Never edit a generated file.** `kit/tokens.css`, `kit/render/shots.config.mjs`,
    `kit/gallery.data.mjs`, `kit/gallery.html`, `kit/styles.index.json`, `kit/live-styles.js`,
-   `kit/dist/**`, `docs/katalog.md`, `styles/*/shots/**`, `kit/site/thumbs/**`, `_site/**` are generator output.
+   `kit/dist/**`, `docs/catalog.md`, `styles/*/shots/**`, `kit/site/thumbs/**`, `_site/**` are generator output.
    Changes go into the source
    (`styles/*/tokens.json`, `token-block.css`, `style.md`, fragment, or `kit/specs/*.json`) and are
    produced with `--apply`/`add-style`. The `--check` gates catch hand edits as **drift**.
@@ -72,7 +72,7 @@ TESTING.md           opening + testing the site
    `gallery.js` next to it; images use relative paths (`../styles/...`). Do not move files out of
    `kit/`, do not write absolute paths.
 10. **Never invent numbers.** Claims like "251 styles", "251 PNGs", "31 families" come from the output
-    of `bash kit/gates.sh` and `kit/dist/report.md` / `docs/katalog.md`. Do not put an unmeasured
+    of `bash kit/gates.sh` and `kit/dist/report.md` / `docs/catalog.md`. Do not put an unmeasured
     number into README/AGENTS.
 11. **New style = one command.** Write a SPEC into `kit/specs/*.json` → `node kit/add-style.mjs <file>`.
     The command generates the sources, assigns layouts/imagery/content, renders, and refreshes the
@@ -118,7 +118,7 @@ node kit/render/phash.mjs --check             # signature of the 251 PNGs
 # Tokens / export / docs
 node kit/export-tokens.mjs                    # dist/* (--check: up to date?)
 node kit/build-gallery.mjs                    # gallery.html + styles.index.json
-node kit/build-catalog-doc.mjs                # docs/katalog.md
+node kit/build-catalog-doc.mjs                # docs/catalog.md
 node kit/report.mjs                           # dist/report.md
 node kit/composition-report.mjs               # dist/composition.md
 
@@ -189,10 +189,10 @@ hook with `--no-verify`, run `gates.sh` in a separate long run, show the output,
 | Style selection + token application procedure | `skills/style-lab-catalog/SKILL.md` | **Before** applying a style to an app |
 | Family→use-case mapping | `skills/style-lab-catalog/references/families.md` | While narrowing down style candidates |
 | New style / SPEC fields | `kit/specs/*.json` + `kit/lib/style-spec.mjs` | When adding a style |
-| Index of the 251 styles | `docs/katalog.md` | When looking up a slug/tag |
+| Index of the 251 styles | `docs/catalog.md` | When looking up a slug/tag |
 | Design it, break the uniformity (recipe) | `playbook.md` §2–§5 | While designing a component/screen |
 | Contrast + export contract | `playbook.md` §14–§16 | When changing color/accessibility/output targets |
-| v6 decisions and measurements | `docs/v6-sadelestirme-raporu.md` | In scope discussions |
+| v6 decisions and measurements | `docs/v6-simplification-report.md` | In scope discussions |
 | Opening, testing, troubleshooting the site | `TESTING.md` | When a page does not open / an image is blank |
 
 ---

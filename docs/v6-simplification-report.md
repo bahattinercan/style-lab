@@ -57,7 +57,7 @@ Fitting safety net: if the content exceeds 2400px the body is scaled once (`zoom
 
 > **2026-11-15 · removed:** the `zoom` safety net engaged in 251/251 styles (content median 2721px,
 > visual type size median 7.9px). It was replaced by a vertical budget + `data-fit` tiers; details in
-> `docs/style-uretimi-arastirma.md` §5 P1. The overflow measurement now checks the fit tier, the zoom ban
+> `docs/style-generation-research.md` §5 P1. The overflow measurement now checks the fit tier, the zoom ban
 > and the 10px type floor. Measurement gate: `node kit/render/render-shots.mjs --measure` → horizontal overflow, clipped blocks,
 8.5px sub-minimum text (251 scenes, 0 issues).
 

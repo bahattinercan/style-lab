@@ -270,7 +270,7 @@ enforce it, `measure.mjs --a11y` reports it as information. The "static version"
 ## 9 · Rollback
 
 - **stage-lab:** a new repo; if deleted, style-lab is unaffected. `git init` + first commit at the end of S0.
-- **style-lab:** this plan is a single file (`docs/stage-lab-plani.md`); roll back with `git rm`. No gate was added.
+- **style-lab:** this plan is a single file (`docs/stage-lab-plan.md`); roll back with `git rm`. No gate was added.
 - **If the contract breaks:** `verify-contract` goes red → `node kit/export-tokens.mjs --check` tells you which file drifted.
 
 ---

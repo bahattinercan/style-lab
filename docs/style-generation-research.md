@@ -215,7 +215,7 @@ grep -c 'node --test' kit/gates.sh   # 0
 ## 8 · Risks
 
 - **P1 breaks the visual signature:** all 251 PNGs are regenerated, `phash --write` renews the baseline; the numbers in
-  `docs/katalog.md`, `report.md`, `composition.md` and the README must be updated. Acceptance: new baseline + a single
+  `docs/catalog.md`, `report.md`, `composition.md` and the README must be updated. Acceptance: new baseline + a single
   "render: fit" commit.
 - **P2 changes legacy colors:** the solver output may deviate from today's hand-picked hex values. Rollback: keep the
   SPEC `palette` field, make `seeds` optional; freeze the old values with a `--legacy-palette` flag.

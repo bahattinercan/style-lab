@@ -33,7 +33,7 @@ If the port is taken, write `8080` instead of `8000`. Press `Ctrl+C` in the term
 |---|---|---|
 | Catalog | `kit/gallery.html` | 251 style cards · search · filters · drawer · shortlist · compare |
 | Style preview | `kit/live.html?style=bento-grid` | a static component page with the selected style's tokens |
-| Catalog index | `docs/katalog.md` | one-line identity per style, for all 251 (generated) |
+| Catalog index | `docs/catalog.md` | one-line identity per style, for all 251 (generated) |
 
 The `style=` value is the folder name without its number: `01-minimalism` → `minimalism`,
 `04-luxury-typography` → `luxury-typography`.

@@ -5,7 +5,7 @@
 > **Kapılar:** `bash kit/gates.sh` (31 adım) · **Kanca:** `bash kit/install-hooks.sh`
 > **Etkileşimli:** `kit/gallery.html` (arama · filtre · çekmece · karşılaştırma) · `kit/live.html?style=<slug>`
 > **Yayın sitesi:** <https://bahattinercan.github.io/style-lab/>
-> **Katalog indeksi:** [`docs/katalog.md`](docs/katalog.md) (251 stil, 31 aile) · **Rapor:** `kit/dist/report.md`
+> **Katalog indeksi:** [`docs/catalog.md`](docs/catalog.md) (251 stil, 31 aile) · **Rapor:** `kit/dist/report.md`
 
 Tekdüze tasarıma karşı katalog: **31 aile bandında 251 görsel stil**. Her stil için **tek bir uzun
 sayfa mock-up'ı** (1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form + veri, CTA, alt bilgi),
@@ -20,7 +20,7 @@ token seti, bileşen reçeteleri, tuzaklar ve **AI brief** bulunur.
 | Statik tasarım (animasyon yok) | Hareket sistemi (`motion.*`, motion lab/export/kapıları) |
 | CSS · Tailwind · Figma export | Flutter/React token üreticileri |
 
-Gerekçe ve ölçümler: [`docs/v6-sadelestirme-raporu.md`](docs/v6-sadelestirme-raporu.md).
+Gerekçe ve ölçümler: [`docs/v6-simplification-report.md`](docs/v6-simplification-report.md).
 
 ## Durum
 
@@ -41,7 +41,7 @@ Gerekçe ve ölçümler: [`docs/v6-sadelestirme-raporu.md`](docs/v6-sadelestirme
 |---|---|
 | `/` | landing: sayılar `kit/styles.index.json`'dan, 8 vitrin stili, 31 aile bandı |
 | `/kit/gallery.html` | galeri: arama, filtre, sayfalama, çekmece, lightbox, karşılaştırma |
-| `/katalog.html` | katalog indeksi (`docs/katalog.md` HTML, stil başına bir bağlantı) |
+| `/katalog.html` | katalog indeksi (`docs/catalog.md` HTML, stil başına bir bağlantı) |
 | `/kit/live.html?style=<slug>` | seçili stilin token'larıyla statik bileşen sayfası |
 
 `_site/` bir derleme çıktısıdır (git'e girmez). Kartlar WebP türevini yükler
@@ -60,8 +60,8 @@ node kit/check-site.mjs          # kapı: derlenen siteyi HTTP üzerinden başs�
 style-lab/
 ├── README.md / README.tr.md      # bu dosya (iki dilli çift)
 ├── AGENTS.md                     # bu depoda çalışan ajanlar için bağlayıcı kurallar
-├── docs/katalog.md               # 251 stilin üretilmiş indeksi (build-catalog-doc.mjs)
-├── docs/v6-sadelestirme-raporu.md# v6 kararları + ölçümler
+├── docs/catalog.md               # 251 stilin üretilmiş indeksi (build-catalog-doc.mjs)
+├── docs/v6-simplification-report.md  # v6 kararları + ölçümler
 ├── playbook.md                   # tasarım reçeteleri (tipografi, boşluk, renk, erişilebilirlik)
 ├── kit/
 │   ├── specs/bands.json          # aile bandı şablonları (ortak prose/CSS)
@@ -76,7 +76,7 @@ style-lab/
 │   ├── build-thumbs.mjs          # PNG → WebP türevleri (kit/site/thumbs, repoda)
 │   ├── build-site.mjs            # _site/ derleyicisi: landing, katalog.html, galeri kopyası, varlıklar
 │   ├── check-site.mjs            # derlenen sitenin başsız duman testi (HTTP)
-│   ├── build-catalog-doc.mjs     # docs/katalog.md
+│   ├── build-catalog-doc.mjs     # docs/catalog.md
 │   ├── export-tokens.mjs         # dist/tokens.all.css · tailwind.theme.css · figma.variables.json
 │   ├── render/page.html          # TEK sayfa şablonu
 │   ├── render/scene.css          # sayfa iskeleti (.pg-*) + bileşen sınıfları
@@ -106,7 +106,7 @@ style-lab/
 | Materyal / zanaat | 222 terrazzo-stone · 223 linocut-print · 227 cast-concrete · 230 raw-steel |
 | Gelecek / araştırma | 242 agent-console · 245 climate-model · 248 quantum-dashboard · 250 neural-canvas |
 
-Tam liste, tek cümlelik kimliklerle: [`docs/katalog.md`](docs/katalog.md).
+Tam liste, tek cümlelik kimliklerle: [`docs/catalog.md`](docs/catalog.md).
 
 ## Aile bantları (31)
 

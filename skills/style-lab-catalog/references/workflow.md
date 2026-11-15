@@ -76,8 +76,8 @@ visible, the `extraCss`/`motif` in the SPEC is weak — strengthen it and regene
 
 ## 5 · Numbers and docs
 
-- `docs/katalog.md` is generated: `node kit/build-catalog-doc.mjs` (gate: `--check`).
-- Do not write number claims into the README/AGENTS; take the measurement from `kit/dist/report.md` and `docs/katalog.md`.
+- `docs/catalog.md` is generated: `node kit/build-catalog-doc.mjs` (gate: `--check`).
+- Do not write number claims into the README/AGENTS; take the measurement from `kit/dist/report.md` and `docs/catalog.md`.
 - Commit message: `feat(specs): <band> — N stil` or `feat(specs): <slug> stili`.
 
 ---

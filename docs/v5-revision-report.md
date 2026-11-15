@@ -563,7 +563,7 @@ and a trust element (the rule set is tied to playbook §7).
   same as in v4).
 - Render quality was inspected by eye: light + dark variants of 8 archetypes, 5 nav models, 4 different families (with a
   contact sheet). No overflow/clipping seen; the **type scale and spacing rhythm** were not separately reviewed per archetype.
-- `docs/katalog.md` was not regenerated (no layout column); a generation script should be added if wanted.
+- `docs/catalog.md` was not regenerated (no layout column); a generation script should be added if wanted.
 - **The motion findings come from reading files** (`kit/dist/motion.json` + 145 `tokens.json` + the `live.html`/`motion-lab.html`
   sources). No runtime measurement was **done** in the browser — the M3 package builds exactly that; so the finding "the live
   preview does not apply the signature" rests on fixed durations in the JS source and was not confirmed by observation on a device.

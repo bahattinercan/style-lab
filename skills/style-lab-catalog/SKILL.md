@@ -54,7 +54,7 @@ values based on MWG; MWG only supplies the mechanism.
 | Typography experiment | Typography Experiments (232–241) | `variable-weight`, `justified-book`, `uppercase-only` |
 | Future / research | Future & Speculative (242–251) | `agent-console`, `quantum-dashboard`, `digital-twin` |
 
-Full band table: `references/families.md` · style list: `docs/katalog.md` ·
+Full band table: `references/families.md` · style list: `docs/catalog.md` ·
 machine-readable: `kit/styles.index.json`.
 
 ## Procedure
@@ -196,4 +196,4 @@ Before an implementation counts as "done":
 - [ ] `bash kit/gates.sh` → "kapılar: temiz" (or the reason for the remaining error is written down).
 
 References: `references/families.md` (31 bands) · `references/workflow.md` (new style, one command) ·
-`docs/katalog.md` (251 styles) · `playbook.md` §2 selection, §5 tokens, §14–§16 contrast/export.
+`docs/catalog.md` (251 styles) · `playbook.md` §2 selection, §5 tokens, §14–§16 contrast/export.

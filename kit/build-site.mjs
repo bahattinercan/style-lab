@@ -8,7 +8,7 @@
  *
  *   _site/
  *   ├── index.html                 landing (üretilir)
- *   ├── katalog.html               251 stilin okunur indeksi (docs/katalog.md'den, üretilir)
+ *   ├── katalog.html               251 stilin okunur indeksi (docs/catalog.md'den, üretilir)
  *   ├── .nojekyll                  Pages Jekyll işlemesini kapatır
  *   ├── kit/gallery.html           galeri (kopya + yayın dönüşümleri)
  *   ├── kit/live.html              stil önizlemesi
@@ -272,7 +272,7 @@ function landingHtml({ pngBytes, thumbBytes }) {
 
 /* --------------------------------------------------------------- katalog */
 
-/** docs/katalog.md → HTML. Yalnız bu dosyanın kullandığı sözdizimi desteklenir. */
+/** docs/catalog.md → HTML. Yalnız bu dosyanın kullandığı sözdizimi desteklenir. */
 function katalogHtml(md) {
   const lines = md.split(/\r?\n/);
   const out = [];
@@ -508,7 +508,7 @@ function build() {
 
   // 5) landing + katalog
   fs.writeFileSync(path.join(OUT, 'index.html'), landingHtml({ pngBytes, thumbBytes }));
-  fs.writeFileSync(path.join(OUT, 'katalog.html'), katalogPage({ md: read('docs/katalog.md'), styleCount: styles.length }));
+  fs.writeFileSync(path.join(OUT, 'katalog.html'), katalogPage({ md: read('docs/catalog.md'), styleCount: styles.length }));
   fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
   return { pngBytes, thumbBytes };
 }
@@ -546,7 +546,7 @@ function check() {
   }
 
   // D) katalog satır sayısı
-  katalogPage({ md: read('docs/katalog.md'), styleCount: styles.length });
+  katalogPage({ md: read('docs/catalog.md'), styleCount: styles.length });
 
   // E) landing sayıları kaynakla aynı mı (uydurma sayı yok)
   const landing = landingHtml({ pngBytes: 0, thumbBytes: 0 });

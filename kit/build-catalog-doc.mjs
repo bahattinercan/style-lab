@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * kit/build-catalog-doc.mjs — docs/katalog.md üretir (okuma listesi).
+ * kit/build-catalog-doc.mjs — docs/catalog.md üretir (okuma listesi).
  *
  * Neden: katalog indeksi elle güncelleniyordu; stil sayısı değişince (151 → 251)
  * doküman sessizce bayatlıyordu. Tek kaynak: kit/styles.index.json + kit/families.json.
@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const INDEX = path.join(ROOT, 'kit', 'styles.index.json');
 const FAMILIES = path.join(ROOT, 'kit', 'families.json');
-const OUT = path.join(ROOT, 'docs', 'katalog.md');
+const OUT = path.join(ROOT, 'docs', 'catalog.md');
 const CHECK = process.argv.includes('--check');
 
 const index = JSON.parse(fs.readFileSync(INDEX, 'utf8'));
@@ -65,13 +65,13 @@ const md = lines.join('\n');
 if (CHECK) {
   const current = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : null;
   if (current !== md) {
-    console.log(`× docs/katalog.md bayat — node kit/build-catalog-doc.mjs`);
+    console.log(`× docs/catalog.md bayat — node kit/build-catalog-doc.mjs`);
     process.exit(1);
   }
-  console.log(`✓ docs/katalog.md güncel (${styles.length} stil · ${families.length} aile)`);
+  console.log(`✓ docs/catalog.md güncel (${styles.length} stil · ${families.length} aile)`);
   process.exit(0);
 }
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, md);
 const kb = (Buffer.byteLength(md) / 1024).toFixed(1);
-console.log(`docs/katalog.md yazıldı · ${styles.length} stil · ${families.length} aile · ${kb} KB`);
+console.log(`docs/catalog.md yazıldı · ${styles.length} stil · ${families.length} aile · ${kb} KB`);

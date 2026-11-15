@@ -4,7 +4,7 @@
 > **Repository:** https://github.com/bahattinercan/style-lab
 > **Gates:** `bash kit/gates.sh` (27 steps) · **Install hook:** `bash kit/install-hooks.sh`
 > **Interactive:** `kit/gallery.html` (search · filter · drawer · compare) · `kit/live.html?style=<slug>`
-> **Live site:** <https://bahattinercan.github.io/style-lab/> · **Catalog index:** [`docs/katalog.md`](docs/katalog.md) (251 styles, 31 families) · **Report:** `kit/dist/report.md`
+> **Live site:** <https://bahattinercan.github.io/style-lab/> · **Catalog index:** [`docs/catalog.md`](docs/catalog.md) (251 styles, 31 families) · **Report:** `kit/dist/report.md`
 
 A catalog against uniform design: **251 visual styles** in **31 family bands**. Every style ships
 **one single-page mock-up** (1280×2400: nav, hero, three content sections, component grid,
@@ -19,7 +19,7 @@ form + data, CTA, footer), a token set, component recipes, pitfalls and an AI br
 | Static design (no animation) | Motion system (`motion.*`, motion lab/exports/checks) |
 | CSS · Tailwind · Figma exports | Flutter/React token emitters |
 
-Rationale and measurements: [`docs/v6-sadelestirme-raporu.md`](docs/v6-sadelestirme-raporu.md).
+Rationale and measurements: [`docs/v6-simplification-report.md`](docs/v6-simplification-report.md).
 
 ## Status
 
@@ -39,7 +39,7 @@ Rationale and measurements: [`docs/v6-sadelestirme-raporu.md`](docs/v6-sadelesti
 |---|---|
 | `/` | landing: counts from `kit/styles.index.json`, 8 featured styles, 31 family bands |
 | `/kit/gallery.html` | the gallery: search, filters, pagination, drawer, lightbox, compare |
-| `/katalog.html` | the catalog index (`docs/katalog.md` rendered, one link per style) |
+| `/katalog.html` | the catalog index (`docs/catalog.md` rendered, one link per style) |
 | `/kit/live.html?style=<slug>` | the selected style's tokens applied to a static component page |
 
 `_site/` is a build artifact (git-ignored). Cards load WebP derivatives
@@ -59,8 +59,8 @@ node kit/check-site.mjs          # gate: headless smoke test over HTTP (landing,
 style-lab/
 ├── README.md / README.tr.md      # this file (bilingual pair)
 ├── AGENTS.md                     # binding rules for agents working in this repo
-├── docs/katalog.md               # generated index of 251 styles (build-catalog-doc.mjs)
-├── docs/v6-sadelestirme-raporu.md# v6 decisions + measurements
+├── docs/catalog.md               # generated index of 251 styles (build-catalog-doc.mjs)
+├── docs/v6-simplification-report.md  # v6 decisions + measurements
 ├── playbook.md                   # design recipes (typography, spacing, color, a11y)
 ├── kit/
 │   ├── specs/bands.json          # family band templates (shared prose/CSS)
@@ -75,7 +75,7 @@ style-lab/
 │   ├── build-thumbs.mjs          # PNG → WebP derivatives (kit/site/thumbs, committed)
 │   ├── build-site.mjs            # _site/ assembler: landing, katalog.html, gallery copy, assets
 │   ├── check-site.mjs            # headless smoke test of the built site over HTTP
-│   ├── build-catalog-doc.mjs     # docs/katalog.md
+│   ├── build-catalog-doc.mjs     # docs/catalog.md
 │   ├── export-tokens.mjs         # dist/tokens.all.css · tailwind.theme.css · figma.variables.json
 │   ├── render/
 │   │   ├── page.html             # THE single page template
@@ -107,7 +107,7 @@ style-lab/
 | Materials / craft | 222 terrazzo-stone · 223 linocut-print · 227 cast-concrete · 230 raw-steel |
 | Future / research | 242 agent-console · 245 climate-model · 248 quantum-dashboard · 250 neural-canvas |
 
-Full list with one-line identities: [`docs/katalog.md`](docs/katalog.md).
+Full list with one-line identities: [`docs/catalog.md`](docs/catalog.md).
 
 ## Family bands (31)
 
