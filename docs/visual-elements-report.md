@@ -126,16 +126,16 @@ Nearest-neighbour distance: min **68**, median **98.5**.
 
 | dir | slug | family | motif.css technique | art file | nearest-neighbour dHash distance |
 |---|---|---|---|---|---:|
-| 126-marble-vein | marble-vein | Materyal & LÃ¼ks | motif CSS technique | gen/marble-vein.svg | 84 |
-| 127-silk-drape | silk-drape | Materyal & LÃ¼ks | motif CSS technique | gen/silk-drape.svg | 98 |
-| 128-brass-copper | brass-copper | Materyal & LÃ¼ks | motif CSS technique | gen/brass-copper.svg | 130 |
-| 129-porcelain-glaze | porcelain-glaze | Materyal & LÃ¼ks | motif CSS technique | gen/porcelain-glaze.svg | 92 |
-| 130-leather-craft | leather-craft | Materyal & LÃ¼ks | motif CSS technique | gen/leather-craft.svg | 96 |
-| 131-optic-prism | optic-prism | Materyal & LÃ¼ks | motif CSS technique | gen/optic-prism.svg | 84 |
-| 132-wood-joinery | wood-joinery | Materyal & LÃ¼ks | motif CSS technique | gen/wood-joinery.svg | 96 |
-| 133-letterpress-print | letterpress-print | Materyal & LÃ¼ks | motif CSS technique | gen/letterpress-print.svg | 102 |
-| 134-concrete-monolith | concrete-monolith | Materyal & LÃ¼ks | motif CSS technique | gen/concrete-monolith.svg | 100 |
-| 135-enamel-porcelain | enamel-porcelain | Materyal & LÃ¼ks | motif CSS technique | gen/enamel-porcelain.svg | 89 |
+| 126-marble-vein | marble-vein | Materyal & LÃ¼ks | branching vein slivers via multiple thin linear-gradient wedges + clip-path | gen/marble-vein.svg | 84 |
+| 127-silk-drape | silk-drape | Materyal & LÃ¼ks | very wide-radius repeating-radial-gradient fold bands (soft sheen) | gen/silk-drape.svg | 98 |
+| 128-brass-copper | brass-copper | Materyal & LÃ¼ks | engraved plate: vertical bar stack + fine hairline hatching | gen/brass-copper.svg | 130 |
+| 129-porcelain-glaze | porcelain-glaze | Materyal & LÃ¼ks | sparse thin cobalt hairline arcs (thin radial-gradient rings), lots of white | gen/porcelain-glaze.svg | 92 |
+| 130-leather-craft | leather-craft | Materyal & LÃ¼ks | dashed stitch frame drawn on the edges + fine speckle grain | gen/leather-craft.svg | 96 |
+| 131-optic-prism | optic-prism | Materyal & LÃ¼ks | conic-gradient spectral slices clipped to a wedge/triangle | gen/optic-prism.svg | 84 |
+| 132-wood-joinery | wood-joinery | Materyal & LÃ¼ks | repeating dovetail pin comb via clip-path polygon pattern | gen/wood-joinery.svg | 96 |
+| 133-letterpress-print | letterpress-print | Materyal & LÃ¼ks | deboss impression: paired linear-gradient edge shadows around type blocks | gen/letterpress-print.svg | 102 |
+| 134-concrete-monolith | concrete-monolith | Materyal & LÃ¼ks | formwork panel grid lines + form-tie holes (radial dots at intersections) | gen/concrete-monolith.svg | 100 |
+| 135-enamel-porcelain | enamel-porcelain | Materyal & LÃ¼ks | glaze pooling rings of unequal thickness (stacked radial-gradients) | gen/enamel-porcelain.svg | 89 |
 
 Nearest-neighbour distance: min **84**, median **96**.
 
@@ -143,16 +143,16 @@ Nearest-neighbour distance: min **84**, median **96**.
 
 | dir | slug | family | motif.css technique | art file | nearest-neighbour dHash distance |
 |---|---|---|---|---|---:|
-| 46-telemetry-grid | telemetry-grid | Veri & GÃ¶sterge | motif CSS technique | gen/telemetry-grid.svg | 73 |
-| 47-trading-desk | trading-desk | Veri & GÃ¶sterge | motif CSS technique | gen/trading-desk.svg | 78 |
-| 48-executive-kpi | executive-kpi | Veri & GÃ¶sterge | motif CSS technique | gen/executive-kpi.svg | 69 |
-| 49-log-stream | log-stream | Veri & GÃ¶sterge | motif CSS technique | gen/log-stream.svg | 78 |
-| 50-lab-instrument | lab-instrument | Veri & GÃ¶sterge | motif CSS technique | gen/lab-instrument.svg | 69 |
-| 51-atlas-console | atlas-console | Veri & GÃ¶sterge | motif CSS technique | gen/atlas-console.svg | 102 |
-| 52-experiment-split | experiment-split | Veri & GÃ¶sterge | motif CSS technique | gen/experiment-split.svg | 77 |
-| 53-ledger-meter | ledger-meter | Veri & GÃ¶sterge | motif CSS technique | gen/ledger-meter.svg | 114 |
-| 54-vitals-triage | vitals-triage | Veri & GÃ¶sterge | motif CSS technique | gen/vitals-triage.svg | 73 |
-| 55-fleet-telemetry | fleet-telemetry | Veri & GÃ¶sterge | motif CSS technique | gen/fleet-telemetry.svg | 77 |
+| 46-telemetry-grid | telemetry-grid | Veri & GÃ¶sterge | 24px grid + horizontal threshold band stripes | gen/telemetry-grid.svg | 73 |
+| 47-trading-desk | trading-desk | Veri & GÃ¶sterge | price ladder horizontal bars of increasing width | gen/trading-desk.svg | 78 |
+| 48-executive-kpi | executive-kpi | Veri & GÃ¶sterge | hairline horizontal rules of varying weight, very sparse | gen/executive-kpi.svg | 69 |
+| 49-log-stream | log-stream | Veri & GÃ¶sterge | vertical timeline spine with severity dots of different size/opacity | gen/log-stream.svg | 78 |
+| 50-lab-instrument | lab-instrument | Veri & GÃ¶sterge | concentric partial gauge arcs + needle wedge | gen/lab-instrument.svg | 69 |
+| 51-atlas-console | atlas-console | Veri & GÃ¶sterge | lat/long graticule crossing line sets + tick marks on edges | gen/atlas-console.svg | 102 |
+| 52-experiment-split | experiment-split | Veri & GÃ¶sterge | two divergent dot clouds split along a centre axis | gen/experiment-split.svg | 77 |
+| 53-ledger-meter | ledger-meter | Veri & GÃ¶sterge | ruled ledger columns + single fill meter block | gen/ledger-meter.svg | 114 |
+| 54-vitals-triage | vitals-triage | Veri & GÃ¶sterge | radial rings combined with clipped waveform spike row | gen/vitals-triage.svg | 73 |
+| 55-fleet-telemetry | fleet-telemetry | Veri & GÃ¶sterge | dotted route paths with node pins at route turns | gen/fleet-telemetry.svg | 77 |
 
 Nearest-neighbour distance: min **69**, median **77**.
 
@@ -160,16 +160,16 @@ Nearest-neighbour distance: min **69**, median **77**.
 
 | dir | slug | family | motif.css technique | art file | nearest-neighbour dHash distance |
 |---|---|---|---|---|---:|
-| 76-biophilic-botanical | biophilic-botanical | DoÄŸa & Organik | motif CSS technique | gen/biophilic-botanical.svg | 110 |
-| 77-weather-atmosphere | weather-atmosphere | DoÄŸa & Organik | motif CSS technique | gen/weather-atmosphere.svg | 97 |
-| 78-topographic-terrain | topographic-terrain | DoÄŸa & Organik | motif CSS technique | gen/topographic-terrain.svg | 100 |
-| 79-ocean-current | ocean-current | DoÄŸa & Organik | motif CSS technique | gen/ocean-current.svg | 107 |
-| 80-seasonal-shift | seasonal-shift | DoÄŸa & Organik | motif CSS technique | gen/seasonal-shift.svg | 95 |
-| 81-forest-bark | forest-bark | DoÄŸa & Organik | motif CSS technique | gen/forest-bark.svg | 90 |
-| 82-desert-sand | desert-sand | DoÄŸa & Organik | motif CSS technique | gen/desert-sand.svg | 95 |
-| 83-polar-ice | polar-ice | DoÄŸa & Organik | motif CSS technique | gen/polar-ice.svg | 111 |
-| 84-volcanic-mineral | volcanic-mineral | DoÄŸa & Organik | motif CSS technique | gen/volcanic-mineral.svg | 116 |
-| 85-coral-reef | coral-reef | DoÄŸa & Organik | motif CSS technique | gen/coral-reef.svg | 90 |
+| 76-biophilic-botanical | biophilic-botanical | DoÄŸa & Organik | overlapping leaf silhouettes via clip-path polygons, soft edge | gen/biophilic-botanical.svg | 110 |
+| 77-weather-atmosphere | weather-atmosphere | DoÄŸa & Organik | very large soft radial-gradient cloud mass + horizontal mist band | gen/weather-atmosphere.svg | 97 |
+| 78-topographic-terrain | topographic-terrain | DoÄŸa & Organik | nested contour lines from stacked thin repeating-radial-gradient ellipses | gen/topographic-terrain.svg | 100 |
+| 79-ocean-current | ocean-current | DoÄŸa & Organik | flowing current lines: offset repeating-linear-gradient with wave clip-path | gen/ocean-current.svg | 107 |
+| 80-seasonal-shift | seasonal-shift | DoÄŸa & Organik | sparse dot drift showing a gradient (dot density varies left to right) | gen/seasonal-shift.svg | 95 |
+| 81-forest-bark | forest-bark | DoÄŸa & Organik | vertical fibrous streak texture (fine repeating-linear-gradient, irregular widths) | gen/forest-bark.svg | 90 |
+| 82-desert-sand | desert-sand | DoÄŸa & Organik | dune curves as wide flattened radial-gradient arcs, asymmetric | gen/desert-sand.svg | 95 |
+| 83-polar-ice | polar-ice | DoÄŸa & Organik | fractured ice plate grid: irregular polygon cells via clip-path + hairline cracks | gen/polar-ice.svg | 111 |
+| 84-volcanic-mineral | volcanic-mineral | DoÄŸa & Organik | geological section: horizontal strata bars of varying thickness + mineral tick marks | gen/volcanic-mineral.svg | 116 |
+| 85-coral-reef | coral-reef | DoÄŸa & Organik | asymmetric coral branch shapes built from rounded clip-path blobs at one corner | gen/coral-reef.svg | 90 |
 
 Nearest-neighbour distance: min **90**, median **98.5**.
 
