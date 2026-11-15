@@ -1,0 +1,40 @@
+/* 77 · weather-atmosphere motif: very large soft radial-gradient cloud mass + horizontal mist band */
+.motif-none {
+  position: relative;
+  overflow: hidden;
+}
+.motif-none::before {
+  content: "";
+  position: absolute;
+  inset: -15% -10% auto auto;
+  width: 90%;
+  height: 110%;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(65% 55% at 75% 25%, color-mix(in srgb, var(--accent) 26%, transparent) 0%, transparent 68%),
+    radial-gradient(50% 45% at 45% 35%, color-mix(in srgb, var(--surface) 75%, transparent) 0%, transparent 65%),
+    radial-gradient(60% 50% at 80% 65%, color-mix(in srgb, var(--accent) 18%, transparent) 0%, transparent 70%);
+  filter: blur(14px);
+  opacity: 0.85;
+}
+.motif-none::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 42%;
+  height: 28%;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg,
+      transparent 0%,
+      color-mix(in srgb, var(--bg-2) 60%, transparent) 30%,
+      color-mix(in srgb, var(--surface) 70%, transparent) 50%,
+      color-mix(in srgb, var(--accent) 14%, transparent) 75%,
+      transparent 100%
+    );
+  filter: blur(6px);
+  opacity: 0.75;
+}

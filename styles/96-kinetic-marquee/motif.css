@@ -1,0 +1,35 @@
+/* 96 · kinetic-marquee — skewed repeating-linear-gradient band stack */
+.motif-none {
+  position: relative;
+  overflow: hidden;
+}
+.motif-none::before {
+  content: "";
+  position: absolute;
+  inset: -30% -20%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 18px,
+    var(--line) 18px 20px,
+    transparent 20px 38px,
+    var(--accent) 38px 46px,
+    transparent 46px 64px
+  );
+  transform: skewX(-20deg);
+  opacity: 0.35;
+}
+.motif-none::after {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 40px,
+    var(--line) 40px 42px,
+    transparent 42px 80px
+  );
+  transform: skewX(-20deg);
+  opacity: 0.25;
+}

@@ -1,0 +1,38 @@
+/* 22 · cyberpunk — diagonal hazard stripes (thick, clipped to a corner wedge) + hard scan bar */
+.motif-grid {
+  position: relative;
+}
+.motif-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: polygon(0 0, 190px 0, 0 190px);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--accent) 0 16px,
+    var(--bg) 16px 32px
+  );
+  opacity: 0.95;
+}
+.motif-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0 54%,
+      var(--line) 54% 56.5%,
+      var(--accent) 56.5% 58.5%,
+      transparent 58.5% 100%
+    ),
+    linear-gradient(
+      90deg,
+      var(--accent) 0 4px,
+      transparent 4px calc(100% - 4px),
+      var(--line) calc(100% - 4px) 100%
+    );
+  opacity: 0.85;
+}

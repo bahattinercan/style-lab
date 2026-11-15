@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f4f1ea"/>
+      <stop offset="100%" stop-color="#eae5da"/>
+    </linearGradient>
+    <pattern id="speedTicks" width="40" height="40" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="40" x2="40" y2="0" stroke="#14161a" stroke-width="1.5" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bgGrad)"/>
+  <rect width="1600" height="1000" fill="url(#speedTicks)"/>
+
+  <!-- Speed reference grid lines -->
+  <g stroke="#14161a" stroke-width="1" opacity="0.12">
+    <line x1="80" y1="0" x2="80" y2="1000"/>
+    <line x1="800" y1="0" x2="800" y2="1000"/>
+    <line x1="1520" y1="0" x2="1520" y2="1000"/>
+    <line x1="0" y1="120" x2="1600" y2="120"/>
+    <line x1="0" y1="880" x2="1600" y2="880"/>
+  </g>
+
+  <!-- Skewed Marquee Band 1 (Top Black) -->
+  <g transform="skewX(-16)">
+    <rect x="120" y="140" width="1600" height="140" fill="#14161a"/>
+    <rect x="120" y="276" width="1600" height="4" fill="#2d3ad0"/>
+    <text x="180" y="235" font-family="'Chakra Petch', 'JetBrains Mono', monospace" font-size="62" font-weight="900" fill="#f7f7ff" letter-spacing="4">
+      KINETIC MOTION VELOCITY STREAM /// ACCEL 3.8G /// 120 FPS
+    </text>
+  </g>
+
+  <!-- Skewed Marquee Band 2 (Middle Blue) -->
+  <g transform="skewX(-16)">
+    <rect x="-80" y="380" width="1700" height="200" fill="#2d3ad0"/>
+    <text x="-40" y="505" font-family="'Chakra Petch', 'JetBrains Mono', monospace" font-size="88" font-weight="800" fill="#f7f7ff" letter-spacing="8">
+      RAPID PASS >>> WAVE FRONT 96.0 >>>
+    </text>
+    <rect x="-80" y="380" width="1700" height="6" fill="#f4f1ea" opacity="0.4"/>
+    <rect x="-80" y="574" width="1700" height="6" fill="#14161a" opacity="0.5"/>
+  </g>
+
+  <!-- Skewed Marquee Band 3 (Lower Neutral) -->
+  <g transform="skewX(-16)">
+    <rect x="360" y="680" width="1320" height="130" fill="#fdfbf6" stroke="#14161a" stroke-width="4"/>
+    <text x="400" y="765" font-family="'Space Grotesk', 'JetBrains Mono', monospace" font-size="48" font-weight="700" fill="#14161a" letter-spacing="2">
+      TEMPORAL CADENCE 0.4MS · LATENCY CHECKED · STABILITY 99.8%
+    </text>
+  </g>
+
+  <!-- Oscillating Velocity Sine Wave Ribbon -->
+  <path d="M 0 540 Q 200 320 400 540 T 800 540 T 1200 540 T 1600 540" fill="none" stroke="#2d3ad0" stroke-width="12" stroke-linecap="round" opacity="0.85"/>
+  <path d="M 0 540 Q 200 320 400 540 T 800 540 T 1200 540 T 1600 540" fill="none" stroke="#f7f7ff" stroke-width="4" stroke-dasharray="16 12"/>
+
+  <!-- HUD badges and telemetry markers -->
+  <rect x="80" y="60" width="140" height="34" fill="#2d3ad0" rx="3"/>
+  <text x="96" y="83" font-family="monospace" font-size="16" font-weight="700" fill="#f7f7ff">STYLE 96</text>
+  <text x="240" y="83" font-family="monospace" font-size="16" font-weight="700" fill="#4a4d57">KINETIC MARQUEE SPEC</text>
+  <circle cx="1520" cy="77" r="12" fill="#2d3ad0"/>
+  <circle cx="1520" cy="77" r="5" fill="#f7f7ff"/>
+</svg>

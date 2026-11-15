@@ -1,0 +1,35 @@
+/* 105 · holographic-layer — conic-gradient iridescent field + horizontal repeating scanlines */
+.motif-mesh {
+  position: relative;
+  overflow: hidden;
+}
+.motif-mesh::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  pointer-events: none;
+  background: conic-gradient(
+    from 45deg at 50% 50%,
+    var(--accent) 0deg,
+    var(--line) 70deg,
+    var(--surface-2) 140deg,
+    var(--accent) 210deg,
+    var(--line) 280deg,
+    var(--accent) 360deg
+  );
+  opacity: 0.35;
+  filter: blur(6px);
+}
+.motif-mesh::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 4px,
+    var(--line) 4px 5px,
+    transparent 5px 8px
+  );
+  opacity: 0.55;
+}

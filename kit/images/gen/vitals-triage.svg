@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<!-- Clinical Mint Ground -->
+  <rect width="1600" height="1000" fill="#f4f8f7" />
+
+  <!-- Monitor Frame -->
+  <rect x="60" y="40" width="1480" height="920" fill="#ffffff" stroke="#10201f" stroke-width="2" rx="6" />
+
+  <!-- Top Status Bar -->
+  <rect x="60" y="40" width="1480" height="50" fill="#10201f" />
+  <text x="90" y="72" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">ICU PATIENT MONITOR // TRIAGE STATUS [STABLE]</text>
+  <text x="1340" y="72" fill="#7d938f" font-family="monospace" font-size="13">BED 04 · ADULT</text>
+
+  <!-- ECG Scope Panel -->
+  <rect x="100" y="120" width="1400" height="400" fill="#f4f8f7" stroke="#d7e3e0" />
+  <line x1="100" y1="120" x2="100" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="120" y1="120" x2="120" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="140" y1="120" x2="140" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="160" y1="120" x2="160" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="180" y1="120" x2="180" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="200" y1="120" x2="200" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="220" y1="120" x2="220" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="240" y1="120" x2="240" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="260" y1="120" x2="260" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="280" y1="120" x2="280" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="300" y1="120" x2="300" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="320" y1="120" x2="320" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="340" y1="120" x2="340" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="360" y1="120" x2="360" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="380" y1="120" x2="380" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="400" y1="120" x2="400" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="420" y1="120" x2="420" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="440" y1="120" x2="440" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="460" y1="120" x2="460" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="480" y1="120" x2="480" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="500" y1="120" x2="500" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="520" y1="120" x2="520" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="540" y1="120" x2="540" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="560" y1="120" x2="560" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="580" y1="120" x2="580" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="600" y1="120" x2="600" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="620" y1="120" x2="620" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="640" y1="120" x2="640" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="660" y1="120" x2="660" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="680" y1="120" x2="680" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="700" y1="120" x2="700" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="720" y1="120" x2="720" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="740" y1="120" x2="740" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="760" y1="120" x2="760" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="780" y1="120" x2="780" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="800" y1="120" x2="800" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="820" y1="120" x2="820" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="840" y1="120" x2="840" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="860" y1="120" x2="860" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="880" y1="120" x2="880" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="900" y1="120" x2="900" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="920" y1="120" x2="920" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="940" y1="120" x2="940" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="960" y1="120" x2="960" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="980" y1="120" x2="980" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1000" y1="120" x2="1000" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="1020" y1="120" x2="1020" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1040" y1="120" x2="1040" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1060" y1="120" x2="1060" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1080" y1="120" x2="1080" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1100" y1="120" x2="1100" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="1120" y1="120" x2="1120" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1140" y1="120" x2="1140" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1160" y1="120" x2="1160" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1180" y1="120" x2="1180" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1200" y1="120" x2="1200" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="1220" y1="120" x2="1220" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1240" y1="120" x2="1240" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1260" y1="120" x2="1260" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1280" y1="120" x2="1280" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1300" y1="120" x2="1300" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="1320" y1="120" x2="1320" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1340" y1="120" x2="1340" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1360" y1="120" x2="1360" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1380" y1="120" x2="1380" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1400" y1="120" x2="1400" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="1420" y1="120" x2="1420" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1440" y1="120" x2="1440" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1460" y1="120" x2="1460" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1480" y1="120" x2="1480" y2="520" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="1500" y1="120" x2="1500" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="100" y1="120" x2="1500" y2="120" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="100" y1="140" x2="1500" y2="140" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="160" x2="1500" y2="160" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="180" x2="1500" y2="180" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="200" x2="1500" y2="200" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="220" x2="1500" y2="220" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="100" y1="240" x2="1500" y2="240" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="260" x2="1500" y2="260" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="280" x2="1500" y2="280" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="300" x2="1500" y2="300" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="320" x2="1500" y2="320" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="100" y1="340" x2="1500" y2="340" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="360" x2="1500" y2="360" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="380" x2="1500" y2="380" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="400" x2="1500" y2="400" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="420" x2="1500" y2="420" stroke="#b8ccc7" stroke-width="1.2" />
+<line x1="100" y1="440" x2="1500" y2="440" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="460" x2="1500" y2="460" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="480" x2="1500" y2="480" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="500" x2="1500" y2="500" stroke="#e0ece9" stroke-width="0.6" />
+<line x1="100" y1="520" x2="1500" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
+
+
+  <!-- ECG Trace in Crimson -->
+  <path d="M 100 320 L 130 320 C 145 320, 150 300, 160 300 C 170 300, 175 320, 190 320 L 200 335 L 215 160 L 230 360 L 240 320 C 255 320, 265 280, 280 280 C 295 280, 305 320, 300 320 L 330 320 C 345 320, 350 300, 360 300 C 370 300, 375 320, 390 320 L 400 335 L 415 160 L 430 360 L 440 320 C 455 320, 465 280, 480 280 C 495 280, 505 320, 500 320 L 530 320 C 545 320, 550 300, 560 300 C 570 300, 575 320, 590 320 L 600 335 L 615 160 L 630 360 L 640 320 C 655 320, 665 280, 680 280 C 695 280, 705 320, 700 320 L 730 320 C 745 320, 750 300, 760 300 C 770 300, 775 320, 790 320 L 800 335 L 815 160 L 830 360 L 840 320 C 855 320, 865 280, 880 280 C 895 280, 905 320, 900 320 L 930 320 C 945 320, 950 300, 960 300 C 970 300, 975 320, 990 320 L 1000 335 L 1015 160 L 1030 360 L 1040 320 C 1055 320, 1065 280, 1080 280 C 1095 280, 1105 320, 1100 320 L 1130 320 C 1145 320, 1150 300, 1160 300 C 1170 300, 1175 320, 1190 320 L 1200 335 L 1215 160 L 1230 360 L 1240 320 C 1255 320, 1265 280, 1280 280 C 1295 280, 1305 320, 1300 320 L 1330 320 C 1345 320, 1350 300, 1360 300 C 1370 300, 1375 320, 1390 320 L 1400 335 L 1415 160 L 1430 360 L 1440 320 C 1455 320, 1465 280, 1480 280 C 1495 280, 1505 320, 1500 320 " fill="none" stroke="#b3341f" stroke-width="3.5" />
+  <text x="120" y="150" font-family="monospace" font-size="14" font-weight="bold" fill="#b3341f">LEAD II // 25mm/s 10mm/mV</text>
+
+  <!-- Plethysmograph Waveform Channel -->
+  <text x="120" y="550" font-family="monospace" font-size="13" font-weight="bold" fill="#1c6b4f">PLETH (SpO2)</text>
+  <path d="M 100 580 C 140 580, 170 500, 200 500 C 230 500, 250 540, 260 530 C 270 520, 285 580, 300 580 C 340 580, 370 500, 400 500 C 430 500, 450 540, 460 530 C 470 520, 485 580, 500 580 C 540 580, 570 500, 600 500 C 630 500, 650 540, 660 530 C 670 520, 685 580, 700 580 C 740 580, 770 500, 800 500 C 830 500, 850 540, 860 530 C 870 520, 885 580, 900 580 C 940 580, 970 500, 1000 500 C 1030 500, 1050 540, 1060 530 C 1070 520, 1085 580, 1100 580 C 1140 580, 1170 500, 1200 500 C 1230 500, 1250 540, 1260 530 C 1270 520, 1285 580, 1300 580 C 1340 580, 1370 500, 1400 500 C 1430 500, 1450 540, 1460 530 C 1470 520, 1485 580, 1500 580 " fill="none" stroke="#1c6b4f" stroke-width="3" />
+
+  <!-- Bottom Vitals Cards -->
+  <!-- Card 1: Heart Rate Radial Rings -->
+  <g transform="translate(100, 680)">
+    <rect x="0" y="0" width="320" height="240" fill="#f4f8f7" stroke="#d7e3e0" rx="4" />
+    <text x="24" y="36" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b3341f">HEART RATE</text>
+    <!-- Radial Ring Dial -->
+    <circle cx="160" cy="140" r="70" fill="none" stroke="#d7e3e0" stroke-width="12" />
+    <circle cx="160" cy="140" r="70" fill="none" stroke="#b3341f" stroke-width="12" stroke-dasharray="320 440" transform="rotate(-90 160 140)" />
+    <text x="160" y="148" font-family="monospace" font-size="44" font-weight="bold" fill="#10201f" text-anchor="middle">74</text>
+    <text x="160" y="174" font-family="sans-serif" font-size="12" fill="#47605d" text-anchor="middle">BPM</text>
+  </g>
+
+  <!-- Card 2: Blood Pressure -->
+  <g transform="translate(460, 680)">
+    <rect x="0" y="0" width="320" height="240" fill="#f4f8f7" stroke="#d7e3e0" rx="4" />
+    <text x="24" y="36" font-family="sans-serif" font-size="14" font-weight="bold" fill="#47605d">NIBP (mmHg)</text>
+    <text x="24" y="120" font-family="monospace" font-size="52" font-weight="bold" fill="#10201f">118/78</text>
+    <text x="24" y="160" font-family="sans-serif" font-size="14" fill="#1c6b4f">MAP: 91 mmHg</text>
+    <text x="24" y="200" font-family="sans-serif" font-size="12" fill="#7d938f">AUTO INTERVAL: 15 MIN</text>
+  </g>
+
+  <!-- Card 3: SpO2 Oxygen -->
+  <g transform="translate(820, 680)">
+    <rect x="0" y="0" width="320" height="240" fill="#f4f8f7" stroke="#d7e3e0" rx="4" />
+    <text x="24" y="36" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1c6b4f">PULSE OXIMETRY</text>
+    <text x="24" y="120" font-family="monospace" font-size="56" font-weight="bold" fill="#1c6b4f">99%</text>
+    <text x="24" y="160" font-family="sans-serif" font-size="14" fill="#47605d">PI: 4.8</text>
+    <text x="24" y="200" font-family="sans-serif" font-size="12" fill="#7d938f">PLETH SENSOR: OK</text>
+  </g>
+
+  <!-- Card 4: Respiration & Temp -->
+  <g transform="translate(1180, 680)">
+    <rect x="0" y="0" width="320" height="240" fill="#f4f8f7" stroke="#d7e3e0" rx="4" />
+    <text x="24" y="36" font-family="sans-serif" font-size="14" font-weight="bold" fill="#47605d">RESP &amp; TEMP</text>
+    <text x="24" y="100" font-family="monospace" font-size="44" font-weight="bold" fill="#10201f">16 <tspan font-size="16" fill="#7d938f">rpm</tspan></text>
+    <text x="24" y="170" font-family="monospace" font-size="44" font-weight="bold" fill="#10201f">36.8 <tspan font-size="16" fill="#7d938f">°C</tspan></text>
+    <text x="24" y="210" font-family="sans-serif" font-size="12" fill="#1c6b4f">TRIAGE: STABLE</text>
+  </g>
+</svg>

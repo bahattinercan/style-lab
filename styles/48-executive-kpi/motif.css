@@ -1,0 +1,30 @@
+.motif-paper {
+  position: relative;
+}
+.motif-paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    var(--line) 0 1px,
+    transparent 1px 48px,
+    color-mix(in srgb, var(--line) 80%, transparent) 48px 49px,
+    transparent 49px 120px,
+    var(--line) 120px 122px,
+    transparent 122px 240px
+  );
+  opacity: 0.85;
+  pointer-events: none;
+}
+.motif-paper::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  width: 140px;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 6px 0 -1px color-mix(in srgb, var(--accent) 35%, transparent);
+  pointer-events: none;
+}

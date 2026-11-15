@@ -227,7 +227,7 @@ const FAMILY_OF = (num) => {
   return FAMILY_RANGES.find(([lo, hi]) => n >= lo && n <= hi)?.[2] ?? 'Diğer';
 };
 
-function fill(tpl, slug, cfg, num, vars, sceneKey, layout = DEFAULT_LAYOUT, imagery = null, copy = null) {
+function fill(tpl, slug, cfg, num, vars, sceneKey, layout = DEFAULT_LAYOUT, imagery = null, copy = null, motifCss = '') {
   // partial'lar yer tutuculardan ÖNCE gömülür: içlerindeki __MOTIF__/__ICON__ da aynı map'ten geçer.
   let html = tpl
     .replace(/<!--\s*NAV\s*-->/, () => partial(`nav-${layout.nav}`))
@@ -253,7 +253,7 @@ function fill(tpl, slug, cfg, num, vars, sceneKey, layout = DEFAULT_LAYOUT, imag
     __FIT__: REFIT ? '0' : (layout.fit ?? '0'),
     __FIT_LOCKED__: REFIT || layout.fit == null ? 'false' : 'true',
     __TYPE_SCALE__: inlineTypeScale(layout.typeScale ?? {}),
-    __PHOTO__: imagery?.photo ? `../images/${imagery.photo}` : '',
+    __PHOTO__: imagery?.art ? `../images/${imagery.art}` : imagery?.photo ? `../images/${imagery.photo}` : '',
     __PHOTO_ATTRS__: imagery?.photo
       ? `data-photo="${imagery.treatment?.mode ?? 'plain'}" style="--photo-strength:${imagery.treatment?.strength ?? 0}"`
       : '',
@@ -283,7 +283,7 @@ function fill(tpl, slug, cfg, num, vars, sceneKey, layout = DEFAULT_LAYOUT, imag
   html = html.replace(/__ICON:([a-z0-9-]+):(\d+)__/g, (_m, name, size) => icon(name, Number(size)));
   return html.replace(
     '<style id="extra"></style>',
-    `<style>\n${cfg.extraCss ?? ''}\n${cfg.scenes?.[sceneKey] ?? ''}\n</style>`,
+    `<style>\n${cfg.extraCss ?? ''}\n${cfg.scenes?.[sceneKey] ?? ''}${motifCss ? `\n${motifCss}` : ''}\n</style>`,
   );
 }
 
@@ -828,6 +828,9 @@ async function runAll(getCdp, browser) {
           layoutFor(dirName),
           imageryFor(dirName),
           copyFor(dirName),
+          fs.existsSync(path.join(STYLES_DIR, dirName, 'motif.css'))
+            ? fs.readFileSync(path.join(STYLES_DIR, dirName, 'motif.css'), 'utf8')
+            : '',
         ),
       );
       jobs.push({ slug, num, scene, png, htmlPath });

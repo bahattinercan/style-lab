@@ -1,0 +1,30 @@
+/* 25 · frutiger-aero — glossy dome highlight + droplet ellipses with soft inner shadow */
+.motif-rings {
+  position: relative;
+}
+.motif-rings::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 75% at 50% 0%,
+    var(--surface) 0%,
+    var(--surface-2) 30%,
+    transparent 65%
+  );
+  opacity: 0.85;
+}
+.motif-rings::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 14px at 28% 61%, var(--surface) 0% 50%, transparent 75%),
+    radial-gradient(ellipse 56px 42px at 30% 64%, var(--surface-2) 0% 30%, transparent 60%),
+    radial-gradient(ellipse 60px 45px at 30% 64%, transparent 40%, var(--accent) 55%, transparent 70%),
+    radial-gradient(circle 10px at 73% 42%, var(--surface) 0% 50%, transparent 75%),
+    radial-gradient(ellipse 42px 32px at 75% 45%, transparent 35%, var(--accent) 52%, transparent 68%);
+  opacity: 0.8;
+}

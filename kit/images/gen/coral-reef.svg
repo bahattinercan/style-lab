@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="reef-water" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#123840" />
+      <stop offset="60%" stop-color="#0d2b30" />
+      <stop offset="100%" stop-color="#06181b" />
+    </linearGradient>
+    <linearGradient id="coral-branch" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffa694" />
+      <stop offset="50%" stop-color="#ff8a73" />
+      <stop offset="100%" stop-color="#d65740" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#reef-water)" />
+
+  <!-- Underwater Sunlight Rays Piercing from Surface (Diagonal Shimmer) -->
+  <g fill="none" stroke="#e6f4f2" stroke-width="45" stroke-opacity="0.04">
+    <line x1="600" y1="-50" x2="350" y2="1050" />
+    <line x1="850" y1="-50" x2="600" y2="1050" />
+    <line x1="1100" y1="-50" x2="850" y2="1050" />
+    <line x1="1350" y1="-50" x2="1100" y2="1050" />
+  </g>
+
+  <!-- Asymmetric Branching Staghorn & Gorgonian Coral Colony (Anchored Upper Right Corner) -->
+  <g transform="translate(1250, 480)">
+    <!-- Coral Branch Trunk 1 -->
+    <path d="M 120,480 C 140,240 80,60 0,-120 C -20,-160 -40,-220 -30,-300 C -20,-340 10,-350 20,-300 C 40,-220 100,-150 140,-50 C 180,60 260,220 280,480 Z" fill="url(#coral-branch)" />
+    <!-- Secondary Branching Antlers -->
+    <path d="M 0,-120 C -60,-80 -140,-90 -180,-160 C -200,-200 -240,-260 -210,-300 C -180,-320 -150,-260 -130,-200 C -100,-140 -40,-120 0,-120 Z" fill="url(#coral-branch)" opacity="0.95" />
+    <path d="M -140,-90 C -180,-30 -260,-40 -320,-80 C -360,-110 -380,-150 -350,-180 C -320,-190 -290,-140 -260,-100 C -220,-60 -180,-70 -140,-90 Z" fill="url(#coral-branch)" opacity="0.9" />
+    <path d="M 50,-20 C 110,-40 160,-120 220,-180 C 260,-220 280,-270 310,-240 C 330,-210 280,-160 240,-100 C 190,-40 130,20 50,-20 Z" fill="url(#coral-branch)" opacity="0.95" />
+    <path d="M -20,110 C -100,80 -180,120 -240,80 C -290,40 -340,60 -360,20 C -370,-10 -330,-10 -300,30 C -250,70 -180,40 -100,60 C -40,80 -10,120 -20,110 Z" fill="url(#coral-branch)" opacity="0.85" />
+  </g>
+
+  <!-- Massive Brain Coral / Porites Mound (Lower Right) -->
+  <g transform="translate(1380, 840)">
+    <ellipse cx="0" cy="0" rx="360" ry="240" fill="#174650" stroke="#ff8a73" stroke-width="2.5" stroke-opacity="0.6" />
+    <ellipse cx="-40" cy="-20" rx="280" ry="180" fill="none" stroke="#a4c6c4" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="14 8" />
+    <ellipse cx="-70" cy="-30" rx="200" ry="120" fill="none" stroke="#ff8a73" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="10 6" />
+    <ellipse cx="-90" cy="-40" rx="110" ry="65" fill="none" stroke="#a4c6c4" stroke-width="1.5" stroke-opacity="0.4" />
+  </g>
+
+  <!-- Floating Polyp Dots and Ascending Micro-Bubble Columns -->
+  <g fill="#ff8a73">
+    <circle cx="940" cy="380" r="4" opacity="0.8" />
+    <circle cx="980" cy="320" r="6" opacity="0.7" />
+    <circle cx="960" cy="240" r="3.5" opacity="0.9" />
+    <circle cx="1020" cy="180" r="5" opacity="0.75" />
+    <circle cx="1060" cy="120" r="4" opacity="0.8" />
+  </g>
+  <g fill="#e6f4f2" opacity="0.6">
+    <circle cx="680" cy="740" r="5" />
+    <circle cx="690" cy="640" r="3" />
+    <circle cx="675" cy="560" r="4.5" />
+    <circle cx="700" cy="460" r="6" />
+    <circle cx="685" cy="360" r="3.5" />
+    <circle cx="710" cy="240" r="5.5" />
+    <circle cx="695" cy="140" r="4" />
+  </g>
+
+  <!-- Marine Benthic Transect Survey Header at Top Left -->
+  <g transform="translate(100, 95)">
+    <text x="0" y="32" font-family="'Baloo 2', sans-serif" font-size="34" font-weight="700" fill="#e6f4f2" letter-spacing="-0.5">Coral Reef Observation Log // 085</text>
+    <text x="0" y="62" font-family="'Nunito', sans-serif" font-size="14" font-weight="700" fill="#ff8a73" letter-spacing="3">ACROPORA REEF QUADRAT · BENTHIC POLICIES &amp; ZOODIVERSITY</text>
+    <text x="0" y="86" font-family="'Courier Prime', monospace" font-size="12" fill="#a4c6c4" letter-spacing="1.5">DEPTH: 14.8m · SALINITY: 35.4 PSU · TEMP: 26.2°C · LIGHT: 420 µmol/m²/s · LIVE COVER: 64%</text>
+  </g>
+</svg>

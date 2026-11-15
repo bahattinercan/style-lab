@@ -145,90 +145,6 @@
       "variant": "1280",
       "bytes": 107268
     },
-    "100-fluid-simulation-01-page@640.webp": {
-      "source": "100-fluid-simulation/shots/01-page.png",
-      "sourceSha": "01a7dbefb0c6af68f854eb7cf7b54ff0c6382f3588f0827d6f2d519ce0a4166a",
-      "sourceBytes": 326555,
-      "variant": "640",
-      "bytes": 32816
-    },
-    "100-fluid-simulation-01-page@1280.webp": {
-      "source": "100-fluid-simulation/shots/01-page.png",
-      "sourceSha": "01a7dbefb0c6af68f854eb7cf7b54ff0c6382f3588f0827d6f2d519ce0a4166a",
-      "sourceBytes": 326555,
-      "variant": "1280",
-      "bytes": 102170
-    },
-    "101-shadow-stage-01-page@640.webp": {
-      "source": "101-shadow-stage/shots/01-page.png",
-      "sourceSha": "d759defa05cae51a4e24a1ecb2e928890fda64c35d0741d1676a5db0146051b2",
-      "sourceBytes": 1390493,
-      "variant": "640",
-      "bytes": 28984
-    },
-    "101-shadow-stage-01-page@1280.webp": {
-      "source": "101-shadow-stage/shots/01-page.png",
-      "sourceSha": "d759defa05cae51a4e24a1ecb2e928890fda64c35d0741d1676a5db0146051b2",
-      "sourceBytes": 1390493,
-      "variant": "1280",
-      "bytes": 96582
-    },
-    "102-moire-field-01-page@640.webp": {
-      "source": "102-moire-field/shots/01-page.png",
-      "sourceSha": "411930ad793f26a348ae6e450e8a9d849c2d1dd4b34035a77113500a0768ac98",
-      "sourceBytes": 600550,
-      "variant": "640",
-      "bytes": 53886
-    },
-    "102-moire-field-01-page@1280.webp": {
-      "source": "102-moire-field/shots/01-page.png",
-      "sourceSha": "411930ad793f26a348ae6e450e8a9d849c2d1dd4b34035a77113500a0768ac98",
-      "sourceBytes": 600550,
-      "variant": "1280",
-      "bytes": 259608
-    },
-    "103-motion-trail-01-page@640.webp": {
-      "source": "103-motion-trail/shots/01-page.png",
-      "sourceSha": "12d2cffee2ebea39c69cd524d7ac9b0dcd29f3cb9998608ef172d9dee10bcc25",
-      "sourceBytes": 279624,
-      "variant": "640",
-      "bytes": 31674
-    },
-    "103-motion-trail-01-page@1280.webp": {
-      "source": "103-motion-trail/shots/01-page.png",
-      "sourceSha": "12d2cffee2ebea39c69cd524d7ac9b0dcd29f3cb9998608ef172d9dee10bcc25",
-      "sourceBytes": 279624,
-      "variant": "1280",
-      "bytes": 98714
-    },
-    "104-stepped-mechanism-01-page@640.webp": {
-      "source": "104-stepped-mechanism/shots/01-page.png",
-      "sourceSha": "029316cfba3049d3016f9c9291bb7e3977cac3c75c0d069ed247e1cc85cb143c",
-      "sourceBytes": 961409,
-      "variant": "640",
-      "bytes": 31542
-    },
-    "104-stepped-mechanism-01-page@1280.webp": {
-      "source": "104-stepped-mechanism/shots/01-page.png",
-      "sourceSha": "029316cfba3049d3016f9c9291bb7e3977cac3c75c0d069ed247e1cc85cb143c",
-      "sourceBytes": 961409,
-      "variant": "1280",
-      "bytes": 114866
-    },
-    "105-holographic-layer-01-page@640.webp": {
-      "source": "105-holographic-layer/shots/01-page.png",
-      "sourceSha": "5cc34345bd2b64a89535f38eaf5bea28c293aae3cd6f4a61b989dce142ded70e",
-      "sourceBytes": 1305890,
-      "variant": "640",
-      "bytes": 61242
-    },
-    "105-holographic-layer-01-page@1280.webp": {
-      "source": "105-holographic-layer/shots/01-page.png",
-      "sourceSha": "5cc34345bd2b64a89535f38eaf5bea28c293aae3cd6f4a61b989dce142ded70e",
-      "sourceBytes": 1305890,
-      "variant": "1280",
-      "bytes": 219650
-    },
     "106-voice-first-01-page@640.webp": {
       "source": "106-voice-first/shots/01-page.png",
       "sourceSha": "eb89d7cd989fd4817c6c2c5d2187b3a9573f9986181ea9db8a79f995fdaecbac",
@@ -537,62 +453,6 @@
       "variant": "1280",
       "bytes": 122236
     },
-    "126-marble-vein-01-page@640.webp": {
-      "source": "126-marble-vein/shots/01-page.png",
-      "sourceSha": "393f6b31523e56bf31f0dd0d72747a7a38f93d9dc6a7b3dd295b19154d20cf0a",
-      "sourceBytes": 933580,
-      "variant": "640",
-      "bytes": 43376
-    },
-    "126-marble-vein-01-page@1280.webp": {
-      "source": "126-marble-vein/shots/01-page.png",
-      "sourceSha": "393f6b31523e56bf31f0dd0d72747a7a38f93d9dc6a7b3dd295b19154d20cf0a",
-      "sourceBytes": 933580,
-      "variant": "1280",
-      "bytes": 144904
-    },
-    "127-silk-drape-01-page@640.webp": {
-      "source": "127-silk-drape/shots/01-page.png",
-      "sourceSha": "c993f7f3b35846236f1a14721b7dc3f0bd780095722357ff6f7064ca467ea535",
-      "sourceBytes": 856078,
-      "variant": "640",
-      "bytes": 41944
-    },
-    "127-silk-drape-01-page@1280.webp": {
-      "source": "127-silk-drape/shots/01-page.png",
-      "sourceSha": "c993f7f3b35846236f1a14721b7dc3f0bd780095722357ff6f7064ca467ea535",
-      "sourceBytes": 856078,
-      "variant": "1280",
-      "bytes": 141162
-    },
-    "128-brass-copper-01-page@640.webp": {
-      "source": "128-brass-copper/shots/01-page.png",
-      "sourceSha": "9b69e8d036abd531e5a04ce936dde3209f38061de5c79db3e1a1f0e204420904",
-      "sourceBytes": 1473796,
-      "variant": "640",
-      "bytes": 43842
-    },
-    "128-brass-copper-01-page@1280.webp": {
-      "source": "128-brass-copper/shots/01-page.png",
-      "sourceSha": "9b69e8d036abd531e5a04ce936dde3209f38061de5c79db3e1a1f0e204420904",
-      "sourceBytes": 1473796,
-      "variant": "1280",
-      "bytes": 145118
-    },
-    "129-porcelain-glaze-01-page@640.webp": {
-      "source": "129-porcelain-glaze/shots/01-page.png",
-      "sourceSha": "996e0beaa2b4907164e5dd80d4f7377eec85c97114ea9bff1cfa11e03eee33e0",
-      "sourceBytes": 344667,
-      "variant": "640",
-      "bytes": 34192
-    },
-    "129-porcelain-glaze-01-page@1280.webp": {
-      "source": "129-porcelain-glaze/shots/01-page.png",
-      "sourceSha": "996e0beaa2b4907164e5dd80d4f7377eec85c97114ea9bff1cfa11e03eee33e0",
-      "sourceBytes": 344667,
-      "variant": "1280",
-      "bytes": 110776
-    },
     "13-neo-brutalism-01-page@640.webp": {
       "source": "13-neo-brutalism/shots/01-page.png",
       "sourceSha": "8e3e02bc98978fc60236ccd969aabbf611ef821d5dc9449a2c9278865cbfa0f9",
@@ -606,90 +466,6 @@
       "sourceBytes": 284041,
       "variant": "1280",
       "bytes": 132322
-    },
-    "130-leather-craft-01-page@640.webp": {
-      "source": "130-leather-craft/shots/01-page.png",
-      "sourceSha": "0d6e8ed00066dc331ade141208ac99af7579072d8509a2ba7d88e4b93a2f9f21",
-      "sourceBytes": 1842296,
-      "variant": "640",
-      "bytes": 38250
-    },
-    "130-leather-craft-01-page@1280.webp": {
-      "source": "130-leather-craft/shots/01-page.png",
-      "sourceSha": "0d6e8ed00066dc331ade141208ac99af7579072d8509a2ba7d88e4b93a2f9f21",
-      "sourceBytes": 1842296,
-      "variant": "1280",
-      "bytes": 125788
-    },
-    "131-optic-prism-01-page@640.webp": {
-      "source": "131-optic-prism/shots/01-page.png",
-      "sourceSha": "8c93a0c7c7ad250280d56dccd60684213c822d20838b48ae586e14ee665614df",
-      "sourceBytes": 286987,
-      "variant": "640",
-      "bytes": 31606
-    },
-    "131-optic-prism-01-page@1280.webp": {
-      "source": "131-optic-prism/shots/01-page.png",
-      "sourceSha": "8c93a0c7c7ad250280d56dccd60684213c822d20838b48ae586e14ee665614df",
-      "sourceBytes": 286987,
-      "variant": "1280",
-      "bytes": 99072
-    },
-    "132-wood-joinery-01-page@640.webp": {
-      "source": "132-wood-joinery/shots/01-page.png",
-      "sourceSha": "8c99dbd77f428aec05a0c05036e10e91252d06965e072b22e35e3c0794694602",
-      "sourceBytes": 1372999,
-      "variant": "640",
-      "bytes": 43484
-    },
-    "132-wood-joinery-01-page@1280.webp": {
-      "source": "132-wood-joinery/shots/01-page.png",
-      "sourceSha": "8c99dbd77f428aec05a0c05036e10e91252d06965e072b22e35e3c0794694602",
-      "sourceBytes": 1372999,
-      "variant": "1280",
-      "bytes": 143440
-    },
-    "133-letterpress-print-01-page@640.webp": {
-      "source": "133-letterpress-print/shots/01-page.png",
-      "sourceSha": "4e2db25789555f9dd99a828773e44500df5d63e8951535eb5318de019f74640d",
-      "sourceBytes": 1138602,
-      "variant": "640",
-      "bytes": 44488
-    },
-    "133-letterpress-print-01-page@1280.webp": {
-      "source": "133-letterpress-print/shots/01-page.png",
-      "sourceSha": "4e2db25789555f9dd99a828773e44500df5d63e8951535eb5318de019f74640d",
-      "sourceBytes": 1138602,
-      "variant": "1280",
-      "bytes": 142496
-    },
-    "134-concrete-monolith-01-page@640.webp": {
-      "source": "134-concrete-monolith/shots/01-page.png",
-      "sourceSha": "8c430fc6e099a6cbb87a975d46d0513b5dc2f35d13f1e5720cf4ad7cb56ce2ed",
-      "sourceBytes": 618909,
-      "variant": "640",
-      "bytes": 44578
-    },
-    "134-concrete-monolith-01-page@1280.webp": {
-      "source": "134-concrete-monolith/shots/01-page.png",
-      "sourceSha": "8c430fc6e099a6cbb87a975d46d0513b5dc2f35d13f1e5720cf4ad7cb56ce2ed",
-      "sourceBytes": 618909,
-      "variant": "1280",
-      "bytes": 144914
-    },
-    "135-enamel-porcelain-01-page@640.webp": {
-      "source": "135-enamel-porcelain/shots/01-page.png",
-      "sourceSha": "bfee6afc6d8dbf86ebde5c56d826eef8ba308af2082c8633209c1a5a1dd20c53",
-      "sourceBytes": 594171,
-      "variant": "640",
-      "bytes": 36064
-    },
-    "135-enamel-porcelain-01-page@1280.webp": {
-      "source": "135-enamel-porcelain/shots/01-page.png",
-      "sourceSha": "bfee6afc6d8dbf86ebde5c56d826eef8ba308af2082c8633209c1a5a1dd20c53",
-      "sourceBytes": 594171,
-      "variant": "1280",
-      "bytes": 117338
     },
     "136-speculative-scifi-01-page@640.webp": {
       "source": "136-speculative-scifi/shots/01-page.png",
@@ -1391,6 +1167,20 @@
       "variant": "1280",
       "bytes": 114894
     },
+    "181-regulatory-report-01-page@640.webp": {
+      "source": "181-regulatory-report/shots/01-page.png",
+      "sourceSha": "57f3ae72eefa5dacbfd9809cec89f54b352a3c0b275fd0ee535047bbecada157",
+      "sourceBytes": 340948,
+      "variant": "640",
+      "bytes": 36664
+    },
+    "181-regulatory-report-01-page@1280.webp": {
+      "source": "181-regulatory-report/shots/01-page.png",
+      "sourceSha": "57f3ae72eefa5dacbfd9809cec89f54b352a3c0b275fd0ee535047bbecada157",
+      "sourceBytes": 340948,
+      "variant": "1280",
+      "bytes": 122472
+    },
     "182-grocery-delivery-01-page@640.webp": {
       "source": "182-grocery-delivery/shots/01-page.png",
       "sourceSha": "1107d8aa7c328bbf892c67f3b0f55361b25456101701234fa8493e7163acc5cb",
@@ -1502,20 +1292,6 @@
       "sourceBytes": 344900,
       "variant": "1280",
       "bytes": 121924
-    },
-    "19-y2k-01-page@640.webp": {
-      "source": "19-y2k/shots/01-page.png",
-      "sourceSha": "dcf3bbddb3eda6800c347b5336689f47782ef88f77b48ed05bd9e70b68f5f52e",
-      "sourceBytes": 463348,
-      "variant": "640",
-      "bytes": 46102
-    },
-    "19-y2k-01-page@1280.webp": {
-      "source": "19-y2k/shots/01-page.png",
-      "sourceSha": "dcf3bbddb3eda6800c347b5336689f47782ef88f77b48ed05bd9e70b68f5f52e",
-      "sourceBytes": 463348,
-      "variant": "1280",
-      "bytes": 141142
     },
     "190-pharmacy-store-01-page@640.webp": {
       "source": "190-pharmacy-store/shots/01-page.png",
@@ -1657,20 +1433,6 @@
       "variant": "1280",
       "bytes": 128196
     },
-    "20-vaporwave-01-page@640.webp": {
-      "source": "20-vaporwave/shots/01-page.png",
-      "sourceSha": "5e871919c286f81feb4ab5ee5c79e3ee24a2515e207998b4d2429415e788c971",
-      "sourceBytes": 2481323,
-      "variant": "640",
-      "bytes": 43774
-    },
-    "20-vaporwave-01-page@1280.webp": {
-      "source": "20-vaporwave/shots/01-page.png",
-      "sourceSha": "5e871919c286f81feb4ab5ee5c79e3ee24a2515e207998b4d2429415e788c971",
-      "sourceBytes": 2481323,
-      "variant": "1280",
-      "bytes": 154374
-    },
     "200-opera-house-01-page@640.webp": {
       "source": "200-opera-house/shots/01-page.png",
       "sourceSha": "a2c52c91dba022c9ad594cbaeda65bf964216a8cd9e549f56edd0642e86ccac0",
@@ -1810,20 +1572,6 @@
       "sourceBytes": 519055,
       "variant": "1280",
       "bytes": 142628
-    },
-    "21-synthwave-01-page@640.webp": {
-      "source": "21-synthwave/shots/01-page.png",
-      "sourceSha": "a6de4c554b2fe4d00daf99dac168a380239df98d5f22080c3c3a07cb1eb99922",
-      "sourceBytes": 1586608,
-      "variant": "640",
-      "bytes": 55684
-    },
-    "21-synthwave-01-page@1280.webp": {
-      "source": "21-synthwave/shots/01-page.png",
-      "sourceSha": "a6de4c554b2fe4d00daf99dac168a380239df98d5f22080c3c3a07cb1eb99922",
-      "sourceBytes": 1586608,
-      "variant": "1280",
-      "bytes": 160270
     },
     "210-genomics-lab-01-page@640.webp": {
       "source": "210-genomics-lab/shots/01-page.png",
@@ -1965,20 +1713,6 @@
       "variant": "1280",
       "bytes": 126080
     },
-    "22-cyberpunk-01-page@640.webp": {
-      "source": "22-cyberpunk/shots/01-page.png",
-      "sourceSha": "6933adbc0da0236b9a3c72bb8bd5177486f58efd6ed35f6f6a5783a106a0a1e2",
-      "sourceBytes": 1702858,
-      "variant": "640",
-      "bytes": 54794
-    },
-    "22-cyberpunk-01-page@1280.webp": {
-      "source": "22-cyberpunk/shots/01-page.png",
-      "sourceSha": "6933adbc0da0236b9a3c72bb8bd5177486f58efd6ed35f6f6a5783a106a0a1e2",
-      "sourceBytes": 1702858,
-      "variant": "1280",
-      "bytes": 186304
-    },
     "220-peer-study-01-page@640.webp": {
       "source": "220-peer-study/shots/01-page.png",
       "sourceSha": "d33c5aa488a4060b85135dd902ceb62df431c334bbc8778f72b8415def021f27",
@@ -2118,20 +1852,6 @@
       "sourceBytes": 1092363,
       "variant": "1280",
       "bytes": 145724
-    },
-    "23-cybercore-01-page@640.webp": {
-      "source": "23-cybercore/shots/01-page.png",
-      "sourceSha": "37441eba4f4abeb421511c58be09055686a33723ec81a06d88d6372439d00184",
-      "sourceBytes": 1343474,
-      "variant": "640",
-      "bytes": 47668
-    },
-    "23-cybercore-01-page@1280.webp": {
-      "source": "23-cybercore/shots/01-page.png",
-      "sourceSha": "37441eba4f4abeb421511c58be09055686a33723ec81a06d88d6372439d00184",
-      "sourceBytes": 1343474,
-      "variant": "1280",
-      "bytes": 159540
     },
     "230-raw-steel-01-page@640.webp": {
       "source": "230-raw-steel/shots/01-page.png",
@@ -2273,20 +1993,6 @@
       "variant": "1280",
       "bytes": 111428
     },
-    "24-pixel-art-01-page@640.webp": {
-      "source": "24-pixel-art/shots/01-page.png",
-      "sourceSha": "0f0f79af2f166e499e3c021f5a0e029523702d1a1f2faac78a89ea07992342bc",
-      "sourceBytes": 299222,
-      "variant": "640",
-      "bytes": 49682
-    },
-    "24-pixel-art-01-page@1280.webp": {
-      "source": "24-pixel-art/shots/01-page.png",
-      "sourceSha": "0f0f79af2f166e499e3c021f5a0e029523702d1a1f2faac78a89ea07992342bc",
-      "sourceBytes": 299222,
-      "variant": "1280",
-      "bytes": 143042
-    },
     "240-numerals-display-01-page@640.webp": {
       "source": "240-numerals-display/shots/01-page.png",
       "sourceSha": "d77d0a78af664dd8b67436f2176b27fd693d220b7cb8c1c514237fd90cd9c5ba",
@@ -2427,20 +2133,6 @@
       "variant": "1280",
       "bytes": 126166
     },
-    "25-frutiger-aero-01-page@640.webp": {
-      "source": "25-frutiger-aero/shots/01-page.png",
-      "sourceSha": "ec30f21bd441cfd81dfaf7a09283296f7dc2d0360d10961f9322f54d03cb4d3d",
-      "sourceBytes": 361839,
-      "variant": "640",
-      "bytes": 35404
-    },
-    "25-frutiger-aero-01-page@1280.webp": {
-      "source": "25-frutiger-aero/shots/01-page.png",
-      "sourceSha": "ec30f21bd441cfd81dfaf7a09283296f7dc2d0360d10961f9322f54d03cb4d3d",
-      "sourceBytes": 361839,
-      "variant": "1280",
-      "bytes": 106858
-    },
     "250-neural-canvas-01-page@640.webp": {
       "source": "250-neural-canvas/shots/01-page.png",
       "sourceSha": "99c33204c36896c2a16ed3f7fcd4473b5ef6fdb77da767adffed8e863d9063d9",
@@ -2468,48 +2160,6 @@
       "sourceBytes": 361179,
       "variant": "1280",
       "bytes": 126090
-    },
-    "26-art-deco-01-page@640.webp": {
-      "source": "26-art-deco/shots/01-page.png",
-      "sourceSha": "dd977d922c3a90301318ff3ceba6bc78400fbd3f0cfe46bdd2348a3c0e03a7bd",
-      "sourceBytes": 1887758,
-      "variant": "640",
-      "bytes": 53004
-    },
-    "26-art-deco-01-page@1280.webp": {
-      "source": "26-art-deco/shots/01-page.png",
-      "sourceSha": "dd977d922c3a90301318ff3ceba6bc78400fbd3f0cfe46bdd2348a3c0e03a7bd",
-      "sourceBytes": 1887758,
-      "variant": "1280",
-      "bytes": 181156
-    },
-    "27-victorian-01-page@640.webp": {
-      "source": "27-victorian/shots/01-page.png",
-      "sourceSha": "8801bb5944ec460ff6e8d9af0cccba4b72fb52a24bea21d44a392797ed86e43b",
-      "sourceBytes": 1610929,
-      "variant": "640",
-      "bytes": 34574
-    },
-    "27-victorian-01-page@1280.webp": {
-      "source": "27-victorian/shots/01-page.png",
-      "sourceSha": "8801bb5944ec460ff6e8d9af0cccba4b72fb52a24bea21d44a392797ed86e43b",
-      "sourceBytes": 1610929,
-      "variant": "1280",
-      "bytes": 102624
-    },
-    "28-surrealism-01-page@640.webp": {
-      "source": "28-surrealism/shots/01-page.png",
-      "sourceSha": "fd3b633ee8ee98728ca55cfa0e223c82527c8422519c20c6997ddc3b9d9591fa",
-      "sourceBytes": 1537647,
-      "variant": "640",
-      "bytes": 40716
-    },
-    "28-surrealism-01-page@1280.webp": {
-      "source": "28-surrealism/shots/01-page.png",
-      "sourceSha": "fd3b633ee8ee98728ca55cfa0e223c82527c8422519c20c6997ddc3b9d9591fa",
-      "sourceBytes": 1537647,
-      "variant": "1280",
-      "bytes": 125006
     },
     "29-ethereal-01-page@640.webp": {
       "source": "29-ethereal/shots/01-page.png",
@@ -2748,146 +2398,6 @@
       "sourceBytes": 350138,
       "variant": "1280",
       "bytes": 6006
-    },
-    "46-telemetry-grid-01-page@640.webp": {
-      "source": "46-telemetry-grid/shots/01-page.png",
-      "sourceSha": "6e1359252e0f5a7da41cda14db469bd80694b1376df75c0d9b1bfbc7011a297d",
-      "sourceBytes": 290837,
-      "variant": "640",
-      "bytes": 37194
-    },
-    "46-telemetry-grid-01-page@1280.webp": {
-      "source": "46-telemetry-grid/shots/01-page.png",
-      "sourceSha": "6e1359252e0f5a7da41cda14db469bd80694b1376df75c0d9b1bfbc7011a297d",
-      "sourceBytes": 290837,
-      "variant": "1280",
-      "bytes": 114124
-    },
-    "47-trading-desk-01-page@640.webp": {
-      "source": "47-trading-desk/shots/01-page.png",
-      "sourceSha": "9ff46099c66ca5fc4bee563963e87c0f0ea3b8b0c5ccbdc4f2f6568b804301d5",
-      "sourceBytes": 362512,
-      "variant": "640",
-      "bytes": 37372
-    },
-    "47-trading-desk-01-page@1280.webp": {
-      "source": "47-trading-desk/shots/01-page.png",
-      "sourceSha": "9ff46099c66ca5fc4bee563963e87c0f0ea3b8b0c5ccbdc4f2f6568b804301d5",
-      "sourceBytes": 362512,
-      "variant": "1280",
-      "bytes": 126126
-    },
-    "48-executive-kpi-01-page@640.webp": {
-      "source": "48-executive-kpi/shots/01-page.png",
-      "sourceSha": "957836eccc2862b98057adc18e7c3d17a7ca936f606f38d8a3db8c8f85bdc8b2",
-      "sourceBytes": 299158,
-      "variant": "640",
-      "bytes": 32010
-    },
-    "48-executive-kpi-01-page@1280.webp": {
-      "source": "48-executive-kpi/shots/01-page.png",
-      "sourceSha": "957836eccc2862b98057adc18e7c3d17a7ca936f606f38d8a3db8c8f85bdc8b2",
-      "sourceBytes": 299158,
-      "variant": "1280",
-      "bytes": 102746
-    },
-    "49-log-stream-01-page@640.webp": {
-      "source": "49-log-stream/shots/01-page.png",
-      "sourceSha": "716bfcb4654aa7ef1d841284e7fcbb9ba212179d1410ae3ea96180a8f3f300b9",
-      "sourceBytes": 332083,
-      "variant": "640",
-      "bytes": 39816
-    },
-    "49-log-stream-01-page@1280.webp": {
-      "source": "49-log-stream/shots/01-page.png",
-      "sourceSha": "716bfcb4654aa7ef1d841284e7fcbb9ba212179d1410ae3ea96180a8f3f300b9",
-      "sourceBytes": 332083,
-      "variant": "1280",
-      "bytes": 140698
-    },
-    "50-lab-instrument-01-page@640.webp": {
-      "source": "50-lab-instrument/shots/01-page.png",
-      "sourceSha": "19c33c5c1e8e5f56291cc9072b53eaea68c7ae847410de8004b8c4c1851d64f3",
-      "sourceBytes": 366800,
-      "variant": "640",
-      "bytes": 42166
-    },
-    "50-lab-instrument-01-page@1280.webp": {
-      "source": "50-lab-instrument/shots/01-page.png",
-      "sourceSha": "19c33c5c1e8e5f56291cc9072b53eaea68c7ae847410de8004b8c4c1851d64f3",
-      "sourceBytes": 366800,
-      "variant": "1280",
-      "bytes": 131482
-    },
-    "51-atlas-console-01-page@640.webp": {
-      "source": "51-atlas-console/shots/01-page.png",
-      "sourceSha": "52905095d203ff801225195449a34d9353cca1928e7382b27d495220c1023a6b",
-      "sourceBytes": 1223986,
-      "variant": "640",
-      "bytes": 41384
-    },
-    "51-atlas-console-01-page@1280.webp": {
-      "source": "51-atlas-console/shots/01-page.png",
-      "sourceSha": "52905095d203ff801225195449a34d9353cca1928e7382b27d495220c1023a6b",
-      "sourceBytes": 1223986,
-      "variant": "1280",
-      "bytes": 142130
-    },
-    "52-experiment-split-01-page@640.webp": {
-      "source": "52-experiment-split/shots/01-page.png",
-      "sourceSha": "92aba812edda88b82471571fd036b04c4ff556ff3af88c8c763fc63001c7acfb",
-      "sourceBytes": 317792,
-      "variant": "640",
-      "bytes": 36062
-    },
-    "52-experiment-split-01-page@1280.webp": {
-      "source": "52-experiment-split/shots/01-page.png",
-      "sourceSha": "92aba812edda88b82471571fd036b04c4ff556ff3af88c8c763fc63001c7acfb",
-      "sourceBytes": 317792,
-      "variant": "1280",
-      "bytes": 115660
-    },
-    "53-ledger-meter-01-page@640.webp": {
-      "source": "53-ledger-meter/shots/01-page.png",
-      "sourceSha": "f8d44f365db5b6d50caaaa31ab6b37acc3680380419072fdd29025eadad185fc",
-      "sourceBytes": 879915,
-      "variant": "640",
-      "bytes": 37716
-    },
-    "53-ledger-meter-01-page@1280.webp": {
-      "source": "53-ledger-meter/shots/01-page.png",
-      "sourceSha": "f8d44f365db5b6d50caaaa31ab6b37acc3680380419072fdd29025eadad185fc",
-      "sourceBytes": 879915,
-      "variant": "1280",
-      "bytes": 127338
-    },
-    "54-vitals-triage-01-page@640.webp": {
-      "source": "54-vitals-triage/shots/01-page.png",
-      "sourceSha": "1f134d0ed7cbd0fe221467a3274fea5c3382c08adf9f902f9ffab0ada4b89175",
-      "sourceBytes": 323697,
-      "variant": "640",
-      "bytes": 34748
-    },
-    "54-vitals-triage-01-page@1280.webp": {
-      "source": "54-vitals-triage/shots/01-page.png",
-      "sourceSha": "1f134d0ed7cbd0fe221467a3274fea5c3382c08adf9f902f9ffab0ada4b89175",
-      "sourceBytes": 323697,
-      "variant": "1280",
-      "bytes": 111476
-    },
-    "55-fleet-telemetry-01-page@640.webp": {
-      "source": "55-fleet-telemetry/shots/01-page.png",
-      "sourceSha": "39ef0e53f55a00c3c8e203f47b36c1f772a54d9c1973b7ce821e998a570c546e",
-      "sourceBytes": 522565,
-      "variant": "640",
-      "bytes": 35102
-    },
-    "55-fleet-telemetry-01-page@1280.webp": {
-      "source": "55-fleet-telemetry/shots/01-page.png",
-      "sourceSha": "39ef0e53f55a00c3c8e203f47b36c1f772a54d9c1973b7ce821e998a570c546e",
-      "sourceBytes": 522565,
-      "variant": "1280",
-      "bytes": 117174
     },
     "56-blueprint-drawing-01-page@640.webp": {
       "source": "56-blueprint-drawing/shots/01-page.png",
@@ -3169,146 +2679,6 @@
       "variant": "1280",
       "bytes": 122198
     },
-    "76-biophilic-botanical-01-page@640.webp": {
-      "source": "76-biophilic-botanical/shots/01-page.png",
-      "sourceSha": "8aa43b8ca127ce2cffe16661f13e095f481a19a303ab462e24993721c439f019",
-      "sourceBytes": 3046228,
-      "variant": "640",
-      "bytes": 46584
-    },
-    "76-biophilic-botanical-01-page@1280.webp": {
-      "source": "76-biophilic-botanical/shots/01-page.png",
-      "sourceSha": "8aa43b8ca127ce2cffe16661f13e095f481a19a303ab462e24993721c439f019",
-      "sourceBytes": 3046228,
-      "variant": "1280",
-      "bytes": 195398
-    },
-    "77-weather-atmosphere-01-page@640.webp": {
-      "source": "77-weather-atmosphere/shots/01-page.png",
-      "sourceSha": "3d9e4caa604b695416b1d77cc6a8cacad641eaf8369e0b9527736ef4b3b3fe86",
-      "sourceBytes": 2234043,
-      "variant": "640",
-      "bytes": 41304
-    },
-    "77-weather-atmosphere-01-page@1280.webp": {
-      "source": "77-weather-atmosphere/shots/01-page.png",
-      "sourceSha": "3d9e4caa604b695416b1d77cc6a8cacad641eaf8369e0b9527736ef4b3b3fe86",
-      "sourceBytes": 2234043,
-      "variant": "1280",
-      "bytes": 189574
-    },
-    "78-topographic-terrain-01-page@640.webp": {
-      "source": "78-topographic-terrain/shots/01-page.png",
-      "sourceSha": "2e9d63a9e060dc1fcd0401599762f3c239c02c43a557c80a4903a60d24cc0f83",
-      "sourceBytes": 2643425,
-      "variant": "640",
-      "bytes": 54408
-    },
-    "78-topographic-terrain-01-page@1280.webp": {
-      "source": "78-topographic-terrain/shots/01-page.png",
-      "sourceSha": "2e9d63a9e060dc1fcd0401599762f3c239c02c43a557c80a4903a60d24cc0f83",
-      "sourceBytes": 2643425,
-      "variant": "1280",
-      "bytes": 292278
-    },
-    "79-ocean-current-01-page@640.webp": {
-      "source": "79-ocean-current/shots/01-page.png",
-      "sourceSha": "4ba6034dc0f68e4bf0874e08856e895aef7ebec54eb71cf427701f2b71a1e73e",
-      "sourceBytes": 673893,
-      "variant": "640",
-      "bytes": 38560
-    },
-    "79-ocean-current-01-page@1280.webp": {
-      "source": "79-ocean-current/shots/01-page.png",
-      "sourceSha": "4ba6034dc0f68e4bf0874e08856e895aef7ebec54eb71cf427701f2b71a1e73e",
-      "sourceBytes": 673893,
-      "variant": "1280",
-      "bytes": 143640
-    },
-    "80-seasonal-shift-01-page@640.webp": {
-      "source": "80-seasonal-shift/shots/01-page.png",
-      "sourceSha": "9dce125aa23f7ce0e490f13b4320b64be41c8f2ad3651512bbcfb47f349e2013",
-      "sourceBytes": 2252965,
-      "variant": "640",
-      "bytes": 40350
-    },
-    "80-seasonal-shift-01-page@1280.webp": {
-      "source": "80-seasonal-shift/shots/01-page.png",
-      "sourceSha": "9dce125aa23f7ce0e490f13b4320b64be41c8f2ad3651512bbcfb47f349e2013",
-      "sourceBytes": 2252965,
-      "variant": "1280",
-      "bytes": 167862
-    },
-    "81-forest-bark-01-page@640.webp": {
-      "source": "81-forest-bark/shots/01-page.png",
-      "sourceSha": "2d86c0dfcba5912ff1d9f0854013bf11ea9b5c9774a541afbd6d6ada283f7c46",
-      "sourceBytes": 1653339,
-      "variant": "640",
-      "bytes": 35080
-    },
-    "81-forest-bark-01-page@1280.webp": {
-      "source": "81-forest-bark/shots/01-page.png",
-      "sourceSha": "2d86c0dfcba5912ff1d9f0854013bf11ea9b5c9774a541afbd6d6ada283f7c46",
-      "sourceBytes": 1653339,
-      "variant": "1280",
-      "bytes": 120710
-    },
-    "82-desert-sand-01-page@640.webp": {
-      "source": "82-desert-sand/shots/01-page.png",
-      "sourceSha": "34bbe94b7abe0b4cc1cc254d1b9af13d093e07929c9b82ca0aafd36170b377be",
-      "sourceBytes": 1346171,
-      "variant": "640",
-      "bytes": 32938
-    },
-    "82-desert-sand-01-page@1280.webp": {
-      "source": "82-desert-sand/shots/01-page.png",
-      "sourceSha": "34bbe94b7abe0b4cc1cc254d1b9af13d093e07929c9b82ca0aafd36170b377be",
-      "sourceBytes": 1346171,
-      "variant": "1280",
-      "bytes": 112038
-    },
-    "83-polar-ice-01-page@640.webp": {
-      "source": "83-polar-ice/shots/01-page.png",
-      "sourceSha": "09594cdf1f9a632495490f082e0f4cbff338b88d15f6383376125b22e904fb6d",
-      "sourceBytes": 581350,
-      "variant": "640",
-      "bytes": 35120
-    },
-    "83-polar-ice-01-page@1280.webp": {
-      "source": "83-polar-ice/shots/01-page.png",
-      "sourceSha": "09594cdf1f9a632495490f082e0f4cbff338b88d15f6383376125b22e904fb6d",
-      "sourceBytes": 581350,
-      "variant": "1280",
-      "bytes": 117652
-    },
-    "84-volcanic-mineral-01-page@640.webp": {
-      "source": "84-volcanic-mineral/shots/01-page.png",
-      "sourceSha": "fc3706f3ab4188d3c0e4da5e959363785ee4bb384d4842e54f51f25c0a8a2b67",
-      "sourceBytes": 892443,
-      "variant": "640",
-      "bytes": 42260
-    },
-    "84-volcanic-mineral-01-page@1280.webp": {
-      "source": "84-volcanic-mineral/shots/01-page.png",
-      "sourceSha": "fc3706f3ab4188d3c0e4da5e959363785ee4bb384d4842e54f51f25c0a8a2b67",
-      "sourceBytes": 892443,
-      "variant": "1280",
-      "bytes": 133322
-    },
-    "85-coral-reef-01-page@640.webp": {
-      "source": "85-coral-reef/shots/01-page.png",
-      "sourceSha": "f4c94a430310619a1c7c633657ec5897ef87235c0358a0b8f594cf0721d907f5",
-      "sourceBytes": 1610285,
-      "variant": "640",
-      "bytes": 49644
-    },
-    "85-coral-reef-01-page@1280.webp": {
-      "source": "85-coral-reef/shots/01-page.png",
-      "sourceSha": "f4c94a430310619a1c7c633657ec5897ef87235c0358a0b8f594cf0721d907f5",
-      "sourceBytes": 1610285,
-      "variant": "1280",
-      "bytes": 175880
-    },
     "86-literary-hardcover-01-page@640.webp": {
       "source": "86-literary-hardcover/shots/01-page.png",
       "sourceSha": "6a585348e4ca188f8cd7ac40451cf94d05080baf2019d81a4ee46702607ee739",
@@ -3449,75 +2819,705 @@
       "variant": "1280",
       "bytes": 202498
     },
+    "100-fluid-simulation-01-page@1280.webp": {
+      "source": "100-fluid-simulation/shots/01-page.png",
+      "sourceSha": "f9b2e871f9c3ad977ca7db50b969e3a82724a292f2fc4a10ead759057db0ceed",
+      "sourceBytes": 280587,
+      "variant": "1280",
+      "bytes": 100680
+    },
+    "100-fluid-simulation-01-page@640.webp": {
+      "source": "100-fluid-simulation/shots/01-page.png",
+      "sourceSha": "f9b2e871f9c3ad977ca7db50b969e3a82724a292f2fc4a10ead759057db0ceed",
+      "sourceBytes": 280587,
+      "variant": "640",
+      "bytes": 32506
+    },
+    "101-shadow-stage-01-page@640.webp": {
+      "source": "101-shadow-stage/shots/01-page.png",
+      "sourceSha": "24509d6543f33d549277c59482d47a4c1353b1ea02b105a18aa685475eec722d",
+      "sourceBytes": 1151926,
+      "variant": "640",
+      "bytes": 27578
+    },
+    "101-shadow-stage-01-page@1280.webp": {
+      "source": "101-shadow-stage/shots/01-page.png",
+      "sourceSha": "24509d6543f33d549277c59482d47a4c1353b1ea02b105a18aa685475eec722d",
+      "sourceBytes": 1151926,
+      "variant": "1280",
+      "bytes": 89310
+    },
+    "102-moire-field-01-page@640.webp": {
+      "source": "102-moire-field/shots/01-page.png",
+      "sourceSha": "2c11a61b9f41bf65e32b2cdda44558e94e01763f4286d95724a9fc6d02d08b7c",
+      "sourceBytes": 581996,
+      "variant": "640",
+      "bytes": 58646
+    },
+    "103-motion-trail-01-page@640.webp": {
+      "source": "103-motion-trail/shots/01-page.png",
+      "sourceSha": "7a4308f1d546dd2d21a49846dbc6adcba1722ceb14f5b9c16c85a0491d313d58",
+      "sourceBytes": 222742,
+      "variant": "640",
+      "bytes": 32572
+    },
+    "103-motion-trail-01-page@1280.webp": {
+      "source": "103-motion-trail/shots/01-page.png",
+      "sourceSha": "7a4308f1d546dd2d21a49846dbc6adcba1722ceb14f5b9c16c85a0491d313d58",
+      "sourceBytes": 222742,
+      "variant": "1280",
+      "bytes": 99242
+    },
+    "102-moire-field-01-page@1280.webp": {
+      "source": "102-moire-field/shots/01-page.png",
+      "sourceSha": "2c11a61b9f41bf65e32b2cdda44558e94e01763f4286d95724a9fc6d02d08b7c",
+      "sourceBytes": 581996,
+      "variant": "1280",
+      "bytes": 278054
+    },
+    "104-stepped-mechanism-01-page@640.webp": {
+      "source": "104-stepped-mechanism/shots/01-page.png",
+      "sourceSha": "d176ed2e13099ce144356292bcd4563a1d21a8798ce5a8f8b9d4662249415d27",
+      "sourceBytes": 945681,
+      "variant": "640",
+      "bytes": 32680
+    },
+    "105-holographic-layer-01-page@640.webp": {
+      "source": "105-holographic-layer/shots/01-page.png",
+      "sourceSha": "e50210c557d4ef5feaeeb1116f74c74d6af37bcd932fd5b93ea597e80dd310e4",
+      "sourceBytes": 1169893,
+      "variant": "640",
+      "bytes": 60158
+    },
+    "104-stepped-mechanism-01-page@1280.webp": {
+      "source": "104-stepped-mechanism/shots/01-page.png",
+      "sourceSha": "d176ed2e13099ce144356292bcd4563a1d21a8798ce5a8f8b9d4662249415d27",
+      "sourceBytes": 945681,
+      "variant": "1280",
+      "bytes": 118996
+    },
+    "105-holographic-layer-01-page@1280.webp": {
+      "source": "105-holographic-layer/shots/01-page.png",
+      "sourceSha": "e50210c557d4ef5feaeeb1116f74c74d6af37bcd932fd5b93ea597e80dd310e4",
+      "sourceBytes": 1169893,
+      "variant": "1280",
+      "bytes": 214718
+    },
+    "126-marble-vein-01-page@640.webp": {
+      "source": "126-marble-vein/shots/01-page.png",
+      "sourceSha": "66ec36778a31e56772a17616b094a7c03a7c92ea5bd3db6dbc1d95e610cf8000",
+      "sourceBytes": 518181,
+      "variant": "640",
+      "bytes": 36396
+    },
+    "127-silk-drape-01-page@640.webp": {
+      "source": "127-silk-drape/shots/01-page.png",
+      "sourceSha": "68b1b05e7871daa1bc4c75927f35ae6fc0c058091fcf008469f70916214786ea",
+      "sourceBytes": 766050,
+      "variant": "640",
+      "bytes": 37374
+    },
+    "127-silk-drape-01-page@1280.webp": {
+      "source": "127-silk-drape/shots/01-page.png",
+      "sourceSha": "68b1b05e7871daa1bc4c75927f35ae6fc0c058091fcf008469f70916214786ea",
+      "sourceBytes": 766050,
+      "variant": "1280",
+      "bytes": 121856
+    },
+    "126-marble-vein-01-page@1280.webp": {
+      "source": "126-marble-vein/shots/01-page.png",
+      "sourceSha": "66ec36778a31e56772a17616b094a7c03a7c92ea5bd3db6dbc1d95e610cf8000",
+      "sourceBytes": 518181,
+      "variant": "1280",
+      "bytes": 116314
+    },
+    "128-brass-copper-01-page@640.webp": {
+      "source": "128-brass-copper/shots/01-page.png",
+      "sourceSha": "7e783b9f74d690c3e204758b57b6ad94ae64b1c5aff23fc0b4d56d76d4b12b5a",
+      "sourceBytes": 1300414,
+      "variant": "640",
+      "bytes": 36488
+    },
+    "129-porcelain-glaze-01-page@640.webp": {
+      "source": "129-porcelain-glaze/shots/01-page.png",
+      "sourceSha": "89ad1d4a05ee86f490e2d96644ee8df56b28e3747b8d98842f3ee5615056f65d",
+      "sourceBytes": 268747,
+      "variant": "640",
+      "bytes": 33126
+    },
+    "128-brass-copper-01-page@1280.webp": {
+      "source": "128-brass-copper/shots/01-page.png",
+      "sourceSha": "7e783b9f74d690c3e204758b57b6ad94ae64b1c5aff23fc0b4d56d76d4b12b5a",
+      "sourceBytes": 1300414,
+      "variant": "1280",
+      "bytes": 119414
+    },
+    "129-porcelain-glaze-01-page@1280.webp": {
+      "source": "129-porcelain-glaze/shots/01-page.png",
+      "sourceSha": "89ad1d4a05ee86f490e2d96644ee8df56b28e3747b8d98842f3ee5615056f65d",
+      "sourceBytes": 268747,
+      "variant": "1280",
+      "bytes": 106838
+    },
+    "130-leather-craft-01-page@640.webp": {
+      "source": "130-leather-craft/shots/01-page.png",
+      "sourceSha": "16b3989d6e2ef83e04528e22747789cbbc5d4f7c720699e0e26f58285cad682c",
+      "sourceBytes": 1680211,
+      "variant": "640",
+      "bytes": 36756
+    },
+    "130-leather-craft-01-page@1280.webp": {
+      "source": "130-leather-craft/shots/01-page.png",
+      "sourceSha": "16b3989d6e2ef83e04528e22747789cbbc5d4f7c720699e0e26f58285cad682c",
+      "sourceBytes": 1680211,
+      "variant": "1280",
+      "bytes": 138732
+    },
+    "131-optic-prism-01-page@640.webp": {
+      "source": "131-optic-prism/shots/01-page.png",
+      "sourceSha": "ff211aae43a448e2ffe1affa296de4df5bc50ceb611105679bcd446ec7e31978",
+      "sourceBytes": 196782,
+      "variant": "640",
+      "bytes": 29522
+    },
+    "131-optic-prism-01-page@1280.webp": {
+      "source": "131-optic-prism/shots/01-page.png",
+      "sourceSha": "ff211aae43a448e2ffe1affa296de4df5bc50ceb611105679bcd446ec7e31978",
+      "sourceBytes": 196782,
+      "variant": "1280",
+      "bytes": 91194
+    },
+    "132-wood-joinery-01-page@640.webp": {
+      "source": "132-wood-joinery/shots/01-page.png",
+      "sourceSha": "495c2f05067e702c7f335f78db629bbb4ac02240f3998241f874fb255410e2ed",
+      "sourceBytes": 1092375,
+      "variant": "640",
+      "bytes": 35102
+    },
+    "133-letterpress-print-01-page@640.webp": {
+      "source": "133-letterpress-print/shots/01-page.png",
+      "sourceSha": "ce258912fa61774c40995b01b125356b8d0fed5dc80348f85fbd034e9aa4785d",
+      "sourceBytes": 769060,
+      "variant": "640",
+      "bytes": 38454
+    },
+    "133-letterpress-print-01-page@1280.webp": {
+      "source": "133-letterpress-print/shots/01-page.png",
+      "sourceSha": "ce258912fa61774c40995b01b125356b8d0fed5dc80348f85fbd034e9aa4785d",
+      "sourceBytes": 769060,
+      "variant": "1280",
+      "bytes": 118950
+    },
+    "132-wood-joinery-01-page@1280.webp": {
+      "source": "132-wood-joinery/shots/01-page.png",
+      "sourceSha": "495c2f05067e702c7f335f78db629bbb4ac02240f3998241f874fb255410e2ed",
+      "sourceBytes": 1092375,
+      "variant": "1280",
+      "bytes": 112066
+    },
+    "134-concrete-monolith-01-page@640.webp": {
+      "source": "134-concrete-monolith/shots/01-page.png",
+      "sourceSha": "ff7e60fcbc7169cc953fffbd203a536c361075363729f02e7b6841ba7909fe10",
+      "sourceBytes": 303229,
+      "variant": "640",
+      "bytes": 38310
+    },
+    "135-enamel-porcelain-01-page@640.webp": {
+      "source": "135-enamel-porcelain/shots/01-page.png",
+      "sourceSha": "5dd6547db619e224138fbbf2b98a818396f2514b3858039f00c372b56c0d107b",
+      "sourceBytes": 370289,
+      "variant": "640",
+      "bytes": 33820
+    },
+    "134-concrete-monolith-01-page@1280.webp": {
+      "source": "134-concrete-monolith/shots/01-page.png",
+      "sourceSha": "ff7e60fcbc7169cc953fffbd203a536c361075363729f02e7b6841ba7909fe10",
+      "sourceBytes": 303229,
+      "variant": "1280",
+      "bytes": 114798
+    },
+    "135-enamel-porcelain-01-page@1280.webp": {
+      "source": "135-enamel-porcelain/shots/01-page.png",
+      "sourceSha": "5dd6547db619e224138fbbf2b98a818396f2514b3858039f00c372b56c0d107b",
+      "sourceBytes": 370289,
+      "variant": "1280",
+      "bytes": 111324
+    },
+    "19-y2k-01-page@640.webp": {
+      "source": "19-y2k/shots/01-page.png",
+      "sourceSha": "4ad24a7168bab7da044cd3332651a96d6c8fa4efc56dee0ed83253b3ee168a44",
+      "sourceBytes": 391044,
+      "variant": "640",
+      "bytes": 43800
+    },
+    "21-synthwave-01-page@640.webp": {
+      "source": "21-synthwave/shots/01-page.png",
+      "sourceSha": "b3bd49ca12de2add37a3fda1ed18b1ff761c0d221d1758e1f40e2bcb2a19a3d4",
+      "sourceBytes": 1445353,
+      "variant": "640",
+      "bytes": 55972
+    },
+    "19-y2k-01-page@1280.webp": {
+      "source": "19-y2k/shots/01-page.png",
+      "sourceSha": "4ad24a7168bab7da044cd3332651a96d6c8fa4efc56dee0ed83253b3ee168a44",
+      "sourceBytes": 391044,
+      "variant": "1280",
+      "bytes": 131414
+    },
+    "20-vaporwave-01-page@1280.webp": {
+      "source": "20-vaporwave/shots/01-page.png",
+      "sourceSha": "6789b369eedc5e9780606a0c0d477077a200f98c218807cf5c528a35f4fbe225",
+      "sourceBytes": 2233391,
+      "variant": "1280",
+      "bytes": 158766
+    },
+    "20-vaporwave-01-page@640.webp": {
+      "source": "20-vaporwave/shots/01-page.png",
+      "sourceSha": "6789b369eedc5e9780606a0c0d477077a200f98c218807cf5c528a35f4fbe225",
+      "sourceBytes": 2233391,
+      "variant": "640",
+      "bytes": 44622
+    },
+    "22-cyberpunk-01-page@640.webp": {
+      "source": "22-cyberpunk/shots/01-page.png",
+      "sourceSha": "551a845ffc1c78e423abd49ee714b13b7674d6866c3c7cfe02605cff58e47927",
+      "sourceBytes": 1505026,
+      "variant": "640",
+      "bytes": 51692
+    },
+    "21-synthwave-01-page@1280.webp": {
+      "source": "21-synthwave/shots/01-page.png",
+      "sourceSha": "b3bd49ca12de2add37a3fda1ed18b1ff761c0d221d1758e1f40e2bcb2a19a3d4",
+      "sourceBytes": 1445353,
+      "variant": "1280",
+      "bytes": 160642
+    },
+    "22-cyberpunk-01-page@1280.webp": {
+      "source": "22-cyberpunk/shots/01-page.png",
+      "sourceSha": "551a845ffc1c78e423abd49ee714b13b7674d6866c3c7cfe02605cff58e47927",
+      "sourceBytes": 1505026,
+      "variant": "1280",
+      "bytes": 173128
+    },
+    "23-cybercore-01-page@640.webp": {
+      "source": "23-cybercore/shots/01-page.png",
+      "sourceSha": "ad9b168d02a276e57b2acacfa1df5f5356e816500549a96c67a0dad0cac26a7d",
+      "sourceBytes": 1228326,
+      "variant": "640",
+      "bytes": 49444
+    },
+    "24-pixel-art-01-page@640.webp": {
+      "source": "24-pixel-art/shots/01-page.png",
+      "sourceSha": "a2bc8e35c1971292e29c5cd1eab47ebba3328a41049507dd22e9f5de56056cd0",
+      "sourceBytes": 168418,
+      "variant": "640",
+      "bytes": 44324
+    },
+    "24-pixel-art-01-page@1280.webp": {
+      "source": "24-pixel-art/shots/01-page.png",
+      "sourceSha": "a2bc8e35c1971292e29c5cd1eab47ebba3328a41049507dd22e9f5de56056cd0",
+      "sourceBytes": 168418,
+      "variant": "1280",
+      "bytes": 121522
+    },
+    "25-frutiger-aero-01-page@640.webp": {
+      "source": "25-frutiger-aero/shots/01-page.png",
+      "sourceSha": "a5e5793911f41a703a50ee660755ac1c9295f191032f8b8c042726f987b57beb",
+      "sourceBytes": 289179,
+      "variant": "640",
+      "bytes": 34762
+    },
+    "23-cybercore-01-page@1280.webp": {
+      "source": "23-cybercore/shots/01-page.png",
+      "sourceSha": "ad9b168d02a276e57b2acacfa1df5f5356e816500549a96c67a0dad0cac26a7d",
+      "sourceBytes": 1228326,
+      "variant": "1280",
+      "bytes": 164878
+    },
+    "26-art-deco-01-page@1280.webp": {
+      "source": "26-art-deco/shots/01-page.png",
+      "sourceSha": "746acc19addb248b5680ac55572def3082473103ef7381f61d1d375542a3529c",
+      "sourceBytes": 1386357,
+      "variant": "1280",
+      "bytes": 124386
+    },
+    "26-art-deco-01-page@640.webp": {
+      "source": "26-art-deco/shots/01-page.png",
+      "sourceSha": "746acc19addb248b5680ac55572def3082473103ef7381f61d1d375542a3529c",
+      "sourceBytes": 1386357,
+      "variant": "640",
+      "bytes": 42228
+    },
+    "25-frutiger-aero-01-page@1280.webp": {
+      "source": "25-frutiger-aero/shots/01-page.png",
+      "sourceSha": "a5e5793911f41a703a50ee660755ac1c9295f191032f8b8c042726f987b57beb",
+      "sourceBytes": 289179,
+      "variant": "1280",
+      "bytes": 104156
+    },
+    "27-victorian-01-page@640.webp": {
+      "source": "27-victorian/shots/01-page.png",
+      "sourceSha": "f6820711b8360adf9106c803ba647af747a38f855c3648f9fb898104d50b7d6a",
+      "sourceBytes": 1349215,
+      "variant": "640",
+      "bytes": 33408
+    },
+    "46-telemetry-grid-01-page@640.webp": {
+      "source": "46-telemetry-grid/shots/01-page.png",
+      "sourceSha": "c31189712d988c162ca80195b12d8fb254094c0eead82dfcf0ac7870cdb1ad64",
+      "sourceBytes": 234453,
+      "variant": "640",
+      "bytes": 36808
+    },
+    "27-victorian-01-page@1280.webp": {
+      "source": "27-victorian/shots/01-page.png",
+      "sourceSha": "f6820711b8360adf9106c803ba647af747a38f855c3648f9fb898104d50b7d6a",
+      "sourceBytes": 1349215,
+      "variant": "1280",
+      "bytes": 95456
+    },
+    "28-surrealism-01-page@1280.webp": {
+      "source": "28-surrealism/shots/01-page.png",
+      "sourceSha": "236fa2dae1b3b3cd967e3754c84d3e04a4f7f8a7af7659ae0c84c1ee7a19077c",
+      "sourceBytes": 1377423,
+      "variant": "1280",
+      "bytes": 122484
+    },
+    "28-surrealism-01-page@640.webp": {
+      "source": "28-surrealism/shots/01-page.png",
+      "sourceSha": "236fa2dae1b3b3cd967e3754c84d3e04a4f7f8a7af7659ae0c84c1ee7a19077c",
+      "sourceBytes": 1377423,
+      "variant": "640",
+      "bytes": 40556
+    },
+    "46-telemetry-grid-01-page@1280.webp": {
+      "source": "46-telemetry-grid/shots/01-page.png",
+      "sourceSha": "c31189712d988c162ca80195b12d8fb254094c0eead82dfcf0ac7870cdb1ad64",
+      "sourceBytes": 234453,
+      "variant": "1280",
+      "bytes": 116418
+    },
+    "47-trading-desk-01-page@640.webp": {
+      "source": "47-trading-desk/shots/01-page.png",
+      "sourceSha": "8e060717e414451eeb764418f3edf5e2ebc0dd1ca58fa45752a99ce725a298b8",
+      "sourceBytes": 209057,
+      "variant": "640",
+      "bytes": 33100
+    },
+    "48-executive-kpi-01-page@640.webp": {
+      "source": "48-executive-kpi/shots/01-page.png",
+      "sourceSha": "6bea643d9dc4a95ac055b32bb726c74b65d5674f893cb1c37a73f0dd00142e77",
+      "sourceBytes": 157104,
+      "variant": "640",
+      "bytes": 29134
+    },
+    "47-trading-desk-01-page@1280.webp": {
+      "source": "47-trading-desk/shots/01-page.png",
+      "sourceSha": "8e060717e414451eeb764418f3edf5e2ebc0dd1ca58fa45752a99ce725a298b8",
+      "sourceBytes": 209057,
+      "variant": "1280",
+      "bytes": 108908
+    },
+    "49-log-stream-01-page@1280.webp": {
+      "source": "49-log-stream/shots/01-page.png",
+      "sourceSha": "457af4742e1e945d113ddec4fe1c2f1510975d4633997b2fa45416e9e14bf569",
+      "sourceBytes": 163676,
+      "variant": "1280",
+      "bytes": 121800
+    },
+    "48-executive-kpi-01-page@1280.webp": {
+      "source": "48-executive-kpi/shots/01-page.png",
+      "sourceSha": "6bea643d9dc4a95ac055b32bb726c74b65d5674f893cb1c37a73f0dd00142e77",
+      "sourceBytes": 157104,
+      "variant": "1280",
+      "bytes": 90132
+    },
+    "49-log-stream-01-page@640.webp": {
+      "source": "49-log-stream/shots/01-page.png",
+      "sourceSha": "457af4742e1e945d113ddec4fe1c2f1510975d4633997b2fa45416e9e14bf569",
+      "sourceBytes": 163676,
+      "variant": "640",
+      "bytes": 35170
+    },
+    "50-lab-instrument-01-page@640.webp": {
+      "source": "50-lab-instrument/shots/01-page.png",
+      "sourceSha": "12e0911f416ba1b19e5669109151ab5c3eb89b390c66892303681b8d5b30f8c8",
+      "sourceBytes": 224004,
+      "variant": "640",
+      "bytes": 38740
+    },
+    "52-experiment-split-01-page@640.webp": {
+      "source": "52-experiment-split/shots/01-page.png",
+      "sourceSha": "4d70cdf987df745aa059e624d934ae186d97d4cb1d5fd76a30e3a30b84e1cc9e",
+      "sourceBytes": 259180,
+      "variant": "640",
+      "bytes": 38582
+    },
+    "50-lab-instrument-01-page@1280.webp": {
+      "source": "50-lab-instrument/shots/01-page.png",
+      "sourceSha": "12e0911f416ba1b19e5669109151ab5c3eb89b390c66892303681b8d5b30f8c8",
+      "sourceBytes": 224004,
+      "variant": "1280",
+      "bytes": 116246
+    },
+    "51-atlas-console-01-page@640.webp": {
+      "source": "51-atlas-console/shots/01-page.png",
+      "sourceSha": "909a4a2162b3bacb95630509bff0fd3bb3686f375df2b5c10c8017001187c4a4",
+      "sourceBytes": 1062481,
+      "variant": "640",
+      "bytes": 38516
+    },
+    "51-atlas-console-01-page@1280.webp": {
+      "source": "51-atlas-console/shots/01-page.png",
+      "sourceSha": "909a4a2162b3bacb95630509bff0fd3bb3686f375df2b5c10c8017001187c4a4",
+      "sourceBytes": 1062481,
+      "variant": "1280",
+      "bytes": 127658
+    },
+    "53-ledger-meter-01-page@640.webp": {
+      "source": "53-ledger-meter/shots/01-page.png",
+      "sourceSha": "29dc8b6ba17e6fe4a3ff3ca72fabfdedb0fd801897f34c1b4f17b8f888bd7454",
+      "sourceBytes": 680906,
+      "variant": "640",
+      "bytes": 34250
+    },
+    "53-ledger-meter-01-page@1280.webp": {
+      "source": "53-ledger-meter/shots/01-page.png",
+      "sourceSha": "29dc8b6ba17e6fe4a3ff3ca72fabfdedb0fd801897f34c1b4f17b8f888bd7454",
+      "sourceBytes": 680906,
+      "variant": "1280",
+      "bytes": 112732
+    },
+    "54-vitals-triage-01-page@640.webp": {
+      "source": "54-vitals-triage/shots/01-page.png",
+      "sourceSha": "8ffddb2d7e916866c84e5124a86e384b8ececd3eb7eef3def10536cc949f37d4",
+      "sourceBytes": 253692,
+      "variant": "640",
+      "bytes": 34814
+    },
+    "52-experiment-split-01-page@1280.webp": {
+      "source": "52-experiment-split/shots/01-page.png",
+      "sourceSha": "4d70cdf987df745aa059e624d934ae186d97d4cb1d5fd76a30e3a30b84e1cc9e",
+      "sourceBytes": 259180,
+      "variant": "1280",
+      "bytes": 120372
+    },
+    "54-vitals-triage-01-page@1280.webp": {
+      "source": "54-vitals-triage/shots/01-page.png",
+      "sourceSha": "8ffddb2d7e916866c84e5124a86e384b8ececd3eb7eef3def10536cc949f37d4",
+      "sourceBytes": 253692,
+      "variant": "1280",
+      "bytes": 112290
+    },
+    "55-fleet-telemetry-01-page@640.webp": {
+      "source": "55-fleet-telemetry/shots/01-page.png",
+      "sourceSha": "a4b4aed7bb456f282bc8fda087b7ae130f3cfe0c8bd845a98f84c7b7fac7c503",
+      "sourceBytes": 440359,
+      "variant": "640",
+      "bytes": 34224
+    },
+    "76-biophilic-botanical-01-page@640.webp": {
+      "source": "76-biophilic-botanical/shots/01-page.png",
+      "sourceSha": "4163f0fcddd1a1aef902b00203e6972d6cccdf68d2f9112bea1e299ff9f67f28",
+      "sourceBytes": 2707379,
+      "variant": "640",
+      "bytes": 36448
+    },
+    "55-fleet-telemetry-01-page@1280.webp": {
+      "source": "55-fleet-telemetry/shots/01-page.png",
+      "sourceSha": "a4b4aed7bb456f282bc8fda087b7ae130f3cfe0c8bd845a98f84c7b7fac7c503",
+      "sourceBytes": 440359,
+      "variant": "1280",
+      "bytes": 117550
+    },
+    "76-biophilic-botanical-01-page@1280.webp": {
+      "source": "76-biophilic-botanical/shots/01-page.png",
+      "sourceSha": "4163f0fcddd1a1aef902b00203e6972d6cccdf68d2f9112bea1e299ff9f67f28",
+      "sourceBytes": 2707379,
+      "variant": "1280",
+      "bytes": 157628
+    },
+    "77-weather-atmosphere-01-page@640.webp": {
+      "source": "77-weather-atmosphere/shots/01-page.png",
+      "sourceSha": "7f2da84bac1e4c76674b9a7fdafb6c9cd7fcec9fbd9ad1dd5dff70457c7eed8c",
+      "sourceBytes": 2011671,
+      "variant": "640",
+      "bytes": 37750
+    },
+    "78-topographic-terrain-01-page@640.webp": {
+      "source": "78-topographic-terrain/shots/01-page.png",
+      "sourceSha": "e1ab3d15be814931c78899467f7872e45da3834fe64dd102c5f0e8b9994315ba",
+      "sourceBytes": 2341720,
+      "variant": "640",
+      "bytes": 43274
+    },
+    "77-weather-atmosphere-01-page@1280.webp": {
+      "source": "77-weather-atmosphere/shots/01-page.png",
+      "sourceSha": "7f2da84bac1e4c76674b9a7fdafb6c9cd7fcec9fbd9ad1dd5dff70457c7eed8c",
+      "sourceBytes": 2011671,
+      "variant": "1280",
+      "bytes": 166790
+    },
+    "78-topographic-terrain-01-page@1280.webp": {
+      "source": "78-topographic-terrain/shots/01-page.png",
+      "sourceSha": "e1ab3d15be814931c78899467f7872e45da3834fe64dd102c5f0e8b9994315ba",
+      "sourceBytes": 2341720,
+      "variant": "1280",
+      "bytes": 238098
+    },
+    "79-ocean-current-01-page@640.webp": {
+      "source": "79-ocean-current/shots/01-page.png",
+      "sourceSha": "770c9b759893b0f9a2289ebf5bd65204d9164b31d72cb957a40867de97df6d2e",
+      "sourceBytes": 507001,
+      "variant": "640",
+      "bytes": 40386
+    },
+    "80-seasonal-shift-01-page@640.webp": {
+      "source": "80-seasonal-shift/shots/01-page.png",
+      "sourceSha": "3233b6b0338361d010a1037ce814ed8dc0503f84fc259a23813491074289bcab",
+      "sourceBytes": 2035541,
+      "variant": "640",
+      "bytes": 36360
+    },
+    "79-ocean-current-01-page@1280.webp": {
+      "source": "79-ocean-current/shots/01-page.png",
+      "sourceSha": "770c9b759893b0f9a2289ebf5bd65204d9164b31d72cb957a40867de97df6d2e",
+      "sourceBytes": 507001,
+      "variant": "1280",
+      "bytes": 152150
+    },
+    "80-seasonal-shift-01-page@1280.webp": {
+      "source": "80-seasonal-shift/shots/01-page.png",
+      "sourceSha": "3233b6b0338361d010a1037ce814ed8dc0503f84fc259a23813491074289bcab",
+      "sourceBytes": 2035541,
+      "variant": "1280",
+      "bytes": 154468
+    },
+    "81-forest-bark-01-page@640.webp": {
+      "source": "81-forest-bark/shots/01-page.png",
+      "sourceSha": "93c9f33181141ad34fa33fed9a2c972520523d2dda21e32c7d5351873a54380f",
+      "sourceBytes": 1467797,
+      "variant": "640",
+      "bytes": 33402
+    },
+    "82-desert-sand-01-page@640.webp": {
+      "source": "82-desert-sand/shots/01-page.png",
+      "sourceSha": "1b7ec0aa2ec6df9f8181de9f80c33897e1be8c13daa3accd65291fc105c09c13",
+      "sourceBytes": 1224547,
+      "variant": "640",
+      "bytes": 32138
+    },
+    "81-forest-bark-01-page@1280.webp": {
+      "source": "81-forest-bark/shots/01-page.png",
+      "sourceSha": "93c9f33181141ad34fa33fed9a2c972520523d2dda21e32c7d5351873a54380f",
+      "sourceBytes": 1467797,
+      "variant": "1280",
+      "bytes": 114566
+    },
+    "82-desert-sand-01-page@1280.webp": {
+      "source": "82-desert-sand/shots/01-page.png",
+      "sourceSha": "1b7ec0aa2ec6df9f8181de9f80c33897e1be8c13daa3accd65291fc105c09c13",
+      "sourceBytes": 1224547,
+      "variant": "1280",
+      "bytes": 106964
+    },
+    "83-polar-ice-01-page@640.webp": {
+      "source": "83-polar-ice/shots/01-page.png",
+      "sourceSha": "20860c3275e913e7e8cf257efca6affd0dc540b5e6fe57fdf637149cfce4f037",
+      "sourceBytes": 504962,
+      "variant": "640",
+      "bytes": 34720
+    },
+    "84-volcanic-mineral-01-page@640.webp": {
+      "source": "84-volcanic-mineral/shots/01-page.png",
+      "sourceSha": "e66b517b1675073d6a1f2e94e9e9acddc62cca36ece6e5bda27dc7456d7187f3",
+      "sourceBytes": 688283,
+      "variant": "640",
+      "bytes": 37560
+    },
+    "83-polar-ice-01-page@1280.webp": {
+      "source": "83-polar-ice/shots/01-page.png",
+      "sourceSha": "20860c3275e913e7e8cf257efca6affd0dc540b5e6fe57fdf637149cfce4f037",
+      "sourceBytes": 504962,
+      "variant": "1280",
+      "bytes": 111418
+    },
+    "84-volcanic-mineral-01-page@1280.webp": {
+      "source": "84-volcanic-mineral/shots/01-page.png",
+      "sourceSha": "e66b517b1675073d6a1f2e94e9e9acddc62cca36ece6e5bda27dc7456d7187f3",
+      "sourceBytes": 688283,
+      "variant": "1280",
+      "bytes": 113642
+    },
+    "85-coral-reef-01-page@640.webp": {
+      "source": "85-coral-reef/shots/01-page.png",
+      "sourceSha": "e12bd4861ebc817b4c52c9866382e3222737be0b7391b46e8d3a3b92a4569ca2",
+      "sourceBytes": 1284847,
+      "variant": "640",
+      "bytes": 40452
+    },
     "96-kinetic-marquee-01-page@640.webp": {
       "source": "96-kinetic-marquee/shots/01-page.png",
-      "sourceSha": "31d1b19b39b74cadc4c52e7e95874c28f283bdf9dd9d3655ddbf01f74e07242f",
-      "sourceBytes": 251109,
+      "sourceSha": "61945820f60cec483c093ae7b1df8e3e58d73eb7639d37232d076d49c71fa271",
+      "sourceBytes": 199974,
       "variant": "640",
-      "bytes": 30646
+      "bytes": 30926
     },
     "96-kinetic-marquee-01-page@1280.webp": {
       "source": "96-kinetic-marquee/shots/01-page.png",
-      "sourceSha": "31d1b19b39b74cadc4c52e7e95874c28f283bdf9dd9d3655ddbf01f74e07242f",
-      "sourceBytes": 251109,
+      "sourceSha": "61945820f60cec483c093ae7b1df8e3e58d73eb7639d37232d076d49c71fa271",
+      "sourceBytes": 199974,
       "variant": "1280",
-      "bytes": 95692
+      "bytes": 94726
+    },
+    "85-coral-reef-01-page@1280.webp": {
+      "source": "85-coral-reef/shots/01-page.png",
+      "sourceSha": "e12bd4861ebc817b4c52c9866382e3222737be0b7391b46e8d3a3b92a4569ca2",
+      "sourceBytes": 1284847,
+      "variant": "1280",
+      "bytes": 125240
     },
     "97-optical-illusion-01-page@640.webp": {
       "source": "97-optical-illusion/shots/01-page.png",
-      "sourceSha": "f79b59fea896d18909b80257b374302229ae60cfcf7c632c7a44cb24d7e8c120",
-      "sourceBytes": 200128,
+      "sourceSha": "4324b8164cceba05db3cda052ca1227c44b9dd0e23235828a24023f28f91a957",
+      "sourceBytes": 255818,
       "variant": "640",
-      "bytes": 32398
-    },
-    "97-optical-illusion-01-page@1280.webp": {
-      "source": "97-optical-illusion/shots/01-page.png",
-      "sourceSha": "f79b59fea896d18909b80257b374302229ae60cfcf7c632c7a44cb24d7e8c120",
-      "sourceBytes": 200128,
-      "variant": "1280",
-      "bytes": 101416
+      "bytes": 41174
     },
     "98-generative-grid-01-page@640.webp": {
       "source": "98-generative-grid/shots/01-page.png",
-      "sourceSha": "21a52e4411cc5493032c35630eb98504a27abb1416c5be7aaa626a333db69ae7",
-      "sourceBytes": 280122,
+      "sourceSha": "f4e45e57b42a36364ef2b6590dc4bb2b9206fc584a4598a2df105749babe6fdd",
+      "sourceBytes": 202580,
       "variant": "640",
-      "bytes": 37718
+      "bytes": 35770
     },
-    "98-generative-grid-01-page@1280.webp": {
-      "source": "98-generative-grid/shots/01-page.png",
-      "sourceSha": "21a52e4411cc5493032c35630eb98504a27abb1416c5be7aaa626a333db69ae7",
-      "sourceBytes": 280122,
+    "97-optical-illusion-01-page@1280.webp": {
+      "source": "97-optical-illusion/shots/01-page.png",
+      "sourceSha": "4324b8164cceba05db3cda052ca1227c44b9dd0e23235828a24023f28f91a957",
+      "sourceBytes": 255818,
       "variant": "1280",
-      "bytes": 116882
+      "bytes": 126268
     },
     "99-depth-parallax-01-page@640.webp": {
       "source": "99-depth-parallax/shots/01-page.png",
-      "sourceSha": "1697126093232ea7c53f52976edcde86a8e6e6a833b4142846d3e36524ccb926",
-      "sourceBytes": 372124,
+      "sourceSha": "fb32f0b8ccbd5ae25f21146dbca74951a2c4c61d0cfb8b6040d0d635f91d1082",
+      "sourceBytes": 268135,
       "variant": "640",
-      "bytes": 31470
+      "bytes": 30470
+    },
+    "98-generative-grid-01-page@1280.webp": {
+      "source": "98-generative-grid/shots/01-page.png",
+      "sourceSha": "f4e45e57b42a36364ef2b6590dc4bb2b9206fc584a4598a2df105749babe6fdd",
+      "sourceBytes": 202580,
+      "variant": "1280",
+      "bytes": 106282
     },
     "99-depth-parallax-01-page@1280.webp": {
       "source": "99-depth-parallax/shots/01-page.png",
-      "sourceSha": "1697126093232ea7c53f52976edcde86a8e6e6a833b4142846d3e36524ccb926",
-      "sourceBytes": 372124,
+      "sourceSha": "fb32f0b8ccbd5ae25f21146dbca74951a2c4c61d0cfb8b6040d0d635f91d1082",
+      "sourceBytes": 268135,
       "variant": "1280",
-      "bytes": 100956
-    },
-    "181-regulatory-report-01-page@640.webp": {
-      "source": "181-regulatory-report/shots/01-page.png",
-      "sourceSha": "57f3ae72eefa5dacbfd9809cec89f54b352a3c0b275fd0ee535047bbecada157",
-      "sourceBytes": 340948,
-      "variant": "640",
-      "bytes": 36664
-    },
-    "181-regulatory-report-01-page@1280.webp": {
-      "source": "181-regulatory-report/shots/01-page.png",
-      "sourceSha": "57f3ae72eefa5dacbfd9809cec89f54b352a3c0b275fd0ee535047bbecada157",
-      "sourceBytes": 340948,
-      "variant": "1280",
-      "bytes": 122472
+      "bytes": 94642
     }
   }
 }

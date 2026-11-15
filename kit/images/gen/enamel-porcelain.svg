@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="ep-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f6f0" />
+      <stop offset="100%" stop-color="#efebe1" />
+    </linearGradient>
+    <radialGradient id="ep-enamel" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#17543f" />
+      <stop offset="60%" stop-color="#17543f" />
+      <stop offset="85%" stop-color="#131a18" />
+      <stop offset="100%" stop-color="#46514c" />
+    </radialGradient>
+    <linearGradient id="ep-gloss" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85" />
+      <stop offset="40%" stop-color="#f1faf4" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#17543f" stop-opacity="0" />
+    </linearGradient>
+    <filter id="ep-shadow">
+      <feDropShadow dx="0" dy="22" stdDeviation="32" flood-color="#131a18" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#ep-bg)" />
+
+  <!-- Kiln alignment circles in fine green/line -->
+  <g stroke="#757f7a" stroke-width="1" stroke-opacity="0.25" fill="none">
+    <circle cx="800" cy="500" r="460" stroke-dasharray="8 8" />
+    <circle cx="800" cy="500" r="380" />
+  </g>
+
+  <!-- Cloisonné Medallion Plaque -->
+  <g filter="url(#ep-shadow)">
+    <!-- Polished porcelain plaque rim -->
+    <circle cx="800" cy="500" r="360" fill="#fffdf8" stroke="#757f7a" stroke-width="3" />
+    <!-- Deep Green Vitreous Enamel Central Pool -->
+    <circle cx="800" cy="500" r="320" fill="url(#ep-enamel)" stroke="#46514c" stroke-width="2" />
+  </g>
+
+  <!-- Cloisonné Wire Filigree Concentric Rings & Petals -->
+  <circle cx="800" cy="500" r="260" fill="none" stroke="#f1faf4" stroke-width="2.5" stroke-opacity="0.75" />
+  <circle cx="800" cy="500" r="200" fill="none" stroke="#f1faf4" stroke-width="1.8" stroke-opacity="0.6" stroke-dasharray="6 4" />
+  <circle cx="800" cy="500" r="130" fill="none" stroke="#f1faf4" stroke-width="2" stroke-opacity="0.8" />
+  <circle cx="800" cy="500" r="60" fill="#17543f" stroke="#f1faf4" stroke-width="2.5" />
+
+  <!-- Cloisonné Radial Petal Ribbons -->
+  <g stroke="#f1faf4" stroke-width="1.8" stroke-opacity="0.7" fill="none">
+    <line x1="800" y1="240" x2="800" y2="440" />
+    <line x1="800" y1="560" x2="800" y2="760" />
+    <line x1="540" y1="500" x2="740" y2="500" />
+    <line x1="860" y1="500" x2="1060" y2="500" />
+    <line x1="616" y1="316" x2="757" y2="457" />
+    <line x1="843" y1="543" x2="984" y2="684" />
+    <line x1="984" y1="316" x2="843" y2="457" />
+    <line x1="757" y1="543" x2="616" y2="684" />
+  </g>
+
+  <!-- Glassy Vitreous Gloss Highlight Arc -->
+  <path d="M 580 340 A 280 280 0 0 1 1020 340" fill="none" stroke="url(#ep-gloss)" stroke-width="24" stroke-linecap="round" opacity="0.65" />
+  <ellipse cx="680" cy="380" rx="36" ry="12" transform="rotate(-35 680 380)" fill="#ffffff" opacity="0.7" />
+
+  <!-- Jeweler Hallmark & Kiln Assay Badge -->
+  <g transform="translate(180, 140)">
+    <rect width="380" height="110" rx="4" fill="#fffdf8" stroke="#17543f" stroke-width="1.5" />
+    <text x="24" y="34" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#17543f" letter-spacing="2">GRAND FEU ENAMEL · 135</text>
+    <text x="24" y="66" font-family="'Poiret One', cursive, sans-serif" font-size="24" font-weight="700" fill="#131a18">Vitreous Deep Emerald</text>
+    <text x="24" y="92" font-family="'JetBrains Mono', monospace" font-size="11" fill="#46514c">820°C VITRIFIED · BRASS CLOISONNÉ WIRE · LOT 135</text>
+  </g>
+</svg>

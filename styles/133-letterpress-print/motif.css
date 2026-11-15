@@ -1,0 +1,27 @@
+/* 133 · letterpress-print motif: deboss impression: paired linear-gradient edge shadows around type blocks */
+.motif-paper::before {
+  content: "";
+  position: absolute;
+  inset: 18px 24px;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: var(--radius);
+  box-shadow:
+    inset 2px 2px 5px color-mix(in srgb, var(--ink) 28%, transparent),
+    inset -2px -2px 4px color-mix(in srgb, var(--surface) 75%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--ink) 12%, transparent) 0%, transparent 22%),
+    linear-gradient(315deg, color-mix(in srgb, var(--surface) 60%, transparent) 0%, transparent 20%);
+  opacity: 0.85;
+}
+.motif-paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, color-mix(in srgb, var(--line) 30%, transparent) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--line) 20%, transparent) 0 1px, transparent 1px 32px);
+  opacity: 0.5;
+}

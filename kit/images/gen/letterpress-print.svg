@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="lp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7f4ec" />
+      <stop offset="100%" stop-color="#ece7db" />
+    </linearGradient>
+    <pattern id="lp-fibre" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 5 12 Q 25 15 45 10 M 15 35 Q 35 40 55 32 M 10 50 Q 30 48 50 54" stroke="#7a746a" stroke-width="0.8" stroke-opacity="0.2" fill="none" />
+    </pattern>
+    <!-- Deep deboss shadow filter simulation -->
+    <filter id="lp-deboss">
+      <feDropShadow dx="-3" dy="-3" stdDeviation="4" flood-color="#ffffff" flood-opacity="0.9" />
+      <feDropShadow dx="4" dy="5" stdDeviation="5" flood-color="#191713" flood-opacity="0.35" />
+    </filter>
+    <filter id="lp-sheet">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#191713" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#lp-bg)" />
+
+  <!-- Heavy 600gsm Cotton Rag Paper Sheet -->
+  <g filter="url(#lp-sheet)">
+    <rect x="140" y="100" width="1320" height="800" rx="4" fill="#fdfbf5" stroke="#7a746a" stroke-width="1.5" stroke-opacity="0.4" />
+    <rect x="140" y="100" width="1320" height="800" rx="4" fill="url(#lp-fibre)" />
+  </g>
+
+  <!-- Printer's Registration Crosshairs & Crop Marks -->
+  <g stroke="#191713" stroke-width="1.2">
+    <!-- Top Left -->
+    <line x1="100" y1="100" x2="130" y2="100" />
+    <line x1="140" y1="60" x2="140" y2="90" />
+    <circle cx="100" cy="70" r="14" fill="none" />
+    <line x1="80" y1="70" x2="120" y2="70" />
+    <line x1="100" y1="50" x2="100" y2="90" />
+    <!-- Bottom Right -->
+    <line x1="1470" y1="900" x2="1500" y2="900" />
+    <line x1="1460" y1="910" x2="1460" y2="940" />
+    <circle cx="1500" cy="930" r="14" fill="none" />
+    <line x1="1480" y1="930" x2="1520" y2="930" />
+    <line x1="1500" y1="910" x2="1500" y2="950" />
+  </g>
+
+  <!-- Debossed Impression Primary Typographic Block -->
+  <g filter="url(#lp-deboss)">
+    <!-- Debossed panel recess -->
+    <rect x="220" y="180" width="1160" height="640" rx="8" fill="#efeade" stroke="#7a746a" stroke-width="1.5" stroke-opacity="0.6" />
+  </g>
+
+  <!-- Large Debossed & Inked Lead Type Characters -->
+  <g font-family="'Cinzel', serif" font-weight="700">
+    <!-- Deep Indigo Inked Monogram -->
+    <text x="300" y="480" font-size="240" fill="#2a2c6b" letter-spacing="-8">L</text>
+    <text x="460" y="480" font-size="240" fill="#191713" letter-spacing="-8">&amp;</text>
+    <text x="640" y="480" font-size="240" fill="#2a2c6b" letter-spacing="-8">P</text>
+    <!-- Secondary specimen font line -->
+    <text x="300" y="600" font-size="64" fill="#191713" letter-spacing="4">LETTERPRESS PRINT</text>
+  </g>
+
+  <!-- Printer Furniture & Lockup Border Frame -->
+  <rect x="250" y="210" width="1100" height="580" fill="none" stroke="#2a2c6b" stroke-width="2.5" />
+  <rect x="258" y="218" width="1084" height="564" fill="none" stroke="#7a746a" stroke-width="1" stroke-dasharray="3 3" />
+
+  <!-- Printer Colophon & Press Spec Details -->
+  <g transform="translate(300, 680)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#2a2c6b" letter-spacing="2">HEIDELBERG CYLINDER PRESS · 133</text>
+    <text x="0" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#4a453d">STOCK: CRANE'S CREST 600 GSM · 100% COTTON RAG · BLIND + METALLIC DEBOSS</text>
+  </g>
+</svg>

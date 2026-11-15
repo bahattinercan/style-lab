@@ -1,0 +1,25 @@
+/* 126 · marble-vein motif: branching vein slivers via multiple thin linear-gradient wedges + clip-path */
+.motif-none::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(122deg, transparent 0 46%, color-mix(in srgb, var(--ink) 36%, transparent) 46.2%, color-mix(in srgb, var(--ink-soft) 18%, transparent) 46.6%, transparent 47.2%),
+    linear-gradient(138deg, transparent 0 54%, color-mix(in srgb, var(--ink-soft) 28%, transparent) 54.2%, transparent 54.8%),
+    linear-gradient(76deg, transparent 0 63%, color-mix(in srgb, var(--accent) 32%, transparent) 63.2%, transparent 63.6%);
+  opacity: 0.9;
+}
+.motif-none::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 0 46.2%, color-mix(in srgb, var(--ink) 40%, transparent) 46.5%, transparent 47%),
+    linear-gradient(142deg, transparent 0 54.1%, color-mix(in srgb, var(--ink-faint) 35%, transparent) 54.4%, transparent 55%);
+  clip-path: polygon(15% 0, 85% 0, 100% 30%, 95% 70%, 70% 100%, 30% 100%, 0 65%, 5% 25%);
+  opacity: 0.8;
+}

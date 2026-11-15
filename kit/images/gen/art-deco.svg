@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="ad-gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fae8b4"/>
+      <stop offset="35%" stop-color="#c8a24a"/>
+      <stop offset="70%" stop-color="#e8cf82"/>
+      <stop offset="100%" stop-color="#9a7526"/>
+    </linearGradient>
+    <linearGradient id="ad-bg" x1="0" y1="0" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0e1b17"/>
+      <stop offset="50%" stop-color="#14241e"/>
+      <stop offset="100%" stop-color="#08100d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Emerald / Black Background -->
+  <rect width="1600" height="1000" fill="url(#ad-bg)"/>
+
+  <!-- Ornate Outer Gold Border Frame -->
+  <rect x="40" y="40" width="1520" height="920" fill="none" stroke="#c8a24a" stroke-width="4"/>
+  <rect x="52" y="52" width="1496" height="896" fill="none" stroke="#c8a24a" stroke-width="1.5"/>
+
+  <!-- Bilateral Radiating Sunburst Rays from Center Horizon (800, 750) -->
+  <g stroke="#c8a24a" stroke-width="1.5" opacity="0.45">
+    <line x1="800" y1="750" x2="0" y2="50"/>
+    <line x1="800" y1="750" x2="150" y2="40"/>
+    <line x1="800" y1="750" x2="300" y2="40"/>
+    <line x1="800" y1="750" x2="450" y2="40"/>
+    <line x1="800" y1="750" x2="600" y2="40"/>
+    <line x1="800" y1="750" x2="720" y2="40"/>
+    <line x1="800" y1="750" x2="880" y2="40"/>
+    <line x1="800" y1="750" x2="1000" y2="40"/>
+    <line x1="800" y1="750" x2="1150" y2="40"/>
+    <line x1="800" y1="750" x2="1300" y2="40"/>
+    <line x1="800" y1="750" x2="1450" y2="40"/>
+    <line x1="800" y1="750" x2="1600" y2="50"/>
+  </g>
+
+  <!-- Mirrored Chevron Fan Arcs (Top Center) -->
+  <g transform="translate(800 120)" stroke="#c8a24a" stroke-width="2" fill="none">
+    <path d="M -300 140 L 0 0 L 300 140"/>
+    <path d="M -260 140 L 0 20 L 260 140"/>
+    <path d="M -220 140 L 0 40 L 220 140"/>
+    <path d="M -180 140 L 0 60 L 180 140"/>
+    <path d="M -140 140 L 0 80 L 140 140"/>
+  </g>
+
+  <!-- Central Architectural Ziggurat Skyscraper Tower (Strict Bilateral Symmetry) -->
+  <g transform="translate(800 0)">
+    <!-- Base tier (Bottom) -->
+    <rect x="-380" y="700" width="760" height="260" fill="#12211c" stroke="#c8a24a" stroke-width="3"/>
+    <!-- Vertical decorative flutes -->
+    <g stroke="#c8a24a" stroke-width="1.5" opacity="0.6">
+      <line x1="-300" y1="700" x2="-300" y2="960"/>
+      <line x1="-200" y1="700" x2="-200" y2="960"/>
+      <line x1="-100" y1="700" x2="-100" y2="960"/>
+      <line x1="0" y1="700" x2="0" y2="960" stroke-width="3"/>
+      <line x1="100" y1="700" x2="100" y2="960"/>
+      <line x1="200" y1="700" x2="200" y2="960"/>
+      <line x1="300" y1="700" x2="300" y2="960"/>
+    </g>
+
+    <!-- Tier 2 -->
+    <rect x="-280" y="520" width="560" height="180" fill="#18302a" stroke="url(#ad-gold)" stroke-width="4"/>
+    <polygon points="-280,520 -240,480 240,480 280,520" fill="url(#ad-gold)"/>
+
+    <!-- Tier 3 -->
+    <rect x="-190" y="360" width="380" height="160" fill="#12211c" stroke="#c8a24a" stroke-width="3"/>
+    <polygon points="-190,360 -150,330 150,330 190,360" fill="url(#ad-gold)"/>
+
+    <!-- Tier 4 -->
+    <rect x="-110" y="240" width="220" height="120" fill="#18302a" stroke="url(#ad-gold)" stroke-width="3"/>
+
+    <!-- Tier 5 (Chrysler Arches Spire Base) -->
+    <rect x="-60" y="150" width="120" height="90" fill="#12211c" stroke="#c8a24a" stroke-width="3"/>
+
+    <!-- Concentric Sunburst Arches Spire -->
+    <path d="M -50 150 C -45 100 45 100 50 150 Z" fill="url(#ad-gold)"/>
+    <path d="M -35 110 C -30 70 30 70 35 110 Z" fill="url(#ad-gold)"/>
+    <path d="M -20 70 C -15 40 15 40 20 70 Z" fill="url(#ad-gold)"/>
+    <!-- Needle Spire -->
+    <polygon points="0,-10 -6,40 6,40" fill="#ede3d2" stroke="#c8a24a" stroke-width="2"/>
+    <circle cx="0" cy="-10" r="6" fill="#c8a24a"/>
+
+    <!-- Center Line of Pure Symmetry -->
+    <line x1="0" y1="40" x2="0" y2="960" stroke="#ede3d2" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- Left & Right Flanking Deco Motifs (Winged Chevrons) -->
+  <g transform="translate(220 500)" stroke="url(#ad-gold)" stroke-width="2.5" fill="none">
+    <polygon points="0,-80 80,-30 60,60 -60,60 -80,-30" fill="#12211c"/>
+    <polyline points="-100,20 0,-60 100,20"/>
+    <polyline points="-80,50 0,-30 80,50"/>
+  </g>
+  <g transform="translate(1380 500)" stroke="url(#ad-gold)" stroke-width="2.5" fill="none">
+    <polygon points="0,-80 80,-30 60,60 -60,60 -80,-30" fill="#12211c"/>
+    <polyline points="-100,20 0,-60 100,20"/>
+    <polyline points="-80,50 0,-30 80,50"/>
+  </g>
+</svg>

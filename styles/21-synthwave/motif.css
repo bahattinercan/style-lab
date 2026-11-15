@@ -1,0 +1,49 @@
+/* 21 · synthwave — ONE-POINT perspective floor grid: clip-path trapezoid plus vertical converging lines */
+.motif-grid {
+  position: relative;
+}
+.motif-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: polygon(25% 40%, 75% 40%, 100% 100%, 0% 100%);
+  background:
+    linear-gradient(
+      0deg,
+      var(--line) 0 2px,
+      transparent 2px 18px,
+      var(--line) 18px 21px,
+      transparent 21px 45px,
+      var(--line) 45px 49px,
+      transparent 49px 80px,
+      var(--line) 80px 85px,
+      transparent 85px 125px,
+      var(--line) 125px 131px,
+      transparent 131px 180px,
+      var(--line) 180px 187px,
+      transparent 187px 100%
+    ),
+    linear-gradient(82deg, transparent 49.2%, var(--line) 49.5% 50.5%, transparent 50.8%),
+    linear-gradient(98deg, transparent 49.2%, var(--line) 49.5% 50.5%, transparent 50.8%),
+    linear-gradient(72deg, transparent 49.2%, var(--line) 49.5% 50.5%, transparent 50.8%),
+    linear-gradient(108deg, transparent 49.2%, var(--line) 49.5% 50.5%, transparent 50.8%),
+    linear-gradient(60deg, transparent 49.2%, var(--line) 49.5% 50.5%, transparent 50.8%),
+    linear-gradient(120deg, transparent 49.2%, var(--line) 49.5% 50.5%, transparent 50.8%),
+    linear-gradient(90deg, transparent 49.2%, var(--accent) 49.4% 50.6%, transparent 50.8%);
+  opacity: 0.85;
+}
+.motif-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0 38.5%,
+      var(--accent) 39% 40.5%,
+      transparent 41% 100%
+    );
+  opacity: 0.9;
+}

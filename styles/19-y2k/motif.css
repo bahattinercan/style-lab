@@ -1,0 +1,27 @@
+/* 19 · y2k — chrome bubble highlight: stacked elliptical radial-gradients with hard specular stops */
+.motif-rings {
+  position: relative;
+}
+.motif-rings::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 140px 90px at 28% 34%, var(--surface) 0% 16%, var(--accent) 18% 26%, transparent 30%),
+    radial-gradient(ellipse 100px 65px at 70% 55%, var(--surface) 0% 12%, var(--line) 15% 22%, transparent 26%),
+    radial-gradient(ellipse 70px 45px at 45% 72%, var(--surface) 0% 14%, var(--accent) 16% 24%, transparent 28%),
+    linear-gradient(135deg, transparent 0 38%, var(--surface) 40% 43%, transparent 45% 100%);
+  opacity: 0.85;
+}
+.motif-rings::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 48%, transparent 55px, var(--surface) 56px 60px, transparent 61px 85px, var(--accent) 86px 89px, transparent 90px),
+    radial-gradient(circle 12px at 26% 32%, var(--surface) 0% 90%, transparent 100%),
+    radial-gradient(circle 8px at 68% 53%, var(--surface) 0% 90%, transparent 100%);
+  opacity: 0.8;
+}

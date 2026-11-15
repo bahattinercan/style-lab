@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="fluidBg" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#eff4f3"/>
+      <stop offset="100%" stop-color="#e3ecea"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0" y1="0" x2="1600" y2="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#b8481a"/>
+      <stop offset="100%" stop-color="#d96632"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#fluidBg)"/>
+
+  <!-- Fluid dynamics telemetry header at TOP (clearing bottom-left caption) -->
+  <g fill="#101a1c">
+    <text x="80" y="80" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="700">
+      FLUID DYNAMICS · SURFACE TENSION 100
+    </text>
+    <text x="80" y="115" font-family="'JetBrains Mono', monospace" font-size="15" fill="#435452">
+      VISCOSITY: η = 1.48 mPa·s · REYNOLDS: Re = 240 (LAMINAR) · MENISCUS 28PX
+    </text>
+  </g>
+
+  <!-- Fluid wave separator body across screen -->
+  <path d="M 0 420 C 350 260 550 560 900 380 C 1200 240 1350 480 1600 320 L 1600 1000 L 0 1000 Z" fill="url(#waveGrad)"/>
+
+  <!-- Concentric surface tension ripple contours -->
+  <g fill="none" stroke="#fbfdfc" stroke-width="3" opacity="0.45">
+    <ellipse cx="620" cy="460" rx="90" ry="45"/>
+    <ellipse cx="620" cy="460" rx="160" ry="75"/>
+    <ellipse cx="620" cy="460" rx="240" ry="110"/>
+    <ellipse cx="1200" cy="560" rx="110" ry="50"/>
+    <ellipse cx="1200" cy="560" rx="190" ry="85"/>
+  </g>
+
+  <!-- Viscous Droplet Coalescence (Metaballs) -->
+  <g fill="#b8481a">
+    <circle cx="340" cy="240" r="70"/>
+    <circle cx="480" cy="280" r="50"/>
+    <path d="M 340 170 Q 410 240 480 230 Q 430 310 340 310 Z" fill="#b8481a"/>
+    <circle cx="1260" cy="200" r="85"/>
+    <circle cx="1400" cy="230" r="45"/>
+    <path d="M 1260 115 Q 1330 190 1400 185 Q 1340 265 1260 285 Z" fill="#b8481a"/>
+  </g>
+
+  <!-- Small floating droplet beads -->
+  <g fill="#101a1c" opacity="0.6">
+    <circle cx="220" cy="360" r="14"/>
+    <circle cx="260" cy="400" r="8"/>
+    <circle cx="780" cy="280" r="16"/>
+    <circle cx="830" cy="260" r="10"/>
+    <circle cx="1100" cy="290" r="12"/>
+    <circle cx="1480" cy="380" r="18"/>
+  </g>
+
+  <!-- Streamline velocity arrows in lower right -->
+  <g stroke="#fdf6f2" stroke-width="2" opacity="0.75" fill="none">
+    <path d="M 400 860 Q 600 820 800 860 T 1200 840 T 1500 860"/>
+    <path d="M 400 900 Q 600 860 800 900 T 1200 880 T 1500 900"/>
+  </g>
+</svg>

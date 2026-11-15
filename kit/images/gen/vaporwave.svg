@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="vw-bg" x1="0" y1="0" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a1230"/>
+      <stop offset="55%" stop-color="#2a1b4d"/>
+      <stop offset="85%" stop-color="#462266"/>
+      <stop offset="100%" stop-color="#1a1230"/>
+    </linearGradient>
+    <linearGradient id="vw-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2a0c0"/>
+      <stop offset="60%" stop-color="#d4689c"/>
+      <stop offset="100%" stop-color="#732f7a"/>
+    </linearGradient>
+    <linearGradient id="vw-bust" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6efff"/>
+      <stop offset="50%" stop-color="#b9a7e0"/>
+      <stop offset="100%" stop-color="#4b2e6d"/>
+    </linearGradient>
+    <linearGradient id="vw-cyan-pink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#05d9e8"/>
+      <stop offset="100%" stop-color="#f2a0c0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="1600" height="1000" fill="url(#vw-bg)"/>
+
+  <!-- Setting Neon Sun in background -->
+  <g transform="translate(800 480)">
+    <circle cx="0" cy="0" r="280" fill="url(#vw-sun)"/>
+    <!-- Blinds horizontal slices through the sun -->
+    <rect x="-300" y="-40" width="600" height="10" fill="#2a1b4d"/>
+    <rect x="-300" y="10" width="600" height="16" fill="#2a1b4d"/>
+    <rect x="-300" y="70" width="600" height="24" fill="#2a1b4d"/>
+    <rect x="-300" y="140" width="600" height="32" fill="#2a1b4d"/>
+    <rect x="-300" y="215" width="600" height="42" fill="#2a1b4d"/>
+  </g>
+
+  <!-- Distant digital horizon mountains -->
+  <polygon points="0,520 220,440 380,490 520,410 740,510 900,430 1120,500 1320,420 1480,480 1600,450 1600,600 0,600" fill="#21133b" opacity="0.85"/>
+  <polyline points="0,520 220,440 380,490 520,410 740,510 900,430 1120,500 1320,420 1480,480 1600,450" fill="none" stroke="#f2a0c0" stroke-width="3" opacity="0.7"/>
+
+  <!-- Perspective Grid Floor -->
+  <g>
+    <!-- Horizon Line -->
+    <line x1="0" y1="560" x2="1600" y2="560" stroke="#f2a0c0" stroke-width="4"/>
+    <!-- Horizontal floor lines -->
+    <line x1="0" y1="580" x2="1600" y2="580" stroke="#b9a7e0" stroke-width="1.5" opacity="0.4"/>
+    <line x1="0" y1="610" x2="1600" y2="610" stroke="#b9a7e0" stroke-width="2" opacity="0.5"/>
+    <line x1="0" y1="655" x2="1600" y2="655" stroke="#b9a7e0" stroke-width="2.5" opacity="0.6"/>
+    <line x1="0" y1="720" x2="1600" y2="720" stroke="#f2a0c0" stroke-width="3" opacity="0.7"/>
+    <line x1="0" y1="810" x2="1600" y2="810" stroke="#f2a0c0" stroke-width="3.5" opacity="0.8"/>
+    <line x1="0" y1="930" x2="1600" y2="930" stroke="#f2a0c0" stroke-width="4" opacity="0.9"/>
+    
+    <!-- Vanishing perspective lines -->
+    <line x1="800" y1="560" x2="-200" y2="1000" stroke="#f2a0c0" stroke-width="2" opacity="0.65"/>
+    <line x1="800" y1="560" x2="100" y2="1000" stroke="#f2a0c0" stroke-width="2" opacity="0.65"/>
+    <line x1="800" y1="560" x2="400" y2="1000" stroke="#f2a0c0" stroke-width="2" opacity="0.65"/>
+    <line x1="800" y1="560" x2="650" y2="1000" stroke="#f2a0c0" stroke-width="2" opacity="0.65"/>
+    <line x1="800" y1="560" x2="800" y2="1000" stroke="#f2a0c0" stroke-width="2" opacity="0.65"/>
+    <line x1="800" y1="560" x2="950" y2="1000" stroke="#f2a0c0" stroke-width="2" opacity="0.65"/>
+    <line x1="800" y1="560" x2="1200" y2="1000" stroke="#f2a0c0" stroke-width="2" opacity="0.65"/>
+    <line x1="800" y1="560" x2="1500" y2="1000" stroke="#f2a0c0" stroke-width="2" opacity="0.65"/>
+    <line x1="800" y1="560" x2="1800" y2="1000" stroke="#f2a0c0" stroke-width="2" opacity="0.65"/>
+  </g>
+
+  <!-- Left: Classical Greek Column (Ionic) -->
+  <g transform="translate(180 320)">
+    <!-- Capital -->
+    <path d="M 0 0 C -30 -30 -80 -20 -70 20 C -60 50 -20 40 0 30 L 140 30 C 160 40 200 50 210 20 C 220 -20 170 -30 140 0 Z" fill="#b9a7e0" stroke="#f6efff" stroke-width="3"/>
+    <!-- Shaft flutes -->
+    <rect x="-10" y="30" width="160" height="420" fill="#2a1b4d" stroke="#b9a7e0" stroke-width="2"/>
+    <line x1="15" y1="30" x2="15" y2="450" stroke="#f6efff" stroke-width="2" opacity="0.7"/>
+    <line x1="45" y1="30" x2="45" y2="450" stroke="#f6efff" stroke-width="2" opacity="0.7"/>
+    <line x1="75" y1="30" x2="75" y2="450" stroke="#f6efff" stroke-width="2" opacity="0.7"/>
+    <line x1="105" y1="30" x2="105" y2="450" stroke="#f6efff" stroke-width="2" opacity="0.7"/>
+    <line x1="130" y1="30" x2="130" y2="450" stroke="#f6efff" stroke-width="2" opacity="0.7"/>
+    <!-- Base -->
+    <rect x="-30" y="450" width="200" height="40" rx="4" fill="#b9a7e0" stroke="#f6efff" stroke-width="3"/>
+  </g>
+
+  <!-- Center-Right: Classical Bust with Horizontal Glitch Displacements -->
+  <g transform="translate(920 180)">
+    <!-- Base shadow/aura -->
+    <ellipse cx="140" cy="520" rx="200" ry="40" fill="#1a1230" opacity="0.8"/>
+    
+    <!-- Bust Silhouette & Sculpted Contours (Slice 1: Hair top) -->
+    <g transform="translate(0 0)">
+      <path d="M 60 120 C 70 50 140 20 220 30 C 290 40 330 90 320 150 C 310 180 270 200 240 210 C 180 210 120 190 70 170 Z" fill="url(#vw-bust)"/>
+    </g>
+    
+    <!-- Slice 2: Forehead & Eyes (Glitch offset right +25px with cyan under-ghost) -->
+    <g transform="translate(25 0)">
+      <!-- Glitch ghost cyan -->
+      <rect x="50" y="150" width="280" height="75" fill="#05d9e8" opacity="0.25"/>
+      <path d="M 80 150 C 130 155 260 150 290 170 C 310 200 300 230 270 235 C 190 235 110 230 75 210 Z" fill="url(#vw-bust)" stroke="#f2a0c0" stroke-width="2"/>
+      <!-- Eye cavity / nose bridge -->
+      <polygon points="170,165 195,190 160,195" fill="#2a1b4d"/>
+      <polygon points="230,165 245,190 215,195" fill="#2a1b4d"/>
+      <polygon points="195,185 205,230 185,230" fill="#f6efff"/>
+    </g>
+
+    <!-- Slice 3: Nose, Mouth & Jaw (Glitch offset left -18px with pink under-ghost) -->
+    <g transform="translate(-18 0)">
+      <rect x="70" y="235" width="260" height="90" fill="#f2a0c0" opacity="0.2"/>
+      <path d="M 85 235 C 120 235 270 235 285 245 C 295 280 270 330 220 345 C 170 350 120 340 95 315 C 80 280 80 250 85 235 Z" fill="url(#vw-bust)" stroke="#05d9e8" stroke-width="1.5"/>
+      <!-- Lips -->
+      <path d="M 175 270 Q 200 265 220 270 Q 200 285 175 270 Z" fill="#2a1b4d"/>
+      <!-- Chin cleft -->
+      <circle cx="198" cy="315" r="8" fill="#4b2e6d"/>
+    </g>
+
+    <!-- Slice 4: Neck & Muscular Torso -->
+    <g transform="translate(0 0)">
+      <path d="M 120 340 C 130 380 120 420 50 480 C 10 520 -40 560 -40 600 L 400 600 C 400 550 340 500 280 460 C 260 410 250 370 255 340 Z" fill="url(#vw-bust)"/>
+      <path d="M 120 450 C 180 490 220 490 280 450" fill="none" stroke="#2a1b4d" stroke-width="6"/>
+      <path d="M 180 480 L 180 600" fill="none" stroke="#2a1b4d" stroke-width="6"/>
+      <path d="M 100 520 C 140 540 180 540 180 600" fill="none" stroke="#f6efff" stroke-width="3" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Floating Wireframe 3D Icosahedron / Geometric Prism -->
+  <g transform="translate(560 300) scale(0.9)">
+    <polygon points="120,40 200,90 170,180 70,180 40,90" fill="#2a1b4d" stroke="#f2a0c0" stroke-width="3" opacity="0.85"/>
+    <polygon points="120,40 170,180 120,130" fill="none" stroke="#05d9e8" stroke-width="2"/>
+    <polygon points="120,40 70,180 120,130" fill="none" stroke="#05d9e8" stroke-width="2"/>
+    <polygon points="40,90 120,130 70,180" fill="none" stroke="#f2a0c0" stroke-width="2"/>
+    <polygon points="200,90 120,130 170,180" fill="none" stroke="#f2a0c0" stroke-width="2"/>
+    <line x1="120" y1="40" x2="120" y2="130" stroke="#f6efff" stroke-width="3"/>
+  </g>
+
+  <!-- Palm Tree Silhouettes on right edge -->
+  <g transform="translate(1420 420)">
+    <!-- Trunk -->
+    <path d="M 60 420 Q 30 200 80 0 Q 70 200 90 420 Z" fill="#1a1230"/>
+    <!-- Fronds -->
+    <path d="M 80 0 Q 0 -80 -120 -40 Q -20 -30 80 0 Z" fill="#2a1b4d" stroke="#f2a0c0" stroke-width="1.5"/>
+    <path d="M 80 0 Q 40 -120 -40 -120 Q 20 -60 80 0 Z" fill="#2a1b4d" stroke="#f2a0c0" stroke-width="1.5"/>
+    <path d="M 80 0 Q 140 -130 180 -80 Q 130 -40 80 0 Z" fill="#2a1b4d" stroke="#f2a0c0" stroke-width="1.5"/>
+    <path d="M 80 0 Q 180 -50 240 20 Q 150 0 80 0 Z" fill="#2a1b4d" stroke="#f2a0c0" stroke-width="1.5"/>
+    <path d="M 80 0 Q -80 20 -140 100 Q -60 40 80 0 Z" fill="#2a1b4d" stroke="#f2a0c0" stroke-width="1.5"/>
+  </g>
+
+  <!-- VHS Overlay Text & Timestamp -->
+  <g fill="#f6efff" font-family="'JetBrains Mono', monospace" font-size="28" letter-spacing="3">
+    <text x="80" y="90">PLAY ▶  SP</text>
+    <text x="80" y="130" fill="#f2a0c0">00:24:19</text>
+    <text x="1380" y="90" fill="#05d9e8" text-anchor="end">NTSC 4:3</text>
+    <text x="1380" y="130" opacity="0.6" text-anchor="end">STEREO</text>
+  </g>
+</svg>

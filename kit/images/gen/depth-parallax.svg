@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="deepVoid" x1="0" y1="0" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b1014"/>
+      <stop offset="50%" stop-color="#101820"/>
+      <stop offset="100%" stop-color="#131d26"/>
+    </linearGradient>
+    <linearGradient id="cyanHaze" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5ac8ff" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#5ac8ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#5ac8ff" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="slabGrad" x1="0" y1="0" x2="0" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a2732"/>
+      <stop offset="100%" stop-color="#0b1014"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#deepVoid)"/>
+
+  <!-- PLANE 0: Distant Mountain / Horizon Ridge (z=0.2, soft haze) -->
+  <g opacity="0.45">
+    <path d="M 0 540 Q 250 420 500 500 T 1000 460 T 1600 520 L 1600 1000 L 0 1000 Z" fill="#131d26"/>
+    <path d="M 0 580 Q 300 480 600 560 T 1200 520 T 1600 560 L 1600 1000 L 0 1000 Z" fill="#1a2732" opacity="0.6"/>
+  </g>
+  <rect x="0" y="440" width="1600" height="140" fill="url(#cyanHaze)"/>
+
+  <!-- PLANE 1: Midground Architectural Geometric Slabs (z=0.6) -->
+  <g opacity="0.85">
+    <rect x="180" y="380" width="360" height="520" fill="url(#slabGrad)" stroke="#5ac8ff" stroke-width="2"/>
+    <rect x="620" y="320" width="440" height="580" fill="url(#slabGrad)" stroke="#5ac8ff" stroke-width="2.5"/>
+    <rect x="1140" y="420" width="320" height="480" fill="url(#slabGrad)" stroke="#5ac8ff" stroke-width="2"/>
+    <line x1="180" y1="380" x2="540" y2="380" stroke="#5ac8ff" stroke-width="4"/>
+    <line x1="620" y1="320" x2="1060" y2="320" stroke="#5ac8ff" stroke-width="5"/>
+    <line x1="1140" y1="420" x2="1460" y2="420" stroke="#5ac8ff" stroke-width="4"/>
+  </g>
+
+  <!-- Header & Plane Info at top -->
+  <g>
+    <text x="80" y="80" font-family="'Fraunces', serif" font-size="36" font-weight="700" fill="#eaf0f4">
+      DEPTH PARALLAX 99 · THREE PLANES
+    </text>
+    <text x="80" y="115" font-family="'IBM Plex Mono', monospace" font-size="14" fill="#5ac8ff">
+      DIFFERENTIAL SCROLL RATIO: [0.20 : 0.60 : 1.00] · OPTICAL HAZE BLUR: 4PX
+    </text>
+  </g>
+
+  <!-- Parallax scale ruler placed horizontally across mid-lower area -->
+  <g stroke="#5ac8ff" stroke-width="2">
+    <line x1="380" y1="920" x2="1480" y2="920"/>
+    <line x1="380" y1="910" x2="380" y2="930"/>
+    <line x1="930" y1="915" x2="930" y2="925"/>
+    <line x1="1480" y1="910" x2="1480" y2="930"/>
+  </g>
+  <text x="380" y="955" font-family="'IBM Plex Mono', monospace" font-size="13" fill="#5ac8ff">0.0 (INF)</text>
+  <text x="900" y="955" font-family="'IBM Plex Mono', monospace" font-size="13" fill="#5ac8ff">0.5 (MID)</text>
+  <text x="1440" y="955" font-family="'IBM Plex Mono', monospace" font-size="13" fill="#5ac8ff">1.0 (NEAR)</text>
+
+  <!-- Depth Reticle in Sky -->
+  <circle cx="800" cy="220" r="48" fill="none" stroke="#5ac8ff" stroke-width="2" opacity="0.6"/>
+  <circle cx="800" cy="220" r="6" fill="#5ac8ff"/>
+  <line x1="720" y1="220" x2="880" y2="220" stroke="#5ac8ff" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="800" y1="140" x2="800" y2="300" stroke="#5ac8ff" stroke-width="1.5" stroke-dasharray="4 4"/>
+</svg>

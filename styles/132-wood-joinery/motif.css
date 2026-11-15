@@ -1,0 +1,37 @@
+/* 132 · wood-joinery motif: repeating dovetail pin comb via clip-path polygon pattern */
+.motif-paper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 38px;
+  z-index: 1;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--accent) 45%, var(--surface-2));
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    100% 100%, 94% 100%, 92% 35%, 86% 35%, 84% 100%,
+    76% 100%, 74% 35%, 68% 35%, 66% 100%,
+    58% 100%, 56% 35%, 50% 35%, 48% 100%,
+    40% 100%, 38% 35%, 32% 35%, 30% 100%,
+    22% 100%, 20% 35%, 14% 35%, 12% 100%,
+    4% 100%, 2% 35%, 0% 35%
+  );
+  opacity: 0.9;
+}
+.motif-paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 19px,
+    color-mix(in srgb, var(--line) 50%, transparent) 19px,
+    color-mix(in srgb, var(--line) 50%, transparent) 20px
+  );
+  opacity: 0.45;
+}

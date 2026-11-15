@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="op-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f2f6f7" />
+      <stop offset="100%" stop-color="#e7eef0" />
+    </linearGradient>
+    <linearGradient id="op-glass" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#fdfeff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#eaf1f3" stop-opacity="0.65" />
+    </linearGradient>
+    <linearGradient id="op-spectral" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d5c63" />
+      <stop offset="25%" stop-color="#43535a" />
+      <stop offset="50%" stop-color="#0d5c63" stop-opacity="0.8" />
+      <stop offset="75%" stop-color="#74858c" />
+      <stop offset="100%" stop-color="#101a1f" />
+    </linearGradient>
+    <filter id="op-shadow">
+      <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#101a1f" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#op-bg)" />
+
+  <!-- Optical Bench Radial Protractor Arc Grid -->
+  <g stroke="#74858c" stroke-width="1" stroke-opacity="0.25" fill="none">
+    <circle cx="720" cy="520" r="160" />
+    <circle cx="720" cy="520" r="300" stroke-dasharray="4 6" />
+    <circle cx="720" cy="520" r="440" />
+    <line x1="120" y1="520" x2="1480" y2="520" stroke-dasharray="2 4" />
+    <line x1="720" y1="80" x2="720" y2="920" stroke-dasharray="2 4" />
+  </g>
+
+  <!-- Incident Collimated Ray (White Beam from Left) -->
+  <line x1="140" y1="520" x2="620" y2="520" stroke="#101a1f" stroke-width="5" stroke-linecap="round" />
+  <line x1="140" y1="520" x2="620" y2="520" stroke="#ffffff" stroke-width="2.5" />
+  <polygon points="380,512 400,520 380,528" fill="#0d5c63" />
+
+  <!-- Equilateral Crown Glass Optical Prism (Center) -->
+  <g filter="url(#op-shadow)">
+    <!-- Base triangle prism body -->
+    <polygon points="720,180 980,680 460,680" fill="url(#op-glass)" stroke="#0d5c63" stroke-width="2.5" />
+    <!-- Facet reflection bevels -->
+    <line x1="720" y1="180" x2="720" y2="680" stroke="#ffffff" stroke-width="2" opacity="0.8" />
+  </g>
+
+  <!-- Internal Refraction Rays Inside Prism -->
+  <line x1="620" y1="520" x2="780" y2="460" stroke="#0d5c63" stroke-width="4" opacity="0.8" />
+  <line x1="620" y1="520" x2="810" y2="520" stroke="#43535a" stroke-width="3" opacity="0.7" />
+  <line x1="620" y1="520" x2="830" y2="570" stroke="#74858c" stroke-width="3" opacity="0.7" />
+
+  <!-- Dispersed Spectral Wavelength Rays Fan (Exiting Right Facet) -->
+  <g stroke-linecap="round">
+    <!-- Ray 1 (Deep Refraction - Teal 480nm) -->
+    <polygon points="780,460 1460,260 1460,300 788,480" fill="#0d5c63" opacity="0.85" />
+    <!-- Ray 2 (Mid Refraction - Steel Gray 550nm) -->
+    <polygon points="795,490 1460,340 1460,380 810,520" fill="#43535a" opacity="0.75" />
+    <!-- Ray 3 (Shallow Refraction - Ink Faint 650nm) -->
+    <polygon points="815,530 1460,440 1460,490 830,570" fill="#74858c" opacity="0.8" />
+    <!-- Ray 4 (Lower Boundary Ray) -->
+    <polygon points="830,570 1460,560 1460,620 840,600" fill="#101a1f" opacity="0.7" />
+  </g>
+
+  <!-- Measuring Reticle Angular Scale Band -->
+  <g transform="translate(1100, 200)" stroke="#101a1f" stroke-width="1.5">
+    <line x1="0" y1="0" x2="0" y2="460" stroke-width="2" />
+    <line x1="0" y1="60" x2="24" y2="60" />
+    <text x="32" y="64" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#0d5c63" stroke="none">λ 435.8 nm [F]</text>
+    <line x1="0" y1="160" x2="24" y2="160" />
+    <text x="32" y="164" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#43535a" stroke="none">λ 546.1 nm [e]</text>
+    <line x1="0" y1="280" x2="24" y2="280" />
+    <text x="32" y="284" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#74858c" stroke="none">λ 589.3 nm [D]</text>
+    <line x1="0" y1="400" x2="24" y2="400" />
+    <text x="32" y="404" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#101a1f" stroke="none">λ 656.3 nm [C]</text>
+  </g>
+
+  <!-- Optical Instrument Calibration Tag -->
+  <g transform="translate(180, 140)">
+    <rect width="360" height="110" rx="4" fill="#ffffff" stroke="#0d5c63" stroke-width="1.5" />
+    <text x="24" y="34" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#0d5c63" letter-spacing="2">SPECTROMETER BENCH · 131</text>
+    <text x="24" y="66" font-family="'Michroma', sans-serif" font-size="18" fill="#101a1f">Optic Crown Prism</text>
+    <text x="24" y="92" font-family="'JetBrains Mono', monospace" font-size="11" fill="#43535a">N_d = 1.5168 · ABBE V_d = 64.2 · ANGLE 60°</text>
+  </g>
+</svg>

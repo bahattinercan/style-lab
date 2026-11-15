@@ -1,0 +1,25 @@
+/* 134 · concrete-monolith motif: formwork panel grid lines + form-tie holes (radial dots at intersections) */
+.motif-none::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--line) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, var(--line) 1.5px, transparent 1.5px);
+  background-size: 80px 80px;
+  opacity: 0.75;
+}
+.motif-none::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 80px 80px, color-mix(in srgb, var(--ink) 45%, transparent) 0 3.5px, color-mix(in srgb, var(--surface) 50%, transparent) 3.5px 5px, transparent 5px);
+  background-size: 80px 80px;
+  background-position: -40px -40px;
+  opacity: 0.85;
+}

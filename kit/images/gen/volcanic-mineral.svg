@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="volc-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14120f" />
+      <stop offset="60%" stop-color="#1c1916" />
+      <stop offset="100%" stop-color="#0a0907" />
+    </linearGradient>
+    <linearGradient id="magma-fire" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e0572a" />
+      <stop offset="40%" stop-color="#ff7a45" />
+      <stop offset="70%" stop-color="#ffb259" />
+      <stop offset="100%" stop-color="#e0572a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#volc-bg)" />
+
+  <!-- Geological Strata Horizontal Formations (Varying thickness) -->
+  <g>
+    <!-- Stratum 1: Basaltic Vesicular Crust -->
+    <rect x="0" y="240" width="1600" height="110" fill="#1c1916" stroke="#26221d" stroke-width="1.5" />
+    <!-- Stratum 2: Pyroclastic Tephra Layer -->
+    <rect x="0" y="380" width="1600" height="60" fill="#26221d" stroke="#14120f" stroke-width="1.5" />
+    <!-- Stratum 3: Incandescent Magma Sill Intrusion (Hot Glow) -->
+    <path d="M 0,480 C 400,450 820,510 1200,470 C 1420,450 1520,490 1600,475 L 1600,565 C 1450,580 1150,540 850,580 C 450,620 200,560 0,585 Z" fill="url(#magma-fire)" opacity="0.95" />
+    <!-- Stratum 4: Massive Columnar Basalt Slabs -->
+    <rect x="0" y="650" width="1600" height="170" fill="#1c1916" stroke="#26221d" stroke-width="2" />
+    <!-- Stratum 5: Peridotite Deep Mantle Base -->
+    <rect x="0" y="850" width="1600" height="150" fill="#0e0d0b" />
+  </g>
+
+  <!-- Columnar Basalt Jointing Vertical Fractures in Stratum 4 -->
+  <g stroke="#14120f" stroke-width="4">
+    <line x1="280" y1="650" x2="280" y2="820" />
+    <line x1="420" y1="650" x2="420" y2="820" />
+    <line x1="560" y1="650" x2="560" y2="820" />
+    <line x1="700" y1="650" x2="700" y2="820" />
+    <line x1="840" y1="650" x2="840" y2="820" />
+    <line x1="980" y1="650" x2="980" y2="820" />
+    <line x1="1120" y1="650" x2="1120" y2="820" />
+    <line x1="1260" y1="650" x2="1260" y2="820" />
+    <line x1="1400" y1="650" x2="1400" y2="820" />
+  </g>
+
+  <!-- Mineral Inclusion Ticks & Lithological Labels on Right -->
+  <g transform="translate(1220, 240)">
+    <rect x="0" y="0" width="280" height="640" fill="#14120f" stroke="#e0572a" stroke-width="1.5" rx="4" opacity="0.9" />
+    <!-- Tick ruler -->
+    <g stroke="#f0eae0" stroke-width="1.2" stroke-opacity="0.4">
+      <line x1="20" y1="20" x2="20" y2="600" />
+      <line x1="12" y1="50" x2="20" y2="50" />
+      <line x1="8" y1="120" x2="20" y2="120" stroke="#e0572a" stroke-width="2" />
+      <line x1="12" y1="190" x2="20" y2="190" />
+      <line x1="8" y1="260" x2="20" y2="260" stroke="#e0572a" stroke-width="2" />
+      <line x1="12" y1="340" x2="20" y2="340" />
+      <line x1="8" y1="430" x2="20" y2="430" stroke="#e0572a" stroke-width="2" />
+      <line x1="12" y1="520" x2="20" y2="520" />
+    </g>
+    <!-- Petrographic Assay Breakdown -->
+    <g transform="translate(45, 40)" font-family="'Share Tech Mono', monospace" font-size="12" fill="#f0eae0">
+      <text x="0" y="20" fill="#e0572a" font-weight="700">PETROGRAPHIC LOG</text>
+      <text x="0" y="60" fill="#b6a998">SiO2 : 49.2 %</text>
+      <text x="0" y="90" fill="#b6a998">Al2O3: 15.8 %</text>
+      <text x="0" y="120" fill="#b6a998">FeO  : 11.4 %</text>
+      <text x="0" y="150" fill="#b6a998">MgO  : 7.8 %</text>
+      <text x="0" y="180" fill="#b6a998">CaO  : 9.6 %</text>
+      <text x="0" y="230" fill="#e0572a" font-weight="700">INTRUSION PROFILE</text>
+      <text x="0" y="260">Tholeiitic Magma</text>
+      <text x="0" y="285">T: 1,180 °C</text>
+      <text x="0" y="310">P: 2.8 kbar</text>
+    </g>
+  </g>
+
+  <!-- Geological Section Header at Top Left -->
+  <g transform="translate(100, 95)">
+    <text x="0" y="32" font-family="'Michroma', sans-serif" font-size="28" fill="#f0eae0" letter-spacing="1">VOLCANIC STRATA // 084</text>
+    <text x="0" y="62" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600" fill="#e0572a" letter-spacing="3">STRATIGRAPHIC BOREHOLE COLUMN · BASALTIC SILL &amp; MAGMA DYKE</text>
+    <text x="0" y="86" font-family="'Share Tech Mono', monospace" font-size="12" fill="#b6a998" letter-spacing="1.5">DEPTH: 0 TO 1,400m · CALDERA RIM PROFILE // BASALT DENSITY: 2.94 g/cm³</text>
+  </g>
+</svg>

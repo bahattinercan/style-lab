@@ -1,0 +1,55 @@
+/* 102 · moire-field — two concentric ring sets, second one translated off-centre */
+.motif-rings {
+  position: relative;
+  overflow: hidden;
+}
+.motif-rings::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 48% 50%,
+    transparent 0 12px,
+    var(--line) 12px 14px,
+    transparent 14px 28px,
+    var(--line) 28px 30px,
+    transparent 30px 46px,
+    var(--line) 46px 48px,
+    transparent 48px 66px,
+    var(--line) 66px 68px,
+    transparent 68px 88px,
+    var(--line) 88px 90px,
+    transparent 90px 112px,
+    var(--line) 112px 114px,
+    transparent 114px 138px,
+    var(--line) 138px 140px,
+    transparent 140px
+  );
+  opacity: 0.75;
+}
+.motif-rings::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 54% 50%,
+    transparent 0 12px,
+    var(--accent) 12px 14px,
+    transparent 14px 28px,
+    var(--accent) 28px 30px,
+    transparent 30px 46px,
+    var(--accent) 46px 48px,
+    transparent 48px 66px,
+    var(--accent) 66px 68px,
+    transparent 68px 88px,
+    var(--accent) 88px 90px,
+    transparent 90px 112px,
+    var(--accent) 112px 114px,
+    transparent 114px 138px,
+    var(--accent) 138px 140px,
+    transparent 140px
+  );
+  opacity: 0.45;
+}

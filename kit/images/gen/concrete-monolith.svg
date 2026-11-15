@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="cm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dedcd6" />
+      <stop offset="100%" stop-color="#d2cfc8" />
+    </linearGradient>
+    <linearGradient id="cm-face" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eae8e3" />
+      <stop offset="50%" stop-color="#dedcd6" />
+      <stop offset="100%" stop-color="#c6c3bc" />
+    </linearGradient>
+    <!-- Recessed snap-tie hole cone shading -->
+    <radialGradient id="cm-cone" cx="40%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#14161a" />
+      <stop offset="60%" stop-color="#3f4448" />
+      <stop offset="100%" stop-color="#dedcd6" />
+    </radialGradient>
+    <filter id="cm-shadow">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#14161a" flood-opacity="0.28" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#cm-bg)" />
+
+  <!-- Formwork Poured Concrete Monolith Slab -->
+  <g filter="url(#cm-shadow)">
+    <rect x="140" y="100" width="1320" height="800" rx="4" fill="url(#cm-face)" stroke="#6b7074" stroke-width="2" />
+  </g>
+
+  <!-- Plywood Formwork Board Joint Seams (Horizontal lines every 200px) -->
+  <g stroke="#14161a" stroke-width="3" stroke-opacity="0.5">
+    <line x1="140" y1="300" x2="1460" y2="300" />
+    <line x1="140" y1="500" x2="1460" y2="500" />
+    <line x1="140" y1="700" x2="1460" y2="700" />
+  </g>
+  <!-- Formwork shadow lip -->
+  <g stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.4">
+    <line x1="140" y1="302" x2="1460" y2="302" />
+    <line x1="140" y1="502" x2="1460" y2="502" />
+    <line x1="140" y1="702" x2="1460" y2="702" />
+  </g>
+
+  <!-- Vertical Formwork Panel Seams -->
+  <g stroke="#14161a" stroke-width="2.5" stroke-opacity="0.4">
+    <line x1="580" y1="100" x2="580" y2="900" />
+    <line x1="1020" y1="100" x2="1020" y2="900" />
+  </g>
+
+  <!-- Snap-Tie Cone Holes (Form-Tie Impressions with center rod pin) -->
+  <g>
+    <!-- Row 1 -->
+    <g transform="translate(360, 200)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+    <g transform="translate(800, 200)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+    <g transform="translate(1240, 200)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(360, 400)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+    <g transform="translate(800, 400)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+    <g transform="translate(1240, 400)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(360, 600)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+    <g transform="translate(800, 600)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+    <g transform="translate(1240, 600)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+
+    <!-- Row 4 -->
+    <g transform="translate(360, 800)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+    <g transform="translate(800, 800)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+    <g transform="translate(1240, 800)">
+      <circle cx="0" cy="0" r="28" fill="url(#cm-cone)" />
+      <circle cx="0" cy="0" r="7" fill="#14161a" />
+      <circle cx="2" cy="-2" r="3" fill="#6b7074" opacity="0.8" />
+    </g>
+  </g>
+
+  <!-- Heavy Stenciled Industrial Batch Marking -->
+  <g transform="translate(200, 240)">
+    <text x="0" y="0" font-family="'Archivo Black', sans-serif" font-size="44" fill="#14161a" letter-spacing="-1">C35/45 · MONOLITH</text>
+    <text x="0" y="32" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#7a5a17" letter-spacing="2">ARCHITECTURAL CAST FORMWORK · POUR 134</text>
+    <text x="0" y="56" font-family="'JetBrains Mono', monospace" font-size="11" fill="#3f4448">AGGREGATE 0-16 MM · SLUMP S3 · COMPRESSION TEST 45.2 N/mm²</text>
+  </g>
+</svg>

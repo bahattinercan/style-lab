@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="topo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ece6d8" />
+      <stop offset="50%" stop-color="#e2dac9" />
+      <stop offset="100%" stop-color="#d8cdba" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#topo-bg)" />
+
+  <!-- Cartographic Map Sheet Margin Neatlines -->
+  <rect x="50" y="50" width="1500" height="900" fill="none" stroke="#241f18" stroke-width="2" />
+  <rect x="62" y="62" width="1476" height="876" fill="none" stroke="#241f18" stroke-width="0.8" stroke-opacity="0.5" />
+
+  <!-- Coordinate Graticule Grid Ticks -->
+  <g stroke="#241f18" stroke-width="1.2" stroke-opacity="0.35">
+    <line x1="350" y1="50" x2="350" y2="62" />
+    <line x1="650" y1="50" x2="650" y2="62" />
+    <line x1="950" y1="50" x2="950" y2="62" />
+    <line x1="1250" y1="50" x2="1250" y2="62" />
+    <line x1="350" y1="938" x2="350" y2="950" />
+    <line x1="650" y1="938" x2="650" y2="950" />
+    <line x1="950" y1="938" x2="950" y2="950" />
+    <line x1="1250" y1="938" x2="1250" y2="950" />
+    <line x1="50" y1="250" x2="62" y2="250" />
+    <line x1="50" y1="500" x2="62" y2="500" />
+    <line x1="50" y1="750" x2="62" y2="750" />
+    <line x1="1538" y1="250" x2="1550" y2="250" />
+    <line x1="1538" y1="500" x2="1550" y2="500" />
+    <line x1="1538" y1="750" x2="1550" y2="750" />
+    <!-- Fine Interior Grid Crosshairs -->
+    <path d="M 640,490 L 660,490 M 650,480 L 650,500" stroke-opacity="0.4" />
+    <path d="M 940,490 L 960,490 M 950,480 L 950,500" stroke-opacity="0.4" />
+    <path d="M 1240,490 L 1260,490 M 1250,480 L 1250,500" stroke-opacity="0.4" />
+  </g>
+
+  <!-- High-Density Contour Lines (Summit Peak 1: Ridge massif at right) -->
+  <g fill="none">
+    <!-- Base Ridge Contours (1000m to 1400m) -->
+    <path d="M 500,880 C 650,750 780,680 950,650 C 1180,610 1380,720 1550,780" stroke="#574e3e" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 540,840 C 690,720 810,640 980,610 C 1170,580 1340,680 1520,740" stroke="#574e3e" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 580,800 C 730,680 840,600 1010,570 C 1180,540 1310,630 1480,690" stroke="#574e3e" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 620,760 C 760,650 870,570 1040,530 C 1200,490 1280,580 1440,640" stroke="#574e3e" stroke-width="1.2" stroke-opacity="0.6" />
+
+    <!-- Index Contour 1400m (Thickened Accent Line) -->
+    <path d="M 660,720 C 800,610 900,530 1070,490 C 1220,450 1260,540 1400,590" stroke="#a34f24" stroke-width="2.5" />
+
+    <!-- Upper Massif Contours (1500m to 1800m) -->
+    <path d="M 720,670 C 840,570 940,500 1100,460 C 1240,420 1260,490 1360,540" stroke="#574e3e" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 780,620 C 880,530 970,470 1120,430 C 1240,390 1260,450 1330,490" stroke="#574e3e" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 850,570 C 930,490 1010,430 1140,390 C 1230,360 1260,400 1300,440" stroke="#574e3e" stroke-width="1.2" stroke-opacity="0.6" />
+
+    <!-- Index Contour 1600m (Thickened Accent Line) -->
+    <path d="M 920,520 C 980,450 1050,400 1160,360 C 1230,330 1260,370 1270,400" stroke="#a34f24" stroke-width="2.5" />
+
+    <!-- Summit Dome Closed Loops (1700m - 1864m) -->
+    <ellipse cx="1160" cy="320" rx="90" ry="45" transform="rotate(-15 1160 320)" stroke="#574e3e" stroke-width="1.4" stroke-opacity="0.75" />
+    <ellipse cx="1160" cy="320" rx="60" ry="30" transform="rotate(-15 1160 320)" stroke="#574e3e" stroke-width="1.4" stroke-opacity="0.8" />
+    <ellipse cx="1160" cy="320" rx="30" ry="15" transform="rotate(-15 1160 320)" stroke="#a34f24" stroke-width="2.2" />
+
+    <!-- Secondary Western Ridge Hill Peak (Left Center) -->
+    <path d="M 120,680 C 220,590 350,560 480,620 C 560,660 620,720 680,820" stroke="#574e3e" stroke-width="1.2" stroke-opacity="0.6" />
+    <path d="M 160,630 C 250,550 360,520 460,570 C 530,610 580,670 630,760" stroke="#a34f24" stroke-width="2.2" />
+    <ellipse cx="340" cy="490" rx="95" ry="50" transform="rotate(22 340 490)" stroke="#574e3e" stroke-width="1.2" stroke-opacity="0.65" />
+    <ellipse cx="340" cy="490" rx="60" ry="30" transform="rotate(22 340 490)" stroke="#574e3e" stroke-width="1.4" stroke-opacity="0.75" />
+    <ellipse cx="340" cy="490" rx="25" ry="14" transform="rotate(22 340 490)" stroke="#a34f24" stroke-width="2.2" />
+  </g>
+
+  <!-- Spot Elevation Callouts & Triangulation Markers -->
+  <g fill="#241f18">
+    <!-- Peak 1: 1864m -->
+    <polygon points="1160,314 1165,324 1155,324" fill="#a34f24" />
+    <text x="1175" y="322" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#a34f24">▲ 1864 m</text>
+    <!-- Peak 2: 1420m -->
+    <polygon points="340,484 345,494 335,494" fill="#a34f24" />
+    <text x="355" y="492" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#a34f24">▲ 1420 m</text>
+    <!-- Contour Index Height Numbers along lines -->
+    <text x="690" y="705" font-family="'Share Tech Mono', monospace" font-size="11" fill="#a34f24" transform="rotate(-38 690 705)">1400</text>
+    <text x="940" y="505" font-family="'Share Tech Mono', monospace" font-size="11" fill="#a34f24" transform="rotate(-32 940 505)">1600</text>
+    <text x="180" y="618" font-family="'Share Tech Mono', monospace" font-size="11" fill="#a34f24" transform="rotate(-36 180 618)">1200</text>
+  </g>
+
+  <!-- Map Title Block & Geodetic Header at Top Left -->
+  <g transform="translate(100, 95)">
+    <text x="0" y="30" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="700" fill="#241f18" letter-spacing="-0.5">TOPOGRAPHIC QUADRANGLE // 078</text>
+    <text x="0" y="58" font-family="'Jost', sans-serif" font-size="14" font-weight="600" fill="#a34f24" letter-spacing="3">SHEET: 46°32'N · 08°14'E // CONTOUR INTERVAL: 20 METERS</text>
+    <text x="0" y="80" font-family="'Share Tech Mono', monospace" font-size="11" fill="#574e3e" letter-spacing="1.5">DATUM: ETRS89 · SPHEROID: GRS80 · PROJECTION: UTM ZONE 32N · VERTICAL DATUM: NAP</text>
+  </g>
+
+  <!-- Scale Bar & Magnetic Declination Indicator at Top Right -->
+  <g transform="translate(1260, 90)">
+    <!-- Scale Bar -->
+    <text x="0" y="15" font-family="'Share Tech Mono', monospace" font-size="11" fill="#574e3e">SCALE 1:25,000</text>
+    <g transform="translate(0, 25)">
+      <rect x="0" y="0" width="50" height="6" fill="#241f18" />
+      <rect x="50" y="0" width="50" height="6" fill="#f7f3e8" stroke="#241f18" stroke-width="0.8" />
+      <rect x="100" y="0" width="50" height="6" fill="#241f18" />
+      <rect x="150" y="0" width="50" height="6" fill="#f7f3e8" stroke="#241f18" stroke-width="0.8" />
+      <text x="0" y="20" font-family="'Share Tech Mono', monospace" font-size="9" fill="#574e3e">0</text>
+      <text x="95" y="20" font-family="'Share Tech Mono', monospace" font-size="9" fill="#574e3e">1km</text>
+      <text x="195" y="20" font-family="'Share Tech Mono', monospace" font-size="9" fill="#574e3e">2km</text>
+    </g>
+  </g>
+</svg>

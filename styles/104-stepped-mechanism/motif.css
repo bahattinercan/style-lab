@@ -1,0 +1,40 @@
+/* 104 · stepped-mechanism — clip-path stepped staircase + ratchet teeth stripes */
+.motif-grid {
+  position: relative;
+  overflow: hidden;
+}
+.motif-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--accent) 0 10px,
+    transparent 10px 20px,
+    var(--line) 20px 22px,
+    transparent 22px 32px
+  );
+  clip-path: polygon(
+    0 0,
+    20% 0, 20% 20%,
+    40% 20%, 40% 40%,
+    60% 40%, 60% 60%,
+    80% 60%, 80% 80%,
+    100% 80%, 100% 100%,
+    0 100%
+  );
+  opacity: 0.42;
+}
+.motif-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--line) 0 2px,
+    transparent 2px 16px
+  );
+  opacity: 0.48;
+}

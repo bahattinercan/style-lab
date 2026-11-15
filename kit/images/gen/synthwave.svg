@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="sw-sky" x1="0" y1="0" x2="0" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#090126"/>
+      <stop offset="40%" stop-color="#120458"/>
+      <stop offset="75%" stop-color="#2b1055"/>
+      <stop offset="100%" stop-color="#ff2a6d"/>
+    </linearGradient>
+    <linearGradient id="sw-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe600"/>
+      <stop offset="45%" stop-color="#ff5e00"/>
+      <stop offset="85%" stop-color="#ff2a6d"/>
+      <stop offset="100%" stop-color="#670058"/>
+    </linearGradient>
+    <linearGradient id="sw-gridfloor" x1="0" y1="520" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1b0a63"/>
+      <stop offset="100%" stop-color="#080126"/>
+    </linearGradient>
+    <linearGradient id="sw-neonbar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff2a6d"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ff2a6d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="520" fill="url(#sw-sky)"/>
+
+  <!-- Distant Stars -->
+  <g fill="#fdfdff" opacity="0.7">
+    <circle cx="120" cy="80" r="2"/><circle cx="280" cy="140" r="1.5"/><circle cx="420" cy="60" r="2.5"/><circle cx="620" cy="110" r="1.5"/>
+    <circle cx="780" cy="50" r="2"/><circle cx="950" cy="95" r="1.5"/><circle cx="1180" cy="65" r="2.5"/><circle cx="1340" cy="120" r="2"/>
+    <circle cx="1490" cy="85" r="1.5"/><circle cx="220" cy="220" r="1.5"/><circle cx="1400" cy="210" r="2"/>
+  </g>
+
+  <!-- Giant Striped Sunset Sun -->
+  <g transform="translate(800 440)">
+    <circle cx="0" cy="0" r="260" fill="url(#sw-sun)"/>
+    <!-- Horizontal slats cut through sun -->
+    <rect x="-280" y="-30" width="560" height="8" fill="#190647"/>
+    <rect x="-280" y="10" width="560" height="14" fill="#1c074e"/>
+    <rect x="-280" y="60" width="560" height="20" fill="#200958"/>
+    <rect x="-280" y="115" width="560" height="28" fill="#250c64"/>
+    <rect x="-280" y="180" width="560" height="38" fill="#2b1055"/>
+  </g>
+
+  <!-- Wireframe Mountain Ranges -->
+  <!-- Back Range -->
+  <polygon points="0,520 180,380 320,440 500,320 680,450 800,360 920,450 1100,320 1280,440 1420,380 1600,520" fill="#1b0948" opacity="0.9"/>
+  <!-- Front Range -->
+  <polygon points="0,520 120,430 260,480 420,390 600,510 740,460 800,480 860,460 1000,510 1180,390 1340,480 1480,430 1600,520" fill="#120458"/>
+  <polyline points="0,520 120,430 260,480 420,390 600,510 740,460 800,480 860,460 1000,510 1180,390 1340,480 1480,430 1600,520" fill="none" stroke="#ff2a6d" stroke-width="3"/>
+  <!-- Ridge wire lines -->
+  <line x1="120" y1="430" x2="200" y2="520" stroke="#ff2a6d" stroke-width="1.5" opacity="0.6"/>
+  <line x1="420" y1="390" x2="480" y2="520" stroke="#ff2a6d" stroke-width="1.5" opacity="0.6"/>
+  <line x1="1180" y1="390" x2="1120" y2="520" stroke="#ff2a6d" stroke-width="1.5" opacity="0.6"/>
+  <line x1="1480" y1="430" x2="1400" y2="520" stroke="#ff2a6d" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Floor Base -->
+  <rect y="520" width="1600" height="480" fill="url(#sw-gridfloor)"/>
+
+  <!-- Bright Cyan Horizon Glow -->
+  <line x1="0" y1="520" x2="1600" y2="520" stroke="#05d9e8" stroke-width="5"/>
+  <rect x="0" y="518" width="1600" height="4" fill="#ffffff" opacity="0.75"/>
+
+  <!-- ONE-POINT PERSPECTIVE FLOOR GRID -->
+  <g>
+    <!-- Converging perspective lines radiating from center horizon (800, 520) -->
+    <line x1="800" y1="520" x2="-400" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+    <line x1="800" y1="520" x2="-150" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+    <line x1="800" y1="520" x2="100" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+    <line x1="800" y1="520" x2="300" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+    <line x1="800" y1="520" x2="500" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+    <line x1="800" y1="520" x2="680" y2="1000" stroke="#05d9e8" stroke-width="3"/>
+    <line x1="800" y1="520" x2="800" y2="1000" stroke="#ff2a6d" stroke-width="4"/>
+    <line x1="800" y1="520" x2="920" y2="1000" stroke="#05d9e8" stroke-width="3"/>
+    <line x1="800" y1="520" x2="1100" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+    <line x1="800" y1="520" x2="1300" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+    <line x1="800" y1="520" x2="1500" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+    <line x1="800" y1="520" x2="1750" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+    <line x1="800" y1="520" x2="2000" y2="1000" stroke="#05d9e8" stroke-width="2.5"/>
+
+    <!-- Horizontal perspective lines (exponential spacing towards viewer) -->
+    <line x1="0" y1="530" x2="1600" y2="530" stroke="#05d9e8" stroke-width="1" opacity="0.4"/>
+    <line x1="0" y1="544" x2="1600" y2="544" stroke="#05d9e8" stroke-width="1.2" opacity="0.5"/>
+    <line x1="0" y1="562" x2="1600" y2="562" stroke="#05d9e8" stroke-width="1.5" opacity="0.6"/>
+    <line x1="0" y1="586" x2="1600" y2="586" stroke="#05d9e8" stroke-width="2" opacity="0.7"/>
+    <line x1="0" y1="618" x2="1600" y2="618" stroke="#05d9e8" stroke-width="2.2" opacity="0.8"/>
+    <line x1="0" y1="660" x2="1600" y2="660" stroke="#05d9e8" stroke-width="2.6" opacity="0.85"/>
+    <line x1="0" y1="715" x2="1600" y2="715" stroke="#05d9e8" stroke-width="3"/>
+    <line x1="0" y1="785" x2="1600" y2="785" stroke="#05d9e8" stroke-width="3.5"/>
+    <line x1="0" y1="875" x2="1600" y2="875" stroke="#05d9e8" stroke-width="4"/>
+    <line x1="0" y1="985" x2="1600" y2="985" stroke="#05d9e8" stroke-width="5"/>
+  </g>
+
+  <!-- 80s Supercar Rear Silhouette Speeding toward the Sun -->
+  <g transform="translate(800 760)">
+    <!-- Shadow under car -->
+    <ellipse cx="0" cy="95" rx="220" ry="24" fill="#000000" opacity="0.85"/>
+    
+    <!-- Wide Low Rear Body -->
+    <polygon points="-190,85 -170,30 -140,5 -90,-25 90,-25 140,5 170,30 190,85" fill="#120458" stroke="#ff2a6d" stroke-width="3"/>
+    <!-- Rear Cabin & Louvered Rear Window -->
+    <polygon points="-90,-25 -65,-75 65,-75 90,-25" fill="#080126" stroke="#05d9e8" stroke-width="2"/>
+    <line x1="-80" y1="-38" x2="80" y2="-38" stroke="#ff2a6d" stroke-width="2"/>
+    <line x1="-72" y1="-50" x2="72" y2="-50" stroke="#ff2a6d" stroke-width="2"/>
+    <line x1="-65" y1="-62" x2="65" y2="-62" stroke="#ff2a6d" stroke-width="2"/>
+    <!-- Rear Wing / Spoiler -->
+    <polygon points="-210,15 -190,-10 190,-10 210,15" fill="#2b1055" stroke="#ff2a6d" stroke-width="3"/>
+    <rect x="-170" y="-10" width="16" height="25" fill="#ff2a6d"/>
+    <rect x="154" y="-10" width="16" height="25" fill="#ff2a6d"/>
+
+    <!-- Continuous Neon Taillight Bar -->
+    <rect x="-160" y="38" width="320" height="18" rx="4" fill="url(#sw-neonbar)"/>
+    <rect x="-150" y="42" width="300" height="10" rx="2" fill="#ffffff"/>
+
+    <!-- Dual Twin Exhausts -->
+    <rect x="-110" y="70" width="35" height="15" rx="3" fill="#2b1055" stroke="#05d9e8" stroke-width="2"/>
+    <rect x="75" y="70" width="35" height="15" rx="3" fill="#2b1055" stroke="#05d9e8" stroke-width="2"/>
+    <!-- Wide Rear Tires -->
+    <rect x="-215" y="50" width="35" height="42" rx="6" fill="#080126" stroke="#ff2a6d" stroke-width="2"/>
+    <rect x="180" y="50" width="35" height="42" rx="6" fill="#080126" stroke="#ff2a6d" stroke-width="2"/>
+  </g>
+</svg>

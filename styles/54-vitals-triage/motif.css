@@ -1,0 +1,38 @@
+.motif-rings {
+  position: relative;
+}
+.motif-rings::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 320px;
+  height: 320px;
+  background:
+    radial-gradient(circle, transparent 30px, var(--line) 31px, transparent 32px,
+      transparent 64px, color-mix(in srgb, var(--accent) 30%, transparent) 65px 67px, transparent 68px,
+      transparent 105px, var(--line) 106px, transparent 107px,
+      transparent 150px, color-mix(in srgb, var(--accent) 22%, transparent) 151px 153px, transparent 154px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+.motif-rings::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 48px;
+  height: 36px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 55%, transparent) 0 2px,
+    transparent 2px 28px
+  );
+  clip-path: polygon(
+    0 50%, 15% 50%, 18% 10%, 21% 90%, 24% 30%, 27% 65%, 30% 50%,
+    45% 50%, 48% 10%, 51% 90%, 54% 30%, 57% 65%, 60% 50%,
+    75% 50%, 78% 10%, 81% 90%, 84% 30%, 87% 65%, 90% 50%, 100% 50%
+  );
+  opacity: 0.75;
+  pointer-events: none;
+}

@@ -111,6 +111,16 @@ Rules:
 - When adding a component, check how it looks in every style by comparing in `kit/gallery.html`.
 - Dark mode is out of scope in v6: only a light palette is generated; do not add a second theme block.
 
+### Visual and motif recipe
+
+- The scene keeps shared structure and base styling; a style adds its graphic motif in its own `motif.css`.
+- The motif is a CSS-only layer over the scene, attached to the existing `.motif-<name>` hook.
+- Motif color comes from `var(--...)` tokens; literal colors, animation, transitions, and `!important` are not allowed.
+- Keep the motif decorative and within the 4 KB file limit so it cannot replace the style's content hierarchy.
+- Generated SVG artwork uses `tokens.json` → `imagery.art` and is stored under `kit/images/gen/`.
+- The artwork occupies the scene's media slot; it does not replace the motif layer or enter the Unsplash registry.
+- `node kit/check-visual.mjs` checks the motif contract and SVG safety before integration.
+
 ---
 
 ### 5.1 Composition axis (schema v3) — the skeleton is a token too

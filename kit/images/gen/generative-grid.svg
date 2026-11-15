@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#e9edf0"/>
+
+  <!-- Coordinate frame -->
+  <rect x="60" y="60" width="1480" height="880" fill="#f7f9fa" stroke="#0f161a" stroke-width="2"/>
+
+  <!-- Plotter grid -->
+  <g><line x1="100" y1="60" x2="100" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="200" y1="60" x2="200" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="300" y1="60" x2="300" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="400" y1="60" x2="400" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="500" y1="60" x2="500" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="600" y1="60" x2="600" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="700" y1="60" x2="700" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="800" y1="60" x2="800" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="900" y1="60" x2="900" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="1000" y1="60" x2="1000" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="1100" y1="60" x2="1100" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="1200" y1="60" x2="1200" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="1300" y1="60" x2="1300" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="1400" y1="60" x2="1400" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="1500" y1="60" x2="1500" y2="940" stroke="#dfe5e9" stroke-width="1.5"/><line x1="60" y1="100" x2="1540" y2="100" stroke="#dfe5e9" stroke-width="1.5"/><line x1="60" y1="200" x2="1540" y2="200" stroke="#dfe5e9" stroke-width="1.5"/><line x1="60" y1="300" x2="1540" y2="300" stroke="#dfe5e9" stroke-width="1.5"/><line x1="60" y1="400" x2="1540" y2="400" stroke="#dfe5e9" stroke-width="1.5"/><line x1="60" y1="500" x2="1540" y2="500" stroke="#dfe5e9" stroke-width="1.5"/><line x1="60" y1="600" x2="1540" y2="600" stroke="#dfe5e9" stroke-width="1.5"/><line x1="60" y1="700" x2="1540" y2="700" stroke="#dfe5e9" stroke-width="1.5"/><line x1="60" y1="800" x2="1540" y2="800" stroke="#dfe5e9" stroke-width="1.5"/><line x1="60" y1="900" x2="1540" y2="900" stroke="#dfe5e9" stroke-width="1.5"/></g>
+
+  <!-- Algorithmic shaded polygonal zones -->
+  <polygon points="400,180 650,320 520,460 280,520" fill="#0b7d55" opacity="0.12"/>
+  <polygon points="850,200 1100,280 1050,480 800,500" fill="#0b7d55" opacity="0.15"/>
+  <polygon points="720,740 950,840 1220,760 1050,480" fill="#0b7d55" opacity="0.1"/>
+
+  <!-- Plotter vectors and chords -->
+  <g><line x1="200" y1="250" x2="400" y2="180" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="200" y1="250" x2="850" y2="200" stroke="#0f161a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35"/><line x1="400" y1="180" x2="650" y2="320" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="650" y1="320" x2="850" y2="200" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="650" y1="320" x2="1380" y2="220" stroke="#0f161a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35"/><line x1="850" y1="200" x2="1100" y2="280" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="1100" y1="280" x2="1380" y2="220" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="1100" y1="280" x2="520" y2="460" stroke="#0f161a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35"/><line x1="1380" y1="220" x2="280" y2="520" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="280" y1="520" x2="520" y2="460" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="280" y1="520" x2="1050" y2="480" stroke="#0f161a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35"/><line x1="520" y1="460" x2="800" y2="500" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="800" y1="500" x2="1050" y2="480" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="800" y1="500" x2="1480" y2="440" stroke="#0f161a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35"/><line x1="1050" y1="480" x2="1300" y2="550" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="1300" y1="550" x2="1480" y2="440" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="1300" y1="550" x2="450" y2="820" stroke="#0f161a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35"/><line x1="1480" y1="440" x2="180" y2="780" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="180" y1="780" x2="450" y2="820" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="180" y1="780" x2="950" y2="840" stroke="#0f161a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35"/><line x1="450" y1="820" x2="720" y2="740" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="720" y1="740" x2="950" y2="840" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="720" y1="740" x2="1420" y2="820" stroke="#0f161a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35"/><line x1="950" y1="840" x2="1220" y2="760" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/><line x1="1220" y1="760" x2="1420" y2="820" stroke="#0b7d55" stroke-width="2.5" opacity="0.6"/></g>
+
+  <!-- Plotter nodes -->
+  <g>
+      <circle cx="200" cy="250" r="8" fill="#0b7d55"/>
+      <circle cx="200" cy="250" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="220" y="242" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_01</text>
+    
+      <circle cx="400" cy="180" r="8" fill="#0b7d55"/>
+      <circle cx="400" cy="180" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="420" y="172" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_02</text>
+    
+      <circle cx="650" cy="320" r="8" fill="#0b7d55"/>
+      <circle cx="650" cy="320" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="670" y="312" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_03</text>
+    
+      <circle cx="850" cy="200" r="8" fill="#0b7d55"/>
+      <circle cx="850" cy="200" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="870" y="192" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_04</text>
+    
+      <circle cx="1100" cy="280" r="8" fill="#0b7d55"/>
+      <circle cx="1100" cy="280" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="1120" y="272" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_05</text>
+    
+      <circle cx="1380" cy="220" r="8" fill="#0b7d55"/>
+      <circle cx="1380" cy="220" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="1400" y="212" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_06</text>
+    
+      <circle cx="280" cy="520" r="8" fill="#0b7d55"/>
+      <circle cx="280" cy="520" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="300" y="512" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_07</text>
+    
+      <circle cx="520" cy="460" r="8" fill="#0b7d55"/>
+      <circle cx="520" cy="460" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="540" y="452" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_08</text>
+    
+      <circle cx="800" cy="500" r="8" fill="#0b7d55"/>
+      <circle cx="800" cy="500" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="820" y="492" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_09</text>
+    
+      <circle cx="1050" cy="480" r="8" fill="#0b7d55"/>
+      <circle cx="1050" cy="480" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="1070" y="472" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_10</text>
+    
+      <circle cx="1300" cy="550" r="8" fill="#0b7d55"/>
+      <circle cx="1300" cy="550" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="1320" y="542" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_11</text>
+    
+      <circle cx="1480" cy="440" r="8" fill="#0b7d55"/>
+      <circle cx="1480" cy="440" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="1500" y="432" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_12</text>
+    
+      <circle cx="180" cy="780" r="8" fill="#0b7d55"/>
+      <circle cx="180" cy="780" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="200" y="772" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_13</text>
+    
+      <circle cx="450" cy="820" r="8" fill="#0b7d55"/>
+      <circle cx="450" cy="820" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="470" y="812" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_14</text>
+    
+      <circle cx="720" cy="740" r="8" fill="#0b7d55"/>
+      <circle cx="720" cy="740" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="740" y="732" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_15</text>
+    
+      <circle cx="950" cy="840" r="8" fill="#0b7d55"/>
+      <circle cx="950" cy="840" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="970" y="832" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_16</text>
+    
+      <circle cx="1220" cy="760" r="8" fill="#0b7d55"/>
+      <circle cx="1220" cy="760" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="1240" y="752" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_17</text>
+    
+      <circle cx="1420" cy="820" r="8" fill="#0b7d55"/>
+      <circle cx="1420" cy="820" r="16" fill="none" stroke="#0b7d55" stroke-width="1.5" opacity="0.8"/>
+      <text x="1440" y="812" font-family="'Share Tech Mono', monospace" font-size="12" fill="#414b51">N_18</text>
+    </g>
+
+  <!-- Technical border rulers -->
+  <g stroke="#0f161a" stroke-width="1.5">
+    <line x1="60" y1="60" x2="1540" y2="60"/>
+    <line x1="60" y1="940" x2="1540" y2="940"/>
+    <line x1="60" y1="60" x2="60" y2="940"/>
+    <line x1="1540" y1="60" x2="1540" y2="940"/>
+  </g>
+
+  <!-- Meta header -->
+  <rect x="80" y="80" width="280" height="64" fill="#e9edf0" stroke="#0b7d55" stroke-width="1.5" rx="2"/>
+  <text x="96" y="106" font-family="'Michroma', sans-serif" font-size="14" font-weight="700" fill="#0f161a">GENERATIVE GRID 98</text>
+  <text x="96" y="130" font-family="'Share Tech Mono', monospace" font-size="12" fill="#0b7d55">SEED: 0x98A4 · NODES: 18 · PASS: 1</text>
+</svg>

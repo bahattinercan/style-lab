@@ -15,6 +15,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -33,6 +34,35 @@ const TEMPLATES = {
 const errors = [];
 const warnings = [];
 
+function validateSvg(file) {
+  const issues = [];
+  if (!fs.existsSync(file)) return ['file missing'];
+  const bytes = fs.readFileSync(file);
+  const svg = bytes.toString('utf8');
+  if (bytes.length > 64 * 1024) issues.push('over 64 KB');
+  if (/<\s*(script|foreignObject)\b/i.test(svg)) issues.push('script/foreignObject forbidden');
+  if (/@import\b/i.test(svg)) issues.push('@import forbidden');
+  if (/url\(\s*['"]?\s*https?:/i.test(svg)) issues.push('external url() forbidden');
+  if (/\b(?:href|src)\s*=\s*(['"])(?!#|data:image\/)[^'"]+\1/i.test(svg)) issues.push('external href/src forbidden');
+  if (!/^\s*<svg\b[^>]*\bviewBox\s*=\s*(['"])[^'"]+\1/i.test(svg)) issues.push('SVG root/viewBox missing');
+  const stack = [];
+  const tags = svg.match(/<!--[\s\S]*?-->|<!\[CDATA\[[\s\S]*?\]\]>|<\?[\s\S]*?\?>|<!DOCTYPE[^>]*>|<[^>]*>/gi) ?? [];
+  for (const token of tags) {
+    if (/^<!--|^<!\[CDATA\[|^<\?|^<!DOCTYPE/i.test(token)) continue;
+    const closing = token.match(/^<\s*\/\s*([\w:-]+)\s*>$/);
+    if (closing) {
+      if (stack.pop() !== closing[1]) { issues.push('malformed XML tag nesting'); break; }
+      continue;
+    }
+    const opening = token.match(/^<\s*([\w:-]+)(?:\s[^<>]*?)?\s*(\/?)>$/);
+    if (!opening) { issues.push('malformed XML tag'); break; }
+    if (!stack.length && opening[1].toLowerCase() !== 'svg') issues.push('root element is not svg');
+    if (!opening[2]) stack.push(opening[1]);
+  }
+  if (stack.length) issues.push('unclosed XML tags');
+  return [...new Set(issues)];
+}
+
 const styles = fs
   .readdirSync(STYLES_DIR, { withFileTypes: true })
   .filter((d) => d.isDirectory() && fs.existsSync(path.join(STYLES_DIR, d.name, 'tokens.json')))
@@ -43,29 +73,46 @@ const styles = fs
   .sort((a, b) => parseInt(a.dirName, 10) - parseInt(b.dirName, 10));
 
 const usage = new Map();
+const artUsage = new Map();
 for (const s of styles) {
   const img = s.tokens.imagery ?? {};
   const tag = s.dirName;
-  if (!img.photo) {
-    errors.push(`${tag}: imagery.photo yok — node kit/assign-imagery.mjs --apply`);
-    continue;
+  if (!img.photo && !img.art) errors.push(`${tag}: imagery.photo veya imagery.art gerekli`);
+  if (img.photo) {
+    if (!FILES.has(img.photo)) errors.push(`${tag}: imagery.photo "${img.photo}" INDEX.json'da yok`);
+    usage.set(img.photo, (usage.get(img.photo) ?? 0) + 1);
   }
-  if (!FILES.has(img.photo)) errors.push(`${tag}: imagery.photo "${img.photo}" INDEX.json'da yok`);
-  usage.set(img.photo, (usage.get(img.photo) ?? 0) + 1);
+  if (img.art) {
+    const rel = String(img.art);
+    const file = path.resolve(ROOT, 'kit/images', rel);
+    const base = path.resolve(ROOT, 'kit/images/gen') + path.sep;
+    if (!rel.startsWith('gen/') || rel.split('/').includes('..') || !rel.endsWith('.svg') || !file.startsWith(base)) errors.push(`${tag}: imagery.art "${rel}" kit/images/gen/ altındaki .svg olmalı`);
+    else {
+      const svgIssues = validateSvg(file);
+      if (svgIssues.length) errors.push(`${tag}: imagery.art ${rel}: ${svgIssues.join(', ')}`);
+      if (fs.existsSync(file)) {
+        const digest = createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+        if (artUsage.has(digest)) errors.push(`${tag}: imagery.art yineleniyor (${artUsage.get(digest)})`);
+        else artUsage.set(digest, tag);
+      }
+    }
+  }
 
   const t = img.treatment ?? {};
-  if (!MODES.has(t.mode)) errors.push(`${tag}: imagery.treatment.mode "${t.mode}" geçersiz (${[...MODES].join('|')})`);
-  const strength = Number(t.strength);
-  if (!Number.isFinite(strength) || strength < 0 || strength > 0.8) {
-    errors.push(`${tag}: treatment.strength ${t.strength} aralık dışı (0…0.8)`);
-  } else if (t.mode === 'plain' && strength !== 0) {
-    errors.push(`${tag}: plain treatment strength 0 olmalı (şu an ${strength})`);
-  } else if (t.mode !== 'plain' && strength <= 0) {
-    errors.push(`${tag}: ${t.mode} treatment strength > 0 olmalı`);
+  if (img.photo) {
+    if (!MODES.has(t.mode)) errors.push(`${tag}: imagery.treatment.mode "${t.mode}" geçersiz (${[...MODES].join('|')})`);
+    const strength = Number(t.strength);
+    if (!Number.isFinite(strength) || strength < 0 || strength > 0.8) {
+      errors.push(`${tag}: treatment.strength ${t.strength} aralık dışı (0…0.8)`);
+    } else if (t.mode === 'plain' && strength !== 0) {
+      errors.push(`${tag}: plain treatment strength 0 olmalı (şu an ${strength})`);
+    } else if (t.mode !== 'plain' && strength <= 0) {
+      errors.push(`${tag}: ${t.mode} treatment strength > 0 olmalı`);
+    }
   }
 
   const hero = s.tokens.layout?.hero;
-  if (PHOTO_HEROES.has(hero) && !img.photo) errors.push(`${tag}: hero "${hero}" fotoğraf kullanıyor ama photo yok`);
+  if (PHOTO_HEROES.has(hero) && !img.photo && !img.art) errors.push(`${tag}: hero "${hero}" medya kullanıyor ama photo/art yok`);
 }
 
 // şablonlar fotoğraf yer tutucusunu taşımalı

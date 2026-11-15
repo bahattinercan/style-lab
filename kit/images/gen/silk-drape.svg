@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="sd-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6efe7" />
+      <stop offset="100%" stop-color="#ede2d6" />
+    </linearGradient>
+    <linearGradient id="sd-fold1" x1="0%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#fdf9f3" />
+      <stop offset="30%" stop-color="#ede2d6" />
+      <stop offset="65%" stop-color="#6b2f4a" />
+      <stop offset="100%" stop-color="#241a20" />
+    </linearGradient>
+    <linearGradient id="sd-fold2" x1="100%" y1="0%" x2="10%" y2="100%">
+      <stop offset="0%" stop-color="#fdf9f3" />
+      <stop offset="40%" stop-color="#f3eade" />
+      <stop offset="75%" stop-color="#6b2f4a" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#241a20" />
+    </linearGradient>
+    <linearGradient id="sd-sheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fdf9f3" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#ede2d6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#6b2f4a" stop-opacity="0.85" />
+    </linearGradient>
+    <filter id="sd-drop">
+      <feDropShadow dx="-10" dy="24" stdDeviation="30" flood-color="#241a20" flood-opacity="0.14" />
+    </filter>
+  </defs>
+
+  <!-- Background swatch foundation -->
+  <rect width="1600" height="1000" fill="url(#sd-bg)" />
+
+  <!-- Draped Textile Swatch Container -->
+  <g filter="url(#sd-drop)">
+    <!-- Base fabric sheet -->
+    <path d="M 120 80 L 1480 80 C 1480 80, 1460 520, 1420 880 C 1320 900, 1180 860, 1020 910 C 860 960, 740 870, 560 910 C 380 950, 240 880, 120 920 Z" fill="url(#sd-fold1)" stroke="#83737a" stroke-width="1" />
+  </g>
+
+  <!-- Cascading Silk Crests & Valleys (Curvilinear fold geometry) -->
+  <path d="M 120 80 C 340 180, 480 420, 420 910 C 380 915, 320 918, 120 920 Z" fill="url(#sd-fold2)" opacity="0.95" />
+  <path d="M 420 80 C 660 220, 740 480, 680 900 C 620 905, 520 908, 420 910 Z" fill="url(#sd-sheen)" opacity="0.9" />
+  <path d="M 720 80 C 960 210, 1040 510, 980 915 C 900 920, 800 910, 680 900 Z" fill="url(#sd-fold1)" opacity="0.95" />
+  <path d="M 1020 80 C 1240 190, 1340 490, 1280 890 C 1200 895, 1100 910, 980 915 Z" fill="url(#sd-fold2)" opacity="0.9" />
+
+  <!-- High-sheen specular highlight crest lines -->
+  <path d="M 240 80 C 440 280, 510 520, 460 912" fill="none" stroke="#fdf9f3" stroke-width="4.5" stroke-linecap="round" opacity="0.8" />
+  <path d="M 540 80 C 740 270, 820 540, 770 905" fill="none" stroke="#fdf9f3" stroke-width="3.5" stroke-linecap="round" opacity="0.85" />
+  <path d="M 860 80 C 1040 260, 1120 530, 1070 910" fill="none" stroke="#fdf9f3" stroke-width="4" stroke-linecap="round" opacity="0.75" />
+  <path d="M 1160 80 C 1320 250, 1390 510, 1350 885" fill="none" stroke="#fdf9f3" stroke-width="3" stroke-linecap="round" opacity="0.7" />
+
+  <!-- Deep Shadow Valley Creases -->
+  <path d="M 380 120 C 460 380, 420 660, 400 910" fill="none" stroke="#241a20" stroke-width="5" stroke-linecap="round" opacity="0.55" />
+  <path d="M 680 110 C 760 370, 730 670, 690 900" fill="none" stroke="#241a20" stroke-width="6" stroke-linecap="round" opacity="0.55" />
+  <path d="M 980 100 C 1060 380, 1030 680, 990 915" fill="none" stroke="#241a20" stroke-width="5.5" stroke-linecap="round" opacity="0.5" />
+
+  <!-- Swatch Corner Fold-Back Over Corner -->
+  <g filter="url(#sd-drop)">
+    <polygon points="1240,80 1480,80 1480,320 1240,80" fill="#fdf9f3" stroke="#83737a" stroke-width="1.5" />
+    <polygon points="1240,80 1480,320 1280,320 1240,80" fill="#ede2d6" opacity="0.8" />
+  </g>
+
+  <!-- Silk Specimen Quality Label -->
+  <g transform="translate(180, 140)">
+    <rect width="360" height="110" rx="4" fill="#fdf9f3" stroke="#6b2f4a" stroke-width="1.5" />
+    <text x="24" y="32" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#6b2f4a" letter-spacing="2">SWATCH CARD 127 · SILK DRAPE</text>
+    <text x="24" y="62" font-family="'Cormorant Garamond', Georgia, serif" font-size="24" font-weight="600" fill="#241a20">100% Mulberry Silk Charmeuse</text>
+    <text x="24" y="88" font-family="'JetBrains Mono', monospace" font-size="10" fill="#5b4b52">WEIGHT: 22 MOMME (95 g/m²) · WIDTH: 140 CM</text>
+    <line x1="24" y1="96" x2="336" y2="96" stroke="#83737a" stroke-width="0.75" stroke-dasharray="2 3" />
+  </g>
+
+  <!-- Weave Thread Density Meter -->
+  <g transform="translate(180, 780)">
+    <rect width="280" height="60" rx="3" fill="#241a20" />
+    <text x="20" y="26" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#f9f1f4" letter-spacing="1.5">THREAD COUNT · WARP / WEFT</text>
+    <text x="20" y="46" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#fdf9f3">320 TPI · BIAS ANGLE 45°</text>
+  </g>
+</svg>

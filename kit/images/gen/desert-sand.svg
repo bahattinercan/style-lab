@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="dusk-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5f4a8a" />
+      <stop offset="40%" stop-color="#8b689a" />
+      <stop offset="70%" stop-color="#d9a584" />
+      <stop offset="100%" stop-color="#f0e5cf" />
+    </linearGradient>
+    <linearGradient id="dune-windward" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf4e6" />
+      <stop offset="50%" stop-color="#f0e5cf" />
+      <stop offset="100%" stop-color="#d9caa8" />
+    </linearGradient>
+    <linearGradient id="dune-slipface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5f4a8a" />
+      <stop offset="60%" stop-color="#3d2a58" />
+      <stop offset="100%" stop-color="#241f18" />
+    </linearGradient>
+    <linearGradient id="dune-mid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6d9be" />
+      <stop offset="100%" stop-color="#bda984" />
+    </linearGradient>
+  </defs>
+
+  <!-- Twilight Desert Sky -->
+  <rect width="1600" height="1000" fill="url(#dusk-sky)" />
+
+  <!-- Celestial Twilight Crescent Moon & Evening Star -->
+  <g transform="translate(1380, 160)">
+    <circle cx="0" cy="0" r="28" fill="#faf4e6" />
+    <circle cx="10" cy="-6" r="24" fill="#6d5494" />
+    <circle cx="-50" cy="40" r="3" fill="#ffffff" />
+    <circle cx="40" cy="70" r="2" fill="#ffffff" opacity="0.8" />
+  </g>
+
+  <!-- Distant Background Sand Dune Horizon Ridge -->
+  <path d="M 0,440 Q 400,340 850,420 T 1600,380 L 1600,1000 L 0,1000 Z" fill="url(#dune-mid)" opacity="0.85" />
+
+  <!-- Sweeping Barchan Crescent Dune 1 (Dramatic Slipface Shadow in Violet) -->
+  <g>
+    <!-- Shadowed Slipface Side -->
+    <path d="M 150,620 C 450,480 820,520 1200,420 C 1200,420 1050,640 680,740 C 380,820 220,780 150,620 Z" fill="url(#dune-slipface)" />
+    <!-- Sunlit Golden Windward Slope -->
+    <path d="M 1200,420 C 1350,380 1520,440 1600,480 L 1600,1000 L 680,1000 C 900,880 1080,720 1200,420 Z" fill="url(#dune-windward)" />
+  </g>
+
+  <!-- Foreground Primary Dune Ridge (Razor-sharp curving crest) -->
+  <g>
+    <!-- Windward golden expanse -->
+    <path d="M 0,680 C 280,560 620,580 940,510 L 940,1000 L 0,1000 Z" fill="url(#dune-windward)" />
+    <!-- Deep violet dusk shadow ridge -->
+    <path d="M 420,740 C 720,620 1080,660 1480,560 C 1580,720 1350,920 980,1000 L 420,1000 Z" fill="url(#dune-slipface)" opacity="0.9" />
+  </g>
+
+  <!-- Aeolian Wind Ripple Striations Across the Dune Faces -->
+  <g fill="none" stroke="#241f18" stroke-width="1" stroke-opacity="0.18">
+    <path d="M 120,630 Q 300,590 520,620" />
+    <path d="M 140,660 Q 320,620 540,650" />
+    <path d="M 160,690 Q 340,650 560,680" />
+    <path d="M 180,720 Q 360,680 580,710" />
+    <path d="M 1100,560 Q 1280,520 1460,570" />
+    <path d="M 1120,590 Q 1300,550 1480,600" />
+    <path d="M 1140,620 Q 1320,580 1500,630" />
+  </g>
+
+  <!-- Desert Atlas Cartographic Header at Top Left -->
+  <g transform="translate(100, 95)">
+    <text x="0" y="32" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="600" fill="#ffffff" letter-spacing="1">DESERT ATLAS // SECTOR 082</text>
+    <text x="0" y="62" font-family="'Jost', sans-serif" font-size="14" font-weight="600" fill="#faf4e6" letter-spacing="3">GRAND ERG ORIENTAL · BARCHAN DUNE CREST &amp; TWILIGHT SHADOW</text>
+    <text x="0" y="86" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#faf4e6" letter-spacing="1.5">COORD: 28°14'N · 08°45'E // SLIPFACE ANGLE: 34° · AZIMUTH: 220° (SW TRADE WIND)</text>
+  </g>
+
+  <!-- Compass Rose & Wind Vector at Top Right -->
+  <g transform="translate(1260, 100)">
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#faf4e6" stroke-width="1.2" stroke-opacity="0.5" />
+    <polygon points="0,-28 6,-8 28,0 8,6 0,28 -6,8 -28,0 -8,-6" fill="#faf4e6" opacity="0.8" />
+    <text x="0" y="-36" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#ffffff" text-anchor="middle">N</text>
+  </g>
+</svg>

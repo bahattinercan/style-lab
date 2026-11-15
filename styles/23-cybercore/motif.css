@@ -1,0 +1,50 @@
+/* 23 · cybercore — character-cell matrix: fine square cell grid where a scattered subset of cells is filled */
+.motif-grid {
+  position: relative;
+}
+.motif-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0.65;
+}
+.motif-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--ink-soft), var(--ink-soft)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--ink-soft), var(--ink-soft)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--ink-soft), var(--ink-soft));
+  background-size:
+    14px 14px,
+    14px 14px,
+    14px 14px,
+    14px 14px,
+    14px 14px,
+    14px 14px,
+    14px 14px,
+    14px 14px;
+  background-position:
+    28px 42px,
+    84px 70px,
+    140px 112px,
+    224px 42px,
+    294px 98px,
+    350px 56px,
+    70px 154px,
+    182px 168px;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+}

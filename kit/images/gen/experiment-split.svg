@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<defs>
+    <linearGradient id="g52-split" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#55566b" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.0" />
+      <stop offset="100%" stop-color="#4b3ee8" stop-opacity="0.15" />
+    </linearGradient>
+  </defs>
+
+  <!-- Light Violet/White Ground -->
+  <rect width="1600" height="1000" fill="#f7f7fb" />
+  <rect x="60" y="40" width="1480" height="920" fill="#ffffff" stroke="#e0e0ea" stroke-width="2" rx="8" />
+
+  <!-- Split Halves Background Tint -->
+  <rect x="60" y="40" width="1480" height="920" fill="url(#g52-split)" rx="8" />
+
+  <!-- Center Split Axis -->
+  <line x1="800" y1="40" x2="800" y2="960" stroke="#4b3ee8" stroke-width="3" stroke-dasharray="10 6" />
+
+  <!-- Header -->
+  <text x="120" y="90" font-family="sans-serif" font-size="18" font-weight="bold" fill="#55566b" letter-spacing="1">COHORT A // CONTROL GROUP (n=50,000)</text>
+  <text x="840" y="90" font-family="sans-serif" font-size="18" font-weight="bold" fill="#4b3ee8" letter-spacing="1">COHORT B // TREATMENT GROUP (n=50,000)</text>
+
+  <!-- Big Lift Badge in Center Top -->
+  <g transform="translate(800, 140)">
+    <rect x="-140" y="0" width="280" height="48" rx="24" fill="#4b3ee8" />
+    <text x="0" y="31" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">+18.4% STATISTICAL LIFT</text>
+  </g>
+
+  <!-- Normal Distribution Bell Curves -->
+  <!-- Curve A: Control (peak at x=480, y=420) -->
+  <path d="M 120 700 Q 320 690 440 500 Q 480 420 520 500 Q 640 690 780 700" fill="none" stroke="#55566b" stroke-width="3.5" />
+  <!-- Curve B: Treatment (peak at x=1120, y=300, higher and narrower) -->
+  <path d="M 820 700 Q 980 690 1080 380 Q 1120 280 1160 380 Q 1260 690 1480 700" fill="none" stroke="#4b3ee8" stroke-width="4" />
+
+  <!-- Shaded P-Value Rejection Region -->
+  <path d="M 1000 680 Q 1080 380 1120 280 Q 1160 380 1260 690 Z" fill="#4b3ee8" fill-opacity="0.12" />
+
+  <!-- Scatter Dot Clouds -->
+  <circle cx="200" cy="580" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="277" cy="630.8134911250315" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="324" cy="596.9300823092879" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="401" cy="517.7340304489616" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="448" cy="498.99272065679077" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="525" cy="557.9071992852689" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="572" cy="637.9126007224763" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="649" cy="590.1459017409611" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="216" cy="514.3304118548608" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="263" cy="511.28098496485813" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="340" cy="575.2100222095985" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="387" cy="602.2063178564767" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="464" cy="582.4652191379665" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="511" cy="513.2525592359378" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="588" cy="525.710030655623" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="635" cy="591.332392183176" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="202" cy="603.7277140446345" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="279" cy="534.4818042745552" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="326" cy="514.7850665127611" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="403" cy="541.8383450356062" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="450" cy="605.7535070287762" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="527" cy="602.6396740357227" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="574" cy="526.8036022869481" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="621" cy="519.0902981601712" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="218" cy="559.1448475822469" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="265" cy="618.0322254127499" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="342" cy="599.2272687722843" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="389" cy="520.0242667952044" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="466" cy="486.2007865315743" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="513" cy="577.0532894083431" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="560" cy="627.8277231770453" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="637" cy="593.8844070154299" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="204" cy="514.6953622217397" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="281" cy="496.0177085396749" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="328" cy="554.9592359712934" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="405" cy="634.9154523447062" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="452" cy="587.0953906661489" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="529" cy="511.3005369259413" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="576" cy="508.3155130226876" r="6" fill="#55566b" fill-opacity="0.75" />
+<circle cx="623" cy="572.2583695685663" r="6" fill="#55566b" fill-opacity="0.75" />
+
+  <circle cx="860" cy="300" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="933" cy="365.3410238665838" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1006" cy="441.19939972803564" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1049" cy="369.86366395446237" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1122" cy="267.18637706797074" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1165" cy="307.2691745731979" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1238" cy="448.89042095077417" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1281" cy="405.0429542396794" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="874" cy="290.4916833014006" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="947" cy="301.40634693520866" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="990" cy="400.7750330287057" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1063" cy="387.1917646002171" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1106" cy="319.17466334047356" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1179" cy="299.3348024148845" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1222" cy="397.8183408179415" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1295" cy="414.8643712074812" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="888" cy="302.06567941304024" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="931" cy="302.3347910348862" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1004" cy="391.3711046987069" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1047" cy="436.9716220576526" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1120" cy="337.6598840089933" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1163" cy="261.28256739543" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1236" cy="333.0621397778448" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1309" cy="452.8676981958994" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="872" cy="374.2370951701924" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="945" cy="276.5805887351913" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="988" cy="324.668565411205" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1061" cy="412.40155928407063" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1104" cy="409.9988251990681" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1177" cy="298.1254554184015" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1220" cy="317.9742408945816" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1293" cy="415.92897538744194" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="886" cy="393.21154715753596" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="929" cy="275.3161476905534" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1002" cy="314.6276642548974" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1045" cy="414.28418653527876" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1118" cy="422.344786629052" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1161" cy="307.10190256748115" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1234" cy="266.0106538424645" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+<circle cx="1307" cy="408.71344763837556" r="7" fill="#4b3ee8" fill-opacity="0.85" />
+
+
+  <!-- Divergence Trend Arrows -->
+  <path d="M 300 620 L 700 580" fill="none" stroke="#55566b" stroke-width="2" stroke-dasharray="6 4" />
+  <path d="M 900 480 L 1380 260" fill="none" stroke="#4b3ee8" stroke-width="3" />
+  <polygon points="1380,260 1360,275 1370,250" fill="#4b3ee8" />
+
+  <!-- Bottom Comparison Metrics Grid -->
+  <!-- Control Metrics Left -->
+  <g transform="translate(140, 780)">
+    <rect x="0" y="0" width="560" height="130" fill="#f7f7fb" stroke="#e0e0ea" rx="6" />
+    <text x="30" y="40" font-family="sans-serif" font-size="14" fill="#55566b" font-weight="bold">CONVERSION RATE</text>
+    <text x="30" y="90" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#15151f">3.42%</text>
+    <text x="320" y="40" font-family="sans-serif" font-size="14" fill="#55566b" font-weight="bold">MEDIAN RETENTION</text>
+    <text x="320" y="90" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#15151f">14.2 d</text>
+  </g>
+
+  <!-- Treatment Metrics Right -->
+  <g transform="translate(900, 780)">
+    <rect x="0" y="0" width="560" height="130" fill="#f2f2fa" stroke="#4b3ee8" stroke-width="2" rx="6" />
+    <text x="30" y="40" font-family="sans-serif" font-size="14" fill="#4b3ee8" font-weight="bold">CONVERSION RATE (TEST)</text>
+    <text x="30" y="90" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#4b3ee8">4.05%</text>
+    <text x="320" y="40" font-family="sans-serif" font-size="14" fill="#4b3ee8" font-weight="bold">MEDIAN RETENTION</text>
+    <text x="320" y="90" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#4b3ee8">18.6 d</text>
+  </g>
+</svg>

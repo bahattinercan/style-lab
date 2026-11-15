@@ -1,0 +1,42 @@
+/* 20 · vaporwave — horizontal VHS tear bands: repeating-linear-gradient bands of unequal height */
+.motif-grid {
+  position: relative;
+}
+.motif-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 16px,
+      var(--line) 16px 18px,
+      transparent 18px 34px,
+      var(--accent) 34px 39px,
+      transparent 39px 68px,
+      var(--line) 68px 69px,
+      transparent 69px 105px,
+      var(--surface-2) 105px 118px,
+      transparent 118px 144px
+    );
+  opacity: 0.8;
+}
+.motif-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0 22%,
+      var(--accent) 22% 23.5%,
+      transparent 23.5% 58%,
+      var(--line) 58% 60.5%,
+      transparent 60.5% 82%,
+      var(--surface) 82% 84%,
+      transparent 84% 100%
+    );
+  opacity: 0.7;
+}

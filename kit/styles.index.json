@@ -1967,7 +1967,7 @@
         "density": "dense",
         "sectionPlan": "classic",
         "family": "Cesur",
-        "fit": "0"
+        "fit": "1"
       },
       "must": [
         "İhlal bütçesi: ekran başına ≤ 3 ihlal",
@@ -3113,7 +3113,7 @@
         "density": "dense",
         "sectionPlan": "editorial",
         "family": "Retro",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Tek aile mono (JetBrains Mono); gövde ≥ 15px",
@@ -3246,7 +3246,7 @@
         "density": "dense",
         "sectionPlan": "campaign",
         "family": "Retro",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Radius 0 (istisna yok)",
@@ -6104,7 +6104,7 @@
         "density": "dense",
         "sectionPlan": "proof-first",
         "family": "Teknik",
-        "fit": "3"
+        "fit": "2"
       },
       "must": [
         "Tek aile: JetBrains Mono; display = body = mono",
@@ -6237,7 +6237,7 @@
         "density": "dense",
         "sectionPlan": "editorial",
         "family": "Veri & Gösterge",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Her tile aynı birim ölçüyü kullanır: 12px padding, 1 birim yükseklik, tile başına en fazla 3 metin satırı",
@@ -6641,7 +6641,7 @@
         "density": "dense",
         "sectionPlan": "classic",
         "family": "Veri & Gösterge",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "Zaman damgası sabit 88px sütunda, `HH:MM:SS.mmm` biçiminde ve mono; saniye altı her zaman görünür",
@@ -6774,7 +6774,7 @@
         "density": "dense",
         "sectionPlan": "data-first",
         "family": "Veri & Gösterge",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "Her ölçüm değeri birim + tolerans ile yazılır (`24,81 mV ±0,02`); birimsiz sayı yok",
@@ -7174,7 +7174,7 @@
         "density": "dense",
         "sectionPlan": "proof-first",
         "family": "Veri & Gösterge",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "Tablolar defter çizgisine oturur: 34px satır, 28px doku ızgarası",
@@ -7707,7 +7707,7 @@
         "density": "dense",
         "sectionPlan": "editorial",
         "family": "Endüstriyel",
-        "fit": "3"
+        "fit": "1"
       },
       "must": [
         "Yüzey bevel formülü: inset üst 1px açık + inset alt 1px koyu; dış gölge yalnız yüzen katmanda",
@@ -7839,7 +7839,7 @@
         "density": "dense",
         "sectionPlan": "data-first",
         "family": "Endüstriyel",
-        "fit": "0"
+        "fit": "1"
       },
       "must": [
         "Uyarı hiyerarşisi sabit: 2px accent çerçeve = yasak/tehlike, 2px ink = talimat, 1px line = bilgi",
@@ -8367,7 +8367,7 @@
         "density": "dense",
         "sectionPlan": "editorial",
         "family": "Endüstriyel",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "Her satır bir iş birimini temsil eder: ürün + konum (raf/bin) + miktar + durum",
@@ -8766,7 +8766,7 @@
         "density": "dense",
         "sectionPlan": "campaign",
         "family": "Endüstriyel",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Her gösterge üçlüsü: etiket (10px mono, üstte) + değer (mono, sağa hizalı) + birim (ayrı)",
@@ -10625,7 +10625,7 @@
         "density": "sparse",
         "sectionPlan": "campaign",
         "family": "Doğa & Organik",
-        "fit": "0"
+        "fit": "1"
       },
       "must": [
         "Zemin derin su (--bg teal); katmanlar arasında 4–6 puan parlaklık farkı",
@@ -11288,7 +11288,7 @@
         "density": "sparse",
         "sectionPlan": "feature-first",
         "family": "Doğa & Organik",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Keskin köşe: radius 0 (kart, buton, input) veya 2px (panel dışı yüzen katman); ara değer yok",
@@ -13210,7 +13210,7 @@
         "density": "dense",
         "sectionPlan": "data-first",
         "family": "Hareket & Optik",
-        "fit": "3"
+        "fit": "2"
       },
       "must": [
         "Izgara modülü 24px; tüm çizim (yay, düğüm, tarama) bu modüle hizalı",
@@ -14538,7 +14538,7 @@
         "density": "dense",
         "sectionPlan": "proof-first",
         "family": "Etkileşim",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "Klavye öncelikli: her eylem bir kısayolla erişilebilir ve kısayol satırda görünür",
@@ -14802,7 +14802,7 @@
         "density": "dense",
         "sectionPlan": "editorial",
         "family": "Etkileşim",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Kolon başlığı sayaç taşır: `GELEN 7/10` biçiminde adet + WIP limiti (mono)",
@@ -15198,7 +15198,7 @@
         "density": "dense",
         "sectionPlan": "proof-first",
         "family": "Etkileşim",
-        "fit": "3"
+        "fit": "2"
       },
       "must": [
         "Her yürütülebilir blok `In [n]:` numarası taşır; numara hücrenin sol oluğunda mono yazılır",
@@ -15462,7 +15462,7 @@
         "density": "dense",
         "sectionPlan": "editorial",
         "family": "Etkileşim",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Her eylemin görünür tuş ipucu vardır: tuş başlığı (kbd) etiketin yanında veya sağında",
@@ -15886,7 +15886,7 @@
         "density": "dense",
         "sectionPlan": "proof-first",
         "family": "Oyuncu",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Nunito 900 44px/1.1 başlık (mobil 28px); gövde Poppins 16.5px/1.6/58ch",
@@ -16171,7 +16171,7 @@
         "density": "dense",
         "sectionPlan": "classic",
         "family": "Oyuncu",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "Caveat 700 52px/1.08 başlık (mobil 32px); gövde Nunito 16.5px/1.72/48ch",
@@ -17929,7 +17929,7 @@
         "density": "sparse",
         "sectionPlan": "proof-first",
         "family": "Materyal & Lüks",
-        "fit": "3"
+        "fit": "1"
       },
       "must": [
         "Cinzel 600 46px/1.12/0.06em başlık (mobil 28px); gövde Lora 16.5px/1.7/58ch",
@@ -18488,7 +18488,7 @@
         "density": "dense",
         "sectionPlan": "data-first",
         "family": "Deneysel & Gelecek",
-        "fit": "3"
+        "fit": "2"
       },
       "must": [
         "Nokta bulutu yoğunluk haritası imza öğedir: 8px nokta ızgarası, yoğunluk accent opaklığıyla okunur",
@@ -18752,7 +18752,7 @@
         "density": "dense",
         "sectionPlan": "feature-first",
         "family": "Deneysel & Gelecek",
-        "fit": "0"
+        "fit": "1"
       },
       "must": [
         "Yüzeyler yumuşak: radius 20px kontrol / 32px kart; buton ve input hap (999px)",
@@ -20080,7 +20080,7 @@
         "density": "sparse",
         "sectionPlan": "data-first",
         "family": "Sahne & Prestij",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "Hero tam kanama oda fotoğrafı + tek scrim; metin sol altta 5/12.",
@@ -20346,7 +20346,7 @@
         "density": "dense",
         "sectionPlan": "classic",
         "family": "Sahne & Prestij",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "Sidebar 240px, aktif öğede 2px cyan şerit.",
@@ -20605,7 +20605,7 @@
         "density": "balanced",
         "sectionPlan": "proof-first",
         "family": "Oyun & Etkileşim",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Kart ve buton kesimi aynı çapraz açıyla (8–12px) kırpılır.",
@@ -20965,7 +20965,7 @@
         "density": "sparse",
         "sectionPlan": "classic",
         "family": "Oyun & Etkileşim",
-        "fit": "3"
+        "fit": "2"
       },
       "must": [
         "Pixel font yalnız başlık/etiket; gövde okunur bir sans-serif.",
@@ -21322,7 +21322,7 @@
         "density": "balanced",
         "sectionPlan": "feature-first",
         "family": "Oyun & Etkileşim",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Kart metni 34ch'i geçmez; künye mono ve tabular.",
@@ -21917,7 +21917,7 @@
         "density": "balanced",
         "sectionPlan": "classic",
         "family": "Oyun & Etkileşim",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Kaynak sayıları mono ve tabular; birim yazılır.",
@@ -22274,7 +22274,7 @@
         "density": "balanced",
         "sectionPlan": "campaign",
         "family": "Oyun & Etkileşim",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Risk seviyesi her zaman metinle yazılır, yalnız renkle değil.",
@@ -22512,7 +22512,7 @@
         "density": "balanced",
         "sectionPlan": "feature-first",
         "family": "Oyun & Etkileşim",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Rütbe ve tarih sütunları mono.",
@@ -23107,7 +23107,7 @@
         "density": "dense",
         "sectionPlan": "data-first",
         "family": "Operasyon & Veri",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "ETA ve mesafe mono; birim yazılır.",
@@ -23345,7 +23345,7 @@
         "density": "dense",
         "sectionPlan": "feature-first",
         "family": "Operasyon & Veri",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Hedef ve sınır aynı grafikte etiketlenir.",
@@ -23702,7 +23702,7 @@
         "density": "dense",
         "sectionPlan": "editorial",
         "family": "Operasyon & Veri",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "Sürüm numarası semver ve mono.",
@@ -23935,8 +23935,8 @@
         "rule": "Köşe 4–6px; 8px üstü yumuşak yuvarlatma operasyonel tabloyla çelişir."
       },
       "layout": {
-        "hero": "split-reverse",
-        "nav": "utility",
+        "hero": "index",
+        "nav": "split",
         "density": "dense",
         "sectionPlan": "data-first",
         "family": "Operasyon & Veri",
@@ -24411,9 +24411,9 @@
         "rule": "Kart 10–14px, buton 6–10px; tam daire yalnız chip/rozet."
       },
       "layout": {
-        "hero": "index",
-        "nav": "split",
-        "density": "dense",
+        "hero": "fullbleed",
+        "nav": "pill",
+        "density": "sparse",
         "sectionPlan": "data-first",
         "family": "Ticaret & Vitrin",
         "fit": "0"
@@ -24892,7 +24892,7 @@
         "density": "dense",
         "sectionPlan": "classic",
         "family": "Ticaret & Vitrin",
-        "fit": "2"
+        "fit": "1"
       },
       "must": [
         "Her spec değerinde birim yazılır.",
@@ -29057,7 +29057,7 @@
         "density": "dense",
         "sectionPlan": "classic",
         "family": "Materyal & Zanaat",
-        "fit": "1"
+        "fit": "0"
       },
       "must": [
         "En fazla iki mürekkep; ikinci ton %40 opaklığı geçmez.",

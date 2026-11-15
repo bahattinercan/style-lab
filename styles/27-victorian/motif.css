@@ -1,0 +1,26 @@
+/* 27 · victorian — ornate engraved frame: double rule border with corner flourishes (thin arcs) */
+.motif-rings {
+  position: relative;
+}
+.motif-rings::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  pointer-events: none;
+  border: 1px solid var(--accent);
+  outline: 3px double var(--line);
+  outline-offset: -6px;
+  opacity: 0.85;
+}
+.motif-rings::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 28px at top left, transparent 24px, var(--accent) 25px 26.5px, transparent 27px),
+    radial-gradient(circle 28px at top right, transparent 24px, var(--accent) 25px 26.5px, transparent 27px),
+    radial-gradient(circle 28px at bottom left, transparent 24px, var(--accent) 25px 26.5px, transparent 27px),
+    radial-gradient(circle 28px at bottom right, transparent 24px, var(--accent) 25px 26.5px, transparent 27px);
+  opacity: 0.8;
+}

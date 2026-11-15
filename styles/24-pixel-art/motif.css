@@ -1,0 +1,52 @@
+/* 24 · pixel-art — coarse 8px stepped mosaic: blocky stepped clip-path staircase, no smooth curves */
+.motif-grid {
+  position: relative;
+}
+.motif-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: polygon(
+    0 0,
+    64px 0,
+    64px 32px,
+    128px 32px,
+    128px 64px,
+    192px 64px,
+    192px 96px,
+    256px 96px,
+    256px 128px,
+    320px 128px,
+    320px 160px,
+    0 160px
+  );
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0 16px,
+    var(--surface-2) 16px 32px
+  );
+  opacity: 0.9;
+}
+.motif-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: polygon(
+    100% 100%,
+    calc(100% - 64px) 100%,
+    calc(100% - 64px) calc(100% - 32px),
+    calc(100% - 128px) calc(100% - 32px),
+    calc(100% - 128px) calc(100% - 64px),
+    calc(100% - 192px) calc(100% - 64px),
+    calc(100% - 192px) calc(100% - 96px),
+    100% calc(100% - 96px)
+  );
+  background: repeating-linear-gradient(
+    0deg,
+    var(--surface) 0 8px,
+    var(--line) 8px 16px
+  );
+  opacity: 0.8;
+}

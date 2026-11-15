@@ -1,0 +1,36 @@
+/* 128 · brass-copper motif: engraved plate: vertical bar stack + fine hairline hatching */
+.motif-bars::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      transparent 0 6%,
+      color-mix(in srgb, var(--accent) 30%, transparent) 6% 9%,
+      transparent 9% 14%,
+      color-mix(in srgb, var(--accent) 45%, transparent) 14% 20%,
+      transparent 20% 48%,
+      color-mix(in srgb, var(--accent) 25%, transparent) 48% 51%,
+      transparent 51% 82%,
+      color-mix(in srgb, var(--accent) 40%, transparent) 82% 88%,
+      transparent 88% 100%
+    );
+  opacity: 0.8;
+}
+.motif-bars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--line) 40%, transparent) 0px,
+    color-mix(in srgb, var(--line) 40%, transparent) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+  opacity: 0.65;
+}

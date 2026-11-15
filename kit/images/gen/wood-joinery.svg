@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="wj-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0e9dc" />
+      <stop offset="100%" stop-color="#e6dccb" />
+    </linearGradient>
+    <linearGradient id="wj-oak" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ec" />
+      <stop offset="100%" stop-color="#ece2d1" />
+    </linearGradient>
+    <linearGradient id="wj-walnut" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#33546b" />
+      <stop offset="50%" stop-color="#1f1c17" />
+      <stop offset="100%" stop-color="#33546b" />
+    </linearGradient>
+    <pattern id="wj-grain" width="100" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 0 6 Q 50 2 100 6 M 0 14 Q 50 18 100 14" stroke="#7b7469" stroke-width="0.75" stroke-opacity="0.25" fill="none" />
+    </pattern>
+    <filter id="wj-shadow">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#1f1c17" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#wj-bg)" />
+
+  <!-- Carpenter Drafting Alignment Grid -->
+  <g stroke="#7b7469" stroke-width="1" stroke-opacity="0.2">
+    <line x1="100" y1="120" x2="1500" y2="120" />
+    <line x1="100" y1="500" x2="1500" y2="500" />
+    <line x1="100" y1="880" x2="1500" y2="880" />
+    <line x1="800" y1="80" x2="800" y2="920" stroke-dasharray="6 6" />
+  </g>
+
+  <!-- Left Board: Quartersawn White Oak -->
+  <g filter="url(#wj-shadow)">
+    <!-- Base oak timber -->
+    <rect x="140" y="160" width="660" height="680" rx="4" fill="url(#wj-oak)" stroke="#7b7469" stroke-width="2" />
+    <rect x="140" y="160" width="660" height="680" rx="4" fill="url(#wj-grain)" />
+  </g>
+
+  <!-- Right Board: Interlocking Dovetail Joinery Pin Comb -->
+  <g filter="url(#wj-shadow)">
+    <!-- Interlocking Dovetail Finger Polygon (Dark Timber Tail & Pins) -->
+    <path d="
+      M 800 160
+      L 900 160
+      L 900 240
+      L 740 280
+      L 740 360
+      L 900 400
+      L 900 480
+      L 740 520
+      L 740 600
+      L 900 640
+      L 900 720
+      L 740 760
+      L 740 840
+      L 1460 840
+      L 1460 160
+      Z
+    " fill="url(#wj-walnut)" stroke="#1f1c17" stroke-width="2" />
+  </g>
+
+  <!-- Mortise Layout Knifed Scribe Lines (1px fine lines) -->
+  <g stroke="#4f4a41" stroke-width="1.5">
+    <line x1="740" y1="120" x2="740" y2="880" stroke-dasharray="4 4" />
+    <line x1="900" y1="120" x2="900" y2="880" stroke-dasharray="4 4" />
+    <!-- Angle pitch indicators -->
+    <line x1="740" y1="280" x2="900" y2="240" stroke="#f4f8fa" stroke-width="1.5" />
+    <line x1="740" y1="400" x2="900" y2="360" stroke="#f4f8fa" stroke-width="1.5" />
+    <line x1="740" y1="520" x2="900" y2="480" stroke="#f4f8fa" stroke-width="1.5" />
+    <line x1="740" y1="640" x2="900" y2="600" stroke="#f4f8fa" stroke-width="1.5" />
+    <line x1="740" y1="760" x2="900" y2="720" stroke="#f4f8fa" stroke-width="1.5" />
+  </g>
+
+  <!-- Joinery Dimension Annotation & Callout Lines -->
+  <g transform="translate(680, 240)" stroke="#33546b" stroke-width="1.5">
+    <line x1="-80" y1="0" x2="-20" y2="0" />
+    <line x1="-80" y1="120" x2="-20" y2="120" />
+    <line x1="-50" y1="0" x2="-50" y2="120" />
+    <text x="-95" y="65" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#33546b" stroke="none" text-anchor="end">PITCH 120mm</text>
+  </g>
+
+  <!-- Carpenter Specification Plaque -->
+  <g transform="translate(190, 200)">
+    <rect width="400" height="120" rx="4" fill="#faf5ec" stroke="#33546b" stroke-width="1.5" />
+    <text x="24" y="34" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#33546b" letter-spacing="2">CARPENTRY DRAWING · 132</text>
+    <text x="24" y="68" font-family="'Fraunces', serif" font-size="22" font-weight="600" fill="#1f1c17">Through Dovetail Joint</text>
+    <text x="24" y="96" font-family="'JetBrains Mono', monospace" font-size="11" fill="#4f4a41">OAK / WALNUT · SLOPE 1:8 (7.1°) · FIT 0.05 MM</text>
+  </g>
+</svg>

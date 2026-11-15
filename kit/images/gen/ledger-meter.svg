@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<!-- Parchment Paper Canvas -->
+  <rect width="1600" height="1000" fill="#faf7ee" />
+
+  <!-- Outer Ledger Sheet Frame -->
+  <rect x="60" y="40" width="1480" height="920" fill="#fffdf6" stroke="#ded9cb" stroke-width="2" />
+
+  <!-- Double Vertical Red Ledger Margin Rules -->
+  <line x1="230" y1="40" x2="230" y2="440" stroke="#a32b1c" stroke-width="1.5" />
+  <line x1="234" y1="40" x2="234" y2="440" stroke="#a32b1c" stroke-width="0.75" />
+
+  <!-- Ledger Column Dividers -->
+  <line x1="700" y1="100" x2="700" y2="440" stroke="#ded9cb" stroke-width="1" />
+  <line x1="820" y1="100" x2="820" y2="440" stroke="#ded9cb" stroke-width="1" />
+  <line x1="1000" y1="100" x2="1000" y2="440" stroke="#ded9cb" stroke-width="1" />
+  <line x1="1220" y1="100" x2="1220" y2="440" stroke="#ded9cb" stroke-width="1" />
+
+  <!-- Header -->
+  <rect x="60" y="40" width="1480" height="60" fill="#fffdf6" />
+  <text x="90" y="78" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#22456b" letter-spacing="1">GENERAL LEDGER &amp; FISCAL RECONCILIATION</text>
+  <text x="1360" y="78" font-family="monospace" font-size="13" fill="#56503f">FOLIO NO. 4882</text>
+  <line x1="60" y1="100" x2="1540" y2="100" stroke="#22456b" stroke-width="2" />
+
+  <!-- Table Header -->
+  <rect x="60" y="102" width="1480" height="42" fill="#f6f0e1" />
+  <text x="90" y="128" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1c1913">DATE</text>
+  <text x="250" y="128" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1c1913">DESCRIPTION OF ACCOUNT</text>
+  <text x="740" y="128" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1c1913">REF</text>
+  <text x="940" y="128" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1c1913" text-anchor="end">DEBIT ($)</text>
+  <text x="1160" y="128" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1c1913" text-anchor="end">CREDIT ($)</text>
+  <text x="1460" y="128" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1c1913" text-anchor="end">BALANCE ($)</text>
+  <line x1="60" y1="144" x2="1540" y2="144" stroke="#ded9cb" stroke-width="1.5" />
+
+  <!-- Rows -->
+  <line x1="60" y1="200" x2="1540" y2="200" stroke="#ded9cb" stroke-width="1" />
+<text x="90" y="230" font-family="Georgia, serif" font-size="13" fill="#1c1913">12 NOV 2026</text>
+<text x="250" y="230" font-family="sans-serif" font-size="13" fill="#1c1913">Operating Disbursements — Infrastructure Cluster</text>
+<text x="740" y="230" font-family="monospace" font-size="12" fill="#56503f">TX-84910</text>
+<text x="940" y="230" font-family="monospace" font-size="13" fill="#a32b1c" text-anchor="end">42,850.00</text>
+<text x="1160" y="230" font-family="monospace" font-size="13" fill="#1f6f4a" text-anchor="end"></text>
+<text x="1460" y="230" font-family="monospace" font-size="14" font-weight="bold" fill="#1c1913" text-anchor="end">842,150.00</text>
+<line x1="60" y1="246" x2="1540" y2="246" stroke="#ded9cb" stroke-width="1" />
+<text x="90" y="276" font-family="Georgia, serif" font-size="13" fill="#1c1913">13 NOV 2026</text>
+<text x="250" y="276" font-family="sans-serif" font-size="13" fill="#1c1913">Treasury Yield Settlement — Series IV Note</text>
+<text x="740" y="276" font-family="monospace" font-size="12" fill="#56503f">TX-84911</text>
+<text x="940" y="276" font-family="monospace" font-size="13" fill="#a32b1c" text-anchor="end"></text>
+<text x="1160" y="276" font-family="monospace" font-size="13" fill="#1f6f4a" text-anchor="end">128,400.00</text>
+<text x="1460" y="276" font-family="monospace" font-size="14" font-weight="bold" fill="#1c1913" text-anchor="end">970,550.00</text>
+<line x1="60" y1="292" x2="1540" y2="292" stroke="#ded9cb" stroke-width="1" />
+<text x="90" y="322" font-family="Georgia, serif" font-size="13" fill="#1c1913">14 NOV 2026</text>
+<text x="250" y="322" font-family="sans-serif" font-size="13" fill="#1c1913">Contract Service Retainer — Global Node Hub</text>
+<text x="740" y="322" font-family="monospace" font-size="12" fill="#56503f">TX-84912</text>
+<text x="940" y="322" font-family="monospace" font-size="13" fill="#a32b1c" text-anchor="end">15,200.00</text>
+<text x="1160" y="322" font-family="monospace" font-size="13" fill="#1f6f4a" text-anchor="end"></text>
+<text x="1460" y="322" font-family="monospace" font-size="14" font-weight="bold" fill="#1c1913" text-anchor="end">955,350.00</text>
+<line x1="60" y1="338" x2="1540" y2="338" stroke="#ded9cb" stroke-width="1" />
+<text x="90" y="368" font-family="Georgia, serif" font-size="13" fill="#1c1913">15 NOV 2026</text>
+<text x="250" y="368" font-family="sans-serif" font-size="13" fill="#1c1913">Commercial Receivable Liquidation Batch #4</text>
+<text x="740" y="368" font-family="monospace" font-size="12" fill="#56503f">TX-84913</text>
+<text x="940" y="368" font-family="monospace" font-size="13" fill="#a32b1c" text-anchor="end"></text>
+<text x="1160" y="368" font-family="monospace" font-size="13" fill="#1f6f4a" text-anchor="end">89,650.00</text>
+<text x="1460" y="368" font-family="monospace" font-size="14" font-weight="bold" fill="#1c1913" text-anchor="end">1,045,000.00</text>
+
+
+  <!-- Double Underline Bottom Total Rule -->
+  <line x1="60" y1="400" x2="1540" y2="400" stroke="#1c1913" stroke-width="1.5" />
+  <line x1="60" y1="404" x2="1540" y2="404" stroke="#1c1913" stroke-width="1" />
+
+  <!-- PROMINENT FILL METER BLOCK (Sitting in clear center band) -->
+  <rect x="80" y="460" width="1440" height="320" fill="#f6f0e1" stroke="#ded9cb" stroke-width="1" rx="4" />
+  <text x="120" y="505" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#22456b">CAPITAL RESERVE ALLOCATION METER</text>
+  <text x="1360" y="505" font-family="monospace" font-size="18" font-weight="bold" fill="#1f6f4a">78.4% UTILIZED</text>
+
+  <!-- Giant Horizontal Fill Meter -->
+  <rect x="120" y="530" width="1360" height="68" fill="#ffffff" stroke="#22456b" stroke-width="2" rx="4" />
+  <!-- Filled portion: 78.4% of 1360 = 1066px -->
+  <rect x="122" y="532" width="1066" height="64" fill="#22456b" rx="2" />
+
+  <!-- Segmented Hash Ticks inside meter -->
+  <line x1="120" y1="532" x2="120" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="160" y1="532" x2="160" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="200" y1="532" x2="200" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="240" y1="532" x2="240" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="280" y1="532" x2="280" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="320" y1="532" x2="320" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="360" y1="532" x2="360" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="400" y1="532" x2="400" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="440" y1="532" x2="440" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="480" y1="532" x2="480" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="520" y1="532" x2="520" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="560" y1="532" x2="560" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="600" y1="532" x2="600" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="640" y1="532" x2="640" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="680" y1="532" x2="680" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="720" y1="532" x2="720" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="760" y1="532" x2="760" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="800" y1="532" x2="800" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="840" y1="532" x2="840" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="880" y1="532" x2="880" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="920" y1="532" x2="920" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="960" y1="532" x2="960" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="1000" y1="532" x2="1000" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="1040" y1="532" x2="1040" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="1080" y1="532" x2="1080" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+<line x1="1120" y1="532" x2="1120" y2="596" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3" />
+
+  <!-- Threshold Target Marker at 85% = 1276px -->
+  <line x1="1276" y1="510" x2="1276" y2="618" stroke="#a32b1c" stroke-width="3" />
+  <polygon points="1276,510 1266,496 1286,496" fill="#a32b1c" />
+  <text x="1276" y="640" font-family="monospace" font-size="12" font-weight="bold" fill="#a32b1c" text-anchor="middle">LIMIT CAP: 85.0%</text>
+
+  <!-- Detail Sub-Meters -->
+  <g transform="translate(120, 680)">
+    <text x="0" y="16" font-family="sans-serif" font-size="12" fill="#56503f">LIQUIDITY RATIO</text>
+    <rect x="0" y="26" width="380" height="14" fill="#ffffff" stroke="#ded9cb" rx="2" />
+    <rect x="0" y="26" width="310" height="14" fill="#1f6f4a" rx="2" />
+
+    <text x="460" y="16" font-family="sans-serif" font-size="12" fill="#56503f">DEBT SERVICE COVERAGE</text>
+    <rect x="460" y="26" width="380" height="14" fill="#ffffff" stroke="#ded9cb" rx="2" />
+    <rect x="460" y="26" width="280" height="14" fill="#22456b" rx="2" />
+
+    <text x="920" y="16" font-family="sans-serif" font-size="12" fill="#56503f">COLLATERAL BUFFER</text>
+    <rect x="920" y="26" width="380" height="14" fill="#ffffff" stroke="#ded9cb" rx="2" />
+    <rect x="920" y="26" width="340" height="14" fill="#1f6f4a" rx="2" />
+  </g>
+
+  <!-- Bottom Tally Seal -->
+  <line x1="80" y1="880" x2="1520" y2="880" stroke="#ded9cb" stroke-width="1" />
+  <text x="120" y="915" font-family="sans-serif" font-size="12" fill="#8a8068">CERTIFIED AUDITED STATEMENT · FISCAL YEAR 2026</text>
+  <text x="1400" y="915" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#22456b">Audit Approved</text>
+</svg>

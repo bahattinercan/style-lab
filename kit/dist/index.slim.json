@@ -4975,8 +4975,8 @@
     "rapor"
    ],
    "layout": {
-    "hero": "split-reverse",
-    "nav": "utility",
+    "hero": "index",
+    "nav": "split",
     "density": "dense"
    },
    "compatible": [
@@ -5075,9 +5075,9 @@
     "plan"
    ],
    "layout": {
-    "hero": "index",
-    "nav": "split",
-    "density": "dense"
+    "hero": "fullbleed",
+    "nav": "pill",
+    "density": "sparse"
    },
    "compatible": [
     "grocery-delivery",

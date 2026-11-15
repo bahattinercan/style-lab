@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="sr-sky" x1="0" y1="0" x2="0" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8ba8b8"/>
+      <stop offset="45%" stop-color="#c5d8e2"/>
+      <stop offset="85%" stop-color="#e7e2da"/>
+      <stop offset="100%" stop-color="#df5329" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="sr-ground" x1="0" y1="560" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d9d2c7"/>
+      <stop offset="50%" stop-color="#c8c0b3"/>
+      <stop offset="100%" stop-color="#a89f92"/>
+    </linearGradient>
+    <radialGradient id="sr-apple" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ff7a52"/>
+      <stop offset="40%" stop-color="#df5329"/>
+      <stop offset="80%" stop-color="#8a2b0f"/>
+      <stop offset="100%" stop-color="#1e1c1a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Surreal Pale Eerie Sky -->
+  <rect width="1600" height="560" fill="url(#sr-sky)"/>
+
+  <!-- Desert Stone Plaza Ground -->
+  <rect y="560" width="1600" height="440" fill="url(#sr-ground)"/>
+  <line x1="0" y1="560" x2="1600" y2="560" stroke="#868178" stroke-width="2"/>
+
+  <!-- De Chirico Receding Classical Stone Arcade (Left) -->
+  <g transform="translate(0 140)">
+    <!-- Arcade Wall Base -->
+    <polygon points="0,0 360,240 360,560 0,660" fill="#efeae1" stroke="#1e1c1a" stroke-width="2"/>
+    
+    <!-- Deep Black Arch Openings Receding in Perspective -->
+    <!-- Arch 1 -->
+    <path d="M 40 180 Q 80 140 120 200 L 120 540 L 40 560 Z" fill="#1e1c1a"/>
+    <!-- Arch 2 -->
+    <path d="M 150 240 Q 180 210 210 250 L 210 500 L 150 520 Z" fill="#1e1c1a"/>
+    <!-- Arch 3 -->
+    <path d="M 235 285 Q 255 260 275 295 L 275 470 L 235 485 Z" fill="#1e1c1a"/>
+    <!-- Arch 4 -->
+    <path d="M 295 325 Q 310 305 325 330 L 325 440 L 295 450 Z" fill="#1e1c1a"/>
+
+    <!-- Long Deep Arcade Shadow Cast onto Ground -->
+    <polygon points="360,560 0,660 0,820 620,680" fill="#1e1c1a" opacity="0.45"/>
+  </g>
+
+  <!-- Lonely Classical Stone Plinth at Center Right -->
+  <g transform="translate(1080 500)">
+    <!-- Top slab -->
+    <polygon points="-80,0 80,0 110,35 -50,35" fill="#fbf9f5" stroke="#1e1c1a" stroke-width="2"/>
+    <!-- Plinth Body -->
+    <polygon points="-50,35 110,35 110,220 -50,220" fill="#efeae1" stroke="#1e1c1a" stroke-width="2"/>
+    <polygon points="-80,0 -50,35 -50,220 -80,185" fill="#d9d2c7" stroke="#1e1c1a" stroke-width="2"/>
+    
+    <!-- Melting Clock Draped Over the Plinth (Dali Tribute) -->
+    <path d="M 10 15 C 40 5 90 20 85 45 C 80 80 115 110 110 150 C 105 180 60 170 50 140 C 45 100 20 90 10 60 Z" fill="#ffffff" stroke="#1e1c1a" stroke-width="2"/>
+    <ellipse cx="65" cy="50" rx="20" ry="12" fill="none" stroke="#1e1c1a" stroke-width="1.5"/>
+    <line x1="65" y1="50" x2="60" y2="44" stroke="#1e1c1a" stroke-width="2"/>
+    <line x1="65" y1="50" x2="74" y2="52" stroke="#1e1c1a" stroke-width="2"/>
+  </g>
+
+  <!-- IMPOSSIBLE DISPLACED OBJECT & SHADOW (Magritte / Surrealism) -->
+  <!-- Center: Giant Displaced Levitation Sphere / Apple (Floating high at y=360) -->
+  <g transform="translate(680 340)">
+    <!-- The Giant Floating Terracotta Sphere -->
+    <circle cx="0" cy="0" r="160" fill="url(#sr-apple)"/>
+    <circle cx="0" cy="0" r="158" fill="none" stroke="#df5329" stroke-width="2"/>
+    <!-- Specular highlight dot -->
+    <circle cx="-50" cy="-60" r="28" fill="#ffffff" opacity="0.65"/>
+    <circle cx="-55" cy="-65" r="14" fill="#ffffff" opacity="0.95"/>
+    <!-- Apple stem & leaf floating atop -->
+    <path d="M 0 -160 C 20 -200 60 -220 80 -230" fill="none" stroke="#1e1c1a" stroke-width="5"/>
+    <path d="M 50 -210 C 80 -240 120 -230 130 -200 C 100 -190 70 -195 50 -210 Z" fill="#df5329" stroke="#1e1c1a" stroke-width="2"/>
+  </g>
+
+  <!-- Impossible Displaced Shadow (Disconnected and Angled Impossibly in Wrong Direction) -->
+  <g transform="translate(680 560)">
+    <!-- Instead of being directly underneath at (680, 560) or rightward, it is cast 250px away at an acute angle! -->
+    <ellipse cx="260" cy="180" rx="240" ry="45" fill="#1e1c1a" opacity="0.65" transform="rotate(-15 260 180)"/>
+    <ellipse cx="260" cy="180" rx="190" ry="32" fill="#1e1c1a" opacity="0.85" transform="rotate(-15 260 180)"/>
+  </g>
+
+  <!-- Far Displaced Figure Silhouette with Long Shadow (Scale contrast) -->
+  <g transform="translate(1350 520)">
+    <!-- Tiny figure in overcoat and bowler hat -->
+    <circle cx="0" cy="0" r="6" fill="#1e1c1a"/>
+    <rect x="-4" y="6" width="8" height="24" fill="#1e1c1a"/>
+    <!-- Immense 180px shadow stretched across plaza -->
+    <polygon points="-4,30 4,30 -220,160 -240,155" fill="#1e1c1a" opacity="0.5"/>
+  </g>
+</svg>

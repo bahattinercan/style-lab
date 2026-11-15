@@ -160,7 +160,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 463348
+        "bytes": 416233
       }
     },
     "vaporwave": {
@@ -168,7 +168,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 2481323
+        "bytes": 2455307
       }
     },
     "synthwave": {
@@ -176,7 +176,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1586608
+        "bytes": 1529591
       }
     },
     "cyberpunk": {
@@ -184,7 +184,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1702858
+        "bytes": 1608455
       }
     },
     "cybercore": {
@@ -192,7 +192,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1343474
+        "bytes": 1303607
       }
     },
     "pixel-art": {
@@ -200,7 +200,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 299222
+        "bytes": 179059
       }
     },
     "frutiger-aero": {
@@ -208,7 +208,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 361839
+        "bytes": 297191
       }
     },
     "art-deco": {
@@ -216,7 +216,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1887758
+        "bytes": 1456265
       }
     },
     "victorian": {
@@ -224,7 +224,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1610929
+        "bytes": 1430535
       }
     },
     "surrealism": {
@@ -232,7 +232,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1537647
+        "bytes": 1500600
       }
     },
     "ethereal": {
@@ -376,7 +376,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 290837
+        "bytes": 237703
       }
     },
     "trading-desk": {
@@ -384,7 +384,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 362512
+        "bytes": 236966
       }
     },
     "executive-kpi": {
@@ -392,7 +392,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 299158
+        "bytes": 165455
       }
     },
     "log-stream": {
@@ -400,7 +400,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 332083
+        "bytes": 182138
       }
     },
     "lab-instrument": {
@@ -408,7 +408,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 366800
+        "bytes": 231698
       }
     },
     "atlas-console": {
@@ -416,7 +416,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1223986
+        "bytes": 1114732
       }
     },
     "experiment-split": {
@@ -424,7 +424,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 317792
+        "bytes": 275973
       }
     },
     "ledger-meter": {
@@ -432,7 +432,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 879915
+        "bytes": 747801
       }
     },
     "vitals-triage": {
@@ -440,7 +440,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 323697
+        "bytes": 259715
       }
     },
     "fleet-telemetry": {
@@ -448,7 +448,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 522565
+        "bytes": 461364
       }
     },
     "blueprint-drawing": {
@@ -616,7 +616,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 3046228
+        "bytes": 2964475
       }
     },
     "weather-atmosphere": {
@@ -624,7 +624,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 2234043
+        "bytes": 2204666
       }
     },
     "topographic-terrain": {
@@ -632,7 +632,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 2643425
+        "bytes": 2548169
       }
     },
     "ocean-current": {
@@ -640,7 +640,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 673893
+        "bytes": 608174
       }
     },
     "seasonal-shift": {
@@ -648,7 +648,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 2252965
+        "bytes": 2225126
       }
     },
     "forest-bark": {
@@ -656,7 +656,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1653339
+        "bytes": 1617080
       }
     },
     "desert-sand": {
@@ -664,7 +664,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1346171
+        "bytes": 1315572
       }
     },
     "polar-ice": {
@@ -672,7 +672,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 581350
+        "bytes": 529598
       }
     },
     "volcanic-mineral": {
@@ -680,7 +680,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 892443
+        "bytes": 760601
       }
     },
     "coral-reef": {
@@ -688,7 +688,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1610285
+        "bytes": 1343926
       }
     },
     "literary-hardcover": {
@@ -776,7 +776,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 251109
+        "bytes": 207570
       }
     },
     "optical-illusion": {
@@ -784,7 +784,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 200128
+        "bytes": 255818
       }
     },
     "generative-grid": {
@@ -792,7 +792,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 280122
+        "bytes": 208807
       }
     },
     "depth-parallax": {
@@ -800,7 +800,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 372124
+        "bytes": 303836
       }
     },
     "fluid-simulation": {
@@ -808,7 +808,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 326555
+        "bytes": 306759
       }
     },
     "shadow-stage": {
@@ -816,7 +816,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1390493
+        "bytes": 1314606
       }
     },
     "moire-field": {
@@ -824,7 +824,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 600550
+        "bytes": 624782
       }
     },
     "motion-trail": {
@@ -832,7 +832,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 279624
+        "bytes": 227681
       }
     },
     "stepped-mechanism": {
@@ -840,7 +840,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 961409
+        "bytes": 965120
       }
     },
     "holographic-layer": {
@@ -848,7 +848,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1305890
+        "bytes": 1304939
       }
     },
     "voice-first": {
@@ -1016,7 +1016,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 933580
+        "bytes": 539021
       }
     },
     "silk-drape": {
@@ -1024,7 +1024,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 856078
+        "bytes": 802509
       }
     },
     "brass-copper": {
@@ -1032,7 +1032,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1473796
+        "bytes": 1375892
       }
     },
     "porcelain-glaze": {
@@ -1040,7 +1040,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 344667
+        "bytes": 281209
       }
     },
     "leather-craft": {
@@ -1048,7 +1048,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1842296
+        "bytes": 1856163
       }
     },
     "optic-prism": {
@@ -1056,7 +1056,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 286987
+        "bytes": 214878
       }
     },
     "wood-joinery": {
@@ -1064,7 +1064,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1372999
+        "bytes": 1175942
       }
     },
     "letterpress-print": {
@@ -1072,7 +1072,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1138602
+        "bytes": 834541
       }
     },
     "concrete-monolith": {
@@ -1080,7 +1080,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 618909
+        "bytes": 335730
       }
     },
     "enamel-porcelain": {
@@ -1088,7 +1088,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 594171
+        "bytes": 403910
       }
     },
     "speculative-scifi": {

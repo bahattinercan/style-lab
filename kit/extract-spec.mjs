@@ -77,6 +77,8 @@ function extract(dir) {
     'shots.config.fragment.mjs': sha(fragment),
     'keywords.json': sha(keywordsText),
   };
+  const motifFile = path.join(STYLES, dir, 'motif.css');
+  if (fs.existsSync(motifFile)) sourceFiles['motif.css'] = sha(read(motifFile));
   const briefBlock = section(md, 'AI brief').match(/```\s*\n([\s\S]*?)\n```/)?.[1]?.trim() ?? '';
   const essence = section(md, 'Nedir');
   const notThis = bullets(section(md, 'Ne değildir'));

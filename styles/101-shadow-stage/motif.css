@@ -1,0 +1,34 @@
+/* 101 · shadow-stage — conic-gradient spotlight cone from top + hard-edged shadow wedge */
+.motif-blob {
+  position: relative;
+  overflow: hidden;
+}
+.motif-blob::before {
+  content: "";
+  position: absolute;
+  inset: -20% -20%;
+  pointer-events: none;
+  background: conic-gradient(
+    from 155deg at 50% 0%,
+    transparent 0deg,
+    var(--accent) 25deg,
+    transparent 50deg
+  );
+  opacity: 0.32;
+  filter: blur(3px);
+}
+.motif-blob::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    transparent 55%,
+    var(--bg) 55.5%,
+    var(--bg-2) 75%,
+    transparent 100%
+  );
+  clip-path: polygon(25% 100%, 75% 35%, 100% 70%, 100% 100%);
+  opacity: 0.55;
+}

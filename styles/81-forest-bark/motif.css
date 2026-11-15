@@ -1,0 +1,55 @@
+/* 81 · forest-bark motif: vertical fibrous streak texture (fine repeating-linear-gradient, irregular widths) */
+.motif-blob {
+  position: relative;
+  overflow: hidden;
+}
+.motif-blob::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 3px,
+    color-mix(in srgb, var(--line) 70%, transparent) 3px,
+    color-mix(in srgb, var(--line) 70%, transparent) 4px,
+    transparent 4px,
+    transparent 11px,
+    color-mix(in srgb, var(--accent) 35%, transparent) 11px,
+    color-mix(in srgb, var(--accent) 35%, transparent) 13px,
+    transparent 13px,
+    transparent 26px,
+    color-mix(in srgb, var(--line) 50%, transparent) 26px,
+    color-mix(in srgb, var(--line) 50%, transparent) 27.5px,
+    transparent 27.5px,
+    transparent 39px,
+    color-mix(in srgb, var(--accent) 25%, transparent) 39px,
+    color-mix(in srgb, var(--accent) 25%, transparent) 42px,
+    transparent 42px,
+    transparent 58px
+  );
+  opacity: 0.85;
+}
+.motif-blob::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 7px,
+    color-mix(in srgb, var(--surface-2) 80%, transparent) 7px,
+    color-mix(in srgb, var(--surface-2) 80%, transparent) 10px,
+    transparent 10px,
+    transparent 31px,
+    color-mix(in srgb, var(--accent) 40%, transparent) 31px,
+    color-mix(in srgb, var(--accent) 40%, transparent) 32px,
+    transparent 32px,
+    transparent 67px
+  );
+  opacity: 0.65;
+}

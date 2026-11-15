@@ -1,0 +1,32 @@
+.motif-bars {
+  position: relative;
+}
+.motif-bars::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    color-mix(in srgb, var(--surface-2) 60%, transparent) 0 20px,
+    transparent 20px 24px
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+.motif-bars::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 48px;
+  left: 20%;
+  right: 10%;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      color-mix(in srgb, var(--accent) 26%, transparent) 0 16px,
+      transparent 16px 24px
+    );
+  clip-path: polygon(15% 0, 95% 0, 75% 50%, 100% 50%, 40% 100%, 0 100%);
+  opacity: 0.85;
+  pointer-events: none;
+}

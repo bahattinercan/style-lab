@@ -1,0 +1,32 @@
+.motif-rings {
+  position: relative;
+}
+.motif-rings::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  width: 260px;
+  height: 260px;
+  background:
+    radial-gradient(circle, transparent 40px, var(--line) 41px, transparent 42px,
+      transparent 70px, color-mix(in srgb, var(--accent) 45%, transparent) 71px 74px, transparent 75px,
+      transparent 100px, var(--line) 101px, transparent 102px,
+      transparent 125px, color-mix(in srgb, var(--accent) 30%, transparent) 126px 128px, transparent 129px);
+  mask-image: conic-gradient(from 220deg, var(--ink) 0deg 260deg, transparent 260deg 360deg);
+  -webkit-mask-image: conic-gradient(from 220deg, var(--ink) 0deg 260deg, transparent 260deg 360deg);
+  pointer-events: none;
+}
+.motif-rings::after {
+  content: "";
+  position: absolute;
+  top: 138px;
+  right: 148px;
+  width: 86px;
+  height: 8px;
+  background: var(--accent);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  transform: rotate(-35deg);
+  transform-origin: 100% 50%;
+  pointer-events: none;
+}

@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="bio-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f2f4ea" />
+      <stop offset="60%" stop-color="#e9eddd" />
+      <stop offset="100%" stop-color="#dde4ce" />
+    </linearGradient>
+    <linearGradient id="bio-leaf1" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#3d824f" />
+      <stop offset="60%" stop-color="#2f6b3f" />
+      <stop offset="100%" stop-color="#1f4a2b" />
+    </linearGradient>
+    <linearGradient id="bio-leaf2" x1="0%" y1="30%" x2="100%" y2="70%">
+      <stop offset="0%" stop-color="#559b68" />
+      <stop offset="100%" stop-color="#2a5d37" />
+    </linearGradient>
+    <linearGradient id="bio-glow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#fbfcf6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#f5f8ee" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="1600" height="1000" fill="url(#bio-bg)" />
+
+  <!-- Botanical Herbarium Specimen Sheet Border -->
+  <rect x="40" y="40" width="1520" height="920" fill="none" stroke="#1b2a1f" stroke-width="1.5" stroke-opacity="0.25" rx="8" />
+  <rect x="52" y="52" width="1496" height="896" fill="none" stroke="#2f6b3f" stroke-width="0.8" stroke-opacity="0.2" rx="6" />
+
+  <!-- Cell Structure & Tissue Stomata Watermark Grid in Background -->
+  <g stroke="#1b2a1f" stroke-width="0.6" stroke-opacity="0.12" fill="none">
+    <circle cx="280" cy="280" r="140" />
+    <circle cx="280" cy="280" r="90" />
+    <circle cx="280" cy="280" r="45" />
+    <line x1="140" y1="280" x2="420" y2="280" />
+    <line x1="280" y1="140" x2="280" y2="420" />
+    <!-- Hexagonal cellular mesh fragments -->
+    <polygon points="1200,160 1240,140 1280,160 1280,200 1240,220 1200,200" />
+    <polygon points="1280,160 1320,140 1360,160 1360,200 1320,220 1280,200" />
+    <polygon points="1240,220 1280,200 1320,220 1320,260 1280,280 1240,260" />
+    <polygon points="1200,200 1240,220 1240,260 1200,280 1160,260 1160,220" />
+    <polygon points="1320,220 1360,200 1400,220 1400,260 1360,280 1320,260" />
+  </g>
+
+  <!-- Large Primary Monstera / Botanical Leaf Foliage (Top-Right to Center) -->
+  <g transform="translate(1080, 520) rotate(-18)">
+    <!-- Base Leaf Contour Shadow -->
+    <path d="M 0,-420 C 180,-360 340,-200 360,0 C 380,220 220,380 0,460 C -220,380 -380,220 -360,0 C -340,-200 -180,-360 0,-420 Z" fill="#1b2a1f" opacity="0.12" transform="translate(14, 18)" />
+    <!-- Main Leaf Body -->
+    <path d="M 0,-420 C 180,-360 340,-200 360,0 C 380,220 220,380 0,460 C -220,380 -380,220 -360,0 C -340,-200 -180,-360 0,-420 Z" fill="url(#bio-leaf1)" />
+    <!-- Monstera Lateral Fenestration Cutouts -->
+    <ellipse cx="140" cy="-160" rx="42" ry="16" transform="rotate(28 140 -160)" fill="#e9eddd" />
+    <ellipse cx="200" cy="-40" rx="55" ry="18" transform="rotate(18 200 -40)" fill="#e9eddd" />
+    <ellipse cx="190" cy="90" rx="52" ry="17" transform="rotate(-12 190 90)" fill="#e9eddd" />
+    <ellipse cx="130" cy="210" rx="40" ry="15" transform="rotate(-30 130 210)" fill="#e9eddd" />
+    <ellipse cx="-140" cy="-150" rx="42" ry="16" transform="rotate(-26 -140 -150)" fill="#e9eddd" />
+    <ellipse cx="-190" cy="-30" rx="54" ry="18" transform="rotate(-15 -190 -30)" fill="#e9eddd" />
+    <ellipse cx="-180" cy="100" rx="50" ry="17" transform="rotate(14 -180 100)" fill="#e9eddd" />
+    <ellipse cx="-120" cy="220" rx="38" ry="14" transform="rotate(32 -120 220)" fill="#e9eddd" />
+    <!-- Leaf Central Rachis Stem & Veins -->
+    <path d="M 0,-420 Q -4,20 0,460" stroke="#fbfcf6" stroke-width="5" stroke-opacity="0.8" fill="none" />
+    <g stroke="#fbfcf6" stroke-width="2" stroke-opacity="0.45" fill="none">
+      <path d="M 0,-300 Q 110,-260 260,-220" />
+      <path d="M 0,-210 Q 140,-160 310,-100" />
+      <path d="M 0,-120 Q 160,-60 340,10" />
+      <path d="M 0,-30 Q 170,40 330,130" />
+      <path d="M 0,60 Q 150,140 280,240" />
+      <path d="M 0,160 Q 120,230 220,340" />
+      <path d="M 0,-300 Q -110,-260 -260,-220" />
+      <path d="M 0,-210 Q -140,-160 -310,-100" />
+      <path d="M 0,-120 Q -160,-60 -340,10" />
+      <path d="M 0,-30 Q -170,40 -330,130" />
+      <path d="M 0,60 Q -150,140 -280,240" />
+      <path d="M 0,160 Q -120,230 -220,340" />
+    </g>
+  </g>
+
+  <!-- Secondary Lanceolate Leaf (Overlapping at upper center) -->
+  <g transform="translate(680, 360) rotate(35)">
+    <path d="M 0,-320 C 120,-220 180,-60 160,110 C 140,260 60,340 0,400 C -60,340 -140,260 -160,110 C -180,-60 -120,-220 0,-320 Z" fill="url(#bio-leaf2)" opacity="0.9" />
+    <path d="M 0,-320 Q 2,40 0,400" stroke="#fbfcf6" stroke-width="3" stroke-opacity="0.75" fill="none" />
+    <g stroke="#fbfcf6" stroke-width="1.5" stroke-opacity="0.4" fill="none">
+      <path d="M 0,-220 Q 70,-170 140,-120" />
+      <path d="M 0,-130 Q 90,-70 160,-10" />
+      <path d="M 0,-40 Q 90,30 150,100" />
+      <path d="M 0,60 Q 80,130 120,210" />
+      <path d="M 0,-220 Q -70,-170 -140,-120" />
+      <path d="M 0,-130 Q -90,-70 -160,-10" />
+      <path d="M 0,-40 Q -90,30 -150,100" />
+      <path d="M 0,60 Q -80,130 -120,210" />
+    </g>
+  </g>
+
+  <!-- Delicate Fern Frond Silhouette (Accent sprig) -->
+  <g transform="translate(520, 680) rotate(-45)">
+    <path d="M 0,280 Q 40,80 120,-160" stroke="#2f6b3f" stroke-width="3" fill="none" opacity="0.6" />
+    <g fill="#2f6b3f" opacity="0.55">
+      <ellipse cx="25" cy="180" rx="35" ry="12" transform="rotate(30 25 180)" />
+      <ellipse cx="-15" cy="195" rx="32" ry="11" transform="rotate(-30 -15 195)" />
+      <ellipse cx="45" cy="110" rx="38" ry="13" transform="rotate(28 45 110)" />
+      <ellipse cx="0" cy="125" rx="35" ry="12" transform="rotate(-28 0 125)" />
+      <ellipse cx="70" cy="35" rx="36" ry="12" transform="rotate(25 70 35)" />
+      <ellipse cx="20" cy="50" rx="34" ry="11" transform="rotate(-25 20 50)" />
+      <ellipse cx="95" cy="-45" rx="32" ry="11" transform="rotate(22 95 -45)" />
+      <ellipse cx="45" cy="-30" rx="30" ry="10" transform="rotate(-22 45 -30)" />
+      <ellipse cx="120" cy="-125" rx="26" ry="9" transform="rotate(20 120 -125)" />
+    </g>
+  </g>
+
+  <!-- Botanical Herbarium Specimen Label / Typography at Top Left -->
+  <g transform="translate(100, 100)">
+    <text x="0" y="32" font-family="'Fraunces', Georgia, serif" font-size="34" font-weight="600" fill="#1b2a1f" letter-spacing="-0.5">FOLIUM BOTANICA · SPECIMEN 076</text>
+    <text x="0" y="65" font-family="'Nunito', 'Inter', sans-serif" font-size="16" font-weight="700" fill="#2f6b3f" letter-spacing="3">TAXON: MONSTERA ADANSONII // PHENOTYPIC CELL MATRIX</text>
+    <text x="0" y="90" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#4a5c4a" letter-spacing="1.5">CHLOROPHYLL A/B: 3.42 · STOMATAL DENSITY: 142/mm² · VASCULAR TRACE: RETICULATE</text>
+  </g>
+
+  <!-- Herbarium Calibration Scale (Metric Bar at Top Right) -->
+  <g transform="translate(1240, 85)" stroke="#1b2a1f" stroke-width="1.5">
+    <line x1="0" y1="0" x2="220" y2="0" />
+    <line x1="0" y1="-8" x2="0" y2="8" />
+    <line x1="55" y1="-5" x2="55" y2="5" />
+    <line x1="110" y1="-8" x2="110" y2="8" />
+    <line x1="165" y1="-5" x2="165" y2="5" />
+    <line x1="220" y1="-8" x2="220" y2="8" />
+    <text x="0" y="24" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#4a5c4a" stroke="none">0cm</text>
+    <text x="95" y="24" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#4a5c4a" stroke="none">5cm</text>
+    <text x="200" y="24" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#4a5c4a" stroke="none">10cm</text>
+  </g>
+</svg>

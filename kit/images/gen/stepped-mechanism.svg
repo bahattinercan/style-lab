@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#adb3b7"/>
+
+  <!-- Technical grid pattern -->
+  <g stroke="#979da1" stroke-width="1.5">
+    <line x1="100" y1="0" x2="100" y2="1000"/>
+    <line x1="680" y1="0" x2="680" y2="1000"/>
+    <line x1="1100" y1="0" x2="1100" y2="1000"/>
+    <line x1="0" y1="500" x2="1600" y2="500"/>
+    <line x1="0" y1="800" x2="1600" y2="800"/>
+  </g>
+
+  <!-- Ratchet gear wheel -->
+  <path d="M 1020.0 500.0 A 340 340 0 0 1 1011.6 575.0 L 950.5 572.5 A 340 340 0 0 1 980.9 658.3 L 922.5 640.0 A 340 340 0 0 1 929.7 730.8 L 878.0 698.0 A 340 340 0 0 1 861.4 787.5 L 820.0 742.5 A 340 340 0 0 1 780.8 824.7 L 752.5 770.5 A 340 340 0 0 1 693.3 839.7 L 680.0 780.0 A 340 340 0 0 1 605.0 831.6 L 607.5 770.5 A 340 340 0 0 1 521.7 800.9 L 540.0 742.5 A 340 340 0 0 1 449.2 749.7 L 482.0 698.0 A 340 340 0 0 1 392.5 681.4 L 437.5 640.0 A 340 340 0 0 1 355.3 600.8 L 409.5 572.5 A 340 340 0 0 1 340.3 513.3 L 400.0 500.0 A 340 340 0 0 1 348.4 425.0 L 409.5 427.5 A 340 340 0 0 1 379.1 341.7 L 437.5 360.0 A 340 340 0 0 1 430.3 269.2 L 482.0 302.0 A 340 340 0 0 1 498.6 212.5 L 540.0 257.5 A 340 340 0 0 1 579.2 175.3 L 607.5 229.5 A 340 340 0 0 1 666.7 160.3 L 680.0 220.0 A 340 340 0 0 1 755.0 168.4 L 752.5 229.5 A 340 340 0 0 1 838.3 199.1 L 820.0 257.5 A 340 340 0 0 1 910.8 250.3 L 878.0 302.0 A 340 340 0 0 1 967.5 318.6 L 922.5 360.0 A 340 340 0 0 1 1004.7 399.2 L 950.5 427.5 A 340 340 0 0 1 1019.7 486.7 L 960.0 500.0 Z" fill="#abb1b5" stroke="#0f1417" stroke-width="4"/>
+  <circle cx="680" cy="500" r="160" fill="#adb3b7" stroke="#1f6b3d" stroke-width="4"/>
+  <circle cx="680" cy="500" r="70" fill="#0f1417"/>
+  <circle cx="680" cy="500" r="28" fill="#adb3b7"/>
+
+  <!-- Ratchet Pawl Lever engaged at top right tooth -->
+  <polygon points="960,320 1060,260 1040,240 920,290" fill="#1f6b3d" stroke="#0f1417" stroke-width="3"/>
+  <circle cx="1060" cy="260" r="14" fill="#0f1417"/>
+
+  <!-- Stepped staircase diagram -->
+  <g>
+      <rect x="1120" y="740" width="40" height="60" fill="#0f1417"/>
+      <text x="1132" y="728" font-family="'Share Tech Mono', monospace" font-size="14" fill="#0f1417" font-weight="700">01</text>
+    
+      <rect x="1164" y="680" width="40" height="120" fill="#1f6b3d"/>
+      <text x="1176" y="668" font-family="'Share Tech Mono', monospace" font-size="14" fill="#0f1417" font-weight="700">02</text>
+    
+      <rect x="1208" y="620" width="40" height="180" fill="#0f1417"/>
+      <text x="1220" y="608" font-family="'Share Tech Mono', monospace" font-size="14" fill="#0f1417" font-weight="700">03</text>
+    
+      <rect x="1252" y="560" width="40" height="240" fill="#1f6b3d"/>
+      <text x="1264" y="548" font-family="'Share Tech Mono', monospace" font-size="14" fill="#0f1417" font-weight="700">04</text>
+    
+      <rect x="1296" y="500" width="40" height="300" fill="#0f1417"/>
+      <text x="1308" y="488" font-family="'Share Tech Mono', monospace" font-size="14" fill="#0f1417" font-weight="700">05</text>
+    
+      <rect x="1340" y="440" width="40" height="360" fill="#1f6b3d"/>
+      <text x="1352" y="428" font-family="'Share Tech Mono', monospace" font-size="14" fill="#0f1417" font-weight="700">06</text>
+    
+      <rect x="1384" y="380" width="40" height="420" fill="#0f1417"/>
+      <text x="1396" y="368" font-family="'Share Tech Mono', monospace" font-size="14" fill="#0f1417" font-weight="700">07</text>
+    
+      <rect x="1428" y="320" width="40" height="480" fill="#1f6b3d"/>
+      <text x="1440" y="308" font-family="'Share Tech Mono', monospace" font-size="14" fill="#0f1417" font-weight="700">08</text>
+    </g>
+
+  <!-- Blueprint dimension callouts -->
+  <text x="80" y="80" font-family="'Share Tech Mono', monospace" font-size="28" font-weight="700" fill="#0f1417">
+    STEPPED RATCHET MECHANISM 104
+  </text>
+  <text x="80" y="115" font-family="'Share Tech Mono', monospace" font-size="14" fill="#1f6b3d">
+    TEETH: 24 · PITCH STEP: 15.0° · DETENT TORQUE: 64 NM · 8 HEIGHT INTERVALS
+  </text>
+</svg>

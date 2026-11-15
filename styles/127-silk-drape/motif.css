@@ -1,0 +1,34 @@
+/* 127 · silk-drape motif: very wide-radius repeating-radial-gradient fold bands (soft sheen) */
+.motif-blob::before {
+  content: "";
+  position: absolute;
+  inset: -30% -20%;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    repeating-radial-gradient(circle at 18% -10%,
+      color-mix(in srgb, var(--surface) 55%, transparent) 0px,
+      color-mix(in srgb, var(--surface) 55%, transparent) 55px,
+      transparent 75px,
+      color-mix(in srgb, var(--accent) 22%, transparent) 110px,
+      transparent 140px,
+      color-mix(in srgb, var(--surface) 40%, transparent) 175px
+    );
+  opacity: 0.85;
+}
+.motif-blob::after {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    repeating-radial-gradient(circle at 92% 115%,
+      transparent 0px,
+      color-mix(in srgb, var(--accent) 18%, transparent) 60px,
+      transparent 90px,
+      color-mix(in srgb, var(--surface) 35%, transparent) 130px,
+      transparent 165px
+    );
+  opacity: 0.75;
+}

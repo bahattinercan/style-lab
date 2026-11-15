@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<defs>
+    <linearGradient id="g49-spine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a78bfa" />
+      <stop offset="50%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#f87171" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Slate Background -->
+  <rect width="1600" height="1000" fill="#12141a" />
+
+  <!-- Console Top Bar -->
+  <rect x="60" y="40" width="1480" height="60" fill="#1a1e28" stroke="#252b3b" />
+  <circle cx="90" cy="70" r="6" fill="#a78bfa" />
+  <text x="115" y="76" fill="#e7e9f0" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">LOG STREAM // REAL-TIME EVENT AUDIT</text>
+  <text x="1240" y="76" fill="#a78bfa" font-family="monospace" font-size="13">RATE: 42.8k/s · BUFFER: OK</text>
+
+  <!-- Vertical Timeline Spine -->
+  <line x1="260" y1="130" x2="260" y2="840" stroke="url(#g49-spine)" stroke-width="4" />
+
+  <!-- Events List -->
+  <circle cx="260" cy="184" r="9" fill="#f87171" />
+<circle cx="260" cy="184" r="15" fill="#f87171" fill-opacity="0.2" />
+<line x1="275" y1="184" x2="320" y2="184" stroke="#f87171" stroke-width="1.5" />
+<rect x="320" y="160" width="1180" height="64" rx="4" fill="#1a1e28" stroke="#252b3b" />
+<text x="340" y="198" fill="#767d92" font-family="monospace" font-size="13">14:28:12.048</text>
+<rect x="490" y="180" width="70" height="26" rx="3" fill="#f87171" fill-opacity="0.2" stroke="#f87171" stroke-width="1" />
+<text x="525" y="198" fill="#f87171" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">FATAL</text>
+<text x="580" y="198" fill="#e7e9f0" font-family="monospace" font-size="14">Kernel panic: memory page fault at 0x00ff82a0</text>
+<text x="1460" y="198" fill="#767d92" font-family="monospace" font-size="12" text-anchor="end">ERR_09</text>
+<circle cx="260" cy="274" r="9" fill="#fbbf24" />
+<circle cx="260" cy="274" r="15" fill="#fbbf24" fill-opacity="0.2" />
+<line x1="275" y1="274" x2="320" y2="274" stroke="#fbbf24" stroke-width="1.5" />
+<rect x="320" y="250" width="1180" height="64" rx="4" fill="#1a1e28" stroke="#252b3b" />
+<text x="340" y="288" fill="#767d92" font-family="monospace" font-size="13">14:28:11.912</text>
+<rect x="490" y="270" width="70" height="26" rx="3" fill="#fbbf24" fill-opacity="0.2" stroke="#fbbf24" stroke-width="1" />
+<text x="525" y="288" fill="#fbbf24" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">WARN</text>
+<text x="580" y="288" fill="#e7e9f0" font-family="monospace" font-size="14">Ingestion buffer utilization reached 92.4%</text>
+<text x="1460" y="288" fill="#767d92" font-family="monospace" font-size="12" text-anchor="end">BUF_OFL</text>
+<circle cx="260" cy="364" r="9" fill="#a78bfa" />
+<circle cx="260" cy="364" r="15" fill="#a78bfa" fill-opacity="0.2" />
+<line x1="275" y1="364" x2="320" y2="364" stroke="#a78bfa" stroke-width="1.5" />
+<rect x="320" y="340" width="1180" height="64" rx="4" fill="#1a1e28" stroke="#252b3b" />
+<text x="340" y="378" fill="#767d92" font-family="monospace" font-size="13">14:28:11.450</text>
+<rect x="490" y="360" width="70" height="26" rx="3" fill="#a78bfa" fill-opacity="0.2" stroke="#a78bfa" stroke-width="1" />
+<text x="525" y="378" fill="#a78bfa" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">INFO</text>
+<text x="580" y="378" fill="#e7e9f0" font-family="monospace" font-size="14">TLS handshake renewed with gateway cluster eu-central</text>
+<text x="1460" y="378" fill="#767d92" font-family="monospace" font-size="12" text-anchor="end">NET_OK</text>
+<circle cx="260" cy="454" r="9" fill="#34d399" />
+<circle cx="260" cy="454" r="15" fill="#34d399" fill-opacity="0.2" />
+<line x1="275" y1="454" x2="320" y2="454" stroke="#34d399" stroke-width="1.5" />
+<rect x="320" y="430" width="1180" height="64" rx="4" fill="#1a1e28" stroke="#252b3b" />
+<text x="340" y="468" fill="#767d92" font-family="monospace" font-size="13">14:28:10.820</text>
+<rect x="490" y="450" width="70" height="26" rx="3" fill="#34d399" fill-opacity="0.2" stroke="#34d399" stroke-width="1" />
+<text x="525" y="468" fill="#34d399" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">DEBUG</text>
+<text x="580" y="468" fill="#e7e9f0" font-family="monospace" font-size="14">GC cycle completed: 482MB reclaimed in 12.4ms</text>
+<text x="1460" y="468" fill="#767d92" font-family="monospace" font-size="12" text-anchor="end">VM_GC</text>
+<circle cx="260" cy="544" r="9" fill="#a78bfa" />
+<circle cx="260" cy="544" r="15" fill="#a78bfa" fill-opacity="0.2" />
+<line x1="275" y1="544" x2="320" y2="544" stroke="#a78bfa" stroke-width="1.5" />
+<rect x="320" y="520" width="1180" height="64" rx="4" fill="#1a1e28" stroke="#252b3b" />
+<text x="340" y="558" fill="#767d92" font-family="monospace" font-size="13">14:28:10.104</text>
+<rect x="490" y="540" width="70" height="26" rx="3" fill="#a78bfa" fill-opacity="0.2" stroke="#a78bfa" stroke-width="1" />
+<text x="525" y="558" fill="#a78bfa" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">INFO</text>
+<text x="580" y="558" fill="#e7e9f0" font-family="monospace" font-size="14">Cluster node ip-10-0-4-82 joined telemetry ring</text>
+<text x="1460" y="558" fill="#767d92" font-family="monospace" font-size="12" text-anchor="end">NODE_ADD</text>
+<circle cx="260" cy="634" r="9" fill="#fbbf24" />
+<circle cx="260" cy="634" r="15" fill="#fbbf24" fill-opacity="0.2" />
+<line x1="275" y1="634" x2="320" y2="634" stroke="#fbbf24" stroke-width="1.5" />
+<rect x="320" y="610" width="1180" height="64" rx="4" fill="#1a1e28" stroke="#252b3b" />
+<text x="340" y="648" fill="#767d92" font-family="monospace" font-size="13">14:28:09.680</text>
+<rect x="490" y="630" width="70" height="26" rx="3" fill="#fbbf24" fill-opacity="0.2" stroke="#fbbf24" stroke-width="1" />
+<text x="525" y="648" fill="#fbbf24" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">WARN</text>
+<text x="580" y="648" fill="#e7e9f0" font-family="monospace" font-size="14">Disk I/O latency spike detected on vol-08f2 (>45ms)</text>
+<text x="1460" y="648" fill="#767d92" font-family="monospace" font-size="12" text-anchor="end">IO_WARN</text>
+<circle cx="260" cy="724" r="9" fill="#34d399" />
+<circle cx="260" cy="724" r="15" fill="#34d399" fill-opacity="0.2" />
+<line x1="275" y1="724" x2="320" y2="724" stroke="#34d399" stroke-width="1.5" />
+<rect x="320" y="700" width="1180" height="64" rx="4" fill="#1a1e28" stroke="#252b3b" />
+<text x="340" y="738" fill="#767d92" font-family="monospace" font-size="13">14:28:09.002</text>
+<rect x="490" y="720" width="70" height="26" rx="3" fill="#34d399" fill-opacity="0.2" stroke="#34d399" stroke-width="1" />
+<text x="525" y="738" fill="#34d399" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">INFO</text>
+<text x="580" y="738" fill="#e7e9f0" font-family="monospace" font-size="14">Snapshot stream batch #48821 verified sha256 checksum</text>
+<text x="1460" y="738" fill="#767d92" font-family="monospace" font-size="12" text-anchor="end">AUDIT</text>
+
+
+  <!-- Bottom Ingestion Waterfall Histogram -->
+  <rect x="60" y="850" width="1480" height="90" fill="#1a1e28" stroke="#252b3b" />
+  <text x="90" y="880" fill="#767d92" font-family="monospace" font-size="12" font-weight="bold">STREAM THROUGHPUT (LAST 60s)</text>
+  <g transform="translate(90, 895)">
+    <!-- 30 throughput bars -->
+    <rect x="0" y="15" width="22" height="20" fill="#a78bfa" />
+<rect x="32" y="12.942625182663598" width="22" height="22.057374817336402" fill="#fbbf24" />
+<rect x="64" y="16.51167958343803" width="22" height="18.48832041656197" fill="#a78bfa" />
+<rect x="96" y="20.060135130662218" width="22" height="14.939864869337782" fill="#a78bfa" />
+<rect x="128" y="18.973980117718895" width="22" height="16.026019882281105" fill="#a78bfa" />
+<rect x="160" y="13.46849659192257" width="22" height="21.53150340807743" fill="#fbbf24" />
+<rect x="192" y="8.521123532306394" width="22" height="26.478876467693606" fill="#fbbf24" />
+<rect x="224" y="9.976591383827277" width="22" height="25.023408616172723" fill="#fbbf24" />
+<rect x="256" y="19.792099006091156" width="22" height="15.207900993908844" fill="#a78bfa" />
+<rect x="288" y="34.073248186780695" width="22" height="0.926751813219302" fill="#a78bfa" />
+<rect x="320" y="45.463340048465696" width="22" height="-10.463340048465692" fill="#a78bfa" />
+<rect x="352" y="48.16594263459635" width="22" height="-13.16594263459635" fill="#a78bfa" />
+<rect x="384" y="41.885768197090954" width="22" height="-6.8857681970909566" fill="#a78bfa" />
+<rect x="416" y="31.775856449263525" width="22" height="3.2241435507364757" fill="#a78bfa" />
+<rect x="448" y="24.474653713074765" width="22" height="10.525346286925235" fill="#a78bfa" />
+<rect x="480" y="23.242025839884967" width="22" height="11.757974160115033" fill="#a78bfa" />
+<rect x="512" y="25.849935489380155" width="22" height="9.150064510619845" fill="#a78bfa" />
+<rect x="544" y="26.767607537063796" width="22" height="8.232392462936202" fill="#a78bfa" />
+<rect x="576" y="21.908706945885047" width="22" height="13.091293054114953" fill="#a78bfa" />
+<rect x="608" y="12.259295630758857" width="22" height="22.740704369241143" fill="#fbbf24" />
+<rect x="640" y="3.55645921820847" width="22" height="31.44354078179153" fill="#f87171" />
+<rect x="672" y="2.1937367062407773" width="22" height="32.80626329375922" fill="#f87171" />
+<rect x="704" y="10.413023988479218" width="22" height="24.586976011520782" fill="#fbbf24" />
+<rect x="736" y="24.41682230099098" width="22" height="10.583177699009019" fill="#a78bfa" />
+<rect x="768" y="36.859619467485935" width="22" height="-1.8596194674859374" fill="#a78bfa" />
+<rect x="800" y="41.893363064275704" width="22" height="-6.893363064275702" fill="#a78bfa" />
+<rect x="832" y="39.02977667952666" width="22" height="-4.029776679526659" fill="#a78bfa" />
+<rect x="864" y="32.9855395678139" width="22" height="2.0144604321860946" fill="#a78bfa" />
+<rect x="896" y="29.71027612335845" width="22" height="5.289723876641549" fill="#a78bfa" />
+<rect x="928" y="31.666842876415178" width="22" height="3.333157123584823" fill="#a78bfa" />
+<rect x="960" y="35.969981857344884" width="22" height="-0.9699818573448864" fill="#a78bfa" />
+<rect x="992" y="36.79157659239349" width="22" height="-1.7915765923934925" fill="#a78bfa" />
+<rect x="1024" y="30.1772514516788" width="22" height="4.822748548321199" fill="#a78bfa" />
+<rect x="1056" y="17.565109991008864" width="22" height="17.434890008991136" fill="#a78bfa" />
+<rect x="1088" y="5.260634424512681" width="22" height="29.73936557548732" fill="#f87171" />
+<rect x="1120" y="0.17621058900569864" width="22" height="34.8237894109943" fill="#f87171" />
+<rect x="1152" y="4.978784016414288" width="22" height="30.021215983585712" fill="#f87171" />
+<rect x="1184" y="16.257998195581393" width="22" height="18.742001804418607" fill="#a78bfa" />
+<rect x="1216" y="27.071698351719725" width="22" height="7.928301648280273" fill="#a78bfa" />
+<rect x="1248" y="31.948000909014084" width="22" height="3.0519990909859143" fill="#a78bfa" />
+<rect x="1280" y="30.598186646250028" width="22" height="4.401813353749974" fill="#a78bfa" />
+<rect x="1312" y="27.5981646426953" width="22" height="7.401835357304701" fill="#a78bfa" />
+  </g>
+</svg>

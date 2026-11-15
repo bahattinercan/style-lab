@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="pg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f2f6f8" />
+      <stop offset="100%" stop-color="#e6eef3" />
+    </linearGradient>
+    <radialGradient id="pg-plate" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="65%" stop-color="#fbfdfe" />
+      <stop offset="92%" stop-color="#eef4f7" />
+      <stop offset="100%" stop-color="#6f8394" stop-opacity="0.35" />
+    </radialGradient>
+    <radialGradient id="pg-cobalt-pool" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1d4f9c" stop-opacity="0.95" />
+      <stop offset="60%" stop-color="#1d4f9c" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#141d26" stop-opacity="0.3" />
+    </radialGradient>
+    <filter id="pg-drop">
+      <feDropShadow dx="0" dy="22" stdDeviation="34" flood-color="#141d26" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#pg-bg)" />
+
+  <!-- Studio alignment crosshairs -->
+  <g stroke="#6f8394" stroke-width="1" stroke-opacity="0.25">
+    <line x1="800" y1="40" x2="800" y2="960" stroke-dasharray="6 6" />
+    <line x1="100" y1="500" x2="1500" y2="500" stroke-dasharray="6 6" />
+  </g>
+
+  <!-- Ceramic Charger Plate (Luminous Bone China) -->
+  <g filter="url(#pg-drop)">
+    <!-- Outer Rim -->
+    <circle cx="800" cy="500" r="420" fill="url(#pg-plate)" stroke="#6f8394" stroke-width="1.5" stroke-opacity="0.4" />
+    <!-- Inner Well Rim Step -->
+    <circle cx="800" cy="500" r="320" fill="none" stroke="#e6eef3" stroke-width="2" />
+  </g>
+
+  <!-- Cobalt Blue Concentric Calligraphic Hairline Arcs (Pure Jingdezhen craft) -->
+  <circle cx="800" cy="500" r="390" fill="none" stroke="#1d4f9c" stroke-width="1.8" stroke-opacity="0.9" />
+  <circle cx="800" cy="500" r="378" fill="none" stroke="#1d4f9c" stroke-width="0.8" stroke-opacity="0.6" />
+
+  <path d="M 480 500 A 320 320 0 0 1 1120 500" fill="none" stroke="#1d4f9c" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.85" />
+  <path d="M 800 180 A 320 320 0 0 1 800 820" fill="none" stroke="#1d4f9c" stroke-width="1" stroke-linecap="round" stroke-opacity="0.4" stroke-dasharray="3 7" />
+
+  <!-- Expressive Cobalt Slip Trailing Swirl -->
+  <path d="M 640 400 C 720 320, 890 310, 950 420 C 1000 510, 930 620, 810 650 C 700 680, 630 580, 680 490 C 720 420, 810 420, 850 470" fill="none" stroke="#1d4f9c" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="850" cy="470" r="8" fill="url(#pg-cobalt-pool)" />
+  <circle cx="640" cy="400" r="4" fill="#1d4f9c" />
+
+  <!-- Translucent Cobalt Glaze Pooling Drops -->
+  <circle cx="560" cy="530" r="12" fill="url(#pg-cobalt-pool)" />
+  <circle cx="563" cy="527" r="3" fill="#ffffff" opacity="0.8" />
+  <circle cx="1020" cy="460" r="16" fill="url(#pg-cobalt-pool)" />
+  <circle cx="1024" cy="456" r="4" fill="#ffffff" opacity="0.85" />
+
+  <!-- Artisan Seal Stamp (Ceramicist Kiln Seal) -->
+  <g transform="translate(760, 460)">
+    <rect width="80" height="80" fill="#1d4f9c" rx="4" />
+    <rect x="6" y="6" width="68" height="68" fill="none" stroke="#f4f8fd" stroke-width="1.5" />
+    <text x="40" y="38" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#f4f8fd" text-anchor="middle">陶</text>
+    <text x="40" y="60" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#f4f8fd" text-anchor="middle">129</text>
+  </g>
+
+  <!-- Technical Spec & Caliber Annotation -->
+  <g transform="translate(180, 140)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#1d4f9c" letter-spacing="2">PORCELAIN CATALOGUE · 129</text>
+    <text x="0" y="28" font-family="'Cormorant Garamond', Georgia, serif" font-size="28" font-weight="500" fill="#141d26">Imperial Cobalt Glaze</text>
+    <text x="0" y="52" font-family="'JetBrains Mono', monospace" font-size="11" fill="#46586a">HIGH-FIRE KAOLIN BODY · CONE 10 (1300°C) REDUCTION</text>
+    <line x1="0" y1="64" x2="380" y2="64" stroke="#6f8394" stroke-width="1" stroke-opacity="0.5" />
+  </g>
+
+  <!-- Diameter & Weight Badges -->
+  <g transform="translate(180, 840)">
+    <rect width="180" height="48" rx="4" fill="#fbfdfe" stroke="#6f8394" stroke-width="1" />
+    <text x="18" y="29" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#141d26">DIAMETER: Ø 280 mm</text>
+  </g>
+  <g transform="translate(380, 840)">
+    <rect width="160" height="48" rx="4" fill="#fbfdfe" stroke="#6f8394" stroke-width="1" />
+    <text x="18" y="29" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#1d4f9c">WEIGHT: 460 g</text>
+  </g>
+</svg>

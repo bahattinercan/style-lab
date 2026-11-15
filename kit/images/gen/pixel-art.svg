@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <!-- Pixel palette: #1a1c2c, #23263a, #29366f, #3b5dc9, #ffcd75, #f4f4f4 -->
+  </defs>
+
+  <!-- Dark 8-bit Night Sky -->
+  <rect width="1600" height="1000" fill="#1a1c2c"/>
+
+  <!-- Stepped Pixel Stars -->
+  <g fill="#f4f4f4">
+    <rect x="160" y="120" width="16" height="16"/><rect x="168" y="104" width="16" height="16"/><rect x="168" y="136" width="16" height="16"/>
+    <rect x="420" y="80" width="16" height="16"/>
+    <rect x="740" y="160" width="16" height="16"/><rect x="724" y="160" width="16" height="16"/><rect x="756" y="160" width="16" height="16"/>
+    <rect x="1100" y="96" width="16" height="16"/>
+    <rect x="1440" y="144" width="16" height="16"/>
+    <rect x="1320" y="240" width="16" height="16"/>
+    <rect x="300" y="280" width="16" height="16"/>
+  </g>
+
+  <!-- 8-Bit Pixel Crescent Moon (composed strictly of stepped rectangles) -->
+  <g fill="#ffcd75" transform="translate(1200 80)">
+    <rect x="64" y="0" width="64" height="16"/>
+    <rect x="32" y="16" width="128" height="16"/>
+    <rect x="16" y="32" width="160" height="32"/>
+    <rect x="0" y="64" width="192" height="64"/>
+    <rect x="0" y="128" width="176" height="32"/>
+    <rect x="16" y="160" width="144" height="32"/>
+    <rect x="32" y="192" width="112" height="16"/>
+    <rect x="64" y="208" width="64" height="16"/>
+    <!-- Cutout inner shadow with background color to form crescent -->
+    <rect x="64" y="16" width="96" height="16" fill="#1a1c2c"/>
+    <rect x="48" y="32" width="128" height="32" fill="#1a1c2c"/>
+    <rect x="48" y="64" width="144" height="64" fill="#1a1c2c"/>
+    <rect x="48" y="128" width="128" height="32" fill="#1a1c2c"/>
+    <rect x="64" y="160" width="96" height="16" fill="#1a1c2c"/>
+  </g>
+
+  <!-- Distant Pixel Mountain Silhouette (Layer 1 - #23263a) -->
+  <g fill="#23263a">
+    <rect x="0" y="560" width="1600" height="440"/>
+    <polygon points="0,560 160,400 320,560" stroke="#23263a" stroke-width="16"/>
+    <polygon points="400,560 640,320 880,560" stroke="#23263a" stroke-width="16"/>
+    <polygon points="960,560 1200,360 1440,560" stroke="#23263a" stroke-width="16"/>
+  </g>
+
+  <!-- Middle Pixel Castle Ground & Ramparts (Layer 2 - #29366f) -->
+  <g fill="#29366f">
+    <!-- Castle Wall Base -->
+    <rect x="0" y="680" width="1600" height="320"/>
+    
+    <!-- Left Castle Tower Crenellations -->
+    <rect x="80" y="440" width="280" height="240"/>
+    <rect x="80" y="380" width="60" height="60"/>
+    <rect x="190" y="380" width="60" height="60"/>
+    <rect x="300" y="380" width="60" height="60"/>
+
+    <!-- Right Tower Crenellations -->
+    <rect x="1240" y="440" width="280" height="240"/>
+    <rect x="1240" y="380" width="60" height="60"/>
+    <rect x="1350" y="380" width="60" height="60"/>
+    <rect x="1460" y="380" width="60" height="60"/>
+
+    <!-- Center Keep Battlement -->
+    <rect x="480" y="520" width="640" height="160"/>
+    <rect x="480" y="480" width="50" height="40"/>
+    <rect x="580" y="480" width="50" height="40"/>
+    <rect x="680" y="480" width="50" height="40"/>
+    <rect x="780" y="480" width="50" height="40"/>
+    <rect x="880" y="480" width="50" height="40"/>
+    <rect x="980" y="480" width="50" height="40"/>
+    <rect x="1070" y="480" width="50" height="40"/>
+  </g>
+
+  <!-- Foreground Stepped Earth (#3b5dc9) -->
+  <g fill="#3b5dc9">
+    <rect x="0" y="780" width="1600" height="220"/>
+    <rect x="120" y="740" width="320" height="40"/>
+    <rect x="540" y="720" width="520" height="60"/>
+    <rect x="1160" y="740" width="340" height="40"/>
+  </g>
+
+  <!-- Floating 8-Bit Island at Center-Sky -->
+  <g transform="translate(620 260)">
+    <!-- Island grass top -->
+    <rect x="40" y="0" width="280" height="32" fill="#ffcd75"/>
+    <rect x="0" y="16" width="360" height="24" fill="#ffcd75"/>
+    <!-- Earth body stepped down -->
+    <rect x="20" y="40" width="320" height="32" fill="#3b5dc9"/>
+    <rect x="60" y="72" width="240" height="32" fill="#29366f"/>
+    <rect x="100" y="104" width="160" height="32" fill="#23263a"/>
+    <rect x="140" y="136" width="80" height="24" fill="#1a1c2c"/>
+
+    <!-- Pixel Campfire on island -->
+    <rect x="160" y="-16" width="40" height="16" fill="#23263a"/>
+    <!-- Flame stepped blocks -->
+    <rect x="168" y="-48" width="24" height="32" fill="#ffcd75"/>
+    <rect x="176" y="-64" width="16" height="24" fill="#f4f4f4"/>
+    <rect x="164" y="-36" width="8" height="20" fill="#ffcd75"/>
+    <rect x="188" y="-36" width="8" height="20" fill="#ffcd75"/>
+  </g>
+
+  <!-- Pixel Castle Gate with Glowing Amber Interior -->
+  <g transform="translate(720 680)">
+    <rect x="0" y="0" width="160" height="180" rx="0" fill="#ffcd75"/>
+    <rect x="16" y="16" width="128" height="164" fill="#ffcd75"/>
+    <!-- Stepped portcullis bars -->
+    <rect x="40" y="0" width="16" height="180" fill="#1a1c2c"/>
+    <rect x="80" y="0" width="16" height="180" fill="#1a1c2c"/>
+    <rect x="120" y="0" width="16" height="180" fill="#1a1c2c"/>
+    <rect x="0" y="40" width="160" height="16" fill="#1a1c2c"/>
+    <rect x="0" y="90" width="160" height="16" fill="#1a1c2c"/>
+    <rect x="0" y="140" width="160" height="16" fill="#1a1c2c"/>
+  </g>
+</svg>

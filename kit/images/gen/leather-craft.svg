@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <linearGradient id="lc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e3cba9" />
+      <stop offset="100%" stop-color="#d7bd98" />
+    </linearGradient>
+    <linearGradient id="lc-leather" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0e0c6" />
+      <stop offset="40%" stop-color="#e9d5b7" />
+      <stop offset="100%" stop-color="#d7bd98" />
+    </linearGradient>
+    <pattern id="lc-grain" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.8" fill="#2b1d12" opacity="0.15" />
+      <circle cx="9" cy="8" r="0.9" fill="#7a3f1d" opacity="0.18" />
+      <circle cx="7" cy="2" r="0.6" fill="#5d452f" opacity="0.12" />
+    </pattern>
+    <filter id="lc-drop">
+      <feDropShadow dx="0" dy="18" stdDeviation="26" flood-color="#2b1d12" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#lc-bg)" />
+
+  <!-- Artisan Workshop Cutting Mat Layout Grid -->
+  <g stroke="#7f6748" stroke-width="1" stroke-opacity="0.2">
+    <line x1="80" y1="120" x2="1520" y2="120" />
+    <line x1="80" y1="320" x2="1520" y2="320" />
+    <line x1="80" y1="520" x2="1520" y2="520" />
+    <line x1="80" y1="720" x2="1520" y2="720" />
+    <line x1="80" y1="920" x2="1520" y2="920" />
+    <line x1="320" y1="80" x2="320" y2="920" />
+    <line x1="620" y1="80" x2="620" y2="920" />
+    <line x1="920" y1="80" x2="920" y2="920" />
+    <line x1="1220" y1="80" x2="1220" y2="920" />
+  </g>
+
+  <!-- Heavy Saddle Leather Hide Specimen (Main Panel) -->
+  <g filter="url(#lc-drop)">
+    <!-- Burnished edge bevel contour -->
+    <rect x="140" y="100" width="1320" height="800" rx="16" fill="url(#lc-leather)" stroke="#7a3f1d" stroke-width="4" />
+    <!-- Fine speckle leather grain overlay -->
+    <rect x="140" y="100" width="1320" height="800" rx="16" fill="url(#lc-grain)" />
+    <!-- Creaser Groove Line -->
+    <rect x="168" y="128" width="1264" height="744" rx="12" fill="none" stroke="#7a3f1d" stroke-width="2" stroke-opacity="0.7" />
+  </g>
+
+  <!-- Dashed Waxed Linen Stitch Frame (Saddle Stitching) -->
+  <rect x="190" y="150" width="1220" height="700" rx="10" fill="none" stroke="#f8ecda" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 8" />
+  <rect x="190" y="150" width="1220" height="700" rx="10" fill="none" stroke="#2b1d12" stroke-width="1" stroke-dasharray="2 16" stroke-dashoffset="10" />
+
+  <!-- Stitched Pocket Overlay (Card/Ticket Slot) -->
+  <g filter="url(#lc-drop)">
+    <path d="M 880 340 L 1380 340 C 1390 340, 1400 350, 1400 360 L 1400 780 C 1400 790, 1390 800, 1380 800 L 880 800 C 870 800, 860 790, 860 780 L 860 360 C 860 350, 870 340, 880 340 Z" fill="#e9d5b7" stroke="#7a3f1d" stroke-width="2" />
+    <!-- Pocket stitching runs -->
+    <path d="M 880 360 L 880 780 L 1380 780 L 1380 360" fill="none" stroke="#f8ecda" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 7" />
+    <!-- Pocket mouth bevel burnish -->
+    <line x1="860" y1="340" x2="1400" y2="340" stroke="#2b1d12" stroke-width="3" />
+  </g>
+
+  <!-- Hot Foil Embossed Maker's Stamp -->
+  <g transform="translate(240, 220)">
+    <rect width="440" height="130" rx="6" fill="#e3cba9" stroke="#7a3f1d" stroke-width="1.5" stroke-dasharray="4 4" />
+    <text x="24" y="38" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#7a3f1d" letter-spacing="2">ATELIER WORK ORDER · 130</text>
+    <text x="24" y="72" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#2b1d12">Full-Grain Saddle Tan</text>
+    <text x="24" y="102" font-family="'JetBrains Mono', monospace" font-size="11" fill="#5d452f">VEGETABLE TANNED · 4.5 OZ (1.8 MM) · WAXED SADDLE STITCH</text>
+  </g>
+
+  <!-- Pricking Iron Awl Punch Gauge Markings -->
+  <g transform="translate(240, 760)">
+    <line x1="0" y1="0" x2="360" y2="0" stroke="#2b1d12" stroke-width="1.5" />
+    <!-- Diamond awl stitch points -->
+    <g fill="#7a3f1d">
+      <polygon points="0,-6 4,0 0,6 -4,0" />
+      <polygon points="40,-6 44,0 40,6 36,0" />
+      <polygon points="80,-6 84,0 80,6 76,0" />
+      <polygon points="120,-6 124,0 120,6 116,0" />
+      <polygon points="160,-6 164,0 160,6 156,0" />
+      <polygon points="200,-6 204,0 200,6 196,0" />
+      <polygon points="240,-6 244,0 240,6 236,0" />
+      <polygon points="280,-6 284,0 280,6 276,0" />
+      <polygon points="320,-6 324,0 320,6 316,0" />
+      <polygon points="360,-6 364,0 360,6 356,0" />
+    </g>
+    <text x="0" y="26" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#2b1d12">STITCH PITCH: 4.0 mm · 7 SPI</text>
+  </g>
+</svg>

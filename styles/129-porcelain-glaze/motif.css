@@ -1,0 +1,35 @@
+/* 129 · porcelain-glaze motif: sparse thin cobalt hairline arcs (thin radial-gradient rings), lots of white */
+.motif-none::before {
+  content: "";
+  position: absolute;
+  inset: -10% -10%;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 82% 18%,
+      transparent 0 110px,
+      color-mix(in srgb, var(--accent) 42%, transparent) 110px 111.2px,
+      transparent 111.2px 185px,
+      color-mix(in srgb, var(--accent) 26%, transparent) 185px 186px,
+      transparent 186px 290px,
+      color-mix(in srgb, var(--accent) 18%, transparent) 290px 290.8px,
+      transparent 290.8px
+    );
+  opacity: 0.9;
+}
+.motif-none::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 86%,
+      transparent 0 80px,
+      color-mix(in srgb, var(--accent) 34%, transparent) 80px 81px,
+      transparent 81px 150px,
+      color-mix(in srgb, var(--accent) 20%, transparent) 150px 150.8px,
+      transparent 150.8px
+    );
+  opacity: 0.85;
+}

@@ -1,0 +1,36 @@
+.motif-dots {
+  position: relative;
+}
+.motif-dots::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 36px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 60%, transparent) 0%,
+    var(--line) 50%,
+    transparent 95%
+  );
+  pointer-events: none;
+}
+.motif-dots::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  width: 14px;
+  background-image:
+    radial-gradient(circle 3px at 7px 28px, var(--accent) 100%, transparent 0),
+    radial-gradient(circle 5px at 7px 72px, var(--danger) 100%, transparent 0),
+    radial-gradient(circle 4px at 7px 116px, var(--warn) 100%, transparent 0),
+    radial-gradient(circle 3px at 7px 160px, var(--ok) 100%, transparent 0),
+    radial-gradient(circle 6px at 7px 208px, var(--accent) 100%, transparent 0),
+    radial-gradient(circle 4px at 7px 256px, color-mix(in srgb, var(--ink) 40%, transparent) 100%, transparent 0);
+  background-repeat: repeat-y;
+  background-size: 14px 280px;
+  pointer-events: none;
+}

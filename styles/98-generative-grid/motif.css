@@ -1,0 +1,28 @@
+/* 98 · generative-grid — irregular dot node lattice + thin grid lines */
+.motif-grid {
+  position: relative;
+  overflow: hidden;
+}
+.motif-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px;
+  opacity: 0.65;
+}
+.motif-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle 2.5px at 12px 12px, var(--accent) 100%, transparent 0),
+    radial-gradient(circle 1.5px at 36px 60px, var(--ink-soft) 100%, transparent 0),
+    radial-gradient(circle 3px at 84px 36px, var(--accent) 100%, transparent 0);
+  background-size: 96px 96px, 72px 72px, 120px 120px;
+  opacity: 0.6;
+}
