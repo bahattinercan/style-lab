@@ -19,6 +19,8 @@ styles/<nn>/token-block.css + fragment + keywords
 kit/tokens.css    →  kit/render/render-shots.mjs  →  styles/<nn>/shots/01-page.png
 kit/styles.index.json → kit/build-gallery.mjs → kit/gallery.html · kit/dist/index.slim.json
 kit/tokens.css    →  kit/export-tokens.mjs  →  kit/dist/{tokens.all.css, tailwind.theme.css, figma.variables.json}
+styles/<nn>/shots/01-page.png → kit/build-thumbs.mjs → kit/site/thumbs/<nn>-01-page@640|1280.webp
+kit/gallery.html + thumbs + fonts + PNG → kit/build-site.mjs → _site/ → .github/workflows/pages.yml → Pages
 ```
 
 ## Klasör haritası
@@ -31,6 +33,9 @@ kit/lib/style-spec.mjs  SPEC → kaynak üreteci
 kit/render/          page.html (TEK şablon), scene.css, partials/, CDP tarayıcı, layouts.json
 kit/dist/            ÜRETİLEN çıktı (elle düzenlenmez)
 kit/fonts/           29 Google Fonts ailesi (woff2, OFL)
+kit/site/thumbs/     ÜRETİLEN: kart/tam boy WebP türevleri + manifest.json (repoda)
+_site/               ÜRETİLEN site (git'e girmez) → GitHub Pages artifact'ı
+.github/workflows/   gates.yml (kapılar) · pages.yml (statik site yayını)
 docs/                katalog.md (üretilir) · v6-sadelestirme-raporu.md · v5-revizyon-raporu.md · stage-lab-plani.md
 playbook.md          tasarım reçeteleri
 TESTING.md           siteyi açma + test etme
@@ -40,11 +45,14 @@ TESTING.md           siteyi açma + test etme
 
 1. **Üretilen dosyayı elle düzenleme.** `kit/tokens.css`, `kit/render/shots.config.mjs`,
    `kit/gallery.data.mjs`, `kit/gallery.html`, `kit/styles.index.json`, `kit/live-styles.js`,
-   `kit/dist/**`, `docs/katalog.md`, `styles/*/shots/**` üretici çıktısıdır. Değişiklik kaynağa
+   `kit/dist/**`, `docs/katalog.md`, `styles/*/shots/**`, `kit/site/thumbs/**`, `_site/**` üretici çıktısıdır.
+   Değişiklik kaynağa
    (`styles/*/tokens.json`, `token-block.css`, `style.md`, fragment, ya da `kit/specs/*.json`) yazılır,
    `--apply`/`add-style` ile üretilir. `--check` kapıları elle yazımı **drift** olarak yakalar.
 2. **Kaynak değiştiyse üretimi de çalıştır**: `node kit/apply-fragments.mjs --apply` →
    `node kit/build-gallery.mjs` → `node kit/export-tokens.mjs` → `node kit/build-catalog-doc.mjs`.
+   `shots/01-page.png` yeniden üretildiyse **ayrıca** `node kit/build-thumbs.mjs` (WebP türevleri);
+   aksi halde `build-thumbs --check` bayat türevle kapıyı kırar.
 3. **Token sözleşmesi sabit.** Her stil aynı 20 değişkeni doldurur (`--bg … --grain`, `--space-1…8`).
    Yeni stil için sözleşmeye değişken **ekleme** — eksik doldur.
 4. **Koyu mod yok (v6).** `palette.dark`, `[data-theme="dark"]` bloğu, koyu sahne üretilmez.
@@ -81,6 +89,12 @@ kit/gallery.html                    # file:// çalışır; arama/URL testi için
 python -m http.server 8000 --bind 127.0.0.1
 # → http://localhost:8000/kit/gallery.html · kit/live.html?style=game-hud
 
+# Yayın sitesi (GitHub Pages)
+node kit/build-thumbs.mjs              # PNG → WebP türevleri (kart 640 / tam 1280) · --check: bayat mı
+node kit/build-site.mjs                # _site/ derle · --check: varlık bütünlüğü · --clean: sıfırdan
+node kit/check-site.mjs                # duman testi: HTTP + başsız tarayıcı (landing/galeri/katalog/live)
+python -m http.server 8000 --directory _site --bind 127.0.0.1   # derlenen siteyi yerelde gez
+
 # Yeni stil ekle (SPEC → her şey)
 node kit/add-style.mjs kit/specs/my-batch.json          # üret + render + indeks
 node kit/add-style.mjs kit/specs/my-batch.json --dry    # yalnız doğrula
@@ -109,7 +123,7 @@ node kit/style-lint.mjs src --style <slug>
 Bu depoda `package.json` yoktur; doğrulama kapısı `kit/gates.sh` dosyasıdır:
 
 ```bash
-bash kit/gates.sh          # 27 adım, birkaç dakika: parite → katalog → atamalar → ölçüm → export → görsel imza
+bash kit/gates.sh          # 31 adım, birkaç dakika: parite → katalog → atamalar → ölçüm → export → site → görsel imza
 ```
 
 Hızlı alt kümeler (değişikliğin türüne göre, tamamı değil):
@@ -121,6 +135,8 @@ node kit/check-schema.mjs && node kit/apply-fragments.mjs --check && node kit/ch
 node kit/check-gallery-ui.mjs && node kit/build-gallery.mjs --check && node kit/build-catalog-doc.mjs --check
 # kompozisyon
 node kit/assign-layouts.mjs --check && node kit/check-layout.mjs
+# yayın sitesi
+node kit/build-thumbs.mjs --check && node kit/build-site.mjs --check && node kit/check-site.mjs
 # tek sayfa taşma ölçümü + görsel imza
 node kit/render/render-shots.mjs --sample 8 --measure && node kit/render/phash.mjs --check
 ```
@@ -150,7 +166,7 @@ ile atlamak yerine `gates.sh`'i ayrı uzun koşuda çalıştır, çıktıyı gö
 - **`neighbors` slug'ları katalogda ya da aynı partide olmalı** (`check-schema` arar).
 - **Headless render WebGL'i SwiftShader ile koşar** — GPU FPS ölçmez; performans iddiası için yeterli değil.
 - **`file://` altında `replaceState` engellenir** — URL durumu (filtre/paylaşım) testi sunucu ister.
-- **Pre-commit kancası 27 adım koşar (>120 s)** ve araç zaman aşımına takılır; kapıyı ayrı uzun komutta
+- **Pre-commit kancası 31 adım koşar (>120 s)** ve araç zaman aşımına takılır; kapıyı ayrı uzun komutta
   çalıştırıp temiz çıktıyı göster, sonra commit et.
 - **Boş kare riski:** CDP sekme havuzunda viewport yarışı olabilir; `render-shots` artık `innerWidth`
   doğrular, PNG boyutunu kontrol eder ve boş kareyi bir kez yeniden yakalar (`kit/render/cdp-browser.mjs`).

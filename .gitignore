@@ -12,3 +12,7 @@ Desktop.ini
 
 # üretilen sahne cache (repoda tutulmaz; çekirdek sahneler styles/*/shots/)
 kit/.shots-cache/
+
+# site derleme çıktısı (node kit/build-site.mjs) — Pages'e Actions artifact olarak gider
+_site/
+kit/.tmp-thumbs/

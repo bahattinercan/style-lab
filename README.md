@@ -4,7 +4,7 @@
 > **Repository:** https://github.com/bahattinercan/style-lab
 > **Gates:** `bash kit/gates.sh` (27 steps) · **Install hook:** `bash kit/install-hooks.sh`
 > **Interactive:** `kit/gallery.html` (search · filter · drawer · compare) · `kit/live.html?style=<slug>`
-> **Catalog index:** [`docs/katalog.md`](docs/katalog.md) (251 styles, 31 families) · **Report:** `kit/dist/report.md`
+> **Live site:** <https://bahattinercan.github.io/style-lab/> · **Catalog index:** [`docs/katalog.md`](docs/katalog.md) (251 styles, 31 families) · **Report:** `kit/dist/report.md`
 
 A catalog against uniform design: **251 visual styles** in **31 family bands**. Every style ships
 **one single-page mock-up** (1280×2400: nav, hero, three content sections, component grid,
@@ -30,6 +30,29 @@ Rationale and measurements: [`docs/v6-sadelestirme-raporu.md`](docs/v6-sadelesti
 - 0 contrast errors (`--strict-soft`), 19 documented soft warnings (decorative `--ink-faint`, low APCA in 3 very-dark palettes).
 - Verification: `bash kit/gates.sh` → last line `kapılar: temiz`.
 
+## Live site
+
+<https://bahattinercan.github.io/style-lab/> — built by `node kit/build-site.mjs` and deployed by
+`.github/workflows/pages.yml` on every push to `main`.
+
+| Page | What it is |
+|---|---|
+| `/` | landing: counts from `kit/styles.index.json`, 8 featured styles, 31 family bands |
+| `/kit/gallery.html` | the gallery: search, filters, pagination, drawer, lightbox, compare |
+| `/katalog.html` | the catalog index (`docs/katalog.md` rendered, one link per style) |
+| `/kit/live.html?style=<slug>` | the selected style's tokens applied to a static component page |
+
+`_site/` is a build artifact (git-ignored). Cards load WebP derivatives
+(`thumbs/<slug>@640.webp`, ~35 KB); the lightbox uses the `@1280` derivative and the original
+PNG stays downloadable. Derivatives come from `node kit/build-thumbs.mjs` and are committed, so CI
+never needs a browser.
+
+```bash
+node kit/build-thumbs.mjs        # PNG → WebP (640 / 1280) · --check for drift
+node kit/build-site.mjs          # assemble _site/ · --check for asset integrity
+node kit/check-site.mjs          # gate: headless smoke test over HTTP (landing, gallery, catalog, live)
+```
+
 ## Folder map
 
 ```
@@ -49,6 +72,9 @@ style-lab/
 │   ├── check-contrast.mjs        # WCAG + APCA + focus ring
 │   ├── check-layout.mjs          # composition diversity gate
 │   ├── build-gallery.mjs         # gallery.html + styles.index.json
+│   ├── build-thumbs.mjs          # PNG → WebP derivatives (kit/site/thumbs, committed)
+│   ├── build-site.mjs            # _site/ assembler: landing, katalog.html, gallery copy, assets
+│   ├── check-site.mjs            # headless smoke test of the built site over HTTP
 │   ├── build-catalog-doc.mjs     # docs/katalog.md
 │   ├── export-tokens.mjs         # dist/tokens.all.css · tailwind.theme.css · figma.variables.json
 │   ├── render/
@@ -145,7 +171,7 @@ Three copies must stay in parity (`check-schema.mjs`): `tokens.json` ⇄ `token-
 ## Verification (gates)
 
 ```bash
-bash kit/gates.sh        # 27 steps: parity → catalog → assignments → measurement → exports → visual signature
+bash kit/gates.sh        # 31 steps: parity → catalog → assignments → measurement → exports → site → visual signature
 ```
 
 Fast subsets:

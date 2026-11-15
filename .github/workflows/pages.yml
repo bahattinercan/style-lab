@@ -1,0 +1,57 @@
+name: pages
+
+# Statik site yayını: `node kit/build-site.mjs` _site/ derler (galeri + landing + katalog +
+# live + WebP türevleri + orijinal PNG'ler), ardından GitHub Pages'e gönderir.
+# Kaynak dosyalar repoda: WebP türevleri `kit/site/thumbs/` (node kit/build-thumbs.mjs),
+# PNG'ler `styles/<slug>/shots/` (node kit/render/render-shots.mjs). CI tarayıcı çalıştırmaz.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: site derle
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: WebP türevleri güncel mi
+        run: node kit/build-thumbs.mjs --check
+
+      - name: site bütünlüğü
+        run: node kit/build-site.mjs --check
+
+      - name: siteyi derle
+        run: node kit/build-site.mjs --clean
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: yayınla
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

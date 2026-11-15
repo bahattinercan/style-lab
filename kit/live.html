@@ -3,412 +3,267 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Canlı hareket demosu · Tasarım Stilleri</title>
+<title>Stil önizlemesi · Tasarım Stilleri</title>
 <script data-style-boot>
-    /* stil ilk boyamadan önce URL'den gelir: <html data-style> runtime'da değişince
-       Chromium gövde metnini bayat hesaplayabiliyor; sayfa stil değişiminde yenilenir. */
+    /* Stil ilk boyamadan önce URL'den gelir: <html data-style> runtime'da değişirse
+       gövde metni bayat hesaplanabilir; stil değişiminde sayfa yenilenir. */
     (() => {
       const m = location.search.match(/[?&]style=([a-z0-9-]+)/);
       if (m) document.documentElement.dataset.style = m[1];
     })();
   </script>
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="render/motion/patterns.css">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
+  /* Yalnızca sözleşme değişkenleri: --bg --surface --ink --accent --line --radius --font-* --space-*
+     Stile özgü sabit renk, gölge veya yarıçap yazılmaz (v6 kural 3). */
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { color-scheme: light; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--ink);
     font-family: var(--font-body);
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 { font-family: var(--font-display); letter-spacing: var(--tracking); margin: 0; line-height: 1.06; }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: var(--tracking); margin: 0; line-height: 1.08; }
+  p { margin: 0; }
+  a { color: inherit; }
+  .wrap { width: min(1120px, 92vw); margin: 0 auto; }
   .mono {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--ink-faint);
   }
-  .wrap { width: min(1160px, 92vw); margin: 0 auto; }
 
-  /* ---------- üst bar ---------- */
+  /* ---------- üst bar (arayüz kabuğu: stil değişse de sabit) ---------- */
   .bar {
-    position: sticky; top: 0; z-index: 50;
-    display: flex; align-items: center; gap: 14px;
-    padding: 12px min(4vw, 40px);
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    position: sticky; top: 0; z-index: 5;
+    display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3);
+    padding: var(--space-3) min(4vw, 32px);
+    background: var(--bg-2, var(--bg));
     border-bottom: 1px solid var(--line);
-    backdrop-filter: blur(6px);
   }
-  .bar .live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2.4s ease-in-out infinite; }
-  .bar b { font-family: var(--font-display); letter-spacing: var(--tracking); font-size: 14px; }
-  .bar .grow { flex: 1; }
-  .bar select, .bar button {
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;
+  .bar .grow { flex: 1 1 auto; }
+  .bar b { font-family: var(--font-display); font-size: 14px; letter-spacing: var(--tracking); }
+  .bar a, .bar select, .bar button {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em;
     background: var(--surface); color: var(--ink);
     border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 8px 10px; cursor: pointer; min-height: 36px;
+    padding: 8px 10px; min-height: 36px;
   }
-  .bar button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
-  .bar a { font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .bar a { text-decoration: none; display: inline-flex; align-items: center; }
+  .bar a:hover, .bar button:hover { border-color: var(--accent); }
+  .bar select { min-width: 220px; }
 
-  /* ---------- hero ---------- */
-  .hero { padding: 54px 0 40px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: end; }
-  .hero .lines { display: flex; flex-direction: column; gap: 4px; }
-  .mask { overflow: hidden; display: block; }
-  /* süre/eğri stilden gelir: live-motion.js → --mi-dur/--mi-ease/--mi-stagger */
-  .mask > span {
-    display: block;
-    transform: translateY(110%);
-    transition: transform var(--mi-dur, 900ms) var(--mi-ease, ease);
-    transition-delay: calc(var(--mi-i, 0) * var(--mi-stagger, 80ms));
-  }
-  .in .mask > span, .reduce .mask > span { transform: none; }
-  .mask:nth-child(2) > span { --mi-i: 1; }
-  .mask:nth-child(3) > span { --mi-i: 2; }
-  .hero h1 { font-size: clamp(34px, 4.4vw, 58px); font-weight: 700; }
-  .hero h1 .dim { color: var(--accent); }
-  .hero .lede { max-width: 44ch; color: var(--ink-soft); margin: 14px 0 18px; }
-  .cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; }
-  .cta.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
-  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  /* ---------- içerik ---------- */
+  .hero { padding: clamp(48px, 9vw, 104px) 0 clamp(32px, 5vw, 56px); }
+  .eyebrow { color: var(--accent); margin-bottom: var(--space-4); }
+  .hero h1 { font-size: clamp(34px, 6.2vw, 68px); max-width: 18ch; }
+  .lede { color: var(--ink-soft); font-size: clamp(16px, 1.9vw, 20px); max-width: 56ch; margin-top: var(--space-5); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-top: var(--space-6); }
 
-  .film { position: relative; aspect-ratio: 4/3.1; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
-  .film .sky {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(68% 46% at 74% 16%, color-mix(in srgb, var(--accent) 46%, transparent), transparent 64%),
-      linear-gradient(180deg, color-mix(in srgb, var(--ink) 54%, var(--bg)) 0%, color-mix(in srgb, var(--ink) 26%, var(--bg)) 46%, color-mix(in srgb, var(--ink) 8%, var(--bg)) 100%);
+  .btn {
+    font-family: var(--font-body); font-size: 15px; font-weight: 600;
+    padding: 12px 18px; min-height: 44px;
+    border-radius: var(--radius); border: 1px solid transparent;
+    background: var(--accent); color: var(--accent-ink);
+    box-shadow: var(--shadow); cursor: pointer;
   }
-  .film .skyline {
-    position: absolute; left: 0; right: 0; bottom: 0; height: 36%;
-    background:
-      repeating-linear-gradient(90deg, color-mix(in srgb, var(--bg) 15%, transparent) 0 6px, transparent 6px 22px),
-      color-mix(in srgb, var(--ink) 56%, transparent);
-    clip-path: polygon(0 48%, 9% 48%, 9% 28%, 22% 28%, 22% 56%, 34% 56%, 34% 16%, 47% 16%, 47% 40%, 60% 40%, 60% 24%, 73% 24%, 73% 52%, 86% 52%, 86% 32%, 100% 32%, 100% 100%, 0 100%);
-    transform: scale(1.04);
-    transition: transform 1.6s cubic-bezier(.16,.84,.24,1);
+  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); box-shadow: none; }
+  .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .chip {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em;
+    padding: 6px 10px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface-2, var(--surface)); color: var(--ink-soft);
   }
-  .in .film .skyline { transform: scale(1); }
-  .film .badge, .film .ctl {
-    position: absolute; z-index: 3;
-    font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
-    background: color-mix(in srgb, var(--bg) 84%, transparent);
-    border: 1px solid var(--line); border-radius: 2px; padding: 5px 8px; color: var(--ink-soft);
-  }
-  .film .badge { left: 12px; top: 12px; display: flex; align-items: center; gap: 7px; }
-  .film .ctl { right: 12px; bottom: 12px; cursor: pointer; min-width: 36px; min-height: 32px; }
-  .film .prog { position: absolute; left: 12px; right: 12px; bottom: 12px; height: 2px; background: color-mix(in srgb, var(--ink) 16%, transparent); overflow: hidden; }
-  .film .prog i { display: block; height: 100%; width: 0; background: var(--accent); animation: fill 9s linear infinite; }
-  .paused .film .prog i { animation-play-state: paused; }
-  .paused .bar .live-dot { animation-play-state: paused; }
+  .chip.on { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
 
-  /* ---------- künye ---------- */
-  .kunye { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 8px 0 0; }
-  .kunye div { padding: 12px 14px; border-left: 1px solid var(--line); }
-  .kunye div:first-child { border-left: 0; }
-  .kunye b { display: block; font-family: var(--font-mono); font-size: 15px; font-weight: 400; }
-  .kunye span { font-family: var(--font-mono); font-size: 8.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); }
+  section.block { padding: clamp(28px, 4vw, 44px) 0; border-top: 1px solid var(--line); }
+  .block h2 { font-size: clamp(20px, 2.6vw, 28px); }
+  .block > .wrap > p { color: var(--ink-soft); margin-top: var(--space-2); }
 
-  /* ---------- reveal ---------- */
-  .sec { padding: 72px 0; border-top: 1px solid var(--line); }
-  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px; }
-  .sec-head h2 { font-size: 28px; }
-  .sec-head .mono { margin-left: auto; }
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .scale { display: grid; gap: var(--space-3); margin-top: var(--space-5); }
+  .scale div { display: flex; align-items: baseline; gap: var(--space-4); }
+  .scale div > span:first-child { flex: none; width: 96px; }
+  .scale div > span:last-child { flex: 1 1 auto; min-width: 0; }
+
+  .grid3 { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: var(--space-5); }
   .card {
-    border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface);
-    padding: 18px; box-shadow: var(--shadow);
-    opacity: 0; transform: translateY(var(--ms-offset, 24px)); filter: blur(6px);
-    transition: opacity var(--ms-dur, 900ms) var(--ms-ease, ease),
-      transform var(--ms-dur, 900ms) var(--ms-ease, ease),
-      filter var(--ms-dur, 900ms) var(--ms-ease, ease);
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius-lg, var(--radius)); padding: var(--space-5);
+    box-shadow: var(--shadow);
   }
-  .in .card { opacity: 1; transform: none; filter: none; }
-  .card:nth-child(2) { transition-delay: var(--ms-stagger, 80ms); }
-  .card:nth-child(3) { transition-delay: calc(var(--ms-stagger, 80ms) * 2); }
-  .card h3 { font-size: 17px; margin: 8px 0 6px; }
-  .card p { margin: 0; color: var(--ink-soft); font-size: 13.5px; }
-  .card .ph { height: 96px; border: 1px solid var(--line); border-radius: 2px; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 34%, var(--bg)), color-mix(in srgb, var(--ink) 12%, var(--bg))); transition: transform var(--mh-dur, 240ms) var(--mh-ease, ease); }
-  .card:hover .ph, .card:focus-within .ph { transform: scale(var(--mh-scale, 1.02)); }
+  .card h3 { font-size: 18px; margin-bottom: var(--space-2); }
+  .card p { color: var(--ink-soft); font-size: 14px; }
+  .card .mono { margin-bottom: var(--space-3); }
 
-  /* ---------- pin + scrub ---------- */
-  .pin { position: relative; height: 170vh; border-top: 1px solid var(--line); }
-  .pin-sticky { position: sticky; top: 64px; height: calc(100vh - 64px); display: grid; grid-template-columns: .9fr 1.1fr; gap: 36px; align-items: center; padding: 20px 0; }
-  .pin-copy h2 { font-size: clamp(26px, 3vw, 40px); margin-bottom: 12px; }
-  .pin-copy p { color: var(--ink-soft); max-width: 44ch; }
-  .pin-progress { margin-top: 18px; height: 2px; background: color-mix(in srgb, var(--ink) 14%, transparent); position: relative; }
-  .pin-progress i { position: absolute; inset: 0 auto 0 0; width: calc(var(--p, 0) * 100%); background: var(--accent); }
-  .pin-meta { display: flex; justify-content: space-between; margin-top: 8px; }
-  .pin-media { position: relative; aspect-ratio: 4/3.4; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
-  .pin-media .sky { position: absolute; inset: 0; background: radial-gradient(70% 50% at 30% 20%, color-mix(in srgb, var(--accent) 40%, transparent), transparent 60%), linear-gradient(180deg, color-mix(in srgb, var(--ink) 40%, var(--bg)), color-mix(in srgb, var(--ink) 8%, var(--bg))); }
-  .pin-media .skyline { position: absolute; inset: auto 0 0 0; height: 30%; background: color-mix(in srgb, var(--ink) 58%, transparent); clip-path: polygon(0 44%, 12% 44%, 12% 24%, 28% 24%, 28% 52%, 44% 52%, 44% 18%, 62% 18%, 62% 46%, 80% 46%, 80% 28%, 100% 28%, 100% 100%, 0 100%); }
-  .pin-media .zoom { position: absolute; inset: 0; transform: scale(calc(1.08 - var(--p, 0) * .08)); transform-origin: 50% 60%; will-change: transform; }
-
-  /* ---------- sayaç ---------- */
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .stat { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); padding: 20px; box-shadow: var(--shadow); }
-  .stat b { display: block; font-family: var(--font-mono); font-size: 34px; font-weight: 400; letter-spacing: 0; }
-  .stat span { font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); }
-
-  .note { margin: 0 0 40px; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-2); font-size: 12px; color: var(--ink-soft); }
-  .note b { color: var(--ink); }
-
-  footer { padding: 26px 0 60px; border-top: 1px solid var(--line); display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
-  footer .mono { margin-left: auto; }
-
-  /* ---------- reduced motion: her şey anında ---------- */
-  .reduce .mask > span, .reduce .card, .reduce .film .skyline, .reduce .pin-media .zoom { transition: none !important; transform: none !important; filter: none !important; opacity: 1 !important; }
-  .reduce .film .prog i, .reduce .bar .live-dot { animation: none !important; }
-  .reduce .pin { height: auto; }
-  .reduce .pin-sticky { position: static; height: auto; padding: 40px 0; }
-  .reduce .pin-progress i { width: 100%; }
-  .reduce .motion-off { display: block; }
-
-  @keyframes fill { from { width: 0; } to { width: 100%; } }
-  @keyframes pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
-
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; gap: 24px; }
-    .cards, .stats { grid-template-columns: 1fr; }
-    .kunye { grid-template-columns: repeat(2, 1fr); }
-    .pin-sticky { grid-template-columns: 1fr; height: auto; position: static; }
-    .pin { height: auto; }
-    .pin-sticky { padding: 34px 0; }
+  .field { display: grid; gap: var(--space-2); margin-top: var(--space-4); max-width: 420px; }
+  .field label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  .field input {
+    font-family: var(--font-body); font-size: 15px; padding: 11px 12px; min-height: 44px;
+    background: var(--surface); color: var(--ink);
+    border: 1px solid var(--line); border-radius: var(--radius);
   }
-  @media (prefers-reduced-motion: reduce) {
-    .mask > span, .card, .film .skyline, .pin-media .zoom { transition: none !important; transform: none !important; filter: none !important; opacity: 1 !important; }
-    .film .prog i, .bar .live-dot { animation: none !important; }
+  .field input:focus-visible, .btn:focus-visible, .bar select:focus-visible, .bar a:focus-visible, .bar button:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px;
+  }
+  .field small { color: var(--ink-faint); font-size: 12px; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: var(--space-5); font-size: 14px; }
+  caption { text-align: left; color: var(--ink-faint); font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding-bottom: var(--space-2); }
+  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); }
+  thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.num { font-family: var(--font-mono); text-align: right; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); font-size: 12px; }
+  .pill.ok { border-color: var(--accent); color: var(--accent); }
+
+  .foot { padding: var(--space-6) 0 var(--space-8); border-top: 1px solid var(--line); color: var(--ink-faint); font-size: 13px; display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+  .foot .grow { flex: 1 1 auto; }
+
+  @media (max-width: 560px) {
+    .bar select { min-width: 0; width: 100%; }
+    .scale div > span:first-child { width: 72px; }
   }
 </style>
 </head>
 <body>
 
-<div class="bar">
-  <span class="live-dot" aria-hidden="true"></span>
-  <b id="styleName">—</b>
+<nav class="bar" aria-label="Önizleme araç çubuğu">
+  <a href="gallery.html">← galeri</a>
+  <b>Stil önizlemesi</b>
+  <span class="mono" id="styleMeta">—</span>
   <span class="grow"></span>
   <label class="mono" for="styleSel">stil</label>
-  <select id="styleSel" aria-label="stil seç"></select>
-  <button id="motionBtn" aria-pressed="false" title="Hareketi kapat">hareket: açık</button>
-</div>
+  <select id="styleSel" aria-label="Stil seç"></select>
+  <a id="fullShot" href="#" target="_blank" rel="noopener">tam sayfa ↗</a>
+  <a href="../katalog.html">katalog</a>
+</nav>
 
-<main class="wrap">
-
-  <section class="hero reveal">
-    <div>
-      <span class="mono" id="styleMeta">canlı hareket demosu · 3 beat</span>
-      <div class="lines" style="margin-top:10px">
-        <h1><span class="mask"><span>Boğaz'da</span></span>
-            <span class="mask"><span>sessiz bir</span></span>
-            <span class="mask"><span class="dim">sabah.</span></span></h1>
-      </div>
-      <p class="lede">Bir stilin harekette nasıl davrandığını burada izleyebilirsin: maskeli başlık, kademeli reveal, tek pin, sayaç ve hover. Değerler <code>tokens.json → motion.sequences</code> ve <code>playbook §6.1</code>'den gelir.</p>
-      <div class="cta-row">
-        <a class="cta" href="#reveal">Özel görüşme talep et</a>
-        <a class="cta ghost" href="#pin">Hareketi izle →</a>
-      </div>
-    </div>
-    <div class="film">
-      <div class="sky"></div>
-      <div class="skyline"></div>
-      <span class="badge"><span class="live-dot" style="width:6px;height:6px"></span> poster · 00:09 döngü</span>
-      <div class="prog"><i></i></div>
-      <button class="ctl" id="pauseBtn" aria-pressed="false" title="Poster döngüsünü duraklat">❙❙</button>
-    </div>
-  </section>
-
-  <div class="kunye reveal" id="kunye">
-    <div><b id="kEnter">—</b><span id="kEnterP">giriş</span></div>
-    <div><b id="kScroll">—</b><span id="kScrollP">scroll</span></div>
-    <div><b id="kPin">—</b><span>scrub</span></div>
-    <div><b id="kHover">—</b><span id="kHoverP">hover</span></div>
+<header class="hero wrap">
+  <p class="mono eyebrow" id="heroMeta">tokens.css · sözleşme değişkenleri</p>
+  <h1 id="heroTitle">Bu sayfa seçili stilin token'larıyla çizilir.</h1>
+  <p class="lede" id="heroLede">
+    Tipografi, renk, yarıçap ve boşluk değerleri doğrudan <code>tokens.css</code> içindeki
+    <code>[data-style]</code> bloğundan gelir. Aşağıdaki bileşenler yalnızca sözleşme
+    değişkenlerini kullanır — kendi projenize aynı değişkenlerle taşıyabilirsiniz.
+  </p>
+  <div class="row">
+    <button class="btn" type="button">Birincil eylem</button>
+    <button class="btn ghost" type="button">İkincil</button>
+    <span class="chip on">seçili</span>
+    <span class="chip">nötr</span>
+    <span class="chip">bilgi</span>
   </div>
+</header>
 
-  <section class="sec reveal" id="reveal">
-    <div class="sec-head">
-      <h2>Scroll reveal</h2>
-      <span class="mono">top 82% · once · stagger 80ms</span>
+<section class="block" aria-labelledby="hScale">
+  <div class="wrap">
+    <h2 id="hScale">Tipografik ölçek</h2>
+    <p>Başlık, gövde ve mono yığını stil dosyasından gelir; ölçek oranı stile göre değişir.</p>
+    <div class="scale">
+      <div><span class="mono">display</span><span style="font-family:var(--font-display);font-size:clamp(28px,4vw,44px);letter-spacing:var(--tracking)">Harf aralığı ve ağırlık</span></div>
+      <div><span class="mono">heading</span><span style="font-family:var(--font-display);font-size:clamp(20px,2.6vw,28px)">Bölüm başlığı</span></div>
+      <div><span class="mono">body</span><span style="color:var(--ink-soft)">Gövde metni 16px, satır yüksekliği 1.6 — okunabilirlik eşiği.</span></div>
+      <div><span class="mono">mono</span><span style="font-family:var(--font-mono);font-size:13px">const style = "data-style";</span></div>
     </div>
-    <div class="cards">
-      <article class="card"><div class="ph"></div><h3>Kademeli giriş</h3><p>Kart başına 80ms gecikme; 24px yükselme ve 6px blur. Yalnız bir kez oynar.</p></article>
-      <article class="card"><div class="ph"></div><h3>Tek observer</h3><p>Tüm bölüm tek bir IntersectionObserver ile izlenir; bileşen başına observer yok.</p></article>
-      <article class="card"><div class="ph"></div><h3>Hover</h3><p>Görsel 1.02 ölçek, 240ms. Basma geri bildirimi renk değişimiyle sınırlı.</p></article>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="hComp">
+  <div class="wrap">
+    <h2 id="hComp">Bileşenler</h2>
+    <p>Form alanı, durum rozetleri ve kart — kontrast eşikleri ölçülmüş token'larla.</p>
+    <div class="field">
+      <label for="demoInput">E-posta</label>
+      <input id="demoInput" type="email" placeholder="ornek@alan.com" autocomplete="email">
+      <small>Odak halkası her stilde 3:1 üzerinde tutulur.</small>
     </div>
-  </section>
-
-  <section class="pin" id="pin">
-    <div class="pin-sticky">
-      <div class="pin-copy">
-        <span class="mono">bölüm · pin + scrub</span>
-        <h2>Semt, evin yarısıdır</h2>
-        <p>Aşağı kaydırdıkça bu bölüm sabitlenir; görsel 1.08 → 1.00 ölçeğe iner, ilerleme çizgisi scroll'a bağlıdır (scrub 1.1). Mobilde pin kapanır, içerik normal akışta kalır.</p>
-        <div class="pin-progress" role="presentation"><i></i></div>
-        <div class="pin-meta"><span class="mono">ilerleme</span><span class="mono" id="pinPct">%0</span></div>
-      </div>
-      <div class="pin-media">
-        <div class="zoom"><div class="sky"></div><div class="skyline"></div></div>
-      </div>
+    <div class="grid3">
+      <article class="card">
+        <p class="mono">yüzey</p>
+        <h3>Kart başlığı</h3>
+        <p>Yüzey, çizgi ve gölge stilin malzeme dilini taşır: düz, kâğıt, cam veya metal.</p>
+      </article>
+      <article class="card">
+        <p class="mono">aksan</p>
+        <h3>Tek vurgu</h3>
+        <p>Aksan rengi eylem içindir; dekorasyon için ikinci bir doygun renk eklenmez.</p>
+        <div class="row" style="margin-top:var(--space-4)"><button class="btn" type="button">Devam</button></div>
+      </article>
+      <article class="card">
+        <p class="mono">durum</p>
+        <h3>Rozetler</h3>
+        <p><span class="pill ok">hazır</span> <span class="pill">beklemede</span> <span class="pill">arşiv</span></p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="sec reveal">
-    <div class="sec-head">
-      <h2>Sayaç</h2>
-      <span class="mono">görünür olunca · 900ms</span>
-    </div>
-    <div class="stats">
-      <div class="stat"><b data-count="12">0</b><span>portföy</span></div>
-      <div class="stat"><b data-count="320">0</b><span>m² ortalama</span></div>
-      <div class="stat"><b data-count="18">0</b><span>gün içinde dönüş</span></div>
-    </div>
-  </section>
+<section class="block" aria-labelledby="hTable">
+  <div class="wrap">
+    <h2 id="hTable">Veri</h2>
+    <p>Tablo yoğunluğu stile göre değişir; sayısal kolonlar mono yığından gelir.</p>
+    <table>
+      <caption>Örnek tablo</caption>
+      <thead>
+        <tr><th scope="col">Kalem</th><th scope="col">Durum</th><th scope="col" style="text-align:right">Değer</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Başlık ölçeği</td><td><span class="pill ok">uyumlu</span></td><td class="num">1.250</td></tr>
+        <tr><td>Kontrast (gövde)</td><td><span class="pill ok">uyumlu</span></td><td class="num">4.5:1</td></tr>
+        <tr><td>Odak halkası</td><td><span class="pill ok">uyumlu</span></td><td class="num">3.0:1</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-  <p class="note motion-off" id="motionOff" hidden><b>Hareket kapalı.</b> Bu görünüm <code>prefers-reduced-motion: reduce</code> ile aynıdır: tüm geçişler 0.01ms, pin/scrub devre dışı, poster döngüsü durur, içerik ilk karede görünür (WCAG 2.2.2 / 2.3.3).</p>
+<footer class="foot wrap">
+  <span class="grow mono" id="footMeta">tokens.css · tek sayfa vitrin</span>
+  <a class="chip" href="gallery.html">galeriye dön</a>
+</footer>
 
-  <footer>
-    <span class="mono" id="styleFoot">—</span>
-    <span class="mono">önizleme · tokens.css + motion.sequences</span>
-    <a class="mono" href="gallery.html">galeriye dön</a>
-  </footer>
-</main>
-
-<script src="live-motion.js"></script>
 <script src="live-styles.js"></script>
 <script>
 (() => {
-  const qs = new URLSearchParams(location.search);
+  'use strict';
   const list = window.LIVE_STYLES || [];
+  const root = document.documentElement;
+  const slug = root.dataset.style;
+  const entry = list.find((s) => s.slug === slug) || null;
   const sel = document.getElementById('styleSel');
-  const nameEl = document.getElementById('styleName');
-  const metaEl = document.getElementById('styleMeta');
-  const footEl = document.getElementById('styleFoot');
-  const current = document.documentElement.dataset.style;
-  const entry = list.find((x) => x.slug === current) || list[0];
+  const meta = document.getElementById('styleMeta');
+  const footMeta = document.getElementById('footMeta');
+  const heroTitle = document.getElementById('heroTitle');
+  const fullShot = document.getElementById('fullShot');
 
-  for (const s of list) {
-    const o = document.createElement('option');
-    o.value = s.slug;
-    o.textContent = s.num + ' · ' + s.name;
-    sel.appendChild(o);
+  if (list.length) {
+    sel.innerHTML = list
+      .map((s) => `<option value="${s.slug}"${s.slug === slug ? ' selected' : ''}>${s.num} · ${s.name}</option>`)
+      .join('');
+    sel.addEventListener('change', () => {
+      location.search = '?style=' + encodeURIComponent(sel.value);
+    });
+  } else {
+    sel.disabled = true;
+    sel.innerHTML = '<option>liste yüklenemedi</option>';
   }
+
+  const label = entry ? `${entry.num} · ${entry.name} · ${entry.family}` : slug;
+  meta.textContent = label;
+  footMeta.textContent = label + ' · tokens.css';
+  heroTitle.textContent = entry ? entry.name + ' — canlı stil önizlemesi' : heroTitle.textContent;
+  document.title = (entry ? entry.name : 'Stil') + ' · önizleme · Tasarım Stilleri';
+
   if (entry) {
-    if (!document.documentElement.dataset.style) document.documentElement.dataset.style = entry.slug;
-    nameEl.textContent = entry.num + ' · ' + entry.name;
-    metaEl.textContent = 'canlı hareket demosu · ' + (entry.family || 'aile') + ' · 3 beat';
-    footEl.textContent = entry.slug;
-    sel.value = entry.slug;
+    // tam sayfa görseli: galeriyle aynı klasör düzeni (styles/<nn-slug>/shots/01-page.png)
+    fullShot.href = '../styles/' + entry.num + '-' + entry.slug + '/shots/01-page.png';
+  } else {
+    fullShot.hidden = true;
   }
-
-  /* M2: stilin GERÇEK hareket verisi (data-motion + CSS değişkenleri) */
-  const mot = (window.STYLE_MOTION || {})[entry?.slug ?? current] ?? null;
-  if (mot) {
-    const root = document.documentElement;
-    root.dataset.motion = mot.enter.pattern;
-    root.dataset.motionHover = mot.hover.pattern;
-    root.style.setProperty('--mi-dur', mot.enter.durationMs + 'ms');
-    root.style.setProperty('--mi-ease', mot.enter.easeCss);
-    root.style.setProperty('--mi-offset', mot.enter.offsetY + 'px');
-    root.style.setProperty('--mi-stagger', mot.enter.staggerMs + 'ms');
-    root.style.setProperty('--ms-dur', mot.scroll.durationMs + 'ms');
-    root.style.setProperty('--ms-ease', mot.enter.easeCss);
-    root.style.setProperty('--ms-offset', mot.scroll.offsetY + 'px');
-    root.style.setProperty('--mh-dur', mot.hover.durationMs + 'ms');
-    root.style.setProperty('--mh-ease', mot.enter.easeCss);
-    root.style.setProperty('--mh-scale', String(mot.hover.imageScale));
-    const set = (id, v) => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = v;
-    };
-    set('kEnter', mot.enter.durationMs + 'ms');
-    set('kEnterP', 'giriş · ' + mot.enter.pattern);
-    set('kScroll', mot.scroll.durationMs + 'ms');
-    set('kScrollP', 'scroll · ' + mot.scroll.pattern);
-    set('kPin', mot.pin.enabled ? String(mot.pin.scrub ?? '—') : 'kapalı');
-    set('kHover', mot.hover.durationMs + 'ms');
-    set('kHoverP', 'hover · ' + mot.hover.pattern);
-    metaEl.textContent = 'canlı hareket · ' + (entry?.family || 'aile') + ' · ' + mot.enter.pattern + ' → ' + mot.scroll.pattern;
-  }
-
-  /* stil değişimi = tam yenileme (temiz token uygulaması) */
-  sel.addEventListener('change', () => {
-    const keepReduce = motionBtn.getAttribute('aria-pressed') === 'true';
-    location.search = '?style=' + sel.value + (keepReduce ? '&motion=reduce' : '');
-  });
-
-  /* hareket anahtarı */
-  const motionBtn = document.getElementById('motionBtn');
-  const motionOff = document.getElementById('motionOff');
-  const osReduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const setMotion = (off) => {
-    document.body.classList.toggle('reduce', off);
-    motionBtn.setAttribute('aria-pressed', String(off));
-    motionBtn.textContent = off ? 'hareket: kapalı' : 'hareket: açık';
-    motionOff.hidden = !off;
-    if (off) document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
-  };
-  setMotion(osReduce || qs.get('motion') === 'reduce');
-  motionBtn.addEventListener('click', () => setMotion(motionBtn.getAttribute('aria-pressed') !== 'true'));
-
-  /* poster döngüsü duraklat (WCAG 2.2.2) */
-  const pauseBtn = document.getElementById('pauseBtn');
-  pauseBtn.addEventListener('click', () => {
-    const on = document.body.classList.toggle('paused');
-    pauseBtn.setAttribute('aria-pressed', String(on));
-    pauseBtn.textContent = on ? '▶' : '❙❙';
-  });
-
-  /* tek observer: reveal + sayaç */
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (!e.isIntersecting) continue;
-      e.target.classList.add('in');
-      if (e.target.querySelector('[data-count]')) countUp(e.target);
-      io.unobserve(e.target);
-    }
-  }, { rootMargin: '0px 0px -18% 0px', threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-  requestAnimationFrame(() => document.querySelector('.hero').classList.add('in'));
-
-  function countUp(scope) {
-    const els = scope ? scope.querySelectorAll('[data-count]') : document.querySelectorAll('[data-count]');
-    for (const el of els) {
-      if (el.dataset.done) continue;
-      el.dataset.done = '1';
-      const target = Number(el.dataset.count);
-      const t0 = performance.now();
-      const countMs = mot ? mot.scroll.durationMs : 900;
-      const tick = (t) => {
-        const k = Math.min(1, (t - t0) / countMs);
-        el.textContent = String(Math.round(target * (1 - Math.pow(1 - k, 3))));
-        if (k < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    }
-  }
-
-  /* pin/scrub: tek scroll dinleyicisi, yalnız custom property yazar */
-  const pin = document.querySelector('.pin');
-  let raf = 0;
-  function scrub() {
-    raf = 0;
-    if (document.body.classList.contains('reduce')) return;
-    const r = pin.getBoundingClientRect();
-    const total = r.height - innerHeight * 0.6;
-    const p = Math.max(0, Math.min(1, (innerHeight * 0.4 - r.top) / Math.max(1, total)));
-    pin.style.setProperty('--p', p.toFixed(3));
-    document.getElementById('pinPct').textContent = '%' + Math.round(p * 100);
-  }
-  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(scrub); }, { passive: true });
-  addEventListener('resize', scrub);
-  scrub();
 })();
 </script>
-<script src="viewer-nav.js"></script>
 </body>
 </html>

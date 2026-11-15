@@ -23,6 +23,32 @@
   const cards = $$('.card');
   const cardOf = new Map(cards.map((c) => [c.dataset.slug, c]));
 
+  /* ------------------------------------------------------- görsel türevleri
+     Yayınlanan sitede kit/site/site-config.js şunu tanımlar:
+       window.STYLE_LAB_SHOTS = { base: '../thumbs', card: '640', full: '1280' }
+     O zaman kartlar/çekmece/lightbox WebP türevini kullanır; PNG yalnız indirme
+     bağlantısı olarak kalır. Tanımsızsa (yerel file:// önizleme) davranış
+     değişmez: doğrudan styles/<dir>/shots/<dosya>.png. */
+  const SHOT_VARIANT = window.STYLE_LAB_SHOTS ?? null;
+  const shotPath = (dir, file, kind = 'card') => {
+    if (!SHOT_VARIANT) return '../styles/' + dir + '/shots/' + file;
+    const variant = kind === 'full' ? SHOT_VARIANT.full : kind === 'card' ? SHOT_VARIANT.card : null;
+    if (!variant) return '../styles/' + dir + '/shots/' + file;
+    return SHOT_VARIANT.base + '/' + dir + '-' + file.replace(/\.png$/i, '@' + variant + '.webp');
+  };
+
+  if (SHOT_VARIANT) {
+    for (const c of cards) {
+      const s = bySlug.get(c.dataset.slug);
+      const cover = c.querySelector('.cover');
+      const file = s?.shots?.[0];
+      if (!s || !cover || !file) continue;
+      const img = cover.querySelector('img');
+      if (img) img.src = shotPath(s.dir, file, 'card');
+      cover.href = shotPath(s.dir, file, 'full');
+    }
+  }
+
   const grid = $('#grid');
   const q = $('#q');
   const qclear = $('#qclear');
@@ -304,10 +330,10 @@
       const img = $('.cover img', c);
       const ground = $('.cover', c);
       const pick = file && s.shots.includes(file) ? file : s.shots[0];
-      const rel = '../styles/' + s.dir + '/shots/' + pick;
+      const rel = shotPath(s.dir, pick, 'card');
       if (img.getAttribute('src') !== rel) img.setAttribute('src', rel);
       img.alt = s.name + ' — ' + sceneLabel(pick);
-      ground.href = rel;
+      ground.href = shotPath(s.dir, pick, 'full');
       $('.cover-l', c).textContent = sceneLabel(pick);
     }
     apply();
@@ -349,7 +375,7 @@
 
     const shots = s.shots.length
       ? s.shots
-          .map((f) => `<button type="button" class="dshot" data-shot="${f}"><img src="../styles/${s.dir}/shots/${f}" alt="${escHtml(s.name)} — ${escHtml(sceneLabel(f))}" loading="lazy"><span>${escHtml(sceneLabel(f))}</span></button>`)
+          .map((f) => `<button type="button" class="dshot" data-shot="${f}"><img src="${shotPath(s.dir, f, 'card')}" alt="${escHtml(s.name)} — ${escHtml(sceneLabel(f))}" loading="lazy"><span>${escHtml(sceneLabel(f))}</span></button>`)
           .join('')
       : '<p class="dr-note">Görsel yok.</p>';
 
@@ -574,7 +600,7 @@
     cmpgrid.innerHTML = [...selected.values()]
       .map((s) => {
         const f = s.shots.includes(file) ? file : s.shots[0];
-        return `<figure><a href="../styles/${s.dir}/shots/${f}" target="_blank" rel="noopener"><img src="../styles/${s.dir}/shots/${f}" alt="${escHtml(s.name)} · ${escHtml(sceneLabel(f))}" loading="lazy"></a><figcaption><b>${escHtml(s.name)}</b><span>${escHtml(s.slug)}</span></figcaption></figure>`;
+        return `<figure><a href="${shotPath(s.dir, f, 'full')}" target="_blank" rel="noopener"><img src="${shotPath(s.dir, f, 'card')}" alt="${escHtml(s.name)} · ${escHtml(sceneLabel(f))}" loading="lazy"></a><figcaption><b>${escHtml(s.name)}</b><span>${escHtml(s.slug)}</span></figcaption></figure>`;
       })
       .join('');
     cmpview.hidden = false;
@@ -617,7 +643,7 @@
   }
 
   function shotsOf(s) {
-    return s.shots.map((f) => ({ src: '../styles/' + s.dir + '/shots/' + f, cap: s.name + ' · ' + sceneLabel(f) }));
+    return s.shots.map((f) => ({ src: shotPath(s.dir, f, 'full'), cap: s.name + ' · ' + sceneLabel(f) }));
   }
 
   /* --------------------------------------------------------------- panel */

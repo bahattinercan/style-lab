@@ -116,6 +116,12 @@ run_gate "galeri arayüzü" node kit/check-gallery-ui.mjs
 run_gate "brief üretimi" node kit/brief.mjs --self-test
 run_gate "mcp sunucusu" node kit/mcp-server.mjs --self-test
 
+# --- yayın sitesi -----------------------------------------------------------
+# WebP türevleri kaynakla aynı mı, _site/ bütünlüğü ve gerçek tarayıcıda duman testi.
+run_gate "webp türevleri" node kit/build-thumbs.mjs --check
+run_gate "site bütünlüğü" node kit/build-site.mjs --check
+run_gate "site duman testi" node kit/check-site.mjs
+
 # --- görsel imza ------------------------------------------------------------
 run_gate "görsel imza" node kit/render/phash.mjs --check
 run_visual_regression || exit 1

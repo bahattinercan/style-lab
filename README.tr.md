@@ -2,8 +2,9 @@
 
 > **Diller:** [English](README.md) · [Türkçe](README.tr.md)
 > **Depo:** https://github.com/bahattinercan/style-lab
-> **Kapılar:** `bash kit/gates.sh` (27 adım) · **Kanca:** `bash kit/install-hooks.sh`
+> **Kapılar:** `bash kit/gates.sh` (31 adım) · **Kanca:** `bash kit/install-hooks.sh`
 > **Etkileşimli:** `kit/gallery.html` (arama · filtre · çekmece · karşılaştırma) · `kit/live.html?style=<slug>`
+> **Yayın sitesi:** <https://bahattinercan.github.io/style-lab/>
 > **Katalog indeksi:** [`docs/katalog.md`](docs/katalog.md) (251 stil, 31 aile) · **Rapor:** `kit/dist/report.md`
 
 Tekdüze tasarıma karşı katalog: **31 aile bandında 251 görsel stil**. Her stil için **tek bir uzun
@@ -28,7 +29,30 @@ Gerekçe ve ölçümler: [`docs/v6-sadelestirme-raporu.md`](docs/v6-sadelestirme
 - 31 aile bandı, 1–251 kesintisiz (`kit/families.json`).
 - 16 farklı `hero|nav` parmak izi; en kalabalık küme 36 stil (**%14**), tavan %25.
 - 0 kontrast hatası (`--strict-soft`), 19 belgelenmiş yumuşak uyarı (dekoratif `--ink-faint`, 3 koyu palette düşük APCA).
+- Yayın sitesi: <https://bahattinercan.github.io/style-lab/> (GitHub Pages, `_site/` artifact'ı).
 - Doğrulama: `bash kit/gates.sh` → son satır `kapılar: temiz`.
+
+## Yayın sitesi
+
+<https://bahattinercan.github.io/style-lab/> — `node kit/build-site.mjs` derler, `main`'e her push'ta
+`.github/workflows/pages.yml` GitHub Pages'e gönderir.
+
+| Sayfa | Ne |
+|---|---|
+| `/` | landing: sayılar `kit/styles.index.json`'dan, 8 vitrin stili, 31 aile bandı |
+| `/kit/gallery.html` | galeri: arama, filtre, sayfalama, çekmece, lightbox, karşılaştırma |
+| `/katalog.html` | katalog indeksi (`docs/katalog.md` HTML, stil başına bir bağlantı) |
+| `/kit/live.html?style=<slug>` | seçili stilin token'larıyla statik bileşen sayfası |
+
+`_site/` bir derleme çıktısıdır (git'e girmez). Kartlar WebP türevini yükler
+(`thumbs/<slug>@640.webp`, ~35 KB); lightbox `@1280` türevini açar, orijinal PNG indirilebilir kalır.
+Türevler `node kit/build-thumbs.mjs` ile üretilip repoda tutulur — CI tarayıcı çalıştırmaz.
+
+```bash
+node kit/build-thumbs.mjs        # PNG → WebP (640 / 1280) · --check bayat türevi yakalar
+node kit/build-site.mjs          # _site/ derle · --check varlık bütünlüğü
+node kit/check-site.mjs          # kapı: derlenen siteyi HTTP üzerinden başsız tarayıcıda ölçer
+```
 
 ## Klasör haritası
 
@@ -49,6 +73,9 @@ style-lab/
 │   ├── check-contrast.mjs        # WCAG + APCA + odak halkası
 │   ├── check-layout.mjs          # kompozisyon çeşitliliği kapısı
 │   ├── build-gallery.mjs         # gallery.html + styles.index.json
+│   ├── build-thumbs.mjs          # PNG → WebP türevleri (kit/site/thumbs, repoda)
+│   ├── build-site.mjs            # _site/ derleyicisi: landing, katalog.html, galeri kopyası, varlıklar
+│   ├── check-site.mjs            # derlenen sitenin başsız duman testi (HTTP)
 │   ├── build-catalog-doc.mjs     # docs/katalog.md
 │   ├── export-tokens.mjs         # dist/tokens.all.css · tailwind.theme.css · figma.variables.json
 │   ├── render/page.html          # TEK sayfa şablonu
@@ -56,7 +83,7 @@ style-lab/
 │   ├── render/partials/          # 8 hero × 5 nav parçası
 │   ├── render/render-shots.mjs   # sayfa üreteci (CDP, taşma ölçümü, boş kare tekrarı)
 │   ├── migrations/v6-*.mjs       # tek seferlik kaynak göçleri (v5 → v6)
-│   └── gates.sh                  # 27 adımlı doğrulama kapısı
+│   └── gates.sh                  # 31 adımlı doğrulama kapısı
 └── styles/<nn-slug>/
     ├── style.md                  # doküman (≥18 bölüm + AI brief)
     ├── tokens.json               # makine kaynağı (palet, tipografi, şekil, boşluk, bileşen, refs)
@@ -127,7 +154,7 @@ en az 3 farklı `hero|nav`) ve `check-composition.mjs` (komşu stillerin DOM izo
 ## Doğrulama (kapılar)
 
 ```bash
-bash kit/gates.sh        # 27 adım: parite → katalog → atamalar → ölçüm → export → görsel imza
+bash kit/gates.sh        # 31 adım: parite → katalog → atamalar → ölçüm → export → site → görsel imza
 ```
 
 Hızlı alt kümeler:

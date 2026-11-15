@@ -264,7 +264,9 @@ function checkShotCatalog(styles) {
 function checkTemplateColors() {
   const dir = path.join(ROOT, 'kit', 'render');
   if (!fs.existsSync(dir)) return;
-  for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.html'))) {
+  // Nokta ile başlayanlar geçici render artefaktlarıdır (.tmp-<slug>-page.html, gitignore'da),
+  // şablon değildir: yarım kalan bir render turu kapıyı yanlışlıkla kırmasın.
+  for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.html') && !x.startsWith('.'))) {
     const src = fs.readFileSync(path.join(dir, f), 'utf8');
     const hit = src.match(/#[0-9a-fA-F]{3,8}\b/);
     if (hit) fail(`kit/render/${f}: hard-coded renk "${hit[0]}" — var(--…) kullan`);
