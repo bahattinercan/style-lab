@@ -154,7 +154,12 @@ async function main() {
         continue;
       }
       if (CHECK) {
-        problems.push(`${name}: ${exists ? 'bayat (kaynak değişmiş)' : 'yok'}`);
+        if (!exists) problems.push(`${name}: yok`);
+        else {
+          // Tanı bilgisi: hangi taraf kaymış (kaynak PNG mi, manifest mi) kısaca görünsün.
+          const istenen = prev.files?.[name]?.sourceSha?.slice(0, 8) ?? 'kayıt yok';
+          problems.push(`${name}: bayat (kaynak ${srcHash.slice(0, 8)} ≠ manifest ${istenen})`);
+        }
         continue;
       }
       jobs.push({ dir, variant, name, abs, rec });
