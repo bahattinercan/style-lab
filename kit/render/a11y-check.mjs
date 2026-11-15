@@ -21,6 +21,11 @@
  *   5 tabindex  : negatif tabindex değerleri (kritik değil)
  *
  * Çıkış kodu: kritik ihlal (1-4) varsa 1; yalnız 5 varsa 0; --warn-only her durumda 0.
+ *
+ * DURUM (v6): bu denetim silinen sahne şablonlarına (form/dashboard/mobile) yazıldı. Tek sayfa
+ * şablonu (`page.html`) nav/hero partial'larını render sırasında eklediği için ham şablonda <h1>
+ * görünmüyor → yanlış pozitif. Bu yüzden `kit/gates.sh` içine BAĞLANMADI; yeniden bağlamak için
+ * önce partial'ları çözen bir adım gerekir.
  * Tarayıcı: BROWSER ortam değişkeni veya render-shots.mjs'deki aday yollar.
  */
 import fs from 'node:fs';

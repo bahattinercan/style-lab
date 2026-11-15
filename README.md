@@ -23,7 +23,7 @@ Rationale and measurements: [`docs/v6-sadelestirme-raporu.md`](docs/v6-sadelesti
 
 ## Status
 
-- 251/251 styles render a single page; **251 PNG, 223 MiB total** (`du -ch styles/*/shots/01-page.png`).
+- 251/251 styles render a single page; **251 PNG, 172 MB total** (`du -ch styles/*/shots/01-page.png`).
 - 251/251 on schema **v6** (`tokens.json` version 6, no `palette.dark`, no `motion`).
 - 31 family bands, 1–251 contiguous (`kit/families.json`).
 - 16 distinct `hero|nav` fingerprints; largest cluster 36 styles (**14%**), cap 25%.

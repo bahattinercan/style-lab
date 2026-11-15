@@ -54,7 +54,12 @@ Silinen kod: 37 sahne şablonu + estate/section/flow CSS + 9 motion script + dar
 10. **Footer** (4 kolon + alt satır)
 
 Sığdırma emniyeti: içerik 2400px'i aşarsa gövde bir kez ölçeklenir (`zoom`), aşmıyorsa hiçbir şey
-değişmez. Ölçüm kapısı: `node kit/render/render-shots.mjs --measure` → yatay taşma, kırpılan blok,
+değişmez.
+
+> **2026-11-15 · kaldırıldı:** `zoom` emniyeti 251/251 stilde devreye giriyordu (içerik medyanı
+> 2721px, görsel punto medyanı 7.9px). Yerine dikey bütçe + `data-fit` kademeleri geldi; ayrıntı
+> `docs/style-uretimi-arastirma.md` §5 P1. Taşma ölçümü artık sığdırma kademesini, zoom yasağını ve
+> 10px punto tabanını denetler. Ölçüm kapısı: `node kit/render/render-shots.mjs --measure` → yatay taşma, kırpılan blok,
 8.5px altı metin (251 sahne, 0 sorun).
 
 ---

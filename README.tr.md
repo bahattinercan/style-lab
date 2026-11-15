@@ -24,7 +24,7 @@ Gerekçe ve ölçümler: [`docs/v6-sadelestirme-raporu.md`](docs/v6-sadelestirme
 
 ## Durum
 
-- 251/251 stil tek sayfa üretiyor; **251 PNG, 223 MiB** (`du -ch styles/*/shots/01-page.png`).
+- 251/251 stil tek sayfa üretiyor; **251 PNG, 172 MB** (`du -ch styles/*/shots/01-page.png`).
 - 251/251 stil şema **v6**'da (`tokens.json` sürüm 6; `palette.dark` ve `motion` yok).
 - 31 aile bandı, 1–251 kesintisiz (`kit/families.json`).
 - 16 farklı `hero|nav` parmak izi; en kalabalık küme 36 stil (**%14**), tavan %25.
