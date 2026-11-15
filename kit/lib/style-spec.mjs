@@ -8,6 +8,7 @@
  * v6 sözleşmesi: koyu mod (palette.dark) YOK, hareket (motion) YOK, sahne tek (01-page.png).
  */
 import { contrastRatio, contrastOnSurface, apcaContrast, parseColor } from '../color.mjs';
+import { deriveStatusColors } from './palette.mjs';
 
 const hex = (v) => String(v).trim();
 
@@ -24,6 +25,40 @@ export const CSS_KEYS = [
   ['accentInk', 'accent-ink'],
   ['line', 'line'],
 ];
+
+/**
+ * v7 sözleşmesi: token bloğu 20 değişkenden 28'e çıkar.
+ *  · --space-1…8 : dikey ritim; tüm stillerde aynı sekiz adım (bant ezebilir).
+ *  · --danger/-ok/-warn (+ -ink): durum renkleri. Değerler `kit/lib/palette.mjs` çözücüsünden
+ *    gelir (zemine karşı 4.5:1 hedefi), SPEC `status` alanıyla ezilebilir.
+ * Neden: 161 stil `--danger`'ı elle eziyor, 90 stil global #b42318'e düşüyordu; JSON bu
+ * değişkenleri hiç bilmiyordu (makine kaynağı ile CSS ayrışmıştı).
+ */
+export const STATUS_KEYS = ['danger', 'dangerInk', 'ok', 'okInk', 'warn', 'warnInk'];
+export const SPACE_SCALE = ['4px', '8px', '12px', '16px', '24px', '32px', '48px', '64px'];
+
+/** Durum renkleri: SPEC ezmesi yoksa çözücüden (zemine karşı 4.5:1). */
+export function statusOf(spec) {
+  const p = spec.palette ?? {};
+  if (spec.status) return { ...deriveStatusColors(p), ...spec.status };
+  return deriveStatusColors(p);
+}
+
+/** CSS çiftleri: 20 çekirdek + 8 boşluk + 6 durum = 34 bildirim. */
+function contractPairs(spec) {
+  const p = spec.palette;
+  const status = statusOf(spec);
+  const space = spec.space ?? SPACE_SCALE;
+  return [
+    ['--danger', status.danger],
+    ['--danger-ink', status.dangerInk],
+    ['--ok', status.ok],
+    ['--ok-ink', status.okInk],
+    ['--warn', status.warn],
+    ['--warn-ink', status.warnInk],
+    ...space.map((v, i) => [`--space-${i + 1}`, v]),
+  ];
+}
 
 /** Yüzde binlik yuvarlama: rapora yazılan ölçümler tek biçimli olsun. */
 const r2 = (n) => Math.round(n * 100) / 100;
@@ -107,6 +142,7 @@ export function tokensJson(spec, ctx) {
 
   const cssPairs = [
     ...CSS_KEYS.map(([json, css]) => [`--${css}`, p[json]]),
+    ...contractPairs(spec),
     ['--radius', radius],
     ['--radius-lg', radiusLg],
     ['--shadow', spec.shadow ?? b.shadow],
@@ -127,6 +163,7 @@ export function tokensJson(spec, ctx) {
     version: 6,
     css,
     palette: Object.fromEntries(CSS_KEYS.map(([json]) => [json, hex(p[json])])),
+    status: statusOf(spec),
     typography: {
       display: fonts[0],
       body: fonts[1],
@@ -190,6 +227,7 @@ export function tokenBlockCss(spec, ctx) {
     `  --ink: ${p.ink}; --ink-soft: ${p.inkSoft}; --ink-faint: ${p.inkFaint};`,
     `  --accent: ${p.accent}; --accent-ink: ${p.accentInk};`,
     `  --line: ${p.line};`,
+    ...contractPairs(spec).map(([k, v]) => `  ${k}: ${v};`),
     `  --radius: ${radius}; --radius-lg: ${radiusLg};`,
     `  --shadow: ${spec.shadow ?? ctx.band.shadow}; --shadow-hard: ${spec.shadowHard ?? 'none'};`,
     `  --font-display: ${quoteStack(fonts[0])};`,

@@ -1224,7 +1224,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 472558
+        "bytes": 257115
       }
     },
     "game-racing": {
@@ -1232,7 +1232,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 301818
+        "bytes": 248608
       }
     },
     "game-fantasy-rpg": {
@@ -1240,7 +1240,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 387583
+        "bytes": 310551
       }
     },
     "game-sci-fi-cockpit": {
@@ -1248,7 +1248,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 287484
+        "bytes": 268641
       }
     },
     "game-retro-console": {
@@ -1256,7 +1256,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 417282
+        "bytes": 245297
       }
     },
     "game-esports-league": {
@@ -1264,7 +1264,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 321840
+        "bytes": 274424
       }
     },
     "game-indie-pixel": {
@@ -1272,7 +1272,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 308712
+        "bytes": 268553
       }
     },
     "game-card-tcg": {
@@ -1280,7 +1280,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 355089
+        "bytes": 294578
       }
     },
     "game-survival-craft": {
@@ -1288,7 +1288,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 682263
+        "bytes": 298850
       }
     },
     "game-mobile-casual": {
@@ -1296,7 +1296,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 547150
+        "bytes": 322021
       }
     },
     "game-horror-occult": {
@@ -1304,7 +1304,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 857022
+        "bytes": 786871
       }
     },
     "game-racing-neon": {
@@ -1312,7 +1312,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 304461
+        "bytes": 245730
       }
     },
     "game-strategy-map": {
@@ -1320,7 +1320,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 359976
+        "bytes": 299568
       }
     },
     "game-sim-builder": {
@@ -1328,7 +1328,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 509401
+        "bytes": 283960
       }
     },
     "game-arcade-cabinet": {
@@ -1336,7 +1336,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 323062
+        "bytes": 258352
       }
     },
     "game-stealth-tactical": {
@@ -1344,7 +1344,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 278775
+        "bytes": 244119
       }
     },
     "game-puzzle-light": {
@@ -1352,7 +1352,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 365442
+        "bytes": 292076
       }
     },
     "game-mmo-guild": {
@@ -1360,7 +1360,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 350896
+        "bytes": 299942
       }
     },
     "game-franchise-sports": {
@@ -1368,7 +1368,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 501031
+        "bytes": 287423
       }
     },
     "game-pinball-neon": {
@@ -1376,7 +1376,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 333793
+        "bytes": 287429
       }
     },
     "support-inbox": {
@@ -1384,7 +1384,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 311172
+        "bytes": 366793
       }
     },
     "grocery-delivery": {
@@ -1392,7 +1392,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 376797
+        "bytes": 378466
       }
     },
     "marketplace-multi": {
@@ -1400,7 +1400,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 372159
+        "bytes": 374892
       }
     },
     "luxury-atelier": {
@@ -1408,7 +1408,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 545270
+        "bytes": 605560
       }
     },
     "subscription-box": {
@@ -1416,7 +1416,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 387621
+        "bytes": 385481
       }
     },
     "sneaker-drop": {
@@ -1424,7 +1424,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 369836
+        "bytes": 370349
       }
     },
     "wine-cellar": {
@@ -1432,7 +1432,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 727629
+        "bytes": 389635
       }
     },
     "furniture-studio": {
@@ -1440,7 +1440,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 277534
+        "bytes": 279591
       }
     },
     "electronics-spec": {
@@ -1448,7 +1448,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 370926
+        "bytes": 373047
       }
     },
     "pharmacy-store": {
@@ -1456,7 +1456,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 378935
+        "bytes": 384643
       }
     },
     "farmers-market": {
@@ -1464,7 +1464,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 395752
+        "bytes": 356018
       }
     },
     "clinical-trial": {
@@ -1472,7 +1472,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 521301
+        "bytes": 375141
       }
     },
     "lab-protocol": {
@@ -1480,7 +1480,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 527433
+        "bytes": 345658
       }
     },
     "pharmacy-labels": {
@@ -1488,7 +1488,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 521828
+        "bytes": 355534
       }
     },
     "physiotherapy": {
@@ -1496,7 +1496,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 389734
+        "bytes": 396996
       }
     },
     "mental-wellness": {
@@ -1504,7 +1504,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 315958
+        "bytes": 388908
       }
     },
     "nutrition-plan": {
@@ -1512,7 +1512,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 528264
+        "bytes": 380000
       }
     },
     "dental-clinic": {
@@ -1520,7 +1520,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 532165
+        "bytes": 380489
       }
     },
     "public-health": {
@@ -1528,7 +1528,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 521700
+        "bytes": 374438
       }
     },
     "genomics-lab": {
@@ -1536,7 +1536,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 528647
+        "bytes": 351197
       }
     },
     "veterinary-care": {
@@ -1544,7 +1544,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 528951
+        "bytes": 390013
       }
     },
     "language-app": {
@@ -1552,7 +1552,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 382032
+        "bytes": 322987
       }
     },
     "skill-tree": {
@@ -1560,7 +1560,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 382845
+        "bytes": 342592
       }
     },
     "university-portal": {
@@ -1568,7 +1568,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 374495
+        "bytes": 335549
       }
     },
     "coding-bootcamp": {
@@ -1576,7 +1576,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 381261
+        "bytes": 340924
       }
     },
     "kids-classroom": {
@@ -1584,7 +1584,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 359004
+        "bytes": 343496
       }
     },
     "exam-prep": {
@@ -1592,7 +1592,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 381010
+        "bytes": 342062
       }
     },
     "music-lesson": {
@@ -1600,7 +1600,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 396808
+        "bytes": 358219
       }
     },
     "lab-simulation": {
@@ -1608,7 +1608,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 385065
+        "bytes": 346776
       }
     },
     "peer-study": {
@@ -1616,7 +1616,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 379621
+        "bytes": 338484
       }
     },
     "certificate-wallet": {
@@ -1624,7 +1624,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 308929
+        "bytes": 326923
       }
     },
     "street-festival": {
@@ -1632,7 +1632,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 325301
+        "bytes": 297332
       }
     },
     "terrazzo-stone": {
@@ -1640,7 +1640,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1262028
+        "bytes": 861141
       }
     },
     "linocut-print": {
@@ -1648,7 +1648,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 800596
+        "bytes": 818973
       }
     },
     "risograph-print": {
@@ -1656,7 +1656,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1081298
+        "bytes": 822622
       }
     },
     "denim-textile": {
@@ -1664,7 +1664,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 671267
+        "bytes": 328100
       }
     },
     "cork-oak": {
@@ -1672,7 +1672,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1249007
+        "bytes": 822329
       }
     },
     "cast-concrete": {
@@ -1680,7 +1680,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 682827
+        "bytes": 317851
       }
     },
     "enamel-jewel": {
@@ -1688,7 +1688,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 564276
+        "bytes": 217747
       }
     },
     "hand-thrown-ceramic": {
@@ -1696,7 +1696,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1096359
+        "bytes": 745244
       }
     },
     "raw-steel": {
@@ -1704,7 +1704,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 646440
+        "bytes": 313940
       }
     },
     "recycled-paper": {
@@ -1712,7 +1712,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 1346331
+        "bytes": 880942
       }
     },
     "condensed-news": {
@@ -1720,7 +1720,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 326989
+        "bytes": 300599
       }
     },
     "monospace-editorial": {
@@ -1728,7 +1728,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 288401
+        "bytes": 265221
       }
     },
     "blackletter-modern": {
@@ -1736,7 +1736,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 290334
+        "bytes": 303838
       }
     },
     "variable-weight": {
@@ -1744,7 +1744,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 332311
+        "bytes": 318003
       }
     },
     "justified-book": {
@@ -1752,7 +1752,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 220001
+        "bytes": 201058
       }
     },
     "stencil-display": {
@@ -1760,7 +1760,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 311983
+        "bytes": 291074
       }
     },
     "uppercase-only": {
@@ -1768,7 +1768,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 352869
+        "bytes": 326420
       }
     },
     "italic-accent": {
@@ -1776,7 +1776,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 348015
+        "bytes": 321062
       }
     },
     "numerals-display": {
@@ -1784,7 +1784,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 327074
+        "bytes": 305225
       }
     },
     "small-caps-ledger": {
@@ -1792,7 +1792,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 342321
+        "bytes": 293962
       }
     },
     "agent-console": {
@@ -1800,7 +1800,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 304420
+        "bytes": 299974
       }
     },
     "spatial-workspace": {
@@ -1808,7 +1808,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 367691
+        "bytes": 294345
       }
     },
     "bio-lab-interface": {
@@ -1816,7 +1816,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 365935
+        "bytes": 290064
       }
     },
     "climate-model": {
@@ -1824,7 +1824,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 361679
+        "bytes": 288302
       }
     },
     "orbital-logistics": {
@@ -1832,7 +1832,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 275186
+        "bytes": 245569
       }
     },
     "synthetic-media": {
@@ -1840,7 +1840,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 357860
+        "bytes": 284430
       }
     },
     "quantum-dashboard": {
@@ -1848,7 +1848,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 322979
+        "bytes": 288901
       }
     },
     "digital-twin": {
@@ -1856,7 +1856,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 368949
+        "bytes": 291581
       }
     },
     "neural-canvas": {
@@ -1864,7 +1864,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 513744
+        "bytes": 284356
       }
     },
     "post-screen-voice": {
@@ -1872,7 +1872,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 360945
+        "bytes": 292123
       }
     },
     "access-audit": {
@@ -1880,7 +1880,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 309580
+        "bytes": 328318
       }
     },
     "theatre-season": {
@@ -1888,7 +1888,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 336258
+        "bytes": 316104
       }
     },
     "podcast-network": {
@@ -1896,7 +1896,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 361043
+        "bytes": 311397
       }
     },
     "incident-response": {
@@ -1904,7 +1904,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 271206
+        "bytes": 321614
       }
     },
     "finops-cost": {
@@ -1912,7 +1912,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 354255
+        "bytes": 370799
       }
     },
     "fleet-dispatch": {
@@ -1920,7 +1920,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 311496
+        "bytes": 315513
       }
     },
     "fraud-review": {
@@ -1928,7 +1928,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 305141
+        "bytes": 336696
       }
     },
     "slo-budget": {
@@ -1936,7 +1936,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 326056
+        "bytes": 377145
       }
     },
     "data-lineage": {
@@ -1944,7 +1944,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 323256
+        "bytes": 337454
       }
     },
     "release-train": {
@@ -1952,7 +1952,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 317797
+        "bytes": 371601
       }
     },
     "regulatory-report": {
@@ -1960,7 +1960,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 346986
+        "bytes": 332547
       }
     },
     "museum-exhibition": {
@@ -1968,7 +1968,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 314333
+        "bytes": 280916
       }
     },
     "film-festival": {
@@ -1976,7 +1976,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 335194
+        "bytes": 307686
       }
     },
     "public-radio": {
@@ -1984,7 +1984,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 323300
+        "bytes": 301827
       }
     },
     "indie-cinema": {
@@ -1992,7 +1992,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 264225
+        "bytes": 300398
       }
     },
     "library-archive": {
@@ -2000,7 +2000,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 313052
+        "bytes": 287718
       }
     },
     "comic-bookstore": {
@@ -2008,7 +2008,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 316592
+        "bytes": 287005
       }
     },
     "opera-house": {
@@ -2016,7 +2016,7 @@
         "key": "landing",
         "w": 1280,
         "h": 2400,
-        "bytes": 319600
+        "bytes": 298202
       }
     }
   }

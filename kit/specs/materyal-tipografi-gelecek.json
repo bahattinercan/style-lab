@@ -312,7 +312,6 @@
     ],
     "neighbors": {
       "compatible": [
-        "denim-textile",
         "raw-steel"
       ],
       "forbidden": [

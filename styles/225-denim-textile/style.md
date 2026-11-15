@@ -190,7 +190,6 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 
 | Yön | Stil | Neden |
 | --- | --- | --- |
-| Garnitür | `denim-textile` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
 | Garnitür | `raw-steel` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
 | Karıştırma | `boutique-hotel` | İki farklı süs dili aynı ekranda rekabet eder |
 | Karıştırma | `ethereal` | İki farklı süs dili aynı ekranda rekabet eder |
@@ -226,6 +225,20 @@ Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animas
   --ink: #121821; --ink-soft: #454e5c; --ink-faint: #78818e;
   --accent: #1b3f6b; --accent-ink: #f6faff;
   --line: rgba(18,24,33,.14);
+  --danger: #d62a1d;
+  --danger-ink: #ffffff;
+  --ok: #008138;
+  --ok-ink: #ffffff;
+  --warn: #b55400;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 2px; --radius-lg: 4px;
   --shadow: 0 1px 2px rgba(0,0,0,.16); --shadow-hard: none;
   --font-display: "Space Grotesk", system-ui, sans-serif;

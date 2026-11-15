@@ -1817,7 +1817,7 @@
       "num": "152",
       "slug": "game-hud",
       "name": "Game HUD",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1829,7 +1829,7 @@
       "num": "153",
       "slug": "game-racing",
       "name": "Game Racing",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1841,7 +1841,7 @@
       "num": "154",
       "slug": "game-fantasy-rpg",
       "name": "Fantasy RPG",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1853,7 +1853,7 @@
       "num": "155",
       "slug": "game-sci-fi-cockpit",
       "name": "Sci-Fi Cockpit",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1865,7 +1865,7 @@
       "num": "156",
       "slug": "game-retro-console",
       "name": "Retro Console",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1877,7 +1877,7 @@
       "num": "157",
       "slug": "game-esports-league",
       "name": "Esports League",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1889,7 +1889,7 @@
       "num": "158",
       "slug": "game-indie-pixel",
       "name": "Indie Pixel",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1901,7 +1901,7 @@
       "num": "159",
       "slug": "game-card-tcg",
       "name": "Card TCG",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1913,7 +1913,7 @@
       "num": "160",
       "slug": "game-survival-craft",
       "name": "Survival Craft",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1925,7 +1925,7 @@
       "num": "161",
       "slug": "game-mobile-casual",
       "name": "Mobile Casual",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1937,7 +1937,7 @@
       "num": "162",
       "slug": "game-horror-occult",
       "name": "Horror Occult",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1949,7 +1949,7 @@
       "num": "163",
       "slug": "game-racing-neon",
       "name": "Racing Neon",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1961,7 +1961,7 @@
       "num": "164",
       "slug": "game-strategy-map",
       "name": "Strategy Map",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1973,7 +1973,7 @@
       "num": "165",
       "slug": "game-sim-builder",
       "name": "Sim Builder",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1985,7 +1985,7 @@
       "num": "166",
       "slug": "game-arcade-cabinet",
       "name": "Arcade Cabinet",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -1997,7 +1997,7 @@
       "num": "167",
       "slug": "game-stealth-tactical",
       "name": "Stealth Tactical",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2009,7 +2009,7 @@
       "num": "168",
       "slug": "game-puzzle-light",
       "name": "Puzzle Light",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2021,7 +2021,7 @@
       "num": "169",
       "slug": "game-mmo-guild",
       "name": "MMO Guild",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2033,7 +2033,7 @@
       "num": "170",
       "slug": "game-franchise-sports",
       "name": "Franchise Sports",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2045,7 +2045,7 @@
       "num": "171",
       "slug": "game-pinball-neon",
       "name": "Pinball Neon",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2057,7 +2057,7 @@
       "num": "172",
       "slug": "incident-response",
       "name": "Incident Response",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2069,7 +2069,7 @@
       "num": "173",
       "slug": "finops-cost",
       "name": "FinOps Cost",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2081,7 +2081,7 @@
       "num": "174",
       "slug": "fleet-dispatch",
       "name": "Fleet Dispatch",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2093,7 +2093,7 @@
       "num": "175",
       "slug": "fraud-review",
       "name": "Fraud Review",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2105,7 +2105,7 @@
       "num": "176",
       "slug": "slo-budget",
       "name": "SLO Budget",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2117,7 +2117,7 @@
       "num": "177",
       "slug": "data-lineage",
       "name": "Data Lineage",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2129,7 +2129,7 @@
       "num": "178",
       "slug": "access-audit",
       "name": "Access Audit",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2141,7 +2141,7 @@
       "num": "179",
       "slug": "release-train",
       "name": "Release Train",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2153,7 +2153,7 @@
       "num": "180",
       "slug": "support-inbox",
       "name": "Support Inbox",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2165,7 +2165,7 @@
       "num": "181",
       "slug": "regulatory-report",
       "name": "Regulatory Report",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2177,7 +2177,7 @@
       "num": "182",
       "slug": "grocery-delivery",
       "name": "Grocery Delivery",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2189,7 +2189,7 @@
       "num": "183",
       "slug": "marketplace-multi",
       "name": "Marketplace Multi",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2201,7 +2201,7 @@
       "num": "184",
       "slug": "luxury-atelier",
       "name": "Luxury Atelier",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2213,7 +2213,7 @@
       "num": "185",
       "slug": "subscription-box",
       "name": "Subscription Box",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2225,7 +2225,7 @@
       "num": "186",
       "slug": "sneaker-drop",
       "name": "Sneaker Drop",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2237,7 +2237,7 @@
       "num": "187",
       "slug": "wine-cellar",
       "name": "Wine Cellar",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2249,7 +2249,7 @@
       "num": "188",
       "slug": "furniture-studio",
       "name": "Furniture Studio",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2261,7 +2261,7 @@
       "num": "189",
       "slug": "electronics-spec",
       "name": "Electronics Spec",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2273,7 +2273,7 @@
       "num": "190",
       "slug": "pharmacy-store",
       "name": "Pharmacy Store",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2285,7 +2285,7 @@
       "num": "191",
       "slug": "farmers-market",
       "name": "Farmers Market",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2297,7 +2297,7 @@
       "num": "192",
       "slug": "museum-exhibition",
       "name": "Museum Exhibition",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2309,7 +2309,7 @@
       "num": "193",
       "slug": "theatre-season",
       "name": "Theatre Season",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2321,7 +2321,7 @@
       "num": "194",
       "slug": "film-festival",
       "name": "Film Festival",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2333,7 +2333,7 @@
       "num": "195",
       "slug": "public-radio",
       "name": "Public Radio",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2345,7 +2345,7 @@
       "num": "196",
       "slug": "podcast-network",
       "name": "Podcast Network",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2357,7 +2357,7 @@
       "num": "197",
       "slug": "indie-cinema",
       "name": "Indie Cinema",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2369,7 +2369,7 @@
       "num": "198",
       "slug": "library-archive",
       "name": "Library Archive",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2381,7 +2381,7 @@
       "num": "199",
       "slug": "comic-bookstore",
       "name": "Comic Bookstore",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2393,7 +2393,7 @@
       "num": "200",
       "slug": "opera-house",
       "name": "Opera House",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2405,7 +2405,7 @@
       "num": "201",
       "slug": "street-festival",
       "name": "Street Festival",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2417,7 +2417,7 @@
       "num": "202",
       "slug": "clinical-trial",
       "name": "Clinical Trial",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2429,7 +2429,7 @@
       "num": "203",
       "slug": "lab-protocol",
       "name": "Lab Protocol",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2441,7 +2441,7 @@
       "num": "204",
       "slug": "pharmacy-labels",
       "name": "Pharmacy Labels",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2453,7 +2453,7 @@
       "num": "205",
       "slug": "physiotherapy",
       "name": "Physiotherapy",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2465,7 +2465,7 @@
       "num": "206",
       "slug": "mental-wellness",
       "name": "Mental Wellness",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2477,7 +2477,7 @@
       "num": "207",
       "slug": "nutrition-plan",
       "name": "Nutrition Plan",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2489,7 +2489,7 @@
       "num": "208",
       "slug": "dental-clinic",
       "name": "Dental Clinic",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2501,7 +2501,7 @@
       "num": "209",
       "slug": "public-health",
       "name": "Public Health",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2513,7 +2513,7 @@
       "num": "210",
       "slug": "genomics-lab",
       "name": "Genomics Lab",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2525,7 +2525,7 @@
       "num": "211",
       "slug": "veterinary-care",
       "name": "Veterinary Care",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2537,7 +2537,7 @@
       "num": "212",
       "slug": "language-app",
       "name": "Language App",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2549,7 +2549,7 @@
       "num": "213",
       "slug": "skill-tree",
       "name": "Skill Tree",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2561,7 +2561,7 @@
       "num": "214",
       "slug": "university-portal",
       "name": "University Portal",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2573,7 +2573,7 @@
       "num": "215",
       "slug": "coding-bootcamp",
       "name": "Coding Bootcamp",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2585,7 +2585,7 @@
       "num": "216",
       "slug": "kids-classroom",
       "name": "Kids Classroom",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2597,7 +2597,7 @@
       "num": "217",
       "slug": "exam-prep",
       "name": "Exam Prep",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2609,7 +2609,7 @@
       "num": "218",
       "slug": "music-lesson",
       "name": "Music Lesson",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2621,7 +2621,7 @@
       "num": "219",
       "slug": "lab-simulation",
       "name": "Lab Simulation",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2633,7 +2633,7 @@
       "num": "220",
       "slug": "peer-study",
       "name": "Peer Study",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2645,7 +2645,7 @@
       "num": "221",
       "slug": "certificate-wallet",
       "name": "Certificate Wallet",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2657,7 +2657,7 @@
       "num": "222",
       "slug": "terrazzo-stone",
       "name": "Terrazzo Stone",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2669,7 +2669,7 @@
       "num": "223",
       "slug": "linocut-print",
       "name": "Linocut Print",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2681,7 +2681,7 @@
       "num": "224",
       "slug": "risograph-print",
       "name": "Risograph Print",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2693,7 +2693,7 @@
       "num": "225",
       "slug": "denim-textile",
       "name": "Denim Textile",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2705,7 +2705,7 @@
       "num": "226",
       "slug": "cork-oak",
       "name": "Cork Oak",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2717,7 +2717,7 @@
       "num": "227",
       "slug": "cast-concrete",
       "name": "Cast Concrete",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2729,7 +2729,7 @@
       "num": "228",
       "slug": "enamel-jewel",
       "name": "Enamel Jewel",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2741,7 +2741,7 @@
       "num": "229",
       "slug": "hand-thrown-ceramic",
       "name": "Hand-thrown Ceramic",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2753,7 +2753,7 @@
       "num": "230",
       "slug": "raw-steel",
       "name": "Raw Steel",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2765,7 +2765,7 @@
       "num": "231",
       "slug": "recycled-paper",
       "name": "Recycled Paper",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2777,7 +2777,7 @@
       "num": "232",
       "slug": "condensed-news",
       "name": "Condensed News",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2789,7 +2789,7 @@
       "num": "233",
       "slug": "monospace-editorial",
       "name": "Monospace Editorial",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2801,7 +2801,7 @@
       "num": "234",
       "slug": "blackletter-modern",
       "name": "Blackletter Modern",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2813,7 +2813,7 @@
       "num": "235",
       "slug": "variable-weight",
       "name": "Variable Weight",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2825,7 +2825,7 @@
       "num": "236",
       "slug": "justified-book",
       "name": "Justified Book",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2837,7 +2837,7 @@
       "num": "237",
       "slug": "stencil-display",
       "name": "Stencil Display",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2849,7 +2849,7 @@
       "num": "238",
       "slug": "uppercase-only",
       "name": "Uppercase Only",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2861,7 +2861,7 @@
       "num": "239",
       "slug": "italic-accent",
       "name": "Italic Accent",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2873,7 +2873,7 @@
       "num": "240",
       "slug": "numerals-display",
       "name": "Numerals Display",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2885,7 +2885,7 @@
       "num": "241",
       "slug": "small-caps-ledger",
       "name": "Small Caps Ledger",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2897,7 +2897,7 @@
       "num": "242",
       "slug": "agent-console",
       "name": "Agent Console",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2909,7 +2909,7 @@
       "num": "243",
       "slug": "spatial-workspace",
       "name": "Spatial Workspace",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2921,7 +2921,7 @@
       "num": "244",
       "slug": "bio-lab-interface",
       "name": "Bio Lab Interface",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2933,7 +2933,7 @@
       "num": "245",
       "slug": "climate-model",
       "name": "Climate Model",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2945,7 +2945,7 @@
       "num": "246",
       "slug": "orbital-logistics",
       "name": "Orbital Logistics",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2957,7 +2957,7 @@
       "num": "247",
       "slug": "synthetic-media",
       "name": "Synthetic Media",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2969,7 +2969,7 @@
       "num": "248",
       "slug": "quantum-dashboard",
       "name": "Quantum Dashboard",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2981,7 +2981,7 @@
       "num": "249",
       "slug": "digital-twin",
       "name": "Digital Twin",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -2993,7 +2993,7 @@
       "num": "250",
       "slug": "neural-canvas",
       "name": "Neural Canvas",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",
@@ -3005,7 +3005,7 @@
       "num": "251",
       "slug": "post-screen-voice",
       "name": "Post-screen Voice",
-      "tokens": 20,
+      "tokens": 34,
       "files": {
         "css": "tokens.all.css",
         "tailwind": "tailwind.theme.css",

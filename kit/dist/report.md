@@ -168,106 +168,106 @@
 | 149 | [Boutique Hotel](../styles/149-boutique-hotel/style.md) | Sahne & Prestij | 1/1 | 24 |
 | 150 | [Lookbook Editorial](../styles/150-lookbook-editorial/style.md) | Sahne & Prestij | 1/1 | 24 |
 | 151 | [Dark Dashboard](../styles/151-dark-dashboard/style.md) | Sahne & Prestij | 1/1 | 24 |
-| 152 | [Game HUD](../styles/152-game-hud/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 153 | [Game Racing](../styles/153-game-racing/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 154 | [Fantasy RPG](../styles/154-game-fantasy-rpg/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 155 | [Sci-Fi Cockpit](../styles/155-game-sci-fi-cockpit/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 156 | [Retro Console](../styles/156-game-retro-console/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 157 | [Esports League](../styles/157-game-esports-league/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 158 | [Indie Pixel](../styles/158-game-indie-pixel/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 159 | [Card TCG](../styles/159-game-card-tcg/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 160 | [Survival Craft](../styles/160-game-survival-craft/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 161 | [Mobile Casual](../styles/161-game-mobile-casual/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 162 | [Horror Occult](../styles/162-game-horror-occult/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 163 | [Racing Neon](../styles/163-game-racing-neon/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 164 | [Strategy Map](../styles/164-game-strategy-map/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 165 | [Sim Builder](../styles/165-game-sim-builder/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 166 | [Arcade Cabinet](../styles/166-game-arcade-cabinet/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 167 | [Stealth Tactical](../styles/167-game-stealth-tactical/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 168 | [Puzzle Light](../styles/168-game-puzzle-light/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 169 | [MMO Guild](../styles/169-game-mmo-guild/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 170 | [Franchise Sports](../styles/170-game-franchise-sports/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 171 | [Pinball Neon](../styles/171-game-pinball-neon/style.md) | Oyun & Etkileşim | 1/1 | 20 |
-| 172 | [Incident Response](../styles/172-incident-response/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 173 | [FinOps Cost](../styles/173-finops-cost/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 174 | [Fleet Dispatch](../styles/174-fleet-dispatch/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 175 | [Fraud Review](../styles/175-fraud-review/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 176 | [SLO Budget](../styles/176-slo-budget/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 177 | [Data Lineage](../styles/177-data-lineage/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 178 | [Access Audit](../styles/178-access-audit/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 179 | [Release Train](../styles/179-release-train/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 180 | [Support Inbox](../styles/180-support-inbox/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 181 | [Regulatory Report](../styles/181-regulatory-report/style.md) | Operasyon & Veri | 1/1 | 20 |
-| 182 | [Grocery Delivery](../styles/182-grocery-delivery/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 183 | [Marketplace Multi](../styles/183-marketplace-multi/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 184 | [Luxury Atelier](../styles/184-luxury-atelier/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 185 | [Subscription Box](../styles/185-subscription-box/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 186 | [Sneaker Drop](../styles/186-sneaker-drop/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 187 | [Wine Cellar](../styles/187-wine-cellar/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 188 | [Furniture Studio](../styles/188-furniture-studio/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 189 | [Electronics Spec](../styles/189-electronics-spec/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 190 | [Pharmacy Store](../styles/190-pharmacy-store/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 191 | [Farmers Market](../styles/191-farmers-market/style.md) | Ticaret & Vitrin | 1/1 | 20 |
-| 192 | [Museum Exhibition](../styles/192-museum-exhibition/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 193 | [Theatre Season](../styles/193-theatre-season/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 194 | [Film Festival](../styles/194-film-festival/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 195 | [Public Radio](../styles/195-public-radio/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 196 | [Podcast Network](../styles/196-podcast-network/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 197 | [Indie Cinema](../styles/197-indie-cinema/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 198 | [Library Archive](../styles/198-library-archive/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 199 | [Comic Bookstore](../styles/199-comic-bookstore/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 200 | [Opera House](../styles/200-opera-house/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 201 | [Street Festival](../styles/201-street-festival/style.md) | Kültür & Yayın | 1/1 | 20 |
-| 202 | [Clinical Trial](../styles/202-clinical-trial/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 203 | [Lab Protocol](../styles/203-lab-protocol/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 204 | [Pharmacy Labels](../styles/204-pharmacy-labels/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 205 | [Physiotherapy](../styles/205-physiotherapy/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 206 | [Mental Wellness](../styles/206-mental-wellness/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 207 | [Nutrition Plan](../styles/207-nutrition-plan/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 208 | [Dental Clinic](../styles/208-dental-clinic/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 209 | [Public Health](../styles/209-public-health/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 210 | [Genomics Lab](../styles/210-genomics-lab/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 211 | [Veterinary Care](../styles/211-veterinary-care/style.md) | Sağlık & Bilim | 1/1 | 20 |
-| 212 | [Language App](../styles/212-language-app/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 213 | [Skill Tree](../styles/213-skill-tree/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 214 | [University Portal](../styles/214-university-portal/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 215 | [Coding Bootcamp](../styles/215-coding-bootcamp/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 216 | [Kids Classroom](../styles/216-kids-classroom/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 217 | [Exam Prep](../styles/217-exam-prep/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 218 | [Music Lesson](../styles/218-music-lesson/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 219 | [Lab Simulation](../styles/219-lab-simulation/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 220 | [Peer Study](../styles/220-peer-study/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 221 | [Certificate Wallet](../styles/221-certificate-wallet/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 20 |
-| 222 | [Terrazzo Stone](../styles/222-terrazzo-stone/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 223 | [Linocut Print](../styles/223-linocut-print/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 224 | [Risograph Print](../styles/224-risograph-print/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 225 | [Denim Textile](../styles/225-denim-textile/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 226 | [Cork Oak](../styles/226-cork-oak/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 227 | [Cast Concrete](../styles/227-cast-concrete/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 228 | [Enamel Jewel](../styles/228-enamel-jewel/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 229 | [Hand-thrown Ceramic](../styles/229-hand-thrown-ceramic/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 230 | [Raw Steel](../styles/230-raw-steel/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 231 | [Recycled Paper](../styles/231-recycled-paper/style.md) | Materyal & Zanaat | 1/1 | 20 |
-| 232 | [Condensed News](../styles/232-condensed-news/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 233 | [Monospace Editorial](../styles/233-monospace-editorial/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 234 | [Blackletter Modern](../styles/234-blackletter-modern/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 235 | [Variable Weight](../styles/235-variable-weight/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 236 | [Justified Book](../styles/236-justified-book/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 237 | [Stencil Display](../styles/237-stencil-display/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 238 | [Uppercase Only](../styles/238-uppercase-only/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 239 | [Italic Accent](../styles/239-italic-accent/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 240 | [Numerals Display](../styles/240-numerals-display/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 241 | [Small Caps Ledger](../styles/241-small-caps-ledger/style.md) | Tipografi Denemeleri | 1/1 | 20 |
-| 242 | [Agent Console](../styles/242-agent-console/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
-| 243 | [Spatial Workspace](../styles/243-spatial-workspace/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
-| 244 | [Bio Lab Interface](../styles/244-bio-lab-interface/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
-| 245 | [Climate Model](../styles/245-climate-model/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
-| 246 | [Orbital Logistics](../styles/246-orbital-logistics/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
-| 247 | [Synthetic Media](../styles/247-synthetic-media/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
-| 248 | [Quantum Dashboard](../styles/248-quantum-dashboard/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
-| 249 | [Digital Twin](../styles/249-digital-twin/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
-| 250 | [Neural Canvas](../styles/250-neural-canvas/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
-| 251 | [Post-screen Voice](../styles/251-post-screen-voice/style.md) | Gelecek & Spekülatif | 1/1 | 20 |
+| 152 | [Game HUD](../styles/152-game-hud/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 153 | [Game Racing](../styles/153-game-racing/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 154 | [Fantasy RPG](../styles/154-game-fantasy-rpg/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 155 | [Sci-Fi Cockpit](../styles/155-game-sci-fi-cockpit/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 156 | [Retro Console](../styles/156-game-retro-console/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 157 | [Esports League](../styles/157-game-esports-league/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 158 | [Indie Pixel](../styles/158-game-indie-pixel/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 159 | [Card TCG](../styles/159-game-card-tcg/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 160 | [Survival Craft](../styles/160-game-survival-craft/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 161 | [Mobile Casual](../styles/161-game-mobile-casual/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 162 | [Horror Occult](../styles/162-game-horror-occult/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 163 | [Racing Neon](../styles/163-game-racing-neon/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 164 | [Strategy Map](../styles/164-game-strategy-map/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 165 | [Sim Builder](../styles/165-game-sim-builder/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 166 | [Arcade Cabinet](../styles/166-game-arcade-cabinet/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 167 | [Stealth Tactical](../styles/167-game-stealth-tactical/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 168 | [Puzzle Light](../styles/168-game-puzzle-light/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 169 | [MMO Guild](../styles/169-game-mmo-guild/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 170 | [Franchise Sports](../styles/170-game-franchise-sports/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 171 | [Pinball Neon](../styles/171-game-pinball-neon/style.md) | Oyun & Etkileşim | 1/1 | 34 |
+| 172 | [Incident Response](../styles/172-incident-response/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 173 | [FinOps Cost](../styles/173-finops-cost/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 174 | [Fleet Dispatch](../styles/174-fleet-dispatch/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 175 | [Fraud Review](../styles/175-fraud-review/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 176 | [SLO Budget](../styles/176-slo-budget/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 177 | [Data Lineage](../styles/177-data-lineage/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 178 | [Access Audit](../styles/178-access-audit/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 179 | [Release Train](../styles/179-release-train/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 180 | [Support Inbox](../styles/180-support-inbox/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 181 | [Regulatory Report](../styles/181-regulatory-report/style.md) | Operasyon & Veri | 1/1 | 34 |
+| 182 | [Grocery Delivery](../styles/182-grocery-delivery/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 183 | [Marketplace Multi](../styles/183-marketplace-multi/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 184 | [Luxury Atelier](../styles/184-luxury-atelier/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 185 | [Subscription Box](../styles/185-subscription-box/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 186 | [Sneaker Drop](../styles/186-sneaker-drop/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 187 | [Wine Cellar](../styles/187-wine-cellar/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 188 | [Furniture Studio](../styles/188-furniture-studio/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 189 | [Electronics Spec](../styles/189-electronics-spec/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 190 | [Pharmacy Store](../styles/190-pharmacy-store/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 191 | [Farmers Market](../styles/191-farmers-market/style.md) | Ticaret & Vitrin | 1/1 | 34 |
+| 192 | [Museum Exhibition](../styles/192-museum-exhibition/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 193 | [Theatre Season](../styles/193-theatre-season/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 194 | [Film Festival](../styles/194-film-festival/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 195 | [Public Radio](../styles/195-public-radio/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 196 | [Podcast Network](../styles/196-podcast-network/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 197 | [Indie Cinema](../styles/197-indie-cinema/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 198 | [Library Archive](../styles/198-library-archive/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 199 | [Comic Bookstore](../styles/199-comic-bookstore/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 200 | [Opera House](../styles/200-opera-house/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 201 | [Street Festival](../styles/201-street-festival/style.md) | Kültür & Yayın | 1/1 | 34 |
+| 202 | [Clinical Trial](../styles/202-clinical-trial/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 203 | [Lab Protocol](../styles/203-lab-protocol/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 204 | [Pharmacy Labels](../styles/204-pharmacy-labels/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 205 | [Physiotherapy](../styles/205-physiotherapy/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 206 | [Mental Wellness](../styles/206-mental-wellness/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 207 | [Nutrition Plan](../styles/207-nutrition-plan/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 208 | [Dental Clinic](../styles/208-dental-clinic/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 209 | [Public Health](../styles/209-public-health/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 210 | [Genomics Lab](../styles/210-genomics-lab/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 211 | [Veterinary Care](../styles/211-veterinary-care/style.md) | Sağlık & Bilim | 1/1 | 34 |
+| 212 | [Language App](../styles/212-language-app/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 213 | [Skill Tree](../styles/213-skill-tree/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 214 | [University Portal](../styles/214-university-portal/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 215 | [Coding Bootcamp](../styles/215-coding-bootcamp/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 216 | [Kids Classroom](../styles/216-kids-classroom/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 217 | [Exam Prep](../styles/217-exam-prep/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 218 | [Music Lesson](../styles/218-music-lesson/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 219 | [Lab Simulation](../styles/219-lab-simulation/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 220 | [Peer Study](../styles/220-peer-study/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 221 | [Certificate Wallet](../styles/221-certificate-wallet/style.md) | Öğrenme & Oyunlaştırma | 1/1 | 34 |
+| 222 | [Terrazzo Stone](../styles/222-terrazzo-stone/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 223 | [Linocut Print](../styles/223-linocut-print/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 224 | [Risograph Print](../styles/224-risograph-print/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 225 | [Denim Textile](../styles/225-denim-textile/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 226 | [Cork Oak](../styles/226-cork-oak/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 227 | [Cast Concrete](../styles/227-cast-concrete/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 228 | [Enamel Jewel](../styles/228-enamel-jewel/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 229 | [Hand-thrown Ceramic](../styles/229-hand-thrown-ceramic/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 230 | [Raw Steel](../styles/230-raw-steel/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 231 | [Recycled Paper](../styles/231-recycled-paper/style.md) | Materyal & Zanaat | 1/1 | 34 |
+| 232 | [Condensed News](../styles/232-condensed-news/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 233 | [Monospace Editorial](../styles/233-monospace-editorial/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 234 | [Blackletter Modern](../styles/234-blackletter-modern/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 235 | [Variable Weight](../styles/235-variable-weight/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 236 | [Justified Book](../styles/236-justified-book/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 237 | [Stencil Display](../styles/237-stencil-display/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 238 | [Uppercase Only](../styles/238-uppercase-only/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 239 | [Italic Accent](../styles/239-italic-accent/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 240 | [Numerals Display](../styles/240-numerals-display/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 241 | [Small Caps Ledger](../styles/241-small-caps-ledger/style.md) | Tipografi Denemeleri | 1/1 | 34 |
+| 242 | [Agent Console](../styles/242-agent-console/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
+| 243 | [Spatial Workspace](../styles/243-spatial-workspace/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
+| 244 | [Bio Lab Interface](../styles/244-bio-lab-interface/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
+| 245 | [Climate Model](../styles/245-climate-model/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
+| 246 | [Orbital Logistics](../styles/246-orbital-logistics/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
+| 247 | [Synthetic Media](../styles/247-synthetic-media/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
+| 248 | [Quantum Dashboard](../styles/248-quantum-dashboard/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
+| 249 | [Digital Twin](../styles/249-digital-twin/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
+| 250 | [Neural Canvas](../styles/250-neural-canvas/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
+| 251 | [Post-screen Voice](../styles/251-post-screen-voice/style.md) | Gelecek & Spekülatif | 1/1 | 34 |
 
 ## 3 · Kontrast (WCAG)
 

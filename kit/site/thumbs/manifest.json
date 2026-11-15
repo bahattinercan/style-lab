@@ -5,20 +5,6 @@
     "1280"
   ],
   "files": {
-    "01-minimalism-01-page@640.webp": {
-      "source": "01-minimalism/shots/01-page.png",
-      "sourceSha": "f7ee479b504be5f6416954f680022add2bfc4d86441c83aa8a7f7cec2a2dde53",
-      "sourceBytes": 525628,
-      "variant": "640",
-      "bytes": 42724
-    },
-    "01-minimalism-01-page@1280.webp": {
-      "source": "01-minimalism/shots/01-page.png",
-      "sourceSha": "f7ee479b504be5f6416954f680022add2bfc4d86441c83aa8a7f7cec2a2dde53",
-      "sourceBytes": 525628,
-      "variant": "1280",
-      "bytes": 132526
-    },
     "02-swiss-design-01-page@640.webp": {
       "source": "02-swiss-design/shots/01-page.png",
       "sourceSha": "6a9e1dceee6c416f9a5ec4638a259d909f8503237dcb94c777b8b5766c687a47",
@@ -943,104 +929,6 @@
       "variant": "1280",
       "bytes": 132370
     },
-    "153-game-racing-01-page@640.webp": {
-      "source": "153-game-racing/shots/01-page.png",
-      "sourceSha": "ca56fb61a1aae3d66bee5b8421dde2436d945d37b1b3fdb9f2593518963b75c5",
-      "sourceBytes": 294724,
-      "variant": "640",
-      "bytes": 37674
-    },
-    "153-game-racing-01-page@1280.webp": {
-      "source": "153-game-racing/shots/01-page.png",
-      "sourceSha": "ca56fb61a1aae3d66bee5b8421dde2436d945d37b1b3fdb9f2593518963b75c5",
-      "sourceBytes": 294724,
-      "variant": "1280",
-      "bytes": 114266
-    },
-    "154-game-fantasy-rpg-01-page@640.webp": {
-      "source": "154-game-fantasy-rpg/shots/01-page.png",
-      "sourceSha": "069dc1b5ed71de108928c56f3fc12650a8817ffbfe2ad1d4d64f9b30c2d03767",
-      "sourceBytes": 381864,
-      "variant": "640",
-      "bytes": 37928
-    },
-    "154-game-fantasy-rpg-01-page@1280.webp": {
-      "source": "154-game-fantasy-rpg/shots/01-page.png",
-      "sourceSha": "069dc1b5ed71de108928c56f3fc12650a8817ffbfe2ad1d4d64f9b30c2d03767",
-      "sourceBytes": 381864,
-      "variant": "1280",
-      "bytes": 120958
-    },
-    "155-game-sci-fi-cockpit-01-page@640.webp": {
-      "source": "155-game-sci-fi-cockpit/shots/01-page.png",
-      "sourceSha": "0f15bb3dd39ad42453440e3f7881d32be6ba668875292d444b7ee1a500cc0820",
-      "sourceBytes": 283492,
-      "variant": "640",
-      "bytes": 40576
-    },
-    "155-game-sci-fi-cockpit-01-page@1280.webp": {
-      "source": "155-game-sci-fi-cockpit/shots/01-page.png",
-      "sourceSha": "0f15bb3dd39ad42453440e3f7881d32be6ba668875292d444b7ee1a500cc0820",
-      "sourceBytes": 283492,
-      "variant": "1280",
-      "bytes": 116682
-    },
-    "156-game-retro-console-01-page@640.webp": {
-      "source": "156-game-retro-console/shots/01-page.png",
-      "sourceSha": "c2580dcf005c6f9afc6aa84163065505d0ef72f40237d56559f5fa4b272799ee",
-      "sourceBytes": 403726,
-      "variant": "640",
-      "bytes": 39514
-    },
-    "156-game-retro-console-01-page@1280.webp": {
-      "source": "156-game-retro-console/shots/01-page.png",
-      "sourceSha": "c2580dcf005c6f9afc6aa84163065505d0ef72f40237d56559f5fa4b272799ee",
-      "sourceBytes": 403726,
-      "variant": "1280",
-      "bytes": 113018
-    },
-    "157-game-esports-league-01-page@640.webp": {
-      "source": "157-game-esports-league/shots/01-page.png",
-      "sourceSha": "eb50ed6a3331162edf6eac826b6cb5afab8c22626c0e0712cafce0724e38b2b1",
-      "sourceBytes": 314314,
-      "variant": "640",
-      "bytes": 38408
-    },
-    "157-game-esports-league-01-page@1280.webp": {
-      "source": "157-game-esports-league/shots/01-page.png",
-      "sourceSha": "eb50ed6a3331162edf6eac826b6cb5afab8c22626c0e0712cafce0724e38b2b1",
-      "sourceBytes": 314314,
-      "variant": "1280",
-      "bytes": 117672
-    },
-    "158-game-indie-pixel-01-page@640.webp": {
-      "source": "158-game-indie-pixel/shots/01-page.png",
-      "sourceSha": "e6e7d1f6baad22d483da9d71d6055c04b9bf3a53f823a9881e50a23ac3380cca",
-      "sourceBytes": 301375,
-      "variant": "640",
-      "bytes": 40332
-    },
-    "158-game-indie-pixel-01-page@1280.webp": {
-      "source": "158-game-indie-pixel/shots/01-page.png",
-      "sourceSha": "e6e7d1f6baad22d483da9d71d6055c04b9bf3a53f823a9881e50a23ac3380cca",
-      "sourceBytes": 301375,
-      "variant": "1280",
-      "bytes": 119108
-    },
-    "159-game-card-tcg-01-page@640.webp": {
-      "source": "159-game-card-tcg/shots/01-page.png",
-      "sourceSha": "a486771403c17b5a9f14f49fc0b20119ef6f0df3d8915ff4416d4791ec86367b",
-      "sourceBytes": 350761,
-      "variant": "640",
-      "bytes": 38974
-    },
-    "159-game-card-tcg-01-page@1280.webp": {
-      "source": "159-game-card-tcg/shots/01-page.png",
-      "sourceSha": "a486771403c17b5a9f14f49fc0b20119ef6f0df3d8915ff4416d4791ec86367b",
-      "sourceBytes": 350761,
-      "variant": "1280",
-      "bytes": 124712
-    },
     "16-memphis-01-page@640.webp": {
       "source": "16-memphis/shots/01-page.png",
       "sourceSha": "84e3c00524e52b66ab69b9662cae5d29e6b701ab3645ee77114efac6a247e6ad",
@@ -1054,146 +942,6 @@
       "sourceBytes": 278263,
       "variant": "1280",
       "bytes": 131752
-    },
-    "160-game-survival-craft-01-page@640.webp": {
-      "source": "160-game-survival-craft/shots/01-page.png",
-      "sourceSha": "04bba3410d2db9f970d79d4d2361b7220b7df09792f00ee6de465b6e3e083f77",
-      "sourceBytes": 666810,
-      "variant": "640",
-      "bytes": 43860
-    },
-    "160-game-survival-craft-01-page@1280.webp": {
-      "source": "160-game-survival-craft/shots/01-page.png",
-      "sourceSha": "04bba3410d2db9f970d79d4d2361b7220b7df09792f00ee6de465b6e3e083f77",
-      "sourceBytes": 666810,
-      "variant": "1280",
-      "bytes": 139290
-    },
-    "161-game-mobile-casual-01-page@640.webp": {
-      "source": "161-game-mobile-casual/shots/01-page.png",
-      "sourceSha": "7f63c7a6ca6c2b3f1efb6d0bfc3f99d8fc5ba3668a233dd03b219c00f87bda14",
-      "sourceBytes": 531456,
-      "variant": "640",
-      "bytes": 43422
-    },
-    "161-game-mobile-casual-01-page@1280.webp": {
-      "source": "161-game-mobile-casual/shots/01-page.png",
-      "sourceSha": "7f63c7a6ca6c2b3f1efb6d0bfc3f99d8fc5ba3668a233dd03b219c00f87bda14",
-      "sourceBytes": 531456,
-      "variant": "1280",
-      "bytes": 138038
-    },
-    "162-game-horror-occult-01-page@640.webp": {
-      "source": "162-game-horror-occult/shots/01-page.png",
-      "sourceSha": "fff027afed1641c7e29bf12e5f8662fbd2bcbec9813f21c1fc56c5682f2c1eca",
-      "sourceBytes": 782329,
-      "variant": "640",
-      "bytes": 36174
-    },
-    "162-game-horror-occult-01-page@1280.webp": {
-      "source": "162-game-horror-occult/shots/01-page.png",
-      "sourceSha": "fff027afed1641c7e29bf12e5f8662fbd2bcbec9813f21c1fc56c5682f2c1eca",
-      "sourceBytes": 782329,
-      "variant": "1280",
-      "bytes": 120596
-    },
-    "163-game-racing-neon-01-page@640.webp": {
-      "source": "163-game-racing-neon/shots/01-page.png",
-      "sourceSha": "d75842008e8b132b74bd1e743933e5a44156e9a76f93723f4121f3358ea9b70b",
-      "sourceBytes": 297591,
-      "variant": "640",
-      "bytes": 39730
-    },
-    "163-game-racing-neon-01-page@1280.webp": {
-      "source": "163-game-racing-neon/shots/01-page.png",
-      "sourceSha": "d75842008e8b132b74bd1e743933e5a44156e9a76f93723f4121f3358ea9b70b",
-      "sourceBytes": 297591,
-      "variant": "1280",
-      "bytes": 122662
-    },
-    "164-game-strategy-map-01-page@640.webp": {
-      "source": "164-game-strategy-map/shots/01-page.png",
-      "sourceSha": "614d7a915b9b933743bd6a0763743c32cfd16fc92b926422d3d2f1e226735504",
-      "sourceBytes": 354858,
-      "variant": "640",
-      "bytes": 36002
-    },
-    "164-game-strategy-map-01-page@1280.webp": {
-      "source": "164-game-strategy-map/shots/01-page.png",
-      "sourceSha": "614d7a915b9b933743bd6a0763743c32cfd16fc92b926422d3d2f1e226735504",
-      "sourceBytes": 354858,
-      "variant": "1280",
-      "bytes": 110742
-    },
-    "165-game-sim-builder-01-page@640.webp": {
-      "source": "165-game-sim-builder/shots/01-page.png",
-      "sourceSha": "de490ce7f7f48871fbfe0df14135004380103af1cec1d8c1a64f79fa1e3cc29f",
-      "sourceBytes": 490532,
-      "variant": "640",
-      "bytes": 43114
-    },
-    "165-game-sim-builder-01-page@1280.webp": {
-      "source": "165-game-sim-builder/shots/01-page.png",
-      "sourceSha": "de490ce7f7f48871fbfe0df14135004380103af1cec1d8c1a64f79fa1e3cc29f",
-      "sourceBytes": 490532,
-      "variant": "1280",
-      "bytes": 133826
-    },
-    "166-game-arcade-cabinet-01-page@640.webp": {
-      "source": "166-game-arcade-cabinet/shots/01-page.png",
-      "sourceSha": "65b670259026e8e9204f7e6ff256cc13520a453158db0ee6d9099e231affef94",
-      "sourceBytes": 316435,
-      "variant": "640",
-      "bytes": 45356
-    },
-    "166-game-arcade-cabinet-01-page@1280.webp": {
-      "source": "166-game-arcade-cabinet/shots/01-page.png",
-      "sourceSha": "65b670259026e8e9204f7e6ff256cc13520a453158db0ee6d9099e231affef94",
-      "sourceBytes": 316435,
-      "variant": "1280",
-      "bytes": 133016
-    },
-    "167-game-stealth-tactical-01-page@640.webp": {
-      "source": "167-game-stealth-tactical/shots/01-page.png",
-      "sourceSha": "9f3d59aef7111086f3e6ff634bdb20e7eedf7ce38dd2c2c05bc3932432f7b1fe",
-      "sourceBytes": 273064,
-      "variant": "640",
-      "bytes": 36116
-    },
-    "167-game-stealth-tactical-01-page@1280.webp": {
-      "source": "167-game-stealth-tactical/shots/01-page.png",
-      "sourceSha": "9f3d59aef7111086f3e6ff634bdb20e7eedf7ce38dd2c2c05bc3932432f7b1fe",
-      "sourceBytes": 273064,
-      "variant": "1280",
-      "bytes": 104786
-    },
-    "168-game-puzzle-light-01-page@640.webp": {
-      "source": "168-game-puzzle-light/shots/01-page.png",
-      "sourceSha": "675786c2612f32e9858a3f975cea05119dc0b3f00e2e12f02c4bb522be4191cc",
-      "sourceBytes": 357018,
-      "variant": "640",
-      "bytes": 39008
-    },
-    "168-game-puzzle-light-01-page@1280.webp": {
-      "source": "168-game-puzzle-light/shots/01-page.png",
-      "sourceSha": "675786c2612f32e9858a3f975cea05119dc0b3f00e2e12f02c4bb522be4191cc",
-      "sourceBytes": 357018,
-      "variant": "1280",
-      "bytes": 121574
-    },
-    "169-game-mmo-guild-01-page@640.webp": {
-      "source": "169-game-mmo-guild/shots/01-page.png",
-      "sourceSha": "493a7660195d87aaed98ee8775da334f2d85529de2c3aba7be04d09c81b4d25a",
-      "sourceBytes": 345790,
-      "variant": "640",
-      "bytes": 39850
-    },
-    "169-game-mmo-guild-01-page@1280.webp": {
-      "source": "169-game-mmo-guild/shots/01-page.png",
-      "sourceSha": "493a7660195d87aaed98ee8775da334f2d85529de2c3aba7be04d09c81b4d25a",
-      "sourceBytes": 345790,
-      "variant": "1280",
-      "bytes": 124956
     },
     "17-maximalism-01-page@640.webp": {
       "source": "17-maximalism/shots/01-page.png",
@@ -1209,146 +957,6 @@
       "variant": "1280",
       "bytes": 187108
     },
-    "170-game-franchise-sports-01-page@640.webp": {
-      "source": "170-game-franchise-sports/shots/01-page.png",
-      "sourceSha": "243e02c9a5af4e6c5731ff612af3d91ea9b452d091b8dc83e1a318473936a64d",
-      "sourceBytes": 482336,
-      "variant": "640",
-      "bytes": 42550
-    },
-    "170-game-franchise-sports-01-page@1280.webp": {
-      "source": "170-game-franchise-sports/shots/01-page.png",
-      "sourceSha": "243e02c9a5af4e6c5731ff612af3d91ea9b452d091b8dc83e1a318473936a64d",
-      "sourceBytes": 482336,
-      "variant": "1280",
-      "bytes": 130184
-    },
-    "171-game-pinball-neon-01-page@640.webp": {
-      "source": "171-game-pinball-neon/shots/01-page.png",
-      "sourceSha": "48d8add0f9cd5cfeb07be7a3065eb244a0d3a9a601dd19c369bf585ec9f6353f",
-      "sourceBytes": 325405,
-      "variant": "640",
-      "bytes": 44196
-    },
-    "171-game-pinball-neon-01-page@1280.webp": {
-      "source": "171-game-pinball-neon/shots/01-page.png",
-      "sourceSha": "48d8add0f9cd5cfeb07be7a3065eb244a0d3a9a601dd19c369bf585ec9f6353f",
-      "sourceBytes": 325405,
-      "variant": "1280",
-      "bytes": 136748
-    },
-    "172-incident-response-01-page@640.webp": {
-      "source": "172-incident-response/shots/01-page.png",
-      "sourceSha": "bd9c020752d5dcdb2030642325ef3979a460386382db14d652ad8adf2838499c",
-      "sourceBytes": 266949,
-      "variant": "640",
-      "bytes": 36282
-    },
-    "172-incident-response-01-page@1280.webp": {
-      "source": "172-incident-response/shots/01-page.png",
-      "sourceSha": "bd9c020752d5dcdb2030642325ef3979a460386382db14d652ad8adf2838499c",
-      "sourceBytes": 266949,
-      "variant": "1280",
-      "bytes": 110184
-    },
-    "173-finops-cost-01-page@640.webp": {
-      "source": "173-finops-cost/shots/01-page.png",
-      "sourceSha": "7b0afaab0e8cb96180287b4c23b650cbfc1ca6c229fd24e9f37c5a8d7e800367",
-      "sourceBytes": 341887,
-      "variant": "640",
-      "bytes": 40940
-    },
-    "173-finops-cost-01-page@1280.webp": {
-      "source": "173-finops-cost/shots/01-page.png",
-      "sourceSha": "7b0afaab0e8cb96180287b4c23b650cbfc1ca6c229fd24e9f37c5a8d7e800367",
-      "sourceBytes": 341887,
-      "variant": "1280",
-      "bytes": 131188
-    },
-    "174-fleet-dispatch-01-page@640.webp": {
-      "source": "174-fleet-dispatch/shots/01-page.png",
-      "sourceSha": "f8592bc71857167891883f4b2daa23cd33a15e2a9e8c4807a4c0148f930c6d59",
-      "sourceBytes": 305857,
-      "variant": "640",
-      "bytes": 35498
-    },
-    "174-fleet-dispatch-01-page@1280.webp": {
-      "source": "174-fleet-dispatch/shots/01-page.png",
-      "sourceSha": "f8592bc71857167891883f4b2daa23cd33a15e2a9e8c4807a4c0148f930c6d59",
-      "sourceBytes": 305857,
-      "variant": "1280",
-      "bytes": 111822
-    },
-    "175-fraud-review-01-page@640.webp": {
-      "source": "175-fraud-review/shots/01-page.png",
-      "sourceSha": "340836214e385559ad06d408415d721fe3666b7d1641dfb987d82171000f2fce",
-      "sourceBytes": 299059,
-      "variant": "640",
-      "bytes": 31662
-    },
-    "175-fraud-review-01-page@1280.webp": {
-      "source": "175-fraud-review/shots/01-page.png",
-      "sourceSha": "340836214e385559ad06d408415d721fe3666b7d1641dfb987d82171000f2fce",
-      "sourceBytes": 299059,
-      "variant": "1280",
-      "bytes": 97924
-    },
-    "176-slo-budget-01-page@640.webp": {
-      "source": "176-slo-budget/shots/01-page.png",
-      "sourceSha": "6f87488100068a81dbc649280b44d80e6dd756f6f598a6646466f003fba7aff3",
-      "sourceBytes": 318887,
-      "variant": "640",
-      "bytes": 40446
-    },
-    "176-slo-budget-01-page@1280.webp": {
-      "source": "176-slo-budget/shots/01-page.png",
-      "sourceSha": "6f87488100068a81dbc649280b44d80e6dd756f6f598a6646466f003fba7aff3",
-      "sourceBytes": 318887,
-      "variant": "1280",
-      "bytes": 125958
-    },
-    "177-data-lineage-01-page@640.webp": {
-      "source": "177-data-lineage/shots/01-page.png",
-      "sourceSha": "f86f3635e9221deb2219f5c8bacb28967189476046d16f07f4a8d10ec820295c",
-      "sourceBytes": 319598,
-      "variant": "640",
-      "bytes": 39436
-    },
-    "177-data-lineage-01-page@1280.webp": {
-      "source": "177-data-lineage/shots/01-page.png",
-      "sourceSha": "f86f3635e9221deb2219f5c8bacb28967189476046d16f07f4a8d10ec820295c",
-      "sourceBytes": 319598,
-      "variant": "1280",
-      "bytes": 118592
-    },
-    "178-access-audit-01-page@640.webp": {
-      "source": "178-access-audit/shots/01-page.png",
-      "sourceSha": "432d7c621665d60c28ea9af8993154cda187022e2ecf1a4aa5f61298f63866ae",
-      "sourceBytes": 303580,
-      "variant": "640",
-      "bytes": 36408
-    },
-    "178-access-audit-01-page@1280.webp": {
-      "source": "178-access-audit/shots/01-page.png",
-      "sourceSha": "432d7c621665d60c28ea9af8993154cda187022e2ecf1a4aa5f61298f63866ae",
-      "sourceBytes": 303580,
-      "variant": "1280",
-      "bytes": 113012
-    },
-    "179-release-train-01-page@640.webp": {
-      "source": "179-release-train/shots/01-page.png",
-      "sourceSha": "e51da3318ad3ddf0a00ca9ee522ce27ff8cf8c3fb8dcbc3dbe9318efbb51325c",
-      "sourceBytes": 312205,
-      "variant": "640",
-      "bytes": 38348
-    },
-    "179-release-train-01-page@1280.webp": {
-      "source": "179-release-train/shots/01-page.png",
-      "sourceSha": "e51da3318ad3ddf0a00ca9ee522ce27ff8cf8c3fb8dcbc3dbe9318efbb51325c",
-      "sourceBytes": 312205,
-      "variant": "1280",
-      "bytes": 120204
-    },
     "18-dopamine-ui-01-page@640.webp": {
       "source": "18-dopamine-ui/shots/01-page.png",
       "sourceSha": "11d2955b1f4bc238945c89bbf436b6e1e066cf3f742e04caada1edadadf6677a",
@@ -1362,146 +970,6 @@
       "sourceBytes": 351784,
       "variant": "1280",
       "bytes": 125972
-    },
-    "180-support-inbox-01-page@640.webp": {
-      "source": "180-support-inbox/shots/01-page.png",
-      "sourceSha": "003c612197e473272e079aad2a14d0b40c4f41d03162cf03336328a0645413df",
-      "sourceBytes": 305597,
-      "variant": "640",
-      "bytes": 37408
-    },
-    "180-support-inbox-01-page@1280.webp": {
-      "source": "180-support-inbox/shots/01-page.png",
-      "sourceSha": "003c612197e473272e079aad2a14d0b40c4f41d03162cf03336328a0645413df",
-      "sourceBytes": 305597,
-      "variant": "1280",
-      "bytes": 117174
-    },
-    "181-regulatory-report-01-page@640.webp": {
-      "source": "181-regulatory-report/shots/01-page.png",
-      "sourceSha": "0a83b8fa60cdd119fb90b66f2d3a50012d26d9cd9c576c2ddd3a5369eed38113",
-      "sourceBytes": 341631,
-      "variant": "640",
-      "bytes": 38342
-    },
-    "181-regulatory-report-01-page@1280.webp": {
-      "source": "181-regulatory-report/shots/01-page.png",
-      "sourceSha": "0a83b8fa60cdd119fb90b66f2d3a50012d26d9cd9c576c2ddd3a5369eed38113",
-      "sourceBytes": 341631,
-      "variant": "1280",
-      "bytes": 125314
-    },
-    "182-grocery-delivery-01-page@640.webp": {
-      "source": "182-grocery-delivery/shots/01-page.png",
-      "sourceSha": "64cbe8e3a2ee9fce1d1ae70dcd4a965da2f8eab8abfedd8102976042c062eeb0",
-      "sourceBytes": 368774,
-      "variant": "640",
-      "bytes": 36710
-    },
-    "182-grocery-delivery-01-page@1280.webp": {
-      "source": "182-grocery-delivery/shots/01-page.png",
-      "sourceSha": "64cbe8e3a2ee9fce1d1ae70dcd4a965da2f8eab8abfedd8102976042c062eeb0",
-      "sourceBytes": 368774,
-      "variant": "1280",
-      "bytes": 120302
-    },
-    "183-marketplace-multi-01-page@640.webp": {
-      "source": "183-marketplace-multi/shots/01-page.png",
-      "sourceSha": "c9c2d32352581d5700cd921cae9a29b8557d4efcfe0f532d6cfe1898483a7b87",
-      "sourceBytes": 364722,
-      "variant": "640",
-      "bytes": 38338
-    },
-    "183-marketplace-multi-01-page@1280.webp": {
-      "source": "183-marketplace-multi/shots/01-page.png",
-      "sourceSha": "c9c2d32352581d5700cd921cae9a29b8557d4efcfe0f532d6cfe1898483a7b87",
-      "sourceBytes": 364722,
-      "variant": "1280",
-      "bytes": 125004
-    },
-    "184-luxury-atelier-01-page@640.webp": {
-      "source": "184-luxury-atelier/shots/01-page.png",
-      "sourceSha": "abe467b3530e02e8612bc52acadf37de1a5268ed554254043c67e5a53e69298a",
-      "sourceBytes": 500975,
-      "variant": "640",
-      "bytes": 27748
-    },
-    "184-luxury-atelier-01-page@1280.webp": {
-      "source": "184-luxury-atelier/shots/01-page.png",
-      "sourceSha": "abe467b3530e02e8612bc52acadf37de1a5268ed554254043c67e5a53e69298a",
-      "sourceBytes": 500975,
-      "variant": "1280",
-      "bytes": 88628
-    },
-    "185-subscription-box-01-page@640.webp": {
-      "source": "185-subscription-box/shots/01-page.png",
-      "sourceSha": "18bfd3ba764ed530840c7b3b11853947d5d6cc404dfd8e64e4044909d765af67",
-      "sourceBytes": 381729,
-      "variant": "640",
-      "bytes": 39840
-    },
-    "185-subscription-box-01-page@1280.webp": {
-      "source": "185-subscription-box/shots/01-page.png",
-      "sourceSha": "18bfd3ba764ed530840c7b3b11853947d5d6cc404dfd8e64e4044909d765af67",
-      "sourceBytes": 381729,
-      "variant": "1280",
-      "bytes": 126014
-    },
-    "186-sneaker-drop-01-page@640.webp": {
-      "source": "186-sneaker-drop/shots/01-page.png",
-      "sourceSha": "aa7188ee426cd2f17511cd353831f6f6fba917362f1b84900290d459b118f11e",
-      "sourceBytes": 362643,
-      "variant": "640",
-      "bytes": 42404
-    },
-    "186-sneaker-drop-01-page@1280.webp": {
-      "source": "186-sneaker-drop/shots/01-page.png",
-      "sourceSha": "aa7188ee426cd2f17511cd353831f6f6fba917362f1b84900290d459b118f11e",
-      "sourceBytes": 362643,
-      "variant": "1280",
-      "bytes": 132118
-    },
-    "187-wine-cellar-01-page@640.webp": {
-      "source": "187-wine-cellar/shots/01-page.png",
-      "sourceSha": "02edf555bda6f24d318f651b0a6f6744e44aab3ea4ad346ce594a1c51f0feca3",
-      "sourceBytes": 715839,
-      "variant": "640",
-      "bytes": 46308
-    },
-    "187-wine-cellar-01-page@1280.webp": {
-      "source": "187-wine-cellar/shots/01-page.png",
-      "sourceSha": "02edf555bda6f24d318f651b0a6f6744e44aab3ea4ad346ce594a1c51f0feca3",
-      "sourceBytes": 715839,
-      "variant": "1280",
-      "bytes": 151510
-    },
-    "188-furniture-studio-01-page@640.webp": {
-      "source": "188-furniture-studio/shots/01-page.png",
-      "sourceSha": "cc0a94ac846d43e2c04b2e5573c3f78cc05d64f46a22a9ca7f8abbccc0254bb6",
-      "sourceBytes": 270835,
-      "variant": "640",
-      "bytes": 34004
-    },
-    "188-furniture-studio-01-page@1280.webp": {
-      "source": "188-furniture-studio/shots/01-page.png",
-      "sourceSha": "cc0a94ac846d43e2c04b2e5573c3f78cc05d64f46a22a9ca7f8abbccc0254bb6",
-      "sourceBytes": 270835,
-      "variant": "1280",
-      "bytes": 105344
-    },
-    "189-electronics-spec-01-page@640.webp": {
-      "source": "189-electronics-spec/shots/01-page.png",
-      "sourceSha": "5b8d2b347e391fafa56fc25c60bb5c87ea9096a49ab6fa86ac3bb0614917c2f0",
-      "sourceBytes": 363523,
-      "variant": "640",
-      "bytes": 38648
-    },
-    "189-electronics-spec-01-page@1280.webp": {
-      "source": "189-electronics-spec/shots/01-page.png",
-      "sourceSha": "5b8d2b347e391fafa56fc25c60bb5c87ea9096a49ab6fa86ac3bb0614917c2f0",
-      "sourceBytes": 363523,
-      "variant": "1280",
-      "bytes": 125262
     },
     "19-y2k-01-page@640.webp": {
       "source": "19-y2k/shots/01-page.png",
@@ -1517,146 +985,6 @@
       "variant": "1280",
       "bytes": 141626
     },
-    "190-pharmacy-store-01-page@640.webp": {
-      "source": "190-pharmacy-store/shots/01-page.png",
-      "sourceSha": "874a56d093a9374d5fb5841eba02726b75be1aa5b5c09662581431d2cb2021dc",
-      "sourceBytes": 371022,
-      "variant": "640",
-      "bytes": 37944
-    },
-    "190-pharmacy-store-01-page@1280.webp": {
-      "source": "190-pharmacy-store/shots/01-page.png",
-      "sourceSha": "874a56d093a9374d5fb5841eba02726b75be1aa5b5c09662581431d2cb2021dc",
-      "sourceBytes": 371022,
-      "variant": "1280",
-      "bytes": 123830
-    },
-    "191-farmers-market-01-page@640.webp": {
-      "source": "191-farmers-market/shots/01-page.png",
-      "sourceSha": "601df089b7007ece8333d425a19b30b617dd44efde452c9de57f7f17e72f4a08",
-      "sourceBytes": 389840,
-      "variant": "640",
-      "bytes": 38490
-    },
-    "191-farmers-market-01-page@1280.webp": {
-      "source": "191-farmers-market/shots/01-page.png",
-      "sourceSha": "601df089b7007ece8333d425a19b30b617dd44efde452c9de57f7f17e72f4a08",
-      "sourceBytes": 389840,
-      "variant": "1280",
-      "bytes": 123502
-    },
-    "192-museum-exhibition-01-page@640.webp": {
-      "source": "192-museum-exhibition/shots/01-page.png",
-      "sourceSha": "332f466b57393cd16f90a17dd3a594b788f3da5c7e8dab98e7348a08f7057b51",
-      "sourceBytes": 305889,
-      "variant": "640",
-      "bytes": 31466
-    },
-    "192-museum-exhibition-01-page@1280.webp": {
-      "source": "192-museum-exhibition/shots/01-page.png",
-      "sourceSha": "332f466b57393cd16f90a17dd3a594b788f3da5c7e8dab98e7348a08f7057b51",
-      "sourceBytes": 305889,
-      "variant": "1280",
-      "bytes": 99258
-    },
-    "193-theatre-season-01-page@640.webp": {
-      "source": "193-theatre-season/shots/01-page.png",
-      "sourceSha": "a2e7e7f1b31000b78444e951245301b23593a29405366f74fe9e1d546dce2787",
-      "sourceBytes": 328716,
-      "variant": "640",
-      "bytes": 34636
-    },
-    "193-theatre-season-01-page@1280.webp": {
-      "source": "193-theatre-season/shots/01-page.png",
-      "sourceSha": "a2e7e7f1b31000b78444e951245301b23593a29405366f74fe9e1d546dce2787",
-      "sourceBytes": 328716,
-      "variant": "1280",
-      "bytes": 112986
-    },
-    "194-film-festival-01-page@640.webp": {
-      "source": "194-film-festival/shots/01-page.png",
-      "sourceSha": "782eb2f2217b4ea7c2c14f0003515775b4ae1e73a0a4c6f892dac8242d98e38f",
-      "sourceBytes": 328413,
-      "variant": "640",
-      "bytes": 38264
-    },
-    "194-film-festival-01-page@1280.webp": {
-      "source": "194-film-festival/shots/01-page.png",
-      "sourceSha": "782eb2f2217b4ea7c2c14f0003515775b4ae1e73a0a4c6f892dac8242d98e38f",
-      "sourceBytes": 328413,
-      "variant": "1280",
-      "bytes": 119848
-    },
-    "195-public-radio-01-page@640.webp": {
-      "source": "195-public-radio/shots/01-page.png",
-      "sourceSha": "a54cbfd8e7d06d4668f5de77653e2e9829d73cf2187ff8347f0d12a22b9bb0b6",
-      "sourceBytes": 315069,
-      "variant": "640",
-      "bytes": 36546
-    },
-    "195-public-radio-01-page@1280.webp": {
-      "source": "195-public-radio/shots/01-page.png",
-      "sourceSha": "a54cbfd8e7d06d4668f5de77653e2e9829d73cf2187ff8347f0d12a22b9bb0b6",
-      "sourceBytes": 315069,
-      "variant": "1280",
-      "bytes": 116776
-    },
-    "196-podcast-network-01-page@640.webp": {
-      "source": "196-podcast-network/shots/01-page.png",
-      "sourceSha": "e773fe4b41b327d1dac7faa6f52c1b7ebc0c25d3882962550a02eb01c531c8ad",
-      "sourceBytes": 353769,
-      "variant": "640",
-      "bytes": 38752
-    },
-    "196-podcast-network-01-page@1280.webp": {
-      "source": "196-podcast-network/shots/01-page.png",
-      "sourceSha": "e773fe4b41b327d1dac7faa6f52c1b7ebc0c25d3882962550a02eb01c531c8ad",
-      "sourceBytes": 353769,
-      "variant": "1280",
-      "bytes": 122596
-    },
-    "197-indie-cinema-01-page@640.webp": {
-      "source": "197-indie-cinema/shots/01-page.png",
-      "sourceSha": "45045ce92f34a2130caeb1c743de1be58f0668607196f2214548b827d8bacb69",
-      "sourceBytes": 261676,
-      "variant": "640",
-      "bytes": 36948
-    },
-    "197-indie-cinema-01-page@1280.webp": {
-      "source": "197-indie-cinema/shots/01-page.png",
-      "sourceSha": "45045ce92f34a2130caeb1c743de1be58f0668607196f2214548b827d8bacb69",
-      "sourceBytes": 261676,
-      "variant": "1280",
-      "bytes": 113328
-    },
-    "198-library-archive-01-page@640.webp": {
-      "source": "198-library-archive/shots/01-page.png",
-      "sourceSha": "aefdec910538e7498afc71fd66265590fbdabed33c2f29b11b2a46b00caeb01d",
-      "sourceBytes": 304875,
-      "variant": "640",
-      "bytes": 29772
-    },
-    "198-library-archive-01-page@1280.webp": {
-      "source": "198-library-archive/shots/01-page.png",
-      "sourceSha": "aefdec910538e7498afc71fd66265590fbdabed33c2f29b11b2a46b00caeb01d",
-      "sourceBytes": 304875,
-      "variant": "1280",
-      "bytes": 97032
-    },
-    "199-comic-bookstore-01-page@640.webp": {
-      "source": "199-comic-bookstore/shots/01-page.png",
-      "sourceSha": "7baf2a81cf191679a492ebdcf6e7ae0ce8628858dc0d122c4742f12568e29463",
-      "sourceBytes": 308567,
-      "variant": "640",
-      "bytes": 40918
-    },
-    "199-comic-bookstore-01-page@1280.webp": {
-      "source": "199-comic-bookstore/shots/01-page.png",
-      "sourceSha": "7baf2a81cf191679a492ebdcf6e7ae0ce8628858dc0d122c4742f12568e29463",
-      "sourceBytes": 308567,
-      "variant": "1280",
-      "bytes": 123920
-    },
     "20-vaporwave-01-page@640.webp": {
       "source": "20-vaporwave/shots/01-page.png",
       "sourceSha": "32bb5ab4754651b83c95eb165637950b348a01956d9397bf783d8bf7144634db",
@@ -1670,146 +998,6 @@
       "sourceBytes": 2264933,
       "variant": "1280",
       "bytes": 159354
-    },
-    "200-opera-house-01-page@640.webp": {
-      "source": "200-opera-house/shots/01-page.png",
-      "sourceSha": "7db845e7e9465db486529546f6b7386d82ba9a59783045656061df79bd6c5827",
-      "sourceBytes": 312027,
-      "variant": "640",
-      "bytes": 31682
-    },
-    "200-opera-house-01-page@1280.webp": {
-      "source": "200-opera-house/shots/01-page.png",
-      "sourceSha": "7db845e7e9465db486529546f6b7386d82ba9a59783045656061df79bd6c5827",
-      "sourceBytes": 312027,
-      "variant": "1280",
-      "bytes": 101770
-    },
-    "201-street-festival-01-page@640.webp": {
-      "source": "201-street-festival/shots/01-page.png",
-      "sourceSha": "c363106248a3d92e67a1d552c3a885b69da77ed670bbad67862e604a98214b1b",
-      "sourceBytes": 317813,
-      "variant": "640",
-      "bytes": 41188
-    },
-    "201-street-festival-01-page@1280.webp": {
-      "source": "201-street-festival/shots/01-page.png",
-      "sourceSha": "c363106248a3d92e67a1d552c3a885b69da77ed670bbad67862e604a98214b1b",
-      "sourceBytes": 317813,
-      "variant": "1280",
-      "bytes": 129554
-    },
-    "202-clinical-trial-01-page@640.webp": {
-      "source": "202-clinical-trial/shots/01-page.png",
-      "sourceSha": "0ee401a9497c1174023d15b5de629cbc9acc86311896b7a108b5825be21fe63f",
-      "sourceBytes": 502867,
-      "variant": "640",
-      "bytes": 43748
-    },
-    "202-clinical-trial-01-page@1280.webp": {
-      "source": "202-clinical-trial/shots/01-page.png",
-      "sourceSha": "0ee401a9497c1174023d15b5de629cbc9acc86311896b7a108b5825be21fe63f",
-      "sourceBytes": 502867,
-      "variant": "1280",
-      "bytes": 139442
-    },
-    "203-lab-protocol-01-page@640.webp": {
-      "source": "203-lab-protocol/shots/01-page.png",
-      "sourceSha": "2bd7ea2f7ce6a7f034f736aa53959c77d8be4040fa4ae0609ccfeb4667526155",
-      "sourceBytes": 509255,
-      "variant": "640",
-      "bytes": 43304
-    },
-    "203-lab-protocol-01-page@1280.webp": {
-      "source": "203-lab-protocol/shots/01-page.png",
-      "sourceSha": "2bd7ea2f7ce6a7f034f736aa53959c77d8be4040fa4ae0609ccfeb4667526155",
-      "sourceBytes": 509255,
-      "variant": "1280",
-      "bytes": 135784
-    },
-    "204-pharmacy-labels-01-page@640.webp": {
-      "source": "204-pharmacy-labels/shots/01-page.png",
-      "sourceSha": "946006ed1f744fe854e90455d1e690b248ee6d05dfefc4ad36ce649e3aaca036",
-      "sourceBytes": 506478,
-      "variant": "640",
-      "bytes": 45404
-    },
-    "204-pharmacy-labels-01-page@1280.webp": {
-      "source": "204-pharmacy-labels/shots/01-page.png",
-      "sourceSha": "946006ed1f744fe854e90455d1e690b248ee6d05dfefc4ad36ce649e3aaca036",
-      "sourceBytes": 506478,
-      "variant": "1280",
-      "bytes": 143500
-    },
-    "205-physiotherapy-01-page@640.webp": {
-      "source": "205-physiotherapy/shots/01-page.png",
-      "sourceSha": "e83705bac37bc482e24d16e0bce39beb8ea0425b274fea568ab1c22c813b0755",
-      "sourceBytes": 382937,
-      "variant": "640",
-      "bytes": 36714
-    },
-    "205-physiotherapy-01-page@1280.webp": {
-      "source": "205-physiotherapy/shots/01-page.png",
-      "sourceSha": "e83705bac37bc482e24d16e0bce39beb8ea0425b274fea568ab1c22c813b0755",
-      "sourceBytes": 382937,
-      "variant": "1280",
-      "bytes": 118158
-    },
-    "206-mental-wellness-01-page@640.webp": {
-      "source": "206-mental-wellness/shots/01-page.png",
-      "sourceSha": "ae23decd9d767e2d3efb3f25deffe5ff7a96d1cb2d8f7c5b0d5c45f720695391",
-      "sourceBytes": 310078,
-      "variant": "640",
-      "bytes": 30504
-    },
-    "206-mental-wellness-01-page@1280.webp": {
-      "source": "206-mental-wellness/shots/01-page.png",
-      "sourceSha": "ae23decd9d767e2d3efb3f25deffe5ff7a96d1cb2d8f7c5b0d5c45f720695391",
-      "sourceBytes": 310078,
-      "variant": "1280",
-      "bytes": 95222
-    },
-    "207-nutrition-plan-01-page@640.webp": {
-      "source": "207-nutrition-plan/shots/01-page.png",
-      "sourceSha": "f00336e03285eb560bf1be7b03d212bb260219b7bd8c501f2d5f5176a6194449",
-      "sourceBytes": 509741,
-      "variant": "640",
-      "bytes": 42224
-    },
-    "207-nutrition-plan-01-page@1280.webp": {
-      "source": "207-nutrition-plan/shots/01-page.png",
-      "sourceSha": "f00336e03285eb560bf1be7b03d212bb260219b7bd8c501f2d5f5176a6194449",
-      "sourceBytes": 509741,
-      "variant": "1280",
-      "bytes": 133666
-    },
-    "208-dental-clinic-01-page@640.webp": {
-      "source": "208-dental-clinic/shots/01-page.png",
-      "sourceSha": "ae033c21ba2bc9c8e8b7cd147ab3e39d1fece1997af09dd0d00987922844bd2d",
-      "sourceBytes": 517943,
-      "variant": "640",
-      "bytes": 45158
-    },
-    "208-dental-clinic-01-page@1280.webp": {
-      "source": "208-dental-clinic/shots/01-page.png",
-      "sourceSha": "ae033c21ba2bc9c8e8b7cd147ab3e39d1fece1997af09dd0d00987922844bd2d",
-      "sourceBytes": 517943,
-      "variant": "1280",
-      "bytes": 142968
-    },
-    "209-public-health-01-page@640.webp": {
-      "source": "209-public-health/shots/01-page.png",
-      "sourceSha": "d256382ed7a40be09a08f54393e8cbdbd76cb6975993c0a8d28de6a9545f84c8",
-      "sourceBytes": 503644,
-      "variant": "640",
-      "bytes": 44778
-    },
-    "209-public-health-01-page@1280.webp": {
-      "source": "209-public-health/shots/01-page.png",
-      "sourceSha": "d256382ed7a40be09a08f54393e8cbdbd76cb6975993c0a8d28de6a9545f84c8",
-      "sourceBytes": 503644,
-      "variant": "1280",
-      "bytes": 142528
     },
     "21-synthwave-01-page@640.webp": {
       "source": "21-synthwave/shots/01-page.png",
@@ -1825,146 +1013,6 @@
       "variant": "1280",
       "bytes": 156062
     },
-    "210-genomics-lab-01-page@640.webp": {
-      "source": "210-genomics-lab/shots/01-page.png",
-      "sourceSha": "3f9a7cbcf982f2de91c86668c74d5938793a8be3ff30766c3d9b7d7f695614e1",
-      "sourceBytes": 516755,
-      "variant": "640",
-      "bytes": 44112
-    },
-    "210-genomics-lab-01-page@1280.webp": {
-      "source": "210-genomics-lab/shots/01-page.png",
-      "sourceSha": "3f9a7cbcf982f2de91c86668c74d5938793a8be3ff30766c3d9b7d7f695614e1",
-      "sourceBytes": 516755,
-      "variant": "1280",
-      "bytes": 137024
-    },
-    "211-veterinary-care-01-page@640.webp": {
-      "source": "211-veterinary-care/shots/01-page.png",
-      "sourceSha": "f248bc9bdfdf48076ef92ce91f8e9835fbdf300280c0974a970628c375f933a4",
-      "sourceBytes": 514327,
-      "variant": "640",
-      "bytes": 42302
-    },
-    "211-veterinary-care-01-page@1280.webp": {
-      "source": "211-veterinary-care/shots/01-page.png",
-      "sourceSha": "f248bc9bdfdf48076ef92ce91f8e9835fbdf300280c0974a970628c375f933a4",
-      "sourceBytes": 514327,
-      "variant": "1280",
-      "bytes": 134192
-    },
-    "212-language-app-01-page@640.webp": {
-      "source": "212-language-app/shots/01-page.png",
-      "sourceSha": "9dfb79a460b44a1620beb672f76bb302c56decf62f024fa830c9ae01be72e125",
-      "sourceBytes": 375476,
-      "variant": "640",
-      "bytes": 40096
-    },
-    "212-language-app-01-page@1280.webp": {
-      "source": "212-language-app/shots/01-page.png",
-      "sourceSha": "9dfb79a460b44a1620beb672f76bb302c56decf62f024fa830c9ae01be72e125",
-      "sourceBytes": 375476,
-      "variant": "1280",
-      "bytes": 123060
-    },
-    "213-skill-tree-01-page@640.webp": {
-      "source": "213-skill-tree/shots/01-page.png",
-      "sourceSha": "018ae250e625afdc4a2d41f0c080393c3a5e99f827391dc3e614916ba2a205e8",
-      "sourceBytes": 376885,
-      "variant": "640",
-      "bytes": 38358
-    },
-    "213-skill-tree-01-page@1280.webp": {
-      "source": "213-skill-tree/shots/01-page.png",
-      "sourceSha": "018ae250e625afdc4a2d41f0c080393c3a5e99f827391dc3e614916ba2a205e8",
-      "sourceBytes": 376885,
-      "variant": "1280",
-      "bytes": 124326
-    },
-    "214-university-portal-01-page@640.webp": {
-      "source": "214-university-portal/shots/01-page.png",
-      "sourceSha": "5f4e8a1ea08693bed6283ebd87a85e438209f65b29a6e042e93bf32ea41338ea",
-      "sourceBytes": 367610,
-      "variant": "640",
-      "bytes": 38642
-    },
-    "214-university-portal-01-page@1280.webp": {
-      "source": "214-university-portal/shots/01-page.png",
-      "sourceSha": "5f4e8a1ea08693bed6283ebd87a85e438209f65b29a6e042e93bf32ea41338ea",
-      "sourceBytes": 367610,
-      "variant": "1280",
-      "bytes": 123580
-    },
-    "215-coding-bootcamp-01-page@640.webp": {
-      "source": "215-coding-bootcamp/shots/01-page.png",
-      "sourceSha": "1e76df916f4b7fe955e8b5ddf571d7f2b152ee987c0c4d2cc5db1c76bfd86627",
-      "sourceBytes": 375045,
-      "variant": "640",
-      "bytes": 39020
-    },
-    "215-coding-bootcamp-01-page@1280.webp": {
-      "source": "215-coding-bootcamp/shots/01-page.png",
-      "sourceSha": "1e76df916f4b7fe955e8b5ddf571d7f2b152ee987c0c4d2cc5db1c76bfd86627",
-      "sourceBytes": 375045,
-      "variant": "1280",
-      "bytes": 126180
-    },
-    "216-kids-classroom-01-page@640.webp": {
-      "source": "216-kids-classroom/shots/01-page.png",
-      "sourceSha": "714daf3574cad25fbb61a8b87ef898de5b4b2608a94e997d92e8f21fe1905ffe",
-      "sourceBytes": 353510,
-      "variant": "640",
-      "bytes": 38748
-    },
-    "216-kids-classroom-01-page@1280.webp": {
-      "source": "216-kids-classroom/shots/01-page.png",
-      "sourceSha": "714daf3574cad25fbb61a8b87ef898de5b4b2608a94e997d92e8f21fe1905ffe",
-      "sourceBytes": 353510,
-      "variant": "1280",
-      "bytes": 123134
-    },
-    "217-exam-prep-01-page@640.webp": {
-      "source": "217-exam-prep/shots/01-page.png",
-      "sourceSha": "b6d93b266b1946f9070e9b9718392d36e6cbcce5f45813a5a65ae051634877f3",
-      "sourceBytes": 374479,
-      "variant": "640",
-      "bytes": 38962
-    },
-    "217-exam-prep-01-page@1280.webp": {
-      "source": "217-exam-prep/shots/01-page.png",
-      "sourceSha": "b6d93b266b1946f9070e9b9718392d36e6cbcce5f45813a5a65ae051634877f3",
-      "sourceBytes": 374479,
-      "variant": "1280",
-      "bytes": 124648
-    },
-    "218-music-lesson-01-page@640.webp": {
-      "source": "218-music-lesson/shots/01-page.png",
-      "sourceSha": "edc0ac27c89bcfa2f588bff396074d2d517ce0ff1aee574a0be74cf619a7cb9e",
-      "sourceBytes": 390994,
-      "variant": "640",
-      "bytes": 38986
-    },
-    "218-music-lesson-01-page@1280.webp": {
-      "source": "218-music-lesson/shots/01-page.png",
-      "sourceSha": "edc0ac27c89bcfa2f588bff396074d2d517ce0ff1aee574a0be74cf619a7cb9e",
-      "sourceBytes": 390994,
-      "variant": "1280",
-      "bytes": 127970
-    },
-    "219-lab-simulation-01-page@640.webp": {
-      "source": "219-lab-simulation/shots/01-page.png",
-      "sourceSha": "b748058a480c35bd7c4a39d5cf78ebe804fcbd8e3f822796c4cc89da41fb04a1",
-      "sourceBytes": 379056,
-      "variant": "640",
-      "bytes": 39496
-    },
-    "219-lab-simulation-01-page@1280.webp": {
-      "source": "219-lab-simulation/shots/01-page.png",
-      "sourceSha": "b748058a480c35bd7c4a39d5cf78ebe804fcbd8e3f822796c4cc89da41fb04a1",
-      "sourceBytes": 379056,
-      "variant": "1280",
-      "bytes": 124330
-    },
     "22-cyberpunk-01-page@640.webp": {
       "source": "22-cyberpunk/shots/01-page.png",
       "sourceSha": "e7a701098533f5bb834132e31a886c6f5d711adf4cd6827dcf6b12b1571e5d59",
@@ -1978,146 +1026,6 @@
       "sourceBytes": 1596835,
       "variant": "1280",
       "bytes": 184824
-    },
-    "220-peer-study-01-page@640.webp": {
-      "source": "220-peer-study/shots/01-page.png",
-      "sourceSha": "898f2ebde7b24bfa8610cb7ee611fc2eac8dac0f30455f69188f37b5d53c40a5",
-      "sourceBytes": 372960,
-      "variant": "640",
-      "bytes": 39132
-    },
-    "220-peer-study-01-page@1280.webp": {
-      "source": "220-peer-study/shots/01-page.png",
-      "sourceSha": "898f2ebde7b24bfa8610cb7ee611fc2eac8dac0f30455f69188f37b5d53c40a5",
-      "sourceBytes": 372960,
-      "variant": "1280",
-      "bytes": 126158
-    },
-    "221-certificate-wallet-01-page@640.webp": {
-      "source": "221-certificate-wallet/shots/01-page.png",
-      "sourceSha": "bca46f21072d7bb254eaabadd6554c199cb17a6b89dc5976d730246d62f92274",
-      "sourceBytes": 303334,
-      "variant": "640",
-      "bytes": 33060
-    },
-    "221-certificate-wallet-01-page@1280.webp": {
-      "source": "221-certificate-wallet/shots/01-page.png",
-      "sourceSha": "bca46f21072d7bb254eaabadd6554c199cb17a6b89dc5976d730246d62f92274",
-      "sourceBytes": 303334,
-      "variant": "1280",
-      "bytes": 104172
-    },
-    "222-terrazzo-stone-01-page@640.webp": {
-      "source": "222-terrazzo-stone/shots/01-page.png",
-      "sourceSha": "ed7d9a7664564554d2a4667c45e5ce649fa5c3ed63f0ce3755c36375ceffecd4",
-      "sourceBytes": 1172350,
-      "variant": "640",
-      "bytes": 40066
-    },
-    "222-terrazzo-stone-01-page@1280.webp": {
-      "source": "222-terrazzo-stone/shots/01-page.png",
-      "sourceSha": "ed7d9a7664564554d2a4667c45e5ce649fa5c3ed63f0ce3755c36375ceffecd4",
-      "sourceBytes": 1172350,
-      "variant": "1280",
-      "bytes": 132414
-    },
-    "223-linocut-print-01-page@640.webp": {
-      "source": "223-linocut-print/shots/01-page.png",
-      "sourceSha": "9ff591949a0bd9c50dd8676c729b46a51f36a514fb3984756a0b47e6f67e2cf0",
-      "sourceBytes": 735998,
-      "variant": "640",
-      "bytes": 31200
-    },
-    "223-linocut-print-01-page@1280.webp": {
-      "source": "223-linocut-print/shots/01-page.png",
-      "sourceSha": "9ff591949a0bd9c50dd8676c729b46a51f36a514fb3984756a0b47e6f67e2cf0",
-      "sourceBytes": 735998,
-      "variant": "1280",
-      "bytes": 90770
-    },
-    "224-risograph-print-01-page@640.webp": {
-      "source": "224-risograph-print/shots/01-page.png",
-      "sourceSha": "929e78665bb731962636ace7a9ea624c83e5a3c2b657616c1dbad64d1325f91e",
-      "sourceBytes": 980683,
-      "variant": "640",
-      "bytes": 42886
-    },
-    "224-risograph-print-01-page@1280.webp": {
-      "source": "224-risograph-print/shots/01-page.png",
-      "sourceSha": "929e78665bb731962636ace7a9ea624c83e5a3c2b657616c1dbad64d1325f91e",
-      "sourceBytes": 980683,
-      "variant": "1280",
-      "bytes": 136114
-    },
-    "225-denim-textile-01-page@640.webp": {
-      "source": "225-denim-textile/shots/01-page.png",
-      "sourceSha": "06774ed4539383da96ccd0aa2597f643a5630b55c1362882c5a11a52bee9feb7",
-      "sourceBytes": 656443,
-      "variant": "640",
-      "bytes": 45300
-    },
-    "225-denim-textile-01-page@1280.webp": {
-      "source": "225-denim-textile/shots/01-page.png",
-      "sourceSha": "06774ed4539383da96ccd0aa2597f643a5630b55c1362882c5a11a52bee9feb7",
-      "sourceBytes": 656443,
-      "variant": "1280",
-      "bytes": 147342
-    },
-    "226-cork-oak-01-page@640.webp": {
-      "source": "226-cork-oak/shots/01-page.png",
-      "sourceSha": "4249a24978616605c208e871ebb5935ec53e886ce6256d140666c21e3b08b1f6",
-      "sourceBytes": 1150173,
-      "variant": "640",
-      "bytes": 43368
-    },
-    "226-cork-oak-01-page@1280.webp": {
-      "source": "226-cork-oak/shots/01-page.png",
-      "sourceSha": "4249a24978616605c208e871ebb5935ec53e886ce6256d140666c21e3b08b1f6",
-      "sourceBytes": 1150173,
-      "variant": "1280",
-      "bytes": 143560
-    },
-    "227-cast-concrete-01-page@640.webp": {
-      "source": "227-cast-concrete/shots/01-page.png",
-      "sourceSha": "2697a00ee9b2b15d8354bb177a73b0dc1f8352f896c24e39b465f7164c1cf947",
-      "sourceBytes": 670558,
-      "variant": "640",
-      "bytes": 46566
-    },
-    "227-cast-concrete-01-page@1280.webp": {
-      "source": "227-cast-concrete/shots/01-page.png",
-      "sourceSha": "2697a00ee9b2b15d8354bb177a73b0dc1f8352f896c24e39b465f7164c1cf947",
-      "sourceBytes": 670558,
-      "variant": "1280",
-      "bytes": 146074
-    },
-    "228-enamel-jewel-01-page@640.webp": {
-      "source": "228-enamel-jewel/shots/01-page.png",
-      "sourceSha": "8512284366b98fd8049e8a433a17b06bb1984b287d669e87ac6f36e059645e9d",
-      "sourceBytes": 554146,
-      "variant": "640",
-      "bytes": 38358
-    },
-    "228-enamel-jewel-01-page@1280.webp": {
-      "source": "228-enamel-jewel/shots/01-page.png",
-      "sourceSha": "8512284366b98fd8049e8a433a17b06bb1984b287d669e87ac6f36e059645e9d",
-      "sourceBytes": 554146,
-      "variant": "1280",
-      "bytes": 126456
-    },
-    "229-hand-thrown-ceramic-01-page@640.webp": {
-      "source": "229-hand-thrown-ceramic/shots/01-page.png",
-      "sourceSha": "c6e8c98b01b8bb65df9bc1042815a10d5b0585f2fe08ec31123a1f5d3225d5e2",
-      "sourceBytes": 1019512,
-      "variant": "640",
-      "bytes": 42686
-    },
-    "229-hand-thrown-ceramic-01-page@1280.webp": {
-      "source": "229-hand-thrown-ceramic/shots/01-page.png",
-      "sourceSha": "c6e8c98b01b8bb65df9bc1042815a10d5b0585f2fe08ec31123a1f5d3225d5e2",
-      "sourceBytes": 1019512,
-      "variant": "1280",
-      "bytes": 144792
     },
     "23-cybercore-01-page@640.webp": {
       "source": "23-cybercore/shots/01-page.png",
@@ -2133,146 +1041,6 @@
       "variant": "1280",
       "bytes": 157100
     },
-    "230-raw-steel-01-page@640.webp": {
-      "source": "230-raw-steel/shots/01-page.png",
-      "sourceSha": "7f96fc24666d0f827af1810f0d02baf9d6d16ce88c036870b37f14b0bf07ce7a",
-      "sourceBytes": 634206,
-      "variant": "640",
-      "bytes": 42284
-    },
-    "230-raw-steel-01-page@1280.webp": {
-      "source": "230-raw-steel/shots/01-page.png",
-      "sourceSha": "7f96fc24666d0f827af1810f0d02baf9d6d16ce88c036870b37f14b0bf07ce7a",
-      "sourceBytes": 634206,
-      "variant": "1280",
-      "bytes": 137468
-    },
-    "231-recycled-paper-01-page@640.webp": {
-      "source": "231-recycled-paper/shots/01-page.png",
-      "sourceSha": "ad92df97d8bbc5fdff96cdedf9cd36d66411e8785ad50cafd56759dc816dd80d",
-      "sourceBytes": 1248748,
-      "variant": "640",
-      "bytes": 42442
-    },
-    "231-recycled-paper-01-page@1280.webp": {
-      "source": "231-recycled-paper/shots/01-page.png",
-      "sourceSha": "ad92df97d8bbc5fdff96cdedf9cd36d66411e8785ad50cafd56759dc816dd80d",
-      "sourceBytes": 1248748,
-      "variant": "1280",
-      "bytes": 148822
-    },
-    "232-condensed-news-01-page@640.webp": {
-      "source": "232-condensed-news/shots/01-page.png",
-      "sourceSha": "0e996eca0349770ffb39ee641a13205b1e35b769723a5dd27149553e87405b79",
-      "sourceBytes": 321265,
-      "variant": "640",
-      "bytes": 32972
-    },
-    "232-condensed-news-01-page@1280.webp": {
-      "source": "232-condensed-news/shots/01-page.png",
-      "sourceSha": "0e996eca0349770ffb39ee641a13205b1e35b769723a5dd27149553e87405b79",
-      "sourceBytes": 321265,
-      "variant": "1280",
-      "bytes": 105676
-    },
-    "233-monospace-editorial-01-page@640.webp": {
-      "source": "233-monospace-editorial/shots/01-page.png",
-      "sourceSha": "0a81f70549b36742c48fdf6dd6187d5b441ff7c86700797375a9196e77a3d2ae",
-      "sourceBytes": 277552,
-      "variant": "640",
-      "bytes": 38626
-    },
-    "233-monospace-editorial-01-page@1280.webp": {
-      "source": "233-monospace-editorial/shots/01-page.png",
-      "sourceSha": "0a81f70549b36742c48fdf6dd6187d5b441ff7c86700797375a9196e77a3d2ae",
-      "sourceBytes": 277552,
-      "variant": "1280",
-      "bytes": 123598
-    },
-    "234-blackletter-modern-01-page@640.webp": {
-      "source": "234-blackletter-modern/shots/01-page.png",
-      "sourceSha": "9ad65e0a855c5ec88ca57041a6fcfa7823769efb24cc78d10054e61c062f04c8",
-      "sourceBytes": 284585,
-      "variant": "640",
-      "bytes": 28868
-    },
-    "234-blackletter-modern-01-page@1280.webp": {
-      "source": "234-blackletter-modern/shots/01-page.png",
-      "sourceSha": "9ad65e0a855c5ec88ca57041a6fcfa7823769efb24cc78d10054e61c062f04c8",
-      "sourceBytes": 284585,
-      "variant": "1280",
-      "bytes": 89016
-    },
-    "235-variable-weight-01-page@640.webp": {
-      "source": "235-variable-weight/shots/01-page.png",
-      "sourceSha": "62c5261d4a4c9d793700cfd5eac274c90686369bef68b6470e888aaefddba2a5",
-      "sourceBytes": 326600,
-      "variant": "640",
-      "bytes": 37180
-    },
-    "235-variable-weight-01-page@1280.webp": {
-      "source": "235-variable-weight/shots/01-page.png",
-      "sourceSha": "62c5261d4a4c9d793700cfd5eac274c90686369bef68b6470e888aaefddba2a5",
-      "sourceBytes": 326600,
-      "variant": "1280",
-      "bytes": 116152
-    },
-    "236-justified-book-01-page@640.webp": {
-      "source": "236-justified-book/shots/01-page.png",
-      "sourceSha": "081b6e7061de5c018f43eccf0c461f1a7717551820fec1d4999e173e53f39bae",
-      "sourceBytes": 217488,
-      "variant": "640",
-      "bytes": 26012
-    },
-    "236-justified-book-01-page@1280.webp": {
-      "source": "236-justified-book/shots/01-page.png",
-      "sourceSha": "081b6e7061de5c018f43eccf0c461f1a7717551820fec1d4999e173e53f39bae",
-      "sourceBytes": 217488,
-      "variant": "1280",
-      "bytes": 83614
-    },
-    "237-stencil-display-01-page@640.webp": {
-      "source": "237-stencil-display/shots/01-page.png",
-      "sourceSha": "2c4e47d9753ab6aa8400b29f553d00e7a5bf7508c04272c49802e079d66fe1f7",
-      "sourceBytes": 305560,
-      "variant": "640",
-      "bytes": 35204
-    },
-    "237-stencil-display-01-page@1280.webp": {
-      "source": "237-stencil-display/shots/01-page.png",
-      "sourceSha": "2c4e47d9753ab6aa8400b29f553d00e7a5bf7508c04272c49802e079d66fe1f7",
-      "sourceBytes": 305560,
-      "variant": "1280",
-      "bytes": 108536
-    },
-    "238-uppercase-only-01-page@640.webp": {
-      "source": "238-uppercase-only/shots/01-page.png",
-      "sourceSha": "346dacdba0883e447ad3dd51c250038abb102a2ced714b12f5fec6f61c171dba",
-      "sourceBytes": 345488,
-      "variant": "640",
-      "bytes": 40560
-    },
-    "238-uppercase-only-01-page@1280.webp": {
-      "source": "238-uppercase-only/shots/01-page.png",
-      "sourceSha": "346dacdba0883e447ad3dd51c250038abb102a2ced714b12f5fec6f61c171dba",
-      "sourceBytes": 345488,
-      "variant": "1280",
-      "bytes": 129114
-    },
-    "239-italic-accent-01-page@640.webp": {
-      "source": "239-italic-accent/shots/01-page.png",
-      "sourceSha": "c4b0ae662bc42fd1ba2369cacdc7c386b78d5cdf63f1a80db974ecc9114ac268",
-      "sourceBytes": 340512,
-      "variant": "640",
-      "bytes": 33366
-    },
-    "239-italic-accent-01-page@1280.webp": {
-      "source": "239-italic-accent/shots/01-page.png",
-      "sourceSha": "c4b0ae662bc42fd1ba2369cacdc7c386b78d5cdf63f1a80db974ecc9114ac268",
-      "sourceBytes": 340512,
-      "variant": "1280",
-      "bytes": 111858
-    },
     "24-pixel-art-01-page@640.webp": {
       "source": "24-pixel-art/shots/01-page.png",
       "sourceSha": "3bf691db7b83fc9ec155ccf74b94969a2c3864fa01aa34a09a0e9060c8afcac4",
@@ -2287,146 +1055,6 @@
       "variant": "1280",
       "bytes": 139200
     },
-    "240-numerals-display-01-page@640.webp": {
-      "source": "240-numerals-display/shots/01-page.png",
-      "sourceSha": "6e9fa0986d865e1bb3f600a51dbc7d1e9a8fb484321319f0c97bdd2495d70043",
-      "sourceBytes": 320518,
-      "variant": "640",
-      "bytes": 35700
-    },
-    "240-numerals-display-01-page@1280.webp": {
-      "source": "240-numerals-display/shots/01-page.png",
-      "sourceSha": "6e9fa0986d865e1bb3f600a51dbc7d1e9a8fb484321319f0c97bdd2495d70043",
-      "sourceBytes": 320518,
-      "variant": "1280",
-      "bytes": 114232
-    },
-    "241-small-caps-ledger-01-page@640.webp": {
-      "source": "241-small-caps-ledger/shots/01-page.png",
-      "sourceSha": "abec87fbe66d612fe8589fa311740e491b7ab2467c5dd170a6c9412050bf0e84",
-      "sourceBytes": 335868,
-      "variant": "640",
-      "bytes": 30526
-    },
-    "241-small-caps-ledger-01-page@1280.webp": {
-      "source": "241-small-caps-ledger/shots/01-page.png",
-      "sourceSha": "abec87fbe66d612fe8589fa311740e491b7ab2467c5dd170a6c9412050bf0e84",
-      "sourceBytes": 335868,
-      "variant": "1280",
-      "bytes": 100226
-    },
-    "242-agent-console-01-page@640.webp": {
-      "source": "242-agent-console/shots/01-page.png",
-      "sourceSha": "969096d2c91f0cd36f5018380045c4db6b258180aa20e12d5dc0ca55057639d9",
-      "sourceBytes": 298529,
-      "variant": "640",
-      "bytes": 34584
-    },
-    "242-agent-console-01-page@1280.webp": {
-      "source": "242-agent-console/shots/01-page.png",
-      "sourceSha": "969096d2c91f0cd36f5018380045c4db6b258180aa20e12d5dc0ca55057639d9",
-      "sourceBytes": 298529,
-      "variant": "1280",
-      "bytes": 103256
-    },
-    "243-spatial-workspace-01-page@640.webp": {
-      "source": "243-spatial-workspace/shots/01-page.png",
-      "sourceSha": "8e6d5d895b624d00d2e80ffe74175db248f5a3ac7915ad6e230db1b353b4b460",
-      "sourceBytes": 361074,
-      "variant": "640",
-      "bytes": 38644
-    },
-    "243-spatial-workspace-01-page@1280.webp": {
-      "source": "243-spatial-workspace/shots/01-page.png",
-      "sourceSha": "8e6d5d895b624d00d2e80ffe74175db248f5a3ac7915ad6e230db1b353b4b460",
-      "sourceBytes": 361074,
-      "variant": "1280",
-      "bytes": 122294
-    },
-    "244-bio-lab-interface-01-page@640.webp": {
-      "source": "244-bio-lab-interface/shots/01-page.png",
-      "sourceSha": "48bd5328f4944e13c47e6bacab5a68b94a93d3c86bcdc358b5fb8d22693c9450",
-      "sourceBytes": 359657,
-      "variant": "640",
-      "bytes": 40954
-    },
-    "244-bio-lab-interface-01-page@1280.webp": {
-      "source": "244-bio-lab-interface/shots/01-page.png",
-      "sourceSha": "48bd5328f4944e13c47e6bacab5a68b94a93d3c86bcdc358b5fb8d22693c9450",
-      "sourceBytes": 359657,
-      "variant": "1280",
-      "bytes": 125692
-    },
-    "245-climate-model-01-page@640.webp": {
-      "source": "245-climate-model/shots/01-page.png",
-      "sourceSha": "427182838f7fc7c0549bb1a30933864f99ef157defa7aeff6eada0a52aeab20c",
-      "sourceBytes": 353876,
-      "variant": "640",
-      "bytes": 39666
-    },
-    "245-climate-model-01-page@1280.webp": {
-      "source": "245-climate-model/shots/01-page.png",
-      "sourceSha": "427182838f7fc7c0549bb1a30933864f99ef157defa7aeff6eada0a52aeab20c",
-      "sourceBytes": 353876,
-      "variant": "1280",
-      "bytes": 125962
-    },
-    "246-orbital-logistics-01-page@640.webp": {
-      "source": "246-orbital-logistics/shots/01-page.png",
-      "sourceSha": "d809d67186bcaf948c02136131d258d9c3b394fc22cbfcaa295becbb75a9fff7",
-      "sourceBytes": 268138,
-      "variant": "640",
-      "bytes": 34400
-    },
-    "246-orbital-logistics-01-page@1280.webp": {
-      "source": "246-orbital-logistics/shots/01-page.png",
-      "sourceSha": "d809d67186bcaf948c02136131d258d9c3b394fc22cbfcaa295becbb75a9fff7",
-      "sourceBytes": 268138,
-      "variant": "1280",
-      "bytes": 106884
-    },
-    "247-synthetic-media-01-page@640.webp": {
-      "source": "247-synthetic-media/shots/01-page.png",
-      "sourceSha": "4f5e3a38fc9506f1b50bd3967fc4482bd63e5f0bf3673ea9aaf1cb41e640a0b2",
-      "sourceBytes": 350877,
-      "variant": "640",
-      "bytes": 39378
-    },
-    "247-synthetic-media-01-page@1280.webp": {
-      "source": "247-synthetic-media/shots/01-page.png",
-      "sourceSha": "4f5e3a38fc9506f1b50bd3967fc4482bd63e5f0bf3673ea9aaf1cb41e640a0b2",
-      "sourceBytes": 350877,
-      "variant": "1280",
-      "bytes": 125140
-    },
-    "248-quantum-dashboard-01-page@640.webp": {
-      "source": "248-quantum-dashboard/shots/01-page.png",
-      "sourceSha": "d3e6f08bd3eaf39cb2166a7f42f862e4bb71faaae70fee0fb553fd3f009b6025",
-      "sourceBytes": 319566,
-      "variant": "640",
-      "bytes": 40224
-    },
-    "248-quantum-dashboard-01-page@1280.webp": {
-      "source": "248-quantum-dashboard/shots/01-page.png",
-      "sourceSha": "d3e6f08bd3eaf39cb2166a7f42f862e4bb71faaae70fee0fb553fd3f009b6025",
-      "sourceBytes": 319566,
-      "variant": "1280",
-      "bytes": 123668
-    },
-    "249-digital-twin-01-page@640.webp": {
-      "source": "249-digital-twin/shots/01-page.png",
-      "sourceSha": "f86bc6ece65a0402cfc9e843c869f73bf9210f303071f42cf4f27d7395b8fa03",
-      "sourceBytes": 363155,
-      "variant": "640",
-      "bytes": 40186
-    },
-    "249-digital-twin-01-page@1280.webp": {
-      "source": "249-digital-twin/shots/01-page.png",
-      "sourceSha": "f86bc6ece65a0402cfc9e843c869f73bf9210f303071f42cf4f27d7395b8fa03",
-      "sourceBytes": 363155,
-      "variant": "1280",
-      "bytes": 125274
-    },
     "25-frutiger-aero-01-page@640.webp": {
       "source": "25-frutiger-aero/shots/01-page.png",
       "sourceSha": "f5294b82f6b1f87176b69ecac7b6a5c3043c3769ebb400a3ea2f0741fde855c2",
@@ -2440,34 +1068,6 @@
       "sourceBytes": 440720,
       "variant": "1280",
       "bytes": 118758
-    },
-    "250-neural-canvas-01-page@640.webp": {
-      "source": "250-neural-canvas/shots/01-page.png",
-      "sourceSha": "8e6295160c595bb5e8fcbd1b288904e1633dcdafb74e45d9e7689a4d1ba5b814",
-      "sourceBytes": 495568,
-      "variant": "640",
-      "bytes": 42180
-    },
-    "250-neural-canvas-01-page@1280.webp": {
-      "source": "250-neural-canvas/shots/01-page.png",
-      "sourceSha": "8e6295160c595bb5e8fcbd1b288904e1633dcdafb74e45d9e7689a4d1ba5b814",
-      "sourceBytes": 495568,
-      "variant": "1280",
-      "bytes": 133720
-    },
-    "251-post-screen-voice-01-page@640.webp": {
-      "source": "251-post-screen-voice/shots/01-page.png",
-      "sourceSha": "e6030ca9737b7cd4ee48608067205c5064443ff55dfbb9ec7b9a0fa7b54b2a1d",
-      "sourceBytes": 353484,
-      "variant": "640",
-      "bytes": 39782
-    },
-    "251-post-screen-voice-01-page@1280.webp": {
-      "source": "251-post-screen-voice/shots/01-page.png",
-      "sourceSha": "e6030ca9737b7cd4ee48608067205c5064443ff55dfbb9ec7b9a0fa7b54b2a1d",
-      "sourceBytes": 353484,
-      "variant": "1280",
-      "bytes": 126258
     },
     "26-art-deco-01-page@640.webp": {
       "source": "26-art-deco/shots/01-page.png",
@@ -3465,59 +2065,1459 @@
     },
     "152-game-hud-01-page@640.webp": {
       "source": "152-game-hud/shots/01-page.png",
-      "sourceSha": "93867a382395da1baef4c398976306e7fbdaedd0a50bb2078cd5950384b8d98c",
-      "sourceBytes": 472558,
+      "sourceSha": "49680f801740554d8718297faceb4b0c1c01252cbb62332851e94ff1b0870241",
+      "sourceBytes": 255177,
       "variant": "640",
-      "bytes": 42870
+      "bytes": 33436
     },
-    "41-grand-tourer-01-page@640.webp": {
-      "source": "41-grand-tourer/shots/01-page.png",
-      "sourceSha": "a8847f0ee677a2866cf9dba9d46bbd7607398fb1c0629fefd732d5d95061f117",
-      "sourceBytes": 1580975,
+    "01-minimalism-01-page@640.webp": {
+      "source": "01-minimalism/shots/01-page.png",
+      "sourceSha": "17e617cc77a8d8097210f6120e2952fcb4d61923b21c2b686bd546bda5ce7222",
+      "sourceBytes": 507552,
       "variant": "640",
-      "bytes": 40098
+      "bytes": 42724
     },
     "152-game-hud-01-page@1280.webp": {
       "source": "152-game-hud/shots/01-page.png",
-      "sourceSha": "93867a382395da1baef4c398976306e7fbdaedd0a50bb2078cd5950384b8d98c",
-      "sourceBytes": 472558,
+      "sourceSha": "49680f801740554d8718297faceb4b0c1c01252cbb62332851e94ff1b0870241",
+      "sourceBytes": 255177,
       "variant": "1280",
-      "bytes": 128022
+      "bytes": 102938
     },
-    "41-grand-tourer-01-page@1280.webp": {
-      "source": "41-grand-tourer/shots/01-page.png",
-      "sourceSha": "a8847f0ee677a2866cf9dba9d46bbd7607398fb1c0629fefd732d5d95061f117",
-      "sourceBytes": 1580975,
+    "01-minimalism-01-page@1280.webp": {
+      "source": "01-minimalism/shots/01-page.png",
+      "sourceSha": "17e617cc77a8d8097210f6120e2952fcb4d61923b21c2b686bd546bda5ce7222",
+      "sourceBytes": 507552,
       "variant": "1280",
-      "bytes": 143454
+      "bytes": 132526
+    },
+    "153-game-racing-01-page@640.webp": {
+      "source": "153-game-racing/shots/01-page.png",
+      "sourceSha": "5f06fa4fcb5b02b3ad966b830e42f4116c098934c3b8b765bf71ed23841fcc12",
+      "sourceBytes": 246704,
+      "variant": "640",
+      "bytes": 32574
+    },
+    "154-game-fantasy-rpg-01-page@640.webp": {
+      "source": "154-game-fantasy-rpg/shots/01-page.png",
+      "sourceSha": "acd3b5f18c0de3519be068f152789b684ac8009bc302252c3ad23e39292fd105",
+      "sourceBytes": 309193,
+      "variant": "640",
+      "bytes": 31884
+    },
+    "153-game-racing-01-page@1280.webp": {
+      "source": "153-game-racing/shots/01-page.png",
+      "sourceSha": "5f06fa4fcb5b02b3ad966b830e42f4116c098934c3b8b765bf71ed23841fcc12",
+      "sourceBytes": 246704,
+      "variant": "1280",
+      "bytes": 102374
+    },
+    "154-game-fantasy-rpg-01-page@1280.webp": {
+      "source": "154-game-fantasy-rpg/shots/01-page.png",
+      "sourceSha": "acd3b5f18c0de3519be068f152789b684ac8009bc302252c3ad23e39292fd105",
+      "sourceBytes": 309193,
+      "variant": "1280",
+      "bytes": 102740
+    },
+    "155-game-sci-fi-cockpit-01-page@640.webp": {
+      "source": "155-game-sci-fi-cockpit/shots/01-page.png",
+      "sourceSha": "6de7408d9e510f760b76e151821ac91ab94ddd9abb3e342bdda3e14fac24a505",
+      "sourceBytes": 266050,
+      "variant": "640",
+      "bytes": 35332
+    },
+    "155-game-sci-fi-cockpit-01-page@1280.webp": {
+      "source": "155-game-sci-fi-cockpit/shots/01-page.png",
+      "sourceSha": "6de7408d9e510f760b76e151821ac91ab94ddd9abb3e342bdda3e14fac24a505",
+      "sourceBytes": 266050,
+      "variant": "1280",
+      "bytes": 105938
+    },
+    "156-game-retro-console-01-page@640.webp": {
+      "source": "156-game-retro-console/shots/01-page.png",
+      "sourceSha": "c2bb2574324704c915ece44ad1a95ebffea7f644e52fff6239917544865c5da8",
+      "sourceBytes": 243272,
+      "variant": "640",
+      "bytes": 36462
+    },
+    "156-game-retro-console-01-page@1280.webp": {
+      "source": "156-game-retro-console/shots/01-page.png",
+      "sourceSha": "c2bb2574324704c915ece44ad1a95ebffea7f644e52fff6239917544865c5da8",
+      "sourceBytes": 243272,
+      "variant": "1280",
+      "bytes": 106440
+    },
+    "157-game-esports-league-01-page@640.webp": {
+      "source": "157-game-esports-league/shots/01-page.png",
+      "sourceSha": "16beeb4f1882436c7888baadbb05c70d18b119edc916ce1910bafaecb6a353a9",
+      "sourceBytes": 272673,
+      "variant": "640",
+      "bytes": 33164
+    },
+    "158-game-indie-pixel-01-page@640.webp": {
+      "source": "158-game-indie-pixel/shots/01-page.png",
+      "sourceSha": "18512aebdc58e41792157c0d13677289001cb00b4c48dab4676ecfcabf6c6377",
+      "sourceBytes": 268192,
+      "variant": "640",
+      "bytes": 34490
+    },
+    "157-game-esports-league-01-page@1280.webp": {
+      "source": "157-game-esports-league/shots/01-page.png",
+      "sourceSha": "16beeb4f1882436c7888baadbb05c70d18b119edc916ce1910bafaecb6a353a9",
+      "sourceBytes": 272673,
+      "variant": "1280",
+      "bytes": 102918
+    },
+    "158-game-indie-pixel-01-page@1280.webp": {
+      "source": "158-game-indie-pixel/shots/01-page.png",
+      "sourceSha": "18512aebdc58e41792157c0d13677289001cb00b4c48dab4676ecfcabf6c6377",
+      "sourceBytes": 268192,
+      "variant": "1280",
+      "bytes": 105352
+    },
+    "159-game-card-tcg-01-page@640.webp": {
+      "source": "159-game-card-tcg/shots/01-page.png",
+      "sourceSha": "1b02bcd90100837d2934e188fe378ace2b4b2a39e1aa21e81d807de475db1f39",
+      "sourceBytes": 294126,
+      "variant": "640",
+      "bytes": 34518
+    },
+    "160-game-survival-craft-01-page@640.webp": {
+      "source": "160-game-survival-craft/shots/01-page.png",
+      "sourceSha": "52acbf50b98dedd3f31ef98cbb4347254f448d4342653b0d959b137606e63373",
+      "sourceBytes": 296597,
+      "variant": "640",
+      "bytes": 30934
+    },
+    "160-game-survival-craft-01-page@1280.webp": {
+      "source": "160-game-survival-craft/shots/01-page.png",
+      "sourceSha": "52acbf50b98dedd3f31ef98cbb4347254f448d4342653b0d959b137606e63373",
+      "sourceBytes": 296597,
+      "variant": "1280",
+      "bytes": 97468
+    },
+    "161-game-mobile-casual-01-page@640.webp": {
+      "source": "161-game-mobile-casual/shots/01-page.png",
+      "sourceSha": "8a76119221a72fc27903376846333dd23fb4720e43ac2b39951c28a0855309e7",
+      "sourceBytes": 319686,
+      "variant": "640",
+      "bytes": 34642
+    },
+    "159-game-card-tcg-01-page@1280.webp": {
+      "source": "159-game-card-tcg/shots/01-page.png",
+      "sourceSha": "1b02bcd90100837d2934e188fe378ace2b4b2a39e1aa21e81d807de475db1f39",
+      "sourceBytes": 294126,
+      "variant": "1280",
+      "bytes": 110336
+    },
+    "162-game-horror-occult-01-page@640.webp": {
+      "source": "162-game-horror-occult/shots/01-page.png",
+      "sourceSha": "c72486a7315021dc8b8f85c69f6a70997a649a09f23014701a74dc9cbfa822ea",
+      "sourceBytes": 714617,
+      "variant": "640",
+      "bytes": 31494
+    },
+    "161-game-mobile-casual-01-page@1280.webp": {
+      "source": "161-game-mobile-casual/shots/01-page.png",
+      "sourceSha": "8a76119221a72fc27903376846333dd23fb4720e43ac2b39951c28a0855309e7",
+      "sourceBytes": 319686,
+      "variant": "1280",
+      "bytes": 107240
+    },
+    "162-game-horror-occult-01-page@1280.webp": {
+      "source": "162-game-horror-occult/shots/01-page.png",
+      "sourceSha": "c72486a7315021dc8b8f85c69f6a70997a649a09f23014701a74dc9cbfa822ea",
+      "sourceBytes": 714617,
+      "variant": "1280",
+      "bytes": 104832
+    },
+    "163-game-racing-neon-01-page@640.webp": {
+      "source": "163-game-racing-neon/shots/01-page.png",
+      "sourceSha": "db89945d5228ece6644963f330b4b7ad9c71cee232bff705cb7de32c66be4697",
+      "sourceBytes": 244339,
+      "variant": "640",
+      "bytes": 33872
+    },
+    "164-game-strategy-map-01-page@1280.webp": {
+      "source": "164-game-strategy-map/shots/01-page.png",
+      "sourceSha": "839eb438937ba43fe32b3f6c6f202fd79ebf731b1501da2f14b1ad8e13eccdfa",
+      "sourceBytes": 298515,
+      "variant": "1280",
+      "bytes": 98296
+    },
+    "164-game-strategy-map-01-page@640.webp": {
+      "source": "164-game-strategy-map/shots/01-page.png",
+      "sourceSha": "839eb438937ba43fe32b3f6c6f202fd79ebf731b1501da2f14b1ad8e13eccdfa",
+      "sourceBytes": 298515,
+      "variant": "640",
+      "bytes": 31580
+    },
+    "165-game-sim-builder-01-page@640.webp": {
+      "source": "165-game-sim-builder/shots/01-page.png",
+      "sourceSha": "8f4d6663cffb5e0ddfbcdc97972b48edb884197bdee57d6c5fc2128f25f52497",
+      "sourceBytes": 283783,
+      "variant": "640",
+      "bytes": 32834
+    },
+    "163-game-racing-neon-01-page@1280.webp": {
+      "source": "163-game-racing-neon/shots/01-page.png",
+      "sourceSha": "db89945d5228ece6644963f330b4b7ad9c71cee232bff705cb7de32c66be4697",
+      "sourceBytes": 244339,
+      "variant": "1280",
+      "bytes": 106576
+    },
+    "165-game-sim-builder-01-page@1280.webp": {
+      "source": "165-game-sim-builder/shots/01-page.png",
+      "sourceSha": "8f4d6663cffb5e0ddfbcdc97972b48edb884197bdee57d6c5fc2128f25f52497",
+      "sourceBytes": 283783,
+      "variant": "1280",
+      "bytes": 103502
+    },
+    "166-game-arcade-cabinet-01-page@640.webp": {
+      "source": "166-game-arcade-cabinet/shots/01-page.png",
+      "sourceSha": "fc70f27e3e32f0f29b7f447fb4a40015cefbed0f497848b696891b6e0fb6ef98",
+      "sourceBytes": 256216,
+      "variant": "640",
+      "bytes": 39182
+    },
+    "167-game-stealth-tactical-01-page@640.webp": {
+      "source": "167-game-stealth-tactical/shots/01-page.png",
+      "sourceSha": "96e03f55ff8f935b5b41ea1d8f5f4228511ebbff2ee58e8ea1af442f8665ce86",
+      "sourceBytes": 241044,
+      "variant": "640",
+      "bytes": 30484
+    },
+    "166-game-arcade-cabinet-01-page@1280.webp": {
+      "source": "166-game-arcade-cabinet/shots/01-page.png",
+      "sourceSha": "fc70f27e3e32f0f29b7f447fb4a40015cefbed0f497848b696891b6e0fb6ef98",
+      "sourceBytes": 256216,
+      "variant": "1280",
+      "bytes": 114358
+    },
+    "167-game-stealth-tactical-01-page@1280.webp": {
+      "source": "167-game-stealth-tactical/shots/01-page.png",
+      "sourceSha": "96e03f55ff8f935b5b41ea1d8f5f4228511ebbff2ee58e8ea1af442f8665ce86",
+      "sourceBytes": 241044,
+      "variant": "1280",
+      "bytes": 94276
+    },
+    "168-game-puzzle-light-01-page@640.webp": {
+      "source": "168-game-puzzle-light/shots/01-page.png",
+      "sourceSha": "403e4c9b111b842931fb68e3e68b5fb0e4d2d16c54f4b1e01fafb49ed8917dfc",
+      "sourceBytes": 291409,
+      "variant": "640",
+      "bytes": 33440
+    },
+    "168-game-puzzle-light-01-page@1280.webp": {
+      "source": "168-game-puzzle-light/shots/01-page.png",
+      "sourceSha": "403e4c9b111b842931fb68e3e68b5fb0e4d2d16c54f4b1e01fafb49ed8917dfc",
+      "sourceBytes": 291409,
+      "variant": "1280",
+      "bytes": 102616
+    },
+    "169-game-mmo-guild-01-page@640.webp": {
+      "source": "169-game-mmo-guild/shots/01-page.png",
+      "sourceSha": "1e501f72c6b13ac0f05381eb2c761ece109d9932a4487eab668d82a48b918293",
+      "sourceBytes": 298964,
+      "variant": "640",
+      "bytes": 34028
+    },
+    "169-game-mmo-guild-01-page@1280.webp": {
+      "source": "169-game-mmo-guild/shots/01-page.png",
+      "sourceSha": "1e501f72c6b13ac0f05381eb2c761ece109d9932a4487eab668d82a48b918293",
+      "sourceBytes": 298964,
+      "variant": "1280",
+      "bytes": 109538
+    },
+    "170-game-franchise-sports-01-page@640.webp": {
+      "source": "170-game-franchise-sports/shots/01-page.png",
+      "sourceSha": "e6fc2b102c2c45337632f4716346368434e1846fb1df24975eb24d15dcf5a6ff",
+      "sourceBytes": 287423,
+      "variant": "640",
+      "bytes": 35014
+    },
+    "171-game-pinball-neon-01-page@640.webp": {
+      "source": "171-game-pinball-neon/shots/01-page.png",
+      "sourceSha": "1665c21a4bc73ae8b00f21153a326d7282031668539192ae2edeb4fec9c50568",
+      "sourceBytes": 286699,
+      "variant": "640",
+      "bytes": 37702
+    },
+    "170-game-franchise-sports-01-page@1280.webp": {
+      "source": "170-game-franchise-sports/shots/01-page.png",
+      "sourceSha": "e6fc2b102c2c45337632f4716346368434e1846fb1df24975eb24d15dcf5a6ff",
+      "sourceBytes": 287423,
+      "variant": "1280",
+      "bytes": 106260
+    },
+    "171-game-pinball-neon-01-page@1280.webp": {
+      "source": "171-game-pinball-neon/shots/01-page.png",
+      "sourceSha": "1665c21a4bc73ae8b00f21153a326d7282031668539192ae2edeb4fec9c50568",
+      "sourceBytes": 286699,
+      "variant": "1280",
+      "bytes": 120956
+    },
+    "172-incident-response-01-page@640.webp": {
+      "source": "172-incident-response/shots/01-page.png",
+      "sourceSha": "b848b51986e8a5e002bb39aed6287c6de1069eb5cb866b688499b757e5950e25",
+      "sourceBytes": 315701,
+      "variant": "640",
+      "bytes": 38290
+    },
+    "173-finops-cost-01-page@1280.webp": {
+      "source": "173-finops-cost/shots/01-page.png",
+      "sourceSha": "727d96749770759d424442fb03ea51d37388930cc9c00b04dfee6c035f635d8c",
+      "sourceBytes": 362520,
+      "variant": "1280",
+      "bytes": 125532
+    },
+    "173-finops-cost-01-page@640.webp": {
+      "source": "173-finops-cost/shots/01-page.png",
+      "sourceSha": "727d96749770759d424442fb03ea51d37388930cc9c00b04dfee6c035f635d8c",
+      "sourceBytes": 362520,
+      "variant": "640",
+      "bytes": 39574
+    },
+    "172-incident-response-01-page@1280.webp": {
+      "source": "172-incident-response/shots/01-page.png",
+      "sourceSha": "b848b51986e8a5e002bb39aed6287c6de1069eb5cb866b688499b757e5950e25",
+      "sourceBytes": 315701,
+      "variant": "1280",
+      "bytes": 118236
+    },
+    "174-fleet-dispatch-01-page@640.webp": {
+      "source": "174-fleet-dispatch/shots/01-page.png",
+      "sourceSha": "311c40e30cabb178e3f228e69a648aaf9780e8230f055704452fff019b625c75",
+      "sourceBytes": 307779,
+      "variant": "640",
+      "bytes": 31566
+    },
+    "175-fraud-review-01-page@640.webp": {
+      "source": "175-fraud-review/shots/01-page.png",
+      "sourceSha": "ebf58a37b9a6f5847b829b0516f2d61963c5b1ca074c8a4af01cbd43d67142c3",
+      "sourceBytes": 330467,
+      "variant": "640",
+      "bytes": 32658
+    },
+    "174-fleet-dispatch-01-page@1280.webp": {
+      "source": "174-fleet-dispatch/shots/01-page.png",
+      "sourceSha": "311c40e30cabb178e3f228e69a648aaf9780e8230f055704452fff019b625c75",
+      "sourceBytes": 307779,
+      "variant": "1280",
+      "bytes": 101658
+    },
+    "176-slo-budget-01-page@640.webp": {
+      "source": "176-slo-budget/shots/01-page.png",
+      "sourceSha": "27d5be3f372f3c135ee737259e7f5814d384e95aab95d411655836c93851cd33",
+      "sourceBytes": 370577,
+      "variant": "640",
+      "bytes": 40196
+    },
+    "175-fraud-review-01-page@1280.webp": {
+      "source": "175-fraud-review/shots/01-page.png",
+      "sourceSha": "ebf58a37b9a6f5847b829b0516f2d61963c5b1ca074c8a4af01cbd43d67142c3",
+      "sourceBytes": 330467,
+      "variant": "1280",
+      "bytes": 106574
+    },
+    "177-data-lineage-01-page@640.webp": {
+      "source": "177-data-lineage/shots/01-page.png",
+      "sourceSha": "bd34b9088b42b21df54f233a7ce2b72e28537eef5fd671307c43332786bf8d28",
+      "sourceBytes": 331194,
+      "variant": "640",
+      "bytes": 33760
+    },
+    "177-data-lineage-01-page@1280.webp": {
+      "source": "177-data-lineage/shots/01-page.png",
+      "sourceSha": "bd34b9088b42b21df54f233a7ce2b72e28537eef5fd671307c43332786bf8d28",
+      "sourceBytes": 331194,
+      "variant": "1280",
+      "bytes": 106850
+    },
+    "176-slo-budget-01-page@1280.webp": {
+      "source": "176-slo-budget/shots/01-page.png",
+      "sourceSha": "27d5be3f372f3c135ee737259e7f5814d384e95aab95d411655836c93851cd33",
+      "sourceBytes": 370577,
+      "variant": "1280",
+      "bytes": 127130
+    },
+    "178-access-audit-01-page@640.webp": {
+      "source": "178-access-audit/shots/01-page.png",
+      "sourceSha": "51dac85ea1687933bf79832e2806f525c92b78737078afcfc2f3b200d16700a3",
+      "sourceBytes": 321391,
+      "variant": "640",
+      "bytes": 31948
+    },
+    "180-support-inbox-01-page@640.webp": {
+      "source": "180-support-inbox/shots/01-page.png",
+      "sourceSha": "2aa7cad063fb1a1a7b443356445b4db6e8df7cf6cc200a58d2c2a8ebd4a126da",
+      "sourceBytes": 360393,
+      "variant": "640",
+      "bytes": 38540
+    },
+    "178-access-audit-01-page@1280.webp": {
+      "source": "178-access-audit/shots/01-page.png",
+      "sourceSha": "51dac85ea1687933bf79832e2806f525c92b78737078afcfc2f3b200d16700a3",
+      "sourceBytes": 321391,
+      "variant": "1280",
+      "bytes": 102936
+    },
+    "179-release-train-01-page@640.webp": {
+      "source": "179-release-train/shots/01-page.png",
+      "sourceSha": "63248d00e30faea11ab1f4079cb5604a17d3529c412f6b370fa6ad0009cd058e",
+      "sourceBytes": 366626,
+      "variant": "640",
+      "bytes": 38686
+    },
+    "179-release-train-01-page@1280.webp": {
+      "source": "179-release-train/shots/01-page.png",
+      "sourceSha": "63248d00e30faea11ab1f4079cb5604a17d3529c412f6b370fa6ad0009cd058e",
+      "sourceBytes": 366626,
+      "variant": "1280",
+      "bytes": 122076
+    },
+    "180-support-inbox-01-page@1280.webp": {
+      "source": "180-support-inbox/shots/01-page.png",
+      "sourceSha": "2aa7cad063fb1a1a7b443356445b4db6e8df7cf6cc200a58d2c2a8ebd4a126da",
+      "sourceBytes": 360393,
+      "variant": "1280",
+      "bytes": 122714
+    },
+    "181-regulatory-report-01-page@640.webp": {
+      "source": "181-regulatory-report/shots/01-page.png",
+      "sourceSha": "fd87bde2118922a20b9fd67fd5b8ea41aefaa69c005483464ba438b67cccf497",
+      "sourceBytes": 324674,
+      "variant": "640",
+      "bytes": 32682
+    },
+    "181-regulatory-report-01-page@1280.webp": {
+      "source": "181-regulatory-report/shots/01-page.png",
+      "sourceSha": "fd87bde2118922a20b9fd67fd5b8ea41aefaa69c005483464ba438b67cccf497",
+      "sourceBytes": 324674,
+      "variant": "1280",
+      "bytes": 107028
+    },
+    "182-grocery-delivery-01-page@640.webp": {
+      "source": "182-grocery-delivery/shots/01-page.png",
+      "sourceSha": "da6574e45117b0a8902173394636ace63aee90b5800ea0e27afb7d3c6da77636",
+      "sourceBytes": 370995,
+      "variant": "640",
+      "bytes": 38510
+    },
+    "182-grocery-delivery-01-page@1280.webp": {
+      "source": "182-grocery-delivery/shots/01-page.png",
+      "sourceSha": "da6574e45117b0a8902173394636ace63aee90b5800ea0e27afb7d3c6da77636",
+      "sourceBytes": 370995,
+      "variant": "1280",
+      "bytes": 120472
+    },
+    "183-marketplace-multi-01-page@640.webp": {
+      "source": "183-marketplace-multi/shots/01-page.png",
+      "sourceSha": "95cf3c473e36b981ad9e97c15d3087622342fe936eb81b29fa8790dab00bb427",
+      "sourceBytes": 367551,
+      "variant": "640",
+      "bytes": 38878
+    },
+    "184-luxury-atelier-01-page@640.webp": {
+      "source": "184-luxury-atelier/shots/01-page.png",
+      "sourceSha": "8aa69bd3344c265118f4acdc69d0751133f164ddcf3978b4f303332ef5eb0578",
+      "sourceBytes": 558496,
+      "variant": "640",
+      "bytes": 32608
+    },
+    "183-marketplace-multi-01-page@1280.webp": {
+      "source": "183-marketplace-multi/shots/01-page.png",
+      "sourceSha": "95cf3c473e36b981ad9e97c15d3087622342fe936eb81b29fa8790dab00bb427",
+      "sourceBytes": 367551,
+      "variant": "1280",
+      "bytes": 123870
+    },
+    "184-luxury-atelier-01-page@1280.webp": {
+      "source": "184-luxury-atelier/shots/01-page.png",
+      "sourceSha": "8aa69bd3344c265118f4acdc69d0751133f164ddcf3978b4f303332ef5eb0578",
+      "sourceBytes": 558496,
+      "variant": "1280",
+      "bytes": 104032
+    },
+    "186-sneaker-drop-01-page@640.webp": {
+      "source": "186-sneaker-drop/shots/01-page.png",
+      "sourceSha": "c31d01546ffd844247f99136574127cee68855957c02fc71b2941063bebda340",
+      "sourceBytes": 362653,
+      "variant": "640",
+      "bytes": 41598
+    },
+    "185-subscription-box-01-page@640.webp": {
+      "source": "185-subscription-box/shots/01-page.png",
+      "sourceSha": "49a1de48392447ff214ab5b3b92b90311b71e249eb8de191ea4900a289f32fc9",
+      "sourceBytes": 379648,
+      "variant": "640",
+      "bytes": 39160
+    },
+    "185-subscription-box-01-page@1280.webp": {
+      "source": "185-subscription-box/shots/01-page.png",
+      "sourceSha": "49a1de48392447ff214ab5b3b92b90311b71e249eb8de191ea4900a289f32fc9",
+      "sourceBytes": 379648,
+      "variant": "1280",
+      "bytes": 124554
+    },
+    "186-sneaker-drop-01-page@1280.webp": {
+      "source": "186-sneaker-drop/shots/01-page.png",
+      "sourceSha": "c31d01546ffd844247f99136574127cee68855957c02fc71b2941063bebda340",
+      "sourceBytes": 362653,
+      "variant": "1280",
+      "bytes": 129774
+    },
+    "187-wine-cellar-01-page@640.webp": {
+      "source": "187-wine-cellar/shots/01-page.png",
+      "sourceSha": "d5ecbe963910d65f20ceb82195751cf3231e14bdbde38262c260194146de919b",
+      "sourceBytes": 382891,
+      "variant": "640",
+      "bytes": 37910
+    },
+    "188-furniture-studio-01-page@640.webp": {
+      "source": "188-furniture-studio/shots/01-page.png",
+      "sourceSha": "ef770e5c8f337e7bec81d4d10ce380b0c8c0071ff523687e21afa1720b6ef45a",
+      "sourceBytes": 273195,
+      "variant": "640",
+      "bytes": 33980
+    },
+    "187-wine-cellar-01-page@1280.webp": {
+      "source": "187-wine-cellar/shots/01-page.png",
+      "sourceSha": "d5ecbe963910d65f20ceb82195751cf3231e14bdbde38262c260194146de919b",
+      "sourceBytes": 382891,
+      "variant": "1280",
+      "bytes": 122810
+    },
+    "188-furniture-studio-01-page@1280.webp": {
+      "source": "188-furniture-studio/shots/01-page.png",
+      "sourceSha": "ef770e5c8f337e7bec81d4d10ce380b0c8c0071ff523687e21afa1720b6ef45a",
+      "sourceBytes": 273195,
+      "variant": "1280",
+      "bytes": 105112
+    },
+    "189-electronics-spec-01-page@640.webp": {
+      "source": "189-electronics-spec/shots/01-page.png",
+      "sourceSha": "b840fde057487c7197740ce51ac408a9f3835162ee2296ba9b3ebee0715b19ed",
+      "sourceBytes": 366166,
+      "variant": "640",
+      "bytes": 39154
+    },
+    "190-pharmacy-store-01-page@640.webp": {
+      "source": "190-pharmacy-store/shots/01-page.png",
+      "sourceSha": "fa42e5b8ffeb6ebc160a36e360b820d715d9971072ce41c2f71c2e333bfb6488",
+      "sourceBytes": 378883,
+      "variant": "640",
+      "bytes": 40154
+    },
+    "189-electronics-spec-01-page@1280.webp": {
+      "source": "189-electronics-spec/shots/01-page.png",
+      "sourceSha": "b840fde057487c7197740ce51ac408a9f3835162ee2296ba9b3ebee0715b19ed",
+      "sourceBytes": 366166,
+      "variant": "1280",
+      "bytes": 124482
+    },
+    "190-pharmacy-store-01-page@1280.webp": {
+      "source": "190-pharmacy-store/shots/01-page.png",
+      "sourceSha": "fa42e5b8ffeb6ebc160a36e360b820d715d9971072ce41c2f71c2e333bfb6488",
+      "sourceBytes": 378883,
+      "variant": "1280",
+      "bytes": 127426
+    },
+    "191-farmers-market-01-page@640.webp": {
+      "source": "191-farmers-market/shots/01-page.png",
+      "sourceSha": "139e892935a7db7aeddacaa4bcfa754ce191575851eb1ace01feff2c3d5ffd40",
+      "sourceBytes": 349704,
+      "variant": "640",
+      "bytes": 31170
+    },
+    "191-farmers-market-01-page@1280.webp": {
+      "source": "191-farmers-market/shots/01-page.png",
+      "sourceSha": "139e892935a7db7aeddacaa4bcfa754ce191575851eb1ace01feff2c3d5ffd40",
+      "sourceBytes": 349704,
+      "variant": "1280",
+      "bytes": 104624
+    },
+    "192-museum-exhibition-01-page@640.webp": {
+      "source": "192-museum-exhibition/shots/01-page.png",
+      "sourceSha": "4f15091b04f8a47aa2a39ba428271b5df5e71667caf296b743c7cc89da852862",
+      "sourceBytes": 275031,
+      "variant": "640",
+      "bytes": 26410
+    },
+    "192-museum-exhibition-01-page@1280.webp": {
+      "source": "192-museum-exhibition/shots/01-page.png",
+      "sourceSha": "4f15091b04f8a47aa2a39ba428271b5df5e71667caf296b743c7cc89da852862",
+      "sourceBytes": 275031,
+      "variant": "1280",
+      "bytes": 86922
+    },
+    "193-theatre-season-01-page@640.webp": {
+      "source": "193-theatre-season/shots/01-page.png",
+      "sourceSha": "4b2d4110b9bd07f5164ad365540500f7bceb141c8f6bd4b10d9c241d738dcdc5",
+      "sourceBytes": 309228,
+      "variant": "640",
+      "bytes": 32020
+    },
+    "194-film-festival-01-page@640.webp": {
+      "source": "194-film-festival/shots/01-page.png",
+      "sourceSha": "ee69e7f095b67bdfa79a9215e271ac3401e48a0e3fd45e316de4c453df0019e0",
+      "sourceBytes": 300897,
+      "variant": "640",
+      "bytes": 33496
+    },
+    "193-theatre-season-01-page@1280.webp": {
+      "source": "193-theatre-season/shots/01-page.png",
+      "sourceSha": "4b2d4110b9bd07f5164ad365540500f7bceb141c8f6bd4b10d9c241d738dcdc5",
+      "sourceBytes": 309228,
+      "variant": "1280",
+      "bytes": 106182
+    },
+    "195-public-radio-01-page@640.webp": {
+      "source": "195-public-radio/shots/01-page.png",
+      "sourceSha": "71f18ad11c168a95583d490a72be242c536195347a70b54bb55c940c82bd9123",
+      "sourceBytes": 294485,
+      "variant": "640",
+      "bytes": 31872
+    },
+    "194-film-festival-01-page@1280.webp": {
+      "source": "194-film-festival/shots/01-page.png",
+      "sourceSha": "ee69e7f095b67bdfa79a9215e271ac3401e48a0e3fd45e316de4c453df0019e0",
+      "sourceBytes": 300897,
+      "variant": "1280",
+      "bytes": 104704
+    },
+    "196-podcast-network-01-page@1280.webp": {
+      "source": "196-podcast-network/shots/01-page.png",
+      "sourceSha": "f7897977195bdec1a4cf73b79cf943c4720c6facacce2b5ef412969e89239fb4",
+      "sourceBytes": 304446,
+      "variant": "1280",
+      "bytes": 106430
+    },
+    "196-podcast-network-01-page@640.webp": {
+      "source": "196-podcast-network/shots/01-page.png",
+      "sourceSha": "f7897977195bdec1a4cf73b79cf943c4720c6facacce2b5ef412969e89239fb4",
+      "sourceBytes": 304446,
+      "variant": "640",
+      "bytes": 33042
+    },
+    "197-indie-cinema-01-page@640.webp": {
+      "source": "197-indie-cinema/shots/01-page.png",
+      "sourceSha": "e282df2104e4a1014a6cf8e8ababaadf32bcf6ffd2acb81ed66e1968e1ba68ad",
+      "sourceBytes": 293068,
+      "variant": "640",
+      "bytes": 33982
+    },
+    "195-public-radio-01-page@1280.webp": {
+      "source": "195-public-radio/shots/01-page.png",
+      "sourceSha": "71f18ad11c168a95583d490a72be242c536195347a70b54bb55c940c82bd9123",
+      "sourceBytes": 294485,
+      "variant": "1280",
+      "bytes": 103870
+    },
+    "198-library-archive-01-page@640.webp": {
+      "source": "198-library-archive/shots/01-page.png",
+      "sourceSha": "b4b536ba9334b6a7674f74c8e511f25e06afc213cb7ea1b9dbcfbce144061e89",
+      "sourceBytes": 280108,
+      "variant": "640",
+      "bytes": 26824
+    },
+    "198-library-archive-01-page@1280.webp": {
+      "source": "198-library-archive/shots/01-page.png",
+      "sourceSha": "b4b536ba9334b6a7674f74c8e511f25e06afc213cb7ea1b9dbcfbce144061e89",
+      "sourceBytes": 280108,
+      "variant": "1280",
+      "bytes": 88936
+    },
+    "199-comic-bookstore-01-page@640.webp": {
+      "source": "199-comic-bookstore/shots/01-page.png",
+      "sourceSha": "2d573cabb99dc3ce321ca0756bb026b68d934c5f8f671e5e5b2c1d51ab67dca7",
+      "sourceBytes": 280998,
+      "variant": "640",
+      "bytes": 36312
+    },
+    "197-indie-cinema-01-page@1280.webp": {
+      "source": "197-indie-cinema/shots/01-page.png",
+      "sourceSha": "e282df2104e4a1014a6cf8e8ababaadf32bcf6ffd2acb81ed66e1968e1ba68ad",
+      "sourceBytes": 293068,
+      "variant": "1280",
+      "bytes": 106032
+    },
+    "199-comic-bookstore-01-page@1280.webp": {
+      "source": "199-comic-bookstore/shots/01-page.png",
+      "sourceSha": "2d573cabb99dc3ce321ca0756bb026b68d934c5f8f671e5e5b2c1d51ab67dca7",
+      "sourceBytes": 280998,
+      "variant": "1280",
+      "bytes": 110108
+    },
+    "201-street-festival-01-page@640.webp": {
+      "source": "201-street-festival/shots/01-page.png",
+      "sourceSha": "3c2b1e8cc2f0a707b98428eb1496a7c88faa5825f9090e202ba4a44c26ae1f63",
+      "sourceBytes": 290476,
+      "variant": "640",
+      "bytes": 35900
+    },
+    "200-opera-house-01-page@640.webp": {
+      "source": "200-opera-house/shots/01-page.png",
+      "sourceSha": "c8c56d3f0864c95e4427c3ae3925e407d1f798a04e645112742439245eeea70f",
+      "sourceBytes": 291246,
+      "variant": "640",
+      "bytes": 29292
+    },
+    "200-opera-house-01-page@1280.webp": {
+      "source": "200-opera-house/shots/01-page.png",
+      "sourceSha": "c8c56d3f0864c95e4427c3ae3925e407d1f798a04e645112742439245eeea70f",
+      "sourceBytes": 291246,
+      "variant": "1280",
+      "bytes": 95550
+    },
+    "201-street-festival-01-page@1280.webp": {
+      "source": "201-street-festival/shots/01-page.png",
+      "sourceSha": "3c2b1e8cc2f0a707b98428eb1496a7c88faa5825f9090e202ba4a44c26ae1f63",
+      "sourceBytes": 290476,
+      "variant": "1280",
+      "bytes": 109422
+    },
+    "202-clinical-trial-01-page@640.webp": {
+      "source": "202-clinical-trial/shots/01-page.png",
+      "sourceSha": "50259ec4da5565be4267f8add5f95654df5dfca0b6e62c8eea12657628d8205f",
+      "sourceBytes": 368880,
+      "variant": "640",
+      "bytes": 40788
+    },
+    "203-lab-protocol-01-page@640.webp": {
+      "source": "203-lab-protocol/shots/01-page.png",
+      "sourceSha": "ad18f243ca5bc8a66c561ca0e461373b572a3cc39fb62e11db9b17d9b2aabd13",
+      "sourceBytes": 338999,
+      "variant": "640",
+      "bytes": 33412
+    },
+    "202-clinical-trial-01-page@1280.webp": {
+      "source": "202-clinical-trial/shots/01-page.png",
+      "sourceSha": "50259ec4da5565be4267f8add5f95654df5dfca0b6e62c8eea12657628d8205f",
+      "sourceBytes": 368880,
+      "variant": "1280",
+      "bytes": 127396
+    },
+    "204-pharmacy-labels-01-page@1280.webp": {
+      "source": "204-pharmacy-labels/shots/01-page.png",
+      "sourceSha": "45abebf5c7f2cb7996bc2aaeb9410aa19dce0dbf33a52eafc99e3426832c920d",
+      "sourceBytes": 349530,
+      "variant": "1280",
+      "bytes": 133070
+    },
+    "204-pharmacy-labels-01-page@640.webp": {
+      "source": "204-pharmacy-labels/shots/01-page.png",
+      "sourceSha": "45abebf5c7f2cb7996bc2aaeb9410aa19dce0dbf33a52eafc99e3426832c920d",
+      "sourceBytes": 349530,
+      "variant": "640",
+      "bytes": 42144
+    },
+    "203-lab-protocol-01-page@1280.webp": {
+      "source": "203-lab-protocol/shots/01-page.png",
+      "sourceSha": "ad18f243ca5bc8a66c561ca0e461373b572a3cc39fb62e11db9b17d9b2aabd13",
+      "sourceBytes": 338999,
+      "variant": "1280",
+      "bytes": 108476
+    },
+    "205-physiotherapy-01-page@640.webp": {
+      "source": "205-physiotherapy/shots/01-page.png",
+      "sourceSha": "a1ab647c07afa1c1707ff981db786b5ce417ab36dc860333a563d203b79eb50c",
+      "sourceBytes": 390146,
+      "variant": "640",
+      "bytes": 37380
+    },
+    "206-mental-wellness-01-page@640.webp": {
+      "source": "206-mental-wellness/shots/01-page.png",
+      "sourceSha": "77966443d46bf0246b16a2d433315b9859e24bb72042e4e72926291b52a2ed3c",
+      "sourceBytes": 382092,
+      "variant": "640",
+      "bytes": 37690
+    },
+    "207-nutrition-plan-01-page@640.webp": {
+      "source": "207-nutrition-plan/shots/01-page.png",
+      "sourceSha": "ee8b602fa98695fe01096ae1153ab88b7614deb914366bf96c67217e7c2f91f9",
+      "sourceBytes": 373904,
+      "variant": "640",
+      "bytes": 40362
+    },
+    "205-physiotherapy-01-page@1280.webp": {
+      "source": "205-physiotherapy/shots/01-page.png",
+      "sourceSha": "a1ab647c07afa1c1707ff981db786b5ce417ab36dc860333a563d203b79eb50c",
+      "sourceBytes": 390146,
+      "variant": "1280",
+      "bytes": 119504
+    },
+    "206-mental-wellness-01-page@1280.webp": {
+      "source": "206-mental-wellness/shots/01-page.png",
+      "sourceSha": "77966443d46bf0246b16a2d433315b9859e24bb72042e4e72926291b52a2ed3c",
+      "sourceBytes": 382092,
+      "variant": "1280",
+      "bytes": 118808
+    },
+    "208-dental-clinic-01-page@640.webp": {
+      "source": "208-dental-clinic/shots/01-page.png",
+      "sourceSha": "8615f5a8a94bc3bdb7a2509c6a56c829e98ca4278980cbde9e04729fd7ef2b48",
+      "sourceBytes": 374109,
+      "variant": "640",
+      "bytes": 41354
+    },
+    "207-nutrition-plan-01-page@1280.webp": {
+      "source": "207-nutrition-plan/shots/01-page.png",
+      "sourceSha": "ee8b602fa98695fe01096ae1153ab88b7614deb914366bf96c67217e7c2f91f9",
+      "sourceBytes": 373904,
+      "variant": "1280",
+      "bytes": 125330
+    },
+    "208-dental-clinic-01-page@1280.webp": {
+      "source": "208-dental-clinic/shots/01-page.png",
+      "sourceSha": "8615f5a8a94bc3bdb7a2509c6a56c829e98ca4278980cbde9e04729fd7ef2b48",
+      "sourceBytes": 374109,
+      "variant": "1280",
+      "bytes": 129586
+    },
+    "209-public-health-01-page@640.webp": {
+      "source": "209-public-health/shots/01-page.png",
+      "sourceSha": "e375966cd94f885726301244cc0ef01ce1fe1d50c5358c155231ba45bb3a7bd7",
+      "sourceBytes": 368167,
+      "variant": "640",
+      "bytes": 41296
+    },
+    "209-public-health-01-page@1280.webp": {
+      "source": "209-public-health/shots/01-page.png",
+      "sourceSha": "e375966cd94f885726301244cc0ef01ce1fe1d50c5358c155231ba45bb3a7bd7",
+      "sourceBytes": 368167,
+      "variant": "1280",
+      "bytes": 129530
+    },
+    "211-veterinary-care-01-page@640.webp": {
+      "source": "211-veterinary-care/shots/01-page.png",
+      "sourceSha": "3e89d65db4fb12a810bdebad0b04990e277889bc5ac44c125e58dc9026193ce5",
+      "sourceBytes": 382610,
+      "variant": "640",
+      "bytes": 38190
+    },
+    "210-genomics-lab-01-page@1280.webp": {
+      "source": "210-genomics-lab/shots/01-page.png",
+      "sourceSha": "543b5b16a20d109ed2b5d42e38a509023a7e819412fdc93b705584b1f2200c84",
+      "sourceBytes": 344908,
+      "variant": "1280",
+      "bytes": 110922
+    },
+    "210-genomics-lab-01-page@640.webp": {
+      "source": "210-genomics-lab/shots/01-page.png",
+      "sourceSha": "543b5b16a20d109ed2b5d42e38a509023a7e819412fdc93b705584b1f2200c84",
+      "sourceBytes": 344908,
+      "variant": "640",
+      "bytes": 34456
+    },
+    "212-language-app-01-page@640.webp": {
+      "source": "212-language-app/shots/01-page.png",
+      "sourceSha": "b363d2378d26d278e981c366b9418cf9a497dae4d111bc1d9b223b736e23c3e5",
+      "sourceBytes": 321334,
+      "variant": "640",
+      "bytes": 39426
+    },
+    "211-veterinary-care-01-page@1280.webp": {
+      "source": "211-veterinary-care/shots/01-page.png",
+      "sourceSha": "3e89d65db4fb12a810bdebad0b04990e277889bc5ac44c125e58dc9026193ce5",
+      "sourceBytes": 382610,
+      "variant": "1280",
+      "bytes": 120712
+    },
+    "213-skill-tree-01-page@640.webp": {
+      "source": "213-skill-tree/shots/01-page.png",
+      "sourceSha": "bcff7bad24a9bbd37c487262e8e3e11c3258d5a55130907b93ce8b26e243ce13",
+      "sourceBytes": 341597,
+      "variant": "640",
+      "bytes": 38158
+    },
+    "212-language-app-01-page@1280.webp": {
+      "source": "212-language-app/shots/01-page.png",
+      "sourceSha": "b363d2378d26d278e981c366b9418cf9a497dae4d111bc1d9b223b736e23c3e5",
+      "sourceBytes": 321334,
+      "variant": "1280",
+      "bytes": 121332
+    },
+    "214-university-portal-01-page@640.webp": {
+      "source": "214-university-portal/shots/01-page.png",
+      "sourceSha": "f5ed7d759bd0ebbc31d387cf21159faed29d06a893709c50e270d6add8fc2afa",
+      "sourceBytes": 333234,
+      "variant": "640",
+      "bytes": 38340
+    },
+    "213-skill-tree-01-page@1280.webp": {
+      "source": "213-skill-tree/shots/01-page.png",
+      "sourceSha": "bcff7bad24a9bbd37c487262e8e3e11c3258d5a55130907b93ce8b26e243ce13",
+      "sourceBytes": 341597,
+      "variant": "1280",
+      "bytes": 120390
+    },
+    "215-coding-bootcamp-01-page@640.webp": {
+      "source": "215-coding-bootcamp/shots/01-page.png",
+      "sourceSha": "9f37aa969f65fbe5092889ee5648d8bd98bdcb519d0a63f5767eacad09d9dfba",
+      "sourceBytes": 338826,
+      "variant": "640",
+      "bytes": 38828
+    },
+    "214-university-portal-01-page@1280.webp": {
+      "source": "214-university-portal/shots/01-page.png",
+      "sourceSha": "f5ed7d759bd0ebbc31d387cf21159faed29d06a893709c50e270d6add8fc2afa",
+      "sourceBytes": 333234,
+      "variant": "1280",
+      "bytes": 122242
+    },
+    "215-coding-bootcamp-01-page@1280.webp": {
+      "source": "215-coding-bootcamp/shots/01-page.png",
+      "sourceSha": "9f37aa969f65fbe5092889ee5648d8bd98bdcb519d0a63f5767eacad09d9dfba",
+      "sourceBytes": 338826,
+      "variant": "1280",
+      "bytes": 122058
+    },
+    "216-kids-classroom-01-page@640.webp": {
+      "source": "216-kids-classroom/shots/01-page.png",
+      "sourceSha": "4cfdb5f6cbb253c621783f450d0c5db1b4b1b8772dc280ceb1bb315c373167ca",
+      "sourceBytes": 343028,
+      "variant": "640",
+      "bytes": 39108
+    },
+    "216-kids-classroom-01-page@1280.webp": {
+      "source": "216-kids-classroom/shots/01-page.png",
+      "sourceSha": "4cfdb5f6cbb253c621783f450d0c5db1b4b1b8772dc280ceb1bb315c373167ca",
+      "sourceBytes": 343028,
+      "variant": "1280",
+      "bytes": 121084
+    },
+    "217-exam-prep-01-page@640.webp": {
+      "source": "217-exam-prep/shots/01-page.png",
+      "sourceSha": "90de2dc1c9c2e100c3088e37a1c1e99f754e81eeaa1acd32b1566b5aff658e21",
+      "sourceBytes": 340105,
+      "variant": "640",
+      "bytes": 38854
+    },
+    "217-exam-prep-01-page@1280.webp": {
+      "source": "217-exam-prep/shots/01-page.png",
+      "sourceSha": "90de2dc1c9c2e100c3088e37a1c1e99f754e81eeaa1acd32b1566b5aff658e21",
+      "sourceBytes": 340105,
+      "variant": "1280",
+      "bytes": 123342
+    },
+    "218-music-lesson-01-page@640.webp": {
+      "source": "218-music-lesson/shots/01-page.png",
+      "sourceSha": "fa144b2335b25d840562c1e88f4c2d68711c168ec3bb344509e657985aca25da",
+      "sourceBytes": 358219,
+      "variant": "640",
+      "bytes": 39372
+    },
+    "218-music-lesson-01-page@1280.webp": {
+      "source": "218-music-lesson/shots/01-page.png",
+      "sourceSha": "fa144b2335b25d840562c1e88f4c2d68711c168ec3bb344509e657985aca25da",
+      "sourceBytes": 358219,
+      "variant": "1280",
+      "bytes": 126110
+    },
+    "219-lab-simulation-01-page@640.webp": {
+      "source": "219-lab-simulation/shots/01-page.png",
+      "sourceSha": "3798827908ab735dfd74291624eb6077c3cf21566a17c8700a8237c70b97f539",
+      "sourceBytes": 346206,
+      "variant": "640",
+      "bytes": 38772
+    },
+    "219-lab-simulation-01-page@1280.webp": {
+      "source": "219-lab-simulation/shots/01-page.png",
+      "sourceSha": "3798827908ab735dfd74291624eb6077c3cf21566a17c8700a8237c70b97f539",
+      "sourceBytes": 346206,
+      "variant": "1280",
+      "bytes": 123082
+    },
+    "221-certificate-wallet-01-page@640.webp": {
+      "source": "221-certificate-wallet/shots/01-page.png",
+      "sourceSha": "a3402883b5d6f31b7d13e68a113832f6c5d77c919be4250d19efb6dd0db9f79a",
+      "sourceBytes": 324447,
+      "variant": "640",
+      "bytes": 39432
+    },
+    "220-peer-study-01-page@640.webp": {
+      "source": "220-peer-study/shots/01-page.png",
+      "sourceSha": "49ae6894c325f85d7bbbc28b97e158a86bfcc663752b7a503847d45e82d9f87e",
+      "sourceBytes": 336419,
+      "variant": "640",
+      "bytes": 38660
+    },
+    "220-peer-study-01-page@1280.webp": {
+      "source": "220-peer-study/shots/01-page.png",
+      "sourceSha": "49ae6894c325f85d7bbbc28b97e158a86bfcc663752b7a503847d45e82d9f87e",
+      "sourceBytes": 336419,
+      "variant": "1280",
+      "bytes": 123136
+    },
+    "221-certificate-wallet-01-page@1280.webp": {
+      "source": "221-certificate-wallet/shots/01-page.png",
+      "sourceSha": "a3402883b5d6f31b7d13e68a113832f6c5d77c919be4250d19efb6dd0db9f79a",
+      "sourceBytes": 324447,
+      "variant": "1280",
+      "bytes": 125818
+    },
+    "222-terrazzo-stone-01-page@640.webp": {
+      "source": "222-terrazzo-stone/shots/01-page.png",
+      "sourceSha": "c3886645453ab7f521f30b00013609be2596a356fffd810667c02301e677e4d0",
+      "sourceBytes": 798057,
+      "variant": "640",
+      "bytes": 28910
+    },
+    "223-linocut-print-01-page@640.webp": {
+      "source": "223-linocut-print/shots/01-page.png",
+      "sourceSha": "60d0bbe97282a915bd58ec1a386775377919121ccbb0a5378a1fdb356546b9a4",
+      "sourceBytes": 754369,
+      "variant": "640",
+      "bytes": 30742
+    },
+    "222-terrazzo-stone-01-page@1280.webp": {
+      "source": "222-terrazzo-stone/shots/01-page.png",
+      "sourceSha": "c3886645453ab7f521f30b00013609be2596a356fffd810667c02301e677e4d0",
+      "sourceBytes": 798057,
+      "variant": "1280",
+      "bytes": 94282
+    },
+    "223-linocut-print-01-page@1280.webp": {
+      "source": "223-linocut-print/shots/01-page.png",
+      "sourceSha": "60d0bbe97282a915bd58ec1a386775377919121ccbb0a5378a1fdb356546b9a4",
+      "sourceBytes": 754369,
+      "variant": "1280",
+      "bytes": 99232
+    },
+    "224-risograph-print-01-page@640.webp": {
+      "source": "224-risograph-print/shots/01-page.png",
+      "sourceSha": "cb0c640c4466d95e5b3d3320b0d89ba553049aa6c03debe2c46e8969a6cdcae3",
+      "sourceBytes": 746830,
+      "variant": "640",
+      "bytes": 32524
+    },
+    "224-risograph-print-01-page@1280.webp": {
+      "source": "224-risograph-print/shots/01-page.png",
+      "sourceSha": "cb0c640c4466d95e5b3d3320b0d89ba553049aa6c03debe2c46e8969a6cdcae3",
+      "sourceBytes": 746830,
+      "variant": "1280",
+      "bytes": 106592
+    },
+    "225-denim-textile-01-page@1280.webp": {
+      "source": "225-denim-textile/shots/01-page.png",
+      "sourceSha": "23e8e9ca70d331e7ca1b673f2c43b632ae47088b76211c4ec3d731568eba5e63",
+      "sourceBytes": 321544,
+      "variant": "1280",
+      "bytes": 105232
+    },
+    "225-denim-textile-01-page@640.webp": {
+      "source": "225-denim-textile/shots/01-page.png",
+      "sourceSha": "23e8e9ca70d331e7ca1b673f2c43b632ae47088b76211c4ec3d731568eba5e63",
+      "sourceBytes": 321544,
+      "variant": "640",
+      "bytes": 32914
+    },
+    "226-cork-oak-01-page@640.webp": {
+      "source": "226-cork-oak/shots/01-page.png",
+      "sourceSha": "f33893f8b9282610397d3cabf76bfc39245f25a88c9fe21d7d18d155c9381854",
+      "sourceBytes": 749503,
+      "variant": "640",
+      "bytes": 31042
+    },
+    "227-cast-concrete-01-page@640.webp": {
+      "source": "227-cast-concrete/shots/01-page.png",
+      "sourceSha": "e6f6c4cf10691115e4ce711cbbd80ae1966f40f29213ada2b892a436bfbeb9ec",
+      "sourceBytes": 310994,
+      "variant": "640",
+      "bytes": 32704
+    },
+    "226-cork-oak-01-page@1280.webp": {
+      "source": "226-cork-oak/shots/01-page.png",
+      "sourceSha": "f33893f8b9282610397d3cabf76bfc39245f25a88c9fe21d7d18d155c9381854",
+      "sourceBytes": 749503,
+      "variant": "1280",
+      "bytes": 101582
+    },
+    "227-cast-concrete-01-page@1280.webp": {
+      "source": "227-cast-concrete/shots/01-page.png",
+      "sourceSha": "e6f6c4cf10691115e4ce711cbbd80ae1966f40f29213ada2b892a436bfbeb9ec",
+      "sourceBytes": 310994,
+      "variant": "1280",
+      "bytes": 105174
+    },
+    "228-enamel-jewel-01-page@640.webp": {
+      "source": "228-enamel-jewel/shots/01-page.png",
+      "sourceSha": "24391f5108e580e5d7a629b8164e952630899bd9fad7958f38c6c64543909d24",
+      "sourceBytes": 212740,
+      "variant": "640",
+      "bytes": 26982
+    },
+    "229-hand-thrown-ceramic-01-page@640.webp": {
+      "source": "229-hand-thrown-ceramic/shots/01-page.png",
+      "sourceSha": "d14faf44cace6447ffc6885dcfbc259ca12cd21ac5377c84b92787ddef0398a0",
+      "sourceBytes": 688671,
+      "variant": "640",
+      "bytes": 36912
+    },
+    "228-enamel-jewel-01-page@1280.webp": {
+      "source": "228-enamel-jewel/shots/01-page.png",
+      "sourceSha": "24391f5108e580e5d7a629b8164e952630899bd9fad7958f38c6c64543909d24",
+      "sourceBytes": 212740,
+      "variant": "1280",
+      "bytes": 86710
+    },
+    "229-hand-thrown-ceramic-01-page@1280.webp": {
+      "source": "229-hand-thrown-ceramic/shots/01-page.png",
+      "sourceSha": "d14faf44cace6447ffc6885dcfbc259ca12cd21ac5377c84b92787ddef0398a0",
+      "sourceBytes": 688671,
+      "variant": "1280",
+      "bytes": 119036
+    },
+    "230-raw-steel-01-page@640.webp": {
+      "source": "230-raw-steel/shots/01-page.png",
+      "sourceSha": "462c74fcd7760b3e81c8a01aea3f1b0132aead2acb36c79e6a6c83d98ecffcb3",
+      "sourceBytes": 306714,
+      "variant": "640",
+      "bytes": 30228
+    },
+    "230-raw-steel-01-page@1280.webp": {
+      "source": "230-raw-steel/shots/01-page.png",
+      "sourceSha": "462c74fcd7760b3e81c8a01aea3f1b0132aead2acb36c79e6a6c83d98ecffcb3",
+      "sourceBytes": 306714,
+      "variant": "1280",
+      "bytes": 100484
+    },
+    "231-recycled-paper-01-page@640.webp": {
+      "source": "231-recycled-paper/shots/01-page.png",
+      "sourceSha": "61fecd356bc2a33432c4f38a75bf6a6d89bd395d7a3eae0c981ac4eda059d19b",
+      "sourceBytes": 817624,
+      "variant": "640",
+      "bytes": 30442
+    },
+    "231-recycled-paper-01-page@1280.webp": {
+      "source": "231-recycled-paper/shots/01-page.png",
+      "sourceSha": "61fecd356bc2a33432c4f38a75bf6a6d89bd395d7a3eae0c981ac4eda059d19b",
+      "sourceBytes": 817624,
+      "variant": "1280",
+      "bytes": 108352
+    },
+    "232-condensed-news-01-page@640.webp": {
+      "source": "232-condensed-news/shots/01-page.png",
+      "sourceSha": "c1706d1fdf17d8e12c6ddc38c341e0d4367942597dce77839799b755ef63864b",
+      "sourceBytes": 293375,
+      "variant": "640",
+      "bytes": 29320
+    },
+    "233-monospace-editorial-01-page@640.webp": {
+      "source": "233-monospace-editorial/shots/01-page.png",
+      "sourceSha": "60168ce65d9b40cedd75f23c440e0d7ab9eac500f0785bea6c6da4a1afbe6c5a",
+      "sourceBytes": 257189,
+      "variant": "640",
+      "bytes": 34740
+    },
+    "232-condensed-news-01-page@1280.webp": {
+      "source": "232-condensed-news/shots/01-page.png",
+      "sourceSha": "c1706d1fdf17d8e12c6ddc38c341e0d4367942597dce77839799b755ef63864b",
+      "sourceBytes": 293375,
+      "variant": "1280",
+      "bytes": 90204
+    },
+    "233-monospace-editorial-01-page@1280.webp": {
+      "source": "233-monospace-editorial/shots/01-page.png",
+      "sourceSha": "60168ce65d9b40cedd75f23c440e0d7ab9eac500f0785bea6c6da4a1afbe6c5a",
+      "sourceBytes": 257189,
+      "variant": "1280",
+      "bytes": 111588
+    },
+    "234-blackletter-modern-01-page@640.webp": {
+      "source": "234-blackletter-modern/shots/01-page.png",
+      "sourceSha": "cac19a15acf3651b1cb571c702ffe1e11f386ec3f469131ed239e322402f30c7",
+      "sourceBytes": 297082,
+      "variant": "640",
+      "bytes": 29168
+    },
+    "235-variable-weight-01-page@640.webp": {
+      "source": "235-variable-weight/shots/01-page.png",
+      "sourceSha": "b16749710659e83846fb2f3d48facd9f8bac0bb15b4612f95c93d8da116aa387",
+      "sourceBytes": 311521,
+      "variant": "640",
+      "bytes": 37562
+    },
+    "235-variable-weight-01-page@1280.webp": {
+      "source": "235-variable-weight/shots/01-page.png",
+      "sourceSha": "b16749710659e83846fb2f3d48facd9f8bac0bb15b4612f95c93d8da116aa387",
+      "sourceBytes": 311521,
+      "variant": "1280",
+      "bytes": 118006
+    },
+    "236-justified-book-01-page@640.webp": {
+      "source": "236-justified-book/shots/01-page.png",
+      "sourceSha": "13d387cd415d01dc688f09d0bf4a518d88c778415383780fd30be16e851cb188",
+      "sourceBytes": 196115,
+      "variant": "640",
+      "bytes": 23956
+    },
+    "234-blackletter-modern-01-page@1280.webp": {
+      "source": "234-blackletter-modern/shots/01-page.png",
+      "sourceSha": "cac19a15acf3651b1cb571c702ffe1e11f386ec3f469131ed239e322402f30c7",
+      "sourceBytes": 297082,
+      "variant": "1280",
+      "bytes": 94760
+    },
+    "236-justified-book-01-page@1280.webp": {
+      "source": "236-justified-book/shots/01-page.png",
+      "sourceSha": "13d387cd415d01dc688f09d0bf4a518d88c778415383780fd30be16e851cb188",
+      "sourceBytes": 196115,
+      "variant": "1280",
+      "bytes": 78138
+    },
+    "237-stencil-display-01-page@640.webp": {
+      "source": "237-stencil-display/shots/01-page.png",
+      "sourceSha": "fc4f39abb021862c911ca033981029cb899bdbf450049098eff78c91c966b806",
+      "sourceBytes": 283091,
+      "variant": "640",
+      "bytes": 31862
+    },
+    "237-stencil-display-01-page@1280.webp": {
+      "source": "237-stencil-display/shots/01-page.png",
+      "sourceSha": "fc4f39abb021862c911ca033981029cb899bdbf450049098eff78c91c966b806",
+      "sourceBytes": 283091,
+      "variant": "1280",
+      "bytes": 99766
+    },
+    "238-uppercase-only-01-page@640.webp": {
+      "source": "238-uppercase-only/shots/01-page.png",
+      "sourceSha": "d953ee2aff44c5e5c4f7d274603f778c5f54324d52685d8242d36e085f579508",
+      "sourceBytes": 319706,
+      "variant": "640",
+      "bytes": 37488
+    },
+    "238-uppercase-only-01-page@1280.webp": {
+      "source": "238-uppercase-only/shots/01-page.png",
+      "sourceSha": "d953ee2aff44c5e5c4f7d274603f778c5f54324d52685d8242d36e085f579508",
+      "sourceBytes": 319706,
+      "variant": "1280",
+      "bytes": 118650
+    },
+    "239-italic-accent-01-page@640.webp": {
+      "source": "239-italic-accent/shots/01-page.png",
+      "sourceSha": "1c6aebc120ec99aa08b067dbd590a0324013e3189f44c42cc75f5db60578e10e",
+      "sourceBytes": 314485,
+      "variant": "640",
+      "bytes": 29616
+    },
+    "240-numerals-display-01-page@640.webp": {
+      "source": "240-numerals-display/shots/01-page.png",
+      "sourceSha": "20df16f83b60e082be850f990562953681439cf2d3faa2d454a5bf598fc8a854",
+      "sourceBytes": 298281,
+      "variant": "640",
+      "bytes": 32668
+    },
+    "239-italic-accent-01-page@1280.webp": {
+      "source": "239-italic-accent/shots/01-page.png",
+      "sourceSha": "1c6aebc120ec99aa08b067dbd590a0324013e3189f44c42cc75f5db60578e10e",
+      "sourceBytes": 314485,
+      "variant": "1280",
+      "bytes": 98642
+    },
+    "240-numerals-display-01-page@1280.webp": {
+      "source": "240-numerals-display/shots/01-page.png",
+      "sourceSha": "20df16f83b60e082be850f990562953681439cf2d3faa2d454a5bf598fc8a854",
+      "sourceBytes": 298281,
+      "variant": "1280",
+      "bytes": 104004
+    },
+    "241-small-caps-ledger-01-page@640.webp": {
+      "source": "241-small-caps-ledger/shots/01-page.png",
+      "sourceSha": "cc59a3b58f7203509de0f5db3b066a32dcaaa482037a0aefe5d103f3052e9585",
+      "sourceBytes": 287252,
+      "variant": "640",
+      "bytes": 26110
+    },
+    "242-agent-console-01-page@640.webp": {
+      "source": "242-agent-console/shots/01-page.png",
+      "sourceSha": "503a196d48a4a01dccfd2714ab6ef0278df02137047ae8e874e3d0e5134889fa",
+      "sourceBytes": 298863,
+      "variant": "640",
+      "bytes": 34402
+    },
+    "242-agent-console-01-page@1280.webp": {
+      "source": "242-agent-console/shots/01-page.png",
+      "sourceSha": "503a196d48a4a01dccfd2714ab6ef0278df02137047ae8e874e3d0e5134889fa",
+      "sourceBytes": 298863,
+      "variant": "1280",
+      "bytes": 108664
+    },
+    "241-small-caps-ledger-01-page@1280.webp": {
+      "source": "241-small-caps-ledger/shots/01-page.png",
+      "sourceSha": "cc59a3b58f7203509de0f5db3b066a32dcaaa482037a0aefe5d103f3052e9585",
+      "sourceBytes": 287252,
+      "variant": "1280",
+      "bytes": 85944
+    },
+    "243-spatial-workspace-01-page@640.webp": {
+      "source": "243-spatial-workspace/shots/01-page.png",
+      "sourceSha": "c5ee5656f9e33885b6c73af6f9a801f135a3de62e641ab84498c07410c76e602",
+      "sourceBytes": 293698,
+      "variant": "640",
+      "bytes": 32624
+    },
+    "245-climate-model-01-page@640.webp": {
+      "source": "245-climate-model/shots/01-page.png",
+      "sourceSha": "ead1585dbccdbac7feb0eabcfa8cee813b44163f59c3df6a35b90f3e82604ed0",
+      "sourceBytes": 288176,
+      "variant": "640",
+      "bytes": 33294
+    },
+    "244-bio-lab-interface-01-page@1280.webp": {
+      "source": "244-bio-lab-interface/shots/01-page.png",
+      "sourceSha": "3646122960fbea5ad43abed372a9a70c01cc4594b44e8a9f519bb846c50c55aa",
+      "sourceBytes": 290064,
+      "variant": "1280",
+      "bytes": 105990
+    },
+    "244-bio-lab-interface-01-page@640.webp": {
+      "source": "244-bio-lab-interface/shots/01-page.png",
+      "sourceSha": "3646122960fbea5ad43abed372a9a70c01cc4594b44e8a9f519bb846c50c55aa",
+      "sourceBytes": 290064,
+      "variant": "640",
+      "bytes": 33442
+    },
+    "243-spatial-workspace-01-page@1280.webp": {
+      "source": "243-spatial-workspace/shots/01-page.png",
+      "sourceSha": "c5ee5656f9e33885b6c73af6f9a801f135a3de62e641ab84498c07410c76e602",
+      "sourceBytes": 293698,
+      "variant": "1280",
+      "bytes": 105474
+    },
+    "245-climate-model-01-page@1280.webp": {
+      "source": "245-climate-model/shots/01-page.png",
+      "sourceSha": "ead1585dbccdbac7feb0eabcfa8cee813b44163f59c3df6a35b90f3e82604ed0",
+      "sourceBytes": 288176,
+      "variant": "1280",
+      "bytes": 108478
+    },
+    "246-orbital-logistics-01-page@640.webp": {
+      "source": "246-orbital-logistics/shots/01-page.png",
+      "sourceSha": "ee369ce9d032d7a915397c24bbe51061f79ee9c1b02fd0ddc4b4b2550de197ed",
+      "sourceBytes": 243917,
+      "variant": "640",
+      "bytes": 30530
+    },
+    "247-synthetic-media-01-page@640.webp": {
+      "source": "247-synthetic-media/shots/01-page.png",
+      "sourceSha": "5e0529c725a7a1af3d8800a2fbfb145202766581476e77c5c5f3314f92133740",
+      "sourceBytes": 284430,
+      "variant": "640",
+      "bytes": 33352
+    },
+    "246-orbital-logistics-01-page@1280.webp": {
+      "source": "246-orbital-logistics/shots/01-page.png",
+      "sourceSha": "ee369ce9d032d7a915397c24bbe51061f79ee9c1b02fd0ddc4b4b2550de197ed",
+      "sourceBytes": 243917,
+      "variant": "1280",
+      "bytes": 96530
+    },
+    "248-quantum-dashboard-01-page@1280.webp": {
+      "source": "248-quantum-dashboard/shots/01-page.png",
+      "sourceSha": "5d2184ca5ca5dcefd5079457f42d3007d69808938ec812b5351b0226f19924aa",
+      "sourceBytes": 288354,
+      "variant": "1280",
+      "bytes": 6006
+    },
+    "247-synthetic-media-01-page@1280.webp": {
+      "source": "247-synthetic-media/shots/01-page.png",
+      "sourceSha": "5e0529c725a7a1af3d8800a2fbfb145202766581476e77c5c5f3314f92133740",
+      "sourceBytes": 284430,
+      "variant": "1280",
+      "bytes": 106954
+    },
+    "248-quantum-dashboard-01-page@640.webp": {
+      "source": "248-quantum-dashboard/shots/01-page.png",
+      "sourceSha": "5d2184ca5ca5dcefd5079457f42d3007d69808938ec812b5351b0226f19924aa",
+      "sourceBytes": 288354,
+      "variant": "640",
+      "bytes": 35488
+    },
+    "249-digital-twin-01-page@640.webp": {
+      "source": "249-digital-twin/shots/01-page.png",
+      "sourceSha": "65a7d330d8718b149624ba172aaba7830b60287847f9feaff9bc041f8e61d2aa",
+      "sourceBytes": 291367,
+      "variant": "640",
+      "bytes": 32638
+    },
+    "251-post-screen-voice-01-page@640.webp": {
+      "source": "251-post-screen-voice/shots/01-page.png",
+      "sourceSha": "333bf8e26691651af561834c0f4a3d95cc77e5d3532704c1e4c2ab6f01792e48",
+      "sourceBytes": 291324,
+      "variant": "640",
+      "bytes": 33378
+    },
+    "249-digital-twin-01-page@1280.webp": {
+      "source": "249-digital-twin/shots/01-page.png",
+      "sourceSha": "65a7d330d8718b149624ba172aaba7830b60287847f9feaff9bc041f8e61d2aa",
+      "sourceBytes": 291367,
+      "variant": "1280",
+      "bytes": 104850
+    },
+    "250-neural-canvas-01-page@640.webp": {
+      "source": "250-neural-canvas/shots/01-page.png",
+      "sourceSha": "68c9181bd6dbfb647d3fe08120a4735248eddc6e258f7439f8e2556c68a3b29f",
+      "sourceBytes": 282467,
+      "variant": "640",
+      "bytes": 33070
+    },
+    "250-neural-canvas-01-page@1280.webp": {
+      "source": "250-neural-canvas/shots/01-page.png",
+      "sourceSha": "68c9181bd6dbfb647d3fe08120a4735248eddc6e258f7439f8e2556c68a3b29f",
+      "sourceBytes": 282467,
+      "variant": "1280",
+      "bytes": 106098
+    },
+    "251-post-screen-voice-01-page@1280.webp": {
+      "source": "251-post-screen-voice/shots/01-page.png",
+      "sourceSha": "333bf8e26691651af561834c0f4a3d95cc77e5d3532704c1e4c2ab6f01792e48",
+      "sourceBytes": 291324,
+      "variant": "1280",
+      "bytes": 109618
+    },
+    "41-grand-tourer-01-page@640.webp": {
+      "source": "41-grand-tourer/shots/01-page.png",
+      "sourceSha": "0517ed1759c74c6a6ab38ebfc1e7750dc51ff5d0571f66b980bc5726390a035d",
+      "sourceBytes": 1482649,
+      "variant": "640",
+      "bytes": 40098
     },
     "42-grand-tourer-oxblood-01-page@640.webp": {
       "source": "42-grand-tourer-oxblood/shots/01-page.png",
-      "sourceSha": "53c998c352a140dafe458c47f728f65ed842de86f8848d458bc8b42ff1df1987",
-      "sourceBytes": 989895,
+      "sourceSha": "a4e40b54b5ae942478283d7c57b8c7464dcc138c4d353a432e5d337d92ef3d8b",
+      "sourceBytes": 925264,
       "variant": "640",
       "bytes": 27256
     },
-    "43-grand-tourer-midnight-01-page@1280.webp": {
-      "source": "43-grand-tourer-midnight/shots/01-page.png",
-      "sourceSha": "4e4b4910a15053ce1b93ac2541a95d550195cc13cebb86ee6d0147eb8f9c6464",
-      "sourceBytes": 1447710,
+    "41-grand-tourer-01-page@1280.webp": {
+      "source": "41-grand-tourer/shots/01-page.png",
+      "sourceSha": "0517ed1759c74c6a6ab38ebfc1e7750dc51ff5d0571f66b980bc5726390a035d",
+      "sourceBytes": 1482649,
       "variant": "1280",
-      "bytes": 111802
+      "bytes": 143454
     },
     "43-grand-tourer-midnight-01-page@640.webp": {
       "source": "43-grand-tourer-midnight/shots/01-page.png",
-      "sourceSha": "4e4b4910a15053ce1b93ac2541a95d550195cc13cebb86ee6d0147eb8f9c6464",
-      "sourceBytes": 1447710,
+      "sourceSha": "1bab398efd8751b8f5216923294f2939940164a42c8b9292da62e57cf48cc910",
+      "sourceBytes": 1326401,
       "variant": "640",
       "bytes": 35326
     },
     "42-grand-tourer-oxblood-01-page@1280.webp": {
       "source": "42-grand-tourer-oxblood/shots/01-page.png",
-      "sourceSha": "53c998c352a140dafe458c47f728f65ed842de86f8848d458bc8b42ff1df1987",
-      "sourceBytes": 989895,
+      "sourceSha": "a4e40b54b5ae942478283d7c57b8c7464dcc138c4d353a432e5d337d92ef3d8b",
+      "sourceBytes": 925264,
       "variant": "1280",
       "bytes": 85942
+    },
+    "43-grand-tourer-midnight-01-page@1280.webp": {
+      "source": "43-grand-tourer-midnight/shots/01-page.png",
+      "sourceSha": "1bab398efd8751b8f5216923294f2939940164a42c8b9292da62e57cf48cc910",
+      "sourceBytes": 1326401,
+      "variant": "1280",
+      "bytes": 111802
     }
   }
 }
