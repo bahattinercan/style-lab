@@ -1,125 +1,125 @@
-# Sahne katmanı planı — "site bir sahne" (stage-lab) · v2
+# Stage layer plan — "the site is a stage" (stage-lab) · v2
 
-> **Ne işe yarar:** Lando Norris · Monolith · Bruno · Inkwell · Aurel · Ponpon · Unseen · Mat Voyce sınıfı
-> WebGL/animasyon sitelerini üretebilir hâle gelmek için karar kaydı + uygulama planı.
-> **Durum:** plan onaylandı, kod yazılmadı. **v2:** stil `04-luxury-typography` kilitlendi, stil sözleşmesi çatışması çözüldü.
-> **Kapsam dışı:** style-lab'ın 145 stil kataloğu ve 38 kapısı **değişmez**. Bu plan yeni bir repo açar.
+> **What it is for:** a decision record + implementation plan for becoming able to produce
+> WebGL/animated sites in the class of Lando Norris · Monolith · Bruno · Inkwell · Aurel · Ponpon · Unseen · Mat Voyce.
+> **Status:** plan approved, no code written. **v2:** style `04-luxury-typography` locked, the style-contract conflict resolved.
+> **Out of scope:** style-lab's 145-style catalog and its 38 gates **do not change**. This plan opens a new repo.
 
 ---
 
-## 1 · Karar kaydı (kilitli)
+## 1 · Decision record (locked)
 
-| # | Karar | Seçim | Sonuç |
+| # | Decision | Choice | Consequence |
 |---|---|---|---|
-| K1 | Kod nerede | **Kardeş proje `../stage-lab`** | npm/vite/three serbest; style-lab bağımlılıksız kalır |
-| K2 | Hareket politikası | **Serbest, şartsız** | `kit/motion/policy.json` yasakları sahne tier'ında geçersiz |
-| K3 | İlk arketip | **`portrait-motif`** (Lando iskeleti) | 5 beat + motif tekrarı |
-| K4 | Bu turun çıktısı | **Yalnız bu doküman** | Kod yok, kapı değişmez |
-| **K5** | **Stil** | **`04-luxury-typography`** | Palet, tipografi, boşluk ve **stil hareket yasakları** bağlayıcı → §3 |
+| K1 | Where the code lives | **Sibling project `../stage-lab`** | npm/vite/three are free to use; style-lab stays dependency-free |
+| K2 | Motion policy | **Free, unconditional** | The `kit/motion/policy.json` bans do not apply at the stage tier |
+| K3 | First archetype | **`portrait-motif`** (Lando skeleton) | 5 beats + motif repetition |
+| K4 | Output of this round | **This document only** | No code, gates unchanged |
+| **K5** | **Style** | **`04-luxury-typography`** | Palette, typography, spacing and **the style's own motion bans** are binding → §3 |
 
-### K1 gerekçesi — neden kardeş proje
-style-lab kökte `package.json` taşımıyor; kit Node built-in + headless Chrome (CDP) ile çalışıyor.
-Sahne sitesi tersini ister: `three` + `@react-three/fiber` + `gsap` + `lenis` + `vite`. Bunları style-lab'a sokmak
-38 kapıyı npm'e bağımlı hâle getirir.
+### K1 rationale — why a sibling project
+style-lab carries no `package.json` at the root; the kit runs on Node built-ins + headless Chrome (CDP).
+A stage site wants the opposite: `three` + `@react-three/fiber` + `gsap` + `lenis` + `vite`. Pulling those
+into style-lab would make the 38 gates npm-dependent.
 
-| Repo | Rol | Yazar | Okur |
+| Repo | Role | Writes | Reads |
 |---|---|---|---|
-| `style-lab` | **veri**: palet, tipografi, motion süre/eğri, sahne şablonları | yalnız kendi kapıları | — |
-| `stage-lab` | **sahne**: beat makinesi, WebGL, kamera, ses | kendi `npm run verify` | style-lab'ın `dist/` çıktısı + `tokens.json` |
+| `style-lab` | **data**: palette, typography, motion duration/easing, scene templates | only its own gates | — |
+| `stage-lab` | **stage**: beat machine, WebGL, camera, audio | its own `npm run verify` | style-lab's `dist/` output + `tokens.json` |
 
-**Kontrat (tek yön):** `stage-lab` style-lab'a **yazmaz**. Okuduğu dosyalar:
+**Contract (one-way):** `stage-lab` **never writes** to style-lab. The files it reads:
 
-| Dosya | Ne alınır |
+| File | What is taken |
 |---|---|
-| `kit/dist/tokens.all.css` | `[data-style]` değişken setleri (açık + koyu) |
+| `kit/dist/tokens.all.css` | `[data-style]` variable sets (light + dark) |
 | `kit/dist/tailwind.theme.css` | `@theme` (Tailwind v4) |
-| `kit/dist/motion.json` | `durationMs`, `{kind, points}` eğri, `offsetYPx` |
-| `kit/dist/react/styleLabTokens.js` | TS tarafında tipli token |
-| `kit/styles.index.json` | 145 stil özeti + yollar |
-| **`styles/04-luxury-typography/tokens.json`** | **`must` · `mustNot` · `motion.forbidden` · `components` — stil sözleşmesi kapısının girdisi** |
-| **`styles/04-luxury-typography/style.md`** | kompozisyon + ekran reçetesi (insan okur, kapı okumaz) |
+| `kit/dist/motion.json` | `durationMs`, `{kind, points}` easing, `offsetYPx` |
+| `kit/dist/react/styleLabTokens.js` | typed tokens on the TS side |
+| `kit/styles.index.json` | summary of the 145 styles + paths |
+| **`styles/04-luxury-typography/tokens.json`** | **`must` · `mustNot` · `motion.forbidden` · `components` — the input of the style-contract gate** |
+| **`styles/04-luxury-typography/style.md`** | composition + screen recipe (human-readable, not read by the gate) |
 
-**Drift koruması:** `tools/verify-contract.mjs` — 7 dosyanın SHA256'sını `contract.lock.json` ile karşılaştırır.
-style-lab export'u değişip stage-lab güncellenmemişse `npm run verify` kırmızı. Ters yön yok.
-
----
-
-## 2 · Referans sökümü → 5 arketip
-
-| Arketip | Referans | Taşıyıcı fikir | Çekirdek mekanik | `04` ile uyum |
-|---|---|---|---|---|
-| `portrait-motif` | Lando Norris | kask | imleç motifi parçalar → motif 4+ yerde tekrar | ✅ (uyarlanmış, §3) |
-| `single-object` | Monolith | tek monolit | scroll → **kamera** | ⚠️ kamera sabitlenmeli, motif dönmeli |
-| `scroll-narrative` | Inkwell | oyunun kendisi | nav yok, beat + fizik | ⚠️ fizik "hareket" sayılır → dürtülü olmalı |
-| `playable-world` | Bruno · Aurel | oynanabilir dünya | WASD + çarpışma | ⚠️ 04'ün seyrek yerleşimi ile zor; sonraya |
-| `kinetic-type` | Mat Voyce · Stas Bondar | harf | ölçek/eksen + DrawSVG | ✅ doğal uyum (Cormorant 300 + DrawSVG) |
-
-**K2 sonrası net kural:** `policy.json` yasakları düştü, **`04`'ün kendi yasakları düşmedi.** İkisi ayrı katman.
+**Drift protection:** `tools/verify-contract.mjs` compares the SHA256 of 7 files against `contract.lock.json`.
+If the style-lab export changed and stage-lab was not updated, `npm run verify` goes red. There is no reverse direction.
 
 ---
 
-## 3 · `04` ile uyum: 6 çatışma ve çözümü
+## 2 · Reference breakdown → 5 archetypes
 
-Bu bölüm v2'nin asıl işi. Lando mekaniği `04`'ün sözleşmesine **olduğu gibi** konamaz.
-
-| # | Çatışma | `04` ne diyor | Kaynak | Çözüm |
+| Archetype | Reference | Carrying idea | Core mechanic | Fit with `04` |
 |---|---|---|---|---|
-| Ç1 | **Sürekli animasyon** | `motion.forbidden`: "sürekli animasyon" | parçacıklar kendi kendine süzülürse ihlal | **Hareket kullanıcıdan gelir.** Parçacıklar imleç dürtünce hareket eder, atalet 1.2s'de sıfıra iner, durur. "Toz" değil **"gravür talaşı"** |
-| Ç2 | **Parallax** | `motion.forbidden`: "parallax" | kamera/katman kayması yasak | Kamera **sabit**. Derinlik `clip-path` katmanları + `opacity` ile kurulur (`04` imzası: `mask-wipe` / `clip-curtain`) |
-| Ç3 | **Pin / scrub** | `pin.enabled: false`, `scroll.once: true` | Monolith/Inkwell mekaniği pin ister | **İki kanal:** DOM reveal = `once: true` (04 aynen); sahne scrub = ayrı kanal, geri dönebilir. Override **yazılı**, sessiz ezme yok |
-| Ç4 | **Bloom / parlaklık** | "gölge, gradient, cam, doku" yasak; `--bg` krem | krem zeminde bloom beyazı kırpar | **Bloom = 0.** Post yok; yerine grain `.03` + 1px `--line` vignette |
-| Ç5 | **Altın** | "`--accent` metin olarak kullanılmaz" (2.0:1); "altın yalnızca hairline/ikon/çerçeve" | dolu altın mesh = geniş alan | Motif **çizgi**dir: `LineSegments` / 1px gravür. Dolu altın yüzey yok; altın yalnızca hairline ve tek vurgu noktası |
-| Ç6 | **Yoğunluk** | "ekran başına 1 başlık + 1 paragraf + 1 CTA", "≤2 bölüm", chip enflasyonu yasak | Lando'nun hall-of-fame grid'i | `atlas` beat'i **grid değil**: 3 satır seyrek liste, hairline ayırıcı, serif rakam |
+| `portrait-motif` | Lando Norris | helmet | cursor pokes motif pieces → motif repeats in 4+ places | ✅ (adapted, §3) |
+| `single-object` | Monolith | single monolith | scroll → **camera** | ⚠️ camera must be locked, the motif rotates |
+| `scroll-narrative` | Inkwell | the game itself | no nav, beat + physics | ⚠️ physics counts as "motion" → must be impulse-driven |
+| `playable-world` | Bruno · Aurel | playable world | WASD + collision | ⚠️ hard with 04's sparse layout; defer |
+| `kinetic-type` | Mat Voyce · Stas Bondar | letter | scale/axis + DrawSVG | ✅ natural fit (Cormorant 300 + DrawSVG) |
 
-### 3.1 Üç katmanlı öncelik (çatışma çıkınca sıra bu)
+**Clear rule after K2:** the `policy.json` bans are gone, **`04`'s own bans are not.** They are two separate layers.
+
+---
+
+## 3 · Fitting `04`: 6 conflicts and their resolution
+
+This section is the real work of v2. The Lando mechanic cannot be placed into `04`'s contract **as is**.
+
+| # | Conflict | What `04` says | Source | Resolution |
+|---|---|---|---|---|
+| C1 | **Continuous animation** | `motion.forbidden`: "continuous animation" | if particles drift on their own it is a violation | **Motion comes from the user.** Particles move when the cursor pokes them, inertia falls to zero in 1.2s and they stop. Not "dust" but **"engraving shavings"** |
+| C2 | **Parallax** | `motion.forbidden`: "parallax" | camera/layer sliding is banned | The camera is **fixed**. Depth is built with `clip-path` layers + `opacity` (`04` signature: `mask-wipe` / `clip-curtain`) |
+| C3 | **Pin / scrub** | `pin.enabled: false`, `scroll.once: true` | the Monolith/Inkwell mechanic needs pinning | **Two channels:** DOM reveal = `once: true` (04 as-is); stage scrub = a separate channel, reversible. The override is **written down**, no silent override |
+| C4 | **Bloom / glow** | "no shadow, gradient, glass, texture"; `--bg` is cream | bloom clips to white on a cream ground | **Bloom = 0.** No post; instead grain `.03` + a 1px `--line` vignette |
+| C5 | **Gold** | "`--accent` is never used as text" (2.0:1); "gold only as hairline/icon/frame" | a filled gold mesh = large area | The motif **is a line**: `LineSegments` / 1px engraving. No filled gold surface; gold only in hairlines and a single accent point |
+| C6 | **Density** | "1 heading + 1 paragraph + 1 CTA per screen", "≤2 sections", chip inflation banned | Lando's hall-of-fame grid | The `atlas` beat is **not a grid**: 3 sparse list rows, hairline dividers, serif numerals |
+
+### 3.1 Three-layer precedence (this is the order when a conflict appears)
 
 ```
-1. 04 stil sözleşmesi  (must / mustNot / motion.forbidden)
-2. K2 sahne istisnası   (policy.json yasakları düşer)
-3. Arketip mekaniği     (Lando iskeleti; ilk ikisiyle çelişirse uyarlanır)
+1. 04 style contract   (must / mustNot / motion.forbidden)
+2. K2 stage exception  (policy.json bans are dropped)
+3. Archetype mechanic  (Lando skeleton; adapted if it conflicts with the first two)
 ```
 
-### 3.2 `04` profil (stage-lab tarafı)
+### 3.2 `04` profile (stage-lab side)
 
-| Katman | Değer | Kaynak |
+| Layer | Value | Source |
 |---|---|---|
-| Zemin | `#f6f1e7` krem (`--bg`) | tokens.json |
+| Ground | `#f6f1e7` cream (`--bg`) | tokens.json |
 | Display | Cormorant Garamond **300**, 64px / 1.1 / `0.01em` | typography.scale.h1 |
-| Gövde | Jost 14 / 1.75 / `0.02em`, ölçü **46–54ch** | typography.measure |
-| Mikro etiket | 10px / 500 / uppercase / `0.3em`, renk **`--ink`** (altın değil) | must #3 + kontrast |
-| Hairline | 1px `rgba(26,24,21,.16)`; **altın `--accent` yalnız çizgi** | must #6 |
-| Shape | radius **0**, gölge **yok** (`--shadow: none`) | shape/elevation |
-| Giriş | **800ms** `cubic-bezier(.2,.7,.2,1)`, `opacity` + 24px, stagger 90ms | sequences.enter |
+| Body | Jost 14 / 1.75 / `0.02em`, measure **46–54ch** | typography.measure |
+| Micro label | 10px / 500 / uppercase / `0.3em`, color **`--ink`** (not gold) | must #3 + contrast |
+| Hairline | 1px `rgba(26,24,21,.16)`; **gold `--accent` only as a line** | must #6 |
+| Shape | radius **0**, shadow **none** (`--shadow: none`) | shape/elevation |
+| Enter | **800ms** `cubic-bezier(.2,.7,.2,1)`, `opacity` + 24px, stagger 90ms | sequences.enter |
 | Scroll reveal | **1000ms**, `top 80%`, `once: true` | sequences.scroll |
-| Hover | **320ms**, `scale(1.015)` (görsel), `underline-draw` (bağlantı) | sequences.hover |
-| Ödül hareketi | hairline **0 → 40px**, 400ms `ease-in-out` | `04` hareket tablosu |
-| Koyu mod | `#12100e` zemin, altın `#d8bb7d` | palette.dark |
+| Hover | **320ms**, `scale(1.015)` (image), `underline-draw` (link) | sequences.hover |
+| Reward motion | hairline **0 → 40px**, 400ms `ease-in-out` | `04` motion table |
+| Dark mode | `#12100e` ground, gold `#d8bb7d` | palette.dark |
 
-**Sahne varsayılanı açık mod** (`04`'ün imzası krem kâğıt). Koyu mod ayrı profil: aynı kod, farklı parçacık/bloom ayarı.
+**Stage default is light mode** (`04`'s signature cream paper). Dark mode is a separate profile: same code, different particle/bloom setting.
 
-### 3.3 Tipografi ↔ sahne köprüsü
+### 3.3 Typography ↔ stage bridge
 
-- **FOUT yasak.** 64px Cormorant 300 bir kez sıçrarsa lüks hissi biter. `font-display: block` + preload;
-  **B0 preload beat'i `document.fonts.ready`'yi bekler** → sahne fontla birlikte açılır.
-- Motif ile display aynı karede: metin `mix-blend-mode: multiply` **kullanılmaz** (gölge/gradient yasağına yakın);
-  bunun yerine motif `opacity: .12` gravür katmanı, metin üstte tam kontrast.
-- Hairline, motifin bir parçasından türetilir (motifin yatay kesiti = 40px çizgi) → **motif tekrarı #3**.
+- **FOUT is banned.** If the 64px Cormorant 300 jumps once, the luxury feel is over. `font-display: block` + preload;
+  **the B0 preload beat waits for `document.fonts.ready`** → the stage opens together with the font.
+- Motif and display in the same frame: `mix-blend-mode: multiply` is **not used** for text (too close to the
+  shadow/gradient ban); instead the motif is an `opacity: .12` engraving layer and the text sits on top at full contrast.
+- The hairline is derived from a part of the motif (the motif's horizontal cross-section = a 40px rule) → **motif repetition #3**.
 
 ---
 
-## 4 · `portrait-motif` derin söküm (K3 + K5)
+## 4 · `portrait-motif` deep breakdown (K3 + K5)
 
-### 4.1 Altı beat (04 temposuna çekilmiş)
+### 4.1 Six beats (pulled to the 04 tempo)
 
-| Beat | Süre / tetik | Ne olur | Teknik | `04` uyumu |
+| Beat | Duration / trigger | What happens | Technique | `04` fit |
 |---|---|---|---|---|
-| **B0 preload** | 0 – 1.2s | font + motif parçaları toplanır | `document.fonts.ready` + GSAP timeline | `clip-curtain` |
-| **B1 hero** | scroll = 0 | gravür motif; imleç dürtünce talaş kalkar, **1.2s'de durur** | `InstancedMesh` 4k, atalet sönümü | Ç1 |
-| **B2 story** | scroll 0 → .6 | 3 perde, **kamera sabit**, motif `clip-path` ile açılır | GSAP scrub + `clip-path` | Ç2, Ç3 |
-| **B3 atlas** | scroll .6 → .9 | 3 satır seyrek liste; satır numarası serif; motifin dilimi hairline (tekrar #3) | DOM + hairline | Ç6 |
-| **B4 footer** | scroll .9 → 1 | motif dev gravür, `opacity .08`, `clip-path` (tekrar #4) | CSS clip + scrub | Ç2, Ç4 |
+| **B0 preload** | 0 – 1.2s | font + motif pieces assemble | `document.fonts.ready` + GSAP timeline | `clip-curtain` |
+| **B1 hero** | scroll = 0 | engraving motif; cursor poke lifts shavings, **stops in 1.2s** | `InstancedMesh` 4k, inertia damping | C1 |
+| **B2 story** | scroll 0 → .6 | 3 acts, **camera fixed**, motif opens with `clip-path` | GSAP scrub + `clip-path` | C2, C3 |
+| **B3 atlas** | scroll .6 → .9 | 3 sparse list rows; row number in serif; a motif slice as the hairline (repetition #3) | DOM + hairline | C6 |
+| **B4 footer** | scroll .9 → 1 | giant motif engraving, `opacity .08`, `clip-path` (repetition #4) | CSS clip + scrub | C2, C4 |
 
-Motif tekrarı: nav mikro çizim (#1) + hero (#2) + atlas hairline (#3) + footer (#4) → **4**.
+Motif repetition: nav micro drawing (#1) + hero (#2) + atlas hairline (#3) + footer (#4) → **4**.
 
 ### 4.2 Motif pipeline
 
@@ -127,44 +127,44 @@ Motif tekrarı: nav mikro çizim (#1) + hero (#2) + atlas hairline (#3) + footer
 motif.svg / motif.glb  →  tools/optimize-motif.mjs  →  public/motif/{mesh.glb, parts.json, og.webp}
 ```
 
-- `04` gereği motif **çizgi** taşımalı: GLB'den `LineSegments` (edges) türetilir; dolu yüzey yalnızca
-  `--surface` / `--bg` ile aynı tonda, gölgesiz. Altın yalnız hairline.
-- GLB: Draco + KTX2, **≤ 1.5 MB**; parça isimleri `parts.json`'a (imleç hangi parçayı koparacak).
-- SVG fallback: WebGL yoksa **aynı motif** SVG olarak; boş ekran yok.
-- Parçacık sayısı 10k **değil 4k**: krem zeminde 10k toz "kirli" görünür (`04`'ün "görünür gürültü yok" kuralı).
+- Per `04` the motif must carry **lines**: `LineSegments` (edges) are derived from the GLB; a filled surface only in
+  the same tone as `--surface` / `--bg`, without shadows. Gold only in hairlines.
+- GLB: Draco + KTX2, **≤ 1.5 MB**; part names go into `parts.json` (which part the cursor will detach).
+- SVG fallback: without WebGL the **same motif** as SVG; no blank screen.
+- Particle count 4k **not 10k**: 10k dust particles look "dirty" on a cream ground (`04`'s "no visible noise" rule).
 
-### 4.3 Yığın (pinlenmiş sürümler)
+### 4.3 Stack (pinned versions)
 
-| Katman | Seçim | Not |
+| Layer | Choice | Note |
 |---|---|---|
 | Build | Vite 6 + React 19 + TS strict | |
-| 3B | `three` + `@react-three/fiber` + `@react-three/drei` | `LineSegments`, KTX2 loader |
-| Timeline | `gsap` + `ScrollTrigger` | scrub kanalı ayrı; `CustomEase` marka eğrisi |
-| Smooth scroll | `lenis` | GSAP ticker'a bağlanır |
-| 2B mikro-motion | `@rive-app/react-canvas` | hairline çizimi + mikro etiket |
-| Post | **yok** (bloom off) | Ç4; grain CSS ile |
-| Ölçüm | `playwright` + CDP | FPS, drawcall, LCP, uzun görev |
+| 3D | `three` + `@react-three/fiber` + `@react-three/drei` | `LineSegments`, KTX2 loader |
+| Timeline | `gsap` + `ScrollTrigger` | scrub channel separate; `CustomEase` brand curve |
+| Smooth scroll | `lenis` | bound to the GSAP ticker |
+| 2D micro-motion | `@rive-app/react-canvas` | hairline drawing + micro label |
+| Post | **none** (bloom off) | C4; grain via CSS |
+| Measurement | `playwright` + CDP | FPS, drawcall, LCP, long tasks |
 
 ---
 
-## 5 · `stage-lab` mimarisi
+## 5 · `stage-lab` architecture
 
 ```
 ../stage-lab/
-├── contract.lock.json            # style-lab 7 dosya SHA256 (tokens.json dahil)
+├── contract.lock.json            # SHA256 of 7 style-lab files (tokens.json included)
 ├── tools/
-│   ├── verify-contract.mjs       # drift kapısı
-│   ├── check-style-contract.mjs  # 04 must/mustNot denetimi (kod + config)
-│   ├── optimize-motif.mjs        # GLB → çizgi türetimi + Draco/KTX2 + parts.json
-│   └── measure.mjs               # playwright: FPS/drawcall/LCP/long task/etkileşim sayısı
+│   ├── verify-contract.mjs       # drift gate
+│   ├── check-style-contract.mjs  # 04 must/mustNot audit (code + config)
+│   ├── optimize-motif.mjs        # GLB → line derivation + Draco/KTX2 + parts.json
+│   └── measure.mjs               # playwright: FPS/drawcall/LCP/long task/interaction count
 ├── src/
 │   ├── stage/
-│   │   ├── beats.ts              # B0..B4, config'ten okur, fonts.ready bekler
-│   │   ├── scroll.ts             # Lenis + iki kanal: reveal(once) / scrub(reversible)
-│   │   ├── scene.tsx             # R3F canvas, frameloop='demand', kalite kademesi
-│   │   └── motif.ts              # çizgi motif yükleme + parça haritası + SVG fallback
+│   │   ├── beats.ts              # B0..B4, reads config, awaits fonts.ready
+│   │   ├── scroll.ts             # Lenis + two channels: reveal(once) / scrub(reversible)
+│   │   ├── scene.tsx             # R3F canvas, frameloop='demand', quality tier
+│   │   └── motif.ts              # line motif loading + part map + SVG fallback
 │   ├── archetypes/portrait-motif/
-│   ├── ui/                       # nav (pill) · hero · atlas listesi · footer
+│   ├── ui/                       # nav (pill) · hero · atlas list · footer
 │   └── styles/                   # tokens.all.css import + data-style="luxury-typography"
 ├── stage.config.json
 └── verify: typecheck + lint + style-contract + build + verify-contract + measure
@@ -180,167 +180,170 @@ motif.svg / motif.glb  →  tools/optimize-motif.mjs  →  public/motif/{mesh.gl
   "scroll": { "reveal": { "once": true, "durationMs": 1000 }, "scrub": { "distanceVh": 300 } },
   "audio": { "enabled": false },
   "styleOverrides": {
-    "motion.forbidden": ["hızlı (100ms altı) geçişler"],
-    "scroll.pin": { "enabled": true, "scrub": true, "rationale": "Ç3: scrub kullanıcı sürüyor, otonom hareket değil" },
+    "motion.forbidden": ["fast transitions (under 100ms)"],
+    "scroll.pin": { "enabled": true, "scrub": true, "rationale": "C3: scrub is user-driven, not autonomous motion" },
     "policy.forbidden": ["custom-cursor", "scroll-hijack", "pin"] 
   }
 }
 ```
 
-`styleOverrides` **zorunlu alan**: override yoksa kapı `motion.forbidden`'ı aynen uygular. Sessiz ezme yok.
+`styleOverrides` is a **required field**: without an override the gate applies `motion.forbidden` verbatim. No silent overrides.
 
 ---
 
-## 6 · Kabul ölçütleri (ölçülebilir)
+## 6 · Acceptance criteria (measurable)
 
-### Sahne
+### Stage
 
-| # | Ölçüt | Eşik | Nasıl |
+| # | Criterion | Threshold | How |
 |---|---|---|---|
-| 1 | Motif tekrarı | ≥ **4** farklı bölüm | `measure.mjs` DOM sorgusu |
-| 2 | Beat ilerlemesi | 5 beat, scroll 0→1 | `window.__beats` telemetrisi |
+| 1 | Motif repetition | ≥ **4** distinct sections | `measure.mjs` DOM query |
+| 2 | Beat progression | 5 beats, scroll 0→1 | `window.__beats` telemetry |
 | 3 | FPS (desktop, 4k) | p50 ≥ **55** · p95 ≥ **45** | CDP `Performance` |
-| 4 | Drawcall | ≤ **30** | `renderer.info.render.calls` |
+| 4 | Drawcalls | ≤ **30** | `renderer.info.render.calls` |
 | 5 | LCP (4G) | ≤ **2.5s** | Lighthouse |
-| 6 | JS gzip | ≤ **450 KB** | vite build raporu |
-| 7 | GLB | ≤ **1.5 MB** (Draco+KTX2) | dosya boyutu |
-| 8 | WebGL yok | SVG motif, boş ekran yok | `--disable-webgl` |
-| 9 | Atalet durur | imleç sabitken 1.5s sonra transform değişimi = **0** | CDP: ardışık frame matrix diff |
+| 6 | JS gzip | ≤ **450 KB** | vite build report |
+| 7 | GLB | ≤ **1.5 MB** (Draco+KTX2) | file size |
+| 8 | No WebGL | SVG motif, no blank screen | `--disable-webgl` |
+| 9 | Inertia stops | with the cursor still, transform change after 1.5s = **0** | CDP: consecutive frame matrix diff |
 
-### `04` stil sözleşmesi (yeni — v2'nin ana kapısı)
+### `04` style contract (new — the main gate of v2)
 
-| # | Ölçüt | Eşik | Nasıl |
+| # | Criterion | Threshold | How |
 |---|---|---|---|
-| 10 | Gölge | `box-shadow: none`, `text-shadow: none` | computed style taraması |
-| 11 | Gradient / cam | `gradient` / `backdrop-filter` = **0** eşleşme | CSS tarama |
-| 12 | Radius | ≤ **2px** her öğede | computed style |
+| 10 | Shadow | `box-shadow: none`, `text-shadow: none` | computed style scan |
+| 11 | Gradient / glass | `gradient` / `backdrop-filter` = **0** matches | CSS scan |
+| 12 | Radius | ≤ **2px** on every element | computed style |
 | 13 | Display | family ⊇ Cormorant, weight ∈ {300,400}, size ≥ 52px | computed style |
-| 14 | Kalın display | weight ≥ 600 **hiçbir** display öğede | computed style |
-| 15 | Gövde | ≥ 14px, line-height ≥ 1.7 | computed style |
-| 16 | Altın metin | `color: #c6a664` **hiçbir** metin düğümünde | computed style (kontrast 2.0:1) |
-| 17 | Mikro etiket | `--ink`, 10px, uppercase, tracking ≥ `0.2em` | computed style |
-| 18 | Seyreklik | hero'da ≤ **3** etkileşim; bölüm ≤ **2** | DOM sayımı |
-| 19 | FOUT | preload sonrası font swap **0** | `document.fonts` gözlemcisi |
-| 20 | Kontrast | `ink/bg` ≥ 15, `ink-soft/bg` ≥ 6.5, `ink-faint` gövdede **yok** | APCA/WCAG hesabı |
+| 14 | Heavy display | weight ≥ 600 on **no** display element | computed style |
+| 15 | Body | ≥ 14px, line-height ≥ 1.7 | computed style |
+| 16 | Gold text | `color: #c6a664` on **no** text node | computed style (contrast 2.0:1) |
+| 17 | Micro label | `--ink`, 10px, uppercase, tracking ≥ `0.2em` | computed style |
+| 18 | Sparsity | ≤ **3** interactive elements in the hero; ≤ **2** per section | DOM count |
+| 19 | FOUT | **0** font swaps after preload | `document.fonts` observer |
+| 20 | Contrast | `ink/bg` ≥ 15, `ink-soft/bg` ≥ 6.5, `ink-faint` **absent** from body | APCA/WCAG calculation |
 
-**Kapı:** `npm run verify` = `tsc --noEmit` → `eslint` → **`check-style-contract`** → `vite build` → `verify-contract` → `measure --all`
+**Gate:** `npm run verify` = `tsc --noEmit` → `eslint` → **`check-style-contract`** → `vite build` → `verify-contract` → `measure --all`
 
 ---
 
-## 7 · Fazlar
+## 7 · Phases
 
 ### stage-lab
 
-| Faz | İş | Bitti sayılır |
+| Phase | Work | Counts as done |
 |---|---|---|
-| **S0** | iskelet: Vite+TS+R3F, `verify-contract`, `check-style-contract`, token import, boş canvas | `verify` yeşil, `contract.lock.json` üretildi |
-| **S1** | motif pipeline: çizgi türetimi + Draco/KTX2 + SVG fallback | motif GLB ≤ 1.5 MB, fallback çalışıyor |
-| **S2** | beat makinesi + **iki kanal scroll** + `fonts.ready` bekleyişi | scroll 0→1, 5 beat, FOUT yok |
-| **S3** | gravür parçacık + imleç dürtüsü + **atalet sönümü** | imleç sabitken hareket duruyor (ölçüt 9) |
-| **S4** | UI: pill nav · hero · atlas listesi · footer + motif 4 tekrar | ölçüt 1 ve 18 |
-| **S5** | ölçüm + poster + 3 viewport + koyu mod profili | `measure --all` bütçe içinde |
-| **S6** | kalan 4 arketip (`04` uyarlamalarıyla) | config değiştirip arketip değişiyor |
+| **S0** | skeleton: Vite+TS+R3F, `verify-contract`, `check-style-contract`, token import, empty canvas | `verify` green, `contract.lock.json` produced |
+| **S1** | motif pipeline: line derivation + Draco/KTX2 + SVG fallback | motif GLB ≤ 1.5 MB, fallback works |
+| **S2** | beat machine + **two-channel scroll** + `fonts.ready` wait | scroll 0→1, 5 beats, no FOUT |
+| **S3** | engraving particles + cursor impulse + **inertia damping** | motion stops with the cursor still (criterion 9) |
+| **S4** | UI: pill nav · hero · atlas list · footer + motif 4 repetitions | criteria 1 and 18 |
+| **S5** | measurement + poster + 3 viewports + dark mode profile | `measure --all` within budget |
+| **S6** | the remaining 4 archetypes (with `04` adaptations) | changing config changes the archetype |
 
-### style-lab (bu plandan tek dokunuş)
+### style-lab (the only touch from this plan)
 
-| Faz | İş |
+| Phase | Work |
 |---|---|
-| **Z0** | bu doküman (yapıldı) |
-| **Z1** *(opsiyonel)* | `docs/animasyon-referanslari.md` §2'ye yıllık kazanan 8 satırı |
+| **Z0** | this document (done) |
+| **Z1** *(optional)* | add the 8 annual-winner rows to `docs/animasyon-referanslari.md` §2 |
 
-`policy.json`, `gates.sh`, `playbook.md`, `styles/04-*` **değişmiyor**.
+`policy.json`, `gates.sh`, `playbook.md`, `styles/04-*` **do not change**.
 
 ---
 
-## 8 · Bilinçli kabul edilen riskler
+## 8 · Deliberately accepted risks
 
-| Risk | Ne olur | Tek anahtarla geri dönüş |
+| Risk | What happens | One-switch rollback |
 |---|---|---|
-| **Klavye tuzağı** | scroll kilidi + pin klavye kullanıcısını sıkıştırır | `a11y.escapeHatch: true` → statik sürüm |
-| **Hareket hassasiyeti** | `prefers-reduced-motion` yok sayılıyor | `a11y.respectReducedMotion: true` → poster |
-| **Odak kaybı** | `cursor:none` + gölge DOM | `a11y.focusRing: true` → 1px `--accent`, offset 3px |
-| **Performans** | düşük cihazda 4k parçacık kasar | kalite kademesi (4k → 1k → 0) |
-| **Stil kayması** | sahne büyüdükçe 04'ün yasakları unutulur | `check-style-contract` kapısı (ölçüt 10–19) |
+| **Keyboard trap** | scroll lock + pin squeezes keyboard users | `a11y.escapeHatch: true` → static version |
+| **Motion sensitivity** | `prefers-reduced-motion` is ignored | `a11y.respectReducedMotion: true` → poster |
+| **Focus loss** | `cursor:none` + shadow DOM | `a11y.focusRing: true` → 1px `--accent`, offset 3px |
+| **Performance** | 4k particles stutter on low-end devices | quality tier (4k → 1k → 0) |
+| **Style drift** | as the stage grows, 04's bans get forgotten | the `check-style-contract` gate (criteria 10–19) |
 
-Dört `a11y.*` anahtarı **varsayılan `false`** (K2). Kod yolu yazılır ve test edilir; kapı zorlamaz,
-`measure.mjs --a11y` raporu bilgi olarak yazar. "Statik sürüm" bağlantısı yine de bulunur (tek satır HTML).
-
----
-
-## 9 · Geri dönüş
-
-- **stage-lab:** yeni repo, silinirse style-lab etkilenmez. `git init` + ilk commit S0 sonunda.
-- **style-lab:** bu plandan tek dosya (`docs/stage-lab-plani.md`); `git rm` ile dönülür. Kapı eklenmedi.
-- **Kontrat kırılırsa:** `verify-contract` kırmızı → `node kit/export-tokens.mjs --check` hangi dosyanın kaydığını söyler.
+The four `a11y.*` switches default to **`false`** (K2). The code path is written and tested; the gate does not
+enforce it, `measure.mjs --a11y` reports it as information. The "static version" link still exists (one line of HTML).
 
 ---
 
-## 10 · Sıradaki tur (öneri)
+## 9 · Rollback
 
-1. `../stage-lab` iskeleti (S0) — 8 dosya, `npm run verify` yeşil.
-2. **Motif envanteri:** kask yerine bu projenin tek nesnesi ne? Çizgi/gravür türetimine uygun mu (kapalı hacim, keskin kenar)?
-3. Marka metni: `04` ekran başına 1 başlık + 1 paragraf istiyor → 5 beat'in metni **önceden** yazılmalı (sahne metne göre kurulur, tersi değil).
+- **stage-lab:** a new repo; if deleted, style-lab is unaffected. `git init` + first commit at the end of S0.
+- **style-lab:** this plan is a single file (`docs/stage-lab-plani.md`); roll back with `git rm`. No gate was added.
+- **If the contract breaks:** `verify-contract` goes red → `node kit/export-tokens.mjs --check` tells you which file drifted.
 
 ---
 
-## 11 · Uygulama durumu (S0–S5 tamam · 2026-11-09)
+## 10 · Next round (proposal)
 
-`../stage-lab` kuruldu, ilk commit `2a48da1`. `npm run verify` yeşil, ölçüm **32/32**.
+1. The `../stage-lab` skeleton (S0) — 8 files, `npm run verify` green.
+2. **Motif inventory:** what is this project's single object instead of a helmet? Is it suitable for line/engraving
+   derivation (closed volume, sharp edges)?
+3. Brand copy: `04` wants 1 heading + 1 paragraph per screen → the copy for the 5 beats must be written **upfront**
+   (the stage is built around the text, not the other way round).
 
-| Faz | Durum | Kanıt |
+---
+
+## 11 · Implementation status (S0–S5 complete · 2026-11-09)
+
+`../stage-lab` was created, first commit `2a48da1`. `npm run verify` is green, measurement **32/32**.
+
+| Phase | Status | Evidence |
 |---|---|---|
-| S0 iskelet | ✅ | Vite 8 + React 19 + R3F 9 + TS strict · `contract.lock.json` (7 dosya) |
-| S1 motif | ✅ | Prosedürel gravür mühür: `motif.svg` + `parts.json`, 5 parti, hairline oranı 0.91 |
-| S2 beat + scroll | ✅ | B0–B4, `fonts.ready` bekleyişi (FOUT 0), reveal `once` / scrub geri dönüşebilir |
-| S3 toz + imleç | ✅ | 2.4k nokta, imleç dürtüsü, atalet ~1 s'de **0** (ölçüldü) |
-| S4 UI | ✅ | Motif 4 yerde: nav · canvas · atlas hairline · footer |
-| S5 ölçüm | ✅ | `tools/measure.mjs` — gölge 0, gradient 0, radius 0, altın metin 0, kontrast 15.74:1 |
-| S6 diğer arketipler | ✅ | 5/5 arketip ayrı derleme+ölçümde yeşil (`npm run verify:archetypes`) |
+| S0 skeleton | ✅ | Vite 8 + React 19 + R3F 9 + TS strict · `contract.lock.json` (7 files) |
+| S1 motif | ✅ | Procedural engraving seal: `motif.svg` + `parts.json`, 5 parts, hairline ratio 0.91 |
+| S2 beat + scroll | ✅ | B0–B4, `fonts.ready` wait (FOUT 0), reveal `once` / scrub reversible |
+| S3 dust + cursor | ✅ | 2.4k points, cursor impulse, inertia **0** in ~1 s (measured) |
+| S4 UI | ✅ | Motif in 4 places: nav · canvas · atlas hairline · footer |
+| S5 measurement | ✅ | `tools/measure.mjs` — shadow 0, gradient 0, radius 0, gold text 0, contrast 15.74:1 |
+| S6 other archetypes | ✅ | 5/5 archetypes green in separate build+measurement (`npm run verify:archetypes`) |
 
-### 11.1 Plandan bilinçli sapmalar
+### 11.1 Deliberate deviations from the plan
 
-| # | Sapma | Gerekçe |
+| # | Deviation | Rationale |
 |---|---|---|
-| 1 | `a11y.respectReducedMotion` + `focusRing` **açık** (plan `false` diyordu) | §3.1 öncelik sırası: stil sözleşmesi > K2. `04` reduced-motion ve altın odak halkasını **zorunlu** kılıyor. `escapeHatch` kapalı kaldı |
-| 2 | GLB/Draco/KTX2 boru hattı **yok** | Motif prosedürel çizgi; tek kaynak `motif-geometry.js` hem SVG hem `LineSegments` üretiyor. Gerçek mesh gelince `optimize-motif.mjs` devreye girer |
-| 3 | 145 palet yerine **tek stil** çekildi (`tools/extract-tokens.mjs`) | CSS 116 KB → 15 KB. Kural korunur: token yine style-lab'ın üretilmiş çıktısından gelir |
-| 4 | Rive ve ses yok | 2B mikro-motion CSS ile kuruldu; `audio.enabled: false` |
+| 1 | `a11y.respectReducedMotion` + `focusRing` **on** (the plan said `false`) | §3.1 precedence: style contract > K2. `04` makes reduced-motion and the gold focus ring **mandatory**. `escapeHatch` stayed off |
+| 2 | No GLB/Draco/KTX2 pipeline | The motif is procedural lines; a single source `motif-geometry.js` produces both the SVG and the `LineSegments`. `optimize-motif.mjs` kicks in once a real mesh arrives |
+| 3 | **One style** extracted instead of 145 palettes (`tools/extract-tokens.mjs`) | CSS 116 KB → 15 KB. The rule holds: tokens still come from style-lab's generated output |
+| 4 | No Rive and no audio | 2D micro-motion was built with CSS; `audio.enabled: false` |
 
-### 11.2 Ölçümün yakaladığı 3 gerçek hata
+### 11.2 Three real bugs the measurement caught
 
-1. **Toz hiç durmuyordu** — kuvvet imlecin *konumuna* bağlıydı, imleç sabitken de itmeye devam ediyordu.
-   `04`'ün "sürekli animasyon" yasağının tam ihlali. Düzeltme: kuvvet yalnız imleç hareket ettiği karede.
-2. **Motif kaydırmada donuyordu** — `frameloop: 'demand'` + ilerleme değişiminde `invalidate()` yok.
-3. **Toz motifi takip etmiyordu** — parçacıklar `<group>` dönüşümünün dışındaydı; ayrı hesap yapılınca
-   motif küçülürken toz halkası yerinde kalıyordu. Düzeltme: tek `lookState` + `localToWorld`/`worldToLocal`.
+1. **The dust never stopped** — the force was tied to the cursor's *position*, so it kept pushing even with the cursor
+   still. A direct violation of `04`'s "continuous animation" ban. Fix: the force applies only on frames where the
+   cursor actually moved.
+2. **The motif froze while scrolling** — `frameloop: 'demand'` with no `invalidate()` on progress change.
+3. **The dust did not follow the motif** — particles were outside the `<group>` transform, so a separate calculation
+   left the dust ring in place while the motif shrank. Fix: a single `lookState` + `localToWorld`/`worldToLocal`.
 
-**Ders:** "sahne ölçütü" yalnız görsel değil; 19–20 numaralı ölçütler bu üç hatayı yakalamasaydı site
-"çalışıyor" görünüp yasak tekniği sessizce uygulayacaktı.
+**Lesson:** the "stage criteria" are not only visual; had criteria 19–20 not caught these three bugs, the site would
+have looked like it "works" while silently applying a banned technique.
 
-### 11.3 "Kare üretimi" ≠ FPS
+### 11.3 "Frame production" ≠ FPS
 
-Headless Chromium'da vsync yok; ölçülen sayı saniyedeki kare üretimi (ölçümde ~180). Gerçek cihaz FPS'i
-değildir — raporda böyle yazılıyor, "60fps" iddiası yok.
+Headless Chromium has no vsync; the measured number is frames produced per second (~180 in the measurement). It is not
+real-device FPS — the report says so, and there is no "60fps" claim.
 
-### 11.4 S6 — diğer 4 arketip (tamam)
+### 11.4 S6 — the other 4 archetypes (complete)
 
-| Arketip | Referans | Mekanik | `04` uyarlaması |
+| Archetype | Reference | Mechanic | `04` adaptation |
 |---|---|---|---|
-| `portrait-motif` | Lando | motif + toz, imleç dürtüsü | hareket yalnız imleçten |
-| `single-object` | Monolith | dönüş = ilerleme | **kamera sabit** (Ç2), clip-curtain, toz yok |
-| `scroll-narrative` | Inkwell | navigasyonsuz anlatı | clip-curtain + scrub, dürtü yok |
-| `playable-motif` | Bruno / Aurel | WASD ile konum | tuş bırakılınca durur (Ç1) |
-| `kinetic-type` | Mat Voyce | harf = motif, WebGL yok | 1px stroke gravür, `--stage-rot` ile döner |
+| `portrait-motif` | Lando | motif + dust, cursor impulse | motion only from the cursor |
+| `single-object` | Monolith | rotation = progress | **camera fixed** (C2), clip-curtain, no dust |
+| `scroll-narrative` | Inkwell | narration without navigation | clip-curtain + scrub, no impulse |
+| `playable-motif` | Bruno / Aurel | position via WASD | stops when keys are released (C1) |
+| `kinetic-type` | Mat Voyce | letter = motif, no WebGL | 1px stroke engraving, rotates with `--stage-rot` |
 
-**Ölçüm:** her arketip ayrı derlenir (`VITE_STAGE_ARCHETYPE`), 33 ölçüt koşar. Sahne taşımayan
-arketipte drawcall/parçacık ölçütleri `n/a` — sahte sayı üretilmez.
+**Measurement:** each archetype builds separately (`VITE_STAGE_ARCHETYPE`) and 33 criteria run. In an archetype with
+no stage, the drawcall/particle criteria are `n/a` — no fake numbers are produced.
 
-**Gözle bulunan 2 tasarım hatası (ölçüt yakalamadı):**
+**2 design bugs found by eye (the criteria did not catch them):**
 
-1. **Clip story ortasında kalıyordu** → mühür yarısı kesik görünüyordu. Perde hero'dan çıkarken
-   (p 0.02→0.20) açılacak şekilde daraltıldı; story'ye girildiğinde motif tam.
-2. **`kinetic-type` harfi görünmüyordu** — hem clip onu gizliyordu hem dolgu 0.07 opaklıkta kayboluyordu.
-   Clip kapatıldı, harf **1px stroke gravür**e çevrildi (04: "illüstrasyon yok, gerekiyorsa ince gravür").
+1. **The clip stayed in the middle of the story** → the seal looked half-cut. It was narrowed so the curtain opens
+   while leaving the hero (p 0.02→0.20); the motif is whole once the story is entered.
+2. **The `kinetic-type` letter was invisible** — the clip hid it and the fill was lost at 0.07 opacity. The clip was
+   turned off and the letter became a **1px stroke engraving** (04: "no illustration, a thin engraving if needed").
 
-**Ders:** ölçüt "motif görünür" diyemez; görünürlüğün *ne kadar* olduğunu ancak kareye bakmak söyler.
-Sayısal kapı + `--shot` birlikte çalışmalı.
+**Lesson:** a criterion cannot say "the motif is visible"; only looking at the frame tells you *how much* visible.
+A numeric gate and `--shot` must work together.

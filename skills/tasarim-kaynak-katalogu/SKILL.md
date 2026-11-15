@@ -1,109 +1,112 @@
 ---
 name: tasarim-kaynak-katalogu
 description: >-
-  Dondurulmus tasarim kaynak katalogunda (refs/design-resources, 1249 kayit, 33 bolum) arama yapar:
-  ucretsiz illustrasyon, mockup, stock fotograf, ikon seti, font, renk/erisilebilirlik araci, gorsel
-  sikistirma servisi bulur; link sagligini (olu link) filtreler ve katalogu yeniler. Tetikleyiciler:
+  Searches the frozen design resource catalog (refs/design-resources, 1249 records, 33 sections):
+  finds free illustrations, mockups, stock photos, icon sets, fonts, color/accessibility tools and
+  image compression services; filters by link health (dead links) and refreshes the catalog. Triggers:
+  "find a mockup", "free illustration", "where do I get icons", "need stock photos", "color tool",
+  "contrast checker tool", "where to get fonts", "image compression", "resource catalog", "dead link",
+  "link health", "design resources", "search the catalog", "where do I find assets"; Turkish:
   "mockup bul", "ucretsiz illustrasyon", "nereden ikon", "stock fotograf lazim", "renk araci",
   "kontrast kontrolu araci", "font nereden", "gorsel sikistirma", "kaynak katalogu", "olu link",
-  "link sagligi", "design resources", "katalogda ara", "asset nerede bulurum".
+  "link sagligi", "katalogda ara", "asset nerede bulurum".
 ---
 
-# Tasarım Kaynak Kataloğu
+# Design Resource Catalog
 
-`refs/design-resources/` altında **dondurulmuş** bir link dizini durur: 1249 kayıt · 33 bölüm ·
-1063 benzersiz domain (bradtraversy/design-resources-for-developers, 2026-10-18 snapshot).
+A **frozen** link index lives under `refs/design-resources/`: 1249 records · 33 sections ·
+1063 unique domains (bradtraversy/design-resources-for-developers, 2026-10-18 snapshot).
 
-Bu skill **varlık ve araç bulur**. Stil seçmez, token üretmez, kod yazmaz — o iş `style-lab-catalog`'un.
-Görsel dil kararı ile varlık tedariki ayrı sorulardır; ikisini karıştırma.
+This skill **finds assets and tools**. It does not choose styles, produce tokens or write code — that is
+`style-lab-catalog`'s job. The visual language decision and asset procurement are separate questions; do not mix them.
 
 ## When to Use
 
-- Bir yüzeye **varlık** lazımsa: illüstrasyon, mockup, stock fotoğraf, desen/doku, ikon, font.
-- **Renk/erişilebilirlik aracı** aranıyorsa (kontrast ölçer, palet üretici, ton skalası).
-- **Görsel sıkıştırma** veya dönüştürme servisi gerekiyorsa (poster/deck çıktısı şiştiğinde).
-- "Bu link ölü mü?" / "katalogdaki kayıtlar sağlam mı?" sorusunda (`--alive`, `linkcheck.mjs`).
-- Kullanıcı belirli bir kaynağı adıyla anıp yerini sorduğunda.
+- An **asset** is needed for a surface: illustration, mockup, stock photo, pattern/texture, icon, font.
+- A **color/accessibility tool** is being looked for (contrast checker, palette generator, tone scale).
+- An **image compression** or conversion service is needed (when a poster/deck output gets too large).
+- The question is "is this link dead?" / "are the catalog records healthy?" (`--alive`, `linkcheck.mjs`).
+- The user names a specific resource and asks where it is.
 
-**Kullanma:** stil/tema seçimi · tasarım sistemi kurma · token üretimi · kaynak *kodu* okuma
-(bu katalogda kod yok) · lisans hukuku danışmanlığı (lisansı kullanıcı doğrular).
+**Do not use for:** style/theme selection · setting up a design system · token generation · reading resource *code*
+(there is no code in this catalog) · license legal advice (the user verifies the license).
 
-## 30 saniyede karar
+## Decide in 30 seconds
 
-| İhtiyaç | Bölüm |
+| Need | Section |
 |---|---|
-| Ücretsiz illüstrasyon, desen, avatar | `UI Graphics` (47) |
-| Cihaz/ürün mockup'ı, ekran görüntüsü sunumu | `Product & Image Mockups` (24) + `UI Graphics` |
-| Stock fotoğraf / video / müzik | `Stock Photos` (40) · `Stock Videos` (10) |
-| İkon seti, ikon fontu, logo, favicon | `Icons` (69) · `Icon Fonts` (22) · `Logos` (13) · `Favicons` (11) |
-| Font çifti, tipografi ölçeği | `Fonts` (47) |
-| Kontrast/palet aracı | `Colors` (88) |
-| Animasyon kütüphanesi (CSS/JS) | `CSS Animations` (28) · `Javascript Animation Libraries` (36) |
-| Görsel sıkıştırma | `Image Compression` (51) |
-| Şablon, hazır sayfa iskeleti | `HTML & CSS Templates` (31) |
-| Galeri/ilham | `Design Inspiration` (48) |
+| Free illustration, pattern, avatar | `UI Graphics` (47) |
+| Device/product mockup, screenshot presentation | `Product & Image Mockups` (24) + `UI Graphics` |
+| Stock photo / video / music | `Stock Photos` (40) · `Stock Videos` (10) |
+| Icon set, icon font, logo, favicon | `Icons` (69) · `Icon Fonts` (22) · `Logos` (13) · `Favicons` (11) |
+| Font pairing, typography scale | `Fonts` (47) |
+| Contrast/palette tool | `Colors` (88) |
+| Animation library (CSS/JS) | `CSS Animations` (28) · `Javascript Animation Libraries` (36) |
+| Image compression | `Image Compression` (51) |
+| Template, ready page skeleton | `HTML & CSS Templates` (31) |
+| Gallery/inspiration | `Design Inspiration` (48) |
 
-Bölüm adları **İngilizce** ve **framework eksenli** (React/Vue/Angular/Svelte ayrı). Türkçe anahtar
-kelimeyle arama çoğu kaydı kaçırır: "renk" değil `color`, "yazı tipi" değil `font`, "simge" değil `icon`.
+Section names are **English** and **framework-oriented** (React/Vue/Angular/Svelte are separate). Searching with
+Turkish keywords misses most records: use `color` not "renk", `font` not "yazı tipi", `icon` not "simge".
 
 ## Procedure
 
-### 1 · Ara (en sık yol)
+### 1 · Search (the most common path)
 
 ```bash
-# Depo kökünde çalıştırın.
-node refs/design-resources/query.mjs --q mockup --alive                 # ölü linkler elenmiş
+# Run from the repository root.
+node refs/design-resources/query.mjs --q mockup --alive                 # dead links filtered out
 node refs/design-resources/query.mjs --section "Stock Photos" --alive --limit 10
-node refs/design-resources/query.mjs --q "gradient" --json              # makine-okur
-node refs/design-resources/query.mjs --sections                         # bölüm + kayıt sayısı
+node refs/design-resources/query.mjs --q "gradient" --json              # machine-readable
+node refs/design-resources/query.mjs --sections                         # sections + record counts
 ```
 
-Çıktıdaki durum kolonu: `ok` erişilebilir · `bot` 403/429 (bot koruması, **çoğu sağ**) ·
-`OLU` kesin ölü · `hata` 5xx/timeout · `?` hiç denenmemiş.
+The status column in the output: `ok` reachable · `bot` 403/429 (bot protection, **mostly alive**) ·
+`OLU` definitely dead · `hata` 5xx/timeout · `?` never attempted.
 
-### 2 · Sonucu kullanıcıya taşı
+### 2 · Bring the result to the user
 
-- Kaynağın **ne olduğunu** bir satırda söyle (katalogdaki açıklama), URL'yi ver.
-- `bot` işaretliyse "link tarayıcıda açılır, otomatik kontrolde 403 döndü" diye not düş.
-- Seçimi kullanıcı yapsın: 3–5 aday yeter, 20 kayıt dökme.
+- Say **what** the resource is in one line (the catalog description) and give the URL.
+- If it is marked `bot`, note "the link opens in a browser, the automated check returned 403".
+- Let the user choose: 3–5 candidates is enough, do not dump 20 records.
 
-### 3 · Katalog boşsa
+### 3 · When the catalog has nothing
 
-Depo kapalı (yeni kayıt yok) ve AI çağı kayıtları zayıf (7 kayıt). Sonuç çıkmıyorsa internetten ara,
-bulduğunu **kataloğa ekleme** — bu snapshot dondurulmuş; yeni kaynak gerekiyorsa `readme.snapshot.md`
-güncellenir (aşağıdaki bakım adımı).
+The repo is closed (no new records) and the AI-era records are weak (7 records). If nothing comes up, search the
+internet, but do **not add** what you find to the catalog — this snapshot is frozen; if a new resource is needed,
+`readme.snapshot.md` is updated (the maintenance step below).
 
-### 4 · Bakım (istenirse)
+### 4 · Maintenance (on request)
 
 ```bash
-node refs/design-resources/analyze.mjs      # readme.snapshot.md → rows.json (1249 kayıt, ~0.2 s)
-node refs/design-resources/linkcheck.mjs    # rows.json → link-health.json + ölü link raporları (~2 dk)
-node refs/design-resources/linkcheck.mjs --limit 100   # hızlı deneme
+node refs/design-resources/analyze.mjs      # readme.snapshot.md → rows.json (1249 records, ~0.2 s)
+node refs/design-resources/linkcheck.mjs    # rows.json → link-health.json + dead link reports (~2 min)
+node refs/design-resources/linkcheck.mjs --limit 100   # quick trial
 ```
 
 ## Pitfalls
 
-- **403 ≠ ölü.** Unsplash, Pexels, Pixabay gibi büyük siteler otomatik isteğe 403 döner; `bot` etiketini
-  ölü sayıp eleme. Gerçek ölü ölçütü 404/410/DNS yok → `olu-linkler-kesin.md`.
-- **Snapshot CRLF'tir.** Kendi ayrıştırıcını yazarsan `\r` temizle; yoksa `^## (.+)$` hiçbir başlığı
-  yakalamaz ve tüm kayıtlar tek bölüme düşer (yaşandı).
-- **Bölüm adı eşleşmez.** `--section "Mockups"` değil `--section "Product & Image Mockups"`; emin değilsen
-  `--sections` ile listeyi al.
-- **`--alive` filtresi `link-health.json`'a bağlıdır.** Dosya eskiyse eski sonucu gösterir; şüphelenirsen
-  `linkcheck.mjs --limit 200` ile tazele.
-- **Bu bir stil kaynağı değil.** "Glassmorphism nasıl yapılır" sorusunun cevabı burada yok; `style-lab-catalog`
-  ve `styles/<slug>/style.md`'ye git.
-- **Lisans:** katalog "free" diyor ama lisans türü (CC0/MIT/ticari kullanım) kayıtta yazmıyor. Ticari işte
-  kullanıcıya bunu söyle.
-- Ölü link sayısı koşular arasında **±2 oynar**; tek koşuya bakıp "katalog çürük" deme.
+- **403 ≠ dead.** Large sites such as Unsplash, Pexels and Pixabay return 403 to automated requests; do not treat the
+  `bot` tag as dead and filter it out. The real dead criterion is 404/410/no DNS → `olu-linkler-kesin.md`.
+- **The snapshot is CRLF.** If you write your own parser, strip `\r`; otherwise `^## (.+)$` catches no headings at all
+  and every record falls into a single section (this happened).
+- **Section names do not match.** `--section "Mockups"` will not work, `--section "Product & Image Mockups"` will; if
+  unsure, get the list with `--sections`.
+- **The `--alive` filter depends on `link-health.json`.** A stale file shows stale results; if suspicious, refresh with
+  `linkcheck.mjs --limit 200`.
+- **This is not a style resource.** The answer to "how do I do glassmorphism" is not here; go to `style-lab-catalog`
+  and `styles/<slug>/style.md`.
+- **License:** the catalog says "free" but the license type (CC0/MIT/commercial use) is not recorded. Tell the user this
+  for commercial work.
+- The dead link count **fluctuates by ±2** between runs; do not judge the catalog as rotten from a single run.
 
 ## Verification
 
 ```bash
-node refs/design-resources/query.mjs --q mockup --alive --limit 3   # 3 sonuç dönmeli, durum kolonu dolu
+node refs/design-resources/query.mjs --q mockup --alive --limit 3   # should return 3 results with a filled status column
 node refs/design-resources/analyze.mjs | head -2                    # "kayit: 1249 | bolum: 33 | domain: 1063"
 ```
 
-- `analyze.mjs` 1249 dışında bir sayı veriyorsa `readme.snapshot.md` değişmiş ya da CRLF tuzağına düşülmüş.
-- `query.mjs --sections` bölüm adlarını listeliyorsa `rows.json` sağlam.
-- `linkcheck.mjs` "kesin olu" sayısı 40–70 bandında normaldir; 300+ ise ağ/proxy sorunu ara.
+- If `analyze.mjs` reports a number other than 1249, `readme.snapshot.md` changed or the CRLF trap was hit.
+- If `query.mjs --sections` lists the section names, `rows.json` is sound.
+- In `linkcheck.mjs`, a "kesin olu" count in the 40–70 range is normal; if it is 300+, look for a network/proxy problem.

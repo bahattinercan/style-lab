@@ -1,106 +1,107 @@
-# Aile bantları (31 band)
+# Family bands (31 bands)
 
-Band tablosunun **tek kaynağı** `kit/families.json`'dır: 1–251 kesintisiz ve çakışmasız.
-`kit/build-gallery.mjs`, `kit/report.mjs`, `kit/build-catalog-doc.mjs` ve `kit/apply-fragments.mjs` bu dosyayı okur;
-`node kit/apply-fragments.mjs --check` aralıkların bütünlüğünü doğrular.
+The **single source** of the band table is `kit/families.json`: 1–251 contiguous and non-overlapping.
+`kit/build-gallery.mjs`, `kit/report.mjs`, `kit/build-catalog-doc.mjs` and `kit/apply-fragments.mjs` read this file;
+`node kit/apply-fragments.mjs --check` verifies the integrity of the ranges.
 
-Örnek slug'lar ve "3 tipik kullanım" kolonları bu skill'in yorumudur; bandın adı, aralığı ve
-stil sayısı `kit/families.json` + `styles/` klasörlerinden gelir.
-Tek stilli bandlar tek numara olarak yazılır (37 = 37–37 · 38 = 38–38 · 45 = 45–45).
+The example slugs and the "3 typical uses" columns are this skill's interpretation; the band's name, range and
+style count come from `kit/families.json` + the `styles/` folders.
+Single-style bands are written as a single number (37 = 37–37 · 38 = 38–38 · 45 = 45–45).
 
-| Band | Aile | Stil | Örnek slug'lar | 3 tipik kullanım |
+| Band | Family | Styles | Example slugs | 3 typical uses |
 |---|---|---|---|---|
-| 01–07 | Sade | 7 | `minimalism` · `swiss-design` · `japandi` | kurumsal SaaS paneli · uzun okuma/makale · sakin e-ticaret |
-| 08–12 | Yüzey | 5 | `glassmorphism` · `neumorphism` · `aurora-ui` | mobil ayar ekranı · medya oynatıcı katmanı · oyunlaştırılmış onboarding |
-| 13–18 | Cesur | 6 | `neo-brutalism` · `memphis` · `dopamine-ui` | etkinlik afişi · genç marka lansmanı · indirim/kampanya sayfası |
-| 19–27 | Retro | 9 | `y2k` · `synthwave` · `art-deco` | müzik/oyun vitrini · dönemsel kampanya · sergi posteri |
-| 28–34 | Sanatsal | 7 | `surrealism` · `scrapbook` · `dark-academia` | kültür-sanat projesi · kişisel portfolyo · kitap/yayın tanıtımı |
-| 35–36 | Geometrik | 2 | `bauhaus` · `constructivism` | kültür kurumu afişi · mimarlık stüdyosu · konferans programı |
-| 37 | Tipografik | 1 | `kinetic-type` | tipografi vitrini · font/ajans sunumu · konferans ana sayfası |
-| 38 | Organik | 1 | `organic-bio` | wellness/sağlık ürünü · sürdürülebilir marka · bitki/yemek içeriği |
-| 39–40 | Yeni Dalga | 2 | `ai-native-mesh` · `scandinavian-dark` | AI ürün lansmanı · uzun oturumlu üretkenlik aracı · sakin içerik okuma |
-| 41–44 | Zamansız | 4 | `grand-tourer` · `utility` | lüks otomotiv/saat · kurumsal form ve ayar · teknik dokümantasyon |
-| 45 | Teknik | 1 | `terminal-ui` | geliştirici aracı · log/konsol ekranı · CLI dokümantasyonu |
-| 46–55 | Veri & Gösterge | 10 | `telemetry-grid` · `trading-desk` · `vitals-triage` | operasyon paneli · finans alım-satım ekranı · hasta/vital izleme |
-| 56–65 | Endüstriyel | 10 | `blueprint-drawing` · `mes-production-line` · `cockpit-avionics` | mühendislik paftası & saha güvenliği · MES/depo akışı · enerji (SCADA) & kokpit paneli |
-| 66–75 | Kültürel & Bölgesel | 10 | `nordic-folk` · `levant-calligraphy` · `persian-miniature` | müze/sergi kataloğu · yerel zanaat markası · şehir/turizm tanıtımı |
-| 76–85 | Doğa & Organik | 10 | `biophilic-botanical` · `topographic-terrain` · `coral-reef` | iklim/çevre projesi · açık hava markası · harita/keşif ürünü |
-| 86–95 | Yayın & Tipografi | 10 | `literary-hardcover` · `broadsheet-daily` · `encyclopedia` | yayınevi/kitap okuma · katalog & ürün listesi · akademik referans |
-| 96–105 | Hareket & Optik | 10 | `kinetic-marquee` · `depth-parallax` · `holographic-layer` | marka manifestosu hero · vitrin/portfolyo · lansman teaser'ı |
-| 106–115 | Etkileşim | 10 | `command-palette` · `timeline-editor` · `kanban-flow` | araç/IDE arayüzü · zaman çizelgesi editörü · görev panosu |
-| 116–125 | Oyuncu | 10 | `kids-playground` · `celebration-card` · `collectible-card` | çocuk/oyun ürünü · festival ve kutlama akışı · koleksiyon/hikâye anlatımı |
-| 126–135 | Materyal & Lüks | 10 | `marble-vein` · `leather-craft` · `letterpress-print` | mücevap/moda vitrini · butik hizmet · premium ambalaj |
-| 136–145 | Deneysel & Gelecek | 10 | `speculative-scifi` · `agent-orchestration` · `quantum-lab` | konsept/lansman denemesi · AI ajan ve veri hacmi vitrini · bilim kurgu/gelecek anlatısı |
-| 146–151 | Sahne & Prestij | 6 | `noir-estate` · `agency-portfolio` · `product-launch` · `boutique-hotel` · `lookbook-editorial` · `dark-dashboard` | sinematik emlak/prestij · ajans vitrini · ürün lansmanı · butik otel · editoryal lookbook · koyu ürün paneli |
-| 152–171 | Oyun & Etkileşim | 20 | `game-hud` · `game-sci-fi-cockpit` · `game-card-tcg` | oyun içi HUD/menü · espor/turnuva sayfası · kart/koleksiyon vitrini |
-| 172–181 | Operasyon & Veri | 10 | `incident-response` · `finops-cost` · `slo-budget` | olay müdahale konsolu · maliyet/güvenilirlik panosu · denetim raporu |
-| 182–191 | Ticaret & Vitrin | 10 | `grocery-delivery` · `luxury-atelier` · `electronics-spec` | market/teslimat · butik lüks vitrin · teknik ürün spec |
-| 192–201 | Kültür & Yayın | 10 | `museum-exhibition` · `film-festival` · `library-archive` | müze/sergi · festival programı · arşiv/katalog |
-| 202–211 | Sağlık & Bilim | 10 | `clinical-trial` · `mental-wellness` · `genomics-lab` | klinik protokol · randevu/form · laboratuvar paneli |
-| 212–221 | Öğrenme & Oyunlaştırma | 10 | `language-app` · `skill-tree` · `exam-prep` | dil/kod öğrenme · müfredat haritası · sınav hazırlık |
-| 222–231 | Materyal & Zanaat | 10 | `terrazzo-stone` · `linocut-print` · `raw-steel` | malzeme kataloğu · baskı atölyesi · endüstriyel ürün |
-| 232–241 | Tipografi Denemeleri | 10 | `variable-weight` · `justified-book` · `uppercase-only` | ajans vitrini · yayınevi sayfası · kültürel kimlik |
-| 242–251 | Gelecek & Spekülatif | 10 | `agent-console` · `quantum-dashboard` · `climate-model` | ajan/otomasyon konsolu · model izleme · senaryo raporu |
+| 01–07 | Plain | 7 | `minimalism` · `swiss-design` · `japandi` | corporate SaaS panel · long read/article · calm e-commerce |
+| 08–12 | Surface | 5 | `glassmorphism` · `neumorphism` · `aurora-ui` | mobile settings screen · media player layer · gamified onboarding |
+| 13–18 | Bold | 6 | `neo-brutalism` · `memphis` · `dopamine-ui` | event poster · young brand launch · sale/campaign page |
+| 19–27 | Retro | 9 | `y2k` · `synthwave` · `art-deco` | music/game storefront · period campaign · exhibition poster |
+| 28–34 | Artistic | 7 | `surrealism` · `scrapbook` · `dark-academia` | culture-arts project · personal portfolio · book/publication promo |
+| 35–36 | Geometric | 2 | `bauhaus` · `constructivism` | cultural institution poster · architecture studio · conference program |
+| 37 | Typographic | 1 | `kinetic-type` | typography showcase · font/agency presentation · conference home page |
+| 38 | Organic | 1 | `organic-bio` | wellness/health product · sustainable brand · plant/food content |
+| 39–40 | New Wave | 2 | `ai-native-mesh` · `scandinavian-dark` | AI product launch · long-session productivity tool · calm content reading |
+| 41–44 | Timeless | 4 | `grand-tourer` · `utility` | luxury automotive/watch · corporate form and settings · technical documentation |
+| 45 | Technical | 1 | `terminal-ui` | developer tool · log/console screen · CLI documentation |
+| 46–55 | Data & Metrics | 10 | `telemetry-grid` · `trading-desk` · `vitals-triage` | operations panel · financial trading screen · patient/vitals monitoring |
+| 56–65 | Industrial | 10 | `blueprint-drawing` · `mes-production-line` · `cockpit-avionics` | engineering drawing & site safety · MES/warehouse flow · energy (SCADA) & cockpit panel |
+| 66–75 | Cultural & Regional | 10 | `nordic-folk` · `levant-calligraphy` · `persian-miniature` | museum/exhibition catalog · local craft brand · city/tourism promotion |
+| 76–85 | Nature & Organic | 10 | `biophilic-botanical` · `topographic-terrain` · `coral-reef` | climate/environment project · outdoor brand · map/exploration product |
+| 86–95 | Publishing & Typography | 10 | `literary-hardcover` · `broadsheet-daily` · `encyclopedia` | publisher/book reading · catalog & product list · academic reference |
+| 96–105 | Motion & Optics | 10 | `kinetic-marquee` · `depth-parallax` · `holographic-layer` | brand manifesto hero · storefront/portfolio · launch teaser |
+| 106–115 | Interaction | 10 | `command-palette` · `timeline-editor` · `kanban-flow` | tool/IDE interface · timeline editor · task board |
+| 116–125 | Playful | 10 | `kids-playground` · `celebration-card` · `collectible-card` | kids/play product · festival and celebration flow · collection/storytelling |
+| 126–135 | Material & Luxury | 10 | `marble-vein` · `leather-craft` · `letterpress-print` | jewelry/fashion storefront · boutique service · premium packaging |
+| 136–145 | Experimental & Future | 10 | `speculative-scifi` · `agent-orchestration` · `quantum-lab` | concept/launch experiment · AI agent and data volume showcase · sci-fi/future narrative |
+| 146–151 | Stage & Prestige | 6 | `noir-estate` · `agency-portfolio` · `product-launch` · `boutique-hotel` · `lookbook-editorial` · `dark-dashboard` | cinematic real estate/prestige · agency showcase · product launch · boutique hotel · editorial lookbook · dark product panel |
+| 152–171 | Game & Interaction | 20 | `game-hud` · `game-sci-fi-cockpit` · `game-card-tcg` | in-game HUD/menu · esports/tournament page · card/collection showcase |
+| 172–181 | Operations & Data | 10 | `incident-response` · `finops-cost` · `slo-budget` | incident response console · cost/reliability board · audit report |
+| 182–191 | Commerce & Storefront | 10 | `grocery-delivery` · `luxury-atelier` · `electronics-spec` | grocery/delivery · boutique luxury storefront · technical product spec |
+| 192–201 | Culture & Publishing | 10 | `museum-exhibition` · `film-festival` · `library-archive` | museum/exhibition · festival program · archive/catalog |
+| 202–211 | Health & Science | 10 | `clinical-trial` · `mental-wellness` · `genomics-lab` | clinical protocol · appointment/form · laboratory panel |
+| 212–221 | Learning & Gamification | 10 | `language-app` · `skill-tree` · `exam-prep` | language/code learning · curriculum map · exam preparation |
+| 222–231 | Material & Craft | 10 | `terrazzo-stone` · `linocut-print` · `raw-steel` | material catalog · print workshop · industrial product |
+| 232–241 | Typography Experiments | 10 | `variable-weight` · `justified-book` · `uppercase-only` | agency showcase · publisher page · cultural identity |
+| 242–251 | Future & Speculative | 10 | `agent-console` · `quantum-dashboard` · `climate-model` | agent/automation console · model monitoring · scenario report |
 
-Toplam: **31 band · 251 stil**.
+Total: **31 bands · 251 styles**.
 
-## İki etiket, iki iş (karıştırma)
+## Two labels, two jobs (do not mix them up)
 
-| Alan | Nerede | Ne işe yarar |
+| Field | Where | What it is for |
 |---|---|---|
-| **Band** (`kit/families.json`) | band tablosu, galeri, rapor, fragment birleştirme | Seçim ve sınıflandırma. 21 band, 1–145 kesintisiz. |
-| **Hareket ailesi** (`tokens.json → motion.family`) | `kit/motion-check.mjs` çeşitlilik kapısı | Animasyon imzası karşılaştırması. **Band adıyla birebir aynıdır** (21 aile); eşitliği `check-schema` + aşağıdaki kanıt komutu doğrular. |
+| **Band** (`kit/families.json`) | band table, gallery, report, fragment merging | Selection and classification. 21 bands, 1–145 contiguous. |
+| **Motion family** (`tokens.json → motion.family`) | the `kit/motion-check.mjs` variety gate | Animation signature comparison. **Identical to the band name** (21 families); equality is verified by `check-schema` + the evidence command below. |
 
-Pratik sonuç: band ve hareket ailesi **aynı adı taşır** (tek kaynak `kit/families.json`). Yeni stilde
-`motion.family` alanına bandın adını yaz; farklı yazarsan `node kit/check-schema.mjs` ve aşağıdaki
-kanıt komutu uyarır/hatalar.
+Practical consequence: band and motion family **carry the same name** (single source `kit/families.json`). In a new
+style write the band name into the `motion.family` field; if you write something different, `node kit/check-schema.mjs`
+and the evidence command below will warn/error.
 
-## Tabloyu güncel doğrula
+## Verify the table is current
 
 ```bash
-# band tablosu ↔ katalog uyumu (ad + aralık + sayı)
+# band table ↔ catalog agreement (name + range + count)
 node -e "const fs=require('fs');const f=require('./kit/families.json').families;const s=fs.readdirSync('styles').filter(x=>fs.statSync('styles/'+x).isDirectory()).map(x=>parseInt(x,10)).filter(Number.isFinite);let ok=true;for(const b of f){const n=s.filter(x=>x>=b.from&&x<=b.to).length;console.log(String(b.from).padStart(3)+'-'+String(b.to).padStart(3),b.name.padEnd(22),n);if(!n)ok=false}console.log(ok?'band tablosu tutarlı':'BOŞ BAND VAR')"
 
-# fragment'ların kit dosyalarıyla senkronu + aralık bütünlüğü
+# fragments in sync with the kit files + range integrity
 node kit/apply-fragments.mjs --check
 ```
 
-## Band nasıl seçilir
+## How to choose a band
 
-Niyet → önce bakılacak bandlar (2–3 aday seç, sonra tek stile in):
+Intent → the bands to look at first (pick 2–3 candidates, then narrow to a single style):
 
-| İhtiyaç | Önce bakılacak band |
+| Need | Bands to look at first |
 |---|---|
-| Sakin, nötr, kurumsal | Sade (01–07) · Yeni Dalga (39–40) |
-| Okuma/uzun metin | Sade (01–07) · Yayın & Tipografi (86–95) |
-| Veri/operasyon yoğunluğu | Veri & Gösterge (46–55) · Endüstriyel (56–65) |
-| Sahada/üretimde kullanım | Endüstriyel (56–65) · Veri & Gösterge (46–55) |
-| Yüksek enerji, kampanya | Cesur (13–18) · Oyuncu (116–125) |
-| Kültürel kimlik, zanaat | Kültürel & Bölgesel (66–75) · Materyal & Lüks (126–135) |
-| Doğa/iklim anlatısı | Doğa & Organik (76–85) · Organik (38) |
-| Vitrin, marka manifestosu | Hareket & Optik (96–105) · Cesur (13–18) |
-| Tipografi odaklı vitrin | Tipografik (37) · Yayın & Tipografi (86–95) |
-| Araç/üretkenlik arayüzü | Etkileşim (106–115) · Teknik (45) |
-| Konsept/deney, gelecek anlatısı | Deneysel & Gelecek (136–145) |
+| Calm, neutral, corporate | Plain (01–07) · New Wave (39–40) |
+| Reading/long text | Plain (01–07) · Publishing & Typography (86–95) |
+| Data/operations density | Data & Metrics (46–55) · Industrial (56–65) |
+| Field/production use | Industrial (56–65) · Data & Metrics (46–55) |
+| High energy, campaign | Bold (13–18) · Playful (116–125) |
+| Cultural identity, craft | Cultural & Regional (66–75) · Material & Luxury (126–135) |
+| Nature/climate narrative | Nature & Organic (76–85) · Organic (38) |
+| Storefront, brand manifesto | Motion & Optics (96–105) · Bold (13–18) |
+| Typography-led showcase | Typographic (37) · Publishing & Typography (86–95) |
+| Tool/productivity interface | Interaction (106–115) · Technical (45) |
+| Concept/experiment, future narrative | Experimental & Future (136–145) |
 
-## Seçim kuralları (baskın + garnitür)
+## Selection rules (dominant + garnish)
 
-1. **Tek baskın stil.** Ekranın rengi, tipografisi, radius'u ve hareketi tek stilden gelir.
-2. **En fazla 1 garnitür.** Garnitür yalnız kendi `data-style` alt ağacında yaşar ve baskın
-   stilin değişkenlerini **ezmez**.
-3. Garnitür adayı: baskın stilin `tokens.json → neighbors.compatible` listesi.
-   `neighbors.forbidden` listesindeki stille kimlik çatışır — kullanma.
-   `kit/check-schema.mjs` bu slug'ların katalogda var olmasını denetler.
-4. Aynı bandın içinden iki stil yan yana konmaz (imza ve kimlik yakın); farklı bandan seç.
-5. Karar gerekçesi tek cümle: "Baskın X çünkü <ölçülebilir sebep>; garnitür Y çünkü <tek katman>".
+1. **One dominant style.** The screen's color, typography, radius and motion all come from a single style.
+2. **At most 1 garnish.** The garnish lives only in its own `data-style` subtree and does **not** override the
+   dominant style's variables.
+3. Garnish candidate: the dominant style's `tokens.json → neighbors.compatible` list.
+   A style in `neighbors.forbidden` conflicts with the identity — do not use it.
+   `kit/check-schema.mjs` verifies that these slugs exist in the catalog.
+4. Two styles from the same band are not placed side by side (signature and identity are too close); choose from
+   different bands.
+5. One sentence of justification: "Dominant X because <measurable reason>; garnish Y because <single layer>".
 
-## Kanıt: band = motion.family (tek kaynak)
+## Evidence: band = motion.family (single source)
 
 ```bash
-# her stilin bandı ile tokens.json motion.family aynı mı?
+# does every style's band match tokens.json motion.family?
 node -e "const fs=require('fs');const F=require('./kit/families.json').families;const band=n=>F.find(f=>n>=f.from&&n<=f.to)?.name;let bad=[];for(const d of fs.readdirSync('styles').filter(x=>fs.statSync('styles/'+x).isDirectory())){const t=JSON.parse(fs.readFileSync('styles/'+d+'/tokens.json','utf8'));const b=band(parseInt(d,10));if(t.motion?.family!==b)bad.push(d+' :: '+(t.motion?.family||'-')+' ≠ '+b)}console.log(bad.length?'UYUMSUZ '+bad.length+'\n'+bad.join('\n'):'tutarlı: band = motion.family')"
 
-# kapılar
-node kit/motion-check.mjs | tail -3   # 21 aile, aile içi kopya 0, imza 145/145
-node kit/check-schema.mjs | tail -2   # 0 hata
+# gates
+node kit/motion-check.mjs | tail -3   # 21 families, 0 intra-family copies, signature 145/145
+node kit/check-schema.mjs | tail -2   # 0 errors
 ```

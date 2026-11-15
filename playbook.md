@@ -1,382 +1,385 @@
-# Playbook · Tekdüze Tasarımı Kırma
+# Playbook · Breaking Uniform Design
 
-Bu dosya "hangi stil" sorusundan sonraki soruyu yanıtlar: **stili uygulamaya nasıl oturturum, tekdüzeleşmeden nasıl çeşitlendiririm.**
+This file answers the question that follows "which style": **how do I fit the style into an app, and how do I vary it without becoming uniform.**
 
 ---
 
-## 1 · Tekdüzelik neden oluşur
+## 1 · Why uniformity happens
 
-| Sebep | Belirti | Çözüm |
+| Cause | Symptom | Fix |
 |---|---|---|
-| Tek yüzey tipi | Her ekran aynı beyaz kart + aynı gölge | 3 yüzey seviyesi tanımla: zemin, kart, yüzen katman (her biri farklı davranır) |
-| Tek punto ritmi | Her başlık 20px, her gövde 14px | Ölçek zıplaması: 1.25× yerine 1.5–1.7× (14 → 21 → 32) |
-| Renk sadece "marka" | Buton dışında renk yok | Renk **kod** taşısın: durum, kategori, öncelik |
-| Simetri takıntısı | Her bölüm ortalanmış, eşit | 1 asimetrik bölüm / ekran (7/5 veya 8/4) |
-| Süs yasağı | Her şey düz; hiçbir imza yok | 1 imza öğe: doku, hairline, özel köşe, özel geçiş |
-| Tek ölçek | Her başlık aynı puntoda | İki uç punto + 1.5× ölçek oranı |
+| One surface type | Every screen is the same white card with the same shadow | Define 3 surface levels: ground, card, floating layer (each behaves differently) |
+| One type rhythm | Every heading 20px, every body 14px | Scale jump: 1.5–1.7× instead of 1.25× (14 → 21 → 32) |
+| Color only means "brand" | No color outside the button | Let color **carry code**: state, category, priority |
+| Symmetry obsession | Every section centered and equal | 1 asymmetric section per screen (7/5 or 8/4) |
+| Ornament ban | Everything flat; no signature at all | 1 signature element: texture, hairline, custom corner, custom transition |
+| One scale | Every heading at the same size | Two extreme sizes + a 1.5× scale ratio |
 
-**Kural:** Bir ekranda en az **bir** "bu markaya ait" öğe olmalı — stil dosyasındaki *Görsel imza* maddelerinden biri.
+**Rule:** A screen must contain at least **one** "this belongs to the brand" element — one of the *Visual signature* items in the style file.
 
 ---
 
-## 2 · Stil seçimi ve karıştırma
+## 2 · Style selection and mixing
 
-### 2.1 Tek stil (önerilen başlangıç)
-Ürün kişiliğine göre 1 stil seç, tüm token'ları ondan al. En hızlı ve en tutarlı yol.
+### 2.1 Single style (recommended start)
+Pick 1 style that matches the product personality and take every token from it. The fastest and most consistent route.
 
-### 2.2 Baskın + garnitür (2 stil, üst sınır)
-- **Baskın %80:** renk, tipografi, yüzey, radius → tek stilden.
-- **Garnitür %20:** sadece *bir* katmanda (ör. hero görseli, nav, boş durum illüstrasyonu).
-- Garnitür, baskının değişkenlerini ezmez; sadece kendi bileşeninde `data-style` taşır.
-- **Sarmalayıcı tek öznitelik taşır:** `<div data-style="liquid-glass">`. Bileşik seçici yoktur;
-  `kit/check-composition.mjs --browser` komşu stillerin DOM'da birbirine karışmadığını ölçer.
+### 2.2 Dominant + garnish (2 styles, upper limit)
+- **Dominant 80%:** color, typography, surface, radius → from one style.
+- **Garnish 20%:** in *one* layer only (e.g. hero image, nav, empty-state illustration).
+- The garnish does not override the dominant's variables; it only carries `data-style` on its own component.
+- **A wrapper carries a single attribute:** `<div data-style="liquid-glass">`. There are no compound
+  selectors; `kit/check-composition.mjs --browser` measures that neighbouring styles do not bleed into
+  each other in the DOM.
 
 ```
-<html data-style="minimalism">          <!-- baskın -->
-  <header data-style="liquid-glass">     <!-- garnitür: sadece nav -->
-  <main> ... minimalism token'ları ... </main>
-  <section data-style="editorial-design"><!-- garnitür: sadece hikâye bölümü -->
+<html data-style="minimalism">          <!-- dominant -->
+  <header data-style="liquid-glass">     <!-- garnish: nav only -->
+  <main> ... minimalism tokens ... </main>
+  <section data-style="editorial-design"><!-- garnish: story section only -->
 </html>
 ```
 
-### 2.3 Uyumlu / yasak ikili
+### 2.3 Compatible / forbidden pairs
 
-| Uyumlu | Neden |
+| Compatible | Why |
 |---|---|
-| minimalism + liquid-glass | cam, sade zeminde tek katman olarak okunur |
-| swiss-design + bento-grid | ikisi de ızgara disiplini |
-| editorial-design + luxury-typography | aynı serif ailesi, farklı yoğunluk |
-| japandi + wabi-sabi | aynı sıcaklık ve doku dili |
-| neo-brutalism + memphis | ikisi de kalın kontur + düz renk |
-| cybercore + cyberpunk | terminal + neon, aynı dünya |
-| aurora-ui + glassmorphism | biri zemin, diğeri katman |
-| claymorphism + dopamine-ui | pastel + canlı, aynı oyuncu ton |
+| minimalism + liquid-glass | glass reads as a single layer on a plain ground |
+| swiss-design + bento-grid | both are grid discipline |
+| editorial-design + luxury-typography | same serif family, different density |
+| japandi + wabi-sabi | same warmth and texture language |
+| neo-brutalism + memphis | both heavy outline + flat color |
+| cybercore + cyberpunk | terminal + neon, same world |
+| aurora-ui + glassmorphism | one is ground, the other is layer |
+| claymorphism + dopamine-ui | pastel + vivid, same playful tone |
 
-| Yasak | Neden |
+| Forbidden | Why |
 |---|---|
-| glassmorphism + neumorphism | iki farklı ışık fiziği; ikisi de "yüzey" iddiasında |
-| minimalism + maximalism | boşluk politikası çelişir |
-| swiss-design + scrapbook | ızgara vs bilinçli kaos |
-| art-deco + pixel-art | çözünürlük ve dönem çelişir |
-| 3+ stil | hiyerarşi değil gürültü üretir |
+| glassmorphism + neumorphism | two different light physics; both claim to be "the surface" |
+| minimalism + maximalism | contradictory space policies |
+| swiss-design + scrapbook | grid vs deliberate chaos |
+| art-deco + pixel-art | conflicting resolution and era |
+| 3+ styles | produces noise, not hierarchy |
 
-**Kural:** 3. stili eklemek istiyorsan önce 2.'yi sil.
-
----
-
-## 3 · Tekdüzeliği kıran 7 kaldıraç
-
-1. **Yüzey hiyerarşisi** — zemin / kart / yüzen katman. Üçü farklı gölge, farklı radius, farklı opaklık.
-2. **Tipografik kontrast** — aynı ekranda 2 uç: çok büyük başlık + çok küçük etiket (11px tracked). Orta boyutları azalt.
-3. **Renk kodu** — renk dekorasyon değil bilgi taşısın (durum, kategori, öncelik). Gri skalada 4 ton yeter.
-4. **Doku** — %3–6 grain, 1px hairline, hafif iç gölge. Düz yüzeyi "malzeme" yapar.
-5. **Düzen ritmi** — 3 bölüm aynı hizada olmasın: biri tam genişlik, biri 2 kolon, biri dar + boşluklu.
-6. **Durum izi** — basma/odak/seçim her yerde aynı dilde; 3'ten fazla durum tonu kullanma.
-7. **İmza öğe** — 1 tane, tekrar eden, markaya ait: köşe braket, hairline altın çizgi, kalın gölge, cam nav, pixel ikon.
+**Rule:** If you want to add a 3rd style, delete the 2nd first.
 
 ---
 
-## 4 · Ekran bazlı stil atama
+## 3 · The 7 levers that break uniformity
 
-Stil yoğunluğu ekranın işine göre değişmeli. Operasyonel ekranda "gösteri", vitrin ekranında "sadelik" hata.
+1. **Surface hierarchy** — ground / card / floating layer. Three different shadows, different radii, different opacity.
+2. **Typographic contrast** — two extremes on one screen: a very large heading + a very small label (11px tracked). Reduce the middle sizes.
+3. **Color code** — color should carry information, not decoration (state, category, priority). Four tones in grayscale are enough.
+4. **Texture** — 3–6% grain, 1px hairline, subtle inner shadow. It turns a flat surface into "material".
+5. **Layout rhythm** — three sections should not align: one full width, one two columns, one narrow + airy.
+6. **State trail** — press/focus/selection speak the same language everywhere; never more than 3 state tones.
+7. **Signature element** — one, repeated, owned by the brand: corner bracket, hairline gold rule, hard shadow, glass nav, pixel icon.
 
-| Ekran | Stil yoğunluğu | Uygulama |
+---
+
+## 4 · Style assignment per screen
+
+Style intensity must follow the screen's job. "Showmanship" on an operational screen and "plainness" on a showcase screen are both mistakes.
+
+| Screen | Style intensity | Application |
 |---|---|---|
-| Landing / hero | **yüksek** | Tam stil: büyük başlık, doku, gradient, imza öğe |
-| Onboarding | yüksek | Tek fikir/sayfa, güçlü illüstrasyon, tek CTA |
-| Boş durum | orta-yüksek | Stilin karakteri burada en çok görünür; 1 cümle + 1 eylem |
-| Dashboard | **düşük** | Nötr zemin, stil sadece tipografi/radius/renk kodunda |
-| Liste / tablo | düşük | Yoğunluk önde; stil satır çizgisi ve sayı tipografisinde |
-| Form | düşük | Konvansiyon kazanır; stil sadece odak ve kenarlıkta |
-| Ödeme / silme / giriş | **çok düşük** | Stil 0'a yakın; güven ve netlik |
-| Bildirim / toast | orta | Stilin renk ve radius dili; tek satır, ikon + metin |
-| Profil / ayar | orta | Bento veya bölüm ritmi; süs minimal |
+| Landing / hero | **high** | Full style: large heading, texture, gradient, signature element |
+| Onboarding | high | One idea per page, strong illustration, single CTA |
+| Empty state | medium-high | The style's character is most visible here; 1 sentence + 1 action |
+| Dashboard | **low** | Neutral ground, style only in typography/radius/color code |
+| List / table | low | Density leads; style lives in row rules and numeric typography |
+| Form | low | Convention wins; style only in focus and borders |
+| Payment / delete / login | **very low** | Style close to 0; trust and clarity |
+| Notification / toast | medium | The style's color and radius language; one line, icon + text |
+| Profile / settings | medium | Bento or section rhythm; minimal ornament |
 
-**Pratik:** Uygulamada `data-style` seçimi sayfa düzeyinde; istisna ekranlar için `data-style="plain"` (nötr) tanımla.
+**Practice:** In an app, `data-style` is chosen at page level; for exception screens define `data-style="plain"` (neutral).
 
 ---
 
-## 5 · Token mimarisi
+## 5 · Token architecture
 
 ```
-tokens.css        → stillerin değişken setleri ([data-style="..."])
-components.css    → buton, kart, input, tablo: sadece var() tüketir
-app.css           → sadece düzen (grid, spacing); stil bilgisi içermez
+tokens.css        → the styles' variable sets ([data-style="..."])
+components.css    → button, card, input, table: consumes var() only
+app.css           → layout only (grid, spacing); carries no style information
 ```
 
-Kurallar:
-- Bileşenlerde **hard-coded renk/gölge/radius yok**; hepsi `var(--...)`.
-- Stil başına en fazla 3 ek değişken (ör. `--shadow-hard`, `--grain`, `--blur`).
-- Yeni bileşen eklerken tüm stillerde nasıl göründüğünü `kit/gallery.html`'de karşılaştırarak kontrol et.
-- Koyu mod v6 kapsamı dışı: yalnız açık palet üretilir; ikinci bir tema bloğu eklenmez.
+Rules:
+- **No hard-coded color/shadow/radius** in components; everything is `var(--...)`.
+- At most 3 extra variables per style (e.g. `--shadow-hard`, `--grain`, `--blur`).
+- When adding a component, check how it looks in every style by comparing in `kit/gallery.html`.
+- Dark mode is out of scope in v6: only a light palette is generated; do not add a second theme block.
 
 ---
 
-### 5.1 Kompozisyon ekseni (şema v3) — iskelet de bir tokendır
+### 5.1 Composition axis (schema v3) — the skeleton is a token too
 
-Renk ve tipografi iki stili ayırır; **aynı iskelet** ayırmaz. 145 stilin hero kompozisyonu aynı
-olduğunda katalog "aynı sitenin 145 boyası" olur (ölçüldü: v4'te tek parmak izi = %100).
-Bu yüzden kompozisyon token düzeyine taşındı: `tokens.json → layout { hero, nav, density }`.
+Color and typography separate two styles; **the same skeleton** does not. When 145 styles share one
+hero composition, the catalog becomes "145 paint jobs of the same site" (measured: in v4 a single
+fingerprint = 100%). That is why composition moved to the token level: `tokens.json → layout { hero, nav, density }`.
 
-| Eksen | Arketipler | Ne değişir |
+| Axis | Archetypes | What changes |
 |---|---|---|
-| `hero` | split · split-reverse · centered · type · fullbleed · product · index · sticky | kopya/medya ilişkisi, ekran sayısı, hiyerarşi |
-| `nav` | inline · pill · split · utility · rail | gezinme modeli (üst satır, hap, yan ray…) |
-| `density` | sparse · balanced · dense | ekran başına öğe sayısı ve boşluk |
+| `hero` | split · split-reverse · centered · type · fullbleed · product · index · sticky | copy/media relationship, screen count, hierarchy |
+| `nav` | inline · pill · split · utility · rail | navigation model (top row, pill, side rail…) |
+| `density` | sparse · balanced · dense | items per screen and spacing |
 
-Kurallar:
-1. **Tek kaynak** `kit/render/layouts.json`; markup `kit/render/partials/`; stiller yalnız CSS yazar.
-2. Arketip seçicileri `[data-layout]` / `[data-nav]` ile nitelenir → iskelet kazanır, iç öğe stilleri çalışır.
-3. Atama **deterministiktir** (`kit/assign-layouts.mjs`): slug + aile + etiket puanlanır, eşitlik hash ile bozulur.
-   Elle "hissiyat" seçimi yapılmaz; istisna gerekiyorsa önce sözlüğe kural eklenir.
-4. Tavanlar ölçülür: tek `hero|nav` ≤ %25, tek hero ≤ %35, aile ≥8 stilde ≥3 farklı hero,
-   her arketip ≥4 stilde canlı (`kit/check-layout.mjs`, `--self-test` ile kanıtlı).
-5. Kompozisyon aile içinde kopyalanmaz: **aynı `hero|nav` çifti aile içinde tekrar etmez**, muafiyet yok.
+Rules:
+1. **Single source** `kit/render/layouts.json`; markup in `kit/render/partials/`; styles write CSS only.
+2. Archetype selectors are qualified with `[data-layout]` / `[data-nav]` → the skeleton wins, inner element styles still apply.
+3. Assignment is **deterministic** (`kit/assign-layouts.mjs`): slug + family + tags are scored, ties are broken by hash.
+   No manual "feel"-based choice; if an exception is needed, add a rule to the dictionary first.
+4. Ceilings are measured: one `hero|nav` ≤ 25%, one hero ≤ 35%, a family with ≥8 styles has ≥3 distinct heroes,
+   every archetype lives in ≥4 styles (`kit/check-layout.mjs`, proven by `--self-test`).
+5. Composition is not copied within a family: **the same `hero|nav` pair never repeats inside a family**, no exemptions.
 
-Ayrıntı: README § Kompozisyon ekseni · dağılım: `kit/dist/composition.md`.
-
----
-
-## 6 · Erişilebilirlik kapısı (her stilde zorunlu)
-
-- [ ] Gövde metni kontrastı ≥ 4.5:1, büyük metin ≥ 3:1.
-- [ ] `--ink-faint` sadece dekoratif; etkileşimli metinde kullanılmaz.
-- [ ] Odak halkası görünür: `:focus-visible { outline: 2px solid var(--focus, var(--accent)); outline-offset: 2px }`.
-  Halka hem `--bg` hem `--surface` üzerinde **≥ 3:1** olmalı (non-text kontrast). Accent bu eşiği
-  geçmiyorsa `--focus` token'ı ink yönünde karıştırılarak türetilir (13 stilde böyle; accent'e dokunulmadı).
-- [ ] APCA kontrolü: gövde metni |Lc| ≥ 75 hedef, ≥ 60 kabul, < 45 hata. WCAG oranı ile birlikte oku —
-  APCA polariteye duyarlıdır (koyu zeminde açık metin ile tersi aynı puanı almaz).
-- [ ] Dokunma hedefi ≥ 44×44px (görsel küçükse de padding ile).
-- [ ] Renk tek başına anlam taşımaz (durum + ikon/etiket).
-- [ ] Animasyon yok (v6): otomatik oynayan video/marquee/carousel kullanılmaz.
-- [ ] `prefers-reduced-transparency` desteklenir (cam yüzeyde opak fallback).
-- [ ] Video `poster` ile gelir; LCP elemanı poster'dır, video değil.
-- [ ] Cam/şeffaf yüzeylerde opak fallback (`@supports`).
-- [ ] Düşük kontrastlı stillerde (neumorphism, ethereal, japandi) metin katmanı ayrıca koyulaştırılır.
+Details: README § Composition axis · distribution: `kit/dist/composition.md`.
 
 ---
 
-## 7 · Performans bütçesi
+## 6 · Accessibility gate (mandatory in every style)
 
-| Öğe | Sınır | Not |
+- [ ] Body text contrast ≥ 4.5:1, large text ≥ 3:1.
+- [ ] `--ink-faint` is decorative only; never used for interactive text.
+- [ ] Focus ring is visible: `:focus-visible { outline: 2px solid var(--focus, var(--accent)); outline-offset: 2px }`.
+  The ring must be **≥ 3:1** on both `--bg` and `--surface` (non-text contrast). If accent does not clear
+  this threshold, the `--focus` token is derived by mixing toward ink (this happens in 13 styles; accent was left untouched).
+- [ ] APCA check: body text |Lc| ≥ 75 target, ≥ 60 acceptable, < 45 error. Read it together with the WCAG
+  ratio — APCA is polarity-sensitive (light text on a dark ground does not score the same as the inverse).
+- [ ] Touch target ≥ 44×44px (with padding even if the visual is smaller).
+- [ ] Color never carries meaning alone (state + icon/label).
+- [ ] No animation (v6): no auto-playing video/marquee/carousel.
+- [ ] `prefers-reduced-transparency` is supported (opaque fallback on glass surfaces).
+- [ ] Video ships with a `poster`; the LCP element is the poster, not the video.
+- [ ] Opaque fallback on glass/transparent surfaces (`@supports`).
+- [ ] In low-contrast styles (neumorphism, ethereal, japandi) the text layer is darkened separately.
+
+---
+
+## 7 · Performance budget
+
+| Item | Limit | Note |
 |---|---|---|
-| `backdrop-filter` katmanı | ekran başına ≤ 3 | mobilde statik blur'a düş |
-| Grain | SVG `feTurbulence`, 1 kez | PNG doku kullanma |
-| Font ailesi | ≤ 3 (display + body + mono) | `font-display: swap`, subset |
-| Görsel | ≤ 300 KB / görünür alan | WebP/AVIF + `srcset` |
-| Sürekli animasyon | ekran başına ≤ 1 | `transform`/`opacity` dışında animasyon yok |
-| Gölge katmanı | ≤ 3 `box-shadow` | çok katmanlı glow mobilde pahalı |
+| `backdrop-filter` layers | ≤ 3 per screen | fall back to a static blur on mobile |
+| Grain | SVG `feTurbulence`, once | do not use PNG textures |
+| Font families | ≤ 3 (display + body + mono) | `font-display: swap`, subset |
+| Image | ≤ 300 KB per viewport | WebP/AVIF + `srcset` |
+| Continuous animation | ≤ 1 per screen | no animation outside `transform`/`opacity` |
+| Shadow layers | ≤ 3 `box-shadow` | multi-layer glow is expensive on mobile |
 
 ---
 
-## 8 · 40 dakikalık uygulama tarifi
+## 8 · The 40-minute application recipe
 
-Mevcut bir uygulamaya yeni stil oturtmak için sıra:
+The order for fitting a new style onto an existing app:
 
-1. **5 dk** — README'den stil seç; stil dosyasının "Ekran reçeteleri" tablosunu oku.
-2. **5 dk** — `kit/tokens.css` içindeki bloğu `:root` altına taşı; `<html data-style="...">` ekle.
-3. **10 dk** — `components.css` içindeki hard-coded renk/radius/gölgeleri `var()` ile değiştir.
-4. **5 dk** — Tipografi ölçeğini stil dosyasındaki oranlara çek (punto + tracking + satır aralığı).
-5. **5 dk** — Yüzey hiyerarşisini kur: zemin → kart → yüzen katman; üçüne farklı davranış ver.
-6. **5 dk** — Tek imza öğe ekle (doku, hairline, gölge dili, cam nav).
-7. **5 dk** — Durum dilini uygula: odak halkası, basma, seçim (§6).
-8. **QA** — §7 listesi + `kit/gallery.html`'de kendi bileşenini karşılaştır.
-
----
-
-## 9 · Tek ekran QA listesi
-
-- [ ] Ekranda baskın tek bir odak var mı?
-- [ ] En az 2 farklı punto uçları (11px etiket + 32px+ başlık) var mı?
-- [ ] Yüzeyler 3 seviyeye ayrıldı mı, yoksa hepsi aynı kart mı?
-- [ ] Renk bilgi taşıyor mu, süs mü?
-- [ ] Stile ait bir imza öğe görünüyor mu?
-- [ ] 390px genişlikte taşma/çakışma var mı?
-- [ ] Kontrast ve odak halkası geçti mi?
-- [ ] Aynı ekran başka bir stille de çalışır mı (token sözleşmesi sağlam mı)?
+1. **5 min** — Pick the style from the README; read the style file's "Screen recipes" table.
+2. **5 min** — Move the block from `kit/tokens.css` under `:root`; add `<html data-style="...">`.
+3. **10 min** — Replace the hard-coded colors/radii/shadows in `components.css` with `var()`.
+4. **5 min** — Pull the type scale to the ratios in the style file (size + tracking + line height).
+5. **5 min** — Build the surface hierarchy: ground → card → floating layer; give each a different behavior.
+6. **5 min** — Add the single signature element (texture, hairline, shadow language, glass nav).
+7. **5 min** — Apply the state language: focus ring, press, selection (§6).
+8. **QA** — §7 checklist + compare your component in `kit/gallery.html`.
 
 ---
 
-## 10 · Sık yapılan hatalar
+## 9 · Single-screen QA checklist
 
-| Hata | Sonuç | Düzeltme |
+- [ ] Is there a single dominant focus on the screen?
+- [ ] Are there at least 2 extreme type sizes (11px label + 32px+ heading)?
+- [ ] Are surfaces split into 3 levels, or is everything the same card?
+- [ ] Does color carry information, or is it ornament?
+- [ ] Is a signature element belonging to the style visible?
+- [ ] Is there overflow/overlap at 390px width?
+- [ ] Did contrast and the focus ring pass?
+- [ ] Would the same screen work with another style (is the token contract sound)?
+
+---
+
+## 10 · Common mistakes
+
+| Mistake | Result | Fix |
 |---|---|---|
-| Stili her bileşene ayrı ayrı uygulamak | Tutarsız radius/gölge | Tek `data-style` + token |
-| Garnitür stili baskının değişkenlerini ezmek | Kimlik kaybı | Garnitür sadece kendi alt ağacında |
-| Tüm ekranlarda aynı yoğunluk | Yorucu ya da ruhsuz | §4 matrisi |
-| Sadece rengi değiştirmek | "Aynı tasarım, farklı boya" | Tipografi + yüzey + boşluk da değişmeli |
-| 4+ font / 3+ radius | Dağınıklık | 1 ölçek, 2 radius |
-| Paleti filter ile değiştirmek | Renkler zehirlenir | Paleti token'dan yaz |
-| Stili figma'da bırakmak | Kodda kaybolur | Token'ları repoya koy |
+| Applying the style to each component separately | Inconsistent radius/shadow | One `data-style` + tokens |
+| Letting the garnish style override the dominant's variables | Identity loss | The garnish stays inside its own subtree |
+| Same intensity on every screen | Exhausting or lifeless | §4 matrix |
+| Changing only the color | "Same design, different paint" | Typography + surface + spacing must change too |
+| 4+ fonts / 3+ radii | Clutter | 1 scale, 2 radii |
+| Changing the palette with a filter | Colors get poisoned | Write the palette from tokens |
+| Leaving the style in Figma | It gets lost in code | Put the tokens in the repo |
 
 ---
 
-## 11 · Ajan/otomatik üretim için prompt şablonu
+## 11 · Prompt template for agents/automated generation
 
-Kısa sürüm (stil dosyasındaki `## AI brief` bloğu daha ayrıntılıdır; çelişirse AI brief kazanır):
+Short version (the `## AI brief` block in the style file is more detailed; if they conflict, the AI brief wins):
 
 ```
-Stil: <slug> — dosyalar: styles/<nn-slug>/style.md + tokens.json + shots/
-Kurallar:
-- Sadece kit/tokens.css içindeki <slug> değişkenlerini kullan; hard-coded renk/gölge/radius yazma.
-- Tipografi: --font-display başlıkta, --font-body gövdede, --font-mono etiketlerde, --tracking başlıkta.
-- Yüzey: 3 seviye (bg / surface / surface+shadow), radius --radius ve --radius-lg.
-- Bileşenler: style.md § Bileşen reçeteleri tablosundaki ölçüler birebir.
-- Kompozisyon: playbook §5 + style.md § Görsel imza; animasyon yok (v6).
-- Yasaklar: style.md § Yasaklar ve § Tuzaklar.
-- Erişilebilirlik: playbook §7 listesi geçmeli.
-- Çıktı: bileşen kodu + kısa not (hangi imza öğeyi nerede kullandın).
+Style: <slug> — files: styles/<nn-slug>/style.md + tokens.json + shots/
+Rules:
+- Use only the <slug> variables in kit/tokens.css; never write hard-coded color/shadow/radius.
+- Typography: --font-display for headings, --font-body for body, --font-mono for labels, --tracking on headings.
+- Surfaces: 3 levels (bg / surface / surface+shadow), radius --radius and --radius-lg.
+- Components: the measurements in style.md § Component recipes, exactly.
+- Composition: playbook §5 + style.md § Visual signature; no animation (v6).
+- Forbidden: style.md § Forbidden and § Pitfalls.
+- Accessibility: the playbook §7 checklist must pass.
+- Output: component code + a short note (which signature element you used where).
 ```
 
 ---
 
-## 12 · Yeni stil ekleme akışı (v6 · tek komut)
+## 12 · New style flow (v6 · one command)
 
-> v5'te 8 adımdı (~15 dk) ve üç kopyanın elle senkronu en sık kırılan yerdi. v6'da tek SPEC + tek komut.
+> In v5 this was 8 steps (~15 min) and manual three-copy sync was the most frequent breakage. In v6 it is one SPEC + one command.
 
-1. `kit/specs/*.json` içinden bir dosyayı örnek al; SPEC'e şunları yaz: `num`, `slug`, `name`, `band`,
-   `tagline`, `feeling/best/avoid`, `palette` (10 renk), `fonts` (3 aile, `kit/fonts` listesinden),
-   `radius` (2 değer), `motif`, `signature` (≥3), `must` / `mustNot` (≥3), `refs` (≥3 https),
+1. Copy a file from `kit/specs/*.json` as a template; write into the SPEC: `num`, `slug`, `name`, `band`,
+   `tagline`, `feeling/best/avoid`, `palette` (10 colors), `fonts` (3 families from the `kit/fonts` list),
+   `radius` (2 values), `motif`, `signature` (≥3), `must` / `mustNot` (≥3), `refs` (≥3 https),
    `keywords` (3), `brief`, `neighbors`.
-2. `node kit/add-style.mjs kit/specs/<dosya>.json` — kontrast/font/komşu/bant doğrulanır; beş kaynak
-   (`tokens.json`, `token-block.css`, `style.md`, `shots.config.fragment.mjs`, `keywords.json`) yazılır.
-3. Aynı komut `apply-fragments` → layout/görsel/içerik atamaları → tek sayfa render → doküman tabloları
-   → galeri, indeks, export, rapor, görsel baseline adımlarını koşar.
-4. `bash kit/gates.sh` temiz olana kadar düzelt. Yeni aile açıyorsan `kit/families.json`'a kesintisiz aralık
-   ve `kit/specs/bands.json`'a şablon ekle; `apply-fragments` boşluk/çakışma görürse kırmızı verir.
+2. `node kit/add-style.mjs kit/specs/<file>.json` — contrast/font/neighbour/band are validated; five sources
+   (`tokens.json`, `token-block.css`, `style.md`, `shots.config.fragment.mjs`, `keywords.json`) are written.
+3. The same command runs `apply-fragments` → layout/imagery/content assignments → single-page render →
+   doc tables → gallery, index, export, report, visual baseline.
+4. Fix until `bash kit/gates.sh` is clean. If you open a new family, add a contiguous range to
+   `kit/families.json` and a template to `kit/specs/bands.json`; `apply-fragments` goes red on a gap/overlap.
 
-Kabul: `add-style` son satırı `bitti · N stil hazır`, `bash kit/gates.sh` son satırı `kapılar: temiz`,
-`node kit/check-schema.mjs` 0 hata, `node kit/check-contrast.mjs --strict-soft` 0 hata.
+Acceptance: the last line of `add-style` is `bitti · N stil hazır`, the last line of `bash kit/gates.sh` is
+`kapılar: temiz`, `node kit/check-schema.mjs` reports 0 errors, `node kit/check-contrast.mjs --strict-soft`
+reports 0 errors.
 
 ---
 
-## 13 · AI uygulama protokolü (stil → kod)
+## 13 · AI application protocol (style → code)
 
-Bu bölüm "AI bu kütüphaneyi kullanarak tasarım uygulasın" dendiğinde izlenecek sıradır.
-Amaç: stilin **kimliğini** koruyarak uygulanabilir kod üretmek; "renk değiştirilmiş aynı tasarım" değil.
+This section is the order to follow when someone says "let the AI build a design with this library".
+The goal is to produce applicable code that preserves the style's **identity**, not "the same design with different colors".
 
-### 14.1 Okuma sırası (bağlam kurma)
+### 14.1 Reading order (building context)
 
-1. `kit/styles.index.json` → stil seç (aile, etiket, `docsReady`).
-2. `styles/<nn-slug>/style.md` → sırayla: **§ Zorunlu kurallar → § Yasaklar → § Bileşen reçeteleri → § Ekran reçeteleri → § Tuzaklar**.
-3. `styles/<nn-slug>/tokens.json` → palet, ölçek, layout, must/mustNot (kod üretirken bunu referans al).
-4. `styles/<nn-slug>/shots/01…04` → görseli aç. Dokümanla görsel çelişiyorsa **görsel kazanır**; çelişkiyi düzelt (docsReady olan stillerde görseller token'lardan üretildiği için tutarlıdır).
+1. `kit/styles.index.json` → pick the style (family, tags, `docsReady`).
+2. `styles/<nn-slug>/style.md` → in order: **§ Mandatory rules → § Forbidden → § Component recipes → § Screen recipes → § Pitfalls**.
+3. `styles/<nn-slug>/tokens.json` → palette, scale, layout, must/mustNot (reference this while generating code).
+4. `styles/<nn-slug>/shots/01…04` → open the image. If the doc and the image conflict, **the image wins**; fix the
+   conflict (in `docsReady` styles the images are generated from the tokens, so they are consistent).
 
-### 14.2 Karar matrisi (hangi ekranda ne kadar stil)
+### 14.2 Decision matrix (how much style on which screen)
 
-| Ekran | Yoğunluk | AI'ya talimat |
+| Screen | Intensity | Instruction to the AI |
 |---|---|---|
-| Landing / hero | yüksek | Tam stil: display tipografi, imza öğe, doku/gradient/katman serbest (yasaklara uyarak) |
-| Dashboard / tablo | düşük | Stil yalnızca tipografi + radius + renk kodunda; süs ekleme |
-| Form / ödeme / giriş | çok düşük | Konvansiyon kazanır; stil sadece odak halkası ve kenarlıkta |
-| Boş durum / onboarding | orta-yüksek | Stilin karakteri burada görünür: 1 cümle + 1 eylem + imza öğe |
+| Landing / hero | high | Full style: display typography, signature element, texture/gradient/layering allowed (respecting the forbidden list) |
+| Dashboard / table | low | Style only in typography + radius + color code; add no ornament |
+| Form / payment / login | very low | Convention wins; style only in the focus ring and borders |
+| Empty state / onboarding | medium-high | The style's character shows here: 1 sentence + 1 action + signature element |
 
-### 14.3 Üretim kuralları
+### 14.3 Generation rules
 
-- Bileşen kodu **yalnızca** `var(--…)` tüketir; hiçbir renk/gölge/radius literal yazılmaz.
-- Üç yüzey seviyesi kurulur: `--bg` → `--surface` (+`--line`) → yüzen katman (+`--shadow`). Stil "gölge yok" diyorsa yüzen katman da 1px çizgiyle ayrılır.
-- Tipografi: display + gövde + mono rolleri ayrı; punto ölçeği stil dosyasındaki basamaklardan seçilir, ara basamak uydurulmaz.
-- Kompozisyon: playbook §5 + stil dosyası § Görsel imza; animasyon yok (v6).
-- Stil "koyu tabanlı" ise açık tema uydurma; ikinci tema gerekiyorsa tokens.json'daki `dark`/`light` bloğunu kullan, `filter: invert()` asla.
-- Garnitür kullanımı: en fazla 1 ikincil stil ve yalnızca tek katmanda (`data-style` alt ağaçta); baskın stilin değişkenlerini ezmez.
+- Component code consumes **only** `var(--…)`; no color/shadow/radius literal is ever written.
+- Three surface levels are built: `--bg` → `--surface` (+`--line`) → floating layer (+`--shadow`). If the style says "no shadow", the floating layer is separated by a 1px rule instead.
+- Typography: display + body + mono roles are distinct; the type scale is chosen from the steps in the style file, no intermediate steps invented.
+- Composition: playbook §5 + style file § Visual signature; no animation (v6).
+- If the style is "dark based", do not invent a light theme; if a second theme is needed use the `dark`/`light` block in tokens.json, never `filter: invert()`.
+- Garnish usage: at most 1 secondary style and in one layer only (`data-style` in the subtree); it must not override the dominant style's variables.
 
-### 14.4 Teslim öncesi öz-denetim (AI kendi çıktısına uygular)
+### 14.4 Pre-delivery self-check (the AI applies this to its own output)
 
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (style.md § Görsel imza).
-- [ ] Hard-coded renk/gölge/radius yok — grep ile doğrula (`#[0-9a-f]{3,6}`, `box-shadow:`, `border-radius:`).
-- [ ] Yasaklar listesindeki hiçbir öğe kullanılmadı.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1 (style.md § Erişilebilirlik değerleriyle).
-- [ ] Odak halkası görünür, dokunma hedefi ≥ 44×44px.
-- [ ] 390px genişlikte taşma/çakışma yok.
-- [ ] Otomatik oynayan hiçbir hareket yok (v6).
-- [ ] Yazdığın kodu `kit/gallery.html` mantığıyla karşılaştırdın mı: aynı bileşen, stil değişince bozulmuyor mu?
+- [ ] At least 2 of the style's signature items are visible on the screen (style.md § Visual signature).
+- [ ] No hard-coded color/shadow/radius — verify with grep (`#[0-9a-f]{3,6}`, `box-shadow:`, `border-radius:`).
+- [ ] Nothing from the forbidden list was used.
+- [ ] Contrast: body ≥ 4.5:1, large text ≥ 3:1 (with the values from style.md § Accessibility).
+- [ ] Focus ring visible, touch target ≥ 44×44px.
+- [ ] No overflow/overlap at 390px width.
+- [ ] No auto-playing motion (v6).
+- [ ] Did you compare the code you wrote with the logic of `kit/gallery.html`: the same component, and does it hold up when the style changes?
 
-### 14.5 Sık hatalar (AI'ya özel)
+### 14.5 Common mistakes (AI-specific)
 
-| Hata | Belirti | Düzeltme |
+| Mistake | Symptom | Fix |
 |---|---|---|
-| Sadece token'ları kopyalamak | "Aynı tasarım, farklı boya" | Tipografi ölçeği + yüzey + boşluk ritmini de uygula |
-| Stili her bileşene ayrı uygulamak | Tutarsız radius/gölge | Tek `data-style` + token katmanı |
-| Tüm ekranlarda tam yoğunluk | Yorucu ya da güvensiz (ödeme ekranı) | §14.2 matrisi |
-| Dokümanı okumadan görselden kopyalamak | Yanlış ölçü (görsel 1280px'e göre üretildi) | Ölçüleri style.md tablolarından al; görselden yalnızca *karakter* al |
-| Yasakları atlamak | Stilin kimliği bozulur (ör. neumorphism'de gölge eklemek) | § Yasaklar listesini çıktı üretmeden önce oku |
+| Copying only the tokens | "Same design, different paint" | Apply the type scale + surface + spacing rhythm too |
+| Applying the style to each component separately | Inconsistent radius/shadow | One `data-style` + token layer |
+| Full intensity on every screen | Exhausting, or unsafe (payment screen) | §14.2 matrix |
+| Copying from the image without reading the doc | Wrong measurements (images are produced at 1280px) | Take measurements from the style.md tables; take only *character* from the image |
+| Skipping the forbidden list | The style's identity breaks (e.g. adding a shadow in neumorphism) | Read the § Forbidden list before producing output |
 
-### 14.6 Hızlı komut özeti
+### 14.6 Quick command summary
 
 ```bash
-node kit/build-gallery.mjs --check      # şema/link/görsel/token senkron denetimi
-node kit/check-contrast.mjs             # WCAG raporu (borçlar baseline'da)
-node kit/render/render-shots.mjs        # eksik görselleri üret (--styles <slug> --force)
-node kit/render/fetch-fonts.mjs         # fontları yeniden indir (offline render için)
+node kit/build-gallery.mjs --check      # schema/link/image/token sync check
+node kit/check-contrast.mjs             # WCAG report (debts in the baseline)
+node kit/render/render-shots.mjs        # generate missing images (--styles <slug> --force)
+node kit/render/fetch-fonts.mjs         # re-download fonts (for offline render)
 ```
 
-## 14 · Kabul edilmiş kontrast uyarıları
+## 14 · Accepted contrast warnings
 
-`node kit/check-contrast.mjs` **0 hata** verir. Kalan 15 uyarı bilinçli tasarım kararıdır
-ve `kit/contrast-baseline.json`'a **yazılmaz** — çünkü bunlar metin değil, dekoratif
-öğelerdir (ızgara çizgisi, ayırıcı, ikon konturu, soluk etiket).
+`node kit/check-contrast.mjs` reports **0 errors**. The remaining 15 warnings are deliberate design
+decisions and are **not written** to `kit/contrast-baseline.json` — because these are not text but
+decorative elements (grid rule, divider, icon outline, faint label).
 
-**Kural:** `--ink-faint` **gövde metni olarak kullanılmaz.** Yalnızca şu yerlerde:
-- ≥ 3:1 gerektirmeyen dekoratif çizgi/ayırıcı/ızgara,
-- pasif durumdaki ikon konturu,
-- `aria-hidden` etiketler (ör. teknik ölçü notları).
+**Rule:** `--ink-faint` is **never used as body text.** Only in these places:
+- decorative rule/divider/grid that does not require ≥ 3:1,
+- icon outline in a passive state,
+- `aria-hidden` labels (e.g. technical measurement notes).
 
-Metin her zaman `--ink` (gövde) veya `--ink-soft` (açıklama, ≥ 4.5:1) kullanır.
+Text always uses `--ink` (body) or `--ink-soft` (caption, ≥ 4.5:1).
 
-| Stil | Token | Ölçülen | Nerede kullanılıyor |
+| Style | Token | Measured | Where it is used |
 |---|---|---|---|
-| 01 minimalism | `--ink-faint` | 2.53:1 | bölüm etiketi, hairline |
-| 04 luxury-typography | `--ink-faint` | 2.76:1 | mini etiket, çizgi |
-| 05 bento-grid | `--ink-faint` | 2.43:1 | kutucuk etiketi |
-| 06 japandi | `--ink-faint` | 2.98:1 | etiket, ayırıcı |
-| 07 wabi-sabi | `--ink-faint` | 2.87:1 | etiket, çizgi |
-| 10 neumorphism | `--ink-faint` | 2.52:1 | gömülü yüzey etiketi |
-| 11 claymorphism | `--ink-faint` | 3.00:1 | yumuşak etiket |
-| 19 y2k | `--ink-faint` | 2.70:1 | krom üstü etiket |
-| 25 frutiger-aero | `--ink-faint` | 2.94:1 | parlak yüzey etiketi |
-| 28 surrealism | `--ink-faint` | 2.76:1 | ölçek notu |
-| 29 ethereal | `--ink-faint` | 2.85:1 | sis üstü etiket |
-| 30 bohemian | `--ink-faint` | 2.99:1 | doku üstü etiket |
-| 31 scrapbook | `--ink-faint` | 2.95:1 | el yazısı altı not |
-| 34 skeuomorphism | `--ink-faint` | 2.26:1 | bevel üstü etiket |
-| 34 skeuomorphism | `--ink-soft` | 4.34:1 | **gövde metni değil** — yalnız ≥18px |
+| 01 minimalism | `--ink-faint` | 2.53:1 | section label, hairline |
+| 04 luxury-typography | `--ink-faint` | 2.76:1 | mini label, rule |
+| 05 bento-grid | `--ink-faint` | 2.43:1 | tile label |
+| 06 japandi | `--ink-faint` | 2.98:1 | label, divider |
+| 07 wabi-sabi | `--ink-faint` | 2.87:1 | label, rule |
+| 10 neumorphism | `--ink-faint` | 2.52:1 | inset surface label |
+| 11 claymorphism | `--ink-faint` | 3.00:1 | soft label |
+| 19 y2k | `--ink-faint` | 2.70:1 | label on chrome |
+| 25 frutiger-aero | `--ink-faint` | 2.94:1 | label on glossy surface |
+| 28 surrealism | `--ink-faint` | 2.76:1 | scale note |
+| 29 ethereal | `--ink-faint` | 2.85:1 | label on mist |
+| 30 bohemian | `--ink-faint` | 2.99:1 | label on texture |
+| 31 scrapbook | `--ink-faint` | 2.95:1 | note under handwriting |
+| 34 skeuomorphism | `--ink-faint` | 2.26:1 | label on bevel |
+| 34 skeuomorphism | `--ink-soft` | 4.34:1 | **not body text** — ≥18px only |
 
-**Skeuomorphism istisnası:** malzeme dokusu kontrastı yediği için `--ink-soft` 4.34:1'de
-kalıyor; bu stilde gövde metni her zaman `--ink` (8.41:1). Yeni bir stil eklerken
-`--ink-soft` ≥ 4.5:1 hedefle; altına inerse bu tabloya satır ekle ve nedenini yaz.
+**Skeuomorphism exception:** because the material texture eats contrast, `--ink-soft` stays at 4.34:1;
+in this style body text always uses `--ink` (8.41:1). When adding a new style, target `--ink-soft` ≥ 4.5:1;
+if it drops below, add a row to this table and state why.
 
-## 15 · Token dışa aktarma sözleşmesi
+## 15 · Token export contract
 
-`kit/dist/` üretilen çıktıdır, elle düzenlenmez; `node kit/export-tokens.mjs` yazar,
-`--check` kapıda güncelliğini doğrular.
+`kit/dist/` is generated output and is not edited by hand; `node kit/export-tokens.mjs` writes it and
+`--check` verifies freshness at the gate.
 
-| Çıktı | Sözleşme |
+| Output | Contract |
 |---|---|
-| `tokens.all.css` | `:root` fallback + her stil için `[data-style]` + varsa `[data-theme=dark]`; değişken adları `kit/tokens.css` ile birebir |
-| `tailwind.theme.css` | Tailwind v4 `@theme`: `--color-*`, `--font-*`, `--radius-control/card`, `--shadow-control`; 8 adımlı boşluk `p-1…p-16` ile eşlenir (4px taban) |
-| `figma.variables.json` | `collections[]`: `Color System` (Light/Dark modlu), `Radius`, `Spacing`, `Typography`; her değişken `{ name, type, values: { <mod>: değer } }` |
-| `index.json` | Stil başına `dark` durumu, token sayısı, dosya yolları |
+| `tokens.all.css` | `:root` fallback + `[data-style]` per style + `[data-theme=dark]` where present; variable names identical to `kit/tokens.css` |
+| `tailwind.theme.css` | Tailwind v4 `@theme`: `--color-*`, `--font-*`, `--radius-control/card`, `--shadow-control`; the 8-step spacing maps to `p-1…p-16` (4px base) |
+| `figma.variables.json` | `collections[]`: `Color System` (with Light/Dark modes), `Radius`, `Spacing`, `Typography`; every variable is `{ name, type, values: { <mode>: value } }` |
+| `index.json` | Per style: `dark` status, token count, file paths |
 
-Kural: yeni bir token eklendiğinde önce `kit/tokens.css` + `styles/<slug>/tokens.json` güncellenir,
-sonra export çalıştırılır. Ters yön (dist'i elle düzeltmek) kapıda `token export güncel` adımında yakalanır.
+Rule: when a token is added, first update `kit/tokens.css` + `styles/<slug>/tokens.json`, then run the
+export. The reverse direction (hand-editing dist) is caught at the `token export güncel` gate step.
 
-## 16 · Sözleşme denetimi (style-lint)
+## 16 · Contract check (style-lint)
 
-Token üretmek yetmez; tüketen kodun token'a uyduğunu **ölçmek** gerekir. `kit/style-lint.mjs`
-seçilen stile göre kod tarar ve katalogu referanstan sözleşmeye çevirir:
+Producing tokens is not enough; the consuming code must be **measured** against them. `kit/style-lint.mjs`
+scans code for the chosen style and turns the catalog from a reference into a contract:
 
 ```bash
-node kit/style-lint.mjs src --style terminal-ui --strict   # CI'da bu
+node kit/style-lint.mjs src --style terminal-ui --strict   # this one in CI
 ```
 
-| Kural sınıfı | Neden hata | Nasıl düzeltilir |
+| Rule class | Why it is an error | How to fix it |
 |---|---|---|
-| Renk literali (`#fff`, `rgba()`, `Color(0x…)`) | stil değişince ekran değişmez | `var(--accent)` / `context.styleLab.accent` |
-| Stil dışı font | kimlik kaybolur (her stil tek font ailesi taşır) | `var(--font-display)` / `t.typography` |
-| Radius literali | köşe dili stil sözleşmesinden kopar | `var(--radius)` / `var(--radius-lg)` |
-| `--ink-faint` metin olarak | kontrast düşer, okunmaz | `var(--ink-soft)` |
-| `data-style` yok | hiçbir token uygulanmaz | kök elemanda `data-style="<slug>"` |
+| Color literal (`#fff`, `rgba()`, `Color(0x…)`) | the screen does not change when the style changes | `var(--accent)` / `context.styleLab.accent` |
+| Off-style font | identity is lost (each style carries a single font family) | `var(--font-display)` / `t.typography` |
+| Radius literal | the corner language detaches from the style contract | `var(--radius)` / `var(--radius-lg)` |
+| `--ink-faint` as text | contrast drops, unreadable | `var(--ink-soft)` |
+| No `data-style` | no token is applied at all | `data-style="<slug>"` on the root element |
 
-Uyarı/hata ayrımı bilinçli: renk ve font **kimliği** bozar (hata); radius çoğu zaman
-makul bir istisna taşıyabilir (uyarı). `--strict` ile uyarılar da kapı olur — yeni projede
-bunu aç, eski projede borç defteri gibi kullan.
+The warning/error split is deliberate: color and font break **identity** (error); radius can often carry
+a reasonable exception (warning). With `--strict` warnings become gates too — enable it on a new project,
+use it like a debt ledger on an old one.

@@ -1,146 +1,145 @@
-# v6 · tek sayfa vitrin — sadeleştirme raporu
+# v6 · single-page showcase — simplification report
 
-> **Tarih:** 2026-11-14 · **Dal:** `v6-tek-sayfa` · **Kapsam:** tüm depo
-> **Karar veren:** kullanıcı (tek sayfa · koyu mod yok · animasyon yok · oyun stilleri dahil 100 yeni stil)
-> **Doğrulama:** `bash kit/gates.sh` → `kapılar: temiz` (26 adım)
+> **Date:** 2026-11-14 · **Branch:** `v6-tek-sayfa` · **Scope:** the whole repository
+> **Decided by:** the user (single page · no dark mode · no animation · 100 new styles including game styles)
+> **Verification:** `bash kit/gates.sh` → `kapılar: temiz` (26 steps)
 
 ---
 
-## 1 · Ne istendi, ne yapıldı
+## 1 · What was asked, what was done
 
-| İstek | Uygulama |
+| Request | Implementation |
 |---|---|
-| "Her stil için tek sayfa tasarım" | 37 sahne şablonu silindi; **`kit/render/page.html`** tek şablon (1280×2400). Stil başına **1 PNG**. |
-| "Stil eklememiz çok uzun sürüyor" | 8 adımlı akış → **tek komut**: `node kit/add-style.mjs kit/specs/<dosya>.json` (SPEC → 5 kaynak → atama → render → indeks). |
-| "Animasyona gerek yok" | `motion` alanı, `motion-*` scriptleri, motion lab/strip/measure, `dist/motion.*`, fragment'lardaki `@keyframes`/`animation` bildirimleri kaldırıldı. |
-| "Sadece stil görmek istiyorum" | Koyu mod (palette.dark, koyu token bloğu, koyu sahneler, dark-fill) kaldırıldı. Flutter/React token üreticileri kapsam dışı (CSS + Tailwind + Figma kaldı). |
-| "100 tane stil araştırması" | **100 yeni stil** (152–251) eklendi: 9 yeni aile bandı, aralarında **Oyun & Etkileşim (152–171, 20 stil)**. |
+| "One page design per style" | The 37 scene templates were deleted; **`kit/render/page.html`** is the single template (1280×2400). **1 PNG** per style. |
+| "Adding a style takes too long" | The 8-step flow became **one command**: `node kit/add-style.mjs kit/specs/<file>.json` (SPEC → 5 sources → assignments → render → index). |
+| "No animation needed" | The `motion` field, `motion-*` scripts, motion lab/strip/measure, `dist/motion.*`, and the `@keyframes`/`animation` declarations in fragments were removed. |
+| "I just want to see the style" | Dark mode (palette.dark, dark token block, dark scenes, dark-fill) was removed. Flutter/React token emitters are out of scope (CSS + Tailwind + Figma remain). |
+| "Research 100 styles" | **100 new styles** (152–251) were added: 9 new family bands, among them **Game & Interaction (152–171, 20 styles)**. |
 
 ---
 
-## 2 · Sayılar (ölçüldü)
+## 2 · Numbers (measured)
 
-| Ölçü | v5 | v6 | Kaynak |
+| Metric | v5 | v6 | Source |
 |---|---|---|---|
-| Stil | 151 | **251** | `kit/dist/report.md` |
-| Aile bandı | 22 | **31** | `kit/families.json` |
-| Stil başına görsel | 4 (repoda) / 37 (tam) | **1** | `kit/shots.core.json` |
-| Repodaki PNG | 604 | **251** | `kit/shots.manifest.json` |
-| PNG toplam boyut | 195.2 MiB | **223 MiB** | `du -ch styles/*/shots/01-page.png` |
-| Kapı adımı | 38 | **26** | `grep -c '^run_gate' kit/gates.sh` |
-| `hero|nav` parmak izi | 16 | **16** (en kalabalık %14) | `node kit/check-layout.mjs` |
-| Kontrast hata / borç | 0 / 0 | **0 / 0** (19 yumuşak uyarı) | `node kit/check-contrast.mjs --strict-soft` |
-| Görsel imza | 604/604 | **251/251, 0 fark** | `node kit/render/phash.mjs --check` |
+| Styles | 151 | **251** | `kit/dist/report.md` |
+| Family bands | 22 | **31** | `kit/families.json` |
+| Images per style | 4 (in repo) / 37 (full) | **1** | `kit/shots.core.json` |
+| PNGs in the repo | 604 | **251** | `kit/shots.manifest.json` |
+| Total PNG size | 195.2 MiB | **223 MiB** | `du -ch styles/*/shots/01-page.png` |
+| Gate steps | 38 | **26** | `grep -c '^run_gate' kit/gates.sh` |
+| `hero|nav` fingerprints | 16 | **16** (largest cluster 14%) | `node kit/check-layout.mjs` |
+| Contrast errors / debt | 0 / 0 | **0 / 0** (19 soft warnings) | `node kit/check-contrast.mjs --strict-soft` |
+| Visual signature | 604/604 | **251/251, 0 difference** | `node kit/render/phash.mjs --check` |
 
-Silinen kod: 37 sahne şablonu + estate/section/flow CSS + 9 motion script + dark-fill + 2 exporter
-(~6.500 satır). Eklenen: `kit/lib/style-spec.mjs` (üreteç), `kit/add-style.mjs` (tek komut),
-`kit/specs/` (31 aile şablonu + 100 SPEC), `kit/build-catalog-doc.mjs`, `kit/migrations/v6-*.mjs`.
-
----
-
-## 3 · Tek sayfa sözleşmesi
-
-`kit/render/page.html` — 1280×2400, bölümler yukarıdan aşağıya:
-
-1. **Nav** (5 partial: inline · pill · split · rail · utility)
-2. **Hero** (8 partial: split · split-reverse · centered · type · fullbleed · product · index · sticky)
-3. **Logo şeridi** (per-style copy)
-4. **Üç adım** (kart ızgarası)
-5. **Medya + metin** (fotoğraf + 3 madde + ölçüm çubuğu)
-6. **Ölçü bandı** (4 sayı)
-7. **Bileşen ızgarası** (buton/chip · input · kart · tablo)
-8. **Form + veri** (2 kolon: form, grafik)
-9. **CTA bandı**
-10. **Footer** (4 kolon + alt satır)
-
-Sığdırma emniyeti: içerik 2400px'i aşarsa gövde bir kez ölçeklenir (`zoom`), aşmıyorsa hiçbir şey
-değişmez.
-
-> **2026-11-15 · kaldırıldı:** `zoom` emniyeti 251/251 stilde devreye giriyordu (içerik medyanı
-> 2721px, görsel punto medyanı 7.9px). Yerine dikey bütçe + `data-fit` kademeleri geldi; ayrıntı
-> `docs/style-uretimi-arastirma.md` §5 P1. Taşma ölçümü artık sığdırma kademesini, zoom yasağını ve
-> 10px punto tabanını denetler. Ölçüm kapısı: `node kit/render/render-shots.mjs --measure` → yatay taşma, kırpılan blok,
-8.5px altı metin (251 sahne, 0 sorun).
+Code deleted: 37 scene templates + estate/section/flow CSS + 9 motion scripts + dark-fill + 2 exporters
+(~6,500 lines). Added: `kit/lib/style-spec.mjs` (generator), `kit/add-style.mjs` (single command),
+`kit/specs/` (31 family templates + 100 SPECs), `kit/build-catalog-doc.mjs`, `kit/migrations/v6-*.mjs`.
 
 ---
 
-## 4 · Stil ekleme: v5 → v6
+## 3 · Single-page contract
 
-**v5 (8 adım, ~15 dk):** style.md yaz → token bloğunu `tokens.css`'e kopyala → `tokens.json` →
-fragment → keywords → `apply-fragments` → `assign-*` → render → tablo senkronu → export/rapor.
+`kit/render/page.html` — 1280×2400, sections from top to bottom:
 
-**v6 (1 komut):**
+1. **Nav** (5 partials: inline · pill · split · rail · utility)
+2. **Hero** (8 partials: split · split-reverse · centered · type · fullbleed · product · index · sticky)
+3. **Logo strip** (per-style copy)
+4. **Three steps** (card grid)
+5. **Media + text** (photo + 3 points + measurement bar)
+6. **Metric band** (4 numbers)
+7. **Component grid** (button/chip · input · card · table)
+8. **Form + data** (2 columns: form, chart)
+9. **CTA band**
+10. **Footer** (4 columns + bottom line)
+
+Fitting safety net: if the content exceeds 2400px the body is scaled once (`zoom`); if it does not, nothing changes.
+
+> **2026-11-15 · removed:** the `zoom` safety net engaged in 251/251 styles (content median 2721px,
+> visual type size median 7.9px). It was replaced by a vertical budget + `data-fit` tiers; details in
+> `docs/style-uretimi-arastirma.md` §5 P1. The overflow measurement now checks the fit tier, the zoom ban
+> and the 10px type floor. Measurement gate: `node kit/render/render-shots.mjs --measure` → horizontal overflow, clipped blocks,
+8.5px sub-minimum text (251 scenes, 0 issues).
+
+---
+
+## 4 · Adding a style: v5 → v6
+
+**v5 (8 steps, ~15 min):** write style.md → copy the token block into `tokens.css` → `tokens.json` →
+fragment → keywords → `apply-fragments` → `assign-*` → render → table sync → export/report.
+
+**v6 (1 command):**
 
 ```bash
 node kit/add-style.mjs kit/specs/my-batch.json
 ```
 
-SPEC alanları (`kit/specs/*.json`): `num slug name band tagline feeling best avoid palette[10]
+SPEC fields (`kit/specs/*.json`): `num slug name band tagline feeling best avoid palette[10]
 fonts[3] radius[2] motif signature[] must[] mustNot[] refs[] keywords[] brief neighbors`,
-opsiyonel `upper tracking scale essence origin recognition notThis screens traps extraCss`.
+optional `upper tracking scale essence origin recognition notThis screens traps extraCss`.
 
-Komut sırası: **doğrula** (kontrast eşikleri, font kütüphanesi, komşu slug'ları, aile bandı) →
-**üret** (5 kaynak, üç kopya paritesi korunur) → `apply-fragments` → `assign-layouts` →
+Command order: **validate** (contrast thresholds, font library, neighbour slugs, family band) →
+**generate** (5 sources, three-copy parity preserved) → `apply-fragments` → `assign-layouts` →
 `assign-imagery` → `assign-content` → `render-shots` → `optimize-shots` → `sync-shot-tables` →
 `build-gallery` → `export-tokens` → `build-slim-index` → `report` → `composition-report` → `phash --write`.
 
-Story sayısı: 100 yeni stil 8 parti hâlinde üretildi; her partiden sonra `check-schema` +
-`check-contrast` + `check-layout` temiz olana kadar düzeltildi.
+Batch count: the 100 new styles were produced in 8 batches; after each batch things were fixed until
+`check-schema` + `check-contrast` + `check-layout` were clean.
 
 ---
 
-## 5 · Aile bantları (v6 ekleri)
+## 5 · Family bands (v6 additions)
 
-| Bant | Aralık | Stil | Örnek |
+| Band | Range | Styles | Examples |
 |---|---|---|---|
-| Oyun & Etkileşim | 152–171 | 20 | game-hud · game-racing · game-fantasy-rpg · game-sci-fi-cockpit · game-retro-console · game-esports-league · game-indie-pixel · game-card-tcg · game-survival-craft · game-mobile-casual · game-horror-occult · game-racing-neon · game-strategy-map · game-sim-builder · game-arcade-cabinet · game-stealth-tactical · game-puzzle-light · game-mmo-guild · game-franchise-sports · game-pinball-neon |
-| Operasyon & Veri | 172–181 | 10 | incident-response · finops-cost · fleet-dispatch · fraud-review · slo-budget · data-lineage · access-audit · release-train · support-inbox · regulatory-report |
-| Ticaret & Vitrin | 182–191 | 10 | grocery-delivery · marketplace-multi · luxury-atelier · subscription-box · sneaker-drop · wine-cellar · furniture-studio · electronics-spec · pharmacy-store · farmers-market |
-| Kültür & Yayın | 192–201 | 10 | museum-exhibition · theatre-season · film-festival · public-radio · podcast-network · indie-cinema · library-archive · comic-bookstore · opera-house · street-festival |
-| Sağlık & Bilim | 202–211 | 10 | clinical-trial · lab-protocol · pharmacy-labels · physiotherapy · mental-wellness · nutrition-plan · dental-clinic · public-health · genomics-lab · veterinary-care |
-| Öğrenme & Oyunlaştırma | 212–221 | 10 | language-app · skill-tree · university-portal · coding-bootcamp · kids-classroom · exam-prep · music-lesson · lab-simulation · peer-study · certificate-wallet |
-| Materyal & Zanaat | 222–231 | 10 | terrazzo-stone · linocut-print · risograph-print · denim-textile · cork-oak · cast-concrete · enamel-jewel · hand-thrown-ceramic · raw-steel · recycled-paper |
-| Tipografi Denemeleri | 232–241 | 10 | condensed-news · monospace-editorial · blackletter-modern · variable-weight · justified-book · stencil-display · uppercase-only · italic-accent · numerals-display · small-caps-ledger |
-| Gelecek & Spekülatif | 242–251 | 10 | agent-console · spatial-workspace · bio-lab-interface · climate-model · orbital-logistics · synthetic-media · quantum-dashboard · digital-twin · neural-canvas · post-screen-voice |
+| Game & Interaction | 152–171 | 20 | game-hud · game-racing · game-fantasy-rpg · game-sci-fi-cockpit · game-retro-console · game-esports-league · game-indie-pixel · game-card-tcg · game-survival-craft · game-mobile-casual · game-horror-occult · game-racing-neon · game-strategy-map · game-sim-builder · game-arcade-cabinet · game-stealth-tactical · game-puzzle-light · game-mmo-guild · game-franchise-sports · game-pinball-neon |
+| Operations & Data | 172–181 | 10 | incident-response · finops-cost · fleet-dispatch · fraud-review · slo-budget · data-lineage · access-audit · release-train · support-inbox · regulatory-report |
+| Commerce & Storefront | 182–191 | 10 | grocery-delivery · marketplace-multi · luxury-atelier · subscription-box · sneaker-drop · wine-cellar · furniture-studio · electronics-spec · pharmacy-store · farmers-market |
+| Culture & Publishing | 192–201 | 10 | museum-exhibition · theatre-season · film-festival · public-radio · podcast-network · indie-cinema · library-archive · comic-bookstore · opera-house · street-festival |
+| Health & Science | 202–211 | 10 | clinical-trial · lab-protocol · pharmacy-labels · physiotherapy · mental-wellness · nutrition-plan · dental-clinic · public-health · genomics-lab · veterinary-care |
+| Learning & Gamification | 212–221 | 10 | language-app · skill-tree · university-portal · coding-bootcamp · kids-classroom · exam-prep · music-lesson · lab-simulation · peer-study · certificate-wallet |
+| Material & Craft | 222–231 | 10 | terrazzo-stone · linocut-print · risograph-print · denim-textile · cork-oak · cast-concrete · enamel-jewel · hand-thrown-ceramic · raw-steel · recycled-paper |
+| Typography Experiments | 232–241 | 10 | condensed-news · monospace-editorial · blackletter-modern · variable-weight · justified-book · stencil-display · uppercase-only · italic-accent · numerals-display · small-caps-ledger |
+| Future & Speculative | 242–251 | 10 | agent-console · spatial-workspace · bio-lab-interface · climate-model · orbital-logistics · synthetic-media · quantum-dashboard · digital-twin · neural-canvas · post-screen-voice |
 
-Her SPEC gerçek tasarım referanslarına dayanır (Wikipedia/Google Fonts/MDN/W3C gibi kararlı kaynaklar
-`refs` alanında); paletler ölçülerek eşiklere oturtuldu, hiçbiri baseline borcuna yazılmadı.
+Every SPEC is grounded in real design references (stable sources such as Wikipedia/Google Fonts/MDN/W3C
+in the `refs` field); palettes were measured into the thresholds, and none were written into baseline debt.
 
 ---
 
-## 6 · Göç (v5 kaynakları)
+## 6 · Migration (v5 sources)
 
-| Script | Ne yapar | Kapsam |
+| Script | What it does | Scope |
 |---|---|---|
-| `kit/migrations/v6-strip.mjs` | `palette.dark` ve `motion` siler, `version: 6`, koyu token bloğunu kaldırır, style.md'den "## Hareket"/"## Koyu mod" bölümlerini çıkarır, fragment'lardan `@keyframes`/`animation` temizler | 151 stil · 460 dosya |
-| `kit/migrations/v6-shots.mjs` | style.md'deki eski sahne atıflarını `shots/01-page.png`'e çevirir, "Örnek görseller" tablosunu tek satıra indirir | 151 style.md |
-| `kit/render/render-shots.mjs` | SCENES = tek `page` (1280×2400); `--measure`, boş kare tekrarı, viewport doğrulaması | 251 PNG |
+| `kit/migrations/v6-strip.mjs` | Deletes `palette.dark` and `motion`, sets `version: 6`, removes the dark token block, strips the "## Hareket"/"## Koyu mod" sections from style.md, cleans `@keyframes`/`animation` from fragments | 151 styles · 460 files |
+| `kit/migrations/v6-shots.mjs` | Converts the old scene references in style.md to `shots/01-page.png`, collapses the "Örnek görseller" table to a single line | 151 style.md |
+| `kit/render/render-shots.mjs` | SCENES = the single `page` (1280×2400); `--measure`, blank-frame retry, viewport verification | 251 PNG |
 
 ---
 
-## 7 · Kapılar (26 adım)
+## 7 · Gates (26 steps)
 
-Parite: `apply-fragments --check` · `check-schema` · `check-contrast --strict-soft` ·
-Katalog: `build-gallery --check` · `build-slim-index --check` · `sync-shot-tables --check` ·
-Atamalar: `assign-layouts/imagery/content --check` · `check-content` · `check-imagery` ·
+Parity: `apply-fragments --check` · `check-schema` · `check-contrast --strict-soft` ·
+Catalog: `build-gallery --check` · `build-slim-index --check` · `sync-shot-tables --check` ·
+Assignments: `assign-layouts/imagery/content --check` · `check-content` · `check-imagery` ·
 `fetch-images --check` · `check-layout` (+ self-test) · `check-composition --browser` · `composition-report --check` ·
-Ölçüm: `render-shots --sample 6 --measure` ·
-Çıktı: `export-tokens --check` · `fetch-fonts --check` · `report --check` ·
-Araç: `style-lint --self-test` · `check-gallery-ui` · `brief --self-test` · `mcp-server --self-test` ·
-Görsel: `phash --check` · piksel regresyonu (baseline varsa).
+Measurement: `render-shots --sample 6 --measure` ·
+Output: `export-tokens --check` · `fetch-fonts --check` · `report --check` ·
+Tooling: `style-lint --self-test` · `check-gallery-ui` · `brief --self-test` · `mcp-server --self-test` ·
+Visual: `phash --check` · pixel regression (when a baseline exists).
 
-Çıkarılan kapılar (karşılıkları yok): `motion-check`, `assign-motion`, `build-motion-css`,
+Removed gates (no replacement): `motion-check`, `assign-motion`, `build-motion-css`,
 `motion-audit`, `build-motion-lab`, `render/motion-measure`, `render/motion-strip`,
 `normalize-motion`, `check-viewers`, `render-sections`, `render-flows`, `export/flutter --verify`,
-`export/react --verify`, `build-catalog` (yerine `build-catalog-doc`).
+`export/react --verify`, `build-catalog` (replaced by `build-catalog-doc`).
 
 ---
 
-## 8 · Bilinen sınırlar
+## 8 · Known limits
 
-- Tek sayfa sabit 1280×2400: responsive/mobil kare yok.
-- Koyu mod ve animasyon kapsam dışı; bunları isteyen tüketici proje kendi temasını kurar.
-- Flutter/React token üreticileri silindi; CSS/Tailwind/Figma export yeterli kabul edildi.
-- `--measure` yalnız taşma/kırpılma/ küçük metni ölçer; renk uyumu ve hiyerarşi gözle denetlenir
-  (`kit/qa/landing.png` levhası).
-- Kapı sayısı 26; yeni özellik eklendiğinde kapı da eklenmeli (yoksa doğrulanmamış iddia olur).
+- The single page is a fixed 1280×2400: no responsive/mobile frame.
+- Dark mode and animation are out of scope; a consuming project that wants them builds its own theme.
+- The Flutter/React token emitters were deleted; CSS/Tailwind/Figma export was accepted as sufficient.
+- `--measure` only measures overflow/clipping/small text; color harmony and hierarchy are inspected by
+  eye (`kit/qa/landing.png` board).
+- The gate count is 26; when a feature is added, a gate must be added too (otherwise it is an unverified claim).

@@ -1,15 +1,15 @@
 # AGENTS.md · style-lab (v6)
 
-## Proje özeti
+## Project overview
 
-Tasarım stili kataloğu: **251 stil**, **31 aile bandı**, stil başına **tek uzun sayfa** (1280×2400)
-mock-up + token seti + bileşen reçetesi + AI brief. Koyu mod ve animasyon **v6'da kaldırıldı**.
+A design style catalog: **251 styles**, **31 family bands**, **one long page per style** (1280×2400)
+mock-up + token set + component recipe + AI brief. Dark mode and animation were **removed in v6**.
 
-Kod az, **veri + üretici** çok: `styles/<nn-slug>/` altındaki kaynak dosyalar `kit/` scriptleriyle
-tek yönlü olarak HTML/CSS/PNG/JSON'a derlenir. Bağımlılık yok — `npm install` gerekmez; Node 22 +
-kurulu Chrome/Edge yeter.
+Little code, lots of **data + generators**: the source files under `styles/<nn-slug>/` are compiled
+one-way into HTML/CSS/PNG/JSON by the `kit/` scripts. No dependencies — `npm install` is not needed;
+Node 22 plus an installed Chrome/Edge is enough.
 
-**Kaynak → üretim zinciri**
+**Source → build chain**
 
 ```
 kit/specs/*.json  →  kit/add-style.mjs  →  styles/<nn>/ {tokens.json, token-block.css, style.md,
@@ -23,170 +23,178 @@ styles/<nn>/shots/01-page.png → kit/build-thumbs.mjs → kit/site/thumbs/<nn>-
 kit/gallery.html + thumbs + fonts + PNG → kit/build-site.mjs → _site/ → .github/workflows/pages.yml → Pages
 ```
 
-## Klasör haritası
+## Folder map
 
 ```
 styles/<nn-slug>/    style.md · tokens.json · token-block.css · shots.config.fragment.mjs · keywords.json · shots/
-kit/                 üretici + kapı scriptleri (.mjs, hepsi CLI'lı)
-kit/specs/           bands.json (aile şablonları) + stil SPEC'leri (100 v6 stili burada)
-kit/lib/style-spec.mjs  SPEC → kaynak üreteci
-kit/render/          page.html (TEK şablon), scene.css, partials/, CDP tarayıcı, layouts.json
-kit/dist/            ÜRETİLEN çıktı (elle düzenlenmez)
-kit/fonts/           29 Google Fonts ailesi (woff2, OFL)
-kit/site/thumbs/     ÜRETİLEN: kart/tam boy WebP türevleri + manifest.json (repoda)
-_site/               ÜRETİLEN site (git'e girmez) → GitHub Pages artifact'ı
-.github/workflows/   gates.yml (kapılar) · pages.yml (statik site yayını)
-docs/                katalog.md (üretilir) · v6-sadelestirme-raporu.md · v5-revizyon-raporu.md · stage-lab-plani.md
-playbook.md          tasarım reçeteleri
-TESTING.md           siteyi açma + test etme
+kit/                 generator + gate scripts (.mjs, all with a CLI)
+kit/specs/           bands.json (family templates) + style SPECs (the 100 v6 styles live here)
+kit/lib/style-spec.mjs  SPEC → source generator
+kit/render/          page.html (the ONLY template), scene.css, partials/, CDP browser, layouts.json
+kit/dist/            GENERATED output (never edited by hand)
+kit/fonts/           29 Google Fonts families (woff2, OFL)
+kit/site/thumbs/     GENERATED: card/full-size WebP derivatives + manifest.json (in the repo)
+_site/               GENERATED site (git-ignored) → GitHub Pages artifact
+.github/workflows/   gates.yml (gates) · pages.yml (static site publishing)
+docs/                katalog.md (generated) · v6-sadelestirme-raporu.md · v5-revizyon-raporu.md · stage-lab-plani.md
+playbook.md          design recipes
+TESTING.md           opening + testing the site
 ```
 
-## Kırılamaz kurallar
+## Non-negotiable rules
 
-1. **Üretilen dosyayı elle düzenleme.** `kit/tokens.css`, `kit/render/shots.config.mjs`,
+1. **Never edit a generated file.** `kit/tokens.css`, `kit/render/shots.config.mjs`,
    `kit/gallery.data.mjs`, `kit/gallery.html`, `kit/styles.index.json`, `kit/live-styles.js`,
-   `kit/dist/**`, `docs/katalog.md`, `styles/*/shots/**`, `kit/site/thumbs/**`, `_site/**` üretici çıktısıdır.
-   Değişiklik kaynağa
-   (`styles/*/tokens.json`, `token-block.css`, `style.md`, fragment, ya da `kit/specs/*.json`) yazılır,
-   `--apply`/`add-style` ile üretilir. `--check` kapıları elle yazımı **drift** olarak yakalar.
-2. **Kaynak değiştiyse üretimi de çalıştır**: `node kit/apply-fragments.mjs --apply` →
+   `kit/dist/**`, `docs/katalog.md`, `styles/*/shots/**`, `kit/site/thumbs/**`, `_site/**` are generator output.
+   Changes go into the source
+   (`styles/*/tokens.json`, `token-block.css`, `style.md`, fragment, or `kit/specs/*.json`) and are
+   produced with `--apply`/`add-style`. The `--check` gates catch hand edits as **drift**.
+2. **If a source changed, run the build too**: `node kit/apply-fragments.mjs --apply` →
    `node kit/build-gallery.mjs` → `node kit/export-tokens.mjs` → `node kit/build-catalog-doc.mjs`.
-   `shots/01-page.png` yeniden üretildiyse **ayrıca** `node kit/build-thumbs.mjs` (WebP türevleri);
-   aksi halde `build-thumbs --check` bayat türevle kapıyı kırar.
-3. **Token sözleşmesi sabit.** Her stil aynı 20 değişkeni doldurur (`--bg … --grain`, `--space-1…8`).
-   Yeni stil için sözleşmeye değişken **ekleme** — eksik doldur.
-4. **Koyu mod yok (v6).** `palette.dark`, `[data-theme="dark"]` bloğu, koyu sahne üretilmez.
-   `check-schema` bu alanları görürse **hata** verir. Tema değiştirici ekleme.
-5. **Animasyon yok (v6).** `motion` alanı, `@keyframes`, `animation:` bildirimi yasak;
-   `check-schema` `motion` görürse hata verir, migration bant fragment'larından keyframe'leri temizledi.
-6. **Kontrast ölçülür, tahmin edilmez.** WCAG + APCA + odak halkası 3:1. Eşikler `add-style`
-   (SPEC doğrulaması: ink/bg ≥ 4.5, ink-soft/bg ≥ 4.5, accent-ink/accent ≥ 4.5, odak ≥ 3) ve
-   `kit/check-contrast.mjs --strict-soft` ile ölçülür. `kit/contrast-baseline.json` bir **borç defteri**:
-   kapıyı geçirmek için baseline'a kayıt **ekleme**; değeri düzelt.
-7. **Kompozisyon çeşitliliği.** `layout` `kit/render/layouts.json` arketiplerinden gelir; elle uydurma.
-   Kural: hiçbir `hero|nav` parmak izi %25'i geçmez, her arketip ≥4 stilde kullanılır, aile başına
-   en az 3 farklı parmak izi. Kapı: `node kit/check-layout.mjs`.
-8. **Tek sahne politikası.** Repoda yalnız `shots/01-page.png` durur (1280×2400). Başka sahne
-   üretme, `.shots-cache` kullanma; `kit/shots.core.json` = `["01-page.png"]`.
-9. **Dosya yolu kırılgan.** `kit/gallery.html` yanındaki `gallery.css`/`tokens.css`/`gallery.js` ile
-   çalışır; görseller göreli yol (`../styles/...`). Dosyaları `kit/` dışına taşıma, mutlak yol yazma.
-10. **Sayı uydurma.** "251 stil", "251 PNG", "31 aile" gibi iddialar `bash kit/gates.sh` ve
-    `kit/dist/report.md` / `docs/katalog.md` çıktısından gelir. Ölçmediğin sayıyı README/AGENTS'e yazma.
-11. **Yeni stil = tek komut.** `kit/specs/*.json`'a SPEC yaz → `node kit/add-style.mjs <dosya>`.
-    Komut kaynakları üretir, atamaları yapar, render eder, indeks/rapor/baseline yeniler.
-12. **Bir değişiklik = bir amaç.** Üretilen dev dosyaları (880 KB `styles.index.json`, 780 KB
-    `gallery.html`) format gerekçesiyle yeniden yazma; diff'i okunamaz hale getirir.
-13. **Commit mesajı** `feat|fix|docs|test|chore(<alan>): <ne>` — alan: render, gallery, schema, export,
-    content, specs, docs. Mevcut geçmiş böyle (`fix(render): …`).
-14. **Kullanıcıya görünen metin Türkçe; kod tanımlayıcıları İngilizce.** `docs/`, `style.md` prose'u Türkçe.
-15. **Dış kaynak eklerken** `refs/design-resources` kataloğuna yaz, ölü link bırakma.
+   If `shots/01-page.png` was regenerated, **additionally** run `node kit/build-thumbs.mjs` (WebP
+   derivatives); otherwise `build-thumbs --check` fails the gate with stale derivatives.
+3. **The token contract is fixed.** Every style fills the same 20 variables (`--bg … --grain`, `--space-1…8`).
+   Do **not** add variables to the contract for a new style — fill in the missing ones.
+4. **No dark mode (v6).** No `palette.dark`, no `[data-theme="dark"]` block, no dark scene.
+   `check-schema` **errors** if it sees these fields. Do not add a theme switcher.
+5. **No animation (v6).** The `motion` field, `@keyframes` and `animation:` declarations are forbidden;
+   `check-schema` errors if it sees `motion`, and the migration stripped keyframes from band fragments.
+6. **Contrast is measured, not guessed.** WCAG + APCA + focus ring 3:1. Thresholds are measured by
+   `add-style` (SPEC validation: ink/bg ≥ 4.5, ink-soft/bg ≥ 4.5, accent-ink/accent ≥ 4.5, focus ≥ 3)
+   and by `kit/check-contrast.mjs --strict-soft`. `kit/contrast-baseline.json` is a **debt ledger**:
+   do **not** add entries to the baseline to pass the gate; fix the value.
+7. **Composition variety.** `layout` comes from the archetypes in `kit/render/layouts.json`; never
+   invent it by hand. Rule: no `hero|nav` fingerprint exceeds 25%, every archetype is used in ≥4
+   styles, each family has at least 3 distinct fingerprints. Gate: `node kit/check-layout.mjs`.
+8. **Single-scene policy.** The repo holds only `shots/01-page.png` (1280×2400). Do not produce other
+   scenes, do not use `.shots-cache`; `kit/shots.core.json` = `["01-page.png"]`.
+9. **File paths are fragile.** `kit/gallery.html` works together with the `gallery.css`/`tokens.css`/
+   `gallery.js` next to it; images use relative paths (`../styles/...`). Do not move files out of
+   `kit/`, do not write absolute paths.
+10. **Never invent numbers.** Claims like "251 styles", "251 PNGs", "31 families" come from the output
+    of `bash kit/gates.sh` and `kit/dist/report.md` / `docs/katalog.md`. Do not put an unmeasured
+    number into README/AGENTS.
+11. **New style = one command.** Write a SPEC into `kit/specs/*.json` → `node kit/add-style.mjs <file>`.
+    The command generates the sources, assigns layouts/imagery/content, renders, and refreshes the
+    index/report/baseline.
+12. **One change = one purpose.** Do not rewrite the huge generated files (880 KB `styles.index.json`,
+    780 KB `gallery.html`) for formatting reasons; it makes the diff unreadable.
+13. **Commit message** `feat|fix|docs|test|chore(<area>): <what>` — area: render, gallery, schema,
+    export, content, specs, docs. Existing history follows this (`fix(render): …`).
+14. **Documentation is English; code identifiers are English.** `AGENTS.md`, `playbook.md`,
+    `TESTING.md`, `docs/**`, `skills/**` and commit messages are written in English. `README` is the
+    only bilingual pair (`README.md` English + `README.tr.md` Turkish). `style.md` prose is still
+    Turkish because it is generated from the Turkish prose in `kit/specs/*.json` — to make it English,
+    translate the SPEC and re-run `add-style`, never the generated file.
+15. **When adding an external resource**, record it in the `refs/design-resources` catalog and leave
+    no dead links.
 
-## Komutlar
+## Commands
 
 ```bash
-# Siteyi aç (sunucusuz)
-kit/gallery.html                    # file:// çalışır; arama/URL testi için sunucu gerekli
+# Open the site (no server needed)
+kit/gallery.html                    # works over file://; search/URL testing needs a server
 python -m http.server 8000 --bind 127.0.0.1
 # → http://localhost:8000/kit/gallery.html · kit/live.html?style=game-hud
 
-# Yayın sitesi (GitHub Pages)
-node kit/build-thumbs.mjs              # PNG → WebP türevleri (kart 640 / tam 1280) · --check: bayat mı
-node kit/build-site.mjs                # _site/ derle · --check: varlık bütünlüğü · --clean: sıfırdan
-node kit/check-site.mjs                # duman testi: HTTP + başsız tarayıcı (landing/galeri/katalog/live)
-python -m http.server 8000 --directory _site --bind 127.0.0.1   # derlenen siteyi yerelde gez
+# Published site (GitHub Pages)
+node kit/build-thumbs.mjs              # PNG → WebP derivatives (card 640 / full 1280) · --check: stale?
+node kit/build-site.mjs                # assemble _site/ · --check: asset integrity · --clean: from scratch
+node kit/check-site.mjs                # smoke test: HTTP + headless browser (landing/gallery/catalog/live)
+python -m http.server 8000 --directory _site --bind 127.0.0.1   # browse the built site locally
 
-# Yeni stil ekle (SPEC → her şey)
-node kit/add-style.mjs kit/specs/my-batch.json          # üret + render + indeks
-node kit/add-style.mjs kit/specs/my-batch.json --dry    # yalnız doğrula
-node kit/add-style.mjs kit/specs/my-batch.json --check  # kaynaklar SPEC ile aynı mı
+# Add a new style (SPEC → everything)
+node kit/add-style.mjs kit/specs/my-batch.json          # generate + render + index
+node kit/add-style.mjs kit/specs/my-batch.json --dry    # validate only
+node kit/add-style.mjs kit/specs/my-batch.json --check  # are sources identical to the SPEC?
 
-# Tek stil sahne üretimi / görsel regresyon
+# Single-style scene generation / visual regression
 node kit/render/render-shots.mjs --styles <slug> --force --jobs 2
 node kit/sync-shot-tables.mjs --write --styles <slug>
 node kit/render/optimize-shots.mjs --styles <slug>
-node kit/render/phash.mjs --write --force     # görsel imza baseline
-node kit/render/phash.mjs --check             # 251 PNG'nin imzası
+node kit/render/phash.mjs --write --force     # visual signature baseline
+node kit/render/phash.mjs --check             # signature of the 251 PNGs
 
-# Token / export / doküman
-node kit/export-tokens.mjs                    # dist/* (--check: güncel mi)
+# Tokens / export / docs
+node kit/export-tokens.mjs                    # dist/* (--check: up to date?)
 node kit/build-gallery.mjs                    # gallery.html + styles.index.json
 node kit/build-catalog-doc.mjs                # docs/katalog.md
 node kit/report.mjs                           # dist/report.md
 node kit/composition-report.mjs               # dist/composition.md
 
-# Tüketen projede stil gerçekten uygulanmış mı
+# Is the style really applied in a consuming project?
 node kit/style-lint.mjs src --style <slug>
 ```
 
-## Doğrulama (ajan kapısı)
+## Verification (agent gate)
 
-Bu depoda `package.json` yoktur; doğrulama kapısı `kit/gates.sh` dosyasıdır:
+This repo has no `package.json`; the verification gate is `kit/gates.sh`:
 
 ```bash
-bash kit/gates.sh          # 31 adım, birkaç dakika: parite → katalog → atamalar → ölçüm → export → site → görsel imza
+bash kit/gates.sh          # 31 steps, a few minutes: parity → catalog → assignments → measurement → export → site → visual signature
 ```
 
-Hızlı alt kümeler (değişikliğin türüne göre, tamamı değil):
+Quick subsets (by kind of change, not the full set):
 
 ```bash
-# kaynak / şema / token / fragment
+# source / schema / tokens / fragments
 node kit/check-schema.mjs && node kit/apply-fragments.mjs --check && node kit/check-contrast.mjs --strict-soft
-# web arayüzü / galeri / doküman
+# web UI / gallery / docs
 node kit/check-gallery-ui.mjs && node kit/build-gallery.mjs --check && node kit/build-catalog-doc.mjs --check
-# kompozisyon
+# composition
 node kit/assign-layouts.mjs --check && node kit/check-layout.mjs
-# yayın sitesi
+# published site
 node kit/build-thumbs.mjs --check && node kit/build-site.mjs --check && node kit/check-site.mjs
-# tek sayfa taşma ölçümü + görsel imza
+# single-page overflow measurement + visual signature
 node kit/render/render-shots.mjs --sample 8 --measure --cache-only && node kit/render/phash.mjs --check
 ```
 
-**"Bitti" tanımı:** `bash kit/gates.sh` son satırı `kapılar: temiz` **ve** çalıştırdığın komutun
-çıktısı gösterilmiş olmalı. Kapı kırmızıysa düzelt ve **aynı komutu tekrar** çalıştır.
-3 turda geçmiyorsa dur, ⚠️ ile neden + 2 seçenek sun.
+**Definition of "done":** the last line of `bash kit/gates.sh` is `kapılar: temiz` **and** the output
+of the command you ran has been shown. If a gate is red, fix it and **run the same command again**.
+If it does not pass in 3 rounds, stop and present the reason + 2 options with ⚠️.
 
-**İstisnalar (çıktıda yazılır, sessizce geçilmez):**
-`node` yoksa `gates.sh` kapıları atlar ve uyarır (0 döner — "temiz" sayma).
-`kit/render/.baseline/` yoksa piksel regresyonu `↷` ile atlanır.
-Flutter SDK gerekmiyor (v6'da flutter export yok).
+**Exceptions (written into the output, never silently skipped):**
+if `node` is missing, `gates.sh` skips the gates and warns (returns 0 — do not count that as "clean").
+If `kit/render/.baseline/` is missing, pixel regression is skipped with `↷`.
+The Flutter SDK is not required (v6 has no flutter export).
 
-Commit öncesi kapı **kurulu**: `.git/hooks/pre-commit` → `bash kit/gates.sh` (yeniden kurmak için
-`bash kit/install-hooks.sh`). Tam set 120 s'lik araç zaman aşımını aşabilir: kancayı `--no-verify`
-ile atlamak yerine `gates.sh`'i ayrı uzun koşuda çalıştır, çıktıyı göster, commit'i ondan sonra yap.
+The pre-commit gate is **installed**: `.git/hooks/pre-commit` → `bash kit/gates.sh` (reinstall with
+`bash kit/install-hooks.sh`). The full set can exceed the 120 s tool timeout: instead of bypassing the
+hook with `--no-verify`, run `gates.sh` in a separate long run, show the output, then commit.
 
 ## Pitfalls
 
-- **`styles/` klasör adı = slug kaynağı.** `152-game-hud` → `game-hud`. Klasörü yeniden adlandırmak
-  token bloğu + galeri + indeks + PNG'yi kırar.
-- **`kit/tokens.css` elle düzenlenmez**: düzeltme `styles/<slug>/token-block.css` içine yazılır, `--apply`.
-- **`check-schema` üç kopya paritesi** json ⇄ fragment ⇄ css. Yalnız birini düzeltmek kapıyı kırar.
-- **`gallery.html` ~780 KB, `styles.index.json` ~880 KB** — bunları read/edit ile açma; `node -e` ile alan çek.
-- **Band eklerken `kit/families.json` kesintisiz olmalı** (boşluk/çakışma `apply-fragments`'ı kırar).
-- **SPEC'te `avoid`/`best`/`feeling` düz string olmalı** (dizi verirsen `add-style` hata verir).
-- **`neighbors` slug'ları katalogda ya da aynı partide olmalı** (`check-schema` arar).
-- **Headless render WebGL'i SwiftShader ile koşar** — GPU FPS ölçmez; performans iddiası için yeterli değil.
-- **`file://` altında `replaceState` engellenir** — URL durumu (filtre/paylaşım) testi sunucu ister.
-- **Pre-commit kancası 31 adım koşar (>120 s)** ve araç zaman aşımına takılır; kapıyı ayrı uzun komutta
-  çalıştırıp temiz çıktıyı göster, sonra commit et.
-- **Boş kare riski:** CDP sekme havuzunda viewport yarışı olabilir; `render-shots` artık `innerWidth`
-  doğrular, PNG boyutunu kontrol eder ve boş kareyi bir kez yeniden yakalar (`kit/render/cdp-browser.mjs`).
-- **Kapılar statik denetim yapar, tıklama davranışını yakalamaz.** Galeri için `check-gallery-ui` var;
-  lightbox/arama davranışı için headless Chrome + CDP turu elle koşulur.
-- **`optimize-shots --all` sonrası `phash --check`** koş; sıkıştırma piksel değiştirdiyse imza kayar.
+- **The `styles/` folder name is the slug source.** `152-game-hud` → `game-hud`. Renaming the folder
+  breaks the token block + gallery + index + PNG.
+- **`kit/tokens.css` is never edited by hand**: the fix goes into `styles/<slug>/token-block.css`, then `--apply`.
+- **`check-schema` enforces three-copy parity** json ⇄ fragment ⇄ css. Fixing only one breaks the gate.
+- **`gallery.html` ~780 KB, `styles.index.json` ~880 KB** — do not open them with read/edit; pull fields with `node -e`.
+- **`kit/families.json` must stay contiguous when adding a band** (a gap/overlap breaks `apply-fragments`).
+- **`avoid`/`best`/`feeling` must be plain strings in the SPEC** (an array makes `add-style` error out).
+- **`neighbors` slugs must exist in the catalog or in the same batch** (`check-schema` looks them up).
+- **Headless render runs WebGL on SwiftShader** — it does not measure GPU FPS; not enough for a performance claim.
+- **`replaceState` is blocked under `file://`** — testing URL state (filter/share) needs a server.
+- **The pre-commit hook runs 31 steps (>120 s)** and hits the tool timeout; run the gate in a separate
+  long command, show the clean output, then commit.
+- **Blank-frame risk:** viewport races are possible in the CDP tab pool; `render-shots` now verifies
+  `innerWidth`, checks the PNG dimensions, and re-captures a blank frame once (`kit/render/cdp-browser.mjs`).
+- **The gates are static checks; they do not catch click behaviour.** `check-gallery-ui` covers the
+  gallery; lightbox/search behaviour needs a manual headless Chrome + CDP round.
+- **Run `phash --check` after `optimize-shots --all`**; if compression changed pixels, the signature drifts.
 
-## Kural haritası
+## Rule map
 
-| Konu | Dosya | Ne zaman okunur |
+| Topic | File | When to read it |
 |---|---|---|
-| Stil seçimi + token uygulama prosedürü | `skills/style-lab-catalog/SKILL.md` | Bir uygulamaya stil uygulamadan **önce** |
-| Aile→kullanım eşlemesi | `skills/style-lab-catalog/references/families.md` | Stil adaylarını daraltırken |
-| Yeni stil / SPEC alanları | `kit/specs/*.json` + `kit/lib/style-spec.mjs` | Stil eklerken |
-| 251 stilin indeksi | `docs/katalog.md` | Slug/etiket ararken |
-| Tasarla, tekdüzeliği kır (reçete) | `playbook.md` §2–§5 | Bileşen/ekran tasarlarken |
-| Kontrast + export sözleşmesi | `playbook.md` §14–§16 | Renk/erişilebilirlik/çıktı hedefi değiştirirken |
-| v6 kararları ve ölçümler | `docs/v6-sadelestirme-raporu.md` | Kapsam tartışmasında |
-| Siteyi açma, test, sorun giderme | `TESTING.md` | Sayfa açılmıyorsa / görsel boşsa |
+| Style selection + token application procedure | `skills/style-lab-catalog/SKILL.md` | **Before** applying a style to an app |
+| Family→use-case mapping | `skills/style-lab-catalog/references/families.md` | While narrowing down style candidates |
+| New style / SPEC fields | `kit/specs/*.json` + `kit/lib/style-spec.mjs` | When adding a style |
+| Index of the 251 styles | `docs/katalog.md` | When looking up a slug/tag |
+| Design it, break the uniformity (recipe) | `playbook.md` §2–§5 | While designing a component/screen |
+| Contrast + export contract | `playbook.md` §14–§16 | When changing color/accessibility/output targets |
+| v6 decisions and measurements | `docs/v6-sadelestirme-raporu.md` | In scope discussions |
+| Opening, testing, troubleshooting the site | `TESTING.md` | When a page does not open / an image is blank |
 
 ---
-_Doğrulandı (v6): `bash kit/gates.sh` → `kapılar: temiz` (27 adım) · 251 stil · 251 tek sayfa PNG ·
-31 aile · 16 farklı hero|nav parmak izi · kontrast 0 hata / 19 yumuşak uyarı · phash 251/251 fark 0._
+_Verified (v6): `bash kit/gates.sh` → `kapılar: temiz` (27 steps) · 251 styles · 251 single-page PNGs ·
+31 families · 16 distinct hero|nav fingerprints · contrast 0 errors / 19 soft warnings · phash 251/251 diff 0._

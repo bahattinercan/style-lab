@@ -1,60 +1,60 @@
-# Faz durumu — P0–P5
+# Phase status — P0–P5
 
-> **Tarih:** 2026-11-15 · **Dal:** `v6-tek-sayfa`
-> **Kapsam:** Bu turda açık olan P0–P5 maddeleri uygulandı. Son durum, aşağıdaki kapı çıktılarıyla birlikte güncellenir.
+> **Date:** 2026-11-15 · **Branch:** `v6-tek-sayfa`
+> **Scope:** The P0–P5 items open in this round were implemented. The final state is updated together with the gate outputs below.
 
-Bu dosya fazların kabul ölçütlerini ve güncel kanıtını kaydeder. Üretilen dosyalar elle değil, proje üreticileriyle güncellenir.
+This file records the acceptance criteria of each phase and the current evidence. Generated files are updated by the project generators, never by hand.
 
-## P0 · Erişilebilirlik
+## P0 · Accessibility
 
-Landing denetimi gerçek layout partial'larını, gerçek stil gövdesini ve üç haneli stil klasörlerini kullanır. Kapıda 251 stilin tümü taranır.
+The landing check uses the real layout partials, the real style body and the three-digit style folders. All 251 styles are scanned at the gate.
 
-**Kanıt:** `node kit/render/a11y-check.mjs --scene landing` · 251 stil, 0 kritik ihlal, 0 negatif `tabindex`.
+**Evidence:** `node kit/render/a11y-check.mjs --scene landing` · 251 styles, 0 critical violations, 0 negative `tabindex`.
 
-## P1 · Sayfaya sığdırma ve tipografi
+## P1 · Page fitting and typography
 
-- `--fit` ölçüm kademesini `tokens.json.layout.fit` içine yazar; normal render saklanan kademeyi uygular. Layout ve SPEC üreticileri bu değeri korur.
-- Taşma veya kırpılma varsa fit değeri kalıcılaştırılmaz. 251 sahne yeniden ölçülüp render edildi.
-- `h1` boyutları `typography.scale.h1` / SPEC `scale.h1` üzerinden CSS değişkenine taşındı. `type-scale.mjs` inline değişkenleri güvenli uzunluk değeriyle üretir; `scene.css` bu değişkenleri kullanır.
+- The `--fit` measurement tier is written into `tokens.json.layout.fit`; a normal render applies the stored tier. The layout and SPEC generators preserve this value.
+- If there is overflow or clipping, the fit value is not persisted. All 251 scenes were re-measured and re-rendered.
+- `h1` sizes moved to a CSS variable through `typography.scale.h1` / SPEC `scale.h1`. `type-scale.mjs` emits the inline variables with a safe length value; `scene.css` consumes them.
 
-**Kanıt:** `render-shots --measure --fit --jobs 2` · 251 sahne, 0 taşma, 0 hata. `node --test kit/lib/type-scale.test.mjs`.
+**Evidence:** `render-shots --measure --fit --jobs 2` · 251 scenes, 0 overflow, 0 errors. `node --test kit/lib/type-scale.test.mjs`.
 
-## P2 · Palet modeli
+## P2 · Palette model
 
-- 251 token kaynağı ve 100 SPEC, `paletteSeeds` / `paletteTargets` alanlarını taşır.
-- OKLCH tabanlı çözücü hedef kontrastı yakalar; erişilebilir durum renklerini üretir.
-- Borç baseline'ına uyarı eklenmedi.
+- 251 token sources and 100 SPECs carry the `paletteSeeds` / `paletteTargets` fields.
+- The OKLCH-based resolver hits the target contrast and produces accessible state colors.
+- No warning was added to the debt baseline.
 
-**Kanıt:** `node kit/check-contrast.mjs --strict-soft` · 251 stil, 0 hata, 0 borç, 0 uyarı.
+**Evidence:** `node kit/check-contrast.mjs --strict-soft` · 251 styles, 0 errors, 0 debt, 0 warnings.
 
-## P3 · Tek kaynak ve legacy SPEC
+## P3 · Single source and the legacy SPEC
 
-- `STYLES` nesnesinin tamamı fragment'lardan üretiliyor. 45 gölge blok ve 994 ölü satır kaldırıldı; iki ardışık `apply-fragments --apply` idempotent.
-- Eski 01–151 stillerin alanları `kit/specs/legacy-01-151.json` dosyasına çıkarıldı: prose alanları ve reçeteler `style.md`'den; token/layout/imagery alanları `tokens.json`'dan; motif/gövde sınıfı/CSS `shots.config.fragment.mjs`'den; keywords dizisi `keywords.json`'dan gelir.
-- Eski aile aralıkları `bands.json` içindeki en yakın ortak reçeteye eşlenir. Bu eşleme eski ailelerle yeni bandların birebir aynı olduğu anlamına gelmez.
-- Her stilin dört kaynak dosyası SHA-256 ile izlenir. `add-style --check` yeniden çıkarılan tüm alanları ve kaynak özetlerini SPEC ile karşılaştırır; aynı kontrol `gates.sh` içinde çalışır.
+- The entire `STYLES` object is generated from fragments. 45 shadow blocks and 994 dead lines were removed; two consecutive `apply-fragments --apply` runs are idempotent.
+- The fields of the old 01–151 styles were extracted into `kit/specs/legacy-01-151.json`: prose fields and recipes come from `style.md`; token/layout/imagery fields from `tokens.json`; motif/body class/CSS from `shots.config.fragment.mjs`; the keywords array from `keywords.json`.
+- The old family ranges map to the nearest shared recipe in `bands.json`. This mapping does not mean the old families and the new bands are identical.
+- The four source files of every style are tracked by SHA-256. `add-style --check` compares every re-extracted field and source digest against the SPEC; the same check runs inside `gates.sh`.
 
-**Kanıt:** `node kit/add-style.mjs kit/specs/legacy-01-151.json --check` · 151 stil, 0 drift. `node kit/apply-fragments.mjs --check`.
+**Evidence:** `node kit/add-style.mjs kit/specs/legacy-01-151.json --check` · 151 styles, 0 drift. `node kit/apply-fragments.mjs --check`.
 
-## P4 · Kompozisyon çeşitliliği
+## P4 · Composition variety
 
-- `layouts.json` altı bölüm planı tanımlar; her stilin `sectionPlan` ataması deterministiktir. Sayfa bölümleri CSS `order` ile değil DOM sırasıyla render edilir ve erişilebilirlik ağacıyla aynı sıradadır.
-- Layout kapısı her planın dokuz bölüm işaretçisini tam bir kez içerdiğini ve plan dağılımını kontrol eder.
-- Görsel baseline üzerindeki tüm stil çiftleri dHash ile karşılaştırılır; en düşük kabul eşiği 24/256'dır.
+- `layouts.json` defines six section plans; every style's `sectionPlan` assignment is deterministic. Page sections are rendered in DOM order, not with CSS `order`, and follow the same order as the accessibility tree.
+- The layout gate checks that every plan contains its nine section markers exactly once, and checks the plan distribution.
+- All style pairs are compared with dHash over the visual baseline; the lowest accepted threshold is 24/256.
 
-**Kanıt:** `node kit/check-layout.mjs` · 6 plan, 16 hero/nav parmak izi. `node kit/check-distinctness.mjs` · 251 stil, 0 yakın çift.
+**Evidence:** `node kit/check-layout.mjs` · 6 plans, 16 hero/nav fingerprints. `node kit/check-distinctness.mjs` · 251 styles, 0 near pairs.
 
-## P5 · İmza CSS kaçış kapıları
+## P5 · Signature CSS escape gates
 
-- `check-signature.mjs` sabit hex renkleri ve kendi kendini ezen bildirimi yakalar; linter sentetik self-test ile doğrulanır.
-- Render öncesi CSS normalizasyonu tekrar bildirimleri düzenler. SPEC `extraCss` üst sınırı 400 karakterdir; mevcut en uzun değer 399 karakter.
+- `check-signature.mjs` catches hard-coded hex colors and self-overriding declarations; the linter is verified with a synthetic self-test.
+- CSS normalization before render tidies duplicate declarations. The SPEC `extraCss` limit is 400 characters; the longest current value is 399 characters.
 
-**Kanıt:** `node kit/check-signature.mjs` · 251 stil, 0 bulgu. `node kit/check-signature.mjs --self-test`.
+**Evidence:** `node kit/check-signature.mjs` · 251 styles, 0 findings. `node kit/check-signature.mjs --self-test`.
 
-## Son doğrulama
+## Final verification
 
 ```bash
 bash kit/gates.sh
 ```
 
-**Sonuç (2026-11-15):** `kapılar: temiz`. Legacy SPEC paritesi 151/151, görsel imza 251/251 ve 0 fark, benzersizlikte 0 yakın çift. A11y 251/251, 0 kritik ihlal; örnek taşma ölçümü 24 sahnede 0 taşma; birim testleri 11/11 geçti. Piksel regresyonu `kit/render/.baseline/` bulunmadığı için `↷` ile atlandı. `bash ~/.pi/agent/bin/verify.sh` stack tanımadığı için otomatik doğrulama komutu bulamadı; bu depo için `kit/gates.sh` elle çalıştırıldı.
+**Result (2026-11-15):** `kapılar: temiz`. Legacy SPEC parity 151/151, visual signature 251/251 with 0 difference, 0 near pairs in distinctness. A11y 251/251, 0 critical violations; the sample overflow measurement found 0 overflow across 24 scenes; unit tests passed 11/11. Pixel regression was skipped with `↷` because `kit/render/.baseline/` is absent. `bash ~/.pi/agent/bin/verify.sh` could not find an automatic verification command because it does not recognise the stack; `kit/gates.sh` was therefore run by hand for this repo.
