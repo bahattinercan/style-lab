@@ -103,7 +103,10 @@ run_gate "kompozisyon raporu güncel" node kit/composition-report.mjs --check
 
 # --- tek sayfa ölçümü -------------------------------------------------------
 # Taşma (yatay/blok) ve 8,5px altı metin: sayfa 1280×2400 sözleşmesine sığıyor mu?
-run_gate "tek sayfa taşma ölçümü" node kit/render/render-shots.mjs --sample 6 --measure
+# --cache-only: ölçüm turu kareleri kit/.shots-cache altına yazar. Aksi halde render
+# styles/*/shots/*.png üzerine yazar; Linux rasterlaşması farklı olduğu için commit edilmiş
+# PNG baytları değişir ve `build-thumbs --check` haklı olarak "bayat" der.
+run_gate "tek sayfa taşma ölçümü" node kit/render/render-shots.mjs --sample 6 --measure --cache-only
 
 # --- üretilen çıktılar ------------------------------------------------------
 run_gate "token export güncel" node kit/export-tokens.mjs --check

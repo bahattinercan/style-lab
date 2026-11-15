@@ -138,7 +138,7 @@ node kit/assign-layouts.mjs --check && node kit/check-layout.mjs
 # yayın sitesi
 node kit/build-thumbs.mjs --check && node kit/build-site.mjs --check && node kit/check-site.mjs
 # tek sayfa taşma ölçümü + görsel imza
-node kit/render/render-shots.mjs --sample 8 --measure && node kit/render/phash.mjs --check
+node kit/render/render-shots.mjs --sample 8 --measure --cache-only && node kit/render/phash.mjs --check
 ```
 
 **"Bitti" tanımı:** `bash kit/gates.sh` son satırı `kapılar: temiz` **ve** çalıştırdığın komutun

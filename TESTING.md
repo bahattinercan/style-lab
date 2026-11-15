@@ -96,7 +96,7 @@ node kit/build-thumbs.mjs --check  # WebP türevleri kaynak PNG ile aynı mı
 node kit/build-site.mjs --check    # site varlıkları: her stil için 2 WebP + PNG, linkler çözülüyor mu
 node kit/check-site.mjs            # derler + HTTP üzerinden tarayıcıda ölçer (landing/galeri/katalog/live)
 node kit/check-composition.mjs --browser  # DOM kompozisyonu (gerçek tarayıcı)
-node kit/render/render-shots.mjs --styles minimalism --measure  # tek stil: taşma ölçümü
+node kit/render/render-shots.mjs --styles minimalism --measure --cache-only  # tek stil: taşma ölçümü
 node kit/render/phash.mjs --check  # görsel imza (251 PNG)
 ```
 
