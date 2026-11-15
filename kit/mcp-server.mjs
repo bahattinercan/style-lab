@@ -153,15 +153,17 @@ function callBrief({ intent, industry }) {
 
 const lastLine = (s) => s.trim().split(String.fromCharCode(10)).slice(-1)[0] ?? '';
 
-function callRender({ slug, scene, force }) {
+/** cacheOnly: kareyi kit/.shots-cache altına yazar — commit edilmiş PNG'ye dokunmaz. */
+function callRender({ slug, scene, force, cacheOnly = false }) {
   const dir = dirOf(slug);
   const args = [path.join(ROOT, 'kit', 'render', 'render-shots.mjs'), '--styles', slug, '--scenes', String(scene)];
   if (force) args.push('--force');
+  if (cacheOnly) args.push('--cache-only');
   const out = execFileSync(process.execPath, args, { encoding: 'utf8' });
   const sceneFile = MANIFEST_SCENES()[scene];
   if (!sceneFile) throw new Error(`bilinmeyen sahne: ${scene}`);
   const core = CORE.includes(sceneFile);
-  const p = core ? path.join(STYLES, dir, 'shots', sceneFile) : path.join(CACHE, dir, sceneFile);
+  const p = core && !cacheOnly ? path.join(STYLES, dir, 'shots', sceneFile) : path.join(CACHE, dir, sceneFile);
   return { slug, scene, path: path.relative(ROOT, p), exists: fs.existsSync(p), log: lastLine(out) };
 }
 
@@ -249,7 +251,10 @@ if (ARGV.includes('--self-test')) {
   checks.push(['shots', shots.shots.length === CORE.length]);
   const brief = callBrief({ intent: 'premium emlak' });
   checks.push(['brief', brief.markdown.includes('## Seçim') && brief.markdown.length > 400]);
-  const rendered = callRender({ slug: sample, scene: 'landing', force: true });
+  // cacheOnly: self-test commit edilmiş styles/*/shots/*.png dosyasını yeniden yazmamalı.
+  // Aksi halde headless rasterlaşma farkı (ör. Linux CI) baytları değiştirir, WebP türev
+  // manifest'i bayatlar ve kapı kendi kendini kırar.
+  const rendered = callRender({ slug: sample, scene: 'landing', force: true, cacheOnly: true });
   checks.push(['render', rendered.exists === true]);
   let failed = 0;
   for (const [name, ok] of checks) {
