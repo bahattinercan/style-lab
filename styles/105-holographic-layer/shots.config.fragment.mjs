@@ -157,12 +157,12 @@ export const CONFIG = {
       .hero-visual .visual-card { background: color-mix(in srgb, var(--surface) 92%, transparent); }
       .hero-visual .visual-card::before {
         content: "KATMAN 0 · 1 · 2  /  12px kayma";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
       }
       .hero-visual .visual-card::after {
         content: "opaklık .40 / .24 / .08 · tarama 3px";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
         color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
       }
       .hero-visual .visual-row:nth-child(2) { transform: translateX(6px); }

@@ -25,6 +25,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { parseColor } from './color.mjs';
+import { buildDtcg } from './lib/dtcg.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
@@ -254,6 +255,7 @@ function build() {
   files.set('tokens.all.css', buildTokensCss(styles, css));
   files.set('tailwind.theme.css', buildTailwind(styles, css));
   files.set('figma.variables.json', JSON.stringify(buildFigma(styles, css), null, 2) + '\n');
+  files.set('tokens.dtcg.json', JSON.stringify(buildDtcg(styles, css), null, 2) + '\n');
 
   const index = {
     generatedBy: 'kit/export-tokens.mjs',
@@ -266,6 +268,7 @@ function build() {
         css: 'tokens.all.css',
         tailwind: 'tailwind.theme.css',
         figma: 'figma.variables.json',
+        dtcg: 'tokens.dtcg.json',
       },
     })),
     counts: {

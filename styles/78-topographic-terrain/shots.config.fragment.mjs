@@ -119,7 +119,7 @@ export const CONFIG = {
           .visual-row { border-radius: 2px; }
           .visual-row .sq { border-radius: 0; }
           .visual-row .num { font-size: 11px; letter-spacing: .06em; }
-          .hero-visual::after { content: '1:25 000'; position: absolute; right: 14px; bottom: 10px; font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; color: var(--ink-soft); }
+          .hero-visual::after { content: '1:25 000'; position: absolute; right: 14px; bottom: 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--ink-soft); }
     `,
   },
 };

@@ -141,12 +141,12 @@ export const CONFIG = {
       /* hero: viskozite ölçer — damla kesiti + akış çizgisi */
       .hero-visual .visual-card::before {
         content: "viskozite · 0.42 Pa·s · yüzey gerilimi 0.8";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
       }
       .hero-visual .visual-card::after {
         content: "akış 0.6 L/sn · sıcaklık 21°C";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
         color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
       }
       .hero-visual .visual-row .line { height: 10px; border-radius: 999px; }

@@ -103,7 +103,7 @@ export const CONFIG = {
       }
       .hero-visual .visual-card::after {
         content: "sayı 03 · fotokopi · 20 adet";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
         color: var(--ink-soft); padding-top: 8px; border-top: 2px solid var(--ink); margin-top: auto;
       }
       .hero-visual .visual-row .sq { border-radius: 0; width: 14px; height: 14px; transform: rotate(-8deg); }

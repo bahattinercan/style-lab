@@ -84,13 +84,13 @@ export const CONFIG = {
         linear-gradient(90deg, color-mix(in srgb, var(--accent) 18%, transparent) 1px, transparent 1px);
         background-size: 24px 24px, 24px 24px; }
       .hero-visual::after { content: 'Ø 42 · ölçek 1:2'; position: absolute; right: 14px; bottom: 10px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .12em; color: var(--accent); }
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; color: var(--accent); }
       .visual-card { background: color-mix(in srgb, var(--bg) 82%, transparent);
         border: 1px solid var(--accent); border-radius: var(--radius-lg); }
       .visual-card .bar { height: 1px; background: var(--accent); }
       .visual-row .sq { border: 1px solid var(--accent); background: transparent; }
       .visual-row .line { height: 1px; background: color-mix(in srgb, var(--ink) 30%, transparent); position: relative; }
       .visual-row .line::after { content: ''; position: absolute; right: -1px; top: -3px; width: 1px; height: 7px; background: var(--accent); }
-      .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--accent); }`,
+      .visual-row .num { font-family: var(--font-mono); font-size: 10px; color: var(--accent); }`,
   },
 };

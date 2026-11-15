@@ -59,7 +59,7 @@ export const CONFIG = {
       .hero-visual { position: relative; min-height: 360px; }
       .hero-visual::before {
         content: "C30/37 · KALIP 134"; position: absolute; inset: 0; padding: 18px 20px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
         background:
           radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--ink) 26%, transparent) 0 4px, transparent 4px) 0 0 / 96px 96px repeat,
           linear-gradient(90deg, color-mix(in srgb, var(--ink) 14%, transparent) 0 1px, transparent 1px) 0 0 / 96px 100% repeat-x,

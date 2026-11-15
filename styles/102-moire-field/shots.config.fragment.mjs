@@ -127,12 +127,12 @@ export const CONFIG = {
       .hero-visual .visual-card { background: color-mix(in srgb, var(--surface) 90%, transparent); border: 1px solid var(--ink); }
       .hero-visual .visual-card::before {
         content: "MOIRÉ 4° / 11° · girişim 15px";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--ink);
       }
       .hero-visual .visual-card::after {
         content: "kesim payı 3 mm · statik baskı";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
         color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--ink); margin-top: auto;
       }
       .hero-visual .visual-row { border-bottom: 1px solid var(--line); }

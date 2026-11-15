@@ -147,7 +147,7 @@ export const CONFIG = {
       /* hero: üç derinlik düzlemi — ölçek şeridi + ufuk çizgisi */
       .hero-visual .visual-card::before {
         content: "PLANE 0 · 0.6×   PLANE 1 · 1.0×   PLANE 2 · 1.4×";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
       }
       .hero-visual .visual-row { border-bottom: 1px solid var(--line); }

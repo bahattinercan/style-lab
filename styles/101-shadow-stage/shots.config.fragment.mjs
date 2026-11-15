@@ -117,12 +117,12 @@ export const CONFIG = {
       .hero-visual .visual-card { box-shadow: 28px 28px 0 -20px color-mix(in srgb, var(--ink) 22%, transparent); }
       .hero-visual .visual-card::before {
         content: "SAHNE 01 · ışık 22% / 16% · tek kaynak";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
       }
       .hero-visual .visual-card::after {
         content: "gölge 24px · blur .7 · vinyet .14";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
         color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
       }
       .hero-visual .visual-rows { border-bottom: 1px solid var(--line); }

@@ -55,7 +55,7 @@ export const CONFIG = {
       .hero-visual { position: relative; min-height: 340px; }
       .hero-visual::before {
         content: "KIRLANGIÇ KUYRUĞU · 1:6"; position: absolute; inset: 24px; padding: 16px 20px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; color: var(--ink-soft);
         background:
           repeating-linear-gradient(62deg, color-mix(in srgb, var(--ink) 26%, transparent) 0 2px, transparent 2px 12px),
           repeating-linear-gradient(-62deg, color-mix(in srgb, var(--ink) 14%, transparent) 0 2px, transparent 2px 12px),

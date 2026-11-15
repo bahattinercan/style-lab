@@ -304,17 +304,53 @@ async function shootSpawn(browser, htmlPath, png, scene, slug) {
  * Tek tarayıcı + CDP ile yakalar (varsayılan). `--legacy-spawn` verilirse eski yol.
  * Kazanç: kare başına 0.32–0.46 s → ~0.15 s; ayrıca WebP yakalama (thumbnail) mümkün.
  */
-/** Sahne taşma ölçümü (--measure): yatay taşma, kırpılan blok, 9px altı metin. */
-const MEASURE_EXPR = `(() => {
+/**
+ * Sahne ölçümü (--measure): sığdırma kademesi + yatay taşma + kırpılan blok + punto tabanı.
+ *
+ * Neden kademe: `page.html` 2400px'i aşan içeriği `body.style.zoom` ile küçültüyordu; kapı bunu
+ * görmediği için 6,9px metinli sayfa "0 sorun" diye geçiyordu. Artık zoom yok: taban CSS bütçesi +
+ * `data-fit` kademeleri (1: logo+band, 2: üç adım bölümü) uygulanır, punto hiç küçültülmez.
+ */
+/**
+ * Ölçümden ÖNCE uygulanan sığdırma kademesi. `page.html` artık zoom ile küçültmüyor:
+ * 2400px bütçesi taban CSS'te kurulu, yetmeyen stillerde kademe uygulanır —
+ * 1: logo şeridi + ölçü bandı kalkar, 2: üç adım bölümü de kalkar. Punto hiç küçültülmez.
+ */
+const FIT_BODY = `
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   const de = document.documentElement;
+  if (document.fonts?.ready) { try { await document.fonts.ready; } catch {} }
+  let fitTier = '0';
+  for (const tier of ['0', '1', '2', '3']) {
+    if (tier === '0') delete document.body.dataset.fit;
+    else document.body.dataset.fit = tier;
+    await wait(80);
+    fitTier = tier;
+    if (de.scrollHeight <= de.clientHeight + 1) break;
+  }
+  await wait(60);
+`;
+
+/** Sahne ölçümü (--measure): sığdırma kademesi + yatay taşma + kırpılan blok + görsel punto. */
+const MEASURE_EXPR = `(async () => {
+  ${FIT_BODY}
   const vh = de.clientHeight;
+  const pageOverflow = de.scrollHeight - vh;
+  const contentHeight = de.scrollHeight;
   const clipped = [...document.querySelectorAll('.panel, .comp-head, .plans, .intg-grid, .search-results, .feed-main, table.tbl')]
     .filter((el) => { const r = el.getBoundingClientRect(); return r.bottom > vh + 2 && r.height > 40; }).length;
   let tiny = 0;
+  let tinyVisual = 0;
+  let texts = 0;
+  let minVisualFont = 999;
   for (const el of document.querySelectorAll('body *')) {
     if (!el.childElementCount && el.textContent.trim().length > 1) {
       const fs = parseFloat(getComputedStyle(el).fontSize);
-      if (fs && fs < 8.5) tiny++;
+      if (!fs) continue;
+      texts++;
+      if (fs < 10) tiny++;
+      if (fs < 10) tinyVisual++;
+      if (fs < minVisualFont) minVisualFont = fs;
     }
   }
   // nav içeriğin üstüne biniyor mu: mutlak/ray nav varsa içerik onun sağından başlamalı
@@ -323,7 +359,6 @@ const MEASURE_EXPR = `(() => {
   let navOverlap = 0;
   if (nav && (navPos === 'absolute' || navPos === 'fixed')) {
     const nr = nav.getBoundingClientRect();
-    // border box değil içerik kutusu: ray itmesi padding ile yapılır
     const contentLeft = (el) => el.getBoundingClientRect().left + parseFloat(getComputedStyle(el).paddingLeft || '0');
     const content = [document.querySelector('.hero-copy, .hero'), document.querySelector('main.pg')].filter(Boolean);
     for (const el of content) {
@@ -334,12 +369,31 @@ const MEASURE_EXPR = `(() => {
       }
     }
   }
-  return { overflowX: de.scrollWidth - de.clientWidth, clipped, tiny, navOverlap };
+  return {
+    overflowX: de.scrollWidth - de.clientWidth,
+    clipped,
+    tiny,
+    tinyVisual,
+    texts,
+    navOverlap,
+    fitTier,
+    zoom: 1,
+    pageOverflow,
+    contentHeight,
+    minVisualFont: minVisualFont === 999 ? null : Math.round(minVisualFont * 10) / 10,
+  };
 })()`;
 
+/** Yakalama öncesi aynı kademeyi uygular (ölçüm ayrı koşuda yapılır; render deterministik). */
+const FIT_APPLY_EXPR = `(async () => { ${FIT_BODY} return fitTier; })()`;
+
 const MEASURE = process.argv.includes('--measure');
+const FIT_JSON = process.argv.includes('--fit-json');
+/** Görsel punto tabanı: gövde 10px altına düşerse okunurluk ve WCAG 1.4.4 ölçeği bozulur. */
+const MIN_VISUAL_FONT = 10;
 const problems = [];
 const warnings = [];
+const fitRows = [];
 
 /**
  * Boş/tek renk kare tespiti: sayfanın alt %60'ında renk varyansı yoksa render yarım kalmıştır
@@ -366,22 +420,79 @@ function isEmptyFrame(buf) {
   return max - min < 6;
 }
 
+/** Ölçüm satırlarını tek bir sığdırma özetine indirger (kapı çıktısı ve --fit-json için). */
+function summarizeFit(rows) {
+  if (!rows.length) {
+    return { n: 0, closed: 0, tier1: 0, tier2: 0, tier3: 0, minFont: null, tinyShare: 0, minHeight: null, maxHeight: null, worst: [] };
+  }
+  const fonts = rows.map((r) => r.minVisualFont).filter((v) => v != null);
+  const heights = rows.map((r) => r.contentHeight);
+  const texts = rows.reduce((a, r) => a + r.texts, 0);
+  const tiny = rows.reduce((a, r) => a + r.tinyVisual, 0);
+  const worst = rows
+    .map((r) => ({ slug: r.slug, h: r.contentHeight }))
+    .sort((a, b) => b.h - a.h)
+    .slice(0, 5);
+  return {
+    n: rows.length,
+    closed: rows.filter((r) => r.pageOverflow > 2).length,
+    tier1: rows.filter((r) => r.fitTier === '1').length,
+    tier2: rows.filter((r) => r.fitTier === '2').length,
+    tier3: rows.filter((r) => r.fitTier === '3').length,
+    minFont: fonts.length ? Math.min(...fonts) : null,
+    tinyShare: texts ? Math.round((tiny / texts) * 1000) / 10 : 0,
+    minHeight: Math.min(...heights),
+    maxHeight: Math.max(...heights),
+    worst,
+  };
+}
+
 async function shoot(cdp, htmlPath, png, scene, slug) {
   if (LEGACY_SPAWN) return shootSpawn(cdp.browserPath ?? cdp.browser, htmlPath, png, scene, slug);
   if (MEASURE) {
-    const m = await cdp.evaluate(htmlPath, { width: scene.width, height: scene.height, expression: MEASURE_EXPR });
+    const m = await cdp.evaluate(htmlPath, {
+      width: scene.width,
+      height: scene.height,
+      expression: MEASURE_EXPR,
+      awaitPromise: true,
+    });
+    fitRows.push({ slug, ...m });
     if (m.overflowX > 2) problems.push(`${slug}/${scene.key}: yatay taşma ${m.overflowX}px`);
+    if (m.pageOverflow > 2) {
+      const where = m.fitTier === '2' ? 'en sıkı kademeden sonra da' : `kademe ${m.fitTier} sonrası`;
+      problems.push(
+        `${slug}/${scene.key}: tek sayfa taşıyor ${m.pageOverflow}px (içerik ${m.contentHeight}px, ${where})`,
+      );
+    }
+    const TIER_NOTE = { '1': 'boşluk sıkıştı + logo şeridi düştü', '2': 'ölçü bandı da düştü', '3': 'üç adım bölümü de düştü' };
+    if (TIER_NOTE[m.fitTier]) warnings.push(`${slug}/${scene.key}: sığdırma kademesi ${m.fitTier} — ${TIER_NOTE[m.fitTier]}`);
     if (m.clipped) problems.push(`${slug}/${scene.key}: ${m.clipped} blok alttan kırpılıyor`);
     if (m.navOverlap > 0) problems.push(`${slug}/${scene.key}: içerik nav'ın ${m.navOverlap}px altında kalıyor`);
-    if (m.tiny > 3) warnings.push(`${slug}/${scene.key}: ${m.tiny} öğe 8,5px altı`);
+    if (m.minVisualFont != null && m.minVisualFont < MIN_VISUAL_FONT - 1) {
+      problems.push(`${slug}/${scene.key}: en küçük görsel punto ${m.minVisualFont}px < ${MIN_VISUAL_FONT - 1}px`);
+    } else if (m.minVisualFont != null && m.minVisualFont < MIN_VISUAL_FONT) {
+      warnings.push(`${slug}/${scene.key}: en küçük görsel punto ${m.minVisualFont}px < ${MIN_VISUAL_FONT}px`);
+    }
+    if (m.tiny) warnings.push(`${slug}/${scene.key}: ${m.tiny} öğe 10px altı (punto tabanı)`);
+    if (m.tinyVisual > 3) warnings.push(`${slug}/${scene.key}: ${m.tinyVisual} öğe görsel olarak 10px altı`);
     if (!process.env.SHOTS_KEEP_TMP) fs.rmSync(htmlPath, { force: true });
     return;
   }
-  let buf = await cdp.capture(htmlPath, { width: scene.width, height: scene.height, format: 'png' });
+  let buf = await cdp.captureWithEval(htmlPath, {
+    width: scene.width,
+    height: scene.height,
+    format: 'png',
+    expression: FIT_APPLY_EXPR,
+  });
   if (isEmptyFrame(buf)) {
     warnings.push(`${slug}/${scene.key}: boş kare — yeniden yakalandı`);
     await new Promise((r) => setTimeout(r, 150));
-    buf = await cdp.capture(htmlPath, { width: scene.width, height: scene.height, format: 'png' });
+    buf = await cdp.captureWithEval(htmlPath, {
+      width: scene.width,
+      height: scene.height,
+      format: 'png',
+      expression: FIT_APPLY_EXPR,
+    });
     if (isEmptyFrame(buf)) problems.push(`${slug}/${scene.key}: boş kare (iki denemede de)`);
   }
   // Windows'ta antivirüs/indeksleyici dosyayı kilitleyebiliyor: 4 denemeye kadar yaz.
@@ -712,10 +823,19 @@ async function runAll(getCdp, browser) {
     return job;
   });
   if (MEASURE) {
+    const fit = summarizeFit(fitRows);
     for (const pr of problems.slice(0, 25)) console.log(`× ${pr}`);
+    if (problems.length > 25) console.log(`× … ${problems.length - 25} sorun daha`);
+    for (const w of warnings.slice(0, 8)) console.log(`! ${w}`);
+    if (warnings.length > 8) console.log(`! … ${warnings.length - 8} uyarı daha`);
     const shown = new Set(jobs.map((j) => j.slug + '/' + j.scene.key)).size;
-    console.log(`
-ölçüm · ${shown} sahne · ${problems.length} sorun · ${warnings.length} uyarı (küçük metin)`);
+    console.log(
+      `ölçüm · ${shown} sahne · ${problems.length} sorun · ${warnings.length} uyarı (sığdırma/punto)\n` +
+        `sığdırma · taşan: ${fit.closed}/${fit.n} · kademe 1: ${fit.tier1} · 2: ${fit.tier2} · 3: ${fit.tier3} · ` +
+        `en küçük punto ${fit.minFont}px · 10px altı metin ${fit.tinyShare}% · ` +
+        `içerik ${fit.minHeight}–${fit.maxHeight}px · en yüksek: ${fit.worst.map((w) => `${w.slug}:${w.h}`).join(' ')}`,
+    );
+    if (FIT_JSON) console.log(JSON.stringify({ summary: fit, rows: fitRows }, null, 2));
     if (problems.length) process.exitCode = 1;
     return;
   }

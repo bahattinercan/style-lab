@@ -130,12 +130,12 @@ export const CONFIG = {
       }
       .hero-visual .visual-card::before {
         content: "0 → 12px → 24px · iz .40 / .20 / .08";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
       }
       .hero-visual .visual-card::after {
         content: "0.37s · 3 kademe · hap kontrol";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
         color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
       }
       .hero-visual .visual-row .line { height: 8px; }

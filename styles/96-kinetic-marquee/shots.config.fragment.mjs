@@ -130,7 +130,7 @@ export const CONFIG = {
       .hero-visual .visual-card { transform: skewX(-6deg); }
       .hero-visual .visual-card::after {
         content: "0.62s · MARQUEE · 28s/loop";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
         color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line);
         margin-top: auto; transform: skewX(6deg);
       }

@@ -42,7 +42,7 @@ export const CONFIG = {
     }
     .card::after, .panel::after {
       content: 'x:024 y:048'; position: absolute; right: 8px; bottom: 6px;
-      font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em;
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em;
       color: var(--ink-faint); pointer-events: none;
     }
     .panel > .t, .card > .t, .comp-card-demo > .t {
@@ -150,7 +150,7 @@ export const CONFIG = {
       .hero-visual .visual-card { background: var(--surface); }
       .hero-visual .visual-card::after {
         content: "x 0→240 · y 0→160 · 24px ızgara";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
         color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
       }
       .hero-visual .visual-row { position: relative; padding-left: 18px; }

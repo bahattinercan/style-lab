@@ -117,11 +117,11 @@ export const CONFIG = {
       .scene-landing .visual-row .sq { width: 7px; height: 7px; border-radius: 999px; background: var(--accent); }
       .scene-landing .visual-row:first-child::before {
         content: "ÇALIŞIYOR"; position: absolute; right: 0; top: 0;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .06em; color: var(--accent);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; color: var(--accent);
       }
       .scene-landing .visual-row:nth-child(2)::before {
         content: "ONAY BEKLİYOR"; position: absolute; right: 0; top: 0;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .06em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; color: var(--ink-soft);
       }
     `,
   },

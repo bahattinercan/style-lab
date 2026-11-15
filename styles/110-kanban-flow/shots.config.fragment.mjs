@@ -103,7 +103,7 @@ body.scene-landing .hero-visual .visual-rows { display: grid; grid-template-colu
 body.scene-landing .hero-visual .visual-row { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 10px; background: var(--surface); border-radius: var(--radius); box-shadow: 0 1px 3px color-mix(in srgb, var(--ink) 12%, transparent); }
 body.scene-landing .hero-visual .visual-row .sq { width: 100%; height: 6px; border-radius: 3px; }
 body.scene-landing .hero-visual .visual-row .line { height: 26px; border-radius: var(--radius); background: var(--surface-2); }
-body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--ink-soft); }
+body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 10px; color: var(--ink-soft); }
 body.scene-landing .hero-visual .visual-card::after { content: 'TODO 3/5 · YAPILIYOR 2/3 · BİTTİ 7/12 — WIP limiti aşılmadı'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); }`,
     },
 };

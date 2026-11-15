@@ -72,7 +72,7 @@ export const CONFIG = {
           .visual-rows { margin-top: auto; gap: 0; }
           .visual-row { border-radius: 0; border: 0; border-top: 1px solid var(--line); background: transparent; padding: 9px 0; }
           .visual-row .sq { border-radius: 0; width: 12px; height: 12px; }
-          .hero-visual::after { content: 'GÜNLÜK · 14. SAYFA'; position: absolute; top: 6px; right: 10px; font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em; color: var(--ink-soft); }
+          .hero-visual::after { content: 'GÜNLÜK · 14. SAYFA'; position: absolute; top: 6px; right: 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; color: var(--ink-soft); }
     `,
   },
 };

@@ -101,11 +101,11 @@ export const CONFIG = {
       .visual-rows { display: flex; flex-direction: column; gap: 0; font-family: var(--font-mono); }
       .visual-row { display: grid; grid-template-columns: 44px 44px 1fr; gap: 8px; align-items: center;
         padding: 5px 6px; border-bottom: 1px solid color-mix(in srgb, var(--line) 65%, transparent); font-size: 10px; }
-      .visual-row::before { content: '12:0' counter(l) ':04'; color: var(--ink-faint); font-size: 9px; }
+      .visual-row::before { content: '12:0' counter(l) ':04'; color: var(--ink-faint); font-size: 10px; }
       .visual-row .sq { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
       .visual-row:nth-child(2) .sq { background: var(--warn); }
       .visual-row:nth-child(3) .sq { background: var(--danger); }
       .visual-row .line { background: color-mix(in srgb, var(--ink) 22%, transparent); height: 3px; }
-      .visual-row .num { font-size: 9px; color: var(--ink-soft); }`,
+      .visual-row .num { font-size: 10px; color: var(--ink-soft); }`,
   },
 };

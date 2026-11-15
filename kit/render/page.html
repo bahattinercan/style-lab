@@ -19,7 +19,7 @@
     </div>
   </section>
 
-  <section class="pg-sec">
+  <section class="pg-sec pg-trio-sec">
     <header class="pg-head">
       <span class="pg-cap">Nasıl çalışır</span>
       <h2>Üç adım, tek sözleşme</h2>
@@ -185,20 +185,5 @@
 </main>
 
 <div class="sig"></div>
-<script>
-  /* Sığdırma emniyeti: büyük tipografili stiller 2400px'i taşırırsa gövde bir kez ölçeklenir.
-     Taşma yoksa hiçbir şey değişmez; ölçüm fontlar hazır olduktan sonra yapılır. */
-  (() => {
-    const fit = () => {
-      const de = document.documentElement;
-      const over = de.scrollHeight - de.clientHeight;
-      if (over <= 1) return;
-      const z = Math.max(0.78, (de.clientHeight - 2) / de.scrollHeight);
-      document.body.style.zoom = z.toFixed(3);
-    };
-    if (document.fonts?.ready) document.fonts.ready.then(fit);
-    else fit();
-  })();
-</script>
 </body>
 </html>

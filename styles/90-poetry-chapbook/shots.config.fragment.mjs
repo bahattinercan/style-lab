@@ -68,7 +68,7 @@ export const CONFIG = {
           .visual-row { border-radius: 0; border: 0; background: transparent; padding: 0; }
           .visual-row .sq { display: none; }
           .visual-row .line { height: 2px; background: color-mix(in srgb, var(--ink) 18%, transparent); }
-          .visual-row .num { font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em; }
+          .visual-row .num { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; }
           .hero-visual::before { content: ''; position: absolute; left: 18px; top: 24px; bottom: 24px; width: 0; border-left: 1px dashed var(--line); }
     `,
   },

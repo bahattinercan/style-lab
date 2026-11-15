@@ -479,10 +479,14 @@ main.wrap { padding-bottom: 84px; }
   border: 1px solid transparent; box-shadow: var(--shadow);
 }
 .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); box-shadow: none; }
+/* Filtre çipleri koyu arayüzde okunur kalmalı: stil token'ı (--surface-2/--ink-soft) burada
+   AÇIK paletten geliyordu ve çipler beyaz zemin + açık yazı oluyordu. Çip sınıfı sayfada iki
+   yerde kullanıldığı için bu tanım UI (koyu) token'larına bağlandı. */
 .chip {
   font-size: 10px; padding: 4px 9px; border-radius: 999px;
-  background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--line);
+  background: var(--ui-card-2, #171c24); color: var(--ui-ink-2); border: 1px solid var(--ui-line);
 }
+.chip:hover { background: #1d2430; color: var(--ui-ink); border-color: var(--ui-line-2); }
 
 /* ---------- alt bilgi ---------- */
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 14px 10px; }

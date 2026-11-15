@@ -56,7 +56,7 @@ export const CONFIG = {
       .hero-visual::before {
         content: "TİPO · 300 g/m² · 133"; position: absolute; inset: 22px; padding: 18px 20px;
         box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 16%, transparent), inset 0 -1px 0 var(--surface-2);
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
         background:
           linear-gradient(0deg, color-mix(in srgb, var(--ink) 34%, transparent) 0 10px, transparent 10px) 20px 64px / 58% 10px no-repeat,
           linear-gradient(0deg, color-mix(in srgb, var(--ink) 18%, transparent) 0 6px, transparent 6px) 20px 88px / 42% 6px no-repeat,

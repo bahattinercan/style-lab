@@ -66,7 +66,7 @@ export const CONFIG = {
           .visual-row { border-radius: 0; border: 0; border-top: 1px solid var(--line); background: transparent; padding: 8px 0; counter-increment: ref; }
           .visual-row .sq { display: none; }
           .visual-row .num { font-family: var(--font-mono); font-size: 10px; }
-          .hero-visual::after { content: 'Şekil 1 · ölçüm düzeni'; position: absolute; left: 18px; bottom: 8px; font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em; color: var(--ink-soft); }
+          .hero-visual::after { content: 'Şekil 1 · ölçüm düzeni'; position: absolute; left: 18px; bottom: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); }
     `,
   },
 };

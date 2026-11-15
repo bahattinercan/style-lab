@@ -129,11 +129,11 @@ export const CONFIG = {
         linear-gradient(90deg, color-mix(in srgb, var(--accent) 14%, transparent) 1px, transparent 1px);
         background-size: 34px 34px, 34px 34px; }
       .hero-visual::before { content: '37.04°N · 27.42°E'; position: absolute; left: 14px; bottom: 12px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; color: var(--ink-faint); }
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; color: var(--ink-faint); }
       .visual-card { background: color-mix(in srgb, var(--surface) 90%, transparent); border-color: color-mix(in srgb, var(--accent) 26%, var(--line)); }
       .visual-row { position: relative; }
       .visual-row .sq { border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--accent); }
       .visual-row .line { height: 2px; background: color-mix(in srgb, var(--ink) 18%, transparent); }
-      .visual-row .num { font-size: 9px; }`,
+      .visual-row .num { font-size: 10px; }`,
   },
 };

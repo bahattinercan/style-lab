@@ -45,7 +45,7 @@ export const CONFIG = {
         border-radius: 0; border: 1px solid var(--line); box-shadow: none; background: var(--surface);
       }
       .hero-visual { border-radius: 0; border: 1px solid var(--line); box-shadow: none; }
-      .chip { border-radius: 0; background: var(--surface-2); border-color: var(--line); font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .08em; color: var(--ink-soft); }
+      .chip { border-radius: 0; background: var(--surface-2); border-color: var(--line); font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); }
       .chip.accent { background: var(--accent); border-color: transparent; color: var(--accent-ink); }
       .btn { border-radius: 0; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; min-height: 44px; padding: 13px 16px; box-shadow: none; }
       .btn.ghost, .btn.soft { background: transparent; color: var(--ink); border: 1px solid var(--line); }
@@ -74,7 +74,7 @@ export const CONFIG = {
       @media (max-width: 900px) {
         h1 { font-size: 30px; }
         .art-body, .comp-card-demo p, .co-note, .sec { columns: 1; column-rule: 0; }
-        body.scene-landing .sig::before { font-size: 8.5px; letter-spacing: .1em; }
+        body.scene-landing .sig::before { font-size: 10px; letter-spacing: .1em; }
       }
     
     /* ── QA düzeltme katmanı (dosya sonu: aynı özgüllükte son kural kazanır) ── */
@@ -111,12 +111,12 @@ export const CONFIG = {
       .hero-visual .visual-card::before {
         content: "MADDE 042 · telaffuz /sö·zük/";
         position: absolute; left: 0; top: 0;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
         color: var(--ink-soft); padding-bottom: 10px;
       }
       .hero-visual .visual-card::after {
         content: "→ bkz. 045, 118 · → karşıt: 077";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em;
         color: var(--ink-soft); padding-top: 10px; border-top: 1px solid var(--line); margin-top: auto;
       }
       .hero-visual .visual-row { counter-increment: madde; display: grid; grid-template-columns: 18px 14px 1fr auto; align-items: center; gap: 10px; }

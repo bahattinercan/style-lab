@@ -155,7 +155,7 @@ export const CONFIG = {
       .hero-visual { position: relative; min-height: 360px; }
       .hero-visual::before {
         content: "SIR · 1.280 °C"; position: absolute; inset: 0; padding: 18px 20px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
         background:
           repeating-radial-gradient(circle at 50% 62%, color-mix(in srgb, var(--accent) 30%, transparent) 0 1px, transparent 1px 26px),
           repeating-linear-gradient(38deg, color-mix(in srgb, var(--ink) 10%, transparent) 0 1px, transparent 1px 38px);

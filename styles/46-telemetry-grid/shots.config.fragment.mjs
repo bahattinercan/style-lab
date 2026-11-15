@@ -12,7 +12,7 @@ export const CONFIG = {
       font-family: var(--font-mono); font-size: 11px; font-weight: 500;
       letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft);
     }
-    .eyebrow::before { content: '\\25CF'; color: var(--accent); margin-right: 6px; font-size: 8px; vertical-align: middle; }
+    .eyebrow::before { content: '\\25CF'; color: var(--accent); margin-right: 6px; font-size: 10px; vertical-align: middle; }
     .lede { font-size: 15px; line-height: 1.52; max-width: 62ch; color: var(--ink-soft); }
 
     .nav {

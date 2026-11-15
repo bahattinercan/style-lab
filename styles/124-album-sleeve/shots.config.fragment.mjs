@@ -24,7 +24,7 @@ export const CONFIG = {
       /* sirt seridi: kilifin sol kenarinda 26px dikey serit + dikey yazi */
       .hero-visual::before {
         content: "LP · 33 1/3 RPM"; position: absolute; top: 0; bottom: 0; left: 0; width: 26px;
-        background: var(--ink); color: var(--bg); font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em;
+        background: var(--ink); color: var(--bg); font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em;
         writing-mode: vertical-rl; text-orientation: mixed; display: flex; align-items: center; justify-content: center;
       }
       /* barkod: kilifin sag alt kosesinde dikey cizgi dizisi */
@@ -37,7 +37,7 @@ export const CONFIG = {
         border-radius: var(--radius); border: 1px solid var(--line); box-shadow: none; background: var(--surface);
       }
       .visual-card { aspect-ratio: 1 / 1; }
-      .chip { border-radius: 0; background: transparent; border-color: var(--line); font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .12em; padding: 2px 6px; }
+      .chip { border-radius: 0; background: transparent; border-color: var(--line); font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; padding: 2px 6px; }
       .chip.accent { background: var(--accent); border-color: transparent; color: var(--accent-ink); }
       .btn { border-radius: 0; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; min-height: 44px; padding: 12px 18px; box-shadow: none; }
       .btn.ghost, .btn.soft { background: transparent; color: var(--ink); border: 1px solid var(--line); }
@@ -64,7 +64,7 @@ export const CONFIG = {
       }
       @media (max-width: 900px) {
         h1 { font-size: 40px; max-width: 14ch; }
-        .hero-visual::before { width: 20px; font-size: 8px; }
+        .hero-visual::before { width: 20px; font-size: 10px; }
         body.scene-landing .sig::after { display: none; }
       }
       /* --- QA dalgası: kontrast + örtüşme + yerleşim --- */
@@ -80,7 +80,7 @@ export const CONFIG = {
       .hero-visual { position: relative; }
       .hero-visual::before {
         content: "A · 33 1/3"; position: absolute; inset: 0; padding: 16px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
         background:
           radial-gradient(circle at 50% 46%, var(--surface) 0 10px, var(--ink) 10px 11px, transparent 11px) 0 0 / 100% 100% no-repeat,
           repeating-radial-gradient(circle at 50% 46%, color-mix(in srgb, var(--ink) 26%, transparent) 0 1px, transparent 1px 6px) 0 0 / 100% 100% no-repeat,

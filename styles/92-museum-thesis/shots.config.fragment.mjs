@@ -103,7 +103,7 @@ export const CONFIG = {
       .hero-visual .visual-card { padding: 22px 22px 18px; border-left: 1px solid var(--ink); }
       .hero-visual .visual-card::before {
         content: "LEVHA II — KOLEKSİYON KAYDI";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .24em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .24em;
         color: var(--ink-soft); padding-bottom: 10px; border-bottom: 1px solid var(--line);
       }
       .hero-visual .visual-card::after {

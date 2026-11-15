@@ -92,12 +92,12 @@ export const CONFIG = {
       .hero-visual .visual-card { border-top: 1px solid var(--ink); padding-top: 12px; }
       .hero-visual .visual-card::before {
         content: "KATALOG 2026 · A–C · TEK FİYAT";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
       }
       .hero-visual .visual-card::after {
         content: "01 — 24 / stok · fiyat · varyant";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
         color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
       }
       .hero-visual .visual-row { border-bottom: 1px solid var(--line); padding-bottom: 9px; }

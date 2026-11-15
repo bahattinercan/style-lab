@@ -70,7 +70,7 @@
     "sectionYnote": "Yoğun ekran: bölüm boşluğu 44px, satır ritmi 40px.",
     "forbiddenType": ["dekoratif display font", "28px üstü gövde", "italik başlık"],
     "motif": "bars",
-    "extraCss": "h1 { font-size: 40px; max-width: 24ch; }\nh2 { font-size: 24px; }\nh3 { font-size: 17px; }\nbody { font-size: 14px; }\n.panel, .pg-card { border-radius: 4px; }\n.btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }\n.field { min-height: 38px; font-size: 13px; }\n.chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }\n.pg-table td, .pg-table th { padding: 6px 0; }\n.pg-sec { padding: 22px 56px; }\n.pg-trio .pg-card { border-top-width: 1px; }\n.mono, .num, .pg-cap { font-variant-numeric: tabular-nums; }",
+    "extraCss": "h1 { font-size: 40px; max-width: 24ch; }\nh2 { font-size: 24px; }\nh3 { font-size: 17px; }\nbody { font-size: 14px; }\n.panel, .pg-card { border-radius: 4px; }\n.btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }\n.field { min-height: 38px; font-size: 13px; }\n.chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }\n.pg-table td, .pg-table th { padding: 6px 0; }\n.pg-sec { padding: 22px 56px; }\n.pg-trio .pg-card { border-top-width: 1px; }\n.mono, .num, .pg-cap { font-variant-numeric: tabular-nums; }",
     "colorNote": "Durum renkleri accent'in türevi değil, ayrı semantik token'lar (--ok/--danger/--warn) üzerinden gelir; accent eylem rengidir.",
     "typeNote": "Yoğun ekran: 14px gövde, 13px tablo, 10.5px mono etiket. Satır yüksekliği 1.55 altına inilmez.",
     "gridNote": "8 kolon içerik + 4 kolon panel; tablolar tam genişlik. Kart içi padding 16px, satır 40px.",

@@ -148,6 +148,6 @@ export const CONFIG = {
       .visual-row .sq { width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
         box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
       .visual-row .line { height: 2px; }
-      .visual-row .num { font-size: 9px; text-align: right; }`,
+      .visual-row .num { font-size: 10px; text-align: right; }`,
   },
 };

@@ -30,7 +30,7 @@ export const CONFIG = {
         border-radius: 0; border: 1px solid var(--line); box-shadow: none; background: var(--surface);
       }
       .hero-visual { border-radius: 0; border: 1px solid var(--ink); box-shadow: none; }
-      .chip { border-radius: 0; background: transparent; border-color: var(--line); font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .14em; padding: 2px 6px; }
+      .chip { border-radius: 0; background: transparent; border-color: var(--line); font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; padding: 2px 6px; }
       .chip.accent { background: var(--accent); border-color: transparent; color: var(--accent-ink); }
       .btn { border-radius: 0; border: 1px solid var(--ink); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; min-height: 44px; padding: 13px 18px; box-shadow: none; }
       .btn.ghost, .btn.soft { background: transparent; color: var(--ink); border: 1px solid var(--line); }
@@ -98,12 +98,12 @@ export const CONFIG = {
       .hero-visual .visual-card { background: var(--surface); box-shadow: 0 0 0 1px var(--line); }
       .hero-visual .visual-card::before {
         content: "Aa · 34/40 · wgt 700 · trk -0.02em";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--ink);
       }
       .hero-visual .visual-card::after {
         content: "x-h 0.52em  ·  cap 0.72em  ·  taban 8px";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em;
         color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
       }
       .hero-visual .visual-row { border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }

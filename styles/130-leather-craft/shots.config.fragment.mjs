@@ -162,7 +162,7 @@ export const CONFIG = {
         content: "EL DİKİŞİ · 130"; position: absolute; inset: 14px; padding: 20px;
         border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: var(--radius);
         outline: 1px dashed color-mix(in srgb, var(--ink-soft) 45%, transparent); outline-offset: -8px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em; color: var(--ink-soft);
         background: linear-gradient(90deg, color-mix(in srgb, var(--ink) 12%, transparent) 0 100%) 20px calc(100% - 26px) / 46% 14px no-repeat;
         pointer-events: none;
       }

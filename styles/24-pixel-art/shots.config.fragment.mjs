@@ -9,6 +9,6 @@ export const CONFIG = {
     .hero-visual { border: 3px solid var(--ink); box-shadow: var(--shadow-hard); }
     .panel, .btn, .field { border-width: 2px; }
     .btn { box-shadow: var(--shadow-hard); }
-    .eyebrow, .label, .chip { font-family: var(--font-display); font-size: 9px; letter-spacing: .06em; }
+    .eyebrow, .label, .chip { font-family: var(--font-display); font-size: 10px; letter-spacing: .06em; }
   `,
 };

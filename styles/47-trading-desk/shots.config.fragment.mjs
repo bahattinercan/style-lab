@@ -12,7 +12,7 @@ export const CONFIG = {
       font-family: var(--font-mono); font-size: 11px; font-weight: 500;
       letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
     }
-    .eyebrow::before { content: '▲'; color: var(--accent); margin-right: 5px; font-size: 8px; }
+    .eyebrow::before { content: '▲'; color: var(--accent); margin-right: 5px; font-size: 10px; }
     .lede { font-size: 14px; line-height: 1.48; max-width: 56ch; color: var(--ink-soft); }
 
     .nav {
@@ -77,7 +77,7 @@ export const CONFIG = {
     .bar:not(.accent) { background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); }
     .proof li::before {
       content: '▲'; width: auto; height: auto; background: none; border-radius: 0;
-      color: var(--accent); font-family: var(--font-mono); font-size: 9px;
+      color: var(--accent); font-family: var(--font-mono); font-size: 10px;
     }
     .divider { height: 1px; background: var(--line); }
     .logo-strip span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; }

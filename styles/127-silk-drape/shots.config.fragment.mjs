@@ -163,7 +163,7 @@ export const CONFIG = {
       .hero-visual { position: relative; min-height: 360px; }
       .hero-visual::before {
         content: "İPEK · 19 MOM"; position: absolute; inset: 0; padding: 18px 22px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em; color: var(--ink-soft);
         background:
           repeating-linear-gradient(96deg, color-mix(in srgb, var(--ink) 16%, transparent) 0 2px, transparent 2px 22px),
           repeating-linear-gradient(84deg, color-mix(in srgb, var(--accent) 22%, transparent) 0 1px, transparent 1px 36px),

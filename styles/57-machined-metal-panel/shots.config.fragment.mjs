@@ -21,7 +21,7 @@ export const CONFIG = {
       h3 { font-size: 19px; line-height: 1.3; letter-spacing: .04em; }
       .lede { font-size: 16px; line-height: 1.58; max-width: 58ch; color: var(--ink-soft); }
       .eyebrow, .label, .mono {
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em;
         text-transform: uppercase; color: var(--ink-soft);
       }
       .eyebrow::before { content: '◤ '; color: var(--accent); }
@@ -64,7 +64,7 @@ export const CONFIG = {
       }
       .chip {
         background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
       }
 
       /* amber durum noktası: her KPI başlığının solunda */
@@ -74,7 +74,7 @@ export const CONFIG = {
         content: ''; width: 6px; height: 6px; border-radius: 50%;
         background: var(--accent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 20%, transparent);
       }
-      .table th { font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+      .table th { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
       .table th, .table td { border-bottom: 1px solid var(--line); }
       .mark { border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); }
       .divider, .line, .bar { background: var(--line); }
@@ -102,13 +102,13 @@ export const CONFIG = {
       .hero-visual { background-image: repeating-linear-gradient(180deg,
         color-mix(in srgb, var(--ink) 5%, transparent) 0 1px, transparent 1px 3px); }
       .hero-visual::after { content: 'PANEL A-04 · 24V'; position: absolute; left: 12px; top: 10px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; color: var(--ink-soft); }
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--ink-soft); }
       .visual-card { background: var(--surface-2); border: 1px solid var(--line); box-shadow: var(--shadow); }
       .visual-card .bar { height: 3px; background: color-mix(in srgb, var(--ink) 22%, transparent); }
       .visual-row { display: grid; grid-template-columns: 12px 1fr 40px; align-items: center; gap: 8px; }
       .visual-row .sq { width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
         box-shadow: inset 0 1px 0 color-mix(in srgb, var(--danger-ink) 40%, transparent), 0 0 0 2px color-mix(in srgb, var(--ink) 16%, transparent); }
       .visual-row .line { height: 2px; background: color-mix(in srgb, var(--ink) 26%, transparent); }
-      .visual-row .num { font-family: var(--font-mono); font-size: 9px; }`,
+      .visual-row .num { font-family: var(--font-mono); font-size: 10px; }`,
   },
 };

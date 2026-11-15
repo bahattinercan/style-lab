@@ -53,7 +53,7 @@ export const CONFIG = {
       .hero-visual { position: relative; min-height: 340px; }
       .hero-visual::before {
         content: "λ 400 → 700 nm"; position: absolute; inset: 24px; padding: 16px 20px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
         background:
           linear-gradient(112deg, transparent 0 24%, color-mix(in srgb, var(--accent) 80%, transparent) 24% 30%, transparent 30%) ,
           linear-gradient(112deg, transparent 0 44%, color-mix(in srgb, var(--accent) 55%, transparent) 44% 50%, transparent 50%),

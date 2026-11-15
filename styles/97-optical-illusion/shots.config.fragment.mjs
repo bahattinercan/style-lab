@@ -139,7 +139,7 @@ export const CONFIG = {
       .hero-visual .visual-card { background: var(--surface); }
       .hero-visual .visual-card::before {
         content: "ŞEKİL / ZEMİN · 2°";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .24em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .24em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--ink);
       }
       .hero-visual .visual-row { padding: 8px 10px; border: 1px solid var(--ink); }

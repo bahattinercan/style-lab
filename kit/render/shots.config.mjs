@@ -44,12 +44,12 @@ const GRAND_TOURER_CSS = `
         letter-spacing: .16em; text-transform: uppercase; min-height: 42px; padding: 12px 20px;
         box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 -1px 0 rgba(28,26,23,.24);
       }
-      .btn.sm { min-height: 34px; padding: 8px 14px; font-size: 9.5px; }
+      .btn.sm { min-height: 34px; padding: 8px 14px; font-size: 10px; }
       .btn.ghost { box-shadow: inset 0 1px 0 rgba(255,255,255,.6); border-color: color-mix(in srgb, var(--ink) 30%, transparent); color: var(--ink); }
       .btn.soft { box-shadow: inset 0 1px 0 rgba(255,255,255,.6); }
 
       /* gravür plaka: etiket, chip, marka rozeti */
-      .chip { border-radius: 2px; background: transparent; border-color: color-mix(in srgb, var(--ink) 26%, transparent); color: var(--ink-soft); font-size: 8.5px; letter-spacing: .18em; padding: 4px 8px; }
+      .chip { border-radius: 2px; background: transparent; border-color: color-mix(in srgb, var(--ink) 26%, transparent); color: var(--ink-soft); font-size: 10px; letter-spacing: .18em; padding: 4px 8px; }
       .chip.accent { background: var(--accent); border-color: transparent; color: var(--accent-ink); }
       .mark { border-radius: 50%; background: var(--accent); color: var(--accent-ink); box-shadow: inset 0 0 0 1px rgba(255,255,255,.35); font-size: 12px; }
 
@@ -84,7 +84,7 @@ const GRAND_TOURER_CSS = `
       .pricing-head h1 { font-size: 30px; }
       .lhead h1 { font-size: 19px; letter-spacing: .1em; }
       .plan .price b { font-size: 26px; }
-      .plan .price span { text-transform: uppercase; letter-spacing: .14em; font-size: 9.5px; }
+      .plan .price span { text-transform: uppercase; letter-spacing: .14em; font-size: 10px; }
       .scene-pricing .period { align-self: flex-start; margin-left: auto; }
       .art-main h1 { font-size: 29px; line-height: 1.18; }
       .art-main h2 { font-size: 17px; }
@@ -205,7 +205,7 @@ const GRAND_TOURER_OXBLOOD_CSS = `
         border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
       }
       body.scene-landing .proof li {
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
         color: var(--ink-soft); padding: 0 16px; border-left: 1px solid var(--line); gap: 7px;
       }
       body.scene-landing .proof li:first-child { border-left: 0; padding-left: 0; }
@@ -959,7 +959,7 @@ export const STYLES = {
       .hero-visual { border: 3px solid var(--ink); box-shadow: var(--shadow-hard); }
       .panel, .btn, .field { border-width: 2px; }
       .btn { box-shadow: var(--shadow-hard); }
-      .eyebrow, .label, .chip { font-family: var(--font-display); font-size: 9px; letter-spacing: .06em; }
+      .eyebrow, .label, .chip { font-family: var(--font-display); font-size: 10px; letter-spacing: .06em; }
     `,
   },
 
@@ -1537,7 +1537,7 @@ export const STYLES = {
       .hero-visual { border: 3px solid var(--ink); box-shadow: var(--shadow-hard); }
       .panel, .btn, .field { border-width: 2px; }
       .btn { box-shadow: var(--shadow-hard); }
-      .eyebrow, .label, .chip { font-family: var(--font-display); font-size: 9px; letter-spacing: .06em; }
+      .eyebrow, .label, .chip { font-family: var(--font-display); font-size: 10px; letter-spacing: .06em; }
     `,
   },
   'frutiger-aero': {
@@ -2173,7 +2173,7 @@ export const STYLES = {
         font-family: var(--font-mono); font-size: 11px; font-weight: 500;
         letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft);
       }
-      .eyebrow::before { content: '\\25CF'; color: var(--accent); margin-right: 6px; font-size: 8px; vertical-align: middle; }
+      .eyebrow::before { content: '\\25CF'; color: var(--accent); margin-right: 6px; font-size: 10px; vertical-align: middle; }
       .lede { font-size: 15px; line-height: 1.52; max-width: 62ch; color: var(--ink-soft); }
 
       .nav {
@@ -2280,7 +2280,7 @@ export const STYLES = {
         font-family: var(--font-mono); font-size: 11px; font-weight: 500;
         letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
       }
-      .eyebrow::before { content: '▲'; color: var(--accent); margin-right: 5px; font-size: 8px; }
+      .eyebrow::before { content: '▲'; color: var(--accent); margin-right: 5px; font-size: 10px; }
       .lede { font-size: 14px; line-height: 1.48; max-width: 56ch; color: var(--ink-soft); }
 
       .nav {
@@ -2345,7 +2345,7 @@ export const STYLES = {
       .bar:not(.accent) { background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); }
       .proof li::before {
         content: '▲'; width: auto; height: auto; background: none; border-radius: 0;
-        color: var(--accent); font-family: var(--font-mono); font-size: 9px;
+        color: var(--accent); font-family: var(--font-mono); font-size: 10px;
       }
       .divider { height: 1px; background: var(--line); }
       .logo-strip span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; }
@@ -2585,12 +2585,12 @@ export const STYLES = {
         .visual-rows { display: flex; flex-direction: column; gap: 0; font-family: var(--font-mono); }
         .visual-row { display: grid; grid-template-columns: 44px 44px 1fr; gap: 8px; align-items: center;
           padding: 5px 6px; border-bottom: 1px solid color-mix(in srgb, var(--line) 65%, transparent); font-size: 10px; }
-        .visual-row::before { content: '12:0' counter(l) ':04'; color: var(--ink-faint); font-size: 9px; }
+        .visual-row::before { content: '12:0' counter(l) ':04'; color: var(--ink-faint); font-size: 10px; }
         .visual-row .sq { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
         .visual-row:nth-child(2) .sq { background: var(--warn); }
         .visual-row:nth-child(3) .sq { background: var(--danger); }
         .visual-row .line { background: color-mix(in srgb, var(--ink) 22%, transparent); height: 3px; }
-        .visual-row .num { font-size: 9px; color: var(--ink-soft); }`,
+        .visual-row .num { font-size: 10px; color: var(--ink-soft); }`,
     },
   },
   'lab-instrument': {
@@ -2838,12 +2838,12 @@ export const STYLES = {
           linear-gradient(90deg, color-mix(in srgb, var(--accent) 14%, transparent) 1px, transparent 1px);
           background-size: 34px 34px, 34px 34px; }
         .hero-visual::before { content: '37.04°N · 27.42°E'; position: absolute; left: 14px; bottom: 12px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; color: var(--ink-faint); }
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; color: var(--ink-faint); }
         .visual-card { background: color-mix(in srgb, var(--surface) 90%, transparent); border-color: color-mix(in srgb, var(--accent) 26%, var(--line)); }
         .visual-row { position: relative; }
         .visual-row .sq { border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--accent); }
         .visual-row .line { height: 2px; background: color-mix(in srgb, var(--ink) 18%, transparent); }
-        .visual-row .num { font-size: 9px; }`,
+        .visual-row .num { font-size: 10px; }`,
     },
   },
   'experiment-split': {
@@ -3345,7 +3345,7 @@ export const STYLES = {
         .visual-row .sq { width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
           box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
         .visual-row .line { height: 2px; }
-        .visual-row .num { font-size: 9px; text-align: right; }`,
+        .visual-row .num { font-size: 10px; text-align: right; }`,
     },
   },
   'blueprint-drawing': {
@@ -3429,14 +3429,14 @@ export const STYLES = {
           linear-gradient(90deg, color-mix(in srgb, var(--accent) 18%, transparent) 1px, transparent 1px);
           background-size: 24px 24px, 24px 24px; }
         .hero-visual::after { content: 'Ø 42 · ölçek 1:2'; position: absolute; right: 14px; bottom: 10px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .12em; color: var(--accent); }
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; color: var(--accent); }
         .visual-card { background: color-mix(in srgb, var(--bg) 82%, transparent);
           border: 1px solid var(--accent); border-radius: var(--radius-lg); }
         .visual-card .bar { height: 1px; background: var(--accent); }
         .visual-row .sq { border: 1px solid var(--accent); background: transparent; }
         .visual-row .line { height: 1px; background: color-mix(in srgb, var(--ink) 30%, transparent); position: relative; }
         .visual-row .line::after { content: ''; position: absolute; right: -1px; top: -3px; width: 1px; height: 7px; background: var(--accent); }
-        .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--accent); }`,
+        .visual-row .num { font-family: var(--font-mono); font-size: 10px; color: var(--accent); }`,
     },
   },
   'machined-metal-panel': {
@@ -3457,7 +3457,7 @@ export const STYLES = {
         h3 { font-size: 19px; line-height: 1.3; letter-spacing: .04em; }
         .lede { font-size: 16px; line-height: 1.58; max-width: 58ch; color: var(--ink-soft); }
         .eyebrow, .label, .mono {
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em;
           text-transform: uppercase; color: var(--ink-soft);
         }
         .eyebrow::before { content: '◤ '; color: var(--accent); }
@@ -3500,7 +3500,7 @@ export const STYLES = {
         }
         .chip {
           background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
         }
 
         /* amber durum noktası: her KPI başlığının solunda */
@@ -3510,7 +3510,7 @@ export const STYLES = {
           content: ''; width: 6px; height: 6px; border-radius: 50%;
           background: var(--accent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 20%, transparent);
         }
-        .table th { font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+        .table th { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
         .table th, .table td { border-bottom: 1px solid var(--line); }
         .mark { border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); }
         .divider, .line, .bar { background: var(--line); }
@@ -3538,14 +3538,14 @@ export const STYLES = {
         .hero-visual { background-image: repeating-linear-gradient(180deg,
           color-mix(in srgb, var(--ink) 5%, transparent) 0 1px, transparent 1px 3px); }
         .hero-visual::after { content: 'PANEL A-04 · 24V'; position: absolute; left: 12px; top: 10px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; color: var(--ink-soft); }
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--ink-soft); }
         .visual-card { background: var(--surface-2); border: 1px solid var(--line); box-shadow: var(--shadow); }
         .visual-card .bar { height: 3px; background: color-mix(in srgb, var(--ink) 22%, transparent); }
         .visual-row { display: grid; grid-template-columns: 12px 1fr 40px; align-items: center; gap: 8px; }
         .visual-row .sq { width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
           box-shadow: inset 0 1px 0 color-mix(in srgb, var(--danger-ink) 40%, transparent), 0 0 0 2px color-mix(in srgb, var(--ink) 16%, transparent); }
         .visual-row .line { height: 2px; background: color-mix(in srgb, var(--ink) 26%, transparent); }
-        .visual-row .num { font-family: var(--font-mono); font-size: 9px; }`,
+        .visual-row .num { font-family: var(--font-mono); font-size: 10px; }`,
     },
   },
   'safety-signage': {
@@ -3858,7 +3858,7 @@ export const STYLES = {
         .visual-row .sq { width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
           box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
         .visual-row .line { height: 1.5px; background: color-mix(in srgb, var(--accent) 40%, transparent); }
-        .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--accent); }`,
+        .visual-row .num { font-family: var(--font-mono); font-size: 10px; color: var(--accent); }`,
     },
   },
   'calibration-lab': {
@@ -6146,7 +6146,7 @@ export const STYLES = {
             .visual-row { border-radius: 2px; }
             .visual-row .sq { border-radius: 0; }
             .visual-row .num { font-size: 11px; letter-spacing: .06em; }
-            .hero-visual::after { content: '1:25 000'; position: absolute; right: 14px; bottom: 10px; font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em; color: var(--ink-soft); }
+            .hero-visual::after { content: '1:25 000'; position: absolute; right: 14px; bottom: 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--ink-soft); }
       `,
     },
   },
@@ -7443,7 +7443,7 @@ export const STYLES = {
             .visual-rows { margin-top: auto; gap: 0; }
             .visual-row { border-radius: 0; border: 0; border-top: 1px solid var(--line); background: transparent; padding: 9px 0; }
             .visual-row .sq { border-radius: 0; width: 12px; height: 12px; }
-            .hero-visual::after { content: 'GÜNLÜK · 14. SAYFA'; position: absolute; top: 6px; right: 10px; font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em; color: var(--ink-soft); }
+            .hero-visual::after { content: 'GÜNLÜK · 14. SAYFA'; position: absolute; top: 6px; right: 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; color: var(--ink-soft); }
       `,
     },
   },
@@ -7585,7 +7585,7 @@ export const STYLES = {
             .visual-row { border-radius: 0; border: 0; border-top: 1px solid var(--line); background: transparent; padding: 8px 0; counter-increment: ref; }
             .visual-row .sq { display: none; }
             .visual-row .num { font-family: var(--font-mono); font-size: 10px; }
-            .hero-visual::after { content: 'Şekil 1 · ölçüm düzeni'; position: absolute; left: 18px; bottom: 8px; font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em; color: var(--ink-soft); }
+            .hero-visual::after { content: 'Şekil 1 · ölçüm düzeni'; position: absolute; left: 18px; bottom: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); }
       `,
     },
   },
@@ -7655,7 +7655,7 @@ export const STYLES = {
             .visual-row { border-radius: 0; border: 0; background: transparent; padding: 0; }
             .visual-row .sq { display: none; }
             .visual-row .line { height: 2px; background: color-mix(in srgb, var(--ink) 18%, transparent); }
-            .visual-row .num { font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em; }
+            .visual-row .num { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; }
             .hero-visual::before { content: ''; position: absolute; left: 18px; top: 24px; bottom: 24px; width: 0; border-left: 1px dashed var(--line); }
       `,
     },
@@ -7750,12 +7750,12 @@ export const STYLES = {
         .hero-visual .visual-card { border-top: 1px solid var(--ink); padding-top: 12px; }
         .hero-visual .visual-card::before {
           content: "KATALOG 2026 · A–C · TEK FİYAT";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
         }
         .hero-visual .visual-card::after {
           content: "01 — 24 / stok · fiyat · varyant";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
           color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
         }
         .hero-visual .visual-row { border-bottom: 1px solid var(--line); padding-bottom: 9px; }
@@ -7868,7 +7868,7 @@ export const STYLES = {
         .hero-visual .visual-card { padding: 22px 22px 18px; border-left: 1px solid var(--ink); }
         .hero-visual .visual-card::before {
           content: "LEVHA II — KOLEKSİYON KAYDI";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .24em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .24em;
           color: var(--ink-soft); padding-bottom: 10px; border-bottom: 1px solid var(--line);
         }
         .hero-visual .visual-card::after {
@@ -7912,7 +7912,7 @@ export const STYLES = {
           border-radius: 0; border: 1px solid var(--line); box-shadow: none; background: var(--surface);
         }
         .hero-visual { border-radius: 0; border: 1px solid var(--ink); box-shadow: none; }
-        .chip { border-radius: 0; background: transparent; border-color: var(--line); font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .14em; padding: 2px 6px; }
+        .chip { border-radius: 0; background: transparent; border-color: var(--line); font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; padding: 2px 6px; }
         .chip.accent { background: var(--accent); border-color: transparent; color: var(--accent-ink); }
         .btn { border-radius: 0; border: 1px solid var(--ink); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; min-height: 44px; padding: 13px 18px; box-shadow: none; }
         .btn.ghost, .btn.soft { background: transparent; color: var(--ink); border: 1px solid var(--line); }
@@ -7980,12 +7980,12 @@ export const STYLES = {
         .hero-visual .visual-card { background: var(--surface); box-shadow: 0 0 0 1px var(--line); }
         .hero-visual .visual-card::before {
           content: "Aa · 34/40 · wgt 700 · trk -0.02em";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--ink);
         }
         .hero-visual .visual-card::after {
           content: "x-h 0.52em  ·  cap 0.72em  ·  taban 8px";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em;
           color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
         }
         .hero-visual .visual-row { border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
@@ -8039,7 +8039,7 @@ export const STYLES = {
           border-radius: 0; border: 1px solid var(--line); box-shadow: none; background: var(--surface);
         }
         .hero-visual { border-radius: 0; border: 1px solid var(--line); box-shadow: none; }
-        .chip { border-radius: 0; background: var(--surface-2); border-color: var(--line); font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .08em; color: var(--ink-soft); }
+        .chip { border-radius: 0; background: var(--surface-2); border-color: var(--line); font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); }
         .chip.accent { background: var(--accent); border-color: transparent; color: var(--accent-ink); }
         .btn { border-radius: 0; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; min-height: 44px; padding: 13px 16px; box-shadow: none; }
         .btn.ghost, .btn.soft { background: transparent; color: var(--ink); border: 1px solid var(--line); }
@@ -8068,7 +8068,7 @@ export const STYLES = {
         @media (max-width: 900px) {
           h1 { font-size: 30px; }
           .art-body, .comp-card-demo p, .co-note, .sec { columns: 1; column-rule: 0; }
-          body.scene-landing .sig::before { font-size: 8.5px; letter-spacing: .1em; }
+          body.scene-landing .sig::before { font-size: 10px; letter-spacing: .1em; }
         }
 
       /* ── QA düzeltme katmanı (dosya sonu: aynı özgüllükte son kural kazanır) ── */
@@ -8105,12 +8105,12 @@ export const STYLES = {
         .hero-visual .visual-card::before {
           content: "MADDE 042 · telaffuz /sö·zük/";
           position: absolute; left: 0; top: 0;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
           color: var(--ink-soft); padding-bottom: 10px;
         }
         .hero-visual .visual-card::after {
           content: "→ bkz. 045, 118 · → karşıt: 077";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .14em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em;
           color: var(--ink-soft); padding-top: 10px; border-top: 1px solid var(--line); margin-top: auto;
         }
         .hero-visual .visual-row { counter-increment: madde; display: grid; grid-template-columns: 18px 14px 1fr auto; align-items: center; gap: 10px; }
@@ -8224,7 +8224,7 @@ export const STYLES = {
         }
         .hero-visual .visual-card::after {
           content: "sayı 03 · fotokopi · 20 adet";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
           color: var(--ink-soft); padding-top: 8px; border-top: 2px solid var(--ink); margin-top: auto;
         }
         .hero-visual .visual-row .sq { border-radius: 0; width: 14px; height: 14px; transform: rotate(-8deg); }
@@ -8367,7 +8367,7 @@ export const STYLES = {
         .hero-visual .visual-card { transform: skewX(-6deg); }
         .hero-visual .visual-card::after {
           content: "0.62s · MARQUEE · 28s/loop";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
           color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line);
           margin-top: auto; transform: skewX(6deg);
         }
@@ -8520,7 +8520,7 @@ export const STYLES = {
         .hero-visual .visual-card { background: var(--surface); }
         .hero-visual .visual-card::before {
           content: "ŞEKİL / ZEMİN · 2°";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .24em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .24em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--ink);
         }
         .hero-visual .visual-row { padding: 8px 10px; border: 1px solid var(--ink); }
@@ -8576,7 +8576,7 @@ export const STYLES = {
       }
       .card::after, .panel::after {
         content: 'x:024 y:048'; position: absolute; right: 8px; bottom: 6px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em;
         color: var(--ink-faint); pointer-events: none;
       }
       .panel > .t, .card > .t, .comp-card-demo > .t {
@@ -8684,7 +8684,7 @@ export const STYLES = {
         .hero-visual .visual-card { background: var(--surface); }
         .hero-visual .visual-card::after {
           content: "x 0→240 · y 0→160 · 24px ızgara";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
           color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
         }
         .hero-visual .visual-row { position: relative; padding-left: 18px; }
@@ -8847,7 +8847,7 @@ export const STYLES = {
         /* hero: üç derinlik düzlemi — ölçek şeridi + ufuk çizgisi */
         .hero-visual .visual-card::before {
           content: "PLANE 0 · 0.6×   PLANE 1 · 1.0×   PLANE 2 · 1.4×";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
         }
         .hero-visual .visual-row { border-bottom: 1px solid var(--line); }
@@ -9002,12 +9002,12 @@ export const STYLES = {
         /* hero: viskozite ölçer — damla kesiti + akış çizgisi */
         .hero-visual .visual-card::before {
           content: "viskozite · 0.42 Pa·s · yüzey gerilimi 0.8";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
         }
         .hero-visual .visual-card::after {
           content: "akış 0.6 L/sn · sıcaklık 21°C";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
           color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
         }
         .hero-visual .visual-row .line { height: 10px; border-radius: 999px; }
@@ -9133,12 +9133,12 @@ export const STYLES = {
         .hero-visual .visual-card { box-shadow: 28px 28px 0 -20px color-mix(in srgb, var(--ink) 22%, transparent); }
         .hero-visual .visual-card::before {
           content: "SAHNE 01 · ışık 22% / 16% · tek kaynak";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
         }
         .hero-visual .visual-card::after {
           content: "gölge 24px · blur .7 · vinyet .14";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
           color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
         }
         .hero-visual .visual-rows { border-bottom: 1px solid var(--line); }
@@ -9273,12 +9273,12 @@ export const STYLES = {
         .hero-visual .visual-card { background: color-mix(in srgb, var(--surface) 90%, transparent); border: 1px solid var(--ink); }
         .hero-visual .visual-card::before {
           content: "MOIRÉ 4° / 11° · girişim 15px";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--ink);
         }
         .hero-visual .visual-card::after {
           content: "kesim payı 3 mm · statik baskı";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
           color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--ink); margin-top: auto;
         }
         .hero-visual .visual-row { border-bottom: 1px solid var(--line); }
@@ -9417,12 +9417,12 @@ export const STYLES = {
         }
         .hero-visual .visual-card::before {
           content: "0 → 12px → 24px · iz .40 / .20 / .08";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
         }
         .hero-visual .visual-card::after {
           content: "0.37s · 3 kademe · hap kontrol";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
           color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
         }
         .hero-visual .visual-row .line { height: 8px; }
@@ -9561,7 +9561,7 @@ export const STYLES = {
         /* hero: kademeli gösterge — çentik cetveli + 8px basamak */
         .hero-visual .visual-card::before {
           content: "KADEME 3 / 8 · adım 8px";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 2px solid var(--ink);
         }
         .hero-visual .visual-card::after {
@@ -9731,12 +9731,12 @@ export const STYLES = {
         .hero-visual .visual-card { background: color-mix(in srgb, var(--surface) 92%, transparent); }
         .hero-visual .visual-card::before {
           content: "KATMAN 0 · 1 · 2  /  12px kayma";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em;
           color: var(--ink-soft); padding-bottom: 8px; border-bottom: 1px solid var(--line);
         }
         .hero-visual .visual-card::after {
           content: "opaklık .40 / .24 / .08 · tarama 3px";
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
           color: var(--ink-soft); padding-top: 8px; border-top: 1px solid var(--line); margin-top: auto;
         }
         .hero-visual .visual-row:nth-child(2) { transform: translateX(6px); }
@@ -10264,7 +10264,7 @@ export const STYLES = {
   body.scene-landing .hero-visual .visual-row { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 10px; background: var(--surface); border-radius: var(--radius); box-shadow: 0 1px 3px color-mix(in srgb, var(--ink) 12%, transparent); }
   body.scene-landing .hero-visual .visual-row .sq { width: 100%; height: 6px; border-radius: 3px; }
   body.scene-landing .hero-visual .visual-row .line { height: 26px; border-radius: var(--radius); background: var(--surface-2); }
-  body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--ink-soft); }
+  body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 10px; color: var(--ink-soft); }
   body.scene-landing .hero-visual .visual-card::after { content: 'TODO 3/5 · YAPILIYOR 2/3 · BİTTİ 7/12 — WIP limiti aşılmadı'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); }`,
       },
   },
@@ -10743,7 +10743,7 @@ export const STYLES = {
   body.scene-landing .hero-visual .visual-row { grid-template-columns: 28px 1fr auto; padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; }
   body.scene-landing .hero-visual .visual-row .sq { width: 26px; height: 26px; border-radius: 999px; border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--line); }
   body.scene-landing .hero-visual .visual-row:nth-child(2) .sq { background: color-mix(in srgb, var(--accent) 55%, var(--surface-2)); }
-  body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; }
+  body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; }
   body.scene-landing .hero-visual .visual-card::after { content: '3 kişi düzenliyor · imleçler canlı · DÜZENLİYOR'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); }`,
       },
   },
@@ -10875,7 +10875,7 @@ export const STYLES = {
   body.scene-landing .hero-visual .visual-row { grid-template-columns: 14px 1fr auto; padding: 9px 14px; border-radius: 0; border-bottom: 1px solid var(--line); }
   body.scene-landing .hero-visual .visual-row:first-child { border-left: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
   body.scene-landing .hero-visual .visual-row .sq { width: 10px; height: 10px; border-radius: 1px; background: var(--surface-2); }
-  body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 3px; padding: 1px 5px; }
+  body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 10px; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 3px; padding: 1px 5px; }
   body.scene-landing .hero-visual .visual-card::after { content: '> ara · K komut · ENTER seç · ↑↓ gez · ? yardım'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); padding: 9px 14px; }`,
       },
   },
@@ -11499,7 +11499,7 @@ export const STYLES = {
         /* sirt seridi: kilifin sol kenarinda 26px dikey serit + dikey yazi */
         .hero-visual::before {
           content: "LP · 33 1/3 RPM"; position: absolute; top: 0; bottom: 0; left: 0; width: 26px;
-          background: var(--ink); color: var(--bg); font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em;
+          background: var(--ink); color: var(--bg); font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em;
           writing-mode: vertical-rl; text-orientation: mixed; display: flex; align-items: center; justify-content: center;
         }
         /* barkod: kilifin sag alt kosesinde dikey cizgi dizisi */
@@ -11512,7 +11512,7 @@ export const STYLES = {
           border-radius: var(--radius); border: 1px solid var(--line); box-shadow: none; background: var(--surface);
         }
         .visual-card { aspect-ratio: 1 / 1; }
-        .chip { border-radius: 0; background: transparent; border-color: var(--line); font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .12em; padding: 2px 6px; }
+        .chip { border-radius: 0; background: transparent; border-color: var(--line); font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em; padding: 2px 6px; }
         .chip.accent { background: var(--accent); border-color: transparent; color: var(--accent-ink); }
         .btn { border-radius: 0; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; min-height: 44px; padding: 12px 18px; box-shadow: none; }
         .btn.ghost, .btn.soft { background: transparent; color: var(--ink); border: 1px solid var(--line); }
@@ -11539,7 +11539,7 @@ export const STYLES = {
         }
         @media (max-width: 900px) {
           h1 { font-size: 40px; max-width: 14ch; }
-          .hero-visual::before { width: 20px; font-size: 8px; }
+          .hero-visual::before { width: 20px; font-size: 10px; }
           body.scene-landing .sig::after { display: none; }
         }
         /* --- QA dalgası: kontrast + örtüşme + yerleşim --- */
@@ -11555,7 +11555,7 @@ export const STYLES = {
         .hero-visual { position: relative; }
         .hero-visual::before {
           content: "A · 33 1/3"; position: absolute; inset: 0; padding: 16px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
           background:
             radial-gradient(circle at 50% 46%, var(--surface) 0 10px, var(--ink) 10px 11px, transparent 11px) 0 0 / 100% 100% no-repeat,
             repeating-radial-gradient(circle at 50% 46%, color-mix(in srgb, var(--ink) 26%, transparent) 0 1px, transparent 1px 6px) 0 0 / 100% 100% no-repeat,
@@ -11809,7 +11809,7 @@ export const STYLES = {
         .hero-visual { position: relative; min-height: 360px; }
         .hero-visual::after {
           content: "KESİT A–A"; position: absolute; inset: 0; padding: 18px 20px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
           background:
             repeating-linear-gradient(74deg, color-mix(in srgb, var(--ink) 24%, transparent) 0 1px, transparent 1px 46px),
             repeating-linear-gradient(-62deg, color-mix(in srgb, var(--accent) 42%, transparent) 0 1px, transparent 1px 64px),
@@ -11978,7 +11978,7 @@ export const STYLES = {
         .hero-visual { position: relative; min-height: 360px; }
         .hero-visual::before {
           content: "İPEK · 19 MOM"; position: absolute; inset: 0; padding: 18px 22px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em; color: var(--ink-soft);
           background:
             repeating-linear-gradient(96deg, color-mix(in srgb, var(--ink) 16%, transparent) 0 2px, transparent 2px 22px),
             repeating-linear-gradient(84deg, color-mix(in srgb, var(--accent) 22%, transparent) 0 1px, transparent 1px 36px),
@@ -12318,7 +12318,7 @@ export const STYLES = {
         .hero-visual { position: relative; min-height: 360px; }
         .hero-visual::before {
           content: "SIR · 1.280 °C"; position: absolute; inset: 0; padding: 18px 20px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
           background:
             repeating-radial-gradient(circle at 50% 62%, color-mix(in srgb, var(--accent) 30%, transparent) 0 1px, transparent 1px 26px),
             repeating-linear-gradient(38deg, color-mix(in srgb, var(--ink) 10%, transparent) 0 1px, transparent 1px 38px);
@@ -12485,7 +12485,7 @@ export const STYLES = {
           content: "EL DİKİŞİ · 130"; position: absolute; inset: 14px; padding: 20px;
           border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); border-radius: var(--radius);
           outline: 1px dashed color-mix(in srgb, var(--ink-soft) 45%, transparent); outline-offset: -8px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em; color: var(--ink-soft);
           background: linear-gradient(90deg, color-mix(in srgb, var(--ink) 12%, transparent) 0 100%) 20px calc(100% - 26px) / 46% 14px no-repeat;
           pointer-events: none;
         }
@@ -12543,7 +12543,7 @@ export const STYLES = {
         .hero-visual { position: relative; min-height: 340px; }
         .hero-visual::before {
           content: "λ 400 → 700 nm"; position: absolute; inset: 24px; padding: 16px 20px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
           background:
             linear-gradient(112deg, transparent 0 24%, color-mix(in srgb, var(--accent) 80%, transparent) 24% 30%, transparent 30%) ,
             linear-gradient(112deg, transparent 0 44%, color-mix(in srgb, var(--accent) 55%, transparent) 44% 50%, transparent 50%),
@@ -12607,7 +12607,7 @@ export const STYLES = {
         .hero-visual { position: relative; min-height: 340px; }
         .hero-visual::before {
           content: "KIRLANGIÇ KUYRUĞU · 1:6"; position: absolute; inset: 24px; padding: 16px 20px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; color: var(--ink-soft);
           background:
             repeating-linear-gradient(62deg, color-mix(in srgb, var(--ink) 26%, transparent) 0 2px, transparent 2px 12px),
             repeating-linear-gradient(-62deg, color-mix(in srgb, var(--ink) 14%, transparent) 0 2px, transparent 2px 12px),
@@ -12671,7 +12671,7 @@ export const STYLES = {
         .hero-visual::before {
           content: "TİPO · 300 g/m² · 133"; position: absolute; inset: 22px; padding: 18px 20px;
           box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 16%, transparent), inset 0 -1px 0 var(--surface-2);
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
           background:
             linear-gradient(0deg, color-mix(in srgb, var(--ink) 34%, transparent) 0 10px, transparent 10px) 20px 64px / 58% 10px no-repeat,
             linear-gradient(0deg, color-mix(in srgb, var(--ink) 18%, transparent) 0 6px, transparent 6px) 20px 88px / 42% 6px no-repeat,
@@ -12738,7 +12738,7 @@ export const STYLES = {
         .hero-visual { position: relative; min-height: 360px; }
         .hero-visual::before {
           content: "C30/37 · KALIP 134"; position: absolute; inset: 0; padding: 18px 20px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
           background:
             radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--ink) 26%, transparent) 0 4px, transparent 4px) 0 0 / 96px 96px repeat,
             linear-gradient(90deg, color-mix(in srgb, var(--ink) 14%, transparent) 0 1px, transparent 1px) 0 0 / 96px 100% repeat-x,
@@ -12797,7 +12797,7 @@ export const STYLES = {
         .hero-visual { position: relative; min-height: 340px; }
         .hero-visual::before {
           content: "MİNE · 135"; position: absolute; inset: 0; padding: 20px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
           background:
             radial-gradient(circle at 34% 58%, transparent 0 34px, color-mix(in srgb, var(--accent) 70%, transparent) 34px 36px, transparent 36px) 0 0 / 100% 100% no-repeat,
             radial-gradient(circle at 34% 58%, transparent 0 26px, color-mix(in srgb, var(--ink) 22%, transparent) 26px 27px, transparent 27px) 0 0 / 100% 100% no-repeat,
@@ -13162,11 +13162,11 @@ export const STYLES = {
         .scene-landing .visual-row .sq { width: 7px; height: 7px; border-radius: 999px; background: var(--accent); }
         .scene-landing .visual-row:first-child::before {
           content: "ÇALIŞIYOR"; position: absolute; right: 0; top: 0;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .06em; color: var(--accent);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; color: var(--accent);
         }
         .scene-landing .visual-row:nth-child(2)::before {
           content: "ONAY BEKLİYOR"; position: absolute; right: 0; top: 0;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: .06em; color: var(--ink-soft);
+          font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; color: var(--ink-soft);
         }
       `,
     },
@@ -15480,7 +15480,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }
@@ -15501,7 +15501,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }
@@ -15522,7 +15522,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }
@@ -15542,7 +15542,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }
@@ -15562,7 +15562,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }
@@ -15582,7 +15582,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }
@@ -15603,7 +15603,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }
@@ -15624,7 +15624,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }
@@ -15645,7 +15645,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }
@@ -15665,7 +15665,7 @@ export const STYLES = {
   .panel, .pg-card { border-radius: 4px; }
   .btn { min-height: 38px; padding: 0 14px; font-size: 13px; border-radius: 4px; }
   .field { min-height: 38px; font-size: 13px; }
-  .chip { border-radius: 3px; font-size: 9.5px; letter-spacing: .1em; }
+  .chip { border-radius: 3px; font-size: 10px; letter-spacing: .1em; }
   .pg-table td, .pg-table th { padding: 6px 0; }
   .pg-sec { padding: 22px 56px; }
   .pg-trio .pg-card { border-top-width: 1px; }

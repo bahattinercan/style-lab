@@ -158,7 +158,7 @@ export const CONFIG = {
       .hero-visual { position: relative; min-height: 360px; }
       .hero-visual::after {
         content: "KESİT A–A"; position: absolute; inset: 0; padding: 18px 20px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
         background:
           repeating-linear-gradient(74deg, color-mix(in srgb, var(--ink) 24%, transparent) 0 1px, transparent 1px 46px),
           repeating-linear-gradient(-62deg, color-mix(in srgb, var(--accent) 42%, transparent) 0 1px, transparent 1px 64px),

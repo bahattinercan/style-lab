@@ -109,6 +109,6 @@ export const CONFIG = {
       .visual-row .sq { width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
         box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
       .visual-row .line { height: 1.5px; background: color-mix(in srgb, var(--accent) 40%, transparent); }
-      .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--accent); }`,
+      .visual-row .num { font-family: var(--font-mono); font-size: 10px; color: var(--accent); }`,
   },
 };

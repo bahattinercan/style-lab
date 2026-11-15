@@ -51,7 +51,7 @@ export const CONFIG = {
       .hero-visual { position: relative; min-height: 340px; }
       .hero-visual::before {
         content: "MİNE · 135"; position: absolute; inset: 0; padding: 20px;
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .2em; color: var(--ink-soft);
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-soft);
         background:
           radial-gradient(circle at 34% 58%, transparent 0 34px, color-mix(in srgb, var(--accent) 70%, transparent) 34px 36px, transparent 36px) 0 0 / 100% 100% no-repeat,
           radial-gradient(circle at 34% 58%, transparent 0 26px, color-mix(in srgb, var(--ink) 22%, transparent) 26px 27px, transparent 27px) 0 0 / 100% 100% no-repeat,

@@ -131,7 +131,7 @@ body.scene-landing .hero-visual .visual-rows { gap: 0; margin: 0; }
 body.scene-landing .hero-visual .visual-row { grid-template-columns: 14px 1fr auto; padding: 9px 14px; border-radius: 0; border-bottom: 1px solid var(--line); }
 body.scene-landing .hero-visual .visual-row:first-child { border-left: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
 body.scene-landing .hero-visual .visual-row .sq { width: 10px; height: 10px; border-radius: 1px; background: var(--surface-2); }
-body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 9px; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 3px; padding: 1px 5px; }
+body.scene-landing .hero-visual .visual-row .num { font-family: var(--font-mono); font-size: 10px; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 3px; padding: 1px 5px; }
 body.scene-landing .hero-visual .visual-card::after { content: '> ara · K komut · ENTER seç · ↑↓ gez · ? yardım'; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--ink-soft); padding: 9px 14px; }`,
     },
 };

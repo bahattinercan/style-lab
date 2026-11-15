@@ -131,7 +131,7 @@ export const CONFIG = {
       /* hero: kademeli gösterge — çentik cetveli + 8px basamak */
       .hero-visual .visual-card::before {
         content: "KADEME 3 / 8 · adım 8px";
-        font-family: var(--font-mono); font-size: 9px; letter-spacing: .18em;
+        font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
         color: var(--ink-soft); padding-bottom: 8px; border-bottom: 2px solid var(--ink);
       }
       .hero-visual .visual-card::after {
