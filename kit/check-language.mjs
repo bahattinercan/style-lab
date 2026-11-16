@@ -53,6 +53,7 @@ const SKIP_FILES = [
   'kit/render/shots.config.mjs',
   'kit/tokens.css',
   'docs/catalog.md',
+  'kit/check-language.mjs', // the gate itself holds the Turkish word list and letter set
 ];
 const BINARY_EXT = new Set([
   '.png', '.jpg', '.jpeg', '.webp', '.woff2', '.woff', '.ttf', '.otf', '.ico', '.gif', '.pdf', '.zip', '.mp4', '.webm',

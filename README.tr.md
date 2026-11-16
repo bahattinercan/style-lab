@@ -1,52 +1,53 @@
-# Design Styles Library (style-lab) v6
+# Tasarım Stilleri Kütüphanesi (style-lab) · v6
 
-> **Languages:** [English](README.md) · [Turkish](README.tr.md)
-> **Repository:** https://github.com/bahattinercan/style-lab
-> **Doors:** `bash kit/gates.sh` (31 steps) · **Hooks:** `bash kit/install-hooks.sh`
-> **Interactive:** `kit/gallery.html` (search · filter · drawer · comparison) · `kit/live.html?style=<slug>`
-> **Publication site:** <https://bahattinercan.github.io/style-lab/>
-> **Catalog index:** [`docs/catalog.md`](docs/catalog.md) (251 styles, 31 families) · **Report:** `kit/dist/report.md`
+> **Diller:** [English](README.md) · [Türkçe](README.tr.md)
+> **Depo:** https://github.com/bahattinercan/style-lab
+> **Kapılar:** `bash kit/gates.sh` · **Kanca:** `bash kit/install-hooks.sh`
+> **Etkileşimli:** `kit/gallery.html` (arama · filtre · çekmece · karşılaştırma) · `kit/live.html?style=<slug>`
+> **Yayın sitesi:** <https://bahattinercan.github.io/style-lab/>
+> **Katalog indeksi:** [`docs/catalog.md`](docs/catalog.md) (251 stil, 31 aile) · **Rapor:** `kit/dist/report.md`
 
-Catalog versus monotonous design: **251 visual styles across 31 family bands**. **one long for each style
-page mock-up** (1280×2400: navigation, hero, three sections, widget grid, form + data, CTA, footer),
-Includes token set, component recipes, traps and **AI brief**.
+Tekdüze tasarıma karşı katalog: **31 aile bandında 251 görsel stil**. Her stil için **tek bir uzun
+sayfa mock-up'ı** (1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form + veri, CTA, alt bilgi),
+token seti, bileşen reçeteleri, tuzaklar ve **AI brief** bulunur.
 
-**v6 scope (intentional simplification):**
+**v6 kapsamı (bilinçli sadeleştirme):**
 
-| remaining | Removed |
+| Kalan | Kaldırılan |
 |---|---|
-| Single long page per style (`01-page.png`) | 37 scene templates (dashboard, mobile, real estate, …) |
-| Open palette only | Dark mode (`palette.dark`, dark token block, dark scenes) |
-| Static design (no animation) | Motion system (`motion.*`, motion lab/export/gates) |
-| CSS · Tailwind · Figma export | Flutter/React token generators |
+| Stil başına tek uzun sayfa (`01-page.png`) | 37 sahne şablonu (dashboard, mobil, emlak, …) |
+| Yalnız açık palet | Koyu mod (`palette.dark`, koyu token bloğu, koyu sahneler) |
+| Statik tasarım (animasyon yok) | Hareket sistemi (`motion.*`, motion lab/export/kapıları) |
+| CSS · Tailwind · Figma export | Flutter/React token üreticileri |
 
-Rationale and measurements: [`docs/v6-simplification-report.md`](docs/v6-simplification-report.md).
+Gerekçe ve ölçümler: [`docs/v6-simplification-report.md`](docs/v6-simplification-report.md).
 
-## Status
+## Durum
 
-- Produces 251/251 style single sheets; **251 PNG, 172 MB** (`du -ch styles/*/shots/01-page.png`).
-- 251/251 style scheme in **v6** (`tokens.json` version 6; no `palette.dark` and `motion`).
-- 31 family bands, 1–251 continuous (`kit/families.json`).
-- 16 different `hero|nav` fingerprints; the most populated cluster is 36 styles (**14%**), the ceiling is 25%.
-- 0 contrast errors (`--strict-soft`), 19 documented soft warnings (decorative `--ink-faint`, low APCA on 3 dark palettes).
-- Publication site: <https://bahattinercan.github.io/style-lab/> (GitHub Pages, `_site/` artifact).
-- Validation: `bash kit/gates.sh` → last line `gates: clean`.
+- 251/251 stil tek sayfa üretiyor; **251 PNG, 167 MB** (`du -ch styles/*/shots/01-page.png`).
+- 251/251 stil şema **v6**'da (`tokens.json` sürüm 6; `palette.dark` ve `motion` yok).
+- 31 aile bandı, 1–251 kesintisiz (`kit/families.json`).
+- 16 farklı `hero|nav` parmak izi; en kalabalık küme 36 stil (**%14**), tavan %25.
+- 0 kontrast hatası (`--strict-soft`), 19 belgelenmiş yumuşak uyarı (dekoratif `--ink-faint`, 3 koyu palette düşük APCA).
+- Yayın sitesi: <https://bahattinercan.github.io/style-lab/> (GitHub Pages, `_site/` artifact'ı).
+- Doğrulama: `bash kit/gates.sh` → son satır `gates: clean`.
+- Dokümanlar, kod ve üretilen çıktı İngilizce; iki dilli tek dosya bu README çiftidir.
 
-## Publishing site
+## Yayın sitesi
 
-<https://bahattinercan.github.io/style-lab/> — Builds `node kit/build-site.mjs`, every push to `main`
-`.github/workflows/pages.yml` pushes to GitHub Pages.
+<https://bahattinercan.github.io/style-lab/> — `node kit/build-site.mjs` derler, `main`'e her push'ta
+`.github/workflows/pages.yml` GitHub Pages'e gönderir.
 
-| Page | What |
+| Sayfa | Ne |
 |---|---|
-| `/` | landing: numbers from `kit/styles.index.json`, 8 showcase styles, 31 family bands |
-| `/kit/gallery.html` | gallery: search, filter, pagination, drawer, lightbox, comparison |
-| `/katalog.html` | catalog index (`docs/catalog.md` HTML, one link per style) |
-| `/kit/live.html?style=<slug>` | static component page with tokens of selected style |
+| `/` | landing: sayılar `kit/styles.index.json`'dan, 8 vitrin stili, 31 aile bandı |
+| `/kit/gallery.html` | galeri: arama, filtre, sayfalama, çekmece, lightbox, karşılaştırma |
+| `/katalog.html` | katalog indeksi (`docs/catalog.md` HTML, stil başına bir bağlantı) |
+| `/kit/live.html?style=<slug>` | seçili stilin token'larıyla statik bileşen sayfası |
 
-`_site/` is a build output (does not go into git). Cards install WebP variant
-(`thumbs/<slug>@640.webp`, ~35 KB); lightbox opens the `@1280` variant, the original PNG remains available for download.
-Derivatives are built with `node kit/build-thumbs.mjs` and kept in the repo — it does not run a CI browser.
+`_site/` bir derleme çıktısıdır (git'e girmez). Kartlar WebP türevini yükler
+(`thumbs/<slug>@640.webp`, ~35 KB); lightbox `@1280` türevini açar, orijinal PNG indirilebilir kalır.
+Türevler `node kit/build-thumbs.mjs` ile üretilip repoda tutulur — CI tarayıcı çalıştırmaz.
 
 ```bash
 node kit/build-thumbs.mjs        # PNG → WebP (640 / 1280) · --check bayat türevi yakalar
@@ -54,7 +55,7 @@ node kit/build-site.mjs          # _site/ derle · --check varlık bütünlüğ�
 node kit/check-site.mjs          # kapı: derlenen siteyi HTTP üzerinden başsız tarayıcıda ölçer
 ```
 
-## Folder map
+## Klasör haritası
 
 ```
 style-lab/
@@ -83,7 +84,7 @@ style-lab/
 │   ├── render/partials/          # 8 hero × 5 nav parçası
 │   ├── render/render-shots.mjs   # sayfa üreteci (CDP, taşma ölçümü, boş kare tekrarı)
 │   ├── migrations/v6-*.mjs       # tek seferlik kaynak göçleri (v5 → v6)
-│   └── gates.sh                  # 31 adımlı doğrulama kapısı
+│   └── gates.sh                  # tam doğrulama seti (parite → ölçüm → site → imza)
 └── styles/<nn-slug>/
     ├── style.md                  # doküman (≥18 bölüm + AI brief)
     ├── tokens.json               # makine kaynağı (palet, tipografi, şekil, boşluk, bileşen, refs)
@@ -93,82 +94,83 @@ style-lab/
     └── shots/01-page.png         # 1280×2400 tek sayfa (üretilir, elle düzenlenmez)
 ```
 
-## Selection in 10 seconds
+## 10 saniyede seçim
 
-| Need | Start |
+| İhtiyaç | Başlangıç |
 |---|---|
-| Calm product interface | 01 minimalism · 02 swiss-design · 06 japandi · 168 game-puzzle-light |
-| Maximum characters | 13 neo-brutalism · 17 maximalism · 166 game-arcade-cabinet · 235 variable-weight |
-| Trust / finance / operations | 172 incident-response · 173 finops-cost · 176 slo-budget · 181 regulatory-report |
-| Trade | 182 grocery-delivery · 184 luxury-atelier · 187 wine-cellar · 189 electronics-spec |
-| Game | 152 game-hud · 155 game-sci-fi-cockpit · 159 game-card-tcg · 165 game-sim-builder |
-| Culture / publishing | 192 museum-exhibition · 194 film-festival · 232 condensed-news · 236 justified-book |
-| Material / craft | 222 terrazzo-stone · 223 linocut-print · 227 cast-concrete · 230 raw-steel |
-| Future / research | 242 agent-console · 245 climate-model · 248 quantum-dashboard · 250 neural-canvas |
+| Sakin ürün arayüzü | 01 minimalism · 02 swiss-design · 06 japandi · 168 game-puzzle-light |
+| Maksimum karakter | 13 neo-brutalism · 17 maximalism · 166 game-arcade-cabinet · 235 variable-weight |
+| Güven / finans / operasyon | 172 incident-response · 173 finops-cost · 176 slo-budget · 181 regulatory-report |
+| Ticaret | 182 grocery-delivery · 184 luxury-atelier · 187 wine-cellar · 189 electronics-spec |
+| Oyun | 152 game-hud · 155 game-sci-fi-cockpit · 159 game-card-tcg · 165 game-sim-builder |
+| Kültür / yayın | 192 museum-exhibition · 194 film-festival · 232 condensed-news · 236 justified-book |
+| Materyal / zanaat | 222 terrazzo-stone · 223 linocut-print · 227 cast-concrete · 230 raw-steel |
+| Gelecek / araştırma | 242 agent-console · 245 climate-model · 248 quantum-dashboard · 250 neural-canvas |
 
-Full list, with one-sentence IDs: [`docs/catalog.md`](docs/catalog.md).
+Tam liste, tek cümlelik kimliklerle: [`docs/catalog.md`](docs/catalog.md).
 
-## Family tapes (31)
+## Aile bantları (31)
 
-Bands are defined in a single source (`kit/families.json`); `apply-fragments`, `build-gallery`, `report`
-and `build-catalog-doc` reads the same file. 1–151 v5 catalog (22 bands), **152–251 v6 additional bands** (9 bands,
-100 styles): Game & Interaction (152–171, 20 styles) · Operations & Data (172–181) · Commerce & Storefront (182–191) ·
-Culture & Broadcasting (192–201) · Health & Science (202–211) · Learning & Gamification (212–221) ·
-Material & Craft (222–231) · Typography Essays (232–241) · Future & Speculative (242–251).
+Bantlar tek kaynakta (`kit/families.json`) tanımlıdır; `apply-fragments`, `build-gallery`, `report`
+ve `build-catalog-doc` aynı dosyayı okur. 1–151 v5 kataloğu (22 bant), **152–251 v6 ek bandı** (9 bant,
+100 stil): Oyun & Etkileşim (152–171, 20 stil) · Operasyon & Veri (172–181) · Ticaret & Vitrin (182–191) ·
+Kültür & Yayın (192–201) · Sağlık & Bilim (202–211) · Öğrenme & Oyunlaştırma (212–221) ·
+Materyal & Zanaat (222–231) · Tipografi Denemeleri (232–241) · Gelecek & Spekülatif (242–251).
 
-## How to use
+## Nasıl kullanılır
 
-1. Open `kit/gallery.html` (`file://` works; server required for URL status/search testing).
-2. Find the style, copy the `data-style` slug.
-3. In the project: copy `<html data-style="game-hud">` + `kit/tokens.css` (or `kit/dist/tokens.all.css`).
-4. Install components with contract variables only: `--bg --bg-2 --surface --surface-2 --ink
+1. `kit/gallery.html` aç (`file://` çalışır; URL durumu/arama testi için sunucu gerekir).
+2. Stili bul, `data-style` slug'ını kopyala.
+3. Projede: `<html data-style="game-hud">` + `kit/tokens.css` (veya `kit/dist/tokens.all.css`) kopyala.
+4. Bileşenleri yalnız sözleşme değişkenleriyle kur: `--bg --bg-2 --surface --surface-2 --ink
    --ink-soft --ink-faint --accent --accent-ink --line --radius --radius-lg --shadow --font-* --space-*`.
-5. Verify with `node kit/style-lint.mjs src --style <slug>` (no color/font/radius literal).
+5. `node kit/style-lint.mjs src --style <slug>` ile doğrula (renk/font/radius literali yok).
 
-## Composition axis (scheme v6)
+## Kompozisyon ekseni (şema v6)
 
-In each `tokens.json` field `layout: { hero, nav, density }` is selected from `kit/render/layouts.json`
-(8 heroes × 5 nav × 3 density). `assign-layouts.mjs` slug + family + tags deterministic points;
-When adding a new style, the layout is not selected manually.
+Her `tokens.json` içinde `layout: { hero, nav, density }` alanı `kit/render/layouts.json`'dan seçilir
+(8 hero × 5 nav × 3 yoğunluk). `assign-layouts.mjs` slug + aile + etiketleri deterministik puanlar;
+yeni stil eklerken layout elle seçilmez.
 
-Doors: `check-layout.mjs` (no fingerprint exceeds 25%, each archetype used, per family
-at least 3 different `hero|nav`) and `check-composition.mjs` (DOM isolation of neighboring styles).
+Kapılar: `check-layout.mjs` (hiçbir parmak izi %25'i geçmez, her arketip kullanılır, aile başına
+en az 3 farklı `hero|nav`) ve `check-composition.mjs` (komşu stillerin DOM izolasyonu).
 
-## Variable contract
+## Değişken sözleşmesi
 
-20 variables, same names in each style — component code does not change when style changes:
+20 değişken, her stilde aynı adlar — stil değişince bileşen kodu değişmez:
 
-| Group | Variables |
+| Grup | Değişkenler |
 |---|---|
-| Surface | `--bg` `--bg-2` `--surface` `--surface-2` |
-| Text | `--ink` `--ink-soft` `--ink-faint` |
-| Emphasis | `--accent` `--accent-ink` |
-| Line / shape | `--line` `--radius` `--radius-lg` |
-| Depth | `--shadow` `--shadow-hard` |
-| Typography | `--font-display` `--font-body` `--font-mono` `--tracking` |
-| Texture | `--blur` `--grain` |
-| Space | `--space-1…8` (4 · 8 · 12 · 16 · 24 · 32 · 48 · 64) |
+| Yüzey | `--bg` `--bg-2` `--surface` `--surface-2` |
+| Metin | `--ink` `--ink-soft` `--ink-faint` |
+| Vurgu | `--accent` `--accent-ink` |
+| Çizgi / şekil | `--line` `--radius` `--radius-lg` |
+| Derinlik | `--shadow` `--shadow-hard` |
+| Tipografi | `--font-display` `--font-body` `--font-mono` `--tracking` |
+| Doku | `--blur` `--grain` |
+| Boşluk | `--space-1…8` (4 · 8 · 12 · 16 · 24 · 32 · 48 · 64) |
 
-Three copies remain at par (`check-schema.mjs`): `tokens.json` ⇄ `token-block.css` ⇄ `kit/tokens.css`.
+Üç kopya paritede kalır (`check-schema.mjs`): `tokens.json` ⇄ `token-block.css` ⇄ `kit/tokens.css`.
 
-## Authentication (gates)
+## Doğrulama (kapılar)
 
 ```bash
-bash kit/gates.sh        # 31 adım: parite → katalog → atamalar → ölçüm → export → site → görsel imza
+bash kit/gates.sh        # parite → katalog → atamalar → ölçüm → export → site → görsel imza
 ```
 
-Quick subsets:
+Hızlı alt kümeler:
 
 ```bash
 node kit/check-schema.mjs && node kit/apply-fragments.mjs --check     # kaynak paritesi
 node kit/check-contrast.mjs --strict-soft                            # WCAG + APCA
+node kit/check-language.mjs                                          # İngilizce dışı metin
 node kit/build-gallery.mjs --check && node kit/build-catalog-doc.mjs --check
 node kit/render/render-shots.mjs --sample 8 --measure                 # taşma / kırpılan blok
 node kit/render/phash.mjs --check                                    # 251 PNG'nin görsel imzası
 ```
 
-"Done" definition: `bash kit/gates.sh` last line `gates: clean`. Commit hook runs the same door
-(`.git/hooks/pre-commit`); full run may exceed 120s tool timeout, run in separate long command.
+"Bitti" tanımı: `bash kit/gates.sh` son satırı `gates: clean`. Commit kancası aynı kapıyı koşar
+(`.git/hooks/pre-commit`); tam koşu 120 s araç zaman aşımını aşabilir, ayrı uzun komutta çalıştır.
 
 ## Token export
 
@@ -177,15 +179,15 @@ node kit/export-tokens.mjs            # kit/dist/*.css · figma.variables.json �
 node kit/export-tokens.mjs --check    # kapı: dist güncel mi?
 ```
 
-| File | Usage |
+| Dosya | Kullanım |
 |---|---|
-| `kit/dist/tokens.all.css` | 251 `[data-style]` block + `:root` fallback |
-| `kit/dist/tailwind.theme.css` | per style `@theme` (Tailwind v4) |
-| `kit/dist/figma.variables.json` | Figma variable collections (color/radius/spacing/typography) |
-| `kit/dist/index.json`, `index.slim.json` | machine-readable catalog (slim = agent friendly) |
-| `kit/dist/report.md`, `composition.md` | measured catalog report |
+| `kit/dist/tokens.all.css` | 251 `[data-style]` bloğu + `:root` fallback |
+| `kit/dist/tailwind.theme.css` | stil başına `@theme` (Tailwind v4) |
+| `kit/dist/figma.variables.json` | Figma değişken koleksiyonları (renk / radius / boşluk / tipografi) |
+| `kit/dist/index.json`, `index.slim.json` | makine-okur katalog (slim = ajan dostu) |
+| `kit/dist/report.md`, `composition.md` | ölçümlü katalog raporu |
 
-## Checking implemented code (style-lint)
+## Uygulanmış kodu denetleme (style-lint)
 
 ```bash
 node kit/style-lint.mjs src --style terminal-ui            # hata + uyarı
@@ -193,11 +195,11 @@ node kit/style-lint.mjs src --style terminal-ui --strict   # uyarılar da hata
 node kit/style-lint.mjs --list-rules
 ```
 
-Rules: `color-literal`, `font-literal`, `radius-literal`, `dart-color-literal`, `dart-font-literal`,
-`dart-radius-literal`, `ink-faint-text`, `root-style-missing`. Generated files
-(`tokens.css`, `tokens.all.css`, `tailwind.theme.css`, `node_modules`, `dist`, `.dart_tool`) are skipped.
+Kurallar: `color-literal`, `font-literal`, `radius-literal`, `dart-color-literal`, `dart-font-literal`,
+`dart-radius-literal`, `ink-faint-text`, `root-style-missing`. Üretilen dosyalar
+(`tokens.css`, `tokens.all.css`, `tailwind.theme.css`, `node_modules`, `dist`, `.dart_tool`) atlanır.
 
-## Add new style (v6: single command)
+## Yeni stil ekleme (v6: tek komut)
 
 ```bash
 # 1) SPEC yaz (bkz. kit/specs/*.json) — palet, fontlar, radius, imza, must/mustNot, refs, brief
@@ -205,30 +207,32 @@ Rules: `color-literal`, `font-literal`, `radius-literal`, `dart-color-literal`, 
 node kit/add-style.mjs kit/specs/my-batch.json
 ```
 
-Command validates SPEC (contrast, font, adjacent, band), writes five resources, runs `apply-fragments`,
-Makes layout/image/content assignments, renders the page, synchronizes document tables; gallery,
-Refreshes index, exports, reports and visual baseline. Flags: `--dry` (validate only),
+Komut SPEC'i doğrular (kontrast, font, komşu, bant), beş kaynağı yazar, `apply-fragments`'ı koşar,
+layout/görsel/içerik atamalarını yapar, sayfayı render eder, doküman tablolarını eşitler; galeri,
+indeks, export'lar, raporlar ve görsel baseline'ı yeniler. Bayraklar: `--dry` (yalnız doğrula),
 `--check` (drift), `--no-render`, `--styles a,b`.
 
-New family band: seamless range to `kit/families.json`, template to `kit/specs/bands.json`, then generate.
-`apply-fragments` returns red if it sees a gap/overlap.
+Yeni aile bandı: `kit/families.json`'a kesintisiz aralık, `kit/specs/bands.json`'a şablon, sonra üret.
+`apply-fragments` boşluk/çakışma görürse kırmızı verir.
 
-## For agents
+## Ajanlar için
 
-1. `AGENTS.md` (linker) → `kit/dist/index.slim.json` (candidates).
-2. `node kit/pick.mjs --intent "..." --limit 3` points by intent.
-3. `kit/mcp-server.mjs` provides `pick`, `style`, `tokens`, `shots`, `render`, `brief` via stdio MCP.
-4. `node kit/brief.mjs --intent "..." --style <slug>` writes copyable brief.
+1. `AGENTS.md` (bağlayıcı) → `kit/dist/index.slim.json` (adaylar).
+2. `node kit/pick.mjs --intent "..." --limit 3` niyete göre puanlar.
+3. `kit/mcp-server.mjs` stdio MCP üzerinden `pick`, `style`, `tokens`, `shots`, `render`, `brief` sunar.
+4. `node kit/brief.mjs --intent "..." --style <slug>` kopyalanabilir brief yazar.
 
-## Known limits
+## Bilinen sınırlar
 
-- Headless rendering uses SwiftShader: screenshots do not measure GPU performance.
-- `history.replaceState` is blocked under `file://`; gallery URL health test requests server.
-- Screens are fixed 1280×2400 canvas — no responsive/mobile frames in v6.
-- `optimize-shots.mjs` changes the byte, not the pixel; `phash --check` preserves the signature.
-- Font coverage: 29 Google Fonts families localized; styles select from this list alone.
+- Headless render SwiftShader kullanır: ekran görüntüleri GPU performansı ölçmez.
+- `file://` altında `history.replaceState` engellenir; galeri URL durumu testi sunucu ister.
+- Ekranlar sabit 1280×2400 tuvalidir — v6'da responsive/mobil kare yok.
+- `optimize-shots.mjs` baytı değiştirir, pikseli değiştirmez; `phash --check` imzayı korur.
+- Font kapsamı: 29 Google Fonts ailesi yerelleştirilmiş; stiller yalnız bu listeden seçer.
+- 151 eski stilin `style.md` gövdesi hâlâ Türkçe: metin `kit/specs/legacy-01-151.json` içinden
+  geliyor, şablon başlıkları İngilizce. Çeviri ayrı iş olarak `docs/english-migration-plan.md`'de.
 
 ## Lisans
 
-Code and tokens: MIT (`LICENSE`). Localized fonts: OFL (`kit/fonts/LICENSES.md`).
-Photos: Unsplash License (`kit/images/LICENSES.md`).
+Kod ve token'lar: MIT (`LICENSE`). Yerelleştirilmiş fontlar: OFL (`kit/fonts/LICENSES.md`).
+Fotoğraflar: Unsplash License (`kit/images/LICENSES.md`).
