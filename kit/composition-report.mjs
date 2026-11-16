@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 /**
- * kit/composition-report.mjs — kompozisyon dağılımını ölçen rapor (kit/dist/composition.md).
+ * kit/composition-report.mjs — report measuring composition distribution (kit/dist/composition.md).
  *
- * Neden: `kit/dist/report.md` kapsam/kontrast/koyu mod borcunu ölçer; **iskelet çeşitliliğini**
- * ölçmez. Bu rapor, v5 revizyonunun ana ölçüsü olan "tekdüzelik endeksi"ni (en kalabalık
- * hero|nav kombinasyonunun payı) ve aile bazlı çeşitliliği yazıya döker.
+ * Cause: `kit/dist/report.md` measures coverage/contrast/dark mode debt; **skeletal diversity**
+ *does not measure. This report includes the "uniformity index" (the most crowded
+ * share of hero|nav combination) and transcribes family-based diversity.
  *
- * Kullanım:
- *   node kit/composition-report.mjs           # yaz
- *   node kit/composition-report.mjs --check   # güncel mi (bayat rapor = exit 1)
- *   node kit/composition-report.mjs --quiet
- */
+ * Usage:
+ * write node kit/composition-report.mjs #
+ * node kit/composition-report.mjs --check # is it up to date (stale report = exit 1)
+ * node kit/composition-report.mjs --quiet*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -40,7 +39,7 @@ function discover() {
         num,
         slug: tokens.slug ?? d.name.replace(/^\d+-/, ''),
         name: tokens.name ?? d.slug,
-        family: FAMILIES.find((f) => num >= f.from && num <= f.to)?.name ?? 'Diğer',
+        family: FAMILIES.find((f) => num >= f.from && num <= f.to)?.name ?? 'Other',
         layout: tokens.layout ?? null,
       };
     })
@@ -53,7 +52,7 @@ function build() {
   const rows = discover();
   const result = checkLayout(rows);
   if (result.errors.length) {
-    console.error('× kompozisyon raporu üretilemedi; önce kapıyı temizle: node kit/check-layout.mjs');
+    console.error('× composition report could not be produced; clear the door first: node kit/check-layout.mjs');
     for (const e of result.errors.slice(0, 5)) console.error(`  - ${e}`);
     process.exit(1);
   }
@@ -68,28 +67,28 @@ function build() {
     rows.filter((r) => r.layout[key] === value).slice(0, limit).map((r) => `\`${r.slug}\``).join(', ');
 
   const lines = [];
-  lines.push('# Kompozisyon raporu');
+  lines.push('# Composition report');
   lines.push('');
-  lines.push('Üretim: `node kit/composition-report.mjs` · kaynak: `kit/render/layouts.json` + `styles/*/tokens.json`');
+  lines.push('Production: `node kit/composition-report.mjs` source: `kit/render/layouts.json` + `styles/*/tokens.json`');
   lines.push('');
-  lines.push('> Neden bu rapor var: katalog 145 stilin **rengini** çeşitlendiriyordu, **iskeletini** değil.');
-  lines.push('> Ölçü: hero|nav parmak izi. Hedef: tekdüzelik endeksi (en kalabalık kombinasyonun payı) **%30 altı**.');
+  lines.push('> Why is there this report: the catalog varied the **color** of 145 styles, not the **skeleton**.');
+  lines.push('> Measure: hero|nav fingerprint. Target: uniformity index (share of most populated combination) **Below 30%**.');
   lines.push('');
-  lines.push('## 1 · Özet');
+  lines.push('## 1 · Summary');
   lines.push('');
-  lines.push('| Ölçü | Değer | Hedef |');
+  lines.push('| Measure | Value | Target |');
   lines.push('|---|---|---|');
-  lines.push(`| Stil | ${n} | — |`);
-  lines.push(`| Farklı hero|nav parmak izi | ${s.fingerprints.length} | ≥ 12 |`);
-  lines.push(`| **Tekdüzelik endeksi** (en kalabalık parmak izi) | ${uniformity}/${n} = ${pct(uniformity, n)} | <%30 |`);
-  lines.push(`| En kalabalık tek hero | ${s.heroes[0][0]} = ${heroShare}/${n} = ${pct(heroShare, n)} | <%35 |`);
-  lines.push(`| Aile başına ortalama farklı hero | ${avgHero.toFixed(1)} | ≥ 2 |`);
-  lines.push(`| Kullanılan arketip | ${s.heroes.length} hero · ${s.navs.length} nav · ${s.densities.length} yoğunluk | tümü |`);
+  lines.push(`| Style | ${n} | — |`);
+  lines.push(`| Distinct hero|nav fingerprints | ${s.fingerprints.length} | ≥ 12 |`);
+  lines.push(`| **Uniformity index** (busiest fingerprint) | ${uniformity}/${n} = ${pct(uniformity, n)} | <30% |`);
+  lines.push(`| Busiest single hero | ${s.heroes[0][0]} = ${heroShare}/${n} = ${pct(heroShare, n)} | <35% |`);
+  lines.push(`| Average distinct heroes per family | ${avgHero.toFixed(1)} | ≥ 2 |`);
+  lines.push(`| Archetypes in use | ${s.heroes.length} hero · ${s.navs.length} nav · ${s.densities.length} densities | all |`);
   lines.push('');
 
   lines.push('## 2 · Hero arketipleri');
   lines.push('');
-  lines.push('| Arketip | Ne zaman | Stil | Örnekler |');
+  lines.push('| Archetype | When | Style | Examples |');
   lines.push('|---|---|---|---|');
   for (const h of LAYOUTS.heroes) {
     const used = s.heroes.find(([k]) => k === h.id)?.[1] ?? 0;
@@ -98,25 +97,25 @@ function build() {
   lines.push('');
   lines.push('## 3 · Nav arketipleri');
   lines.push('');
-  lines.push('| Arketip | Ne zaman | Stil | Örnekler |');
+  lines.push('| Archetype | When | Style | Examples |');
   lines.push('|---|---|---|---|');
   for (const v of LAYOUTS.navs) {
     const used = s.navs.find(([k]) => k === v.id)?.[1] ?? 0;
     lines.push(`| \`${v.id}\` · ${v.label} | ${v.when} | ${used} (${pct(used, n)}) | ${exemplars('nav', v.id)} |`);
   }
   lines.push('');
-  lines.push('## 4 · Yoğunluk');
+  lines.push('## 4 · Density');
   lines.push('');
-  lines.push('| Yoğunluk | Ne zaman | Stil |');
+  lines.push('| Density | When | Style |');
   lines.push('|---|---|---|');
   for (const d of LAYOUTS.densities) {
     const used = s.densities.find(([k]) => k === d.id)?.[1] ?? 0;
     lines.push(`| \`${d.id}\` · ${d.label} | ${d.when} | ${used} (${pct(used, n)}) |`);
   }
   lines.push('');
-  lines.push('## 5 · Aile bazlı çeşitlilik');
+  lines.push('## 5 · Family-based diversity');
   lines.push('');
-  lines.push('| Aile | Stil | Farklı hero | Farklı parmak izi | Baskın hero |');
+  lines.push('| Family | Style | Different hero | Different fingerprint | Dominant hero |');
   lines.push('|---|---|---|---|---|');
   for (const f of s.families) {
     const list = rows.filter((r) => r.family === f.family);
@@ -128,18 +127,18 @@ function build() {
   lines.push('');
   lines.push('## 6 · Parmak izleri');
   lines.push('');
-  lines.push('| hero|nav | Stil | Pay |');
+  lines.push('| hero|nav | Style | Share |');
   lines.push('|---|---|---|');
   for (const [k, v] of s.fingerprints) lines.push(`| \`${k}\` | ${v} | ${pct(v, n)} |`);
   lines.push('');
-  lines.push('## 7 · Kalan eksenler (henüz ölçülmüyor)');
+  lines.push('## 7 · Remaining axes (not yet measured)');
   lines.push('');
-  lines.push('| Eksen | Durum | Plan |');
+  lines.push('| Axis | Status | Plan |');
   lines.push('|---|---|---|');
-  lines.push('| İçerik paketi (sektör) | tek kurgusal SaaS + emlak | P1: `kit/content/*.json`, `tokens.json → industries[]` |');
-  lines.push('| Görsel katman | 0 `<img>` (yalnız CSS motif) | P2: `kit/images/` + `imagery.treatment` |');
-  lines.push('| Bölüm kütüphanesi | yok | P3: `kit/sections.html` + 12 arketip |');
-  lines.push('| Akış şeritleri | tek kare | P4: onboarding/checkout/invite akışları |');
+  lines.push('| Content suite (industry) | single fictional SaaS + real estate | P1:`kit/content/*.json`, `tokens.json → industries[]`|');
+  lines.push('| Visual layer | 0`<img>`(CSS motif only) | P2:`kit/images/` + `imagery.treatment`|');
+  lines.push('| Section library | none | P3:`kit/sections.html` + 12 arketip |');
+  lines.push('| Flow strips | single frame | P4: onboarding/checkout/invite flows |');
   lines.push('');
   return lines.join('\n');
 }
@@ -148,17 +147,17 @@ const md = build();
 if (CHECK) {
   const current = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : null;
   if (current === null) {
-    console.log('× kompozisyon raporu yok — node kit/composition-report.mjs');
+    console.log('× no composition report — node kit/composition-report.mjs');
     process.exit(1);
   }
   if (current !== md) {
-    console.log('× kompozisyon raporu bayat — node kit/composition-report.mjs');
+    console.log('× the composition report is stale — node kit/composition-report.mjs');
     process.exit(1);
   }
-  if (!QUIET) console.log('✓ kompozisyon raporu güncel');
+  if (!QUIET) console.log('✓ composition report is up to date');
   process.exit(0);
 }
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, md);
-if (!QUIET) console.log(`kompozisyon raporu: ${path.relative(ROOT, OUT)}`);
+if (!QUIET) console.log(`composition report: ${path.relative(ROOT, OUT)}`);

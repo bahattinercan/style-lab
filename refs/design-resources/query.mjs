@@ -2,7 +2,7 @@
 /**
  * refs/design-resources/query.mjs — katalogda ara; istege gore olu linkleri ele.
  *
- * Girdi : rows.json (+ varsa link-health.json ile link durumu)
+ * Input  : rows.json (+ link status from link-health.json when present)
  * Kullanim:
  *   node refs/design-resources/query.mjs --q mockup
  *   node refs/design-resources/query.mjs --section "Stock Photos" --alive
@@ -60,12 +60,12 @@ const statusOf = (row) => {
 if (flag('alive')) hits = hits.filter((row) => ['ok', 'bot', '?'].includes(statusOf(row)));
 
 if (flag('json')) {
-  console.log(JSON.stringify(hits.slice(0, limit).map((row) => ({ ...row, durum: statusOf(row) })), null, 2));
+  console.log(JSON.stringify(hits.slice(0, limit).map((row) => ({ ...row, status: statusOf(row) })), null, 2));
 } else {
   if (!hits.length) console.log('eslesme yok');
   for (const row of hits.slice(0, limit)) {
     console.log(`${statusOf(row).padEnd(5)} ${row.name.slice(0, 30).padEnd(31)} ${row.url}`);
     if (row.desc) console.log(`      ${row.desc.slice(0, 96)}`);
   }
-  if (hits.length > limit) console.log(`\n... ${hits.length - limit} sonuc daha (--limit ${hits.length})`);
+  if (hits.length > limit) console.log(`\n... ${hits.length - limit} more results (--limit ${hits.length})`);
 }

@@ -1,18 +1,18 @@
-# geçici render / QA çıktıları
+# temporary render / QA output
 kit/qa/
 kit/render/.tmp/
 kit/render/.tmp-*.html
 kit/render/.baseline/
 *.log
 
-# işletim sistemi
+# operating system
 .DS_Store
 Thumbs.db
 Desktop.ini
 
-# üretilen sahne cache (repoda tutulmaz; çekirdek sahneler styles/*/shots/)
+# generated scene cache (not kept in the repo; the core scenes live in styles/*/shots/)
 kit/.shots-cache/
 
-# site derleme çıktısı (node kit/build-site.mjs) — Pages'e Actions artifact olarak gider
+# site build output (node kit/build-site.mjs) — published to Pages as an Actions artifact
 _site/
 kit/.tmp-thumbs/

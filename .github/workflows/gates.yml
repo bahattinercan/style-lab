@@ -1,8 +1,8 @@
 name: gates
 
-# Katalog kapıları — tek kaynak `kit/gates.sh` (31 adım). Burada adımlar yeniden listelenmez:
-# eski sürüm v5 scriptlerini (motion, render-sections, export/react) çağırıyordu ve v6'da
-# kırılmıştı. Yerelde de aynı komut koşar.
+# Catalog doors — single source `kit/gates.sh` (31 steps). The steps are not relisted here:
+# old version was calling v5 scripts (motion, render-sections, export/react) and in v6
+# it was broken. The same command runs locally as well.
 on:
   push:
     branches: [main]
@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   gates:
-    name: kapılar
+    name: gates
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: tarayıcı (CDP kapıları için)
+      - name: browser (for the CDP gates)
         run: google-chrome --version || chromium --version || true
-      - name: kapılar
+      - name: gates
         run: bash kit/gates.sh

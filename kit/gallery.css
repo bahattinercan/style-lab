@@ -1,8 +1,8 @@
-/* ============================================================
-   gallery.css — stil kataloğu (chrome nötr, demo alanı temalı)
-   Yapı: üst başlık · sticky araç çubuğu · filtre paneli · kart ızgarası
-         · çekmece · karşılaştırma · lightbox
-   ============================================================ */
+/*====================================================================================
+   gallery.css — style catalog (chrome neutral, demo area themed)
+   Structure: header · sticky toolbar · filter panel · card grid
+         · drawer · comparison · lightbox
+   ====================================================================================*/
 
 * { box-sizing: border-box; }
 
@@ -34,7 +34,7 @@ button, input, select { font: inherit; }
 :focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
 [hidden] { display: none !important; }
 
-/* ---------- üst başlık ---------- */
+/*---------- top title ----------*/
 .top { padding: 18px 0 6px; }
 .top-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .top h1 {
@@ -79,7 +79,7 @@ kbd {
   background: #1a212b; border: 1px solid var(--ui-line-2); border-bottom-width: 2px; color: #cfd8e5;
 }
 
-/* ---------- sticky araç çubuğu ---------- */
+/*---------- sticky toolbar ----------*/
 .bar { position: sticky; top: 0; z-index: 50; }
 .bar-in { position: relative; padding: 8px 0 0; background: var(--ui-bg); }
 .bar-in::after {
@@ -156,7 +156,7 @@ kbd {
 }
 .count[data-state="empty"] { color: #f0b0a0; background: #1b1210; border-color: #4a2a26; }
 
-/* ---------- aktif filtre çipleri ---------- */
+/*---------- active filter chips ----------*/
 .activebar { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 8px; }
 .achip {
   display: inline-flex; align-items: center; gap: 6px;
@@ -169,7 +169,7 @@ kbd {
 .achip.clearall { background: transparent; border-style: dashed; border-color: var(--ui-line-2); color: var(--ui-ink-2); }
 .achip.clearall:hover { color: #f0b0a0; border-color: #4a2a26; }
 
-/* ---------- filtre paneli ---------- */
+/*---------- filter panel ----------*/
 .fpanel {
   position: relative; z-index: 60; margin-top: 2px;
   background: var(--ui-panel); border: 1px solid var(--ui-line);
@@ -213,7 +213,7 @@ kbd {
 }
 .linkbtn:hover { color: #a9c8ff; }
 
-/* ---------- ızgara ---------- */
+/*---------- grill ----------*/
 main.wrap { padding-bottom: 84px; }
 .grid {
   display: grid;
@@ -235,7 +235,7 @@ main.wrap { padding-bottom: 84px; }
 .card:focus-visible { outline: 2px solid var(--ui-focus); outline-offset: 2px; }
 .card[hidden] { display: none; }
 
-/* kapak: kartın tek görseli, 16:10 */
+/*cover: single image of the card, 16:10*/
 .cover {
   position: relative; display: block; aspect-ratio: 16 / 10;
   background: #0e1218; overflow: hidden; cursor: zoom-in;
@@ -312,7 +312,7 @@ main.wrap { padding-bottom: 84px; }
 .pinfo { margin-left: auto; font: 500 11px/1 ui-monospace, monospace; color: var(--ui-ink-3); }
 @media (max-width: 520px) { .pinfo { margin-left: 0; width: 100%; } }
 
-/* ---------- çekmece ---------- */
+/*---------- drawer ----------*/
 .drawer { position: fixed; inset: 0; z-index: 120; display: flex; justify-content: flex-end; }
 .drawer-scrim {
   position: absolute; inset: 0; border: 0; padding: 0; cursor: pointer;
@@ -423,8 +423,8 @@ main.wrap { padding-bottom: 84px; }
 }
 .dr-foot code { color: #cfe3ff; }
 
-/* ---------- demo alanı: tek yer tema alır ---------- */
-/* ---------- demo alanı: tek yer tema alır ---------- */
+/*---------- demo area: one place takes theme ----------*/
+/*---------- demo area: one place takes theme ----------*/
 .demo {
   position: relative;
   background: var(--bg);
@@ -479,16 +479,16 @@ main.wrap { padding-bottom: 84px; }
   border: 1px solid transparent; box-shadow: var(--shadow);
 }
 .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); box-shadow: none; }
-/* Filtre çipleri koyu arayüzde okunur kalmalı: stil token'ı (--surface-2/--ink-soft) burada
-   AÇIK paletten geliyordu ve çipler beyaz zemin + açık yazı oluyordu. Çip sınıfı sayfada iki
-   yerde kullanıldığı için bu tanım UI (koyu) token'larına bağlandı. */
+/*Filter chips must remain readable on dark interface: style token (--surface-2/--ink-soft) here
+   It was coming from the OPEN palette and the chips were white background + light text. Chip class two on page
+   Since it is used everywhere, this definition is tied to UI (dark) tokens.*/
 .chip {
   font-size: 10px; padding: 4px 9px; border-radius: 999px;
   background: var(--ui-card-2, #171c24); color: var(--ui-ink-2); border: 1px solid var(--ui-line);
 }
 .chip:hover { background: #1d2430; color: var(--ui-ink); border-color: var(--ui-line-2); }
 
-/* ---------- alt bilgi ---------- */
+/*---------- footer ----------*/
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 14px 10px; }
 .tags li {
   list-style: none; font-size: 10px; color: #8f9aaa;
@@ -504,9 +504,9 @@ main.wrap { padding-bottom: 84px; }
 }
 .src:hover { text-decoration: underline; }
 
-/* ============================================================
-   Stil imzaları — sadece belirgin farkı göstermek için
-   ============================================================ */
+/*====================================================================================
+   Style signatures — just to show the obvious difference
+   ====================================================================================*/
 
 /* Bento */
 .bento { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 62px; gap: 8px; width: 100%; max-width: 300px; }
@@ -529,7 +529,7 @@ main.wrap { padding-bottom: 84px; }
 .lux-t { font-family: var(--font-display); font-size: 38px; line-height: 1.02; font-weight: 400; letter-spacing: .01em; margin: 10px 0 14px; }
 .hair { height: 1px; background: var(--accent); width: 84px; margin: 0 auto 16px; }
 
-/* Glass / Liquid: arkada renk olmalı */
+/*Glass / Liquid: must have color on the back*/
 [data-style="glassmorphism"] .demo,
 [data-style="liquid-glass"] .demo {
   background:
@@ -549,7 +549,7 @@ main.wrap { padding-bottom: 84px; }
     #0a0a10;
 }
 
-/* Synthwave / Vaporwave: ufuk ızgarası */
+/*Synthwave / Vaporwave: horizon grid*/
 [data-style="synthwave"] .demo, [data-style="vaporwave"] .demo { align-items: flex-start; padding-top: 26px; }
 [data-style="synthwave"] .demo::before, [data-style="vaporwave"] .demo::before {
   content: ""; position: absolute; left: -30%; right: -30%; bottom: -18%; height: 52%;
@@ -631,7 +631,7 @@ main.wrap { padding-bottom: 84px; }
 .knob::after { content: ""; width: 2px; height: 20px; background: var(--ink-faint); transform: rotate(38deg); border-radius: 2px; }
 .neu-press { box-shadow: var(--shadow-hard); }
 
-/* Frutiger / Y2K: parlak plastik */
+/*Frutiger / Y2K: glossy plastic*/
 [data-style="frutiger-aero"] .panel { max-width: 250px; }
 [data-style="y2k"] .panel { max-width: 250px; }
 
@@ -643,11 +643,11 @@ main.wrap { padding-bottom: 84px; }
     var(--bg);
 }
 
-/* Sakura/maximalism kenar boşluğu */
+/*Sakura/maximalism margin*/
 [data-style="maximalism"] .panel { border: 2px solid var(--ink); }
-/* ============================================================
-   Karşılaştırma · lightbox · toast · mobil
-   ============================================================ */
+/*====================================================================================
+   Comparison · lightbox · toast · mobile
+   ====================================================================================*/
 
 .cmpbar {
   position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);

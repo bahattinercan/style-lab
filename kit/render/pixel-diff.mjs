@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 /**
- * kit/render/pixel-diff.mjs — Bağımlılıksız PNG piksel karşılaştırma aracı
+ * kit/render/pixel-diff.mjs — Dependency-free PNG pixel comparison tool
  *
- * Kullanım:
- *   node kit/render/pixel-diff.mjs --a <png> --b <png> [--threshold 0.1] [--json]
- */
+ * Usage:
+ * node kit/render/pixel-diff.mjs --a <png> --b <png> [--threshold 0.1] [--json]*/
 import fs from 'node:fs';
 import { decodePng } from './png.mjs';
 
@@ -41,15 +40,15 @@ function parseArgs(argv) {
 }
 
 function showHelp() {
-  console.log(`Kullanım:
+  console.log(`Usage:
   node kit/render/pixel-diff.mjs --a <png> --b <png> [--threshold 0.1] [--json]
 
-Seçenekler:
-  --a <yol>          İlk PNG dosyasının yolu
-  --b <yol>          İkinci PNG dosyasının yolu
-  --threshold <sayı> Kabul edilebilir piksel farkı eşik oranı (%) [varsayılan: 0.1]
-  --json             Tek satır JSON çıktısı üret
-  -h, --help         Bu yardım mesajını göster`);
+Options:
+  --a <path> Path to the first PNG file
+  --b <path> Path to the second PNG file
+  --threshold <number> Acceptable pixel difference threshold ratio (%) [default: 0.1]
+  --json Produce single line JSON output
+  -h, --help Show this help message`);
 }
 
 function main() {
@@ -63,11 +62,11 @@ function main() {
   if (!fileA || !fileB) {
     if (json) {
       console.log(JSON.stringify({
-        error: '--a ve --b parametreleri zorunludur',
+        error: 'the --a and --b parameters are required',
         decision: 'fail'
       }));
     } else {
-      console.error('Hata: --a ve --b parametreleri zorunludur.');
+      console.error('Error: the --a and --b parameters are required.');
       showHelp();
     }
     process.exit(2);
@@ -76,11 +75,11 @@ function main() {
   if (isNaN(threshold) || threshold < 0) {
     if (json) {
       console.log(JSON.stringify({
-        error: 'Geçersiz threshold değeri',
+        error: 'Invalid threshold value',
         decision: 'fail'
       }));
     } else {
-      console.error('Hata: Geçersiz threshold değeri.');
+      console.error('Error: Invalid threshold value.');
     }
     process.exit(2);
   }
@@ -89,7 +88,7 @@ function main() {
   try {
     bufA = fs.readFileSync(fileA);
   } catch (err) {
-    const msg = `Dosya okunamadı (${fileA}): ${err.message}`;
+    const msg = `Could not read the file (${fileA}): ${err.message}`;
     if (json) console.log(JSON.stringify({ error: msg, decision: 'fail' }));
     else console.error(`Hata: ${msg}`);
     process.exit(2);
@@ -98,7 +97,7 @@ function main() {
   try {
     bufB = fs.readFileSync(fileB);
   } catch (err) {
-    const msg = `Dosya okunamadı (${fileB}): ${err.message}`;
+    const msg = `Could not read the file (${fileB}): ${err.message}`;
     if (json) console.log(JSON.stringify({ error: msg, decision: 'fail' }));
     else console.error(`Hata: ${msg}`);
     process.exit(2);
@@ -108,7 +107,7 @@ function main() {
   try {
     imgA = decodePng(bufA);
   } catch (err) {
-    const msg = `PNG çözümlenemedi (${fileA}): ${err.message}`;
+    const msg = `Could not decode the PNG (${fileA}): ${err.message}`;
     if (json) console.log(JSON.stringify({ error: msg, decision: 'fail' }));
     else console.error(`Hata: ${msg}`);
     process.exit(2);
@@ -117,26 +116,26 @@ function main() {
   try {
     imgB = decodePng(bufB);
   } catch (err) {
-    const msg = `PNG çözümlenemedi (${fileB}): ${err.message}`;
+    const msg = `Could not decode the PNG (${fileB}): ${err.message}`;
     if (json) console.log(JSON.stringify({ error: msg, decision: 'fail' }));
     else console.error(`Hata: ${msg}`);
     process.exit(2);
   }
 
-  // Boyut kontrolü
+  // Size control
   if (imgA.width !== imgB.width || imgA.height !== imgB.height) {
     if (json) {
       console.log(JSON.stringify({
-        error: 'Boyut uyuşmazlığı',
+        error: 'Size mismatch',
         dimensionMismatch: true,
         a: { width: imgA.width, height: imgA.height },
         b: { width: imgB.width, height: imgB.height },
         decision: 'fail'
       }));
     } else {
-      console.error('Hata: Boyut uyuşmazlığı!');
-      console.error(`  Görsel A (${fileA}): ${imgA.width}x${imgA.height}`);
-      console.error(`  Görsel B (${fileB}): ${imgB.width}x${imgB.height}`);
+      console.error('Error: Size mismatch!');
+      console.error(`  Image A (${fileA}): ${imgA.width}x${imgA.height}`);
+      console.error(`  Image B (${fileB}): ${imgB.width}x${imgB.height}`);
       console.error('  Karar: fail');
     }
     process.exit(2);
@@ -228,32 +227,32 @@ function main() {
     console.log(JSON.stringify(output));
   } else {
     if (diffPixels === 0) {
-      console.log('Piksel Karşılaştırma Özeti:');
-      console.log(`  Görsel A : ${fileA}`);
-      console.log(`  Görsel B : ${fileB}`);
-      console.log(`  Boyut    : ${width}x${height} (${totalPixels.toLocaleString('tr-TR')} piksel)`);
-      console.log(`  Farklı   : 0 piksel (oran %0)`);
-      console.log(`  Eşik     : %${threshold}`);
-      console.log(`  Sınır    : yok`);
-      console.log(`  Karar    : pass`);
+      console.log('Pixel Comparison Summary:');
+      console.log(`  Image A  : ${fileA}`);
+      console.log(`  Image B  : ${fileB}`);
+      console.log(`  Size     : ${width}x${height} (${totalPixels.toLocaleString('en-US')} pixels)`);
+      console.log(`Different: 0 pixels (rate 0%)`);
+      console.log(`  Threshold: ${threshold}%`);
+      console.log(`Limit: none`);
+      console.log(`  Verdict  : pass`);
     } else if (passed) {
-      console.log('UYARI: Eşik altında piksel farkı tespit edildi:');
-      console.log(`  Görsel A : ${fileA}`);
-      console.log(`  Görsel B : ${fileB}`);
-      console.log(`  Boyut    : ${width}x${height} (${totalPixels.toLocaleString('tr-TR')} piksel)`);
-      console.log(`  Farklı   : ${diffPixels.toLocaleString('tr-TR')} piksel (oran %${diffRatio.toFixed(4)})`);
-      console.log(`  Eşik     : %${threshold}`);
-      console.log(`  Sınır    : [minX: ${minX}, minY: ${minY}, maxX: ${maxX}, maxY: ${maxY}]`);
-      console.log(`  Karar    : pass (uyarı: fark eşik altında)`);
+      console.log('WARNING: Pixel difference below threshold detected:');
+      console.log(`  Image A  : ${fileA}`);
+      console.log(`  Image B  : ${fileB}`);
+      console.log(`  Size     : ${width}x${height} (${totalPixels.toLocaleString('en-US')} pixels)`);
+      console.log(`  Different: ${diffPixels.toLocaleString('en-US')} pixels (ratio ${diffRatio.toFixed(4)}%)`);
+      console.log(`  Threshold: ${threshold}%`);
+      console.log(`  Bounds   : [minX: ${minX}, minY: ${minY}, maxX: ${maxX}, maxY: ${maxY}]`);
+      console.log(`Verdict: pass (warning: difference below threshold)`);
     } else {
-      console.log('HATA: Piksel farkı eşik değerini aştı:');
-      console.log(`  Görsel A : ${fileA}`);
-      console.log(`  Görsel B : ${fileB}`);
-      console.log(`  Boyut    : ${width}x${height} (${totalPixels.toLocaleString('tr-TR')} piksel)`);
-      console.log(`  Farklı   : ${diffPixels.toLocaleString('tr-TR')} piksel (oran %${diffRatio.toFixed(4)})`);
-      console.log(`  Eşik     : %${threshold}`);
-      console.log(`  Sınır    : [minX: ${minX}, minY: ${minY}, maxX: ${maxX}, maxY: ${maxY}]`);
-      console.log(`  Karar    : fail`);
+      console.log('ERROR: Pixel difference exceeded threshold value:');
+      console.log(`  Image A  : ${fileA}`);
+      console.log(`  Image B  : ${fileB}`);
+      console.log(`  Size     : ${width}x${height} (${totalPixels.toLocaleString('en-US')} pixels)`);
+      console.log(`  Different: ${diffPixels.toLocaleString('en-US')} pixels (ratio ${diffRatio.toFixed(4)}%)`);
+      console.log(`  Threshold: ${threshold}%`);
+      console.log(`  Bounds   : [minX: ${minX}, minY: ${minY}, maxX: ${maxX}, maxY: ${maxY}]`);
+      console.log(`  Verdict  : fail`);
     }
   }
 

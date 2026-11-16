@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 /**
- * refs/design-resources/linkcheck.mjs — katalogdaki her linki dener, ölü olanları ayırır.
+ * refs/design-resources/linkcheck.mjs — probes every link in the catalog and separates the dead ones.
  *
- * Girdi : rows.json (analyze.mjs üretir)
- * Çıktı : link-health.json (ham sonuç) · olu-linkler.md (tüm sorunlular)
- *         olu-linkler-kesin.md (yalnız 404/410/DNS yok — gerçekten ölü)
+ * Input  : rows.json (produced by analyze.mjs)
+ * Output : link-health.json (raw result) · olu-linkler.md (everything problematic)
+ *          olu-linkler-kesin.md (404/410/no DNS only — genuinely dead)
  *
- * Kullanım:
- *   node refs/design-resources/linkcheck.mjs                 # 1249 link, ~2 dk
- *   node refs/design-resources/linkcheck.mjs --limit 100     # ilk 100 kayıt (hızlı deneme)
+ * Usage:
+ *   node refs/design-resources/linkcheck.mjs                 # 1249 links, ~2 min
+ *   node refs/design-resources/linkcheck.mjs --limit 100     # first 100 records (quick trial)
  *   node refs/design-resources/linkcheck.mjs --concurrency 40
  *
- * Not: 403/429 dönenler ölü sayılmaz — bot korumasıdır, çoğu sağdır.
+ * Note: 403/429 responses are not counted as dead — that is bot protection, mostly healthy.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -74,18 +74,18 @@ const blocked = results.filter((row) => [401, 402, 403, 429].includes(row.status
 
 const row = (entry) => `| ${entry.section} | ${entry.name.replace(/\|/g, '\\|')} | ${entry.url} | ${entry.status || entry.error} |`;
 const table = (entries) =>
-  ['| Bolum | Ad | URL | Durum |', '|---|---|---|---|', ...entries.map(row)].join('\n') + '\n';
+  ['| Section | Name | URL | Status |', '|---|---|---|---|', ...entries.map(row)].join('\n') + '\n';
 
 fs.writeFileSync(path.join(HERE, 'link-health.json'), JSON.stringify(results));
 fs.writeFileSync(
   path.join(HERE, 'olu-linkler.md'),
-  `# Sorunlu linkler (${dead.length}/${results.length})\n\n` +
-    '403/429 cogu bot korumasi; gercek oluler icin `olu-linkler-kesin.md`.\n\n' +
+  `# Problematic links (${dead.length}/${results.length})\n\n` +
+    'Most 403/429 responses are bot protection; for the genuinely dead see `olu-linkler-kesin.md`.\n\n' +
     table(dead),
 );
 fs.writeFileSync(
   path.join(HERE, 'olu-linkler-kesin.md'),
-  `# Kesin olu linkler (${gone.length}/${results.length})\n\n` + table(gone),
+  `# Confirmed dead links (${gone.length}/${results.length})\n\n` + table(gone),
 );
 
 const errorCounts = dead.reduce((acc, entry) => {
@@ -93,10 +93,10 @@ const errorCounts = dead.reduce((acc, entry) => {
   return acc.set(key, (acc.get(key) ?? 0) + 1);
 }, new Map());
 
-console.log(`denenen: ${results.length} | erisilebilir: ${results.length - dead.length} | sorunlu: ${dead.length}`);
-console.log(`kesin olu: ${gone.length} | bot korumasi: ${blocked.length}`);
-console.log('\n== sorun turleri ==');
+console.log(`probed: ${results.length} | reachable: ${results.length - dead.length} | problematic: ${dead.length}`);
+console.log(`confirmed dead: ${gone.length} | bot protection: ${blocked.length}`);
+console.log('\n== problem types ==');
 for (const [key, count] of [...errorCounts].sort((a, b) => b[1] - a[1])) {
   console.log(String(count).padStart(4), key);
 }
-console.log('\n-> link-health.json, olu-linkler.md, olu-linkler-kesin.md yazildi');
+console.log('\n-> wrote link-health.json, olu-linkler.md, olu-linkler-kesin.md');

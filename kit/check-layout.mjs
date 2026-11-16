@@ -1,25 +1,24 @@
 #!/usr/bin/env node
 /**
- * kit/check-layout.mjs — kompozisyon çeşitliliği kapısı.
+ * kit/check-layout.mjs — gateway to composition diversity.
  *
- * Neden: kit/motion-check.mjs "hareket imzası aile içinde kopyalanmasın" diyor ama
- * İSKELET için hiçbir ölçü yoktu — 145 stilin hero kompozisyonu aynıydı. Bu kapı
- * `tokens.json → layout` üzerinden şunu ölçer:
+ * Reason: kit/motion-check.mjs says "do not copy motion signature within family" but
+ * There were no dimensions for SKELETON — the hero composition of all 145 styles was the same. this door
+ * Measures via `tokens.json → layout`:
  *
- *   kapsam      : her stilde layout var, değerler layouts.json'da tanımlı
- *   aile        : aile içinde yeterli sayıda farklı hero (aile ≥8 ise ≥3)
- *   parmak izi  : aile içinde ≥min(3, n) farklı hero|nav kombinasyonu
- *   tavan       : hiçbir parmak izi stil sayısının %25'ini, hiçbir hero %35'ini geçmez
- *   canlılık    : her arketip en az 4 stilde kullanılır (ölü arketip yok)
- *   şablon      : page.html yer tutucuları taşır ve
- *                 birbirinden YALNIZ data-theme ile ayrılır (sessiz şablon drift'i yok)
+ * scope: each style has a layout, the values are defined in layouts.json
+ * family: sufficient number of different heroes within the family (≥3 if family ≥8)
+ * fingerprint : ≥min(3, n) different hero|nav combinations within family
+ * ceiling: no fingerprint exceeds 25% of the style count, no hero exceeds 35%
+ * vitality: each archetype is used in at least 4 styles (no dead archetypes)
+ * template: carries page.html placeholders and
+ * separated from each other by data-theme ONLY (no silent template drift)
  *
- * Kullanım:
- *   node kit/check-layout.mjs              # kapı (hata varsa exit 1)
- *   node kit/check-layout.mjs --json
- *   node kit/check-layout.mjs --self-test  # kural setinin no-op olmadığını kanıtlar
- *   node kit/check-layout.mjs --report     # dağılım tablosu (hata yoksa da yazar)
- */
+ * Usage:
+ * node kit/check-layout.mjs # door (exit 1 if error)
+ * node kit/check-layout.mjs --json
+ * node kit/check-layout.mjs --self-test # proves the ruleset is no-op
+ * node kit/check-layout.mjs --report # distribution table (writes even if there are no errors)*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -60,7 +59,7 @@ function discover() {
         dirName: d.name,
         num,
         slug: tokens.slug ?? d.name.replace(/^\d+-/, ''),
-        family: FAMILIES.find((f) => num >= f.from && num <= f.to)?.name ?? 'Diğer',
+        family: FAMILIES.find((f) => num >= f.from && num <= f.to)?.name ?? 'Other',
         version: tokens.version ?? 2,
         layout: tokens.layout ?? null,
       };
@@ -68,7 +67,7 @@ function discover() {
     .sort((a, b) => a.num - b.num);
 }
 
-/** Saf kural seti: hem gerçek hem sentetik girdiyle çalışır (self-test bunu kullanır). */
+/** Pure ruleset: works with both real and synthetic input (self-test uses this).*/
 export function checkLayout(rows) {
   const errors = [];
   const warnings = [];
@@ -78,20 +77,20 @@ export function checkLayout(rows) {
     if (!Array.isArray(plan.order) || plan.order.length !== SECTION_MARKERS.length ||
       new Set(plan.order).size !== SECTION_MARKERS.length ||
       SECTION_MARKERS.some((section) => !plan.order.includes(section))) {
-      errors.push(`section plan "${plan.id}" page.html bölümlerini tam ve tekil sıralamalı`);
+      errors.push(`section plan "${plan.id}" must list the page.html sections completely and uniquely`);
     }
   }
 
   for (const r of rows) {
     if (!r.layout) {
-      errors.push(`${r.dirName}: layout yok (şema v3 zorunlu) — node kit/assign-layouts.mjs --apply`);
+      errors.push(`${r.dirName}: missing layout (schema v3 required) — node kit/assign-layouts.mjs --apply`);
       continue;
     }
     const { hero, nav, density } = r.layout;
-    if (!HERO_IDS.includes(hero)) errors.push(`${r.dirName}: layout.hero "${hero}" tanımsız`);
-    if (!NAV_IDS.includes(nav)) errors.push(`${r.dirName}: layout.nav "${nav}" tanımsız`);
-    if (!DENSITY_IDS.includes(density)) errors.push(`${r.dirName}: layout.density "${density}" tanımsız`);
-    if (!SECTION_PLAN_IDS.includes(r.layout.sectionPlan)) errors.push(`${r.dirName}: layout.sectionPlan "${r.layout.sectionPlan}" tanımsız`);
+    if (!HERO_IDS.includes(hero)) errors.push(`${r.dirName}: layout.hero "${hero}" is undefined`);
+    if (!NAV_IDS.includes(nav)) errors.push(`${r.dirName}: layout.nav "${nav}" is undefined`);
+    if (!DENSITY_IDS.includes(density)) errors.push(`${r.dirName}: layout.density "${density}" is undefined`);
+    if (!SECTION_PLAN_IDS.includes(r.layout.sectionPlan)) errors.push(`${r.dirName}: layout.sectionPlan "${r.layout.sectionPlan}" is undefined`);
     const heroPartial = path.join(ROOT, 'kit', 'render', 'partials', `hero-${hero}.html`);
     if (HERO_IDS.includes(hero) && !fs.existsSync(heroPartial)) errors.push(`${r.dirName}: hero partial yok (hero-${hero}.html)`);
     const navPartial = path.join(ROOT, 'kit', 'render', 'partials', `nav-${nav}.html`);
@@ -114,34 +113,34 @@ export function checkLayout(rows) {
   const sectionPlans = countBy((r) => r.layout.sectionPlan);
   const fingerprints = countBy((r) => `${r.layout.hero}|${r.layout.nav}`);
 
-  // tavan: tek parmak izi / tek hero tek başına katalogu domine etmesin
+  // ceiling: one fingerprint / one hero should not dominate the catalog alone
   for (const [k, v] of fingerprints) {
     if (v / n > MAX_FP_SHARE) {
-      errors.push(`parmak izi "${k}" ${v}/${n} stil (%${Math.round((v / n) * 100)}) — tavan %${MAX_FP_SHARE * 100}`);
+      errors.push(`fingerprint "${k}" ${v}/${n} styles (${Math.round((v / n) * 100)}%) — ceiling ${MAX_FP_SHARE * 100}%`);
     }
   }
   for (const [k, v] of heroes) {
     if (v / n > MAX_HERO_SHARE) {
-      errors.push(`hero "${k}" ${v}/${n} stil (%${Math.round((v / n) * 100)}) — tavan %${MAX_HERO_SHARE * 100}`);
+      errors.push(`hero "${k}" ${v}/${n} styles (${Math.round((v / n) * 100)}%) — ceiling ${MAX_HERO_SHARE * 100}%`);
     }
   }
 
-  // canlılık: her arketip kullanılıyor mu
+  // vitality: are each archetype used?
   for (const id of HERO_IDS) {
     const v = heroes.get(id) ?? 0;
-    if (v < MIN_ARCHETYPE_USES) errors.push(`hero "${id}" yalnız ${v} stilde — en az ${MIN_ARCHETYPE_USES} (ölü arketip)`);
+    if (v < MIN_ARCHETYPE_USES) errors.push(`hero "${id}" appears in ${v} styles only — at least ${MIN_ARCHETYPE_USES} (dead archetype)`);
   }
   for (const id of NAV_IDS) {
     const v = navs.get(id) ?? 0;
-    if (v < MIN_ARCHETYPE_USES) errors.push(`nav "${id}" yalnız ${v} stilde — en az ${MIN_ARCHETYPE_USES} (ölü arketip)`);
+    if (v < MIN_ARCHETYPE_USES) errors.push(`nav "${id}" appears in ${v} styles only — at least ${MIN_ARCHETYPE_USES} (dead archetype)`);
   }
   for (const plan of LAYOUTS.sections) {
     const used = sectionPlans.get(plan.id) ?? 0;
-    if (used < MIN_ARCHETYPE_USES) errors.push(`section plan "${plan.id}" yalnız ${used} stilde — en az ${MIN_ARCHETYPE_USES}`);
-    if (used / n > 0.35) errors.push(`section plan "${plan.id}" ${used}/${n} stil (%${Math.round((used / n) * 100)}) — tavan %35`);
+    if (used < MIN_ARCHETYPE_USES) errors.push(`section plan "${plan.id}" is used in ${used} styles only — at least ${MIN_ARCHETYPE_USES}`);
+    if (used / n > 0.35) errors.push(`section plan "${plan.id}" ${used}/${n} styles (${Math.round((used / n) * 100)}%) — ceiling 35%`);
   }
 
-  // aile içi çeşitlilik
+  // within-family diversity
   const families = new Map();
   for (const r of rows) {
     if (!families.has(r.family)) families.set(r.family, []);
@@ -153,15 +152,15 @@ export function checkLayout(rows) {
     const heroTarget = list.length >= 8 ? 3 : Math.min(2, list.length);
     const fpTarget = Math.min(3, list.length);
     if (heroSet.size < heroTarget) {
-      errors.push(`aile "${family}" (${list.length} stil): ${heroSet.size} farklı hero — en az ${heroTarget}`);
+      errors.push(`family "${family}" (${list.length} styles): ${heroSet.size} distinct heroes — at least ${heroTarget}`);
     }
     if (fpSet.size < fpTarget) {
-      errors.push(`aile "${family}" (${list.length} stil): ${fpSet.size} farklı hero|nav — en az ${fpTarget}`);
+      errors.push(`family "${family}" (${list.length} styles): ${fpSet.size} distinct hero|nav — at least ${fpTarget}`);
     }
-    if (list.length >= 8 && densities.size < 2) warnings.push(`aile "${family}": yoğunluk çeşitliliği yok`);
+    if (list.length >= 8 && densities.size < 2) warnings.push(`family "${family}": no density variety`);
   }
 
-  // şablon sözleşmesi: yer tutucular (v6: tek sayfa şablonu)
+  // template agreement: placeholders (v6: single page template)
   const lightTpl = path.join(ROOT, 'kit', 'render', 'page.html');
   for (const [label, p] of [['page.html', lightTpl]]) {
     if (!fs.existsSync(p)) {
@@ -194,46 +193,46 @@ export function checkLayout(rows) {
   };
 }
 
-/** Kural setinin gerçekten yakaladığını kanıtlar: her senaryo TEK bir hata üretmeli. */
+/** Proves that the ruleset really captures: each scenario must produce a SINGLE error.*/
 function selfTest() {
   const rows = discover();
   if (!rows.length) {
-    console.log('× self-test: stil bulunamadı');
+    console.log('× self-test: style not found');
     return 1;
   }
   const base = checkLayout(rows);
   if (base.errors.length) {
-    console.log('× self-test: gerçek katalog zaten hatalı, sentetik test anlamsız');
+    console.log('× self-test: real catalog is already faulty, synthetic test is pointless');
     return 1;
   }
 
   const clone = () => rows.map((r) => ({ ...r, layout: { ...r.layout } }));
   const scenarios = [
     {
-      name: 'tekdüzelik: tüm stiller aynı hero|nav',
+      name: 'uniformity: all styles are the same hero|nav',
       mutate: (rs) => rs.forEach((r) => (r.layout = { ...r.layout, hero: 'split', nav: 'inline' })),
-      expect: /parmak izi "split\|inline"/,
+      expect: /fingerprint "split\|inline"/,
     },
     {
-      name: 'eksik layout',
+      name: 'missing layout',
       mutate: (rs) => (rs[0].layout = null),
-      expect: /layout yok/,
+      expect: /missing layout/,
     },
     {
-      name: 'tanımsız arketip',
+      name: 'undefined archetype',
       mutate: (rs) => (rs[1].layout = { ...rs[1].layout, hero: 'yok-boyle-hero' }),
-      expect: /tanımsız/,
+      expect: /is undefined/,
     },
     {
-      name: 'aile içi kopya: bir ailenin tüm stilleri aynı',
+      name: 'intra-family copy: all styles of a family are the same',
       mutate: (rs) => {
-        const fam = rs.find((r) => r.family === 'Veri & Gösterge')?.family ?? rs[0].family;
+        const fam = rs.find((r) => r.family === 'Data & Indicator')?.family ?? rs[0].family;
         rs.filter((r) => r.family === fam).forEach((r) => (r.layout = { ...r.layout, hero: 'product', nav: 'utility' }));
       },
-      expect: /aile "(Veri & Gösterge|.*)"/,
+      expect: /family "(Data & Indicator|.*)"/,
     },
     {
-      name: 'ölü arketip: sticky hiç kullanılmıyor',
+      name: 'dead archetype: sticky is never used',
       mutate: (rs) => rs.forEach((r) => {
         if (r.layout.hero === 'sticky') r.layout = { ...r.layout, hero: 'split' };
       }),
@@ -248,45 +247,45 @@ function selfTest() {
     const out = checkLayout(rs);
     const hit = out.errors.some((e) => s.expect.test(e));
     if (hit) {
-      console.log(`✓ yakalandı: ${s.name}`);
+      console.log(`✓ caught: ${s.name}`);
     } else {
       failed += 1;
-      console.log(`× KAÇTI: ${s.name} (beklenen /${s.expect.source}/)`);
-      if (out.errors.length) console.log(`   üretilen hatalar: ${out.errors.slice(0, 3).join(' | ')}`);
+      console.log(`× MISSED: ${s.name} (expected /${s.expect.source}/)`);
+      if (out.errors.length) console.log(`   produced errors: ${out.errors.slice(0, 3).join(' | ')}`);
     }
   }
 
-  // şablon sözleşmesi testi: yer tutucu silinince yakalanmalı (geçici kopya ile)
+  // template contract test: catch when placeholder is deleted (with temporary copy)
   const lightTpl = path.join(ROOT, 'kit', 'render', 'page.html');
   const backup = fs.readFileSync(lightTpl, 'utf8');
   try {
     fs.writeFileSync(lightTpl, backup.replace('<!-- HERO -->', ''));
     const out = checkLayout(rows);
-    if (out.errors.some((e) => /HERO --> yer tutucusu yok/.test(e))) console.log('✓ yakalandı: şablondan HERO yer tutucusu silinmesi');
+    if (out.errors.some((e) => /HERO --> yer tutucusu yok/.test(e))) console.log('✓ caught: deleting HERO placeholder from template');
     else {
       failed += 1;
-      console.log('× KAÇTI: şablondan HERO yer tutucusu silinmesi');
+      console.log('× MISSED: deleting HERO placeholder from template');
     }
   } finally {
     fs.writeFileSync(lightTpl, backup);
   }
 
-  console.log(failed ? `\n× self-test: ${failed} senaryo kaçtı` : '\n✓ self-test: kural seti no-op değil');
+  console.log(failed ? `\n× self-test: ${failed} scenarios missed` : '\n✓ self-test: rule set is not no-op');
   return failed ? 1 : 0;
 }
 
 function printReport(stats) {
   if (!stats.styles) return;
   const pad = (s, w) => String(s).padEnd(w);
-  console.log(`\n— hero dağılımı (${stats.styles} stil) —`);
+  console.log(`\n— hero distribution (${stats.styles} styles) —`);
   for (const [k, v] of stats.heroes) console.log(`  ${pad(k, 14)} ${String(v).padStart(3)}  %${Math.round((v / stats.styles) * 100)}`);
-  console.log('— nav dağılımı —');
+  console.log('— nav distribution —');
   for (const [k, v] of stats.navs) console.log(`  ${pad(k, 14)} ${String(v).padStart(3)}`);
-  console.log('— yoğunluk —');
+  console.log('— density —');
   for (const [k, v] of stats.densities) console.log(`  ${pad(k, 14)} ${String(v).padStart(3)}`);
   console.log(`\n— parmak izi (${stats.fingerprints.length} kombinasyon) —`);
   for (const [k, v] of stats.fingerprints) console.log(`  ${pad(k, 22)} ${String(v).padStart(3)}`);
-  console.log('\n— aile çeşitliliği —');
+  console.log('\n— family diversity —');
   for (const f of stats.families) console.log(`  ${pad(f.family, 24)} n=${String(f.n).padStart(2)}  hero=${f.heroes}  fp=${f.fingerprints}`);
 }
 
@@ -305,7 +304,7 @@ function main() {
     const top = result.stats.fingerprints?.[0];
     if (top) {
       const share = Math.round((top[1] / result.stats.styles) * 100);
-      console.log(`kompozisyon: ${result.stats.fingerprints.length} farklı hero|nav · en kalabalık ${top[0]} = ${top[1]} stil (%${share})`);
+      console.log(`composition: ${result.stats.fingerprints.length} distinct hero|nav · busiest ${top[0]} = ${top[1]} styles (${share}%)`);
     }
   }
   if (REPORT) printReport(result.stats);
@@ -313,10 +312,10 @@ function main() {
   for (const w of result.warnings) console.log(`! ${w}`);
   if (result.errors.length) {
     for (const e of result.errors) console.log(`× ${e}`);
-    console.log(`\n${result.errors.length} kompozisyon ihlali`);
+    console.log(`\n${result.errors.length} composition violations`);
     return 1;
   }
-  console.log(`✓ kompozisyon kapısı temiz (${rows.length} stil · ${result.stats.fingerprints.length} parmak izi)`);
+  console.log(`✓ composition gate clean (${rows.length} styles · ${result.stats.fingerprints.length} fingerprints)`);
   return 0;
 }
 

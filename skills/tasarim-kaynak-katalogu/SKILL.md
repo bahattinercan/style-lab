@@ -47,7 +47,7 @@ This skill **finds assets and tools**. It does not choose styles, produce tokens
 | Gallery/inspiration | `Design Inspiration` (48) |
 
 Section names are **English** and **framework-oriented** (React/Vue/Angular/Svelte are separate). Searching with
-Turkish keywords misses most records: use `color` not "renk", `font` not "yazı tipi", `icon` not "simge".
+Search in English: the records use `color`, `font`, `icon`; translated keywords miss most entries.
 
 ## Procedure
 

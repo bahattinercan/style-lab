@@ -113,7 +113,7 @@ function selfTest() {
 
 if (process.argv.includes('--self-test')) {
   try { selfTest(); console.log('check-visual: self-test temiz'); }
-  catch (error) { console.error('check-visual: self-test başarısız: ' + error.message); process.exitCode = 1; }
+  catch (error) { console.error('check-visual: self-test failed:' + error.message); process.exitCode = 1; }
 } else {
   const styles = path.join(ROOT, 'styles');
   const entries = fs.readdirSync(styles, { withFileTypes: true })

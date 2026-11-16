@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 /**
- * kit/build-slim-index.mjs — ajan için hafif katalog indeksi (`kit/dist/index.slim.json`).
+ * kit/build-slim-index.mjs — lightweight catalog index for the agent (`kit/dist/index.slim.json`).
  *
- * Neden: `kit/styles.index.json` 1 MB (145 × 27 sahne yolu + gömülü token kopyası) — bir ajanın
- * okuyacağı dosya değil. Bu script seçim kararı için gereken **en az** alanı üretir:
- * slug, ad, aile, tek cümle, etiketler, kompozisyon, uyumlu komşular, yollar.
- * v6: koyu mod ve hareket katmanı kaldırıldı; indeks yalnız seçim kararı için gerekeni taşır.
+ * Reason: `kit/styles.index.json` 1 MB (145 × 27 stage path + embedded token copy) — an agent's
+ * is not the file it will read. This script produces the **minimum** space required for the selection decision:
+ * slug, name, family, single sentence, tags, composition, compatible neighbors, paths.
+ * v6: dark mode and motion layer removed; The index carries only what is needed for the selection decision.
  *
- * Kullanım:
- *   node kit/build-slim-index.mjs           # yaz
- *   node kit/build-slim-index.mjs --check   # güncel mi? değilse exit 1
- *   node kit/build-slim-index.mjs --json    # özet
- */
+ * Usage:
+ * write node kit/build-slim-index.mjs #
+ * node kit/build-slim-index.mjs --check # is it up to date? otherwise exit 1
+ * node kit/build-slim-index.mjs --json # summary*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -44,12 +43,12 @@ const doc = {
   count: styles.length,
   families: families.families.map((f) => ({ name: f.name, from: f.from, to: f.to })),
   contract: {
-    dir: 'dosya yolu: styles/<num>-<slug>/ (style.md · tokens.json · shots/01-page.png)',
-    tag: 'tek cümlelik kimlik',
-    tags: '3 etiket (arama/niyet eşleşmesi)',
-    layout: 'kompozisyon arketipi: hero|nav|density (kit/render/layouts.json)',
-    compatible: 'garnitür olarak kullanılabilir stiller (baskın değil)',
-    forbidden: 'birlikte kullanılmayacak stiller',
+    dir: 'file path: styles/<num>-<slug>/ (style.md · tokens.json · shots/01-page.png)',
+    tag: 'one sentence identity',
+    tags: '3 tags (search/intent match)',
+    layout: 'composition archetype: hero|nav|density (kit/render/layouts.json)',
+    compatible: 'Styles that can be used as garnishes (not dominant)',
+    forbidden: 'Styles that cannot be used together',
   },
   styles,
 };
@@ -65,13 +64,13 @@ if (JSON_OUT) {
 if (CHECK) {
   const current = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : '';
   const synced = current === serialized;
-  console.log(`slim indeks · ${doc.count} stil · ${kb} KB · ${synced ? 'senkron' : 'GÜNCEL DEĞİL'}`);
+  console.log(`slim index · ${doc.count} styles · ${kb} KB · ${synced ? 'in sync' : 'NOT CURRENT'}`);
   if (!synced) {
-    console.log('  düzelt: node kit/build-slim-index.mjs');
+    console.log('fix: node kit/build-slim-index.mjs');
     process.exit(1);
   }
   if (serialized.length > 150 * 1024) {
-    console.log(`  ✗ dosya 150 KB sınırını aştı (${kb} KB) — ajan okunabilirliği düşer`);
+    console.log(`  ✗ the file passed the 150 KB limit (${kb} KB) — agent readability drops`);
     process.exit(1);
   }
   process.exit(0);
@@ -79,4 +78,4 @@ if (CHECK) {
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, serialized);
-console.log(`yazıldı: kit/dist/index.slim.json · ${doc.count} stil · ${kb} KB`);
+console.log(`written: kit/dist/index.slim.json · ${doc.count} styles · ${kb} KB`);

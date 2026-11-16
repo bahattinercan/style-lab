@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="tr" data-style="minimalism">
+<html lang="en" data-style="minimalism">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stil önizlemesi · Tasarım Stilleri</title><script src="live-styles.js"></script>
+<title>Style preview · Design Styles</title><script src="live-styles.js"></script>
 <script>
 (() => {
   const params = new URLSearchParams(location.search);
@@ -15,8 +15,8 @@
 })();
 </script>
 <script data-style-boot>
-    /* Stil ilk boyamadan önce URL'den gelir: <html data-style> runtime'da değişirse
-       gövde metni bayat hesaplanabilir; stil değişiminde sayfa yenilenir. */
+    /*The style comes from the URL before the first paint: <html data-style> if it changes at runtime
+       body text can be considered stale; The page is refreshed when the style changes.*/
     (() => {
       const m = location.search.match(/[?&]style=([a-z0-9-]+)/);
       if (m) document.documentElement.dataset.style = m[1];
@@ -25,8 +25,8 @@
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
-  /* Yalnızca sözleşme değişkenleri: --bg --surface --ink --accent --line --radius --font-* --space-*
-     Stile özgü sabit renk, gölge veya yarıçap yazılmaz (v6 kural 3). */
+  /*Contract variables only: --bg --surface --ink --accent --line --radius --font-* --space-*
+     No style-specific fixed colors, shadows, or radii are written (v6 rule 3).*/
   *, *::before, *::after { box-sizing: border-box; }
   html { color-scheme: light; }
   body {
@@ -47,7 +47,7 @@
     text-transform: uppercase; color: var(--ink-faint);
   }
 
-  /* ---------- üst bar (arayüz kabuğu: stil değişse de sabit) ---------- */
+  /*---------- top bar (interface shell: fixed although style changes) ----------*/
   .bar {
     position: sticky; top: 0; z-index: 5;
     display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3);
@@ -67,7 +67,7 @@
   .bar a:hover, .bar button:hover { border-color: var(--accent); }
   .bar select { min-width: 220px; }
 
-  /* ---------- içerik ---------- */
+  /*---------- content ----------*/
   .hero { padding: clamp(48px, 9vw, 104px) 0 clamp(32px, 5vw, 56px); }
   .eyebrow { color: var(--accent); margin-bottom: var(--space-4); }
   .hero h1 { font-size: clamp(34px, 6.2vw, 68px); max-width: 18ch; }
@@ -141,42 +141,42 @@
 </head>
 <body>
 
-<nav class="bar" aria-label="Önizleme araç çubuğu">
-  <a href="gallery.html">← galeri</a>
-  <b>Stil önizlemesi</b>
+<nav class="bar" aria-label="Preview toolbar">
+  <a href="gallery.html">← gallery</a>
+  <b>Style preview</b>
   <span class="mono" id="styleMeta">—</span>
   <span class="grow"></span>
-  <label class="mono" for="styleSel">stil</label>
-  <select id="styleSel" aria-label="Stil seç"></select>
-  <a id="fullShot" href="#" target="_blank" rel="noopener">tam sayfa ↗</a>
-  <a href="../katalog.html">katalog</a>
+  <label class="mono" for="styleSel">style</label>
+  <select id="styleSel" aria-label="Choose style"></select>
+  <a id="fullShot" href="#" target="_blank" rel="noopener">full page ↗</a>
+  <a href="../katalog.html">catalog</a>
 </nav>
 
 <header class="hero wrap">
-  <p class="mono eyebrow" id="heroMeta">tokens.css · sözleşme değişkenleri</p>
-  <h1 id="heroTitle">Bu sayfa seçili stilin token'larıyla çizilir.</h1>
+  <p class="mono eyebrow" id="heroMeta">tokens.css · contract variables</p>
+  <h1 id="heroTitle">This page is drawn with the tokens of the selected style.</h1>
   <p class="lede" id="heroLede">
-    Tipografi, renk, yarıçap ve boşluk değerleri doğrudan <code>tokens.css</code> içindeki
-    <code>[data-style]</code> bloğundan gelir. Aşağıdaki bileşenler yalnızca sözleşme
-    değişkenlerini kullanır — kendi projenize aynı değişkenlerle taşıyabilirsiniz.
+    Typography, colour, radius and spacing values come straight from the <code>[data-style]</code>
+    block in <code>tokens.css</code>. The components below use only the contract variables —
+    you can carry them into your own project with the same variables.
   </p>
   <div class="row">
-    <button class="btn" type="button">Birincil eylem</button>
-    <button class="btn ghost" type="button">İkincil</button>
-    <span class="chip on">seçili</span>
-    <span class="chip">nötr</span>
-    <span class="chip">bilgi</span>
+    <button class="btn" type="button">Primary action</button>
+    <button class="btn ghost" type="button">secondary</button>
+    <span class="chip on">selected</span>
+    <span class="chip">neutral</span>
+    <span class="chip">information</span>
   </div>
 </header>
 
 <section class="block" aria-labelledby="hScale">
   <div class="wrap">
-    <h2 id="hScale">Tipografik ölçek</h2>
-    <p>Başlık, gövde ve mono yığını stil dosyasından gelir; ölçek oranı stile göre değişir.</p>
+    <h2 id="hScale">typographic scale</h2>
+    <p>The title, body, and mono stack come from the style file; scale ratio varies by style.</p>
     <div class="scale">
-      <div><span class="mono">display</span><span style="font-family:var(--font-display);font-size:clamp(28px,4vw,44px);letter-spacing:var(--tracking)">Harf aralığı ve ağırlık</span></div>
-      <div><span class="mono">heading</span><span style="font-family:var(--font-display);font-size:clamp(20px,2.6vw,28px)">Bölüm başlığı</span></div>
-      <div><span class="mono">body</span><span style="color:var(--ink-soft)">Gövde metni 16px, satır yüksekliği 1.6 — okunabilirlik eşiği.</span></div>
+      <div><span class="mono">display</span><span style="font-family:var(--font-display);font-size:clamp(28px,4vw,44px);letter-spacing:var(--tracking)">Letter spacing and weight</span></div>
+      <div><span class="mono">heading</span><span style="font-family:var(--font-display);font-size:clamp(20px,2.6vw,28px)">Episode title</span></div>
+      <div><span class="mono">body</span><span style="color:var(--ink-soft)">Body text 16px, line height 1.6 — readability threshold.</span></div>
       <div><span class="mono">mono</span><span style="font-family:var(--font-mono);font-size:13px">const style = "data-style";</span></div>
     </div>
   </div>
@@ -184,29 +184,29 @@
 
 <section class="block" aria-labelledby="hComp">
   <div class="wrap">
-    <h2 id="hComp">Bileşenler</h2>
-    <p>Form alanı, durum rozetleri ve kart — kontrast eşikleri ölçülmüş token'larla.</p>
+    <h2 id="hComp">Components</h2>
+    <p>Form field, status badges, and card — with tokens with measured contrast thresholds.</p>
     <div class="field">
       <label for="demoInput">E-posta</label>
-      <input id="demoInput" type="email" placeholder="ornek@alan.com" autocomplete="email">
-      <small>Odak halkası her stilde 3:1 üzerinde tutulur.</small>
+      <input id="demoInput" type="email" placeholder="example@alan.com" autocomplete="email">
+      <small>The focus ring is kept on 3:1 in every style.</small>
     </div>
     <div class="grid3">
       <article class="card">
-        <p class="mono">yüzey</p>
-        <h3>Kart başlığı</h3>
-        <p>Yüzey, çizgi ve gölge stilin malzeme dilini taşır: düz, kâğıt, cam veya metal.</p>
+        <p class="mono">surface</p>
+        <h3>card title</h3>
+        <p>Surface, line and shadow convey the material language of the style: flat, paper, glass or metal.</p>
       </article>
       <article class="card">
         <p class="mono">aksan</p>
-        <h3>Tek vurgu</h3>
-        <p>Aksan rengi eylem içindir; dekorasyon için ikinci bir doygun renk eklenmez.</p>
-        <div class="row" style="margin-top:var(--space-4)"><button class="btn" type="button">Devam</button></div>
+        <h3>single emphasis</h3>
+        <p>Accent color is for action; a second saturated color is not added for decoration.</p>
+        <div class="row" style="margin-top:var(--space-4)"><button class="btn" type="button">Continue</button></div>
       </article>
       <article class="card">
-        <p class="mono">durum</p>
+        <p class="mono">situation</p>
         <h3>Rozetler</h3>
-        <p><span class="pill ok">hazır</span> <span class="pill">beklemede</span> <span class="pill">arşiv</span></p>
+        <p><span class="pill ok">ready</span> <span class="pill">beklemede</span> <span class="pill">archive</span></p>
       </article>
     </div>
   </div>
@@ -214,25 +214,25 @@
 
 <section class="block" aria-labelledby="hTable">
   <div class="wrap">
-    <h2 id="hTable">Veri</h2>
-    <p>Tablo yoğunluğu stile göre değişir; sayısal kolonlar mono yığından gelir.</p>
+    <h2 id="hTable">Data</h2>
+    <p>Painting density varies by style; numeric columns come from mono stack.</p>
     <table>
-      <caption>Örnek tablo</caption>
+      <caption>sample table</caption>
       <thead>
-        <tr><th scope="col">Kalem</th><th scope="col">Durum</th><th scope="col" style="text-align:right">Değer</th></tr>
+        <tr><th scope="col">Kalem</th><th scope="col">Status</th><th scope="col" style="text-align:right">Value</th></tr>
       </thead>
       <tbody>
-        <tr><td>Başlık ölçeği</td><td><span class="pill ok">uyumlu</span></td><td class="num">1.250</td></tr>
-        <tr><td>Kontrast (gövde)</td><td><span class="pill ok">uyumlu</span></td><td class="num">4.5:1</td></tr>
-        <tr><td>Odak halkası</td><td><span class="pill ok">uyumlu</span></td><td class="num">3.0:1</td></tr>
+        <tr><td>Title scale</td><td><span class="pill ok">uyumlu</span></td><td class="num">1.250</td></tr>
+        <tr><td>Contrast (body)</td><td><span class="pill ok">uyumlu</span></td><td class="num">4.5:1</td></tr>
+        <tr><td>focus ring</td><td><span class="pill ok">uyumlu</span></td><td class="num">3.0:1</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
 <footer class="foot wrap">
-  <span class="grow mono" id="footMeta">tokens.css · tek sayfa vitrin</span>
-  <a class="chip" href="gallery.html">galeriye dön</a>
+  <span class="grow mono" id="footMeta">tokens.css · single page viewport</span>
+  <a class="chip" href="gallery.html">return to gallery</a>
 </footer>
 
 <script src="live-styles.js"></script>
@@ -258,17 +258,17 @@
     });
   } else {
     sel.disabled = true;
-    sel.innerHTML = '<option>liste yüklenemedi</option>';
+    sel.innerHTML = '<option>failed to load list</option>';
   }
 
   const label = entry ? `${entry.num} · ${entry.name} · ${entry.family}` : slug;
   meta.textContent = label;
   footMeta.textContent = label + ' · tokens.css';
-  heroTitle.textContent = entry ? entry.name + ' — canlı stil önizlemesi' : heroTitle.textContent;
-  document.title = (entry ? entry.name : 'Stil') + ' · önizleme · Tasarım Stilleri';
+  heroTitle.textContent = entry ? entry.name + '— live style preview' : heroTitle.textContent;
+  document.title = (entry ? entry.name : 'Style') + ' · preview · Design Styles';
 
   if (entry) {
-    // tam sayfa görseli: galeriyle aynı klasör düzeni (styles/<nn-slug>/shots/01-page.png)
+    // full page image: same folder layout as gallery (styles/<nn-slug>/shots/01-page.png)
     fullShot.href = '../styles/' + entry.num + '-' + entry.slug + '/shots/01-page.png';
   } else {
     fullShot.hidden = true;

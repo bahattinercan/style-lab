@@ -4,10 +4,10 @@
     "slug": "terrazzo-stone",
     "name": "Terrazzo Stone",
     "band": "materyal",
-    "tagline": "Terrazzo yüzey: taş kırıntısı doku, kireç zemin, tek kiremit accent ve sade künye.",
-    "feeling": "serin, dokulu, \"taş cilalı\"",
-    "best": "mimarlık/iç mekân, malzeme kataloğu, döşeme ürünü",
-    "avoid": "yazılım paneli",
+    "tagline": "Terrazzo surface: stone-chip texture, lime background, a single tile accent and a plain spec plate.",
+    "feeling": "cool, textured, \"polished stone\"",
+    "best": "architecture/interiors, material catalogue, flooring product",
+    "avoid": "a software panel",
     "palette": {
       "bg": "#f6f4ef",
       "bg2": "#ece9e1",
@@ -32,20 +32,20 @@
     "motif": "paper",
     "grain": 0.05,
     "signature": [
-      "**Taş kırıntısı:** yalnız görsel kutuda noktasal doku.",
-      "**Kireç zemin:** sıcak nötr, tek accent.",
-      "**Keskin kenar:** 0–4px.",
-      "**Numune künyesi:** mono kalınlık/ölçü."
+      "**Stone chips:** speckled texture inside the image frame only.",
+      "**Lime background:** warm neutral, one accent.",
+      "**Sharp edge:** 0–4px.",
+      "**Sample plate:** mono thickness/dimensions."
     ],
     "must": [
-      "Her numunede ölçü ve yüzey bitişi.",
-      "Doku yalnız görsel katmanda.",
-      "Metin opak yüzeyde."
+      "Dimensions and surface finish on every sample.",
+      "Texture stays in the image layer only.",
+      "Text sits on opaque surfaces."
     ],
     "mustNot": [
-      "Taklit taş düğme.",
-      "Çok renkli terrazzo paleti.",
-      "Yuvarlak 12px+ kart."
+      "A fake stone button.",
+      "A multi-colour terrazzo palette.",
+      "A rounded card above 12px."
     ],
     "neighbors": {
       "compatible": [
@@ -61,30 +61,30 @@
       {
         "label": "Terrazzo (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Terrazzo",
-        "use": "malzeme bağlamı"
+        "use": "material context"
       },
       {
         "label": "Jost (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Jost",
-        "use": "başlık ve gövde"
+        "use": "heading and body"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "ölçü"
+        "use": "dimension"
       }
     ],
     "keywords": [
       "materyal",
-      "taş",
-      "doku"
+      "stone",
+      "texture"
     ],
     "industries": [
       "mimarlik",
       "eticaret"
     ],
-    "essence": "Terrazzo Stone, malzemenin kendisini gösterir: doku fotoğrafta, sayı künyede.",
-    "brief": "Terrazzo malzeme kataloğu tasarla: kireç zemin, noktasal doku yalnız görselde, mono ölçü künyesi.",
+    "essence": "Terrazzo Stone shows the material itself: texture in the photo, numbers on the plate.",
+    "brief": "Design a terrazzo material catalogue: lime background, speckled texture in images only, mono dimension plate.",
     "extraCss": "h1 { font-size: var(--type-h1); font-weight: 400; max-width: 24ch; }\nh2 { font-size: 26px; }\n.pg-card, .pg-media { border-radius: 2px; }",
     "paletteSeeds": {
       "bg": "#f6f4ef",
@@ -115,9 +115,9 @@
     "slug": "linocut-print",
     "name": "Linocut Print",
     "band": "materyal",
-    "tagline": "Linol baskı: mürekkep siyahı, kırık kenar, tek kırmızı vurgu ve el dizgisi ritmi.",
-    "feeling": "zanaat, baskı, \"kalıptan çıktı\"",
-    "best": "baskı atölyesi, sanat baskı, poster satışı",
+    "tagline": "Linocut print: ink black, broken edge, a single red highlight and hand-set rhythm.",
+    "feeling": "craft, print, \"pulled from the block\"",
+    "best": "print workshop, art prints, poster sales",
     "avoid": "kurumsal SaaS",
     "palette": {
       "bg": "#f7f3e8",
@@ -143,20 +143,20 @@
     "motif": "paper",
     "grain": 0.04,
     "signature": [
-      "**Kırık kenar:** görsel kutusunda 2px düzensiz çerçeve.",
-      "**Mürekkep siyahı:** gövde saf siyaha yakın.",
-      "**Tek kırmızı:** yalnız baskı numarası ve CTA.",
-      "**El dizgisi:** başlık sıkı, gövde serif."
+      "**Broken edge:** irregular 2px frame around the image box.",
+      "**Ink black:** body close to pure black.",
+      "**Single red:** print number and CTA only.",
+      "**Hand-set type:** tight heading, serif body."
     ],
     "must": [
-      "Her baskıda numara ve baskı adedi (12/30).",
-      "Kâğıt gramajı mono.",
-      "Kenar çerçevesi 2px."
+      "Number and edition size on every print (12/30).",
+      "Paper weight in mono.",
+      "Edge frame at 2px."
     ],
     "mustNot": [
       "Dijital gradyan.",
-      "Üçten fazla mürekkep rengi.",
-      "Yuvarlak köşe."
+      "More than three ink colours.",
+      "Rounded corners."
     ],
     "neighbors": {
       "compatible": [
@@ -172,30 +172,30 @@
       {
         "label": "Linocut (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Linocut",
-        "use": "baskı tekniği"
+        "use": "print technique"
       },
       {
         "label": "Archivo Black (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Archivo+Black",
-        "use": "kalın başlık"
+        "use": "heavy heading"
       },
       {
         "label": "EB Garamond (Google Fonts)",
         "url": "https://fonts.google.com/specimen/EB+Garamond",
-        "use": "gövde serif"
+        "use": "serif body"
       }
     ],
     "keywords": [
       "materyal",
-      "baskı",
+      "print",
       "zanaat"
     ],
     "industries": [
       "kultur",
       "eticaret"
     ],
-    "essence": "Linocut Print, baskının sınırlılığını gösterir: az renk, kalın çizgi, numaralı adet.",
-    "brief": "Linol baskı atölyesi sayfası tasarla: kâğıt zemin, mürekkep siyahı, tek kırmızı vurgu, numaralı baskı künyesi.",
+    "essence": "Linocut Print shows the limits of print: few colours, thick strokes, numbered editions.",
+    "brief": "Design a linocut workshop page: paper background, ink black, a single red highlight, numbered print plate.",
     "extraCss": "h1 { font-size: var(--type-h1); line-height: .98; max-width: 20ch; }\n.pg-media { border: 2px solid var(--ink); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
     "paletteSeeds": {
       "bg": "#f7f3e8",
@@ -226,9 +226,9 @@
     "slug": "risograph-print",
     "name": "Risograph Print",
     "band": "materyal",
-    "tagline": "Riso baskı: iki mürekkep (mavi-pembe), kayma efekti, kâğıt dokusu ve mono adet.",
-    "feeling": "deneysel, ucuza lüks, \"iki renk yeter\"",
-    "best": "bağımsız yayın, poster/zine, sanat baskı",
+    "tagline": "Risograph print: two inks (blue-pink), misregistration, paper texture and mono edition.",
+    "feeling": "experimental, cheap luxury, \"two colours are enough\"",
+    "best": "independent publishing, poster/zine, art print",
     "avoid": "kurumsal banka",
     "palette": {
       "bg": "#fbf7f2",
@@ -254,20 +254,20 @@
     "motif": "paper",
     "grain": 0.05,
     "signature": [
-      "**İki mürekkep:** mavi accent + %40 opaklık pembe ikinci ton.",
-      "**Kayma:** görselde 2px ofset gölge (accent %30).",
-      "**Kâğıt dokusu:** %5 grain.",
-      "**Mono adet:** baskı numarası."
+      "**Two inks:** blue accent + pink second tone at 40% opacity.",
+      "**Misregistration:** 2px offset shadow in images (accent at 30%).",
+      "**Paper texture:** 5% grain.",
+      "**Mono edition:** the print number."
     ],
     "must": [
-      "En fazla iki mürekkep; ikinci ton %40 opaklığı geçmez.",
-      "Baskı adedi mono.",
-      "Kayma efekti yalnız görselde."
+      "Two inks at most; the second tone never exceeds 40% opacity.",
+      "Edition size in mono.",
+      "Misregistration only inside images."
     ],
     "mustNot": [
-      "Dört renkli CMYK fotoğraf.",
+      "A four-colour CMYK photo.",
       "Gradyan.",
-      "Yuvarlak köşe."
+      "Rounded corners."
     ],
     "neighbors": {
       "compatible": [
@@ -283,30 +283,30 @@
       {
         "label": "Risograph (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Risograph",
-        "use": "iki mürekkep mantığı"
+        "use": "two-ink logic"
       },
       {
         "label": "Space Grotesk (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Space+Grotesk",
-        "use": "başlık ve gövde"
+        "use": "heading and body"
       },
       {
         "label": "Space Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Space+Mono",
-        "use": "adet/künye"
+        "use": "edition/plate"
       }
     ],
     "keywords": [
       "materyal",
       "riso",
-      "baskı"
+      "print"
     ],
     "industries": [
       "kultur",
       "eticaret"
     ],
-    "essence": "Risograph Print, kısıtı estetik yapar: iki mürekkep, kayma ve kâğıt.",
-    "brief": "Riso baskı sayfası tasarla: kâğıt zemin, mavi accent + %40 pembe, 2px kayma, mono baskı adedi.",
+    "essence": "Risograph Print turns the constraint into the aesthetic: two inks, misregistration and paper.",
+    "brief": "Design a riso print page: paper background, blue accent + 40% pink, 2px offset, mono edition number.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-media { box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 30%, transparent); }",
     "paletteSeeds": {
       "bg": "#fbf7f2",
@@ -337,10 +337,10 @@
     "slug": "denim-textile",
     "name": "Denim Textile",
     "band": "materyal",
-    "tagline": "Denim dokusu: çivit mavisi, çift dikiş çizgisi, keten zemin ve mono beden tablosu.",
-    "feeling": "dayanıklı, gündelik, \"dikiş izi\"",
-    "best": "tekstil/denim marka, beden tablosu, ürün detayı",
-    "avoid": "lüks mücevher",
+    "tagline": "Denim texture: indigo blue, double-stitch line, linen background and a mono size table.",
+    "feeling": "durable, everyday, \"stitch mark\"",
+    "best": "textile/denim brand, size table, product detail",
+    "avoid": "luxury jewellery",
     "palette": {
       "bg": "#f2f4f7",
       "bg2": "#e6eaf0",
@@ -364,20 +364,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**Çift dikiş:** bölüm ayırıcı 1px + 4px aralıklı ikinci çizgi.",
-      "**Çivit accent:** yalnız beden ve CTA.",
-      "**Beden tablosu:** mono ölçü, cm.",
-      "**Keskin kenar:** 2–4px."
+      "**Double stitch:** a 1px divider plus a second rule 4px away.",
+      "**Indigo accent:** size and CTA only.",
+      "**Size table:** mono measurements, cm.",
+      "**Sharp edge:** 2–4px."
     ],
     "must": [
-      "Beden tablosu cm ve mono.",
-      "Kumaş içeriği yazılır.",
-      "Dikiş çizgisi dekoratif, metne değmez."
+      "Size table in cm and mono.",
+      "Fabric content is stated.",
+      "The stitch line stays decorative and never touches text."
     ],
     "mustNot": [
-      "Kot pantolon ikonu yığını.",
-      "Beş renkli yıkama paleti.",
-      "Yuvarlak kart."
+      "A pile of jeans icons.",
+      "A five-colour wash palette.",
+      "A rounded card."
     ],
     "neighbors": {
       "compatible": [
@@ -392,17 +392,17 @@
       {
         "label": "Denim (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Denim",
-        "use": "kumaş/dikiş bağlamı"
+        "use": "fabric/stitch context"
       },
       {
         "label": "Space Grotesk (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Space+Grotesk",
-        "use": "başlık ailesi"
+        "use": "heading family"
       },
       {
         "label": "Courier Prime (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Courier+Prime",
-        "use": "beden tablosu"
+        "use": "size table"
       }
     ],
     "keywords": [
@@ -414,8 +414,8 @@
       "moda",
       "eticaret"
     ],
-    "essence": "Denim Textile, kumaşın dayanıklılığını dikiş çizgisi ve ölçü tablosuyla anlatır.",
-    "brief": "Denim ürün sayfası tasarla: keten-mavi zemin, çift dikiş çizgisi, mono cm beden tablosu, çivit accent.",
+    "essence": "Denim Textile explains durability through stitch lines and a measurement table.",
+    "brief": "Design a denim product page: linen-blue background, double-stitch line, mono cm size table, indigo accent.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-sec { border-bottom: 1px solid var(--line); box-shadow: 0 3px 0 -2px var(--line); }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
     "paletteSeeds": {
       "bg": "#f2f4f7",
@@ -446,9 +446,9 @@
     "slug": "cork-oak",
     "name": "Cork Oak",
     "band": "materyal",
-    "tagline": "Mantar meşesi: sıcak kahve zemin, taneli doku, yuvarlak hat ve mono üretim notu.",
-    "feeling": "doğal, hafif, \"dokunulabilir\"",
-    "best": "sürdürülebilir ürün, doğal malzeme, ambalaj",
+    "tagline": "Cork oak: warm brown background, grained texture, rounded edges and a mono production note.",
+    "feeling": "natural, light, \"tactile\"",
+    "best": "sustainable product, natural material, packaging",
     "avoid": "neon teknoloji",
     "palette": {
       "bg": "#faf5ee",
@@ -474,20 +474,20 @@
     "motif": "blob",
     "grain": 0.04,
     "signature": [
-      "**Taneli doku:** yalnız görselde, %4 grain.",
-      "**Yuvarlak hat:** 8/14px, yumuşak.",
-      "**Kahve accent:** tek sıcak vurgu.",
-      "**Üretim notu:** mono sertifika kodu."
+      "**Grained texture:** in images only, 4% grain.",
+      "**Rounded edge:** 8/14px, soft.",
+      "**Coffee accent:** a single warm highlight.",
+      "**Production note:** mono certificate code."
     ],
     "must": [
       "Sertifika/izlenebilirlik kodu mono.",
-      "Malzeme kalınlığı yazılır.",
-      "Doku metnin arkasında kullanılmaz."
+      "Material thickness is stated.",
+      "Texture is never placed behind text."
     ],
     "mustNot": [
-      "Yapay ahşap deseni.",
-      "Dört renkli doğa paleti.",
-      "Keskin 0px köşe."
+      "A fake wood pattern.",
+      "A four-colour nature palette.",
+      "Sharp 0px corners."
     ],
     "neighbors": {
       "compatible": [
@@ -503,30 +503,30 @@
       {
         "label": "Cork (material) (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Cork_(material)",
-        "use": "malzeme özellikleri"
+        "use": "material properties"
       },
       {
         "label": "Fraunces (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Fraunces",
-        "use": "başlık serif"
+        "use": "serif heading"
       },
       {
         "label": "Space Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Space+Mono",
-        "use": "üretim notu"
+        "use": "production note"
       }
     ],
     "keywords": [
       "materyal",
       "mantar",
-      "sürdürülebilir"
+      "sustainable"
     ],
     "industries": [
       "mimarlik",
       "eticaret"
     ],
-    "essence": "Cork Oak, malzemenin hafifliğini anlatır: doku, kalınlık ve izlenebilirlik.",
-    "brief": "Mantar malzeme sayfası tasarla: sıcak zemin, yuvarlak hat, %4 taneli doku, mono üretim kodu.",
+    "essence": "Cork Oak conveys the lightness of the material: texture, thickness and traceability.",
+    "brief": "Design a cork material page: warm background, rounded edges, 4% grained texture, mono production code.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-card, .pg-media { border-radius: 14px; }",
     "paletteSeeds": {
       "bg": "#faf5ee",
@@ -557,10 +557,10 @@
     "slug": "cast-concrete",
     "name": "Cast Concrete",
     "band": "materyal",
-    "tagline": "Beton döküm: gri skala, kalıp izi, keskin blok ve mono dayanım sınıfı.",
-    "feeling": "ağır, yapısal, \"C30/37\"",
-    "best": "mimarlık, yapı malzemesi, inşaat portfolyosu",
-    "avoid": "çocuk uygulaması",
+    "tagline": "Cast concrete: grey scale, formwork seam, sharp block and mono strength class.",
+    "feeling": "heavy, structural, \"C30/37\"",
+    "best": "architecture, building material, construction portfolio",
+    "avoid": "a children's app",
     "palette": {
       "bg": "#eef0f1",
       "bg2": "#e2e5e7",
@@ -584,20 +584,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**Kalıp izi:** kart üstünde 1px yatay çizgi dizisi.",
-      "**Kalın blok:** kartlar arasında 2px boşluk, gölge yok.",
-      "**Gri skala:** accent koyu gri-mavi, dekoratif renk yok.",
-      "**Dayanım:** mono `C30/37`."
+      "**Formwork seam:** a series of 1px horizontal rules across the card.",
+      "**Heavy block:** 2px gaps between cards, no shadow.",
+      "**Grey scale:** the accent is a dark grey-blue, no decorative colour.",
+      "**Strength class:** mono `C30/37`."
     ],
     "must": [
-      "Her blokta ölçü ve dayanım sınıfı.",
-      "Kenar 0px, gölge yok.",
-      "Görsel S/B veya düşük doygunluk."
+      "Dimensions and strength class on every block.",
+      "0px edges, no shadow.",
+      "Imagery in black and white or low saturation."
     ],
     "mustNot": [
       "Renkli degrade.",
-      "Yuvarlak köşe.",
-      "Süs illüstrasyon."
+      "Rounded corners.",
+      "A decorative illustration."
     ],
     "neighbors": {
       "compatible": [
@@ -613,30 +613,30 @@
       {
         "label": "Concrete (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Concrete",
-        "use": "dayanım sınıfı"
+        "use": "strength class"
       },
       {
         "label": "Archivo Black (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Archivo+Black",
-        "use": "blok başlık"
+        "use": "block heading"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "sınıf/ölçü"
+        "use": "class/dimension"
       }
     ],
     "keywords": [
       "materyal",
       "beton",
-      "mimarlık"
+      "architecture"
     ],
     "industries": [
       "mimarlik",
       "insaat"
     ],
-    "essence": "Cast Concrete, yapıyı rakamla anlatır: sınıf, ölçü, tolerans.",
-    "brief": "Beton malzeme sayfası tasarla: gri skala, keskin blok, kalıp izi çizgisi, mono dayanım sınıfı.",
+    "essence": "Cast Concrete describes structure in numbers: class, dimension, tolerance.",
+    "brief": "Design a concrete material page: grey scale, sharp blocks, formwork seam line, mono strength class.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.panel, .pg-card, .pg-media { border-radius: 0; box-shadow: none; }\n.pg-card { border-top: 4px solid var(--ink); }",
     "paletteSeeds": {
       "bg": "#eef0f1",
@@ -667,10 +667,10 @@
     "slug": "enamel-jewel",
     "name": "Enamel Jewel",
     "band": "materyal",
-    "tagline": "Mineli mücevher: gece moru, altın çizgi, küçük ölçek ve mono taş bilgisi.",
-    "feeling": "parlak, değerli, \"tek taş\"",
-    "best": "mücevher, saat, sınırlı koleksiyon",
-    "avoid": "hızlı tüketim",
+    "tagline": "Enamel jewellery: midnight purple, gold line, small scale and mono stone details.",
+    "feeling": "bright, precious, \"one stone\"",
+    "best": "jewellery, watches, limited collection",
+    "avoid": "fast-moving consumer goods",
     "palette": {
       "bg": "#120f1a",
       "bg2": "#171322",
@@ -694,20 +694,20 @@
     ],
     "motif": "rings",
     "signature": [
-      "**Altın çizgi:** 1px accent, %70 opaklık.",
-      "**Küçük ölçek:** gövde 14px, başlık 40px — mücevher gibi ölçülü.",
-      "**Taş bilgisi:** mono karat/kesim.",
-      "**Gece moru:** tek zemin."
+      "**Gold line:** 1px accent at 70% opacity.",
+      "**Small scale:** 14px body, 40px heading — measured like jewellery.",
+      "**Stone details:** mono carat/cut.",
+      "**Midnight purple:** a single background."
     ],
     "must": [
-      "Her parçada taş, karat ve maden.",
-      "Görsel 1:1, tek nesne.",
-      "Accent yalnız çizgi ve fiyat."
+      "Stone, carat and metal for every piece.",
+      "Images at 1:1, a single object.",
+      "Accent only on lines and prices."
     ],
     "mustNot": [
-      "Parıltı efekti.",
-      "Beş renkli taş paleti.",
-      "Yuvarlak kart."
+      "A sparkle effect.",
+      "A five-colour stone palette.",
+      "A rounded card."
     ],
     "neighbors": {
       "compatible": [
@@ -723,7 +723,7 @@
       {
         "label": "Vitreous enamel (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Vitreous_enamel",
-        "use": "malzeme bağlamı"
+        "use": "material context"
       },
       {
         "label": "Cormorant Garamond (Google Fonts)",
@@ -733,20 +733,20 @@
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "taş bilgisi"
+        "use": "stone details"
       }
     ],
     "keywords": [
       "materyal",
-      "mücevher",
+      "jewellery",
       "mine"
     ],
     "industries": [
       "moda",
       "eticaret"
     ],
-    "essence": "Enamel Jewel, küçük ölçekte lüks kurar: az metin, tek nesne, net malzeme bilgisi.",
-    "brief": "Mineli mücevher sayfası tasarla: gece moru zemin, altın ince çizgi, tek nesne görseli, mono karat/kesim.",
+    "essence": "Enamel Jewel builds luxury at small scale: little text, one object, clear material facts.",
+    "brief": "Design an enamel jewellery page: midnight purple background, thin gold line, single-object image, mono carat/cut.",
     "extraCss": "h1 { font-size: var(--type-h1); font-weight: 300; max-width: 24ch; }\n.pg-media { aspect-ratio: 1 / 1; border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line)); }",
     "paletteSeeds": {
       "bg": "#120f1a",
@@ -777,10 +777,10 @@
     "slug": "hand-thrown-ceramic",
     "name": "Hand-thrown Ceramic",
     "band": "materyal",
-    "tagline": "El yapımı seramik: kil beyazı zemin, sır yeşili accent, düzensiz kenar ve mono fırın notu.",
-    "feeling": "sıcak, el emeği, \"tek tek\"",
-    "best": "seramik atölyesi, el yapımı ürün, sınırlı parti",
-    "avoid": "endüstriyel panel",
+    "tagline": "Handmade ceramic: clay white background, glaze green accent, irregular edge and a mono kiln note.",
+    "feeling": "warm, handmade, \"one by one\"",
+    "best": "ceramic workshop, handmade product, limited batch",
+    "avoid": "an industrial panel",
     "palette": {
       "bg": "#faf7f1",
       "bg2": "#f1eade",
@@ -805,20 +805,20 @@
     "motif": "blob",
     "grain": 0.03,
     "signature": [
-      "**Düzensiz kenar:** görselde 8px yarıçap farkı (10/18).",
-      "**Kil beyazı:** sıcak zemin.",
-      "**Sır yeşili:** tek accent.",
-      "**Fırın notu:** mono sıcaklık ve parti."
+      "**Irregular edge:** corners differ by 8px radius (10/18).",
+      "**Clay white:** warm background.",
+      "**Glaze green:** the only accent.",
+      "**Kiln note:** mono temperature and batch."
     ],
     "must": [
-      "Her üründe parti no ve fırın sıcaklığı.",
-      "Ölçü ml/cm mono.",
-      "Fotoğraf tek nesne, gölge yumuşak."
+      "Batch number and kiln temperature on every piece.",
+      "Volume and dimensions in mono ml/cm.",
+      "A single object per photo, soft shadow."
     ],
     "mustNot": [
-      "Kusursuz vektör küp.",
+      "A flawless vector cube.",
       "Parlak seramik efekti.",
-      "Beş renkli sır paleti."
+      "A five-colour glaze palette."
     ],
     "neighbors": {
       "compatible": [
@@ -834,30 +834,30 @@
       {
         "label": "Pottery (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Pottery",
-        "use": "fırın/parti kavramı"
+        "use": "kiln/batch notion"
       },
       {
         "label": "Fraunces (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Fraunces",
-        "use": "başlık serif"
+        "use": "serif heading"
       },
       {
         "label": "Courier Prime (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Courier+Prime",
-        "use": "fırın notu"
+        "use": "kiln note"
       }
     ],
     "keywords": [
       "materyal",
       "seramik",
-      "el yapımı"
+      "handmade"
     ],
     "industries": [
       "eticaret",
       "kultur"
     ],
-    "essence": "Hand-thrown Ceramic, partiyi ve fırını gösterir: her parça tekrar edilemez.",
-    "brief": "Seramik atölyesi sayfası tasarla: kil beyazı zemin, sır yeşili accent, düzensiz köşe, mono fırın notu.",
+    "essence": "Hand-thrown Ceramic shows batch and kiln: no piece can be repeated.",
+    "brief": "Design a ceramic workshop page: clay white background, glaze green accent, irregular corners, mono kiln note.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-media { border-radius: 18px 12px 16px 10px; }\n.pg-card { border-radius: 16px 12px 14px 10px; }",
     "paletteSeeds": {
       "bg": "#faf7f1",
@@ -888,10 +888,10 @@
     "slug": "raw-steel",
     "name": "Raw Steel",
     "band": "materyal",
-    "tagline": "Ham çelik: soğuk gri, haddelenmiş yüzey, teknik etiket ve mono tolerans.",
-    "feeling": "endüstriyel, hassas, \"±0.05 mm\"",
-    "best": "metal işleme, endüstriyel ürün, teknik katalog",
-    "avoid": "çocuk eğitimi",
+    "tagline": "Raw steel: cold grey, rolled surface, technical label and mono tolerance.",
+    "feeling": "industrial, precise, \"±0.05 mm\"",
+    "best": "metal working, industrial product, technical catalogue",
+    "avoid": "children's education",
     "palette": {
       "bg": "#e9ecee",
       "bg2": "#dde1e4",
@@ -915,20 +915,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**Haddelenmiş yüzey:** 1px yatay çizgi dizisi, %8.",
-      "**Teknik etiket:** mono büyük harf.",
-      "**Tolerans:** ± değer mono.",
-      "**Keskin kenar:** 0–2px."
+      "**Rolled surface:** a series of 1px horizontal rules at 8%.",
+      "**Technical label:** mono uppercase.",
+      "**Tolerance:** ± value in mono.",
+      "**Sharp edge:** 0–2px."
     ],
     "must": [
-      "Her parçada malzeme sınıfı ve tolerans.",
-      "Yüzey işlemi yazılır.",
-      "Görsel düşük doygunluk."
+      "Material class and tolerance on every part.",
+      "Surface treatment is stated.",
+      "Imagery at low saturation."
     ],
     "mustNot": [
-      "Pas/çürük dekoru.",
+      "Rust and decay decoration.",
       "Renkli metalik gradyan.",
-      "Yuvarlak köşe."
+      "Rounded corners."
     ],
     "neighbors": {
       "compatible": [
@@ -944,12 +944,12 @@
       {
         "label": "Steel (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Steel",
-        "use": "malzeme sınıfı"
+        "use": "material class"
       },
       {
         "label": "Chakra Petch (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Chakra+Petch",
-        "use": "teknik başlık"
+        "use": "technical heading"
       },
       {
         "label": "Share Tech Mono (Google Fonts)",
@@ -959,15 +959,15 @@
     ],
     "keywords": [
       "materyal",
-      "çelik",
-      "endüstri"
+      "steel",
+      "industry"
     ],
     "industries": [
       "insaat",
       "teknoloji"
     ],
-    "essence": "Raw Steel, toleransı öne çıkarır: sınıf, ölçü, yüzey ve sapma.",
-    "brief": "Ham çelik katalog sayfası tasarla: soğuk gri, 1px yüzey çizgileri, mono tolerans, keskin kenar.",
+    "essence": "Raw Steel foregrounds tolerance: class, dimension, surface and deviation.",
+    "brief": "Design a raw steel catalogue page: cold grey, 1px surface rules, mono tolerance, sharp edges.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 8%, transparent) 0 1px, transparent 1px 8px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
     "paletteSeeds": {
       "bg": "#e9ecee",
@@ -998,9 +998,9 @@
     "slug": "recycled-paper",
     "name": "Recycled Paper",
     "band": "materyal",
-    "tagline": "Geri dönüşüm kâğıdı: kirli beyaz, zeytin accent, kenar izleri ve mono geri dönüşüm oranı.",
-    "feeling": "dürüst, sade, \"%100 geri dönüşüm\"",
-    "best": "sürdürülebilir marka, ambalaj, kurumsal sorumluluk",
+    "tagline": "Recycled paper: off-white, olive accent, edge marks and a mono recycled ratio.",
+    "feeling": "honest, plain, \"100% recycled\"",
+    "best": "sustainable brand, packaging, corporate responsibility",
     "avoid": "neon teknoloji",
     "palette": {
       "bg": "#f7f5ef",
@@ -1026,20 +1026,20 @@
     "motif": "paper",
     "grain": 0.05,
     "signature": [
-      "**Kirli beyaz:** mürekkep emmiş kâğıt tonu.",
-      "**Zeytin accent:** tek doğal vurgu.",
-      "**Kenar izi:** bölüm ayırıcı kesikli 1px.",
-      "**Oran etiketi:** mono `%100`."
+      "**Off-white:** the tone of paper that has absorbed ink.",
+      "**Olive accent:** the only natural highlight.",
+      "**Edge mark:** dashed 1px section divider.",
+      "**Ratio label:** mono `%100`."
     ],
     "must": [
-      "Geri dönüşüm oranı ve sertifika yazılır.",
-      "Kâğıt gramajı mono.",
-      "Kesikli çizgi yalnız ayırıcı."
+      "Recycled ratio and certificate are stated.",
+      "Paper weight in mono.",
+      "Dashed rules are used for dividers only."
     ],
     "mustNot": [
-      "Yaprak ikonu yığını.",
-      "Parlak yeşil.",
-      "Yuvarlak 12px+ kart."
+      "A pile of leaf icons.",
+      "Bright green.",
+      "A rounded card above 12px."
     ],
     "neighbors": {
       "compatible": [
@@ -1060,7 +1060,7 @@
       {
         "label": "Lora (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Lora",
-        "use": "gövde serif"
+        "use": "serif body"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
@@ -1070,15 +1070,15 @@
     ],
     "keywords": [
       "materyal",
-      "kâğıt",
-      "geri dönüşüm"
+      "paper",
+      "recycling"
     ],
     "industries": [
       "surdulebilirlik",
       "eticaret"
     ],
-    "essence": "Recycled Paper, iddiayı sayıyla verir: oran, gramaj, sertifika.",
-    "brief": "Geri dönüşüm kâğıdı sayfası tasarla: kirli beyaz zemin, zeytin accent, kesikli ayırıcı, mono %, gramaj.",
+    "essence": "Recycled Paper states the claim in numbers: ratio, weight, certificate.",
+    "brief": "Design a recycled paper page: off-white background, olive accent, dashed divider, mono %, paper weight.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-sec { border-bottom: 1px dashed var(--line); padding-bottom: 34px; }",
     "paletteSeeds": {
       "bg": "#f7f5ef",
@@ -1109,10 +1109,10 @@
     "slug": "condensed-news",
     "name": "Condensed News",
     "band": "tipografi",
-    "tagline": "Sıkı gazete tipografisi: dar başlık, çok kolon, hairline ve mono tarih-imza.",
-    "feeling": "haber, baskı, \"manşet\"",
-    "best": "haber sitesi, köşe yazısı, günlük bülten",
-    "avoid": "yavaş lüks vitrin",
+    "tagline": "Tight newspaper typography: condensed heading, many columns, hairlines and mono date-byline.",
+    "feeling": "news, print, \"headline\"",
+    "best": "news site, column, daily bulletin",
+    "avoid": "a slow luxury showcase",
     "palette": {
       "bg": "#fdfcf8",
       "bg2": "#f2f0e8",
@@ -1136,20 +1136,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**Dar başlık:** Anton, 0.98 satır aralığı, 3 satıra kadar.",
-      "**Çok kolon:** 4 kolon gövde, 2 kolon alıntı.",
-      "**Hairline:** kolon ayırıcı 1px.",
-      "**Manşet kırmızısı:** yalnız etiket."
+      "**Condensed heading:** Anton, 0.98 line height, up to three lines.",
+      "**Many columns:** four-column body, two-column pull quote.",
+      "**Hairline:** 1px column divider.",
+      "**Headline red:** label only."
     ],
     "must": [
-      "Başlık en fazla 3 satır.",
-      "Her metinde tarih ve imza mono.",
-      "Kolon ayırıcı 1px."
+      "Headings never exceed three lines.",
+      "Date and byline are mono on every text.",
+      "Column divider at 1px."
     ],
     "mustNot": [
-      "Yuvarlak köşe.",
-      "Dekoratif görsel.",
-      "Üçten fazla font."
+      "Rounded corners.",
+      "A decorative image.",
+      "More than three font families."
     ],
     "neighbors": {
       "compatible": [
@@ -1165,21 +1165,21 @@
       {
         "label": "Newspaper (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Newspaper",
-        "use": "kolon/manşet düzeni"
+        "use": "column/headline layout"
       },
       {
         "label": "Anton (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Anton",
-        "use": "manşet"
+        "use": "headline"
       },
       {
         "label": "EB Garamond (Google Fonts)",
         "url": "https://fonts.google.com/specimen/EB+Garamond",
-        "use": "gövde serif"
+        "use": "serif body"
       }
     ],
     "keywords": [
-      "tipografi",
+      "typography",
       "haber",
       "gazete"
     ],
@@ -1187,8 +1187,8 @@
       "medya",
       "kultur"
     ],
-    "essence": "Condensed News, sayfayı bir gazete gibi doldurur: manşet, kolon, tarih ve imza.",
-    "brief": "Haber sayfası tasarla: dar Anton manşet, 4 kolon gövde, hairline ayırıcı, mono tarih-imza.",
+    "essence": "Condensed News fills the page like a newspaper: headline, columns, date and byline.",
+    "brief": "Design a news page: condensed Anton headline, four-column body, hairline dividers, mono date-byline.",
     "extraCss": "h1 { font-size: var(--type-h1); line-height: .96; max-width: 18ch; }\nh2 { font-size: 28px; }\n.pg-sec { border-top: 2px solid var(--ink); padding-top: 16px; }",
     "paletteSeeds": {
       "bg": "#fdfcf8",
@@ -1219,10 +1219,10 @@
     "slug": "monospace-editorial",
     "name": "Monospace Editorial",
     "band": "tipografi",
-    "tagline": "Monospace editoryal: kod ritmi, tek accent, uzun ölçü ve mono etiket hiyerarşisi.",
-    "feeling": "teknik, dürüst, \"her şey hizalı\"",
-    "best": "teknik blog, dokümantasyon, geliştirici yayını",
-    "avoid": "lüks vitrin",
+    "tagline": "Monospace editorial: code rhythm, one accent, long measure and a mono label hierarchy.",
+    "feeling": "technical, honest, \"everything aligned\"",
+    "best": "technical blog, documentation, developer publication",
+    "avoid": "a luxury showcase",
     "palette": {
       "bg": "#fbfbfa",
       "bg2": "#f0f0ee",
@@ -1246,20 +1246,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**Tek aile:** başlık ve gövde aynı mono; hiyerarşi punto ve ağırlıkla.",
-      "**Kod ritmi:** satır aralığı 1.7, ölçü 72ch.",
-      "**Tek accent:** yalnız bağlantı ve inline kod.",
-      "**Keskin kenar:** 0–2px."
+      "**Single family:** heading and body share the same mono face; hierarchy comes from size and weight.",
+      "**Code rhythm:** 1.7 line height, 72ch measure.",
+      "**Single accent:** links and inline code only.",
+      "**Sharp edge:** 0–2px."
     ],
     "must": [
-      "Hiyerarşi yalnız punto/ağırlıkla kurulur.",
-      "Kod blokları yatay kaymaz.",
-      "Satır uzunluğu 72ch."
+      "Hierarchy is built from size and weight alone.",
+      "Code blocks never scroll horizontally.",
+      "Line length stays at 72ch."
     ],
     "mustNot": [
-      "İkinci font ailesi.",
+      "A second font family.",
       "Gradyan.",
-      "Yuvarlak kart."
+      "A rounded card."
     ],
     "neighbors": {
       "compatible": [
@@ -1280,7 +1280,7 @@
       {
         "label": "MDN Web Docs",
         "url": "https://developer.mozilla.org/",
-        "use": "kod blok biçimi"
+        "use": "code block format"
       },
       {
         "label": "WCAG 2.2",
@@ -1289,16 +1289,16 @@
       }
     ],
     "keywords": [
-      "tipografi",
+      "typography",
       "mono",
-      "dokümantasyon"
+      "documentation"
     ],
     "industries": [
       "teknoloji",
       "medya"
     ],
-    "essence": "Monospace Editorial, tek aileyle hiyerarşi kurar: punto, ağırlık ve boşluk yeter.",
-    "brief": "Monospace editoryal sayfa tasarla: tek mono aile, 72ch ölçü, inline kod accent, keskin kenar.",
+    "essence": "Monospace Editorial builds hierarchy from a single family: size, weight and space are enough.",
+    "brief": "Design a monospace editorial page: a single mono family, 72ch measure, inline code accent, sharp edges.",
     "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.1; max-width: 26ch; font-weight: 700; }\nh2 { font-size: 24px; font-weight: 600; }\nbody, .lede, .pg-p { font-family: var(--font-mono); font-size: 15px; line-height: 1.72; }",
     "paletteSeeds": {
       "bg": "#fbfbfa",
@@ -1329,10 +1329,10 @@
     "slug": "blackletter-modern",
     "name": "Blackletter Modern",
     "band": "tipografi",
-    "tagline": "Modern gotik: ağır serif başlık, gece zemin, tek kan rengi ve sade gövde.",
-    "feeling": "kadim, güçlü, \"mühür\"",
-    "best": "etkinlik/kulüp kimliği, bira/viski etiketi, kültür programı",
-    "avoid": "çocuk eğitimi",
+    "tagline": "Modern gothic: heavy serif heading, night background, a single blood colour and a plain body.",
+    "feeling": "ancient, powerful, \"seal\"",
+    "best": "event/club identity, beer/whisky label, culture programme",
+    "avoid": "children's education",
     "palette": {
       "bg": "#100e0c",
       "bg2": "#15120f",
@@ -1356,20 +1356,20 @@
     ],
     "motif": "paper",
     "signature": [
-      "**Ağır serif başlık:** Cinzel 54px, harf aralığı geniş.",
-      "**Tek kan rengi:** accent yalnız mühür ve CTA.",
-      "**Sade gövde:** EB Garamond 16px.",
-      "**Kenar yok:** hairline dışında çizgi yok."
+      "**Heavy serif heading:** Cinzel 54px, wide letter spacing.",
+      "**Single blood colour:** accent on the seal and CTA only.",
+      "**Plain body:** EB Garamond 16px.",
+      "**No borders:** nothing but hairlines."
     ],
     "must": [
-      "Gotik başlık yalnız H1/H2.",
-      "Gövde serif ve okunur; süslenmez.",
+      "Gothic headings in H1/H2 only.",
+      "The body stays serif and readable; no ornament.",
       "Accent tek."
     ],
     "mustNot": [
-      "Gerçek blackletter font (okunmaz).",
-      "Dört renkli ortaçağ paleti.",
-      "Yuvarlak kart."
+      "A real blackletter face (unreadable).",
+      "A four-colour medieval palette.",
+      "A rounded card."
     ],
     "neighbors": {
       "compatible": [
@@ -1385,30 +1385,30 @@
       {
         "label": "Blackletter (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Blackletter",
-        "use": "harf geleneği"
+        "use": "letter tradition"
       },
       {
         "label": "Cinzel (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Cinzel",
-        "use": "gotik esinli başlık"
+        "use": "gothic-inspired heading"
       },
       {
         "label": "EB Garamond (Google Fonts)",
         "url": "https://fonts.google.com/specimen/EB+Garamond",
-        "use": "gövde"
+        "use": "body"
       }
     ],
     "keywords": [
-      "tipografi",
+      "typography",
       "gotik",
-      "mühür"
+      "seal"
     ],
     "industries": [
       "kultur",
       "etkinlik"
     ],
-    "essence": "Blackletter Modern, gotik harfin ağırlığını modern ölçekle dengeler: başlık ağır, gövde sakin.",
-    "brief": "Modern gotik kimlik sayfası tasarla: gece zemin, ağır serif başlık, tek kan rengi, sade gövde.",
+    "essence": "Blackletter Modern balances the weight of gothic lettering against a modern scale: heavy heading, calm body.",
+    "brief": "Design a modern gothic identity page: night background, heavy serif heading, a single blood colour, plain body.",
     "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .04em; max-width: 22ch; }\nh2 { font-size: 30px; letter-spacing: .03em; }\n.pg-card, .pg-media { border-radius: 0; }",
     "paletteSeeds": {
       "bg": "#100e0c",
@@ -1439,10 +1439,10 @@
     "slug": "variable-weight",
     "name": "Variable Weight",
     "band": "tipografi",
-    "tagline": "Değişken ağırlık: aynı ailede 300–900, kontrast sıçraması ve ölçü ritmi.",
-    "feeling": "dinamik, kontrollü, \"ağırlıkla konuşur\"",
-    "best": "ajans/kreatif stüdyo, tipografi denemesi",
-    "avoid": "resmî denetim raporu",
+    "tagline": "Variable weight: 300–900 in one family, contrast jump and scale rhythm.",
+    "feeling": "dynamic, controlled, \"speaks through weight\"",
+    "best": "agency/creative studio, typography experiment",
+    "avoid": "an official audit report",
     "palette": {
       "bg": "#f7f7f5",
       "bg2": "#ececea",
@@ -1466,20 +1466,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**Ağırlık sıçraması:** H1 800, H2 400, gövde 400.",
-      "**Tek renk:** accent yalnız bağlantı.",
-      "**Ölçü ritmi:** 72/40/16/12.",
-      "**Keskin kenar:** 0–2px."
+      "**Weight jump:** H1 at 800, H2 at 400, body at 400.",
+      "**Single colour:** accent on links only.",
+      "**Scale rhythm:** 72/40/16/12.",
+      "**Sharp edge:** 0–2px."
     ],
     "must": [
-      "Ağırlık farkı en az 300 birim.",
-      "Başlık ve gövde aynı aile.",
-      "Accent yalnız bağlantı."
+      "Weight differences of at least 300 units.",
+      "Heading and body use the same family.",
+      "Accent on links only."
     ],
     "mustNot": [
-      "Dörtten fazla ağırlık.",
-      "Dekoratif gölge.",
-      "Yuvarlak kart."
+      "More than four weights.",
+      "A decorative shadow.",
+      "A rounded card."
     ],
     "neighbors": {
       "compatible": [
@@ -1495,30 +1495,30 @@
       {
         "label": "Variable font (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Variable_font",
-        "use": "ağırlık ekseni"
+        "use": "weight axis"
       },
       {
         "label": "Inter (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Inter",
-        "use": "değişken ağırlık"
+        "use": "variable weight"
       },
       {
         "label": "MDN · font-weight",
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight",
-        "use": "ağırlık aralığı"
+        "use": "weight range"
       }
     ],
     "keywords": [
-      "tipografi",
-      "ağırlık",
+      "typography",
+      "weight",
       "ajans"
     ],
     "industries": [
       "ajans",
       "teknoloji"
     ],
-    "essence": "Variable Weight, tek aileyle dramaturji kurar: ağırlık ve ölçek değişir, renk değişmez.",
-    "brief": "Değişken ağırlıkla ajans sayfası tasarla: H1 800, H2 400, 72/40/16/12 ölçek, tek accent.",
+    "essence": "Variable Weight creates drama from one family: weight and scale change, colour does not.",
+    "brief": "Design an agency page with variable weight: H1 at 800, H2 at 400, a 72/40/16/12 scale, one accent.",
     "extraCss": "h1 { font-size: var(--type-h1); line-height: .96; font-weight: 800; max-width: 16ch; }\nh2 { font-size: 40px; font-weight: 400; }\nh3 { font-size: 16px; font-weight: 700; }",
     "paletteSeeds": {
       "bg": "#f7f7f5",
@@ -1549,10 +1549,10 @@
     "slug": "justified-book",
     "name": "Justified Book",
     "band": "tipografi",
-    "tagline": "Kitap dizgisi: iki yana yaslı serif, 66ch ölçü, bölüm numarası ve mono kolofon.",
-    "feeling": "edebî, sakin, \"sayfa çevir\"",
-    "best": "kitap/uzun okuma, yayınevi, edebiyat dergisi",
-    "avoid": "hızlı dashboard",
+    "tagline": "Book typesetting: justified serif, 66ch measure, chapter number and a mono colophon.",
+    "feeling": "literary, calm, \"turn the page\"",
+    "best": "book/long read, publisher, literary magazine",
+    "avoid": "a fast dashboard",
     "palette": {
       "bg": "#fbf8f1",
       "bg2": "#f2ece0",
@@ -1576,20 +1576,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**İki yana yaslı:** `text-align: justify; hyphens: auto`.",
-      "**66ch ölçü:** satır uzunluğu sabit.",
-      "**Bölüm numarası:** mono, sol üstte.",
+      "**Justified:** `text-align: justify; hyphens: auto`.",
+      "**66ch measure:** line length stays fixed.",
+      "**Chapter number:** mono, top left.",
       "**Kolofon:** mono 11px, alt bilgi."
     ],
     "must": [
-      "Gövde justify + hyphenation.",
-      "Bölüm numarası ve başlık hiyerarşisi.",
-      "Satır aralığı 1.65."
+      "Body justified with hyphenation.",
+      "Chapter number and heading hierarchy.",
+      "Line height 1.65."
     ],
     "mustNot": [
-      "Geniş ekran gövde (90ch+).",
-      "Kart galerisi.",
-      "Yuvarlak köşe."
+      "Wide-screen body (90ch+).",
+      "A card gallery.",
+      "Rounded corners."
     ],
     "neighbors": {
       "compatible": [
@@ -1605,12 +1605,12 @@
       {
         "label": "Justification (typesetting) (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Justification_(typesetting)",
-        "use": "dizgi kuralı"
+        "use": "typesetting rule"
       },
       {
         "label": "EB Garamond (Google Fonts)",
         "url": "https://fonts.google.com/specimen/EB+Garamond",
-        "use": "gövde serif"
+        "use": "serif body"
       },
       {
         "label": "Courier Prime (Google Fonts)",
@@ -1619,7 +1619,7 @@
       }
     ],
     "keywords": [
-      "tipografi",
+      "typography",
       "kitap",
       "dizgi"
     ],
@@ -1627,8 +1627,8 @@
       "medya",
       "kultur"
     ],
-    "essence": "Justified Book, ekranı bir sayfa gibi dizeler: ölçü, justification ve sessiz hiyerarşi.",
-    "brief": "Kitap sayfası tasarla: iki yana yaslı serif gövde, 66ch ölçü, mono bölüm numarası, kolofon.",
+    "essence": "Justified Book sets the screen like a page: measure, justification and quiet hierarchy.",
+    "brief": "Design a book page: justified serif body, 66ch measure, mono chapter number, colophon.",
     "extraCss": "h1 { font-size: var(--type-h1); font-weight: 400; max-width: 24ch; }\nbody, .lede, .pg-p { font-size: 17px; line-height: 1.68; text-align: justify; hyphens: auto; max-width: 66ch; }",
     "paletteSeeds": {
       "bg": "#fbf8f1",
@@ -1659,10 +1659,10 @@
     "slug": "stencil-display",
     "name": "Stencil Display",
     "band": "tipografi",
-    "tagline": "Şablon harf: askerî kalıp, sarı accent, blok başlık ve mono kod etiketi.",
-    "feeling": "endüstriyel, kesik, \"kasa no\"",
-    "best": "etkinlik/afiş, ambalaj, endüstriyel marka",
-    "avoid": "sağlık formu",
+    "tagline": "Stencil display: military stencil, yellow accent, block heading and mono code label.",
+    "feeling": "industrial, stencilled, \"crate no.\"",
+    "best": "event/poster, packaging, industrial brand",
+    "avoid": "a health form",
     "palette": {
       "bg": "#15181c",
       "bg2": "#1b1f24",
@@ -1687,20 +1687,20 @@
     "motif": "grid",
     "upper": true,
     "signature": [
-      "**Blok başlık:** Archivo Black 50px, harfler arası sıkı.",
-      "**Şablon hissi:** başlıkta 2px `text-shadow` yok; sadece keskin.",
-      "**Sarı accent:** yalnız kod etiketi.",
-      "**Kod etiketi:** mono, 12px, büyük harf."
+      "**Block heading:** Archivo Black 50px, tight letter spacing.",
+      "**Stencil feel:** no 2px `text-shadow` on the heading; sharp only.",
+      "**Yellow accent:** on the code label only.",
+      "**Code label:** mono, 12px, uppercase."
     ],
     "must": [
-      "Kod etiketi mono ve tekil.",
-      "Başlık uppercase; gövde cümle düzeninde.",
-      "Kenar 0px."
+      "The code label is mono and unique.",
+      "Headings uppercase; body in sentence case.",
+      "0px corners."
     ],
     "mustNot": [
-      "Gerçek şablon font (okunmaz).",
-      "Üçten fazla renk.",
-      "Yuvarlak kart."
+      "A real stencil face (unreadable).",
+      "More than three colours.",
+      "A rounded card."
     ],
     "neighbors": {
       "compatible": [
@@ -1716,12 +1716,12 @@
       {
         "label": "Stencil (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Stencil",
-        "use": "harf kesim mantığı"
+        "use": "stencil cut logic"
       },
       {
         "label": "Archivo Black (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Archivo+Black",
-        "use": "blok başlık"
+        "use": "block heading"
       },
       {
         "label": "Share Tech Mono (Google Fonts)",
@@ -1730,16 +1730,16 @@
       }
     ],
     "keywords": [
-      "tipografi",
-      "şablon",
-      "endüstri"
+      "typography",
+      "stencil",
+      "industry"
     ],
     "industries": [
       "etkinlik",
       "insaat"
     ],
-    "essence": "Stencil Display, kalıp harfin kesikliğini modern blokla taşır: az renk, çok ağırlık.",
-    "brief": "Şablon harf afişi tasarla: koyu zemin, Archivo Black blok başlık, sarı kod etiketi, keskin kenar.",
+    "essence": "Stencil Display carries the stencil cut through a modern block: few colours, heavy weight.",
+    "brief": "Design a stencil poster: dark background, Archivo Black block heading, yellow code label, sharp edges.",
     "extraCss": "h1 { font-size: var(--type-h1); line-height: .98; max-width: 18ch; letter-spacing: -.01em; }\nh2 { font-size: 28px; }",
     "paletteSeeds": {
       "bg": "#15181c",
@@ -1770,9 +1770,9 @@
     "slug": "uppercase-only",
     "name": "Uppercase Only",
     "band": "tipografi",
-    "tagline": "Yalnız büyük harf: geniş tracking, kısa satır, tek accent ve mimari boşluk.",
-    "feeling": "buyurgan, net, \"başlık gibi\"",
-    "best": "kültür kurumu, mimarlık ofisi, etkinlik kimliği",
+    "tagline": "Uppercase only: wide tracking, short lines, one accent and architectural space.",
+    "feeling": "commanding, crisp, \"like a heading\"",
+    "best": "cultural institution, architecture office, event identity",
     "avoid": "uzun okuma metni",
     "palette": {
       "bg": "#f4f4f1",
@@ -1798,20 +1798,20 @@
     "motif": "none",
     "upper": true,
     "signature": [
-      "**Tamamı büyük harf:** başlık ve gövde; okunurluk için 0.02em tracking.",
-      "**Kısa satır:** maksimum 42ch.",
-      "**Geniş boşluk:** bölüm 88px.",
-      "**Tek accent:** yalnız etiket."
+      "**All uppercase:** heading and body; 0.02em tracking for legibility.",
+      "**Short line:** 42ch maximum.",
+      "**Wide space:** 88px sections.",
+      "**Single accent:** label only."
     ],
     "must": [
-      "Satır uzunluğu 42ch'i geçmez.",
-      "Tracking 0.02em altına inmez.",
-      "Başlık ve gövde aynı aile."
+      "Line length never exceeds 42ch.",
+      "Tracking never drops below 0.02em.",
+      "Heading and body use the same family."
     ],
     "mustNot": [
-      "Uzun paragraf (8 satır+).",
-      "Üçten fazla punto.",
-      "Yuvarlak kart."
+      "Long paragraphs (eight lines or more).",
+      "More than three sizes.",
+      "A rounded card."
     ],
     "neighbors": {
       "compatible": [
@@ -1827,7 +1827,7 @@
       {
         "label": "Letter case (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Letter_case",
-        "use": "büyük harf okunurluğu"
+        "use": "uppercase legibility"
       },
       {
         "label": "Space Grotesk (Google Fonts)",
@@ -1837,20 +1837,20 @@
       {
         "label": "WCAG 2.2",
         "url": "https://www.w3.org/TR/WCAG22/",
-        "use": "okunurluk ölçütleri"
+        "use": "legibility criteria"
       }
     ],
     "keywords": [
-      "tipografi",
-      "büyük harf",
-      "mimarlık"
+      "typography",
+      "uppercase",
+      "architecture"
     ],
     "industries": [
       "mimarlik",
       "kultur"
     ],
-    "essence": "Uppercase Only, kısa ve emredici cümlelerle çalışır: uzun metin bu dilin düşmanıdır.",
-    "brief": "Yalnız büyük harf kimlik sayfası tasarla: geniş tracking, 42ch satır, mimari boşluk, tek accent.",
+    "essence": "Uppercase Only works with short, declarative sentences: long text is the enemy of this language.",
+    "brief": "Design an uppercase identity page: wide tracking, 42ch lines, architectural space, one accent.",
     "extraCss": "h1, h2, h3, body, .lede, .pg-p, .pg-foot-col, .pg-list li { text-transform: uppercase; }h1 { font-size: var(--type-h1); letter-spacing: .04em; max-width: 18ch; }\n.pg-p, .lede { max-width: 42ch; letter-spacing: .02em; }",
     "paletteSeeds": {
       "bg": "#f4f4f1",
@@ -1881,10 +1881,10 @@
     "slug": "italic-accent",
     "name": "Italic Accent",
     "band": "tipografi",
-    "tagline": "İtalik vurgu: düz gövde içinde eğik başlık, ince serif kontrast ve tek sıcak accent.",
-    "feeling": "edebî, zarif, \"vurgu eğik\"",
-    "best": "yayınevi, edebiyat dergisi, kültür programı",
-    "avoid": "yoğun veri tablosu",
+    "tagline": "Italic emphasis: slanted heading inside a roman body, thin serif contrast and one warm accent.",
+    "feeling": "literary, elegant, \"emphasis in italic\"",
+    "best": "publisher, literary magazine, culture programme",
+    "avoid": "a dense data table",
     "palette": {
       "bg": "#fbf9f4",
       "bg2": "#f2ede3",
@@ -1908,20 +1908,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**Eğik başlık:** H1/H2 italic, gövde düz.",
-      "**İnce/kalın kontrast:** serif display 38px, gövde 16px.",
-      "**Sıcak accent:** yalnız bağlantı.",
-      "**Hairline:** ayırıcı 1px."
+      "**Slanted heading:** H1/H2 italic, body roman.",
+      "**Thin/heavy contrast:** 38px serif display, 16px body.",
+      "**Warm accent:** links only.",
+      "**Hairline:** 1px dividers."
     ],
     "must": [
-      "İtalik yalnız başlık ve alıntı.",
-      "Gövde düz serif.",
-      "Ölçü 66ch."
+      "Italic in headings and quotes only.",
+      "The body stays roman serif.",
+      "66ch measure."
     ],
     "mustNot": [
-      "Tüm metni italik.",
-      "Üçten fazla vurgu.",
-      "Yuvarlak kart."
+      "All text in italic.",
+      "More than three emphases.",
+      "A rounded card."
     ],
     "neighbors": {
       "compatible": [
@@ -1937,21 +1937,21 @@
       {
         "label": "Italic type (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Italic_type",
-        "use": "vurgu kullanımı"
+        "use": "emphasis usage"
       },
       {
         "label": "Cormorant Garamond (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Cormorant+Garamond",
-        "use": "başlık serif"
+        "use": "serif heading"
       },
       {
         "label": "Lora (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Lora",
-        "use": "gövde serif"
+        "use": "serif body"
       }
     ],
     "keywords": [
-      "tipografi",
+      "typography",
       "italik",
       "edebiyat"
     ],
@@ -1959,8 +1959,8 @@
       "medya",
       "kultur"
     ],
-    "essence": "Italic Accent, vurguyu tek bir eğik başlıkla kurar; gerisi düz ve sakin.",
-    "brief": "Editoryal sayfa tasarla: eğik serif başlık, düz gövde, tek sıcak accent, hairline ayırıcı.",
+    "essence": "Italic Accent builds emphasis from a single slanted heading; everything else stays roman and calm.",
+    "brief": "Design an editorial page: italic serif heading, roman body, one warm accent, hairline dividers.",
     "extraCss": "h1, h2 { font-style: italic; font-weight: 400; }h1 { font-size: var(--type-h1); max-width: 22ch; }\nblockquote, .pg-media .pg-cap { font-style: italic; }",
     "paletteSeeds": {
       "bg": "#fbf9f4",
@@ -1991,10 +1991,10 @@
     "slug": "numerals-display",
     "name": "Numerals Display",
     "band": "tipografi",
-    "tagline": "Rakam odaklı tipografi: dev sayılar, mono hizalama, birim etiketi ve ince çizgi.",
-    "feeling": "ölçülü, veri, \"sayı konuşur\"",
-    "best": "yıllık rapor, veri hikâyesi, ölçüm panosu",
-    "avoid": "çocuk uygulaması",
+    "tagline": "Numeral-driven typography: giant figures, mono alignment, unit label and thin rules.",
+    "feeling": "measured, data, \"the number speaks\"",
+    "best": "annual report, data story, measurement board",
+    "avoid": "a children's app",
     "palette": {
       "bg": "#f7f8f9",
       "bg2": "#eceef0",
@@ -2018,20 +2018,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**Dev rakam:** 96px display, tabular.",
-      "**Birim etiketi:** mono 11px, rakamın yanında.",
-      "**İnce çizgi:** rakam altında 1px.",
-      "**Az metin:** başlık iki satır sınırı."
+      "**Giant figure:** 96px display, tabular.",
+      "**Unit label:** mono 11px, next to the figure.",
+      "**Thin rule:** 1px under the figure.",
+      "**Little text:** headings limited to two lines."
     ],
     "must": [
-      "Tüm rakamlar tabular ve hizalı.",
-      "Birim her zaman yazılır.",
-      "Basamak gruplama nokta/virgül tutarlı."
+      "All figures are tabular and aligned.",
+      "The unit is always written.",
+      "Digit grouping stays consistent between separators."
     ],
     "mustNot": [
-      "Animasyonlu sayaç.",
+      "An animated counter.",
       "Dekoratif grafik.",
-      "Üçten fazla rakam boyutu."
+      "More than three figure sizes."
     ],
     "neighbors": {
       "compatible": [
@@ -2047,7 +2047,7 @@
       {
         "label": "Numeral system (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Numeral_system",
-        "use": "sayı biçimi"
+        "use": "numeral format"
       },
       {
         "label": "Space Grotesk (Google Fonts)",
@@ -2061,16 +2061,16 @@
       }
     ],
     "keywords": [
-      "tipografi",
-      "rakam",
-      "rapor"
+      "typography",
+      "numeral",
+      "report"
     ],
     "industries": [
       "finans",
       "kultur"
     ],
-    "essence": "Numerals Display, sayıyı başrole koyar: rakam büyük, birim net, gerisi sessiz.",
-    "brief": "Rakam odaklı rapor sayfası tasarla: 96px tabular rakamlar, mono birim, ince çizgi, az metin.",
+    "essence": "Numerals Display makes the number the lead: large figures, clear units, everything else silent.",
+    "brief": "Design a numeral-driven report page: 96px tabular figures, mono units, thin rules, little text.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-band b { font-size: 72px; font-variant-numeric: tabular-nums; line-height: .9; }\n.pg-band span { font-family: var(--font-mono); font-size: 10.5px; }",
     "paletteSeeds": {
       "bg": "#f7f8f9",
@@ -2101,10 +2101,10 @@
     "slug": "small-caps-ledger",
     "name": "Small Caps Ledger",
     "band": "tipografi",
-    "tagline": "Küçük kapsüllü defter: başlıklarda small-caps, ince çizgili tablo ve mono toplam.",
-    "feeling": "kayıt, titiz, \"deftere yazıldı\"",
-    "best": "muhasebe/defter, üyelik kaydı, envanter listesi",
-    "avoid": "gençlik kampanyası",
+    "tagline": "Small-caps ledger: small-caps headings, hairline table and a mono total.",
+    "feeling": "record, meticulous, \"written in the ledger\"",
+    "best": "accounting/ledger, membership record, inventory list",
+    "avoid": "a youth campaign",
     "palette": {
       "bg": "#fbfaf5",
       "bg2": "#f1efe6",
@@ -2128,20 +2128,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**Small-caps başlık:** `font-variant: small-caps`, 20px.",
-      "**İnce tablo:** yalnız yatay 1px çizgi.",
-      "**Mono toplam:** sağ alt, tabular.",
-      "**Defter dokusu:** hafif çizgi arka plan, %4."
+      "**Small-caps heading:** `font-variant: small-caps`, 20px.",
+      "**Hairline table:** 1px horizontal rules only.",
+      "**Mono total:** bottom right, tabular.",
+      "**Ledger texture:** faint ruled background at 4%."
     ],
     "must": [
-      "Her satırda tarih ve tutar.",
-      "Toplamlar tabular ve sağa hizalı.",
-      "Small-caps yalnız başlıklarda."
+      "Date and amount on every row.",
+      "Totals are tabular and right-aligned.",
+      "Small caps in headings only."
     ],
     "mustNot": [
-      "Renkli satır vurgusu.",
-      "Yuvarlak kart.",
-      "Üçten fazla rakam biçimi."
+      "Coloured row highlights.",
+      "A rounded card.",
+      "More than three numeral formats."
     ],
     "neighbors": {
       "compatible": [
@@ -2157,7 +2157,7 @@
       {
         "label": "Small caps (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Small_caps",
-        "use": "başlık biçimi"
+        "use": "heading format"
       },
       {
         "label": "EB Garamond (Google Fonts)",
@@ -2171,7 +2171,7 @@
       }
     ],
     "keywords": [
-      "tipografi",
+      "typography",
       "defter",
       "muhasebe"
     ],
@@ -2179,8 +2179,8 @@
       "finans",
       "eticaret"
     ],
-    "essence": "Small Caps Ledger, defteri ekranda tutar: small-caps başlık, ince çizgi, mono toplam.",
-    "brief": "Defter/muhasebe sayfası tasarla: small-caps başlıklar, ince çizgili tablo, mono toplamlar.",
+    "essence": "Small Caps Ledger keeps the ledger on screen: small-caps headings, hairline rules, mono totals.",
+    "brief": "Design a ledger/accounting page: small-caps headings, hairline table, mono totals.",
     "extraCss": "h1, h2, h3 { font-variant: small-caps; font-weight: 600; letter-spacing: .02em; }h1 { font-size: var(--type-h1); }\n.pg-table th { font-variant: small-caps; font-size: 11px; letter-spacing: .06em; }\n.pg-table td:last-child { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }",
     "paletteSeeds": {
       "bg": "#fbfaf5",
@@ -2211,10 +2211,10 @@
     "slug": "agent-console",
     "name": "Agent Console",
     "band": "gelecek",
-    "tagline": "Ajan konsolu: izleme kaydı, camgöbeği sinyal, araç çağrısı tablosu ve mono gecikme.",
-    "feeling": "otonom, şeffaf, \"hangi adımda\"",
-    "best": "AI ajan ürünü, otomasyon konsolu, çalıştırma kaydı",
-    "avoid": "lüks vitrin",
+    "tagline": "Agent console: trace log, cyan signal, tool-call table and mono latency.",
+    "feeling": "autonomous, transparent, \"which step\"",
+    "best": "AI agent product, automation console, run log",
+    "avoid": "a luxury showcase",
     "palette": {
       "bg": "#0a0e12",
       "bg2": "#0e1319",
@@ -2238,20 +2238,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**İzleme kaydı:** her adım 01/02, araç adı mono.",
-      "**Camgöbeği sinyal:** yalnız çalışan adım.",
-      "**Gecikme:** ms mono, sağa hizalı.",
-      "**Keskin panel:** 2–4px."
+      "**Trace log:** every step 01/02, tool name in mono.",
+      "**Cyan signal:** the running step only.",
+      "**Latency:** mono ms, right-aligned.",
+      "**Sharp panel:** 2–4px."
     ],
     "must": [
-      "Her adımda araç adı, süre ve sonuç.",
-      "Hata adımı metinle işaretlenir.",
-      "Gizli adım yok; kayıt tam."
+      "Tool name, duration and result in every step.",
+      "Failed steps are marked in text.",
+      "No hidden steps; the log is complete."
     ],
     "mustNot": [
-      "Animasyonlu akış.",
-      "Beş renkli durum.",
-      "Yuvarlak 12px+ kart."
+      "An animated flow.",
+      "Five status colours.",
+      "A rounded card above 12px."
     ],
     "neighbors": {
       "compatible": [
@@ -2267,17 +2267,17 @@
       {
         "label": "Intelligent agent (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Intelligent_agent",
-        "use": "adım/araç modeli"
+        "use": "step/tool model"
       },
       {
         "label": "OpenTelemetry",
         "url": "https://opentelemetry.io/",
-        "use": "izleme alanları"
+        "use": "trace fields"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "kayıt biçimi"
+        "use": "log format"
       }
     ],
     "keywords": [
@@ -2289,8 +2289,8 @@
       "teknoloji",
       "saas"
     ],
-    "essence": "Agent Console, otonom işi denetlenebilir kılar: her adım, araç ve süre kayıtta.",
-    "brief": "AI ajan konsolu tasarla: koyu zemin, adım kaydı, camgöbeği yalnız çalışan adımda, mono gecikme.",
+    "essence": "Agent Console makes autonomous work auditable: every step, tool and duration is logged.",
+    "brief": "Design an AI agent console: dark background, step log, cyan on the running step only, mono latency.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
     "paletteSeeds": {
       "bg": "#0a0e12",
@@ -2321,9 +2321,9 @@
     "slug": "spatial-workspace",
     "name": "Spatial Workspace",
     "band": "gelecek",
-    "tagline": "Uzamsal çalışma alanı: derin gri, katman çizgileri, mor accent ve mono koordinat.",
-    "feeling": "mekânsal, katmanlı, \"derinlikte çalış\"",
-    "best": "AR/VR iş alanı, 3D işbirliği, uzamsal arayüz",
+    "tagline": "Spatial workspace: deep grey, layer outlines, purple accent and mono coordinates.",
+    "feeling": "spatial, layered, \"work in depth\"",
+    "best": "AR/VR workspace, 3D collaboration, spatial interface",
     "avoid": "muhasebe defteri",
     "palette": {
       "bg": "#0d0f14",
@@ -2348,20 +2348,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**Katman çizgileri:** eş merkezli 1px çerçeveler, %10.",
-      "**Mor accent:** seçili katman.",
+      "**Layer outlines:** concentric 1px frames at 10%.",
+      "**Purple accent:** the selected layer.",
       "**Koordinat:** mono x/y/z.",
-      "**Derinlik:** gölge yerine çizgi."
+      "**Depth:** lines instead of shadows."
     ],
     "must": [
-      "Her katmanda ad ve koordinat.",
-      "Seçim tek katman.",
-      "Odak halkası her yüzeyde."
+      "Name and coordinates on every layer.",
+      "One layer selected at a time.",
+      "Focus ring on every surface."
     ],
     "mustNot": [
-      "Ağır 3D illüstrasyon.",
-      "Gradyan derinlik.",
-      "Yuvarlak 20px+ panel."
+      "A heavy 3D illustration.",
+      "Gradient depth.",
+      "A rounded panel above 20px."
     ],
     "neighbors": {
       "compatible": [
@@ -2377,12 +2377,12 @@
       {
         "label": "Spatial computing (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Spatial_computing",
-        "use": "katman/uzam modeli"
+        "use": "layer/spatial model"
       },
       {
         "label": "WebXR Device API",
         "url": "https://www.w3.org/TR/webxr/",
-        "use": "uzamsal arayüz bağlamı"
+        "use": "spatial interface context"
       },
       {
         "label": "JetBrains Mono (Google Fonts)",
@@ -2393,14 +2393,14 @@
     "keywords": [
       "gelecek",
       "uzamsal",
-      "katman"
+      "layer"
     ],
     "industries": [
       "teknoloji",
       "tasarim"
     ],
-    "essence": "Spatial Workspace, katmanları görünür kılar: ne nerede, hangi derinlikte.",
-    "brief": "Uzamsal çalışma alanı tasarla: derin gri, katman çerçeveleri, mor accent seçimde, mono koordinat.",
+    "essence": "Spatial Workspace makes layers visible: what is where, at which depth.",
+    "brief": "Design a spatial workspace: deep grey, layer frames, purple accent on selection, mono coordinates.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-media { background-image: repeating-radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 40px); }",
     "paletteSeeds": {
       "bg": "#0d0f14",
@@ -2431,10 +2431,10 @@
     "slug": "bio-lab-interface",
     "name": "Bio Lab Interface",
     "band": "gelecek",
-    "tagline": "Biyolojik laboratuvar arayüzü: koyu yeşil, asit accent, kültür tablosu ve mono sıcaklık.",
-    "feeling": "canlı, kontrollü, \"37.0 °C\"",
-    "best": "biyoteknoloji, kültür takibi, laboratuvar otomasyonu",
-    "avoid": "moda kampanyası",
+    "tagline": "Biology lab interface: dark green, acid accent, culture table and mono temperature.",
+    "feeling": "alive, controlled, \"37.0 °C\"",
+    "best": "biotechnology, culture tracking, lab automation",
+    "avoid": "a fashion campaign",
     "palette": {
       "bg": "#0a100d",
       "bg2": "#0e1511",
@@ -2458,20 +2458,20 @@
     ],
     "motif": "dots",
     "signature": [
-      "**Kültür tablosu:** örnek, sıcaklık, süre mono.",
-      "**Asit yeşili:** yalnız canlı/aktif örnek.",
-      "**Nokta dokusu:** hücre benzeri, %6.",
-      "**Keskin panel:** 2–4px."
+      "**Culture table:** sample, temperature, duration in mono.",
+      "**Acid green:** live/active samples only.",
+      "**Dot texture:** cell-like, 6%.",
+      "**Sharp panel:** 2–4px."
     ],
     "must": [
-      "Her örnekte sıcaklık, pH ve süre.",
-      "Aktif durum metinle.",
-      "Birimler mono."
+      "Temperature, pH and duration on every sample.",
+      "Active state stated in text.",
+      "Units are mono."
     ],
     "mustNot": [
-      "Animasyonlu hücre.",
+      "An animated cell.",
       "Neon degradeler.",
-      "Okunamayan 9px etiket."
+      "An unreadable 9px label."
     ],
     "neighbors": {
       "compatible": [
@@ -2487,17 +2487,17 @@
       {
         "label": "Biotechnology (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Biotechnology",
-        "use": "kültür/ölçüm alanları"
+        "use": "culture/measurement fields"
       },
       {
         "label": "Inter (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Inter",
-        "use": "gövde ailesi"
+        "use": "body family"
       },
       {
         "label": "Share Tech Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Share+Tech+Mono",
-        "use": "ölçüm"
+        "use": "measurement"
       }
     ],
     "keywords": [
@@ -2509,8 +2509,8 @@
       "bilim",
       "saglik"
     ],
-    "essence": "Bio Lab Interface, canlı örneği tabloyla yönetir: sıcaklık, pH, süre ve durum.",
-    "brief": "Biyoteknoloji arayüzü tasarla: koyu yeşil zemin, asit yeşili yalnız aktif örnekte, mono ölçümler.",
+    "essence": "Bio Lab Interface manages live samples through a table: temperature, pH, duration and status.",
+    "brief": "Design a biotech interface: dark green background, acid green on active samples only, mono measurements.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
     "paletteSeeds": {
       "bg": "#0a100d",
@@ -2541,9 +2541,9 @@
     "slug": "climate-model",
     "name": "Climate Model",
     "band": "gelecek",
-    "tagline": "İklim modeli panosu: soğuk mavi, senaryo şeritleri, yıl ekseni ve mono sapma değeri.",
+    "tagline": "Climate model board: cold blue, scenario ribbons, year axis and mono deviation value.",
     "feeling": "bilimsel, uzun vadeli, \"+1.5 °C\"",
-    "best": "iklim/sürdürülebilirlik raporu, senaryo analizi",
+    "best": "climate/sustainability report, scenario analysis",
     "avoid": "hype kampanya",
     "palette": {
       "bg": "#f6f9fb",
@@ -2568,20 +2568,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**Senaryo şeritleri:** 3 yatay bant, farklı opaklık.",
-      "**Yıl ekseni:** mono, 10'ar yıl.",
-      "**Sapma değeri:** mono, +/− işaretli.",
-      "**Soğuk palet:** accent tek."
+      "**Scenario ribbons:** three horizontal bands at different opacity.",
+      "**Year axis:** mono, in steps of ten years.",
+      "**Deviation value:** mono, signed +/−.",
+      "**Cold palette:** a single accent."
     ],
     "must": [
-      "Her senaryoda referans yılı ve sapma.",
-      "Eksen etiketleri ve birim.",
-      "Kaynak dipnotu."
+      "Reference year and deviation in every scenario.",
+      "Axis labels and unit.",
+      "A source footnote."
     ],
     "mustNot": [
-      "Korku odaklı görsel.",
-      "Renk geçişli ısı haritası (7+ ton).",
-      "Kaynaksız iddia."
+      "Fear-driven imagery.",
+      "A gradient heat map (7+ shades).",
+      "Claims with no source."
     ],
     "neighbors": {
       "compatible": [
@@ -2597,17 +2597,17 @@
       {
         "label": "Climate model (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Climate_model",
-        "use": "senaryo yapısı"
+        "use": "scenario structure"
       },
       {
         "label": "IPCC",
         "url": "https://www.ipcc.ch/",
-        "use": "rapor dili"
+        "use": "report language"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "eksen/değer"
+        "use": "axis/value"
       }
     ],
     "keywords": [
@@ -2619,8 +2619,8 @@
       "bilim",
       "kamu"
     ],
-    "essence": "Climate Model, senaryoları karşılaştırır: aynı eksen, aynı birim, aynı referans.",
-    "brief": "İklim senaryo panosu tasarla: soğuk mavi, yıl ekseni mono, senaryo şeritleri, sapma değerleri.",
+    "essence": "Climate Model compares scenarios: same axis, same unit, same reference.",
+    "brief": "Design a climate scenario board: cold blue, mono year axis, scenario ribbons, deviation values.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-chart i:nth-child(odd) { opacity: .55; }",
     "paletteSeeds": {
       "bg": "#f6f9fb",
@@ -2651,9 +2651,9 @@
     "slug": "orbital-logistics",
     "name": "Orbital Logistics",
     "band": "gelecek",
-    "tagline": "Yörünge lojistiği: gece mavisi, yörünge çizgileri, manifest tablosu ve mono pencere saati.",
-    "feeling": "operasyonel uzay, \"fırlatma penceresi\"",
-    "best": "uzay lojistiği, uydu operasyonu, manifest planı",
+    "tagline": "Orbital logistics: night blue, orbit lines, manifest table and mono launch-window time.",
+    "feeling": "operational space, \"launch window\"",
+    "best": "space logistics, satellite operations, manifest planning",
     "avoid": "market vitrini",
     "palette": {
       "bg": "#080b14",
@@ -2679,20 +2679,20 @@
     "motif": "rings",
     "upper": true,
     "signature": [
-      "**Yörünge çizgileri:** eş merkezli elipsler, %12.",
-      "**Manifest tablosu:** yük, kütle, pencere mono.",
-      "**Mavi accent:** yalnız aktif pencere.",
+      "**Orbit lines:** concentric ellipses at 12%.",
+      "**Manifest table:** payload, mass, window in mono.",
+      "**Blue accent:** the active window only.",
       "**Pencere saati:** mono, UTC."
     ],
     "must": [
-      "Her yükte kütle ve hedef yörünge.",
+      "Mass and target orbit for every payload.",
       "Saatler UTC ve mono.",
-      "Durum metinle."
+      "State stated in text."
     ],
     "mustNot": [
-      "Fotoğrafik uzay arka planı.",
-      "Animasyonlu yörünge.",
-      "Okunamayan 9px."
+      "A photographic space backdrop.",
+      "An animated orbit.",
+      "An unreadable 9px."
     ],
     "neighbors": {
       "compatible": [
@@ -2708,12 +2708,12 @@
       {
         "label": "Orbital mechanics (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Orbital_mechanics",
-        "use": "yörünge/pencere kavramı"
+        "use": "orbit/window notion"
       },
       {
         "label": "Chakra Petch (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Chakra+Petch",
-        "use": "teknik başlık"
+        "use": "technical heading"
       },
       {
         "label": "Share Tech Mono (Google Fonts)",
@@ -2730,8 +2730,8 @@
       "bilim",
       "teknoloji"
     ],
-    "essence": "Orbital Logistics, fırlatma penceresini planlar: ne, ne zaman, hangi yörüngeye.",
-    "brief": "Yörünge lojistiği manifesti tasarla: gece mavisi, yörünge çizgileri, mono UTC pencere, manifest tablosu.",
+    "essence": "Orbital Logistics plans the launch window: what, when, to which orbit.",
+    "brief": "Design an orbital logistics manifest: night blue, orbit lines, mono UTC window, manifest table.",
     "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .04em; max-width: 24ch; }\n.pg-media { background-image: repeating-radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--accent) 12%, transparent) 0 1px, transparent 1px 36px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
     "paletteSeeds": {
       "bg": "#080b14",
@@ -2762,9 +2762,9 @@
     "slug": "synthetic-media",
     "name": "Synthetic Media",
     "band": "gelecek",
-    "tagline": "Sentetik medya: grafit zemin, turkuaz accent, kaynak etiketi ve mono üretim parametresi.",
-    "feeling": "deneysel, şeffaf, \"üretildi\"",
-    "best": "AI medya ürünü, içerik doğrulama, model kartı",
+    "tagline": "Synthetic media: graphite background, turquoise accent, source label and mono generation parameters.",
+    "feeling": "experimental, transparent, \"generated\"",
+    "best": "AI media product, content verification, model card",
     "avoid": "resmî belge",
     "palette": {
       "bg": "#0e1013",
@@ -2789,20 +2789,20 @@
     ],
     "motif": "dots",
     "signature": [
-      "**Kaynak etiketi:** her medyada \"synthetic\" mono etiketi.",
-      "**Turkuaz accent:** yalnız doğrulama durumu.",
-      "**Parametre listesi:** mono anahtar/değer.",
-      "**Grafit zemin:** tek ton."
+      "**Source label:** a mono \"synthetic\" label on every asset.",
+      "**Turquoise accent:** verification status only.",
+      "**Parameter list:** mono key/value.",
+      "**Graphite background:** a single tone."
     ],
     "must": [
-      "Her medyada üretim kaynağı ve model adı.",
-      "Doğrulama durumu metinle.",
-      "Parametreler mono ve birimli."
+      "Generation source and model name on every asset.",
+      "Verification status is stated in text.",
+      "Parameters are mono and carry units."
     ],
     "mustNot": [
-      "Gizlenen kaynak etiketi.",
-      "Animasyonlu örnek üretim.",
-      "Üçten fazla accent."
+      "A hidden source label.",
+      "An animated sample generation.",
+      "More than three accents."
     ],
     "neighbors": {
       "compatible": [
@@ -2818,17 +2818,17 @@
       {
         "label": "Generative artificial intelligence (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
-        "use": "model/kaynak etiketi"
+        "use": "model/source label"
       },
       {
         "label": "C2PA",
         "url": "https://c2pa.org/",
-        "use": "içerik kaynağı standardı"
+        "use": "content provenance standard"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "parametre"
+        "use": "parameter"
       }
     ],
     "keywords": [
@@ -2840,8 +2840,8 @@
       "teknoloji",
       "medya"
     ],
-    "essence": "Synthetic Media, üretilmiş içeriği işaretler: kaynak, model ve parametre görünür.",
-    "brief": "Sentetik medya ürünü tasarla: grafit zemin, turkuaz doğrulama accent, mono kaynak/parametre listesi.",
+    "essence": "Synthetic Media labels generated content: source, model and parameters stay visible.",
+    "brief": "Design a synthetic media product: graphite background, turquoise verification accent, mono source/parameter list.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-card { border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); }",
     "paletteSeeds": {
       "bg": "#0e1013",
@@ -2872,10 +2872,10 @@
     "slug": "quantum-dashboard",
     "name": "Quantum Dashboard",
     "band": "gelecek",
-    "tagline": "Kuantum panosu: mor-lacivert, durum vektörü tablosu, altın accent ve mono olasılık.",
+    "tagline": "Quantum board: purple-navy, state-vector table, gold accent and mono probability.",
     "feeling": "soyut, hassas, \"%50.2\"",
-    "best": "kuantum hesaplama, olasılık paneli, araştırma arayüzü",
-    "avoid": "tüketici vitrini",
+    "best": "quantum computing, probability panel, research interface",
+    "avoid": "a consumer storefront",
     "palette": {
       "bg": "#0a0a16",
       "bg2": "#0f0f1f",
@@ -2899,20 +2899,20 @@
     ],
     "motif": "dots",
     "signature": [
-      "**Olasılık tablosu:** iki ondalık, mono.",
-      "**Altın accent:** yalnız ölçülen durum.",
-      "**Vektör gösterimi:** `|0⟩` biçimi mono.",
-      "**Koyu mor:** tek zemin."
+      "**Probability table:** two decimals, mono.",
+      "**Gold accent:** the measured state only.",
+      "**Vector notation:** `|0⟩` in mono.",
+      "**Deep purple:** a single background."
     ],
     "must": [
-      "Olasılıklar iki ondalık ve toplam 100.",
-      "Durum gösterimi mono.",
-      "Birim/her normalizasyon yazılır."
+      "Probabilities carry two decimals and sum to 100.",
+      "State notation in mono.",
+      "Units and every normalisation are stated."
     ],
     "mustNot": [
-      "Süs atom illüstrasyonu.",
+      "A decorative atom illustration.",
       "Animasyonlu dalga fonksiyonu.",
-      "On renkli kübit paleti."
+      "A ten-colour qubit palette."
     ],
     "neighbors": {
       "compatible": [
@@ -2928,30 +2928,30 @@
       {
         "label": "Quantum computing (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Quantum_computing",
-        "use": "durum/ölçüm dili"
+        "use": "state/measurement language"
       },
       {
         "label": "Michroma (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Michroma",
-        "use": "teknik başlık"
+        "use": "technical heading"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "olasılık"
+        "use": "probability"
       }
     ],
     "keywords": [
       "gelecek",
       "kuantum",
-      "olasılık"
+      "probability"
     ],
     "industries": [
       "bilim",
       "teknoloji"
     ],
-    "essence": "Quantum Dashboard, olasılığı tabloyla verir: durum, genlik, olasılık ve toplam.",
-    "brief": "Kuantum panosu tasarla: mor-lacivert zemin, altın accent ölçümde, mono olasılık tablosu, |0⟩ gösterimi.",
+    "essence": "Quantum Dashboard delivers probability as a table: state, amplitude, probability and total.",
+    "brief": "Design a quantum board: purple-navy background, gold accent on measurement, mono probability table, |0⟩ notation.",
     "extraCss": "h1 { font-size: var(--type-h1); letter-spacing: .06em; max-width: 26ch; }\n.pg-table td { font-family: var(--font-mono); font-size: 11.5px; }",
     "paletteSeeds": {
       "bg": "#0a0a16",
@@ -2982,9 +2982,9 @@
     "slug": "digital-twin",
     "name": "Digital Twin",
     "band": "gelecek",
-    "tagline": "Dijital ikiz: şema-durum eşleşmesi, camgöbeği canlı accent ve mono sensör değeri.",
-    "feeling": "eşzamanlı, izlenen, \"gerçek zamanlı\"",
-    "best": "dijital ikiz, tesis izleme, sensör panosu",
+    "tagline": "Digital twin: diagram-to-state mapping, live cyan accent and mono sensor values.",
+    "feeling": "synchronised, monitored, \"real time\"",
+    "best": "digital twin, facility monitoring, sensor board",
     "avoid": "editoryal vitrin",
     "palette": {
       "bg": "#0b1013",
@@ -3009,20 +3009,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**Şema + değer:** sol diyagram, sağ sensör tablosu.",
-      "**Camgöbeği canlı:** yalnız aktif sensör.",
-      "**Sensör değeri:** mono, birim + zaman.",
-      "**Keskin panel:** 2–6px."
+      "**Diagram + value:** diagram on the left, sensor table on the right.",
+      "**Live cyan:** the active sensor only.",
+      "**Sensor value:** mono, unit + time.",
+      "**Sharp panel:** 2–6px."
     ],
     "must": [
-      "Her sensörde birim ve son güncelleme.",
-      "Eşik aşımı metinle.",
-      "Diyagram etiketleri okunur."
+      "Unit and last update on every sensor.",
+      "Threshold breaches are marked in text.",
+      "Diagram labels are readable."
     ],
     "mustNot": [
       "Animasyonlu 3B model.",
-      "Sekiz renkli sensör durumu.",
-      "Birimsiz değer."
+      "An eight-colour sensor status set.",
+      "A value without a unit."
     ],
     "neighbors": {
       "compatible": [
@@ -3038,30 +3038,30 @@
       {
         "label": "Digital twin (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Digital_twin",
-        "use": "eşleme modeli"
+        "use": "mapping model"
       },
       {
         "label": "Inter (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Inter",
-        "use": "gövde ailesi"
+        "use": "body family"
       },
       {
         "label": "Share Tech Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Share+Tech+Mono",
-        "use": "sensör değeri"
+        "use": "sensor value"
       }
     ],
     "keywords": [
       "gelecek",
       "ikiz",
-      "sensör"
+      "sensor"
     ],
     "industries": [
       "teknoloji",
       "insaat"
     ],
-    "essence": "Digital Twin, fiziksel durumu tabloyla eşler: sensör, birim, eşik ve zaman.",
-    "brief": "Dijital ikiz ekranı tasarla: koyu zemin, sol diyagram, sağ sensör tablosu, camgöbeği yalnız aktifte.",
+    "essence": "Digital Twin maps the physical state through a table: sensor, unit, threshold and time.",
+    "brief": "Design a digital twin screen: dark background, diagram on the left, sensor table on the right, cyan on the active sensor only.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 9%, transparent) 0 1px, transparent 1px 26px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 9%, transparent) 0 1px, transparent 1px 26px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
     "paletteSeeds": {
       "bg": "#0b1013",
@@ -3092,9 +3092,9 @@
     "slug": "neural-canvas",
     "name": "Neural Canvas",
     "band": "gelecek",
-    "tagline": "Sinir ağı tuvali: katman düğümleri, mor accent, ince bağlantılar ve mono katman boyutu.",
-    "feeling": "keşif, deneysel, \"katman 3: 512\"",
-    "best": "model görselleştirme, eğitim izleme, araştırma notu",
+    "tagline": "Neural network canvas: layer nodes, purple accent, thin connections and mono layer size.",
+    "feeling": "exploratory, experimental, \"layer 3: 512\"",
+    "best": "model visualisation, training monitor, research note",
     "avoid": "muhasebe defteri",
     "palette": {
       "bg": "#0b0b12",
@@ -3119,20 +3119,20 @@
     ],
     "motif": "dots",
     "signature": [
-      "**Katman düğümleri:** her katman bir sütun, düğüm sayısı mono.",
-      "**İnce bağlantı:** 1px, %20 opaklık.",
-      "**Mor accent:** yalnız seçili katman.",
-      "**Aktivasyon notu:** mono kısa etiket."
+      "**Layer nodes:** one column per layer, node count in mono.",
+      "**Thin connection:** 1px at 20% opacity.",
+      "**Purple accent:** the selected layer only.",
+      "**Activation note:** a short mono label."
     ],
     "must": [
-      "Her katmanda boyut ve aktivasyon.",
-      "Bağlantılar dekoratif değil, katman ilişkisi.",
-      "Parametre sayısı mono."
+      "Size and activation on every layer.",
+      "Connections show layer relationships, not decoration.",
+      "Parameter count in mono."
     ],
     "mustNot": [
-      "Animasyonlu eğitim.",
-      "Sekiz renkli düğüm.",
-      "Okunamayan etiket."
+      "Animated training.",
+      "An eight-colour node set.",
+      "An unreadable label."
     ],
     "neighbors": {
       "compatible": [
@@ -3148,30 +3148,30 @@
       {
         "label": "Artificial neural network (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Neural_network_(machine_learning)",
-        "use": "katman kavramı"
+        "use": "layer notion"
       },
       {
         "label": "Space Grotesk (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Space+Grotesk",
-        "use": "başlık ailesi"
+        "use": "heading family"
       },
       {
         "label": "JetBrains Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/JetBrains+Mono",
-        "use": "katman/parametre"
+        "use": "layer/parameters"
       }
     ],
     "keywords": [
       "gelecek",
       "model",
-      "katman"
+      "layer"
     ],
     "industries": [
       "teknoloji",
       "bilim"
     ],
-    "essence": "Neural Canvas, modeli katman katman gösterir: boyut, aktivasyon ve parametre.",
-    "brief": "Sinir ağı tuvali tasarla: koyu zemin, katman sütunları, ince bağlantılar, mono boyut/parametre.",
+    "essence": "Neural Canvas shows the model layer by layer: size, activation and parameters.",
+    "brief": "Design a neural network canvas: dark background, layer columns, thin connections, mono size/parameters.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: radial-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 1.5px, transparent 1.6px); background-size: 22px 22px; }",
     "paletteSeeds": {
       "bg": "#0b0b12",
@@ -3202,10 +3202,10 @@
     "slug": "post-screen-voice",
     "name": "Post-screen Voice",
     "band": "gelecek",
-    "tagline": "Ekran sonrası ses arayüzü: sıcak gri, dalga çizgisi, transkript satırı ve mono süre.",
-    "feeling": "konuşma, akış, \"dinliyorum\"",
-    "best": "sesli asistan, transkript ürünü, çağrı analizi",
-    "avoid": "resmî denetim raporu",
+    "tagline": "Post-screen voice interface: warm grey, waveform line, transcript rows and mono timings.",
+    "feeling": "speech, flow, \"listening\"",
+    "best": "voice assistant, transcript product, call analysis",
+    "avoid": "an official audit report",
     "palette": {
       "bg": "#f6f5f2",
       "bg2": "#ecebe6",
@@ -3229,20 +3229,20 @@
     ],
     "motif": "bars",
     "signature": [
-      "**Dalga çizgisi:** statik 40 çubuk, %30–70 yükseklik.",
-      "**Transkript satırı:** konuşmacı mono, metin düz.",
-      "**Süre:** mono, satır başında.",
-      "**Sıcak gri:** tek zemin."
+      "**Waveform line:** static 40 bars, 30–70% height.",
+      "**Transcript row:** speaker in mono, text roman.",
+      "**Timing:** mono, at the start of the row.",
+      "**Warm grey:** a single background."
     ],
     "must": [
-      "Her transkript satırında konuşmacı ve süre.",
+      "Speaker and timing on every transcript row.",
       "Dalga statik (animasyon yok).",
-      "Dokunma hedefi ≥ 44px."
+      "Touch target ≥ 44px."
     ],
     "mustNot": [
       "Animasyonlu dalga.",
-      "Beş renkli konuşmacı.",
-      "Yuvarlak 20px+ kart."
+      "Five speaker colours.",
+      "A rounded card above 20px."
     ],
     "neighbors": {
       "compatible": [
@@ -3258,17 +3258,17 @@
       {
         "label": "Speech recognition (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Speech_recognition",
-        "use": "transkript yapısı"
+        "use": "transcript structure"
       },
       {
         "label": "Web Speech API",
         "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API",
-        "use": "ses arayüzü bağlamı"
+        "use": "voice interface context"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "süre/konuşmacı"
+        "use": "timing/speaker"
       }
     ],
     "keywords": [
@@ -3280,8 +3280,8 @@
       "teknoloji",
       "medya"
     ],
-    "essence": "Post-screen Voice, konuşmayı satırlara böler: kim, ne zaman, ne dedi.",
-    "brief": "Sesli asistan transkript ekranı tasarla: sıcak gri, statik dalga çizgisi, mono konuşmacı/süre.",
+    "essence": "Post-screen Voice splits speech into rows: who, when, what was said.",
+    "brief": "Design a voice assistant transcript screen: warm grey, static waveform line, mono speaker/timing.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 22ch; }\n.pg-media { background-image: repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 26%, transparent) 0 3px, transparent 3px 12px); background-size: auto 60%; background-position: center; background-repeat: repeat-x; }\n.pg-card { border-radius: 14px; }",
     "paletteSeeds": {
       "bg": "#f6f5f2",

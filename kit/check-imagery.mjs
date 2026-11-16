@@ -1,18 +1,17 @@
 #!/usr/bin/env node
 /**
- * kit/check-imagery.mjs — görsel katman kapısı (P2).
+ * kit/check-imagery.mjs — visual layer port (P2).
  *
- * Neden: `tokens.json → imagery` v4'e kadar yalnız prose'du (`imagery.photos`: "tek konu, yumuşak
- * ışık…") ve 31 şablonun hiçbirinde `<img>` yoktu. P2 ile her stile bir dosya + bir treatment atandı.
- * Bu kapı sessiz drift'i yakalar:
+ * Reason: `tokens.json → imagery` was prose only until v4 (`imagery.photos`: "single thread, soft
+ *light…”) and none of the 31 templates had `<img>`. With P2, one file + one treatment was assigned to each style.
+ * This door captures silent drift:
  *
- *   · index    : `imagery.photo` kit/images/INDEX.json'da var mı, treatment geçerli mi
- *   · tutarlılık: plain ⇒ strength 0; scrim/duotone/grain ⇒ strength > 0
- *   · şablon   : fotoğraf kullanan arketipler (fullbleed, centered) `__PHOTO__` yer tutucusu taşır
- *   · kapsam   : fullbleed/centered stylerın hepsinde photo var (fotoğrafsız render sessizce düz kart olmasın)
+ * · index: Is `imagery.photo` in kit/images/INDEX.json, is treatment valid?
+ * · consistency: plain ⇒ strength 0; scrim/duotone/grain ⇒ strength > 0
+ * · template : archetypes that use photography (fullbleed, centered) carry a `__PHOTO__` placeholder
+ * Scope: All fullbleed/centered stylers have photo (no photo-free rendering, no plain card)
  *
- * Kullanım: node kit/check-imagery.mjs [--json]
- */
+ * Usage: node kit/check-imagery.mjs [--json]*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
@@ -77,7 +76,7 @@ const artUsage = new Map();
 for (const s of styles) {
   const img = s.tokens.imagery ?? {};
   const tag = s.dirName;
-  if (!img.photo && !img.art) errors.push(`${tag}: imagery.photo veya imagery.art gerekli`);
+  if (!img.photo && !img.art) errors.push(`${tag}: imagery.photo or imagery.art is required`);
   if (img.photo) {
     if (!FILES.has(img.photo)) errors.push(`${tag}: imagery.photo "${img.photo}" INDEX.json'da yok`);
     usage.set(img.photo, (usage.get(img.photo) ?? 0) + 1);
@@ -86,7 +85,7 @@ for (const s of styles) {
     const rel = String(img.art);
     const file = path.resolve(ROOT, 'kit/images', rel);
     const base = path.resolve(ROOT, 'kit/images/gen') + path.sep;
-    if (!rel.startsWith('gen/') || rel.split('/').includes('..') || !rel.endsWith('.svg') || !file.startsWith(base)) errors.push(`${tag}: imagery.art "${rel}" kit/images/gen/ altındaki .svg olmalı`);
+    if (!rel.startsWith('gen/') || rel.split('/').includes('..') || !rel.endsWith('.svg') || !file.startsWith(base)) errors.push(`${tag}: imagery.art "${rel}" must be an .svg under kit/images/gen/`);
     else {
       const svgIssues = validateSvg(file);
       if (svgIssues.length) errors.push(`${tag}: imagery.art ${rel}: ${svgIssues.join(', ')}`);
@@ -100,22 +99,22 @@ for (const s of styles) {
 
   const t = img.treatment ?? {};
   if (img.photo) {
-    if (!MODES.has(t.mode)) errors.push(`${tag}: imagery.treatment.mode "${t.mode}" geçersiz (${[...MODES].join('|')})`);
+    if (!MODES.has(t.mode)) errors.push(`${tag}: imagery.treatment.mode "${t.mode}" is not valid (${[...MODES].join('|')})`);
     const strength = Number(t.strength);
     if (!Number.isFinite(strength) || strength < 0 || strength > 0.8) {
-      errors.push(`${tag}: treatment.strength ${t.strength} aralık dışı (0…0.8)`);
+      errors.push(`${tag}: treatment.strength ${t.strength} is outside the range (0…0.8)`);
     } else if (t.mode === 'plain' && strength !== 0) {
-      errors.push(`${tag}: plain treatment strength 0 olmalı (şu an ${strength})`);
+      errors.push(`${tag}: plain treatment strength must be 0 (it is ${strength})`);
     } else if (t.mode !== 'plain' && strength <= 0) {
-      errors.push(`${tag}: ${t.mode} treatment strength > 0 olmalı`);
+      errors.push(`${tag}: ${t.mode} treatment strength must be > 0`);
     }
   }
 
   const hero = s.tokens.layout?.hero;
-  if (PHOTO_HEROES.has(hero) && !img.photo && !img.art) errors.push(`${tag}: hero "${hero}" medya kullanıyor ama photo/art yok`);
+  if (PHOTO_HEROES.has(hero) && !img.photo && !img.art) errors.push(`${tag}: hero "${hero}" uses media but has no photo/art`);
 }
 
-// şablonlar fotoğraf yer tutucusunu taşımalı
+// templates must carry the photo placeholder
 for (const [hero, rel] of Object.entries(TEMPLATES)) {
   const p = path.join(ROOT, rel);
   if (!fs.existsSync(p)) {
@@ -123,17 +122,17 @@ for (const [hero, rel] of Object.entries(TEMPLATES)) {
     continue;
   }
   const html = fs.readFileSync(p, 'utf8');
-  if (!html.includes('__PHOTO__')) errors.push(`${rel}: __PHOTO__ yer tutucusu yok (fotoğraf sessizce düşer)`);
+  if (!html.includes('__PHOTO__')) errors.push(`${rel}: no __PHOTO__ placeholder (the photo silently disappears)`);
   if (!html.includes('__PHOTO_ATTRS__')) errors.push(`${rel}: __PHOTO_ATTRS__ (treatment) yok`);
 }
 
-// ölü görsel: hiç kullanılmayan dosya (yeni stil eklendikçe değişebilir → uyarı)
-for (const f of FILES) if (!usage.has(f)) warnings.push(`kit/images/${f}: hiçbir stilde kullanılmıyor`);
+// dead image: never used file (may change as new styles are added → warning)
+for (const f of FILES) if (!usage.has(f)) warnings.push(`kit/images/${f}: used by no style`);
 
-// kullanım yoğunluğu: tek fotoğrafa aşırı yüklenme
+// usage intensity: single photo overload
 const total = styles.length;
 for (const [file, n] of usage) {
-  if (n / total > 0.25) warnings.push(`kit/images/${file}: ${n}/${total} stil (%${Math.round((n / total) * 100)}) — çeşitlilik düşük`);
+  if (n / total > 0.25) warnings.push(`kit/images/${file}: ${n}/${total} styles (${Math.round((n / total) * 100)}%) — low variety`);
 }
 
 if (JSON_OUT) {
@@ -142,8 +141,8 @@ if (JSON_OUT) {
   for (const w of warnings) console.log(`  ! ${w}`);
   for (const e of errors) console.log(`  × ${e}`);
   console.log(
-    `görsel katman · ${total} stil · ${usage.size}/${FILES.size} fotoğraf kullanımda · ` +
-      `${errors.length} hata · ${warnings.length} uyarı${errors.length ? '' : ' — temiz'}`,
+    `imagery layer · ${total} styles · ${usage.size}/${FILES.size} photos in use · ` +
+      `${errors.length} errors · ${warnings.length} warnings${errors.length ? '' : ' — clean'}`,
   );
 }
 process.exit(errors.length ? 1 : 0);

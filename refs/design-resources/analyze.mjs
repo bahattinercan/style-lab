@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 /**
- * refs/design-resources/analyze.mjs — dondurulmuş markdown kataloğunu ayrıştırır.
+ * refs/design-resources/analyze.mjs — parses the frozen markdown catalog.
  *
- * Girdi : readme.snapshot.md (bradtraversy/design-resources-for-developers, 2026-10-18 snapshot)
- * Çıktı : rows.json (kayıt listesi) + konsol istatistiği
+ * Input  : readme.snapshot.md (bradtraversy/design-resources-for-developers, 2026-10-18 snapshot)
+ * Output : rows.json (record list) + console statistics
  *
- * Kullanım:
+ * Usage:
  *   node refs/design-resources/analyze.mjs
- *   node refs/design-resources/analyze.mjs --json     # sadece özet JSON
+ *   node refs/design-resources/analyze.mjs --json     # summary JSON only
  *
- * Tuzak: dosya CRLF gelir; `\r` temizlenmeden /^## (.+)$/ regex'i hiç tutmaz.
+ * Trap: the file arrives with CRLF; without stripping `\r` the /^## (.+)$/ regex matches nothing.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -36,8 +36,8 @@ for (const line of md) {
   if (!line.startsWith('|')) continue;
   const cells = line.split('|').map((cell) => cell.trim());
   if (cells.length < 3) continue;
-  if (/^[-: ]+$/.test(cells[1])) continue; // ayırıcı satır
-  if (/^website/i.test(cells[1])) continue; // tablo başlığı
+  if (/^[-: ]+$/.test(cells[1])) continue; // separator row
+  if (/^website/i.test(cells[1])) continue; // table header
   const match = cells[1].match(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/);
   if (!match) continue;
   sections.set(section, sections.get(section) + 1);
@@ -76,7 +76,7 @@ const topDomains = [...domains]
 fs.writeFileSync(OUT, JSON.stringify(rows));
 
 const summary = {
-  kaynak: 'bradtraversy/design-resources-for-developers (2026-10-18 dondurulmus snapshot)',
+  source: 'bradtraversy/design-resources-for-developers (2026-10-18 frozen snapshot)',
   toplamKayit: rows.length,
   bolumSayisi: bySection.length,
   benzersizDomain: domains.size,

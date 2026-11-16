@@ -23,52 +23,52 @@ Nearest-neighbour distance: min **64**, median **92**.
 
 ### Group B (126-135)
 
-| dir | slug | family | current CONFIG.motif | current imagery.photo | has motif.css | has art | nearest-neighbour dHash distance |
+| is | slug | family | current CONFIG.motif | current imagery.photo | unique motif.css | has art | nearest-neighbor dHash distance |
 |---|---|---|---|---|---:|---:|---:|
-| 126-marble-vein | marble-vein | Materyal & Lüks | none | arch-01.jpg | no | no | 78 |
-| 127-silk-drape | silk-drape | Materyal & Lüks | blob | int-01.jpg | no | no | 82 |
-| 128-brass-copper | brass-copper | Materyal & Lüks | bars | arch-01.jpg | no | no | 132 |
-| 129-porcelain-glaze | porcelain-glaze | Materyal & Lüks | none | int-01.jpg | no | no | 85 |
-| 130-leather-craft | leather-craft | Materyal & Lüks | paper | tex-03.jpg | no | no | 96 |
-| 131-optic-prism | optic-prism | Materyal & Lüks | rings | arch-01.jpg | no | no | 82 |
-| 132-wood-joinery | wood-joinery | Materyal & Lüks | paper | arch-01.jpg | no | no | 80 |
-| 133-letterpress-print | letterpress-print | Materyal & Lüks | paper | int-01.jpg | no | no | 92 |
-| 134-concrete-monolith | concrete-monolith | Materyal & Lüks | none | int-01.jpg | no | no | 82 |
-| 135-enamel-porcelain | enamel-porcelain | Materyal & Lüks | rings | tex-03.jpg | no | no | 78 |
+| 126-marble-vein | marble-vein | Material & Luxury | none | arch-01.jpg | no | no | 78 |
+| 127-silk-drape | silk-drape | Material & Luxury | blob | int-01.jpg | no | no | 82 |
+| 128-brass-copper | brass-copper | Material & Luxury | bars | arch-01.jpg | no | no | 132 |
+| 129-porcelain-glaze | porcelain-glaze | Material & Luxury | none | int-01.jpg | no | no | 85 |
+| 130-leather-craft | leather-craft | Material & Luxury | paper | tex-03.jpg | no | no | 96 |
+| 131-optic-prism | optic-prism | Material & Luxury | rings | arch-01.jpg | no | no | 82 |
+| 132-wood-joinery | wood-joinery | Material & Luxury | paper | arch-01.jpg | no | no | 80 |
+| 133-letterpress-print | letterpress-print | Material & Luxury | paper | int-01.jpg | no | no | 92 |
+| 134-concrete-monolith | concrete-monolith | Material & Luxury | none | int-01.jpg | no | no | 82 |
+| 135-enamel-porcelain | enamel-porcelain | Material & Luxury | rings | tex-03.jpg | no | no | 78 |
 
 Nearest-neighbour distance: min **78**, median **82**.
 
 ### Group C (46-55)
 
-| dir | slug | family | current CONFIG.motif | current imagery.photo | has motif.css | has art | nearest-neighbour dHash distance |
+| is | slug | family | current CONFIG.motif | current imagery.photo | unique motif.css | has art | nearest-neighbor dHash distance |
 |---|---|---|---|---|---:|---:|---:|
-| 46-telemetry-grid | telemetry-grid | Veri & Gösterge | grid | obj-03.jpg | no | no | 72 |
-| 47-trading-desk | trading-desk | Veri & Gösterge | bars | urb-02.jpg | no | no | 78 |
-| 48-executive-kpi | executive-kpi | Veri & Gösterge | paper | urb-02.jpg | no | no | 66 |
-| 49-log-stream | log-stream | Veri & Gösterge | dots | urb-02.jpg | no | no | 78 |
-| 50-lab-instrument | lab-instrument | Veri & Gösterge | rings | urb-02.jpg | no | no | 66 |
-| 51-atlas-console | atlas-console | Veri & Gösterge | grid | urb-02.jpg | no | no | 99 |
-| 52-experiment-split | experiment-split | Veri & Gösterge | dots | obj-03.jpg | no | no | 77 |
-| 53-ledger-meter | ledger-meter | Veri & Gösterge | paper | urb-02.jpg | no | no | 114 |
-| 54-vitals-triage | vitals-triage | Veri & Gösterge | rings | obj-03.jpg | no | no | 72 |
-| 55-fleet-telemetry | fleet-telemetry | Veri & Gösterge | dots | obj-03.jpg | no | no | 77 |
+| 46-telemetry-grid | telemetry-grid | Data & Indicator | grid | obj-03.jpg | no | no | 72 |
+| 47-trading-desk | trading-desk | Data & Indicator | bars | urb-02.jpg | no | no | 78 |
+| 48-executive-kpi | executive-kpi | Data & Indicator | paper | urb-02.jpg | no | no | 66 |
+| 49-log-stream | log-stream | Data & Indicator | dots | urb-02.jpg | no | no | 78 |
+| 50-lab-instrument | lab-instrument | Data & Indicator | rings | urb-02.jpg | no | no | 66 |
+| 51-atlas-console | atlas-console | Data & Indicator | grid | urb-02.jpg | no | no | 99 |
+| 52-experiment-split | experiment-split | Data & Indicator | dots | obj-03.jpg | no | no | 77 |
+| 53-ledger-meter | ledger-meter | Data & Indicator | paper | urb-02.jpg | no | no | 114 |
+| 54-vitals-triage | vitals-triage | Data & Indicator | rings | obj-03.jpg | no | no | 72 |
+| 55-fleet-telemetry | fleet-telemetry | Data & Indicator | dots | obj-03.jpg | no | no | 77 |
 
 Nearest-neighbour distance: min **66**, median **77**.
 
 ### Group D (76-85)
 
-| dir | slug | family | current CONFIG.motif | current imagery.photo | has motif.css | has art | nearest-neighbour dHash distance |
+| is | slug | family | current CONFIG.motif | current imagery.photo | unique motif.css | has art | nearest-neighbor dHash distance |
 |---|---|---|---|---|---:|---:|---:|
-| 76-biophilic-botanical | biophilic-botanical | Doğa & Organik | blob | nat-03.jpg | no | no | 106 |
-| 77-weather-atmosphere | weather-atmosphere | Doğa & Organik | none | nat-03.jpg | no | no | 94 |
-| 78-topographic-terrain | topographic-terrain | Doğa & Organik | paper | nat-04.jpg | no | no | 96 |
-| 79-ocean-current | ocean-current | Doğa & Organik | rings | nat-02.jpg | no | no | 101 |
-| 80-seasonal-shift | seasonal-shift | Doğa & Organik | dots | nat-01.jpg | no | no | 94 |
-| 81-forest-bark | forest-bark | Doğa & Organik | blob | nat-02.jpg | no | no | 87 |
-| 82-desert-sand | desert-sand | Doğa & Organik | rings | nat-02.jpg | no | no | 96 |
-| 83-polar-ice | polar-ice | Doğa & Organik | grid | nat-02.jpg | no | no | 113 |
-| 84-volcanic-mineral | volcanic-mineral | Doğa & Organik | bars | nat-04.jpg | no | no | 116 |
-| 85-coral-reef | coral-reef | Doğa & Organik | dots | nat-04.jpg | no | no | 87 |
+| 76-biophilic-botanical | biophilic-botanical | Nature & Organic | blob | nat-03.jpg | no | no | 106 |
+| 77-weather-atmosphere | weather-atmosphere | Nature & Organic | none | nat-03.jpg | no | no | 94 |
+| 78-topographic-terrain | topographic-terrain | Nature & Organic | paper | nat-04.jpg | no | no | 96 |
+| 79-ocean-current | ocean-current | Nature & Organic | rings | nat-02.jpg | no | no | 101 |
+| 80-seasonal-shift | seasonal-shift | Nature & Organic | dots | nat-01.jpg | no | no | 94 |
+| 81-forest-bark | forest-bark | Nature & Organic | blob | nat-02.jpg | no | no | 87 |
+| 82-desert-sand | desert-sand | Nature & Organic | rings | nat-02.jpg | no | no | 96 |
+| 83-polar-ice | polar-ice | Nature & Organic | grid | nat-02.jpg | no | no | 113 |
+| 84-volcanic-mineral | volcanic-mineral | Nature & Organic | bars | nat-04.jpg | no | no | 116 |
+| 85-coral-reef | coral-reef | Nature & Organic | dots | nat-04.jpg | no | no | 87 |
 
 Nearest-neighbour distance: min **87**, median **96**.
 
@@ -124,52 +124,52 @@ Nearest-neighbour distance: min **68**, median **98.5**.
 
 ### Group B (126-135)
 
-| dir | slug | family | motif.css technique | art file | nearest-neighbour dHash distance |
+| is | slug | family | motif.css technique | art file | nearest-neighbor dHash distance |
 |---|---|---|---|---|---:|
-| 126-marble-vein | marble-vein | Materyal & Lüks | branching vein slivers via multiple thin linear-gradient wedges + clip-path | gen/marble-vein.svg | 84 |
-| 127-silk-drape | silk-drape | Materyal & Lüks | very wide-radius repeating-radial-gradient fold bands (soft sheen) | gen/silk-drape.svg | 98 |
-| 128-brass-copper | brass-copper | Materyal & Lüks | engraved plate: vertical bar stack + fine hairline hatching | gen/brass-copper.svg | 130 |
-| 129-porcelain-glaze | porcelain-glaze | Materyal & Lüks | sparse thin cobalt hairline arcs (thin radial-gradient rings), lots of white | gen/porcelain-glaze.svg | 92 |
-| 130-leather-craft | leather-craft | Materyal & Lüks | dashed stitch frame drawn on the edges + fine speckle grain | gen/leather-craft.svg | 96 |
-| 131-optic-prism | optic-prism | Materyal & Lüks | conic-gradient spectral slices clipped to a wedge/triangle | gen/optic-prism.svg | 84 |
-| 132-wood-joinery | wood-joinery | Materyal & Lüks | repeating dovetail pin comb via clip-path polygon pattern | gen/wood-joinery.svg | 96 |
-| 133-letterpress-print | letterpress-print | Materyal & Lüks | deboss impression: paired linear-gradient edge shadows around type blocks | gen/letterpress-print.svg | 102 |
-| 134-concrete-monolith | concrete-monolith | Materyal & Lüks | formwork panel grid lines + form-tie holes (radial dots at intersections) | gen/concrete-monolith.svg | 100 |
-| 135-enamel-porcelain | enamel-porcelain | Materyal & Lüks | glaze pooling rings of unequal thickness (stacked radial-gradients) | gen/enamel-porcelain.svg | 89 |
+| 126-marble-vein | marble-vein | Material & Luxury | branching vein slivers via multiple thin linear-gradient wedges + clip-path | gen/marble-vein.svg | 84 |
+| 127-silk-drape | silk-drape | Material & Luxury | very wide-radius repeating-radial-gradient fold bands (soft sheen) | gen/silk-drape.svg | 98 |
+| 128-brass-copper | brass-copper | Material & Luxury | engraved plate: vertical bar stack + fine hairline hatching | gen/brass-copper.svg | 130 |
+| 129-porcelain-glaze | porcelain-glaze | Material & Luxury | sparse thin cobalt hairline arcs (thin radial-gradient rings), lots of white | gen/porcelain-glaze.svg | 92 |
+| 130-leather-craft | leather-craft | Material & Luxury | dashed stitch frame drawn on the edges + fine speckle grain | gen/leather-craft.svg | 96 |
+| 131-optic-prism | optic-prism | Material & Luxury | conic-gradient spectral slices clipped to a wedge/triangle | gen/optic-prism.svg | 84 |
+| 132-wood-joinery | wood-joinery | Material & Luxury | repeating dovetail pin comb via clip-path polygon pattern | gen/wood-joinery.svg | 96 |
+| 133-letterpress-print | letterpress-print | Material & Luxury | deboss impression: paired linear-gradient edge shadows around type blocks | gen/letterpress-print.svg | 102 |
+| 134-concrete-monolith | concrete-monolith | Material & Luxury | formwork panel grid lines + form-tie holes (radial dots at intersections) | gen/concrete-monolith.svg | 100 |
+| 135-enamel-porcelain | enamel-porcelain | Material & Luxury | glaze pooling rings of unequal thickness (stacked radial-gradients) | gen/enamel-porcelain.svg | 89 |
 
 Nearest-neighbour distance: min **84**, median **96**.
 
 ### Group C (46-55)
 
-| dir | slug | family | motif.css technique | art file | nearest-neighbour dHash distance |
+| is | slug | family | motif.css technique | art file | nearest-neighbor dHash distance |
 |---|---|---|---|---|---:|
-| 46-telemetry-grid | telemetry-grid | Veri & Gösterge | 24px grid + horizontal threshold band stripes | gen/telemetry-grid.svg | 73 |
-| 47-trading-desk | trading-desk | Veri & Gösterge | price ladder horizontal bars of increasing width | gen/trading-desk.svg | 78 |
-| 48-executive-kpi | executive-kpi | Veri & Gösterge | hairline horizontal rules of varying weight, very sparse | gen/executive-kpi.svg | 69 |
-| 49-log-stream | log-stream | Veri & Gösterge | vertical timeline spine with severity dots of different size/opacity | gen/log-stream.svg | 78 |
-| 50-lab-instrument | lab-instrument | Veri & Gösterge | concentric partial gauge arcs + needle wedge | gen/lab-instrument.svg | 69 |
-| 51-atlas-console | atlas-console | Veri & Gösterge | lat/long graticule crossing line sets + tick marks on edges | gen/atlas-console.svg | 102 |
-| 52-experiment-split | experiment-split | Veri & Gösterge | two divergent dot clouds split along a centre axis | gen/experiment-split.svg | 77 |
-| 53-ledger-meter | ledger-meter | Veri & Gösterge | ruled ledger columns + single fill meter block | gen/ledger-meter.svg | 114 |
-| 54-vitals-triage | vitals-triage | Veri & Gösterge | radial rings combined with clipped waveform spike row | gen/vitals-triage.svg | 73 |
-| 55-fleet-telemetry | fleet-telemetry | Veri & Gösterge | dotted route paths with node pins at route turns | gen/fleet-telemetry.svg | 77 |
+| 46-telemetry-grid | telemetry-grid | Data & Indicator | 24px grid + horizontal threshold band stripes | gen/telemetry-grid.svg | 73 |
+| 47-trading-desk | trading-desk | Data & Indicator | price ladder horizontal bars of increasing width | gen/trading-desk.svg | 78 |
+| 48-executive-kpi | executive-kpi | Data & Indicator | hairline horizontal rules of varying weight, very sparse | gen/executive-kpi.svg | 69 |
+| 49-log-stream | log-stream | Data & Indicator | vertical timeline spine with severity dots of different size/opacity | gen/log-stream.svg | 78 |
+| 50-lab-instrument | lab-instrument | Data & Indicator | concentric partial gauge arcs + needle wedge | gen/lab-instrument.svg | 69 |
+| 51-atlas-console | atlas-console | Data & Indicator | lat/long graticule crossing line sets + tick marks on edges | gen/atlas-console.svg | 102 |
+| 52-experiment-split | experiment-split | Data & Indicator | two divergent dot clouds split along a center axis | gen/experiment-split.svg | 77 |
+| 53-ledger-meter | ledger-meter | Data & Indicator | ruled ledger columns + single fill meter block | gen/ledger-meter.svg | 114 |
+| 54-vitals-triage | vitals-triage | Data & Indicator | radial rings combined with clipped waveform spike row | gene/vitals-triage.svg | 73 |
+| 55-fleet-telemetry | fleet-telemetry | Data & Indicator | dotted route paths with node pins at route turns | gen/fleet-telemetry.svg | 77 |
 
 Nearest-neighbour distance: min **69**, median **77**.
 
 ### Group D (76-85)
 
-| dir | slug | family | motif.css technique | art file | nearest-neighbour dHash distance |
+| is | slug | family | motif.css technique | art file | nearest-neighbor dHash distance |
 |---|---|---|---|---|---:|
-| 76-biophilic-botanical | biophilic-botanical | Doğa & Organik | overlapping leaf silhouettes via clip-path polygons, soft edge | gen/biophilic-botanical.svg | 110 |
-| 77-weather-atmosphere | weather-atmosphere | Doğa & Organik | very large soft radial-gradient cloud mass + horizontal mist band | gen/weather-atmosphere.svg | 97 |
-| 78-topographic-terrain | topographic-terrain | Doğa & Organik | nested contour lines from stacked thin repeating-radial-gradient ellipses | gen/topographic-terrain.svg | 100 |
-| 79-ocean-current | ocean-current | Doğa & Organik | flowing current lines: offset repeating-linear-gradient with wave clip-path | gen/ocean-current.svg | 107 |
-| 80-seasonal-shift | seasonal-shift | Doğa & Organik | sparse dot drift showing a gradient (dot density varies left to right) | gen/seasonal-shift.svg | 95 |
-| 81-forest-bark | forest-bark | Doğa & Organik | vertical fibrous streak texture (fine repeating-linear-gradient, irregular widths) | gen/forest-bark.svg | 90 |
-| 82-desert-sand | desert-sand | Doğa & Organik | dune curves as wide flattened radial-gradient arcs, asymmetric | gen/desert-sand.svg | 95 |
-| 83-polar-ice | polar-ice | Doğa & Organik | fractured ice plate grid: irregular polygon cells via clip-path + hairline cracks | gen/polar-ice.svg | 111 |
-| 84-volcanic-mineral | volcanic-mineral | Doğa & Organik | geological section: horizontal strata bars of varying thickness + mineral tick marks | gen/volcanic-mineral.svg | 116 |
-| 85-coral-reef | coral-reef | Doğa & Organik | asymmetric coral branch shapes built from rounded clip-path blobs at one corner | gen/coral-reef.svg | 90 |
+| 76-biophilic-botanical | biophilic-botanical | Nature & Organic | overlapping leaf silhouettes via clip-path polygons, soft edge | gene/biophilic-botanical.svg | 110 |
+| 77-weather-atmosphere | weather-atmosphere | Nature & Organic | very large soft radial-gradient cloud mass + horizontal mist band | gen/weather-atmosphere.svg | 97 |
+| 78-topographic-terrain | topographic-terrain | Nature & Organic | nested contour lines from stacked thin repeating-radial-gradient ellipses | gen/topographic-terrain.svg | 100 |
+| 79-ocean-current | ocean-current | Nature & Organic | flowing current lines: offset repeating-linear-gradient with wave clip-path | gen/ocean-current.svg | 107 |
+| 80-seasonal-shift | seasonal-shift | Nature & Organic | sparse dot drift showing a gradient (dot density varies left to right) | gen/seasonal-shift.svg | 95 |
+| 81-forest-bark | forest-bark | Nature & Organic | vertical fibrous streak texture (fine repeating-linear-gradient, irregular widths) | gen/forest-bark.svg | 90 |
+| 82-desert-sand | desert-sand | Nature & Organic | dune curves as wide flattened radial-gradient arcs, asymmetric | gen/desert-sand.svg | 95 |
+| 83-polar-ice | polar-ice | Nature & Organic | fractured ice plate grid: irregular polygon cells via clip-path + hairline cracks | gen/polar-ice.svg | 111 |
+| 84-volcanic-mineral | volcanic-mineral | Nature & Organic | geological section: horizontal strata bars of varying thickness + mineral tick marks | gen/volcanic-mineral.svg | 116 |
+| 85-coral-reef | coral-reef | Nature & Organic | asymmetric coral branch shapes built from rounded clip-path blobs at one corner | gen/coral-reef.svg | 90 |
 
 Nearest-neighbour distance: min **90**, median **98.5**.
 
@@ -216,28 +216,28 @@ Motif CSS files: **50**. Unique artwork SHA-256 hashes: **50**. Metric commands:
 
 ``text
 
-✓ mcp self-test: araçlar çalışıyor
-✓ mcp sunucusu
-▶ webp türevleri
-✓ WebP türevleri güncel (251 stil × 2 boy)
-✓ webp türevleri
-▶ site bütünlüğü
-✓ site bütünlüğü: 251 stil × 2 WebP + PNG · 31 aile · katalog 251 satır
-✓ site bütünlüğü
-▶ site duman testi
-✓ site duman testi: landing + galeri 251 kart (webp, lazy 245, priority 6) + katalog + live · konsol temiz
-✓ site duman testi
-▶ görsel imza
-görsel imza · 251/251 karşılaştırıldı · 0 fark · 0 eksik · 0 yeni
-sonuç: temiz
-✓ görsel imza
-▶ stil ayırt edilebilirliği
+✓ mcp self-test: tools working
+✓ mcp server
+▶ webp variants
+✓ WebP variants up to date (251 styles × 2 sizes)
+✓ webp derivatives
+▶ site integrity
+✓ site integrity: 251 styles × 2 WebP + PNG 31 families catalog 251 lines
+✓ site integrity
+▶ site smoke testing
+✓ site smoke test: landing + gallery 251 cards (webp, lazy 245, priority 6) + catalog + live console clean
+✓ site smoke testing
+▶ visual signature
+visual signature · 251/251 compared · 0 differences · 0 missing · 0 new
+result: clean
+✓ visual signature
+▶ style distinguishability
 distinctness · 251 styles · minimum 24/256 · 0 near pairs
-✓ stil ayırt edilebilirliği
-▶ ayırt edilebilirlik self-test
+✓ style distinguishability
+▶ distinguishability self-test
 self-test: bit distance and strict threshold pass
-✓ ayırt edilebilirlik self-test
-▶ görsel regresyon
-↷ görsel regresyon (baseline yok, atlandı)
-kapılar: temiz
+✓ distinguishability self-test
+▶ visual regression
+↷ visual regression (no baseline, omitted)
+doors: clean
 ``n

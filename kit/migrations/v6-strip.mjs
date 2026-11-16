@@ -1,21 +1,20 @@
 #!/usr/bin/env node
 /**
- * kit/migrations/v6-strip.mjs — v5 → v6 kaynak göçü (tek sayfa · koyu modsuz · hareket siz).
+ * kit/migrations/v6-strip.mjs — v5 → v6 source migration (single page · no dark mode · still).
  *
- * Ne yapar (151 stil kaynağı üzerinde):
- *   1. tokens.json  : palette.dark silinir, motion nesnesi silinir, version 6'ya çekilir.
- *   2. token-block.css : `[data-theme="dark"][data-style="…"]` bloğu silinir.
- *   3. style.md     : "## Hareket" ve "## Koyu mod" bölümleri silinir; "Görseller" satırı
- *                     tek sahneye (shots/01-page.png) çevrilir.
- *   4. shots.config.fragment.mjs : @keyframes blokları ve animation bildirimleri silinir
- *                     (statik tek sayfa: animasyon ne sistemde ne sahnede).
+ * What it does (over 151 style sources):
+ * 1. tokens.json: palette.dark is deleted, motion object is deleted, downgraded to version 6.
+ * 2. token-block.css : `[data-theme="dark"][data-style="…"]` block is deleted.
+ * 3. style.md: "## Motion" and "## Dark mode" sections are deleted; "Images" row
+ * converted to a single scene (shots/01-page.png).
+ * 4. shots.config.fragment.mjs: @keyframes blocks and animation notifications are deleted
+ * (static single page: animation neither in the system nor on the stage).
  *
- * Kullanım:
- *   node kit/migrations/v6-strip.mjs --check    # ne değişecek, yazmadan raporla
- *   node kit/migrations/v6-strip.mjs --apply    # uygula
+ * Usage:
+ * node kit/migrations/v6-strip.mjs --check # what will change, report without writing
+ * node kit/migrations/v6-strip.mjs --apply # apply
  *
- * Kapı değildir; bir kez koşar. Sonrası: node kit/apply-fragments.mjs --apply
- */
+ * It is not a door; runs once. After: node kit/apply-fragments.mjs --apply*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -32,7 +31,7 @@ const writeIfChanged = (p, before, after) => {
   return true;
 };
 
-/** `{` / `}` sayarak tek bir bloğu (seçici + gövde) siler. */
+/** Deletes a single block (selector + body) by counting `{` / `}`.*/
 function removeCssBlock(css, selector) {
   const start = css.indexOf(selector);
   if (start < 0) return css;
@@ -51,7 +50,7 @@ function removeCssBlock(css, selector) {
   return css.slice(0, start).replace(/\s*$/, '\n') + css.slice(i + 1).replace(/^\s*\n/, '');
 }
 
-/** @keyframes bloklarını (iç içe braces) siler. */
+/** @deletes keyframes blocks (nested braces).*/
 function stripKeyframes(css) {
   let out = css;
   for (;;) {
@@ -72,7 +71,7 @@ function stripKeyframes(css) {
   }
 }
 
-/** animation / animation-* bildirimlerini (satır veya blok) siler. */
+/** animation/animation-* deletes declarations (line or block).*/
 function stripAnimationDecls(css) {
   return css
     .replace(/^[ \t]*animation(-[a-z-]+)?\s*:[^;{}]*;[ \t]*\r?\n?/gim, '')
@@ -81,9 +80,8 @@ function stripAnimationDecls(css) {
 }
 
 /**
- * style.md içinden bir `## Başlık` bölümünü (başlık + gövde) siler.
- * Başlık satırı `## ` ile başlar; bölüm bir sonraki `## ` satırında biter.
- */
+ * Deletes a `## Title` section (title + body) from style.md.
+ * Header line starts with `##`; the section ends on the next `## ` line.*/
 function removeMdSection(md, title) {
   const re = new RegExp(`^##\\s+${title}\\s*$`, 'm');
   const m = md.match(re);
@@ -134,11 +132,11 @@ function migrateStyleMd(dirName) {
   after = removeMdSection(after, 'Koyu mod');
   after = after.replace(
     /\|\s*\*\*Görseller\*\*\s*\|[^\n]*\|/,
-    '| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |',
+    '| **Images** | `shots/01-page.png` (single page · 1280×2400) |',
   );
   after = after.replace(/\n{3,}/g, '\n\n');
   if (after === before) return null;
-  return { file, before, after, notes: ['Hareket', 'Koyu mod', 'Görseller'] };
+  return { file, before, after, notes: ['Hareket', 'Koyu mod', 'Images'] };
 }
 
 function migrateFragment(dirName) {
@@ -173,9 +171,9 @@ for (const dir of dirs) {
 }
 
 console.log(
-  `${CHECK ? 'kontrol' : 'uygulandı'} · ${dirs.length} stil · ${stats.files} dosya tarandı · ${stats.changed} değişti` +
+  `${CHECK ? 'check' : 'implemented'} · ${dirs.length} styles · ${stats.files} files scanned · ${stats.changed} changed` +
     ` · ${Object.entries(stats.byKind).map(([k, v]) => `${k} ${v}`).join(' · ')}`,
 );
 if (CHECK && stats.changed) {
-  console.log('uygulamak için: node kit/migrations/v6-strip.mjs --apply');
+  console.log('to apply: node kit/migrations/v6-strip.mjs --apply');
 }

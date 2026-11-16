@@ -1,24 +1,23 @@
 #!/usr/bin/env node
 /**
- * kit/link-skill.mjs — ajan prosedürlerini kullanıcı keşif yoluna bağlar ve frontmatter'ını
- * YAML ayrıştırıcısıyla doğrular (tek kaynak: repo içi skills/).
+ * kit/link-skill.mjs — links agent procedures to the user discovery path and sets its frontmatter
+ * Validates with YAML parser (single source: skills/ in-repo).
  *
- * Kanonik dosyalar repoda `skills/` altında durur; kullanıcı düzeyindeki `~/.agents/skills/`
- * dizinine yalnız bir bağ (Windows: junction, POSIX: symlink) konur:
- * kopya yok → drift yok.
+ * Canonical files reside in the repo under `skills/`; user level `~/.agents/skills/`
+ A single link (Windows: junction, POSIX: symlink) is placed in the * directory:
+ * no duplicates → no drift.
  *
- * Kullanım:
- *   node kit/link-skill.mjs status     # bağ + frontmatter YAML kontrolü
- *   node kit/link-skill.mjs install    # bağı kur (varsa hedefi güncelle)
- *   node kit/link-skill.mjs remove     # yalnız bağı siler (hedef klasöre DOKUNMAZ)
+ * Usage:
+ * node kit/link-skill.mjs status # link + frontmatter YAML control
+ * node kit/link-skill.mjs install # install the link (update target if present)
+ * node kit/link-skill.mjs remove # deletes the link only (DOES NOT touch the target folder)
  *
- * Güvenlik: kaldırma işlemi bağ üzerinde `DirectoryInfo.Delete()` / `unlink` kullanır; asla
- * `rm -rf` veya `Remove-Item -Recurse` çağırmaz (o yollar bağın hedefini silebilir).
+ * Security: removal uses `DirectoryInfo.Delete()` / `unlink` on the link; never
+ * Does not call `rm -rf` or `Remove-Item -Recurse` (those routes can delete the target of the link).
  *
- * YAML notu: `description` düz skalerinde ": " geçerse YAML "nested mapping" hatası verir.
- * Bu yüzden uzun açıklamalar `description: >-` blok skaleriyle yazılır; bu araç
- * aynı hatayı önceden yakalar.
- */
+ * YAML note: If ": " is passed in the plain scalar `description`, YAML will give a "nested mapping" error.
+ * That's why long descriptions are written with `description: >-` block scalar; this tool
+ * catches the same error from before.*/
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -36,7 +35,7 @@ const IS_WIN = process.platform === 'win32';
 
 const ps = (script) => execFileSync('powershell', ['-NoProfile', '-Command', script], { encoding: 'utf8' }).trim();
 
-/** Önce yerel 'yaml' paketini, sonra STYLE_LAB_YAML_RELEASES altındaki sürümleri arar. */
+/** It first searches for the native 'yaml' package, then for versions under STYLE_LAB_YAML_RELEASES.*/
 async function resolveYaml() {
   try {
     return await import('yaml');
@@ -50,26 +49,26 @@ async function resolveYaml() {
   return null;
 }
 
-/** Frontmatter'ı YAML ayrıştırıcısıyla doğrular. */
+/** Validates frontmatter with YAML parser.*/
 async function lint(name) {
   const file = path.join(ROOT, 'skills', name, 'SKILL.md');
   const raw = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
-  if (!raw.startsWith('---')) return ['frontmatter yok (dosya --- ile başlamalı)'];
+  if (!raw.startsWith('---')) return ['no frontmatter (file must start with ---)'];
   const end = raw.indexOf('\n---', 3);
-  if (end === -1) return ['frontmatter kapanışı (---) yok'];
+  if (end === -1) return ['no frontmatter closure (---)'];
   const yaml = await resolveYaml();
-  if (!yaml) return ['uyarı: yaml paketi bulunamadı, frontmatter denetlenmedi'];
+  if (!yaml) return ['warning: yaml package not found, frontmatter not checked'];
   let data;
   try {
     data = yaml.parse(raw.slice(4, end)) ?? {};
   } catch (err) {
-    return ['YAML hatası: ' + String(err.message).split('\n')[0]];
+    return ['YAML error:' + String(err.message).split('\n')[0]];
   }
   const problems = [];
-  if (data.name !== name) problems.push(`name (${data.name}) klasör adıyla (${name}) aynı değil`);
+  if (data.name !== name) problems.push(`name (${data.name}) does not match the folder name (${name})`);
   const d = data.description;
-  if (typeof d !== 'string' || !d.trim()) problems.push('description yok/boş');
-  else if (d.length > 1024) problems.push(`description ${d.length} karakter (>1024)`);
+  if (typeof d !== 'string' || !d.trim()) problems.push('description is missing/empty');
+  else if (d.length > 1024) problems.push(`description is ${d.length} characters (>1024)`);
   return problems;
 }
 
@@ -101,15 +100,15 @@ async function status() {
     const readable = target ? fs.existsSync(path.join(link, 'SKILL.md')) : false;
 
     console.log(`skill         : ${name}`);
-    console.log(`  kaynak      : ${source}`);
-    console.log(`  bağ         : ${link} ${target ? '✓' : '— yok'}`);
-    console.log(`  hedef doğru : ${target ? (same ? '✓' : '× güncel değil (install)') : '—'}`);
-    console.log(`  okunabilir  : ${readable ? '✓ SKILL.md bağ üzerinden açılıyor' : '× bağ kırık'}`);
-    console.log(`  frontmatter : ${yamlProblems.length ? '× ' + yamlProblems.join('; ') : '✓ YAML geçerli (name + description)'}`);
+    console.log(`  source      : ${source}`);
+    console.log(`  link        : ${link} ${target ? '✓' : '— missing'}`);
+    console.log(`  target ok   : ${target ? (same ? '✓' : '× out of date (install)') : '—'}`);
+    console.log(`  readable    : ${readable ? '✓ SKILL.md opens via link' : '× link broken'}`);
+    console.log(`  frontmatter : ${yamlProblems.length ? '× ' + yamlProblems.join('; ') : '✓ YAML is valid (name + description)'}`);
     if (!same || yamlProblems.length || !readable) bad++;
   }
   if (!SKILL_DIRS.length) {
-    console.log('skills/ altında SKILL.md bulunamadı');
+    console.log('SKILL.md not found under skills/');
     return 1;
   }
   return bad ? 1 : 0;
@@ -122,10 +121,10 @@ function remove() {
     if (!target) continue;
     if (IS_WIN) ps(`(Get-Item -LiteralPath '${link}').Delete()`);
     else fs.unlinkSync(link);
-    console.log(`bağ kaldırıldı (hedef korundu): ${link}`);
+    console.log(`link removed (target kept): ${link}`);
     touched++;
   }
-  if (!touched) console.log('kaldırılacak bağ yok');
+  if (!touched) console.log('There are no ties to remove');
   return 0;
 }
 
@@ -143,10 +142,10 @@ function install() {
     if (IS_WIN) ps(`New-Item -ItemType Junction -Path '${link}' -Target '${source}' | Out-Null`);
     else fs.symlinkSync(source, link, 'dir');
     const ok = fs.existsSync(path.join(link, 'SKILL.md'));
-    console.log(`${ok ? '✓ bağlandı' : '× BAŞARISIZ'}: ${link} → ${source}`);
+    console.log(`${ok ? '✓ connected' : '× FAILED'}: ${link} → ${source}`);
     if (!ok) bad++;
   }
-  console.log('Bağ kuruldu; prosedürleri yeniden keşfetmek için ajanınızın oturumunu yenileyin.');
+  console.log('The bond was established; Refresh your agent's session to rediscover procedures.');
   return bad ? 1 : 0;
 }
 

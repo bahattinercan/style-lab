@@ -1,21 +1,20 @@
 #!/usr/bin/env node
 /**
- * kit/check-site.mjs — yayınlanan sitenin duman testi (kapı).
+ * kit/check-site.mjs — smoke test (gate) of the published site.
  *
- * Neden: `build-site --check` dosyaların varlığını doğrular, ama galerinin gerçekten
- * WebP türevini yüklediğini, lightbox'ın 1280 türevini açtığını, live.html'in stil
- * token'larıyla boyandığını ve konsolda hata olmadığını göstermez. Bu kapı `_site/`
- * derler, yerel HTTP sunucusunda servis eder ve başsız tarayıcıda ölçer.
+ * Reason: `build-site --check` verifies the existence of the files, but the gallery does not actually exist.
+ * Installed WebP variant, lightbox opened 1280 variant, live.html styled
+ It does not indicate that it is painted with * tokens and there is no error in the console. This door is `_site/`
+ * compiles it, serves it on the local HTTP server, and measures it in the headless browser.
  *
- * Kullanım:
- *   node kit/check-site.mjs            # derle + servis + ölç (kapı)
- *   node kit/check-site.mjs --verbose  # her ölçümü yazdır
- *   node kit/check-site.mjs --no-build # var olan _site/ ile ölç
+ * Usage:
+ * node kit/check-site.mjs # compile + serve + measure (port)
+ * node kit/check-site.mjs --verbose # print each measurement
+ * node kit/check-site.mjs --no-build # measure against existing _site/
  *
- * Ölçülen: landing (8 vitrin, 31 aile, webp), galeri (251 kart, webp yol, lazy/priority,
- * lightbox 1280 türev), katalog (251 satır, 31 tablo), live (251 seçenek, token rengi),
- * HTTP içerik tipleri (webp/png), konsol hataları.
- */
+ * Measured: landing (8 showcases, 31 families, webp), gallery (251 cards, webp path, lazy/priority,
+ * lightbox 1280 derivative), catalog (251 rows, 31 tables), live (251 options, token color),
+ * HTTP content types (webp/png), console errors.*/
 import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
@@ -50,7 +49,7 @@ const check = (ok, message) => {
   if (!ok) problems.push(message);
 };
 
-/** `_site/` ağacını servis eden minimal statik sunucu (dizin listelemez). */
+/** Minimal static server serving the `_site/` tree (does not list directories).*/
 function serve() {
   const server = http.createServer((req, res) => {
     const url = decodeURIComponent((req.url ?? '/').split('?')[0]);
@@ -72,7 +71,7 @@ function serve() {
   return new Promise((resolve) => server.listen(0, '127.0.0.1', () => resolve(server)));
 }
 
-/** Tarayıcı sekmesi: WebSocket üzerinden minimal CDP istemcisi. */
+/** Browser tab: Minimal CDP client over WebSocket.*/
 async function openPage(port, url) {
   const res = await fetch(`http://127.0.0.1:${port}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' });
   const target = await res.json();
@@ -125,7 +124,7 @@ async function main() {
     execFileSync(process.execPath, [path.join(HERE, 'build-site.mjs')], { cwd: ROOT, stdio: VERBOSE ? 'inherit' : 'ignore' });
   }
   if (!fs.existsSync(path.join(SITE, 'index.html'))) {
-    console.error('✗ _site/index.html yok — önce node kit/build-site.mjs');
+    console.error('✗ No _site/index.html — node kit/build-site.mjs first');
     process.exit(1);
   }
 
@@ -134,7 +133,7 @@ async function main() {
   const base = `http://127.0.0.1:${port}`;
   const cdp = await launch({ tabs: 1 });
   try {
-    // HTTP içerik tipleri
+    // HTTP content types
     const webp = await http0(base, '/thumbs/01-minimalism-01-page@640.webp');
     const png = await http0(base, '/styles/01-minimalism/shots/01-page.png');
     const nojekyll = await http0(base, '/.nojekyll');
@@ -157,14 +156,14 @@ async function main() {
         };
       })()`);
       checks.push({ page: 'index.html', ...info });
-      check(info.tiles === 8, `landing: ${info.tiles} vitrin kartı (8 bekleniyor)`);
-      check(info.bands >= 1, 'landing: aile listesi boş');
-      check(info.webp >= 2 && info.loaded >= 2, `landing: webp ${info.webp} / yüklenen ${info.loaded}`);
+      check(info.tiles === 8, `landing: ${info.tiles} showcase cards (8 expected)`);
+      check(info.bands >= 1, 'landing: family list is empty');
+      check(info.webp >= 2 && info.loaded >= 2, `landing: webp ${info.webp} / loaded ${info.loaded}`);
       check(!p.errors.length, `landing konsol: ${p.errors.join(' | ')}`);
       p.close();
     }
 
-    // galeri
+    // gallery
     {
       const p = await openPage(cdp.port, `${base}/kit/gallery.html`);
       const info = await p.evaluate(`(async () => {
@@ -184,12 +183,12 @@ async function main() {
         };
       })()`);
       checks.push({ page: 'kit/gallery.html', ...info });
-      check(info.cards === 251, `galeri: ${info.cards} kart (251 bekleniyor)`);
-      check(String(info.firstSrc).includes('/thumbs/'), `galeri: kart src türev değil (${info.firstSrc})`);
-      check(String(info.firstHref).includes('@1280.webp'), `galeri: kapak bağlantısı büyük türev değil (${info.firstHref})`);
-      check(info.loaded12 >= 8, `galeri: ilk 12 karttan ${info.loaded12} görsel yüklendi`);
-      check(info.config === 'var', 'galeri: site-config.js yüklenmedi');
-      check(info.lazy > 200 && info.priority === 6, `galeri: lazy ${info.lazy} / priority ${info.priority} (245/6 bekleniyor)`);
+      check(info.cards === 251, `gallery: ${info.cards} cards (251 expected)`);
+      check(String(info.firstSrc).includes('/thumbs/'), `gallery: card src is not a derivative (${info.firstSrc})`);
+      check(String(info.firstHref).includes('@1280.webp'), `gallery: cover link is not the large derivative (${info.firstHref})`);
+      check(info.loaded12 >= 8, `gallery: ${info.loaded12} of the first 12 cards loaded`);
+      check(info.config === 'var', 'gallery: site-config.js not loaded');
+      check(info.lazy > 200 && info.priority === 6, `gallery: lazy ${info.lazy} / priority ${info.priority} (245/6 expected)`);
 
       const lb = await p.evaluate(`(async () => {
         document.querySelector('.card .cover').click();
@@ -197,13 +196,13 @@ async function main() {
         const img = document.querySelector('.lb img, #lb img, [class*="lb"] img');
         return { src: img?.getAttribute('src') ?? null, natural: img?.naturalWidth ?? 0 };
       })()`);
-      checks.push({ page: 'galeri lightbox', ...lb });
+      checks.push({ page: 'gallery lightbox', ...lb });
       if (lb.src) check(String(lb.src).includes('@1280.webp') && lb.natural === 1280, `lightbox: ${lb.src} (${lb.natural}px)`);
-      check(!p.errors.length, `galeri konsol: ${p.errors.join(' | ')}`);
+      check(!p.errors.length, `gallery console: ${p.errors.join(' | ')}`);
       p.close();
     }
 
-    // katalog
+    // catalog
     {
       const p = await openPage(cdp.port, `${base}/katalog.html`);
       const info = await p.evaluate(`(() => ({
@@ -212,9 +211,9 @@ async function main() {
         styleLinks: [...document.querySelectorAll('main table a')].filter((a) => (a.getAttribute('href') || '').includes('gallery.html?q=')).length,
       }))()`);
       checks.push({ page: 'katalog.html', ...info });
-      check(info.rows === 251, `katalog: ${info.rows} satır (251 bekleniyor)`);
-      check(info.tables === 31, `katalog: ${info.tables} tablo (31 bekleniyor)`);
-      check(info.styleLinks === 251, `katalog: ${info.styleLinks} stil bağlantısı (251 bekleniyor)`);
+      check(info.rows === 251, `catalog: ${info.rows} rows (251 expected)`);
+      check(info.tables === 31, `catalog: ${info.tables} tables (31 expected)`);
+      check(info.styleLinks === 251, `catalog: ${info.styleLinks} style links (251 expected)`);
       check(!p.errors.length, `katalog konsol: ${p.errors.join(' | ')}`);
       p.close();
     }
@@ -230,15 +229,15 @@ async function main() {
         fontsLoaded: [...document.fonts].filter((f) => f.status === 'loaded').length,
       }))()`);
       checks.push({ page: 'kit/live.html (tokens)', ...info });
-      check(info.options === 251, `live: ${info.options} seçenek (251 bekleniyor)`);
-      check(info.selected === 'game-hud', `live: seçili stil ${info.selected}`);
-      check(String(info.fullShot).includes('/styles/152-game-hud/shots/01-page.png'), `live: tam sayfa bağlantısı ${info.fullShot}`);
-      check(info.bg !== 'rgb(255, 255, 255)', 'live: stil token’ları uygulanmadı (bg beyaz)');
+      check(info.options === 251, `live: ${info.options} options (251 expected)`);
+      check(info.selected === 'game-hud', `live: selected style is ${info.selected}`);
+      check(String(info.fullShot).includes('/styles/152-game-hud/shots/01-page.png'), `live: full-page link ${info.fullShot}`);
+      check(info.bg !== 'rgb(255, 255, 255)', 'live: style tokens not implemented (bg white)');
       check(!p.errors.length, `live konsol: ${p.errors.join(' | ')}`);
       p.close();
     }
 
-    // live sayfa (yayınlanan tek sayfa tasarımı)
+    // live page (published single page design)
     for (const target of [
       { slug: 'game-hud', path: '/kit/live/152-game-hud.html', motif: 'motif-grid', type: 'stock photo' },
       { slug: 'fluid-simulation', path: '/kit/live/100-fluid-simulation.html', motif: 'motif-blob', type: 'generated artwork' },
@@ -263,17 +262,17 @@ async function main() {
         };
       })()`);
       checks.push({ page: target.path, ...info });
-      check(info.hasH1, `live sayfa (${target.slug}): hero başlığı yok`);
-      check(info.dataStyle === target.slug, `live sayfa (${target.slug}): data-style (${info.dataStyle}) eşleşmedi`);
+      check(info.hasH1, `live page (${target.slug}): no hero heading`);
+      check(info.dataStyle === target.slug, `live page (${target.slug}): data-style (${info.dataStyle}) does not match`);
       check(
         info.motifClass.includes(target.motif),
-        `live sayfa (${target.slug}): ${target.motif} sınıfı media figure üzerinde yok (${info.motifClass})`,
+        `live page (${target.slug}): the ${target.motif} class is missing on the media figure (${info.motifClass})`,
       );
       check(
         info.photoNaturalWidth > 0,
-        `live sayfa (${target.slug}): ${target.type} hero görseli yüklenmedi (${info.photoSrc}, naturalWidth=${info.photoNaturalWidth})`,
+        `live page (${target.slug}): the ${target.type} hero image did not load (${info.photoSrc}, naturalWidth=${info.photoNaturalWidth})`,
       );
-      check(!p.errors.length, `live sayfa (${target.slug}) konsol: ${p.errors.join(' | ')}`);
+      check(!p.errors.length, `live page (${target.slug}) console: ${p.errors.join(' | ')}`);
       p.close();
     }
   } finally {
@@ -283,14 +282,14 @@ async function main() {
 
   if (VERBOSE) console.log(JSON.stringify(checks, null, 2));
   if (problems.length) {
-    console.error(`✗ site duman testi: ${problems.length} sorun`);
+    console.error(`✗ site smoke test: ${problems.length} problems`);
     for (const p of problems) console.error('  - ' + p);
     process.exit(1);
   }
   const gallery = checks.find((c) => c.page === 'kit/gallery.html');
   console.log(
-    `✓ site duman testi: landing + galeri ${gallery?.cards ?? '?'} kart (webp, lazy ${gallery?.lazy ?? '?'}, priority ${gallery?.priority ?? '?'}) ` +
-      `+ katalog + live (token + sayfa) · konsol temiz`,
+    `✓ site smoke test: landing + gallery ${gallery?.cards ?? '?'} cards (webp, lazy ${gallery?.lazy ?? '?'}, priority ${gallery?.priority ?? '?'}) ` +
+      `+ catalog + live (token + page) · console clean`,
   );
 }
 

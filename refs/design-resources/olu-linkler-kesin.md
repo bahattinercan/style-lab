@@ -1,6 +1,6 @@
-# Kesin olu linkler (55/1249)
+# Confirmed dead links (55/1249)
 
-| Bolum | Ad | URL | Durum |
+| Section | Name | URL | Status |
 |---|---|---|---|
 | UI Graphics | Html to Design | https://www.figma.com/community/plugin/1159123024924461424/html.to.design | 404 |
 | Fonts | Google Webfonts Helper | https://google-webfonts-helper.herokuapp.com/fonts | 404 |

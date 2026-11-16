@@ -70,7 +70,7 @@
     <text x="0" y="86" font-family="'Space Mono', monospace" font-size="12" fill="#45626f" letter-spacing="1.5">LAT: 84°12'N · LON: 04°32'W · ICE DRAFT: 3.42m · TEMP: -28.4°C · CONCENTRATION: 88%</text>
   </g>
 
-  <!-- Cryo Telemetry Triple Metric Panel at Top Right -->
+  <!--Cryo Telemetry Triple Metric Panel at Top Right-->
   <g transform="translate(1220, 80)">
     <rect x="0" y="0" width="280" height="90" fill="#f9fcfe" stroke="#0e2733" stroke-width="1.5" rx="4" opacity="0.9" />
     <text x="20" y="28" font-family="'Space Mono', monospace" font-size="11" fill="#45626f">FREEBOARD // ALBEDO</text>

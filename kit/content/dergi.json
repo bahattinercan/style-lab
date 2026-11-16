@@ -1,46 +1,46 @@
 {
-  "label": "Dergi / yayın",
+  "label": "Magazine/publication",
   "tags": [
     "dergi",
-    "yayın",
+    "broadcast",
     "okuma"
   ],
   "hero": {
-    "eyebrow": "Sayı 14 · Kış",
-    "h1": "Uzun okumalar, kısa cümleler",
-    "lede": "Şehir, emek ve sessizlik üzerine üç dosya; basılı sayıyla birlikte.",
-    "ctaPrimary": "Sayıyı oku",
-    "ctaSecondary": "Arşive git →"
+    "eyebrow": "Issue 14 · Winter",
+    "h1": "Long reads, short sentences",
+    "lede": "Three files on the city, work and silence.",
+    "ctaPrimary": "Read the issue",
+    "ctaSecondary": "Archive →"
   },
   "proofs": [
-    "Yılda 4 sayı",
-    "Baskı + dijital",
-    "Reklamsız"
+    "4 issues a year",
+    "Print + digital",
+    "Ad-free"
   ],
   "logos": [
-    "Kış",
-    "Defter",
-    "Kitap",
-    "Baskı",
-    "Arşiv"
+    "Winter",
+    "Notebook",
+    "Book",
+    "Print",
+    "Archive"
   ],
   "tiles": [
     {
       "num": "01",
-      "cap": "Dosya: Şehir"
+      "cap": "File: City"
     },
     {
       "num": "02",
-      "cap": "Söyleşi"
+      "cap": "Interview"
     },
     {
       "num": "03",
-      "cap": "Fotoğraf"
+      "cap": "Photo"
     },
     {
       "num": "04",
-      "cap": "Kitap notları"
+      "cap": "Book notes"
     }
   ],
-  "logoLabel": "Katkı verenler"
+  "logoLabel": "Contributors"
 }

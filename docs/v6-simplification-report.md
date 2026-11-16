@@ -1,8 +1,8 @@
 # v6 · single-page showcase — simplification report
 
-> **Date:** 2026-11-14 · **Branch:** `v6-tek-sayfa` · **Scope:** the whole repository
+> **Date:** 2026-11-14 · **Branch:** `v6-single-page` · **Scope:** the whole repository
 > **Decided by:** the user (single page · no dark mode · no animation · 100 new styles including game styles)
-> **Verification:** `bash kit/gates.sh` → `kapılar: temiz` (26 steps)
+> **Verification:** `bash kit/gates.sh` → `gates: clean` (26 steps)
 
 ---
 
@@ -78,7 +78,7 @@ SPEC fields (`kit/specs/*.json`): `num slug name band tagline feeling best avoid
 fonts[3] radius[2] motif signature[] must[] mustNot[] refs[] keywords[] brief neighbors`,
 optional `upper tracking scale essence origin recognition notThis screens traps extraCss`.
 
-Command order: **validate** (contrast thresholds, font library, neighbour slugs, family band) →
+Command order: **validate** (contrast thresholds, font library, neighbor slugs, family band) →
 **generate** (5 sources, three-copy parity preserved) → `apply-fragments` → `assign-layouts` →
 `assign-imagery` → `assign-content` → `render-shots` → `optimize-shots` → `sync-shot-tables` →
 `build-gallery` → `export-tokens` → `build-slim-index` → `report` → `composition-report` → `phash --write`.
@@ -95,7 +95,7 @@ Batch count: the 100 new styles were produced in 8 batches; after each batch thi
 | Game & Interaction | 152–171 | 20 | game-hud · game-racing · game-fantasy-rpg · game-sci-fi-cockpit · game-retro-console · game-esports-league · game-indie-pixel · game-card-tcg · game-survival-craft · game-mobile-casual · game-horror-occult · game-racing-neon · game-strategy-map · game-sim-builder · game-arcade-cabinet · game-stealth-tactical · game-puzzle-light · game-mmo-guild · game-franchise-sports · game-pinball-neon |
 | Operations & Data | 172–181 | 10 | incident-response · finops-cost · fleet-dispatch · fraud-review · slo-budget · data-lineage · access-audit · release-train · support-inbox · regulatory-report |
 | Commerce & Storefront | 182–191 | 10 | grocery-delivery · marketplace-multi · luxury-atelier · subscription-box · sneaker-drop · wine-cellar · furniture-studio · electronics-spec · pharmacy-store · farmers-market |
-| Culture & Publishing | 192–201 | 10 | museum-exhibition · theatre-season · film-festival · public-radio · podcast-network · indie-cinema · library-archive · comic-bookstore · opera-house · street-festival |
+| Culture & Publishing | 192–201 | 10 | museum-exhibition · theater-season · film-festival · public-radio · podcast-network · indie-cinema · library-archive · comic-bookstore · opera-house · street-festival |
 | Health & Science | 202–211 | 10 | clinical-trial · lab-protocol · pharmacy-labels · physiotherapy · mental-wellness · nutrition-plan · dental-clinic · public-health · genomics-lab · veterinary-care |
 | Learning & Gamification | 212–221 | 10 | language-app · skill-tree · university-portal · coding-bootcamp · kids-classroom · exam-prep · music-lesson · lab-simulation · peer-study · certificate-wallet |
 | Material & Craft | 222–231 | 10 | terrazzo-stone · linocut-print · risograph-print · denim-textile · cork-oak · cast-concrete · enamel-jewel · hand-thrown-ceramic · raw-steel · recycled-paper |
@@ -109,10 +109,10 @@ in the `refs` field); palettes were measured into the thresholds, and none were 
 
 ## 6 · Migration (v5 sources)
 
-| Script | What it does | Scope |
+| Script | What it does | scope |
 |---|---|---|
-| `kit/migrations/v6-strip.mjs` | Deletes `palette.dark` and `motion`, sets `version: 6`, removes the dark token block, strips the "## Hareket"/"## Koyu mod" sections from style.md, cleans `@keyframes`/`animation` from fragments | 151 styles · 460 files |
-| `kit/migrations/v6-shots.mjs` | Converts the old scene references in style.md to `shots/01-page.png`, collapses the "Örnek görseller" table to a single line | 151 style.md |
+| `kit/migrations/v6-strip.mjs` | Deletes `palette.dark` and `motion`, sets `version: 6`, removes the dark token block, strips the "## Motion"/"## Dark mode" sections from style.md, cleans `@keyframes`/`animation` from fragments | 151 styles · 460 files |
+| `kit/migrations/v6-shots.mjs` | Converts the old scene references in style.md to `shots/01-page.png`, collapses the "Sample images" table to a single line | 151 style.md |
 | `kit/render/render-shots.mjs` | SCENES = the single `page` (1280×2400); `--measure`, blank-frame retry, viewport verification | 251 PNG |
 
 ---

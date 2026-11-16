@@ -1,38 +1,37 @@
 #!/usr/bin/env node
 /**
- * kit/render/optimize-shots.mjs — mevcut PNG ekran görüntülerini KAYIPSIZ optimize eder.
+ * kit/render/optimize-shots.mjs — LOSTLESS optimizes existing PNG screenshots.
  *
- * Yöntem: PNG yeniden üretilmez; var olan dosya çözülür, filtre + zlib seçenekleri
- * denenir ve yalnızca DAHA KÜÇÜK olan sonuç yazılır. Piksel verisi birebir aynıdır
- * (lossless). Renk uzayı/gamma/ICC gibi kritik chunk'lar (iCCP, sRGB, gAMA, cHRM,
- * PLTE, tRNS, pHYs, tEXt…) orijinalinden bayt bayt kopyalanır — yalnızca IDAT gövdesi
- * yeniden sıkıştırılır. IHDR hiç değişmez (aynı boyut/renk tipi/bit derinliği).
+ * Method: PNG is not reproduced; existing file is decoded, filter + zlib options
+ * is tried and only the SMALLER result is written. Pixel data is exactly the same
+ * (lossless). Critical chunks like color space/gamma/ICC (iCCP, sRGB, gAMA, cHRM,
+ * PLTE, tRNS, pHYs, tEXt…) are copied from the original byte by byte — IDAT body only
+ * recompressed. IHDR doesn't change at all (same size/color type/bit depth).
  *
- * Neden gerekli: Edge/Chrome ekran görüntüleri her satırı filtre 0 (None) ile yazıyor;
- * düz renkli/az geçişli arayüzlerde Sub/Up/Paeth filtreleri + zlib seviye 9 ciddi
- * kazanç sağlıyor.
+ * Why it is needed: Edge/Chrome screenshots write each line with filter 0 (None);
+ * Sub/Up/Paeth filters on solid color/low pass interfaces + zlib level 9 serious
+ * generates income.
  *
- * Kullanım:
- *   node kit/render/optimize-shots.mjs --all                  # 45 stil, tüm shot'lar
- *   node kit/render/optimize-shots.mjs --styles minimalism,y2k
- *   node kit/render/optimize-shots.mjs --scenes 28-dark-dashboard,31-dark-mobile
- *   node kit/render/optimize-shots.mjs --all --dry            # yazmadan ölç
- *   node kit/render/optimize-shots.mjs --all --verify         # yalnız doğrula (yazmaz)
- *   node kit/render/optimize-shots.mjs --all --json           # tek satır JSON
- *   node kit/render/optimize-shots.mjs --styles y2k --json --jobs 8 --report rapor.md
+ * Usage:
+ * node kit/render/optimize-shots.mjs --all # 45 styles, all shots
+ * node kit/render/optimize-shots.mjs --styles minimalism,y2k
+ * node kit/render/optimize-shots.mjs --scenes 28-dark-dashboard,31-dark-mobile
+ * node kit/render/optimize-shots.mjs --all --dry # measure without typing
+ * node kit/render/optimize-shots.mjs --all --verify # verify only (does not write)
+ * node kit/render/optimize-shots.mjs --all --json # single line JSON
+ * node kit/render/optimize-shots.mjs --styles y2k --json --jobs 8 --reportreport.md
  *
- * Bayraklar:
- *   --styles a,b   hedef stiller (slug veya "03-editorial-design" dizin adı)
- *   --all          tüm stiller (bayrak yoksa da tüm stiller)
- *   --dry          ölç, dosya yazma
- *   --verify       yalnız doğrulama: decode + piksel özeti + chunk bütünlüğü, yazmaz
- *   --json         tek satır JSON çıktısı (ilerleme stderr'e gider)
- *   --jobs N       paralel işçi sayısı [varsayılan: min(8, cpus)]
- *   --report <md>  markdown özet raporu yaz (repo dışında bir yol ver)
+ * Flags:
+ * --styles a,b target styles (slug or directory name "03-editorial-design")
+ * --all all styles (all styles even if there is no flag)
+ * --measure dry, write file
+ * --verify verification only: decode + pixel summary + chunk integrity, do not write
+ * --json output single line JSON (progress goes to stderr)
+ * --jobs N number of parallel workers [default: min(8, cpus)]
+ * --report <md> write markdown summary report (give path outside repo)
  *
- * Çıkış kodu: decode hatası, piksel farkı veya yazma hatası varsa 1; aksi halde 0.
- * Aynı komut aynı sonucu verir (deterministik); ikinci koşu "skipped" döner.
- */
+ * Exit code: 1 if there is a decode error, pixel difference or writing error; otherwise 0.
+ * The same command gives the same result (deterministic); The second run returns "skipped".*/
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -46,7 +45,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..', '..');
 const STYLES_DIR = path.join(ROOT, 'styles');
 const SHOT_RE = /\.png$/i;
-/** Bu boyutun üstünde pahalı filtre adayları (None/Avg) denenmez. */
+/** Expensive filter candidates (None/Avg) are not tried above this size.*/
 const PLAN_FULL_LIMIT = 3 * 1024 * 1024;
 const PLAN_MEDIUM_LIMIT = 512 * 1024;
 
@@ -79,9 +78,9 @@ function chunk(type, data) {
   return Buffer.concat([head, data, crc]);
 }
 
-/** PNG'yi chunk'lara ayır → { ihdr, ihdrRaw, chunks, idat, firstIdat } */
+/** Split PNG into chunks → { ihdr, ihdrRaw, chunks, idat, firstIdat }*/
 function parsePng(buf) {
-  if (buf.length < 8 || !buf.subarray(0, 8).equals(SIGNATURE)) throw new Error('PNG imzası geçersiz');
+  if (buf.length < 8 || !buf.subarray(0, 8).equals(SIGNATURE)) throw new Error('PNG signature is invalid');
   const chunks = [];
   const idat = [];
   let ihdr = null;
@@ -91,10 +90,10 @@ function parsePng(buf) {
   while (off + 8 <= buf.length) {
     const len = buf.readUInt32BE(off);
     const type = buf.toString('ascii', off + 4, off + 8);
-    if (off + 12 + len > buf.length) throw new Error(`${type} chunk gövdesi dosya sonunu aşıyor`);
+    if (off + 12 + len > buf.length) throw new Error(`${type} chunk body runs past the end of the file`);
     const data = Buffer.from(buf.subarray(off + 8, off + 8 + len));
     if (type === 'IHDR') {
-      if (len !== 13) throw new Error('IHDR uzunluğu 13 değil');
+      if (len !== 13) throw new Error('IHDR length is not 13');
       ihdr = {
         width: data.readUInt32BE(0),
         height: data.readUInt32BE(4),
@@ -121,7 +120,7 @@ function parsePng(buf) {
 
 function geometry(ihdr) {
   const channels = CHANNELS[ihdr.colorType];
-  if (!channels) throw new Error(`desteklenmeyen renk tipi: ${ihdr.colorType}`);
+  if (!channels) throw new Error(`unsupported colour type: ${ihdr.colorType}`);
   const bitsPerPixel = channels * ihdr.bitDepth;
   return {
     channels,
@@ -138,17 +137,17 @@ function paeth(a, b, c) {
   return pa <= pb && pa <= pc ? a : pb <= pc ? b : c;
 }
 
-/** Filtreli ham satırları çöz → filtresiz piksel baytları. */
+/** Decode raw rows with filter → pixel bytes without filter.*/
 function unfilter(raw, ihdr, { stride, bpp }) {
   if (raw.length !== (stride + 1) * ihdr.height) {
-    throw new Error(`IDAT boyutu beklenenle uyuşmuyor (${raw.length} ≠ ${(stride + 1) * ihdr.height})`);
+    throw new Error(`IDAT size does not match the expectation (${raw.length} ≠ ${(stride + 1) * ihdr.height})`);
   }
   const out = Buffer.alloc(stride * ihdr.height);
   let prev = Buffer.alloc(stride);
   for (let y = 0; y < ihdr.height; y++) {
     const base = y * (stride + 1);
     const filter = raw[base];
-    if (filter > 4) throw new Error(`geçersiz satır filtresi: ${filter}`);
+    if (filter > 4) throw new Error(`invalid row filter: ${filter}`);
     const line = raw.subarray(base + 1, base + 1 + stride);
     const cur = out.subarray(y * stride, (y + 1) * stride);
     for (let i = 0; i < stride; i++) {
@@ -185,9 +184,8 @@ function filterRow(type, cur, prev, bpp, stride, out, off) {
 }
 
 /**
- * Filtresiz piksel baytlarını yeniden filtrele.
- * mode: 'none' | 'sub' | 'up' | 'avg' | 'paeth' (sabit) | 'adaptive' (satır başına en iyi SAD)
- */
+ * Re-filter unfiltered pixel bytes.
+ * mode: 'none' | 'sub' | 'up' | 'avg' | 'paeth' (fixed) | 'adaptive' (best SAD per line)*/
 function buildFiltered(pixels, ihdr, { stride, bpp }, mode) {
   const raw = Buffer.alloc((stride + 1) * ihdr.height);
   const scratch = Buffer.alloc(stride);
@@ -226,11 +224,10 @@ function deflate9(raw, strategy = zlib.constants.Z_DEFAULT_STRATEGY) {
 }
 
 /**
- * En iyi IDAT akışını seç.
- * 1) her filtre planı için zlib varsayılan stratejisi,
- * 2) ardından en iyi iki akış için Z_FILTERED ve Z_RLE denemesi.
- * Seçim her zaman gerçek deflate boyutuna göre yapılır (tahmin yok).
- */
+ * Choose the best IDAT stream.
+ * 1) zlib default strategy for each filter plan,
+ * 2) then try Z_FILTERED and Z_RLE for the two best streams.
+ * Selection is always based on actual deflate size (no guesswork).*/
 function bestIdat(raw, pixels, ihdr, geom, plans) {
   const streams = plans.map((plan) => ({
     plan,
@@ -252,7 +249,7 @@ function bestIdat(raw, pixels, ihdr, geom, plans) {
   return best;
 }
 
-/** IDAT dışındaki tüm chunk'ları bayt bayt koru, IDAT'ı yenisiyle değiştir. */
+/** Preserve all chunks except IDAT byte by byte, replace IDAT with a new one.*/
 function assemble(parsed, idatData) {
   const parts = [SIGNATURE];
   parsed.chunks.forEach((c, i) => {
@@ -265,14 +262,14 @@ function assemble(parsed, idatData) {
   return Buffer.concat(parts);
 }
 
-/** Kit decoder → 8-bit/girişimsiz için; aksi halde dahili çözücü. */
+/** For kit decoder → 8-bit/non-interference; otherwise internal solver.*/
 function decodePixels(buf) {
   try {
     const img = decodePng(buf);
     return { via: 'png.mjs', width: img.width, height: img.height, channels: img.channels, pixels: img.pixels };
   } catch (err) {
     const parsed = parsePng(buf);
-    if (parsed.ihdr.interlace !== 0) throw new Error(`girişimli PNG çözülemedi: ${err.message}`);
+    if (parsed.ihdr.interlace !== 0) throw new Error(`could not decode the interlaced PNG: ${err.message}`);
     const geom = geometry(parsed.ihdr);
     const raw = zlib.inflateSync(Buffer.concat(parsed.idat));
     return {
@@ -285,16 +282,16 @@ function decodePixels(buf) {
   }
 }
 
-/** width/height/channels + piksel baytları birebir aynı mı */
+/** Are width/height/channels + pixel bytes exactly the same?*/
 function samePixels(a, b) {
   if (a.width !== b.width || a.height !== b.height || a.channels !== b.channels) {
-    return `boyut/kanal farkı (${a.width}×${a.height}×${a.channels} → ${b.width}×${b.height}×${b.channels})`;
+    return `size/channel difference (${a.width}×${a.height}×${a.channels} → ${b.width}×${b.height}×${b.channels})`;
   }
   if (!a.pixels.equals(b.pixels)) {
     let diff = 0;
     const n = Math.min(a.pixels.length, b.pixels.length);
     for (let i = 0; i < n; i++) if (a.pixels[i] !== b.pixels[i]) diff++;
-    return `${diff} bayt piksel farkı`;
+    return `${diff} bytes of pixel difference`;
   }
   return null;
 }
@@ -309,7 +306,7 @@ function pixelDigest(pixels) {
   return crypto.createHash('sha256').update(pixels).digest('hex').slice(0, 16);
 }
 
-/** Bozuk CRC'li chunk tiplerini döndür (--verify bütünlük kontrolü). */
+/** Return chunk types with bad CRC (--verify integrity check).*/
 function badChunkCrcs(buf) {
   const bad = [];
   let off = 8;
@@ -317,7 +314,7 @@ function badChunkCrcs(buf) {
     const len = buf.readUInt32BE(off);
     const type = buf.toString('ascii', off + 4, off + 8);
     if (off + 12 + len > buf.length) {
-      bad.push(`${type}(taşma)`);
+      bad.push(`${type}(overflow)`);
       break;
     }
     const expected = buf.readUInt32BE(off + 8 + len);
@@ -330,9 +327,8 @@ function badChunkCrcs(buf) {
 }
 
 /**
- * Tek dosyayı optimize et. Dönüş: { status, before, after, plan, ... }
- * status: optimized | would-optimize | skipped | mismatch | error
- */
+ * Optimize single file. Return: { status, before, after, plan, ... }
+ * status: optimized | would-optimize | skipped | mismatch | error*/
 function optimizeFile(file, rel, style, opts) {
   const out = { file: rel, style, status: 'skipped', before: 0, after: 0, plan: null, reason: null };
   let original = null;
@@ -373,11 +369,11 @@ function optimizeFile(file, rel, style, opts) {
 
     const next = assemble(parsed, best.z);
     if (next.length >= out.before) {
-      out.reason = 'daha küçük sonuç yok';
+      out.reason = 'no smaller results';
       return out;
     }
 
-    // Yazmadan önce doğrula: piksel birebir aynı mı
+    // Verify before writing: pixel is exactly the same
     const a = decodePixels(original);
     const b = decodePixels(next);
     const diff = samePixels(a, b);
@@ -395,14 +391,14 @@ function optimizeFile(file, rel, style, opts) {
     }
 
     fs.writeFileSync(file, next);
-    // Diske yazılanı geri oku ve yeniden doğrula; fark varsa orijinali geri koy
+    // Read back and reverify what was written to disk; If there is difference put the original back
     const c = decodePixels(fs.readFileSync(file));
     const afterDiff = samePixels(a, c);
     if (afterDiff) {
       fs.writeFileSync(file, original);
       out.status = 'mismatch';
       out.after = out.before;
-      out.reason = `yazma sonrası fark: ${afterDiff}`;
+      out.reason = `difference after writing: ${afterDiff}`;
       return out;
     }
     out.status = 'optimized';
@@ -442,21 +438,21 @@ function readOptions(argv) {
 }
 
 function showHelp() {
-  console.log(`Kullanım:
+  console.log(`Usage:
   node kit/render/optimize-shots.mjs --all [--dry|--verify] [--json] [--jobs N] [--report md]
   node kit/render/optimize-shots.mjs --styles minimalism,y2k
   node kit/render/optimize-shots.mjs --scenes 28-dark-dashboard,31-dark-mobile
 
-Seçenekler:
-  --styles a,b   hedef stiller (slug veya <nn>-slug dizin adı)
-  --scenes a,b   yalnız bu sahneler (dosya adı, .png'siz)
-  --all          tüm stiller (bayrak yoksa varsayılan)
-  --dry          ölç, dosya yazma
-  --verify       yalnız doğrula (decode + piksel özeti), yazma
-  --json         tek satır JSON çıktısı
-  --jobs N       paralel işçi sayısı [varsayılan: min(8, cpus)]
-  --report <md>  markdown özet raporu yaz
-  -h, --help     bu yardım`);
+Options:
+  --styles a,b target styles (slug or <nn>-slug directory name)
+  --scenes a,b these scenes only (filename, without .png)
+  --all all styles (default if no flag)
+  --measure dry, write file
+  --verify verify only (decode + pixel summary), write
+  --json single line JSON output
+  --jobs N number of parallel workers [default: min(8, cpus)]
+  --report <md> write markdown summary report
+  -h, --help this help`);
 }
 
 function styleDirs(onlyStyles) {
@@ -573,33 +569,33 @@ function printHuman(summary, opts, startMs) {
   const secs = ((Date.now() - startMs) / 1000).toFixed(1);
   const f = summary.files;
   console.log('');
-  console.log(`PNG kayıpsız optimizasyon (${summary.mode}) · ${secs}s · ${f.total} dosya · ${opts.jobs} işçi`);
+  console.log(`lossless PNG optimisation (${summary.mode}) · ${secs}s · ${f.total} files · ${opts.jobs} workers`);
   console.log(
-    `boyut ${summary.bytes.beforeMB} MB → ${summary.bytes.afterMB} MB  ` +
+    `size ${summary.bytes.beforeMB} MB → ${summary.bytes.afterMB} MB  ` +
       `(-${summary.bytes.savedMB} MB, %${summary.bytes.pct})`,
   );
   console.log(
     `optimize ${f.optimized + f.wouldOptimize} · atlanan ${f.skipped} · ` +
-      `doğrulama ${summary.verify.checked} (fark ${summary.verify.mismatched}, hata ${summary.verify.failed})`,
+      `verification ${summary.verify.checked} (mismatched ${summary.verify.mismatched}, failed ${summary.verify.failed})`,
   );
-  if (f.verified) console.log(`doğrulanan dosya: ${f.verified}`);
+  if (f.verified) console.log(`verified file: ${f.verified}`);
   const plans = Object.entries(summary.plans).sort((a, b) => b[1] - a[1]);
-  if (plans.length) console.log(`filtre planları: ${plans.map(([k, v]) => `${k}=${v}`).join(' · ')}`);
+  if (plans.length) console.log(`filter plans: ${plans.map(([k, v]) => `${k}=${v}`).join(' · ')}`);
 
   const kb = (n) => (n < 10240 ? (n / 1024).toFixed(1) : String(Math.round(n / 1024)));
   const line = (r) =>
     `${kb(r.saved).padStart(7)} KB %${String(r.pct).padStart(6)}  ${kb(r.before)} → ${kb(r.after)} KB  ${r.file} [${r.plan}]`;
   if (summary.top.bestBytes.length) {
-    console.log('\nen iyi 5 (kazanç):');
+    console.log('\nbest 5 (earnings):');
     for (const r of summary.top.bestBytes) console.log('  ' + line(r));
   }
   if (summary.top.worstPct.length) {
-    console.log('\nen kötü 5 (yüzde):');
+    console.log('\neworst 5 (percent):');
     for (const r of summary.top.worstPct) console.log('  ' + line(r));
   }
   const problems = summary.rows.filter((r) => r.status === 'mismatch' || r.status === 'error');
   if (problems.length) {
-    console.log('\nsorunlu dosyalar:');
+    console.log('\nproblematic files:');
     for (const r of problems) console.log(`  ${r.status}: ${r.file} · ${r.reason ?? ''}`);
   }
 }
@@ -607,28 +603,28 @@ function printHuman(summary, opts, startMs) {
 function markdownReport(summary, opts) {
   const f = summary.files;
   const lines = [
-    '# PNG kayıpsız optimizasyon raporu',
+    '# PNG lossless optimization report',
     '',
-    `- Mod: **${summary.mode}** · dosya: **${f.total}** · işçi: ${opts.jobs}`,
-    `- Boyut: **${summary.bytes.beforeMB} MB → ${summary.bytes.afterMB} MB** ` +
+    `- Mode: **${summary.mode}** · files: **${f.total}** · workers: ${opts.jobs}`,
+    `- Size: **${summary.bytes.beforeMB} MB → ${summary.bytes.afterMB} MB** ` +
       `(-${summary.bytes.savedMB} MB, **%${summary.bytes.pct}**)`,
     `- Optimize: **${f.optimized + f.wouldOptimize}** · atlanan: ${f.skipped} · hata: ${f.errors}`,
-    `- Piksel doğrulama: **${summary.verify.checked}** dosya · fark: **${summary.verify.mismatched}** · hata: ${summary.verify.failed}`,
-    `- Filtre planları: ${Object.entries(summary.plans).map(([k, v]) => `${k}=${v}`).join(', ') || '—'}`,
+    `- Pixel verification: **${summary.verify.checked}** files · mismatched: **${summary.verify.mismatched}** · failed: ${summary.verify.failed}`,
+    `- Filter plans: ${Object.entries(summary.plans).map(([k, v]) => `${k}=${v}`).join(', ') || '—'}`,
     '',
-    '## En iyi 5 (bayt kazancı)',
+    '## Top 5 (byte gain)',
     '',
-    '| dosya | KB kazanç | % | plan |',
+    '| file | KB gain | % | plan |',
     '| --- | ---: | ---: | --- |',
   ];
   for (const r of summary.top.bestBytes) {
     lines.push(`| ${r.file} | ${(r.saved / 1024).toFixed(0)} | ${r.pct} | ${r.plan} |`);
   }
-  lines.push('', '## En kötü 5 (yüzde)', '', '| dosya | KB kazanç | % | plan |', '| --- | ---: | ---: | --- |');
+  lines.push('', '## Worst 5 (percent)', '', '| file | KB gain | % | plan |', '| --- | ---: | ---: | --- |');
   for (const r of summary.top.worstPct) {
     lines.push(`| ${r.file} | ${(r.saved / 1024).toFixed(0)} | ${r.pct} | ${r.plan} |`);
   }
-  lines.push('', '## Stil başına', '', '| stil | dosya | optimize | önce MB | sonra MB | kazanç MB | % |', '| --- | ---: | ---: | ---: | ---: | ---: | ---: |');
+  lines.push('', '## Per style', '', '| style | file | optimize | first MB | then MB | gainMB | % |', '| --- | ---: | ---: | ---: | ---: | ---: | ---: |');
   for (const e of summary.perStyle) {
     lines.push(
       `| ${e.style} | ${e.files} | ${e.optimized} | ${(e.before / 1048576).toFixed(2)} | ` +
@@ -637,7 +633,7 @@ function markdownReport(summary, opts) {
   }
   const problems = summary.rows.filter((r) => r.status === 'mismatch' || r.status === 'error');
   if (problems.length) {
-    lines.push('', '## Sorunlu dosyalar', '');
+    lines.push('', '## Problematic files', '');
     for (const r of problems) lines.push(`- \`${r.status}\` ${r.file} · ${r.reason ?? ''}`);
   }
   return lines.join('\n') + '\n';
@@ -653,7 +649,7 @@ function runWorker() {
   });
 }
 
-/** İşçi havuzu: büyük dosyalar önce dağıtılır, her işçi sıradaki işi kapar. */
+/** Worker pooling: large files are distributed first, each worker grabs the next job.*/
 async function runPool(files, opts, onResult) {
   const queue = [...files].sort((a, b) => b.size - a.size);
   const results = [];
@@ -702,9 +698,9 @@ async function main() {
   }
 
   const dirs = styleDirs(opts.all ? [] : opts.styles);
-  if (!dirs.length) throw new Error('eşleşen stil yok');
+  if (!dirs.length) throw new Error('no matching style');
   const files = collectFiles(dirs);
-  if (!files.length) throw new Error('optimize edilecek PNG bulunamadı');
+  if (!files.length) throw new Error('No PNG found to optimize');
 
   const startMs = Date.now();
   const total = files.length;

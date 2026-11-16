@@ -1,28 +1,27 @@
 #!/usr/bin/env node
 /**
- * kit/apply-fragments.mjs — stil fragment'larını paylaşılan dosyalara **idempotent** birleştirir.
+ * kit/apply-fragments.mjs — combines style fragments **idempotent** into shared files.
  *
- * Kaynaklar (stil klasöründe):
- *   styles/NN-slug/token-block.css          → kit/tokens.css (açık + koyu bloklar, num sırasıyla)
- *   styles/NN-slug/shots.config.fragment.mjs → kit/render/shots.config.mjs (STYLES haritası)
- *   styles/NN-slug/keywords.json             → kit/gallery.data.mjs (KEYWORDS haritası)
+ * Resources (in style folder):
+ * styles/NN-slug/token-block.css → kit/tokens.css (light + dark blocks, in num order)
+ * styles/NN-slug/shots.config.fragment.mjs → kit/render/shots.config.mjs (STYLES map)
+ * styles/NN-slug/keywords.json → kit/gallery.data.mjs (KEYWORDS map)
  *
- * Üretilen bölgeler `apply-fragments:*` işaretleri arasında durur; ikinci çalıştırma
- * aynı baytları yazar (idempotent). İşaret dışındaki metne (mevcut 1-45 blokları,
- * elle yazılmış girdiler) dokunulmaz.
+ * Generated regions stop between `apply-fragments:*` signs; second run
+ * writes the same bytes (idempotent). Text outside the sign (existing blocks 1-45,
+ * hand-written entries) are untouched.
  *
- * Aileler: kit/families.json tek kaynak; bu script 1-145 kesintisiz/çakışmasız olduğunu
- * ve build-gallery.mjs + report.mjs'in dosyayı okuduğunu doğrular.
+ * Families: kit/families.json single source; This script is 1-145 seamless/conflict-free
+ * and build-gallery.mjs + verify that report.mjs read the file.
  *
- * Kullanım:
- *   node kit/apply-fragments.mjs --check                # senkron mu? değilse exit 1
- *   node kit/apply-fragments.mjs --apply                # bölgeleri yaz
- *   node kit/apply-fragments.mjs --check --json         # makine-okur çıktı
- *   node kit/apply-fragments.mjs --check --styles 96,97 # yalnız bu stilleri raporla
+ * Usage:
+ * node kit/apply-fragments.mjs --check # synchronous? otherwise exit 1
+ * node kit/apply-fragments.mjs --apply # write regions
+ * node kit/apply-fragments.mjs --check --json # machine-readable output
+ * node kit/apply-fragments.mjs --check --styles 96.97 # report these styles only
  *
- * Not: --styles yalnız rapor/denetim kapsamını daraltır; --apply her zaman bölgenin
- * tamamını fragment'lardan yeniden üretir (kısmi yazma drift üretirdi).
- */
+ * Note: --styles only narrows the report/audit scope; --apply always applies to the region
+ * regenerates entire fragments (partial writes would produce drift).*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -59,14 +58,14 @@ const MARKS = {
   keywords: ['  /* >>> apply-fragments:keywords >>> */', '  /* <<< apply-fragments:keywords <<< */'],
 };
 
-/** Açık blok bölgesi koyu mod başlığının hemen üstüne, koyu blok bölgesi dosya sonuna girer. */
-const LIGHT_ANCHOR = '/* ============================================================\n   Koyu mod paletleri (data-theme=dark)';
+/** The light block area goes right above the dark mode header, the dark block area goes at the end of the file.*/
+const LIGHT_ANCHOR = '/*===========================================================\nDark mod palettes (data-theme=dark)';
 const STYLES_ANCHOR = '\n};\n\nexport function configFor(slug) {';
 const KEYWORDS_ANCHOR = '\n};\n\nexport const DEMOS = {';
 
 const read = (p) => fs.readFileSync(p, 'utf8');
 
-/* ---------------------------------------------------------------- keşif */
+/* ---------------------------------------------------------------- exploration*/
 
 function discoverStyles() {
   return fs
@@ -76,21 +75,21 @@ function discoverStyles() {
     .sort((a, b) => a.num - b.num);
 }
 
-/* ------------------------------------------------------------- ayrıştırma */
+/*------------------------------------------------------------- parsing*/
 
 
 function readConfigSource(frag) {
   const i = frag.indexOf('export const CONFIG = ');
-  if (i < 0) throw new Error('export const CONFIG bulunamadı');
+  if (i < 0) throw new Error('export const CONFIG not found');
   const src = frag.slice(i + 'export const CONFIG = '.length).replace(/;\s*$/, '').trim();
-  if (!src.startsWith('{') || !src.endsWith('}')) throw new Error('CONFIG bir nesne değişmez değil');
+  if (!src.startsWith('{') || !src.endsWith('}')) throw new Error('CONFIG is not an object immutable');
   return src;
 }
 
 function readTags(p) {
   const j = JSON.parse(read(p));
   const tags = Array.isArray(j) ? j : (j.labels ?? j.keywords ?? j.tags ?? null);
-  if (!Array.isArray(tags) || tags.length === 0) throw new Error(`keywords.json içinde etiket dizisi yok: ${path.basename(path.dirname(p))}`);
+  if (!Array.isArray(tags) || tags.length === 0) throw new Error(`no tag array in keywords.json: ${path.basename(path.dirname(p))}`);
   return tags.map((t) => String(t));
 }
 
@@ -102,11 +101,11 @@ function readFragment(style) {
     keywords: path.join(dir, 'keywords.json'),
   };
   for (const p of Object.values(paths)) {
-    if (!fs.existsSync(p)) throw new Error(`eksik dosya: ${path.relative(ROOT, p)}`);
+    if (!fs.existsSync(p)) throw new Error(`missing file: ${path.relative(ROOT, p)}`);
   }
   const css = read(paths.css);
   const light = readBlock(css, `[data-style="${style.slug}"]`);
-  if (!light) throw new Error(`açık blok yok: ${style.dirName}/token-block.css`);
+  if (!light) throw new Error(`no light block: ${style.dirName}/token-block.css`);
   const tags = readTags(paths.keywords);
   return {
     ...style,
@@ -116,7 +115,7 @@ function readFragment(style) {
   };
 }
 
-/* ---------------------------------------------------------------- üretim */
+/*---------------------------------------------------------------- production*/
 
 function header(dirName) {
   const label = `${dirName} `;
@@ -155,7 +154,7 @@ function region([open, close], chunks) {
   return [open, ...chunks, close].join('\n');
 }
 
-/** Bir nesne değişmezine yeni bölge eklerken önceki son girdi virgülle bitmiyorsa virgülü tamamlar. */
+/** When adding a new region to an object literal, if the last previous entry does not end with a comma, it completes the comma.*/
 function ensureComma(head) {
   if (/,\s*$/.test(head)) return head;
   const m = head.match(/^([\s\S]*?\S)(\s*)$/);
@@ -163,7 +162,7 @@ function ensureComma(head) {
   return `${m[1]},${m[2] || '\n'}`;
 }
 
-/** Bölgeyi işaretler arasında günceller; yoksa `anchor`ın önüne (veya dosya sonuna) ekler. */
+/** Updates the region between beacons; otherwise inserts before `anchor` (or at the end of the file). */
 function upsertRegion(src, marks, content, anchor, gap, opts = {}) {
   const [open, close] = marks;
   const oi = src.indexOf(open);
@@ -172,11 +171,11 @@ function upsertRegion(src, marks, content, anchor, gap, opts = {}) {
   if (oi >= 0 && ci > oi) return fix(src.slice(0, oi)) + content + src.slice(ci + close.length);
   if (anchor === null) return `${fix(src.replace(/\s+$/, ''))}\n\n${content}\n`;
   const ai = src.indexOf(anchor);
-  if (ai < 0) throw new Error(`yerleştirme çapası yok: ${anchor.split('\n')[0]}`);
+  if (ai < 0) throw new Error(`missing insertion anchor: ${anchor.split('\n')[0]}`);
   return fix(src.slice(0, ai)) + content + gap + src.slice(ai);
 }
 
-/* ------------------------------------------------------------ aile kapısı */
+/*------------------------------------------------------------------------------- family door*/
 
 function checkFamilies() {
   const problems = [];
@@ -186,41 +185,41 @@ function checkFamilies() {
   }
   const j = JSON.parse(read(FAMILIES_JSON));
   families = (j.families ?? []).slice().sort((a, b) => a.from - b.from);
-  if (!families.length) problems.push('families.json: families boş');
+  if (!families.length) problems.push('families.json: families is empty');
   let expected = 1;
   for (const f of families) {
-    if (!f.name) problems.push(`aile adı yok: ${JSON.stringify(f)}`);
-    if (f.to < f.from) problems.push(`geçersiz aralık: ${f.name} ${f.from}-${f.to}`);
+    if (!f.name) problems.push(`missing family name: ${JSON.stringify(f)}`);
+    if (f.to < f.from) problems.push(`invalid range: ${f.name} ${f.from}-${f.to}`);
     if (f.from !== expected) {
       problems.push(
         f.from < expected
-          ? `çakışma: ${f.name} ${f.from}-${f.to} (önceki aralık ${expected - 1}'e kadar)`
-          : `boşluk: ${expected}-${f.from - 1} kapsanmıyor (${f.name} ${f.from}'de başlıyor)`,
+          ? `overlap: ${f.name} ${f.from}-${f.to} (the previous range runs to ${expected - 1})`
+          : `gap: ${expected}-${f.from - 1} is not covered (${f.name} starts at ${f.from})`,
       );
     }
     expected = f.to + 1;
   }
   const covered = expected - 1;
   const nums = new Set(discoverStyles().map((s) => s.num));
-  for (let n = 1; n <= covered; n += 1) if (!nums.has(n)) problems.push(`styles/ içinde ${n} numaralı stil yok`);
+  for (let n = 1; n <= covered; n += 1) if (!nums.has(n)) problems.push(`no style number ${n} in styles/`);
   const orphan = [...nums].filter((n) => n > covered);
-  if (orphan.length) problems.push(`aile bandı dışında stil numarası: ${orphan.join(', ')}`);
+  if (orphan.length) problems.push(`style numbers outside any family band: ${orphan.join(', ')}`);
   for (const p of FAMILY_CONSUMERS) {
     const rel = path.relative(ROOT, p);
     if (!fs.existsSync(p)) {
       problems.push(`${rel} yok`);
       continue;
     }
-    if (!read(p).includes('families.json')) problems.push(`${rel} families.json dosyasını okumuyor`);
+    if (!read(p).includes('families.json')) problems.push(`${rel} does not read families.json`);
   }
   return { ok: problems.length === 0, problems, families, covered };
 }
 
 /* ------------------------------------------------------------------ main */
 
-/** v6: tokens.css sonundaki eski koyu mod bölümü üretimde temizlenir (koyu mod kaldırıldı). */
+/** v6: The old dark mode section at the end of tokens.css is purged in production (dark mode removed).*/
 function stripDarkSection(css) {
-  const i = css.indexOf('   Koyu mod paletleri (data-theme=dark)');
+  const i = css.indexOf('   Dark mode palettes (data-theme=dark)');
   if (i < 0) return css;
   const start = css.lastIndexOf('/* ===', i);
   if (start < 0) return css;
@@ -229,7 +228,7 @@ function stripDarkSection(css) {
 
 function main() {
   if (!APPLY && !CHECK) {
-    console.log('kullanım: node kit/apply-fragments.mjs --check | --apply [--styles a,b] [--json]');
+    console.log('usage: node kit/apply-fragments.mjs --check | --apply [--styles a,b] [--json]');
     return 0;
   }
 
@@ -272,7 +271,7 @@ function main() {
 
   const braces = (s) => (s.match(/\{/g) ?? []).length - (s.match(/\}/g) ?? []).length;
   if (braces(nextCss) !== 0) {
-    console.log(`× tokens.css parantez dengesi bozuk (fark ${braces(nextCss)}) — yazılmadı`);
+    console.log(`× tokens.css brace balance is broken (difference ${braces(nextCss)}) — not written`);
     return 1;
   }
 
@@ -319,9 +318,9 @@ function main() {
     if (JSON_OUT) {
       console.log(JSON.stringify({ ...report, applied: writes.filter(([, a, b]) => a !== b).map(([f]) => path.relative(ROOT, f)) }, null, 2));
     } else {
-      console.log(`apply · ${fragments.length} fragment · ${styles.length} stil · ${families.families.length} aile (1-${families.covered})`);
+      console.log(`apply · ${fragments.length} fragments · ${styles.length} styles · ${families.families.length} families (1-${families.covered})`);
       for (const [file, before, after] of writes) {
-        console.log(`  ${before === after ? 'değişmedi' : 'yazıldı  '} ${path.relative(ROOT, file)}`);
+        console.log(`  ${before === after ? 'did not change' : 'was written'} ${path.relative(ROOT, file)}`);
       }
     }
     return inSync ? 0 : errors.length ? 1 : 0;
@@ -329,13 +328,13 @@ function main() {
 
   if (JSON_OUT) console.log(JSON.stringify(report, null, 2));
   else {
-    console.log(`check · ${fragments.length} fragment · ${styles.length} stil · ${families.families.length} aile (1-${families.covered})`);
+    console.log(`check · ${fragments.length} fragments · ${styles.length} styles · ${families.families.length} families (1-${families.covered})`);
     for (const [file, info] of Object.entries(report.files)) {
-      const state = info.synced ? 'senkron' : `EKSİK (${info.missing.length})`;
+      const state = info.synced ? 'synced' : `MISSING (${info.missing.length})`;
       console.log(`  ${state.padEnd(16)} ${file}`);
       if (info.missing.length) console.log(`    ${info.missing.slice(0, 8).join(', ')}${info.missing.length > 8 ? ` … +${info.missing.length - 8}` : ''}`);
     }
-    console.log(inSync ? '  sonuç: temiz' : '  sonuç: senkron değil (--apply)');
+    console.log(inSync ? 'result: clean' : 'result: not synchronous (--apply)');
   }
   return inSync ? 0 : 1;
 }

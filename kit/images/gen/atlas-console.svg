@@ -66,7 +66,7 @@
   <line x1="680" y1="420" x2="920" y2="380" stroke="#f0c46a" stroke-width="2.5" stroke-dasharray="8 4" />
 
   <!-- Side Navigation Data Panels -->
-  <!-- Left Panel -->
+  <!--Left Panel-->
   <g transform="translate(100, 480)">
     <rect x="0" y="0" width="240" height="200" fill="#1a2836" stroke="#253448" rx="4" />
     <text x="20" y="30" font-family="monospace" font-size="12" fill="#7fa8f0" font-weight="bold">TARGET AZIMUTH</text>
@@ -75,7 +75,7 @@
     <text x="20" y="150" font-family="monospace" font-size="32" font-weight="bold" fill="#f0c46a">1,480 NM</text>
   </g>
 
-  <!-- Right Panel -->
+  <!--Right Panel-->
   <g transform="translate(1260, 480)">
     <rect x="0" y="0" width="240" height="200" fill="#1a2836" stroke="#253448" rx="4" />
     <text x="20" y="30" font-family="monospace" font-size="12" fill="#7fa8f0" font-weight="bold">ORBITAL INCLINATION</text>

@@ -1,9 +1,9 @@
 name: pages
 
-# Statik site yayını: `node kit/build-site.mjs` _site/ derler (galeri + landing + katalog +
-# live + WebP türevleri + orijinal PNG'ler), ardından GitHub Pages'e gönderir.
-# Kaynak dosyalar repoda: WebP türevleri `kit/site/thumbs/` (node kit/build-thumbs.mjs),
-# PNG'ler `styles/<slug>/shots/` (node kit/render/render-shots.mjs). CI tarayıcı çalıştırmaz.
+# Static site feed: `node kit/build-site.mjs` _site/ builds (gallery + landing + catalog +
+# live + WebP variants + original PNGs), then pushes it to GitHub Pages.
+# Source files are in the repo: WebP variants `kit/site/thumbs/` (node kit/build-thumbs.mjs),
+# PNGs `styles/<slug>/shots/` (node kit/render/render-shots.mjs). Does not run CI browser.
 on:
   push:
     branches: [main]
@@ -30,10 +30,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: WebP türevleri güncel mi
+      - name: Are the WebP derivatives current
         run: node kit/build-thumbs.mjs --check
 
-      - name: site bütünlüğü
+      - name: site integrity
         run: node kit/build-site.mjs --check
 
       - name: siteyi derle
@@ -46,7 +46,7 @@ jobs:
           path: _site
 
   deploy:
-    name: yayınla
+    name: deploy
     needs: build
     runs-on: ubuntu-latest
     environment:

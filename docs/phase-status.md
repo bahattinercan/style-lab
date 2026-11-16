@@ -1,6 +1,6 @@
 # Phase status — P0–P5
 
-> **Date:** 2026-11-15 · **Branch:** `v6-tek-sayfa`
+> **Date:** 2026-11-15 · **Branch:** `v6-single-page`
 > **Scope:** The P0–P5 items open in this round were implemented. The final state is updated together with the gate outputs below.
 
 This file records the acceptance criteria of each phase and the current evidence. Generated files are updated by the project generators, never by hand.
@@ -30,7 +30,7 @@ The landing check uses the real layout partials, the real style body and the thr
 ## P3 · Single source and the legacy SPEC
 
 - The entire `STYLES` object is generated from fragments. 45 shadow blocks and 994 dead lines were removed; two consecutive `apply-fragments --apply` runs are idempotent.
-- The fields of the old 01–151 styles were extracted into `kit/specs/legacy-01-151.json`: prose fields and recipes come from `style.md`; token/layout/imagery fields from `tokens.json`; motif/body class/CSS from `shots.config.fragment.mjs`; the keywords array from `keywords.json`.
+- The fields of the old 01–151 styles were extracted into `kit/specs/legacy-01-151.json`: process fields and recipes come from `style.md`; token/layout/imagery fields from `tokens.json`; motif/body class/CSS from `shots.config.fragment.mjs`; the keywords array from `keywords.json`.
 - The old family ranges map to the nearest shared recipe in `bands.json`. This mapping does not mean the old families and the new bands are identical.
 - The four source files of every style are tracked by SHA-256. `add-style --check` compares every re-extracted field and source digest against the SPEC; the same check runs inside `gates.sh`.
 
@@ -66,4 +66,4 @@ The landing check uses the real layout partials, the real style body and the thr
 bash kit/gates.sh
 ```
 
-**Result (2026-11-16):** `kapılar: temiz` (38 steps). Live pages check (`node kit/build-live.mjs --check`) added to source/schema gate group; legacy SPEC parity 151/151, visual signature 251/251 with 0 difference, 0 near pairs in distinctness. A11y 251/251, 0 critical violations; sample overflow measurement found 0 overflow across 24 scenes; unit tests passed 11/11; site integrity verified 251 styles × 2 WebP + PNG, 31 families, catalog 251 rows, 251 live pages; site smoke test verified landing, gallery 251 cards, catalog, and live (tokens + published live pages). Pixel regression was skipped with `↷` because `kit/render/.baseline/` is absent.
+**Result (2026-11-16):** `doors: clear` (38 steps). Live pages check (`node kit/build-live.mjs --check`) added to source/schema gate group; legacy SPEC parity 151/151, visual signature 251/251 with 0 difference, 0 near pairs in distinctness. A11y 251/251, 0 critical violations; sample overflow measurement found 0 overflow across 24 scenes; unit tests passed 11/11; site integrity verified 251 styles × 2 WebP + PNG, 31 families, catalog 251 rows, 251 live pages; site smoke test verified landing, gallery 251 cards, catalog, and live (tokens + published live pages). Pixel regression was skipped with `↷` because `kit/render/.baseline/` is absent.

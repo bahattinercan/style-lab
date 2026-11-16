@@ -44,7 +44,7 @@ The `style=` value is the folder name without its number: `01-minimalism` → `m
 ## 3.5 · The published site
 
 <https://bahattinercan.github.io/style-lab/> — GitHub Pages. Its source is the `_site/` folder, which
-is not in git; `kit/build-site.mjs` builds it and a push to `main` triggers `.github/workflows/pages.yml`.
+is not in go; `kit/build-site.mjs` builds it and a push to `main` triggers `.github/workflows/pages.yml`.
 
 ```bash
 node kit/build-thumbs.mjs   # PNG → WebP derivatives (kit/site/thumbs, kept in the repo)
@@ -119,7 +119,7 @@ Replace `./browser/chrome` with the path to your own browser executable.
 
 ## 7 · Troubleshooting
 
-| Symptom | Cause / fix |
+| Symptom | Cause/fix |
 |---|---|
 | Page is unstyled, plain black text | Opened from outside `kit/` → `tokens.css` cannot be found. Use the `kit/gallery.html` path. |
 | Card images are blank | If `styles/<slug>/shots/` is not in the repo, that page was never generated: `node kit/render/render-shots.mjs --styles <slug>` |
@@ -127,7 +127,7 @@ Replace `./browser/chrome` with the path to your own browser executable.
 | Production loads the card PNG | `_site/kit/site-config.js` is missing (the gallery copy was not converted) → `node kit/build-site.mjs --clean` |
 | `build-thumbs --check` says stale | `shots/01-page.png` was regenerated → `node kit/build-thumbs.mjs` |
 | `node: command not found` | Node 22 is required. `bash kit/gates.sh` skips the gates and warns when node is missing. |
-| `görsel regresyon atlandı` | `kit/render/.baseline/` is missing → create it with `node kit/render/baseline.mjs --write` |
+| `visual regression skipped` | `kit/render/.baseline/` is missing → create it with `node kit/render/baseline.mjs --write` |
 | Port 8000 is busy | `--port 8080` or `python -m http.server 8080` |
 
 ## 8 · Deliberate limits

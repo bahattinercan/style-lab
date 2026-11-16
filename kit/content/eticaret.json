@@ -1,46 +1,46 @@
 {
-  "label": "E-ticaret",
+  "label": "e-commerce",
   "tags": [
-    "ticaret",
-    "ürün",
+    "trade",
+    "product",
     "moda"
   ],
   "hero": {
-    "eyebrow": "Yeni sezon",
-    "h1": "Mevsimin en sade parçaları",
-    "lede": "Az sayıda ürün, açık malzeme bilgisi ve iki günde kapıda teslim.",
-    "ctaPrimary": "Koleksiyonu gör",
-    "ctaSecondary": "Beden tablosu →"
+    "eyebrow": "New season",
+    "h1": "The plainest pieces of the season",
+    "lede": "Few products, clear materials, two-day delivery.",
+    "ctaPrimary": "See the range",
+    "ctaSecondary": "Size table →"
   },
   "proofs": [
-    "2 günde teslim",
-    "Ücretsiz iade",
-    "Malzeme künyesi"
+    "2-day delivery",
+    "Free returns",
+    "Material ID"
   ],
   "logos": [
     "Atelier",
     "Loom",
     "Form",
-    "Basit",
-    "Kumas"
+    "Plain",
+    "Cloth"
   ],
   "tiles": [
     {
       "num": "01",
-      "cap": "Gömlek"
+      "cap": "Shirt"
     },
     {
       "num": "02",
-      "cap": "Pantolon"
+      "cap": "Trousers"
     },
     {
       "num": "03",
-      "cap": "Ceket"
+      "cap": "Jacket"
     },
     {
       "num": "04",
-      "cap": "Aksesuar"
+      "cap": "Accessory"
     }
   ],
-  "logoLabel": "Sezon ortakları"
+  "logoLabel": "Season partners"
 }

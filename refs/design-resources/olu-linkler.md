@@ -1,8 +1,8 @@
-# Sorunlu linkler (168/1249)
+# Problematic links (168/1249)
 
-403/429 cogu bot korumasi; gercek oluler icin `olu-linkler-kesin.md`.
+Most 403/429 responses are bot protection; for the genuinely dead see `olu-linkler-kesin.md`.
 
-| Bolum | Ad | URL | Durum |
+| Section | Name | URL | Status |
 |---|---|---|---|
 | UI Graphics | Avataaars | https://avataaars.com/ | CERT_HAS_EXPIRED |
 | UI Graphics | Blush | https://blush.design/ | 429 |

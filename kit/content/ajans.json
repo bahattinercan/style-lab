@@ -1,46 +1,46 @@
 {
-  "label": "Ajans / stüdyo",
+  "label": "Agency / studio",
   "tags": [
     "ajans",
-    "stüdyo",
+    "studio",
     "marka"
   ],
   "hero": {
-    "eyebrow": "Stüdyo · 2016",
-    "h1": "Markayı süslemeden anlatan işler",
-    "lede": "Kimlik, arayüz ve hareketi tek ekiple kuran küçük bir stüdyo.",
-    "ctaPrimary": "Bizimle çalış",
-    "ctaSecondary": "İşleri gör →"
+    "eyebrow": "Studio · 2016",
+    "h1": "Work that names the brand without decoration",
+    "lede": "One small team for identity, interface and motion.",
+    "ctaPrimary": "Work with us",
+    "ctaSecondary": "See roles →"
   },
   "proofs": [
-    "Sekiz kişilik ekip",
-    "Sabit fiyat",
-    "Haftalık demo"
+    "Eight people",
+    "Fixed price",
+    "Weekly demo"
   ],
   "logos": [
     "Studio",
-    "Kolektif",
-    "Baskı",
+    "Collective",
+    "Print",
     "Form",
-    "Işık"
+    "Light"
   ],
   "tiles": [
     {
       "num": "01",
-      "cap": "Kimlik"
+      "cap": "Identity"
     },
     {
       "num": "02",
-      "cap": "Arayüz"
+      "cap": "Interface"
     },
     {
       "num": "03",
-      "cap": "Hareket"
+      "cap": "Motion"
     },
     {
       "num": "04",
-      "cap": "Fotoğraf"
+      "cap": "Photo"
     }
   ],
-  "logoLabel": "Birlikte ürettiklerimiz"
+  "logoLabel": "What we produce together"
 }

@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 /**
- * kit/fetch-images.mjs — görsel katmanı indirir/doğrular (P2).
+ * kit/fetch-images.mjs — downloads/validates the image layer (P2).
  *
- * Kaynak: `kit/images/INDEX.json` (Unsplash License; atıf zorunlu değil, kaynak URL provenance için).
- * Dosyalar repoda tutulur (offline render şartı): 24 kare ≈ 2–4 MB.
+ * Source: `kit/images/INDEX.json` (Unsplash License; attribution not required, source URL for provenance).
+ * Files are kept in the repo (offline rendering requirement): 24 frames ≈ 2–4 MB.
  *
- * Kullanım:
- *   node kit/fetch-images.mjs --all      # eksikleri indir
- *   node kit/fetch-images.mjs --check    # dosya var mı, boyut/format/INDEX tutarlı mı
- *   node kit/fetch-images.mjs --json
- */
+ * Usage:
+ * node kit/fetch-images.mjs --all # download missing items
+ * node kit/fetch-images.mjs --check # does the file exist, is the size/format/INDEX consistent
+ * node kit/fetch-images.mjs --json*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -33,21 +32,21 @@ for (const img of images) {
   const file = path.join(DIR, img.file);
   const exists = fs.existsSync(file);
   const bytes = exists ? fs.statSync(file).size : 0;
-  if (!exists) problems.push(`${img.file}: dosya yok`);
-  else if (bytes < MIN_BYTES) problems.push(`${img.file}: çok küçük (${bytes} B) — indirme yarım kalmış olabilir`);
-  if (!img.id) problems.push(`${img.file}: id yok (kaynak URL üretilemez)`);
-  if (!Array.isArray(img.tags) || !img.tags.length) problems.push(`${img.file}: tags boş`);
-  if (!img.use) problems.push(`${img.file}: use (kullanım notu) yok`);
+  if (!exists) problems.push(`${img.file}: file missing`);
+  else if (bytes < MIN_BYTES) problems.push(`${img.file}: too small (${bytes} B) — the download may be incomplete`);
+  if (!img.id) problems.push(`${img.file}: missing id (no source URL can be built)`);
+  if (!Array.isArray(img.tags) || !img.tags.length) problems.push(`${img.file}: tags are empty`);
+  if (!img.use) problems.push(`${img.file}: missing use (usage note)`);
   rows.push({ file: img.file, exists, bytes });
 }
 
-// yetim dosya: INDEX'te olmayan görsel
+// orphan file: image not in INDEX
 const orphan = fs.existsSync(DIR)
   ? fs.readdirSync(DIR).filter((f) => /\.(jpe?g|png|webp)$/i.test(f) && !images.some((i) => i.file === f))
   : [];
-for (const f of orphan) problems.push(`${f}: INDEX.json'da kaydı yok (yetim dosya)`);
+for (const f of orphan) problems.push(`${f}: not registered in INDEX.json (orphan file)`);
 
-if (!idx.license?.id) problems.push('INDEX.json: license bloğu yok');
+if (!idx.license?.id) problems.push('INDEX.json: no license block');
 
 if (ALL) {
   fs.mkdirSync(DIR, { recursive: true });
@@ -63,7 +62,7 @@ if (ALL) {
       problems.push(`${img.file}: indirilemedi (${String(err.message).split('\n')[0]})`);
     }
   }
-  if (!JSON_OUT) console.log(`indirilen: ${downloaded} · toplam kayıt: ${images.length}`);
+  if (!JSON_OUT) console.log(`downloaded: ${downloaded} · total records: ${images.length}`);
 }
 
 if (JSON_OUT) {
@@ -72,7 +71,7 @@ if (JSON_OUT) {
   for (const p of problems) console.log(`× ${p}`);
   const mb = (rows.reduce((n, r) => n + r.bytes, 0) / 1048576).toFixed(1);
   console.log(
-    `görseller: ${images.length} kayıt · ${rows.filter((r) => r.exists).length} dosya · ${mb} MB · lisans: ${idx.license?.label ?? '—'}` +
+    `images: ${images.length} records · ${rows.filter((r) => r.exists).length} files · ${mb} MB · licence: ${idx.license?.label ?? '—'}` +
       (problems.length ? ` · ${problems.length} sorun` : ' · temiz'),
   );
 }

@@ -6,41 +6,41 @@
     "vitrin"
   ],
   "hero": {
-    "eyebrow": "Boğaz · 41°N",
-    "h1": "Deniz manzaralı, az katlı, sakin bir yaşam",
-    "lede": "Seçili konutlar, şeffaf künye ve tek muhatap; kararı acele ettirmeden verin.",
-    "ctaPrimary": "Portföyü gör",
-    "ctaSecondary": "Randevu al →"
+    "eyebrow": "Strait · 41°N",
+    "h1": "A low, quiet life by the water",
+    "lede": "Selected homes, an open record, one contact.",
+    "ctaPrimary": "See homes",
+    "ctaSecondary": "Book a visit →"
   },
   "proofs": [
-    "Künyeli portföy",
-    "Yerinde keşif",
-    "Tek muhatap"
+    "Open record",
+    "On-site visits",
+    "One contact"
   ],
   "logos": [
     "Bosphorus",
     "Marmara",
     "Levant",
-    "Kule",
-    "Sahil"
+    "Tower",
+    "Coast"
   ],
   "tiles": [
     {
       "num": "01",
-      "cap": "Yalı dairesi"
+      "cap": "Waterside flat"
     },
     {
       "num": "02",
-      "cap": "Bahçe katı"
+      "cap": "Garden floor"
     },
     {
       "num": "03",
-      "cap": "Tarihi han"
+      "cap": "Old han"
     },
     {
       "num": "04",
-      "cap": "Yeni proje"
+      "cap": "New build"
     }
   ],
-  "logoLabel": "Seçili portföy"
+  "logoLabel": "Selected portfolio"
 }

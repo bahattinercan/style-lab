@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "_readme": "Görsel katman kaynağı (P2). Lisans: Unsplash License (ticari kullanım serbest, atıf zorunlu değil; kaynak URL provenance için tutulur). Dosyalar `node kit/fetch-images.mjs --all` ile indirilir; kapı `--check`.",
+  "_readme": "Visual layer source (P2). License: Unsplash License (commercial use allowed, attribution not required; source URL kept for provenance). Files are downloaded with `node kit/fetch-images.mjs --all`; door `--check`.",
   "license": {
     "id": "unsplash",
     "label": "Unsplash License",
@@ -17,7 +17,7 @@
         "interior",
         "calm"
       ],
-      "use": "japandi, minimal, lüks iç mekân"
+      "use": "japandi, minimal, luxury interior"
     },
     {
       "file": "arch-02.jpg",
@@ -25,7 +25,7 @@
       "tags": [
         "architecture"
       ],
-      "use": "emlak, mimarlık, kurumsal"
+      "use": "real estate, architecture, corporate"
     },
     {
       "file": "arch-03.jpg",
@@ -34,7 +34,7 @@
         "architecture",
         "night"
       ],
-      "use": "lüks emlak, gece modu"
+      "use": "luxury real estate, night mode"
     },
     {
       "file": "arch-04.jpg",
@@ -43,7 +43,7 @@
         "interior",
         "warm"
       ],
-      "use": "otel, sıcak malzeme"
+      "use": "hotel, hot material"
     },
     {
       "file": "int-01.jpg",
@@ -51,7 +51,7 @@
       "tags": [
         "interior"
       ],
-      "use": "sade, editorial iç mekân"
+      "use": "simple editorial interior"
     },
     {
       "file": "int-02.jpg",
@@ -60,7 +60,7 @@
         "interior",
         "dark"
       ],
-      "use": "koyu mod, gece"
+      "use": "dark mode, night"
     },
     {
       "file": "int-03.jpg",
@@ -122,7 +122,7 @@
         "craft",
         "art"
       ],
-      "use": "sanatsal, zanaat, atölye"
+      "use": "artistic, craft, workshop"
     },
     {
       "file": "tex-02.jpg",
@@ -132,7 +132,7 @@
         "iridescent",
         "glass"
       ],
-      "use": "y2k, holografik, yüzey, deneysel"
+      "use": "y2k, holographic, surface, experimental"
     },
     {
       "file": "tex-03.jpg",
@@ -142,7 +142,7 @@
         "workshop",
         "metal"
       ],
-      "use": "endüstriyel, zanaat, ahşap/metal"
+      "use": "industrial, craft, wood/metal"
     },
     {
       "file": "tex-04.jpg",
@@ -152,7 +152,7 @@
         "white",
         "minimal"
       ],
-      "use": "sade, tipografik, yayın"
+      "use": "plain typographic publication"
     },
     {
       "file": "obj-01.jpg",
@@ -160,7 +160,7 @@
       "tags": [
         "product"
       ],
-      "use": "ürün, e-ticaret"
+      "use": "product, e-commerce"
     },
     {
       "file": "obj-02.jpg",
@@ -168,7 +168,7 @@
       "tags": [
         "object"
       ],
-      "use": "ayakkabı, kampanya"
+      "use": "shoes, campaign"
     },
     {
       "file": "obj-03.jpg",
@@ -176,7 +176,7 @@
       "tags": [
         "audio"
       ],
-      "use": "donanım, teknoloji"
+      "use": "hardware, technology"
     },
     {
       "file": "obj-04.jpg",
@@ -186,7 +186,7 @@
         "detail",
         "product"
       ],
-      "use": "moda, ürün detayı, kampanya"
+      "use": "fashion, product detail, campaign"
     },
     {
       "file": "urb-01.jpg",
@@ -203,7 +203,7 @@
         "city",
         "glass"
       ],
-      "use": "kurumsal, veri"
+      "use": "enterprise, data"
     },
     {
       "file": "por-01.jpg",
@@ -211,7 +211,7 @@
       "tags": [
         "portrait"
       ],
-      "use": "kişisel marka, ekip"
+      "use": "personal brand, team"
     },
     {
       "file": "por-02.jpg",

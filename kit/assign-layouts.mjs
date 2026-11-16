@@ -1,24 +1,23 @@
 #!/usr/bin/env node
 /**
- * kit/assign-layouts.mjs — 145 stile kompozisyon arketipi atar (deterministik).
+ * kit/assign-layouts.mjs — Assigns composition archetypes to 145 styles (deterministic).
  *
- * Neden: katalog bugüne kadar yalnız rengi/tipografiyi çeşitlendiriyordu; 145 stilin
- * hero iskeleti aynıydı. Bu script `tokens.json → layout { hero, nav, density }` alanını
- * `kit/render/layouts.json` tanımlarından seçer. Seçim rastgele DEĞİL: slug + aile + etiket
- * metni puanlanır; eşitlik deterministik hash ile bozulur (aynı girdi → aynı çıktı).
+ * Why: until now the catalog only varied color/typography; 145 styles
+ * hero skeleton was the same. This script uses the field `tokens.json → layout { hero, nav, density }`
+ * Selects from `kit/render/layouts.json` definitions. The selection is NOT random: slug + family + tag
+ * text is scored; equality is broken by deterministic hashing (same input → same output).
  *
- * Kısıtlar (kapı: kit/check-layout.mjs):
- *   · aile içinde en az min(4, aile büyüklüğü) farklı hero|nav parmak izi
- *   · hiçbir parmak izi stil sayısının %25'ini geçmez (bugün: hepsi tek parmak izi)
- *   · her stil en az bir `sections` arketipi taşır (hero) — şema v3
+ * Constraints (port: kit/check-layout.mjs):
+ * · at least min(4, family size) different hero|nav fingerprints within the family
+ * · no fingerprint exceeds 25% of the style count (today: all single fingerprint)
+ * · every style carries at least one `sections` archetype (hero) — scheme v3
  *
- * Kullanım:
- *   node kit/assign-layouts.mjs --dry            # öneriyi yazdırmadan göster
- *   node kit/assign-layouts.mjs --apply          # tokens.json dosyalarını güncelle
- *   node kit/assign-layouts.mjs --check          # dosyalar öneriyle aynı mı (drift kapısı)
- *   node kit/assign-layouts.mjs --apply --styles luxury-typography,y2k
- *   node kit/assign-layouts.mjs --json
- */
+ * Usage:
+ * node kit/assign-layouts.mjs --dry # show suggestion without printing
+ * node kit/assign-layouts.mjs --apply # update tokens.json files
+ * node kit/assign-layouts.mjs --check # are the files the same as the suggestion (drift gate)
+ * node kit/assign-layouts.mjs --apply --styles luxury-typography,y2k
+ * node kit/assign-layouts.mjs --json*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -39,7 +38,7 @@ const ONLY = (() => {
   return list.length ? new Set(list) : null;
 })();
 
-/** Tavanlar katalog büyüklüğüne göre hesaplanır (sabit 145 tuzağı: stil ekleyince kapı kayar). */
+/** Ceilings are calculated based on catalog size (fixed 145 trap: door slides when add style).*/
 const MAX_SHARE = 0.25;
 const styleCount = fs
   .readdirSync(STYLES_DIR, { withFileTypes: true })
@@ -47,28 +46,27 @@ const styleCount = fs
 const MAX_FINGERPRINT = Math.max(4, Math.floor(styleCount * MAX_SHARE));
 
 /**
- * Hero puanlama sözlüğü. Sıra önemli: ilk eşleşen kural +3, sonrakiler +1 puan.
- * Anahtar kelimeler slug + ad + aile + etiketler üzerinde aranır (Türkçe diakritik sadeleşir).
- */
+ * Hero scoring dictionary. Order matters: first matching rule +3 points, subsequent ones +1 point.
+ * Keywords are searched on slug + name + family + tags (diacritics are simplified).*/
 const HERO_RULES = [
   {
     hero: 'type',
-    strong: /(tipograf|typograph|poster|afis|swiss|editorial|zine|poetry|siir|newspaper|gazete|book|kitap|library|kutuphane|letterpress|print|bask[iı]|manifesto|headline)/,
-    weak: /(dergi|magazine|yay[iı]n|publish|type|metin)/,
+    strong: /(typograph|poster|swiss|editorial|zine|poetry|newspaper|book|library|letterpress|print|manifesto|headline)/,
+    weak: /(magazine|publish|type)/,
   },
   {
     hero: 'fullbleed',
-    strong: /(luxury|luks|grand|tourer|estate|emlak|jewel|mucevher|hotel|otel|fashion|moda|coupe|couture|art-deco|victorian|silk|ipek|marble|mermer|brass|pirin[cs]|leather|deri|porcelain|porselen|noir|oxblood|villa|monolith|craft|zanaat|wood|ah[sş]ap|joinery|drape|cafe|kahve|wine|[sş]arap|restaurant|restoran|resort|travel|seyahat|terrain|arazi|coastal|k[iı]y[iı]|reef|mercan)/,
-    weak: /(premium|vitrin|showcase|photograph|foto|gallery|galeri|organic|botanical|coastal|mineral|drape|prism|pr[iı]zma)/,
+    strong: /(luxury|grand|tourer|estate|jewel|hotel|fashion|coupe|couture|art-deco|victorian|silk|marble|brass|leather|porcelain|noir|oxblood|villa|monolith|craft|wood|joinery|drape|cafe|wine|restaurant|resort|travel|terrain|coastal|reef)/,
+    weak: /(premium|showcase|photograph|gallery|organic|botanical|coastal|mineral|drape|prism)/,
   },
   {
     hero: 'product',
-    strong: /(dashboard|panel|telemetry|telemetri|trading|borsa|kanban|terminal|command|komut|repl|notebook|developer|gelistirici|api|sdk|data|veri|kpi|logistics|lojistik|warehouse|depo|\bmes\b|cockpit|kokpit|sensor|iot|monitor|grid|bento|engine|motor|finance|finans|wallet|cüzdan|bank|crypto|kripto|orchestration|orkestra)/,
+    strong: /(dashboard|panel|telemetry|trading|kanban|terminal|command|repl|notebook|developer|api|sdk|data|kpi|logistics|warehouse|cockpit|sensor|iot|monitor|grid|bento|engine|finance|wallet|bank|crypto|orchestration)/,
     weak: /(tool|arac|console|konsol|analytics|analitik|system|sistem|pipeline|flow|akis)/,
   },
   {
     hero: 'index',
-    strong: /(index|dizin|archive|arsiv|gallery|galeri|portfolio|portfolyo|museum|muze|studio|studyo|catalog|katalog|directory|rehber|sticker|comic|cizgi|album|sleeve|zine|collection|koleksiyon|marketplace|pazar|store|magaza|shop|commerce|ticaret|listing|ilan)/,
+    strong: /(index|archive|gallery|portfolio|museum|studio|catalog|directory|sticker|comic|album|sleeve|zine|collection|marketplace|store|shop|commerce|listing)/,
     weak: /(ajans|agency|work|is\b|project|proje|case|vaka|showcase)/,
   },
   {
@@ -88,7 +86,7 @@ const HERO_RULES = [
   },
 ];
 
-/** Nav: hero'dan türetilir; aynı fingerprint'in tekrarını kırmak için ikinci aday da var. */
+/** Nav: derived from hero; There is also a second candidate to break the repetition of the same fingerprint.*/
 const NAV_OF_HERO = {
   split: ['inline', 'split'],
   'split-reverse': ['utility', 'inline'],
@@ -101,14 +99,14 @@ const NAV_OF_HERO = {
 };
 
 const DENSITY_OF_FAMILY = {
-  'Veri & Gösterge': 'dense',
-  Endüstriyel: 'dense',
+  'Data & Indicator': 'dense',
+  Industrial: 'dense',
   Oyuncu: 'dense',
   Cesur: 'dense',
   Teknik: 'dense',
-  'Materyal & Lüks': 'sparse',
+  'Material & Luxury': 'sparse',
   Sade: 'sparse',
-  'Doğa & Organik': 'sparse',
+  'Nature & Organic': 'sparse',
 };
 
 function norm(text) {
@@ -139,7 +137,7 @@ function families() {
   return (j.families ?? []).map((f) => ({ from: f.from, to: f.to, name: f.name }));
 }
 const FAMILIES = families();
-const FAMILY_OF = (num) => FAMILIES.find((f) => num >= f.from && num <= f.to)?.name ?? 'Diğer';
+const FAMILY_OF = (num) => FAMILIES.find((f) => num >= f.from && num <= f.to)?.name ?? 'Other';
 
 const HERO_IDS = LAYOUTS.heroes.map((h) => h.id);
 const NAV_IDS = LAYOUTS.navs.map((n) => n.id);
@@ -165,41 +163,40 @@ function discover() {
     .sort((a, b) => a.num - b.num);
 }
 
-/** Bir stil için hero puanları (yüksek = daha uygun). */
+/** Hero points for a style (higher = more favorable).*/
 function heroScores(style) {
   const hay = norm(
     [style.slug, style.tokens.name ?? '', style.family, style.tokens.tag ?? '', ...(style.tokens.tags ?? [])].join(' '),
   );
   const scores = {};
   for (const id of HERO_IDS) scores[id] = 0;
-  scores.split = 1; // nötr taban
+  scores.split = 1; // neutral base
   for (const rule of HERO_RULES) {
     if (rule.strong.test(hay)) scores[rule.hero] += 3;
     else if (rule.weak?.test(hay)) scores[rule.hero] += 1;
   }
-  // aile eğilimleri: sade → sakin kompozisyon, veri → ürün ekranı
-  if (style.family === 'Sade') scores.centered += 1;
-  if (style.family === 'Veri & Gösterge') scores.product += 2;
-  if (style.family === 'Materyal & Lüks') scores.fullbleed += 2;
-  if (style.family === 'Yayın & Tipografi') scores.type += 2;
-  if (style.family === 'Tipografik') scores.type += 3;
-  if (style.family === 'Etkileşim') scores.product += 1;
-  if (style.family === 'Geometrik') scores.index += 1;
+  // family trends: plain → calm composition, data → product display
+  if (style.family === 'Minimal') scores.centered += 1;
+  if (style.family === 'Data & Indicator') scores.product += 2;
+  if (style.family === 'Material & Luxury') scores.fullbleed += 2;
+  if (style.family === 'Publication & Typography') scores.type += 2;
+  if (style.family === 'Typographic') scores.type += 3;
+  if (style.family === 'Interactive') scores.product += 1;
+  if (style.family === 'Geometric') scores.index += 1;
   const override = HERO_OVERRIDES[style.slug];
   if (override) scores[override] = Math.max(...Object.values(scores)) + 5;
   return scores;
 }
 
 /**
- * Atama: her stil için puan sıralı adaylar; kısıt ihlali olursa sonraki adaya geçilir.
- * Deterministik: eşit puanda hash(slug) sıralamayı belirler.
- */
+ * Assignment: candidates in score order for each style; If there is a constraint violation, it is passed to the next candidate.
+ * Deterministic: equal points hash (slug) determines the ranking.*/
 function computeAssignments(styles) {
   const ordered = styles.map((s) => {
     const scores = heroScores(s);
     const h = hash(s.slug);
-    // en yüksek puanlı adaylar arasında seçim hash ile yapılır (aynı puan → çeşitlilik),
-    // sonra kalan adaylar puan sırasıyla gelir: kısıt çözümü hep EN İYİ ikinci seçeneğe gider.
+    // selection among the highest scoring candidates is done by hash (same score → diversity),
+    // Then the remaining candidates come in order of points: the constraint solution always goes to the second BEST option.
     const maxScore = Math.max(...HERO_IDS.map((id) => scores[id]));
     const byHash = (a, b) => hash(a + s.slug) - hash(b + s.slug);
     const best = HERO_IDS.filter((id) => scores[id] === maxScore).sort(byHash);
@@ -217,14 +214,14 @@ function computeAssignments(styles) {
     return m;
   };
 
-  // 1) global parmak izi tavanı: en kalabalık hero+nav kombinasyonu MAX_FINGERPRINT'i geçmesin
+  // 1) global fingerprint ceiling: the most populated hero+nav combination should not exceed MAX_FINGERPRINT
   for (let pass = 0; pass < 12; pass += 1) {
     const navOf = (o) => navChoice(o);
     const fp = count((o) => `${o.hero}|${navOf(o)}`);
     const worst = [...fp.entries()].sort((a, b) => b[1] - a[1])[0];
     if (!worst || worst[1] <= MAX_FINGERPRINT) break;
     const [hero] = worst[0].split('|');
-    // bu kombinasyondaki en düşük puanlı stili ikinci adaya taşı
+    // move the lowest scoring style in this combination to the second island
     const affected = ordered
       .filter((o) => o.hero === hero && `${o.hero}|${navOf(o)}` === worst[0])
       .sort((a, b) => a.scores[a.hero] - b.scores[b.hero]);
@@ -235,7 +232,7 @@ function computeAssignments(styles) {
     victim.hero = next;
   }
 
-  // 2) aile içi çeşitlilik: aile ≥4 stilse en az 3 farklı HERO (görsel iskelet), tek stil için 1
+  // 2) within-family diversity: at least 3 different HEROs (visual skeleton) if family ≥4 styles, 1 for a single style
   const byFamily = new Map();
   for (const o of ordered) {
     const f = o.style.family;
@@ -252,18 +249,18 @@ function computeAssignments(styles) {
       for (const o of list) local.set(o.hero, [...(local.get(o.hero) ?? []), o]);
       const crowded = [...local.entries()].sort((a, b) => b[1].length - a[1].length)[0];
       if (!crowded || crowded[1].length < 2) break;
-      // kurban: en düşük puanlı, eşitlikte hash ile deterministik
+      // sacrifice: lowest scoring, deterministic with hash in equality
       const victim = crowded[1]
         .slice()
         .sort((a, b) => a.scores[a.hero] - b.scores[b.hero] || hash(a.style.slug) - hash(b.style.slug))[0];
-      // aile içinde kullanılmayan, global olarak en az kalabalık arketipi seç
+      // Choose the least crowded globally archetype that is not used within the family
       const spare = victim.candidates
         .filter((c) => !usedHeroes.has(c))
         .map((c) => ({ c, load: fpNow.get(`${c}|${navChoice({ ...victim, hero: c })}`) ?? 0 }))
         .sort((a, b) => a.load - b.load || hash(a.c + victim.style.slug) - hash(b.c + victim.style.slug));
       if (!spare.length) break;
-      // kaliteyi koru: belirgin eşleşmeyi (≥2) sıfır puanlı arketipe düşürme — yalnız
-      // kalabalık ailede (≥8) zorunlu çeşitlilik için izin verilir.
+      // maintain quality: downgrade obvious matches (≥2) to zero-point archetype — only
+      // Forced diversity is allowed in large families (≥8).
       const pick = spare.find((x) => !(victim.scores[victim.hero] >= 2 && victim.scores[x.c] === 0 && list.length < 8));
       if (!pick) break;
       victim.hero = pick.c;
@@ -294,7 +291,7 @@ function densityChoice(o) {
   return DENSITY_IDS.includes(chosen) ? chosen : 'balanced';
 }
 
-/** tokens.json'a `layout` alanını yazar (varsa günceller), anahtar sırasını korur. */
+/** Writes (updates if any) the `layout` field to tokens.json, preserving the key order.*/
 function withLayout(tokens, layout) {
   const next = { ...tokens };
   if ((next.version ?? 2) < 3) next.version = 3;
@@ -329,20 +326,20 @@ function main() {
       const next = withLayout(style.tokens, { hero: a.hero, nav: a.nav, density: a.density, sectionPlan: a.sectionPlan, family: style.family, ...(style.tokens.layout?.fit ? { fit: style.tokens.layout.fit } : {}) });
       fs.writeFileSync(style.path, JSON.stringify(next, null, 2) + '\n');
     }
-    console.log(`yazıldı: ${scoped.length} tokens.json (şema v3, layout eklendi)`);
+    console.log(`written: ${scoped.length} tokens.json (schema v3, layout added)`);
     if (!JSON_OUT) printDistribution(assignments);
     return 0;
   }
 
   if (CHECK) {
     if (drift.length) {
-      console.log(`× ${drift.length} stilde layout öneriden farklı (drift):`);
+      console.log(`× layout differs from the recommendation in ${drift.length} styles (drift):`);
       for (const d of drift.slice(0, 10)) console.log(`  - ${d.dir}: ${JSON.stringify(d.current)} → ${JSON.stringify(d.want)}`);
-      if (drift.length > 10) console.log(`  … ${drift.length - 10} tane daha`);
-      console.log('düzeltme: node kit/assign-layouts.mjs --apply');
+      if (drift.length > 10) console.log(`  … ${drift.length - 10} more`);
+      console.log('fix: node kit/assign-layouts.mjs --apply');
       return 1;
     }
-    console.log(`✓ layout ataması güncel (${scoped.length} stil)`);
+    console.log(`✓ layout assignment is up to date (${scoped.length} styles)`);
     return 0;
   }
 
@@ -351,7 +348,7 @@ function main() {
     console.log(JSON.stringify({ assignments: scoped }, null, 2));
     return 0;
   }
-  console.log('stil'.padEnd(30), 'hero'.padEnd(14), 'nav'.padEnd(9), 'density');
+  console.log('style'.padEnd(30), 'hero'.padEnd(14), 'nav'.padEnd(9), 'density');
   for (const a of scoped) console.log(a.dirName.padEnd(30), a.hero.padEnd(14), a.nav.padEnd(9), a.density);
   printDistribution(assignments);
   return 0;
@@ -363,16 +360,16 @@ function printDistribution(assignments) {
     for (const a of assignments) m.set(a[key], (m.get(a[key]) ?? 0) + 1);
     return [...m.entries()].sort((x, y) => y[1] - x[1]);
   };
-  console.log('\n— hero dağılımı —');
+  console.log('\n— hero distribution —');
   for (const [k, v] of tab('hero')) console.log(`  ${k.padEnd(14)} ${String(v).padStart(3)}  %${Math.round((v / assignments.length) * 100)}`);
-  console.log('— nav dağılımı —');
+  console.log('— nav distribution —');
   for (const [k, v] of tab('nav')) console.log(`  ${k.padEnd(14)} ${String(v).padStart(3)}`);
-  console.log('— yoğunluk —');
+  console.log('— density —');
   for (const [k, v] of tab('density')) console.log(`  ${k.padEnd(14)} ${String(v).padStart(3)}`);
   const fp = new Map();
   for (const a of assignments) fp.set(`${a.hero}|${a.nav}`, (fp.get(`${a.hero}|${a.nav}`) ?? 0) + 1);
   const [top, topN] = [...fp.entries()].sort((x, y) => y[1] - x[1])[0] ?? ['—', 0];
-  console.log(`\nparmak izi: ${fp.size} farklı kombinasyon · en kalabalık ${top} = ${topN} stil (%${Math.round((topN / assignments.length) * 100)})`);
+  console.log(`\nfingerprint: ${fp.size} distinct combinations · busiest ${top} = ${topN} styles (${Math.round((topN / assignments.length) * 100)}%)`);
 }
 
 main();

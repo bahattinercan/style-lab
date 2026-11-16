@@ -1,6 +1,6 @@
 # Design Style Library (style-lab) · v6
 
-> **Languages:** [English](README.md) · [Türkçe](README.tr.md)
+> **Languages:** [English](README.md) · [Turkish](README.tr.md)
 > **Repository:** https://github.com/bahattinercan/style-lab
 > **Gates:** `bash kit/gates.sh` (27 steps) · **Install hook:** `bash kit/install-hooks.sh`
 > **Interactive:** `kit/gallery.html` (search · filter · drawer · compare) · `kit/live.html?style=<slug>`
@@ -26,9 +26,9 @@ Rationale and measurements: [`docs/v6-simplification-report.md`](docs/v6-simplif
 - 251/251 styles render a single page; **251 PNG, 172 MB total** (`du -ch styles/*/shots/01-page.png`).
 - 251/251 on schema **v6** (`tokens.json` version 6, no `palette.dark`, no `motion`).
 - 31 family bands, 1–251 contiguous (`kit/families.json`).
-- 16 distinct `hero|nav` fingerprints; largest cluster 36 styles (**14%**), cap 25%.
+- 16 distinct `hero|nav` fingerprints; cluster 36 styles (largest**14%**), cap 25%.
 - 0 contrast errors (`--strict-soft`), 19 documented soft warnings (decorative `--ink-faint`, low APCA in 3 very-dark palettes).
-- Verification: `bash kit/gates.sh` → last line `kapılar: temiz`.
+- Verification: `bash kit/gates.sh` → last line `gates: clean`.
 
 ## Live site
 
@@ -113,22 +113,22 @@ Full list with one-line identities: [`docs/catalog.md`](docs/catalog.md).
 
 | Band | Range | Band | Range |
 |---|---|---|---|
-| Sade | 1–7 | Endüstriyel | 56–65 |
-| Yüzey | 8–12 | Kültürel & Bölgesel | 66–75 |
-| Cesur | 13–18 | Doğa & Organik | 76–85 |
-| Retro | 19–27 | Yayın & Tipografi | 86–95 |
-| Sanatsal | 28–34 | Hareket & Optik | 96–105 |
-| Geometrik | 35–36 | Etkileşim | 106–115 |
-| Tipografik | 37 | Oyuncu | 116–125 |
-| Organik | 38 | Materyal & Lüks | 126–135 |
-| Yeni Dalga | 39–40 | Deneysel & Gelecek | 136–145 |
-| Zamansız | 41–44 | Sahne & Prestij | 146–151 |
-| Teknik | 45 | **Oyun & Etkileşim** | **152–171** |
-| Veri & Gösterge | 46–55 | **Operasyon & Veri** | **172–181** |
-| **Ticaret & Vitrin** | **182–191** | **Kültür & Yayın** | **192–201** |
-| **Sağlık & Bilim** | **202–211** | **Öğrenme & Oyunlaştırma** | **212–221** |
-| **Materyal & Zanaat** | **222–231** | **Tipografi Denemeleri** | **232–241** |
-| **Gelecek & Spekülatif** | **242–251** | | |
+| Plain | 1–7 | Industrial | 56–65 |
+| Surface | 8–12 | Cultural & Regional | 66–75 |
+| Brave | 13–18 | Nature & Organic | 76–85 |
+| Retro | 19–27 | Publication & Typography | 86–95 |
+| artistic | 28–34 | Movement & Optics | 96–105 |
+| Geometric | 35–36 | Interaction | 106–115 |
+| Typographic | 37 | Player | 116–125 |
+| Organic | 38 | Material & Luxury | 126–135 |
+| New Wave | 39–40 | Experimental & Future | 136–145 |
+| Timeless | 41–44 | Stage & Prestige | 146–151 |
+| Technical | 45 | **Game & Interaction** | **152–171** |
+| Data & Indicator | 46–55 | **Operation & Data** | **172–181** |
+| **Commerce & Showcase** | **182–191** | **Culture & Broadcast** | **192–201** |
+| **Health & Science** | **202–211** | **Learning & Gamification** | **212–221** |
+| **Material & Craft** | **222–231** | **Typography Experiments** | **232–241** |
+| **Future & Speculative** | **242–251** | | |
 
 Bold bands are the v6 additions (100 styles). Bands are defined once in `kit/families.json`;
 `apply-fragments`, `build-gallery`, `report` and `build-catalog-doc` all read that file.
@@ -160,7 +160,7 @@ Gates: `check-layout.mjs` (no fingerprint above 25%, every archetype used, ≥3 
 | Surface | `--bg` `--bg-2` `--surface` `--surface-2` |
 | Text | `--ink` `--ink-soft` `--ink-faint` |
 | Accent | `--accent` `--accent-ink` |
-| Line / shape | `--line` `--radius` `--radius-lg` |
+| Line/shape | `--line` `--radius` `--radius-lg` |
 | Depth | `--shadow` `--shadow-hard` |
 | Type | `--font-display` `--font-body` `--font-mono` `--tracking` |
 | Texture | `--blur` `--grain` |
@@ -184,7 +184,7 @@ node kit/render/render-shots.mjs --sample 8 --measure                 # layout o
 node kit/render/phash.mjs --check                                    # perceptual signature of 251 PNGs
 ```
 
-"Done" means `bash kit/gates.sh` ends with `kapılar: temiz`. Commit hook runs the same gate
+"Done" means `bash kit/gates.sh` ends with `gates: clean`. Commit hook runs the same gate
 (`.git/hooks/pre-commit`); the full run can exceed a 120 s tool timeout, so run it separately.
 
 ## Token export

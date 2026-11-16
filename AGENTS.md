@@ -68,13 +68,13 @@ TESTING.md           opening + testing the site
 7. **Composition variety.** `layout` comes from the archetypes in `kit/render/layouts.json`; never
    invent it by hand. Rule: no `hero|nav` fingerprint exceeds 25%, every archetype is used in ≥4
    styles, each family has at least 3 distinct fingerprints. Gate: `node kit/check-layout.mjs`.
-8. **Single-scene policy.** The repo holds only `shots/01-page.png` (1280×2400). Do not produce other
+8. **Single-scene policy.** The repo holds only `shots/01-page.png` (1280×2400). Don't produce others
    scenes, do not use `.shots-cache`; `kit/shots.core.json` = `["01-page.png"]`.
 9. **File paths are fragile.** `kit/gallery.html` works together with the `gallery.css`/`tokens.css`/
    `gallery.js` next to it; images use relative paths (`../styles/...`). Do not move files out of
    `kit/`, do not write absolute paths.
 10. **Never invent numbers.** Claims like "251 styles", "251 PNGs", "31 families" come from the output
-    of `bash kit/gates.sh` and `kit/dist/report.md` / `docs/catalog.md`. Do not put an unmeasured
+    of `bash kit/gates.sh` and `kit/dist/report.md` / `docs/catalog.md`. Don't put an unmeasured
     number into README/AGENTS.
 11. **New style = one command.** Write a SPEC into `kit/specs/*.json` → `node kit/add-style.mjs <file>`.
     The command generates the sources, assigns layouts/imagery/content, renders, and refreshes the
@@ -83,10 +83,9 @@ TESTING.md           opening + testing the site
     780 KB `gallery.html`) for formatting reasons; it makes the diff unreadable.
 13. **Commit message** `feat|fix|docs|test|chore(<area>): <what>` — area: render, gallery, schema,
     export, content, specs, docs. Existing history follows this (`fix(render): …`).
-14. **Documentation is English; code identifiers are English.** `AGENTS.md`, `playbook.md`,
-    `TESTING.md`, `docs/**`, `skills/**` and commit messages are written in English. `README` is the
-    only bilingual pair (`README.md` English + `README.tr.md` Turkish). `style.md` prose is still
-    Turkish because it is generated from the Turkish prose in `kit/specs/*.json` — to make it English,
+14. **Documentation is English; code identifiers are English.** `AGENTS.md`, `playbook.md`,`TESTING.md`, `docs/**`, `skills/**` and commit messages are written in English. `README` is the
+    only bilingual pair (`README.md` English + `README.tr.md` Turkish). `style.md` process is still
+    Turkish because it is generated from the Turkish process in `kit/specs/*.json` — to make it English,
     translate the SPEC and re-run `add-style`, never the generated file.
 15. **When adding an external resource**, record it in the `refs/design-resources` catalog and leave
     no dead links.
@@ -157,7 +156,7 @@ node kit/build-thumbs.mjs --check && node kit/build-site.mjs --check && node kit
 node kit/render/render-shots.mjs --sample 8 --measure --cache-only && node kit/render/phash.mjs --check
 ```
 
-**Definition of "done":** the last line of `bash kit/gates.sh` is `kapılar: temiz` **and** the output
+**Definition of "done":** the last line of `bash kit/gates.sh` is `gates: clean` **and** the output
 of the command you ran has been shown. If a gate is red, fix it and **run the same command again**.
 If it does not pass in 3 rounds, stop and present the reason + 2 options with ⚠️.
 
@@ -180,19 +179,19 @@ hook with `--no-verify`, run `gates.sh` in a separate long run, show the output,
 - **`kit/families.json` must stay contiguous when adding a band** (a gap/overlap breaks `apply-fragments`).
 - **`avoid`/`best`/`feeling` must be plain strings in the SPEC** (an array makes `add-style` error out).
 - **`neighbors` slugs must exist in the catalog or in the same batch** (`check-schema` looks them up).
-- **Headless render runs WebGL on SwiftShader** — it does not measure GPU FPS; not enough for a performance claim.
+- **Headless rendering runs WebGL on SwiftShader** — it does not measure GPU FPS; not enough for a performance claim.
 - **`replaceState` is blocked under `file://`** — testing URL state (filter/share) needs a server.
 - **The pre-commit hook runs 38 steps (>120 s)** and hits the tool timeout; run the gate in a separate
   long command, show the clean output, then commit.
 - **Blank-frame risk:** viewport races are possible in the CDP tab pool; `render-shots` now verifies
   `innerWidth`, checks the PNG dimensions, and re-captures a blank frame once (`kit/render/cdp-browser.mjs`).
-- **The gates are static checks; they do not catch click behaviour.** `check-gallery-ui` covers the
-  gallery; lightbox/search behaviour needs a manual headless Chrome + CDP round.
+- **The gates are static checks; they do not catch click behavior.** `check-gallery-ui` covers the
+  gallery; lightbox/search behavior needs a manual headless Chrome + CDP round.
 - **Run `phash --check` after `optimize-shots --all`**; if compression changed pixels, the signature drifts.
 
 ## Rule map
 
-| Topic | File | When to read it |
+| Topic | Net | When to read it |
 |---|---|---|
 | Style selection + token application procedure | `skills/style-lab-catalog/SKILL.md` | **Before** applying a style to an app |
 | Family→use-case mapping | `skills/style-lab-catalog/references/families.md` | While narrowing down style candidates |
@@ -204,5 +203,5 @@ hook with `--no-verify`, run `gates.sh` in a separate long run, show the output,
 | Opening, testing, troubleshooting the site | `TESTING.md` | When a page does not open / an image is blank |
 
 ---
-_Verified (v6): `bash kit/gates.sh` → `kapılar: temiz` (38 steps) · 251 styles · 251 single-page PNGs ·
+_Verified (v6): `bash kit/gates.sh` → `gates: clean` (38 steps) · 251 styles · 251 single-page PNGs ·
 31 families · 16 distinct hero|nav fingerprints · contrast 0 errors / 19 soft warnings · phash 251/251 diff 0._

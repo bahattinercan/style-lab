@@ -128,7 +128,7 @@ function selfTest() {
   if (bad.filter((f) => f.rule === 'override').length !== 1 || !bad.some((f) => f.rule === 'hex') || !bad.some((f) => f.rule === 'selector') || good.length) {
     throw new Error('self-test failed');
   }
-  console.log('self-test: hex, ezici bildirim ve selector kaçakları yakalandı; media override serbest');
+  console.log('self-test: hex, crush notification and selector leaks caught; media override free');
 }
 
 if (SELF_TEST) {
@@ -140,7 +140,7 @@ if (SELF_TEST) {
   if (JSON_OUT) console.log(JSON.stringify({ styles: Object.keys(STYLES).length, findings: rows }, null, 2));
   else {
     for (const row of rows.slice(0, 60)) console.log(`! ${row.slug}: ${row.rule} · ${row.selector} · ${row.value}`);
-    console.log(`imza CSS'i · ${Object.keys(STYLES).length} stil · ${rows.length} ihlal`);
+    console.log(`signature CSS · ${Object.keys(STYLES).length} styles · ${rows.length} violations`);
   }
   process.exitCode = rows.length ? 1 : 0;
 }

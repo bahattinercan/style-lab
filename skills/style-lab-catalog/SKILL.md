@@ -65,7 +65,7 @@ machine-readable: `kit/styles.index.json`.
 node kit/pick.mjs --intent "long read + calm + corporate"     # 3 candidates + rationale + file paths
 node kit/pick.mjs --intent "game hud" --limit 5
 node kit/pick.mjs --families                                   # the 31 family bands
-node -e "const i=require('./kit/dist/index.slim.json');console.log('stil:',i.count)"
+node -e "const i=require('./kit/dist/index.slim.json');console.log('styles:',i.count)"
 ```
 
 Do **not** memorise catalog numbers; when a number is needed, `kit/dist/report.md` (`node kit/report.mjs`) produces it.
@@ -193,7 +193,7 @@ Before an implementation counts as "done":
 - [ ] Contrast: body ≥ 4.5:1, large text ≥ 3:1, on accent ≥ 4.5:1 (`--strict-soft`).
 - [ ] Focus ring visible, touch target ≥ 44px, no overflow at 390px.
 - [ ] Composition: the screen was built per the `layout.hero` archetype; `node kit/check-layout.mjs` clean.
-- [ ] `bash kit/gates.sh` → "kapılar: temiz" (or the reason for the remaining error is written down).
+- [ ] `bash kit/gates.sh` → "gates: clean" (or the reason for the remaining error is written down).
 
 References: `references/families.md` (31 bands) · `references/workflow.md` (new style, one command) ·
 `docs/catalog.md` (251 styles) · `playbook.md` §2 selection, §5 tokens, §14–§16 contrast/export.

@@ -1,4 +1,4 @@
-/* fixture: bilinçli ihlaller — style-lint bad */
+/*fixture: intentional violations — style-lint bad*/
 .panel {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, .12);

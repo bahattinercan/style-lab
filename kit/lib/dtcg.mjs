@@ -1,21 +1,20 @@
 /**
- * kit/lib/dtcg.mjs — DTCG 2025.10 (`$value`/`$type`) çıktısı.
+ * kit/lib/dtcg.mjs — DTCG 2025.10 (`$value`/`$type`) output.
  *
- * Neden: katalog üç özel biçim üretiyordu (CSS, Tailwind @theme, Figma variables). DTCG
- * 2025.10 stable v1 olduğundan (Tokens Studio, Style Dictionary v5, Figma eklentileri bu biçimi
- * okuyor) dördüncü çıktı standart biçimde verilir; mevcut üç dosya korunur.
+ * Cause: catalog was generating three custom formats (CSS, Tailwind @theme, Figma variables). DTCG
+ * Since 2025.10 is stable v1 (Tokens Studio, Style Dictionary v5, Figma plugins support this format
+ * reading) the fourth output is given in standard format; The three existing files are preserved.
  *
- * Kapsam: renk (colorSpace + components + hex yedeği), dimension (radius, tipografi ölçeği),
- * fontFamily. Kapsam dışı (bilinçli): em cinsinden tracking (şemada birim yok), CSS gölge metni
- * (ayrıştırma hedef başına değişir), prose bileşen reçeteleri.
- */
+ * Scope: color (colorSpace + components + hex replacement), dimension (radius, typography scale),
+ *fontFamily. Out of scope (intentional): tracking in em (no units in schema), CSS shadow text
+ * (parsing varies per target), process component recipes.*/
 import { parseColor } from '../color.mjs';
 
 const round4 = (n) => Math.round(n * 10000) / 10000;
-/** token sözleşmesindeki 10 renk — sıra CSS bloğuyla aynıdır. */
+/** 10 colors in token contract — the order is the same as the CSS block.*/
 export const COLOR_KEYS = ['bg', 'bg-2', 'surface', 'surface-2', 'ink', 'ink-soft', 'ink-faint', 'accent', 'accent-ink', 'line'];
 
-/** DTCG renk değeri: colorSpace + components (0–1) + alpha + hex yedeği. */
+/** DTCG color value: colorSpace + components (0–1) + alpha + hex replacement.*/
 export function dtcgColor(raw) {
   const c = parseColor(raw);
   if (!c) return null;
@@ -25,7 +24,7 @@ export function dtcgColor(raw) {
   return value;
 }
 
-/** "8px" → DTCG dimension; em/calc gibi birimler `null` (şemada karşılığı yok). */
+/** "8px" → DTCG dimension; Units like em/calc are `null` (no equivalent in the diagram).*/
 export function dtcgDimension(raw) {
   const m = String(raw ?? '').trim().match(/^(-?[\d.]+)px$/);
   return m ? { value: Number(m[1]), unit: 'px' } : null;
@@ -40,14 +39,13 @@ export function dtcgFontStack(raw) {
 }
 
 /**
- * Stil listesi + CSS değişken sözlüğü → DTCG belgesi.
+ * Style list + CSS variable dictionary → DTCG document.
  * @param {Array<{slug:string, tokens:{name?:string, typography?:{scale?:Record<string,string>}}|null}>} styles
- * @param {{light: Record<string, Record<string,string>>}} css
- */
+ * @param {{light: Record<string, Record<string,string>>}} css*/
 export function buildDtcg(styles, css) {
   const out = {
     $description:
-      'style-lab v6 token seti · DTCG 2025.10 ($value/$type) · kaynak: kit/tokens.css + styles/<nn-slug>/tokens.json · üretici: kit/export-tokens.mjs',
+      'style-lab v6 token set · DTCG 2025.10 ($value/$type) · source: kit/tokens.css + styles/<nn-slug>/tokens.json · manufacturer: kit/export-tokens.mjs',
   };
   for (const s of styles) {
     const v = css.light[s.slug];

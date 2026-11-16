@@ -1,42 +1,42 @@
-# 35 · Stil Adı
+#35 · Style Name
 
-> **Bir cümlede:** Bu stilin özü — tek cümle, sıfatsız, ölçülebilir bir iddia.
+> **In one sentence:** The essence of this style — one sentence, no adjectives, a measurable claim.
 
 | | |
 |---|---|
-| **Hissiyat** | 3–4 sıfat |
-| **En iyi** | 2–4 ürün/ekran türü |
-| **Kaçın** | nerede kullanılmamalı (somut sektör/ekran) |
-| **Zorluk** | düşük/orta/yüksek · **Erişilebilirlik** | iyi/orta/yüksek risk |
-| **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="slug"]` |
-| **Kompozisyon** | `hero` · `nav` · `density` (arketip gerekçesi: `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-landing.png` … `shots/04-components.png` |
+| **Feeling** | 3–4 adjectives |
+| **Best** | 2–4 products/display type |
+| **Avoid** | where not to use (concrete sector/screen) |
+| **Difficulty** | low/medium/high · **Accessibility** | good/medium/high risk |
+| **Family** | Plain (01–07) · **Token** | `kit/tokens.css` → `[data-style="slug"]` |
+| **Composition** | `hero` · `nav` · `density` (archetype justification: `kit/render/layouts.json`) |
+| **Images** | `shots/01-landing.png` … `shots/04-components.png` |
 
-## Öz
+## Essence
 
-### Nedir
-2–3 paragraf. Stilin kurucu kararları: neyi feda eder, neyi kazanır. "Nasıl hissettirir" değil, "hangi problemi hangi araçla çözer".
+### What is it
+2–3 paragraphs. The founding decisions of the style: what to sacrifice, what to gain. Not "how does it feel", but "which problem does it solve with which tool".
 
-### Ne değildir
-3–5 madde. En sık karıştırıldığı komşu stiller ve aradaki **ölçülebilir** fark (radius, gölge, kontrast, tipografi).
+### What it is not
+3–5 items. The adjacent styles with which it is most often confused and the **measurable** difference between them (radius, shadow, contrast, typography).
 
-### Nereden gelir
-1 paragraf tarihsel/kültürel köken + bugün neden tekrar kullanılıyor. Tarzın "klişe" sayılmaması için hangi detay korunmalı.
+### Where does it come from
+1 paragraph historical/cultural origin + why it is being used again today. What detail should be preserved so that the style is not considered "cliche"?
 
-### 3 saniyede tanıma testi
-Karıştırıldığında bakılacak 5 işaret — her biri ekranda görünür bir ayrıntı:
+### Recognition test in 3 seconds
+5 signs to look for when mixing — each with a visible detail on the screen:
 1. …
 2. …
 3. …
 4. …
 5. …
 
-## Görsel imza
-4–7 madde, her biri **ölçülebilir** (değer + nasıl uygulanacağı). "Sade görünür" yasak; "1px hairline, %10 opaklık, sadece bölüm ayırıcı" doğru.
+## Visual signature
+4–7 items, each **measurable** (value + how to apply). "Looks plain" is forbidden; "1px hairline, 10% opacity, section separator only" is correct.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 |---|---|---|---|
 | `--bg` | | | |
 | `--surface` | | | |
@@ -44,172 +44,171 @@ Karıştırıldığında bakılacak 5 işaret — her biri ekranda görünür bi
 | `--accent` | | | |
 | `--line` | | | |
 
-- Ölçülen kontrast: `ink / bg` = x.x:1 · `ink-soft / bg` = x.x:1 · `accent-ink / accent` = x.x:1.
-- Tek vurgu kuralı / çok renk kuralı: hangisi geçerli, kaç ton, hangi amaçla.
-- Yasak kombinasyon: …
+- Measured contrast: `ink / bg` = x.x:1 · `ink-soft / bg` = x.x:1 · `accent-ink / accent` = x.x:1.
+- Single highlight rule / many color rule: which one applies, how many shades, for what purpose.
+- Forbidden combination: …
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line spacing | Tracking |
 |---|---|---|---|---|---|
-| Display / H1 | | | | | |
+| Display/H1 | | | | | |
 | H2 | | | | | |
-| Gövde | | | | | |
-| Etiket / mono | | | | | |
+| Body | | | | | |
+| Label / mono | | | | | |
 
-- Ölçek oranı: 1.25 / 1.5 / 1.7 — hangi basamaklar gerçekten kullanılıyor (en fazla 6).
-- Ölçü önerisi: `h1 { font-size: clamp(...) }`.
-- Gövde metni maksimum satır uzunluğu: xx ch.
-- Ağırlık kuralı: hangi ağırlıklar var, hangisi yasak (ör. 300 kullanılmaz).
+- Scale ratio: 1.25 / 1.5 / 1.7 — which digits are actually used (up to 6).
+- Size suggestion: `h1 { font-size: clamp(...) }`.
+- Body text maximum line length: xx ch.
+- Weight rule: which weights are available, which are prohibited (e.g. 300 is not used).
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 |---|---|
-| Kolon | |
+| Column | |
 | Gutter | |
-| Container genişliği | |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | |
+| Container width | |
+| Space scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint behavior | |
 
-- Asimetri kuralı: ekran başına kaç bölüm simetriden çıkar.
-- Bölüm ritmi: art arda aynı hizada kaç blok olabilir (en fazla …).
+- Asymmetry rule: how many sections per screen fall out of symmetry.
+- Section rhythm: how many blocks can be aligned in a row (maximum...).
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 |---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | |
-| Kart | `--surface` | | |
-| Yüzen katman | `--surface` + `--shadow` | | |
+| Ground | `--bg` / `--bg-2` | — | |
+| Card | `--surface` | | |
+| Floating layer | `--surface` + `--shadow` | | |
 
-- Kenarlık formülü: …
-- Derinlik nereden gelir: ışık / ofset / doku / hiçbiri.
-- Radius: `--radius` … `--radius-lg` … hangi bileşende hangisi.
+- Border formula: …
+- Where does depth come from: light / offset / texture / none.
+- Radius: `--radius` … `--radius-lg` … which in which component.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Color/shade | Situations |
 |---|---|---|---|---|---|---|
-| Buton (birincil) | | | | | | hover / active / focus / disabled / loading |
-| Buton (ikincil) | | | | | | |
+| Button (primary) | | | | | | hover / active / focus / disabled / loading |
+| Button (secondary) | | | | | | |
 | Input | | | | | | default / focus / filled / error / disabled |
-| Kart | | | | | | |
-| Chip / badge | | | | | | |
-| Nav | | | | | | aktif / pasif |
-| Tablo satırı | | | | | | seçili / hover |
+| Card | | | | | | |
+| Chip/badge | | | | | | |
+| Nav | | | | | | active / passive |
+| Table row | | | | | | selected/hover |
 | Modal / sheet | | | | | | |
 | Toast | | | | | | |
-| Grafik paleti | | | | | | |
+| Graphics palette | | | | | | |
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px` (istisna varsa yaz).
-- Dokunma hedefi: en az 44×44px — hangi bileşende görsel olarak küçük ama padding'le büyütülüyor.
+- Focus ring: `outline: 2px solid var(--accent); outline-offset: 2px` (write if there is an exception).
+- Touch target: at least 44×44px — which component is visually small but enlarged with padding.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 |---|---|
-| İkon | çizgi kalınlığı, köşe, boyut ızgarası |
-| Fotoğraf | hangi tür, hangi ton, ne kadar alan |
-| İllüstrasyon | var / yok, neden |
-| Doku | grain %, desen, gölge |
-| Logo alanı | ne kadar boşluk, hangi varyant |
+| icon | line thickness, corner, size grid |
+| Photo | which type, which tone, how much space |
+| Illustration | yes/no, why |
+| Texture | grain %, pattern, shadow |
+| Logo area | how much space, which variant |
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Application | Visual |
 |---|---|---|---|
-| Landing / hero | yüksek | | `shots/01-landing.png` |
-| Dashboard | düşük | | `shots/02-dashboard.png` |
-| Form | düşük | | `shots/05-components-form.png` |
-| Liste / tablo | düşük | | `shots/11-page-list.png` |
-| Boş durum | orta | | `shots/12-page-states.png` |
-| Onboarding | yüksek | | `shots/15-page-onboarding.png` |
-| Pricing | orta | | `shots/09-page-pricing.png` |
-| Giriş / ödeme | çok düşük | | `shots/10-page-auth.png` · `shots/14-page-checkout.png` |
-| Modal | orta | | `shots/06-components-overlay.png` |
-| Bildirim / toast | orta | | `shots/06-components-overlay.png` |
-| Hata | düşük | | `shots/12-page-states.png` |
-| Profil / ayar | orta | | `shots/13-page-settings.png` |
+| Landing / hero | high | | `shots/01-landing.png` |
+| Dashboard | low | | `shots/02-dashboard.png` |
+| Form | low | | `shots/05-components-form.png` |
+| List / table | low | | `shots/11-page-list.png` |
+| Empty status | middle | | `shots/12-page-states.png` |
+| Onboarding | high | | `shots/15-page-onboarding.png` |
+| Pricing | middle | | `shots/09-page-pricing.png` |
+| Login / payment | very low | | `shots/10-page-auth.png` · `shots/14-page-checkout.png` |
+| Modal | middle | | `shots/06-components-overlay.png` |
+| Notification / toast | middle | | `shots/06-components-overlay.png` |
+| Error | low | | `shots/12-page-states.png` |
+| Profile / setting | middle | | `shots/13-page-settings.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+> The `Image` column is refreshed from the manifest with `node kit/sync-shot-tables.mjs --write`; Do not edit manually.
 
 ## Hareket
 
-| Durum | Süre | Easing | Özellik |
+| Status | Duration | Easing | Feature |
 |---|---|---|---|
 | Basma | | | |
-| Geçiş / sayfa | | | |
-| Ödül / vurgu | | | |
+| Transition / page | | | |
+| Award / highlight | | | |
 
-- `prefers-reduced-motion`: tüm süreler 0.01ms, hareketli arka plan durur.
-- Bu stile yasak hareket: …
+- `prefers-reduced-motion`: all durations 0.01ms, motion background stops.
+- Moves prohibited in this style: …
 
-## Koyu mod
+## Dark mode
 
-| Token | Açık | Koyu |
+| Token | Open | Dark |
 |---|---|---|
 | `--bg` | | |
 | `--surface` | | |
 | `--ink` | | |
 | `--accent` | | |
 
-- Koyu modda değişen başka ne var (gölge → kenarlık, blur azaltma, doygunluk).
-- `filter: invert()` yasak; palet elle yazılır.
+- What else changes in dark mode (shadow → border, blur reduction, saturation).
+- `filter: invert()` forbidden; The palette is written by hand.
 
-## Erişilebilirlik
+## Accessibility
 
-- Ölçülen riskler: en düşük kontrastlı çift (değer) ve düzeltmesi.
-- Bu stilde `--ink-faint` sadece dekoratif; etkileşimli metin değil.
-- Hareket/parlama hassasiyeti: …
-- Cam/şeffaf yüzeylerde `@supports` opak fallback.
-- Odak görünürlüğü: hangi yüzeyde halka zayıf kalıyor, çözümü.
+- Measured risks: lowest contrast pair (value) and its correction.
+- In this style `--ink-faint` is merely decorative; not interactive text.
+- Motion/flare sensitivity: …
+- `@supports` opaque fallback on glass/transparent surfaces.
+- Focus visibility: solution on which surface the ring is weak.
 
-## Örnek görseller
+## Sample images
 
-| Görsel | Dosya | Neye bak | AI bunu nasıl kullanır |
+| Visual | File | Look at what | How AI uses this |
 |---|---|---|---|
 | Landing | `shots/01-landing.png` | | |
 | Dashboard | `shots/02-dashboard.png` | | |
-| Mobil | `shots/03-mobile.png` | | |
-| Bileşenler | `shots/04-components.png` | | |
+| Mobile | `shots/03-mobile.png` | | |
+| Components | `shots/04-components.png` | | |
 
 ## Tuzaklar
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Why | Correction |
 |---|---|---|
 | | | |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `slug` — neden (garnitür olarak nereye konur).
-- **Yasak:** `slug` — neden (hangi fizik/ızgara çelişiyor).
+- **Compatible with:** `slug` — why (where to put it as a garnish).
+- **Forbidden:** `slug` — why (which physics/grid conflicts).
 
 ## Referanslar
 
-| Kaynak | Ne için bakılır |
+| Source | What to look for |
 |---|---|
 | https://… | |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
+Copy-paste; The implementing agent can use this block alone:
 
 ```
-Stil: <Ad> (styles/NN-slug/style.md, tokens.json)
-Token: sadece kit/tokens.css [data-style="slug"] değişkenleri; hard-coded renk/gölge/radius yasak.
-Tipografi: --font-display başlıkta (tracking --tracking), --font-body gövdede, --font-mono etiketlerde.
-Yüzey: 3 seviye (--bg / --surface / --surface + --shadow); radius --radius ve --radius-lg.
-Bileşen: "Bileşen reçeteleri" tablosundaki değerler birebir; durum stilleri dahil.
-Hareket: "Hareket" tablosu; prefers-reduced-motion desteği zorunlu.
-Yasak: "Tuzaklar" ve "Yasaklar" maddeleri.
-Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
+Style: <Name> (styles/NN-slug/style.md, tokens.json)
+Token: only the kit/tokens.css [data-style="slug"] variables; hard-coded colour/shadow/radius is banned.
+Typography: --font-display for headings (tracking --tracking), --font-body for body copy, --font-mono for labels.
+Surface: 3 levels (--bg / --surface / --surface + --shadow); radius --radius and --radius-lg.
+Component: the values in the "Component recipes" table verbatim, including state styles.
+Banned: the "Traps" and "Bans" items.
+Output: component code + a single paragraph note (which signature element you used where).
 ```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor.
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1.
-- [ ] Odak halkası görünür, dokunma hedefi ≥ 44px.
-- [ ] 390px genişlikte taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+**Pre-delivery self-inspection**
+- [ ] At least 2 of the signature elements of the style appear on the screen.
+- [ ] No color/radius/shadow is hard-coded.
+- [ ] Contrast: body ≥ 4.5:1, large text ≥ 3:1.
+- [ ] Focus ring visible, touch target ≥ 44px.
+- [ ] No bleed at 390px width.
+- [ ] When `prefers-reduced-motion` is on, movement stops.

@@ -1,22 +1,21 @@
 #!/usr/bin/env node
 /**
- * kit/check-composition.mjs — baskın + garnitür kompozisyonunun güvenli olduğunu denetler.
+ * kit/check-composition.mjs — checks that the dominant + garnish composition is safe.
  *
- * Kural (playbook §2.2): baskın stil renk/tipografi/yüzeyi taşır; garnitür **yalnız kendi
- * alt ağacında** (`[data-style="garnitür"]`) yaşar ve baskının değişkenlerini ezmez.
- * Bu iki şeyi ölçer:
+ * Rule (playbook §2.2): dominant style carries colour/typography/surface; garnish **own only
+ It lives in the * subtree** (`[data-style="garnish"]`) and does not overwhelm the print's variables.
+ * This measures two things:
  *
- *   statik  : hiçbir stil `:root` / `body` / `*` / sadece `[data-theme]` kapsamında değişken
- *             tanımlamıyor mu? (global tanım → garnitür olarak kullanılamaz, her yeri boyar)
- *   graf    : `neighbors.compatible` / `forbidden` simetrik mi, çakışıyor mu?
- *   tarayıcı: gerçek DOM'da 4 uyumlu çiftte dış alan baskının, iç alan garnitürün değerini alıyor mu?
+ * static : no style `:root` / `body` / `*` / variable only in scope `[data-theme]`
+ * does not define? (global definition → cannot be used as a garnish, it stains everything)
+ * graph : `neighbors.compatible` / `forbidden` symmetrical or conflicting?
+ * browser: does the outer field take the value of the print and the inner field the value of garnish in 4 compatible pairs in the real DOM?
  *
- * Kullanım:
- *   node kit/check-composition.mjs                # statik + graf
- *   node kit/check-composition.mjs --browser      # + gerçek DOM (Chrome/Edge gerekir)
- *   node kit/check-composition.mjs --json
- *   node kit/check-composition.mjs --pairs 4      # kaç çift denenecek (tarayıcı modu)
- */
+ * Usage:
+ * node kit/check-composition.mjs # static + graph
+ * node kit/check-composition.mjs --browser # + real DOM (Chrome/Edge required)
+ * node kit/check-composition.mjs --json
+ * node kit/check-composition.mjs --pairs 4 # how many pairs to try (browser mode)*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -45,12 +44,11 @@ const styleDirs = () =>
 
 const readStyle = (dir) => JSON.parse(fs.readFileSync(path.join(STYLES_DIR, dir, 'tokens.json'), 'utf8'));
 
-/* ---------- 1 · statik: global kapsamda değişken var mı ---------- */
+/*---------- 1 · static: is there a variable in global scope ----------*/
 
 /**
- * Fragment dosyasındaki her kuralın seçicisini ve gövdesinde `--x:` var mı diye bakar.
- * `[data-style="..."]` içermeyen kuralda değişken tanımı = global sızıntı.
- */
+ * Checks the selector and body of each rule in the fragment file for `--x:`.
+ * Variable definition in rule without `[data-style="..."]` = global leak.*/
 function scopedDeclarationProblems(dir) {
   const file = path.join(STYLES_DIR, dir, 'token-block.css');
   if (!fs.existsSync(file)) return [`${dir}: token-block.css yok`];
@@ -77,7 +75,7 @@ function scopedDeclarationProblems(dir) {
     if (end < 0) break;
     const body = css.slice(open + 1, end);
     if (/--[a-z0-9-]+\s*:/i.test(body) && !selector.includes('[data-style="')) {
-      problems.push(`${dir}: global kapsamda değişken (seçici: "${selector.slice(0, 60)}")`);
+      problems.push(`${dir}: variable in the global scope (selector: "${selector.slice(0, 60)}")`);
     }
     i = end + 1;
   }
@@ -86,7 +84,7 @@ function scopedDeclarationProblems(dir) {
 
 for (const dir of styleDirs()) errors.push(...scopedDeclarationProblems(dir));
 
-/* ---------- 2 · graf: komşu listeleri ---------- */
+/*---------- 2 · graph: neighbor lists ----------*/
 
 const index = JSON.parse(fs.readFileSync(path.join(ROOT, 'kit', 'styles.index.json'), 'utf8'));
 const neighbors = new Map(index.styles.map((s) => [s.slug, s.neighbors ?? {}]));
@@ -96,7 +94,7 @@ for (const [slug, n] of neighbors) {
   const compatible = n.compatible ?? [];
   const forbidden = n.forbidden ?? [];
   for (const other of compatible) {
-    // listeler yönlüdür ("bu stil için garnitür adayları"), simetri beklenmez
+    // lists are directional ("garnish candidates for this style"), symmetry is not expected
     if (!allSlugs.has(other)) errors.push(`${slug}: compatible "${other}" katalogda yok`);
   }
   for (const other of forbidden) {
@@ -104,10 +102,10 @@ for (const [slug, n] of neighbors) {
     if (compatible.includes(other)) errors.push(`${slug}: "${other}" hem compatible hem forbidden`);
   }
   if (compatible.includes(slug)) errors.push(`${slug}: kendini compatible listeliyor`);
-  if (compatible.length > 4) warnings.push(`${slug}: ${compatible.length} uyumlu komşu (önerilen ≤ 4)`);
+  if (compatible.length > 4) warnings.push(`${slug}: ${compatible.length} compatible neighbours (≤ 4 recommended)`);
 }
 
-/* ---------- 3 · tarayıcı: gerçek DOM izolasyonu ---------- */
+/*---------- 3 · browser: true DOM isolation ----------*/
 
 async function browserCheck() {
   const pairs = [];
@@ -119,7 +117,7 @@ async function browserCheck() {
     }
   }
   pairs.sort((x, y) => x.key.localeCompare(y.key));
-  // aile çeşitliliği: aynı baskın stilden birden fazla çift seçme
+  // family diversity: choosing multiple pairs of the same dominant style
   const selected = [];
   const usedFamilies = new Set();
   const familyOf = (slug) => index.styles.find((s) => s.slug === slug)?.family ?? slug;
@@ -147,7 +145,7 @@ async function browserCheck() {
   ].filter(Boolean);
   const browser = CANDIDATES.find((p) => fs.existsSync(p));
   if (!browser) {
-    console.log('  ↷ tarayıcı bulunamadı, DOM denetimi atlandı (BROWSER=/yol/ver)');
+    console.log('↷ browser not found, DOM inspection skipped (BROWSER=/path/ver)');
     return;
   }
 
@@ -174,7 +172,7 @@ async function browserCheck() {
   }
   if (!target) {
     proc.kill();
-    console.log('  ↷ CDP hedefi açılmadı, DOM denetimi atlandı');
+    console.log('↷ CDP target not opened, DOM inspection skipped');
     return;
   }
 
@@ -247,16 +245,16 @@ async function browserCheck() {
       const expectIn = { bg: palB.bg, accent: palB.accent, radius: String(tb.shape?.radius ?? '') };
       for (const key of ['bg', 'accent', 'radius']) {
         if (expectOut[key] && res.out[key] !== expectOut[key]) {
-          errors.push(`${a} + ${b} (${theme}): dış alan --${key} "${res.out[key]}" ≠ "${expectOut[key]}" (baskın ezilmiş)`);
+          errors.push(`${a} + ${b} (${theme}): outer scope --${key} "${res.out[key]}" ≠ "${expectOut[key]}" (dominant style overwritten)`);
         }
         if (expectIn[key] && res.in[key] !== expectIn[key]) {
-          errors.push(`${a} + ${b} (${theme}): iç alan --${key} "${res.in[key]}" ≠ "${expectIn[key]}" (garnitür uygulanmamış)`);
+          errors.push(`${a} + ${b} (${theme}): inner scope --${key} "${res.in[key]}" ≠ "${expectIn[key]}" (garnish not applied)`);
         }
       }
     }
   }
 
-  console.log(`  ✓ DOM izolasyonu: ${selected.length} uyumlu çift (${selected.map((p) => `${p.a}+${p.b}`).join(', ')})`);
+  console.log(`  ✓ DOM isolation: ${selected.length} compatible pairs (${selected.map((p) => `${p.a}+${p.b}`).join(', ')})`);
   ws.close();
   proc.kill();
   try {
@@ -266,19 +264,19 @@ async function browserCheck() {
 
 if (BROWSER_MODE) await browserCheck();
 
-/* ---------- rapor ---------- */
+/*---------- report ----------*/
 
 const summary = { styles: styleDirs().length, errors: errors.length, warnings: warnings.length, browser: BROWSER_MODE };
 
 if (JSON_OUT) {
   console.log(JSON.stringify({ ...summary, errors, warnings }, null, 2));
 } else {
-  console.log(`kompozisyon · ${summary.styles} stil · ${summary.errors} hata · ${summary.warnings} uyarı`);
+  console.log(`composition · ${summary.styles} styles · ${summary.errors} errors · ${summary.warnings} warnings`);
   for (const e of errors.slice(0, 12)) console.log(`  ✗ ${e}`);
   if (errors.length > 12) console.log(`  … +${errors.length - 12}`);
   for (const w of warnings.slice(0, 8)) console.log(`  ! ${w}`);
   if (warnings.length > 8) console.log(`  … +${warnings.length - 8}`);
-  if (!errors.length) console.log(BROWSER_MODE ? 'sonuç: temiz (statik + DOM)' : 'sonuç: temiz (statik + graf; DOM için --browser)');
+  if (!errors.length) console.log(BROWSER_MODE ? 'result: clean (static + DOM)' : 'result: clean (static + graph; --browser for DOM)');
 }
 
 process.exit(errors.length ? 1 : 0);

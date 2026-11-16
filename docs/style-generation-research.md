@@ -32,18 +32,18 @@ The weakness: the chain **does not cover the whole catalog**, and the quality ga
 | B1 | **The single page is fitted with "zoom", not by design** | **251/251 styles** overflow 2400px; `body.zoom` p10/p50/p90 = 0.808/0.882/0.931. Pre-zoom content is **p50 2721px** (p10 2578, p90 2972, max 3268) ⇒ median **−321px**, worst **−868px** over. Result: **smallest visual type size p50 7.9px** (p10 7.2, min 6.6), **53.9%** of text elements under 10px; **19 styles** still overflow past the 0.78 floor (bottom content clipped). Before zoom no style has a computed size under 8.5px ⇒ the whole defect is zoom-driven. | `kit/render/page.html:189-199`; measurement: §7 |
 | B2 | **The gate could not see this defect (fixed with P0)** | The old measurement reported `0 issues · 0 warnings (small text)` for the same pages: `MEASURE_EXPR` only read `getComputedStyle().fontSize`; it did not compute the post-zoom visual size or the pre-zoom overflow. The new measurement reports **521 issues** on the same 251 pages (zoom<1, page overflow, visual size under 9px). | `kit/render/render-shots.mjs:307-365`, `:390-420` |
 | B3 | **60% of the catalog is outside the generator** | 100 of 251 styles have a SPEC (152–251), 151 are hand-written (01–151). The legacy styles have all 5 sources but no generator ⇒ `add-style --check` verifies nothing for those 151 styles. | `ls kit/specs` vs `ls styles` |
-| B4 | **45 duplicate style keys inside `shots.config.mjs`** | 297 keys / 252 unique; 45 keys are defined twice: in 26 of them the content is **different** (JS last-definition-wins ⇒ the earlier block is silently dead), in 19 it is an exact copy. The dead blocks total **994 lines**. Whoever edits that key changes nothing. | `kit/render/shots.config.mjs` (e.g. `cyberpunk` at 918 and 1498) |
+| B4 | **45 duplicate style keys inside `shots.config.mjs`** | 297 keys / 252 uniques; 45 keys are defined twice: in 26 of them the content is **different** (JS last-definition-wins ⇒ the earlier block is silently dead), in 19 it is an exact copy. The dead blocks total **994 lines**. Whoever edits that key changes nothing. | `kit/render/shots.config.mjs` (e.g. `cyberpunk` at 918 and 1498) |
 | B5 | **The token contract is split in two** | The `tokens.json`/`css` contract is **20** variables (no spacing and no state color). Variable counts in the `tokens.css` blocks are {20, 21, 24, 25, 28} — 161 styles override `--danger`, 90 fall back to the global `#b42318`. The machine source (JSON) does not know the state color; `scene.css` `.field.err` uses `--danger` anyway. | `styles/*/tokens.json`, `kit/tokens.css:24-30`, `kit/render/scene.css:1096`, `kit/lib/style-spec.mjs:530` |
 | B6 | **`extraCss` is a free-text escape hatch** | 18.5 KB of CSS across 100 SPECs, 185 characters on average, **213 distinct lines** (the same `h1 { font-size: 38px }` 12 times). **138 of 270** signature blocks contain a self-overriding declaration (327 in total): `h1 { font-size: 54px }` then `h1 { font-size: 38px }`. No gate parses this text. | `kit/specs/*.json → extraCss`, no `add-style` validation |
-| B7 | **Non-token colors in old blocks** | 18 of the 270 signature blocks contain **69 hard-coded hex** values in total (all legacy: `skeuomorphism` 18, `frutiger-aero` 6, `glassmorphism` 6…). SPEC generation is clean (0 hex) ⇒ the leak is only in hand-written blocks. | `kit/render/shots.config.mjs` |
-| B8 | **Near-duplicate styles** | dHash pairs across the 251 renders: neighbour distance median 61/256, but **4 pairs ≤ 4/256** (`skill-tree`≈`coding-bootcamp` 2, `marketplace-multi`≈`electronics-spec` 3, `pharmacy-store`≈`marketplace-multi` 4, `university-portal`≈`exam-prep` 4), 9 styles ≤16/256. No gate measures the distance between styles (phash only compares a style with its own baseline). | `kit/render/phash.mjs`, `kit/render/visual-baseline.json` |
-| B9 | **The composition axis is almost fixed** | A single `page.html` (204 lines) ⇒ **identical section order** across 251 pages (logo, three steps, media, metric band, component, form+data, CTA, footer). Only hero/nav (8+5 partials, 16 fingerprints, largest 12%) and `density` change. | `kit/render/page.html`, `kit/render/layouts.json` |
+| B7 | **Non-token colors in old blocks** | 18 of the 270 signature blocks contain **69 hard-coded hex** values ​​in total (all legacy: `skeuomorphism` 18, `frutiger-aero` 6, `glassmorphism` 6…). SPEC generation is clean (0 hex) ⇒ the leak is only in hand-written blocks. | `kit/render/shots.config.mjs` |
+| B8 | **Near-duplicate styles** | dHash pairs across the 251 renders: neighbor distance median 61/256, but **4 pairs ≤ 4/256** (`skill-tree`≈`coding-bootcamp` 2, `marketplace-multi`≈`electronics-spec` 3, `pharmacy-store`≈`marketplace-multi` 4, `university-portal`≈`exam-prep` 4), 9 styles ≤16/256. No gate measures the distance between styles (phash only compares a style with its own baseline). | `kit/render/phash.mjs`, `kit/render/visual-baseline.json` |
+| B9 | **The composition axis is almost fixed** | A single `page.html` (204 lines)⇒ **identical section order** across 251 pages (logo, three steps, media, metric band, component, form+data, CTA, footer). Only hero/nav (8+5 partials, 16 fingerprints, largest 12%) and `density` change. | `kit/render/page.html`, `kit/render/layouts.json` |
 | B10 | **Gate hygiene** | `node --test` appears **0 times** in `gates.sh` ⇒ `render-shots.test.mjs` and `cdp-browser.test.mjs` never run. `kit/render/a11y-check.mjs` (421 lines) is not wired to any gate. `build-gallery` scans `kit/render/*.html`; `.tmp-*.html` files left behind by `SHOTS_KEEP_TMP=1` **wrongly** break the gate. `TESTING.md` describes deleted pages (`motion-lab.html`, `sections.html`, `flows.html`) and "151 styles". | `kit/gates.sh`, `kit/build-gallery.mjs:263-270`, `TESTING.md` |
 | B11 | **Exports are non-standard** | `figma.variables.json` uses its own format, `tailwind.theme.css` uses `@theme`, and there is no DTCG (`$value`/`$type`) output. Since 2025.10 DTCG is **stable v1**; Style Dictionary v5 reads DTCG directly. | `kit/export-tokens.mjs`, `kit/dist/*` |
 | B12 | **Contrast debt is closed by hand** | 0 errors / 19 soft warnings (`skeuomorphism` ink-soft 4.34, 6 styles with ink-faint <3, 3 styles with APCA Lc <60). The palette is hand-written as 10 hex values; a value that misses the threshold is **fixed by a human**, the generator does not solve it. | `kit/check-contrast.mjs --strict-soft`, `kit/lib/style-spec.mjs:57-80` |
 
 **Summary:** the problem is not "there is no generator"; there is one, but (a) it covers 40% of the catalog, (b) the
-gates that measure the output's aesthetic/ergonomic correctness are weak, and (c) the hand-written escape hatches
+gates that measure the output's aesthetic/ergonomic accuracy are weak, and (c) the hand-written escape hatches
 (legacy CSS, `extraCss`) punch holes in the contract.
 
 ---
@@ -106,7 +106,7 @@ partials. `build-gallery`'s template color scan already skips dot-prefixed tempo
 ### P1 — Fitting: budget instead of zoom (M, medium risk) — **DONE**
 1. The zoom safety net in `page.html` is removed; section heights are budgeted (`--sec-y`, `--card-pad`, `--lede-max`).
 2. Fluid typography: `--fs-h1: clamp(...)` per budget; the manual `h1 { font-size: … }` in `extraCss` moves to a **step token** (`--fs-h1`, `--fs-h2`, `--fs-body`).
-3. Two-pass render: measure → if needed adjust the `--fit` variable (typography/spacing only) → capture. Visual scaling (zoom) is banned.
+3. Two-pass rendering: measure → if needed adjust the `--fit` variable (typography/spacing only) → capture. Visual scaling (zoom) is banned.
 
 **Implemented (measurement):** the zoom safety net in `page.html` was deleted. In its place (a) a vertical budget:
 nav 14px, hero 34/24, `.pg-sec` 30→18px, card 16→12px, media 244→196px, band 22→14px, cta 32→22px, footer
@@ -116,7 +116,7 @@ were pulled to 10px (the type size is never reduced by a tier).
 
 After measurement: **0/251 overflowing · smallest type size 10px · text under 10px 0% · content 2400–2401px**.
 Tier distribution: 0 → 79 styles, 1 → 120, 2 → 17, 3 → 35. PNG total 209 MB → **172 MB**.
-The visual signature baseline was renewed (`phash --write`), `bash kit/gates.sh` → **kapılar: temiz**.
+The visual signature baseline was renewed (`phash --write`), `bash kit/gates.sh` → **doors: clean**.
 
 **Acceptance:** on 251/251 pages `zoom = 1`, content ≤ 2400px, visual type size ≥ 10px; the P0 gate is green;
 `01-page.png` signatures are written to the new baseline.
@@ -179,7 +179,7 @@ separated by design).
 |---|---|---|
 | 1 | **P0** | Fixing without measuring is blind; today's "clean" claim is refuted by B1/B2. Fast, no rollback needed. |
 | 2 | **P1** | The only real defect the user sees: 7.7px text. The P0 gate turns it red, P1 turns it green. |
-| 3 | **P2** | Color correctness + contract; without state colors and a spacing scale a consuming project is incomplete. |
+| 3 | **P2** | Color accuracy + contract; without state colors and a spacing scale a consuming project is incomplete. |
 | 4 | **P3** | Coverage: done once, every later refactor applies to all 251 styles at once. Must follow P2 (let the SPEC schema settle). |
 | 5 | **P4** | Catalog value: the "same skeleton" feeling across 251 styles decreases; gate cost is low. |
 | 6 | **P5** | Debt cleanup; almost free together with P3. |
@@ -194,7 +194,7 @@ generator is the source of everything".
 ```bash
 # B1/B2: zoom + visual type size (whole catalog; ~6 min)
 node kit/render/render-shots.mjs --measure --jobs 6 --fit-json > fit.json
-# Summary lines: `ölçüm · 251 sahne · 521 sorun` and `sığdırma · zoom<1: 251/251 · en küçük görsel punto 6.6px`
+# Summary lines: `measurement · 251 scenes · 521 problems` and `fit · overflowing: 251/251 · smallest font 6.6px`
 # Quick look for a single style: --sample 6 --measure  (this is what the gate runs)
 # For the section budget: load the .tmp-*-page.html file over CDP, set body.zoom=1, read the heights of main's children
 # B4: duplicate keys (297 keys / 252 unique / 45 pairs / 26 different / 994 dead lines)
@@ -216,7 +216,7 @@ grep -c 'node --test' kit/gates.sh   # 0
 
 - **P1 breaks the visual signature:** all 251 PNGs are regenerated, `phash --write` renews the baseline; the numbers in
   `docs/catalog.md`, `report.md`, `composition.md` and the README must be updated. Acceptance: new baseline + a single
-  "render: fit" commit.
+  "render:fit" commit.
 - **P2 changes legacy colors:** the solver output may deviate from today's hand-picked hex values. Rollback: keep the
   SPEC `palette` field, make `seeds` optional; freeze the old values with a `--legacy-palette` flag.
 - **P3 reverse-engineering errors:** if the extracted SPEC does not match exactly, the visuals change. Acceptance test:

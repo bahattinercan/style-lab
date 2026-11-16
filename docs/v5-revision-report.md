@@ -11,7 +11,7 @@
 | P6 | `report.mjs --check` (stale report = error) | `exit 1` on a stale file, `✓` when current |
 | P6 | `kit/dist/composition.md` + `composition-report.mjs` | uniformity index, family/archetype distribution |
 | P6 | README/CI gate count reduced to a single source | `gates.sh` 21 steps, CI runs the same list |
-| P0 | `kit/render/layouts.json` (8 hero · 5 nav · 3 density · 12 sections) | single source, justified |
+| P0 | `kit/render/layouts.json` (8 heroes · 5 nav · 3 density · 12 sections) | single source, justified |
 | P0 | 13 partials (`partials/hero-*.html`, `nav-*.html`) + `landing.html`/`dark-landing.html` placeholders | template parity at the gate |
 | P0 | `tokens.json` schema v3 → `layout { hero, nav, density }` (145/145) | `check-schema` clean |
 | P0 | `assign-layouts.mjs` deterministic assignment (`--dry/--apply/--check`) | same input → same output, drift gate |
@@ -100,7 +100,7 @@ line-mask 14% · letter-stagger 12% · split-slide 6%.
 Two real bugs found along the way were fixed: (1) `Page.captureScreenshot` hung on a photographic page in a
 background tab → `Page.bringToFront` before capture; (2) when the first paint was missed a 5–9 KB **blank frame**
 was written → retry twice on captures under 14 KB. The caption was moved into a **surface chip** so small text does
-not sit directly on the photo.
+Don't sit directly on the photo.
 
 ---
 
@@ -114,8 +114,8 @@ not sit directly on the photo.
 | Gate | `check-content.mjs`: 145/145 assignments, 8/8 packages live, text length limits (h1 ≤56), no literal demo copy, every placeholder has a counterpart |
 | Measurement | 290 landings re-rendered in **44.5 s**; distribution: magazine 29 · real estate 27 · saas 23 · agency 22 · consulting 13 · e-commerce 13 · education 11 · health 7 |
 
-Known flake: a single frame can be written blank (5 KB) during a heavy batch render. Two defences were added:
-retry three times on captures under 14 KB + a blank-frame gate in `build-gallery` (`... boş/yarım render`).
+Known flake: a single frame can be written blank (5 KB) during a heavy batch rendering. Two defenses were added:
+retry three times on captures under 14 KB + a blank-frame gate in `build-gallery` (`... empty/half render`).
 
 ---
 
@@ -142,7 +142,7 @@ Two bugs fixed along the way: (1) when the section HTMLs were written into a sub
 | Flows | `kit/render/flows.mjs` **3 flows × 3 steps**: onboarding (goal→team→invite), checkout (cart→payment→confirm), invite (role→message→send) |
 | Skeleton | `flow.html` + `flow.css` (existing classes only + var(--…)) |
 | Render | `render-flows.mjs` → `kit/.shots-cache/<dir>/flows/<id>.png`; **145 × 3 = 435** strips, **78 s** |
-| Viewer | `kit/flows.html?style=<slug>`; gallery cards link `▦ bölüm` / `⇢ akış` |
+| Viewer | `kit/flows.html?style=<slug>`; gallery cards link `▦ chapter` / `⇢ stream` |
 | Gate | `--measure`: 3 steps mandatory, horizontal overflow ≤2px, no out-of-viewport step; blank frames measured by color variety |
 
 Note: the "new functional screens" part of P4 (paywall, feed, table-filters, profile, search, integrations) and the
@@ -154,7 +154,7 @@ Note: the "new functional screens" part of P4 (paywall, feed, table-filters, pro
 
 | Work | Result |
 |---|---|
-| Gallery filters | **family · industry (8) · tone (warm/cool/green/neutral) · scene** + search; cards link `▶ canlı` / `▦ bölüm` / `⇢ akış` |
+| Gallery filters | **family · industry (8) · tone (warm/cool/green/neutral) · scene** + search; cards link `▶ live` / `▦ episode` / `⇢ stream` |
 | Brief | `kit/brief.mjs`: intent → style, industry/copy, layout, choreography, photo+treatment, token block, evidence paths, forbidden list, verification commands |
 | MCP | `kit/mcp-server.mjs` (stdio JSON-RPC, no dependencies): `pick` · `style` · `tokens` · `shots` · `sections` · `flows` · `brief` |
 | Gate | `brief --self-test` (mandatory sections + length), `mcp-server --self-test` (initialize · tools/list · pick · style · shots · brief) |
@@ -169,7 +169,7 @@ Remaining (P5b): a `render` tool in MCP (generate the selected scene and return 
 |---|---|
 | **P4b · functional scenes** | 6 new templates: `paywall` (blurred content + plan card), `feed` (3-column stream), `table-filters` (filter bar + bulk select + pagination), `profile` (bio + tabs), `search` (query + narrowing + highlighted results), `integrations` (catalog grid + connected/partial state). Catalog **31 → 37 scenes**; 145 × 6 = **864 new images**, 2 min 59 s |
 | **State matrix** | `state.html` **5 variants**: empty · skeleton · error · 404 · **filled** (6 state chips + resolution CTAs). 145 re-renders, 46 s |
-| **P5b · MCP render** | `kit/mcp-server.mjs` 8th tool: `render(slug, scene, force)` → generates the scene, returns its path. The self-test now verifies render too |
+| **P5b · MCP rendering** | `kit/mcp-server.mjs` 8th tool: `render(slug, scene, force)` → generates the scene, returns its path. The self-test now verifies render too |
 | **M5b · lab duration bound to tokens** | Demo durations are not raw literals: `calc(var(--mdspeed, 1) * 0.9s)` in CSS, `Math.round(900 * mdspeed())` in JS. `--mdspeed` = the style's enter duration / 900 ms (145 styles → **52 distinct multipliers**, y2k 0.44× · terminal-ui 0.40× · grand-tourer 0.73×) + a speed slider on the page. Gate: an unbound demo → error, a uniform map → error |
 
 The CSS of the new scenes is at the end of `scene.css` (`.scene-paywall`…`.scene-integrations`, ~150 lines, only
@@ -186,11 +186,11 @@ styles such as log-stream and terminal-ui use 8px labels).
 
 The three real bugs the gate caught:
 
-| Bug | Root cause | Fix |
+| Bug | root cause | Fix |
 |---|---|---|
 | The `optical-illusion` form scene overflows by 41px, the bottom row is clipped | the style uses 44px body typography + 44px button height, the form scene is 900px | **fitting** in the form/dark-form templates: once fonts are ready the overflow is measured and, if needed, the body is scaled once with `zoom` (nothing changes when there is no overflow) |
 | `calibration-lab` dark landing overflows horizontally by 77px | the style's signature layer `.sig` (grid) overflows its own box, making the document scrollable | `body .sig { overflow: hidden }` — a decorative layer must not exceed the page bounds |
-| Occasional **5 KB blank frames** in landing/dark-landing | paint race in a background tab; capture happens before the content is painted | `cdp-browser.captureOn`: if the frame size is below the threshold **retry 3 times**, then warn. The retry path was proven by forcing `CDP_MIN_BYTES` (`Warning: boş kare … — 3 deneme`) |
+| Occasional **5 KB blank frames** in landing/dark-landing | paint race in a background tab; capture happens before the content is painted | `cdp-browser.captureOn`: if the frame size is below the threshold **retry 3 times**, then warn. The retry path was proven by forcing `CDP_MIN_BYTES` (`Warning: empty frame … — 3 attempts`) |
 
 The form scene's rhythm was also pulled from 10px to 8px (on the first run `indian-block-print` overflowed by 12px).
 
@@ -227,7 +227,7 @@ New gate `kit/check-viewers.mjs`: opens both viewers in CDP and verifies that th
 |---|---|---|
 | Style count | 145 / 21 families | no gallery in the industry has this many systematically tagged styles |
 | Scene coverage | 31 templates × 145 = **4,495 PNGs** | galleries show one screen; here the whole product surface exists |
-| Dark mode | 145/145, debt 0 | none of the competitors has measurable dark mode coverage |
+| Darkmode | 145/145, debt 0 | none of the Competitors has measurable dark mode coverage |
 | Accessibility | WCAG + APCA + focus ring, `--strict-soft` | not a design suggestion but a **gate** |
 | Motion | 145 distinct signatures, 0 intra-family copies, `--self-test` | it does not just say "animated", it measures it |
 | Output contract | CSS · Tailwind · Figma · Flutter · React | galleries only *show*; this catalog *gives* |
@@ -237,17 +237,17 @@ New gate `kit/check-viewers.mjs`: opens both viewers in CDP and verifies that th
 
 | # | Finding | Measurement | Reference comparison |
 |---|---|---|---|
-| B1 | ~~**Composition uniformity**~~ **→ closed (P0)** | v4: 145 styles on one skeleton (`scene.css:246-248`); v5: 8 hero × 5 nav, 16 fingerprints, index 16% | Awwwards/Land-book: a different composition per page |
-| B2 | **Single content** | one brand/demo copy across all flat scenes ("Northwind", "Ürün ekibin için sakin bir çalışma alanı"); only the real estate package is separate (`estate*.html`) | Land-book/Refero: real product, real industry copy |
-| B3 | **No visual layer** | **none** of the 31 templates has an `<img>`; the `imagery` field is prose only (`tokens.json → imagery.photos`) | all 7 sites are photo/video heavy; Httpster says "typography + photography" |
+| B1 | ~~**Composition uniformity**~~ **→ closed (P0)** | v4: 145 styles on one skeleton (`scene.css:246-248`); v5: 8 heroes × 5 nav, 16 fingerprints, index 16% | Awwwards/Land-book: a different composition per page |
+| B2 | **Single content** | one brand/demo copy across all flat scenes ("Northwind", "A quiet workspace for your product team"); only the real estate package is separate (`estate*.html`) | Land-book/Refero: real product, real industry copy |
+| B3 | **No visual layer** | **none** of the 31 templates has an `<img>`; the `imagery` field is process only (`tokens.json → imagery.photos`) | all 7 sites are photo/video heavy; Httpster says "typography + photography" |
 | B4 | **No section library** | no `section` archetype anywhere; a scene = a full page | Land-book's top "**Sections**" tab; landing.love's 19 section types (Hero 1657, Work 1195, Features 510, Footer 362…) |
 | B5 | **No flows, only screens** | 8 "page" scenes + a 2×2 state board; onboarding/checkout steps inside one frame | Refero: **16 task flows** (sign-up, subscribe, cancel, booking, money transfer…) |
-| B6 | **Weak discovery** | the gallery has search + 21 families + scene chips + ⇄ compare; **no color · industry · page type filter**, no export of a selection, no MCP for agents | Lapa: color/platform/year/old versions; Land-book: page type + Motion/OG/Headlines; Refero: MCP |
+| B6 | **Weak discovery** | the gallery has search + 21 families + scene chips + ⇄ compare; **no color · industry · page type filter**, no export of a selection, no MCP for agents | Porridge: color/platform/year/old versions; Land-book: page type + Motion/OG/Headlines; Reference: MCP |
 | B7 | ~~**Measurement gap**~~ **→ closed (P6)** | composition is now at the gate (`check-layout`), `report.md --check` catches staleness, gate count has a single source | Awwwards jury score (out of 10) = measured quality |
 | B8 | **Motion vocabulary is monotone** | 110/145 styles are exactly `["opacity","transform"]`; 145/145 scroll = `offsetY + fade`. The gate measures **numeric** variety, not **pattern** variety | Landing Love: mask, curtain, split-line, parallax, pin, horizontal, 3D — 19 effect families |
-| B9 | **Missing sequence types** | every style has only 4 sequences: `enter/scroll/pin/hover`; `page` and `reduced` in only 3 styles (the grand-tourer trio); no `exit`, `focus`, or state transitions | Refero: a flow = state transitions; Awwwards: page transitions are standard |
+| B9 | **Missing sequence types** | every style has only 4 sequences: `enter/scroll/pin/hover`; `page` and `reduced` in only 3 styles (the grand-tourer trio); no `exit`, `focus`, or state transitions | Reference: a flow = state transitions; Awwwards: page transitions are standard |
 | B10 | **No archetype ↔ motion link** | composition now has 8 archetypes (P0) but motion is style-bound: pin in 8/13 `sticky` heroes, 0/12 in `centered` — coincidence, not a rule | `sticky`/`index`/`type` archetypes make the choreography **mandatory** |
-| B11 | **Runtime is not measured** | `motion-check` reads the `tokens.json` prose; `live.html` durations are **hard-coded** (`countUp` 900ms, `.24s` hover) → "the live preview does not show the style's signature". The curve count is inconsistent too: README says "105", `motion.json` says "109 curve / 11 approximated / 30 steps" | — |
+| B11 | **Runtime is not measured** | `motion-check` reads the `tokens.json` process; `live.html` durations are **hard-coded** (`countUp` 900ms, `.24s` hover) → "the live preview does not show the style's signature". The curve count is inconsistent too: README says "105", `motion.json` says "109 curve / 11 approximated / 30 steps" | — |
 | B12 | **Presentation is static** | `shots/27-motion.png` is 3 fixed frames; no duration/comparison, no video/strip; the lab's 20 demos are **bound to no style** and exhibit patterns playbook §6.1 #10 forbids (custom cursor, horizontal scroll) | Landing Love: every entry is a **record** (video) + section tags |
 
 ### 2.4 Motion audit (measurement)
@@ -263,7 +263,7 @@ Counted over `kit/dist/motion.json` + 145 `tokens.json` (reproducible):
 | `scroll` only `offsetY + fade` | **145/145** | scrub/progress/mask/parallax absent from tokens |
 | `pin.enabled` | 51/145 (35%) | scattered independent of archetype |
 | `enter.offsetY` | 37 distinct values, 50% of them 6–22px | the same scale |
-| Distinct curves (normalized) | 109 curve · 11 approximated · 30 steps | README says "105" → **stale** |
+| Distinct curves (normalized) | 109 curves · 11 approximated · 30 steps | README says "105" → **stale** |
 | Fixed durations in the live preview | `live.html`: 900ms counter, `.24s` hover, IO `-18%` | the signature is **not applied** |
 | Lab demo ↔ style binding | 20 demos · 0 style references | the lab is disconnected from the catalog |
 | Playbook ↔ lab contradiction | §6.1 #10 "custom cursor, horizontal scroll, marquee>1 are forbidden" vs the lab demoing both | the doc contradicts its own laboratory |
@@ -289,7 +289,7 @@ parameter variety ≠ expressive variety.
 | Site | Working model | What to bring into style-lab |
 |---|---|---|
 | Awwwards | jury score + Site of the Day + collections | **a quality card per style** (contrast, hierarchy, motion budget, density) and an "award level" mark |
-| Lapa Ninja | category + industry + **color** + platform + **old versions** | color/industry filters in the gallery; style version history (`styles/<slug>/CHANGELOG`) |
+| Porridge Ninja | category + industry + **color** + platform + **old versions** | color/industry filters in the gallery; style version history (`styles/<slug>/CHANGELOG`) |
 | Minimal Gallery | 36 industry tags | `tokens.json → industries[]` + a `kit/industries.json` dictionary |
 | Landing Love | **section type** + effect taxonomy + video | a section library (P3) + tagging motion recipes with effect names |
 | Land-book | Websites/**Sections**/Mobile/Motion/**OG Images**/**Headlines** | a section view, an OG card scene, a headline specimen |
@@ -347,8 +347,8 @@ kit/render/partials/*.html    # centered-type · full-bleed-media · type-only �
 
 ### M0 · Make motion measurable (half a day)
 
-**What:** today's gate only looks at prose numbers; which *pattern* is used, and whether `live.html` actually applies
-the signature, is not measured.
+**What:** today's gate only looks at process numbers; which *pattern* is used, and whether `live.html` actually applies
+The signature is not measured.
 
 | Work | File | Acceptance |
 |---|---|---|
@@ -396,7 +396,7 @@ Verification: `node kit/motion-check.mjs --self-test` (5 synthetic violations), 
 |---|---|---|
 | `sticky` | `pin` or `scrub` **mandatory** | the point of a sticky narrative is being revealed by scrolling |
 | `type` | `line-mask` or `letter-stagger` | poster typography must arrive line by line |
-| `product` | `scale-settle` + `scrub` | the giant panel feels like it is "settling" |
+| `product` | `scale-settle` + `scrub` | the giant panel feels like it is "setting" |
 | `index` | `grid-stagger` | the grid opens in stages |
 | `fullbleed` | media `mask-reveal` | the media opens from the edge |
 | `centered` | `fade-rise` or `blur-in` | calm, single message |
@@ -427,9 +427,9 @@ Verification: `node kit/render/motion-measure.mjs --sample 12`, `--all` ≥145.
 
 **What:** the motion has to be **visible** in the catalog. Today's `27-motion.png` is 3 fixed frames; no duration.
 
-| Work | File | Acceptance |
+| Work | Net | Acceptance |
 |---|---|---|
-| Deterministic frame generation | `kit/render/motion-strip.mjs` | frames at t = 0/25/50/75/100% (rAF frozen, `--t` injected), labelled with ms + pattern above each |
+| Deterministic frame generation | `kit/render/motion-strip.mjs` | frames at t = 0/25/50/75/100% (rAF frozen, `--t` injected), labeled with ms + pattern above each |
 | Strip scene | `styles/<slug>/shots/27-motion.png` | 5 frames + a **reduced-motion frame** (6th cell) |
 | Video (optional) | `kit/render/motion-strip.mjs --webm` | WebM if `ffmpeg` exists; otherwise a clear message and the strip stays (**no new npm dependency**) |
 | Gate | `check-schema.mjs` + `render/phash.mjs` | the strip exists for 145/145, labels within ±2% of the token duration |
@@ -513,17 +513,17 @@ and a trust element (the rule set is tied to playbook §7).
 
 1. **Uniformity index** (the share of the largest hero|nav fingerprint) **below 30%** — v4 100%, v5 **16%** ✅
 2. **Industry coverage:** every family has renders in at least 3 different industries; `industries[]` filled for 145/145.
-3. **Visual layer:** at least 60 styles use a photo layer; `imagery.treatment` is a measured value, not prose.
+3. **Visual layer:** at least 60 styles use a photo layer; `imagery.treatment` is a measured value, not process.
 4. **Section library:** 145 × 12 = 1,740 sections, all passing the contrast + overflow gate.
 5. **Flows:** at least 3 flow strips × 145 styles; every flow ≥ 3 steps.
 6. **Gates:** `bash kit/gates.sh` green; new gates have self-tests; `dist/report.md --check` catches staleness.
-7. **Agent path:** `node kit/pick.mjs --intent "premium emlak"` → an `mcp` call → `brief.md` all suggest the same slug.
+7. **Agent path:** `node kit/pick.mjs --intent "premium real estate"` → an `mcp` call → `brief.md` all suggest the same slug.
 8. **Motion vocabulary:** **≥3 distinct** `enter.pattern` per family; a single pattern ≤ **30%** of styles; every pattern
    live in ≥3 styles; the `fade-rise` monopoly is broken (100% today).
 9. **Archetype ↔ motion:** 145/145 styles carry their archetype's mandatory beat (`sticky` ⇒ pin/scrub, `type` ⇒ line-mask, `index` ⇒ grid-stagger…).
 10. **Runtime:** over a 12-style sample, animation durations are within **±2%** of the tokens; **0** running animations
     under `prefers-reduced-motion`; p95 frame ≤ **32ms**.
-11. **Presentation:** 145 storyboard strips (`27-motion.png`, 5 frames + a reduced frame, labelled in ms); `live.html`
+11. **Presentation:** 145 storyboard strips (`27-motion.png`, 5 frames + a reduced frame, labeled in ms); `live.html`
     contains **no fixed duration literal**.
 12. **Lab ↔ catalog:** every pattern has ≥1 demo, every style's pattern is in the lab; **0** contradictions with the
     playbook forbidden list.

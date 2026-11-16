@@ -1,23 +1,22 @@
 /**
- * kit/lib/palette.mjs — palet çözücü (sözleşme v7).
+ * kit/lib/palette.mjs — palette decompiler (contract v7).
  *
- * Neden: palet bugüne kadar 10 elle seçilmiş hex'ti; eşiği geçmeyen değeri insan düzeltiyordu
- * (19 yumuşak uyarı, `skeuomorphism` ink-soft 4.34:1). Bu modül rengi **hedef kontrasta göre
- * çözer**: OKLCH açıklığı ikili aramayla ayarlanır (hue/chroma korunur), WCAG 2.2 oranı hedefe
- * oturtulur. Aynı çözücü durum renklerini (danger/ok/warn) ve nötr rampayı türetir.
+ * Reason: palette was 10 hand-picked hexes so far; The human was correcting the value that did not exceed the threshold
+ * (19 soft splats, `skeuomorphism` ink-soft 4.34:1). This module color **based on target contrast
+ *decodes**: OKLCH aperture adjusted by binary search (hue/chroma preserved), WCAG 2.2 ratio to target
+ * is seated. The same solver derives the state colors (danger/ok/warn) and neutral ramp.
  *
- * Kullanım: `node kit/lib/palette.mjs --self-test` (kapı) · `node kit/lib/palette.mjs --derive <slug>`
+ * Usage: `node kit/lib/palette.mjs --self-test` (door) · `node kit/lib/palette.mjs --derive <slug>`
  *
- * Not: APCA eşik olarak kullanılmaz (WCAG 3 taslak, algoritma belirlenmedi); yalnız bilgi amaçlı.
- */
+ * Note: APCA is not used as a threshold (WCAG 3 draft, algorithm not determined); For informational purposes only.*/
 import { apcaContrast, contrastRatio, parseColor } from '../color.mjs';
 
-/* ------------------------------------------------------------------ renk uzayı */
+/*------------------------------------------------------------------ color space*/
 
 const toLinear = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
 const fromLinear = (c) => (c <= 0.0031308 ? c * 12.92 : 1.055 * c ** (1 / 2.4) - 0.055);
 
-/** {r,g,b} 0–255 → [r,g,b] 0–1 doğrusal olmayan sRGB */
+/** {r,g,b} 0–255 → [r,g,b] 0–1 nonlinear sRGB*/
 const toUnit = (c) => ({ r: c.r / 255, g: c.g / 255, b: c.b / 255 });
 
 /** sRGB (0–1) → OKLab → OKLCH { L, C, h } */
@@ -37,7 +36,7 @@ export function srgbToOklch({ r, g, b }) {
   return { L, C, h };
 }
 
-/** OKLCH → sRGB 0–255 (gamut dışıysa kırpılır) */
+/** OKLCH → sRGB 0–255 (clipped if out of gamut)*/
 export function oklchToSrgb({ L, C, h }) {
   const a = (h * Math.PI) / 180;
   const A = Math.cos(a) * C;
@@ -54,25 +53,25 @@ export function oklchToSrgb({ L, C, h }) {
 
 const hex = ({ r, g, b }) => '#' + [r, g, b].map((n) => n.toString(16).padStart(2, '0')).join('');
 
-/* ------------------------------------------------------------------- çözücü */
+/*---------------------------------------------------------------------------------- solver*/
 
-/** Bir rengi zemine karşı hedef orana oturt: OKLCH L ikili arama, C sınırlı. */
+/** Fit a color to the target ratio against the background: OKLCH L binary search, C limited.*/
 export function solveContrast({ from, against, target, step = 28 }) {
   const againstColor = parseColor(against);
-  if (!againstColor) throw new Error(`çözücü: geçersiz zemin ${against}`);
+  if (!againstColor) throw new Error(`solver: invalid background ${against}`);
   const base = parseColor(from);
-  if (!base) throw new Error(`çözücü: geçersiz renk ${from}`);
+  if (!base) throw new Error(`solver: invalid colour ${from}`);
   const o = srgbToOklch(toUnit(base));
-  // contrastRatio hex metni bekler (parseColor nesneyi çözmez) — ara değerler hex'e çevrilir.
+  // contrastRatio expects hex text (parseColor does not resolve the object) — intermediate values are converted to hex.
   const contrastAt = (L) => contrastRatio(hex(oklchToSrgb({ L, C: o.C, h: o.h })), against);
 
-  // Zemin açıksa koyuya, koyuysa açığa git.
+  // If the ground is light, go dark, if it is dark, go light.
   const bgL = srgbToOklch(toUnit(againstColor)).L;
   const dir = bgL > 0.5 ? -1 : 1;
   let lo = dir < 0 ? 0 : o.L;
   let hi = dir < 0 ? o.L : 1;
   if (contrastAt(dir < 0 ? 0 : 1) < target) {
-    // chroma'yı düşürerek yeniden dene (doygun renk hedefe ulaşamıyorsa nötrleşir)
+    // Try again by lowering the chroma (if the saturated color doesn't hit the mark, it will neutralize)
     for (const cScale of [0.75, 0.5, 0.25, 0]) {
       const cc = o.C * cScale;
       const at = (L) => contrastRatio(hex(oklchToSrgb({ L, C: cc, h: o.h })), against);
@@ -89,7 +88,7 @@ export function solveContrast({ from, against, target, step = 28 }) {
         return { hex: hex(oklchToSrgb({ L: picked, C: cc, h: o.h })), contrast: at(picked), chroma: cc };
       }
     }
-    throw new Error(`çözücü: ${from} → ${against} ${target}:1 ulaşılamıyor`);
+    throw new Error(`solver: ${from} → ${against} cannot reach ${target}:1`);
   }
   for (let i = 0; i < step; i += 1) {
     const mid = (lo + hi) / 2;
@@ -100,7 +99,7 @@ export function solveContrast({ from, against, target, step = 28 }) {
   return { hex: hex(oklchToSrgb({ L, C: o.C, h: o.h })), contrast: contrastAt(L), chroma: o.C };
 }
 
-/** Durum renkleri: sabit hue (kırmızı/yeşil/amber), L hedefe çözülür, üstüne metin rengi. */
+/** Status colors: fixed hue (red/green/amber), L resolved to target, text color on top.*/
 export function deriveStatusColors(palette) {
   const bg = palette.bg;
   const seeds = { danger: '#d92d20', ok: '#12b76a', warn: '#f79009' };
@@ -108,7 +107,7 @@ export function deriveStatusColors(palette) {
   for (const [key, seed] of Object.entries(seeds)) {
     const solved = solveContrast({ from: seed, against: bg, target: 4.5 });
     out[key] = solved.hex;
-    // durum zemininin üstündeki metin: siyah/beyaz arasından yüksek olanı seç
+    // text above status background: choose higher between black/white
     const on = contrastRatio('#ffffff', solved.hex);
     const onDark = contrastRatio('#000000', solved.hex);
     out[`${key}Ink`] = on >= onDark ? '#ffffff' : '#0b0d10';
@@ -119,7 +118,7 @@ export function deriveStatusColors(palette) {
   return out;
 }
 
-/** Nötr rampa: bg'den L adımlarıyla bg-2 / surface-2 / line türetir (yalnız doğrulama için). */
+/** Neutral ramp: derives bg-2/surface-2/line from bg in L steps (for verification only).*/
 export function deriveNeutrals(palette) {
   const bg = parseColor(palette.bg);
   const ink = parseColor(palette.ink);
@@ -133,10 +132,10 @@ export function deriveNeutrals(palette) {
   };
 }
 
-/** APCA hedefi için seed hue/chroma'sını koruyarak en yakın okunabilir açıklığı seç. */
+/** Select the closest readable aperture for the APCA target, preserving the seed hue/chroma.*/
 export function solveApcaContrast({ from, against, target = 60 }) {
   const seed = parseColor(from);
-  if (!seed || !parseColor(against)) throw new Error(`APCA çözücü: geçersiz renk ${from} / ${against}`);
+  if (!seed || !parseColor(against)) throw new Error(`APCA solver: invalid colour ${from} / ${against}`);
   const base = srgbToOklch(toUnit(seed));
   let best = null;
   for (let i = 0; i <= 1000; i += 1) {
@@ -146,7 +145,7 @@ export function solveApcaContrast({ from, against, target = 60 }) {
     const distance = Math.abs(L - base.L);
     if (lc >= target && (!best || distance < best.distance)) best = { hex: color, contrast: lc, distance };
   }
-  if (!best) throw new Error(`APCA çözücü: ${from} → ${against} Lc ${target} hedefi ulaşılamıyor`);
+  if (!best) throw new Error(`APCA solver: ${from} → ${against} cannot reach the Lc ${target} target`);
   return best;
 }
 
@@ -179,28 +178,28 @@ export function deriveCorePalette(seeds, targets = CORE_PALETTE_TARGETS) {
 
 function selfTest() {
   const cases = [
-    { from: '#5a5f66', against: '#fafaf9', target: 4.5, name: 'ink-soft / açık zemin' },
-    { from: '#a9bccd', against: '#0b1118', target: 4.5, name: 'ink-soft / koyu zemin' },
+    { from: '#5a5f66', against: '#fafaf9', target: 4.5, name: 'ink-soft / light ground' },
+    { from: '#a9bccd', against: '#0b1118', target: 4.5, name: 'ink-soft / dark background' },
     { from: '#04140f', against: '#38e8c0', target: 4.5, name: 'accent-ink / accent (mint)' },
-    { from: '#38e8c0', against: '#0b1118', target: 3, name: 'odak halkası' },
+    { from: '#38e8c0', against: '#0b1118', target: 3, name: 'focus ring' },
   ];
   let failed = 0;
   for (const c of cases) {
     const out = solveContrast(c);
     const ok = out.contrast >= c.target - 0.02;
     if (!ok) failed += 1;
-    console.log(`${ok ? '✓' : '×'} ${c.name}: ${out.hex} → ${out.contrast.toFixed(2)}:1 (hedef ${c.target})`);
+    console.log(`${ok ? '✓' : '×'} ${c.name}: ${out.hex} → ${out.contrast.toFixed(2)}:1 (target ${c.target})`);
   }
   const status = deriveStatusColors({ bg: '#0b1118', ink: '#e9f2fa', accent: '#38e8c0' });
   for (const key of ['danger', 'ok', 'warn']) {
     const r = contrastRatio(status[key], '#0b1118');
     const ok = r >= 4.48;
     if (!ok) failed += 1;
-    console.log(`${ok ? '✓' : '×'} durum ${key}: ${status[key]} → ${r.toFixed(2)}:1 (hedef 4.5)`);
+    console.log(`${ok ? '✓' : '×'} status ${key}: ${status[key]} → ${r.toFixed(2)}:1 (target 4.5)`);
     const inkR = contrastRatio(status[`${key}Ink`], status[key]);
     const okInk = inkR >= 4.48;
     if (!okInk) failed += 1;
-    console.log(`${okInk ? '✓' : '×'} durum ${key}-ink: ${status[`${key}Ink`]} → ${inkR.toFixed(2)}:1 (hedef 4.5)`);
+    console.log(`${okInk ? '✓' : '×'} status ${key}-ink: ${status[`${key}Ink`]} → ${inkR.toFixed(2)}:1 (target 4.5)`);
   }
   const seeded = deriveCorePalette({
     bg: '#fafaf9', bg2: '#f2f2f0', surface: '#ffffff', surface2: '#f7f7f5',
@@ -209,21 +208,21 @@ function selfTest() {
   });
   const seededOk = contrastRatio(seeded.inkFaint, seeded.bg) >= 3 && seeded.inkFaint !== '#9aa0a6';
   if (!seededOk) failed += 1;
-  console.log(`${seededOk ? '✓' : '×'} seed palet düşük ink-faint hedefini düzeltir`);
+  console.log(`${seededOk ? '✓' : '×'} the seed palette fixes a low ink-faint target`);
   const apca = solveApcaContrast({ from: '#a6a29b', against: '#12130f', target: 60 });
   const apcaOk = apca.contrast >= 60;
   if (!apcaOk) failed += 1;
-  console.log(`${apcaOk ? '✓' : '×'} APCA çözücü Lc ${apca.contrast.toFixed(1)} hedefini tutturuyor`);
-  // çözücü gerilemez: hedefe ulaşılamayan istek hata verir
+  console.log(`${apcaOk ? '✓' : '×'} the APCA solver hits the Lc ${apca.contrast.toFixed(1)} target`);
+  // resolver cannot be regressed: request fails to reach target returns error
   let threw = false;
   try {
     solveContrast({ from: '#ffffff', against: '#fefefe', target: 21 });
   } catch {
     threw = true;
   }
-  console.log(`${threw ? '✓' : '×'} ulaşılamaz hedef hata veriyor`);
+  console.log(`${threw ? '✓' : '×'} an unreachable target raises an error`);
   if (!threw) failed += 1;
-  console.log(failed ? `self-test: ${failed} başarısız` : 'self-test: çözücü hedefleri tutturuyor');
+  console.log(failed ? `self-test: ${failed} failed` : 'self-test: solver meets targets');
   return failed === 0;
 }
 

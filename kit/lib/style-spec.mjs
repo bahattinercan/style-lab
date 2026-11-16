@@ -1,18 +1,17 @@
 /**
- * kit/lib/style-spec.mjs — SPEC → stil kaynakları (v6 tek sayfa sözleşmesi).
+ * kit/lib/style-spec.mjs — SPEC → style resources (v6 single page contract).
  *
- * Neden: yeni stil eklemek 8 adımdı ve üç kopyanın (tokens.json ⇄ token-block.css ⇄
- * tokens.css) elle senkronu en sık kırılan yerdi. Burada tek SPEC'ten dört kaynak
- * üretilir; `kit/add-style.mjs` geri kalan boru hattını (atama, render, indeks) koşar.
+ * Reason: adding new style was 8 steps and required three copies (tokens.json ⇄ token-block.css ⇄
+ * tokens.css) was the place where manual synchronization was broken most frequently. Here are four sources from one SPEC
+ * is produced; `kit/add-style.mjs` runs the remaining pipeline (assign, render, index).
  *
- * v6 sözleşmesi: koyu mod (palette.dark) YOK, hareket (motion) YOK, sahne tek (01-page.png).
- */
+ * v6 agreement: NO dark mode (palette.dark), NO motion, scene one (01-page.png).*/
 import { contrastRatio, contrastOnSurface, apcaContrast, parseColor } from '../color.mjs';
 import { CORE_PALETTE_TARGETS, deriveCorePalette, deriveStatusColors } from './palette.mjs';
 
 const hex = (v) => String(v).trim();
 
-/** CSS değişken adları — token sözleşmesi sabittir (yeni stil değişken eklemez). */
+/** CSS variable names — token contract is fixed (does not add new style variables).*/
 export const CSS_KEYS = [
   ['bg', 'bg'],
   ['bg2', 'bg-2'],
@@ -27,24 +26,23 @@ export const CSS_KEYS = [
 ];
 
 /**
- * v7 sözleşmesi: token bloğu 20 değişkenden 28'e çıkar.
- *  · --space-1…8 : dikey ritim; tüm stillerde aynı sekiz adım (bant ezebilir).
- *  · --danger/-ok/-warn (+ -ink): durum renkleri. Değerler `kit/lib/palette.mjs` çözücüsünden
- *    gelir (zemine karşı 4.5:1 hedefi), SPEC `status` alanıyla ezilebilir.
- * Neden: 161 stil `--danger`'ı elle eziyor, 90 stil global #b42318'e düşüyordu; JSON bu
- * değişkenleri hiç bilmiyordu (makine kaynağı ile CSS ayrışmıştı).
- */
+ * v7 contract: token block increases from 20 variables to 28.
+ * · --space-1…8 : vertical rhythm; Same eight steps in all styles (band can crush).
+ * · --danger/-ok/-warn (+ -ink): status colors. Values from `kit/lib/palette.mjs` decoder
+ * comes (4.5:1 target against the floor), can be crushed by the SPEC `status` field.
+ * Cause: 161 styles were manually crushing `--danger`, 90 styles were falling into global #b42318; this is JSON
+ * did not know the variables at all (machine source and CSS were parsed).*/
 export const STATUS_KEYS = ['danger', 'dangerInk', 'ok', 'okInk', 'warn', 'warnInk'];
 export const SPACE_SCALE = ['4px', '8px', '12px', '16px', '24px', '32px', '48px', '64px'];
 
-/** Durum renkleri: SPEC ezmesi yoksa çözücüden (zemine karşı 4.5:1). */
+/** Condition colors: from solvent (4.5:1 against background) if no SPEC paste.*/
 export function statusOf(spec) {
   const p = spec.palette ?? {};
   if (spec.status) return { ...deriveStatusColors(p), ...spec.status };
   return deriveStatusColors(p);
 }
 
-/** CSS çiftleri: 20 çekirdek + 8 boşluk + 6 durum = 34 bildirim. */
+/** CSS pairs: 20 cores + 8 spaces + 6 states = 34 declarations.*/
 function contractPairs(spec) {
   const p = spec.palette;
   const status = statusOf(spec);
@@ -60,10 +58,10 @@ function contractPairs(spec) {
   ];
 }
 
-/** Yüzde binlik yuvarlama: rapora yazılan ölçümler tek biçimli olsun. */
+/** Rounding to thousandths: ensure that the measurements written on the report are uniform.*/
 const r2 = (n) => Math.round(n * 100) / 100;
 
-/** Paleti ölçer: WCAG + APCA + odak halkası. Kapı eşikleri build sırasında uygulanır. */
+/** Palette meter: WCAG + APCA + focus ring. Door thresholds are applied during build.*/
 export function inspectPalette(palette) {
   const p = palette;
   const focus = Math.max(contrastRatio(p.accent, p.bg), contrastRatio(p.accent, p.surface));
@@ -78,7 +76,7 @@ export function inspectPalette(palette) {
   };
 }
 
-/** SPEC doğrulaması: hatalar (build durur) ve uyarılar (raporlanır). */
+/** SPEC verification: errors (build stops) and warnings (reported).*/
 export function validateSpec(spec, ctx) {
   const errors = [];
   const warnings = [];
@@ -86,46 +84,46 @@ export function validateSpec(spec, ctx) {
     if (!cond) errors.push(msg);
   };
 
-  need(/^\d{2,3}$/.test(String(spec.num ?? '')), `${spec.slug ?? '?'}: num 2–3 haneli olmalı`);
-  need(/^[a-z0-9]+(-[a-z0-9]+)*$/.test(spec.slug ?? ''), `${spec.slug ?? '?'}: slug kebab-case olmalı`);
-  need(typeof spec.name === 'string' && spec.name.trim().length > 1, `${spec.slug}: name yok`);
-  need(typeof spec.tagline === 'string' && spec.tagline.length > 20, `${spec.slug}: tagline yok/kısa`);
-  if (spec.tagline && spec.tagline.length > 170) warnings.push(`${spec.slug}: tagline ${spec.tagline.length} karakter (>170)`);
+  need(/^\d{2,3}$/.test(String(spec.num ?? '')), `${spec.slug ?? '?'}: num must be 2–3 digits`);
+  need(/^[a-z0-9]+(-[a-z0-9]+)*$/.test(spec.slug ?? ''), `${spec.slug ?? '?'}: slug must be kebab-case`);
+  need(typeof spec.name === 'string' && spec.name.trim().length > 1, `${spec.slug}: missing name`);
+  need(typeof spec.tagline === 'string' && spec.tagline.length > 20, `${spec.slug}: missing/short tagline`);
+  if (spec.tagline && spec.tagline.length > 170) warnings.push(`${spec.slug}: tagline is ${spec.tagline.length} characters (>170)`);
 
   const palette = spec.paletteSeeds
     ? deriveCorePalette(spec.paletteSeeds, spec.paletteTargets)
     : spec.palette ?? {};
-  for (const [json] of CSS_KEYS) need(parseColor(palette[json]) !== null, `${spec.slug}: palette.${json} eksik/geçersiz`);
+  for (const [json] of CSS_KEYS) need(parseColor(palette[json]) !== null, `${spec.slug}: palette.${json} missing/invalid`);
   const fonts = spec.fonts ?? [];
-  need(fonts.length === 3, `${spec.slug}: fonts [display, body, mono] üçlüsü olmalı`);
-  for (const f of fonts) if (ctx.fonts && !ctx.fonts.has(f)) errors.push(`${spec.slug}: font "${f}" kit/fonts içinde yok`);
-  need(Array.isArray(spec.radius) && spec.radius.length === 2, `${spec.slug}: radius [radius, radiusLg] olmalı`);
+  need(fonts.length === 3, `${spec.slug}: fonts must be the [display, body, mono] triple`);
+  for (const f of fonts) if (ctx.fonts && !ctx.fonts.has(f)) errors.push(`${spec.slug}: font "${f}" is not in kit/fonts`);
+  need(Array.isArray(spec.radius) && spec.radius.length === 2, `${spec.slug}: radius must be [radius, radiusLg]`);
   need(Array.isArray(spec.signature) && spec.signature.length >= 3, `${spec.slug}: signature ≥3 madde`);
   need(Array.isArray(spec.must) && spec.must.length >= 3, `${spec.slug}: must ≥3 madde`);
   need(Array.isArray(spec.mustNot) && spec.mustNot.length >= 3, `${spec.slug}: mustNot ≥3 madde`);
-  need(Array.isArray(spec.refs) && spec.refs.length >= 3, `${spec.slug}: refs ≥3 kayıt`);
-  for (const r of spec.refs ?? []) need(/^https:\/\//.test(r.url ?? ''), `${spec.slug}: refs url https olmalı (${r.url})`);
+  need(Array.isArray(spec.refs) && spec.refs.length >= 3, `${spec.slug}: refs must have ≥3 entries`);
+  for (const r of spec.refs ?? []) need(/^https:\/\//.test(r.url ?? ''), `${spec.slug}: refs url must be https (${r.url})`);
   need(Array.isArray(spec.keywords) && spec.keywords.length >= 3, `${spec.slug}: keywords ≥3`);
-  need(typeof spec.brief === 'string' && spec.brief.length > 60, `${spec.slug}: brief yok/kısa`);
+  need(typeof spec.brief === 'string' && spec.brief.length > 60, `${spec.slug}: missing/short brief`);
   need(typeof spec.feeling === 'string' && spec.feeling.length > 5, `${spec.slug}: feeling yok`);
   need(typeof spec.best === 'string' && spec.best.length > 5, `${spec.slug}: best yok`);
   need(typeof spec.avoid === 'string' && spec.avoid.length > 5, `${spec.slug}: avoid yok`);
-  need(Boolean(ctx.band), `${spec.slug}: band "${spec.band}" kit/specs/bands.json içinde yok`);
+  need(Boolean(ctx.band), `${spec.slug}: band "${spec.band}" is not in kit/specs/bands.json`);
 
   if (!errors.length) {
     const c = inspectPalette(palette);
     if (c.body < 4.5) errors.push(`${spec.slug}: ink/bg ${c.body}:1 < 4.5`);
     if (c.soft < 4.5) errors.push(`${spec.slug}: ink-soft/bg ${c.soft}:1 < 4.5 (--strict-soft)`);
     if (c.accentInk < 4.5) errors.push(`${spec.slug}: accent-ink/accent ${c.accentInk}:1 < 4.5`);
-    if (c.focus < 3) errors.push(`${spec.slug}: odak halkası accent/base ${c.focus}:1 < 3`);
-    if (c.faint < 2.2) warnings.push(`${spec.slug}: ink-faint/bg ${c.faint}:1 çok düşük (dekoratif sınırı)`);
+    if (c.focus < 3) errors.push(`${spec.slug}: focus ring accent/base ${c.focus}:1 < 3`);
+    if (c.faint < 2.2) warnings.push(`${spec.slug}: ink-faint/bg ${c.faint}:1 is too low (decorative floor)`);
     if (c.apca < 60) warnings.push(`${spec.slug}: APCA ink/bg Lc ${c.apca} < 60`);
   }
 
   return { errors, warnings };
 }
 
-/* --------------------------------------------------------------- üreticiler */
+/*------------------------------------------------------------------------------- manufacturers*/
 
 const dirOf = (spec) => `${spec.num}-${spec.slug}`;
 const quoteStack = (family) =>
@@ -133,7 +131,7 @@ const quoteStack = (family) =>
     ? `"${family}", ui-monospace, monospace`
     : `"${family}", system-ui, sans-serif`;
 
-/** tokens.json — makine kaynağı. */
+/** tokens.json — machine resource.*/
 export function tokensJson(spec, ctx) {
   const p = spec.palette;
   const b = ctx.band;
@@ -217,13 +215,13 @@ export function tokensJson(spec, ctx) {
   };
 }
 
-/** token-block.css — apply-fragments'ın okuduğu kaynak blok. */
+/** token-block.css — the source block that apply-fragments reads.*/
 export function tokenBlockCss(spec, ctx) {
   const p = spec.palette;
   const [radius, radiusLg] = spec.radius;
   const fonts = spec.fonts;
   const lines = [
-    `/* ${spec.num} · ${spec.name} — token bloğu (kaynak: styles/${dirOf(spec)}/tokens.json) */`,
+    `/*${spec.num} · ${spec.name} — token block (source: styles/${dirOf(spec)}/tokens.json)*/`,
     '',
     `[data-style="${spec.slug}"] {`,
     `  --bg: ${p.bg}; --bg-2: ${p.bg2};`,
@@ -244,14 +242,13 @@ export function tokenBlockCss(spec, ctx) {
   return lines.join('\n');
 }
 
-/** shots.config.fragment.mjs — sahne imzası (yalnız var(--…) renk). */
+/** shots.config.fragment.mjs — scene signature (only var(--…) color).*/
 export function fragmentModule(spec, ctx) {
-  // Bant CSS'i (aile imzası) her zaman girer; stil CSS'i onun üstüne yazar.
+  // Tape always enters CSS (family signature); The style overwrites the CSS with it.
   const extra = [ctx.band.extraCss ?? '', spec.extraCss ?? ''].filter(Boolean).join('\n');
   return `/**
- * ${spec.num} · ${spec.name} — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * ${spec.num} · ${spec.name} — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: '${spec.motif ?? ctx.band.motif}',
   bodyClass: '${spec.bodyClass ?? ctx.band.bodyClass ?? ''}',
@@ -265,7 +262,7 @@ ${extra}
 const row = (cells) => `| ${cells.join(' | ')} |`;
 const table = (head, rows) => [row(head), row(head.map(() => '---')), ...rows.map(row)].join('\n');
 
-/** style.md — insan okur doküman (kapılar bölüm başlıklarını ve meta tabloyu arar). */
+/** style.md — human-reading document (ports look for section titles and meta table).*/
 export function styleMarkdown(spec, ctx) {
   const b = ctx.band;
   const c = inspectPalette(spec.palette);
@@ -276,54 +273,54 @@ export function styleMarkdown(spec, ctx) {
   const familyLabel = ctx.familyLabel;
 
   const colorNotes = {
-    bg: 'sayfa zemini',
-    bg2: 'bölüm ayırıcı zemin, tablo başı',
+    bg: 'page background',
+    bg2: 'partition divider floor, table top',
     surface: 'kart, input, modal',
-    surface2: 'pasif chip, hover zemini',
-    ink: 'başlık, gövde, ikon',
-    inkSoft: 'ikincil metin, açıklama',
-    inkFaint: 'dekoratif etiket, ayırıcı metin',
-    accent: 'birincil eylem, aktif durum',
-    accentInk: 'accent üstü metin',
-    line: 'tüm kenarlıklar',
+    surface2: 'passive chip, hover background',
+    ink: 'title, body, icon',
+    inkSoft: 'secondary text, description',
+    inkFaint: 'decorative label, separator text',
+    accent: 'primary action, active state',
+    accentInk: 'text above accent',
+    line: 'all borders',
   };
   const colorAvoid = {
-    bg: 'kart zemini olarak',
-    bg2: 'buton zemini',
-    surface: 'tam sayfa zemin',
-    surface2: 'birincil buton',
-    ink: 'dev zemin',
-    inkFaint: 'etkileşimli metin',
-    accent: 'geniş zemin (opaklık 0.14 ile)',
-    accentInk: 'accent olmayan zemin',
-    line: 'metin rengi',
+    bg: 'as a card background',
+    bg2: 'button background',
+    surface: 'full-page background',
+    surface2: 'primary button',
+    ink: 'large background',
+    inkFaint: 'interactive text',
+    accent: 'wide background (with opacity 0.14)',
+    accentInk: 'non-accent background',
+    line: 'text colour',
   };
 
   const colorTable = table(
-    ['Token', 'Değer', 'Nerede kullanılır', 'Nerede kullanılmaz'],
+    ['Token', 'Value', 'Where to use', 'Where not to use'],
     CSS_KEYS.map(([json, css]) => [`\`--${css}\``, `\`${p[json]}\``, colorNotes[json], colorAvoid[json] ?? '—']),
   );
 
   const typeTable = table(
-    ['Rol', 'Aile', 'Boyut', 'Ağırlık', 'Satır aralığı', 'Tracking'],
+    ['Role', 'Family', 'Size', 'Weight', 'Line height', 'Tracking'],
     [
-      ['Display / H1', `\`--font-display\` (${fonts[0]})`, `${scale.h1} (mobil ${scale.h1Mobile})`, String(spec.displayWeight ?? b.displayWeight), String(b.lineHeight.display), spec.trackingDisplay ?? b.trackingDisplay],
-      ['H2', 'aynı', scale.h2, '600', String(b.lineHeight.heading), spec.trackingHeading ?? b.trackingHeading],
-      ['H3', 'aynı', scale.h3, '600', '1.3', '0'],
-      ['Gövde', `\`--font-body\` (${fonts[1]})`, scale.body, '400', String(b.lineHeight.body), '0'],
-      ['Küçük gövde', 'aynı', scale.small, '400', '1.55', '0'],
-      ['Etiket', `\`--font-mono\` (${fonts[2]})`, scale.label, '400', '1.2', b.trackingLabel],
-      ['Buton', `\`--font-body\``, scale.caption, '600', '1', '0'],
+      ['Display / H1', `\`--font-display\` (${fonts[0]})`, `${scale.h1} (mobile ${scale.h1Mobile})`, String(spec.displayWeight ?? b.displayWeight), String(b.lineHeight.display), spec.trackingDisplay ?? b.trackingDisplay],
+      ['H2', 'same', scale.h2, '600', String(b.lineHeight.heading), spec.trackingHeading ?? b.trackingHeading],
+      ['H3', 'same', scale.h3, '600', '1.3', '0'],
+      ['Body',`\`--font-body\` (${fonts[1]})`, scale.body, '400', String(b.lineHeight.body), '0'],
+      ['Small body', 'same', scale.small, '400', '1.55', '0'],
+      ['Label',`\`--font-mono\` (${fonts[2]})`, scale.label, '400', '1.2', b.trackingLabel],
+      ['Button', `\`--font-body\``, scale.caption, '600', '1', '0'],
     ],
   );
 
   const screensTable = table(
-    ['Ekran', 'Yoğunluk', 'Uygulama', 'Görsel'],
+    ['Screen', 'Density', 'Implementation', 'Image'],
     ctx.screens.map(([screen, d, recipe]) => [screen, d, recipe, '`shots/01-page.png`']),
   );
 
   const componentTable = table(
-    ['Bileşen', 'Yükseklik', 'Padding', 'Radius', 'Tipografi', 'Renk / gölge', 'Durumlar'],
+    ['Component', 'Height', 'Padding', 'Radius', 'Typography', 'Colour/shade', 'States'],
     Object.entries(spec.components ?? b.components).map(([key, value]) => [
       b.componentLabels[key] ?? key,
       value.h,
@@ -335,28 +332,28 @@ export function styleMarkdown(spec, ctx) {
     ]),
   );
 
-  const trapTable = table(['Belirti', 'Neden', 'Düzeltme'], ctx.traps);
+  const trapTable = table(['Symptom', 'Cause', 'Fix'], ctx.traps);
 
   const dressTable = table(
-    ['Öğe', 'Kural'],
+    ['Item', 'Rule'],
     [
-      ['İkon', b.dress.icons],
-      ['Fotoğraf', b.dress.photos],
-      ['İllüstrasyon', b.dress.illustration],
-      ['Doku', spec.texture ?? b.dress.texture],
+      ['icon', b.dress.icons],
+      ['photo', b.dress.photos],
+      ['illustration', b.dress.illustration],
+      ['Texture', spec.texture ?? b.dress.texture],
       ['Logo', b.dress.logo],
     ],
   );
 
   const contrastTable = table(
-    ['Çift', 'Oran', 'Eşik', 'Not'],
+    ['Pair', 'Ratio', 'Threshold', 'Note'],
     [
-      ['`--ink` / `--bg`', `${c.body}:1`, '≥ 4.5', 'gövde metni'],
-      ['`--ink-soft` / `--bg`', `${c.soft}:1`, '≥ 4.5', 'ikincil metin'],
-      ['`--ink-faint` / `--bg`', `${c.faint}:1`, '≥ 3 hedef', 'yalnız dekoratif'],
-      ['`--accent-ink` / `--accent`', `${c.accentInk}:1`, '≥ 4.5', 'buton metni'],
-      ['odak halkası / zemin', `${c.focus}:1`, '≥ 3', 'accent halka'],
-      ['APCA `--ink` / `--bg`', `Lc ${c.apca}`, '≥ 60 hedef', 'ince metin'],
+      ['`--ink` / `--bg`', `${c.body}:1`, '≥ 4.5', 'body text'],
+      ['`--ink-soft` / `--bg`', `${c.soft}:1`, '≥ 4.5', 'secondary text'],
+      ['`--ink-faint` / `--bg`', `${c.faint}:1`, '≥ 3 target', 'decorative only'],
+      ['`--accent-ink` / `--accent`', `${c.accentInk}:1`, '≥ 4.5', 'button text'],
+      ['focus ring/ground',`${c.focus}:1`, '≥ 3', 'accent ring'],
+      ['APCA `--ink` / `--bg`', `Lc ${c.apca}`, '≥ 60 target', 'thin text'],
     ],
   );
 
@@ -368,144 +365,144 @@ export function styleMarkdown(spec, ctx) {
 
   const md = `# ${spec.num} · ${spec.name}
 
-> **Bir cümlede:** ${spec.tagline}
+> **In one sentence:** ${spec.tagline}
 
 | | |
 |---|---|
-| **Hissiyat** | ${spec.feeling} |
-| **En iyi** | ${spec.best} |
-| **Kaçın** | ${spec.avoid} |
-| **Zorluk** | ${spec.difficulty ?? b.defaultDifficulty} · **Erişilebilirlik** | ${spec.a11y ?? b.defaultA11y} |
-| **Aile** | ${familyLabel} · **Token** | \`kit/tokens.css\` → \`[data-style="${spec.slug}"]\` |
-| **Kompozisyon** | \`${(spec.layout ?? { hero: 'split' }).hero}\` · \`${(spec.layout ?? { nav: 'inline' }).nav}\` · \`${(spec.layout ?? { density: 'balanced' }).density}\` (bkz. \`kit/render/layouts.json\`) |
-| **Görseller** | \`shots/01-page.png\` (tek sayfa · 1280×2400) |
+| **Feeling** | ${spec.feeling} |
+| **Best for** | ${spec.best} |
+| **Avoid** | ${spec.avoid} |
+| **Difficulty** | ${spec.difficulty ?? b.defaultDifficulty} · **Accessibility** | ${spec.a11y ?? b.defaultA11y} |
+| **Family** | ${familyLabel} · **Token** | \`kit/tokens.css\` → \`[data-style="${spec.slug}"]\` |
+| **Composition** | \`${(spec.layout ?? { hero: 'split' }).hero}\` · \`${(spec.layout ?? { nav: 'inline' }).nav}\` · \`${(spec.layout ?? { density: 'balanced' }).density}\` (see \`kit/render/layouts.json\`) |
+| **Images** | \`shots/01-page.png\` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 ${spec.essence ?? `${spec.name}, ${b.essenceTail}. ${spec.signature[0]}`}
 
-### Ne değildir
+### What is not
 ${(spec.notThis ?? b.notThis).map((x) => `- ${x}`).join('\n')}
 
-### Nereden gelir
+### Where it comes from
 ${spec.origin ?? b.origin}
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 ${(spec.recognition ?? b.recognition).map((q, i) => `${i + 1}. ${q}`).join('\n')}
 
-## Görsel imza
+## Visual signature
 ${spec.signature.map((x) => `- ${x}`).join('\n')}
-- **Tipografi:** ${fonts[0]} (display) + ${fonts[1]} (gövde) + ${fonts[2]} (mono etiket).
-- **Renk disiplini:** tek accent \`${p.accent}\`; nötr skala \`${p.bg}\` → \`${p.ink}\`.
-- **Yarıçap:** \`${radius}\` / \`${radiusLg}\`; ${spec.radiusRule ?? b.radiusRule}
+- **Typography:** ${fonts[0]} (display) + ${fonts[1]} (body) + ${fonts[2]} (mono label).
+- **Colour discipline:** a single accent \`${p.accent}\`; neutral scale \`${p.bg}\` → \`${p.ink}\`.
+- **Radius:** \`${radius}\` / \`${radiusLg}\`; ${spec.radiusRule ?? b.radiusRule}
 
-## Zorunlu kurallar
+## Mandatory rules
 
 ${spec.must.map((x, i) => `${i + 1}. ${x}`).join('\n')}
 
-## Renk
+## Color
 
 ${colorTable}
 
-- Ölçülen kontrast: \`ink/bg\` **${c.body}:1** · \`ink-soft/bg\` **${c.soft}:1** · \`ink-faint/bg\` **${c.faint}:1 (dekoratif)** · \`accent-ink/accent\` **${c.accentInk}:1**.
+- Measured contrast: \`ink/bg\` **${c.body}:1** · \`ink-soft/bg\` **${c.soft}:1** · \`ink-faint/bg\` **${c.faint}:1 (decorative)** · \`accent-ink/accent\` **${c.accentInk}:1**.
 - ${spec.colorNote ?? b.colorNote}
-- Opaklıkla tonlanan accent: \`color-mix(in srgb, var(--accent) 14%, var(--surface))\` — ikinci bir hex uydurma.
+- Accent tinted by opacity: \`color-mix(in srgb, var(--accent) 14%, var(--surface))\` — never invent a second hex.
 
-## Tipografi
+## Typography
 
 ${typeTable}
 
 - ${spec.typeNote ?? b.typeNote}
-- Ölçü: ${b.measure} (okuma metni), kart metni en fazla 52ch.
-- ${spec.upper ? 'Başlıklar uppercase: `text-transform: uppercase` + pozitif tracking; gövde metni asla.' : 'Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.'}
+- Measure: ${b.measure} (reading text), card text at most 52ch.
+- ${spec.upper ? 'Headers uppercase: `text-transform: uppercase` + positive tracking; never body text.' : 'Headings are in sentence order (no uppercase); uppercase only on mono tags.'}
 
-## Izgara ve boşluk
+## Grid and space
 
-${table(['Öğe', 'Değer'], Object.entries({
-  Kolon: b.grid.columns,
+${table(['Item', 'Value'], Object.entries({
+  Columns: b.grid.columns,
   Gutter: b.grid.gutter,
   Container: b.grid.container,
-  'Boşluk ölçeği': `${b.spacing.map((s) => s.replace('px', '')).join(' · ')} (\`--space-1…8\`)`,
+  'Gap scale': `${b.spacing.map((s) => s.replace('px', '')).join(' · ')} (\`--space-1…8\`)`,
   Breakpoint: b.grid.breakpoints,
 }))}
 
 - ${spec.gridNote ?? b.gridNote}
-- Bölüm dikey boşluğu masaüstü ${b.sectionY.desktop}, mobil ${b.sectionY.mobile}; kart içi padding ${b.cardPadding}.
+- Section vertical space ${b.sectionY.desktop} desktop, ${b.sectionY.mobile} mobile; card padding ${b.cardPadding}.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-${table(['Seviye', 'Token', 'Gölge', 'Kullanım'], b.elevation)}
+${table(['Level', 'Token', 'Shadow', 'Usage'], b.elevation)}
 
 - ${spec.surfaceNote ?? b.surfaceNote}
 - Radius: \`${radius}\` (buton, input, chip), \`${radiusLg}\` (kart, modal). ${spec.radiusRule ?? b.radiusRule}
 
-## Yasaklar
+## Bans
 
 ${spec.mustNot.map((x) => `- ${x}`).join('\n')}
 ${b.extraBans.map((x) => `- ${x}`).join('\n')}
 
-## Bileşen reçeteleri
+## Component recipes
 
 ${componentTable}
 
-- Odak halkası: \`:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }\`; halka ${c.focus}:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ${b.touchNote}
+- Focus ring: \`:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }\`; ring ${c.focus}:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; ${b.touchNote}
 
-## Görsel dil
+## Visual language
 
 ${dressTable}
 
-- İmza motif: \`motif-${spec.motif ?? b.motif}\` (sahne şablonunda \`__MOTIF__\`).
-- Görsel hiyerarşi: ${b.hierarchy}
+- Signature motif: \`motif-${spec.motif ?? b.motif}\` (in the scene template \`__MOTIF__\`).
+- Visual hierarchy: ${b.hierarchy}
 
-## Ekran reçeteleri
+## Screen recipes
 
 ${screensTable}
 
-## Erişilebilirlik
+## Accessibility
 
 ${contrastTable}
 
-- \`--ink-faint\` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. ${b.a11yNote}
+- \`--ink-faint\` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. ${b.a11yNote}
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| \`shots/01-page.png\` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| \`shots/01-page.png\` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
 ${trapTable}
 
-## Komşu stiller
+## Neighboring styles
 
-${table(['Yön', 'Stil', 'Neden'], [
-  ...(spec.neighbors?.compatible ?? []).map((s) => ['Garnitür', `\`${s}\``, 'Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz']),
-  ...(spec.neighbors?.forbidden ?? []).map((s) => ['Karıştırma', `\`${s}\``, 'İki farklı süs dili aynı ekranda rekabet eder']),
+${table(['Direction', 'Style', 'Why'], [
+  ...(spec.neighbors?.compatible ?? []).map((s) => ['garnish', `\`${s}\``, 'Same level of seriousness; accent sharing is not allowed']),
+  ...(spec.neighbors?.forbidden ?? []).map((s) => ['Mixing',`\`${s}\``, 'Two different ornamental languages compete on the same screen']),
 ])}
 
-## Referanslar
+## References
 
-${table(['Kaynak', 'Ne için'], spec.refs.map((r) => [`${r.url}`, `${r.label} — ${r.use}`]))}
+${table(['Source', 'for what'], spec.refs.map((r) => [`${r.url}`, `${r.label} — ${r.use}`]))}
 
 ## AI brief
 
 \`\`\`text
 ${spec.brief}
 
-Stil: ${spec.name} (${spec.slug}) · aile: ${familyLabel}
+Style: ${spec.name} (${spec.slug}) · family: ${familyLabel}
 Token: --bg ${p.bg} · --surface ${p.surface} · --ink ${p.ink} · --accent ${p.accent} · --line ${p.line}
-Yarıçap: ${radius} / ${radiusLg} · Tipografi: ${fonts[0]} / ${fonts[1]} / ${fonts[2]}
-Zorunlu: ${spec.must.slice(0, 3).join(' · ')}
-Yasak: ${spec.mustNot.slice(0, 3).join(' · ')}
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: ${radius} / ${radiusLg} · Typography: ${fonts[0]} / ${fonts[1]} / ${fonts[2]}
+Required: ${spec.must.slice(0, 3).join(' · ')}
+Banned: ${spec.mustNot.slice(0, 3).join(' · ')}
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 \`\`\`
 
 ## Token
@@ -518,7 +515,7 @@ ${tokenBlock}
   return md;
 }
 
-/** Üretilecek tüm dosyalar: yol → içerik. */
+/** All files to generate: path → content.*/
 export function buildStyle(spec, ctx) {
   const resolved = spec.paletteSeeds
     ? { ...spec, palette: deriveCorePalette(spec.paletteSeeds, spec.paletteTargets) }
@@ -538,15 +535,15 @@ export function buildStyle(spec, ctx) {
       [`styles/${dir}/keywords.json`]: JSON.stringify(resolved.keywords, null, 2) + '\n',
       [`styles/${dir}/style.md`]: styleMarkdown(resolved, styleCtx),
     },
-    metrics: c,
+    metrics:c,
   };
 }
 
-/* ---------------------------------------------------------------- aile tabanı */
+/* ---------------------------------------------------------------- family base */
 
 /**
- * BASE_BAND — her aile bandının devraldığı şablon (v6 tek sayfa).
- * Band dosyası yalnız farkları yazar; derin birleştirme `mergeBand` ile yapılır.
+ * BASE_BAND — the template that each family band inherits (v6 single page).
+ * Band file writes only the differences; the deep merge is done by `mergeBand`.
  */
 export const BASE_BAND = {
   scale: { label: '11px', caption: '12px', small: '14px', body: '16px', h3: '20px', h2: '28px', h1: '54px', h1Mobile: '32px' },
@@ -558,86 +555,86 @@ export const BASE_BAND = {
   lineHeight: { display: 1.06, heading: 1.18, body: 1.6 },
   measure: '66ch',
   shadow: '0 1px 2px rgba(0,0,0,.14)',
-  radiusRule: 'Köşe yarıçapı iki değerden fazla değil; 20px üzeri yuvarlatma kullanılmaz.',
-  forbiddenType: ['ara punto basamakları (18/22/26px)', 'üçten fazla font ağırlığı', 'metin üzerinde gölge'],
+  radiusRule: 'Corner radius no more than two values; Rounding over 20px is not used.',
+  forbiddenType: ['intermediate point steps (18/22/26px)', 'more than three font weights', 'shadow on text'],
   spacing: ['4px', '8px', '12px', '16px', '24px', '32px', '48px', '64px'],
   sectionY: { desktop: '72px', mobile: '44px' },
   cardPadding: '20px',
-  grid: { columns: '12 (içerik 8, form 4)', gutter: '24px (mobil 16px)', container: '1160px', breakpoints: '640 / 900 / 1200 px' },
+  grid: { columns: '12 (content 8, form 4)', gutter: '24px (mobil 16px)', container: '1160px', breakpoints: '640 / 900 / 1200 px' },
   elevation: [
-    ['Zemin', '--bg', 'yok', 'sayfa'],
-    ['Kart', '--surface + 1px --line', '--shadow', 'içerik bloğu'],
-    ['Yüzen', '--surface + --shadow + --line', '--shadow', 'modal, popover, toast'],
+    ['Background', '--bg', 'none', 'page'],
+    ['Kart', '--surface + 1px --line', '--shadow', 'content block'],
+    ['floating', '--surface + --shadow + --line', '--shadow', 'modal, popover, toast'],
   ],
   components: {
-    button: { h: '44px', pad: '0 20px', radius: null, type: '14/600', color: '--accent + --accent-ink', states: 'hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft' },
+    button: { h: '44px', pad: '0 20px', radius: null, type: '14/600', color: '--accent + --accent-ink', states: 'hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft' },
     buttonSecondary: { h: '44px', pad: '0 18px', radius: null, type: '14/600', color: 'transparent + 1px --line', states: 'hover: --surface-2' },
-    input: { h: '44px', pad: '0 14px', radius: null, type: '14/400', color: '--surface + 1px --line', states: 'focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2' },
-    card: { h: 'içerik', pad: '20px', radius: null, type: 'H3 + 14 gövde', color: '--surface + --line + --shadow', states: 'hover yalnız tıklanabilir kartta: kenar --ink %18' },
+    input: { h: '44px', pad: '0 14px', radius: null, type: '14/400', color: '--surface + 1px --line', states: 'focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2' },
+    card: { h: 'content', pad: '20px', radius: null, type: 'H3+14 body', color: '--surface + --line + --shadow', states: 'hover only on clickable card: edge --ink 18%' },
     chip: { h: '24px', pad: '0 10px', radius: '999px', type: '11/500 mono', color: '--surface-2 + --line', states: 'aktif: --accent + --accent-ink' },
-    nav: { h: '64px', pad: '0 24px', radius: '—', type: '14/500', color: '--bg + alt 1px --line', states: 'aktif: --ink + 2px alt çizgi' },
-    tableRow: { h: '52px', pad: '12px 16px', radius: '—', type: '14/400 · sayı mono', color: 'satır altı 1px --line', states: 'hover: --surface-2 · seçili: sol 2px --accent' },
-    modal: { h: 'içerik', pad: '28px', radius: null, type: 'H3 + 14 gövde', color: '--surface + --shadow', states: 'arka plan --bg %72 + 8px blur' },
-    toast: { h: '44px', pad: '0 16px', radius: null, type: '13/500', color: '--ink zemin + --bg metin', states: 'ikon + tek satır, 4sn' },
-    chart: { h: '—', pad: '—', radius: null, type: 'eksen 11 mono', color: '--accent + accent %16 dolgu + --line referans', states: 'en fazla 3 seri' },
+    nav: { h: '64px', pad: '0 24px', radius: '—', type: '14/500', color: '--bg + alt 1px --line', states: 'active: --ink + 2px underline' },
+    tableRow: { h: '52px', pad: '12px 16px', radius: '—', type: '14/400 number mono', color: 'underline 1px --line', states: 'hover: --surface-2 · selected: left 2px --accent' },
+    modal: { h: 'content', pad: '28px', radius: null, type: 'H3+14 body', color: '--surface + --shadow', states: 'arka plan --bg %72 + 8px blur' },
+    toast: { h: '44px', pad: '0 16px', radius: null, type: '13/500', color: '--ink background + --bg text', states: 'icon + single line, 4sec' },
+    chart: { h: '—', pad: '—', radius: null, type: '11px mono axis', color: '--accent + 16% accent fill + --line reference', states: 'three series at most' },
   },
   componentLabels: {
-    button: 'Buton (birincil)',
+    button: 'Button (primary)',
     buttonSecondary: 'Buton (ikincil)',
     input: 'Input',
     card: 'Kart',
     chip: 'Chip / badge',
     nav: 'Nav',
-    tableRow: 'Tablo satırı',
+    tableRow: 'table row',
     modal: 'Modal',
     toast: 'Toast',
     chart: 'Grafik paleti',
   },
   dress: {
-    icons: '1.5px çizgi, 24px kutu; dolgu yalnız aktif durumda',
-    photos: 'Tek konu, yumuşak ışık, düşük doygunluk; 12px radius ile kırpılır',
-    illustration: 'Tercih edilmez; gerekiyorsa line-art --ink-soft',
-    texture: 'Yok (--grain: 0)',
-    logo: 'Monokrom --ink, en az 24px yükseklik',
+    icons: '1.5px line, 24px box; filler is only active',
+    photos: 'Single subject, soft light, low saturation; Cropped with 12px radius',
+    illustration: 'Not preferred; use line-art --ink-soft if needed',
+    texture: 'None (--grain: 0)',
+    logo: 'Monochrome --ink, at least 24px height',
     mode: 'plain',
     strength: 0,
   },
   motif: 'none',
   bodyClass: '',
   extraCss: '',
-  colorNote: 'Accent tek başına eylem ve durum taşır; grafiklerde %14 dolgu ile kullanılır.',
-  typeNote: 'Ölçek oranı 1.5× ve üzeri; ara basamak kullanılmaz.',
-  gridNote: 'Izgara görünmez: yardımcı çizgi eklenmez, hizalama boşlukla kurulur.',
-  surfaceNote: 'Derinlik ışıktan değil ayrımdan gelir: 1px çizgi + zemin tonu farkı.',
-  touchNote: 'ikon butonlarında padding ile hedef büyütülür.',
-  a11yNote: 'prefers-reduced-motion ve prefers-contrast desteklenir.',
-  hierarchy: 'Sayfada en fazla bir büyük görsel; gerisi metin ve veri.',
-  essenceTail: 'tek bir görsel imzayı sonuna kadar taşıyan bir süsleme disiplinidir',
-  notThis: ['Sadece paleti kopyalamak stili getirmez; ölçek ve boşluk ritmi de gerekir.', 'İkinci bir accent rengi bu stili başka bir stile çevirir.'],
-  origin: 'Baskı, mimarlık ve ekran geleneklerinin kesişiminden türedi; ekran tipografisiyle yeniden yorumlandı.',
-  recognition: ['Tek bir accent rengi mi baskın?', 'Köşe yarıçapları aynı aileden mi?', 'Hiyerarşi punto zıplamasıyla mı kurulmuş?'],
+  colorNote: 'Accent alone carries action and state; It is used with 14% padding in graphics.',
+  typeNote: 'Scale ratio 1.5× and above; intermediate steps are not used.',
+  gridNote: 'The grid is not visible: no auxiliary line is added, alignment is established with space.',
+  surfaceNote: 'Depth comes not from light but from distinction: 1px line + ground tone difference.',
+  touchNote: 'The target is enlarged by padding on the icon buttons.',
+  a11yNote: 'prefers-reduced-motion and prefers-contrast are supported.',
+  hierarchy: 'Maximum one large image per page; the rest is text and data.',
+  essenceTail: 'It is an ornamentation discipline that carries a single visual signature to its fullest.',
+  notThis: ["Just copying the palette doesn't add style; scale and rhythm of space are also required.", 'A second accent color turns this style into another.'],
+  origin: 'It derives from the intersection of print, architecture and screen traditions; reinterpreted with screen typography.',
+  recognition: ['Is a single accent color dominant?', 'Are corner radii from the same family?', 'Is the hierarchy established by point jumping?'],
   screens: [
-    ['Landing / hero', 'yüksek', 'Tek başlık (2 satır), 3 maddelik güven satırı, tek birincil CTA'],
-    ['Bölüm · üç kart', 'orta', 'Eşit yükseklik, kart içi 20px padding, başlık H3'],
-    ['Bölüm · medya + metin', 'orta', 'Bir görsel + 3 madde; görselde imza motif'],
-    ['Bileşen ızgarası', 'yüksek', 'Buton/input/kart/tablo aynı yarıçap ve kenar dili'],
-    ['Form + veri', 'orta', 'İki kolon: form solda, grafik sağda; etiket üstte'],
-    ['CTA + footer', 'düşük', 'Tek cümle + tek buton; footer 4 kolon'],
+    ['Landing / hero', 'high', 'Single headline (2 lines), 3-item trust line, single primary CTA'],
+    ['Chapter · three cards', 'medium', 'Equal height, 20px in-card padding, title H3'],
+    ['Section · media + text', 'medium', 'One image + 3 items; signature motif in the image'],
+    ['Component grid', 'high', 'Button/input/card/table same radius and edge language'],
+    ['Form + data', 'medium', 'Two columns: form on the left, graphic on the right; label on top'],
+    ['CTA + footer', 'low', 'One sentence + one button; footer 4 columns'],
   ],
   traps: [
-    ['Sayfa "bitmemiş" görünüyor', 'Boşluk var, hiyerarşi yok', 'En az iki uç punto ve tek güçlü odak ekle'],
-    ['Kartlar birbirine yapışıyor', 'Gölge/kenar ayrımı zayıf', '1px --line + --surface tonu ile ayır'],
-    ['Metin okunmuyor', 'ink-soft zemin üstünde kullanılmış', 'Gövdeyi --ink ile yaz; --ink-soft yalnız ikincil'],
-    ['Renk cıvıyor', 'İkinci accent eklenmiş', 'Tek accent; ton farkını color-mix ile üret'],
+    ['The page looks "unfinished"', 'There is emptiness, no hierarchy', 'Add at least two extreme points and a single strong focus'],
+    ['Cards stick together', 'Shadow/edge separation is poor', 'Separate with 1px --line + --surface tone'],
+    ['Text is unreadable', 'used on ink-soft background', 'Write the body with --ink; --ink-soft secondary only'],
+    ['Colour feels arbitrary', 'Second accent added', 'Single accent; produce tone difference with color-mix'],
   ],
-  defaultDifficulty: 'orta',
-  defaultA11y: 'iyi',
-  extraBans: ['Koyu mod ve tema değiştirici ekleme (v6 kapsam dışı).', 'Animasyon, geçiş ve parallax ekleme (v6 kapsam dışı).'],
+  defaultDifficulty: 'medium',
+  defaultA11y: 'good',
+  extraBans: ['Adding dark mode and theme switcher (v6 out of scope).', 'Adding animations, transitions and parallax (v6 out of scope).'],
 };
 
 const isObj = (v) => v && typeof v === 'object' && !Array.isArray(v);
 
-/** Band farklarını tabana derin birleştirir (diziler bütünüyle değişir). */
+/** Merges band differences deep into the base (sequences change entirely).*/
 export function mergeBand(override) {
   const merge = (base, over) => {
     if (!isObj(base) || !isObj(over)) return over === undefined ? base : over;

@@ -40,7 +40,7 @@
     <line x1="140" y1="702" x2="1460" y2="702" />
   </g>
 
-  <!-- Vertical Formwork Panel Seams -->
+  <!--Vertical Formwork Panel Seams-->
   <g stroke="#14161a" stroke-width="2.5" stroke-opacity="0.4">
     <line x1="580" y1="100" x2="580" y2="900" />
     <line x1="1020" y1="100" x2="1020" y2="900" />

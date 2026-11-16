@@ -1,12 +1,11 @@
 /**
- * kit/lib/css-block.mjs — CSS değişken bloklarını okuyan tek ayrıştırıcı.
+ * kit/lib/css-block.mjs — The only parser that reads CSS variable blocks.
  *
- * Kullanım: `kit/apply-fragments.mjs` (fragment → tokens.css) ve `kit/check-schema.mjs`
- * (tokens.json ↔ token-block.css ↔ tokens.css paritesi). İkinci bir ayrıştırıcı yazılmaz:
- * iki farklı ayrıştırıcı, "senkron" diyen ama drift'i kaçıran kapılar üretir.
- */
+ * Usage: `kit/apply-fragments.mjs` (fragment → tokens.css) and `kit/check-schema.mjs`
+ * (tokens.json ↔ token-block.css ↔ tokens.css parity). A second parser is not written:
+ * two different parsers produce gates that say "synchronous" but miss drift.*/
 
-/** Seçiciden itibaren dengeli `{...}` bloğunu döndürür (yorum/tırnak farkındadır). */
+/** Returns the balanced `{...}` block from the selector (comment/quote aware).*/
 export function readBlock(css, selector) {
   const i = css.indexOf(selector);
   if (i < 0) return null;
@@ -31,7 +30,7 @@ export function readBlock(css, selector) {
   return null;
 }
 
-/** Blok gövdesini `[['--bg', '#fff'], …]` çiftlerine çevirir (son bildirim kazanır). */
+/** Converts the block body to `[['--bg', '#fff'], …]` pairs (last notification wins).*/
 export function parsePairs(block) {
   const body = block.slice(block.indexOf('{') + 1, block.lastIndexOf('}'));
   const clean = body.replace(/\/\*[\s\S]*?\*\//g, ' ');
@@ -40,7 +39,7 @@ export function parsePairs(block) {
     const t = part.trim();
     if (!t) continue;
     const m = t.match(/^(--[a-z0-9-]+)\s*:\s*([\s\S]+)$/i);
-    if (!m) throw new Error(`çözülemeyen bildirim: ${t.slice(0, 70)}`);
+    if (!m) throw new Error(`unparsable declaration: ${t.slice(0, 70)}`);
     out.push([m[1], m[2].replace(/\s+/g, ' ').trim()]);
   }
   const seen = new Map();
@@ -48,7 +47,7 @@ export function parsePairs(block) {
   return [...seen.entries()];
 }
 
-/** Çiftleri sözlüğe çevirir: { '--bg': '#fff' } */
+/** Converts doubles to dictionary: { '--bg': '#fff' }*/
 export function pairsToMap(pairs) {
   return Object.fromEntries(pairs);
 }

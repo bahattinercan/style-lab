@@ -59,7 +59,7 @@ and the evidence command below will warn/error.
 
 ```bash
 # band table ↔ catalog agreement (name + range + count)
-node -e "const fs=require('fs');const f=require('./kit/families.json').families;const s=fs.readdirSync('styles').filter(x=>fs.statSync('styles/'+x).isDirectory()).map(x=>parseInt(x,10)).filter(Number.isFinite);let ok=true;for(const b of f){const n=s.filter(x=>x>=b.from&&x<=b.to).length;console.log(String(b.from).padStart(3)+'-'+String(b.to).padStart(3),b.name.padEnd(22),n);if(!n)ok=false}console.log(ok?'band tablosu tutarlı':'BOŞ BAND VAR')"
+node -e "const fs=require('fs');const f=require('./kit/families.json').families;const s=fs.readdirSync('styles').filter(x=>fs.statSync('styles/'+x).isDirectory()).map(x=>parseInt(x,10)).filter(Number.isFinite);let ok=true;for(const b of f){const n=s.filter(x=>x>=b.from&&x<=b.to).length;console.log(String(b.from).padStart(3)+'-'+String(b.to).padStart(3),b.name.padEnd(22),n);if(!n)ok=false}console.log(ok?'band table consistent':'EMPTY BAND')"
 
 # fragments in sync with the kit files + range integrity
 node kit/apply-fragments.mjs --check
@@ -99,7 +99,7 @@ Intent → the bands to look at first (pick 2–3 candidates, then narrow to a s
 
 ```bash
 # does every style's band match tokens.json motion.family?
-node -e "const fs=require('fs');const F=require('./kit/families.json').families;const band=n=>F.find(f=>n>=f.from&&n<=f.to)?.name;let bad=[];for(const d of fs.readdirSync('styles').filter(x=>fs.statSync('styles/'+x).isDirectory())){const t=JSON.parse(fs.readFileSync('styles/'+d+'/tokens.json','utf8'));const b=band(parseInt(d,10));if(t.motion?.family!==b)bad.push(d+' :: '+(t.motion?.family||'-')+' ≠ '+b)}console.log(bad.length?'UYUMSUZ '+bad.length+'\n'+bad.join('\n'):'tutarlı: band = motion.family')"
+node -e "const fs=require('fs');const F=require('./kit/families.json').families;const band=n=>F.find(f=>n>=f.from&&n<=f.to)?.name;let bad=[];for(const d of fs.readdirSync('styles').filter(x=>fs.statSync('styles/'+x).isDirectory())){const t=JSON.parse(fs.readFileSync('styles/'+d+'/tokens.json','utf8'));const b=band(parseInt(d,10));if(t.motion?.family!==b)bad.push(d+' :: '+(t.motion?.family||'-')+' ≠ '+b)}console.log(bad.length?'MISMATCH '+bad.length+'\n'+bad.join('\n'):'consistent: band = motion.family')"
 
 # gates
 node kit/motion-check.mjs | tail -3   # 21 families, 0 intra-family copies, signature 145/145

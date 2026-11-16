@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 /**
- * kit/migrations/v6-shots.mjs — v5 → v6 belge göçü: 37 sahne → tek sayfa.
+ * kit/migrations/v6-shots.mjs — v5 → v6 document migration: 37 scenes → single page.
  *
- * style.md içinde eski sahne dosyalarına (01-landing, 02-dashboard, 04-components,
- * 17-dark-landing, 03-mobile) yapılan atıfları `shots/01-page.png`'e çevirir;
- * "## Örnek görseller" tablosunu tek satıra indirir. Reçete tablolarındaki ekran
- * satırları korunur (o ekranlar aynı tek sayfanın parçasıdır).
+ * In style.md, old scene files (01-landing, 02-dashboard, 04-components,
+ * Converts references to 17-dark-landing, 03-mobile to `shots/01-page.png`;
+ * Reduces the "## Sample images" table to a single row. Display in recipe tables
+ * lines are preserved (those screens are part of the same single page).
  *
- * Kullanım:
- *   node kit/migrations/v6-shots.mjs --check
- *   node kit/migrations/v6-shots.mjs --apply
- */
+ * Usage:
+ * node kit/migrations/v6-shots.mjs --check
+ * node kit/migrations/v6-shots.mjs --apply*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -24,11 +23,11 @@ const OLD = /`shots\/(?:01-landing|02-dashboard|03-mobile|04-components|17-dark-
 const PAGE = '`shots/01-page.png`';
 
 const SAMPLE_ROW =
-  '| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi aynı karede. |';
+  '| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, widget grid, form/data, CTA, and footer in the same frame. |';
 
 function migrate(md) {
   let out = md.replace(OLD, PAGE);
-  // "## Örnek görseller" tablosu: 4 satır → 1 satır
+  // "## Sample images" table: 4 rows → 1 row
   const m = out.match(/^## Örnek görseller\s*$([\s\S]*?)(?=^## )/m);
   if (m) {
     const body = m[1];
@@ -57,5 +56,5 @@ for (const dir of dirs) {
   changed += 1;
   if (APPLY) fs.writeFileSync(file, after);
 }
-console.log(`${CHECK ? 'kontrol' : 'uygulandı'} · ${dirs.length} stil · ${changed} style.md değişti`);
-if (CHECK && changed) console.log('uygulamak için: node kit/migrations/v6-shots.mjs --apply');
+console.log(`${CHECK ? 'check' : 'implemented'} · ${dirs.length} styles · ${changed} style.md changed`);
+if (CHECK && changed) console.log('to apply: node kit/migrations/v6-shots.mjs --apply');

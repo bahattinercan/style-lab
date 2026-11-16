@@ -1,22 +1,21 @@
 /**
- * kit/render/cdp-browser.mjs — tek tarayıcı, çok sekme, çok kare (CDP, bağımlılıksız).
+ * kit/render/cdp-browser.mjs — single browser, multi-tab, multi-frame (CDP, dependency-free).
  *
- * Neden: eski yol her kare için `chrome --screenshot` başlatıyordu (kare başına yeni profil
- * + tarayıcı açılışı). Ölçüm (16 kare): eski yol 8.2 s @4 paralel; tek sekmeli CDP 18.6 s
- * (seri). Bu dosya sekmeleri paralel çalıştırır: N sekme ≈ N× yakalama, tek tarayıcı süreci.
- * Ayrıca PNG'ye ek olarak **WebP** yakalanabilir (thumbnail: 126 KB → 31 KB, ~4×).
+ * Cause: old way was initializing `chrome --screenshot` per frame (new profile per frame
+ * + browser opening). Measurement (16 frames): old way 8.2 s @4 parallel; single-hop CDP 18.6 s
+ * (series). This file runs tabs in parallel: N tabs ≈ N× capture, single browser process.
+ * **WebP** can also be captured in addition to PNG (thumbnail: 126 KB → 31 KB, ~4×).
  *
- * Determinizm: `--virtual-time-budget` yerine animasyonları dondurma. Sayfa yüklendikten
- * sonra `document.getAnimations()` üzerinden tüm animasyon/geçişler `freezeAtMs`'e konup
- * duraklatılır → sonsuz animasyonlu sahneler (skeleton shimmer, marquee, fluid drift) her
- * koşuda aynı kareyi verir.
+ * Determinism: Freeze animations instead of `--virtual-time-budget`. After the page loads
+ * then all animations/transitions are put into `freezeAtMs` via `document.getAnimations()`
+ * paused → endless animated scenes (skeleton shimmer, marquee, fluid drift) every
+ * gives the same frame in the run.
  *
  * API:
- *   const b = await launch({ tabs: 4 });
- *   const png  = await b.capture(filePath, { width, height });
- *   const webp = await b.capture(filePath, { width, height, format: 'webp', quality: 88 });
- *   await b.close();
- */
+ * const b = await launch({ tabs: 4 });
+ * const png = await b.capture(filePath, { width, height });
+ * const webp = await b.capture(filePath, { width, height, format: 'webp', quality: 88 });
+ * await b.close();*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawn, spawnSync } from 'node:child_process';
@@ -37,10 +36,10 @@ const CANDIDATES = [
 
 export function findBrowser() {
   for (const p of CANDIDATES) if (fs.existsSync(p)) return p;
-  throw new Error('Chromium tabanlı tarayıcı bulunamadı; BROWSER=/yol/tarayici ver');
+  throw new Error('Chromium-based browser not found; Give BROWSER=/path/browser');
 }
 
-/** TEMP'te 1 saatten eski `cdp-*` profillerini arka planda siler (beklemeden). */
+/** In TEMP, deletes `cdp-*` profiles older than 1 hour in the background (without waiting).*/
 function sweepOldProfiles() {
   const temp = process.env.TEMP ?? '/tmp';
   let entries = [];
@@ -55,7 +54,7 @@ function sweepOldProfiles() {
     try {
       if (fs.statSync(dir).mtimeMs < cutoff) setImmediate(() => rmQuiet(dir));
     } catch {
-      /* yarış: dizin bu arada silinmiş olabilir */
+      /*race: directory may have been deleted in the meantime*/
     }
   }
 }
@@ -64,11 +63,11 @@ function rmQuiet(target) {
   try {
     fs.rmSync(target, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
   } catch {
-    /* profil silinemezse zararsız */
+    /*harmless if the profile cannot be deleted*/
   }
 }
 
-/** Tek sekme: CDP oturumu + istek/eşleme tabloları. */
+/** Single tab: CDP session + request/mapping tables.*/
 function makeTab(wsUrl, timeoutMs) {
   const ws = new WebSocket(wsUrl);
   const tab = { ws, timeoutMs, pending: new Map(), waiters: new Map(), nextId: 0 };
@@ -79,7 +78,7 @@ function makeTab(wsUrl, timeoutMs) {
       tab.pending.set(id, { resolve, reject });
       ws.send(JSON.stringify({ id, method, params }));
       setTimeout(() => {
-        if (tab.pending.delete(id)) reject(new Error(`CDP zaman aşımı: ${method}`));
+        if (tab.pending.delete(id)) reject(new Error(`CDP timeout: ${method}`));
       }, timeoutMs);
     });
 
@@ -113,9 +112,9 @@ function makeTab(wsUrl, timeoutMs) {
 
 export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs = 4, keepProfile = true } = {}) {
   const browser = browserPath ?? findBrowser();
-  // Profil HER KOŞUDA YENİ + TEMP'te: repo içinde oluşturmak Windows Defender taramasıyla
-  // ~30 s'ye çıkıyor; profili yeniden kullanmak da önceki Chrome kapanırken kilit sorunu
-  // yaratıyor. Silme pahalı olduğu için varsayılan: bırak (eski profiller arka planda süpürülür).
+  // Profile NEW IN EVERY RUN + TEMP: building in repo With Windows Defender scanning
+  // increases to ~30 s; Reusing the profile also solves the previous Chrome lock issue when closing.
+  // creates. Since deletion is expensive, default: leave (old profiles are swept into the background).
   const profile = profileDir ?? path.join(process.env.TEMP ?? '/tmp', `cdp-${process.pid}-${Date.now()}`);
   sweepOldProfiles();
   fs.mkdirSync(profile, { recursive: true });
@@ -131,7 +130,7 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
       '--no-default-browser-check',
       '--disable-extensions',
       '--disable-sync',
-      // arka plan sekmeleri: büyük fotoğraflı sayfalarda capture'ın askıda kalmaması için
+      // background tabs: to prevent capture from hanging on large photo pages
       '--disable-backgrounding-occluded-windows',
       '--disable-renderer-backgrounding',
       '--disable-background-timer-throttling',
@@ -144,13 +143,13 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
     { stdio: 'ignore', windowsHide: true },
   );
 
-  // Port: <profile>/DevToolsActivePort ilk satır
+  // Port: <profile>/DevToolsActivePort first line
   const portFile = path.join(profile, 'DevToolsActivePort');
   const deadline = Date.now() + timeoutMs;
   let port = null;
   while (Date.now() < deadline) {
     if (fs.existsSync(portFile)) {
-      // Chrome dosyayı yazarken okuma EBUSY/EPERM verebilir: kısa süre yeniden dene
+      // Chrome may give read EBUSY/EPERM while writing file: try again shortly
       let first = '';
       try {
         first = fs.readFileSync(portFile, 'utf8').split(String.fromCharCode(10))[0].trim();
@@ -168,10 +167,10 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
   }
   if (!port) {
     proc.kill();
-    throw new Error('CDP portu açılmadı (DevToolsActivePort yok)');
+    throw new Error('CDP port not opened (no DevToolsActivePort)');
   }
 
-  /** Sekme websocket adresleri: ilki mevcut about:blank, kalanı /json/new ile. */
+  /** Tab websocket addresses: the first one is available with about:blank, the rest with /json/new.*/
   async function targetUrls(count) {
     const urls = [];
     for (let i = 0; i < count; i += 1) {
@@ -187,11 +186,11 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
             if (res.ok) ws = (await res.json()).webSocketDebuggerUrl ?? null;
           }
         } catch {
-          /* tarayıcı hazır değil */
+          /*browser not ready*/
         }
         if (!ws) await sleep(50);
       }
-      if (!ws) throw new Error(`CDP sekmesi ${i} açılamadı`);
+      if (!ws) throw new Error(`could not open CDP tab ${i}`);
       urls.push(ws);
     }
     return urls;
@@ -210,7 +209,7 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
   const fileUrl = (p) => 'file:///' + path.resolve(p).replace(/\\/g, '/');
   let closed = false;
 
-  /** Sayfayı yükler, fontları bekler; freeze ise animasyonları sabit ana kareye dondurur. */
+  /** Loads the page, waits for fonts; freeze freezes animations to a fixed keyframe.*/
   async function prepare(tab, target, opts = {}) {
     const { width = 1280, height = 900, freezeAtMs = 4000, query = '', reducedMotion = null, freeze = true } = opts;
     await tab.send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false, screenWidth: width, screenHeight: height });
@@ -230,13 +229,12 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
     return tab;
   }
 
-  /** Görüntü yakalar (PNG/WebP). Boş/yarım kare (paint yarışı) 3 kez yeniden denenir. */
+  /** Captures images (PNG/WebP). Empty/half frame (paint race) is retried 3 times.*/
   /**
-   * Yakalama öncesi viewport doğrulaması: sekme havuzunda bir sekme başka bir kareye
-   * (ör. dar mobil görünüm) ayarlanmışsa sayfa yanlış genişlikte düzenlenir ve
-   * ekran görüntüsü boş/tek sütun çıkar. Bu yüzden metrikler yeniden uygulanır ve
-   * innerWidth/innerHeight eşleşene kadar beklenir.
-   */
+   * Pre-capture viewport validation: one tab in the tab pool to another frame
+   * (e.g. narrow mobile view) is set, the page will be rendered at the wrong width and
+   * screenshot appears empty/single column. So the metrics are reapplied and
+   * Waits until innerWidth/innerHeight matches.*/
   async function ensureViewport(tab, width, height) {
     for (let i = 0; i < 4; i += 1) {
       const r = await tab
@@ -264,7 +262,7 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
     return false;
   }
 
-  /** PNG IHDR: 16..20 genişlik, 20..24 yükseklik. Format png değilse null. */
+  /** PNG IHDR: 16..20 width, 20..24 height. If the format is not png, null.*/
   function pngSize(buf) {
     if (!buf || buf.length < 24 || buf[0] !== 0x89 || buf[1] !== 0x50) return null;
     return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
@@ -276,13 +274,13 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
     const height = opts.height ?? 900;
     const area = width * height;
     const auto = format === 'png' ? (area > 300_000 ? 12_000 : 4_000) : 2_500;
-    // CDP_MIN_BYTES: test/kıyas için eşiği geçersiz kılar (yeniden deneme yolunu kanıtlamak için)
+    // CDP_MIN_BYTES: overrides the threshold for testing/benchmarking (to prove the retry path)
     const minBytes = Number(process.env.CDP_MIN_BYTES) || auto;
     let last = null;
     for (let attempt = 1; attempt <= 3; attempt += 1) {
       await prepare(tab, target, opts);
       const okViewport = await ensureViewport(tab, width, height);
-      // fotoğraflı sayfalarda arka sekme compositing'i askıya alabiliyor: yakalamadan önce öne al
+      // Can suspend back tab compositing on photo pages: bring to front before capturing
       await tab.send('Page.bringToFront').catch(() => {});
       const shot = await tab.send('Page.captureScreenshot', {
         format,
@@ -294,18 +292,18 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
       const size = pngSize(last);
       const sizeOk = !size || (size.width === width && size.height >= height - 2);
       if (!okViewport || !sizeOk) {
-        process.emitWarning(`viewport uyuşmadı: ${path.basename(String(target))} — yeniden deneniyor`);
+        process.emitWarning(`viewport mismatch: ${path.basename(String(target))} — retrying`);
         await sleep(120);
         continue;
       }
       if (last.length >= minBytes) return last;
       await sleep(150);
     }
-    process.emitWarning(`boş kare: ${path.basename(String(target))} (${last?.length ?? 0} B) — 3 deneme`);
+    process.emitWarning(`blank frame: ${path.basename(String(target))} (${last?.length ?? 0} B) — 3 attempts`);
     return last;
   }
 
-  /** Yükle → ifadeyi çalıştır (animasyon anını ayarla) → aynı sayfada yakala. */
+  /** Load → run expression (set animation moment) → capture on the same page.*/
   async function captureEval(tab, target, opts = {}) {
     const { expression, format = 'png', quality = 88 } = opts;
     await prepare(tab, target, { ...opts, freeze: false });
@@ -313,15 +311,15 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
     const shot = await tab.send('Page.captureScreenshot', { format, ...(format === 'png' ? {} : { quality }), captureBeyondViewport: false, fromSurface: true });
     return Buffer.from(shot.data, 'base64');
   }
-  /** İfade değerlendirir (dondurma yok — çalışma zamanı ölçümü). */
+  /** Expression evaluates (no freeze — runtime measurement).*/
   async function evaluateOn(tab, target, opts = {}) {
     const { expression, awaitPromise = true } = opts;
     await prepare(tab, target, { ...opts, freeze: opts.freeze === true });
     const res = await tab.send('Runtime.evaluate', { expression, awaitPromise, returnByValue: true });
-    if (res?.exceptionDetails) throw new Error(res.exceptionDetails.text ?? 'değerlendirme hatası');
+    if (res?.exceptionDetails) throw new Error(res.exceptionDetails.text ?? 'evaluation error');
     return res?.result?.value;
   }
-  /** Boş sekme al (yoksa bekle), yakala, iade et. */
+  /** Get empty tab (or wait), capture, return.*/
   async function capture(target, opts = {}) {
     const tab = free.length ? free.pop() : await new Promise((resolve) => waiting.push(resolve));
     try {
@@ -362,19 +360,19 @@ export async function launch({ profileDir, browserPath, timeoutMs = 30_000, tabs
       try {
         tab.ws.close();
       } catch {
-        /* zaten kapalı */
+        /*already closed*/
       }
     }
-    // Windows'ta proc.kill() yalnız ana süreci öldürür; alt süreçler (renderer/GPU) kalır ve
-    // profili kilitleyip sonraki turu 30 s askıda bırakır. Süreç AĞACINI öldür (yalnız kendi PID'imiz).
+    // On Windows, proc.kill() kills only the main process; child processes (renderer/GPU) remain and
+    // locks the profile and suspends the next round for 30 s. Kill the process TREE (our own PID only).
     if (process.platform === 'win32') {
       spawnSync('taskkill', ['/PID', String(proc.pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true });
     } else {
       proc.kill();
     }
     await sleep(100);
-    // Profil varsayılan olarak KORUNUR: Windows'ta Chrome profil silme ~30 s sürebiliyor.
-    // Temizlik için: `--clean-profile` (ya da KEEP_CDP_PROFILE=0).
+    // Profile is PROTECTED by default: Deleting a Chrome profile on Windows can take ~30 s.
+    // For cleaning: `--clean-profile` (or KEEP_CDP_PROFILE=0).
     if (!keepProfile || process.env.KEEP_CDP_PROFILE === '0') rmQuiet(profile);
   }
 

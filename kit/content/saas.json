@@ -1,21 +1,21 @@
 {
-  "label": "SaaS / araç",
+  "label": "SaaS / tool",
   "tags": [
-    "yazılım",
-    "ekip",
-    "verimlilik"
+    "software",
+    "team",
+    "efficiency"
   ],
   "hero": {
-    "eyebrow": "2.4 · yeni sürüm",
-    "h1": "Ürün ekibin için sakin bir çalışma alanı",
-    "lede": "Dağınık araçları tek yerde topla; planla, yaz ve teslim et — gürültü olmadan.",
-    "ctaPrimary": "Ücretsiz başla",
-    "ctaSecondary": "Demo izle →"
+    "eyebrow": "Version 2.4",
+    "h1": "A quiet workspace for product teams",
+    "lede": "Plan, write and ship in one place, without the noise.",
+    "ctaPrimary": "Start free",
+    "ctaSecondary": "Watch the demo →"
   },
   "proofs": [
-    "14 gün ücretsiz",
-    "Kart gerekmez",
-    "SSO dahil"
+    "14 days free",
+    "No card",
+    "SSO included"
   ],
   "logos": [
     "Lumen",
@@ -27,20 +27,20 @@
   "tiles": [
     {
       "num": "01",
-      "cap": "Sprint planı"
+      "cap": "Sprint plan"
     },
     {
       "num": "02",
-      "cap": "Tasarım incelemesi"
+      "cap": "Design review"
     },
     {
       "num": "03",
-      "cap": "Sürüm notları"
+      "cap": "Release notes"
     },
     {
       "num": "04",
-      "cap": "Ekip alanı"
+      "cap": "Team space"
     }
   ],
-  "logoLabel": "Güvenen ekipler"
+  "logoLabel": "Trusting teams"
 }

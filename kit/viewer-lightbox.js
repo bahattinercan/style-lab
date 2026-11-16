@@ -1,6 +1,6 @@
 /* ============================================================
-   viewer-lightbox.js — bölüm / akış görüntüleyicileri için büyütme katmanı
-   `figure img` tıklanınca açılır: ← → gezin, tık 1:1 zoom, Esc kapat.
+   viewer-lightbox.js — zoom layer for the sections / flows viewers
+   Opens on `figure img` click: navigate with ← →, click for 1:1 zoom, Esc to close.
    Kendi stilini enjekte eder; sayfalara CSS eklemek gerekmez.
    ============================================================ */
 (() => {
@@ -54,17 +54,17 @@
   box.hidden = true;
   box.setAttribute('role', 'dialog');
   box.setAttribute('aria-modal', 'true');
-  box.setAttribute('aria-label', 'Görsel inceleme');
+  box.setAttribute('aria-label', 'Image inspection');
   box.innerHTML =
     '<div class="vlb-bar">' +
     '<span class="vlb-title"></span>' +
     '<span class="vlb-sub"></span>' +
     '<span class="spacer"></span>' +
-    '<button class="vlb-btn" type="button" data-act="zoom" aria-pressed="false" title="1:1 boyut (z)">1:1</button>' +
-    '<a class="vlb-btn" data-act="open" href="#" target="_blank" rel="noopener" title="Yeni sekmede aç">↗ aç</a>' +
+    '<button class="vlb-btn" type="button" data-act="zoom" aria-pressed="false" title="1:1 size (z)">1:1</button>' +
+    '<a class="vlb-btn" data-act="open" href="#" target="_blank" rel="noopener" title="Open in a new tab">↗ open</a>' +
     '<button class="vlb-btn" type="button" data-act="close" title="Kapat (Esc)">× kapat</button>' +
     '</div>' +
-    '<button class="vlb-nav prev" type="button" data-act="prev" aria-label="Önceki">‹</button>' +
+    '<button class="vlb-nav prev" type="button" data-act="prev" aria-label="Previous">‹</button>' +
     '<button class="vlb-nav next" type="button" data-act="next" aria-label="Sonraki">›</button>' +
     '<div class="vlb-stage"><img alt=""><p class="vlb-msg" hidden></p></div>';
   document.body.appendChild(box);
@@ -90,7 +90,7 @@
       return {
         src: img.getAttribute('src'),
         alt: img.getAttribute('alt') ?? '',
-        title: cap?.querySelector('b')?.textContent?.trim() ?? img.getAttribute('alt') ?? 'Görsel',
+        title: cap?.querySelector('b')?.textContent?.trim() ?? img.getAttribute('alt') ?? 'Image',
         sub: cap?.querySelector('span')?.textContent?.trim() ?? '',
       };
     });
@@ -109,7 +109,7 @@
     titleEl.textContent = it.title;
     subEl.textContent = (it.sub ? it.sub + ' · ' : '') + (index + 1) + '/' + items.length;
     openLink.href = it.src;
-    // komşuları önden yükle (gezinme beklemesin)
+    // preload the neighbours so navigation never waits
     for (const d of [1, -1]) {
       const n = items[(index + d + items.length) % items.length];
       if (n) new Image().src = n.src;
@@ -119,7 +119,7 @@
   function setZoom(on) {
     box.classList.toggle('is-zoom', on);
     zoomBtn.setAttribute('aria-pressed', String(on));
-    zoomBtn.textContent = on ? 'sığdır' : '1:1';
+    zoomBtn.textContent = on ? 'fit' : '1:1';
     if (on) {
       const center = () => {
         const stage = box.querySelector('.vlb-stage');
@@ -157,10 +157,10 @@
   imgEl.addEventListener('error', () => {
     imgEl.hidden = true;
     msgEl.hidden = false;
-    msgEl.textContent = 'Görsel yüklenemedi: ' + items[index]?.src;
+    msgEl.textContent = 'Image failed to load: ' + items[index]?.src;
   });
 
-  // tıklama: kart görseli → lightbox; sahne → zoom geçişi
+  // clicks: card image → lightbox; scene → zoom toggle
   document.addEventListener('click', (e) => {
     if (box.contains(e.target)) return;
     const img = e.target.closest('figure img');
@@ -181,8 +181,8 @@
     if (e.target === box) close();
   });
 
-  // capture fazında dinle: lightbox açıkken görüntüleyici kısayolları (viewer-nav) susar.
-  // Not: stopImmediatePropagation kullanmak kendi bubble dinleyicisini de öldürürdü.
+  // listen in the capture phase: viewer shortcuts (viewer-nav) stay silent while the lightbox is open.
+  // Note: stopImmediatePropagation would also kill this element's own bubble listener.
   document.addEventListener('keydown', (e) => {
     if (box.hidden) return;
     const inField = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable;

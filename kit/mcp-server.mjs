@@ -1,23 +1,22 @@
 #!/usr/bin/env node
 /**
- * kit/mcp-server.mjs — style-lab'ı ajanlara MCP aracı olarak açar (P5).
+ * kit/mcp-server.mjs — Opens style-lab to agents as an MCP tool (P5).
  *
- * Neden: Refero "Design Research for the AI Era" diye MCP sunuyor; katalog da ajan-first
- * tasarlandı ama ajan 145 dosyayı gezmeden karar veremiyordu. Bu sunucu stdio üzerinden
- * JSON-RPC 2.0 konuşur (bağımlılık yok) ve şu araçları verir:
+ * Why: Refero offers MCP as "Design Research for the AI Era"; catalog also agent-first
+ * was designed, but the agent could not make a decision without browsing through 145 files. This server is via stdio
+ * Speaks JSON-RPC 2.0 (no dependencies) and gives these tools:
  *
- *   pick(intent, limit?, family?)     → niyet cümlesinden aday slug'lar (kit/pick.mjs)
- *   style(slug)                       → style.md (kısa) + layout/imagery/industries özeti
- *   tokens(slug)                      → tokens.json (tam)
- *   shots(slug, scene?)               → repodaki çekirdek sahne yolları + eksikse render komutu
- *   brief(intent, industry?)          → hedefe hazır brief markdown (kit/brief.mjs)
- *   render(slug, scene, force?)       → sahneyi üretir ve dosya yolunu döndürür (P5b)
+ * pick(intent, limit?, family?) → candidate slugs from intent clause (kit/pick.mjs)
+ * style(slug) → style.md (short) + layout/imagery/industries summary
+ * tokens(slug) → tokens.json (full)
+ * shots(slug, scene?) → core scene paths in the repo + render command if missing
+ * brief(intent, industry?) → target ready brief markdown (kit/brief.mjs)
+ * render(slug, scene, force?) → renders the scene and returns the file path (P5b)
  *
- * Kullanım:
- *   node kit/mcp-server.mjs                 # stdio MCP sunucusu
- *   node kit/mcp-server.mjs --self-test     # initialize + tools/list + pick çağrısı (kapı)
- *   node kit/mcp-server.mjs --list          # araç listesini yazdır (insan okuması)
- */
+ * Usage:
+ * node kit/mcp-server.mjs # stdio MCP server
+ * node kit/mcp-server.mjs --self-test # initialize + tools/list + pick call (port)
+ * node kit/mcp-server.mjs --list # print toollist (human readable)*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -30,7 +29,7 @@ const CORE = JSON.parse(fs.readFileSync(path.join(ROOT, 'kit', 'shots.core.json'
 
 const dirOf = (slug) => {
   const d = fs.readdirSync(STYLES).find((x) => x.replace(/^\d+-/, '') === slug);
-  if (!d) throw new Error(`bilinmeyen stil: ${slug}`);
+  if (!d) throw new Error(`unknown style: ${slug}`);
   return d;
 };
 const readTokens = (slug) => JSON.parse(fs.readFileSync(path.join(STYLES, dirOf(slug), 'tokens.json'), 'utf8'));
@@ -45,7 +44,7 @@ function packOf(slug) {
 const TOOLS = [
   {
     name: 'pick',
-    description: 'Niyet cümlesinden stil adayı çıkarır (deterministik sözlüksel puanlama). Örn: "premium emlak, sakin".',
+    description: 'Returns style candidates for an intent sentence (deterministic lexical scoring). Example: "premium real estate, calm".',
     inputSchema: {
       type: 'object',
       properties: {
@@ -58,17 +57,17 @@ const TOOLS = [
   },
   {
     name: 'style',
-    description: 'Bir stilin özeti: layout (hero/nav), görsel photo/treatment, sektör, ilk 1200 karakter style.md.',
+    description: 'Summary of a style: layout (hero/nav), visual photo/treatment, sector, first 1200 characters style.md.',
     inputSchema: { type: 'object', properties: { slug: { type: 'string' } }, required: ['slug'] },
   },
   {
     name: 'tokens',
-    description: 'Stilin tam tokens.json içeriği (palet, tipografi, layout, imagery, industries).',
+    description: 'The full tokens.json content of the style (palette, typography, layout, imagery, industries).',
     inputSchema: { type: 'object', properties: { slug: { type: 'string' } }, required: ['slug'] },
   },
   {
     name: 'shots',
-    description: 'Stilin tek sayfa görselinin yolu (shots/01-page.png). Eksikse render komutu döner.',
+    description: "The path to the style's single page image (shots/01-page.png). If it is missing, the render command is returned.",
     inputSchema: {
       type: 'object',
       properties: { slug: { type: 'string' }, scene: { type: 'string' } },
@@ -78,12 +77,12 @@ const TOOLS = [
 
   {
     name: 'render',
-    description: 'Tek sayfa görselini üretir ve yolunu döndürür (1280×2400).',
+    description: 'Generates the single page image and returns its path (1280×2400).',
     inputSchema: {
       type: 'object',
       properties: {
         slug: { type: 'string' },
-        scene: { type: 'string', description: 'sahne anahtarı (v6: yalnız landing)' },
+        scene: { type: 'string', description: 'scene switch (v6: landing only)' },
         force: { type: 'boolean' },
       },
       required: ['slug', 'scene'],
@@ -91,7 +90,7 @@ const TOOLS = [
   },
   {
     name: 'brief',
-    description: 'Niyetten uygulanabilir brief markdown üretir (stil + sektör + layout + koreografi + görsel + dosya yolları).',
+    description: 'Generates actionable brief markdown from intent (style + sector + layout + choreography + visual + file paths).',
     inputSchema: {
       type: 'object',
       properties: { intent: { type: 'string' }, industry: { type: 'string' } },
@@ -153,7 +152,7 @@ function callBrief({ intent, industry }) {
 
 const lastLine = (s) => s.trim().split(String.fromCharCode(10)).slice(-1)[0] ?? '';
 
-/** cacheOnly: kareyi kit/.shots-cache altına yazar — commit edilmiş PNG'ye dokunmaz. */
+/** cacheOnly: writes the frame under kit/.shots-cache — leaving the committed PNG untouched.*/
 function callRender({ slug, scene, force, cacheOnly = false }) {
   const dir = dirOf(slug);
   const args = [path.join(ROOT, 'kit', 'render', 'render-shots.mjs'), '--styles', slug, '--scenes', String(scene)];
@@ -161,13 +160,13 @@ function callRender({ slug, scene, force, cacheOnly = false }) {
   if (cacheOnly) args.push('--cache-only');
   const out = execFileSync(process.execPath, args, { encoding: 'utf8' });
   const sceneFile = MANIFEST_SCENES()[scene];
-  if (!sceneFile) throw new Error(`bilinmeyen sahne: ${scene}`);
+  if (!sceneFile) throw new Error(`unknown scene: ${scene}`);
   const core = CORE.includes(sceneFile);
   const p = core && !cacheOnly ? path.join(STYLES, dir, 'shots', sceneFile) : path.join(CACHE, dir, sceneFile);
   return { slug, scene, path: path.relative(ROOT, p), exists: fs.existsSync(p), log: lastLine(out) };
 }
 
-/** kit/render/render-shots.mjs SCENES listesini tek kaynaktan okur. */
+/** kit/render/render-shots.mjs Reads the SCENES list from a single source.*/
 let SCENE_MAP = null;
 function MANIFEST_SCENES() {
   if (SCENE_MAP) return SCENE_MAP;
@@ -192,7 +191,7 @@ function dispatch(name, args = {}) {
     case 'render':
       return callRender(args);
     default:
-      throw new Error(`bilinmeyen araç: ${name}`);
+      throw new Error(`unknown tool: ${name}`);
   }
 }
 
@@ -224,7 +223,7 @@ function handle(msg) {
       return send({ jsonrpc: '2.0', id, result: { content: [{ type: 'text', text: JSON.stringify(out, null, 2) }] } });
     }
     if (method === 'ping') return send({ jsonrpc: '2.0', id, result: {} });
-    send({ jsonrpc: '2.0', id, error: { code: -32601, message: `bilinmeyen method: ${method}` } });
+    send({ jsonrpc: '2.0', id, error: { code: -32601, message: `unknown method: ${method}` } });
   } catch (err) {
     send({ jsonrpc: '2.0', id, error: { code: -32603, message: String(err.message ?? err) } });
   }
@@ -250,10 +249,10 @@ if (ARGV.includes('--self-test')) {
   const shots = callShots({ slug: sample });
   checks.push(['shots', shots.shots.length === CORE.length]);
   const brief = callBrief({ intent: 'premium emlak' });
-  checks.push(['brief', brief.markdown.includes('## Seçim') && brief.markdown.length > 400]);
-  // cacheOnly: self-test commit edilmiş styles/*/shots/*.png dosyasını yeniden yazmamalı.
-  // Aksi halde headless rasterlaşma farkı (ör. Linux CI) baytları değiştirir, WebP türev
-  // manifest'i bayatlar ve kapı kendi kendini kırar.
+  checks.push(['brief', brief.markdown.includes('## Selection') && brief.markdown.length > 400]);
+  // cacheOnly: self-test should not rewrite the committed styles/*/shots/*.png file.
+  // Otherwise headless rasterization difference (e.g. Linux CI) changes bytes, WebP derivative
+  // The manifesto becomes stale and the door breaks itself.
   const rendered = callRender({ slug: sample, scene: 'landing', force: true, cacheOnly: true });
   checks.push(['render', rendered.exists === true]);
   let failed = 0;
@@ -261,11 +260,11 @@ if (ARGV.includes('--self-test')) {
     console.log(`${ok ? '✓' : '×'} ${name}`);
     if (!ok) failed += 1;
   }
-  console.log(failed ? `\n× mcp self-test: ${failed} başarısız` : '\n✓ mcp self-test: araçlar çalışıyor');
+  console.log(failed ? `\n× mcp self-test: ${failed} failed` : '\n✓ mcp self-test: tools working');
   process.exit(failed ? 1 : 0);
 }
 
-// stdio sunucu
+// stdio server
 process.stdin.setEncoding('utf8');
 let buffer = '';
 process.stdin.on('data', (chunk) => {
@@ -278,7 +277,7 @@ process.stdin.on('data', (chunk) => {
     try {
       handle(JSON.parse(line));
     } catch {
-      /* bozuk satır: MCP istemcisi yeniden dener */
+      /* broken line: the MCP client retries */
     }
   }
 });

@@ -1,35 +1,34 @@
 /**
- * kit/gallery.template.mjs — galeri HTML iskeleti ve kart markup'ı.
+ * kit/gallery.template.mjs — gallery HTML skeleton and card markup.
  *
- * Sorumluluk ayrımı:
- *   - bu dosya   : sunucu tarafı HTML üretimi (kart, araç çubuğu, filtre paneli, çekmece kabuğu)
- *   - gallery.js : tüm etkileşim (arama, filtre, sıralama, çekmece, kopyalama, URL state)
- *   - gallery.css: görünüm
+ * Separation of responsibilities:
+ * - this file : server side HTML generation (card, toolbar, filter panel, drawer shell)
+ * - gallery.js : all interaction (search, filter, sort, drawer, copy, URL state)
+ * - gallery.css: view
  *
- * Kart başına görsel sayısı 1'dir (önce 27 `<a class="shot">` gömülüyordu, HTML 687 KB'tı).
- * Kalan kareler `#style-data` JSON'undan çekmecede ve lightbox'ta üretilir.
- */
+ * Number of images per card is 1 (previously 27 `<a class="shot">` were embedded, HTML was 687 KB).
+ * The remaining frames are generated in drawer and lightbox from `#style-data` JSON.*/
 
 export const SHOT_LABELS = {
   '01': 'Landing',
   '02': 'Dashboard',
   '03': 'Mobil',
-  '04': 'Bileşenler',
+  '04': 'Components',
   '05': 'Do / Don’t',
 };
 
 const INDUSTRY_LABELS = {
   saas: 'SaaS',
   emlak: 'Emlak',
-  danismanlik: 'Danışmanlık',
-  egitim: 'Eğitim',
+  danismanlik: 'Consulting',
+  egitim: 'Education',
   eticaret: 'E-ticaret',
   dergi: 'Dergi',
   ajans: 'Ajans',
-  saglik: 'Sağlık',
+  saglik: 'health',
 };
 
-const TONE_LABELS = { sicak: 'Sıcak', soguk: 'Soğuk', yesil: 'Yeşil', notr: 'Nötr' };
+const TONE_LABELS = { sicak: 'hot', soguk: 'cold', yesil: 'Green', notr: 'neutral' };
 
 export function esc(value) {
   return String(value)
@@ -39,7 +38,7 @@ export function esc(value) {
     .replace(/"/g, '&quot;');
 }
 
-/** `## AI brief` altındaki ilk kod bloğu = ajana verilecek prompt. */
+/** First block of code under `## AI brief` = prompt to be given to the agent.*/
 export function briefOf(md) {
   const m = md.match(/^##\s+AI brief\s*$([\s\S]*?)(?=^##\s|(?![\s\S]))/m);
   if (!m) return '';
@@ -50,7 +49,7 @@ export function briefOf(md) {
 export const shotLabel = (file) =>
   SHOT_LABELS[file.slice(0, 2)] ?? file.replace(/\.[a-z]+$/i, '');
 
-/** Çekmece + lightbox + filtrelerin tek veri kaynağı. */
+/** Single data source of drawer + lightbox + filters.*/
 export function styleData(styles, ctx) {
   const { familyOf, hueBucket, KEYWORDS, DEMOS, DEFAULT_DEMO } = ctx;
   return styles.map((s) => {
@@ -74,10 +73,10 @@ export function styleData(styles, ctx) {
         accent,
       },
       meta: {
-        feel: s.meta?.['Hissiyat'] ?? '',
-        best: s.meta?.['En iyi'] ?? '',
-        avoid: s.meta?.['Kaçın'] ?? '',
-        difficulty: s.meta?.['Zorluk'] ?? '',
+        feel: s.meta?.['Feeling'] ?? '',
+        best: s.meta?.['Best for'] ?? '',
+        avoid: s.meta?.['Avoid'] ?? '',
+        difficulty: s.meta?.['Difficulty'] ?? '',
       },
       must: s.tokensJson?.must ?? [],
       mustNot: s.tokensJson?.mustNot ?? [],
@@ -103,7 +102,7 @@ function card(s) {
   const sub = [s.family, ...s.tags.slice(0, 2)].join(' · ');
   return `
       <article class="card" data-slug="${esc(s.slug)}" data-num="${esc(s.num)}" data-family="${esc(s.family)}" data-industry="${esc(s.industry)}" data-tone="${esc(s.tone)}" tabindex="-1">
-        <a class="cover" href="${rel}" aria-label="${esc(s.name)} — ${esc(label)} görselini büyüt">
+        <a class="cover" href="${rel}" aria-label="${esc(s.name)} — enlarge image ${esc(label)}">
           <img src="${rel}" alt="${esc(s.name)} — ${esc(label)}" loading="lazy" decoding="async">
           <span class="cover-l">${esc(label)}</span>
         </a>
@@ -115,10 +114,10 @@ function card(s) {
           <p class="card-sub">${esc(sub)}</p>
           <div class="card-a">
             <span class="sw-mini" aria-hidden="true">${swatchDots(s)}</span>
-            <button type="button" class="act" data-act="fav" aria-pressed="false" aria-label="Favorilere ekle: ${esc(s.name)}" title="Favori (s)">★</button>
-            <button type="button" class="act" data-act="copy" aria-label="data-style kopyala: ${esc(s.slug)}" title="data-style kopyala (c)">⧉</button>
-            <button type="button" class="act" data-act="cmp" aria-pressed="false" aria-label="Karşılaştırmaya ekle: ${esc(s.name)}" title="Karşılaştır (⇄)">⇄</button>
-            <button type="button" class="act" data-act="open" aria-label="Detayı aç: ${esc(s.name)}" title="Detay (Enter)">⊕</button>
+            <button type="button" class="act" data-act="fav" aria-pressed="false" aria-label="Add to favorites: ${esc(s.name)}" title="Favori (s)">★</button>
+            <button type="button" class="act" data-act="copy" aria-label="copy data-style: ${esc(s.slug)}" title="copy data-style (c)">⧉</button>
+            <button type="button" class="act" data-act="cmp" aria-pressed="false" aria-label="Add to comparison: ${esc(s.name)}" title="Compare (⇄)">⇄</button>
+            <button type="button" class="act" data-act="open" aria-label="Open detail: ${esc(s.name)}" title="Detay (Enter)">⊕</button>
           </div>
         </div>
       </article>`;
@@ -159,33 +158,33 @@ export function galleryHtml(styles, ctx) {
 
 
   return `<!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tasarım Stilleri · Görsel Katalog (${data.length})</title>
+<title>Design Styles · Visual Catalog (${data.length})</title>
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
   <header class="top">
     <div class="wrap top-in">
-      <h1>Tasarım Stilleri <span class="kicker">${data.length} stil</span></h1>
+      <h1>Design Styles<span class="kicker">${data.length} style</span></h1>
       <details class="top-help">
-        <summary>Nasıl kullanılır?</summary>
+        <summary>How to use?</summary>
         <div class="help-body">
-          <p>Uygulamaya almak için kök elemana stili yaz:</p>
+          <p>To implement it, write the style to the root element:</p>
           <p><code>&lt;html data-style="bento-grid"&gt;</code> + <code>kit/tokens.css</code></p>
           <ul>
-            <li>${data.length} stil · her stil için tek sayfa görseli (1280×2400)</li>
-            <li>Her kartın <b>⊕</b> düğmesi: token CSS, AI brief, tüm kareler</li>
-            <li><b>⧉</b> data-style'ı panoya kopyalar, <b>★</b> kısa listeye ekler</li>
-            <li>Arama kutusu numara da kabul eder: <code>152</code> tek stili, <code>152-171</code> aralığı süzer</li>
-            <li>Katalog sayfalanır: sayfa başına 60 kart, altta sayfa numaraları (URL: <code>?page=2</code>)</li>
+            <li>${data.length} style · single page image per style (1280×2400)</li>
+            <li>of each card<b>⊕</b>button: token CSS, AI brief, all frames</li>
+            <li><b>⧉</b>copies the data-style to the clipboard,<b>★</b>adds to shortlist</li>
+            <li>The search box number also accepts:<code>152</code>single style,<code>152-171</code>filters the range</li>
+            <li>The catalog is paginated: 60 cards per page, with page numbers at the bottom (URL:<code>?page=2</code>)</li>
           </ul>
           <p class="kbd-hint">
-            <kbd>/</kbd> ara · <kbd>f</kbd> filtre · <kbd>j</kbd><kbd>k</kbd> gez · <kbd>[</kbd><kbd>]</kbd> sayfa ·
-            <kbd>Enter</kbd> detay · <kbd>c</kbd> kopyala · <kbd>s</kbd> yıldız · <kbd>Esc</kbd> kapat
+            <kbd>/</kbd>search ·<kbd>f</kbd>filter ·<kbd>j</kbd><kbd>k</kbd> move · <kbd>[</kbd><kbd>]</kbd> page ·
+            <kbd>Enter</kbd> detay · <kbd>c</kbd>copy ·<kbd>s</kbd>star ·<kbd>Esc</kbd> kapat
           </p>
         </div>
       </details>
@@ -197,35 +196,35 @@ export function galleryHtml(styles, ctx) {
       <div class="bar-row">
         <div class="search">
           <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6"></circle><path d="M13.4 13.4 17 17"></path></svg>
-          <input id="q" type="search" placeholder="Stil, etiket veya numara (152 · 152-171) ara…" aria-label="Stil ara: isim, etiket, numara veya numara aralığı" autocomplete="off" spellcheck="false">
-          <button type="button" class="qclear" id="qclear" hidden aria-label="Aramayı temizle">×</button>
+          <input id="q" type="search" placeholder="Search for style, label or number (152 152-171)…" aria-label="Search for style: name, label, number or number range" autocomplete="off" spellcheck="false">
+          <button type="button" class="qclear" id="qclear" hidden aria-label="clear search">×</button>
           <kbd class="search-kbd" aria-hidden="true">/</kbd>
         </div>
         <button type="button" class="btn-f" id="fbtn" aria-expanded="false" aria-controls="fpanel">
           Filtre<span class="badge" id="fcount" hidden>0</span>
         </button>
         <div class="sortwrap">
-          <label for="sort">Sıra</label>
+          <label for="sort">sequence</label>
           <select id="sort">
             <option value="num">Numara</option>
-            <option value="name">İsim</option>
-            <option value="family">Aile</option>
+            <option value="name">name</option>
+            <option value="family">family</option>
           </select>
         </div>
-        <button type="button" class="btn-f ghost" id="favbtn" aria-pressed="false" title="Yalnız favoriler">★<span class="badge" id="favcount" hidden>0</span></button>
+        <button type="button" class="btn-f ghost" id="favbtn" aria-pressed="false" title="lonely favorites">★<span class="badge" id="favcount" hidden>0</span></button>
         <p class="count" id="count" role="status" aria-live="polite">${data.length} / ${data.length}</p>
       </div>
       <div class="activebar" id="active" hidden></div>
       <div class="fpanel" id="fpanel" hidden>
         <div class="fpanel-in">
           ${chipRow('fam', 'Aile', fams)}
-          ${chipRow('ind', 'Sektör', inds)}
+          ${chipRow('ind', 'Sector', inds)}
           ${chipRow('tone', 'Ton', tones)}
           <div class="fpanel-f">
-            <span id="fsum">Filtre yok</span>
-            <span class="fhint">Numara: arama kutusuna <b>152</b> veya <b>152-171</b> yaz</span>
+            <span id="fsum">no filter</span>
+            <span class="fhint">Number: in the search box<b>152</b>or<b>152-171</b> yaz</span>
             <button type="button" class="linkbtn" id="fclear">Filtreleri temizle</button>
-            <button type="button" class="linkbtn" id="fclose">Kapat</button>
+            <button type="button" class="linkbtn" id="fclose">Close</button>
           </div>
         </div>
       </div>
@@ -235,42 +234,42 @@ export function galleryHtml(styles, ctx) {
   <main class="wrap">
     <div class="grid" id="grid">${data.map(card).join('\n')}
     </div>
-    <nav class="pager" id="pager" aria-label="Sayfalama" hidden>
-      <button type="button" class="pbtn" id="pPrev" aria-label="Önceki sayfa">←</button>
+    <nav class="pager" id="pager" aria-label="Pagination" hidden>
+      <button type="button" class="pbtn" id="pPrev" aria-label="Previous page">←</button>
       <div class="pnums" id="pNums"></div>
-      <button type="button" class="pbtn" id="pNext" aria-label="Sonraki sayfa">→</button>
+      <button type="button" class="pbtn" id="pNext" aria-label="Next page">→</button>
       <span class="pinfo" id="pInfo" role="status" aria-live="polite"></span>
     </nav>
     <p class="empty" id="empty" hidden>
-      Eşleşen stil yok. <button type="button" class="linkbtn" id="emptyReset">Filtreleri temizle</button>
+      No matching style. <button type="button" class="linkbtn" id="emptyReset">Clear filters</button>
     </p>
   </main>
 
   <div class="cmpbar" id="cmpbar" hidden>
-    <span id="cmpcount">0 seçili</span>
-    <button type="button" id="cmpGo" class="cmpbtn" disabled>Karşılaştır</button>
+    <span id="cmpcount">0 selected</span>
+    <button type="button" id="cmpGo" class="cmpbtn" disabled>Compare</button>
     <button type="button" id="cmpClear" class="cmpbtn ghost">Temizle</button>
   </div>
 
   <div class="drawer" id="drawer" hidden>
-    <button type="button" class="drawer-scrim" data-close aria-label="Kapat"></button>
+    <button type="button" class="drawer-scrim" data-close aria-label="Close"></button>
     <aside class="drawer-p" role="dialog" aria-modal="true" aria-labelledby="dTitle" tabindex="-1">
       <div class="drawer-body" id="dBody"></div>
     </aside>
   </div>
 
-  <div class="cmpview" id="cmpview" hidden role="dialog" aria-modal="true" aria-label="Stil karşılaştırma">
+  <div class="cmpview" id="cmpview" hidden role="dialog" aria-modal="true" aria-label="Style comparison">
     <header>
-      <h2 id="cmpTitle">Karşılaştırma</h2>
-      <button type="button" id="cmpClose" class="lb-close" aria-label="Kapat">×</button>
+      <h2 id="cmpTitle">Comparison</h2>
+      <button type="button" id="cmpClose" class="lb-close" aria-label="Close">×</button>
     </header>
     <div class="cmpgrid" id="cmpGrid"></div>
-    <p class="cmpnote">Aynı sahne, farklı stiller. Sahne seçimi galerideki «Kapak» çubuğundan gelir; kartlarda ⇄ ile 2–4 stil seç.</p>
+    <p class="cmpnote">Same scene, different styles. Scene selection comes from the «Cover» bar in the gallery; Choose 2–4 styles with ⇄ on the cards.</p>
   </div>
 
-  <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Görsel önizleme">
-    <button type="button" class="lb-close" id="lbClose" aria-label="Kapat">×</button>
-    <button type="button" class="lb-nav prev" id="lbPrev" aria-label="Önceki">‹</button>
+  <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Visual preview">
+    <button type="button" class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <button type="button" class="lb-nav prev" id="lbPrev" aria-label="Previous">‹</button>
     <button type="button" class="lb-nav next" id="lbNext" aria-label="Sonraki">›</button>
     <img id="lbImg" alt="">
     <p class="lb-cap" id="lbCap"></p>

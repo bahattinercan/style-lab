@@ -1,4 +1,4 @@
-/* fixture: token sözleşmesine uyar — style-lint good */
+/* fixture: obeys the token contract — style-lint good */
 .panel {
   background: var(--surface);
   border: 1px solid var(--line);

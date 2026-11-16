@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 /**
- * kit/color.mjs — renk yardımcıları (tek kaynak).
+ * kit/color.mjs — color helpers (single source).
  *
- * Desteklenen biçimler: #rgb · #rrggbb · #rrggbbaa · rgb() · rgba() (virgül veya boşluk ayraçlı).
- * Kullanım: kit/export-tokens.mjs, kit/report.mjs, kit/check-contrast.mjs
- */
+ * Supported formats: #rgb · #rrggbb · #rrggbbaa · rgb() · rgba() (comma or space delimited).
+ * Usage: kit/export-tokens.mjs, kit/report.mjs, kit/check-contrast.mjs*/
 
 const toLinear = (v) => {
   const s = v / 255;
   return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
 };
 
-/** CSS renk değeri → { r, g, b, a } (r,g,b 0-255; a 0-1). Çözülemezse null. */
+/** CSS color value → { r, g, b, a } (r,g,b 0-255; a 0-1). Null if not resolved.*/
 export function parseColor(value) {
   if (!value) return null;
   const v = String(value).trim();
@@ -37,7 +36,7 @@ export function parseColor(value) {
   return null;
 }
 
-/** Yarı saydam ön planı zemine bindirir. */
+/** Superimposes the translucent foreground onto the ground.*/
 export const over = (fg, bg) => ({
   r: fg.r * fg.a + bg.r * (1 - fg.a),
   g: fg.g * fg.a + bg.g * (1 - fg.a),
@@ -45,10 +44,10 @@ export const over = (fg, bg) => ({
   a: 1,
 });
 
-/** Göreli parlaklık (WCAG 2.2). */
+/** Relative brightness (WCAG 2.2).*/
 export const luminance = (c) => 0.2126 * toLinear(c.r) + 0.7152 * toLinear(c.g) + 0.0722 * toLinear(c.b);
 
-/** İki CSS renk değeri arasında kontrast oranı; çözülemezse null. */
+/** Contrast ratio between two CSS color values; null if not resolved.*/
 export function contrastRatio(fgRaw, bgRaw) {
   const bg = parseColor(bgRaw);
   let fg = parseColor(fgRaw);
@@ -60,7 +59,7 @@ export function contrastRatio(fgRaw, bgRaw) {
   return (hi + 0.05) / (lo + 0.05);
 }
 
-/** Yarı saydam yüzeyin sayfa zemini üzerindeki hâline göre kontrast (cam stilleri için). */
+/** Contrast of the translucent surface against the page background (for glass styles).*/
 export function contrastOnSurface(fgRaw, surfaceRaw, pageRaw) {
   const surface = parseColor(surfaceRaw);
   const page = parseColor(pageRaw);
@@ -69,7 +68,7 @@ export function contrastOnSurface(fgRaw, surfaceRaw, pageRaw) {
   return contrastRatio(fgRaw, `rgb(${base.r} ${base.g} ${base.b})`);
 }
 
-/* ---------- APCA (WCAG 3 taslağı) ---------- */
+/*---------- APCA (draft WCAG 3) ----------*/
 
 const APCA = {
   mainTRC: 2.4,
@@ -90,7 +89,7 @@ const APCA = {
   loClip: 0.1,
 };
 
-/** APCA Y: algısal parlaklık (siyah eşiğinde yumuşatılmış). */
+/** APCA Y: perceptual brightness (aliased at black threshold).*/
 function apcaY(c) {
   const ch = (v) => Math.pow(v / 255, APCA.mainTRC);
   const y = APCA.Rco * ch(c.r) + APCA.Gco * ch(c.g) + APCA.Bco * ch(c.b);
@@ -98,11 +97,10 @@ function apcaY(c) {
 }
 
 /**
- * APCA kontrastı (Lc), APCA-W3 0.1.9 formülü.
- * İşaret polariteyi taşır: **pozitif = açık zemin üstünde koyu metin**, negatif = tersi.
- * Gövde metni için |Lc| ≥ 75, büyük/akıcı metin ≥ 60, ikincil metin ≥ 45 önerilir.
- * Çözülemezse null.
- */
+ * APCA contrast (Lc), formula APCA-W3 0.1.9.
+ * The sign conveys polarity: **positive = dark text on light background**, negative = reverse.
+ * |Lc| for body text ≥ 75, large/fluent text ≥ 60, secondary text ≥ 45 recommended.
+ * Null if not resolved.*/
 export function apcaContrast(textRaw, bgRaw) {
   const bg = parseColor(bgRaw);
   let text = parseColor(textRaw);

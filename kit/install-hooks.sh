@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# kit/install-hooks.sh — commit öncesi kapıları kurar (yerel, versiyonlanmaz).
+# kit/install-hooks.sh — installs ports before commit (native, not versioned).
 set -eu
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 HOOK="$ROOT/.git/hooks/pre-commit"

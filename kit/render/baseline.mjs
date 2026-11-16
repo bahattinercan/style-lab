@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 /**
- * kit/render/baseline.mjs — görsel regresyon baseline'ı yönetir.
+ * kit/render/baseline.mjs — handles the visual regression baseline.
  *
- * gates.sh, baseline varsa `styles/<slug>/shots/*.png` dosyalarını
- * `kit/render/.baseline/<slug>/*.png` ile piksel piksel karşılaştırır.
- * Baseline dizini repoya girmez (.gitignore) — bilinçli bir "kabul" adımıdır.
+ * gates.sh, `styles/<slug>/shots/*.png` files if there is a baseline
+ * Compares pixel by pixel with `kit/render/.baseline/<slug>/*.png`.
+ * Baseline directory does not go into the repo (.gitignore) — it is a deliberate "acceptance" step.
  *
- * Kullanım:
- *   node kit/render/baseline.mjs --write              # tüm stiller için baseline yaz
- *   node kit/render/baseline.mjs --write --styles utility,minimalism
- *   node kit/render/baseline.mjs --status             # kapsam raporu
- *   node kit/render/baseline.mjs --clean              # baseline'ı sil
- */
+ * Usage:
+ * node kit/render/baseline.mjs --write # write baseline for all styles
+ * node kit/render/baseline.mjs --write --styles utility,minimalism
+ * node kit/render/baseline.mjs --status # coverage report
+ * node kit/render/baseline.mjs --clean # delete baseline*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -59,9 +58,9 @@ function status() {
     based += shots.filter((f) => baseFiles.includes(f)).length;
     if (shots.length && baseFiles.length !== shots.length) missing.push(`${s.slug} (${baseFiles.length}/${shots.length})`);
   }
-  console.log(`baseline: ${based}/${total} görsel · ${list.length} stil · dizin: ${path.relative(ROOT, BASELINE)}`);
+  console.log(`baseline: ${based}/${total} images · ${list.length} styles · folder: ${path.relative(ROOT, BASELINE)}`);
   if (missing.length) {
-    console.log(`eksik/yarım baseline (${missing.length} stil):`);
+    console.log(`missing/incomplete baseline (${missing.length} styles):`);
     for (const m of missing.slice(0, 20)) console.log('  · ' + m);
     if (missing.length > 20) console.log(`  … +${missing.length - 20}`);
     console.log('  → node kit/render/baseline.mjs --write');
@@ -82,18 +81,18 @@ function write() {
       copied++;
     }
   }
-  console.log(`baseline yazıldı: ${copied} görsel · ${list.length} stil → ${path.relative(ROOT, BASELINE)}`);
-  console.log('not: baseline repoya girmez; kabul ettiğin görüntülerin kopyasıdır. Kapatmak için --clean.');
+  console.log(`baseline written: ${copied} images · ${list.length} styles → ${path.relative(ROOT, BASELINE)}`);
+  console.log('note: baseline does not enter repo; is a copy of the images you accept. --clean to close.');
   return 0;
 }
 
 function clean() {
   if (!fs.existsSync(BASELINE)) {
-    console.log('baseline yok, silinecek bir şey yok');
+    console.log('No baseline, nothing to erase');
     return 0;
   }
   fs.rmSync(BASELINE, { recursive: true, force: true });
-  console.log('baseline silindi — görsel regresyon kapısı atlanacak');
+  console.log('baseline deleted — visual regression gate will be skipped');
   return 0;
 }
 

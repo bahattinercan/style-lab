@@ -1,14 +1,14 @@
-/* PrimeNest prestij demo — stil ve tema denetimi.
-   Tek iş: <html data-style> ve <html data-theme> özniteliklerini değiştirmek.
-   Bileşen kodu değişmez; renk/tipografi/radius tamamen token'lardan gelir. */
+/*PrimeNest prestige demo — style and theme control.
+   One job: change the <html data-style> and <html data-theme> attributes.
+   Component code does not change; color/typography/radius comes entirely from tokens.*/
 
 const STYLES = {
-  'noir-estate': 'Noir Estate · sıcak siyah + altın, cam gezinme',
-  'agency-portfolio': 'Agency Portfolio · kâğıt + elektrik mavi, dev tipografi',
+  'noir-estate': 'Noir Estate · warm black + gold, glass navigation',
+  'agency-portfolio': 'Agency Portfolio · paper + electric blue, giant typography',
   'product-launch': 'Product Launch · lacivert + mint spotlight',
-  'boutique-hotel': 'Boutique Hotel · kum-koyu + terracotta, Playfair',
+  'boutique-hotel': 'Boutique Hotel · sand-and-coast + terracotta, Playfair',
   'lookbook-editorial': 'Lookbook Editorial · kemik + kiremit, Fraunces',
-  'dark-dashboard': 'Dark Dashboard · grafit + cyan, yoğun ızgara',
+  'dark-dashboard': 'Dark Dashboard · graphite + cyan, dense grid',
 };
 
 const root = document.documentElement;
@@ -19,7 +19,7 @@ const switcher = document.getElementById('switcher');
 const swToggle = document.getElementById('swToggle');
 const swPanel = document.getElementById('swPanel');
 
-/* Panel varsayılan kapalı: sayfanın üstünde sürekli durup içeriği örtmesin. */
+/*The panel is closed by default: it should not stay on top of the page and cover the content.*/
 let open = new URLSearchParams(location.search).get('panel') === '1';
 
 function paintPanel() {
@@ -33,7 +33,7 @@ swToggle.addEventListener('click', () => {
   paintPanel();
 });
 
-/** URL ile de açılabilir: prestij.html?style=boutique-hotel&theme=dark */
+/** Can also be opened with URL: prestij.html?style=boutique-hotel&theme=dark*/
 function fromUrl() {
   const params = new URLSearchParams(location.search);
   const style = params.get('style');
@@ -50,7 +50,7 @@ function paint() {
   }
   const dark = root.dataset.theme === 'dark';
   themeToggle.setAttribute('aria-pressed', String(dark));
-  themeToggle.textContent = dark ? 'Açık mod' : 'Koyu mod';
+  themeToggle.textContent = dark ? 'light mode' : 'dark mode';
   if (note) note.textContent = STYLES[slug] ?? '';
   const url = new URL(location.href);
   url.searchParams.set('style', slug);
@@ -73,7 +73,7 @@ themeToggle.addEventListener('click', () => {
   paint();
 });
 
-/* Favori düğmeleri: aria-pressed + dolu kalp. */
+/*Favorite buttons: aria-pressed + full heart.*/
 for (const fav of document.querySelectorAll('.card-fav')) {
   fav.addEventListener('click', () => {
     const on = fav.getAttribute('aria-pressed') !== 'true';
@@ -82,12 +82,12 @@ for (const fav of document.querySelectorAll('.card-fav')) {
   });
 }
 
-/* Arama formu demo: gerçek gönderim yok, sadece odak/geri bildirim. */
+/*Search form demo: no actual submission, just focus/feedback.*/
 document.querySelector('.search')?.addEventListener('submit', (event) => {
   event.preventDefault();
   const btn = event.currentTarget.querySelector('.search-go');
   const label = btn.textContent;
-  btn.textContent = 'Aranıyor…';
+  btn.textContent = 'Wanted…';
   btn.disabled = true;
   setTimeout(() => {
     btn.textContent = label;
@@ -99,7 +99,7 @@ fromUrl();
 paint();
 paintPanel();
 
-/* Esc paneli kapatır (klavye kullanıcısı için). */
+/*Esc closes the panel (for the keyboard user).*/
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && open) {
     open = false;

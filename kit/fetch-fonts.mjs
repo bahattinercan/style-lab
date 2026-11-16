@@ -1,19 +1,18 @@
 #!/usr/bin/env node
 /**
- * kit/fetch-fonts.mjs — katalogda kullanılan font ailelerinin TTF'lerini indirir.
+ * kit/fetch-fonts.mjs — downloads the TTFs of font families used in the catalog.
  *
- * Neden: Flutter `pubspec.yaml → flutter.fonts` altında **TTF/OTF** ister; repoda
- * yalnız web için woff2 var (kit/fonts). Bu script Google Fonts'tan (OFL lisanslı)
- * TTF indirir; sistem fontları (SF Pro, Segoe UI, Menlo…) atlanır ve raporlanır.
+ * Cause: Flutter requires **TTF/OTF** under `pubspec.yaml → flutter.fonts`; in repo
+ * there is only woff2 for web (kit/fonts). This script is from Google Fonts (OFL licensed)
+ * Downloads TTF; system fonts (SF Pro, Segoe UI, Menlo…) are skipped and reported.
  *
- * Google Fonts eski tarayıcı UA'sına TTF döndürür (modern UA woff2 döndürür).
+ * Google Fonts returns TTF to legacy browser UA (modern UA returns woff2).
  *
- * Kullanım:
- *   node kit/fetch-fonts.mjs --dry     # ne indirilecek (boyut tahmini yok, liste)
- *   node kit/fetch-fonts.mjs           # indir (var olanı atlar)
- *   node kit/fetch-fonts.mjs --check   # gerekli TTF'ler diskte mi
- *   node kit/fetch-fonts.mjs --force   # yeniden indir
- */
+ * Usage:
+ * node kit/fetch-fonts.mjs --dry # what to download (no size estimate, list)
+ * node kit/fetch-fonts.mjs # download (skips existing)
+ * node kit/fetch-fonts.mjs --check # are the required TTFs on disk
+ * node kit/fetch-fonts.mjs --force # re-download*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -29,7 +28,7 @@ const DRY = ARGV.includes('--dry');
 const CHECK = ARGV.includes('--check');
 const FORCE = ARGV.includes('--force');
 
-/** Google Fonts'ta olmayan / platforma özgü aileler: paketlenmez, fallback gerekir */
+/** Families not available in Google Fonts/platform specific: not bundled, fallback required*/
 const SYSTEM_FAMILIES = new Set([
   'Helvetica Neue',
   'SF Pro Display',
@@ -44,7 +43,7 @@ const SYSTEM_FAMILIES = new Set([
   'Outrun',
 ]);
 
-/** Google Fonts adı farklı olan aileler (varsa) */
+/** Families with different Google Fonts name (if any)*/
 const GF_NAME = {
   'Archivo Black': 'Archivo Black',
   'Baloo 2': 'Baloo 2',
@@ -95,7 +94,7 @@ async function fetchBuffer(url) {
   return Buffer.from(await res.arrayBuffer());
 }
 
-/** CSS2 → [{ weight, url }] (eski UA ile TTF URL'leri) */
+/** CSS2 → [{ weight, url }] (old UA vs TTF URLs)*/
 function parseFaces(css) {
   const faces = [];
   for (const block of css.split('@font-face').slice(1)) {
@@ -123,37 +122,37 @@ if (CHECK) {
   const problems = [];
   if (!fs.existsSync(INDEX)) {
     console.log('  ✗ INDEX.json yok');
-    console.log('  düzelt: node kit/fetch-fonts.mjs');
+    console.log('fix: node kit/fetch-fonts.mjs');
     process.exit(1);
   }
   const index = JSON.parse(fs.readFileSync(INDEX, 'utf8'));
   const indexed = new Set(Object.keys(index.families));
 
-  // 1) INDEX'te bildirilen her dosya diskte ve makul boyutta mı
+  // 1) Is every file reported in INDEX on disk and of reasonable size
   let fileCount = 0;
   for (const [fam, info] of Object.entries(index.families)) {
     for (const rel of Object.values(info.files)) {
       fileCount++;
       const abs = path.join(ROOT, rel);
-      if (!fs.existsSync(abs) || fs.statSync(abs).size < 10_000) problems.push(`${fam}: ${path.basename(rel)} yok/küçük`);
+      if (!fs.existsSync(abs) || fs.statSync(abs).size < 10_000) problems.push(`${fam}: ${path.basename(rel)} missing/too small`);
     }
   }
 
-  // 2) kapsam: katalogdaki her aile ya gömülü ya da bilinçli sistem fontu olmalı
+  // 2) scope: each family in the catalog must be either an embedded or conscious system font
   const uncovered = [...needed.keys()].filter((f) => !indexed.has(f) && !SYSTEM_FAMILIES.has(f));
-  for (const f of uncovered) problems.push(`${f}: ne gömülü ne sistem fontu (sessiz fallback)`);
+  for (const f of uncovered) problems.push(`${f}: neither embedded nor a system font (silent fallback)`);
 
   const missingWeights = Object.entries(index.families).filter(([, i]) => (i.missingWeights ?? []).length).length;
   console.log(
-    `font TTF · ${indexed.size} aile · ${fileCount} dosya · ${uncovered.length} kapsamsız · ${missingWeights} ailede eksik ağırlık (kabul: Google Fonts'ta yok)`,
+    `font TTF · ${indexed.size} families · ${fileCount} files · ${uncovered.length} uncovered · ${missingWeights} families with a missing weight (accepted: not on Google Fonts)`,
   );
   if (problems.length) {
     for (const p of problems.slice(0, 8)) console.log(`  ✗ ${p}`);
     if (problems.length > 8) console.log(`  … +${problems.length - 8}`);
-    console.log('  düzelt: node kit/fetch-fonts.mjs');
+    console.log('fix: node kit/fetch-fonts.mjs');
     process.exit(1);
   }
-  console.log('  sonuç: tamam');
+  console.log('result: ok');
   process.exit(0);
 }
 
@@ -168,7 +167,7 @@ for (const fam of bundled) {
   const weights = [...needed.get(fam)].sort((a, b) => a - b);
   const files = {};
 
-  // Ağırlık başına tek istek: bir ağırlık yoksa (ör. Anton yalnız 400) diğerleri kaybolmaz
+  // Single request per weight: if a weight is missing (e.g. Anton alone 400) the others will not be lost
   const missingWeights = [];
   for (const weight of weights) {
     const target = path.join(OUT_DIR, fileFor(fam, weight));

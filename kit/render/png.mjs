@@ -1,13 +1,12 @@
 /**
- * kit/render/png.mjs — bağımlılıksız PNG kırpma (headless pencere payı için)
+ * kit/render/png.mjs — dependency-free PNG clipping (for headless window share)
  *
- * Neden: msedge --headless=new, --window-size=W,H verildiğinde sayfayı (H - 92)
- * yüksekliğinde bir viewport'a yerleştirip PNG'yi H yüksekliğinde üretiyor.
- * Yani görüntünün altında 92px "pencere payı" kalıyor ve sayfa 900 yerine
- * 808px'e sığdırılıyor. Çözüm: pencereyi 92px daha yüksek iste, sonra kırp.
+ * Cause: When msedge --headless=new, --window-size=W,H is given the page (H - 92)
+ It places it in a viewport with height * and produces the PNG with height H.
+ * So there is 92px "window margin" below the image and instead of page 900
+ * Fits to 808px. Solution: make the window 92px higher, then crop it.
  *
- * Sadece 8-bit, girişimsiz (non-interlaced) PNG destekler — Chrome/Edge çıktısı.
- */
+ * Only supports 8-bit, non-interlaced PNG — Chrome/Edge output.*/
 import fs from 'node:fs';
 import zlib from 'node:zlib';
 
@@ -46,9 +45,9 @@ function paeth(a, b, c) {
   return pa <= pb && pa <= pc ? a : pb <= pc ? b : c;
 }
 
-/** PNG'yi çöz → { width, height, channels, pixels (filtresiz satırlar) } */
+/** decode PNG → { width, height, channels, pixels (unfiltered lines) }*/
 export function decodePng(buf) {
-  if (!buf.subarray(0, 8).equals(SIGNATURE)) throw new Error('PNG imzası geçersiz');
+  if (!buf.subarray(0, 8).equals(SIGNATURE)) throw new Error('PNG signature is invalid');
   let off = 8;
   let ihdr = null;
   const idat = [];
@@ -74,7 +73,7 @@ export function decodePng(buf) {
     throw new Error(`desteklenmeyen PNG (bitDepth=${ihdr.bitDepth}, interlace=${ihdr.interlace})`);
   }
   const channels = { 0: 1, 2: 3, 3: 1, 4: 2, 6: 4 }[ihdr.colorType];
-  if (!channels) throw new Error(`desteklenmeyen renk tipi: ${ihdr.colorType}`);
+  if (!channels) throw new Error(`unsupported colour type: ${ihdr.colorType}`);
 
   const raw = zlib.inflateSync(Buffer.concat(idat));
   const { width, height } = ihdr;
@@ -102,7 +101,7 @@ export function decodePng(buf) {
   return { width, height, channels, pixels: out };
 }
 
-/** Üstten h satırı koruyarak yeniden kodla. */
+/** Re-code, preserving the h line from the top.*/
 export function encodePng({ width, channels, pixels }, height) {
   const stride = width * channels;
   const raw = Buffer.alloc((stride + 1) * height);
@@ -126,7 +125,7 @@ export function encodePng({ width, channels, pixels }, height) {
   ]);
 }
 
-/** Dosyayı yerinde üstten kırp (height verilenden büyükse). */
+/** Crop the file from the top in place (if the height is larger than given).*/
 export function cropPngTop(file, height) {
   const buf = fs.readFileSync(file);
   const img = decodePng(buf);

@@ -256,8 +256,8 @@ Rules:
 4. Fix until `bash kit/gates.sh` is clean. If you open a new family, add a contiguous range to
    `kit/families.json` and a template to `kit/specs/bands.json`; `apply-fragments` goes red on a gap/overlap.
 
-Acceptance: the last line of `add-style` is `bitti · N stil hazır`, the last line of `bash kit/gates.sh` is
-`kapılar: temiz`, `node kit/check-schema.mjs` reports 0 errors, `node kit/check-contrast.mjs --strict-soft`
+Acceptance: the last line of `add-style` is `done · N styles ready`, the last line of `bash kit/gates.sh` is
+`gates: clean`, `node kit/check-schema.mjs` reports 0 errors, `node kit/check-contrast.mjs --strict-soft`
 reports 0 errors.
 
 ---
@@ -371,7 +371,7 @@ if it drops below, add a row to this table and state why.
 | `index.json` | Per style: `dark` status, token count, file paths |
 
 Rule: when a token is added, first update `kit/tokens.css` + `styles/<slug>/tokens.json`, then run the
-export. The reverse direction (hand-editing dist) is caught at the `token export güncel` gate step.
+export. The reverse direction (hand-editing dist) is caught at the `token export` gate step.
 
 ## 16 · Contract check (style-lint)
 

@@ -15,7 +15,7 @@
   <text x="105" y="71" fill="#f2a33c" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">AMBER TERMINAL // ORDER BOOK LADDER</text>
   <text x="1100" y="71" fill="#9fb3bf" font-family="monospace" font-size="13">TICK SPEED: 240/s · SPREAD: 0.05 · DEPTH: NORMAL</text>
 
-  <!-- Left Candlestick Panel -->
+  <!--Left Candlestick Panel-->
   <rect x="60" y="110" width="560" height="830" fill="#161d23" stroke="#27323c" />
   <text x="80" y="140" fill="#f2a33c" font-family="monospace" font-size="13" font-weight="bold">PRICE ACTION (1m)</text>
   <!-- Grid Lines -->
@@ -64,7 +64,7 @@
   <!-- Moving Average Line across candles -->
   <path d="M 120 620 Q 240 540 360 460 T 580 340" fill="none" stroke="#f2a33c" stroke-width="2.5" />
 
-  <!-- Center Price Ladder Panel -->
+  <!--Center Price Ladder Panel-->
   <rect x="640" y="110" width="480" height="830" fill="#101418" stroke="#27323c" />
   <rect x="640" y="110" width="480" height="40" fill="#1c242b" />
   <text x="730" y="136" fill="#35d07f" font-family="monospace" font-size="13" font-weight="bold">BIDS (QTY)</text>
@@ -126,7 +126,7 @@
 <text x="880" y="788" fill="#e8eef2" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">142.25</text>
 
 
-  <!-- Right Cumulative Depth Panel -->
+  <!--Right Cumulative Depth Panel-->
   <rect x="1140" y="110" width="400" height="830" fill="#161d23" stroke="#27323c" />
   <text x="1160" y="140" fill="#f2a33c" font-family="monospace" font-size="13" font-weight="bold">MARKET DEPTH PROFILE</text>
 

@@ -1,28 +1,27 @@
 #!/usr/bin/env node
 /**
- * kit/check-encoding.mjs — UTF-8 metin kodlaması ve mojibake regresyon kapısı.
+ * kit/check-encoding.mjs — UTF-8 text encoding and mojibake regression port.
  *
- * Denetlenen desenler:
- *   - CP1252/UTF-8 çift kodlama (mojibake) parmak izleri: Â· Ã¼ Ã§ Ã– Ãœ Ã— â† â‚¬
- *   - UTF-8 Bayt Sırası İşareti (BOM / 0xEF 0xBB 0xBF / U+FEFF)
+ * Checked patterns:
+ * - CP1252/UTF-8 dual encoding (mojibake) fingerprints: Â· Ã¼ Ã§ Ã– Ãœ Ã— â† â‚¬
+ * - UTF-8 Byte Order Mark (BOM / 0xEF 0xBB 0xBF / U+FEFF)
  *
- * Hedef varlıklar:
- *   - kit/build-live.mjs
- *   - kit/live/**
- *   - kit/live.html
- *   - kit/gallery.html
- *   - kit/gallery.data.mjs
- *   - kit/live-styles.js
- *   - AGENTS.md
- *   - TESTING.md
- *   - playbook.md
- *   - docs/**
+ * Target assets:
+ * - kit/build-live.mjs
+ * - kit/live/**
+ * - kit/live.html
+ * - kit/gallery.html
+ * - kit/gallery.data.mjs
+ * - kit/live-styles.js
+ * - AGENTS.md
+ * - TESTING.md
+ * - playbook.md
+ * - docs/**
  *
- * Kullanım:
- *   node kit/check-encoding.mjs              # kapı (bulgu varsa exit 1)
- *   node kit/check-encoding.mjs --json       # JSON çıktısı
- *   node kit/check-encoding.mjs --self-test  # sentetik hasarlı ve temiz fikstür testi
- */
+ * Usage:
+ * node kit/check-encoding.mjs # gate (exit 1 if found)
+ * node kit/check-encoding.mjs --json # JSON output
+ * node kit/check-encoding.mjs --self-test # synthetic damaged and clean fixture testing*/
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -112,7 +111,7 @@ export function selfTest() {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'check-encoding-test-'));
   try {
     const cleanFile = path.join(tempDir, 'clean.txt');
-    fs.writeFileSync(cleanFile, 'Önizleme araç çubuğu · 1280×2400 ← ↗ — temiz UTF-8', 'utf8');
+    fs.writeFileSync(cleanFile, 'Preview toolbar · 1280×2400 ← ↗ — clean UTF-8', 'utf8');
 
     const cleanHits = scanFile(cleanFile, tempDir);
     if (cleanHits.length !== 0) {
@@ -120,7 +119,7 @@ export function selfTest() {
     }
 
     const mojibakeFile = path.join(tempDir, 'damaged-mojibake.txt');
-    fs.writeFileSync(mojibakeFile, 'Hasarlı satır: 01 Â· Stil Ã¶nizlemesi Ã¼ Ã—', 'utf8');
+    fs.writeFileSync(mojibakeFile, 'Damaged row: 01 Â· Style Preview Ã¼ Ã—', 'utf8');
 
     const mojibakeHits = scanFile(mojibakeFile, tempDir);
     if (mojibakeHits.length === 0) {
@@ -132,7 +131,7 @@ export function selfTest() {
     }
 
     const bomFile = path.join(tempDir, 'damaged-bom.txt');
-    fs.writeFileSync(bomFile, Buffer.concat([Buffer.from([0xef, 0xbb, 0xbf]), Buffer.from('BOM ile başlayan dosya', 'utf8')]));
+    fs.writeFileSync(bomFile, Buffer.concat([Buffer.from([0xef, 0xbb, 0xbf]), Buffer.from('File starting with BOM', 'utf8')]));
 
     const bomHits = scanFile(bomFile, tempDir);
     if (bomHits.length === 0 || !bomHits.some((h) => h.type === 'BOM')) {
@@ -149,11 +148,11 @@ function main() {
   if (SELF_TEST) {
     try {
       selfTest();
-      console.log('check-encoding: self-test temiz');
+      console.log('check-encoding: self-test clean');
       process.exitCode = 0;
       return;
     } catch (err) {
-      console.error('check-encoding: self-test başarısız: ' + err.message);
+      console.error('check-encoding: self-test failed:' + err.message);
       process.exitCode = 1;
       return;
     }
@@ -187,9 +186,9 @@ function main() {
       for (const hit of allHits) {
         console.error(`${hit.file}:${hit.line}: ${hit.message}`);
       }
-      console.error(`check-encoding: ${allHits.length} bulgu (${files.length} dosya tarandı)`);
+      console.error(`check-encoding: ${allHits.length} findings (${files.length} files scanned)`);
     } else {
-      console.log(`check-encoding: temiz (${files.length} dosya tarandı)`);
+      console.log(`check-encoding: clean (${files.length} files scanned)`);
     }
   }
 

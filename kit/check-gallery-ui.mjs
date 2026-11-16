@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 /**
- * kit/check-gallery-ui.mjs — galeri arayüzünün kullanılabilirlik kapısı.
+ * kit/check-gallery-ui.mjs — usability gate of the gallery interface.
  *
- * Neden: kart ızgarası, filtre paneli, çekmece ve URL durumu "çalışıyor gibi"
- * görünse de ölçülmeden bozulabiliyor (kart 490px'e geri döner, panel içeriği
- * örter, mobilde aksiyonlar taşar, ?fam= yok sayılır). Bu kapı ölçer.
+ * Cause: card grid, filter panel, drawer and URL status "seems to be working"
+ * appears but may be distorted without being measured (card reverts to 490px, panel content
+ * covers, actions overflow on mobile, ?fam= ignored). This door meter.
  *
- * Kullanım:
- *   node kit/check-gallery-ui.mjs            # kapı
- *   node kit/check-gallery-ui.mjs --verbose  # her ölçümü yazdır
- */
+ * Usage:
+ * node kit/check-gallery-ui.mjs # door
+ * node kit/check-gallery-ui.mjs --verbose # print each measurement*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -19,12 +18,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TARGET = path.join(ROOT, 'kit', 'gallery.html');
 const VERBOSE = process.argv.includes('--verbose');
 
-/** Beklenen stil sayısı — sabit 145 değil, styles/ altındaki gerçek klasör sayısı. */
+/** Expected number of styles — actual number of folders under styles/, not the fixed 145.*/
 const STYLE_COUNT = fs
   .readdirSync(path.join(ROOT, 'styles'), { withFileTypes: true })
   .filter((d) => d.isDirectory() && fs.existsSync(path.join(ROOT, 'styles', d.name, 'style.md'))).length;
 
-/* Ölçümler: her biri { ad, değer, beklenti } döner. Kapı beklentiyi uygular. */
+/*Measurements: each returns { name, value, expectation }. The door implements expectation.*/
 const DESKTOP = `(async () => {
   const wait = (ms = 40) => new Promise((r) => setTimeout(r, ms));
   const m = {};
@@ -43,7 +42,7 @@ const DESKTOP = `(async () => {
   q.dispatchEvent(new Event('input'));
   await wait();
   m.searchMatch = document.getElementById('count').textContent;
-  q.value = 'gölge';
+  q.value = 'shadow';
   q.dispatchEvent(new Event('input'));
   await wait();
   m.searchDiacritic = document.getElementById('count').textContent;
@@ -76,7 +75,7 @@ const DESKTOP = `(async () => {
   document.getElementById('fbtn').click();
   await wait();
   m.panelOpen = !document.getElementById('fpanel').hidden;
-  const fam = document.querySelector('#fpanel .chip[data-fam="Sade"]');
+  const fam = document.querySelector('#fpanel .chip[data-fam="Minimal"]');
   fam.click();
   await wait();
   m.afterFam = document.getElementById('count').textContent;
@@ -109,7 +108,7 @@ const DESKTOP = `(async () => {
   m.cmpViewOpen = !document.getElementById('cmpview').hidden;
   m.cmpFigures = document.querySelectorAll('#cmpGrid figure').length;
 
-  /* --- sayfalama  (önce filtreleri temizle: 7 karta inmiş ızgarada sayfalama gizli) --- */
+  /*--- pagination (clear filters first: pagination is hidden in the grid reduced to 7 cards) ---*/
   document.getElementById('fclear').click();
   await wait();
   const PAGE = 60;
@@ -155,7 +154,7 @@ const FILTERPAGE = `(async () => {
   document.getElementById('pNext').click();
   await wait();
   const q = document.getElementById('q');
-  q.value = 'oyun';
+  q.value = 'game';
   q.dispatchEvent(new Event('input'));
   await wait();
   return {
@@ -190,55 +189,55 @@ const check = (name, ok, measured) => results.push({ name, ok, measured });
 const cdp = await launch({ tabs: 2 });
 try {
   const d = await cdp.evaluate(TARGET, { width: 1440, height: 900, expression: DESKTOP });
-  check(`kart sayısı ${STYLE_COUNT}`, d.cards === STYLE_COUNT, d.cards);
-  check('kart yüksekliği ≤ 320px', d.cardHeight > 0 && d.cardHeight <= 320, d.cardHeight + 'px');
-  check('ızgara ≥ 4 sütun (1440px)', d.columns >= 4, d.columns);
-  check('ilk ekranda ≥ 8 kart', d.visibleCards >= 8, d.visibleCards);
-  check('araç çubuğu sticky', d.stickyBar === 'sticky', d.stickyBar);
-  check('arama "minimal" daraltıyor', new RegExp(`^[1-9]\\d? / ${STYLE_COUNT}$`).test(d.searchMatch), d.searchMatch);
-  check('arama diakritik duyarsız ("gölge" ← "golge")', Number(d.searchDiacritic.split(' ')[0]) > 0, d.searchDiacritic);
-  check('numara araması ("152") tek stile indiriyor', d.searchNum === d.searchNumExpected && d.searchNum.startsWith('1 /'), d.searchNum + ' · beklenen ' + d.searchNumExpected);
-  check('numara araması "#9" çalışıyor', d.searchHash === d.searchHashExpected, d.searchHash);
-  check('numara aralığı ("152-171") süzüyor', d.searchRange === d.searchRangeExpected && !d.searchRange.startsWith('0 /'), d.searchRange + ' · beklenen ' + d.searchRangeExpected);
-  check('ters aralık ("171..152") de çalışıyor', d.searchRangeRev === d.searchRangeExpected, d.searchRangeRev);
-  check('filtre paneli açılıyor', d.panelOpen === true, d.panelOpen);
-  check('aile filtresi 7 stile indiriyor', d.afterFam === `7 / ${STYLE_COUNT}`, d.afterFam);
-  check('aktif filtre çipleri görünür', d.activeChips >= 2, d.activeChips);
-  check('filtre URL\'e yazılıyor', /(^|[?&])fam=Sade/.test(d.urlAfterFam), d.urlAfterFam);
-  check('çekmece açılıyor', d.drawerOpen === true, d.drawerOpen);
-  check('çekmecede stil başlığı var', d.drawerTitle.length > 2, d.drawerTitle);
-  check('token CSS üretiliyor (≥ 200 karakter)', d.tokenCss.length >= 200 && d.tokenCss.includes('--bg:'), d.tokenCss.length + ' karakter');
-  check('çekmecede tek sayfa görseli listeleniyor', d.drawerShots >= 1, d.drawerShots);
-  check('çekmecede 4 aksiyon (kopyala/favori)', d.drawerActions >= 4, d.drawerActions);
-  check('lightbox açılıyor', d.lightboxOpen === true && d.lightboxSrc.length > 0, d.lightboxSrc);
-  check('karşılaştırma çubuğu görünür', d.cmpBarVisible === true, d.cmpBarVisible);
-  check('karşılaştırma 2 stille etkin', d.cmpEnabled === true, d.cmpEnabled);
-  check('karşılaştırma görünümü açılıyor', d.cmpViewOpen === true && d.cmpFigures === 2, d.cmpFigures + ' figür');
+  check(`card count ${STYLE_COUNT}`, d.cards === STYLE_COUNT, d.cards);
+  check('card height ≤ 320px', d.cardHeight > 0 && d.cardHeight <= 320, d.cardHeight + 'px');
+  check('grid ≥ 4 columns (1440px)', d.columns >= 4, d.columns);
+  check('at least 8 cards above the fold', d.visibleCards >= 8, d.visibleCards);
+  check('toolbar sticky', d.stickyBar === 'sticky', d.stickyBar);
+  check('search "minimal" narrows the list', new RegExp(`^[1-9]\\d? / ${STYLE_COUNT}$`).test(d.searchMatch), d.searchMatch);
+  check('search diacritic insensitive ("shadow" ← "shadow")', Number(d.searchDiacritic.split(' ')[0]) > 0, d.searchDiacritic);
+  check('reducing number search ("152") to single style', d.searchNum === d.searchNumExpected && d.searchNum.startsWith('1 /'), d.searchNum + ' · expected ' + d.searchNumExpected);
+  check('number search "#9" working', d.searchHash === d.searchHashExpected, d.searchHash);
+  check('filtering number range ("152-171")', d.searchRange === d.searchRangeExpected && !d.searchRange.startsWith('0 /'), d.searchRange + ' · expected ' + d.searchRangeExpected);
+  check('works in reverse range ("171..152")', d.searchRangeRev === d.searchRangeExpected, d.searchRangeRev);
+  check('filter panel is opening', d.panelOpen === true, d.panelOpen);
+  check('family filter reduces to 7 styles', d.afterFam ===`7 / ${STYLE_COUNT}`, d.afterFam);
+  check('active filter chips visible', d.activeChips >= 2, d.activeChips);
+  check('filtre URL\'e is written', /(^|[?&])fam=Minimal/.test(d.urlAfterFam), d.urlAfterFam);
+  check('the drawer is opening', d.drawerOpen === true, d.drawerOpen);
+  check('There is a style header in the drawer', d.drawerTitle.length > 2, d.drawerTitle);
+  check('generating token CSS (≥ 200 characters)', d.tokenCss.length >= 200 && d.tokenCss.includes('--bg:'), d.tokenCss.length + ' characters');
+  check('single page image listed in drawer', d.drawerShots >= 1, d.drawerShots);
+  check('4 actions in drawer (copy/favorite)', d.drawerActions >= 4, d.drawerActions);
+  check('lightbox is opening', d.lightboxOpen === true && d.lightboxSrc.length > 0, d.lightboxSrc);
+  check('comparison bar appears', d.cmpBarVisible === true, d.cmpBarVisible);
+  check('comparison enabled with 2 styles', d.cmpEnabled === true, d.cmpEnabled);
+  check('comparison view opens', d.cmpViewOpen === true && d.cmpFigures === 2, d.cmpFigures + 'figure');
 
-  check('sayfalama görünür (60 kart/sayfa)', d.pagerVisible === true && d.page1Visible === 60, d.page1Info);
-  check('2. sayfa 60 kart gösteriyor', d.page2Visible === 60 && /^61–120 /.test(d.page2Info), d.page2Info);
-  check("sayfa URL'e yazılıyor (page=2)", /(^|[?&])page=2(&|$)/.test(d.page2Url), d.page2Url);
-  check('sayfa numaraları + aktif sayfa', d.pageNums >= 5 && d.pageCurrent === '2', d.pageNums + ' numara · aktif ' + d.pageCurrent);
-  check('son sayfa kalan kartları gösteriyor', d.lastPageVisible === d.lastExpected, d.lastInfo + ' · beklenen ' + d.lastExpected);
-  check('1. sayfaya dönüş', d.backToFirst === 60, d.backToFirst + ' kart');
+  check('paging visible (60 cards/page)', d.pagerVisible === true && d.page1Visible === 60, d.page1Info);
+  check('Page 2 shows 60 cards', d.page2Visible === 60 && /^61–120 /.test(d.page2Info), d.page2Info);
+  check('page is written to the URL (page=2)', /(^|[?&])page=2(&|$)/.test(d.page2Url), d.page2Url);
+  check('page numbers + active page', d.pageNums >= 5 && d.pageCurrent === '2', d.pageNums + ' numara · aktif ' + d.pageCurrent);
+  check('The last page shows the remaining cards.', d.lastPageVisible === d.lastExpected, d.lastInfo + ' · beklenen ' + d.lastExpected);
+  check('Return to page 1', d.backToFirst === 60, d.backToFirst + ' kart');
 
   const mob = await cdp.evaluate(TARGET, { width: 375, height: 780, expression: MOBILE });
-  check('mobilde yatay taşma yok', mob.scrollWidth <= mob.innerWidth + 1, mob.scrollWidth + ' ≤ ' + mob.innerWidth);
-  check('mobilde kart aksiyonları taşmıyor', mob.actionOverflow === 0, mob.actionOverflow + ' taşan kart');
-  check('mobilde 2 sütun', mob.columns === 2, mob.columns);
-  check('filtre düğmesi dokunma hedefi ≥ 32px', Number(mob.filterButton.split('x')[1]) >= 32, mob.filterButton);
+  check('no horizontal bleed on mobile', mob.scrollWidth <= mob.innerWidth + 1, mob.scrollWidth + ' ≤ ' + mob.innerWidth);
+  check('Card actions do not overflow on mobile', mob.actionOverflow === 0, mob.actionOverflow + 'overflow card');
+  check('2 columns on mobile', mob.columns === 2, mob.columns);
+  check('filter button touch target ≥ 32px', Number(mob.filterButton.split('x')[1]) >= 32, mob.filterButton);
 
   const u = await cdp.evaluate(TARGET, {
     width: 1440,
     height: 900,
-    query: 'fam=Sade&sort=name&q=minimal',
+    query: 'fam=Minimal&sort=name&q=minimalism',
     expression: URLSTATE,
   });
-  check('URL durumu geri yükleniyor (fam+sort+q)', u.sort === 'name' && u.query === 'minimal' && u.visible === 1, JSON.stringify(u));
+  check('Restoring URL state (fam+sort+q)', u.sort === 'name' && u.query === 'minimalism' && u.visible === 1, JSON.stringify(u));
 
   const fp = await cdp.evaluate(TARGET, { width: 1440, height: 900, expression: FILTERPAGE });
-  check("filtre sayfayı 1'e döndürüyor", fp.pagerHidden === true || fp.page === '1', JSON.stringify(fp));
-  check("filtre sonrası URL'de page yok", !/(^|[?&])page=/.test(fp.url), fp.url);
+  check('a filter returns to page 1', fp.pagerHidden === true || fp.page === '1', JSON.stringify(fp));
+  check('no page in the URL after filtering', !/(^|[?&])page=/.test(fp.url), fp.url);
 
   const uNum = await cdp.evaluate(TARGET, {
     width: 1440,
@@ -246,7 +245,7 @@ try {
     query: 'q=152-171',
     expression: URLSTATE,
   });
-  check('numara aralığı URL\'den geri yükleniyor', uNum.query === '152-171' && uNum.visible === uNum.rangeTotal && uNum.rangeVisible === uNum.rangeTotal, JSON.stringify(uNum));
+  check('number range is restored from the URL', uNum.query === '152-171' && uNum.visible === uNum.rangeTotal && uNum.rangeVisible === uNum.rangeTotal, JSON.stringify(uNum));
 } finally {
   await cdp.close();
 }
@@ -255,10 +254,10 @@ let failed = 0;
 for (const r of results) {
   if (!r.ok) failed += 1;
   if (r.ok && !VERBOSE) continue;
-  console.log(`${r.ok ? '✓' : '×'} ${r.name}${r.ok ? ' — ' + r.measured : ' — ölçülen: ' + r.measured}`);
+  console.log(`${r.ok ? '✓' : '×'} ${r.name}${r.ok ? ' — ' + r.measured : '— measured:' + r.measured}`);
 }
 if (failed) {
-  console.log(`\n× galeri arayüzü: ${failed}/${results.length} ölçüm başarısız (kit/gallery.css · kit/gallery.js)`);
+  console.log(`\n× gallery UI: ${failed}/${results.length} measurements failed (kit/gallery.css · kit/gallery.js)`);
   process.exit(1);
 }
-console.log(`\n✓ galeri arayüzü: ${results.length} ölçüm geçti (1440px · 375px · URL durumu)`);
+console.log(`\n✓ gallery UI: ${results.length} measurements passed (1440px · 375px · URL state)`);

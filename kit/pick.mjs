@@ -1,18 +1,17 @@
 #!/usr/bin/env node
 /**
- * kit/pick.mjs — niyet cümlesinden stil adayı çıkarır (ajanın ilk adımı).
+ * kit/pick.mjs — extracts the style candidate from the intent statement (the agent's first step).
  *
- * Neden: ajanın 145 stili tek tek okuması gerekmesin. `kit/dist/index.slim.json`
- * üzerinde sözlüksel puanlama yapar; gömülü model/vektör yok, kural açık ve denetlenebilir.
- * Çıktı: sıralı adaylar + **hangi terimin eşleştiği** (gerekçe) + dosya yolları.
+ * Reason: the agent should not have to read the 145 styles one by one. `kit/dist/index.slim.json`
+ * performs lexical scoring on; No embedded models/vectors, rules are explicit and auditable.
+ * Output: sorted candidates + **which term matches** (justification) + file paths.
  *
- * Kullanım:
- *   node kit/pick.mjs --intent "uzun okuma + sakin + kurumsal"
- *   node kit/pick.mjs --intent "veri yoğun panel" --family "Veri & Gösterge"
- *   node kit/pick.mjs --intent "premium emlak" --limit 5 --garnish
- *   node kit/pick.mjs --intent "..." --json
- *   node kit/pick.mjs --families
- */
+ * Usage:
+ * node kit/pick.mjs --intent "long read + calm + enterprise"
+ * node kit/pick.mjs --intent "data-intensive panel" --family "Data & Display"
+ * node kit/pick.mjs --intent "premium real estate" --limit 5 --garnish
+ * node kit/pick.mjs --intent "..." --json
+ * node kit/pick.mjs --families*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -32,7 +31,7 @@ const LIMIT = Number(argOf('--limit') ?? 3);
 const FAMILY = argOf('--family');
 const INTENT = argOf('--intent');
 
-/** Türkçe küçük harf + diakritik sadeleştirme: "Kültürel" → "kulturel" */
+/** Lower case + diacritic simplification so accented and plain spellings compare equal */
 function norm(text) {
   return String(text)
     .toLocaleLowerCase('tr')
@@ -49,85 +48,84 @@ function norm(text) {
 }
 
 const STOP = new Set([
-  've', 'ile', 'icin', 'bir', 'cok', 'daha', 'gibi', 'ama', 'veya', 'the', 'and', 'for', 'with', 'a', 'of', 'to',
-  'ama', 'fakat', 'gerek', 'istiyorum', 'lazim', 'olan', 'olsun', 'tarzi', 'tarz', 'stil', 'style', 'tasarim',
+  'the', 'and', 'for', 'with', 'a', 'an', 'of', 'to', 'in', 'on', 'or', 'but', 'want', 'need',
+  'style', 'styles', 'design', 'look', 'feel', 'like', 'that', 'is', 'are',
 ]);
 
 /**
- * Niyet sözlüğü: kullanıcı dili → katalog terimleri. Küçük ve bilinçli tutulur;
- * eşleşme bulunamazsa yalnız sözlüksel arama kalır (sihir yok).
- */
+ * Intent dictionary: user language → catalog terms. It is kept small and deliberate;
+ * if no match is found, only lexical search remains (no magic).*/
 const SYNONYMS = {
-  kurumsal: ['sade', 'executive', 'swiss', 'utility', 'minimal', 'premium', 'finans'],
-  sakin: ['japandi', 'wabi-sabi', 'ethereal', 'sade', 'bosluk', 'yumusak'],
-  okuma: ['editorial', 'yayin', 'kitap', 'literary', 'broadsheet', 'magazine', 'poetry', 'academic', 'serif'],
-  metin: ['editorial', 'literary', 'poetry', 'academic', 'typography'],
-  veri: ['veri', 'telemetry', 'trading', 'kpi', 'log', 'dashboard', 'tablo', 'gosterge', 'olcum'],
+  corporate: ['minimal', 'executive', 'swiss', 'utility', 'premium', 'finance'],
+  calm: ['japandi', 'wabi-sabi', 'ethereal', 'minimal', 'space', 'soft'],
+  reading: ['editorial', 'publishing', 'book', 'literary', 'broadsheet', 'magazine', 'poetry', 'academic', 'serif'],
+  text: ['editorial', 'literary', 'poetry', 'academic', 'typography'],
+  data: ['telemetry', 'trading', 'kpi', 'log', 'dashboard', 'table', 'gauge', 'measurement'],
   dashboard: ['bento', 'executive-kpi', 'telemetry-grid', 'kanban', 'panel'],
   panel: ['dashboard', 'telemetry', 'kpi', 'console', 'trading'],
-  luks: ['luxury', 'zamansiz', 'materyal', 'marble', 'brass', 'silk', 'grand-tourer', 'premium'],
+  luxury: ['luxury', 'timeless', 'material', 'marble', 'brass', 'silk', 'grand-tourer', 'premium'],
   premium: ['luxury', 'grand-tourer', 'marble', 'brass', 'art-deco'],
-  emlak: ['estate', 'grand-tourer', 'luxury', 'emlak', 'vitrin'],
-  oyun: ['oyuncu', 'kids', 'dopamine', 'carnival', 'arcade', 'sticker', 'playground'],
-  cocuk: ['kids', 'playground', 'dopamine', 'carnival', 'sticker'],
-  eglence: ['dopamine', 'carnival', 'sticker', 'memphis', 'maximalism', 'celebration'],
-  terminal: ['teknik', 'terminal', 'command-palette', 'keyboard', 'log', 'mono'],
-  gelistirici: ['teknik', 'terminal', 'command-palette', 'keyboard', 'utility'],
-  nostalji: ['retro', 'y2k', 'synthwave', 'vaporwave', 'arcade', 'pixel'],
+  estate: ['estate', 'grand-tourer', 'luxury', 'showcase'],
+  game: ['playful', 'kids', 'dopamine', 'carnival', 'arcade', 'sticker', 'playground'],
+  kids: ['kids', 'playground', 'dopamine', 'carnival', 'sticker'],
+  fun: ['dopamine', 'carnival', 'sticker', 'memphis', 'maximalism', 'celebration'],
+  terminal: ['technical', 'terminal', 'command-palette', 'keyboard', 'log', 'mono'],
+  developer: ['technical', 'terminal', 'command-palette', 'keyboard', 'utility'],
+  nostalgia: ['retro', 'y2k', 'synthwave', 'vaporwave', 'arcade', 'pixel'],
   retro: ['retro', 'y2k', 'synthwave', 'vaporwave', 'arcade', 'pixel', 'frutiger'],
-  gelecek: ['deneysel', 'speculative', 'nanotech', 'quantum', 'zero-gravity', 'holographic', 'ai-native'],
-  deneysel: ['deneysel', 'speculative', 'moire', 'optical', 'generative', 'quantum'],
-  dogal: ['doga', 'biophilic', 'organic', 'forest', 'japandi', 'botanical', 'topographic'],
-  surdurulebilir: ['doga', 'biophilic', 'organic', 'japandi', 'forest'],
-  kulturel: ['kulturel', 'nordic-folk', 'levant', 'azulejo', 'persian', 'block-print', 'textile'],
-  endustriyel: ['endustriyel', 'blueprint', 'mes', 'saha', 'cockpit', 'calibration', 'warehouse'],
-  muze: ['museum', 'thesis', 'editorial', 'academic', 'art-deco'],
-  dergi: ['magazine', 'editorial', 'broadsheet', 'catalog'],
-  kartvizit: ['minimal', 'swiss', 'editorial', 'letterpress'],
-  moda: ['editorial', 'luxury', 'magazine', 'silk', 'marble'],
-  saglik: ['vitals', 'clinical', 'utility', 'minimal', 'calm'],
-  egitim: ['academic', 'encyclopedia', 'notebook', 'playground'],
-  harita: ['map', 'atlas', 'topographic', 'terrain', 'spatial'],
-  ses: ['voice-first', 'audio', 'album', 'waveform'],
-  mobil: ['mobile', 'app', 'playground', 'command-palette'],
+  future: ['experimental', 'speculative', 'nanotech', 'quantum', 'zero-gravity', 'holographic', 'ai-native'],
+  experimental: ['experimental', 'speculative', 'moire', 'optical', 'generative', 'quantum'],
+  natural: ['nature', 'biophilic', 'organic', 'forest', 'japandi', 'botanical', 'topographic'],
+  sustainable: ['nature', 'biophilic', 'organic', 'japandi', 'forest'],
+  cultural: ['cultural', 'nordic-folk', 'levant', 'azulejo', 'persian', 'block-print', 'textile'],
+  industrial: ['industrial', 'blueprint', 'shopfloor', 'cockpit', 'calibration', 'warehouse'],
+  museum: ['museum', 'thesis', 'editorial', 'academic', 'art-deco'],
+  magazine: ['magazine', 'editorial', 'broadsheet', 'catalog'],
+  businesscard: ['minimal', 'swiss', 'editorial', 'letterpress'],
+  fashion: ['editorial', 'luxury', 'magazine', 'silk', 'marble'],
+  health: ['vitals', 'clinical', 'utility', 'minimal', 'calm'],
+  education: ['academic', 'encyclopedia', 'notebook', 'playground'],
+  map: ['map', 'atlas', 'topographic', 'terrain', 'spatial'],
+  voice: ['voice-first', 'audio', 'album', 'waveform'],
+  mobile: ['mobile', 'app', 'playground', 'command-palette'],
 };
 
 const FAMILY_SYNONYMS = {
-  sade: ['Sade'],
-  yuzey: ['Yüzey'],
-  cesur: ['Cesur'],
+  minimal: ['Minimal'],
+  surface: ['Surface'],
+  bold: ['Bold'],
   retro: ['Retro'],
-  sanatsal: ['Sanatsal'],
-  geometrik: ['Geometrik'],
-  tipografik: ['Tipografik'],
-  organik: ['Organik'],
-  yenidalga: ['Yeni Dalga'],
-  zamansiz: ['Zamansız'],
-  teknik: ['Teknik'],
-  veri: ['Veri & Gösterge'],
-  endustriyel: ['Endüstriyel'],
-  kulturel: ['Kültürel & Bölgesel'],
-  doga: ['Doğa & Organik'],
-  yayin: ['Yayın & Tipografi'],
-  hareket: ['Hareket & Optik'],
-  etkilesim: ['Etkileşim'],
-  oyuncu: ['Oyuncu'],
-  materyal: ['Materyal & Lüks'],
-  deneysel: ['Deneysel & Gelecek'],
-  // niyet → aile eşlemesi (katalogda o niyetin evi olan bantlar)
-  emlak: ['Zamansız'],
-  luks: ['Zamansız', 'Materyal & Lüks'],
-  premium: ['Zamansız'],
-  moda: ['Yayın & Tipografi'],
-  dergi: ['Yayın & Tipografi'],
-  okuma: ['Yayın & Tipografi'],
-  metin: ['Yayın & Tipografi'],
-  saglik: ['Veri & Gösterge'],
-  harita: ['Doğa & Organik'],
+  art: ['Art'],
+  geometric: ['Geometric'],
+  typographic: ['Typographic'],
+  organic: ['Organic'],
+  newwave: ['New Wave'],
+  timeless: ['Timeless'],
+  technical: ['Technical'],
+  data: ['Data & Indicator'],
+  industrial: ['Industrial'],
+  cultural: ['Cultural & Regional'],
+  nature: ['Nature & Organic'],
+  publishing: ['Publication & Typography'],
+  motion: ['Motion & Optics'],
+  interactive: ['Interactive'],
+  playful: ['Playful'],
+  material: ['Material & Luxury'],
+  experimental: ['Experimental & Future'],
+  // intent → family mapping (the band where that intent lives in the catalog)
+  estate: ['Timeless'],
+  luxury: ['Timeless', 'Material & Luxury'],
+  premium: ['Timeless'],
+  fashion: ['Publication & Typography'],
+  magazine: ['Publication & Typography'],
+  reading: ['Publication & Typography'],
+  text: ['Publication & Typography'],
+  health: ['Data & Indicator'],
+  map: ['Nature & Organic'],
 };
 
 if (!fs.existsSync(SLIM)) {
-  console.error('kit/dist/index.slim.json yok — önce: node kit/build-slim-index.mjs');
+  console.error('no kit/dist/index.slim.json — before: node kit/build-slim-index.mjs');
   process.exit(1);
 }
 const index = JSON.parse(fs.readFileSync(SLIM, 'utf8'));
@@ -138,7 +136,7 @@ if (FAMILIES_ONLY) {
 }
 
 if (!INTENT) {
-  console.error('kullanım: node kit/pick.mjs --intent "uzun okuma + sakin + kurumsal" [--family <aile>] [--limit 3] [--garnish] [--json]');
+  console.error('usage: node kit/pick.mjs --intent "long read + calm + corporate" [--family <name>] [--limit 3] [--garnish] [--json]');
   process.exit(2);
 }
 
@@ -147,7 +145,7 @@ const rawTerms = norm(INTENT)
   .split(/[\s,+;/]+/)
   .filter((t) => t.length > 1 && !STOP.has(t));
 
-const expanded = new Map(); // terim → ağırlık (doğrudan 1, eşanlamlı 0.6)
+const expanded = new Map(); // term → weight (direct 1, synonym 0.6)
 for (const term of rawTerms) {
   expanded.set(term, Math.max(expanded.get(term) ?? 0, 1));
   for (const syn of SYNONYMS[term] ?? []) {
@@ -175,10 +173,10 @@ const scored = index.styles.map((s) => {
     if (slug === term || slug.split('-').includes(term)) hits.push(['slug', 3]);
     else if (term.includes('-') && slug.includes(term)) hits.push(['slug~', 2.5]);
     if (name.split(' ').includes(term)) hits.push(['ad', 3]);
-    if (tags.some((t) => t === term)) hits.push(['etiket', 3]);
-    else if (tags.some((t) => t.includes(term))) hits.push(['etiket~', 1.8]);
+    if (tags.some((t) => t === term)) hits.push(['tag', 3]);
+    else if (tags.some((t) => t.includes(term))) hits.push(['tag~', 1.8]);
     if (family.includes(term)) hits.push(['aile', 2.5]);
-    if (tag.includes(term)) hits.push(['cümle', 1.2]);
+    if (tag.includes(term)) hits.push(['sentence', 1.2]);
     for (const [kind, base] of hits) {
       score += base * weight;
       reasons.push(`${kind}:${term}`);
@@ -187,9 +185,9 @@ const scored = index.styles.map((s) => {
 
   if (wantedFamilies.has(s.family)) {
     score += 4;
-    reasons.push(`aile-eşleşme:${s.family}`);
+    reasons.push(`family-match:${s.family}`);
   }
-  if (!s.dark) score -= 0.5; // koyu modu olmayan stil pratikte dezavantajlı
+  if (!s.dark) score -= 0.5; // a style without a dark variant is practically at a disadvantage
 
   return { style: s, score: Number(score.toFixed(2)), reasons: [...new Set(reasons)] };
 });
@@ -201,8 +199,8 @@ const ranked = scored
   .slice(0, Math.max(1, LIMIT));
 
 if (!ranked.length) {
-  console.log(`eşleşme yok: "${INTENT}"`);
-  console.log('ipucu: aile adları için --families · daha genel bir niyet cümlesi dene');
+  console.log(`no match: "${INTENT}"`);
+  console.log('tip: for family names --families · try a more general intent phrase');
   process.exit(1);
 }
 
@@ -238,13 +236,13 @@ for (const [i, r] of ranked.entries()) {
   const mark = i === 0 ? '★' : '·';
   console.log(`${mark} ${s.num} ${s.slug}  [${s.family}]  puan ${r.score}`);
   console.log(`   ${s.tag}`);
-  console.log(`   etiketler: ${s.tags.join(' · ')} · hareket: ${s.motion.enterMs}ms/${s.motion.ease} · koyu: ${s.dark ? 'var' : 'yok'}`);
-  console.log(`   gerekçe: ${r.reasons.slice(0, 6).join(', ')}`);
-  console.log(`   dosya: ${dirOf(s)}/style.md · ${dirOf(s)}/shots/01-landing.png`);
+  console.log(`   tags: ${s.tags.join(' · ')} · motion: ${s.motion?.enterMs ?? '—'}ms/${s.motion?.ease ?? '—'} · dark: ${s.dark ? 'yes' : 'no'}`);
+  console.log(`   rationale: ${r.reasons.slice(0, 6).join(', ')}`);
+  console.log(`   file: ${dirOf(s)}/style.md · ${dirOf(s)}/shots/01-page.png`);
   if (GARNISH && i === 0) {
-    console.log(`   garnitür (uyumlu): ${s.compatible.join(', ') || '—'}`);
-    console.log(`   yasak: ${s.forbidden.join(', ') || '—'}`);
+    console.log(`   garnish (compatible): ${s.compatible.join(', ') || '—'}`);
+    console.log(`   banned: ${s.forbidden.join(', ') || '—'}`);
   }
   console.log('');
 }
-console.log('sonraki adım: seçilen stilin style.md → "Görsel imza" + "Yasaklar" + tokens.json → motion.sequences');
+console.log('next step: the chosen style\'s style.md → "Visual signature" + "Bans" + tokens.json');

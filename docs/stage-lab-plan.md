@@ -29,7 +29,7 @@ into style-lab would make the 38 gates npm-dependent.
 
 **Contract (one-way):** `stage-lab` **never writes** to style-lab. The files it reads:
 
-| File | What is taken |
+| Net | What is taken |
 |---|---|
 | `kit/dist/tokens.all.css` | `[data-style]` variable sets (light + dark) |
 | `kit/dist/tailwind.theme.css` | `@theme` (Tailwind v4) |
@@ -86,14 +86,14 @@ This section is the real work of v2. The Lando mechanic cannot be placed into `0
 | Ground | `#f6f1e7` cream (`--bg`) | tokens.json |
 | Display | Cormorant Garamond **300**, 64px / 1.1 / `0.01em` | typography.scale.h1 |
 | Body | Jost 14 / 1.75 / `0.02em`, measure **46–54ch** | typography.measure |
-| Micro label | 10px / 500 / uppercase / `0.3em`, color **`--ink`** (not gold) | must #3 + contrast |
+| Microlabel | 10px / 500 / uppercase / `0.3em`, color **`--ink`** (not gold) | must #3 + contrast |
 | Hairline | 1px `rgba(26,24,21,.16)`; **gold `--accent` only as a line** | must #6 |
 | Shape | radius **0**, shadow **none** (`--shadow: none`) | shape/elevation |
 | Enter | **800ms** `cubic-bezier(.2,.7,.2,1)`, `opacity` + 24px, stagger 90ms | sequences.enter |
 | Scroll reveal | **1000ms**, `top 80%`, `once: true` | sequences.scroll |
 | Hover | **320ms**, `scale(1.015)` (image), `underline-draw` (link) | sequences.hover |
 | Reward motion | hairline **0 → 40px**, 400ms `ease-in-out` | `04` motion table |
-| Dark mode | `#12100e` ground, gold `#d8bb7d` | palette.dark |
+| Darkmode | `#12100e` ground, gold `#d8bb7d` | palette.dark |
 
 **Stage default is light mode** (`04`'s signature cream paper). Dark mode is a separate profile: same code, different particle/bloom setting.
 
@@ -111,10 +111,10 @@ This section is the real work of v2. The Lando mechanic cannot be placed into `0
 
 ### 4.1 Six beats (pulled to the 04 tempo)
 
-| Beat | Duration / trigger | What happens | Technique | `04` fit |
+| Beat | Duration / trigger | What happens | Technique | `04` feet |
 |---|---|---|---|---|
 | **B0 preload** | 0 – 1.2s | font + motif pieces assemble | `document.fonts.ready` + GSAP timeline | `clip-curtain` |
-| **B1 hero** | scroll = 0 | engraving motif; cursor poke lifts shavings, **stops in 1.2s** | `InstancedMesh` 4k, inertia damping | C1 |
+| **B1 hero** | scroll = 0 | engraving motif; cursor poke lifts shavings, **stops in 1.2s** | `InstancedMesh` 4k, inertia dumping | C1 |
 | **B2 story** | scroll 0 → .6 | 3 acts, **camera fixed**, motif opens with `clip-path` | GSAP scrub + `clip-path` | C2, C3 |
 | **B3 atlas** | scroll .6 → .9 | 3 sparse list rows; row number in serif; a motif slice as the hairline (repetition #3) | DOM + hairline | C6 |
 | **B4 footer** | scroll .9 → 1 | giant motif engraving, `opacity .08`, `clip-path` (repetition #4) | CSS clip + scrub | C2, C4 |
@@ -218,7 +218,7 @@ motif.svg / motif.glb  →  tools/optimize-motif.mjs  →  public/motif/{mesh.gl
 | 14 | Heavy display | weight ≥ 600 on **no** display element | computed style |
 | 15 | Body | ≥ 14px, line-height ≥ 1.7 | computed style |
 | 16 | Gold text | `color: #c6a664` on **no** text node | computed style (contrast 2.0:1) |
-| 17 | Micro label | `--ink`, 10px, uppercase, tracking ≥ `0.2em` | computed style |
+| 17 | Microlabel | `--ink`, 10px, uppercase, tracking ≥ `0.2em` | computed style |
 | 18 | Sparsity | ≤ **3** interactive elements in the hero; ≤ **2** per section | DOM count |
 | 19 | FOUT | **0** font swaps after preload | `document.fonts` observer |
 | 20 | Contrast | `ink/bg` ≥ 15, `ink-soft/bg` ≥ 6.5, `ink-faint` **absent** from body | APCA/WCAG calculation |
@@ -311,7 +311,7 @@ enforce it, `measure.mjs --a11y` reports it as information. The "static version"
 ### 11.2 Three real bugs the measurement caught
 
 1. **The dust never stopped** — the force was tied to the cursor's *position*, so it kept pushing even with the cursor
-   still. A direct violation of `04`'s "continuous animation" ban. Fix: the force applies only on frames where the
+   still A direct violation of `04`'s "continuous animation" ban. Fix: the force applies only on frames where the
    cursor actually moved.
 2. **The motif froze while scrolling** — `frameloop: 'demand'` with no `invalidate()` on progress change.
 3. **The dust did not follow the motif** — particles were outside the `<group>` transform, so a separate calculation
@@ -333,7 +333,7 @@ real-device FPS — the report says so, and there is no "60fps" claim.
 | `single-object` | Monolith | rotation = progress | **camera fixed** (C2), clip-curtain, no dust |
 | `scroll-narrative` | Inkwell | narration without navigation | clip-curtain + scrub, no impulse |
 | `playable-motif` | Bruno / Aurel | position via WASD | stops when keys are released (C1) |
-| `kinetic-type` | Mat Voyce | letter = motif, no WebGL | 1px stroke engraving, rotates with `--stage-rot` |
+| `kinetic-type` | Matt Voyce | letter = motif, no WebGL | 1px stroke engraving, rotates with `--stage-rot` |
 
 **Measurement:** each archetype builds separately (`VITE_STAGE_ARCHETYPE`) and 33 criteria run. In an archetype with
 no stage, the drawcall/particle criteria are `n/a` — no fake numbers are produced.

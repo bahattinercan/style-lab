@@ -61,4 +61,4 @@ const bandsPath = `${specsDir}/bands.json`;
 const bands = JSON.parse(fs.readFileSync(bandsPath, 'utf8'));
 for (const band of Object.values(bands)) if (band.extraCss) band.extraCss = replaceH1Size(band.extraCss);
 fs.writeFileSync(bandsPath, `${JSON.stringify(bands, null, 2)}\n`, 'utf8');
-console.log(`h1 font-size tokena taşındı: ${migrated} stil fragmenti`);
+console.log(`h1 font-size moved into the token: ${migrated} style fragments`);

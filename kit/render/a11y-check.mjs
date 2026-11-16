@@ -1,29 +1,28 @@
 #!/usr/bin/env node
 /**
- * kit/render/a11y-check.mjs — şablonların erişilebilirlik denetimi (bağımlılıksız).
+ * kit/render/a11y-check.mjs — accessibility check of templates (no dependencies).
  *
- * Yöntem: kit/render/<sahne>.html şablonu geçici bir dosyaya `__STYLE__` yerine
- * stil slug'ı konarak yazılır (tokens.css + scene.css linkleri korunur), Edge/Chrome
- * `--dump-dom` ile render edilmiş DOM alınır ve DOM regex tabanlı bir tarayıcıyla
- * denetlenir. npm bağımlılığı yok, şablonlar kalıcı olarak değiştirilmez.
+ * Method: kit/render/<scene>.html template into a temporary file instead of `__STYLE__`
+ * written by adding style slug (tokens.css + scene.css links are preserved), Edge/Chrome
+ * The rendered DOM is retrieved with `--dump-dom` and the DOM is processed with a regex-based browser.
+ * is inspected. No npm dependencies, templates are not permanently modified.
  *
- * Kullanım:
- *   node kit/render/a11y-check.mjs --styles 01-minimalism,08-glassmorphism --scene landing
- *   node kit/render/a11y-check.mjs --scene landing            # tüm stiller
- *   node kit/render/a11y-check.mjs --styles y2k --scene landing --json
- *   node kit/render/a11y-check.mjs --styles y2k --scene landing --warn-only
+ * Usage:
+ * node kit/render/a11y-check.mjs --styles 01-minimalism,08-glassmorphism --scene landing
+ * node kit/render/a11y-check.mjs --scene landing # all styles
+ * node kit/render/a11y-check.mjs --styles y2k --scene landing --json
+ * node kit/render/a11y-check.mjs --styles y2k --scene landing --warn-only
  *
- * Denetimler (her biri sayı + örnek):
- *   1 h1        : <h1> sayısı tam 1 mi
- *   2 alt       : <img> içinde alt niteliği eksik olanlar (alt="" dekoratif kabul)
- *   3 etiket    : input/select/textarea için aria-label/-labelledby veya <label> yokluğu
- *   4 buton     : görünür metni ve aria-label'i olmayan .btn / button / a
- *   5 tabindex  : negatif tabindex değerleri (kritik değil)
+ * Controls (number + example each):
+ * 1 h1 : Is the number <h1> exactly 1?
+ * 2 alts: Those missing the alt attribute in <img> (alt="" is considered decorative)
+ * 3 labels: aria-label/-labeledby or absence of <label> for input/select/textarea
+ * 4 buttons: .btn/button/a without visible text and aria-label
+ * 5 tabindex : negative tabindex values (not critical)
  *
- * Çıkış kodu: kritik ihlal (1-4) varsa 1; yalnız 5 varsa 0; --warn-only her durumda 0.
+ * Exit code: 1 if there is a critical violation (1-4); 0 if there is only 5; --warn-only 0 in all cases.
  *
- * Tarayıcı: BROWSER ortam değişkeni veya render-shots.mjs'deki aday yollar.
- */
+ * Browser: BROWSER environment variable or candidate paths in render-shots.mjs.*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFile } from 'node:child_process';
@@ -62,10 +61,10 @@ function arg(name, fallback = null) {
 function findBrowser() {
   if (process.env.BROWSER) return process.env.BROWSER;
   for (const p of EDGE_CANDIDATES) if (fs.existsSync(p)) return p;
-  throw new Error('Chromium tabanlı tarayıcı bulunamadı; BROWSER=/yol/tarayici ver');
+  throw new Error('Chromium-based browser not found; Give BROWSER=/path/browser');
 }
 
-/** Sahne adı → şablon: önce manifest (estate-landing → estate.html), sonra dosya adı. */
+/** Stage name → template: first manifest (estate-landing → estate.html), then filename.*/
 function templateFor(scene) {
   try {
     const m = JSON.parse(fs.readFileSync(path.join(ROOT, 'kit', 'shots.manifest.json'), 'utf8'));
@@ -74,16 +73,16 @@ function templateFor(scene) {
       return { file: path.join(HERE, hit.tpl), name: hit.tpl };
     }
   } catch {
-    /* manifest yoksa dosya adı eşlemesine düş */
+    /*If there is no manifest, fall into filename matching*/
   }
   for (const name of [`${scene}.html`, `${scene}s.html`]) {
     const p = path.join(HERE, name);
     if (fs.existsSync(p)) return { file: p, name };
   }
-  throw new Error(`şablon yok: kit/render/${scene}.html (veya ${scene}s.html)`);
+  throw new Error(`missing template: kit/render/${scene}.html (or ${scene}s.html)`);
 }
 
-/** Stil dizinleri (`<nn>-<slug>`), slug ya da dizin adıyla eşleşir. */
+/** Style directories (`<nn>-<slug>`) match the slug or directory name.*/
 function styleDirs(only) {
   const all = fs
     .readdirSync(STYLES_DIR, { withFileTypes: true })
@@ -95,17 +94,16 @@ function styleDirs(only) {
   const picked = [];
   for (const w of wanted) {
     const hit = all.find((dir) => dir === w || dir.replace(/^\d+-/, '') === w);
-    if (!hit) throw new Error(`eşleşen stil yok: ${w}`);
+    if (!hit) throw new Error(`no matching style: ${w}`);
     picked.push(hit);
   }
   return picked;
 }
 
 /**
- * render-shots.mjs `fill()`'in sadeleştirilmiş hâli: yalnız DOM'u etkileyen kancalar
- * doldurulur (stil kimliği + ikonlar). Renk/radius/font yerleştirmesi erişilebilirlik
- * denetimi için gereksiz; tokens.css ve scene.css linkleri şablonda olduğu gibi kalır.
- */
+ * render-shots.mjs Simplified version of `fill()`: hooks that only affect the DOM
+ * is filled (style id + icons). Color/radius/font placement accessibility
+ * unnecessary for control; The tokens.css and scene.css links remain as they are in the template.*/
 function fill(tpl, slug, dirName) {
   if (arg('scene', 'landing') === 'landing') {
     const styleDir = path.join(STYLES_DIR, dirName);
@@ -171,7 +169,7 @@ function fill(tpl, slug, dirName) {
   const family = (() => {
     const n = parseInt(dirName, 10);
     if (n <= 7) return 'Sade';
-    if (n <= 12) return 'Yüzey';
+    if (n <= 12) return 'surface';
     if (n <= 18) return 'Cesur';
     if (n <= 27) return 'Retro';
     return 'Sanatsal';
@@ -214,7 +212,7 @@ async function dumpDom(browser, htmlPath, profile) {
   const variants = [['--virtual-time-budget=4000'], []];
   const problems = [];
   for (const extra of variants) {
-    const label = extra.length ? 'virtual-time-budget' : 'bütçesiz';
+    const label = extra.length ? 'virtual-time-budget' : 'no budget';
     let stdout = '';
     let stderr = '';
     try {
@@ -236,11 +234,11 @@ async function dumpDom(browser, htmlPath, profile) {
       .filter(Boolean)
       .slice(-3)
       .join(' | ');
-    problems.push(detail ? `${label}: ${detail}` : `${label}: çıktı yok`);
+    problems.push(detail ? `${label}: ${detail}` : `${label}: no output`);
   }
   throw new Error(
     `${path.basename(htmlPath)}: --dump-dom DOM vermedi (${problems.join(' · ')}) — ` +
-      'STOP: tarayıcı/DOM sorununu bildirin',
+      'STOP: report browser/DOM issue',
   );
 }
 
@@ -248,14 +246,14 @@ function rmQuiet(target, label) {
   try {
     fs.rmSync(target, { recursive: true, force: true, maxRetries: 20, retryDelay: 250 });
   } catch (err) {
-    console.warn(`uyarı: ${label} silinemedi (${target}): ${err.code ?? err.message}`);
+    console.warn(`warning: could not delete ${label} (${target}): ${err.code ?? err.message}`);
   }
 }
 
 const VOID = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
 const LABELABLE = new Set(['input', 'select', 'textarea']);
 
-/** Kaba ama bağımlılıksız HTML tarayıcı: etiket + nitelik + metin ağacı. */
+/** Crude but dependency-free HTML browser: tag + attribute + text tree.*/
 function parseDom(html) {
   const clean = html
     .replace(/<script[\s\S]*?<\/script>/gi, '')
@@ -295,7 +293,7 @@ function parseDom(html) {
 const norm = (s) => s.replace(/\s+/g, ' ').trim();
 const classList = (el) => (el.attrs.class ?? '').split(/\s+/).filter(Boolean);
 
-/** Erişilebilir ad/ metin: aria-hidden alt ağaç atlanır, <img alt> metne katılır. */
+/** Accessible name/text: aria-hidden subtree skipped, <img sub> joins text.*/
 function nameText(el) {
   if (el.attrs['aria-hidden'] === 'true') return '';
   let out = el.textParts.join(' ');
@@ -319,7 +317,7 @@ export function audit(html) {
     if (count > 0) issues.push({ rule, count, samples: samples.slice(0, 3) });
   };
 
-  // 1 · h1 sayısı tam 1 olmalı
+  // 1 · h1 number must be exactly 1
   const h1s = els.filter((e) => e.tag === 'h1');
   if (h1s.length !== 1) {
     add('h1', h1s.length === 0 ? 1 : h1s.length - 1, [
@@ -328,11 +326,11 @@ export function audit(html) {
     ]);
   }
 
-  // 2 · <img> alt eksik (alt="" dekoratif kabul)
+  // 2 · <img> alt is missing (alt="" is considered decorative)
   const imgsMissingAlt = els.filter((e) => e.tag === 'img' && !('alt' in e.attrs));
   add('alt', imgsMissingAlt.length, imgsMissingAlt.map(snippet));
 
-  // 3 · form alanı etiketi: aria-label / aria-labelledby / <label>
+  // 3 form field label: aria-label / aria-labelledby / <label>
   const labelledIds = new Set(
     els.filter((e) => e.tag === 'label' && e.attrs.for).map((e) => e.attrs.for),
   );
@@ -352,9 +350,9 @@ export function audit(html) {
     if (e.attrs.id && labelledIds.has(e.attrs.id)) return false;
     return !labelledAncestors.has(e);
   });
-  add('etiket', unlabeled.length, unlabeled.map(snippet));
+  add('label', unlabeled.length, unlabeled.map(snippet));
 
-  // 4 · tıklanabilir (button / a / .btn) görünür metin veya aria-label taşımalı
+  // 4 · clickable (button / a / .btn) with visible text or aria-label
   const clickable = els.filter(
     (e) => e.tag === 'button' || e.tag === 'a' || classList(e).includes('btn'),
   );
@@ -366,7 +364,7 @@ export function audit(html) {
   });
   add('buton', nameless.length, nameless.map(snippet));
 
-  // 5 · negatif tabindex (kritik değil)
+  // 5 negative tabindex (not critical)
   const negTab = els.filter((e) => 'tabindex' in e.attrs && Number(e.attrs.tabindex) < 0);
   add('tabindex', negTab.length, negTab.map((e) => `${snippet(e)} tabindex=${e.attrs.tabindex}`));
 
@@ -378,7 +376,7 @@ export function audit(html) {
   return {
     h1: h1s.length,
     altMissing: count('alt'),
-    unlabeledFields: count('etiket'),
+    unlabeledFields: count('label'),
     unlabeledButtons: count('buton'),
     negativeTabindex,
     critical,
@@ -397,8 +395,8 @@ async function main() {
   fs.mkdirSync(tmpDir, { recursive: true });
 
   const rows = [];
-  // Profil dizini süreç başına tek: aynı anda koşan iki denetim birbirinin
-  // krom oturumuna bağlanıp boş DOM almasın (PID ile ayrışır).
+  // Profile directory one per process: two concurrently running checks
+  // connect to chrome session and not get empty DOM (parsed by PID).
   const profile = path.join(tmpDir, `profile-${process.pid}`);
   try {
     for (const dirName of dirs) {
@@ -410,10 +408,10 @@ async function main() {
       rows.push({ slug, dir: dirName, ...audit(dom) });
     }
   } finally {
-    // Yalnız kendi geçici dosyalarım: aynı anda koşan başka bir denetimin profilini silme.
-    for (const dirName of dirs) rmQuiet(path.join(tmpDir, `${dirName}-${sceneArg}.html`), 'geçici şablon');
-    rmQuiet(profile, 'geçici profil dizini');
-    if (fs.existsSync(tmpDir) && fs.readdirSync(tmpDir).length === 0) rmQuiet(tmpDir, 'geçici dizin');
+    // Only my own temporary files: deleting the profile of another control running at the same time.
+    for (const dirName of dirs) rmQuiet(path.join(tmpDir, `${dirName}-${sceneArg}.html`), 'temporary template');
+    rmQuiet(profile, 'temporary profile directory');
+    if (fs.existsSync(tmpDir) && fs.readdirSync(tmpDir).length === 0) rmQuiet(tmpDir, 'temporary directory');
   }
 
   const totals = rows.reduce(
@@ -459,11 +457,11 @@ async function main() {
     const pad = (s, n) => String(s).padEnd(n);
     const padL = (s, n) => String(s).padStart(n);
     console.log(
-      `Erişilebilirlik denetimi · sahne: ${sceneArg} · şablon: ` +
+      `Accessibility audit · scene: ${sceneArg} · template: ` +
         path.relative(ROOT, tpl.file).replace(/\\/g, '/'),
     );
     console.log(
-      `${pad('stil', 22)} ${padL('h1', 3)} ${padL('alt eksik', 9)} ${padL('etiketsiz alan', 14)} ` +
+      `${pad('style', 22)} ${padL('h1', 3)} ${padL('alt miss', 9)} ${padL('unlabelled', 14)} ` +
         `${padL('etiketsiz buton', 15)} ${padL('negatif tabindex', 16)} ${padL('toplam', 6)}`,
     );
     console.log('-'.repeat(90));
@@ -475,14 +473,14 @@ async function main() {
     }
     console.log('-'.repeat(90));
     console.log(
-      `${totals.styles} stil · ${totals.critical} kritik ihlal (h1/alt/etiket/buton) · ` +
+      `${totals.styles} styles · ${totals.critical} critical violations (h1/alt/label/button) · ` +
         `${totals.negativeTabindex} negatif tabindex · ${totals.total} toplam` +
-        (WARN_ONLY ? ' · --warn-only: çıkış 0' : ''),
+        (WARN_ONLY ? '· --warn-only: output 0' : ''),
     );
 
     const withIssues = rows.filter((r) => r.issues.length);
     if (withIssues.length) {
-      console.log('\nÖrnekler:');
+      console.log('\nExamples:');
       for (const r of withIssues) {
         for (const i of r.issues) {
           const samples = i.samples.length ? ' — ' + i.samples.join(' | ') : '';
@@ -490,14 +488,14 @@ async function main() {
         }
       }
     } else {
-      console.log('\nÖrnekler: yok');
+      console.log('\nExamples: none');
     }
   }
 
   process.exitCode = WARN_ONLY ? 0 : exitCode;
 }
 
-/** Doğrudan çalıştırıldığında CLI; import edildiğinde (test) yalnız audit() açılır. */
+/** CLI when run directly; When imported (tested), only audit() is turned on.*/
 const SELF = fileURLToPath(import.meta.url).toLowerCase();
 if (process.argv[1] && path.resolve(process.argv[1]).toLowerCase() === SELF) {
   main().catch((err) => {

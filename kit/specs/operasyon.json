@@ -4,10 +4,10 @@
     "slug": "incident-response",
     "name": "Incident Response",
     "band": "operasyon",
-    "tagline": "Olay müdahale konsolu: zaman çizelgesi, turuncu uyarı, tek sahiplik ve durum etiketleriyle sakin bir kriz ekranı.",
-    "feeling": "kontrollü kriz, \"kim ne yapıyor\"",
-    "best": "SRE/olay yönetimi, kesinti müdahalesi, vardiya panosu",
-    "avoid": "pazarlama vitrini, uzun okuma",
+    "tagline": "Incident response console: a calm crisis screen with timeline, orange alert, sole ownership and status labels.",
+    "feeling": "controlled crisis, \"who is doing what\"",
+    "best": "SRE/incident management, outage response, shift dashboard",
+    "avoid": "marketing showcase, long read",
     "palette": {
       "bg": "#0f1216",
       "bg2": "#131820",
@@ -31,20 +31,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**Zaman çizelgesi:** her olay 44px satır, sol tarafta saat mono.",
-      "**Turuncu uyarı:** accent yalnız açık olay ve eylem.",
-      "**Sahiplik:** her satırda tek isim, tek rol.",
-      "**Sakin kriz:** 4 KPI sınırı, grafik yok."
+      "**Timeline:** each event 44px row, clock mono on left side.",
+      "**Orange warning:** accent only open event and action.",
+      "**Ownership:** one name, one role per line.",
+      "**Calm crisis:** 4 KPI limit, no charts."
     ],
     "must": [
-      "Her olay satırında saat, sahip ve durum yazılır.",
-      "Accent yalnız açık/kritik durum.",
-      "Ekran başına en fazla 4 KPI."
+      "The time, owner, and status are written on each event line.",
+      "Accent is open/critical only.",
+      "Up to 4 KPIs per screen."
     ],
     "mustNot": [
-      "Yanıp sönen alarm ikonu.",
-      "Beşten fazla durum rengi.",
-      "Grafik duvarı."
+      "Flashing alarm icon.",
+      "More than five status colors.",
+      "Graphics wall."
     ],
     "neighbors": {
       "compatible": [
@@ -60,21 +60,21 @@
       {
         "label": "Incident management (Atlassian)",
         "url": "https://www.atlassian.com/incident-management",
-        "use": "olay akışı ve roller"
+        "use": "event flow and roles"
       },
       {
         "label": "Google SRE Book",
         "url": "https://sre.google/sre-book/table-of-contents/",
-        "use": "müdahale pratiği"
+        "use": "intervention practice"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "zaman ve kimlik etiketi"
+        "use": "time and ID tag"
       }
     ],
     "keywords": [
-      "operasyon",
+      "operation",
       "olay",
       "kriz"
     ],
@@ -82,8 +82,8 @@
       "saas",
       "teknoloji"
     ],
-    "essence": "Incident Response, kriz anında okunurluğu korur: tek zaman çizelgesi, tek sahip, tek sonraki adım.",
-    "brief": "Olay müdahale ekranı tasarla: koyu zemin, zaman çizelgesi, turuncu yalnız açık olayda, 4 KPI sınırı, mono saat.",
+    "essence": "Incident Response maintains readability in a crisis: one timeline, one owner, one next step.",
+    "brief": "Design incident response screen: dark background, timeline, orange only on open incident, 4 KPI limit, mono clock.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-table td { font-size: 13px; }\n.pg-card { border-left: 2px solid color-mix(in srgb, var(--accent) 40%, var(--line)); }",
     "paletteSeeds": {
       "bg": "#0f1216",
@@ -114,10 +114,10 @@
     "slug": "finops-cost",
     "name": "FinOps Cost",
     "band": "operasyon",
-    "tagline": "Bulut maliyet paneli: yeşil tasarruf göstergesi, sağa hizalı tutarlar ve bütçe eşiği çizgileri.",
-    "feeling": "hesaplı, şeffaf, \"nerede harcanıyor\"",
-    "best": "bulut maliyet yönetimi, bütçe paneli, satın alma",
-    "avoid": "yaratıcı kampanya sayfası",
+    "tagline": "Cloud cost dashboard: green savings indicator, right-aligned amounts and budget threshold lines.",
+    "feeling": "affordable, transparent, \"where is it spent\"",
+    "best": "cloud cost management, budget panel, purchasing",
+    "avoid": "creative campaign page",
     "palette": {
       "bg": "#f8faf9",
       "bg2": "#eef4f1",
@@ -141,20 +141,20 @@
     ],
     "motif": "bars",
     "signature": [
-      "**Sağa hizalı tutarlar:** para birimi küçük, sayı tabular.",
-      "**Yeşil accent:** tasarruf ve onay; kırmızı yalnız aşım.",
-      "**Bütçe çizgisi:** grafikte kesikli eşik çizgisi.",
-      "**Sade tablo:** zebra yok, hairline var."
+      "**Right-aligned amounts:** lowercase currency, tabular number.",
+      "**Green accent:** savings and confirmation; Red is my only love.",
+      "**Budget line:** dashed threshold line on the chart.",
+      "**Simple painting:** There is no zebra, there is a hairline."
     ],
     "must": [
-      "Tutarlar tabular ve sağa hizalı; para birimi her satırda.",
-      "Bütçe eşiği grafikte kesikli çizgiyle gösterilir.",
-      "Accent yalnız tasarruf/onay."
+      "Amounts are tabular and right-aligned; currency in each row.",
+      "The budget threshold is shown as a dashed line in the chart.",
+      "Accent only savings/confirmation."
     ],
     "mustNot": [
-      "Renkli ısı haritası (7+ ton).",
-      "Animasyonlu sayaç.",
-      "Yuvarlak 16px+ kart."
+      "Color heatmap (7+ hues).",
+      "Animated counter.",
+      "Round 16px+ card."
     ],
     "neighbors": {
       "compatible": [
@@ -170,21 +170,21 @@
       {
         "label": "FinOps Foundation",
         "url": "https://www.finops.org/",
-        "use": "maliyet yönetimi pratiği"
+        "use": "cost management practice"
       },
       {
         "label": "Inter (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Inter",
-        "use": "gövde ailesi"
+        "use": "body family"
       },
       {
         "label": "MDN · CSS Grid",
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
-        "use": "panel yerleşimi"
+        "use": "panel layout"
       }
     ],
     "keywords": [
-      "operasyon",
+      "operation",
       "maliyet",
       "finans"
     ],
@@ -192,8 +192,8 @@
       "saas",
       "finans"
     ],
-    "essence": "FinOps Cost, her tutarı bir karar sorusuna bağlar: ne kadar, hangi ekip, bütçeye göre nerede.",
-    "brief": "Bulut maliyet paneli tasarla: açık zemin, sağa hizalı tabular tutarlar, yeşil accent tasarrufta, kesikli bütçe eşiği.",
+    "essence": "FinOps Cost ties each amount into a decision question: how much, which team, where relative to the budget.",
+    "brief": "Design cloud cost dashboard: open floor, right-aligned tabular amounts, green accent on savings, dashed budget threshold.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-chart i { border-radius: 4px 4px 0 0; }\n.pg-table td.num { font-variant-numeric: tabular-nums; }",
     "paletteSeeds": {
       "bg": "#f8faf9",
@@ -224,10 +224,10 @@
     "slug": "fleet-dispatch",
     "name": "Fleet Dispatch",
     "band": "operasyon",
-    "tagline": "Filo sevk ekranı: harita üstünde araç kartları, mavi rota accent ve mono ETA sütunları.",
-    "feeling": "hareketli ama düzenli, \"her araç bir satır\"",
-    "best": "lojistik, kurye/sevk yönetimi, saha operasyonu",
-    "avoid": "editoryal vitrin, lüks tema",
+    "tagline": "Fleet dispatch screen: vehicle cards on the map, blue route accent and mono ETA columns.",
+    "feeling": "lively but orderly, \"each vehicle a line\"",
+    "best": "logistics, courier/dispatch management, field operation",
+    "avoid": "editorial showcase, luxury theme",
     "palette": {
       "bg": "#0c1116",
       "bg2": "#111820",
@@ -251,20 +251,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**Harita + liste:** sol harita, sağ araç listesi 44px satır.",
-      "**Mavi rota:** accent yalnız aktif rota ve seçili araç.",
-      "**ETA sütunu:** mono, dakika cinsinden.",
-      "**Durum şeridi:** 3px sol kenar, metin etiketiyle."
+      "**Map + list:** left map, right vehicle list 44px row.",
+      "**Blue route:** accent only active route and selected vehicle.",
+      "**ETA column:** mono, in minutes.",
+      "**Status banner:** 3px left margin with text label."
     ],
     "must": [
-      "ETA ve mesafe mono; birim yazılır.",
-      "Araç durumu hem renk hem etiketle.",
-      "Harita üstünde okunur kontrast için opak kart."
+      "ETA and distance mono; unit is written.",
+      "Vehicle status with both color and label.",
+      "Opaque card for readable contrast on the map."
     ],
     "mustNot": [
-      "Animasyonlu araç ikonu.",
-      "Beşten fazla durum rengi.",
-      "Harita üzerinde şeffaf metin."
+      "Animated vehicle icon.",
+      "More than five status colors.",
+      "Transparent text on map."
     ],
     "neighbors": {
       "compatible": [
@@ -280,21 +280,21 @@
       {
         "label": "Fleet management (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Fleet_management",
-        "use": "sevk akışı"
+        "use": "referral flow"
       },
       {
         "label": "Rajdhani (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Rajdhani",
-        "use": "dar başlık"
+        "use": "narrow title"
       },
       {
         "label": "MDN · CSS Grid",
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
-        "use": "harita/liste yerleşimi"
+        "use": "map/list layout"
       }
     ],
     "keywords": [
-      "operasyon",
+      "operation",
       "lojistik",
       "harita"
     ],
@@ -302,8 +302,8 @@
       "lojistik",
       "saas"
     ],
-    "essence": "Fleet Dispatch, haritayı süs değil tablo olarak kullanır: her araç bir satır, her satır bir ETA.",
-    "brief": "Filo sevk ekranı tasarla: koyu zemin, sol harita paneli, sağ araç listesi, mavi accent yalnız aktif rota, mono ETA.",
+    "essence": "Fleet Dispatch uses the map as a table, not decoration: each vehicle a row, each row an ETA.",
+    "brief": "Design fleet dispatch screen: dark background, left map panel, right vehicle list, blue accent only active route, mono ETA.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 10%, transparent) 0 1px, transparent 1px 32px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, transparent) 0 1px, transparent 1px 32px); }",
     "paletteSeeds": {
       "bg": "#0c1116",
@@ -334,10 +334,10 @@
     "slug": "fraud-review",
     "name": "Fraud Review",
     "band": "operasyon",
-    "tagline": "Risk inceleme kuyruğu: mor uyarı, kanıt paneli ve tek karar düğmesiyle temkinli bir inceleme ekranı.",
-    "feeling": "temkinli, kanıta dayalı, \"karar öncesi\"",
-    "best": "dolandırıcılık/risk incelemesi, uyum kuyruğu",
-    "avoid": "neşeli tüketici sayfası",
+    "tagline": "Risk review queue: a cautious review screen with purple alert, evidence panel and single decision button.",
+    "feeling": "cautious, evidence-based, \"pre-decisional\"",
+    "best": "fraud/risk review, compliance queue",
+    "avoid": "cheerful consumer page",
     "palette": {
       "bg": "#0f0e14",
       "bg2": "#14131c",
@@ -361,20 +361,20 @@
     ],
     "motif": "rings",
     "signature": [
-      "**Kanıt paneli:** sol sinyaller, sağ işlem özeti.",
-      "**Mor accent:** inceleme durumu; kırmızı yalnız onaylanmış sahtekârlık.",
-      "**Karar düğmesi:** tek birincil, iki ikincil; karar gerekçesi zorunlu.",
-      "**Risk puanı:** 0–100 mono, renk skalası 3 kademe."
+      "**Evidence panel:** left signals, right trade summary.",
+      "**Purple accent:** review status; red only confirmed fraud.",
+      "**Decision button:** one primary, two secondary; The justification for the decision is mandatory.",
+      "**Risk score:** 0–100 mono, color scale 3 levels."
     ],
     "must": [
-      "Risk puanı ve gerekçe birlikte gösterilir.",
-      "Karar düğmeleri geri alınabilir; onay metni açık yazılır.",
-      "Accent yalnız inceleme durumu."
+      "Risk score and justification are displayed together.",
+      "Decision buttons are reversible; The confirmation text is written clearly.",
+      "Accent solo review status."
     ],
     "mustNot": [
-      "Kırmızı-yeşil tek başına anlam.",
-      "Animasyonlu uyarı.",
-      "Kanıt olmadan karar öneren otomatik buton."
+      "Red-green alone meaning.",
+      "Animated warning.",
+      "Automatic button that recommends decisions without evidence."
     ],
     "neighbors": {
       "compatible": [
@@ -390,21 +390,21 @@
       {
         "label": "Fraud detection (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Fraud",
-        "use": "inceleme bağlamı"
+        "use": "review context"
       },
       {
         "label": "OWASP Top Ten",
         "url": "https://owasp.org/www-project-top-ten/",
-        "use": "risk sinyali kataloğu"
+        "use": "risk signal catalog"
       },
       {
         "label": "JetBrains Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/JetBrains+Mono",
-        "use": "puan ve kimlik"
+        "use": "score and identity"
       }
     ],
     "keywords": [
-      "operasyon",
+      "operation",
       "risk",
       "uyum"
     ],
@@ -412,8 +412,8 @@
       "finans",
       "saas"
     ],
-    "essence": "Fraud Review, kararı hızlandırmaz; kanıtı düzenler. Her sinyal tek satır, her karar tek gerekçe.",
-    "brief": "Dolandırıcılık inceleme ekranı tasarla: koyu zemin, sol sinyal listesi, sağ işlem özeti, mor accent inceleme durumu, tek karar düğmesi.",
+    "essence": "Fraud Review does not speed up the decision; Organizes evidence. Each signal is a single line, each decision is a single justification.",
+    "brief": "Design fraud review screen: dark background, left signal list, right transaction summary, purple accent review status, single decision button.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-card { border-top: 2px solid color-mix(in srgb, var(--accent) 44%, var(--line)); }",
     "paletteSeeds": {
       "bg": "#0f0e14",
@@ -444,10 +444,10 @@
     "slug": "slo-budget",
     "name": "SLO Budget",
     "band": "operasyon",
-    "tagline": "Hata bütçesi panosu: mavi eşik çizgisi, kalan bütçe göstergesi ve mono hata oranı sütunları.",
-    "feeling": "ölçülü, uyarıcı, \"bütçe tükeniyor\"",
-    "best": "güvenilirlik panosu, SLO/SLA takibi, platform ekibi",
-    "avoid": "pazarlama, uzun biçim",
+    "tagline": "Error budget dashboard: blue threshold line, remaining budget indicator, and mono error rate columns.",
+    "feeling": "restrained, cautionary, \"budget running out\"",
+    "best": "reliability dashboard, SLO/SLA tracking, platform team",
+    "avoid": "marketing, long form",
     "palette": {
       "bg": "#0b1018",
       "bg2": "#0f1621",
@@ -471,20 +471,20 @@
     ],
     "motif": "bars",
     "signature": [
-      "**Bütçe göstergesi:** tek büyük yüzde + kalan dakika.",
-      "**Eşik çizgisi:** grafikte iki referans (hedef/sınır).",
-      "**Mavi accent:** sağlıklı; amber yalnız eşik altı.",
-      "**Yoğun tablo:** servis başına satır 44px."
+      "**Budget indicator:** single largest percentage + remaining minutes.",
+      "**Threshold line:** two references (target/limit) in the chart.",
+      "**Blue accent:** healthy; Amber is only subthreshold.",
+      "**Dense table:** 44px row per service."
     ],
     "must": [
-      "Hedef ve sınır aynı grafikte etiketlenir.",
-      "Hata oranı iki ondalık, mono.",
-      "Renk eşikleri metinle de yazılır."
+      "The target and boundary are labeled on the same chart.",
+      "Error rate two decimal, mono.",
+      "Color thresholds are also written in text."
     ],
     "mustNot": [
-      "Aşırı renk geçişli ısı haritası.",
-      "Animasyonlu yüzde.",
-      "Dörtten fazla grafik."
+      "Extreme color gradient heatmap.",
+      "Animated percentage.",
+      "More than four graphics."
     ],
     "neighbors": {
       "compatible": [
@@ -500,30 +500,30 @@
       {
         "label": "Google SRE Workbook · SLOs",
         "url": "https://sre.google/workbook/table-of-contents/",
-        "use": "hata bütçesi tanımı"
+        "use": "error budget definition"
       },
       {
         "label": "Inter (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Inter",
-        "use": "gövde ailesi"
+        "use": "body family"
       },
       {
         "label": "MDN · CSS Grid",
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
-        "use": "pano yerleşimi"
+        "use": "board layout"
       }
     ],
     "keywords": [
-      "operasyon",
-      "güvenilirlik",
+      "operation",
+      "reliability",
       "slo"
     ],
     "industries": [
       "saas",
       "teknoloji"
     ],
-    "essence": "SLO Budget, soyut güvenilirliği tek bir sayıya indirir: kalan hata bütçesi ve onu tüketen servisler.",
-    "brief": "SLO panosu tasarla: koyu zemin, tek büyük bütçe yüzdesi, eşik çizgili grafik, mono hata oranı tablosu.",
+    "essence": "SLO Budget reduces abstract reliability to a single number: the remaining error budget and the services that consume it.",
+    "brief": "Design SLO board: dark background, single large budget percentage, threshold line chart, mono error rate chart.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 24ch; }\n.pg-band b { font-family: var(--font-mono); font-size: 28px; }",
     "paletteSeeds": {
       "bg": "#0b1018",
@@ -554,10 +554,10 @@
     "slug": "data-lineage",
     "name": "Data Lineage",
     "band": "operasyon",
-    "tagline": "Veri soy ağacı ekranı: düğüm çizgileri, soluk camgöbeği accent ve mono şema etiketleri.",
-    "feeling": "sistemli, haritalı, \"kaynak nereden geliyor\"",
-    "best": "veri kataloğu, ETL izleme, şema dokümantasyonu",
-    "avoid": "tüketici vitrini",
+    "tagline": "Data family tree display: node lines, pale cyan accent, and mono schema labels.",
+    "feeling": "systematic, mapped, \"where does the resource come from?\"",
+    "best": "data catalog, ETL tracking, schema documentation",
+    "avoid": "consumer showcase",
     "palette": {
       "bg": "#0d1216",
       "bg2": "#12191f",
@@ -581,20 +581,20 @@
     ],
     "motif": "grid",
     "signature": [
-      "**Düğüm dili:** her tablo bir kutu, kenarlar 1px, ok başı yok.",
-      "**Camgöbeği accent:** yalnız seçili yol.",
-      "**Mono kimlik:** tablo adları mono, tipografi minimal.",
-      "**Şema etiketi:** sütunlar 11px mono, satır 28px."
+      "**Node language:** each table is a box, edges 1px, no arrowheads.",
+      "**Cyan accent:** selected path only.",
+      "**Mono identity:** table names are mono, typography is minimal.",
+      "**Schema label:** columns 11px mono, row 28px."
     ],
     "must": [
-      "Tablo ve sütun adları mono ve okunur (≥11px).",
-      "Seçili yol dışında accent kullanılmaz.",
-      "Her düğümde kaynak/hedef rolü yazılır."
+      "Table and column names are mono and readable (≥11px).",
+      "Accent is not used outside the selected path.",
+      "The source/target role is written on each node."
     ],
     "mustNot": [
-      "Animasyonlu akış çizgisi.",
-      "Rastgele renklendirilmiş düğümler.",
-      "8px altı etiket."
+      "Animated streamline.",
+      "Randomly colored nodes.",
+      "Below 8px tag."
     ],
     "neighbors": {
       "compatible": [
@@ -610,30 +610,30 @@
       {
         "label": "Data lineage (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Data_lineage",
-        "use": "soy ağacı kavramı"
+        "use": "family tree concept"
       },
       {
         "label": "IBM Plex Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/IBM+Plex+Mono",
-        "use": "şema etiketi"
+        "use": "schema tag"
       },
       {
         "label": "MDN · CSS Grid",
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
-        "use": "düğüm yerleşimi"
+        "use": "node placement"
       }
     ],
     "keywords": [
-      "operasyon",
-      "veri",
-      "şema"
+      "operation",
+      "data",
+      "schema"
     ],
     "industries": [
       "teknoloji",
       "saas"
     ],
-    "essence": "Data Lineage, veri akışını harita gibi okutur: kutu, çizgi ve rol etiketi; süs yok.",
-    "brief": "Veri soy ağacı ekranı tasarla: koyu zemin, kutu düğümler, camgöbeği yalnız seçili yolda, mono şema etiketleri.",
+    "essence": "Data Lineage reads the data flow like a map: boxes, lines and role labels; no ornaments.",
+    "brief": "Design data family tree display: dark background, box nodes, cyan only on selected path, mono schema labels.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-media { background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 0 1px, transparent 1px 24px); }\n.pg-table td { font-family: var(--font-mono); font-size: 11px; }",
     "paletteSeeds": {
       "bg": "#0d1216",
@@ -664,10 +664,10 @@
     "slug": "access-audit",
     "name": "Access Audit",
     "band": "operasyon",
-    "tagline": "Erişim denetimi: gri tablo, kırmızı yalnız ihlal, mono kimlik ve değişmezlik vurgusu.",
-    "feeling": "resmî, kayıt tutan, \"kim ne zaman girdi\"",
-    "best": "denetim günlüğü, erişim incelemesi, uyum kanıtı",
-    "avoid": "yaratıcı portfolyo",
+    "tagline": "Access control: gray table, red lone violation, mono identity and immutability emphasis.",
+    "feeling": "official, record-keeper, \"who entered when\"",
+    "best": "audit log, access review, proof of compliance",
+    "avoid": "creative portfolio",
     "palette": {
       "bg": "#f6f6f7",
       "bg2": "#ededf0",
@@ -691,20 +691,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**Sabit satır:** 40px, mono kimlik ve zaman damgası.",
-      "**Kırmızı yalnız ihlal:** accent dekoratif kullanılmaz.",
-      "**Değişmezlik:** her satırda kayıt no ve kaynak.",
-      "**Gri ölçek:** arayüz nötr; renk bilgi taşır."
+      "**Fixed line:** 40px, mono id and timestamp.",
+      "**Red only violation:** accent decorative is not used.",
+      "**Immutability:** record number and source on each line.",
+      "**Gray scale:** interface neutral; Color carries information."
     ],
     "must": [
-      "Zaman damgası ISO biçiminde ve mono.",
-      "Her ihlal satırında kural kimliği yazılır.",
-      "Tablo dışa aktarılabilir; sütun sırası sabit."
+      "The timestamp is in ISO format and mono.",
+      "The rule ID is written on each violation line.",
+      "The table can be exported; column order is fixed."
     ],
     "mustNot": [
-      "Renkli satır arka planı (zebra yalnız gri).",
+      "Colorful line background (zebra gray alone).",
       "Animasyon.",
-      "Gizlenen sütun (audit kaydı eksiltilemez)."
+      "Hidden column (audit record cannot be decremented)."
     ],
     "neighbors": {
       "compatible": [
@@ -720,30 +720,30 @@
       {
         "label": "Audit log (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Audit_trail",
-        "use": "kayıt yapısı"
+        "use": "record structure"
       },
       {
         "label": "NIST Cybersecurity Framework",
         "url": "https://www.nist.gov/cyberframework",
-        "use": "erişim kontrolü pratiği"
+        "use": "access control practice"
       },
       {
         "label": "Courier Prime (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Courier+Prime",
-        "use": "kayıt kimliği"
+        "use": "registration id"
       }
     ],
     "keywords": [
-      "operasyon",
-      "denetim",
+      "operation",
+      "audit",
       "uyum"
     ],
     "industries": [
       "finans",
       "saas"
     ],
-    "essence": "Access Audit, bir tabloyu kanıt haline getirir: her satır kim, ne zaman, hangi kaynaktan ve hangi kural.",
-    "brief": "Erişim denetim ekranı tasarla: nötr gri arayüz, 40px sabit satır, mono zaman damgası, kırmızı yalnız ihlalde.",
+    "essence": "Access Audit turns a table into evidence: each row by who, when, from what source, and by what rule.",
+    "brief": "Design access control screen: neutral gray interface, 40px solid row, mono timestamp, red only in violation.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 28ch; }\n.pg-table td, .pg-table th { font-size: 11.5px; }\n.pg-table tr:nth-child(even) { background: var(--surface-2); }",
     "paletteSeeds": {
       "bg": "#f6f6f7",
@@ -774,10 +774,10 @@
     "slug": "release-train",
     "name": "Release Train",
     "band": "operasyon",
-    "tagline": "Sürüm takvimi: haftalık tren çizgisi, mor durum etiketi ve mono sürüm numaraları.",
-    "feeling": "ritmik, planlı, \"cuma yayın\"",
-    "best": "sürüm planlama, CI/CD panosu, ürün takvimi",
-    "avoid": "editoryal dergi düzeni",
+    "tagline": "Release calendar: weekly trend line, purple status tag and mono release numbers.",
+    "feeling": "rhythmic, planned, \"friday broadcast\"",
+    "best": "release planning, CI/CD dashboard, product calendar",
+    "avoid": "editorial magazine layout",
     "palette": {
       "bg": "#101118",
       "bg2": "#15161f",
@@ -801,19 +801,19 @@
     ],
     "motif": "bars",
     "signature": [
-      "**Tren çizgisi:** yatay 2px hat, duraklar 10px daire.",
-      "**Mor accent:** yalnız sıradaki durak.",
-      "**Sürüm etiketi:** mono `v1.24.0`, sağa hizalı.",
-      "**Durum şeridi:** renk + metin (planlandı/yayında/geri alındı)."
+      "**Train line:** horizontal 2px line, stops 10px circle.",
+      "**Purple accent:** only next stop.",
+      "**Version label:** mono `v1.24.0`, right-aligned.",
+      "**Status banner:** color + text (scheduled/on air/undone)."
     ],
     "must": [
-      "Sürüm numarası semver ve mono.",
-      "Duraklar kronolojik; geri alınanlar işaretli.",
-      "Accent yalnız sıradaki adım."
+      "Version number semver and mono.",
+      "The stops are chronological; Retrievals are marked.",
+      "Accent is just the next step."
     ],
     "mustNot": [
       "Animasyonlu ilerleme.",
-      "Dörtten fazla durum rengi.",
+      "More than four status colors.",
       "Tarihsiz durak."
     ],
     "neighbors": {
@@ -830,30 +830,30 @@
       {
         "label": "Semantic Versioning",
         "url": "https://semver.org/",
-        "use": "sürüm numarası biçimi"
+        "use": "version number format"
       },
       {
         "label": "Space Grotesk (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Space+Grotesk",
-        "use": "başlık ailesi"
+        "use": "title family"
       },
       {
         "label": "JetBrains Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/JetBrains+Mono",
-        "use": "sürüm etiketi"
+        "use": "version tag"
       }
     ],
     "keywords": [
-      "operasyon",
-      "sürüm",
+      "operation",
+      "version",
       "planlama"
     ],
     "industries": [
       "saas",
       "teknoloji"
     ],
-    "essence": "Release Train, yayın ritmini bir hat üzerinde gösterir: her durak bir sürüm, her sürüm bir tarih.",
-    "brief": "Sürüm takvimi ekranı tasarla: koyu zemin, yatay tren hattı, mor yalnız sıradaki durakta, mono semver etiketleri.",
+    "essence": "Release Train shows the release cadence on a line: each stop a release, each release a date.",
+    "brief": "Design release calendar screen: dark background, horizontal train line, purple lonely next stop, mono semver labels.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-meter { height: 4px; }\n.pg-list li::before { border-radius: 2px; }",
     "paletteSeeds": {
       "bg": "#101118",
@@ -884,10 +884,10 @@
     "slug": "support-inbox",
     "name": "Support Inbox",
     "band": "operasyon",
-    "tagline": "Destek gelen kutusu: üç kolon, sarı öncelik, kısa yanıt şablonları ve mono SLA sayacı.",
-    "feeling": "hızlı, sıcak, \"sıradaki kişi\"",
-    "best": "destek masası, ticket kuyruğu, canlı sohbet paneli",
-    "avoid": "lüks editoryal, koyu oyun HUD",
+    "tagline": "Support inbox: three columns, yellow priority, short reply templates and mono SLA counter.",
+    "feeling": "fast, hot, \"next person\"",
+    "best": "support desk, ticket queue, live chat panel",
+    "avoid": "luxury editorial, dark gaming HUD",
     "palette": {
       "bg": "#fbf9f6",
       "bg2": "#f2eee8",
@@ -911,20 +911,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**Üç kolon:** kuyruk 260px, konuşma, bağlam paneli.",
-      "**Sarı-kahve accent:** öncelik ve seçili satır.",
-      "**Şablon çipleri:** tek satır, 6 şablon sınırı.",
-      "**SLA sayacı:** mono, kalan süre."
+      "**Three columns:** tail 260px, conversation, context panel.",
+      "**Yellow-brown accent:** priority and selected row.",
+      "**Template chips:** single row, limit of 6 stencils.",
+      "**SLA counter:** mono, remaining time."
     ],
     "must": [
-      "Her ticket satırında bekleme süresi mono.",
-      "Yanıt şablonları en fazla 6; tek satır.",
-      "Öncelik hem renk hem etiket."
+      "The wait time for each ticket line is mono.",
+      "Response templates maximum 6; single line.",
+      "The priority is both color and label."
     ],
     "mustNot": [
       "Sonsuz kayan mesaj.",
-      "On renkli etiket.",
-      "Animasyonlu yazıyor göstergesi."
+      "Ten colorful labels.",
+      "Animated typing indicator."
     ],
     "neighbors": {
       "compatible": [
@@ -940,30 +940,30 @@
       {
         "label": "Customer support (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Customer_support",
-        "use": "kuyruk ve SLA"
+        "use": "queue and SLA"
       },
       {
         "label": "Inter (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Inter",
-        "use": "gövde ailesi"
+        "use": "body family"
       },
       {
         "label": "Space Mono (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Space+Mono",
-        "use": "sayaç"
+        "use": "counter"
       }
     ],
     "keywords": [
-      "operasyon",
-      "destek",
+      "operation",
+      "support",
       "kuyruk"
     ],
     "industries": [
       "saas",
       "eticaret"
     ],
-    "essence": "Support Inbox, tek ekranda üç soruyu cevaplar: kim bekliyor, ne kadar bekledi, ne cevap verilecek.",
-    "brief": "Destek gelen kutusu tasarla: üç kolon, sarı-kahve accent öncelikte, mono SLA sayacı, şablon çipleri.",
+    "essence": "Support Inbox answers three questions on one screen: who's waiting, how long they've waited, what to answer.",
+    "brief": "Design support inbox: three columns, yellow-brown accent priority, mono SLA counter, template chips.",
     "extraCss": "h1 { font-size: var(--type-h1); max-width: 26ch; }\n.pg-card { box-shadow: 0 1px 2px rgba(27,24,21,.06); }",
     "paletteSeeds": {
       "bg": "#fbf9f6",
@@ -994,10 +994,10 @@
     "slug": "regulatory-report",
     "name": "Regulatory Report",
     "band": "operasyon",
-    "tagline": "Uyum raporu: serif başlık, numaralı bölüm, gri tablo ve tek lacivert accent ile resmî belge düzeni.",
+    "tagline": "Compliance report: official document layout with serif header, numbered section, gray table and single dark blue accent.",
     "feeling": "resmî, denetlenebilir, \"madde madde\"",
-    "best": "uyum/regülasyon raporu, yıllık bildirim, denetim dosyası",
-    "avoid": "kampanya sayfası, neon",
+    "best": "compliance/regulation report, annual notification, audit file",
+    "avoid": "campaign page neon",
     "palette": {
       "bg": "#fffdf9",
       "bg2": "#f4f1ea",
@@ -1021,20 +1021,20 @@
     ],
     "motif": "none",
     "signature": [
-      "**Numaralı bölüm:** 1 / 1.1 / 1.1.1 hiyerarşisi.",
-      "**Serif gövde:** Lora 16px/1.7, ölçü 68ch.",
-      "**Lacivert accent:** yalnız bağlantı ve onay mührü.",
-      "**Gri tablo:** kenar çizgili, zebra yok."
+      "**Numbered section:** 1 / 1.1 / 1.1.1 hierarchy.",
+      "**Serif body:** Lora 16px/1.7, size 68ch.",
+      "**Navy blue accent:** link and seal of approval only.",
+      "**Gray painting:** border striped, no zebra."
     ],
     "must": [
-      "Bölüm numaraları ve başlıklar tutarlı.",
-      "Her tabloda birim ve kaynak dipnotu.",
-      "Metin 68ch'i geçmez."
+      "Chapter numbers and titles are consistent.",
+      "Unit and source footnote in each table.",
+      "Text does not exceed 68ch."
     ],
     "mustNot": [
-      "Renkli uyarı blokları.",
-      "Dekoratif görsel.",
-      "Yuvarlak köşe."
+      "Colored warning blocks.",
+      "Decorative image.",
+      "Round corner."
     ],
     "neighbors": {
       "compatible": [
@@ -1050,30 +1050,30 @@
       {
         "label": "Lora (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Lora",
-        "use": "gövde serif"
+        "use": "body serif"
       },
       {
         "label": "Regulatory compliance (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Regulatory_compliance",
-        "use": "rapor yapısı"
+        "use": "report structure"
       },
       {
         "label": "WCAG 2.2",
         "url": "https://www.w3.org/TR/WCAG22/",
-        "use": "erişilebilirlik ölçütleri"
+        "use": "accessibility criteria"
       }
     ],
     "keywords": [
-      "operasyon",
+      "operation",
       "uyum",
-      "rapor"
+      "report"
     ],
     "industries": [
       "finans",
       "kamu"
     ],
-    "essence": "Regulatory Report, bir belgeyi ekranda da belge gibi tutar: numaralı bölüm, kaynak dipnotu, ölçülü serif.",
-    "brief": "Uyum raporu sayfası tasarla: serif gövde, numaralı bölümler, lacivert accent yalnız bağlantıda, gri kenar çizgili tablo.",
+    "essence": "Regulatory Report keeps a document on the screen like a document: numbered section, source footnote, metric serif.",
+    "brief": "Design compliance report page: serif body, numbered sections, navy blue accent only on link, gray border striped table.",
     "extraCss": "h1 { font-size: var(--type-h1); font-weight: 600; max-width: 24ch; }\nh2 { font-size: 26px; font-weight: 600; }\nbody, .lede, .pg-p { font-size: 16px; line-height: 1.7; }\n.pg-card { border-radius: 0; box-shadow: none; }",
     "paletteSeeds": {
       "bg": "#fffdf9",

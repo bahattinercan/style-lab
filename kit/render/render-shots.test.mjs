@@ -7,11 +7,11 @@ import vm from 'node:vm';
 
 const source = fs.readFileSync(new URL('./render-shots.mjs', import.meta.url), 'utf8');
 const declaration = source.match(/^function writeManifest\(touchedDirs\) \{[\s\S]*?^\}/m);
-assert.ok(declaration, 'Manifest üreticisi bulunmalı');
+assert.ok(declaration, 'There must be a manifest producer');
 const fillDeclaration = source.match(/^function fill\([\s\S]*?^\}/m);
-assert.ok(fillDeclaration, 'HTML doldurucusu bulunmalı');
+assert.ok(fillDeclaration, 'Must have HTML filler');
 
-test('tek stil üretimi diğer stillerin manifest kayıtlarını korur', () => {
+test('single style generation preserves manifest records of other styles', () => {
   const stylesDir = path.resolve('test-styles');
   const cacheDir = path.resolve('test-cache');
   const renderDir = path.resolve('test-render');
@@ -56,7 +56,7 @@ function fillForTest() {
   return context.fill;
 }
 
-test('motif.css içeriği sahnenin ortak style bloğuna eklenir', () => {
+test('motif.css content is added to the public style block of the scene', () => {
   const fill = fillForTest();
   const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'render-motif-'));
   const motifFile = path.join(fixture, 'motif.css');
@@ -70,7 +70,7 @@ test('motif.css içeriği sahnenin ortak style bloğuna eklenir', () => {
   fs.rmSync(fixture, { recursive: true, force: true });
 });
 
-test('imagery.art, imagery.photo varsa __PHOTO__ için öncelik alır', () => {
+test('imagery.art, imagery.photo takes priority over __PHOTO__ if present', () => {
   const fill = fillForTest();
   const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'render-art-'));
   const tokensFile = path.join(fixture, 'tokens.json');

@@ -1,52 +1,52 @@
-# refs/design-resources — dondurulmuş tasarım kaynak kataloğu
+# refs/design-resources — frozen design resource catalog
 
-Kaynak: [bradtraversy/design-resources-for-developers](https://github.com/bradtraversy/design-resources-for-developers)
-Kaynak lisansı: [MIT — Copyright (c) 2020 Brad Traversy](LICENSE-upstream.txt).
-Snapshot: **2026-10-18** (depo o tarihte yeni kayıt almaya kapatıldı — bu yüzden dondurulmuş kopya
-güncelliğini kaybetmiyor, sadece linkler ölüyor).
+Source: [bradtraversy/design-resources-for-developers](https://github.com/bradtraversy/design-resources-for-developers)
+Source licence: [MIT — Copyright (c) 2020 Brad Traversy](LICENSE-upstream.txt).
+Snapshot: **2026-10-18** (the upstream repo closed to new submissions on that date, so the frozen copy
+does not go stale — only its links die).
 
-**1249 kayıt · 33 bölüm · 1063 benzersiz domain.** Kod, token, stil dokümanı **yok** — bu bir link dizini.
-Stil/token ihtiyacı için `styles/` ve `playbook.md`; buradaki değer **varlık (görsel/font/ikon) ve araç**
-keşfi.
+**1249 records · 33 sections · 1063 unique domains.** There is **no** code, token or style documentation here — this is a link
+directory. For styles and tokens use `styles/` and `playbook.md`; the value here is discovering **assets
+(images/fonts/icons) and tools**.
 
-## Kullanım
+## Usage
 
 ```bash
-node refs/design-resources/query.mjs --q mockup --alive          # arama + ölü link filtresi
+node refs/design-resources/query.mjs --q mockup --alive          # search + dead-link filter
 node refs/design-resources/query.mjs --section "Stock Photos" --alive --limit 10
-node refs/design-resources/query.mjs --sections                  # bölüm listesi + kayıt sayısı
-node refs/design-resources/query.mjs --q illüstrasyon --json     # makine-okur
+node refs/design-resources/query.mjs --sections                  # section list + record counts
+node refs/design-resources/query.mjs --q illustration --json     # machine-readable
 ```
 
-`--alive` link durumunu `link-health.json`'dan okur; `ok` / `bot` (403 — bot koruması, çoğu sağ) geçer,
-`OLU` / `hata` elenir.
+`--alive` reads link status from `link-health.json`; `ok` / `bot` (403 — bot protection, mostly healthy) pass,
+`DEAD` / `error` are dropped.
 
-## Bakım
+## Maintenance
 
 ```bash
-node refs/design-resources/analyze.mjs      # readme.snapshot.md → rows.json (1249 kayıt, ~0.2 s)
-node refs/design-resources/linkcheck.mjs    # rows.json → link-health.json + iki ölü-link raporu (~2 dk, 25 eşzamanlı)
+node refs/design-resources/analyze.mjs      # readme.snapshot.md → rows.json (1249 records, ~0.2 s)
+node refs/design-resources/linkcheck.mjs    # rows.json → link-health.json + two dead-link reports (~2 min, 25 concurrent)
 ```
 
-- Snapshot yenilenmek istenirse `readme.snapshot.md` üzerine yazılır, sonra `analyze.mjs` + `linkcheck.mjs`.
-- Ölü sayısı koşular arasında **±2 oynar** (DNS/timeout gürültüsü); trend önemli, tek koşu değil.
-- Snapshot **CRLF** gelir; `\r` temizlenmeden `^## (.+)$` regex'i hiçbir başlığı yakalamaz.
+- To refresh the snapshot, overwrite `readme.snapshot.md`, then run `analyze.mjs` + `linkcheck.mjs`.
+- The dead count moves **±2 between runs** (DNS/timeout noise); the trend matters, not a single run.
+- The snapshot arrives with **CRLF**; without stripping `\r` the `^## (.+)$` regex matches no heading.
 
-## Dosyalar
+## Files
 
-| Dosya | İçerik |
+| File | Content |
 |---|---|
-| `readme.snapshot.md` | dondurulmuş kaynak tablo (183 KB) |
-| `rows.json` | ayrıştırılmış 1249 kayıt: `section`, `name`, `url`, `desc` |
-| `link-health.json` | her URL için `status` + `error` (son koşu) |
-| `olu-linkler.md` | tüm sorunlular (ölü + bot koruması + timeout) |
-| `olu-linkler-kesin.md` | yalnız 404/410/DNS yok |
-| `analyze.mjs` · `linkcheck.mjs` · `query.mjs` | ayrıştır / dene / ara |
-| `inceleme.md` | kataloğun değerlendirmesi (neye yarar, neye yaramaz) |
+| `readme.snapshot.md` | frozen source table (183 KB) |
+| `rows.json` | 1249 parsed records: `section`, `name`, `url`, `desc` |
+| `link-health.json` | `status` + `error` per URL (last run) |
+| `olu-linkler.md` | everything problematic (dead + bot protection + timeout) |
+| `olu-linkler-kesin.md` | 404/410/DNS failures only |
+| `analyze.mjs` · `linkcheck.mjs` · `query.mjs` | parse / probe / search |
+| `inceleme.md` | assessment of the catalog (what it is good for, what it is not) |
 
-## Sınırlar
+## Limits
 
-- Bölümler **framework eksenli** (React / Vue / Angular / Svelte ayrı) — stil eksenli okuma yok.
-- AI çağı kayıtları zayıf (7 kayıt); depo kapalı olduğu için bu boşluk büyüyor.
-- Chrome/Firefox eklentileri 62 kayıt (toplamın %5'i) — bu depoda ölü ağırlık.
-- 8 URL birebir tekrar ediyor (`ant.design`, `heroicons.dev`, `splidejs.com`, `clarity.design`, …).
+- Sections are **framework-oriented** (React / Vue / Angular / Svelte separately) — there is no style-oriented reading.
+- AI-era records are thin (7 entries); the repo is closed, so the gap keeps growing.
+- Chrome/Firefox extensions are 62 records (5% of the total) — dead weight in this repo.
+- 8 URLs repeat verbatim (`ant.design`, `heroicons.dev`, `splidejs.com`, `clarity.design`, …).

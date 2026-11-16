@@ -10,7 +10,7 @@
   <text x="90" y="72" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="2">ICU PATIENT MONITOR // TRIAGE STATUS [STABLE]</text>
   <text x="1340" y="72" fill="#7d938f" font-family="monospace" font-size="13">BED 04 · ADULT</text>
 
-  <!-- ECG Scope Panel -->
+  <!--ECG Scope Panel-->
   <rect x="100" y="120" width="1400" height="400" fill="#f4f8f7" stroke="#d7e3e0" />
   <line x1="100" y1="120" x2="100" y2="520" stroke="#b8ccc7" stroke-width="1.2" />
 <line x1="120" y1="120" x2="120" y2="520" stroke="#e0ece9" stroke-width="0.6" />

@@ -1,46 +1,46 @@
 {
-  "label": "Sağlık / klinik",
+  "label": "healthcare / clinic",
   "tags": [
-    "sağlık",
+    "health",
     "klinik",
     "randevu"
   ],
   "hero": {
-    "eyebrow": "Randevu · 7 gün",
-    "h1": "Randevudan önce bilmeniz gerekenler",
-    "lede": "Hekiminizi seçin, hazırlık adımlarını görün; bekleme odasında zaman kaybetmeyin.",
-    "ctaPrimary": "Randevu al",
-    "ctaSecondary": "Nasıl işliyor →"
+    "eyebrow": "Appointment · 7 days",
+    "h1": "What to know before your visit",
+    "lede": "Pick a doctor, read the prep steps, skip the queue.",
+    "ctaPrimary": "Book a visit",
+    "ctaSecondary": "How it works →"
   },
   "proofs": [
-    "Aynı gün dönüş",
-    "Anlaşmalı kurumlar",
-    "KVKK uyumlu"
+    "Same-day reply",
+    "Contracted clinics",
+    "Privacy first"
   ],
   "logos": [
-    "Poliklinik",
-    "Klini",
-    "Saglik",
-    "Merkez",
+    "Clinic",
+    "Ward",
+    "Health",
+    "Centre",
     "Vital"
   ],
   "tiles": [
     {
       "num": "01",
-      "cap": "Poliklinikler"
+      "cap": "Clinics"
     },
     {
       "num": "02",
-      "cap": "Hazırlık"
+      "cap": "Preparation"
     },
     {
       "num": "03",
-      "cap": "Sonuçlar"
+      "cap": "Results"
     },
     {
       "num": "04",
-      "cap": "Reçete"
+      "cap": "Prescription"
     }
   ],
-  "logoLabel": "Anlaşmalı kurumlar"
+  "logoLabel": "Contracted institutions"
 }

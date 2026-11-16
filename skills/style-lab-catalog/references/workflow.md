@@ -63,7 +63,7 @@ Command order: validate → 5 sources (`tokens.json`, `token-block.css`, `style.
 ## 4 · Verify
 
 ```bash
-bash kit/gates.sh                                  # 27 steps, last line "kapılar: temiz"
+bash kit/gates.sh                                  # 38 steps, last line "gates: clean"
 node kit/check-schema.mjs                          # 0 errors
 node kit/check-contrast.mjs --strict-soft          # 0 errors
 node kit/check-layout.mjs                          # composition (25% fingerprint ceiling)
@@ -78,7 +78,7 @@ visible, the `extraCss`/`motif` in the SPEC is weak — strengthen it and regene
 
 - `docs/catalog.md` is generated: `node kit/build-catalog-doc.mjs` (gate: `--check`).
 - Do not write number claims into the README/AGENTS; take the measurement from `kit/dist/report.md` and `docs/catalog.md`.
-- Commit message: `feat(specs): <band> — N stil` or `feat(specs): <slug> stili`.
+- Commit message: `feat(specs): <band> — N styles` or `feat(specs): add <slug>`.
 
 ---
 

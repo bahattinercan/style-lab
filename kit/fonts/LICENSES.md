@@ -1,20 +1,20 @@
-# Font lisansları
+# Font licenses
 
-Bu klasördeki fontlar Google Fonts kaynaklıdır ve SIL Open Font License 1.1 (OFL) ile dağıtılır.
-Tam OFL 1.1 metni [OFL-1.1.txt](OFL-1.1.txt) dosyasındadır.
-Fontların kendi telif ve lisans bilgileri dosyaların içindeki metadata alanlarında korunur;
-deponun kök MIT lisansı font lisanslarının yerine geçmez.
+The fonts in this folder are sourced from Google Fonts and distributed under the SIL Open Font License 1.1 (OFL).
+The full OFL 1.1 text is in the file [OFL-1.1.txt](OFL-1.1.txt).
+Fonts' own copyright and license information are protected in the metadata fields within the files;
+The root MIT license of the repository does not replace font licenses.
 
-Kaynak: https://fonts.google.com · Lisans: https://openfontlicense.org
+Source: https://fonts.google.com · License: https://openfontlicense.org
 
-Aşağıdaki aile anahtarları ve sayıları gerçek dosya adlarından türetilmiştir;
-dosya sayısı ağırlık ve karakter alt kümelerini de kapsar.
+The family keys and numbers below are derived from actual filenames;
+The number of files includes weight and character subsets.
 
-## WOFF2: 91 dosya, 29 aile
+## WOFF2: 91 files, 29 families
 
 Konum: `*.woff2`.
 
-| Dosya adındaki aile | Dosya |
+| Family in filename | File |
 |---|---:|
 | `anton` | 2 |
 | `architects-daughter` | 2 |
@@ -42,15 +42,15 @@ Konum: `*.woff2`.
 | `rajdhani` | 4 |
 | `share-tech-mono` | 1 |
 | `silkscreen` | 2 |
-| `space-grotesk` | 4 |
+| `space-grotesque` | 4 |
 | `space-mono` | 4 |
 | `vt323` | 2 |
 
-## TTF: 90 dosya, 30 aile
+## TTF: 90 files, 30 families
 
 Konum: `ttf/*.ttf`.
 
-| Dosya adındaki aile | Dosya |
+| Family in filename | File |
 |---|---:|
 | `Anton` | 1 |
 | `Architects-Daughter` | 1 |
@@ -79,6 +79,6 @@ Konum: `ttf/*.ttf`.
 | `Rajdhani` | 4 |
 | `Share-Tech-Mono` | 1 |
 | `Silkscreen` | 2 |
-| `Space-Grotesk` | 4 |
+| `Space-Grotesque` | 4 |
 | `Space-Mono` | 2 |
 | `VT323` | 1 |

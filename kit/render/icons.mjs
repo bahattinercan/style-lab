@@ -1,13 +1,12 @@
 /**
- * kit/render/icons.mjs — şablonlar için tek ikon seti
+ * kit/render/icons.mjs — single icon set for templates
  *
- * Kural: ikonlar `currentColor` kullanır, sabit renk YOKTur; böylece 34 stilin
- * metin rengini otomatik alır. 24×24 ızgara, 1.6px çizgi, yuvarlak uç.
+ * Rule: icons use `currentColor`, NO fixed color; so 34 styles
+ * gets the text color automatically. 24×24 grid, 1.6px line, rounded end.
  *
- * Kullanım (şablon içinde):
- *   __ICON:search:14__      → 14px arama ikonu
- *   __ICON:alert:16__       → 16px uyarı ikonu
- */
+ * Usage (within template):
+ * __ICON:search:14__ → 14px search icon
+ * __ICON:alert:16__ → 16px alert icon*/
 
 const P = {
   search: '<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/>',
@@ -43,7 +42,7 @@ const P = {
 
 export const ICON_NAMES = Object.keys(P);
 
-/** 24×24 ızgarada, currentColor çizgili ikon. */
+/** In a 24×24 grid, currentColor striped icon.*/
 export function icon(name, size = 16) {
   const body = P[name];
   if (!body) throw new Error(`bilinmeyen ikon: ${name}`);

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * kit/sync-shot-tables.mjs — style.md tablolarını manifest ile eşitler (v6: tek sayfa).
+ * kit/sync-shot-tables.mjs — keeps style.md tables in step with the manifest (v6: one page).
  *
- * Neden: her dokümanda görsel tablosu, meta satırı ve "Ekran reçeteleri" kanıt kolonu
- * aynı kaynaktan (kit/shots.manifest.json) üretilmeli; elle yazımda dosya adı sapması oluyordu.
+ * Reason: the image table, the meta row and the "Screen recipes" evidence column in every document
+ * must come from the same source (kit/shots.manifest.json); hand edits drifted the file names.
  *
- * Kullanım:
- *   node kit/sync-shot-tables.mjs --check           # sapma varsa exit 1 (dosya yazmaz)
- *   node kit/sync-shot-tables.mjs --write           # tabloları yeniden yazar
+ * Usage:
+ *   node kit/sync-shot-tables.mjs --check           # exit 1 on drift (writes nothing)
+ *   node kit/sync-shot-tables.mjs --write           # rewrite the tables
  *   node kit/sync-shot-tables.mjs --write --styles minimalism,glassmorphism
  */
 import fs from 'node:fs';
@@ -26,18 +26,18 @@ const only =
     ? process.argv[onlyArg + 1].split(',')
     : [];
 
-/** O stilin shots/ klasöründe gerçekten duran sahneler (sıra manifest sırası). */
+/** The scenes that actually exist in that style's shots/ folder (in manifest order). */
 function existingScenes(dirName, scenes) {
   return scenes.filter((s) => fs.existsSync(path.join(STYLES_DIR, dirName, 'shots', s.file)));
 }
 
-/** Sahne başına "neye bak" notu — kısa, ölçülebilir. */
+/** "What to look at" note per scene — short and measurable. */
 const NOTES = {
   landing:
-    '1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede.',
+    '1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame.',
 };
 
-const STYLE_NOTE = 'Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.';
+const STYLE_NOTE = 'Identical content is rendered with the same text in every style; only the design differs.';
 
 function styleDirs() {
   return fs
@@ -53,28 +53,28 @@ function tableFor(scenes) {
     const note = NOTES[s.key] ?? s.label;
     return `| \`shots/${s.file}\` | ${s.label} — ${note} |`;
   });
-  return ['| Görsel | Neye bak |', '|---|---|', ...rows].join('\n');
+  return ['| Image | What to look at |', '|---|---|', ...rows].join('\n');
 }
 
-/** Meta tablodaki **Görseller** satırını var olan çekirdek sahnelere göre yazar. */
+/** Writes the **Images** row of the meta table from the core scenes that exist. */
 function upsertMetaRow(md, present) {
   if (!present.length) return md;
-  const value = `\`shots/${present[0].file}\` (tek sayfa · 1280×2400)`;
-  return md.replace(/^\| \*\*Görseller\*\* \|.*$/m, `| **Görseller** | ${value} |`);
+  const value = `\`shots/${present[0].file}\` (single page · 1280×2400)`;
+  return md.replace(/^\| \*\*Images\*\* \|.*$/m, `| **Images** | ${value} |`);
 }
 
 function replaceSection(md, table) {
   const parts = md.split(/\n(?=## )/);
-  const idx = parts.findIndex((p) => /^##\s+Örnek görseller\s*(\n|$)/.test(p));
+  const idx = parts.findIndex((p) => /^##\s+Sample images\s*(\n|$)/.test(p));
   if (idx === -1) return { md, ok: false };
-  parts[idx] = ['## Örnek görseller', '', STYLE_NOTE, '', table, ''].join('\n');
+  parts[idx] = ['## Sample images', '', STYLE_NOTE, '', table, ''].join('\n');
   return { md: parts.join('\n').replace(/\n+$/, '\n'), ok: true };
 }
 
-/** "## Ekran reçeteleri" tablosunda kanıt görseli = tek sayfa. */
+/** In the "## Screen recipes" table the evidence image is the single page. */
 function upsertScreenTable(md, present) {
   const parts = md.split(/\n(?=## )/);
-  const idx = parts.findIndex((p) => /^##\s+Ekran reçeteleri\s*(\n|$)/.test(p));
+  const idx = parts.findIndex((p) => /^##\s+Screen recipes\s*(\n|$)/.test(p));
   if (idx === -1) return { md, ok: false };
 
   const lines = parts[idx].split('\n');
@@ -84,7 +84,7 @@ function upsertScreenTable(md, present) {
   const cells = (l) => l.split('|').slice(1, -1).map((c) => c.trim());
   const proof = present.length ? `\`shots/${present[0].file}\`` : '—';
 
-  const out = [...lines.slice(0, headAt), '| Ekran | Yoğunluk | Uygulama | Görsel |', '|---|---|---|---|'];
+  const out = [...lines.slice(0, headAt), '| Screen | Density | Implementation | Image |', '|---|---|---|---|'];
   for (let i = headAt + 2; i < lines.length; i += 1) {
     const line = lines[i];
     if (!line.trim().startsWith('|')) {
@@ -101,7 +101,7 @@ function upsertScreenTable(md, present) {
 
 function main() {
   if (!fs.existsSync(MANIFEST)) {
-    console.error('kit/shots.manifest.json yok — önce render çalıştır');
+    console.error('kit/shots.manifest.json is missing — run the render first');
     process.exit(1);
   }
   const manifest = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'));
@@ -117,10 +117,10 @@ function main() {
 
     const res = replaceSection(before, tableFor(present));
     if (!res.ok) {
-      drift.push(`${dirName}: "## Örnek görseller" bölümü yok`);
+      drift.push(`${dirName}: missing "## Sample images" section`);
       continue;
     }
-    // çekirdek dışı sahneye yapılan atıflar: tablo hücresinde "—", parantez içinde değilse silinir
+    // references to non-core scenes: "—" in the table cell, dropped unless written in parentheses
     const scrub = (md) => {
       let out = md.replace(/\s*\(`shots\/([^`]+)`\)/g, (m, f) => (have.has(f) ? m : ''));
       out = out.replace(/`shots\/([^`]+)`/g, (m, f) => (have.has(f) ? m : '—'));
@@ -130,7 +130,7 @@ function main() {
 
     const res2 = upsertScreenTable(next, present);
     if (!res2.ok) {
-      drift.push(`${dirName}: "## Ekran reçeteleri" tablosu yok`);
+      drift.push(`${dirName}: missing "## Screen recipes" table`);
       continue;
     }
     next = res2.md;
@@ -139,12 +139,12 @@ function main() {
       fs.writeFileSync(file, next);
       changed += 1;
     } else {
-      drift.push(`${dirName}: tablolar manifest ile eşleşmiyor`);
+      drift.push(`${dirName}: tables do not match the manifest`);
     }
   }
 
   if (WRITE) {
-    console.log(`${changed} dosya güncellendi · tek sayfa tablosu + ekran reçetesi görsel kolonu`);
+    console.log(`${changed} files updated · single-page table + screen recipe evidence column`);
     return;
   }
   if (drift.length) {
@@ -152,7 +152,7 @@ function main() {
     for (const d of drift.slice(0, 10)) console.log('  × ' + d);
     process.exit(1);
   }
-  console.log('eşitleme: temiz (tüm style.md tabloları manifest ile aynı)');
+  console.log('sync: clean (every style.md table matches the manifest)');
 }
 
 main();

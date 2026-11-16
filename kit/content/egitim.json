@@ -1,45 +1,45 @@
 {
-  "label": "Eğitim",
+  "label": "Education",
   "tags": [
-    "eğitim",
+    "education",
     "kurs",
-    "öğrenme"
+    "learning"
   ],
   "hero": {
-    "eyebrow": "Güz dönemi",
-    "h1": "Herkesin öğrenebildiği bir sınıf",
-    "lede": "Kısa dersler, açık örnekler ve gerçek geri bildirim; haftada üç saat yeter.",
-    "ctaPrimary": "Derse katıl",
-    "ctaSecondary": "Programı gör →"
+    "eyebrow": "Autumn term",
+    "h1": "A classroom where everyone learns",
+    "lede": "Short lessons, clear examples, real feedback. Three hours a week.",
+    "ctaPrimary": "Join the class",
+    "ctaSecondary": "See the syllabus →"
   },
   "proofs": [
-    "Haftada 3 saat",
-    "Kayıt açık",
-    "Sertifika dahil"
+    "3 hours a week",
+    "Enrolment open",
+    "Certificate"
   ],
   "logos": [
-    "Mektep",
-    "Atölye",
-    "Kürsü",
-    "Defter",
-    "Rota"
+    "School",
+    "Workshop",
+    "Podium",
+    "Notebook",
+    "Route"
   ],
   "tiles": [
     {
       "num": "01",
-      "cap": "Okuma listesi"
+      "cap": "Reading list"
     },
     {
       "num": "02",
-      "cap": "Atölye kaydı"
+      "cap": "Workshop"
     },
     {
       "num": "03",
-      "cap": "Ödev değerlendirme"
+      "cap": "Feedback"
     },
     {
       "num": "04",
-      "cap": "Mezun dosyası"
+      "cap": "Final file"
     }
   ],
   "logoLabel": "Mezunlar"

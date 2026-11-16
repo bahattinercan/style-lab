@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "_readme": "v6: her stil icin repoda tutulan tek gorsel — 1280x2400 tek sayfa (light). Koyu mod ve hareket sahneleri kaldirildi. Uretim: node kit/render/render-shots.mjs --styles <slug>.",
+  "_readme": "v6: single image kept in repo for each style — 1280x2400 single page (light). Dark mode and action scenes have been removed. Generation: node kit/render/render-shots.mjs --styles <slug>.",
   "files": [
     "01-page.png"
   ],
   "labels": {
-    "01-page.png": "Tek sayfa"
+    "01-page.png": "single page"
   }
 }

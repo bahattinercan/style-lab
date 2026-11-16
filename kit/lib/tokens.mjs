@@ -1,14 +1,13 @@
 /**
- * kit/lib/tokens.mjs — token değerlerini hedef-bağımsız tiplere çeviren ortak ayrıştırıcılar.
+ * kit/lib/tokens.mjs — common parsers that convert token values into target-independent types.
  *
- * Neden: `tokens.json` insan için yazılmış CSS/prose karışımı taşır
+ * Reason: `tokens.json` carries a human CSS/process mix
  * ("ease-out / cubic-bezier(.2,.6,.2,1)", "0.5s", "0 1px 2px rgba(16,17,18,.06)",
- * "-0.03em"). CSS dışındaki hedefler (Flutter/Dart, SwiftUI, Compose) sayı ister.
- * Bu modül tek yerde ayrıştırır; `kit/normalize-motion.mjs` ve `kit/export/*`
- * aynı fonksiyonları kullanır — ikinci bir ayrıştırıcı yazılmaz.
- */
+ * "-0.03em"). Targets other than CSS (Flutter/Dart, SwiftUI, Compose) require numbers.
+ * This module parses in one place; `kit/normalize-motion.mjs` and `kit/export/*`
+ * uses the same functions — no second parser is written.*/
 
-/* CSS adlandırılmış eğriler → kontrol noktaları (x1,y1,x2,y2) */
+/*CSS named curves → control points (x1,y1,x2,y2)*/
 export const NAMED_CURVES = {
   linear: [0, 0, 1, 1],
   ease: [0.25, 0.1, 0.25, 1],
@@ -18,9 +17,8 @@ export const NAMED_CURVES = {
 };
 
 /**
- * GSAP eğri adları → yaklaşık cubic-bezier. Yaklaşımdır: `approximated: true`
- * ile işaretlenir, hedef kendi eğrisini üretirken bu değeri kullanır.
- */
+ * GSAP curve names → approximate cubic-bezier. Approximate: `approximated: true`
+ It is marked *, the target uses this value when generating its own curve.*/
 export const GSAP_CURVES = {
   'power1.out': [0.25, 0.46, 0.45, 0.94],
   'power2.out': [0.215, 0.61, 0.355, 1],
@@ -31,13 +29,13 @@ export const GSAP_CURVES = {
   'circ.out': [0.075, 0.82, 0.165, 1],
 };
 
-/** back.out(n): taşma miktarı n ile büyür; y1 = 1 + 0.82·(n−1) yaklaşımı (n=1.7 → 1.56) */
+/** back.out(n): overflow grows with n; y1 = 1 + 0.82·(n−1) approximation (n=1.7 → 1.56)*/
 export function gsapBackOut(overshoot) {
   const n = Number.isFinite(overshoot) ? overshoot : 1.7;
   return [0.34, Number((1 + 0.82 * (n - 1)).toFixed(3)), 0.64, 1];
 }
 
-/** "— açıklama", " - açıklama", ") sonrası serbest metin" kırpılır */
+/** Free text after "— description", " — description", ")" is truncated*/
 function stripProse(value) {
   return String(value)
     .split('—')[0]
@@ -47,9 +45,8 @@ function stripProse(value) {
 }
 
 /**
- * Eğri metni → { kind, ... }. Ayrıştırılamazsa null döner (çağıran hata üretir).
- * Öncelik: cubic-bezier > steps > GSAP > CSS adlandırılmış.
- */
+ * Curve text → { kind, ... }. If it cannot be parsed, it returns null (the caller produces an error).
+ * Priority: named cubic-bezier > steps > GSAP > CSS.*/
 export function parseCurve(value) {
   if (value == null) return null;
   const raw = String(value).trim();
@@ -105,7 +102,7 @@ export function parseCurve(value) {
   return null;
 }
 
-/** "0.5s" | "110ms" | "0.01ms" → ms (sayı). Ayrıştırılamazsa null. */
+/** "0.5s" | "110ms" | "0.01ms" → ms (number). Null if cannot be parsed.*/
 export function parseDurationMs(value) {
   if (value == null) return null;
   if (typeof value === 'number') return value;
@@ -116,7 +113,7 @@ export function parseDurationMs(value) {
   return Number((m[2] === 's' ? n * 1000 : n).toFixed(2));
 }
 
-/** "12px" | "0" → sayı. Ayrıştırılamazsa null. */
+/** "12px" | "0" → number. Null if cannot be parsed.*/
 export function parsePx(value) {
   if (value == null) return null;
   if (typeof value === 'number') return value;
@@ -126,7 +123,7 @@ export function parsePx(value) {
   return bare ? Number(bare[1]) : null;
 }
 
-/** "-0.03em" → em sayısı (px'e çevirmek hedefin font boyutuna bağlı) */
+/** "-0.03em" → number of em (conversion to px depends on target font size)*/
 export function parseEm(value) {
   if (value == null) return null;
   const m = String(value).match(/(-?[\d.]+)\s*em\b/);
@@ -144,14 +141,14 @@ export function parsePercent(value) {
   return { percent: m[1] === '-' ? -n : n, sign: m[1] === '-' ? -1 : 1 };
 }
 
-/** "top 86%" → 86 (scroll tetikleyicisinin yüzdesi) */
+/** "top 86%" → 86 (percentage of scroll trigger)*/
 export function parseTrigger(value) {
   if (value == null) return null;
   const m = String(value).match(/top\s+([\d.]+)\s*%/);
   return m ? Number(m[1]) : null;
 }
 
-/** Sayı ya da sayısal metin ("1.015", "0.04") → sayı */
+/** Number or numeric text ("1.015", "0.04") → number*/
 export function parseNumber(value) {
   if (value == null) return null;
   if (typeof value === 'number') return value;
@@ -161,8 +158,7 @@ export function parseNumber(value) {
 
 /**
  * "#rrggbb" | "#rgb" | "#rrggbbaa" | "rgba(r,g,b,a)" | "rgb(r,g,b)" | "transparent"
- * → { r, g, b, a } (0–255, a 0–1). Ayrıştırılamazsa null (gradient vb.).
- */
+ * → { r, g, b, a } (0–255, a 0–1). Null if not parsable (gradient etc.).*/
 export function parseColor(value) {
   if (value == null) return null;
   const text = String(value).trim();
@@ -238,8 +234,7 @@ function splitTopLevel(value) {
 
 /**
  * CSS box-shadow → [{ dx, dy, blur, spread, color|colorRef, inset }]
- * "none" → []. `var(--line)` gibi referanslar colorRef olarak korunur.
- */
+ * "none" → []. References like `var(--line)` are preserved as colorRef.*/
 export function parseShadows(value) {
   if (value == null) return [];
   const text = String(value).trim();

@@ -1,19 +1,18 @@
 #!/usr/bin/env node
 /**
- * kit/render/fetch-fonts.mjs — Google Fonts woff2 dosyalarını yerelleştirir.
+ * kit/render/fetch-fonts.mjs — Localizes Google Fonts woff2 files.
  *
- * Neden: ekran görüntüsü Edge headless ile alınır; sistemde Inter/Playfair gibi
- * aileler yoksa tipografi Segoe UI'a düşer ve stil karşılaştırması bozulur.
+ * Reason: screenshot is taken with Edge headless; like Inter/Playfair in the system
+ * if families are not present typography falls into Segoe UI and style comparison is broken.
  *
- * Kullanım:
- *   node kit/render/fetch-fonts.mjs          # eksik olanları indir
- *   node kit/render/fetch-fonts.mjs --force   # hepsini yeniden indir
+ * Usage:
+ * node kit/render/fetch-fonts.mjs # download missing ones
+ * node kit/render/fetch-fonts.mjs --force # re-download them all
  *
- * Çıktı:
- *   kit/fonts/<aile>-<ağırlık>-<subset>.woff2
- *   kit/fonts/fonts.css   (@font-face, yerel yollar)
- *   kit/fonts/LICENSES.md (OFL notu)
- */
+ * Output:
+ * kit/fonts/<family>-<weight>-<subset>.woff2
+ * kit/fonts/fonts.css (@font-face, local paths)
+ * kit/fonts/LICENSES.md (OFL note)*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -117,14 +116,14 @@ async function main() {
   await pool(entries, 4, async ([family, weights]) => {
     const css = await getCss(family, weights);
     const faces = parseFaces(css);
-    if (!faces.length) throw new Error(`${family}: @font-face bulunamadı`);
+    if (!faces.length) throw new Error(`${family}: @font-face not found`);
     for (const f of faces) allFaces.push(f);
     return faces.length;
   });
 
   const cssLines = [
-    '/* kit/fonts/fonts.css — OTOMATİK ÜRETİLDİ: node kit/render/fetch-fonts.mjs',
-    '   Google Fonts (OFL). Yeniden üretmek için scripti çalıştır; elle düzenleme. */',
+    '/* kit/fonts/fonts.css — AUTO-GENERATED: node kit/render/fetch-fonts.mjs',
+    'Google Fonts (OFL). Run the script to reproduce; manual editing. */',
     '',
   ];
   let bytes = 0;
@@ -154,15 +153,15 @@ async function main() {
   fs.writeFileSync(
     path.join(OUT, 'LICENSES.md'),
     [
-      '# Font lisansları',
+      '# Font licenses',
       '',
-      'Bu klasördeki `.woff2` dosyaları Google Fonts üzerinden indirildi ve',
-      'SIL Open Font License 1.1 (OFL) ile dağıtılır. Ticari kullanım serbesttir;',
-      'font dosyaları tek başına satılamaz. Aile listesi `kit/render/fetch-fonts.mjs`',
-      'içindeki `FAMILIES` sabitindedir.',
+      'The `.woff2` files in this folder were downloaded from Google Fonts and',
+      'Distributed under SIL Open Font License 1.1 (OFL). Commercial use is permitted;',
+      'font files cannot be sold individually. Family list `kit/render/fetch-fonts.mjs`',
+      'inside`FAMILIES` sabitindedir.',
       '',
       `- Aile: ${Object.keys(FAMILIES).length}`,
-      `- Dosya: ${unique.size}`,
+      `- Files: ${unique.size}`,
       '',
     ].join('\n'),
   );

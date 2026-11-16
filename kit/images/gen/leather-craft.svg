@@ -21,7 +21,7 @@
 
   <rect width="1600" height="1000" fill="url(#lc-bg)" />
 
-  <!-- Artisan Workshop Cutting Mat Layout Grid -->
+  <!--Artisan Workshop Cutting Mat Layout Grid-->
   <g stroke="#7f6748" stroke-width="1" stroke-opacity="0.2">
     <line x1="80" y1="120" x2="1520" y2="120" />
     <line x1="80" y1="320" x2="1520" y2="320" />
@@ -34,7 +34,7 @@
     <line x1="1220" y1="80" x2="1220" y2="920" />
   </g>
 
-  <!-- Heavy Saddle Leather Hide Specimen (Main Panel) -->
+  <!--Heavy Saddle Leather Hide Specimen (Main Panel)-->
   <g filter="url(#lc-drop)">
     <!-- Burnished edge bevel contour -->
     <rect x="140" y="100" width="1320" height="800" rx="16" fill="url(#lc-leather)" stroke="#7a3f1d" stroke-width="4" />

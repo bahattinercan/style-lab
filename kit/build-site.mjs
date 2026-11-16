@@ -1,31 +1,30 @@
 #!/usr/bin/env node
 /**
- * kit/build-site.mjs — yayınlanabilir statik siteyi `_site/` içine derler.
+ * kit/build-site.mjs — compiles the publishable static site into `_site/`.
  *
- * Neden ayrı klasör: repo 2 GB'ın üzerinde (git geçmişi + kit/render + 209 MB PNG).
- * GitHub Pages'e yalnız gerçekten servis edilen dosyalar gitmeli. Bu script kaynakları
- * okur, galeri/landing/katalog HTML'ini üretir ve `_site/` ağacını kurar:
+ * Why separate folder: repo is over 2 GB (git history + kit/render + 209 MB PNG).
+ * Only files that are actually served should go to GitHub Pages. These script resources
+ * reads, generates the gallery/landing/catalog HTML and builds the `_site/` tree:
  *
- *   _site/
- *   ├── index.html                 landing (üretilir)
- *   ├── katalog.html               251 stilin okunur indeksi (docs/catalog.md'den, üretilir)
- *   ├── .nojekyll                  Pages Jekyll işlemesini kapatır
- *   ├── kit/gallery.html           galeri (kopya + yayın dönüşümleri)
- *   ├── kit/live.html              stil önizlemesi
- *   ├── kit/{gallery.css,gallery.js,tokens.css,live-styles.js,viewer-*.js,site-config.js}
- *   ├── thumbs/<dir>-01-page@640|1280.webp   (kit/build-thumbs.mjs üretir)
- *   ├── fonts/                     woff2 + fonts.css (@font-face)
- *   └── styles/<dir>/shots/01-page.png       orijinal PNG (lightbox "PNG" hedefi)
+ * _site/
+ * ├── index.html landing (generated)
+ * ├── readable index of catalog.html 251 styles (generated from docs/catalog.md)
+ * ├── .nojekyll Pages turns off Jekyll processing
+ * ├── kit/gallery.html gallery (copy + post conversions)
+ * ├── kit/live.html style preview
+ * ├── kit/{gallery.css,gallery.js,tokens.css,live-styles.js,viewer-*.js,site-config.js}
+ * ├── thumbs/<dir>-01-page@640|1280.webp (generates kit/build-thumbs.mjs)
+ * ├── fonts/ woff2 + fonts.css (@font-face)
+ * └── styles/<dir>/shots/01-page.png original PNG (lightbox "PNG" target)
  *
- * Kullanım:
- *   node kit/build-site.mjs            # _site/ derle
- *   node kit/build-site.mjs --check    # yayın bütünlüğü kapısı (yazmaz)
- *   node kit/build-site.mjs --clean    # önce _site/'i sil
+ * Usage:
+ * node kit/build-site.mjs # _site/ compile
+ * node kit/build-site.mjs --check # broadcast integrity gate (does not write)
+ * node kit/build-site.mjs --clean # delete _site/ first
  *
- * --check ne ölçer: her stil için iki WebP türevi var mı, galerinin işaret ettiği her
- * görsel/font dosyası çözülüyor mu, katalog tablosu stil sayısıyla eşleşiyor mu,
- * landing'deki sayılar kaynakla aynı mı. Sayı uydurulmaz (AGENTS kural 10).
- */
+ * --check what measures: are there two WebP variants for each style, whatever the gallery points to
+ * is the image/font file decoded, does it match the catalog table style number,
+ * Are the numbers in the landing the same as the source? Numbers cannot be made up (AGENTS rule 10).*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -55,7 +54,7 @@ const esc = (v) =>
 const j = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 const read = (rel) => fs.readFileSync(path.join(ROOT, rel), 'utf8');
 
-/** Site ağacındaki yolu repodaki gerçek dosyaya çevirir: fonts → kit/fonts, thumbs → kit/site/thumbs. */
+/** Converts the path in the site tree to the actual file in the repo: fonts → kit/fonts, thumbs → kit/site/thumbs.*/
 function repoOf(sitePath) {
   if (sitePath.startsWith('fonts/')) return path.join(KIT_DIR, sitePath);
   if (sitePath.startsWith('thumbs/')) return path.join(THUMBS_DIR, sitePath.slice('thumbs/'.length));
@@ -67,7 +66,7 @@ const families = j('kit/families.json').families ?? [];
 const styles = index.styles ?? [];
 const bySlug = new Map(styles.map((s) => [s.slug, s]));
 
-/** README'deki "10 saniyede seç" listesi landing'de vitrine çıkar. */
+/** The "select in 10 seconds" list in the README is displayed on landing.*/
 const FEATURED = [
   'minimalism',
   'swiss-design',
@@ -111,7 +110,7 @@ function landingHtml({ pngBytes, thumbBytes }) {
       return `<li><a href="kit/gallery.html?fam=${encodeURIComponent(f.name)}">
           <span class="band-n">${f.from}–${f.to}</span>
           <span class="band-name">${esc(f.name)}</span>
-          <span class="band-c">${n} stil</span>
+          <span class="band-c">${n} styles</span>
         </a></li>`;
     })
     .join('\n        ');
@@ -120,7 +119,7 @@ function landingHtml({ pngBytes, thumbBytes }) {
     .map((s, i) => {
       const priority = i < 2 ? ' fetchpriority="high"' : ' loading="lazy"';
       return `<a class="tile" href="kit/gallery.html?q=${encodeURIComponent(s.num)}">
-          <img src="${thumbPath(s, '640')}" alt="${esc(s.name)} — tek sayfa önizleme"
+          <img src="${thumbPath(s, '640')}" alt="${esc(s.name)} — single page preview"
                width="640" height="1200"${priority} decoding="async">
           <span class="tile-b"><b>${esc(s.name)}</b><i>${esc(s.family)}</i></span>
         </a>`;
@@ -128,12 +127,12 @@ function landingHtml({ pngBytes, thumbBytes }) {
     .join('\n        ');
 
   return `<!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tasarım Stilleri · ${counts.styles} stil, ${counts.families} aile</title>
-<meta name="description" content="Tekdüzeliğe karşı görsel stil kataloğu: ${counts.styles} stil, ${counts.families} aile bandı, her stil için tek sayfa mock-up, token seti ve AI brief.">
+<title>Design Styles · ${counts.styles} styles, ${counts.families} families</title>
+<meta name="description" content="Visual style catalog to counter monotony: ${counts.styles} style, ${counts.families} family band, one-page mock-up for each style, token set, and AI brief.">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
@@ -211,39 +210,39 @@ function landingHtml({ pngBytes, thumbBytes }) {
 
 <nav class="top" aria-label="Site">
   <div class="wrap top-in">
-    <b>Tasarım Stilleri</b>
-    <span class="mono">${counts.styles} stil · ${counts.families} aile</span>
+    <b>Design Styles</b>
+    <span class="mono">${counts.styles} style ${counts.families} family</span>
     <span class="grow"></span>
-    <a href="kit/gallery.html">galeri</a>
-    <a href="katalog.html">katalog</a>
-    <a href="kit/live.html?style=game-hud">stil önizlemesi</a>
+    <a href="kit/gallery.html">gallery</a>
+    <a href="katalog.html">catalog</a>
+    <a href="kit/live.html?style=game-hud">style preview</a>
   </div>
 </nav>
 
 <header class="hero wrap">
-  <h1>Tekdüzeliğe karşı ${counts.styles} görsel stil.</h1>
+  <h1>${counts.styles} visual styles versus monotony.</h1>
   <p>
-    Her stil tek bir uzun sayfayla anlatılır: gezinme, hero, üç içerik bölümü, bileşen ızgarası,
-    form + veri, CTA ve alt bilgi. Yanında token seti, bileşen reçetesi, tuzaklar ve AI brief gelir.
-    Kartlar WebP, tam sayfa orijinal PNG olarak yayınlanır.
+    Every style is documented with a single long page: navigation, hero, three content sections,
+    a component grid, form + data, CTA and footer. The token set, component recipe, traps and AI brief
+    sit next to it. Cards are published as WebP, full pages as the original PNG.
   </p>
   <div class="stats">
-    <div><span class="mono">stil</span><b>${fmtInt(counts.styles)}</b></div>
-    <div><span class="mono">aile bandı</span><b>${fmtInt(counts.families)}</b></div>
-    <div><span class="mono">tek sayfa PNG</span><b>${fmtInt(counts.shots)}</b></div>
-    <div><span class="mono">görsel boyut</span><b>${counts.pngMb} MB</b></div>
-    <div><span class="mono">webp türev</span><b>${counts.thumbMb} MB</b></div>
+    <div><span class="mono">style</span><b>${fmtInt(counts.styles)}</b></div>
+    <div><span class="mono">family band</span><b>${fmtInt(counts.families)}</b></div>
+    <div><span class="mono">single page PNG</span><b>${fmtInt(counts.shots)}</b></div>
+    <div><span class="mono">visual size</span><b>${counts.pngMb} MB</b></div>
+    <div><span class="mono">webp derivative</span><b>${counts.thumbMb} MB</b></div>
   </div>
   <div class="cta">
-    <a class="primary" href="kit/gallery.html">Galeriyi aç</a>
-    <a href="katalog.html">Katalog indeksi</a>
-    <a href="kit/live.html?style=minimalism">Stil önizlemesi</a>
+    <a class="primary" href="kit/gallery.html">open gallery</a>
+    <a href="katalog.html">Catalog index</a>
+    <a href="kit/live.html?style=minimalism">Style preview</a>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <div class="sec-h"><h2>Vitrin</h2><span>${cards.length} örnek · rastgele değil, farklı ailelerden</span></div>
+    <div class="sec-h"><h2>Vitrin</h2><span>${cards.length} sample · not random, from different families</span></div>
     <div class="tiles">
         ${tiles}
     </div>
@@ -252,7 +251,7 @@ function landingHtml({ pngBytes, thumbBytes }) {
 
 <section>
   <div class="wrap">
-    <div class="sec-h"><h2>Aile bantları</h2><span>${families.length} bant · kesintisiz ${families[0]?.from ?? 1}–${families[families.length - 1]?.to ?? counts.styles}</span></div>
+    <div class="sec-h"><h2>family bands</h2><span>${families.length} bant · kesintisiz ${families[0]?.from ?? 1}–${families[families.length - 1]?.to ?? counts.styles}</span></div>
     <ul class="bands">
         ${bandRows}
     </ul>
@@ -260,9 +259,9 @@ function landingHtml({ pngBytes, thumbBytes }) {
 </section>
 
 <footer class="foot wrap">
-  <span class="grow">Kaynak: <a href="https://github.com/bahattinercan/style-lab">github.com/bahattinercan/style-lab</a></span>
-  <a href="kit/gallery.html">galeri</a>
-  <a href="katalog.html">katalog</a>
+  <span class="grow">Source:<a href="https://github.com/bahattinercan/style-lab">github.com/bahattinercan/style-lab</a></span>
+  <a href="kit/gallery.html">gallery</a>
+  <a href="katalog.html">catalog</a>
 </footer>
 
 </body>
@@ -270,9 +269,9 @@ function landingHtml({ pngBytes, thumbBytes }) {
 `;
 }
 
-/* --------------------------------------------------------------- katalog */
+/*------------------------------------------------------------------------------- catalog*/
 
-/** docs/catalog.md → HTML. Yalnız bu dosyanın kullandığı sözdizimi desteklenir. */
+/** docs/catalog.md → HTML. Only the syntax used by this file is supported.*/
 function katalogHtml(md) {
   const lines = md.split(/\r?\n/);
   const out = [];
@@ -285,7 +284,7 @@ function katalogHtml(md) {
       .replace(/`([^`]+)`/g, '<code>$1</code>')
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, label, href) => {
-        // style.md bağlantıları sitede yayınlanmıyor: galeride o stile götür
+        // style.md links are not published on the site: take to that style in the gallery
         const hit = href.match(/\.\.\/styles\/(\d+)-[^/]+\/style\.md$/);
         if (hit) return `<a href="kit/gallery.html?q=${encodeURIComponent(hit[1])}">${label}</a>`;
         if (/^https?:/.test(href)) return `<a href="${href}" rel="noopener">${label}</a>`;
@@ -325,7 +324,7 @@ function katalogHtml(md) {
     if (line.startsWith('## ')) out.push(`  <h2>${inline(line.slice(3))}</h2>`);
     else if (line.startsWith('# ')) out.push(`  <h1>${inline(line.slice(2))}</h1>`);
     else if (line.startsWith('> ')) {
-      // ardışık alıntı satırları tek blockquote olur
+      // consecutive quoted lines become a single blockquote
       const buf = [line.slice(2)];
       while (next < lines.length && lines[next].trimEnd().startsWith('> ')) {
         buf.push(lines[next].trimEnd().slice(2));
@@ -343,14 +342,14 @@ function katalogHtml(md) {
 
 function katalogPage({ md, styleCount }) {
   const { body, rows } = katalogHtml(md);
-  if (rows !== styleCount) fail(`katalog: ${rows} tablo satırı, beklenen ${styleCount} stil`);
+  if (rows !== styleCount) fail(`catalog: ${rows} table rows, expected ${styleCount} styles`);
   return `<!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Katalog · ${styleCount} stil</title>
-<meta name="description" content="${styleCount} tasarım stilinin tek satırlık kimlikleri ve aile bantları.">
+<title>Catalog ${styleCount} style</title>
+<meta name="description" content="One-line IDs and family bands of the ${styleCount} design style.">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; }
@@ -390,11 +389,11 @@ function katalogPage({ md, styleCount }) {
 <body>
 <nav class="top" aria-label="Site">
   <div class="wrap top-in">
-    <b>Katalog</b>
-    <span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint)">${styleCount} stil</span>
+    <b>catalog</b>
+    <span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint)">${styleCount} style</span>
     <span class="grow"></span>
-    <a href="index.html">ana sayfa</a>
-    <a href="kit/gallery.html">galeri</a>
+    <a href="index.html">home page</a>
+    <a href="kit/gallery.html">gallery</a>
   </div>
 </nav>
 <main class="wrap">
@@ -405,23 +404,22 @@ ${body}
 `;
 }
 
-/* ------------------------------------------------------- galeri dönüşümü */
+/*------------------------------------------------------- gallery transformation*/
 
 /**
- * Galeri kopyasında görsel yollarını WebP türevlerine çevirir:
- *   kart  : ../styles/<dir>/shots/01-page.png → ../thumbs/<dir>-01-page@640.webp
- *   büyük : aynı yol (a.href)                 → ../thumbs/<dir>-01-page@1280.webp
- * Ayrıca site-config.js enjekte eder (gallery.js `.cover` görsellerini runtime'da da
- * türeve çeker) ve ilk kartlara fetchpriority verir.
- */
+ * Converts image paths to WebP variants in gallery copy:
+ * card : ../styles/<dir>/shots/01-page.png → ../thumbs/<dir>-01-page@640.webp
+ * big : same path (a.href) → ../thumbs/<dir>-01-page@1280.webp
+ * Also injects site-config.js (gallery.js `.cover` images at runtime as well)
+ * derivative) and gives fetchpriority to the first cards.*/
 function transformGallery(html) {
   let cardIndex = 0;
-  // <a class="cover" href="…/01-page.png"> → büyük türev
+  // <a class="cover" href="…/01-page.png"> → major derivative
   let out = html.replace(
     /(<a class="cover" href=")\.\.\/styles\/([^"/]+)\/shots\/01-page\.png(")/g,
     (m, pre, dir, post) => pre + '../thumbs/' + dir + '-01-page@1280.webp' + post,
   );
-  // <img src="…/01-page.png" alt="…" loading="lazy" decoding="async"> → kart türevi
+  // <img src="…/01-page.png" alt="…" loading="lazy" decoding="async"> → card variant
   out = out.replace(
     /(<img src=")\.\.\/styles\/([^"/]+)\/shots\/01-page\.png("[^>]*?)>/g,
     (m, pre, dir, mid) => {
@@ -437,15 +435,14 @@ function transformGallery(html) {
     '<script src="gallery.js" defer></script>',
     '<script src="site-config.js"></script>\n<script src="gallery.js" defer></script>',
   );
-  if (cardIndex !== styles.length) fail(`galeri: ${cardIndex} kart görseli dönüştürüldü, beklenen ${styles.length}`);
+  if (cardIndex !== styles.length) fail(`gallery: ${cardIndex} card images converted, expected ${styles.length}`);
   return out;
 }
 
-const SITE_CONFIG = `/* site-config.js — node kit/build-site.mjs üretir; elle düzenleme.
-   Galeriye "kartlar WebP türevini kullan" der. Tanımsızsa (repo içi file://
-   önizleme) gallery.js orijinal PNG yolunu kullanır. */
-window.STYLE_LAB_SHOTS = { base: '../thumbs', card: '640', full: '1280' };
-`;
+const SITE_CONFIG = `/* site-config.js — generates node kit/build-site.mjs; manual editing.
+   It tells the gallery "cards use WebP variant". If undefined (inside repo file://
+   preview) gallery.js uses the original PNG path. */
+window.STYLE_LAB_SHOTS = { base: '../thumbs', card: '640', full: '1280' };`;
 
 /* ----------------------------------------------------------------- derleme */
 
@@ -480,7 +477,7 @@ function build() {
   if (CLEAN && fs.existsSync(OUT)) fs.rmSync(OUT, { recursive: true, force: true });
   ensureDir(OUT);
 
-  // 1) kit varlıkları
+  // 1) kit assets
   for (const f of ['gallery.css', 'gallery.js', 'tokens.css', 'live.html', 'live-styles.js', 'viewer-nav.js', 'viewer-lightbox.js']) {
     copy(`kit/${f}`, `kit/${f}`);
   }
@@ -500,20 +497,20 @@ function build() {
     }
   }
 
-  // 3) PNG orijinaller (lightbox/indirme hedefi)
+  // 3) PNG originals (lightbox/download target)
   let pngBytes = 0;
   for (const s of styles) {
     const rel = shotPng(s);
     const abs = path.join(ROOT, rel);
     if (!fs.existsSync(abs)) {
-      fail(`${rel}: yok — önce node kit/render/render-shots.mjs`);
+      fail(`${rel}: missing — run node kit/render/render-shots.mjs first`);
       continue;
     }
     pngBytes += fs.statSync(abs).size;
     copy(rel, rel);
   }
 
-  // 4) WebP türevleri (kaynak: kit/site/thumbs, hedef: _site/thumbs)
+  // 4) WebP derivatives (source: kit/site/thumbs, target: _site/thumbs)
   let thumbBytes = 0;
   for (const s of styles) {
     for (const variant of VARIANTS) {
@@ -529,7 +526,7 @@ function build() {
     }
   }
 
-  // 5) landing + katalog
+  // 5) landing + catalog
   fs.writeFileSync(path.join(OUT, 'index.html'), landingHtml({ pngBytes, thumbBytes }));
   fs.writeFileSync(path.join(OUT, 'katalog.html'), katalogPage({ md: read('docs/catalog.md'), styleCount: styles.length }));
   fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
@@ -537,7 +534,7 @@ function build() {
 }
 
 function check() {
-  // A) her stil için iki türev
+  // A) two variants for each style
   for (const s of styles) {
     for (const variant of VARIANTS) {
       const abs = repoOf(thumbPath(s, variant));
@@ -546,16 +543,16 @@ function check() {
     if (!fs.existsSync(path.join(ROOT, shotPng(s)))) fail(`${shotPng(s)} yok — node kit/render/render-shots.mjs`);
   }
 
-  // B) galeri kopyası dönüşümü tüm kartları yakalıyor mu
+  // B) does the gallery copy conversion capture all cards
   const gallery = transformGallery(read('kit/gallery.html'));
   if (/\.\.\/styles\/[^"]+\/shots\/01-page\.png/.test(gallery)) {
-    fail('galeri: dönüştürülmemiş PNG yolu kaldı (kart görseli WebP olmalı)');
+    fail('gallery: unconverted PNG path left (card image must be WebP)');
   }
-  if (!gallery.includes('site-config.js')) fail('galeri: site-config.js enjekte edilmedi');
+  if (!gallery.includes('site-config.js')) fail('gallery: site-config.js was not injected');
 
-  // C) galeri/live/katalog referansları site ağacında çözülüyor mu
-  //    Site yolu → repo yolu: kit/ ve styles/ aynı kalır, fonts → kit/fonts,
-  //    thumbs → kit/site/thumbs. Üretilen sayfalar (index/katalog/site-config) atlanır.
+  // C) Are gallery/live/catalog references resolved in the site tree?
+  //    Site path → repo path: kit/ and styles/ remain the same, fonts → kit/fonts,
+  //    thumbs → kit/site/thumbs. Generated pages (index/catalog/site-config) are skipped.
   const GENERATED = new Set(['index.html', 'katalog.html', 'kit/site-config.js', '.nojekyll']);
   for (const rel of ['kit/gallery.html', 'kit/live.html', 'kit/gallery.css']) {
     const html = read(rel);
@@ -564,28 +561,28 @@ function check() {
       if (!ref || ref.startsWith('?') || ref.startsWith('data:')) continue;
       const sitePath = path.posix.normalize(path.posix.join('kit', ref));
       if (GENERATED.has(sitePath)) continue;
-      if (!fs.existsSync(repoOf(sitePath))) fail(`${rel}: ${ref} → ${sitePath} çözülmüyor`);
+      if (!fs.existsSync(repoOf(sitePath))) fail(`${rel}: ${ref} → ${sitePath} does not resolve`);
     }
   }
 
-  // D) canlı sayfalar ve referansları çözülüyor mu
+  // D) Are live pages and their references resolved?
   const liveDir = path.join(KIT_DIR, 'live');
   if (!fs.existsSync(liveDir)) {
-    fail('kit/live klasörü yok — önce node kit/build-live.mjs');
+    fail('There is no kit/live folder — node kit/build-live.mjs first');
   } else {
     const liveFiles = fs.readdirSync(liveDir).filter((f) => f.endsWith('.html'));
     if (liveFiles.length !== styles.length) {
-      fail(`kit/live: ${liveFiles.length} sayfa var, beklenen ${styles.length}`);
+      fail(`kit/live: ${liveFiles.length} pages, expected ${styles.length}`);
     }
     const checkOut = fs.existsSync(OUT);
     if (checkOut) {
       const outLive = path.join(OUT, 'kit', 'live');
       if (!fs.existsSync(outLive)) {
-        fail('_site/kit/live klasörü yok — node kit/build-site.mjs');
+        fail('No _site/kit/live folder — node kit/build-site.mjs');
       } else {
         const outLiveFiles = fs.readdirSync(outLive).filter((f) => f.endsWith('.html'));
         if (outLiveFiles.length !== styles.length) {
-          fail(`_site/kit/live: ${outLiveFiles.length} sayfa var, beklenen ${styles.length}`);
+          fail(`_site/kit/live: ${outLiveFiles.length} pages, expected ${styles.length}`);
         }
       }
       if (!fs.existsSync(path.join(OUT, 'kit', 'render', 'scene.css'))) fail('_site/kit/render/scene.css yok');
@@ -611,22 +608,22 @@ function check() {
     }
   }
 
-  // E) katalog satır sayısı
+  // E) number of catalog lines
   katalogPage({ md: read('docs/catalog.md'), styleCount: styles.length });
 
-  // F) landing sayıları kaynakla aynı mı (uydurma sayı yok)
+  // F) Are the landing numbers the same as the source (no made-up numbers)
   const landing = landingHtml({ pngBytes: 0, thumbBytes: 0 });
-  const shown = Number((landing.match(/<title>[^<]*·\s*(\d+)\s*stil/) ?? [])[1]);
-  if (shown !== styles.length) fail(`landing başlığında ${shown} stil yazıyor, kaynak ${styles.length}`);
+  const shown = Number((landing.match(/<title>[^<]*·\s*(\d+)\s*styles/) ?? [])[1]);
+  if (shown !== styles.length) fail(`the landing headline says ${shown} styles, the source has ${styles.length}`);
 
   if (failures.length) {
-    console.error(`✗ site yayına hazır değil (${failures.length} sorun):`);
+    console.error(`✗ the site is not ready to publish (${failures.length} problems):`);
     for (const f of failures.slice(0, 25)) console.error(`  - ${f}`);
-    if (failures.length > 25) console.error(`  … ${failures.length - 25} tane daha`);
+    if (failures.length > 25) console.error(`  … ${failures.length - 25} more`);
     process.exit(1);
   }
   console.log(
-    `✓ site bütünlüğü: ${styles.length} stil × ${VARIANTS.length} WebP + PNG · ${families.length} aile · katalog ${styles.length} satır · ${styles.length} canlı sayfa`,
+    `✓ site integrity: ${styles.length} styles × ${VARIANTS.length} WebP + PNG · ${families.length} families · catalog ${styles.length} rows · ${styles.length} live pages`,
   );
 }
 
@@ -636,7 +633,7 @@ if (CHECK) {
 } else {
   const { pngBytes, thumbBytes } = build();
   if (failures.length) {
-    console.error(`✗ _site eksik derlendi (${failures.length} sorun):`);
+    console.error(`✗ _site was built incomplete (${failures.length} problems):`);
     for (const f of failures.slice(0, 25)) console.error(`  - ${f}`);
     process.exit(1);
   }
@@ -656,7 +653,7 @@ if (CHECK) {
     return n;
   })(OUT);
   console.log(
-    `✓ _site derlendi · ${files} dosya · ${(size / 1024 / 1024).toFixed(0)} MB ` +
+    `✓ _site built · ${files} files · ${(size / 1024 / 1024).toFixed(0)} MB ` +
       `(PNG ${(pngBytes / 1024 / 1024).toFixed(0)} MB + WebP ${(thumbBytes / 1024 / 1024).toFixed(0)} MB) · ${((Date.now() - started) / 1000).toFixed(1)} s`,
   );
 }

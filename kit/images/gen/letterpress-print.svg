@@ -43,7 +43,7 @@
 
   <!-- Debossed Impression Primary Typographic Block -->
   <g filter="url(#lp-deboss)">
-    <!-- Debossed panel recess -->
+    <!--Debossed panel recess-->
     <rect x="220" y="180" width="1160" height="640" rx="8" fill="#efeade" stroke="#7a746a" stroke-width="1.5" stroke-opacity="0.6" />
   </g>
 
@@ -53,7 +53,7 @@
     <text x="300" y="480" font-size="240" fill="#2a2c6b" letter-spacing="-8">L</text>
     <text x="460" y="480" font-size="240" fill="#191713" letter-spacing="-8">&amp;</text>
     <text x="640" y="480" font-size="240" fill="#2a2c6b" letter-spacing="-8">P</text>
-    <!-- Secondary specimen font line -->
+    <!--Secondary specimen font line-->
     <text x="300" y="600" font-size="64" fill="#191713" letter-spacing="4">LETTERPRESS PRINT</text>
   </g>
 

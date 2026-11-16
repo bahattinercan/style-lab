@@ -1,14 +1,14 @@
-/* ============================================================
-   gallery.js — stil kataloğu etkileşimi
-   build-gallery.mjs `#style-data` JSON'unu gömer, bu dosya okur.
-   Durum URL'de tutulur: ?q=&fam=&ind=&ton=&scene=&sort=&fav
-   ============================================================ */
+/*====================================================================================
+   gallery.js — style catalog interaction
+   build-gallery.mjs embeds `#style-data` JSON, this file reads.
+   Status is kept in the URL: ?q=&fam=&ind=&ton=&scene=&sort=&fav
+   ====================================================================================*/
 (() => {
   'use strict';
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
-  // Türkçe + diakritik duyarsız arama: "golge" → "gölge", "sis" → "şiş"
+  // Diacritic-insensitive search: an unaccented query also matches the accented form
   const norm = (v) =>
     String(v ?? '')
       .toLocaleLowerCase('tr')
@@ -23,12 +23,12 @@
   const cards = $$('.card');
   const cardOf = new Map(cards.map((c) => [c.dataset.slug, c]));
 
-  /* ------------------------------------------------------- görsel türevleri
-     Yayınlanan sitede kit/site/site-config.js şunu tanımlar:
+  /*------------------------------------------------------- visual derivatives
+     On the published site kit/site/site-config.js defines:
        window.STYLE_LAB_SHOTS = { base: '../thumbs', card: '640', full: '1280' }
-     O zaman kartlar/çekmece/lightbox WebP türevini kullanır; PNG yalnız indirme
-     bağlantısı olarak kalır. Tanımsızsa (yerel file:// önizleme) davranış
-     değişmez: doğrudan styles/<dir>/shots/<dosya>.png. */
+     Then cards/drawer/lightbox uses the WebP variant; PNG only download
+     remains connected. Behavior if undefined (local file:// preview)
+     literal: styles/<dir>/shots/<file>.png directly.*/
   const SHOT_VARIANT = window.STYLE_LAB_SHOTS ?? null;
   const shotPath = (dir, file, kind = 'card') => {
     if (!SHOT_VARIANT) return '../styles/' + dir + '/shots/' + file;
@@ -71,7 +71,7 @@
 
   const chipBtns = $$('.chip[data-fam], .chip[data-ind], .chip[data-tone], .chip[data-scene]');
 
-  /* ---------------------------------------------------------- arama dizini */
+  /*------------------------------------------------------------- search index*/
   const hay = new Map(
     DATA.map((s) => [
       s.slug,
@@ -100,20 +100,20 @@
     try {
       localStorage.setItem(FAV_KEY, JSON.stringify([...favs]));
     } catch {
-      /* gizli mod / kota: sessiz geç, oturum içi çalışmaya devam */
+      /*incognito mode / quota: go silent, continue working in-session*/
     }
   };
 
-  /* ------------------------------------------------------------------ durum */
+  /*------------------------------------------------------------------ situation*/
   const state = { q: '', fam: '', ind: '', ton: '', scene: '', sort: 'num', fav: false, page: 1 };
-  /** Sayfa başına kart: 251 stil tek ızgarada 100'den fazla kartla kaydırma yerine sayfalanır. */
+  /** Cards per page: 251 styles page instead of scrolling with over 100 cards in one grid.*/
   const PAGE_SIZE = 60;
 
   const FILTER_KEYS = ['fam', 'ind', 'ton'];
   const activeCount = () =>
     FILTER_KEYS.filter((k) => state[k]).length + (state.scene ? 1 : 0) + (state.q ? 1 : 0) + (state.fav ? 1 : 0);
 
-  /* ------------------------------------------------------- kart sıralama */
+  /*------------------------------------------------------- card sorting*/
   const sortValue = (s) => {
     if (state.sort === 'name') return norm(s.name);
     if (state.sort === 'family') return norm(s.family) + ' ' + s.num;
@@ -122,9 +122,9 @@
   const ordered = [...DATA].sort((a, b) => (sortValue(a) < sortValue(b) ? -1 : sortValue(a) > sortValue(b) ? 1 : 0));
   const rank = new Map(ordered.map((s, i) => [s.slug, i]));
 
-  /* -------------------------------------------------- numara sorgusu
-   * Arama kutusu numara da kabul eder: "152" (tek), "#152", "152-171" /
-   * "152..171" (aralık). Diğer her şey metin aramasıdır (hay dizini). */
+  /*-------------------------------------------------- number query
+   * The search box also accepts numbers: "152" (single), "#152", "152-171" /
+   * "152..171" (range). Everything else is text search (hay index).*/
   function parseQuery(raw) {
     const t = raw.trim().replace(/^#/, '');
     const range = t.match(/^(\d{1,3})\s*(?:-|–|\.\.)\s*(\d{1,3})$/);
@@ -142,7 +142,7 @@
     return !query.term || hay.get(s.slug).includes(query.term);
   };
 
-  /* ------------------------------------------------------------ filtre */
+  /*--------------------------------------------------------------- filter*/
   function apply({ writeUrl = true, keepPage = false } = {}) {
     const query = parseQuery(state.q);
     const matched = [];
@@ -159,7 +159,7 @@
       if (ok) matched.push(c);
     }
 
-    // sayfalama: filtre değişince 1. sayfaya dön, sayfa sınırını kırp
+    // pagination: return to page 1 when filter changes, crop page border
     const pages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
     if (!keepPage) state.page = 1;
     state.page = Math.min(Math.max(1, state.page), pages);
@@ -171,7 +171,7 @@
 
     const shown = matched.length;
     count.textContent = shown + ' / ' + cards.length;
-    count.title = shown ? `sayfa ${state.page}/${pages}` : '';
+    count.title = shown ? `page ${state.page}/${pages}` : '';
     count.dataset.state = shown ? 'ok' : 'empty';
     empty.hidden = shown > 0;
     qclear.hidden = state.q === '';
@@ -206,9 +206,9 @@
     }
     pPrev.disabled = state.page <= 1;
     pNext.disabled = state.page >= pages;
-    pInfo.textContent = `${from + 1}–${from + sliceLen} / ${total} · sayfa ${state.page}/${pages}`;
+    pInfo.textContent = `${from + 1}–${from + sliceLen} / ${total} · page ${state.page}/${pages}`;
 
-    // 1 … 4 5 6 … 5 — dar ekranda da kısa kalır
+    // 1 … 4 5 6 … 5 — stays short even on narrow screens
     const nums = [];
     const push = (p) => nums.push(p);
     const near = [state.page - 1, state.page, state.page + 1].filter((p) => p >= 1 && p <= pages);
@@ -222,7 +222,7 @@
       .map((p) =>
         p === '…'
           ? '<span class="pnum gap" aria-hidden="true">…</span>'
-          : `<button type="button" class="pnum" data-page="${p}"${p === state.page ? ' aria-current="page"' : ''} aria-label="${p}. sayfa">${p}</button>`,
+          : `<button type="button" class="pnum" data-page="${p}"${p === state.page ? ' aria-current="page"' : ''} aria-label="${p}. page">${p}</button>`,
       )
       .join('');
   }
@@ -260,8 +260,8 @@
   const chip = (key, label) =>
     `<button type="button" class="achip" data-clear="${key}">${escHtml(label)}<span aria-hidden="true">×</span></button>`;
 
-  const IND_LABELS = { saas: 'SaaS', emlak: 'Emlak', danismanlik: 'Danışmanlık', egitim: 'Eğitim', eticaret: 'E-ticaret', dergi: 'Dergi', ajans: 'Ajans', saglik: 'Sağlık' };
-  const TONE_LABELS = { sicak: 'Sıcak', soguk: 'Soğuk', yesil: 'Yeşil', notr: 'Nötr' };
+  const IND_LABELS = { saas: 'SaaS', emlak: 'Emlak', danismanlik: 'Consulting', egitim: 'Education', eticaret: 'E-ticaret', dergi: 'Dergi', ajans: 'Ajans', saglik: 'health' };
+  const TONE_LABELS = { sicak: 'hot', soguk: 'cold', yesil: 'Green', notr: 'neutral' };
   const labelOf = (kind, value) => {
     if (kind === 'fam') return value;
     if (kind === 'scene') return sceneLabel(value);
@@ -271,7 +271,7 @@
 
   function sceneLabel(file) {
     if (SHOT_LABELS[file]) return SHOT_LABELS[file];
-    const map = { '01': 'Landing', '02': 'Dashboard', '03': 'Mobil', '04': 'Bileşenler', '05': 'Do / Don’t' };
+    const map = { '01': 'Landing', '02': 'Dashboard', '03': 'Mobil', '04': 'Components', '05': 'Do / Don’t' };
     return map[file.slice(0, 2)] ?? file.replace(/\.[a-z]+$/i, '');
   }
 
@@ -306,7 +306,7 @@
     try {
       history.replaceState(null, '', qs ? location.pathname + '?' + qs : location.pathname);
     } catch {
-      /* file:// bazı tarayıcılarda replaceState'e izin vermez; sessiz geç */
+      /*file:// does not allow replaceState in some browsers; pass quietly*/
     }
   }
 
@@ -322,7 +322,7 @@
     sortSel.value = state.sort;
   }
 
-  /* ----------------------------------------------------------- kapak sahnesi */
+  /* ----------------------------------------------------------- cover scene */
   function setScene(file) {
     state.scene = file;
     for (const c of cards) {
@@ -339,7 +339,7 @@
     apply();
   }
 
-  /* ------------------------------------------------------------- çekmece */
+  /*------------------------------------------------------------- drawer*/
   const TOKEN_VARS = [
     '--bg', '--bg-2', '--surface', '--surface-2', '--ink', '--ink-soft', '--ink-faint',
     '--accent', '--accent-ink', '--line', '--radius', '--radius-lg', '--shadow', '--shadow-hard',
@@ -377,7 +377,7 @@
       ? s.shots
           .map((f) => `<button type="button" class="dshot" data-shot="${f}"><img src="${shotPath(s.dir, f, 'card')}" alt="${escHtml(s.name)} — ${escHtml(sceneLabel(f))}" loading="lazy"><span>${escHtml(sceneLabel(f))}</span></button>`)
           .join('')
-      : '<p class="dr-note">Görsel yok.</p>';
+      : '<p class="dr-note">There is no image.</p>';
 
     const list = (items, cls) =>
       items.length ? `<ul class="${cls}">${items.map((x) => '<li>' + escHtml(x) + '</li>').join('')}</ul>` : '<p class="dr-note">—</p>';
@@ -391,47 +391,47 @@
           <h2 id="dTitle">${escHtml(s.name)}</h2>
           <p class="dr-tag">${escHtml(s.tag)}</p>
         </div>
-        <button type="button" class="dr-x" data-close aria-label="Kapat">×</button>
+        <button type="button" class="dr-x" data-close aria-label="Close">×</button>
       </header>
 
       <div class="dr-act">
         <button type="button" class="btn-p" data-copy="style">⧉ data-style</button>
         <button type="button" class="btn-p" data-copy="tokens">⧉ token CSS</button>
         <button type="button" class="btn-p" data-copy="brief">⧉ AI brief</button>
-        <button type="button" class="btn-p ghost" data-fav aria-pressed="${favs.has(s.slug)}">${favs.has(s.slug) ? '★ kısa listede' : '☆ kısa listeye ekle'}</button>
+        <button type="button" class="btn-p ghost" data-fav aria-pressed="${favs.has(s.slug)}">${favs.has(s.slug) ? '★ shortlisted' : '☆ add to shortlist'}</button>
       </div>
 
       <nav class="dr-jump">
-        <a href="live.html?style=${encodeURIComponent(s.slug)}" target="_blank" rel="noopener">▶ canlı önizleme</a>
+        <a href="live.html?style=${encodeURIComponent(s.slug)}" target="_blank" rel="noopener">▶ live preview</a>
         <a href="../styles/${s.dir}/style.md" target="_blank" rel="noopener">style.md</a>
         <a href="../styles/${s.dir}/tokens.json" target="_blank" rel="noopener">tokens.json</a>
       </nav>
 
       <div class="dr-section">
-        <h3>Tek sayfa <span>${s.shots.length}</span></h3>
+        <h3>single page<span>${s.shots.length}</span></h3>
         <div class="dshots">${shots}</div>
       </div>
 
       <dl class="dr-meta">
-        ${s.meta.feel ? `<div><dt>Hissiyat</dt><dd>${escHtml(s.meta.feel)}</dd></div>` : ''}
-        ${s.meta.best ? `<div><dt>En iyi</dt><dd>${escHtml(s.meta.best)}</dd></div>` : ''}
-        ${s.meta.avoid ? `<div><dt>Kaçın</dt><dd>${escHtml(s.meta.avoid)}</dd></div>` : ''}
+        ${s.meta.feel ? `<div><dt>Feeling</dt><dd>${escHtml(s.meta.feel)}</dd></div>` : ''}
+        ${s.meta.best ? `<div><dt>Best for</dt><dd>${escHtml(s.meta.best)}</dd></div>` : ''}
+        ${s.meta.avoid ? `<div><dt>Avoid</dt><dd>${escHtml(s.meta.avoid)}</dd></div>` : ''}
       </dl>
 
       <div class="dr-section">
-        <h3>Canlı bileşen</h3>
+        <h3>live component</h3>
         <div class="demo dr-demo" data-style="${escHtml(s.slug)}">${demos}</div>
       </div>
 
       <div class="dr-cols">
-        <div class="dr-section"><h3>Zorunlu kurallar</h3>${list(s.must, 'dr-list')}</div>
-        <div class="dr-section"><h3>Yasaklar</h3>${list(s.mustNot, 'dr-list ban')}</div>
+        <div class="dr-section"><h3>Mandatory rules</h3>${list(s.must, 'dr-list')}</div>
+        <div class="dr-section"><h3>Bans</h3>${list(s.mustNot, 'dr-list ban')}</div>
       </div>
 
-      ${s.neighbors.length ? `<div class="dr-section"><h3>Komşu stiller</h3><p class="dr-nb">${s.neighbors.map((x) => `<button type="button" class="linkbtn" data-goto="${escHtml(x)}">${escHtml(x)}</button>`).join(' · ')}</p></div>` : ''}
+      ${s.neighbors.length ? `<div class="dr-section"><h3>Adjacent styles</h3><p class="dr-nb">${s.neighbors.map((x) => `<button type="button" class="linkbtn" data-goto="${escHtml(x)}">${escHtml(x)}</button>`).join(' · ')}</p></div>` : ''}
 
       <details class="dr-sec">
-        <summary>Token CSS <span class="dr-hint">kopyala → projeye yapıştır</span></summary>
+        <summary>Token CSS <span class="dr-hint">copy → paste into project</span></summary>
         <pre class="dr-pre" data-role="tokens"></pre>
       </details>
 
@@ -492,7 +492,7 @@
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(text);
-        toast(label + ' kopyalandı');
+        toast(label + 'copied');
         return true;
       }
       throw new Error('clipboard yok');
@@ -511,7 +511,7 @@
       }
       ta.remove();
       if (ok) {
-        toast(label + ' kopyalandı');
+        toast(label + 'copied');
         return true;
       }
       const pre = $('[data-role="' + (label.includes('brief') ? 'brief' : 'tokens') + '"]', dBody);
@@ -521,9 +521,9 @@
         const sel = window.getSelection();
         sel.removeAllRanges();
         sel.addRange(range);
-        toast('Panoya yazılamadı — metin seçildi, Ctrl+C');
+        toast('Could not write to clipboard — text selected, Ctrl+C');
       } else {
-        toast('Kopyalanamadı — tarayıcı izni yok');
+        toast('Could not copy — no browser permission');
       }
       return false;
     }
@@ -537,7 +537,7 @@
     else if (kind === 'brief') copyText(s.brief || '', 'AI brief');
   }
 
-  /* ------------------------------------------------------- favori / seçim */
+  /*------------------------------------------------------- favorite / choice*/
   function toggleFav(slug) {
     if (favs.has(slug)) favs.delete(slug);
     else favs.add(slug);
@@ -549,12 +549,12 @@
       favcount.hidden = favs.size === 0;
     }
     const s = bySlug.get(slug);
-    toast(favs.has(slug) ? s.name + ' kısa listeye eklendi' : s.name + ' kısa listeden çıktı');
+    toast(favs.has(slug) ? s.name + 'added to shortlist' : s.name + 'left off the shortlist');
     if (drawerSlug === slug && !drawer.hidden) {
       const btn = $('[data-fav]', dBody);
       if (btn) {
         btn.setAttribute('aria-pressed', String(favs.has(slug)));
-        btn.textContent = favs.has(slug) ? '★ kısa listede' : '☆ kısa listeye ekle';
+        btn.textContent = favs.has(slug) ? '★ shortlisted' : '☆ add to shortlist';
       }
     }
   }
@@ -566,7 +566,7 @@
     }
   }
 
-  /* ----------------------------------------------------------- karşılaştır */
+  /*-------------------------------------------------------------- compare*/
   const cmpbar = $('#cmpbar');
   const cmpcount = $('#cmpcount');
   const cmpGo = $('#cmpGo');
@@ -577,7 +577,7 @@
   const MAX_CMP = 4;
 
   function syncCmp() {
-    cmpcount.textContent = selected.size + ' seçili';
+    cmpcount.textContent = selected.size + 'selected';
     cmpbar.hidden = selected.size === 0;
     cmpGo.disabled = selected.size < 2;
     for (const c of cards) {
@@ -588,7 +588,7 @@
   function toggleCmp(slug) {
     if (selected.has(slug)) selected.delete(slug);
     else if (selected.size >= MAX_CMP) {
-      toast('En fazla ' + MAX_CMP + ' stil karşılaştırılır');
+      toast('En fazla ' + MAX_CMP + 'style is compared');
       return;
     } else selected.set(slug, bySlug.get(slug));
     syncCmp();
@@ -596,7 +596,7 @@
 
   function openCmp() {
     const file = state.scene || '01-page.png';
-    cmpTitle.textContent = selected.size + ' stil · ' + sceneLabel(file);
+    cmpTitle.textContent = selected.size + ' styles · ' + sceneLabel(file);
     cmpgrid.innerHTML = [...selected.values()]
       .map((s) => {
         const f = s.shots.includes(file) ? file : s.shots[0];
@@ -646,7 +646,7 @@
     return s.shots.map((f) => ({ src: shotPath(s.dir, f, 'full'), cap: s.name + ' · ' + sceneLabel(f) }));
   }
 
-  /* --------------------------------------------------------------- panel */
+  /*------------------------------------------------------------------------------- panel*/
   function openPanel() {
     fpanel.hidden = false;
     fbtn.setAttribute('aria-expanded', 'true');
@@ -657,7 +657,7 @@
   }
   const togglePanel = () => (fpanel.hidden ? openPanel() : closePanel());
 
-  /* ------------------------------------------------------------ bağlamalar */
+  /*--------------------------------------------------------------- bindings*/
   for (const c of cards) {
     const slug = c.dataset.slug;
     c.addEventListener('click', (e) => {
@@ -808,7 +808,7 @@
     const inField = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable;
     const focusIdx = () => cards.filter((c) => !c.hidden).indexOf(document.activeElement);
 
-    // modal açıkken Tab döngüsü (odak arkadaki kartlara kaçmasın)
+    // Tab loop while modal is open (avoid focusing on the cards behind)
     if (e.key === 'Tab') {
       const scopeEl = !drawer.hidden ? drawerPanel : !cmpview.hidden ? cmpview : !lb.hidden ? lb : null;
       if (scopeEl) {
@@ -893,7 +893,7 @@
       .replace(/"/g, '&quot;');
   }
 
-  /* --------------------------------------------------------------- başlat */
+  /*------------------------------------------------------------------------------- start*/
   readUrlState();
   const hashStyle = new URLSearchParams(location.search).get('style');
   apply({ writeUrl: false, keepPage: true });

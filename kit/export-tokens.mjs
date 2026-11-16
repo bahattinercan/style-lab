@@ -1,25 +1,24 @@
 #!/usr/bin/env node
 /**
- * kit/export-tokens.mjs — katalog token'larını kullanılabilir biçimlere aktarır.
+ * kit/export-tokens.mjs — exports catalog tokens into usable formats.
  *
- * Girdi (tek kaynak): kit/tokens.css (palet + koyu mod) ve styles/<nn-slug>/tokens.json
- * (tipografi, radius, boşluk, hareket, bileşen reçetesi).
+ * Input (single source): kit/tokens.css (palette + dark mode) and styles/<nn-slug>/tokens.json
+ * (typography, radius, spacing, movement, component prescription).
  *
- * Çıktı (varsayılan: kit/dist/):
- *   tokens.all.css         tüm stiller, :root + [data-style] — doğrudan kopyalanabilir
- *   tailwind.theme.css     Tailwind v4 @theme (renk/font/radius/gölge) + 8 adım boşluk eşlemesi (yorumsatırı)
- *   figma.variables.json   Figma variables içe aktarma biçimi (Color System Light/Dark + Radius + Spacing + Typography)
- *   index.json             manifest: hangi stil, hangi dosya, kaç token
+ * Output (default: kit/dist/):
+ * tokens.all.css all styles, :root + [data-style] — can be copied directly
+ * tailwind.theme.css Tailwind v4 @theme (color/font/radius/shadow) + 8 step spacing mapping (commentline)
+ * figma.variables.json Figma variables import format (Color System Light/Dark + Radius + Spacing + Typography)
+ * index.json manifest: which style, which file, how many tokens
  *
- * Kullanım:
- *   node kit/export-tokens.mjs                     # hepsi, kit/dist/
- *   node kit/export-tokens.mjs --styles utility,minimalism
- *   node kit/export-tokens.mjs --out /tmp/out      # başka klasör
- *   node kit/export-tokens.mjs --check             # kit/dist güncel mi (kapı)
- *   node kit/export-tokens.mjs --split             # ayrıca stil başına dosyalar (dist/<slug>/)
+ * Usage:
+ * node kit/export-tokens.mjs # all, kit/dist/
+ * node kit/export-tokens.mjs --styles utility,minimalism
+ * node kit/export-tokens.mjs --out /tmp/out # another folder
+ * node kit/export-tokens.mjs --check # kit/dist is up to date (gate)
+ * node kit/export-tokens.mjs --split # also files per style (dist/<slug>/)
  *
- * Not: renk ayrıştırma check-contrast.mjs ile aynı kuralları izler (hex 3/6/8, rgb[a]()).
- */
+ * Note: color decomposition follows the same rules as check-contrast.mjs (hex 3/6/8, rgb[a]()).*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -43,11 +42,11 @@ const SPLIT = process.argv.includes('--split');
 const OUT_DIR = path.resolve(arg('out', path.join(ROOT, 'kit', 'dist')));
 const ONLY = (arg('styles', '') || '').split(',').filter(Boolean);
 
-const HEADER = '/* kit/export-tokens.mjs üretir — elle düzenlemeyin. Kaynak: kit/tokens.css + styles/<nn-slug>/tokens.json */';
+const HEADER = '/* generates kit/export-tokens.mjs — do not edit manually. Source: kit/tokens.css + styles/<nn-slug>/tokens.json */';
 
 /* ---------------------------------------------------------------- okuma */
 
-/** tokens.css → { light: {slug: vars} } · v6: koyu mod kaldırıldı */
+/** tokens.css → { light: {slug: vars} } · v6: dark mode removed*/
 function readTokensCss() {
   const css = fs.readFileSync(TOKENS_CSS, 'utf8');
   const light = {};
@@ -82,7 +81,7 @@ function listStyles() {
     });
 }
 
-/* ---------------------------------------------------------------- renk */
+/*---------------------------------------------------------------- color*/
 
 const round4 = (n) => Math.round(n * 10000) / 10000;
 const figmaColor = (c) => ({ r: round4(c.r / 255), g: round4(c.g / 255), b: round4(c.b / 255), a: round4(c.a) });
@@ -99,11 +98,11 @@ function styleCssBlock(style, vars) {
     lines.push('  ' + present.map((k) => `--${k}: ${vars[k]};`).join(' '));
     void group;
   };
-  push('renk', COLOR_VARS);
+  push('color', COLOR_VARS);
   push('radius', ['radius', 'radius-lg']);
-  push('gölge', ['shadow', 'shadow-hard']);
+  push('shadow', ['shadow', 'shadow-hard']);
   push('tipografi', ['font-display', 'font-body', 'font-mono', 'tracking']);
-  push('yüzey', ['blur', 'grain']);
+  push('surface', ['blur', 'grain']);
   if (lines.length === 0) return '';
   return `/* ${style.num} · ${style.tokens?.name ?? style.slug} */\n[data-style="${style.slug}"] {\n${lines.join('\n')}\n}\n`;
 }
@@ -114,7 +113,7 @@ function buildTokensCss(styles, css) {
   const parts = [
     HEADER,
     '',
-    '/* varsayılan (fallback): değişken adları her stilde aynıdır, bileşenler stil değişince bozulmaz */',
+    '/* default (fallback): variable names are the same in every style, components do not break when the style changes */',
     `:root {\n${rootLine}\n}`,
     '',
   ];
@@ -129,7 +128,7 @@ function buildTokensCss(styles, css) {
 
 /* ---------------------------------------------------------- Tailwind v4 */
 
-/** style-lab'ın 8 adımlı boşluğu Tailwind'in 4px tabanına birebir oturur. */
+/** style-lab's 8-step spacing fits perfectly into Tailwind's 4px base.*/
 const SPACING_MAP = [
   ['--space-1', '4px', 'p-1'],
   ['--space-2', '8px', 'p-2'],
@@ -142,7 +141,7 @@ const SPACING_MAP = [
 ];
 
 function buildTailwind(styles, css) {
-  const out = [HEADER, '', '/* Kullanım: <html data-style="<slug>"> + bu dosyayı theme olarak yükle. */', ''];
+  const out = [HEADER, '', '/*Usage: <html data-style="<slug>"> + load this file as theme.*/', ''];
 
   for (const s of styles) {
     const v = css.light[s.slug];
@@ -163,7 +162,7 @@ function buildTailwind(styles, css) {
     out.push('');
   }
 
-  out.push('/* ---- boşluk: katalog ölçeği = Tailwind 4px tabanı');
+  out.push('/* ---- space: catalog scale = Tailwind base 4px');
   for (const [token, px, cls] of SPACING_MAP) out.push(`   ${token} ${px} → ${cls}`);
   out.push('   ---- */');
   out.push('');
@@ -228,8 +227,8 @@ function buildFigma(styles, css) {
 
   return {
     _readme:
-      'Figma variables içe aktarma biçimi: collections[].variables[] = { name, type, values: { <mod adı>: değer } }. ' +
-      'Color System v6 tek modlu (Light); Radius/Spacing/Typography tek modlu. kit/export-tokens.mjs üretir.',
+      'Figma variables import format: collections[].variables[] = { name, type, values: { <mode name>: value } }.' +
+      'Color System v6 single mode (Light); Radius/Spacing/Typography single mode. It produces kit/export-tokens.mjs.',
     generatedBy: 'kit/export-tokens.mjs',
     source: 'kit/tokens.css + styles/<nn-slug>/tokens.json',
     collections: [
@@ -304,15 +303,15 @@ function main() {
     for (const [rel, content] of files) {
       const p = path.join(OUT_DIR, rel);
       if (!fs.existsSync(p)) stale.push(`${rel}: yok`);
-      else if (fs.readFileSync(p, 'utf8') !== content) stale.push(`${rel}: güncel değil`);
+      else if (fs.readFileSync(p, 'utf8') !== content) stale.push(`${rel}: not up to date`);
     }
     if (stale.length) {
-      console.log(`export: ${stale.length} dosya eksik/bayat`);
+      console.log(`export: ${stale.length} files missing/stale`);
       for (const s of stale) console.log('  × ' + s);
       console.log('  → node kit/export-tokens.mjs');
       return 1;
     }
-    console.log(`export: güncel (${index.counts.styles} stil · ${files.size} dosya)`);
+    console.log(`export: up to date (${index.counts.styles} styles · ${files.size} files)`);
     return 0;
   }
 
@@ -323,8 +322,8 @@ function main() {
   }
   const bytes = [...files.values()].reduce((n, c) => n + Buffer.byteLength(c), 0);
   console.log(
-    `export: ${files.size} dosya · ${(bytes / 1024).toFixed(1)} KB → ${path.relative(ROOT, OUT_DIR)}` +
-      ` · ${index.counts.styles} stil`,
+    `export: ${files.size} files · ${(bytes / 1024).toFixed(1)} KB → ${path.relative(ROOT, OUT_DIR)}` +
+      ` · ${index.counts.styles} styles`,
   );
   return 0;
 }

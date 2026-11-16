@@ -1,22 +1,21 @@
 #!/usr/bin/env node
 /**
- * kit/render/phash.mjs — ucuz görsel regresyon: piksel yerine algısal imza.
+ * kit/render/phash.mjs — cheap visual regression: perceptual signature instead of pixels.
  *
- * Neden: 3915 PNG'nin baseline kopyası ≈1.2 GB. Bunun yerine her sahne için
- * 256 bitlik dHash (17×16 gri ızgara, yatay komşu karşılaştırması) + ortalama renk
- * saklanır (~370 KB JSON). Kaba bozulmayı (render hatası, stil kaybı, koyu mod kaçağı)
- * yakalar; piksel-piksel doğruluk için `pixel-diff.mjs` + `--write` baseline'ı kullanılır.
+ * Cause: Baseline copy of 3915 PNG is ≈1.2 GB. Instead for every scene
+ * 256-bit dHash (17×16 gray grid, horizontal neighbor comparison) + average color
+ * stored (~370 KB JSON). Rough distortion (render error, style loss, dark mode leak)
+ * catches; For pixel-by-pixel accuracy, `pixel-diff.mjs` + `--write` baseline is used.
  *
- * Kullanım:
- *   node kit/render/phash.mjs --write              # baseline yaz (varsa --force)
- *   node kit/render/phash.mjs --check              # karşılaştır (hata varsa exit 1)
- *   node kit/render/phash.mjs --check --json
- *   node kit/render/phash.mjs --check --styles minimalism,ethereal
- *   node kit/render/phash.mjs --check --update <slug>   # kabul edilen değişiklik
- *   node kit/render/phash.mjs --self-test          # eşik duyarlılığını kanıtla
+ * Usage:
+ * node kit/render/phash.mjs --write # write baseline (--force if present)
+ * node kit/render/phash.mjs --check # compare (exit 1 if there are errors)
+ * node kit/render/phash.mjs --check --json
+ * node kit/render/phash.mjs --check --styles minimalism,ethereal
+ * node kit/render/phash.mjs --check --update <slug> # accepted change
+ * node kit/render/phash.mjs --self-test # prove threshold sensitivity
  *
- * Eşikler: Hamming mesafesi ≤ 8/256 bit, ortalama renk kanalı ≤ 10/255.
- */
+ * Thresholds: Hamming distance ≤ 8/256 bits, average color channel ≤ 10/255.*/
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,7 +25,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '../..');
 const STYLES_DIR = path.join(ROOT, 'styles');
 const BASELINE = path.join(HERE, 'visual-baseline.json');
-/** --cache: kit/.shots-cache/ altındaki üretilen sahneleri de tara (varsayılan: yalnız repodaki çekirdek). */
+/** --cache: also scan generated scenes under kit/.shots-cache/ (default: kernel in repo only).*/
 const WITH_CACHE = process.argv.includes('--cache') || process.env.PHASH_CACHE === '1';
 const CACHE_DIR = path.join(ROOT, 'kit', '.shots-cache');
 
@@ -60,10 +59,10 @@ const ONLY = (() => {
 
 const HASH_MAX_DISTANCE = Number(argOf('--hash-tolerance') ?? 8);
 const MEAN_MAX_DELTA = Number(argOf('--mean-tolerance') ?? 10);
-const GRID = 17; // dHash: 17 sütun → 16 karşılaştırma
+const GRID = 17; // dHash: 17 columns → 16 comparisons
 const ROWS = 16;
 
-/* ---------- imza ---------- */
+/* ---------- signature ---------- */
 
 const hex = (bytes) => Buffer.from(bytes).toString('hex');
 
@@ -81,8 +80,7 @@ function popcount(buf) {
 
 /**
  * PNG → { hash: 64 hex, mean: 6 hex }
- * hash: dHash 16×16 (yatay fark), mean: örneklenmiş ortalama RGB.
- */
+ * hash: dHash 16×16 (horizontal difference), mean: sampled average RGB.*/
 export function signature(img) {
   const { width, height, channels, pixels } = img;
   const cellW = width / GRID;
@@ -123,7 +121,7 @@ export function signature(img) {
     }
   }
 
-  // 16×16 = 256 bit: her satırda komşu hücre farkı
+  // 16×16 = 256 bits: difference of neighboring cells in each row
   const bits = new Uint8Array(32);
   let bit = 0;
   for (let y = 0; y < ROWS; y++) {
@@ -158,7 +156,7 @@ function styleDirs() {
     .sort();
 }
 
-/** Sahne dosyaları: { file, path } — repodaki shots/ + (--cache) kit/.shots-cache/<dir>/. */
+/** Scene files: { file, path } — shots/ + (--cache) kit/.shots-cache/<dir>/ in the repo.*/
 function shotsOf(dir) {
   const roots = [path.join(STYLES_DIR, dir, 'shots')];
   if (WITH_CACHE) roots.push(path.join(CACHE_DIR, dir));
@@ -235,8 +233,8 @@ function selfTest() {
   }
 
   const probes = [
-    ['aynı görsel', same, false],
-    ['%15 parlaklık', distance(ref, `${signature(brighten).hash}:${signature(brighten).mean}`), true],
+    ['same visual', same, false],
+    ['15% brightness', distance(ref, `${signature(brighten).hash}:${signature(brighten).mean}`), true],
     ['negatif', distance(ref, `${signature(inv).hash}:${signature(inv).mean}`), true],
     ['24px kayma', distance(ref, `${signature(shift).hash}:${signature(shift).mean}`), true],
   ];
@@ -246,24 +244,24 @@ function selfTest() {
     const flagged = d.hashDistance > HASH_MAX_DISTANCE || d.meanDelta > MEAN_MAX_DELTA;
     const ok = flagged === shouldFlag;
     if (!ok) failed++;
-    console.log(`  ${ok ? '✓' : '✗'} ${label}: hash ${d.hashDistance}/${256} · renk Δ${d.meanDelta} → ${flagged ? 'yakalandı' : 'geçti'}`);
+    console.log(`  ${ok ? '✓' : '✗'} ${label}: hash ${d.hashDistance}/256 · colour Δ${d.meanDelta} → ${flagged ? 'caught' : 'passed'}`);
   }
-  console.log(failed ? `self-test: ${failed} başarısız` : 'self-test: eşikler ayırt ediyor');
+  console.log(failed ? `self-test: ${failed} failed` : 'self-test: thresholds distinguish');
   process.exit(failed ? 1 : 0);
 }
 
 if (SELF_TEST) selfTest();
 
-/* ---------- ana akış ---------- */
+/*---------- main stream ----------*/
 
 if (!WRITE && !CHECK) {
-  console.error('kullanım: node kit/render/phash.mjs --write | --check [--json] [--styles a,b] | --self-test');
+  console.error('usage: node kit/render/phash.mjs --write | --check [--json] [--styles a,b] | --self-test');
   process.exit(2);
 }
 
 if (WRITE) {
   if (fs.existsSync(BASELINE) && !FORCE) {
-    console.error(`baseline zaten var: ${path.relative(ROOT, BASELINE)} — üzerine yazmak için --force`);
+    console.error(`baseline already exists: ${path.relative(ROOT, BASELINE)} — use --force to overwrite`);
     process.exit(2);
   }
   const tree = computeAll({ verbose: true });
@@ -276,12 +274,12 @@ if (WRITE) {
   };
   fs.writeFileSync(BASELINE, JSON.stringify(doc) + '\n');
   const kb = (fs.statSync(BASELINE).size / 1024).toFixed(0);
-  console.log(`baseline yazıldı: kit/render/visual-baseline.json · ${doc.count} görsel · ${kb} KB`);
+  console.log(`baseline written: kit/render/visual-baseline.json · ${doc.count} images · ${kb} KB`);
   process.exit(0);
 }
 
 if (!fs.existsSync(BASELINE)) {
-  console.log('↷ görsel imza regresyonu (baseline yok, atlandı) — kurmak için: node kit/render/phash.mjs --write');
+  console.log('↷ visual signature regression (no baseline, omitted) — to install: node kit/render/phash.mjs --write');
   process.exit(0);
 }
 
@@ -313,22 +311,22 @@ for (const [slug, files] of Object.entries(current)) {
   }
 }
 
-const summary = { baseline: baseline.count, compared: comparedCount, failures: failures.length, missing: missing.length, added: added.length, scope: ONLY ? [...ONLY] : 'tümü' };
+const summary = { baseline: baseline.count, compared: comparedCount, failures: failures.length, missing: missing.length, added: added.length, scope: ONLY ? [...ONLY] : 'all' };
 
 if (JSON_OUT) {
   console.log(JSON.stringify({ ...summary, details: failures }, null, 2));
 } else {
-  console.log(`görsel imza · ${summary.compared}/${summary.baseline} karşılaştırıldı · ${summary.failures} fark · ${summary.missing} eksik · ${summary.added} yeni`);
-  for (const f of failures.slice(0, 15)) console.log(`  ✗ ${f.slug}/shots/${f.file} — hash ${f.hashDistance}/256 · renk Δ${f.meanDelta}`);
+  console.log(`visual signature · ${summary.compared}/${summary.baseline} compared · ${summary.failures} diffs · ${summary.missing} missing · ${summary.added} new`);
+  for (const f of failures.slice(0, 15)) console.log(`  ✗ ${f.slug}/shots/${f.file} — hash ${f.hashDistance}/256 · colour Δ${f.meanDelta}`);
   if (failures.length > 15) console.log(`  … +${failures.length - 15}`);
-  for (const m of missing.slice(0, 5)) console.log(`  ✗ eksik dosya: ${m}`);
+  for (const m of missing.slice(0, 5)) console.log(`  ✗ missing file: ${m}`);
   for (const a of added.slice(0, 5)) console.log(`  ! baseline'da yok: ${a}`);
 }
 
 const bad = failures.length + missing.length + added.length;
 if (!bad) {
-  console.log('sonuç: temiz');
+  console.log('result: clean');
   process.exit(0);
 }
-if (failures.length) console.log('  kabul edilen değişiklikse: node kit/render/phash.mjs --write --force');
+if (failures.length) console.log('accepted change: node kit/render/phash.mjs --write --force');
 process.exit(1);

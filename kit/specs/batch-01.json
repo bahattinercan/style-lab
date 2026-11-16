@@ -4,12 +4,12 @@
     "slug": "game-hud",
     "name": "Game HUD",
     "band": "oyun",
-    "tagline": "Oyun içi katmanın okunur hâli: keskin köşe, tabular rakam, tek sinyal rengi ve durum odaklı hiyerarşi.",
-    "feeling": "kontrollü gerilim, \"her şey bir tuş uzağında\"",
-    "best": "oyun içi katmanlar, espor yayın paneli, canlı skor ekranı, kontrol paneli",
-    "avoid": "uzun okuma metni, form ağırlıklı kurumsal akışlar",
-    "difficulty": "orta",
-    "a11y": "iyi (koyu zeminde 4.5:1 üstü)",
+    "tagline": "Readable version of the in-game layer: sharp corner, tabular number, single signal color and state-oriented hierarchy.",
+    "feeling": "controlled voltage, \"everything is just a click away\"",
+    "best": "in-game layers, esports broadcast panel, live score screen, control panel",
+    "avoid": "long reading text, form-heavy corporate streams",
+    "difficulty": "medium",
+    "a11y": "good (above 4.5:1 on dark ground)",
     "palette": {
       "bg": "#0b1118",
       "bg2": "#0e161f",
@@ -35,24 +35,24 @@
     "upper": true,
     "tracking": "0.02em",
     "signature": [
-      "**Keskin köşe:** 2/4px; HUD bir çerçeve gibi davranır, yumuşak yuvarlatma yok.",
-      "**Tek sinyal rengi:** accent yalnız canlı durum ve birincil eylem; ikinci bir neon hue yasak.",
-      "**Tabular rakam:** skor/timer/sayaç mono ve sağa hizalı; rakam genişliği zıplamaz.",
-      "**İnce accent kenar:** kartlar 1px accent %22 kenarla ayrılır, gölge kullanılmaz.",
-      "**Uppercase başlık:** başlık ve etiket uppercase; gövde metni cümle düzeninde kalır."
+      "**Sharp corner:** 2/4px; The HUD acts like a frame, no smooth rounding.",
+      "**Single signal color:** accent only live status and primary action; A second neon hue is prohibited.",
+      "**Tabular digit:** score/timer/counter mono and right aligned; digit width does not jump.",
+      "**Thin accent edge:** cards are separated by a 1px accent 22% edge, no shadow is used.",
+      "**Uppercase title:** title and tag uppercase; body text remains in sentence order."
     ],
     "must": [
-      "Accent sayısı bir; durum bilgisi metin veya ikonla da verilir.",
-      "Tüm sayılar `font-variant-numeric: tabular-nums` ile yazılır.",
-      "Kart ve buton köşesi ≤ 4px; gölge yerine 1px kenar kullanılır.",
-      "HUD katmanı en fazla 3 seviye: zemin, panel, yüzen bildirim.",
-      "Kontrast gövde ≥ 4.5:1, odak halkası ≥ 3:1."
+      "Accent number one; Status information is also given via text or icon.",
+      "All numbers are written with `font-variant-numeric: tabular-nums`.",
+      "Card and button corner ≤ 4px; 1px border is used instead of shadow.",
+      "HUD layer up to 3 levels: ground, panel, floating notification.",
+      "Contrast body ≥ 4.5:1, focus ring ≥ 3:1."
     ],
     "mustNot": [
-      "Sonsuz yanıp sönen gösterge veya animasyonlu skor (v6 kapsam dışı).",
-      "Üçten fazla durum rengi; sarı/yeşil/kırmızı üçlüsünün keyfî kullanımı.",
-      "Yumuşak 12px+ yuvarlatma ve çok katmanlı gölge.",
-      "Serif başlık veya script font."
+      "Infinite flashing indicator or animated score (v6 out of scope).",
+      "More than three status colors; arbitrary use of the yellow/green/red trio.",
+      "Soft 12px+ rounding and multilayer shadow.",
+      "Serif title or script font."
     ],
     "neighbors": {
       "compatible": [
@@ -68,36 +68,36 @@
       {
         "label": "Game UI Database",
         "url": "https://www.gameuidatabase.com/",
-        "use": "oyun içi katman örnekleri; HUD yoğunluğu karşılaştırması"
+        "use": "in-game layer examples; HUD density comparison"
       },
       {
         "label": "Heads-up display (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Heads-up_display",
-        "use": "HUD katmanlarının bilgi hiyerarşisi"
+        "use": "Information hierarchy of HUD layers"
       },
       {
         "label": "Chakra Petch (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Chakra+Petch",
-        "use": "teknik display ailesi; uppercase başlık"
+        "use": "technical display family; uppercase title"
       },
       {
         "label": "MDN · tabular-nums",
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric",
-        "use": "sabit genişlikli rakam ayarı"
+        "use": "fixed width digit setting"
       }
     ],
     "keywords": [
-      "oyun",
+      "game",
       "hud",
-      "koyu panel"
+      "dark panel"
     ],
     "industries": [
       "oyun",
       "medya"
     ],
-    "essence": "Game HUD, oyuncunun ekranda gördüğü her sayının bir karar anına bağlı olduğu varsayımıyla kurulur: skor, can, süre ve hedef aynı ızgarada hizalanır. Süs yok; kontrast ve keskinlik var.",
-    "origin": "Arcade kokpitleri, konsol HUD'ları ve PC oyun menüleri; 2010'lardan sonra espor yayın panelleriyle sadeleşti.",
-    "brief": "Oyun içi bir kontrol paneli tasarla. Skor, can ve süre aynı yatay şeritte; ana eylem tek buton. Rakamlar mono ve tabular, köşeler 2px, accent yalnız canlı durum için. Süs, gölge ve animasyon yok; hiyerarşi puntodan gelir.",
+    "essence": "Game HUD is built on the assumption that every number the player sees on the screen is tied to a decision moment: score, health, duration and target are aligned on the same grid. No ornaments; There is contrast and sharpness.",
+    "origin": "Arcade cockpits, console HUDs and PC game menus; After the 2010s, esports became simpler with broadcast panels.",
+    "brief": "Design an in-game control panel. Score, health and time are on the same horizontal strip; main action single button. Numbers are mono and tabular, corners are 2px, accent is only for live state. No ornaments, shadows and animations; The hierarchy comes from the point size.",
     "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.12; max-width: 24ch; }\nh2 { font-size: 26px; }\n.brand { text-transform: uppercase; letter-spacing: .16em; font-size: 13px; }\n.pg-media { clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%); }\n.pg-num { color: var(--accent); }\n.pg-meter { border-radius: 0; }\n.pg-meter i { border-radius: 0; }",
     "paletteSeeds": {
       "bg": "#0b1118",
@@ -128,12 +128,12 @@
     "slug": "game-racing",
     "name": "Game Racing",
     "band": "oyun",
-    "tagline": "Hız göstergesi dilinde arayüz: dar rakamlar, sıcak accent, eğimli kesim ve yarış telemetrisi hiyerarşisi.",
-    "feeling": "hız, sıcak metal, \"son tur\" baskısı",
-    "best": "yarış oyunu menüleri, telemetri paneli, spor yayın grafiği",
-    "avoid": "sakin kurumsal form akışları, uzun okuma ekranları",
-    "difficulty": "orta",
-    "a11y": "orta (sıcak accent büyük puntoda güvenli)",
+    "tagline": "Interface in speedometer language: narrow digits, warm accent, beveled cut and racing telemetry hierarchy.",
+    "feeling": "speed, hot metal, \"last lap\" pressure",
+    "best": "racing game menus, telemetry panel, sports broadcast graphic",
+    "avoid": "calm corporate form flows, long reading screens",
+    "difficulty": "medium",
+    "a11y": "medium (warm accent safe in large print)",
     "palette": {
       "bg": "#121010",
       "bg2": "#171313",
@@ -160,24 +160,24 @@
     "tracking": "0.04em",
     "shadow": "0 1px 0 rgba(0,0,0,.4)",
     "signature": [
-      "**Eğimli kesim:** köşe yerine 8–12px çapraz kırpma; buton ve kart aynı kesim açısını paylaşır.",
-      "**Dar rakam:** Rajdhani'nin sıkı genişliği skor ve tur sayısını tek satırda tutar.",
-      "**Sıcak accent:** turuncu yalnız hız/sıralama vurgusu; soğuk mavi ikinci renk olarak kullanılmaz.",
-      "**Telemetri şeridi:** yatay çubuklar ince ve mono etiketli; grafik değil gösterge gibi okunur.",
-      "**Yarış tipografisi:** başlık uppercase ve geniş tracking, gövde 15px sakin."
+      "**Bevel crop:** 8–12px diagonal crop instead of corner; The button and the card share the same cutting angle.",
+      "**Night figure:** Rajdhani's tight width keeps the score and runs count in one line.",
+      "**Hot accent:** orange only speed/ranking accent; cold blue is not used as a second color.",
+      "**Telemetry strip:** horizontal bars labeled thin and mono; It reads like an indicator, not a chart.",
+      "**Racing typography:** header uppercase and wide tracking, body 15px quiet."
     ],
     "must": [
-      "Kart ve buton kesimi aynı çapraz açıyla (8–12px) kırpılır.",
-      "Accent yalnız hız, sıralama ve birincil eylem için kullanılır.",
-      "Tüm sayısal alanlar mono veya dar display; ondalık hizalı.",
-      "Şerit göstergeler 6px yüksekliğinde, arka plan `--surface-2`.",
-      "Kontrast gövde ≥ 4.5:1."
+      "The card and button cutout are cropped to the same diagonal angle (8–12px).",
+      "Accent is used only for speed, ranking and primary action.",
+      "All numeric fields mono or narrow display; decimal aligned.",
+      "Strip indicators are 6px high, background is `--surface-2`.",
+      "Contrast body ≥ 4.5:1."
     ],
     "mustNot": [
-      "Animasyonlu hız göstergesi veya kayan telemetri (v6 kapsam dışı).",
-      "Mavi-turuncu tamamlayıcı kontrast yığını.",
-      "Serif veya el yazısı başlık.",
-      "Yuvarlak 12px+ kart köşesi."
+      "Animated speedometer or scrolling telemetry (v6 out of scope).",
+      "Blue-orange complementary contrast stack.",
+      "Serif or handwritten title.",
+      "Rounded 12px+ card corner."
     ],
     "neighbors": {
       "compatible": [
@@ -193,31 +193,31 @@
       {
         "label": "Rajdhani (Google Fonts)",
         "url": "https://fonts.google.com/specimen/Rajdhani",
-        "use": "dar display; rakam ve başlık ailesi"
+        "use": "narrow display; number and title family"
       },
       {
         "label": "Racing telemetry (Wikipedia)",
         "url": "https://en.wikipedia.org/wiki/Telemetry",
-        "use": "gösterge ve ölçüm hiyerarşisi"
+        "use": "indicator and measurement hierarchy"
       },
       {
         "label": "Game UI Database",
         "url": "https://www.gameuidatabase.com/",
-        "use": "yarış oyunu menü referansları"
+        "use": "racing game menu references"
       }
     ],
     "keywords": [
-      "oyun",
-      "yarış",
+      "game",
+      "race",
       "telemetri"
     ],
     "industries": [
       "oyun",
       "spor"
     ],
-    "essence": "Game Racing, yarış kokpitinin gösterge mantığını arayüze taşır: her sayı bir karar (fren, vites, sıra) ve her karar tek bakışta okunmalıdır.",
-    "origin": "Yarış oyunu menüleri, motor sporları yayın grafikleri ve analog gösterge panelleri.",
-    "brief": "Yarış oyunu menüsü tasarla: tur, sıralama ve süre aynı şeritte; kartlar çapraz kesimli; accent turuncu yalnız hız vurgusu. Rakamlar dar ve tabular. Animasyon yok, süs yok.",
+    "essence": "Game Racing brings the display logic of the racing cockpit into the interface: each number is a decision (brake, gear, row) and each decision must be read at a glance.",
+    "origin": "Racing game menus, motorsport broadcast graphics and analog instrument panels.",
+    "brief": "Design racing game menu: lap, qualifying and time in the same lane; cards are cross-cut; accent orange only emphasis on speed. The numbers are tight and taboo. No animation, no flourishes.",
     "extraCss": "h1 { font-size: var(--type-h1); line-height: 1.06; max-width: 22ch; }\n.panel, .pg-card { clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }\n.btn { clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px)); }\n.pg-band b { font-family: var(--font-mono); font-size: 30px; }\n.pg-chart i { border-radius: 0; }",
     "paletteSeeds": {
       "bg": "#121010",

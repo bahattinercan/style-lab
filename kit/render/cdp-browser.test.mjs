@@ -5,10 +5,10 @@ import vm from 'node:vm';
 
 const source = fs.readFileSync(new URL('./cdp-browser.mjs', import.meta.url), 'utf8');
 const invocation = source.match(/const proc = (spawn\([\s\S]*?\n  \));/);
-assert.ok(invocation, 'Tarayıcı başlatma çağrısı bulunmalı');
+assert.ok(invocation, 'Browser initialization call must be present');
 
 for (const platform of ['linux', 'win32', 'darwin']) {
-  test(`${platform}: tarayıcı başlatma bayrakları`, () => {
+  test(`${platform}: browser launch flags`, () => {
     let args;
     vm.runInNewContext(invocation[1], {
       browser: 'test-browser',

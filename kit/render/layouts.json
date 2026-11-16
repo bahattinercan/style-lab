@@ -1,22 +1,22 @@
 {
   "version": 1,
-  "_readme": "Kompozisyon ekseni tek kaynağı. style-lab şimdiye kadar rengi/tipografiyi çeşitlendiriyordu; bu dosya İSKELETİ çeşitlendirir. tokens.json → layout.hero / layout.nav buradaki id'lerden birini seçmek zorunda (kapı: kit/check-layout.mjs). Yeni arketip = buraya kayıt + kit/render/partials/<id>.html + scene.css'te [data-layout] bloğu.",
+  "_readme": "Composition axis single source. until now style-lab was varying the color/typography; This file diversifies the SKELETON. tokens.json → layout.hero / layout.nav have to choose one of the ids here (door: kit/check-layout.mjs). New archetype = register here + kit/render/partials/<id>.html + [data-layout] block in scene.css.",
   "heroes": [
     {
       "id": "split",
       "label": "Split",
-      "when": "kopya solda, ürün görseli sağda; dengeli, nötr varsayılan",
+      "when": "copy on the left, product image on the right; balanced, neutral default",
       "strengths": [
         "SaaS",
-        "araç",
-        "kurumsal"
+        "vehicle",
+        "corporate"
       ],
       "densityBias": "balanced"
     },
     {
       "id": "split-reverse",
       "label": "Split (ters)",
-      "when": "görsel solda, kopya sağda; okuma akışını kırar, cesur ailelerde ritim",
+      "when": "image on left, copy on right; breaks the flow of reading, rhythm in brave families",
       "strengths": [
         "indie",
         "etkinlik",
@@ -26,42 +26,42 @@
     },
     {
       "id": "centered",
-      "label": "Merkezlenmiş",
-      "when": "tek mesaj + geniş görsel bandı; sakin, seyrek markalar",
+      "label": "centered",
+      "when": "single message + wide visual band; quiet, infrequent brands",
       "strengths": [
         "minimal",
         "japandi",
-        "kişisel marka"
+        "personal brand"
       ],
       "densityBias": "sparse"
     },
     {
       "id": "type",
-      "label": "Salt tipografi",
-      "when": "görsel yok; başlık ekranın kendisi. Poster/dergi/ajans vitrini",
+      "label": "Pure typography",
+      "when": "no visual; the title screen itself. Poster/magazine/agency display",
       "strengths": [
-        "tipografi",
-        "kültür",
+        "typography",
+        "culture",
         "ajans"
       ],
       "densityBias": "sparse"
     },
     {
       "id": "fullbleed",
-      "label": "Tam kenar medya",
-      "when": "medya sol kenara taşar (kart yok), kopya sağda nefes alır; vitrin/lüks",
+      "label": "full edge media",
+      "when": "media bleeds to the left edge (no card), copy breathes on the right; showcase/luxury",
       "strengths": [
         "emlak",
         "otel",
-        "mücevher",
+        "jewelery",
         "moda"
       ],
       "densityBias": "sparse"
     },
     {
       "id": "product",
-      "label": "Ürün ekranı",
-      "when": "kopya üstte küçük, dev ürün paneli altta; araç iddiası",
+      "label": "product display",
+      "when": "The copy is small at the top, the giant product panel is at the bottom; vehicle claim",
       "strengths": [
         "SaaS",
         "dashboard",
@@ -71,24 +71,24 @@
     },
     {
       "id": "index",
-      "label": "Dizin ızgarası",
-      "when": "kopya solda dar, sağda 2×2 iş/kayıt ızgarası; portfolyo, arşiv",
+      "label": "index grid",
+      "when": "copy narrow on left, 2×2 job/record grid on right; portfolio, archive",
       "strengths": [
         "ajans",
         "portfolyo",
-        "arşiv",
-        "müze"
+        "archive",
+        "museum"
       ],
       "densityBias": "dense"
     },
     {
       "id": "sticky",
-      "label": "Yapışkan anlatı",
-      "when": "solda yapışkan kopya, sağda kayan 3 panelli hikâye şeridi; uzun sayfa",
+      "label": "sticky narrative",
+      "when": "sticky copy on left, scrolling 3-panel story strip on right; long page",
       "strengths": [
         "hikâye",
-        "ürün anlatısı",
-        "spekülatif"
+        "product narrative",
+        "speculative"
       ],
       "densityBias": "balanced"
     }
@@ -96,45 +96,45 @@
   "navs": [
     {
       "id": "inline",
-      "label": "Satır içi",
-      "when": "marka + linkler + iki buton; nötr varsayılan"
+      "label": "inline",
+      "when": "brand + links + two buttons; neutral default"
     },
     {
       "id": "pill",
-      "label": "Yüzen hap",
-      "when": "sayfadan kopuk, ortada linkler; yüzey/cam ve vitrin aileleri"
+      "label": "floating pill",
+      "when": "Links in the middle, disconnected from the page; surface/glass and showcase families"
     },
     {
       "id": "split",
-      "label": "Bölünmüş",
-      "when": "marka solda, linkler sağda, tek metin CTA; editoryal ve tipografik"
+      "label": "divided",
+      "when": "brand on the left, links on the right, single text CTA; editorial and typographic"
     },
     {
       "id": "utility",
-      "label": "Yardımcı satırlı",
-      "when": "üstte ince yardımcı satır, altta ana gezinme; kurumsal, veri, endüstri"
+      "label": "auxiliary line",
+      "when": "thin helper row at top, main navigation at bottom; enterprise, data, industry"
     },
     {
       "id": "rail",
       "label": "Yan ray",
-      "when": "solda dikey gezinme rayı; uygulama hissi, komut paleti, araç aileleri"
+      "when": "vertical navigation rail on the left; application feel, command palette, tool families"
     }
   ],
   "densities": [
     {
       "id": "sparse",
-      "label": "Seyrek",
-      "when": "ekran başına ≤5 öğe, geniş boşluk"
+      "label": "rare",
+      "when": "≤5 items per screen, ample white space"
     },
     {
       "id": "balanced",
-      "label": "Dengeli",
-      "when": "standart bilgi yoğunluğu"
+      "label": "balanced",
+      "when": "standard information density"
     },
     {
       "id": "dense",
-      "label": "Yoğun",
-      "when": "çok öğe, küçük boşluk, veri hissi"
+      "label": "intense",
+      "when": "many items, small space, data sense"
     }
   ],
   "sections": [
@@ -200,7 +200,7 @@
     },
     {
       "id": "data-first",
-      "label": "Veri ?nce",
+      "label": "data before",
       "order": [
         "stats",
         "form-data",
@@ -233,62 +233,62 @@
     {
       "id": "hero",
       "label": "Hero",
-      "when": "giriş sahnesi (heroes[] arketiplerinden biri)"
+      "when": "intro scene (one of the heroes[] archetypes)"
     },
     {
       "id": "logo-wall",
-      "label": "Güvenen ekipler",
-      "when": "sosyal kanıt şeridi"
+      "label": "Trusting teams",
+      "when": "social proof ribbon"
     },
     {
       "id": "feature-trio",
-      "label": "Üç özellik",
-      "when": "eşit ağırlıklı üç değer önerisi"
+      "label": "three features",
+      "when": "Three equally weighted value propositions"
     },
     {
       "id": "bento",
       "label": "Bento",
-      "when": "farklı boyutlu kutu ızgarası"
+      "when": "different size box grid"
     },
     {
       "id": "how-it-works",
-      "label": "Nasıl çalışır",
-      "when": "3 adım, numaralı akış"
+      "label": "How does it work",
+      "when": "3 steps, numbered flow"
     },
     {
       "id": "testimonial",
       "label": "Referans",
-      "when": "tek güçlü alıntı + kimlik"
+      "when": "single strong quote + identity"
     },
     {
       "id": "stats",
-      "label": "İstatistik",
-      "when": "3–4 büyük sayı"
+      "label": "Statistics",
+      "when": "3–4 big numbers"
     },
     {
       "id": "pricing",
-      "label": "Fiyat tablosu",
-      "when": "plan karşılaştırma"
+      "label": "price chart",
+      "when": "plan comparison"
     },
     {
       "id": "faq",
-      "label": "SSS",
-      "when": "itiraz kırma"
+      "label": "FAQ",
+      "when": "breaking objection"
     },
     {
       "id": "cta",
-      "label": "Kapanış CTA",
-      "when": "son eylem bloğu"
+      "label": "Closing CTA",
+      "when": "last action block"
     },
     {
       "id": "footer",
       "label": "Footer",
-      "when": "site haritası + yasal"
+      "when": "sitemap + legal"
     },
     {
       "id": "og-card",
-      "label": "OG kartı",
-      "when": "1200×630 paylaşım görseli"
+      "label": "OG card",
+      "when": "1200×630 sharing image"
     }
   ]
 }

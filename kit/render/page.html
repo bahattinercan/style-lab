@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="tr" data-style="__STYLE__" data-layout="__LAYOUT_HERO__" data-nav="__LAYOUT_NAV__">
+<html lang="en" data-style="__STYLE__" data-layout="__LAYOUT_HERO__" data-nav="__LAYOUT_NAV__">
 <head>
 <meta charset="utf-8">
-<title>__STYLE__ · tek sayfa</title>
+<title>__STYLE__ · single page</title>
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="scene.css">
 <style id="extra"></style>
@@ -23,27 +23,27 @@
   <!-- SECTION:how-it-works -->
   <section class="pg-sec pg-trio-sec">
     <header class="pg-head">
-      <span class="pg-cap">Nasıl çalışır</span>
-      <h2>Üç adım, tek sözleşme</h2>
-      <p class="lede">Bileşen kodu stil değişince değişmez; yalnız tokenda değişen değerler görünür.</p>
+      <span class="pg-cap">How does it work</span>
+      <h2>Three steps, one contract</h2>
+      <p class="lede">Component code does not change when the style changes; Only the changing values ​​in the token are visible.</p>
     </header>
     <div class="pg-trio">
       <article class="pg-card">
         <span class="pg-num">01</span>
-        <h3>Seç</h3>
-        <p class="pg-p">Katalogdan tek stil seçilir; palet, tipografi ve boşluk aynı sözleşmeden gelir.</p>
+        <h3>Select</h3>
+        <p class="pg-p">One style is selected from the catalogue; palette, typography, and spacing come from the same convention.</p>
         <div class="pg-bars"><i></i><i></i><i></i></div>
       </article>
       <article class="pg-card">
         <span class="pg-num">02</span>
-        <h3>Uygula</h3>
-        <p class="pg-p">Sayfa <span class="mono">data-style</span> ile bağlanır; tek değişken seti tüm yüzeyi taşır.</p>
+        <h3>Apply</h3>
+        <p class="pg-p">Page<span class="mono">data-style</span>Connects with; A single variable set carries the entire surface.</p>
         <div class="pg-bars"><i></i><i></i><i></i></div>
       </article>
       <article class="pg-card">
         <span class="pg-num">03</span>
-        <h3>Ölç</h3>
-        <p class="pg-p">Kontrast, odak halkası ve dokunma hedefi ölçülür; ihlal kapıdan döner.</p>
+        <h3>measure</h3>
+        <p class="pg-p">Contrast, focus ring and touch target are measured; Violation returns from the door.</p>
         <div class="pg-bars"><i></i><i></i><i></i></div>
       </article>
     </div>
@@ -57,13 +57,13 @@
       <span class="pg-cap">__COPY_LOGO1__ · 01 / 04</span>
     </figure>
     <div class="pg-split-copy">
-      <span class="pg-cap">Yaklaşım</span>
-      <h2>Her yüzey aynı ritimle kurulur</h2>
-      <p class="lede">Ölçek, boşluk ve köşe yarıçapı tek yerden gelir. Kart, tablo ve form aynı aileyi konuşur.</p>
+      <span class="pg-cap">Approach</span>
+      <h2>Every surface is installed with the same rhythm</h2>
+      <p class="lede">Scale, spacing, and corner radius all come from one place. Card, table and form speak the same family.</p>
       <ul class="pg-list">
-        <li>Ölçülebilir kontrast: gövde 4.5:1, odak halkası 3:1.</li>
-        <li>Tek değişken seti: <span class="mono">--bg · --ink · --accent · --line</span>.</li>
-        <li>Bileşen kodu sabit, stil yalnız öznitelik.</li>
+        <li>Measurable contrast: body 4.5:1, focus ring 3:1.</li>
+        <li>Single variable set:<span class="mono">--bg · --ink · --accent · --line</span>.</li>
+        <li>Component code is fixed, style is just an attribute.</li>
       </ul>
       <div class="pg-meter"><i></i></div>
       <span class="pg-cap">kapsam · %68</span>
@@ -72,9 +72,9 @@
 
   <!-- SECTION:stats -->
   <section class="pg-band">
-    <div><b>24</b><span>ülkede kullanım</span></div>
-    <div><b>%42</b><span>dönüşüm artışı</span></div>
-    <div><b>9 dk</b><span>kurulum süresi</span></div>
+    <div><b>24</b><span>use in country</span></div>
+    <div><b>%42</b><span>conversion increase</span></div>
+    <div><b>9 dk</b><span>installation time</span></div>
     <div><b>4.8</b><span>ortalama puan</span></div>
   </section>
 
@@ -82,46 +82,46 @@
   <section class="pg-sec">
     <header class="pg-head pg-head-row">
       <div>
-        <span class="pg-cap">Bileşenler</span>
-        <h2>Tek set, tüm yüzeyler</h2>
+        <span class="pg-cap">Components</span>
+        <h2>One set, all surfaces</h2>
       </div>
       <span class="chip">tokens.css</span>
     </header>
     <div class="pg-comp">
       <article class="pg-card">
-        <span class="pg-cap">Buton</span>
+        <span class="pg-cap">button</span>
         <div class="pg-row">
           <span class="btn">Birincil</span>
-          <span class="btn ghost">İkincil</span>
+          <span class="btn ghost">secondary</span>
           <span class="btn soft">Sessiz</span>
         </div>
-        <span class="pg-cap">Durum</span>
+        <span class="pg-cap">Status</span>
         <div class="pg-row">
-          <span class="chip"><span class="dot"></span>canlı</span>
-          <span class="chip accent">yeni</span>
+          <span class="chip"><span class="dot"></span>live</span>
+          <span class="chip accent">new</span>
           <span class="chip">bekler</span>
         </div>
       </article>
       <article class="pg-card">
         <span class="pg-cap">Girdi</span>
-        <input class="field" placeholder="Proje adı" aria-label="proje adı">
-        <input class="field focus" value="kuzey-kampanya" aria-label="odaklı alan">
-        <input class="field err" value="ornek@" aria-label="hatalı alan">
-        <span class="help err">Geçerli bir e-posta gir</span>
+        <input class="field" placeholder="Project name" aria-label="project name">
+        <input class="field focus" value="kuzey-kampanya" aria-label="focused area">
+        <input class="field err" value="example@" aria-label="faulty area">
+        <span class="help err">Enter a valid email</span>
       </article>
       <article class="pg-card">
         <div class="pg-card-top">
           <span class="mark">N</span>
-          <span class="pg-card-t">Kart başlığı</span>
-          <span class="chip">yeni</span>
+          <span class="pg-card-t">card title</span>
+          <span class="chip">new</span>
         </div>
-        <p class="pg-p">Yüzey <span class="mono">--surface</span>, kenar <span class="mono">--line</span>, köşe <span class="mono">--radius-lg</span>.</p>
+        <p class="pg-p">surface<span class="mono">--surface</span>, edge<span class="mono">--line</span>, corner<span class="mono">--radius-lg</span>.</p>
         <div class="pg-bars"><i></i><i></i><i></i></div>
       </article>
       <article class="pg-card">
-        <span class="pg-cap">Tablo</span>
+        <span class="pg-cap">Table</span>
         <table class="pg-table">
-          <thead><tr><th>ad</th><th>durum</th><th class="num">değer</th></tr></thead>
+          <thead><tr><th>ad</th><th>situation</th><th class="num">value</th></tr></thead>
           <tbody>
             <tr><td>Atlas</td><td><span class="chip accent">aktif</span></td><td class="num">%72</td></tr>
             <tr><td>Fatura</td><td><span class="chip">bekler</span></td><td class="num">%40</td></tr>
@@ -135,35 +135,35 @@
   <section class="pg-sec pg-form">
     <div class="pg-card">
       <span class="pg-cap">Form</span>
-      <h3>Hesap oluştur</h3>
+      <h3>Create account</h3>
       <div class="pg-2col">
         <label class="pg-ctl"><span class="label">Ad</span><input class="field" value="Elif" aria-label="ad"></label>
         <label class="pg-ctl"><span class="label">Soyad</span><input class="field" value="Barut" aria-label="soyad"></label>
       </div>
       <label class="pg-ctl"><span class="label">E-posta</span><input class="field" value="elif@kuzey.co" aria-label="e-posta"></label>
-      <label class="pg-check"><input type="checkbox" checked> Haftalık özet gönder</label>
+      <label class="pg-check"><input type="checkbox" checked>Send weekly summary</label>
       <div class="pg-row" style="margin-top:auto">
-        <span class="btn">Kaydet</span>
-        <span class="btn ghost">Vazgeç</span>
+        <span class="btn">Save</span>
+        <span class="btn ghost">Cancel</span>
       </div>
     </div>
     <div class="pg-card">
-      <span class="pg-cap">Veri</span>
-      <h3>Haftalık hacim</h3>
+      <span class="pg-cap">Data</span>
+      <h3>Weekly volume</h3>
       <div class="pg-chart">
         <i style="height:38%"></i><i style="height:52%"></i><i style="height:46%"></i><i class="on" style="height:74%"></i>
         <i style="height:61%"></i><i style="height:83%"></i><i style="height:57%"></i><i style="height:69%"></i>
       </div>
-      <div class="pg-legend"><span>bu hafta · 12.4k</span><span>geçen hafta · 9.8k</span></div>
-      <div class="pg-row"><span class="chip accent">+%26</span><span class="chip">hedef %80</span></div>
+      <div class="pg-legend"><span>this week · 12.4k</span><span>last week · 9.8k</span></div>
+      <div class="pg-row"><span class="chip accent">+26%</span><span class="chip">target 80%</span></div>
     </div>
   </section>
 
   <!-- SECTION:cta -->
   <section class="pg-cta">
-    <span class="pg-cap">Başla</span>
-    <h2>Tek stil, tek sayfa, tek sözleşme</h2>
-    <p class="lede">Stil seçilir, token uygulanır, ölçülür. Kalan iş bileşenin değil değişkenin işidir.</p>
+    <span class="pg-cap">start</span>
+    <h2>One style, one page, one contract</h2>
+    <p class="lede">Style chosen, token applied, measured. The remaining work is the work of the variable, not the component.</p>
     <div class="pg-row">
       <span class="btn">__COPY_CTA1__</span>
       <span class="btn ghost">__COPY_CTA2__</span>
@@ -174,21 +174,21 @@
   <footer class="pg-foot">
     <div class="pg-foot-brand">
       <div class="brand"><span class="mark">N</span> Northwind</div>
-      <p>Ölçülebilir tasarım sözleşmesi: palet, tipografi, boşluk ve odak tek kaynaktan.</p>
+      <p>Measurable design charter: palette, typography, spacing and focus from a single source.</p>
     </div>
     <div class="pg-foot-col">
-      <b>Ürün</b><span>Katalog</span><span>Bileşenler</span><span>Şablonlar</span>
+      <b>Product</b><span>catalog</span><span>Components</span><span>templates</span>
     </div>
     <div class="pg-foot-col">
-      <b>Kaynak</b><span>Dokümanlar</span><span>Token seti</span><span>Değişiklikler</span>
+      <b>Source</b><span>Documents</span><span>Token seti</span><span>Changes</span>
     </div>
     <div class="pg-foot-col">
-      <b>İletişim</b><span>merhaba@northwind.co</span><span>+90 212 000 00 00</span><span>İstanbul</span>
+      <b>Contact</b><span>merhaba@northwind.co</span><span>+90 212 000 00 00</span><span>Istanbul</span>
     </div>
   </footer>
   <!-- SECTION:footer-base -->
   <div class="pg-foot-base">
-    <span>© 2026 Northwind · tüm hakları saklıdır</span>
+    <span>© 2026 Northwind · all rights reserved</span>
     <span>__FAMILY__ · __STYLE__</span>
   </div>
 </main>

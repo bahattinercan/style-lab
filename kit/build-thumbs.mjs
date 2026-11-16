@@ -1,28 +1,27 @@
 #!/usr/bin/env node
 /**
- * kit/build-thumbs.mjs — yayın için WebP görsel türevleri (kart + tam boy).
+ * kit/build-thumbs.mjs — WebP image variants for broadcast (card + full size).
  *
- * Neden: her stil 1280×2400 PNG (~830 KB). Galeri kartı bu boyutu yüklerse ilk ekran
- * ~10 MB olur. Bu script aynı kareyi iki WebP türevine indirir:
- *   kart  : 640×1200  (galeri ızgarası, çekmece, karşılaştırma)
- *   tam   : 1280×2400 (lightbox — orijinal çözünürlük)
- * Orijinal PNG silinmez; sitede "PNG indir" bağlantısı ona gider.
+ * Reason: each style is 1280×2400 PNG (~830 KB). If the gallery card loads this size the first screen
+ * It would be ~10 MB. This script reduces the same frame to two WebP variants:
+ * card : 640×1200 (gallery grid, drawer, comparison)
+ * full : 1280×2400 (lightbox — original resolution)
+ * The original PNG is not deleted; on the site the "Download PNG" link goes to it.
  *
- * Yöntem: bağımlılık yok. PNG bir HTML sayfasına hedef genişlikte konur, headless
- * Edge/Chrome (CDP) ekran görüntüsünü `format: webp` olarak yakalar. Yakalama, tarayıcı
- * ölçeklemesini kullandığı için ayrı bir resim kütüphanesi gerekmez.
+ * Method: no dependencies. PNG is placed on an HTML page at target width, headless
+ * Captures Edge/Chrome (CDP) screenshot as `format: webp`. Capture, scanner
+ Since it uses * scaling, a separate image library is not required.
  *
- * Kullanım:
- *   node kit/build-thumbs.mjs                 # eksik/bayat türevleri üret
- *   node kit/build-thumbs.mjs --force         # hepsini yeniden üret
- *   node kit/build-thumbs.mjs --check         # türevler kaynakla aynı mı (yazmaz)
- *   node kit/build-thumbs.mjs --styles game-hud,bento-grid
- *   node kit/build-thumbs.mjs --json          # tek satır özet
+ * Usage:
+ * node kit/build-thumbs.mjs # generate incomplete/stale variants
+ * node kit/build-thumbs.mjs --force # rebuild all
+ * node kit/build-thumbs.mjs --check # are the derivatives the same as the source (does not write)
+ * node kit/build-thumbs.mjs --styles game-hud,bento-grid
+ * node kit/build-thumbs.mjs --json # one line summary
  *
- * Çıktı: kit/site/thumbs/<nn-slug>-<kaynak>@<genişlik>.webp + manifest.json
- * Manifest kaynağın sha256'sını tutar; --check bayat türevi bu yüzden yakalar
- * (mtime klonda korunmaz, hash korunur).
- */
+ * Output: kit/site/thumbs/<nn-slug>-<source>@<width>.webp + manifest.json
+ * Manifest holds the sha256 of the source; --check catches the stale variant so
+ * (mtime is not preserved in the clone, hash is preserved).*/
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -40,7 +39,7 @@ const SHOT = '01-page.png';
 const SRC_W = 1280;
 const SRC_H = 2400;
 
-/** Türev tanımları — galeri `window.STYLE_LAB_SHOTS` ile aynı adları kullanır. */
+/** Derivative definitions — gallery uses the same names as `window.STYLE_LAB_SHOTS`.*/
 const VARIANTS = [
   { key: '640', width: 640, quality: 78 },
   { key: '1280', width: 1280, quality: 82 },
@@ -75,7 +74,7 @@ function styleDirs() {
   if (!ONLY.length) return all;
   const picked = all.filter((d) => ONLY.includes(d) || ONLY.includes(d.replace(/^\d+-/, '')));
   const missing = ONLY.filter((s) => !picked.some((d) => d === s || d.replace(/^\d+-/, '') === s));
-  if (missing.length) fail(`bilinmeyen stil: ${missing.join(', ')}`);
+  if (missing.length) fail(`unknown style: ${missing.join(', ')}`);
   return picked;
 }
 
@@ -92,7 +91,7 @@ function readManifest() {
   }
 }
 
-/** WebP başlığından genişlik/yükseklik (VP8 / VP8L / VP8X). */
+/** Width/height from WebP header (VP8 / VP8L / VP8X).*/
 function webpSize(buf) {
   if (!buf || buf.length < 30 || buf.toString('ascii', 0, 4) !== 'RIFF' || buf.toString('ascii', 8, 12) !== 'WEBP') {
     return null;
@@ -113,7 +112,7 @@ function webpSize(buf) {
   return null;
 }
 
-/** Tek türev için geçici HTML: sayfa tam olarak hedef boyutta, kenar boşluğu yok. */
+/** Temporary HTML for single variant: page exactly target size, no margins.*/
 function writeTileHtml(dir, variant) {
   const height = Math.round((variant.width * SRC_H) / SRC_W);
   const src = path.resolve(STYLES_DIR, dir, 'shots', SHOT).replace(/\\/g, '/');
@@ -138,7 +137,7 @@ async function main() {
   for (const dir of dirs) {
     const srcPath = path.join(STYLES_DIR, dir, 'shots', SHOT);
     if (!fs.existsSync(srcPath)) {
-      problems.push(`${dir}: ${SHOT} yok — önce render et`);
+      problems.push(`${dir}: ${SHOT} is missing — render first`);
       continue;
     }
     const srcBytes = fs.statSync(srcPath).size;
@@ -156,9 +155,9 @@ async function main() {
       if (CHECK) {
         if (!exists) problems.push(`${name}: yok`);
         else {
-          // Tanı bilgisi: hangi taraf kaymış (kaynak PNG mi, manifest mi) kısaca görünsün.
-          const istenen = prev.files?.[name]?.sourceSha?.slice(0, 8) ?? 'kayıt yok';
-          problems.push(`${name}: bayat (kaynak ${srcHash.slice(0, 8)} ≠ manifest ${istenen})`);
+          // Diagnostic information: briefly show which side is shifted (source PNG or manifest).
+          const istenen = prev.files?.[name]?.sourceSha?.slice(0, 8) ?? 'no record';
+          problems.push(`${name}: stale (source ${srcHash.slice(0, 8)} ≠ manifest ${istenen})`);
         }
         continue;
       }
@@ -169,21 +168,21 @@ async function main() {
   if (CHECK) {
     const expected = new Set(dirs.flatMap((d) => VARIANTS.map((v) => outName(d, v))));
     for (const extra of Object.keys(prev.files ?? {})) {
-      if (!expected.has(extra)) problems.push(`${extra}: artık üretilmiyor (sil)`);
+      if (!expected.has(extra)) problems.push(`${extra}: no longer produced (delete it)`);
     }
     if (problems.length) {
-      console.error('✗ WebP türevleri güncel değil:');
+      console.error('✗ WebP variants are out of date:');
       for (const p of problems.slice(0, 20)) console.error(`  - ${p}`);
-      if (problems.length > 20) console.error(`  … ${problems.length - 20} tane daha`);
-      console.error('  düzelt: node kit/build-thumbs.mjs');
+      if (problems.length > 20) console.error(`  … ${problems.length - 20} more`);
+      console.error('fix: node kit/build-thumbs.mjs');
       process.exit(1);
     }
-    if (!JSON_OUT) console.log(`✓ WebP türevleri güncel (${dirs.length} stil × ${VARIANTS.length} boy)`);
+    if (!JSON_OUT) console.log(`✓ WebP derivatives are up to date (${dirs.length} styles × ${VARIANTS.length} sizes)`);
     return;
   }
 
   if (!jobs.length) {
-    if (!JSON_OUT) console.log(`✓ yapılacak iş yok (${dirs.length} stil × ${VARIANTS.length} boy güncel)`);
+    if (!JSON_OUT) console.log(`✓ nothing to do (${dirs.length} styles × ${VARIANTS.length} sizes up to date)`);
     for (const [name, rec] of Object.entries(prev.files ?? {})) next.files[name] ??= rec;
     fs.mkdirSync(OUT_DIR, { recursive: true });
     fs.writeFileSync(MANIFEST, JSON.stringify(next, null, 2) + '\n');
@@ -213,14 +212,14 @@ async function main() {
         });
         const size = webpSize(buf);
         if (!size || size.width !== tile.width) {
-          throw new Error(`${job.name}: beklenmeyen WebP (${size ? `${size.width}×${size.height}` : 'başlık yok'})`);
+          throw new Error(`${job.name}: beklenmeyen WebP (${size ? `${size.width}×${size.height}`: 'no title' })`);
         }
         fs.writeFileSync(job.abs, buf);
         next.files[job.name] = { ...job.rec, bytes: buf.length };
         done += 1;
         bytes += buf.length;
         if (!JSON_OUT && done % 25 === 0) {
-          console.error(`  ${done}/${jobs.length} türev · ${(bytes / 1024 / 1024).toFixed(1)} MB`);
+          console.error(`  ${done}/${jobs.length} derivatives · ${(bytes / 1024 / 1024).toFixed(1)} MB`);
         }
         fs.rmSync(tile.file, { force: true });
       }
@@ -231,7 +230,7 @@ async function main() {
     fs.rmSync(TMP_DIR, { recursive: true, force: true });
   }
 
-  // üretilmeyen (taze bulunan) kayıtları koru
+  // preserve discontinued (freshly found) records
   for (const [name, rec] of Object.entries(prev.files ?? {})) {
     if (Object.keys(next.files).length && !next.files[name] && fs.existsSync(path.join(OUT_DIR, name))) next.files[name] = rec;
   }
@@ -246,7 +245,7 @@ async function main() {
     seconds: Number(seconds),
   };
   if (JSON_OUT) console.log(JSON.stringify(summary));
-  else console.log(`✓ ${done} WebP türev · ${(bytes / 1024 / 1024).toFixed(1)} MB · ${seconds} s · ${tabs} sekme`);
+  else console.log(`✓ ${done} WebP derivatives · ${(bytes / 1024 / 1024).toFixed(1)} MB · ${seconds} s · ${tabs} tabs`);
 
   if (problems.length) {
     console.error('⚠ atlananlar:');
