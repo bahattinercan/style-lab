@@ -1,112 +1,112 @@
-/* kit/live-styles.js — node kit/build-gallery.mjs üretir; elle düzenleme */
-window.LIVE_STYLES = [
+/* kit/live-styles.js — node generates kit/build-gallery.mjs; manual editing */
+window.LIVE_STYLES =[
   {
     "num": "01",
     "slug": "minimalism",
     "name": "Minimalism",
-    "family": "Sade"
+    "family": "Minimal"
   },
   {
     "num": "02",
     "slug": "swiss-design",
     "name": "Swiss Design",
-    "family": "Sade"
+    "family": "Minimal"
   },
   {
     "num": "03",
     "slug": "editorial-design",
     "name": "Editorial Design",
-    "family": "Sade"
+    "family": "Minimal"
   },
   {
     "num": "04",
     "slug": "luxury-typography",
     "name": "Luxury Typography",
-    "family": "Sade"
+    "family": "Minimal"
   },
   {
     "num": "05",
     "slug": "bento-grid",
     "name": "Bento Grid",
-    "family": "Sade"
+    "family": "Minimal"
   },
   {
     "num": "06",
     "slug": "japandi",
     "name": "Japandi",
-    "family": "Sade"
+    "family": "Minimal"
   },
   {
     "num": "07",
     "slug": "wabi-sabi",
     "name": "Wabi-Sabi",
-    "family": "Sade"
+    "family": "Minimal"
   },
   {
     "num": "08",
     "slug": "glassmorphism",
     "name": "Glassmorphism",
-    "family": "Yüzey"
+    "family": "Surface"
   },
   {
     "num": "09",
     "slug": "liquid-glass",
     "name": "Liquid Glass",
-    "family": "Yüzey"
+    "family": "Surface"
   },
   {
     "num": "10",
     "slug": "neumorphism",
     "name": "Neumorphism",
-    "family": "Yüzey"
+    "family": "Surface"
   },
   {
     "num": "11",
     "slug": "claymorphism",
     "name": "Claymorphism",
-    "family": "Yüzey"
+    "family": "Surface"
   },
   {
     "num": "12",
     "slug": "aurora-ui",
     "name": "Aurora UI",
-    "family": "Yüzey"
+    "family": "Surface"
   },
   {
     "num": "13",
     "slug": "neo-brutalism",
     "name": "Neo-Brutalism",
-    "family": "Cesur"
+    "family": "Bold"
   },
   {
     "num": "14",
     "slug": "anti-design",
     "name": "Anti-Design",
-    "family": "Cesur"
+    "family": "Bold"
   },
   {
     "num": "15",
     "slug": "acid-graphics",
     "name": "Acid Graphics",
-    "family": "Cesur"
+    "family": "Bold"
   },
   {
     "num": "16",
     "slug": "memphis",
     "name": "Memphis",
-    "family": "Cesur"
+    "family": "Bold"
   },
   {
     "num": "17",
     "slug": "maximalism",
     "name": "Maximalism",
-    "family": "Cesur"
+    "family": "Bold"
   },
   {
     "num": "18",
     "slug": "dopamine-ui",
     "name": "Dopamine UI",
-    "family": "Cesur"
+    "family": "Bold"
   },
   {
     "num": "19",
@@ -166,1344 +166,1344 @@ window.LIVE_STYLES = [
     "num": "28",
     "slug": "surrealism",
     "name": "Surrealism",
-    "family": "Sanatsal"
+    "family": "Art"
   },
   {
     "num": "29",
     "slug": "ethereal",
     "name": "Ethereal",
-    "family": "Sanatsal"
+    "family": "Art"
   },
   {
     "num": "30",
     "slug": "bohemian",
     "name": "Bohemian",
-    "family": "Sanatsal"
+    "family": "Art"
   },
   {
     "num": "31",
     "slug": "scrapbook",
     "name": "Scrapbook",
-    "family": "Sanatsal"
+    "family": "Art"
   },
   {
     "num": "32",
     "slug": "conceptual-sketch",
     "name": "Conceptual Sketch",
-    "family": "Sanatsal"
+    "family": "Art"
   },
   {
     "num": "33",
     "slug": "dark-academia",
     "name": "Dark Academia",
-    "family": "Sanatsal"
+    "family": "Art"
   },
   {
     "num": "34",
     "slug": "skeuomorphism",
     "name": "Skeuomorphism",
-    "family": "Sanatsal"
+    "family": "Art"
   },
   {
     "num": "35",
     "slug": "bauhaus",
     "name": "Bauhaus",
-    "family": "Geometrik"
+    "family": "Geometric"
   },
   {
     "num": "36",
     "slug": "constructivism",
     "name": "Constructivism",
-    "family": "Geometrik"
+    "family": "Geometric"
   },
   {
     "num": "37",
     "slug": "kinetic-type",
     "name": "Kinetic Type",
-    "family": "Tipografik"
+    "family": "Typographic"
   },
   {
     "num": "38",
     "slug": "organic-bio",
     "name": "Organic / Biophilic",
-    "family": "Organik"
+    "family": "Organic"
   },
   {
     "num": "39",
     "slug": "ai-native-mesh",
     "name": "AI-native Mesh",
-    "family": "Yeni Dalga"
+    "family": "New Wave"
   },
   {
     "num": "40",
     "slug": "scandinavian-dark",
     "name": "Scandinavian Dark",
-    "family": "Yeni Dalga"
+    "family": "New Wave"
   },
   {
     "num": "41",
     "slug": "grand-tourer",
     "name": "Grand Tourer",
-    "family": "Zamansız"
+    "family": "Timeless"
   },
   {
     "num": "42",
     "slug": "grand-tourer-oxblood",
     "name": "Grand Tourer Oxblood",
-    "family": "Zamansız"
+    "family": "Timeless"
   },
   {
     "num": "43",
     "slug": "grand-tourer-midnight",
     "name": "Grand Tourer Midnight",
-    "family": "Zamansız"
+    "family": "Timeless"
   },
   {
     "num": "44",
     "slug": "utility",
     "name": "Utility",
-    "family": "Zamansız"
+    "family": "Timeless"
   },
   {
     "num": "45",
     "slug": "terminal-ui",
     "name": "Terminal UI",
-    "family": "Teknik"
+    "family": "Technical"
   },
   {
     "num": "46",
     "slug": "telemetry-grid",
     "name": "Telemetry Grid",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "47",
     "slug": "trading-desk",
     "name": "Trading Desk",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "48",
     "slug": "executive-kpi",
     "name": "Executive KPI",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "49",
     "slug": "log-stream",
     "name": "Log Stream",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "50",
     "slug": "lab-instrument",
     "name": "Lab Instrument",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "51",
     "slug": "atlas-console",
     "name": "Atlas Console",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "52",
     "slug": "experiment-split",
     "name": "Experiment Split",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "53",
     "slug": "ledger-meter",
     "name": "Ledger Meter",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "54",
     "slug": "vitals-triage",
     "name": "Vitals Triage",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "55",
     "slug": "fleet-telemetry",
     "name": "Fleet Telemetry",
-    "family": "Veri & Gösterge"
+    "family": "Data & Indicator"
   },
   {
     "num": "56",
     "slug": "blueprint-drawing",
     "name": "Blueprint Çizimi",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "57",
     "slug": "machined-metal-panel",
     "name": "İşlenmiş Metal Panel",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "58",
     "slug": "safety-signage",
     "name": "Güvenlik Tabelası",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "59",
     "slug": "mes-production-line",
     "name": "Üretim Hattı · MES",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "60",
     "slug": "energy-grid",
     "name": "Enerji Şebekesi",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "61",
     "slug": "calibration-lab",
     "name": "Calibration Lab",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "62",
     "slug": "warehouse-flow",
     "name": "Warehouse Flow",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "63",
     "slug": "maintenance-cmms",
     "name": "Maintenance CMMS",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "64",
     "slug": "construction-site",
     "name": "Construction Site",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "65",
     "slug": "cockpit-avionics",
     "name": "Cockpit Avionics",
-    "family": "Endüstriyel"
+    "family": "Industrial"
   },
   {
     "num": "66",
     "slug": "nordic-folk",
     "name": "Nordic Folk",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "67",
     "slug": "japanese-ma",
     "name": "Japanese Ma",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "68",
     "slug": "levant-calligraphy",
     "name": "Levant Calligraphy",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "69",
     "slug": "andalusian-azulejo",
     "name": "Andalusian Azulejo",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "70",
     "slug": "slavic-late-brutalist",
     "name": "Slavic Late Brutalist",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "71",
     "slug": "west-african-pattern",
     "name": "West African Pattern",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "72",
     "slug": "andean-textile",
     "name": "Andean Textile",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "73",
     "slug": "indian-block-print",
     "name": "Indian Block Print",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "74",
     "slug": "persian-miniature",
     "name": "Persian Miniature",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "75",
     "slug": "aegean-island",
     "name": "Aegean Island",
-    "family": "Kültürel & Bölgesel"
+    "family": "Cultural & Regional"
   },
   {
     "num": "76",
     "slug": "biophilic-botanical",
     "name": "Biyofilik Botanik",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "77",
     "slug": "weather-atmosphere",
     "name": "Hava Durumu & Atmosfer",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "78",
     "slug": "topographic-terrain",
     "name": "Topografya & Arazi",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "79",
     "slug": "ocean-current",
     "name": "Deniz & Akıntı",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "80",
     "slug": "seasonal-shift",
     "name": "Mevsim Geçişi",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "81",
     "slug": "forest-bark",
     "name": "Forest Bark",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "82",
     "slug": "desert-sand",
     "name": "Desert Sand",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "83",
     "slug": "polar-ice",
     "name": "Polar Ice",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "84",
     "slug": "volcanic-mineral",
     "name": "Volcanic Mineral",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "85",
     "slug": "coral-reef",
     "name": "Coral Reef",
-    "family": "Doğa & Organik"
+    "family": "Nature & Organic"
   },
   {
     "num": "86",
     "slug": "literary-hardcover",
     "name": "Literary Hardcover",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "87",
     "slug": "broadsheet-daily",
     "name": "Broadsheet Daily",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "88",
     "slug": "magazine-feature",
     "name": "Magazine Feature",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "89",
     "slug": "academic-paper",
     "name": "Academic Paper",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "90",
     "slug": "poetry-chapbook",
     "name": "Poetry Chapbook",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "91",
     "slug": "product-catalog",
     "name": "Product Catalog",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "92",
     "slug": "museum-thesis",
     "name": "Museum & Thesis",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "93",
     "slug": "type-experiment",
     "name": "Type Experiment",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "94",
     "slug": "encyclopedia",
     "name": "Encyclopedia",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "95",
     "slug": "punk-fanzine",
     "name": "Punk Fanzine",
-    "family": "Yayın & Tipografi"
+    "family": "Publication & Typography"
   },
   {
     "num": "96",
     "slug": "kinetic-marquee",
     "name": "Kinetic Marquee",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "97",
     "slug": "optical-illusion",
     "name": "Optical Illusion",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "98",
     "slug": "generative-grid",
     "name": "Generative Grid",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "99",
     "slug": "depth-parallax",
     "name": "Depth Parallax",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "100",
     "slug": "fluid-simulation",
     "name": "Fluid Simulation",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "101",
     "slug": "shadow-stage",
     "name": "Shadow Stage",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "102",
     "slug": "moire-field",
     "name": "Moiré Field",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "103",
     "slug": "motion-trail",
     "name": "Motion Trail",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "104",
     "slug": "stepped-mechanism",
     "name": "Stepped Mechanism",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "105",
     "slug": "holographic-layer",
     "name": "Holographic Layer",
-    "family": "Hareket & Optik"
+    "family": "Motion & Optics"
   },
   {
     "num": "106",
     "slug": "voice-first",
     "name": "Ses-Öncelikli",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "107",
     "slug": "spatial-ar-layer",
     "name": "Uzamsal AR Katman",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "108",
     "slug": "command-palette",
     "name": "Komut Paleti",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "109",
     "slug": "timeline-editor",
     "name": "Zaman Çizelgesi Editörü",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "110",
     "slug": "kanban-flow",
     "name": "Kanban Akışı",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "111",
     "slug": "step-wizard",
     "name": "Adım Sihirbazı",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "112",
     "slug": "zero-ui",
     "name": "Sıfır Arayüz",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "113",
     "slug": "notebook-repl",
     "name": "Notebook / REPL",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "114",
     "slug": "multiplayer-presence",
     "name": "Eşzamanlı İşbirlikçi",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "115",
     "slug": "keyboard-first",
     "name": "Klavye-Öncelikli Komut Arayüzü",
-    "family": "Etkileşim"
+    "family": "Interactive"
   },
   {
     "num": "116",
     "slug": "kids-playground",
     "name": "Kids Playground",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "117",
     "slug": "carnival-festival",
     "name": "Carnival Festival",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "118",
     "slug": "sticker-sheet",
     "name": "Sticker Sheet",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "119",
     "slug": "arcade-8bit",
     "name": "Arcade 8-bit",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "120",
     "slug": "craft-handmade",
     "name": "Craft Handmade",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "121",
     "slug": "celebration-card",
     "name": "Celebration Card",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "122",
     "slug": "collectible-card",
     "name": "Collectible Card",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "123",
     "slug": "comic-story",
     "name": "Comic Story",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "124",
     "slug": "album-sleeve",
     "name": "Album Sleeve",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "125",
     "slug": "sports-energy",
     "name": "Sports Energy",
-    "family": "Oyuncu"
+    "family": "Playful"
   },
   {
     "num": "126",
     "slug": "marble-vein",
     "name": "Marble Vein",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "127",
     "slug": "silk-drape",
     "name": "Silk Drape",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "128",
     "slug": "brass-copper",
     "name": "Brass Copper",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "129",
     "slug": "porcelain-glaze",
     "name": "Porcelain Glaze",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "130",
     "slug": "leather-craft",
     "name": "Leather Craft",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "131",
     "slug": "optic-prism",
     "name": "Optic Prism",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "132",
     "slug": "wood-joinery",
     "name": "Wood Joinery",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "133",
     "slug": "letterpress-print",
     "name": "Letterpress Print",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "134",
     "slug": "concrete-monolith",
     "name": "Concrete Monolith",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "135",
     "slug": "enamel-porcelain",
     "name": "Enamel Porcelain",
-    "family": "Materyal & Lüks"
+    "family": "Material & Luxury"
   },
   {
     "num": "136",
     "slug": "speculative-scifi",
     "name": "Spekülatif Bilim-Kurgu",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "137",
     "slug": "volumetric-data",
     "name": "Hologram & Uzamsal Veri",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "138",
     "slug": "agent-orchestration",
     "name": "AI-native Ajan Arayüzü",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "139",
     "slug": "bio-synthetic",
     "name": "Biyo & Sentetik",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "140",
     "slug": "nanotech",
     "name": "Nanoteknik",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "141",
     "slug": "planetary-service",
     "name": "Planetary Service",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "142",
     "slug": "quantum-lab",
     "name": "Quantum Lab",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "143",
     "slug": "retro-future",
     "name": "Retro Future",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "144",
     "slug": "virtual-engine",
     "name": "Virtual Engine",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "145",
     "slug": "zero-gravity",
     "name": "Zero Gravity",
-    "family": "Deneysel & Gelecek"
+    "family": "Experimental & Future"
   },
   {
     "num": "146",
     "slug": "noir-estate",
     "name": "Noir Estate",
-    "family": "Sahne & Prestij"
+    "family": "Stage & Prestige"
   },
   {
     "num": "147",
     "slug": "agency-portfolio",
     "name": "Agency Portfolio",
-    "family": "Sahne & Prestij"
+    "family": "Stage & Prestige"
   },
   {
     "num": "148",
     "slug": "product-launch",
     "name": "Product Launch",
-    "family": "Sahne & Prestij"
+    "family": "Stage & Prestige"
   },
   {
     "num": "149",
     "slug": "boutique-hotel",
     "name": "Boutique Hotel",
-    "family": "Sahne & Prestij"
+    "family": "Stage & Prestige"
   },
   {
     "num": "150",
     "slug": "lookbook-editorial",
     "name": "Lookbook Editorial",
-    "family": "Sahne & Prestij"
+    "family": "Stage & Prestige"
   },
   {
     "num": "151",
     "slug": "dark-dashboard",
     "name": "Dark Dashboard",
-    "family": "Sahne & Prestij"
+    "family": "Stage & Prestige"
   },
   {
     "num": "152",
     "slug": "game-hud",
     "name": "Game HUD",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "153",
     "slug": "game-racing",
     "name": "Game Racing",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "154",
     "slug": "game-fantasy-rpg",
     "name": "Fantasy RPG",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "155",
     "slug": "game-sci-fi-cockpit",
     "name": "Sci-Fi Cockpit",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "156",
     "slug": "game-retro-console",
     "name": "Retro Console",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "157",
     "slug": "game-esports-league",
     "name": "Esports League",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "158",
     "slug": "game-indie-pixel",
     "name": "Indie Pixel",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "159",
     "slug": "game-card-tcg",
     "name": "Card TCG",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "160",
     "slug": "game-survival-craft",
     "name": "Survival Craft",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "161",
     "slug": "game-mobile-casual",
     "name": "Mobile Casual",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "162",
     "slug": "game-horror-occult",
     "name": "Horror Occult",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "163",
     "slug": "game-racing-neon",
     "name": "Racing Neon",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "164",
     "slug": "game-strategy-map",
     "name": "Strategy Map",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "165",
     "slug": "game-sim-builder",
     "name": "Sim Builder",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "166",
     "slug": "game-arcade-cabinet",
     "name": "Arcade Cabinet",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "167",
     "slug": "game-stealth-tactical",
     "name": "Stealth Tactical",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "168",
     "slug": "game-puzzle-light",
     "name": "Puzzle Light",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "169",
     "slug": "game-mmo-guild",
     "name": "MMO Guild",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "170",
     "slug": "game-franchise-sports",
     "name": "Franchise Sports",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "171",
     "slug": "game-pinball-neon",
     "name": "Pinball Neon",
-    "family": "Oyun & Etkileşim"
+    "family": "Games & Interaction"
   },
   {
     "num": "172",
     "slug": "incident-response",
     "name": "Incident Response",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "173",
     "slug": "finops-cost",
     "name": "FinOps Cost",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "174",
     "slug": "fleet-dispatch",
     "name": "Fleet Dispatch",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "175",
     "slug": "fraud-review",
     "name": "Fraud Review",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "176",
     "slug": "slo-budget",
     "name": "SLO Budget",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "177",
     "slug": "data-lineage",
     "name": "Data Lineage",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "178",
     "slug": "access-audit",
     "name": "Access Audit",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "179",
     "slug": "release-train",
     "name": "Release Train",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "180",
     "slug": "support-inbox",
     "name": "Support Inbox",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "181",
     "slug": "regulatory-report",
     "name": "Regulatory Report",
-    "family": "Operasyon & Veri"
+    "family": "Operations & Data"
   },
   {
     "num": "182",
     "slug": "grocery-delivery",
     "name": "Grocery Delivery",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "183",
     "slug": "marketplace-multi",
     "name": "Marketplace Multi",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "184",
     "slug": "luxury-atelier",
     "name": "Luxury Atelier",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "185",
     "slug": "subscription-box",
     "name": "Subscription Box",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "186",
     "slug": "sneaker-drop",
     "name": "Sneaker Drop",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "187",
     "slug": "wine-cellar",
     "name": "Wine Cellar",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "188",
     "slug": "furniture-studio",
     "name": "Furniture Studio",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "189",
     "slug": "electronics-spec",
     "name": "Electronics Spec",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "190",
     "slug": "pharmacy-store",
     "name": "Pharmacy Store",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "191",
     "slug": "farmers-market",
     "name": "Farmers Market",
-    "family": "Ticaret & Vitrin"
+    "family": "Commerce & Showcase"
   },
   {
     "num": "192",
     "slug": "museum-exhibition",
     "name": "Museum Exhibition",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "193",
     "slug": "theatre-season",
     "name": "Theatre Season",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "194",
     "slug": "film-festival",
     "name": "Film Festival",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "195",
     "slug": "public-radio",
     "name": "Public Radio",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "196",
     "slug": "podcast-network",
     "name": "Podcast Network",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "197",
     "slug": "indie-cinema",
     "name": "Indie Cinema",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "198",
     "slug": "library-archive",
     "name": "Library Archive",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "199",
     "slug": "comic-bookstore",
     "name": "Comic Bookstore",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "200",
     "slug": "opera-house",
     "name": "Opera House",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "201",
     "slug": "street-festival",
     "name": "Street Festival",
-    "family": "Kültür & Yayın"
+    "family": "Culture & Publishing"
   },
   {
     "num": "202",
     "slug": "clinical-trial",
     "name": "Clinical Trial",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "203",
     "slug": "lab-protocol",
     "name": "Lab Protocol",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "204",
     "slug": "pharmacy-labels",
     "name": "Pharmacy Labels",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "205",
     "slug": "physiotherapy",
     "name": "Physiotherapy",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "206",
     "slug": "mental-wellness",
     "name": "Mental Wellness",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "207",
     "slug": "nutrition-plan",
     "name": "Nutrition Plan",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "208",
     "slug": "dental-clinic",
     "name": "Dental Clinic",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "209",
     "slug": "public-health",
     "name": "Public Health",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "210",
     "slug": "genomics-lab",
     "name": "Genomics Lab",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "211",
     "slug": "veterinary-care",
     "name": "Veterinary Care",
-    "family": "Sağlık & Bilim"
+    "family": "Health & Science"
   },
   {
     "num": "212",
     "slug": "language-app",
     "name": "Language App",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "213",
     "slug": "skill-tree",
     "name": "Skill Tree",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "214",
     "slug": "university-portal",
     "name": "University Portal",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "215",
     "slug": "coding-bootcamp",
     "name": "Coding Bootcamp",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "216",
     "slug": "kids-classroom",
     "name": "Kids Classroom",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "217",
     "slug": "exam-prep",
     "name": "Exam Prep",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "218",
     "slug": "music-lesson",
     "name": "Music Lesson",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "219",
     "slug": "lab-simulation",
     "name": "Lab Simulation",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "220",
     "slug": "peer-study",
     "name": "Peer Study",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "221",
     "slug": "certificate-wallet",
     "name": "Certificate Wallet",
-    "family": "Öğrenme & Oyunlaştırma"
+    "family": "Learning & Gamification"
   },
   {
     "num": "222",
     "slug": "terrazzo-stone",
     "name": "Terrazzo Stone",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "223",
     "slug": "linocut-print",
     "name": "Linocut Print",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "224",
     "slug": "risograph-print",
     "name": "Risograph Print",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "225",
     "slug": "denim-textile",
     "name": "Denim Textile",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "226",
     "slug": "cork-oak",
     "name": "Cork Oak",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "227",
     "slug": "cast-concrete",
     "name": "Cast Concrete",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "228",
     "slug": "enamel-jewel",
     "name": "Enamel Jewel",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "229",
     "slug": "hand-thrown-ceramic",
     "name": "Hand-thrown Ceramic",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "230",
     "slug": "raw-steel",
     "name": "Raw Steel",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "231",
     "slug": "recycled-paper",
     "name": "Recycled Paper",
-    "family": "Materyal & Zanaat"
+    "family": "Material & Craft"
   },
   {
     "num": "232",
     "slug": "condensed-news",
     "name": "Condensed News",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "233",
     "slug": "monospace-editorial",
     "name": "Monospace Editorial",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "234",
     "slug": "blackletter-modern",
     "name": "Blackletter Modern",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "235",
     "slug": "variable-weight",
     "name": "Variable Weight",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "236",
     "slug": "justified-book",
     "name": "Justified Book",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "237",
     "slug": "stencil-display",
     "name": "Stencil Display",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "238",
     "slug": "uppercase-only",
     "name": "Uppercase Only",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "239",
     "slug": "italic-accent",
     "name": "Italic Accent",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "240",
     "slug": "numerals-display",
     "name": "Numerals Display",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "241",
     "slug": "small-caps-ledger",
     "name": "Small Caps Ledger",
-    "family": "Tipografi Denemeleri"
+    "family": "Typography Experiments"
   },
   {
     "num": "242",
     "slug": "agent-console",
     "name": "Agent Console",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   },
   {
     "num": "243",
     "slug": "spatial-workspace",
     "name": "Spatial Workspace",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   },
   {
     "num": "244",
     "slug": "bio-lab-interface",
     "name": "Bio Lab Interface",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   },
   {
     "num": "245",
     "slug": "climate-model",
     "name": "Climate Model",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   },
   {
     "num": "246",
     "slug": "orbital-logistics",
     "name": "Orbital Logistics",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   },
   {
     "num": "247",
     "slug": "synthetic-media",
     "name": "Synthetic Media",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   },
   {
     "num": "248",
     "slug": "quantum-dashboard",
     "name": "Quantum Dashboard",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   },
   {
     "num": "249",
     "slug": "digital-twin",
     "name": "Digital Twin",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   },
   {
     "num": "250",
     "slug": "neural-canvas",
     "name": "Neural Canvas",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   },
   {
     "num": "251",
     "slug": "post-screen-voice",
     "name": "Post-screen Voice",
-    "family": "Gelecek & Spekülatif"
+    "family": "Future & Speculative"
   }
 ];

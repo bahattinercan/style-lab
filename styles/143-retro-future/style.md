@@ -1,20 +1,20 @@
 # 143 · Retro Future
 
-> **Bir cümlede:** 1960'lar uzay çağı afişini ekrana taşıyan; krem kâğıt, hardal mürekkep, yuvarlak paneller ve yörünge yayıyla kurulmuş iyimser fütürizm arayüzü.
+> **In one sentence:** 1960'lar uzay çağı afişini ekrana taşıyan; krem kâğıt, hardal mürekkep, yuvarlak paneller ve yörünge yayıyla kurulmuş iyimser fütürizm arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | iyimser, dönemsel, cesur, sıcak |
-| **En iyi** | lansman/etkinlik afişi, kültür-sanat vitrini, ürün hikâyesi, müze sergi sayfası |
-| **Kaçın** | yoğun veri konsolu, klinik/sağlık ekranı, teknik dokümantasyon |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.25:1) |
-| **Aile** | Deneysel & Gelecek (136–145) · **Token** | `styles/143-retro-future/tokens.json` → `[data-style="retro-future"]` |
-| **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | iyimser, dönemsel, cesur, sıcak |
+| **Best for** | lansman/etkinlik afişi, kültür-sanat vitrini, ürün hikâyesi, müze sergi sayfası |
+| **Avoid** | yoğun veri konsolu, klinik/sağlık ekranı, teknik dokümantasyon |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Experimental & Future (136–145) · **Token** | `kit/tokens.css` → `[data-style="retro-future"]` |
+| **Composition** | `split` · `split` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Retro Future, arayüzü **uzay çağı afişi** gibi kurar: krem kâğıt zemin, hardal mürekkep accent, geniş harf aralıklı geometrik başlık (Futura soyu Jost), yuvarlak paneller ve her ekranda bir yörünge yayı. İyimserlik tasarım kararıdır: hiçbir köşe keskin değil, hiçbir yüzey soğuk gri değil.
 
 Üç kurucu karar: (1) **afiş hiyerarşisi** — tek büyük başlık (56px), tek alt cümle, tek CTA; afişte üçüncü bir vurgu katmanı yoktur; (2) **kâğıttan kesilmiş panel** — 1px mürekkep kenar + 3px alt kural + yumuşak gölge; panel gerçekten "yapıştırılmış" gibi durur; (3) **yörünge yayı** — yarım daire her ekranda bir kez, süs değil dönem işareti.
@@ -23,121 +23,147 @@ Display **Jost** (600) ile 0.1em harf aralığı: 1960'lar afiş tipografisinin 
 
 Bedeli: bu stil veri yoğunluğunu taşımaz. Tablolar gerektiğinde zebra yarım ton ve mono sayı ile sakinleştirilir, süs bütçesi sıfıra iner.
 
-### Ne değildir
+### What is not
 - **Synthwave (21) değildir:** 21 koyu mor zemin + neon pembe ile 1980'ler elektroniğidir (radius 4, grid); Retro Future krem/hardal ve yuvarlaktır (20/28), neon yoktur.
 - **Frutiger Aero (25) değildir:** 25 parlak mavi, cam parlaması ve gradient ile 2000'ler estetiğidir; burada gradient yok, kağıt dokusu var.
 - **Grand Tourer (41) değildir:** 41 Cinzel + koyu yeşil ile lüks otomotiv dilidir; burada display Jost ve hardal accent vardır.
 - **Y2K (19) değildir:** 19 Michroma + parlak mavi krom kullanır; Retro Future mat kâğıttadır.
 
-### Nereden gelir
+### Where it comes from
 1960'lar space-age grafik tasarımı (NASA Graphics Standards, Expo 67 afişleri), Futura/Helvetica öncesi geometrik sans kültürü ve roket çağı iyimserliği. Ekranda yeniden kullanılmasının nedeni: koyu "tech" estetiğinin tekdüzeliğine karşı sıcak bir fütürizm arayışı. Klişeye dönüşmemesi için korunacak detay: harf aralığının gerçekten geniş olması (0.1em) ve yörünge yayının yarım daire kalması — tam daire "atom" klişesine kayar.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Krem/kâğıt zemin; accent hardal, üçüncü renk yok.
 2. Başlık geniş harf aralıklı geometrik sans (Jost), neredeyse afiş puntosunda.
 3. Paneller yuvarlak (20–28px) ve altında 3px mürekkep kural var.
 4. Ekranda bir yörünge yayı (yarım daire) ve en fazla üç hız çizgisi.
 5. Butonlar hap; hiçbir köşe keskin değil.
 
-## Görsel imza
+## Visual signature
 - **Harf aralığı:** display 0.1em, H2 0.06em, etiket 0.22em — dönemin imzası.
 - **Yapıştırılmış panel:** 1px `--ink` kenar + `0 3px 0 var(--ink)` alt kural + tek katman gölge.
 - **Yörünge yayı:** 2px accent yarım daire, hero ve sayfa zemininde bir kez.
 - **Hız çizgileri:** 6/3/2px üç yatay çizgi, accent, opaklık %50; en fazla üç.
-- **Radius:** `--radius` 20px (kart içi, input), `--radius-lg` 28px (kart, modal); butonlar 999px.
 - **Doku:** `--grain .03` kâğıt; tarama çizgisi ve neon yok.
 - **Palet sıcaklığı:** zemin krem (`#f3ecdd`), mürekkep sıcak siyah (`#1b1710`) — soğuk gri yasak.
+- **Typography:** Jost (display) + Inter (body) + Space Mono (mono label).
+- **Colour discipline:** a single accent `#7a5c04`; neutral scale `#f3ecdd` → `#1b1710`.
+- **Radius:** `20px` / `28px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f3ecdd` | afiş zemini (krem) | panel zemini |
-| `--bg-2` | `#ece3d0` | bölüm ayırıcı, input zemini | kart yüzeyi |
-| `--surface` | `#faf5e9` | panel, kart (kâğıt) | sayfa zemini |
-| `--surface-2` | `#e8dfca` | zebra, chip, ikincil yüzey | birincil kart |
-| `--ink` | `#1b1710` | metin, kenarlık, kural | dekoratif dolgu |
-| `--ink-soft` | `#4f4737` | ikincil metin | başlık |
-| `--ink-faint` | `#857a63` | yalnız dekoratif etiket | etkileşimli metin |
-| `--accent` | `#7a5c04` | CTA, afiş vurgusu, yörünge yayı | gövde metni |
-| `--accent-ink` | `#ffffff` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(27,23,16,.16)` | ikincil ayırıcı | ana kenarlık (onun yerine `--ink`) |
+1. Uzay çağı tipografisi: Jost 600 + 0.1em harf aralığı; başlık asla 56px üstüne çıkmaz
+2. Panel kenarı 1px ink + 3px alt kural (kağıttan kesilmiş etkisi)
+3. Hız çizgileri ekran başına tek yönde ve en fazla 3 adet
+4. Accent hardal yalnız birincil eylem ve afiş vurgusunda
+5. Krem zemin + sıcak mürekkep; soğuk gri kullanılmaz
+6. Her ekranda en az bir yarım daire yörünge yayı
 
-- Ölçülen kontrast: `ink/bg` = **15.17:1** · `ink-soft/bg` = **7.80:1** · `accent-ink/accent` = **6.25:1** · `ink-faint/bg` = **3.60:1**.
-- Tek vurgu kuralı: accent yalnız birincil eylem ve afiş vurgusu. Alarm `--danger`, uyarı `--warn`, onay `--ok`.
-- Yasak kombinasyon: gövde metninde hardal; accent üstünde `--ink-soft`.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f3ecdd` | page background | as a card background |
+| `--bg-2` | `#ece3d0` | partition divider floor, table top | button background |
+| `--surface` | `#faf5e9` | kart, input, modal | full-page background |
+| `--surface-2` | `#e8dfca` | passive chip, hover background | primary button |
+| `--ink` | `#1b1710` | title, body, icon | large background |
+| `--ink-soft` | `#4f4737` | secondary text, description | — |
+| `--ink-faint` | `#857a63` | decorative label, separator text | interactive text |
+| `--accent` | `#7a5c04` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `rgba(27,23,16,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Jost (`--font-display`) | 56px / mobil 32px | 600 | 1.04 | `--tracking` 0.1em |
-| H2 | Jost | 30px | 600 | 1.16 | 0.06em |
-| H3 | Inter | 21px | 600 | 1.28 | 0 |
-| Gövde | Inter (`--font-body`) | 16px | 400 | 1.62 | 0 |
-| Etiket / sayı | Space Mono (`--font-mono`) | 11px | 400/700 | 1.44 | 0.22em |
+- Measured contrast: `ink/bg` **15.17:1** · `ink-soft/bg` **7.8:1** · `ink-faint/bg` **3.6:1 (decorative)** · `accent-ink/accent` **6.25:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.5; kullanılan basamaklar: 11 · 12 · 13 · 16 · 21 · 30 · 56.
-- Ölçü önerisi: `h1 { font-size: clamp(32px, 5vw, 56px); }`
-- Gövde metni maksimum satır uzunluğu: 62 ch (geniş harf aralığı ölçüyü daraltır).
-- Ağırlık kuralı: Jost 400/600; 700 afiş başlığında kullanılmaz (harf aralığıyla birlikte taşma yapar).
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Jost) | 32px (mobile 32px) | 500 | 1.06 | -0.02em |
+| H2 | same | 30px | 600 | 1.18 | -0.015em |
+| H3 | same | 21px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Space Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 24px |
-| Container genişliği | 1180px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1280 afiş paneli 5/7 · 768 tek sütun · 390 başlık 32px, yay küçülür |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: afiş paneli 5/7; ekran başına bir asimetri.
-- Bölüm ritmi: art arda en fazla 2 yuvarlak panel; üçüncü blok tam genişlik afiş bandı olur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | kâğıt, bölüm ayırıcı |
-| Panel | `--surface` | `0 20px 44px -34px` + `0 3px 0 var(--ink)` | kart, KPI, tablo |
-| Yüzen katman | `--surface` + `--shadow` | aynı | modal, toast |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--ink)` + alt kural `0 3px 0 var(--ink)`.
-- Derinlik nereden gelir: yapıştırılmış kâğıt etkisi (kenar + alt kural + yumuşak gölge); blur/bevel yok.
-- Radius: `--radius` 20px (input, kart içi), `--radius-lg` 28px (kart, modal); butonlar 999px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 0 26px | 999px | 13px/600 Inter 0.04em | `--accent` zemin, `--accent-ink`, `--shadow` | hover %90 (340ms) · active 2px (kural kısalır) · focus 3px accent · disabled %42 · loading yörünge noktaları |
-| Buton (ikincil) | 44px | 0 26px | 999px | 13px/600 | `--surface`, 1px `--ink`, `--ink` | hover `--surface-2` |
-| Input | 44px | 0 16px | `--radius` | 15px Inter | `--surface`, 1px `--ink` | focus 3px accent · error `--danger` · disabled %42 |
-| Kart | içerik | 24px | `--radius-lg` | — | `--surface`, 1px `--ink`, alt kural + gölge | hover'da yay %45 → %60 |
-| Chip / badge | 26px | 0 12px | 999px | 11px/600 mono 0.1em | `--surface-2`, 1px `--ink` | seçili: accent zemin |
-| Nav | 60px | 0 28px | 0 | 13px/400 | `--bg`, alt **3px ink** kural | aktif: accent nokta + 3px kural |
-| Tablo satırı | 42px | 8px 14px | 0 | 13px (sayı mono) | alt 1px `--line`, zebra `--surface-2` | hover `--surface-2` |
-| Modal / sheet | — | 26px | `--radius-lg` | 16px/400 | `--surface`, 1px `--ink`, gölge | ortada, üstte ince yörünge yayı |
-| Toast | 42px | 10px 16px | 999px | 12px mono | `--surface`, 1px `--ink`, gölge | 4600ms, üst orta |
-| Grafik paleti | — | — | — | — | `--accent` · `--ink` · `--ink-soft` (3 seri) | çizgi 2px, uçta yuvarlak nokta |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `20px` (buton, input, chip), `28px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 3px solid var(--accent); outline-offset: 2px`.
-- Dokunma hedefi: en az 44×44px; buton ve input 44px, chip 26px görünür ama 44px alan taşır.
+## Bans
 
-## Görsel dil
+- Neon/cyberpunk paleti, glow, tarama çizgisi.
+- 28px üzeri radius veya keskin 0 radius.
+- Roket fotoğrafı/kolaj, emoji roket.
+- Gradient metin; gövde metninde hardal.
+- Saniyede 1+ flaş, sürekli dönen uydu.
+- Tam daire "atom" motifi (yarım yay kuralını bozar).
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, 20px ızgara; roket, uydu, yörünge, atom |
-| Fotoğraf | Yok — dönem afişi; fotoğraf yerine vektör şema |
-| İllüstrasyon | Yalnız hız çizgileri ve yarım daire yörünge |
-| Doku | `--grain .03` kâğıt; tarama çizgisi yok |
-| Logo alanı | Jost 600 kelime logosu, 0.14em; 18px halka + üç çizgi işareti |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 20px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 20px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 20px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 20px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 20px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 20px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 20px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 5.74:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-bars` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | Afiş paneli 5/7; dev başlık, tek CTA, yörünge yayı | `shots/01-page.png` |
 | Dashboard | orta | Yuvarlak paneller; tablolar zebra, sayı mono | `shots/01-page.png` |
@@ -152,44 +178,33 @@ Bedeli: bu stil veri yoğunluğunu taşımaz. Tablolar gerektiğinde zebra yarı
 | Hata | düşük | `--danger` kenar + "pencere kapandı" | `shots/01-page.png` |
 | Profil / ayar | orta | Harf aralığı yoğunluğu, yay görünürlüğü | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Uzay çağı tipografisi: Jost 600 + 0.1em harf aralığı; başlık 56px üstüne çıkmaz.
-- Panel kenarı 1px `--ink` + `0 3px 0 var(--ink)` alt kural.
-- Yörünge yayı yarım daire ve ekran başına bir kez.
-- Hız çizgileri tek yönde, en fazla üç.
-- Zemin krem, mürekkep sıcak siyah; soğuk gri yok.
-- Accent hardal yalnız CTA ve afiş vurgusunda.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.17:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.8:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.6:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.25:1 | ≥ 4.5 | button text |
+| focus ring/ground | 5.74:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 93.6 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Neon/cyberpunk paleti, glow, tarama çizgisi.
-- 28px üzeri radius veya keskin 0 radius.
-- Roket fotoğrafı/kolaj, emoji roket.
-- Gradient metin; gövde metninde hardal.
-- Saniyede 1+ flaş, sürekli dönen uydu.
-- Tam daire "atom" motifi (yarım yay kuralını bozar).
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük etkileşimli çift: `accent-ink/accent` = 6.25:1; gövde 15.17:1; `ink-faint/bg` = 3.60:1 (dekoratif).
-- `--ink-faint` yalnız dekoratif etiketlerde; etkileşimli metin daima `--ink`/`--ink-soft`.
-- Geniş harf aralığı okunurluğu düşürmesin diye ölçü 62 ch'yi geçmez.
-- Odak halkası 3px accent + 2px offset; krem zeminde net.
-- 390px'te başlık 32px, yay küçülür; taşma yok.
-- `prefers-reduced-motion` açıkken yay ve hız çizgileri sabit.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Kitsch" görünüyor | üçüncü renk + tam daire motif | paleti iki renge indir, yayı yarım bırak |
 | Başlık taşıyor | 0.1em aralık + uzun kelime | punktoyu düşür, `max-width` ch ver |
 | Panel yüzmüyor | alt kural yok | `0 3px 0 var(--ink)` ekle |
@@ -197,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Okunmuyor | gövde hardal | gövde `--ink`, accent yalnız CTA |
 | Mobilde kırılıyor | 5/7 korunmuş | 768 altında tek sütun |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `grand-tourer` — dönemsel vitrin dili; hap form ve kural ortak.
-- **Uyumlu:** `frutiger-aero` — iyimser gelecek; gradient eklenirse 2000'lere kayar (dikkat).
-- **Uyumlu:** `synthwave` — retro ekseni; koyu varyant olarak yan yana kullanılabilir.
-- **Yasak:** `terminal-ui` — mono ızgara ve 0 radius afiş dilini bozar.
-- **Yasak:** `swiss-design` — keskin ızgara ve 0 radius yuvarlak panel kuralıyla çelişir.
-- **Yasak:** `neo-brutalism` — kalın siyah kontur afişin kâğıt hissini sertleştirir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `grand-tourer` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `frutiger-aero` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `synthwave` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `terminal-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `swiss-design` | Two different ornamental languages compete on the same screen |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.moma.org/collection/terms/space-age | retro-fütürist tipografi ve renk |
-| https://www.nasa.gov/history/nasa-graphics-standards-manual/ | harf aralığı ve işaret dili |
-| https://fonts.google.com/specimen/Jost | Futura benzeri display ölçüleri |
-| https://www.nngroup.com/articles/legibility-of-typography/ | geniş harf aralığının sınırı |
+| Source | for what |
+| --- | --- |
+| https://www.moma.org/collection/terms/space-age | MoMA · Space-age graphic design — retro-fütürist tipografi ve renk |
+| https://www.nasa.gov/history/nasa-graphics-standards-manual/ | NASA Graphics Standards 1975 — harf aralığı ve işaret dili |
+| https://fonts.google.com/specimen/Jost | Jost · Google Fonts — Futura benzeri display ölçüleri |
+| https://www.nngroup.com/articles/legibility-of-typography/ | NN/g · Typography legibility — geniş harf aralığının sınırı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Retro Future (styles/143-retro-future/style.md, tokens.json)
 Token: sadece [data-style="retro-future"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: display Jost 600 + tracking .1em (yalnız başlık), gövde Inter 400/600,
@@ -233,16 +248,15 @@ Hareket: enter .61s cubic-bezier(.3,1.2,.4,1) y16 stagger .09; scroll top 77% .7
   1 pin scrub 1.1 (+120%); hover 340ms scale 1.035; reduced-motion zorunlu.
 Yasak: neon/glow, 28px üstü veya 0 radius, üçüncü renk, tam daire atom motifi, roket fotoğrafı.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Başlık Jost 600 ve 0.1em aralıkla taşmıyor.
-- [ ] Panellerde 1px kenar + 3px alt kural var.
-- [ ] Yörünge yayı yarım daire ve tek.
-- [ ] Kontrast: gövde 15.17:1, accent üstü 6.25:1.
-- [ ] Zemin krem, soğuk gri yok.
-- [ ] 390px'te taşma yok.
-- [ ] `prefers-reduced-motion` açıkken yay/hız çizgileri sabit.
+Style: Retro Future (retro-future) · family: Experimental & Future (136–145)
+Token: --bg #f3ecdd · --surface #faf5e9 · --ink #1b1710 · --accent #7a5c04 · --line rgba(27,23,16,.16)
+Radius: 20px / 28px · Typography: Jost / Inter / Space Mono
+Required: Uzay çağı tipografisi: Jost 600 + 0.1em harf aralığı; başlık asla 56px üstüne çıkmaz · Panel kenarı 1px ink + 3px alt kural (kağıttan kesilmiş etkisi) · Hız çizgileri ekran başına tek yönde ve en fazla 3 adet
+Banned: Neon/cyberpunk paleti, glow, tarama çizgisi. · 28px üzeri radius veya keskin 0 radius. · Roket fotoğrafı/kolaj, emoji roket.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -253,15 +267,25 @@ Yasak: neon/glow, 28px üstü veya 0 radius, üçüncü renk, tam daire atom mot
   --ink: #1b1710; --ink-soft: #4f4737; --ink-faint: #857a63;
   --accent: #7a5c04; --accent-ink: #ffffff;
   --line: rgba(27,23,16,.16);
+  --danger: #d12318;
+  --danger-ink: #ffffff;
+  --ok: #007c34;
+  --ok-ink: #ffffff;
+  --warn: #b04f00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 20px; --radius-lg: 28px;
-  --shadow: 0 20px 44px -34px rgba(27,23,16,.55); --shadow-hard: 0 3px 0 var(--ink);
-  --font-display: "Jost", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
-  --tracking: 0.1em; --blur: 0px; --grain: .03;
-  --danger: #8f2a12; --danger-ink: #ffffff;
-  --ok: #28603c; --warn: #7a5205;
+  --shadow: 0 20px 44px -34px rgba(27,23,16,.55); --shadow-hard: none;
+  --font-display: "Jost", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --tracking: 0.1em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `styles/143-retro-future/token-block.css` içinde `[data-theme="dark"][data-style="retro-future"]` olarak durur (10 renk anahtarı `palette.dark` ile birebir); `## Koyu mod` tablosu tek kaynak özetidir.

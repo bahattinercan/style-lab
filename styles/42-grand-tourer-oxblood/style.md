@@ -1,43 +1,59 @@
 # 42 · Grand Tourer Oxblood
 
-> **Bir cümlede:** Grand Tourer sisteminin bordo deri kardeşi: aynı krem kokpit, aynı krom ve kadran, ama vurgu İngiliz kulüp derisinin bordo tonunda — üstüne gravür başlık, künye şeridi ve mat çerçeve eklenmiş "prime" katmanı.
+> **In one sentence:** Grand Tourer sisteminin bordo deri kardeşi: aynı krem kokpit, aynı krom ve kadran, ama vurgu İngiliz kulüp derisinin bordo tonunda — üstüne gravür başlık, künye şeridi ve mat çerçeve eklenmiş "prime" katmanı.
 
 | | |
 |---|---|
-| **Hissiyat** | kulüp üyesi, deri koltuk, gizli servet, "aileye özel" |
-| **En iyi** | lüks konut/ofis portföyü, özel kulüp, butik otel suiteleri, mücevher, özel bankacılık, şarap/viski |
-| **Kaçın** | kurumsal B2B panel, sağlık, çocuk ürünü, indirim kampanyası, devlet/kamu arayüzü (bordo + krem "kulüp" okunur) |
-| **Zorluk** | orta · **Erişilebilirlik** | iyi (14.28:1 gövde, 9.75:1 accent üstü) |
-| **Aile** | Zamansız (41–44) · **Token** | `kit/tokens.css` → `[data-style="grand-tourer-oxblood"]` |
-| **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | kulüp üyesi, deri koltuk, gizli servet, "aileye özel" |
+| **Best for** | lüks konut/ofis portföyü, özel kulüp, butik otel suiteleri, mücevher, özel bankacılık, şarap/viski |
+| **Avoid** | kurumsal B2B panel, sağlık, çocuk ürünü, indirim kampanyası, devlet/kamu arayüzü (bordo + krem "kulüp" okunur) |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Timeless (41–44) · **Token** | `kit/tokens.css` → `[data-style="grand-tourer-oxblood"]` |
+| **Composition** | `sticky` · `pill` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Oxblood, **Grand Tourer (41) sisteminin palet varyantıdır**: tipografi, ızgara, krom kenar, kadran, koç çizgisi ve tüm bileşen ölçüleri birebir aynıdır. Değişen tek şey **vurgu ve nötr sıcaklığı**: yarış yeşili yerine bordo `#6b2130` (oxblood, klasik İngiliz deri rengi), zemin ise bir tık daha sıcak krem `#f1e9dd`. Böylece lüks "kulüp" tarafına kayar: yeşil bahçe/yarış, bordo koltuk/kütüphane.
 
 Kazandığı şey: **yakınlık ve aidiyet**. Bordo, kontrastı düşük olduğu için saldırgan değil; krem zeminde "davet" gibi okunur. Feda ettiği şey: **kurumsal güvenlik**. Bordo + krem, banka/kurum arayüzünde değil, üyelik ve konuk ağırlama dilinde okunur; resmi işlem ekranlarında yeşil (41) veya lacivert (43) daha nötr kalır.
 
 **Prime katmanı (41'den ayrıldığı yer).** 42, ailenin "üst donanım" varyantıdır; palet farkının üstüne beş ölçülebilir detay ekler: (1) başlıkta **gravür ışığı** (`text-shadow: 0 1px 0 rgba(255,255,255,.62)`) ve 52px/.12em geniş harf aralığı, (2) landing'de CTA altında **künye şeridi** (mono 9px, hairline hücreler), (3) birincil butonda **plaka halkası** (1px outline, 2px boşluk), (4) hero görselinde **mat çerçeve** (6px zemin boşluğu + 1px hairline + iç vinyet ≤%6), (5) kartlarda **işlenmiş alt kenar** (`inset 0 -1px 0 rgba(32,26,23,.07)`). Hareket de ağırlaşır: 200/400/560ms — "kapı kapanışı" hissi.
 
-### Ne değildir
+### What is not
 - **Grand Tourer (41) değildir** — aynı sistem, farklı palet. Yalnız rengi değiştirip ölçüleri bozarsanız (radius 12px, gölge, altın) bu stil olmaz; ikisi **tek ailede iki oda** gibidir.
 - **Art Deco (26) değildir.** Deco'nun altını, simetrisi ve zigguratı yok; burada krom 1px ve asimetri var.
 - **Victorian (27) değildir.** Bordo burada tek vurgu; gravür, çift çerçeve ve süs yok.
 - **Dopamine/warm-luxury şablonları değildir.** Pembe-bej "sıcak minimal" furyasından farkı: **mono sayaç rakamı, krom iç parlama ve kadran** — sıcaklık renkten değil malzemeden gelir.
 
-### Nereden gelir
+### Where it comes from
 Oxblood, 20. yüzyıl İngiliz kulüp ve otomobil iç mekânlarının deri rengi (Connolly "oxblood"), Amerikan üniversite ve ülke kulüplerinin koltuklarında standarttı. Dijitalde bordo, "davet" ve "üyelik" sinyali olarak geri döndü. Klişeye düşmemesi için korunması gereken detay: **bordoyu doygunlaştırmamak** — `#6b2130` üstüne parlak kırmızı eklendiği an stil "düğün davetiyesi"ne kayar.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin sıcak krem mi (`#f1e9dd`), vurgu **tek** bordo mu (`#6b2130`) — parlak kırmızı/bordo karışımı yok mu?
 2. Kartlarda krom iç parlama (1px beyaz) + tek hairline var mı; gölge koyu blok mu? (Olmamalı.)
 3. Başlık Cinzel büyük harf, 0.09em mi; altın/şampanya sızmış mı? (Olmamalı.)
 4. Fiyat/KPI **mono sayaç** mı; serif rakam var mı?
 5. Nav altında koç çizgisi ve landing'de kadran var mı?
 
-## Zorunlu kurallar
+## Visual signature
+- **Bordo krom kart:** `--surface #f9f3e9` + dış hairline + iç beyaz 1px + **alt 1px işlenmiş gölge çizgisi** (`inset 0 -1px 0 rgba(32,26,23,.07)`); kart zemini sayfadan %4–%6 açık.
+- **Gravür başlık:** Cinzel 400, 52px, `.12em`, `text-shadow: 0 1px 0 rgba(255,255,255,.62)` — krem zeminde kabartma plaka; eyebrow ve etiketler bordo (`--accent`), `.22–.24em`.
+- **Mat çerçeve:** hero görseli `0 0 0 6px var(--bg), 0 0 0 7px color-mix(ink 15%)` + `inset 0 0 70px color-mix(ink 6%)` → duvara asılmış baskı; koyu blok gölge yok.
+- **Künye şeridi:** CTA altında üç hücre, mono 9px `.18em`, üst/alt 1px hairline, hücre arası 1px dikey çizgi, 4px bordo nokta.
+- **Plaka CTA:** birincil butonda `outline: 1px color-mix(accent 40%)`, `outline-offset: 2px`, mono 11px `.2em`; buton içinde üst beyaz/alt koyu 1px krom.
+- **Tek bordo anlam:** birincil buton, aktif satır işareti, veri serisi 1, odak halkası — başka yerde bordo yok.
+- **Sıcak nötr:** `--ink #201a17` (kahve-siyah), `--ink-soft #5a4d45`, `--line rgba(32,26,23,.18)`; soğuk gri yok.
+- **Koç çizgisi:** nav altında 1px bordo + 1px hairline; onboarding/ayırıcıda `border-top: 1px var(--accent)` eşleşmesi.
+- **Kadran:** 224px, `.9deg` tik / `9deg` aralık, 88/96px krom halka, `1.3deg` bordo iğne, 4px göbek.
+- **Ceviz damarı:** 92°, 1px / 11px, `--ink` %2.5 — yalnız yan panel, auth asidesi ve footer.
+- **Sayaç tipografisi:** fiyat 26px, KPI 22px, 404 44px mono; `letter-spacing: 0`.
+- **Typography:** Cinzel (display) + Jost (body) + Courier Prime (mono label).
+- **Colour discipline:** a single accent `#6b2130`; neutral scale `#f1e9dd` → `#201a17`.
+- **Radius:** `3px` / `6px`; Card 10–14px, button 6–10px; full circle only chip/badge.
+
+## Mandatory rules
 
 1. **Krom kenar:** dış `1px var(--line)` + iç `inset 0 0 0 1px rgba(255,255,255,.6)`. Toplam 2px, üçüncü çizgi yok.
 2. **Tek vurgu bordo `#6b2130`:** ekranın ≤%8'i (veri ekranlarında ≤%4). Parlak kırmızı, bordo-mor, altın ikinci vurgu yasak.
@@ -52,7 +68,66 @@ Oxblood, 20. yüzyıl İngiliz kulüp ve otomobil iç mekânlarının deri rengi
 11. **Plaka CTA:** yalnız **birincil** butonda 1px accent halka (`outline`, offset 2px) — ikincil/sessiz butonda halka yok; halka 2px+ veya çift halka olmaz. **Yıkıcı eylem** (`--danger`) halka almaz ve mobil/dar sahnelerde halka kapanır (kırpılma).
 12. **Mat çerçeve + künye:** landing'de hero görseli mat çerçeve (6px `--bg` + 1px hairline + iç vinyet ≤%6) alır; CTA altındaki üç hücreli künye şeridi mono 9px `.18em`, hücre arası 1px dikey çizgi. Vinyet %6'yı geçmez (kontrast düşürür).
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f1e9dd` | page background | as a card background |
+| `--bg-2` | `#e8dfd0` | partition divider floor, table top | button background |
+| `--surface` | `#f9f3e9` | kart, input, modal | full-page background |
+| `--surface-2` | `#e9dfce` | passive chip, hover background | primary button |
+| `--ink` | `#201a17` | title, body, icon | large background |
+| `--ink-soft` | `#5a4d45` | secondary text, description | — |
+| `--ink-faint` | `#74665c` | decorative label, separator text | interactive text |
+| `--accent` | `#6b2130` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f7efe1` | text above accent | non-accent background |
+| `--line` | `rgba(32,26,23,.18)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **14.28:1** · `ink-soft/bg` **6.75:1** · `ink-faint/bg` **4.59:1 (decorative)** · `accent-ink/accent` **9.75:1**.
+- Price and stock information is written with --ink, not accent; accent solo action (cart, buy).
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Cinzel) | 52px (mobile 30px) | 600 | 1.06 | -0.02em |
+| H2 | same | 24px | 600 | 1.18 | -0.015em |
+| H3 | same | 15.5px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 16.5px | 400 | 1.6 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier Prime) | 9.5px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 13px | 600 | 1 | 0 |
+
+- Price 26–32px display, currency 13px mono; product name 15px/600.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- Product grid 3–4 columns; card ratio 4:5. Filter rail 240px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Cards are separated by light shadow; On hover, the shadow grows, the edge does not change.
+- Radius: `3px` (buton, input, chip), `6px` (kart, modal). Card 10–14px, button 6–10px; full circle only chip/badge.
+
+## Bans
 
 - Altın/şampanya/bakır metal, pembe-bej "sıcak minimal" geçişi, ikinci vurgu (mor, yeşil, turuncu).
 - Parlak kırmızı (`#c1121f` ve benzeri) — bordo ile yan yana "indirim" diline kayar.
@@ -62,111 +137,44 @@ Oxblood, 20. yüzyıl İngiliz kulüp ve otomobil iç mekânlarının deri rengi
 - Display 700/italik, el yazısı font, negatif tracking.
 - Emoji, illüstrasyon, foto kolaj, desenli arka plan.
 - Sürekli animasyon (marquee, dönen iğne, nefes alan katman), spring.
+- Stack of discount labels on price.
+- More than four types of rosettes.
+- Auto-playing image.
 
-## Görsel imza
-- **Bordo krom kart:** `--surface #f9f3e9` + dış hairline + iç beyaz 1px + **alt 1px işlenmiş gölge çizgisi** (`inset 0 -1px 0 rgba(32,26,23,.07)`); kart zemini sayfadan %4–%6 açık.
-- **Gravür başlık:** Cinzel 400, 52px, `.12em`, `text-shadow: 0 1px 0 rgba(255,255,255,.62)` — krem zeminde kabartma plaka; eyebrow ve etiketler bordo (`--accent`), `.22–.24em`.
-- **Mat çerçeve:** hero görseli `0 0 0 6px var(--bg), 0 0 0 7px color-mix(ink 15%)` + `inset 0 0 70px color-mix(ink 6%)` → duvara asılmış baskı; koyu blok gölge yok.
-- **Künye şeridi:** CTA altında üç hücre, mono 9px `.18em`, üst/alt 1px hairline, hücre arası 1px dikey çizgi, 4px bordo nokta.
-- **Plaka CTA:** birincil butonda `outline: 1px color-mix(accent 40%)`, `outline-offset: 2px`, mono 11px `.2em`; buton içinde üst beyaz/alt koyu 1px krom.
-- **Tek bordo anlam:** birincil buton, aktif satır işareti, veri serisi 1, odak halkası — başka yerde bordo yok.
-- **Sıcak nötr:** `--ink #201a17` (kahve-siyah), `--ink-soft #5a4d45`, `--line rgba(32,26,23,.18)`; soğuk gri yok.
-- **Koç çizgisi:** nav altında 1px bordo + 1px hairline; onboarding/ayırıcıda `border-top: 1px var(--accent)` eşleşmesi.
-- **Kadran:** 224px, `.9deg` tik / `9deg` aralık, 88/96px krom halka, `1.3deg` bordo iğne, 4px göbek.
-- **Ceviz damarı:** 92°, 1px / 11px, `--ink` %2.5 — yalnız yan panel, auth asidesi ve footer.
-- **Sayaç tipografisi:** fiyat 26px, KPI 22px, 404 44px mono; `letter-spacing: 0`.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 3px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 3px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 3px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 3px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 3px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 3px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 3px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f1e9dd` | sayfa zemini (sıcak krem deri) | kart yüzeyi |
-| `--bg-2` | `#e8dfd0` | ikincil bölüm, input zemini, bulk bar | birincil kart |
-| `--surface` | `#f9f3e9` | kart, panel, modal, tablo kabı | tam sayfa zemin |
-| `--surface-2` | `#e9dfce` | hover, seçili satır, çip zemini | ana kart |
-| `--ink` | `#201a17` | başlık, gövde, sayaç (**14.28:1**) | accent zemin üstünde |
-| `--ink-soft` | `#5a4d45` | açıklama, lede, pasif nav (**6.75:1**) | başlık |
-| `--ink-faint` | `#74665c` | etiket, sıra no, ipucu (**4.59:1**) | uzun gövde metni |
-| `--accent` | `#6b2130` | buton, aktif durum, seri 1, odak (**9.25:1** bg üstü) | durum/silme |
-| `--accent-ink` | `#f7efe1` | accent üstü metin (**9.75:1**) | accent dışı zeminde (1.03:1) |
-| `--line` | `rgba(32,26,23,.18)` | kenarlık, koç çizgisi | metin |
-| `--danger` | `#9a3b1e` | silme/tehlike (**5.78:1**) | dekoratif vurgu |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 10.09:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **14.28:1** · `ink-soft/bg` **6.75:1** · `ink-faint/bg` **4.59:1** · `accent-ink/accent` **9.75:1** · `accent/bg` **9.25:1** · `ink/surface` **15.57:1** · `ink/surface-2` **13.03:1** · `ink-soft/surface-2` **6.16:1** · `ink-faint/surface-2` **4.19:1** (dekoratif) · `ok/bg` **7.04:1** · `warn/bg` **4.91:1** · `danger/bg` **5.78:1**.
-- Grafik paleti: `--data-1 #6b2130` (bordo), `--data-2 #6f6250` (ceviz), `--data-3 #9d9079` (krom gölge), `--data-4 #a9762d` (pirinç, yalnız 4. seri).
-- Yasak kombinasyon: bordo zemin üstü `--ink` (2.6:1), `--ink-faint` üstü `--surface-2` gövde metni (4.19:1), accent bordo ile `--danger` yan yana aynı anlamda.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 20px; basket/favorite full |
+| photo | The product is single object, white/neutral backdrop, shadow is soft; 4:5 |
+| illustration | Thin line only in category title |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Cinzel | 52px (mobil 31px) | 400 | 1.06 | `.12em`, büyük harf, gravür ışığı |
-| H2 | Cinzel | 24px | 400 | 1.16 | `.10em` |
-| H3 | Cinzel | 15.5px | 400 | 1.3 | `.08em` |
-| Gövde | Jost | 16.5px | 400 | 1.68 | `0` |
-| Küçük gövde | Jost | 13px | 400 | 1.55 | `.01em` |
-| Etiket / mono | Courier Prime | 9.5–10.5px | 400 | 1.2 | `.14–.2em` |
-| Sayaç | Courier Prime | 22–26px | 400 | 1.05 | `0` |
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Basamaklar **9.5 · 11 · 13 · 16.5 · 24 · 52**; ölçü `clamp(31px, 4vw, 52px)`, gövde 62ch, lede 44ch.
-- Ağırlık: yalnız 400/500; Cinzel 400 (700 büyük harfte tabela etkisi yapar), gövde 300 yasak.
-- Gravür ışığı yalnız **başlıkta**; gövde metninde `text-shadow` yok (küçük puntoda bulanıklık yapar).
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 32px |
-| Container | 1160px (galeri 1320px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 96 |
-| Breakpoint | <640 tek kolon (20px), 640–960 8 kolon, >960 12 kolon |
-
-- Asimetri: hero 7/5 veya 8/4; ekran başına en fazla 2 bölüm asimetrik; simetrik hero yasak (tek kart onboarding/404 istisna).
-- Ritim: bölüm 96px (mobil 56px), kart içi 28px, kart–kart 20px, başlık–gövde 12px.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | yok | sayfa + grain + ceviz damarı |
-| Kart | `--surface` + krom kenar | `0 1px 2px rgba(32,26,23,.08)` | panel, KPI, tablo kabı, plan kartı |
-| Yüzen | `--surface` + krom kenar | `0 18px 40px -28px rgba(32,26,23,.45)` | modal, dropdown, tooltip, alt sayfa |
-
-- Derinlik **krom iç parlama + hairline + ton farkı**ndan gelir; koyu blok gölge ve cam efekti yok.
-- Radius: 3px buton/input/chip, 6px kart/modal; 50% yalnız kadran/avatar/rozet/toggle.
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 42px | 0 20px | 3px | Courier Prime 10.5px `.16em` | `--accent` + `--accent-ink`, `inset 0 1px 0 rgba(255,255,255,.3)` + `inset 0 -1px 0 rgba(32,26,23,.24)` | hover: `color-mix(accent 90%, ink)` · active: `translateY(1px)` · focus: `outline 2px accent, offset 2px` · disabled: `opacity .42` |
-| Buton (ikincil) | 42px | 0 18px | 3px | Courier Prime 10.5px | saydam + `1px color-mix(ink 30%)` + `--ink` | hover: `--surface-2` · focus: aynı halka |
-| Input | 42px | 0 14px | 3px | Jost 13px | `--surface` + `1px color-mix(ink 22%)` + `inset 0 1px 2px` | focus: `outline 2px accent, offset 2px` · error: `1px var(--danger)` + 12px satır · disabled: `.5` |
-| Kart | içerik | 28px (20px mobil) | 6px | Cinzel 24 + Jost 16.5 | `--surface` + krom kenar | öne çıkan: `--surface-2` + üst 2px `--accent` |
-| Chip / plaka | 24px | 0 8px | 2px | Courier Prime 8.5px `.18em` | saydam + `1px color-mix(ink 26%)` | aktif: `--accent` + `--accent-ink`; dokunma 44px |
-| Nav | 72px | 0 52px | — | mono 11px `.14em` | `--bg` + koç çizgisi | aktif: 1px bordo alt çizgi |
-| Tablo satırı | 52px | 12px 14px | 0 / 6px kap | Jost 13px, başlık mono 9.5px | alt `1px var(--line)` | hover: `--surface-2` · seçili: `--surface-2` + sol 2px bordo |
-| Modal | içerik | 28px | 6px | Cinzel 24 + 16.5 | krom kenar + yüzen gölge | backdrop `rgba(32,26,23,.55)` |
-| Toast | 52px | 0 16px | 3px | Jost 13px | `--surface` + sol 2px durum | 5sn, tek sefer |
-| Grafik | — | — | çubuk üst 2px | eksen mono 8–9px | `--data-1…4` | çubuk arası 12px, yatay grid yok |
-
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; dolu butonda `--accent-ink` halka. **Plaka halkası** (1px) odak halkasının yerine geçmez; ikisi üst üste binerse odak 3px offset ile çizilir.
-- Dokunma hedefi: en az 44×44px (chip 24px görünür, `min-height: 44px`).
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 1.6px çizgi, 24px ızgara, `currentColor`; dolu ikon yok |
-| Fotoğraf | altın saat, sıcak ton, film grain; deri dikiş/jant/şömine detayı; tek kare, alan ≥%30, `saturate(.92) contrast(1.03)` |
-| İllüstrasyon | yok — kadran çizimi + mono künye + boşluk |
-| Doku | grain .035 + ceviz damarı (1px/11px, %2.5) + koç çizgisi |
-| Logo alanı | 26px bordo daire rozet + Cinzel harf, çevresinde ≥24px boşluk |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | 50px Cinzel, 7/5 asimetri, tek bordo CTA, bir kadran | `shots/01-page.png` |
 | Dashboard | düşük-orta | mono KPI, krom kartlar, bordo yalnız seri 1 ve aktif satır | `shots/01-page.png` |
@@ -187,38 +195,40 @@ Oxblood, 20. yüzyıl İngiliz kulüp ve otomobil iç mekânlarının deri rengi
 | Mobil · alt sayfa | orta | üst köşe 6px, 44px tutamaç, yapışkan CTA | `shots/01-page.png` |
 | Mobil · form | çok düşük | 54px input, 46px CTA | `shots/01-page.png` |
 | Mobil · liste | düşük | 64px satır, durum plakası | `shots/01-page.png` |
+| Emlak landing | orta | poster hero + künye şeridi + portföy rafı + bölüm + galeri; 6 ilan kuralı | `shots/01-page.png` |
+| Emlak · ilan detayı | yüksek | galeri (1+2), künye, açıklama, kat planı, harita, yapışkan ajan paneli + 3 alanlı form | `shots/01-page.png` |
+| Emlak · harita | orta | sol filtre rayı, iğneli harita, hover kartı, mini sonuç listesi | `shots/01-page.png` |
+| Emlak · concierge | düşük | 3 alanlı form + adım göstergesi + güven/gizlilik blokları | `shots/01-page.png` |
+| Mobil · emlak | orta | dikey poster hero, künye, 360° tur, yapışkan ajan barı | `shots/01-page.png` |
+| Hareket levhası | — | giriş / scroll reveal / pin+scrub beatleri; reduced-motion notu | `shots/01-page.png` |
 
-| Emlak landing | orta | poster hero + künye şeridi + portföy rafı + bölüm + galeri; 6 ilan kuralı | — |
-| Emlak · ilan detayı | yüksek | galeri (1+2), künye, açıklama, kat planı, harita, yapışkan ajan paneli + 3 alanlı form | — |
-| Emlak · harita | orta | sol filtre rayı, iğneli harita, hover kartı, mini sonuç listesi | — |
-| Emlak · concierge | düşük | 3 alanlı form + adım göstergesi + güven/gizlilik blokları | — |
-| Mobil · emlak | orta | dikey poster hero, künye, 360° tur, yapışkan ajan barı | — |
-| Hareket levhası | — | giriş / scroll reveal / pin+scrub beatleri; reduced-motion notu | — |
+## Accessibility
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 14.28:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.75:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.59:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 9.75:1 | ≥ 4.5 | button text |
+| focus ring/ground | 10.09:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 91.6 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-- En düşük metin çifti: `--ink-faint / --bg` **4.59:1** (dekoratif etiket). `--ink-faint / --surface-2` **4.19:1** → gövde metni olarak kullanılmaz.
-- `--accent-ink / --accent` **9.75:1** (AAA), `--ink / --bg` **14.28:1**: buton ve gövde güvenli. `--accent-ink` krem zemin üstünde metin değildir (1.03:1).
-- Bordo, kırmızı ile karışabildiği için `--danger` bilinçli olarak turuncuya çekildi (`#9a3b1e`, 5.78:1); hata metni her zaman ikon + metin birlikte (renk tek başına anlam taşımaz).
-- Odak: krem zeminde 2px bordo halka 9.25:1; dolu butonda `--accent-ink` halka. Plakanın 1px halkası dekoratiftir, odak göstergesi sayılmaz.
-- Gravür ışığı (`text-shadow` beyaz, 1px) yalnız glifin alt kenarında kalır; ölçülen kontrastı eşik altına indirmez (deboss ≤ 0.15:1). Mat çerçevenin iç vinyeti ≤%6 — metin üstüne binmez (yalnız görsel zemini).
-- Grain/ceviz katmanları `pointer-events: none` + `aria-hidden`; kontrastı 0.2:1'den fazla düşürmez.
-- `--blur: 0` → `@supports` fallback gerekmez.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Düğün davetiyesi" gibi duruyor | Bordo doygunlaşmış / altın eklenmiş | `#6b2130` sabit; altın yok; süs yalnız kadran ve gravür ışığı |
 | "Sadece 41'in bordolusu" gibi duruyor | Prime katmanı uygulanmamış (gravür, künye, mat çerçeve, plaka halkası yok) | Beş detayın hepsi: gravür başlık + künye şeridi + plaka CTA + mat çerçeve + işlenmiş alt kenar |
 | Başlık bulanık/ağır | Deboss 2px+ veya çift ışık, ya da gövdeye de `text-shadow` verilmiş | Işık 1px, yalnız başlıkta |
@@ -230,24 +240,33 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Okumak yoruyor | Gövde büyük harf / 300 ağırlık | Jost 400 normal harf, 62ch |
 | Bordo ile hata karıştı | `--danger` accent'e yakın seçilmiş | `#9a3b1e` turuncu-kızıl + ikon zorunlu |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `grand-tourer` (aynı aile, yeşil — farklı marka katmanı), `luxury-typography`, `editorial-design`.
-- **Yasak:** `grand-tourer-midnight` (aynı sayfada iki vurgu paleti), `neo-brutalism`, `dopamine-ui`, `glassmorphism`, `cyberpunk`, `bauhaus`.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `grand-tourer` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `luxury-typography` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `cyberpunk` | Two different ornamental languages compete on the same screen |
+| Mixing | `bauhaus` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://fonts.google.com/specimen/Cinzel | büyük harf display, 400, `.09em` |
-| https://fonts.google.com/specimen/Jost | gövde 16.5/1.68 |
-| https://fonts.google.com/specimen/Courier+Prime | sayaç ve etiket mono |
-| https://www.hagerty.com/media/ | bordo deri kokpit, krom anahtar, ceviz panel |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | kontrast eşikleri |
+| Source | for what |
+| --- | --- |
+| https://fonts.google.com/specimen/Cinzel | Cinzel — büyük harf display, 400, .09em |
+| https://fonts.google.com/specimen/Jost | Jost — gövde 16.5/1.68 |
+| https://fonts.google.com/specimen/Courier+Prime | Courier Prime — sayaç ve etiket mono |
+| https://www.hagerty.com/media/ | Hagerty — klasik GT medyası — bordo deri kokpit, krom anahtar, ceviz panel |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 — Contrast Minimum — kontrast eşikleri |
 
 ## AI brief
 
-```
+```text
 Stil: Grand Tourer Oxblood (styles/42-grand-tourer-oxblood/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="grand-tourer-oxblood"]; hard-coded renk/gölge/radius yasak.
 Tipografi: Cinzel BÜYÜK HARF 400 (başlık), Jost (gövde), Courier Prime (tüm sayı + etiket).
@@ -266,6 +285,14 @@ Yapma:
 - Altın/şampanya, parlak kırmızı, ikinci vurgu, gradyan, glow, blur, 2px+ kenar, 8px+ radius.
 - Deboss 2px+, çift ışık, gövdede text-shadow, vinyet %6 üstü, çift plaka halkası.
 - Saf siyah/beyaz, gövdede büyük harf/300 ağırlık, emoji, illüstrasyon, sürekli animasyon.
+
+Style: Grand Tourer Oxblood (grand-tourer-oxblood) · family: Timeless (41–44)
+Token: --bg #f1e9dd · --surface #f9f3e9 · --ink #201a17 · --accent #6b2130 · --line rgba(32,26,23,.18)
+Radius: 3px / 6px · Typography: Cinzel / Jost / Courier Prime
+Required: **Krom kenar:** dış `1px var(--line)` + iç `inset 0 0 0 1px rgba(255,255,255,.6)`. Toplam 2px, üçüncü çizgi yok. · **Tek vurgu bordo `#6b2130`:** ekranın ≤%8'i (veri ekranlarında ≤%4). Parlak kırmızı, bordo-mor, altın ikinci vurgu yasak. · **Durum rengi ayrı:** `--danger #9a3b1e` (yanık kızıl) — accent bordo ile karışmaması için bilinçli olarak daha turuncu; "sil" butonu asla accent bordoyu kullanmaz.
+Banned: Altın/şampanya/bakır metal, pembe-bej "sıcak minimal" geçişi, ikinci vurgu (mor, yeşil, turuncu). · Parlak kırmızı (`#c1121f` ve benzeri) — bordo ile yan yana "indirim" diline kayar. · Gradyan buton/kart, glow, blur (`--blur: 0`), renkli ışık lekesi.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token
@@ -277,14 +304,25 @@ Yapma:
   --ink: #201a17; --ink-soft: #5a4d45; --ink-faint: #74665c;
   --accent: #6b2130; --accent-ink: #f7efe1;
   --line: rgba(32,26,23,.18);
+  --danger: #cf2015;
+  --danger-ink: #ffffff;
+  --ok: #007a32;
+  --ok-ink: #ffffff;
+  --warn: #ae4d00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 3px; --radius-lg: 6px;
-  --shadow: inset 0 0 0 1px rgba(255,255,255,.6), 0 1px 2px rgba(32,26,23,.08); --shadow-hard: 3px 3px 0 rgba(32,26,23,.12);
-  --font-display: "Cinzel", "Playfair Display", Georgia, serif;
-  --font-body: "Jost", "Inter", system-ui, sans-serif;
-  --font-mono: "Courier Prime", "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: 0.12em; --blur: 0px; --grain: .035;
-  --data-1: #6b2130; --data-2: #6f6250; --data-3: #9d9079; --data-4: #a9762d;
-  --danger: #9a3b1e; --danger-ink: #f9f3e9;
-  --ok: #23572f; --warn: #8a5a12;
+  --shadow: inset 0 0 0 1px rgba(255,255,255,.6), 0 1px 2px rgba(32,26,23,.08); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: 0.12em; --blur: 0px; --grain: 0;
 }
 ```

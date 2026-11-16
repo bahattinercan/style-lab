@@ -1,145 +1,169 @@
 # 67 · Japanese Ma
 
-> **Bir cümleyle:** Ölçülmüş boşluk: 12 kolonun 8'inde içerik, sağ 4 kolonda hiçbir şey ve mühür kırmızısından tek bir kare.
+> **In one sentence:** Japanese Ma
 
 | | |
 |---|---|
-| **Hissiyat** | sessiz, kesin, ferah, neredeyse törensel |
-| **En iyi** | mimari/zanaat stüdyosu, galeri–müze kataloğu, editoryal uzun okuma, premium donanım tanıtımı |
-| **Kaçın** | yoğun operasyon paneli, indirim kampanyası, çocuk uygulaması, çok serili grafik ekranı |
-| **Zorluk** | yüksek (boşluğu "boş bırakılmış" değil "ölçülmüş" göstermek) · **Erişilebilirlik** | iyi (16.32:1 gövde, 5.33:1 accent üstü) |
-| **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="japanese-ma"]` |
-| **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | sessiz, kesin, ferah, neredeyse törensel |
+| **Best for** | mimari/zanaat stüdyosu, galeri–müze kataloğu, editoryal uzun okuma, premium donanım tanıtımı |
+| **Avoid** | yoğun operasyon paneli, indirim kampanyası, çocuk uygulaması, çok serili grafik ekranı |
+| **Difficulty** | yüksek (boşluğu "boş bırakılmış" değil "ölçülmüş" göstermek) · **Accessibility** |  |
+| **Family** | Cultural & Regional (66–75) · **Token** | `kit/tokens.css` → `[data-style="japanese-ma"]` |
+| **Composition** | `split` · `split` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Japanese Ma, ekranı **boşluğun kendisiyle** kurar. 12 kolonun yalnız 8'i doludur; sağdaki 4 kolon kasıtlı olarak boş kalır ve bu boşluk dekorasyon değil **ölçü**dür (masa üstünde bölüm arası 160px, mobilde 88px). Öğe sayısı azdır: bir display başlık (64px, Jost 400), tek bir yatay 1px çizgi, ve tek bir mühür kırmızısı (`#bf3320`) — o da ekranın %2'sini geçmez.
 
 Kazandığı şey: **dikkat ekonomisi**. Ekranda yarışan tek bir öğe olduğu için kullanıcı ilk saniyede nereye bakacağını bilir; sayfa "hızlı" değil "kesin" hisseder. Feda ettiği şey: **bilgi yoğunluğu ve tarama hızı** — bu stilde 20 satırlık tablo, çoklu KPI veya karşılaştırma matrisi çalışmaz; o ekranlarda yalnız tipografi ve çizgi ödünç alınır (süs zaten yok).
 
-### Ne değildir
+### What is not
 - **Japandi (06) değildir.** Japandi sıcak bir **hibrit**: krem zemin (`#f4efe7`), serif display (Lora), adaçayı accent ve 10–14px radius. Burada zemin **nötr washi** (`#f6f5f1`), display **geometrik sans** (Jost), accent **mühür kırmızısı** ve radius **0/2px**; üstelik boşluk oranı zorunlu (8/12 kolon, 160px ritim).
 - **Wabi-Sabi (07) değildir.** Wabi-sabi kasten eğik ve dokulu çalışır (`--grain: .07`, 0.5–1.5° dönüklük, asimetrik radius); burada hiza **kusursuz**, grain **.015**, radius **0/2px**.
 - **Minimalism (01) değildir.** Minimalism gölgeyle (`0 1px 2px`) hacim kurar, 8/12px radius ve mavi accent kullanır; burada `--shadow: none`, radius 0, accent kırmızı ve boşluk katı bir orana bağlı.
 - **Editorial Design (03) değildir.** Editorial serif başlık + drop cap + kolon ritmiyle **dolu** bir sayfa kurar; burada display sans, drop cap yok ve metin ölçüsü 56ch'e kısıtlı.
 - **"Sadece çok boşluk" değildir.** Boşluk rastgele değil: 160/88px ritim, 12'de 8 kolon, 32px gutter — üçü birlikte stilin ölçüsüdür.
 
-### Nereden gelir
+### Where it comes from
 `ma` (間), Japon estetiğinde "aralık/boşluk"un kendisinin biçim olmasıdır: çay evi nişi, byōbu paravan kompozisyonu ve sumi-e'nin boş kâğıdı aynı ilkeyi paylaşır — öğe azaltıldıkça kalan öğenin ağırlığı artar. Dijitalde 2010'lardan sonra "slow/quiet" markalar ve Japon mimarlık stüdyolarının siteleriyle yayıldı; nedeni ölçülebilir: az öğe = daha az bant genişliği, daha net odak, daha uzun okuma süresi.
 
 Klişeye düşmemek için korunması gereken detay: **çizgi disiplini ve mühür oranı**. Boşluğu 2–3 bölüme sıkıştırmak, ikinci bir renk eklemek veya mühürü buton+rozet+grafik üçlüsüne çoğaltmak stili "bej minimalizm"e indirger.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Sağ tarafta **boş bir kolon şeridi** var mı (içerik solda 8/12, sağda 4/12 boş)?
 2. Ekranda **tek çizgi** mi var — bölüm başlığının üstünde 1px yatay çizgi, başka çerçeve yok mu?
 3. Accent **mühür kırmızısı** ve **tek bir kare/etiket** mi (ekranın ≤ %2'si)?
 4. Başlık **64px geometrik sans**, ağırlık 400 (kalın değil), tracking **-0.03em** mi?
 5. Kartlar **gölgesiz ve radius 0–2px** mi; modal bile yalnız 1px çizgiyle mi ayrılıyor?
 
-## Görsel imza
-1. **8/12 kolon kuralı:** içerik solda 8 kolonda; sağdaki 4 kolon (12 kolonun %33'ü) hiçbir öğe almaz. Boşluk ekranın ~1/3'ü.
-2. **Tek yatay çizgi:** 1px `--line`, bölüm başlığının üstünde, 28px padding-top; ekranda ikinci bir yatay çizgi yok.
-3. **Mühür:** 26×26px düz accent kare (mobilde 20×20), radius 0, gölge yok; hero metninin sağında tek adet.
-4. **Boşluk çizgisi:** hero'da 12. kolon sınırına denk gelen 1px dikey kural (%66.6 hizada), yalnız landing'de.
-5. **Ölçü ritmi:** bölüm dikey 160px (mobil 88px), kart padding 28px, gutter 32px — her üçü boşluğun ölçüsüdür.
-6. **Alt çizgi form dili:** input ve chip kutulu değil, yalnız 1px alt çizgi; odak 4px offset halkayla.
-7. **Mono etiket:** 11px IBM Plex Mono, uppercase, .22em tracking — ekrandaki tek "küçük" ses.
+## Visual signature
+- **8/12 kolon kuralı:** içerik solda 8 kolonda; sağdaki 4 kolon (12 kolonun %33'ü) hiçbir öğe almaz. Boşluk ekranın ~1/3'ü.
+- **Tek yatay çizgi:** 1px `--line`, bölüm başlığının üstünde, 28px padding-top; ekranda ikinci bir yatay çizgi yok.
+- **Mühür:** 26×26px düz accent kare (mobilde 20×20), radius 0, gölge yok; hero metninin sağında tek adet.
+- **Boşluk çizgisi:** hero'da 12. kolon sınırına denk gelen 1px dikey kural (%66.6 hizada), yalnız landing'de.
+- **Ölçü ritmi:** bölüm dikey 160px (mobil 88px), kart padding 28px, gutter 32px — her üçü boşluğun ölçüsüdür.
+- **Alt çizgi form dili:** input ve chip kutulu değil, yalnız 1px alt çizgi; odak 4px offset halkayla.
+- **Mono etiket:** 11px IBM Plex Mono, uppercase, .22em tracking — ekrandaki tek "küçük" ses.
+- **Typography:** Jost (display) + Inter (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#bf3320`; neutral scale `#f6f5f1` → `#16181a`.
+- **Radius:** `0px` / `2px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f6f5f1` | Sayfa zemini (nötr washi) | Kart içi |
-| `--bg-2` | `#ecebe5` | Alt bilgi, ikincil şerit | Geniş bölüm zemini |
-| `--surface` | `#ffffff` | Kart, panel, modal | Sayfa zemini |
-| `--surface-2` | `#f1f0ea` | Seçili satır, ikincil buton hover | Dekoratif blok |
-| `--ink` | `#16181a` | Başlık, gövde (sumi siyahı) | Accent zemin üstü |
-| `--ink-soft` | `#4a4f52` | Lede, ikincil metin, nav | Büyük başlık |
-| `--ink-faint` | `#7b8084` | Dekoratif etiket, ayırıcı | Etkileşimli metin |
-| `--accent` | `#bf3320` | Mühür karesi, birincil buton, aktif işaret | Geniş zemin, gövde |
-| `--accent-ink` | `#fdf7f2` | Accent üstü metin | Accent olmayan zemin |
-| `--line` | `rgba(22,24,26,.14)` | Tek yatay çizgi, kart kenarı, alt çizgiler | Metin |
+1. **Boşluk baskın:** bölüm dikey 160px (mobil 88px); içerik 12 kolonun 8'inde, sağdaki 4 kolon boş.
+2. **Tek çizgi:** 1px `--line` bölüm başlığını içerikten ayırır; ekranda ikinci yatay çizgi yok.
+3. **Mühür oranı:** accent yalnız birincil buton, aktif işaret ve mühür karesi; ekranın ≤ %2'si.
+4. **Gölge ve radius yok:** kart/modal/hero yalnız 1px çizgiyle; radius 0px, en fazla 2px.
+5. **İki punto ucu:** 11px mono etiket + 64px display; ara basamak uydurulmaz.
+6. **Form dili:** input kutulu değil — yalnız alt çizgi + 4px offset odak halkası.
 
-- Ölçülen kontrast: `ink / bg` = **16.32:1** · `ink-soft / bg` = **7.60:1** · `accent-ink / accent` = **5.33:1** · `ink-faint / bg` = **3.66:1** (yalnız dekoratif).
-- Tek vurgu kuralı: siyah + washi + mühür kırmızısı. Accent alanı **≤ %2** — bu stil için "%10" bile fazladır.
-- Yasak kombinasyon: accent zemin + `--ink` metin; `--ink-faint` + `--bg-2` (3.4:1); ikinci renk (mavi/yeşil) hiçbir amaçla.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f6f5f1` | page background | as a card background |
+| `--bg-2` | `#ecebe5` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f1f0ea` | passive chip, hover background | primary button |
+| `--ink` | `#16181a` | title, body, icon | large background |
+| `--ink-soft` | `#4a4f52` | secondary text, description | — |
+| `--ink-faint` | `#7b8084` | decorative label, separator text | interactive text |
+| `--accent` | `#bf3320` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fdf7f2` | text above accent | non-accent background |
+| `--line` | `rgba(22,24,26,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Jost | 64px (mobil 40px) | 400 | 1.02 | -0.03em |
-| H2 | Jost | 26px | 400 | 1.2 | -0.02em |
-| H3 | Jost | 17px | 400 | 1.35 | -0.01em |
-| Gövde | Inter | 16px | 400 | 1.78 | 0 |
-| Lede | Inter | 16px | 400 | 1.78 | 0 (38ch) |
-| Etiket / mono | IBM Plex Mono | 11px | 400 | 1.4 | 0.22em |
+- Measured contrast: `ink/bg` **16.32:1** · `ink-soft/bg` **7.6:1** · `ink-faint/bg` **3.66:1 (decorative)** · `accent-ink/accent` **5.33:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.6 (16 → 26 → 64); kullanılan basamak sayısı **5** (11/16/17/26/64) — ara basamak yok.
-- Ölçü önerisi: `h1 { font-size: clamp(40px, 5.6vw, 64px) }`.
-- Gövde metni maksimum satır uzunluğu: **56ch**; lede 38ch — ölçü dar tutulur, boşluğa bırakılır.
-- Ağırlık kuralı: yalnız 400 ve 500 (vurgu). 600/700/900 yok; display asla kalınlaşmaz, hiyerarşi puntodan gelir.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Jost) | 40px (mobile 40px) | 400 | 1.04 | -0.02em |
+| H2 | same | 26px | 600 | 1.16 | -0.015em |
+| H3 | same | 17px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.68 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (içerik 8, boş şerit 4) |
-| Gutter | 32px |
-| Container genişliği | 1120px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 / 768 / 390 — 768 altında boş şerit kapanır, ritim 88px'e iner |
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: her ekran **asimetrik başlar** (8/4 bölünme); dashboard gibi veri ekranlarında bile sağ kenarda en az 32px boş şerit korunur.
-- Bölüm ritmi: art arda en fazla **2** blok aynı hizada; üçüncü blok 160px boşlukla ayrılır.
-- Bölüm dikey boşluk 160px (mobil 88px); kart padding 28px; kart arası 32px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | Sayfa, alt bilgi |
-| Kart | `--surface` + 1px `--line` | `none` | Panel, KPI, bileşen kartı |
-| Yüzen katman | `--surface` + 1px `--line` | `none` | Modal, dropdown (gölge yerine perde `--bg` %92) |
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)` — dikey kenar yok, yatay çizgi tek başına yeterlidir; kartta tam çerçeve serbest (1px).
-- Derinlik nereden gelir: **hiçbir yerden**. Katman ayrımı çizgi + ton farkı + boşluk. Gölge stilin sözlüğünde yok.
-- Radius: `--radius` 0px (buton, input, chip, mühür) · `--radius-lg` 2px (kart, modal, hero). 2px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 46px | 14px 22px | 0px | 11px/400 mono, uppercase, .18em | `--accent` / `--accent-ink`, gölge yok | hover %92 karışım 320ms · active opacity .88 · focus 1px accent + 4px offset · disabled opacity .4 · loading 3 çizgi |
-| Buton (ikincil) | 46px | 14px 22px | 0px | 11px/400 mono | şeffaf / `--ink`, 1px `--line` | hover kenar `--ink` · focus aynı halka |
-| Input | 48px | 12px 0 | 0px | 16px/400 Inter | şeffaf, yalnız alt 1px `--line` | focus 1px accent + 4px offset + accent alt çizgi · filled `--ink` · error `--danger` alt çizgi + açıklama · disabled opacity .4 |
-| Kart | — | 28px | 2px | H3 Jost 17px | `--surface` + 1px `--line`, gölge yok | hover: yalnız kenar `--ink-faint` |
-| Chip / badge | 22px | 0 | 0px | 10.5px/400 mono, uppercase, .2em | şeffaf, alt 1px `--line` | accent varyantı yalnız etiket (alan ≤ %2) |
-| Nav | 72px | 0 56px | 0 | 11px/400 mono, uppercase, .16em | `--bg` zemin + alt 1px `--line` | aktif: accent 1px alt çizgi + `--ink`; pasif `--ink-soft` |
-| Tablo satırı | 56px | 16px 0 | 0 | 14px/400 Inter | alt 1px `--line` | hover `--surface-2` · seçili: sol 32px boşluk + accent 1px nokta |
-| Modal / sheet | — | 40px | 2px | H2 Jost 26px | `--surface` + 1px çizgi, gölge yok | perde `--bg` %92, geçiş 320ms fade |
-| Toast | 44px | 14px 0 | 0px | 13px/400 Inter | şeffaf zemin, üst 1px accent | 4000ms, kutu yok — yalnız çizgi + metin |
-| Grafik paleti | — | — | — | eksen 11px mono | `--accent`, `--ink`, `--ink-faint` | en fazla 3 seri; yalnız yatay 1px %6 ızgara |
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-- Odak halkası: `outline: 1px solid var(--accent); outline-offset: 4px` — 1px + geniş offset stilin "çizgi" diline uyar; accent zeminli butonda `outline-color: var(--accent-ink)`, offset -4px.
-- Dokunma hedefi: en az 46×46px (nav öğeleri 72px yüksekliğin tamamını kullanır).
-- Chip 22px görünür ama satır içi sarmalayıcı 44px dikey padding alır; chip tek başına dokunma hedefi olamaz.
+## Bans
 
-## Görsel dil
+- Gölge, blur, gradient, cam yüzey (`--shadow: none`, `--blur: 0`).
+- İkinci accent rengi veya dekoratif renk lekesi.
+- 2px üstü radius, dolgu ikon, illüstrasyon.
+- 700+ ağırlık ve 18/22/30 gibi ara punto basamakları.
+- Ortalanmış blok düzen; metin ekseni her zaman solda.
+- Süs olarak eklenen çizgi, çerçeve veya desen.
+- Neon accent.
+- Stack of round cards.
+- Otomatik carousel.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi, kare uç, 24px ızgara; 16px altına inilmez; dolu ikon yok |
-| Fotoğraf | Tek nesne, sade fon, yumuşak yansıma; görsel alanı ekranın en fazla %40'ı, çerçevesiz |
-| İllüstrasyon | Yok — boşluk ve çizgi onun yerini alır |
-| Doku | `--grain: .015` washi; gözle seçilmez, yalnız büyük düz alanlarda hissedilir |
-| Logo alanı | Uppercase metin logo, .16em tracking, çevresinde 32px güvenli boşluk; işaret yok |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 5.66:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 8/4 bölünme, 64px başlık, mühür karesi, tek çizgi | `shots/01-page.png` |
 | Dashboard | düşük | KPI kartları gölgesiz 1px; metrik sayısı ≤ 4; sağda 32px boş şerit | `shots/01-page.png` |
@@ -154,47 +178,33 @@ Klişeye düşmemek için korunması gereken detay: **çizgi disiplini ve mühü
 | Hata | düşük | `--danger` alt çizgi + 12px açıklama; ikon yok | `shots/01-page.png` |
 | Profil / ayar | orta | Bölüm başlıkları tek çizgiyle; alanlar 48px | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.32:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.6:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.66:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.33:1 | ≥ 4.5 | button text |
+| focus ring/ground | 5.66:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 98.6 | ≥ 60 target | thin text |
 
-1. **Boşluk baskın:** bölüm dikey 160px (mobil 88px); içerik 12 kolonun 8'inde, sağdaki 4 kolon boş.
-2. **Tek çizgi:** 1px `--line` bölüm başlığını içerikten ayırır; ekranda ikinci yatay çizgi yok.
-3. **Mühür oranı:** accent yalnız birincil buton, aktif işaret ve mühür karesi; ekranın ≤ %2'si.
-4. **Gölge ve radius yok:** kart/modal/hero yalnız 1px çizgiyle; radius 0px, en fazla 2px.
-5. **İki punto ucu:** 11px mono etiket + 64px display; ara basamak uydurulmaz.
-6. **Form dili:** input kutulu değil — yalnız alt çizgi + 4px offset odak halkası.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Yasaklar
+## Sample images
 
-- Gölge, blur, gradient, cam yüzey (`--shadow: none`, `--blur: 0`).
-- İkinci accent rengi veya dekoratif renk lekesi.
-- 2px üstü radius, dolgu ikon, illüstrasyon.
-- 700+ ağırlık ve 18/22/30 gibi ara punto basamakları.
-- Ortalanmış blok düzen; metin ekseni her zaman solda.
-- Süs olarak eklenen çizgi, çerçeve veya desen.
+Identical content is rendered with the same text in every style; only the design differs.
 
-## Erişilebilirlik
-
-- Ölçülen riskler: en düşük çift `--ink-faint / --bg` = **3.66:1** (açık tema). `--ink-faint` yalnız dekoratif; etkileşimli metin, form etiketi veya nav bağlantısı olamaz.
-- Odak halkası 1px + 4px offset: çok ince olduğu için yalnız `--bg` ve `--surface` üstünde kullanılır; accent zeminli butonda `outline-color: var(--accent-ink)` + offset -4px ile içeri alınır (aksi halde halka görünmez).
-- Hareket/parlama hassasiyeti: düşük — parlaklık değişimi yok, geçişler uzun ama küçük mesafeli (12–14px).
-- Şeffaf yüzey yok (`--blur: 0`), `@supports` fallback gerekmez; modal perdesi düz renk olduğu için okunabilirlik garanti.
-- Mühür karesi dekoratif: `aria-hidden="true"`, `alt=""`; bilgi taşımaz. Buton olarak kullanılırsa ≥46px'e büyütülür ve `aria-label` alır.
-- Alt çizgi input'larda `border-bottom` 1px `--line`; odak halkası olmadan alan "kutusuz" görünür — focus stilini kaldırmak erişilebilirlik ihlalidir.
-
-## Örnek görseller
-
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Sayfa "boş kalmış" hissi veriyor | boşluk ölçüsüz: 160px yerine 64px, kolon bölünmesi yok | 8/4 kolon bölünmesi + 160/88px ritmi geri getir |
 | Bej minimalizme benziyor | sıcak zemin + serif display eklenmiş | Zemini `#f6f5f1` nötre sabitle, display'i Jost 400'de tut |
 | Kırmızı her yerde | accent buton + rozet + grafik + link | Accent'i mühür + birincil buton + aktif işaretle sınırla (≤ %2) |
@@ -202,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Odak halkası görünmüyor | 1px halka accent zeminde | `outline-color: var(--accent-ink)`, offset -4px |
 | Başlık ağır görünüyor | 600/700 ağırlığa çıkılmış | Display 400; hiyerarşiyi puntoyla kur |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `minimalism` — nötr skala ve hairline ortak; garnitür olarak yalnız tablo/form katmanında kullanılır.
-- **Uyumlu:** `editorial-design` — uzun makale gövdesini editorial üstlenir, bu stil başlık/boşluk iskeletini verir.
-- **Uyumlu:** `nordic-folk` — aynı sıcak-nötr aile; folk yalnız tek üst bantta, bu stilin boşluğunu kapatmadan.
-- **Yasak:** `maximalism` — çok öğe ma'nın tek kuralını (az öğe) yok eder.
-- **Yasak:** `memphis` — zikzak/konfeti ve canlı renkler mühür disiplinini kırar.
-- **Yasak:** `claymorphism` — şişkin gölge ve yuvarlak form `--shadow: none` + radius 0 kuralıyla çelişir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `minimalism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `nordic-folk` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `maximalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `memphis` | Two different ornamental languages compete on the same screen |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Ma_(negative_space) | boşluğun yapısal görevi ve aralık ölçüsü |
-| https://en.wikipedia.org/wiki/Japanese_typography | dikey ritim, harf aralığı, etiket geleneği |
-| https://www.metmuseum.org/ | mühür (hanko) ve tek nokta kırmızısı kullanımı |
-| https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html | 46–48px dokunma hedefi ölçüsü |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Ma_(negative_space | en.wikipedia.org — ) — boşluğun yapısal görevi ve aralık ölçüsü |
+| https://en.wikipedia.org/wiki/Japanese_typography | Japanese typography — Wikipedia — dikey ritim, harf aralığı, etiket geleneği |
+| https://www.metmuseum.org/ | The Met — mühür (hanko) ve tek nokta kırmızısı kullanımı |
+| https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html | WCAG 2.2 · Target Size (Minimum) — 46–48px dokunma hedefi ölçüsü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Japanese Ma (styles/67-japanese-ma/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="japanese-ma"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: display Jost 400 (H1 64px / -0.03em, mobil 40px), gövde Inter 400 16/1.78 (<= 56ch),
@@ -240,15 +250,15 @@ Hareket: enter 1050ms cubic-bezier(.25,.1,.25,1) 12px stagger 140ms; scroll top 
 Yasak: golge, blur, gradient, ikinci accent, 2px ustu radius, dolgu ikon, illüstrasyon,
   ortalama duzen, 600+ agirlik, sus amacli cizgi.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (8/4 boşluk + tek çizgi + mühür).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1 (16.32:1), accent üstü ≥ 4.5:1 (5.33:1).
-- [ ] Odak halkası görünür (1px + 4px offset), dokunma hedefi ≥ 46px.
-- [ ] 390px genişlikte taşma yok; boş şerit mobilde kapanıyor.
-- [ ] `prefers-reduced-motion` açıkken hareket ve pin duruyor.
+Style: Japanese Ma (japanese-ma) · family: Cultural & Regional (66–75)
+Token: --bg #f6f5f1 · --surface #ffffff · --ink #16181a · --accent #bf3320 · --line rgba(22,24,26,.14)
+Radius: 0px / 2px · Typography: Jost / Inter / IBM Plex Mono
+Required: **Boşluk baskın:** bölüm dikey 160px (mobil 88px); içerik 12 kolonun 8'inde, sağdaki 4 kolon boş. · **Tek çizgi:** 1px `--line` bölüm başlığını içerikten ayırır; ekranda ikinci yatay çizgi yok. · **Mühür oranı:** accent yalnız birincil buton, aktif işaret ve mühür karesi; ekranın ≤ %2'si.
+Banned: Gölge, blur, gradient, cam yüzey (`--shadow: none`, `--blur: 0`). · İkinci accent rengi veya dekoratif renk lekesi. · 2px üstü radius, dolgu ikon, illüstrasyon.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -259,13 +269,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #16181a; --ink-soft: #4a4f52; --ink-faint: #7b8084;
   --accent: #bf3320; --accent-ink: #fdf7f2;
   --line: rgba(22,24,26,.14);
+  --danger: #d72b1e;
+  --danger-ink: #ffffff;
+  --ok: #008239;
+  --ok-ink: #ffffff;
+  --warn: #b65400;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
   --shadow: none; --shadow-hard: none;
-  --font-display: "Jost", "Inter", system-ui, sans-serif;
+  --font-display: "Jost", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: -0.03em; --blur: 0px; --grain: 0.015;
+  --tracking: -0.03em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `token-block.css` içinde `[data-theme="dark"][data-style="japanese-ma"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

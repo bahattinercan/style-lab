@@ -1,141 +1,168 @@
 # 97 · Optical Illusion
 
-> **Bir cümlede:** Kenarları keskinleştirip desen frekansını yükselterek gözü yanıltan, ama hiçbir desenini hareket ettirmeyen statik optik stil.
+> **In one sentence:** Kenarları keskinleştirip desen frekansını yükselterek gözü yanıltan, ama hiçbir desenini hareket ettirmeyen statik optik stil.
 
 | | |
 |---|---|
-| **Hissiyat** | keskin, zihinsel, gergin, "bakınca kayıyor" |
-| **En iyi** | sanat/kültür etkinliği vitrini, ajans portfolyosu, sergi kataloğu, editoryal özel sayı |
-| **Kaçın** | uzun okuma, sağlık/kamu formu, epilepsi/baş ağrısı hassasiyeti olan kullanıcılar için zorunlu ekranlar |
-| **Zorluk** | yüksek (illüzyonu güvenli tutmak) · **Erişilebilirlik** | yüksek risk (desen frekansı ve titreme — bu stilde **desen asla animasyonlanmaz**) |
-| **Aile** | Hareket & Optik (96–105) · **Token** | `kit/tokens.css` → `[data-style="optical-illusion"]` |
-| **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | keskin, zihinsel, gergin, "bakınca kayıyor" |
+| **Best for** | sanat/kültür etkinliği vitrini, ajans portfolyosu, sergi kataloğu, editoryal özel sayı |
+| **Avoid** | uzun okuma, sağlık/kamu formu, epilepsi/baş ağrısı hassasiyeti olan kullanıcılar için zorunlu ekranlar |
+| **Difficulty** | yüksek (illüzyonu güvenli tutmak) · **Accessibility** |  |
+| **Family** | Motion & Optics (96–105) · **Token** | `kit/tokens.css` → `[data-style="optical-illusion"]` |
+| **Composition** | `sticky` · `pill` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Optical Illusion, algıyı **frekans ve açı** ile bozan stildir: iki çizgi ızgarasının 1–3° çakışmasıyla **moiré**, 4px **yarım ton** nokta ızgarası, 2px değişimli **kenar bandı** ve ekran başına tek **şekil-zemin** paneli. Kurucu kararları üç tanedir. Birincisi **keskinlik**: radius 0, gölge yok, blur yok — illüzyon ancak keskin kenarda çalışır. İkincisi **statik desen**: desen hareket etmez; hareket yalnız geçişlerde (0.34s giriş, 90ms hover) bulunur. Üçüncüsü **tek illüzyon odağı**: ekranda bir desen başroldedir, diğerleri %6–8 opaklıkla geri çekilir.
 
 Kazandığı şey: **bakışı tutma** — bir moiré paneli, aynı alandaki 6 karttan daha uzun süre bakılır. Feda ettiği şey: **konfor**; bu yüzden stilin en sert kuralı desenin animasyonsuz kalmasıdır (WCAG "three flashes" eşiği).
 
-### Ne değildir
+### What is not
 - **Anti-Design (14) değildir:** 14 bilinçli kırık hiza ve karışık tipografiyle kaos kurar; burada her şey ızgarada, kaos yalnız **desen katmanında** ve kontrollü.
 - **Kinetic Marquee (96) değildir:** 96 hareketle (marquee, skew) çalışır; 97 **hareketsiz** çalışır — deseni hareket ettirmek stilin ihlalidir.
 - **Constructivism (36) değildir:** 36 kalın çerçeve + kırmızı-siyah bloklarla **propaganda** kompozisyonu kurar; burada çerçeve 1–2px ve ana araç **frekans/optik kayma**.
 - **Swiss Design (02) değildir:** 02 ızgarayı görünmez kılar; burada ızgara **görünür ve yanıltıcıdır** (moiré + yarım ton).
 - **"Retro tarama efekti" değildir:** CRT tarama çizgisi statik bir doku değil taklit; burada desen ölçülü (1px/6px, 4px nokta) ve işlevseldir.
 
-### Nereden gelir
+### Where it comes from
 Op-art (Vasarely, Riley) 1960'larda izleyicinin gözünü desenin içinde "kaydırarak" sanat yaptı; baskıda moiré uzun süre bir **hata** sayıldı, sonra bilinçli estetik oldu. Dijitalde CSS `repeating-linear-gradient` + `rotate` ile iki ızgara çakıştırılarak yeniden üretilebiliyor. Klişeye dönüşmemesi için korunacak detay: **açı farkının 1–3° ile sınırlı kalması** ve desenin asla animasyonlanmaması.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. En az bir panelde iki çizgi ızgarası hafif açıyla çakışıyor (moiré).
 2. Köşeler tamamen keskin; hiçbir yüzeyde gölge yok.
 3. Yüksek kontrast siyah/beyaz + tek kırmızı-magenta vurgu.
 4. Bir köşede 4px nokta ızgarası ya da 2px değişimli kenar bandı var.
 5. Hiçbir desen hareket etmiyor — hareket yalnız hover ve geçişlerde.
 
-## Görsel imza
-1. **Moiré:** iki `repeating-linear-gradient` ızgara, ikincisi `rotate(2deg)`; en çok **1** panelde, `%72` opaklık.
-2. **Yarım ton:** `4px 4px` nokta ızgarası, kart köşesinde 32×32 blok, `%55` opaklık.
-3. **Kenar bandı:** 2px siyah / 2px boşluk değişimi; nav altı 8px yükseklik (statik).
-4. **Keskinlik:** `--radius: 0px`, `--radius-lg: 0px`, `--shadow: none`; hiçbir yüzeyde yuvarlaklık yok.
-5. **Şekil-zemin:** en çok 1 panel; iki daire + çizgi ızgarası, `%8` zemin dokusu.
-6. **Archivo Black display:** 44px, `-0.01em`; gövde Inter 15px/1.6, etiket Space Mono.
-7. **Hover dili:** 90ms'de zemin siyah → accent'e kırılır; görsel ölçek `1.045` (desen büyür, kaymaz).
+## Visual signature
+- **Moiré:** iki `repeating-linear-gradient` ızgara, ikincisi `rotate(2deg)`; en çok **1** panelde, `%72` opaklık.
+- **Yarım ton:** `4px 4px` nokta ızgarası, kart köşesinde 32×32 blok, `%55` opaklık.
+- **Kenar bandı:** 2px siyah / 2px boşluk değişimi; nav altı 8px yükseklik (statik).
+- **Keskinlik:** `--radius: 0px`, `--radius-lg: 0px`, `--shadow: none`; hiçbir yüzeyde yuvarlaklık yok.
+- **Şekil-zemin:** en çok 1 panel; iki daire + çizgi ızgarası, `%8` zemin dokusu.
+- **Archivo Black display:** 44px, `-0.01em`; gövde Inter 15px/1.6, etiket Space Mono.
+- **Hover dili:** 90ms'de zemin siyah → accent'e kırılır; görsel ölçek `1.045` (desen büyür, kaymaz).
+- **Typography:** Archivo Black (display) + Inter (body) + Space Mono (mono label).
+- **Colour discipline:** a single accent `#b8123f`; neutral scale `#fbfbfb` → `#0a0a0a`.
+- **Radius:** `0px` / `0px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#fbfbfb` | sayfa zemini | desen zemini |
-| `--surface` | `#ffffff` | kart, panel, modal | sayfa zemini |
-| `--surface-2` | `#f4f4f4` | çip, zebra, ikincil buton | birincil eylem |
-| `--ink` | `#0a0a0a` | başlık, gövde, **desen rengi** | devre dışı |
-| `--ink-soft` | `#464646` | etiket, açıklama | başlık |
-| `--ink-faint` | `#8a8a8a` | dekoratif: dipnot, ikinci desen katmanı | etkileşimli metin |
-| `--accent` | `#b8123f` | hover kırılması, odak halkası, tek vurgu | desen rengi, geniş dolgu |
-| `--accent-ink` | `#ffffff` | accent üstü metin | gövde metni |
-| `--line` | `rgba(10,10,10,.12)` | ikincil ayırıcı, tablo çizgisi | desen (desen `--ink` kullanır) |
-| `--danger` / `--ok` / `--warn` | `#a00d1f` / `#259953` / `#b27c00` | hata / onay / uyarı | desen, dekorasyon |
+1. Desenler statiktir: moiré, yarım ton ve kenar bandı hiç animasyonlanmaz
+2. Moiré yalnız iki çizgi ızgarasının 1–3° çakışmasıyla; en çok 1 panelde
+3. Yarım ton nokta ızgarası 4px; kenar bandı 2px değişimli
+4. Radius her yerde 0px; gölge hiçbir yüzeyde yok
+5. Ekran başına en fazla 1 şekil-zemin (figure-ground) paneli
+6. Tipografi keskin: Archivo Black display, Inter gövde, Space Mono etiket
 
-- Ölçülen kontrast (açık): `ink / bg` = **19.13:1** · `ink-soft / bg` = **9.12:1** · `accent-ink / accent` = **6.57:1** · `ink-faint / bg` = **3.34:1** (yalnız dekoratif).
-- Tek vurgu kuralı: kırmızı-magenta yalnız kırılma/odak anlamında; desen daima `--ink`.
-- Yasak kombinasyon: deseni accent ile çizmek (optik kayma kaybolur); ikinci doygun renk eklemek.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#fbfbfb` | page background | as a card background |
+| `--bg-2` | `#f1f1f1` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f4f4f4` | passive chip, hover background | primary button |
+| `--ink` | `#0a0a0a` | title, body, icon | large background |
+| `--ink-soft` | `#464646` | secondary text, description | — |
+| `--ink-faint` | `#8a8a8a` | decorative label, separator text | interactive text |
+| `--accent` | `#b8123f` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `rgba(10,10,10,.12)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Archivo Black (`--font-display`) | 44px (mobil 28px) | 400 (tek ağırlık) | 1.06 | `--tracking` -0.01em |
-| H2 | Archivo Black | 26px | 400 | 1.2 | -0.01em |
-| H3 | Archivo Black | 19px | 400 | 1.28 | -0.01em |
-| Gövde | Inter (`--font-body`) | 15px | 400 | 1.6 | 0 |
-| Küçük / açıklama | Inter | 13px | 400 | 1.5 | 0 |
-| Etiket / mono | Space Mono (`--font-mono`) | 11px | 400 | 1.35 | 0.2em (büyük harf) |
+- Measured contrast: `ink/bg` **19.13:1** · `ink-soft/bg` **9.12:1** · `ink-faint/bg` **3.34:1 (decorative)** · `accent-ink/accent` **6.57:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı **1.5** (11 → 15 → 26 → 44); kullanılan basamak sayısı 5: 11/13/15/26/44.
-- Ölçü: `h1 { font-size: clamp(28px, 4vw, 44px) }`.
-- Gövde metni maksimum satır uzunluğu: **54 ch** (desen üstünde okuma payı).
-- Ağırlık kuralı: display tek ağırlık (400 = Archivo Black'in kendisi); gövde 400/500. İtalik yasak.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Archivo Black) | 44px (mobile 28px) | 500 | 1.06 | -0.02em |
+| H2 | same | 26px | 600 | 1.18 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Space Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (1240px üstü), 8 (768–1239), 4 (390–767) |
-| Gutter | 16px |
-| Container genişliği | 1200px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1240px: illüzyon paneli 8 / metin 4; 768px: 6/6; 390px: tek kolon, moiré paneli tam genişlik |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** asimetrik bölüm (8/4) — o bölüm illüzyon panelidir.
-- Bölüm ritmi: 64px (mobil 40px); art arda en fazla **1** desen bloğu (göz yorulmasın).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, statik desen zemini |
-| Kart | `--surface` | yok | panel, tablo, liste |
-| Yüzen katman | `--surface` + 2px `--ink` çerçeve | `none` | modal, açılır menü |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--ink)` (kart/input), `2px` (nav alt, ikincil buton, modal).
-- Derinlik nereden gelir: **hiçbir yerden**; illüzyon düzlemde çalışır, gölge onu bozar.
-- Radius: 0px — istisna yok.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 0 20px | 0 | 13px Archivo Black, .06em, büyük harf | ink zemin / bg metin | hover 90ms'de accent zemin · active 1px aşağı · focus 2px halka · disabled %40 kesikli · loading 4 kare nokta 480ms steps(4) |
-| Buton (ikincil) | 44px | 0 20px | 0 | 13px Inter | şeffaf + 2px ink | hover ters çevirme (ink zemin) |
-| Input | 42px | 0 12px | 0 | 14px Inter | surface + 1px ink | focus 2px accent halka offset 0 · error 2px sol danger · disabled %40 |
-| Kart | — | 20px | 0 | başlık 26px Archivo Black | surface + 1px ink + köşede yarım ton | normal · illüzyon kartı (moiré) · seçili (2px accent) |
-| Chip | 22px | 0 8px | 0 | 11px Space Mono, .08em | surface-2 + 1px ink | seçili: accent zemin |
-| Nav | 60px (+8px bant) | 0 20px | 0 | 13px Inter | bg + 2px ink alt çizgi | aktif: accent 2px alt çizgi |
-| Tablo satırı | 38px | 0 10px | 0 | 14px Inter / mono sayı | alt 1px `--line`, %4 zebra | hover `--surface-2` · seçili sol 2px accent |
-| Modal | — | 24px | 0 | başlık 26px Archivo Black | surface + 2px ink çerçeve | açılış 340ms · Esc kapatır · çevresinde 8px bant |
-| Toast | 40px | 0 12px | 0 | 13px Inter | surface + sol 8px bant | animasyon yok, görünür/görünmez · 5000ms |
-| Grafik paleti | — | — | — | eksen 11px mono | ink → accent → ink-soft | en çok 3 seri · 2px çizgi + 4px kare işaret |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `0px` (buton, input, chip), `0px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; input'ta `offset: 0` (keskin kenara yapışık).
-- Dokunma hedefi: 44px buton; 38px satır mobilde 44px; 22px çipler 44×44px sarmalayıcı ile büyütülür.
+## Bans
 
-## Görsel dil
+- Animasyonlu veya hafif titreyen desen; saniyede 3'ten fazla ton değişimi.
+- Gradient, gölge, blur, yuvarlak köşe.
+- Üçten fazla kontrast desenini aynı ekranda birleştirmek.
+- Deseni accent rengiyle çizmek.
+- Tam kanamalı fotoğraf; CRT tarama çizgisi taklidi.
+- Desenü metnin arkasına koymak.
+- Uydurma sanatçı/sergi adı; eksik içerik `{{work}}` gibi işaretli yer tutucu olur.
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 16px, 1.5px çizgi; desenle yarışmaması için sade, köşe yarıçapı 0 |
-| Fotoğraf | yok; zorunluysa yarım ton (4px nokta) + 1px çerçeve |
-| İllüstrasyon | CSS illüzyon: moiré, yarım ton, şekil-zemin; hazır görsel yok |
-| Doku | 2px kenar bandı + 4px nokta ızgarası; grain 0 (grain deseni kirletir) |
-| Logo alanı | Archivo Black 15px + 12×12 moiré karesi; 16px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.57:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 8/4: moiré paneli + 44px display | `shots/01-page.png` |
 | Dashboard | orta | 2 kart (biri yarım ton köşeli) + 3 serili grafik | `shots/01-page.png` |
@@ -150,46 +177,33 @@ Op-art (Vasarely, Riley) 1960'larda izleyicinin gözünü desenin içinde "kayd�
 | Hata | düşük | desen durur/kaldırılır, mesaj `--danger` çerçeve | `shots/01-page.png` |
 | Profil / ayar | orta | "desen yoğunluğu: azalt" anahtarı | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-- **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — şekil–zemin testi — dönüşümlü terslenen satırlar, moiré perde.
+## Accessibility
 
-## Zorunlu kurallar
-- Desenler statiktir; hiçbir desen animasyonlanmaz (flicker yasak).
-- Moiré yalnız 1–3° açı farkı ile ve ekran başına en fazla 1 panelde.
-- Yarım ton 4px nokta; kenar bandı 2px/2px değişimli.
-- Radius her yerde 0px; gölge hiçbir yüzeyde yok.
-- Ekran başına en fazla 1 şekil-zemin paneli ve toplam 2 desen katmanı.
-- Desen asla metnin arkasına girmez; metin daima temiz zeminde.
-- Renk, radius, gölge yalnız `--…` token'larından gelir.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 19.13:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 9.12:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.34:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.57:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.57:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 103.4 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Animasyonlu veya hafif titreyen desen; saniyede 3'ten fazla ton değişimi.
-- Gradient, gölge, blur, yuvarlak köşe.
-- Üçten fazla kontrast desenini aynı ekranda birleştirmek.
-- Deseni accent rengiyle çizmek.
-- Tam kanamalı fotoğraf; CRT tarama çizgisi taklidi.
-- Desenü metnin arkasına koymak.
-- Uydurma sanatçı/sergi adı; eksik içerik `{{work}}` gibi işaretli yer tutucu olur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen riskler: en düşük çift `--ink-faint / bg` = **3.34:1** (dekoratif dipnot); etkileşimli metin `--ink` 19.13:1, `--ink-soft` 9.12:1.
-- Titreme: WCAG 2.2 "Three Flashes" gereği desen animasyonu yok; desen yoğunluğu ayarı (`azalt`) her ekranda erişilebilir.
-- Desen bilgi taşımaz; durum daima metin/ikon ile yazılır.
-- Şeffaf yüzey yok (`--blur: 0px`), `@supports` fallback gerekmez.
-- Odak görünürlüğü: desensiz zeminde 2px kırmızı halka 6.57:1; illüzyon panelinin içinde odak alan öğe bulunmaz (yalnız okunur).
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Baş ağrısı / okunamıyor | desen metnin arkasında veya animasyonlu | deseni metinden ayır, animasyonu kaldır |
 | "Retro efekt" gibi duruyor | desen çok yoğun (2px altı aralık) | 4–6px aralık ve %55–72 opaklıkta kal |
 | Ekran kirli görünüyor | 3'ten fazla desen katmanı | 2 katmana indir, birini %8'e düşür |
@@ -197,28 +211,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Yumuşak görünüyor | radius veya gölge eklenmiş | 0px ve gölgesize dön |
 | Vurgu kayboluyor | desen accent ile çizilmiş | desen `--ink`, vurgu yalnız kırılma/odak |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `swiss-design` — ızgara disiplini ortak; desen katmanı 97'den, tipografi 02'den alınır.
-- **Uyumlu:** `anti-design` — deneysel vitrin; ancak 97'de kaos yalnız desen katmanında.
-- **Uyumlu:** `constructivism` — yüksek kontrast ve keskin kenar; aynı ekranda desen sayısı 2'yi geçmez.
-- **Yasak:** `glassmorphism` — blur/şeffaflık moiré frekansını yok eder.
-- **Yasak:** `claymorphism` — yuvarlak ve yumuşak yüzey illüzyonun tek koşulu olan keskinliği bozar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `swiss-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `anti-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `constructivism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `liquid-glass` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Moir%C3%A9_pattern | ızgara açısı ve desen frekansı ilişkisi |
-| https://en.wikipedia.org/wiki/Figure%E2%80%93ground_organization | şekil-zemin panelinin algı kuralı |
-| https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html | titreyen desen yasağının ölçütü |
-| https://fonts.google.com/specimen/Archivo+Black | tek ağırlıklı display ve keskin harf formu |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Moir%C3%A9_pattern | Wikipedia · Moiré pattern — ızgara açısı ve desen frekansı ilişkisi |
+| https://en.wikipedia.org/wiki/Figure%E2%80%93ground_organization | Wikipedia · Figure–ground organization — şekil-zemin panelinin algı kuralı |
+| https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html | WCAG 2.2 · Three Flashes or Below Threshold — titreyen desen yasağının ölçütü |
+| https://fonts.google.com/specimen/Archivo+Black | Google Fonts · Archivo Black — tek ağırlıklı display ve keskin harf formu |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Optical Illusion (styles/97-optical-illusion/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="optical-illusion"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Archivo Black) başlıkta, --font-body (Inter) gövdede,
@@ -230,15 +245,15 @@ Imza: enter 0.34s cubic-bezier(.9,0,.1,1) 18px / stagger 0.06; scroll top 82% 0.
       hover 90ms scale 1.045; pin yok.
 Yasak: animasyonlu desen, gradient/golge/blur/radius, deseni accent ile cizmek, 3'ten fazla desen katmani.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda imza öğelerinden en az 2'si görünüyor (moiré, yarım ton, kenar bandı, şekil-zemin).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1.
-- [ ] Hiçbir desen animasyonlanmıyor; metin temiz zeminde.
-- [ ] 390px genişlikte taşma yok; desen katmanı ≤ 2.
-- [ ] `prefers-reduced-motion` açıkken geçişler duruyor.
+Style: Optical Illusion (optical-illusion) · family: Motion & Optics (96–105)
+Token: --bg #fbfbfb · --surface #ffffff · --ink #0a0a0a · --accent #b8123f · --line rgba(10,10,10,.12)
+Radius: 0px / 0px · Typography: Archivo Black / Inter / Space Mono
+Required: Desenler statiktir: moiré, yarım ton ve kenar bandı hiç animasyonlanmaz · Moiré yalnız iki çizgi ızgarasının 1–3° çakışmasıyla; en çok 1 panelde · Yarım ton nokta ızgarası 4px; kenar bandı 2px değişimli
+Banned: Animasyonlu veya hafif titreyen desen; saniyede 3'ten fazla ton değişimi. · Gradient, gölge, blur, yuvarlak köşe. · Üçten fazla kontrast desenini aynı ekranda birleştirmek.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -249,14 +264,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #0a0a0a; --ink-soft: #464646; --ink-faint: #8a8a8a;
   --accent: #b8123f; --accent-ink: #ffffff;
   --line: rgba(10,10,10,.12);
+  --danger: #d92d20;
+  --danger-ink: #ffffff;
+  --ok: #00863d;
+  --ok-ink: #ffffff;
+  --warn: #bb5800;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 0px;
   --shadow: none; --shadow-hard: none;
   --font-display: "Archivo Black", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
   --tracking: 0em; --blur: 0px; --grain: 0;
-  --danger: #a00d1f; --danger-ink: #ffffff; --ok: #259953; --warn: #b27c00;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="optical-illusion"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

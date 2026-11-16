@@ -1,7 +1,6 @@
 /**
- * 156 · Retro Console — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 156 · Retro Console — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'grid',
   bodyClass: 'upper',

@@ -1,221 +1,221 @@
 # 246 · Orbital Logistics
 
-> **Bir cümlede:** Yörünge lojistiği: gece mavisi, yörünge çizgileri, manifest tablosu ve mono pencere saati.
+> **In one sentence:** Orbital logistics: night blue, orbit lines, manifest table and mono launch-window time.
 
 | | |
 |---|---|
-| **Hissiyat** | operasyonel uzay, "fırlatma penceresi" |
-| **En iyi** | uzay lojistiği, uydu operasyonu, manifest planı |
-| **Kaçın** | market vitrini |
-| **Zorluk** | zor · **Erişilebilirlik** | orta |
-| **Aile** | Gelecek & Spekülatif (242–251) · **Token** | `kit/tokens.css` → `[data-style="orbital-logistics"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | operational space, "launch window" |
+| **Best for** | space logistics, satellite operations, manifest planning |
+| **Avoid** | market vitrini |
+| **Difficulty** | hard · **Accessibility** | medium |
+| **Family** | Future & Speculative (242–251) · **Token** | `kit/tokens.css` → `[data-style="orbital-logistics"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Orbital Logistics, fırlatma penceresini planlar: ne, ne zaman, hangi yörüngeye.
+### What it is
+Orbital Logistics plans the launch window: what, when, to which orbit.
 
-### Ne değildir
-- Neon sci-fi klişesi değildir; accent sinyal, zemin sakin.
-- Koyu zemin zorunlu değildir; kontrast ve çizgi dili belirleyici.
+### What is not
+- Neon is not a sci-fi cliché; accent signal, ground calm.
+- Dark background is not mandatory; Contrast and line language are decisive.
 
-### Nereden gelir
-Uzay programı arayüzleri, laboratuvar cihaz panelleri ve sistem şemalarının görsel dili.
+### Where it comes from
+The visual language of space program interfaces, laboratory instrument panels, and system diagrams.
 
-### 3 saniyede tanıma testi
-1. Accent sinyal olarak mı kullanılmış?
-2. Teknik etiketler mono mu?
-3. Gölge yerine çizgi mi?
+### Recognition test in 3 seconds
+1. Was Accent used as a signal?
+2. Are the technical labels mono?
+3. Line instead of shadow?
 
-## Görsel imza
-- **Yörünge çizgileri:** eş merkezli elipsler, %12.
-- **Manifest tablosu:** yük, kütle, pencere mono.
-- **Mavi accent:** yalnız aktif pencere.
+## Visual signature
+- **Orbit lines:** concentric ellipses at 12%.
+- **Manifest table:** payload, mass, window in mono.
+- **Blue accent:** the active window only.
 - **Pencere saati:** mono, UTC.
-- **Tipografi:** Chakra Petch (display) + Rajdhani (gövde) + Share Tech Mono (mono etiket).
-- **Renk disiplini:** tek accent `#5fa8ff`; nötr skala `#080b14` → `#e9eefb`.
-- **Yarıçap:** `2px` / `4px`; Köşe 2–8px; spekülatif dilde geometri keskin, yuvarlatma ölçülü.
+- **Typography:** Chakra Petch (display) + Rajdhani (body) + Share Tech Mono (mono label).
+- **Colour discipline:** a single accent `#5fa8ff`; neutral scale `#080b14` → `#e9eefb`.
+- **Radius:** `2px` / `4px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Her yükte kütle ve hedef yörünge.
+1. Mass and target orbit for every payload.
 2. Saatler UTC ve mono.
-3. Durum metinle.
+3. State stated in text.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#080b14` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#0c101b` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#101623` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#182030` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#e9eefb` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#a5b0c9` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#7b869e` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#5fa8ff` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#04101f` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(233,238,251,.14)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#080b14` | page background | as a card background |
+| `--bg-2` | `#0c101b` | partition divider floor, table top | button background |
+| `--surface` | `#101623` | kart, input, modal | full-page background |
+| `--surface-2` | `#182030` | passive chip, hover background | primary button |
+| `--ink` | `#e9eefb` | title, body, icon | large background |
+| `--ink-soft` | `#a5b0c9` | secondary text, description | — |
+| `--ink-faint` | `#7b869e` | decorative label, separator text | interactive text |
+| `--accent` | `#5fa8ff` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#04101f` | text above accent | non-accent background |
+| `--line` | `rgba(233,238,251,.14)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **16.93:1** · `ink-soft/bg` **9.04:1** · `ink-faint/bg` **5.38:1 (dekoratif)** · `accent-ink/accent` **7.76:1**.
-- Accent bir sinyal rengi; geniş zemin yerine çizgi, etiket ve grafikte kullanılır.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **16.93:1** · `ink-soft/bg` **9.04:1** · `ink-faint/bg` **5.38:1 (decorative)** · `accent-ink/accent` **7.76:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Chakra Petch) | 54px (mobil 32px) | 500 | 1.06 | -0.02em |
-| H2 | aynı | 28px | 600 | 1.18 | -0.015em |
-| H3 | aynı | 19px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Rajdhani) | 15px | 400 | 1.62 | 0 |
-| Küçük gövde | aynı | 14px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (Share Tech Mono) | 10.5px | 400 | 1.2 | 0.14em |
-| Buton | `--font-body` | 12px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Chakra Petch) | 54px (mobile 32px) | 500 | 1.06 | -0.02em |
+| H2 | same | 28px | 600 | 1.18 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Rajdhani) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Share Tech Mono) | 10.5px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-- Display 54px; teknik etiketler mono ve geniş tracking. Gövde 15px, ölçü 62ch.
-- Ölçü: 66ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar uppercase: `text-transform: uppercase` + pozitif tracking; gövde metni asla.
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headers uppercase: `text-transform: uppercase` + positive tracking; never body text.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Izgara yardımcı çizgi olarak hafifçe görünür (accent %8); bölüm aralığı 56px.
-- Bölüm dikey boşluğu masaüstü 72px, mobil 44px; kart içi padding 20px.
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Yüzeyler ince accent kenarla ayrılır; gölge yerine 1px sinyal çizgisi.
-- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Köşe 2–8px; spekülatif dilde geometri keskin, yuvarlatma ölçülü.
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Yasaklar
+## Bans
 
-- Fotoğrafik uzay arka planı.
-- Animasyonlu yörünge.
-- Okunamayan 9px.
+- A photographic space backdrop.
+- An animated orbit.
+- An unreadable 9px.
 - Animasyonlu tarama.
-- Üçten fazla sinyal rengi.
-- Okunamayan 8px etiket.
+- More than three signal colors.
+- Unreadable 8px label.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 2px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 2px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 2px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 2px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 7.99:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.99:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1px çizgi, 20px; ölçüm işareti gibi |
-| Fotoğraf | Teknik görsel: render, diyagram, makro doku |
-| İllüstrasyon | Diyagram/şema; süs illüstrasyon yok |
-| Doku | Tarama çizgisi %3 |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-rings` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Sistem / landing | orta | Tek cümle + ölçüm şeridi | `shots/01-page.png` |
-| Şema | yüksek | Diyagram + mono etiket | `shots/01-page.png` |
-| Veri | yüksek | Grafik + birim + zaman | `shots/01-page.png` |
-| Kontrol | orta | 3 anahtar + eşik | `shots/01-page.png` |
-| Kayıt / erişim | düşük | Tek sütun form | `shots/01-page.png` |
-| Rapor | orta | Özet + tablo | `shots/01-page.png` |
-| Yol haritası | orta | Zaman çizelgesi | `shots/01-page.png` |
-| İletişim | düşük | Form + adres | `shots/01-page.png` |
+| System / landing | medium | Single sentence + measuring tape | `shots/01-page.png` |
+| scheme | high | Diagram + mono label | `shots/01-page.png` |
+| Data | high | Chart + unit + time | `shots/01-page.png` |
+| control | medium | 3 keys + threshold | `shots/01-page.png` |
+| Registration / access | low | single column form | `shots/01-page.png` |
+| Report | medium | Summary + table | `shots/01-page.png` |
+| road map | medium | timeline | `shots/01-page.png` |
+| Contact | low | Form + address | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 16.93:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 9.04:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 5.38:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 7.76:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 7.99:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 96.5 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 16.93:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 9.04:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.38:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.76:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.99:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 96.5 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Bilim kurgu klişesi | Her yerde neon | Accent'i %10 alana indir |
-| Şema okunmuyor | Etiket üst üste | Etiketi çizgi dışına taşı |
-| Kontrast düşük | Accent metin | Metni --ink, accent'i çizgi yap |
+| science fiction cliché | neon everywhere | Reduce Accent to 10% space |
+| Schema not read | label on top of each other | Move label out of line |
+| Contrast is low | Accent text | Make text --ink, accent line |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `fleet-dispatch` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `planetary-service` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `boutique-hotel` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `kids-classroom` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `fleet-dispatch` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `planetary-service` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `boutique-hotel` | Two different ornamental languages compete on the same screen |
+| Mixing | `kids-classroom` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://en.wikipedia.org/wiki/Orbital_mechanics | Orbital mechanics (Wikipedia) — yörünge/pencere kavramı |
-| https://fonts.google.com/specimen/Chakra+Petch | Chakra Petch (Google Fonts) — teknik başlık |
+| https://en.wikipedia.org/wiki/Orbital_mechanics | Orbital mechanics (Wikipedia) — orbit/window notion |
+| https://fonts.google.com/specimen/Chakra+Petch | Chakra Petch (Google Fonts) — technical heading |
 | https://fonts.google.com/specimen/Share+Tech+Mono | Share Tech Mono (Google Fonts) — manifest/saat |
 
 ## AI brief
 
 ```text
-Yörünge lojistiği manifesti tasarla: gece mavisi, yörünge çizgileri, mono UTC pencere, manifest tablosu.
+Design an orbital logistics manifest: night blue, orbit lines, mono UTC window, manifest table.
 
-Stil: Orbital Logistics (orbital-logistics) · aile: Gelecek & Spekülatif (242–251)
+Style: Orbital Logistics (orbital-logistics) · family: Future & Speculative (242–251)
 Token: --bg #080b14 · --surface #101623 · --ink #e9eefb · --accent #5fa8ff · --line rgba(233,238,251,.14)
-Yarıçap: 2px / 4px · Tipografi: Chakra Petch / Rajdhani / Share Tech Mono
-Zorunlu: Her yükte kütle ve hedef yörünge. · Saatler UTC ve mono. · Durum metinle.
-Yasak: Fotoğrafik uzay arka planı. · Animasyonlu yörünge. · Okunamayan 9px.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 2px / 4px · Typography: Chakra Petch / Rajdhani / Share Tech Mono
+Required: Mass and target orbit for every payload. · Saatler UTC ve mono. · State stated in text.
+Banned: A photographic space backdrop. · An animated orbit. · An unreadable 9px.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

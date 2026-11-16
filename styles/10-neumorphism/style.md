@@ -1,41 +1,52 @@
 # 10 · Neumorphism
 
-> **Bir cümlede:** Aynı renkli yumuşak yüzey üzerinde çift gölgeyle kabartma; kontrol "çizilmiş" değil "basılmış" görünür.
+> **In one sentence:** Aynı renkli yumuşak yüzey üzerinde çift gölgeyle kabartma; kontrol "çizilmiş" değil "basılmış" görünür.
 
 | | |
 |---|---|
-| **Hissiyat** | yumuşak plastik, dokunulabilir, sessiz teknoloji |
-| **En iyi** | tek amaçlı kontrol seti (akıllı ev, ses, saat), meditasyon/odak uygulaması, donanım eşlikçisi |
-| **Kaçın** | yoğun form/tablo, erişilebilirlik kritik ürünler, açık havada okunacak ekran |
-| **Zorluk** | yüksek (kontrast) · **Erişilebilirlik** | **yüksek risk** |
-| **Aile** | Yüzey (08–12) · **Token** | `kit/tokens.css` → `[data-style="neumorphism"]` |
-| **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | yumuşak plastik, dokunulabilir, sessiz teknoloji |
+| **Best for** | tek amaçlı kontrol seti (akıllı ev, ses, saat), meditasyon/odak uygulaması, donanım eşlikçisi |
+| **Avoid** | yoğun form/tablo, erişilebilirlik kritik ürünler, açık havada okunacak ekran |
+| **Difficulty** | yüksek (kontrast) · **Accessibility** |  |
+| **Family** | Surface (8–12) · **Token** | `kit/tokens.css` → `[data-style="neumorphism"]` |
+| **Composition** | `centered` · `pill` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Neumorphism, zemin ve yüzeyin **aynı renk** olmasına dayanır; ayrım yalnızca **iki zıt gölgeyle** kurulur: sol üstten açık (`#f8fbff`), sağ alttan koyu (`#cfd4dd`). Kontroller dışa (kabarık) ya da içe (gömülü) gölgelenir. Sonuç: fiziksel bir panel hissi.
 
 Kazandığı şey: dokunsal, sakin bir "cihaz" hissi. Feda ettiği şey: erişilebilirlik — düşük kontrast ve belirsiz tıklama alanları bu stilin doğal riski.
 
-### Ne değildir
+### What is not
 - **Skeuomorphism değildir.** Skeuomorphism malzeme dokusu (ahşap, cam, metal) ekler; neumorphism tek renk + gölgeyle çalışır.
 - **Claymorphism değildir.** Clay pastel renkli, şişkin ve oyuncak; neumorphism tek renkli ve sessiz.
 - **Glassmorphism değildir.** Camda arka plan görünür ve bulanıklaşır; burada arka plan yok, sadece ışık.
 - **"Yumuşak kart" değildir.** Aynı renk + iki zıt gölge + iç/dış durum ayrımı olmadan sadece bulanık gölge olur.
 
-### Nereden gelir
+### Where it comes from
 2019–2020'de dribbble estetiği olarak yükseldi; Apple'ın watchOS/akıllı ev panelleri ve tek işlevli kontrol setleri için hâlâ kullanışlı. Zayıf kontrastı nedeniyle geniş ürün arayüzlerinde terk edildi — bu yüzden **sınırlı yüzeyde** kullanılmalı.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin ve kart **aynı renk** mi?
 2. İki zıt gölge var mı (sol üst açık, sağ alt koyu)?
 3. Basılı öğeler **içe gömülü** gölge mi kullanıyor?
 4. Kenarlık yok / şeffaf mı?
 5. Ekranda 3'ten fazla gölge yoğunluğu var mı (hepsi aynı yönde)?
 
-## Zorunlu kurallar
+## Visual signature
+- **Kabartma formülü:** `6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff`.
+- **Gömülü formül:** `inset 6px 6px 12px #cfd4dd, inset -6px -6px 12px #f8fbff`.
+- **Radius 16/24px:** yumuşak ama daire değil.
+- **Yön disiplini:** tüm gölgeler sol üst ışık / sağ alt gölge.
+- **Buton basılması:** basınca dış gölge → iç gölge (gerçek "basılma").
+- **Sessiz palet:** tek gri-mavi skala + tek accent (`#4262e8`).
+- **Typography:** Nunito Sans (display) + Nunito Sans (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#4262e8`; neutral scale `#e4e8ef` → `#333a45`.
+- **Radius:** `16px` / `24px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Mandatory rules
 
 1. **Tek renk yüzey:** zemin ve kart aynı tonda (`#e4e8ef`); ayrım yalnızca gölgeyle.
 2. **İki zıt gölge:** `6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff` (kabarık); basılı durumda `inset` aynı değerler.
@@ -44,7 +55,66 @@ Kazandığı şey: dokunsal, sakin bir "cihaz" hissi. Feda ettiği şey: erişil
 5. **Sınırlı yüzey:** ekran başına en fazla 6 neumorfik kontrol; gerisi düz metin/boşluk.
 6. **Odak halkası zorunlu:** gölge tek başına durum bildirmez → 2px `--accent` halka + `outline-offset: 3px`.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#e4e8ef` | page background | as a card background |
+| `--bg-2` | `#dde2ea` | partition divider floor, table top | button background |
+| `--surface` | `#e4e8ef` | kart, input, modal | full-page background |
+| `--surface-2` | `#e9edf3` | passive chip, hover background | primary button |
+| `--ink` | `#333a45` | title, body, icon | large background |
+| `--ink-soft` | `#5d6674` | secondary text, description | — |
+| `--ink-faint` | `#7e8593` | decorative label, separator text | interactive text |
+| `--accent` | `#4262e8` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `transparent` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **9.33:1** · `ink-soft/bg` **4.72:1** · `ink-faint/bg` **3.02:1 (decorative)** · `accent-ink/accent` **5.07:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Nunito Sans) | 44px (mobile 28px) | 400 | 1.08 | -0.02em |
+| H2 | same | 26px | 600 | 1.2 | -0.015em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Nunito Sans) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `16px` (buton, input, chip), `24px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Bans
 
 - Aynı ekranda 3+ farklı gölge açısı/mesafesi.
 - İnce gölge (2px) — kabartma okunmaz; en az 6px ofset.
@@ -52,106 +122,44 @@ Kazandığı şey: dokunsal, sakin bir "cihaz" hissi. Feda ettiği şey: erişil
 - Kenarlık + gölge birlikte (çelişen iki dil).
 - Yoğun tablo/form: 6'dan fazla kontrol yan yana.
 - Accent üstü beyaz metin yerine accent zemin geniş kullanımı (buton dışında).
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-## Görsel imza
-- **Kabartma formülü:** `6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff`.
-- **Gömülü formül:** `inset 6px 6px 12px #cfd4dd, inset -6px -6px 12px #f8fbff`.
-- **Radius 16/24px:** yumuşak ama daire değil.
-- **Yön disiplini:** tüm gölgeler sol üst ışık / sağ alt gölge.
-- **Buton basılması:** basınca dış gölge → iç gölge (gerçek "basılma").
-- **Sessiz palet:** tek gri-mavi skala + tek accent (`#4262e8`).
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 16px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 16px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 16px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 16px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 16px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 16px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 16px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#e4e8ef` | zemin | ayrı kart rengi |
-| `--bg-2` | `#dde2ea` | basılı zemin (gömülü alan) | buton |
-| `--surface` | `#e4e8ef` | kart (aynı renk!) | — |
-| `--surface-2` | `#e9edf3` | hafif açık alan | vurgu |
-| `--ink` | `#333a45` | tüm metin | — |
-| `--ink-soft` | `#5d6674` | açıklama (4.72:1) | 12px altı |
-| `--ink-faint` | `#7e8593` | dekoratif (2.52:1) | **gövde metni yasak** |
-| `--accent` | `#4262e8` | aktif durum, tek buton, odak | geniş zemin |
-| `--accent-ink` | `#ffffff` | accent üstü metin (5.07:1) | — |
-| `--line` | `transparent` | — | kenarlık çizmek |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 4.12:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **9.33:1** · `ink-soft/bg` **4.72:1** · `ink-faint/bg` **2.52:1** · `accent-ink/accent` **5.07:1**.
-- Gölge renkleri zeminin türevleri olmalı (`#cfd4dd` koyu, `#f8fbff` açık); gri/siyah gölge kabartmayı öldürür.
-- Yasak: ikinci accent, gradient, doku.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Nunito Sans | 44px (mobil 28px) | 700 | 1.12 | `0` |
-| H2 | Nunito Sans | 26px | 700 | 1.2 | `0` |
-| H3 | Nunito Sans | 18px | 700 | 1.3 | `0` |
-| Gövde | Nunito Sans | 16px | 400 | 1.6 | `0` |
-| Etiket | JetBrains Mono | 10px | 500 | 1.2 | `0.14em`, uppercase |
-| Buton | Nunito Sans | 14px | 700 | 1 | `0.01em` |
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Yuvarlak hatlı sans (Nunito Sans) radius ile uyum sağlar; grotesk (Inter) kabartmayla çelişir.
-- Display 700 — bu stilde kalın ağırlık gölgeye karşı durabilir.
-- 12px altı metin kullanma (kontrast + yumuşak zemin).
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (içerik 8) |
-| Gutter | 24px |
-| Container | 1120px |
-| Boşluk ölçeği | 8 · 16 · 24 · 32 · 48 · 64 |
-| Breakpoint | 640 / 900 / 1120 px |
-| Bölüm dikey | 64px (mobil 44px) |
-
-- Kontroller arası boşluk ≥ 20px: iki gölge birbirine karışırsa kabartma okunmaz.
-- Bir bölümde en fazla 6 neumorfik öğe; 7. öğe düz metin olur.
-- Kart içi padding 24px (gölge payı için 20px'ten az olmaz).
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` | yok | sayfa |
-| Kabarık | `--surface` | `--shadow` | kart, buton |
-| Gömülü | `--bg-2` | `--shadow-hard` (inset) | input, basılı buton, seçili sekme |
-
-- Derinlik tamamen gölgeden; kenarlık, doku, gradient yok.
-- Radius: `--radius` 16px (buton/input), `--radius-lg` 24px (kart/modal).
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 48px | 0 22px | 16px | 14/700 | `--accent` + `--accent-ink` (düz renk, gölge yok) | hover: %94 parlaklık · **active: inset gölge** · focus: 2px `--accent` halka, offset 3px · disabled: %38 |
-| Buton (kabartma) | 48px | 0 22px | 16px | 14/700 | `--surface` + `--shadow` | active: `--shadow-hard` (gömülür) |
-| Input | 48px | 0 16px | 16px | 15/400 | `--surface` + `--shadow-hard` (gömülü) | focus: 2px `--accent` halka · error: `--danger` metin + ikon (kenarlık yok) |
-| Kart | içerik | 24px | 24px | H3 + 15 | `--surface` + `--shadow` | hover (tıklanabilir): gölge mesafesi 8px'e çıkar |
-| Chip / sekme | 34px | 0 14px | 16px | 12/700 | `--surface` + `--shadow` | aktif: `--shadow-hard` + metin `--ink` |
-| Nav | 72px | 0 32px | — | 14/700 | `--bg` + alt gölge `0 1px 0 #cfd4dd` | aktif: 4px alt iç gölge |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 | gölge yok, satır arası 8px boşluk | hover: satır `--shadow` |
-| Modal | içerik | 28px | 24px | H2 + 15 | `--surface` + daha büyük `--shadow` | backdrop: `rgba(51,58,69,.28)` |
-| Toast | 48px | 0 18px | 16px | 13/600 | `--surface` + `--shadow` | 4sn |
-| Grafik | — | — | 8px uç | eksen 10 mono | `--accent` + gömülü ray (`--shadow-hard`) | 2 seri |
-
-- Odak halkası **zorunlu ve accent renkli**; gölge tek başına "odaklandı" demez.
-- Dokunma hedefi 48px (bu stilde 44 değil: gölge kenarı algıyı küçültür).
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, 20px, `--ink-soft`; gömülü daire içinde serbest |
-| Fotoğraf | Yumuşak ışık, stüdyo; kenarlar 24px radius |
-| İllüstrasyon | Yumuşak 3B/plastik tonlu; keskin çizgi yasak |
-| Doku | Yok (`--grain: 0`) |
-| Logo | Koyu gri, yuvarlak hatlı wordmark |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | Büyük başlık + tek kabartma kontrol kümesi (3–4 öğe); gerisi boşluk | `shots/01-page.png` |
 | Dashboard | düşük | En fazla 6 kabartma kart; KPI metni `--ink`, grafik gömülü ray | `shots/01-page.png` |
@@ -166,27 +174,33 @@ Kazandığı şey: dokunsal, sakin bir "cihaz" hissi. Feda ettiği şey: erişil
 | Hata | düşük | `--danger` ikon + metin (kenarlık yok) | `shots/01-page.png` |
 | Profil / ayar | orta | Ayar satırı 56px, gömülü toggle | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- **En yüksek riskli stil.** Gövde 9.33:1 güvenli; `ink-soft` 4.72:1 sınırda; `ink-faint` **kullanılamaz**.
-- Tıklanabilirlik: gölge "dokunulabilir" hissi verse de etkileşim sınırı belirsiz → **görünür odak halkası ve hover'da metin rengi değişimi** zorunlu.
-- Dokunma hedefi 48px, gölge payı hedefe dahil değil.
-- Form hataları yalnızca renkle değil **ikon + metinle** bildirilir.
-- Düşük görme/parlak ortam: bu stil tek başına kullanılmaz; kritik ekranlarda `data-style` düşür (`plain`).
-- `prefers-contrast: more` → kenarlık ekle (`1px var(--ink)`), neumorphism'i bırak.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 9.33:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 4.72:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.02:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.07:1 | ≥ 4.5 | button text |
+| focus ring/ground | 4.12:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 82.6 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Bulanık gri" görünüyor | Gölge zıtlığı yok | Açık highlight'ı `#f8fbff` yap, ofset 6px |
 | Buton tıklanmıyor gibi | Basılma durumu yok | active'te inset gölge + metin rengi |
 | Okunmuyor | `--ink-faint` gövde metninde | `--ink` kullan; gövde ≥ 4.5:1 |
@@ -194,22 +208,27 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Form kullanılamaz | Kenarlık yok + belirsiz hedef | Gömülü input + odak halkası + 48px |
 | Erişilebilirlik şikayeti | Renk tek başına durum | İkon + metin + halka |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `11 claymorphism` (yumuşak yüzey dili, garnitür), `01 minimalism` (düz zemin + tek neumorfik kontrol).
-- **Yasak:** `08 glassmorphism` / `09 liquid-glass` (ışık fiziği çelişir), `13 neo-brutalism` (kontur + sert gölge).
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `claymorphism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `minimalism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `liquid-glass` | Two different ornamental languages compete on the same screen |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://dribbble.com/tags/neumorphism | Gölge formülü varyantları (eleştirel bak) |
-| https://www.nngroup.com/articles/neumorphism-critique/ | Neden sınırlı kullanılmalı |
-| https://developer.apple.com/design/human-interface-guidelines/accessibility | Kontrast ve hedef boyutu |
+| Source | for what |
+| --- | --- |
+| https://dribbble.com/tags/neumorphism | Dribbble · Neumorphism — Gölge formülü varyantları (eleştirel bak) |
+| https://www.nngroup.com/articles/neumorphism-critique/ | NN/g · Neumorphism critique — Neden sınırlı kullanılmalı |
+| https://developer.apple.com/design/human-interface-guidelines/accessibility | Apple HIG · Accessibility — Kontrast ve hedef boyutu |
 
 ## AI brief
 
-```
+```text
 Stil: Neumorphism (styles/10-neumorphism/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="neumorphism"]; hard-coded renk/gölge YASAK.
 Yüzey: zemin ve kart AYNI renk (#e4e8ef); ayrım sadece çift gölge: 6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff.
@@ -220,15 +239,15 @@ Odak halkası ZORUNLU: 2px var(--accent), offset 3px. Dokunma hedefi 48px.
 Sınır: ekran başına ≤ 6 neumorfik kontrol; tabloda neumorphism kullanma.
 Yasak: kenarlık, gradient, doku, farklı gölge açıları, 2px altı ofset, düşük kontrastlı metin.
 Çıktı: kod + tek paragraf not (gölge yönü ve erişilebilirlik önlemleri).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Zemin ve kart aynı renk; ayrım yalnızca çift gölge.
-- [ ] Tüm gölgeler aynı yönde ve aynı mesafede.
-- [ ] Basılı durumda inset gölge var.
-- [ ] Ekran başına ≤ 6 neumorfik kontrol.
-- [ ] Odak halkası görünür, hedef 48px, hata ikon+metin.
-- [ ] `--ink-faint` gövde metninde kullanılmadı.
+Style: Neumorphism (neumorphism) · family: Surface (8–12)
+Token: --bg #e4e8ef · --surface #e4e8ef · --ink #333a45 · --accent #4262e8 · --line transparent
+Radius: 16px / 24px · Typography: Nunito Sans / Nunito Sans / JetBrains Mono
+Required: **Tek renk yüzey:** zemin ve kart aynı tonda (`#e4e8ef`); ayrım yalnızca gölgeyle. · **İki zıt gölge:** `6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff` (kabarık); basılı durumda `inset` aynı değerler. · **Kenarlık yok:** `--line: transparent`; input/buton kenarı gölgeyle tanımlanır.
+Banned: Aynı ekranda 3+ farklı gölge açısı/mesafesi. · İnce gölge (2px) — kabartma okunmaz; en az 6px ofset. · Düşük kontrastlı metin (`--ink-soft` altı) gövde metninde.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -239,11 +258,24 @@ Yasak: kenarlık, gradient, doku, farklı gölge açıları, 2px altı ofset, d�
   --ink: #333a45; --ink-soft: #5d6674; --ink-faint: #7e8593;
   --accent: #4262e8; --accent-ink: #ffffff;
   --line: transparent;
+  --danger: #cd1d12;
+  --danger-ink: #ffffff;
+  --ok: #007931;
+  --ok-ink: #ffffff;
+  --warn: #ad4b00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 16px; --radius-lg: 24px;
-  --shadow: 6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff;
-  --shadow-hard: inset 6px 6px 12px #cfd4dd, inset -6px -6px 12px #f8fbff;
-  --font-display: "Nunito Sans", "Inter", system-ui, sans-serif;
-  --font-body: "Nunito Sans", "Inter", system-ui, sans-serif;
+  --shadow: 6px 6px 12px #cfd4dd, -6px -6px 12px #f8fbff; --shadow-hard: none;
+  --font-display: "Nunito Sans", system-ui, sans-serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: 0em; --blur: 0px; --grain: 0;
 }

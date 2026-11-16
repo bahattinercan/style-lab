@@ -1,41 +1,52 @@
 # 12 · Aurora UI
 
-> **Bir cümlede:** Koyu zeminin üzerinde kuzey ışığı gibi akan renkli gradient katmanları; cam paneller gradient'i taşır.
+> **In one sentence:** Koyu zeminin üzerinde kuzey ışığı gibi akan renkli gradient katmanları; cam paneller gradient'i taşır.
 
 | | |
 |---|---|
-| **Hissiyat** | ışıklı, akışkan, modern, "yeni teknoloji" |
-| **En iyi** | AI/veri ürünü landing'i, kripto, SaaS hero, etkinlik/lansman sayfası |
-| **Kaçın** | uzun okuma, düşük kontrastlı ofis ekranı, güç tasarrufu hedefli ürün, baskı/print |
-| **Zorluk** | orta · **Erişilebilirlik** | orta risk (parlama, banding, yorgunluk) |
-| **Aile** | Yüzey (08–12) · **Token** | `kit/tokens.css` → `[data-style="aurora-ui"]` |
-| **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | ışıklı, akışkan, modern, "yeni teknoloji" |
+| **Best for** | AI/veri ürünü landing'i, kripto, SaaS hero, etkinlik/lansman sayfası |
+| **Avoid** | uzun okuma, düşük kontrastlı ofis ekranı, güç tasarrufu hedefli ürün, baskı/print |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Surface (8–12) · **Token** | `kit/tokens.css` → `[data-style="aurora-ui"]` |
+| **Composition** | `centered` · `pill` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Aurora UI, koyu zemin üzerine yerleştirilmiş **bulanık renk bulutları** (mor, cyan, pembe) ve bunların üzerinde duran **cam panellerden** oluşur. Gradient statik değildir: yavaşça kayar (20s+ döngü) veya scroll'da hafifçe hareket eder. Amaç "canlı, ışıklı, geleceğe ait" bir ilk izlenim.
 
 Kazandığı şey: modernlik ve ürün lansmanı enerjisi. Feda ettiği şey: uzun süreli okuma konforu ve performans.
 
-### Ne değildir
+### What is not
 - **Glassmorphism değildir.** Cam orada katman iddiasıdır; aurora'da asıl öğe **zemin gradient**idir, cam ikincildir.
 - **Synthwave değildir.** Synthwave ızgara + neon çizgi + 80'ler; aurora yumuşak ve nokta ışığı.
 - **Gradient arka plan değildir.** Tek lineer gradient yeterli değil: 2–3 radyal blob + grain + cam katman gerekir.
 - **"Mor gradient + beyaz yazı" değildir.** Kontrast yönetilmezse okunmaz; aurora bunu grain ve cam opaklığıyla çözer.
 
-### Nereden gelir
+### Where it comes from
 2021–2023'te AI ürünlerinin lansman dili olarak popülerleşti (aurora borealis metaforu). Bugün hâlâ landing/hero için güçlü, ama dashboard'da "2023 klişesi" riski taşır — bu yüzden **yoğunluk ekran başına düşürülmelidir**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Koyu zemin üzerinde 2–3 yumuşak renk bulutu var mı?
 2. Bulutların üstünde yarı saydam cam panel mi duruyor?
 3. Grain (`.06`) var mı — banding'i kırıyor mu?
 4. Accent tek (mor) ve metin tam opak beyaz mı?
 5. Gradient **yavaş** mı (yorgunluk yapmayan hız)?
 
-## Zorunlu kurallar
+## Visual signature
+- **Aurora katmanı:** `radial-gradient(40% 46% at 12% 8%, #12121c, transparent 62%)` + accent blob + cyan blob.
+- **Cam panel:** beyaz %6 + blur 20px + 1px beyaz %14.
+- **Mor gölge:** `0 20px 60px rgba(109,91,255,.25)` — paneller ışık saçar.
+- **Grain .06:** tüm zeminde; gradyanın "dijital" görünümünü yumuşatır.
+- **Tipografi:** Inter, `-0.02em`, 600 display; gradient metin yok, düz beyaz.
+- **Yavaş sürüklenme:** blob'lar 24–40s döngüde 8–12px kayar.
+- **Typography:** Inter (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#6d5bff`; neutral scale `#0a0a10` → `#f7f7fb`.
+- **Radius:** `16px` / `24px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Mandatory rules
 
 1. **Blob katmanı:** 2–3 radyal gradient, opaklık ≤ .30, `blur(40px)`; ekran başına ≤ 3.
 2. **Cam panel:** `--surface` (beyaz %6) + `backdrop-filter: blur(20px)` + 1px `--line`.
@@ -44,7 +55,66 @@ Kazandığı şey: modernlik ve ürün lansmanı enerjisi. Feda ettiği şey: uz
 5. **Yavaş hareket:** blob döngüsü ≥ 24s, `linear`; `prefers-reduced-motion` ile durur.
 6. **Accent tek:** `#6d5bff`; ikinci vurgu rengi yok (blob renkleri accent değil atmosfer).
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0a0a10` | page background | as a card background |
+| `--bg-2` | `#12121c` | partition divider floor, table top | button background |
+| `--surface` | `rgba(255,255,255,.06)` | kart, input, modal | full-page background |
+| `--surface-2` | `rgba(255,255,255,.04)` | passive chip, hover background | primary button |
+| `--ink` | `#f7f7fb` | title, body, icon | large background |
+| `--ink-soft` | `rgba(247,247,251,.72)` | secondary text, description | — |
+| `--ink-faint` | `rgba(247,247,251,.48)` | decorative label, separator text | interactive text |
+| `--accent` | `#6d5bff` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `rgba(255,255,255,.14)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **18.47:1** · `ink-soft/bg` **9.62:1** · `ink-faint/bg` **4.74:1 (decorative)** · `accent-ink/accent` **4.57:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Inter) | 56px (mobile 32px) | 400 | 1.08 | -0.02em |
+| H2 | same | 28px | 600 | 1.2 | -0.015em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `16px` (buton, input, chip), `24px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Bans
 
 - Doygun neon çizgi/ızgara (synthwave'e kayma).
 - Hızlı hareket eden gradient (baş dönmesi, performans).
@@ -52,106 +122,44 @@ Kazandığı şey: modernlik ve ürün lansmanı enerjisi. Feda ettiği şey: uz
 - 4+ blob veya 3+ parlak renk; her bölümde farklı palet.
 - Yoğun veri ekranında tam aurora (grafik okunmaz).
 - `will-change` ile sürekli compositing (pil tüketimi).
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-## Görsel imza
-- **Aurora katmanı:** `radial-gradient(40% 46% at 12% 8%, #12121c, transparent 62%)` + accent blob + cyan blob.
-- **Cam panel:** beyaz %6 + blur 20px + 1px beyaz %14.
-- **Mor gölge:** `0 20px 60px rgba(109,91,255,.25)` — paneller ışık saçar.
-- **Grain .06:** tüm zeminde; gradyanın "dijital" görünümünü yumuşatır.
-- **Tipografi:** Inter, `-0.02em`, 600 display; gradient metin yok, düz beyaz.
-- **Yavaş sürüklenme:** blob'lar 24–40s döngüde 8–12px kayar.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 16px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 16px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 16px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 16px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 16px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 16px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 16px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#0a0a10` | sayfa | panel |
-| `--bg-2` | `#12121c` | blob iç taban, ikincil zemin | metin |
-| `--surface` | `rgba(255,255,255,.06)` | cam panel | opak gerekli yerde |
-| `--surface-2` | `rgba(255,255,255,.04)` | ikincil cam | buton |
-| `--ink` | `#f7f7fb` | tüm metin (tam opak) | — |
-| `--ink-soft` | `rgba(247,247,251,.72)` | açıklama | 12px altı |
-| `--ink-faint` | `rgba(247,247,251,.48)` | dekoratif (4.74:1) | etkileşimli |
-| `--accent` | `#6d5bff` | CTA, aktif, grafik | geniş zemin |
-| `--accent-ink` | `#ffffff` | accent üstü metin (**4.57:1**) | — |
-| `--line` | `rgba(255,255,255,.14)` | cam kenarı | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 4.57:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **18.47:1** · `ink-soft/bg` **9.62:1** · `ink-faint/bg` **4.74:1** · `accent-ink/accent` **4.57:1**.
-- Accent üstü beyaz **4.57:1** → 14px/600 buton metni AA sınırında; 12px altına inme.
-- Blob renkleri: `#6d5bff` (mor), `#22d3ee` (cyan), `#f472b6` (pembe) — opaklık ≤ .30.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Inter | 56px (mobil 32px) | 600 | 1.06 | `-0.02em` |
-| H2 | Inter | 28px | 600 | 1.2 | `-0.02em` |
-| H3 | Inter | 18px | 600 | 1.3 | `-0.01em` |
-| Gövde | Inter | 16px | 400 | 1.65 | `0` |
-| Etiket | JetBrains Mono | 10px | 500 | 1.2 | `0.16em`, uppercase |
-| Buton | Inter | 14px | 600 | 1 | `0` |
+- Signature motif: `motif-blob` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Gradient metin yok; okunabilirlik için düz beyaz.
-- Cam üstü metin 12px altına inmez (blur kontrastı düşürür).
-- Display 700 kullanma; 600 yeterli ve gradient üstünde daha net.
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (hero 6/6) |
-| Gutter | 24px |
-| Container | 1200px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 |
-| Breakpoint | 640 / 900 / 1200 px |
-| Bölüm dikey | 80px (mobil 48px) |
-
-- Blob'lar bölüm sınırlarına değil ekranın tamamına yayılır (`background-attachment: fixed`).
-- Kartlar arası ≥ 16px; cam panel içi 24px.
-- Hero'da tek cam panel; ikinci panel ancak ayırıcı boşlukla.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Aurora zemini | `--bg` + blobs + grain | — | sayfa |
-| Cam panel | `--surface` + blur 20px | `--shadow` (mor) | kart, KPI |
-| Yüzen | `--surface` + blur 24px | `--shadow` | modal, nav |
-
-- Derinlik ışıktan: mor glow + cam katman. Koyu gölge yok.
-- Radius: `--radius` 16px, `--radius-lg` 24px.
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 0 22px | 16px | 14/600 | `--accent` + `--accent-ink` | hover: parlaklık + mor glow artar · focus: 2px beyaz %70 halka · disabled: %42 |
-| Buton (cam) | 44px | 0 18px | 16px | 14/600 | `--surface-2` + blur + 1px `--line` | hover: `--surface` |
-| Input | 44px | 0 14px | 16px | 14/400 | `--surface-2` + blur | focus: 2px `--accent` halka · error: `--danger` |
-| Kart | içerik | 24px | 24px | H3 + 15 | `--surface` + blur + `--shadow` | hover: translateY(-2px) |
-| Chip | 26px | 0 11px | 999px | 10/500 mono | `--surface-2` + `--line` | aktif: accent + beyaz |
-| Nav | 64px | 0 24px | — | 14/600 | cam + blur 20px | aktif: metin `--ink` + 2px alt accent |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 | satır altı beyaz %10 | hover: `--surface-2` |
-| Modal | içerik | 28px | 24px | H2 + 15 | cam + blur 24px + daha derin glow | backdrop: `rgba(5,5,12,.55)` |
-| Toast | 46px | 0 18px | 16px | 13/500 | cam + `--line` | 4sn |
-| Grafik | — | — | 4px uç | eksen 10 mono | `--accent` + cyan %70 | 2 seri |
-
-- Odak halkası beyaz %70 (mor accent cam üstünde zayıf kalır).
-- Dokunma hedefi 44px.
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, beyaz, 20px |
-| Fotoğraf | Koyu zemin + ışıklı kenar; ürün render'ı serbest |
-| İllüstrasyon | Blob/gradient; ayrıntılı çizgi yasak |
-| Doku | grain .06 (zorunlu, banding kırıcı) |
-| Logo | Beyaz monokrom, 20–24px |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 3 blob + cam hero panel, 56px başlık, tek accent CTA, altında logo şeridi | `shots/01-page.png` |
 | Dashboard | düşük | Blob'lar sadece arka planda ve **opaklık .12**; cam yalnız nav + tek panel | `shots/01-page.png` |
@@ -166,27 +174,33 @@ Kazandığı şey: modernlik ve ürün lansmanı enerjisi. Feda ettiği şey: uz
 | Hata | düşük | `--danger` kenar + açık metin | `shots/01-page.png` |
 | Profil / ayar | orta | Cam sidebar + cam içerik (tek katman) | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde 18.47:1, açıklama 9.62:1 → güvenli. `--ink-faint` 4.74:1 → küçük metinde sınırda, etkileşimli değil.
-- Accent üstü beyaz **4.57:1** → 14px/600 AA; buton metni küçültme.
-- **Parlama/photosensitivite:** blob hareketi yavaş (≥24s), parlaklık ≤ .30; `prefers-reduced-motion` durdurur.
-- Banding: grain .06 olmadan gradient şeritleri görünür (özellikle Windows'ta).
-- Cam üstü metin daima opak; yarı saydam metin efektif kontrastı 4.5 altına düşürür.
-- `prefers-reduced-transparency`: `--blur: 0`, `--surface: var(--bg-2)`.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 18.47:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 9.62:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.74:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 4.57:1 | ≥ 4.5 | button text |
+| focus ring/ground | 4.57:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 102.6 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Banding (şeritler) | Grain yok / 8-bit gradient | `--grain: .06` ekle |
 | Göz yorgunluğu | 4+ blob, yüksek parlaklık | Blob ≤ 3, opaklık ≤ .30 |
 | "2023 klişesi" | Aynı mor-pembe hero, değişmeyen düzen | Blob yerleşimini markaya özel kur; tipografi/düzenle ayrıştır |
@@ -194,22 +208,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Pil tüketimi | Sürekli animasyon + blur | Blob animasyonu 1, `will-change` sadece gerektiğinde |
 | Dashboard'da kaos | Tam aurora yoğun veride | Opaklık .12, cam yalnız nav |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `08 glassmorphism` (zemin + katman), `09 liquid-glass` (optik varyant), `05 bento-grid` (cam bento hero).
-- **Yasak:** `21 synthwave` (neon ızgara), `02 swiss-design` (rasyonel ızgara), `24 pixel-art` (ölçek).
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `glassmorphism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `liquid-glass` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `bento-grid` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `synthwave` | Two different ornamental languages compete on the same screen |
+| Mixing | `swiss-design` | Two different ornamental languages compete on the same screen |
+| Mixing | `pixel-art` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://stripe.com | Koyu zemin + ışıklı gradient dengesi |
-| https://linear.app | Gradient'in geri çekildiği örnek |
-| https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient | Blob katmanlarının kurulumu |
+| Source | for what |
+| --- | --- |
+| https://stripe.com | Stripe — Koyu zemin + ışıklı gradient dengesi |
+| https://linear.app | Linear — Gradient'in geri çekildiği örnek |
+| https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/radial-gradient | MDN radial-gradient — Blob katmanlarının kurulumu |
 
 ## AI brief
 
-```
+```text
 Stil: Aurora UI (styles/12-aurora-ui/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="aurora-ui"]; hard-coded renk/blur YASAK.
 Zemin: 2–3 radyal blob (mor #6d5bff, cyan #22d3ee, pembe #f472b6) opaklık ≤ .30 + blur(40px); grain .06 ZORUNLU.
@@ -220,15 +240,15 @@ Hareket: blob 24–40s linear döngü (transform), geçişler 260ms; prefers-red
 Yoğun ekran (dashboard/tablo/ödeme): blob opaklığı .12, cam yalnız nav → stil geri çekilir.
 Yasak: neon ızgara/çizgi, 4+ blob, hızlı gradient, gradient metin, opak bar üstü sahte cam.
 Çıktı: kod + tek paragraf not (blob sayısı, opaklık, grain ve kontrast önlemi).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Blob ≤ 3, opaklık ≤ .30, grain .06 var.
-- [ ] Cam panelde blur + 1px kenar + glow gölge.
-- [ ] Metin tam opak; kontrast ≥ 4.5:1.
-- [ ] Accent tek; buton metni 14px/600.
-- [ ] Blob animasyonu yavaş, `prefers-reduced-motion` durduruyor.
-- [ ] Yoğun ekranda opaklık düşürüldü.
+Style: Aurora UI (aurora-ui) · family: Surface (8–12)
+Token: --bg #0a0a10 · --surface rgba(255,255,255,.06) · --ink #f7f7fb · --accent #6d5bff · --line rgba(255,255,255,.14)
+Radius: 16px / 24px · Typography: Inter / Inter / JetBrains Mono
+Required: **Blob katmanı:** 2–3 radyal gradient, opaklık ≤ .30, `blur(40px)`; ekran başına ≤ 3. · **Cam panel:** `--surface` (beyaz %6) + `backdrop-filter: blur(20px)` + 1px `--line`. · **Grain .06:** banding'i kırar; 8-bit ekranlarda zorunlu.
+Banned: Doygun neon çizgi/ızgara (synthwave'e kayma). · Hızlı hareket eden gradient (baş dönmesi, performans). · Gradient üstünde gradient metin (`background-clip: text` ile 3 renk).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -239,11 +259,25 @@ Yasak: neon ızgara/çizgi, 4+ blob, hızlı gradient, gradient metin, opak bar 
   --ink: #f7f7fb; --ink-soft: rgba(247,247,251,.72); --ink-faint: rgba(247,247,251,.48);
   --accent: #6d5bff; --accent-ink: #ffffff;
   --line: rgba(255,255,255,.14);
+  --danger: #e23729;
+  --danger-ink: #000000;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 16px; --radius-lg: 24px;
   --shadow: 0 20px 60px rgba(109,91,255,.25); --shadow-hard: none;
-  --font-display: "Inter", "Satoshi", system-ui, sans-serif;
-  --font-body: "Inter", "Satoshi", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: -0.02em; --blur: 20px; --grain: .06;
+  --tracking: -0.02em; --blur: 0px; --grain: 0;
 }
 ```

@@ -1,223 +1,223 @@
 # 159 · Card TCG
 
-> **Bir cümlede:** Koleksiyon kartı dili: nadirlik çerçevesi, kırmızı mühür, dar sütun ve mono künye.
+> **In one sentence:** Trading card language: rarity frame, red seal, narrow column and mono imprint.
 
 | | |
 |---|---|
-| **Hissiyat** | koleksiyon, dokunma isteği, "kartı çevir" |
-| **En iyi** | kart oyunu, koleksiyon galerisi, sınırlı sürüm vitrini |
-| **Kaçın** | yoğun veri panelleri, uzun formlar |
-| **Zorluk** | orta · **Erişilebilirlik** | orta |
-| **Aile** | Oyun & Etkileşim (152–171) · **Token** | `kit/tokens.css` → `[data-style="game-card-tcg"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | collection, touch request, "flip card" |
+| **Best for** | card game, collectible gallery, limited edition showcase |
+| **Avoid** | dense data panels, long forms |
+| **Difficulty** | medium · **Accessibility** | medium |
+| **Family** | Games & Interaction (152–171) · **Token** | `kit/tokens.css` → `[data-style="game-card-tcg"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Card TCG, bir kartın iki saniyede okunmasını sağlar: ad, nadirlik, sayı ve kural aynı sütun ritmini izler.
+### What it is
+Card TCG allows a card to be read in two seconds: name, rarity, number and rule follow the same column rhythm.
 
-### Ne değildir
-- Neon her yere sürülmüş bir tema değildir; accent sadece durum ve eylem taşır.
-- Koyu zemin tek başına oyun stili yapmaz; sayısal ritim ve keskin köşe gerekir.
-- Pixel font zorunlu değil; yazılım HUD'ları da bu ailedendir.
+### What is not
+- Neon is not a ubiquitous theme; accent carries only case and action.
+- Dark background alone does not make a play style; Numerical rhythm and sharp corners are required.
+- Pixel font is not mandatory; software HUDs are also in this family.
 
-### Nereden gelir
-Arcade kokpitleri, konsol HUD'ları ve PC oyun menülerinin ekran tipografisi geleneği; 2010'lardan sonra canlı yayın ve espor arayüzleriyle sadeleşti.
+### Where it comes from
+The screen typography tradition of arcade cockpits, console HUDs, and PC game menus; After the 2010s, it became simpler with live broadcast and esports interfaces.
 
-### 3 saniyede tanıma testi
-1. Köşeler keskin mi (≤6px)?
-2. Rakamlar tabular ve mono mu?
-3. Accent sayısı tek mi, durum için mi kullanılmış?
+### Recognition test in 3 seconds
+1. Are the corners sharp (≤6px)?
+2. Numbers taboos and mono?
+3. Is the Accent number unique or used for the situation?
 
-## Görsel imza
-- **Nadirlik çerçevesi:** kart kenarı 1px accent %34; nadirlik arttıkça yalnız kenar opaklığı artar.
-- **Kırmızı mühür:** accent yalnız nadirlik ve ana eylem; geniş zemin yok.
-- **Dar sütun:** kart metni 32ch, künye mono 10.5px.
-- **Kâğıt dokusu:** %3 grain, yalnız büyük yüzeyde.
-- **Tipografi:** Cinzel (display) + Lora (gövde) + IBM Plex Mono (mono etiket).
-- **Renk disiplini:** tek accent `#e0463c`; nötr skala `#171313` → `#f4e9dc`.
-- **Yarıçap:** `4px` / `10px`; Köşe ya 0 ya da tek küçük değer (≤6px); yumuşak 12px+ yuvarlatma yasak.
+## Visual signature
+- **Rarity border:** card edge 1px accent 34%; As rarity increases, only edge opacity increases.
+- **Red seal:** accent solo rarity and main action; There is no wide ground.
+- **Narrow column:** card text 32ch, imprint mono 10.5px.
+- **Paper texture:** 3% grain, on large surface only.
+- **Typography:** Cinzel (display) + Lora (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#e0463c`; neutral scale `#171313` → `#f4e9dc`.
+- **Radius:** `4px` / `10px`; Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Kart metni 34ch'i geçmez; künye mono ve tabular.
-2. Nadirlik yalnız kenar opaklığıyla değil etiketle de yazılır.
-3. Accent geniş zemin olarak kullanılmaz.
+1. Card text does not exceed 34ch; imprint mono and taboos.
+2. Rarity is written not only by edge opacity but also by the label.
+3. Accent is not used as a wide ground.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#171313` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#1d1918` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#241f1d` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#2e2825` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#f4e9dc` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#c0ae9c` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#93847a` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#e0463c` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#1c0805` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(244,233,220,.16)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#171313` | page background | as a card background |
+| `--bg-2` | `#1d1918` | partition divider floor, table top | button background |
+| `--surface` | `#241f1d` | kart, input, modal | full-page background |
+| `--surface-2` | `#2e2825` | passive chip, hover background | primary button |
+| `--ink` | `#f4e9dc` | title, body, icon | large background |
+| `--ink-soft` | `#c0ae9c` | secondary text, description | — |
+| `--ink-faint` | `#93847a` | decorative label, separator text | interactive text |
+| `--accent` | `#e0463c` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#1c0805` | text above accent | non-accent background |
+| `--line` | `rgba(244,233,220,.16)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **15.4:1** · `ink-soft/bg` **8.58:1** · `ink-faint/bg` **5.11:1 (dekoratif)** · `accent-ink/accent` **4.7:1**.
-- HUD kontrastı: durum renkleri (canlı/hasar) accent'in tonlarından türetilir; dördüncü bir hue eklenmez.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **15.4:1** · `ink-soft/bg` **8.58:1** · `ink-faint/bg` **5.11:1 (decorative)** · `accent-ink/accent` **4.7:1**.
+- HUD contrast: status colors (live/damage) are derived from the accent's tones; A fourth hue is not added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Cinzel) | 42px (mobil 28px) | 700 | 1.1 | 0.01em |
-| H2 | aynı | 26px | 600 | 1.2 | 0.01em |
-| H3 | aynı | 19px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Lora) | 15px | 400 | 1.62 | 0 |
-| Küçük gövde | aynı | 13px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (IBM Plex Mono) | 10px | 400 | 1.2 | 0.2em |
-| Buton | `--font-body` | 11px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Cinzel) | 42px (mobile 28px) | 700 | 1.1 | 0.01em |
+| H2 | same | 26px | 600 | 1.2 | 0.01em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Lora) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 10px | 400 | 1.2 | 0.2em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-- Rakamlar tabular; skor/timer alanları mono ve sağa hizalı. Başlık uppercase, gövde cümle düzeninde.
-- Ölçü: 62ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Numbers are taboos; score/timer areas are mono and right aligned. Title in uppercase, body in sentence order.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Ekran ızgarası görünür bir çerçeve gibi davranır: bölümler arasına 1px accent kenar konur, dekoratif çizgi eklenmez.
-- Bölüm dikey boşluğu masaüstü 64px, mobil 40px; kart içi padding 18px.
+- The screen grid acts like a visible frame: a 1px accent border is placed between sections, no decorative lines are added.
+- Section vertical space 64px desktop, 40px mobile; card padding 18px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Yüzeyler opak; cam/blur yok. Durum bildirimi için ince accent kenar kullanılır.
-- Radius: `4px` (buton, input, chip), `10px` (kart, modal). Köşe ya 0 ya da tek küçük değer (≤6px); yumuşak 12px+ yuvarlatma yasak.
+- Surfaces are opaque; There is no glass/blur. Thin accent edge is used for status notification.
+- Radius: `4px` (buton, input, chip), `10px` (kart, modal). Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-## Yasaklar
+## Bans
 
-- Dönen/parıldayan kart efekti.
-- Dörtten fazla nadirlik rengi.
-- Kart içinde 3'ten fazla punto.
-- Sonsuz yanıp sönen gösterge (v6'da animasyon yok).
-- Üçten fazla durum rengi.
-- HUD içinde serif başlık.
+- Spinning/shining card effect.
+- More than four rarity colors.
+- More than 3 points on the card.
+- Infinite blinking indicator (no animation in v6).
+- More than three status colors.
+- Serif title in HUD.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 4px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 4px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 4px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 4px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 4px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 4px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 4px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 4px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 4px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 4px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 4px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 4px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 4px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 4.49:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 4.49:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1px blok ikon, 16/20px tuval; anti-alias yok, tam sayı ölçek |
-| Fotoğraf | Oyun içi render ya da tek nesne çekimi; %25 alan, koyu vinyet |
-| İllüstrasyon | Sprite/silüet: en fazla 3 ton (accent, ink, surface-2) |
-| Doku | Statik tarama (1px/3px, %4) yalnız bölüm zemininde |
-| Logo | Sol üst 20px, uppercase, mono veya display |
+| icon | 1px block icon, 16/20px canvas; no anti-alias, integer scale |
+| photo | In-game rendering or single object shooting; 25% area, dark vignette |
+| illustration | Sprite/silhouette: up to 3 tones (accent, ink, surface-2) |
+| Texture | Static raster (1px/3px, 4%) on section background only |
+| Logo | Top left 20px, uppercase, mono or display |
 
-- İmza motif: `motif-paper` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Birincil odak tek büyük sayı/skor; ikinci odak tek CTA; gerisi etiket.
+- Signature motif: `motif-paper` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Primary focus is on one big number/score; second focus single CTA; the rest is label.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| HUD / oyun içi katman | yüksek | Skor + durum çubuğu + tek CTA; 3 katmandan fazla bindirme yok | `shots/01-page.png` |
-| Menü / lobi | orta | Dikey liste, seçili satırda accent sol kenar, 44px satır | `shots/01-page.png` |
-| Karakter / envanter | yüksek | Izgara 4'lü, her kartta nadirlik etiketi mono | `shots/01-page.png` |
-| Görev / quest | orta | Başlık + 2 satır açıklama + ödül tablosu | `shots/01-page.png` |
-| Maç sonu / skor tablosu | yüksek | Sağa hizalı sayılar, zebra yerine hairline | `shots/01-page.png` |
-| Ayarlar | orta | Anahtar + segment; her satır 56px | `shots/01-page.png` |
-| Mağaza / battle pass | yüksek | 3 kolon plan kartı, ortada accent kenar | `shots/01-page.png` |
-| Form / hesap | düşük | Tek sütun 480px, etiket üstte 12px mono | `shots/01-page.png` |
+| HUD/in-game overlay | high | Score + status bar + single CTA; No overlays of more than 3 layers | `shots/01-page.png` |
+| Menu / lobby | medium | Vertical list, accent left edge on selected row, 44px row | `shots/01-page.png` |
+| Character / inventory | high | Grid 4-pack, rarity tag mono on each card | `shots/01-page.png` |
+| quest | medium | Title + 2 line description + reward table | `shots/01-page.png` |
+| Match end / score table | high | Right aligned numbers, hairline instead of zebra | `shots/01-page.png` |
+| Settings | medium | Key + segment; each line 56px | `shots/01-page.png` |
+| Store / battle pass | high | 3 column plan card, accent edge in the middle | `shots/01-page.png` |
+| Form / account | low | Single column 480px, label 12px mono on top | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 15.4:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 8.58:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 5.11:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 4.7:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 4.49:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 93.8 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 15.4:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.58:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.11:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 4.7:1 | ≥ 4.5 | button text |
+| focus ring/ground | 4.49:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 93.8 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Arayüz oyuncak gibi görünüyor | Neon ve gölge fazla | Accent'i %14 dolguya indir, gölgeyi sıfırla |
-| Sayılar zıplıyor | Orantısız (proportional) rakam | font-variant-numeric: tabular-nums kullan |
-| Menü okunmuyor | Uppercase + düşük kontrast | Uppercase'i başlıkta tut, gövdeyi cümle düzenine çevir |
-| Kartlar kontrolsüz parlıyor | Kenar accent %40+ | Kenarı %22'ye sabitle, hover'da %34 |
+| The interface looks like a toy | Too much neon and shadow | Reduce Accent to 14% fill, reset shadow |
+| Numbers are jumping | Proportional figure | font-variant-numeric: use tabular-nums |
+| Menu not readable | Uppercase + low contrast | Keep uppercase in title, change body to sentence order |
+| Cards glow uncontrollably | Edge accent 40%+ | Fix edge at 22%, hover at 34% |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `collectible-card` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `game-fantasy-rpg` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `bento-grid` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `glassmorphism` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `collectible-card` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `game-fantasy-rpg` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `bento-grid` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://en.wikipedia.org/wiki/Collectible_card_game | Trading card game (Wikipedia) — kart ve nadirlik yapısı |
-| https://fonts.google.com/specimen/Cinzel | Cinzel (Google Fonts) — kart başlığı |
-| https://fonts.google.com/specimen/Lora | Lora (Google Fonts) — gövde serif |
+| https://en.wikipedia.org/wiki/Collectible_card_game | Trading card game (Wikipedia) — card and rarity structure |
+| https://fonts.google.com/specimen/Cinzel | Cinzel (Google Fonts) — card title |
+| https://fonts.google.com/specimen/Lora | Lora (Google Fonts) — body serif |
 
 ## AI brief
 
 ```text
-Koleksiyon kartı galerisi tasarla: nadirlik çerçevesi, kırmızı mühür accent, 32ch kart metni, mono künye.
+Design trading card gallery: rarity frame, red seal accent, 32ch card text, mono imprint.
 
-Stil: Card TCG (game-card-tcg) · aile: Oyun & Etkileşim (152–171)
+Style: Card TCG (game-card-tcg) · family: Games & Interaction (152–171)
 Token: --bg #171313 · --surface #241f1d · --ink #f4e9dc · --accent #e0463c · --line rgba(244,233,220,.16)
-Yarıçap: 4px / 10px · Tipografi: Cinzel / Lora / IBM Plex Mono
-Zorunlu: Kart metni 34ch'i geçmez; künye mono ve tabular. · Nadirlik yalnız kenar opaklığıyla değil etiketle de yazılır. · Accent geniş zemin olarak kullanılmaz.
-Yasak: Dönen/parıldayan kart efekti. · Dörtten fazla nadirlik rengi. · Kart içinde 3'ten fazla punto.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 4px / 10px · Typography: Cinzel / Lora / IBM Plex Mono
+Required: Card text does not exceed 34ch; imprint mono and taboos. · Rarity is written not only by edge opacity but also by the label. · Accent is not used as a wide ground.
+Banned: Spinning/shining card effect. · More than four rarity colors. · More than 3 points on the card.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="tr" data-style="game-mobile-casual" data-layout="centered" data-nav="pill">
+<html lang="en" data-style="game-mobile-casual" data-layout="split" data-nav="inline">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>game-mobile-casual · tek sayfa</title>
+<title>game-mobile-casual · single page</title>
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../render/scene.css">
 <style>
@@ -38,43 +38,43 @@ h2 { font-size: 24px; }
 
 </style>
 </head>
-<body class="scene-landing page upper density-sparse" style="--type-h1: 40px; --type-h1-mobile: 28px; --type-h2: 26px; --type-h3: 19px" data-fit="1" data-fit-locked="true">
-  <header class="nav nav-pill">
+<body class="scene-landing page upper density-balanced" style="--type-h1: 40px; --type-h1-mobile: 28px; --type-h2: 26px; --type-h3: 19px" data-fit="1" data-fit-locked="true">
+  <header class="nav nav-inline">
     <div class="brand"><span class="mark">N</span> Northwind</div>
-    <nav class="nav-links" aria-label="Ana gezinme">
-      <a href="#">Ürün</a><a href="#">Çözümler</a><a href="#">Fiyatlar</a><a href="#">Docs</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#">Product</a><a href="#">Solutions</a><a href="#">Fiyatlar</a><a href="#">Docs</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn ghost sm" href="#">Giriş</a>
-      <a class="btn sm" href="#">Başla</a>
+      <a class="btn ghost sm" href="#">Login</a>
+      <a class="btn sm" href="#">start</a>
     </div>
   </header>
 
-  <main class="hero hero-centered">
-    <div class="hero-copy hero-copy-centered">
-      <span class="eyebrow">Yeni sezon</span>
-      <h1>Mevsimin en sade parçaları</h1>
-      <p class="lede">Az sayıda ürün, açık malzeme bilgisi ve iki günde kapıda teslim.</p>
+  <main class="hero hero-split">
+    <div class="hero-copy">
+      <span class="eyebrow">Version 2.4</span>
+      <h1>A quiet workspace for product teams</h1>
+      <p class="lede">Plan, write and ship in one place, without the noise.</p>
       <div class="cta-row">
-        <a class="btn" href="#">Koleksiyonu gör</a>
-        <a class="btn ghost" href="#">Beden tablosu →</a>
+        <a class="btn" href="#">Start free</a>
+        <a class="btn ghost" href="#">Watch the demo →</a>
       </div>
       <ul class="proof">
-        <li>2 günde teslim</li>
-        <li>Ücretsiz iade</li>
-        <li>Malzeme künyesi</li>
+        <li>14 days free</li>
+        <li>No card</li>
+        <li>SSO included</li>
       </ul>
     </div>
 
-    <figure class="hero-visual hero-visual-wide" data-photo="plain" style="--photo-strength:0">
-      <img class="hero-photo" src="../images/int-03.jpg" alt="" loading="eager">
-      <div class="hero-media-scrim" aria-hidden="true"></div>
+    <figure class="hero-visual motif-dots">
       <div class="visual-card">
         <div class="bar accent"></div>
         <div class="bar w70"></div>
+        <div class="bar w45"></div>
         <div class="visual-rows">
           <div class="visual-row"><span class="sq"></span><span class="line"></span><span class="num">%82</span></div>
           <div class="visual-row"><span class="sq"></span><span class="line short"></span><span class="num">%47</span></div>
+          <div class="visual-row"><span class="sq"></span><span class="line"></span><span class="num">%63</span></div>
         </div>
       </div>
     </figure>
@@ -82,82 +82,82 @@ h2 { font-size: 24px; }
 
 
 <main class="pg" data-section-plan="data-first">  <section class="pg-band">
-    <div><b>24</b><span>ülkede kullanım</span></div>
-    <div><b>%42</b><span>dönüşüm artışı</span></div>
-    <div><b>9 dk</b><span>kurulum süresi</span></div>
+    <div><b>24</b><span>use in country</span></div>
+    <div><b>%42</b><span>conversion increase</span></div>
+    <div><b>9 dk</b><span>installation time</span></div>
     <div><b>4.8</b><span>ortalama puan</span></div>
   </section>
 
   <section class="pg-sec pg-form">
     <div class="pg-card">
       <span class="pg-cap">Form</span>
-      <h3>Hesap oluştur</h3>
+      <h3>Create account</h3>
       <div class="pg-2col">
         <label class="pg-ctl"><span class="label">Ad</span><input class="field" value="Elif" aria-label="ad"></label>
         <label class="pg-ctl"><span class="label">Soyad</span><input class="field" value="Barut" aria-label="soyad"></label>
       </div>
       <label class="pg-ctl"><span class="label">E-posta</span><input class="field" value="elif@kuzey.co" aria-label="e-posta"></label>
-      <label class="pg-check"><input type="checkbox" checked> Haftalık özet gönder</label>
+      <label class="pg-check"><input type="checkbox" checked>Send weekly summary</label>
       <div class="pg-row" style="margin-top:auto">
-        <span class="btn">Kaydet</span>
-        <span class="btn ghost">Vazgeç</span>
+        <span class="btn">Save</span>
+        <span class="btn ghost">Cancel</span>
       </div>
     </div>
     <div class="pg-card">
-      <span class="pg-cap">Veri</span>
-      <h3>Haftalık hacim</h3>
+      <span class="pg-cap">Data</span>
+      <h3>Weekly volume</h3>
       <div class="pg-chart">
         <i style="height:38%"></i><i style="height:52%"></i><i style="height:46%"></i><i class="on" style="height:74%"></i>
         <i style="height:61%"></i><i style="height:83%"></i><i style="height:57%"></i><i style="height:69%"></i>
       </div>
-      <div class="pg-legend"><span>bu hafta · 12.4k</span><span>geçen hafta · 9.8k</span></div>
-      <div class="pg-row"><span class="chip accent">+%26</span><span class="chip">hedef %80</span></div>
+      <div class="pg-legend"><span>this week · 12.4k</span><span>last week · 9.8k</span></div>
+      <div class="pg-row"><span class="chip accent">+26%</span><span class="chip">target 80%</span></div>
     </div>
   </section>
 
   <section class="pg-sec">
     <header class="pg-head pg-head-row">
       <div>
-        <span class="pg-cap">Bileşenler</span>
-        <h2>Tek set, tüm yüzeyler</h2>
+        <span class="pg-cap">Components</span>
+        <h2>One set, all surfaces</h2>
       </div>
       <span class="chip">tokens.css</span>
     </header>
     <div class="pg-comp">
       <article class="pg-card">
-        <span class="pg-cap">Buton</span>
+        <span class="pg-cap">button</span>
         <div class="pg-row">
           <span class="btn">Birincil</span>
-          <span class="btn ghost">İkincil</span>
+          <span class="btn ghost">secondary</span>
           <span class="btn soft">Sessiz</span>
         </div>
-        <span class="pg-cap">Durum</span>
+        <span class="pg-cap">Status</span>
         <div class="pg-row">
-          <span class="chip"><span class="dot"></span>canlı</span>
-          <span class="chip accent">yeni</span>
+          <span class="chip"><span class="dot"></span>live</span>
+          <span class="chip accent">new</span>
           <span class="chip">bekler</span>
         </div>
       </article>
       <article class="pg-card">
         <span class="pg-cap">Girdi</span>
-        <input class="field" placeholder="Proje adı" aria-label="proje adı">
-        <input class="field focus" value="kuzey-kampanya" aria-label="odaklı alan">
-        <input class="field err" value="ornek@" aria-label="hatalı alan">
-        <span class="help err">Geçerli bir e-posta gir</span>
+        <input class="field" placeholder="Project name" aria-label="project name">
+        <input class="field focus" value="kuzey-kampanya" aria-label="focused area">
+        <input class="field err" value="example@" aria-label="faulty area">
+        <span class="help err">Enter a valid email</span>
       </article>
       <article class="pg-card">
         <div class="pg-card-top">
           <span class="mark">N</span>
-          <span class="pg-card-t">Kart başlığı</span>
-          <span class="chip">yeni</span>
+          <span class="pg-card-t">card title</span>
+          <span class="chip">new</span>
         </div>
-        <p class="pg-p">Yüzey <span class="mono">--surface</span>, kenar <span class="mono">--line</span>, köşe <span class="mono">--radius-lg</span>.</p>
+        <p class="pg-p">surface<span class="mono">--surface</span>, edge<span class="mono">--line</span>, corner<span class="mono">--radius-lg</span>.</p>
         <div class="pg-bars"><i></i><i></i><i></i></div>
       </article>
       <article class="pg-card">
-        <span class="pg-cap">Tablo</span>
+        <span class="pg-cap">Table</span>
         <table class="pg-table">
-          <thead><tr><th>ad</th><th>durum</th><th class="num">değer</th></tr></thead>
+          <thead><tr><th>ad</th><th>situation</th><th class="num">value</th></tr></thead>
           <tbody>
             <tr><td>Atlas</td><td><span class="chip accent">aktif</span></td><td class="num">%72</td></tr>
             <tr><td>Fatura</td><td><span class="chip">bekler</span></td><td class="num">%40</td></tr>
@@ -171,16 +171,16 @@ h2 { font-size: 24px; }
     <figure class="pg-media motif-dots" data-photo="plain" style="--photo-strength:0">
       <img class="pg-photo" src="../images/int-03.jpg" alt="" loading="eager">
       <div class="pg-media-scrim" aria-hidden="true"></div>
-      <span class="pg-cap">Atelier · 01 / 04</span>
+      <span class="pg-cap">Lumen · 01 / 04</span>
     </figure>
     <div class="pg-split-copy">
-      <span class="pg-cap">Yaklaşım</span>
-      <h2>Her yüzey aynı ritimle kurulur</h2>
-      <p class="lede">Ölçek, boşluk ve köşe yarıçapı tek yerden gelir. Kart, tablo ve form aynı aileyi konuşur.</p>
+      <span class="pg-cap">Approach</span>
+      <h2>Every surface is installed with the same rhythm</h2>
+      <p class="lede">Scale, spacing, and corner radius all come from one place. Card, table and form speak the same family.</p>
       <ul class="pg-list">
-        <li>Ölçülebilir kontrast: gövde 4.5:1, odak halkası 3:1.</li>
-        <li>Tek değişken seti: <span class="mono">--bg · --ink · --accent · --line</span>.</li>
-        <li>Bileşen kodu sabit, stil yalnız öznitelik.</li>
+        <li>Measurable contrast: body 4.5:1, focus ring 3:1.</li>
+        <li>Single variable set:<span class="mono">--bg · --ink · --accent · --line</span>.</li>
+        <li>Component code is fixed, style is just an attribute.</li>
       </ul>
       <div class="pg-meter"><i></i></div>
       <span class="pg-cap">kapsam · %68</span>
@@ -189,71 +189,71 @@ h2 { font-size: 24px; }
 
   <section class="pg-sec pg-trio-sec">
     <header class="pg-head">
-      <span class="pg-cap">Nasıl çalışır</span>
-      <h2>Üç adım, tek sözleşme</h2>
-      <p class="lede">Bileşen kodu stil değişince değişmez; yalnız tokenda değişen değerler görünür.</p>
+      <span class="pg-cap">How does it work</span>
+      <h2>Three steps, one contract</h2>
+      <p class="lede">Component code does not change when the style changes; Only the changing values ​​in the token are visible.</p>
     </header>
     <div class="pg-trio">
       <article class="pg-card">
         <span class="pg-num">01</span>
-        <h3>Seç</h3>
-        <p class="pg-p">Katalogdan tek stil seçilir; palet, tipografi ve boşluk aynı sözleşmeden gelir.</p>
+        <h3>Select</h3>
+        <p class="pg-p">One style is selected from the catalogue; palette, typography, and spacing come from the same convention.</p>
         <div class="pg-bars"><i></i><i></i><i></i></div>
       </article>
       <article class="pg-card">
         <span class="pg-num">02</span>
-        <h3>Uygula</h3>
-        <p class="pg-p">Sayfa <span class="mono">data-style</span> ile bağlanır; tek değişken seti tüm yüzeyi taşır.</p>
+        <h3>Apply</h3>
+        <p class="pg-p">Page<span class="mono">data-style</span>Connects with; A single variable set carries the entire surface.</p>
         <div class="pg-bars"><i></i><i></i><i></i></div>
       </article>
       <article class="pg-card">
         <span class="pg-num">03</span>
-        <h3>Ölç</h3>
-        <p class="pg-p">Kontrast, odak halkası ve dokunma hedefi ölçülür; ihlal kapıdan döner.</p>
+        <h3>measure</h3>
+        <p class="pg-p">Contrast, focus ring and touch target are measured; Violation returns from the door.</p>
         <div class="pg-bars"><i></i><i></i><i></i></div>
       </article>
     </div>
   </section>
 
   <section class="pg-logos">
-    <span class="pg-cap">Sezon ortakları</span>
+    <span class="pg-cap">Trusting teams</span>
     <div class="pg-logos-row">
-      <span>Atelier</span><span>Loom</span><span>Form</span><span>Basit</span><span>Kumas</span>
+      <span>Lumen</span><span>Kite</span><span>Orbit</span><span>Nimbus</span><span>Telos</span>
     </div>
   </section>
 
   <section class="pg-cta">
-    <span class="pg-cap">Başla</span>
-    <h2>Tek stil, tek sayfa, tek sözleşme</h2>
-    <p class="lede">Stil seçilir, token uygulanır, ölçülür. Kalan iş bileşenin değil değişkenin işidir.</p>
+    <span class="pg-cap">start</span>
+    <h2>One style, one page, one contract</h2>
+    <p class="lede">Style chosen, token applied, measured. The remaining work is the work of the variable, not the component.</p>
     <div class="pg-row">
-      <span class="btn">Koleksiyonu gör</span>
-      <span class="btn ghost">Beden tablosu →</span>
+      <span class="btn">Start free</span>
+      <span class="btn ghost">Watch the demo →</span>
     </div>
   </section>
 
   <footer class="pg-foot">
     <div class="pg-foot-brand">
       <div class="brand"><span class="mark">N</span> Northwind</div>
-      <p>Ölçülebilir tasarım sözleşmesi: palet, tipografi, boşluk ve odak tek kaynaktan.</p>
+      <p>Measurable design charter: palette, typography, spacing and focus from a single source.</p>
     </div>
     <div class="pg-foot-col">
-      <b>Ürün</b><span>Katalog</span><span>Bileşenler</span><span>Şablonlar</span>
+      <b>Product</b><span>catalog</span><span>Components</span><span>templates</span>
     </div>
     <div class="pg-foot-col">
-      <b>Kaynak</b><span>Dokümanlar</span><span>Token seti</span><span>Değişiklikler</span>
+      <b>Source</b><span>Documents</span><span>Token seti</span><span>Changes</span>
     </div>
     <div class="pg-foot-col">
-      <b>İletişim</b><span>merhaba@northwind.co</span><span>+90 212 000 00 00</span><span>İstanbul</span>
+      <b>Contact</b><span>merhaba@northwind.co</span><span>+90 212 000 00 00</span><span>Istanbul</span>
     </div>
   </footer>
   <div class="pg-foot-base">
-    <span>© 2026 Northwind · tüm hakları saklıdır</span>
-    <span>Oyun & Etkileşim · game-mobile-casual</span>
+    <span>© 2026 Northwind · all rights reserved</span>
+    <span>Games & Interaction · game-mobile-casual</span>
   </div>
 </main>
 
 <div class="sig"></div>
-<nav class="live-bar" aria-label="Önizleme araç çubuğu"><a href="../gallery.html">← galeri</a><b>Stil önizlemesi</b><span class="grow"></span><label for="styleSel">stil</label><select id="styleSel" aria-label="Stil seç"><option value="minimalism">01 · Minimalism</option><option value="swiss-design">02 · Swiss Design</option><option value="editorial-design">03 · Editorial Design</option><option value="luxury-typography">04 · Luxury Typography</option><option value="bento-grid">05 · Bento Grid</option><option value="japandi">06 · Japandi</option><option value="wabi-sabi">07 · Wabi-Sabi</option><option value="glassmorphism">08 · Glassmorphism</option><option value="liquid-glass">09 · Liquid Glass</option><option value="neumorphism">10 · Neumorphism</option><option value="claymorphism">11 · Claymorphism</option><option value="aurora-ui">12 · Aurora UI</option><option value="neo-brutalism">13 · Neo-Brutalism</option><option value="anti-design">14 · Anti-Design</option><option value="acid-graphics">15 · Acid Graphics</option><option value="memphis">16 · Memphis</option><option value="maximalism">17 · Maximalism</option><option value="dopamine-ui">18 · Dopamine UI</option><option value="y2k">19 · Y2K</option><option value="vaporwave">20 · Vaporwave</option><option value="synthwave">21 · Synthwave</option><option value="cyberpunk">22 · Cyberpunk</option><option value="cybercore">23 · Cybercore</option><option value="pixel-art">24 · Pixel Art</option><option value="frutiger-aero">25 · Frutiger Aero</option><option value="art-deco">26 · Art Deco</option><option value="victorian">27 · Victorian</option><option value="surrealism">28 · Surrealism</option><option value="ethereal">29 · Ethereal</option><option value="bohemian">30 · Bohemian</option><option value="scrapbook">31 · Scrapbook</option><option value="conceptual-sketch">32 · Conceptual Sketch</option><option value="dark-academia">33 · Dark Academia</option><option value="skeuomorphism">34 · Skeuomorphism</option><option value="bauhaus">35 · Bauhaus</option><option value="constructivism">36 · Constructivism</option><option value="kinetic-type">37 · Kinetic Type</option><option value="organic-bio">38 · Organic / Biophilic</option><option value="ai-native-mesh">39 · AI-native Mesh</option><option value="scandinavian-dark">40 · Scandinavian Dark</option><option value="grand-tourer">41 · Grand Tourer</option><option value="grand-tourer-oxblood">42 · Grand Tourer Oxblood</option><option value="grand-tourer-midnight">43 · Grand Tourer Midnight</option><option value="utility">44 · Utility</option><option value="terminal-ui">45 · Terminal UI</option><option value="telemetry-grid">46 · Telemetry Grid</option><option value="trading-desk">47 · Trading Desk</option><option value="executive-kpi">48 · Executive KPI</option><option value="log-stream">49 · Log Stream</option><option value="lab-instrument">50 · Lab Instrument</option><option value="atlas-console">51 · Atlas Console</option><option value="experiment-split">52 · Experiment Split</option><option value="ledger-meter">53 · Ledger Meter</option><option value="vitals-triage">54 · Vitals Triage</option><option value="fleet-telemetry">55 · Fleet Telemetry</option><option value="blueprint-drawing">56 · Blueprint Çizimi</option><option value="machined-metal-panel">57 · İşlenmiş Metal Panel</option><option value="safety-signage">58 · Güvenlik Tabelası</option><option value="mes-production-line">59 · Üretim Hattı · MES</option><option value="energy-grid">60 · Enerji Şebekesi</option><option value="calibration-lab">61 · Calibration Lab</option><option value="warehouse-flow">62 · Warehouse Flow</option><option value="maintenance-cmms">63 · Maintenance CMMS</option><option value="construction-site">64 · Construction Site</option><option value="cockpit-avionics">65 · Cockpit Avionics</option><option value="nordic-folk">66 · Nordic Folk</option><option value="japanese-ma">67 · Japanese Ma</option><option value="levant-calligraphy">68 · Levant Calligraphy</option><option value="andalusian-azulejo">69 · Andalusian Azulejo</option><option value="slavic-late-brutalist">70 · Slavic Late Brutalist</option><option value="west-african-pattern">71 · West African Pattern</option><option value="andean-textile">72 · Andean Textile</option><option value="indian-block-print">73 · Indian Block Print</option><option value="persian-miniature">74 · Persian Miniature</option><option value="aegean-island">75 · Aegean Island</option><option value="biophilic-botanical">76 · Biyofilik Botanik</option><option value="weather-atmosphere">77 · Hava Durumu &amp; Atmosfer</option><option value="topographic-terrain">78 · Topografya &amp; Arazi</option><option value="ocean-current">79 · Deniz &amp; Akıntı</option><option value="seasonal-shift">80 · Mevsim Geçişi</option><option value="forest-bark">81 · Forest Bark</option><option value="desert-sand">82 · Desert Sand</option><option value="polar-ice">83 · Polar Ice</option><option value="volcanic-mineral">84 · Volcanic Mineral</option><option value="coral-reef">85 · Coral Reef</option><option value="literary-hardcover">86 · Literary Hardcover</option><option value="broadsheet-daily">87 · Broadsheet Daily</option><option value="magazine-feature">88 · Magazine Feature</option><option value="academic-paper">89 · Academic Paper</option><option value="poetry-chapbook">90 · Poetry Chapbook</option><option value="product-catalog">91 · Product Catalog</option><option value="museum-thesis">92 · Museum &amp; Thesis</option><option value="type-experiment">93 · Type Experiment</option><option value="encyclopedia">94 · Encyclopedia</option><option value="punk-fanzine">95 · Punk Fanzine</option><option value="kinetic-marquee">96 · Kinetic Marquee</option><option value="optical-illusion">97 · Optical Illusion</option><option value="generative-grid">98 · Generative Grid</option><option value="depth-parallax">99 · Depth Parallax</option><option value="fluid-simulation">100 · Fluid Simulation</option><option value="shadow-stage">101 · Shadow Stage</option><option value="moire-field">102 · Moiré Field</option><option value="motion-trail">103 · Motion Trail</option><option value="stepped-mechanism">104 · Stepped Mechanism</option><option value="holographic-layer">105 · Holographic Layer</option><option value="voice-first">106 · Ses-Öncelikli</option><option value="spatial-ar-layer">107 · Uzamsal AR Katman</option><option value="command-palette">108 · Komut Paleti</option><option value="timeline-editor">109 · Zaman Çizelgesi Editörü</option><option value="kanban-flow">110 · Kanban Akışı</option><option value="step-wizard">111 · Adım Sihirbazı</option><option value="zero-ui">112 · Sıfır Arayüz</option><option value="notebook-repl">113 · Notebook / REPL</option><option value="multiplayer-presence">114 · Eşzamanlı İşbirlikçi</option><option value="keyboard-first">115 · Klavye-Öncelikli Komut Arayüzü</option><option value="kids-playground">116 · Kids Playground</option><option value="carnival-festival">117 · Carnival Festival</option><option value="sticker-sheet">118 · Sticker Sheet</option><option value="arcade-8bit">119 · Arcade 8-bit</option><option value="craft-handmade">120 · Craft Handmade</option><option value="celebration-card">121 · Celebration Card</option><option value="collectible-card">122 · Collectible Card</option><option value="comic-story">123 · Comic Story</option><option value="album-sleeve">124 · Album Sleeve</option><option value="sports-energy">125 · Sports Energy</option><option value="marble-vein">126 · Marble Vein</option><option value="silk-drape">127 · Silk Drape</option><option value="brass-copper">128 · Brass Copper</option><option value="porcelain-glaze">129 · Porcelain Glaze</option><option value="leather-craft">130 · Leather Craft</option><option value="optic-prism">131 · Optic Prism</option><option value="wood-joinery">132 · Wood Joinery</option><option value="letterpress-print">133 · Letterpress Print</option><option value="concrete-monolith">134 · Concrete Monolith</option><option value="enamel-porcelain">135 · Enamel Porcelain</option><option value="speculative-scifi">136 · Spekülatif Bilim-Kurgu</option><option value="volumetric-data">137 · Hologram &amp; Uzamsal Veri</option><option value="agent-orchestration">138 · AI-native Ajan Arayüzü</option><option value="bio-synthetic">139 · Biyo &amp; Sentetik</option><option value="nanotech">140 · Nanoteknik</option><option value="planetary-service">141 · Planetary Service</option><option value="quantum-lab">142 · Quantum Lab</option><option value="retro-future">143 · Retro Future</option><option value="virtual-engine">144 · Virtual Engine</option><option value="zero-gravity">145 · Zero Gravity</option><option value="noir-estate">146 · Noir Estate</option><option value="agency-portfolio">147 · Agency Portfolio</option><option value="product-launch">148 · Product Launch</option><option value="boutique-hotel">149 · Boutique Hotel</option><option value="lookbook-editorial">150 · Lookbook Editorial</option><option value="dark-dashboard">151 · Dark Dashboard</option><option value="game-hud">152 · Game HUD</option><option value="game-racing">153 · Game Racing</option><option value="game-fantasy-rpg">154 · Fantasy RPG</option><option value="game-sci-fi-cockpit">155 · Sci-Fi Cockpit</option><option value="game-retro-console">156 · Retro Console</option><option value="game-esports-league">157 · Esports League</option><option value="game-indie-pixel">158 · Indie Pixel</option><option value="game-card-tcg">159 · Card TCG</option><option value="game-survival-craft">160 · Survival Craft</option><option value="game-mobile-casual" selected>161 · Mobile Casual</option><option value="game-horror-occult">162 · Horror Occult</option><option value="game-racing-neon">163 · Racing Neon</option><option value="game-strategy-map">164 · Strategy Map</option><option value="game-sim-builder">165 · Sim Builder</option><option value="game-arcade-cabinet">166 · Arcade Cabinet</option><option value="game-stealth-tactical">167 · Stealth Tactical</option><option value="game-puzzle-light">168 · Puzzle Light</option><option value="game-mmo-guild">169 · MMO Guild</option><option value="game-franchise-sports">170 · Franchise Sports</option><option value="game-pinball-neon">171 · Pinball Neon</option><option value="incident-response">172 · Incident Response</option><option value="finops-cost">173 · FinOps Cost</option><option value="fleet-dispatch">174 · Fleet Dispatch</option><option value="fraud-review">175 · Fraud Review</option><option value="slo-budget">176 · SLO Budget</option><option value="data-lineage">177 · Data Lineage</option><option value="access-audit">178 · Access Audit</option><option value="release-train">179 · Release Train</option><option value="support-inbox">180 · Support Inbox</option><option value="regulatory-report">181 · Regulatory Report</option><option value="grocery-delivery">182 · Grocery Delivery</option><option value="marketplace-multi">183 · Marketplace Multi</option><option value="luxury-atelier">184 · Luxury Atelier</option><option value="subscription-box">185 · Subscription Box</option><option value="sneaker-drop">186 · Sneaker Drop</option><option value="wine-cellar">187 · Wine Cellar</option><option value="furniture-studio">188 · Furniture Studio</option><option value="electronics-spec">189 · Electronics Spec</option><option value="pharmacy-store">190 · Pharmacy Store</option><option value="farmers-market">191 · Farmers Market</option><option value="museum-exhibition">192 · Museum Exhibition</option><option value="theatre-season">193 · Theatre Season</option><option value="film-festival">194 · Film Festival</option><option value="public-radio">195 · Public Radio</option><option value="podcast-network">196 · Podcast Network</option><option value="indie-cinema">197 · Indie Cinema</option><option value="library-archive">198 · Library Archive</option><option value="comic-bookstore">199 · Comic Bookstore</option><option value="opera-house">200 · Opera House</option><option value="street-festival">201 · Street Festival</option><option value="clinical-trial">202 · Clinical Trial</option><option value="lab-protocol">203 · Lab Protocol</option><option value="pharmacy-labels">204 · Pharmacy Labels</option><option value="physiotherapy">205 · Physiotherapy</option><option value="mental-wellness">206 · Mental Wellness</option><option value="nutrition-plan">207 · Nutrition Plan</option><option value="dental-clinic">208 · Dental Clinic</option><option value="public-health">209 · Public Health</option><option value="genomics-lab">210 · Genomics Lab</option><option value="veterinary-care">211 · Veterinary Care</option><option value="language-app">212 · Language App</option><option value="skill-tree">213 · Skill Tree</option><option value="university-portal">214 · University Portal</option><option value="coding-bootcamp">215 · Coding Bootcamp</option><option value="kids-classroom">216 · Kids Classroom</option><option value="exam-prep">217 · Exam Prep</option><option value="music-lesson">218 · Music Lesson</option><option value="lab-simulation">219 · Lab Simulation</option><option value="peer-study">220 · Peer Study</option><option value="certificate-wallet">221 · Certificate Wallet</option><option value="terrazzo-stone">222 · Terrazzo Stone</option><option value="linocut-print">223 · Linocut Print</option><option value="risograph-print">224 · Risograph Print</option><option value="denim-textile">225 · Denim Textile</option><option value="cork-oak">226 · Cork Oak</option><option value="cast-concrete">227 · Cast Concrete</option><option value="enamel-jewel">228 · Enamel Jewel</option><option value="hand-thrown-ceramic">229 · Hand-thrown Ceramic</option><option value="raw-steel">230 · Raw Steel</option><option value="recycled-paper">231 · Recycled Paper</option><option value="condensed-news">232 · Condensed News</option><option value="monospace-editorial">233 · Monospace Editorial</option><option value="blackletter-modern">234 · Blackletter Modern</option><option value="variable-weight">235 · Variable Weight</option><option value="justified-book">236 · Justified Book</option><option value="stencil-display">237 · Stencil Display</option><option value="uppercase-only">238 · Uppercase Only</option><option value="italic-accent">239 · Italic Accent</option><option value="numerals-display">240 · Numerals Display</option><option value="small-caps-ledger">241 · Small Caps Ledger</option><option value="agent-console">242 · Agent Console</option><option value="spatial-workspace">243 · Spatial Workspace</option><option value="bio-lab-interface">244 · Bio Lab Interface</option><option value="climate-model">245 · Climate Model</option><option value="orbital-logistics">246 · Orbital Logistics</option><option value="synthetic-media">247 · Synthetic Media</option><option value="quantum-dashboard">248 · Quantum Dashboard</option><option value="digital-twin">249 · Digital Twin</option><option value="neural-canvas">250 · Neural Canvas</option><option value="post-screen-voice">251 · Post-screen Voice</option></select><a href="../../styles/161-game-mobile-casual/shots/01-page.png" target="_blank" rel="noopener">tam sayfa ↗</a><a href="../../docs/catalog.md">katalog</a><a href="../live.html?mode=tokens&amp;style=game-mobile-casual">tokens</a></nav><style>.live-bar{position:fixed;inset:0 0 auto;z-index:9999;display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3);padding:var(--space-3) min(4vw,32px);background:var(--bg-2,var(--bg));border-bottom:1px solid var(--line);font:11px var(--font-mono);letter-spacing:.06em}.live-bar[hidden]{display:none}.live-bar .grow{flex:1}.live-bar a,.live-bar select{font:inherit;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--radius);padding:8px 10px;min-height:36px;text-decoration:none}.live-bar b{font:14px var(--font-display);letter-spacing:var(--tracking)}@media(max-width:700px){.live-bar{position:sticky}.live-bar select{min-width:0;max-width:40vw}}</style><script>if(new URLSearchParams(location.search).get('chrome')==='0')document.querySelector('.live-bar').hidden=true;document.getElementById('styleSel').addEventListener('change',e=>location.href='../live.html?style='+encodeURIComponent(e.target.value));</script>
+<nav class="live-bar" aria-label="Preview toolbar"><a href="../gallery.html">← gallery</a><b>Style preview</b><span class="grow"></span><label for="styleSel">style</label><select id="styleSel" aria-label="Choose style"><option value="minimalism">01 · Minimalism</option><option value="swiss-design">02 · Swiss Design</option><option value="editorial-design">03 · Editorial Design</option><option value="luxury-typography">04 · Luxury Typography</option><option value="bento-grid">05 · Bento Grid</option><option value="japandi">06 · Japandi</option><option value="wabi-sabi">07 · Wabi-Sabi</option><option value="glassmorphism">08 · Glassmorphism</option><option value="liquid-glass">09 · Liquid Glass</option><option value="neumorphism">10 · Neumorphism</option><option value="claymorphism">11 · Claymorphism</option><option value="aurora-ui">12 · Aurora UI</option><option value="neo-brutalism">13 · Neo-Brutalism</option><option value="anti-design">14 · Anti-Design</option><option value="acid-graphics">15 · Acid Graphics</option><option value="memphis">16 · Memphis</option><option value="maximalism">17 · Maximalism</option><option value="dopamine-ui">18 · Dopamine UI</option><option value="y2k">19 · Y2K</option><option value="vaporwave">20 · Vaporwave</option><option value="synthwave">21 · Synthwave</option><option value="cyberpunk">22 · Cyberpunk</option><option value="cybercore">23 · Cybercore</option><option value="pixel-art">24 · Pixel Art</option><option value="frutiger-aero">25 · Frutiger Aero</option><option value="art-deco">26 · Art Deco</option><option value="victorian">27 · Victorian</option><option value="surrealism">28 · Surrealism</option><option value="ethereal">29 · Ethereal</option><option value="bohemian">30 · Bohemian</option><option value="scrapbook">31 · Scrapbook</option><option value="conceptual-sketch">32 · Conceptual Sketch</option><option value="dark-academia">33 · Dark Academia</option><option value="skeuomorphism">34 · Skeuomorphism</option><option value="bauhaus">35 · Bauhaus</option><option value="constructivism">36 · Constructivism</option><option value="kinetic-type">37 · Kinetic Type</option><option value="organic-bio">38 · Organic / Biophilic</option><option value="ai-native-mesh">39 · AI-native Mesh</option><option value="scandinavian-dark">40 · Scandinavian Dark</option><option value="grand-tourer">41 · Grand Tourer</option><option value="grand-tourer-oxblood">42 · Grand Tourer Oxblood</option><option value="grand-tourer-midnight">43 · Grand Tourer Midnight</option><option value="utility">44 · Utility</option><option value="terminal-ui">45 · Terminal UI</option><option value="telemetry-grid">46 · Telemetry Grid</option><option value="trading-desk">47 · Trading Desk</option><option value="executive-kpi">48 · Executive KPI</option><option value="log-stream">49 · Log Stream</option><option value="lab-instrument">50 · Lab Instrument</option><option value="atlas-console">51 · Atlas Console</option><option value="experiment-split">52 · Experiment Split</option><option value="ledger-meter">53 · Ledger Meter</option><option value="vitals-triage">54 · Vitals Triage</option><option value="fleet-telemetry">55 · Fleet Telemetry</option><option value="blueprint-drawing">56 · Blueprint Çizimi</option><option value="machined-metal-panel">57 · İşlenmiş Metal Panel</option><option value="safety-signage">58 · Güvenlik Tabelası</option><option value="mes-production-line">59 · Üretim Hattı · MES</option><option value="energy-grid">60 · Enerji Şebekesi</option><option value="calibration-lab">61 · Calibration Lab</option><option value="warehouse-flow">62 · Warehouse Flow</option><option value="maintenance-cmms">63 · Maintenance CMMS</option><option value="construction-site">64 · Construction Site</option><option value="cockpit-avionics">65 · Cockpit Avionics</option><option value="nordic-folk">66 · Nordic Folk</option><option value="japanese-ma">67 · Japanese Ma</option><option value="levant-calligraphy">68 · Levant Calligraphy</option><option value="andalusian-azulejo">69 · Andalusian Azulejo</option><option value="slavic-late-brutalist">70 · Slavic Late Brutalist</option><option value="west-african-pattern">71 · West African Pattern</option><option value="andean-textile">72 · Andean Textile</option><option value="indian-block-print">73 · Indian Block Print</option><option value="persian-miniature">74 · Persian Miniature</option><option value="aegean-island">75 · Aegean Island</option><option value="biophilic-botanical">76 · Biyofilik Botanik</option><option value="weather-atmosphere">77 · Hava Durumu &amp; Atmosfer</option><option value="topographic-terrain">78 · Topografya &amp; Arazi</option><option value="ocean-current">79 · Deniz &amp; Akıntı</option><option value="seasonal-shift">80 · Mevsim Geçişi</option><option value="forest-bark">81 · Forest Bark</option><option value="desert-sand">82 · Desert Sand</option><option value="polar-ice">83 · Polar Ice</option><option value="volcanic-mineral">84 · Volcanic Mineral</option><option value="coral-reef">85 · Coral Reef</option><option value="literary-hardcover">86 · Literary Hardcover</option><option value="broadsheet-daily">87 · Broadsheet Daily</option><option value="magazine-feature">88 · Magazine Feature</option><option value="academic-paper">89 · Academic Paper</option><option value="poetry-chapbook">90 · Poetry Chapbook</option><option value="product-catalog">91 · Product Catalog</option><option value="museum-thesis">92 · Museum &amp; Thesis</option><option value="type-experiment">93 · Type Experiment</option><option value="encyclopedia">94 · Encyclopedia</option><option value="punk-fanzine">95 · Punk Fanzine</option><option value="kinetic-marquee">96 · Kinetic Marquee</option><option value="optical-illusion">97 · Optical Illusion</option><option value="generative-grid">98 · Generative Grid</option><option value="depth-parallax">99 · Depth Parallax</option><option value="fluid-simulation">100 · Fluid Simulation</option><option value="shadow-stage">101 · Shadow Stage</option><option value="moire-field">102 · Moiré Field</option><option value="motion-trail">103 · Motion Trail</option><option value="stepped-mechanism">104 · Stepped Mechanism</option><option value="holographic-layer">105 · Holographic Layer</option><option value="voice-first">106 · Ses-Öncelikli</option><option value="spatial-ar-layer">107 · Uzamsal AR Katman</option><option value="command-palette">108 · Komut Paleti</option><option value="timeline-editor">109 · Zaman Çizelgesi Editörü</option><option value="kanban-flow">110 · Kanban Akışı</option><option value="step-wizard">111 · Adım Sihirbazı</option><option value="zero-ui">112 · Sıfır Arayüz</option><option value="notebook-repl">113 · Notebook / REPL</option><option value="multiplayer-presence">114 · Eşzamanlı İşbirlikçi</option><option value="keyboard-first">115 · Klavye-Öncelikli Komut Arayüzü</option><option value="kids-playground">116 · Kids Playground</option><option value="carnival-festival">117 · Carnival Festival</option><option value="sticker-sheet">118 · Sticker Sheet</option><option value="arcade-8bit">119 · Arcade 8-bit</option><option value="craft-handmade">120 · Craft Handmade</option><option value="celebration-card">121 · Celebration Card</option><option value="collectible-card">122 · Collectible Card</option><option value="comic-story">123 · Comic Story</option><option value="album-sleeve">124 · Album Sleeve</option><option value="sports-energy">125 · Sports Energy</option><option value="marble-vein">126 · Marble Vein</option><option value="silk-drape">127 · Silk Drape</option><option value="brass-copper">128 · Brass Copper</option><option value="porcelain-glaze">129 · Porcelain Glaze</option><option value="leather-craft">130 · Leather Craft</option><option value="optic-prism">131 · Optic Prism</option><option value="wood-joinery">132 · Wood Joinery</option><option value="letterpress-print">133 · Letterpress Print</option><option value="concrete-monolith">134 · Concrete Monolith</option><option value="enamel-porcelain">135 · Enamel Porcelain</option><option value="speculative-scifi">136 · Spekülatif Bilim-Kurgu</option><option value="volumetric-data">137 · Hologram &amp; Uzamsal Veri</option><option value="agent-orchestration">138 · AI-native Ajan Arayüzü</option><option value="bio-synthetic">139 · Biyo &amp; Sentetik</option><option value="nanotech">140 · Nanoteknik</option><option value="planetary-service">141 · Planetary Service</option><option value="quantum-lab">142 · Quantum Lab</option><option value="retro-future">143 · Retro Future</option><option value="virtual-engine">144 · Virtual Engine</option><option value="zero-gravity">145 · Zero Gravity</option><option value="noir-estate">146 · Noir Estate</option><option value="agency-portfolio">147 · Agency Portfolio</option><option value="product-launch">148 · Product Launch</option><option value="boutique-hotel">149 · Boutique Hotel</option><option value="lookbook-editorial">150 · Lookbook Editorial</option><option value="dark-dashboard">151 · Dark Dashboard</option><option value="game-hud">152 · Game HUD</option><option value="game-racing">153 · Game Racing</option><option value="game-fantasy-rpg">154 · Fantasy RPG</option><option value="game-sci-fi-cockpit">155 · Sci-Fi Cockpit</option><option value="game-retro-console">156 · Retro Console</option><option value="game-esports-league">157 · Esports League</option><option value="game-indie-pixel">158 · Indie Pixel</option><option value="game-card-tcg">159 · Card TCG</option><option value="game-survival-craft">160 · Survival Craft</option><option value="game-mobile-casual" selected>161 · Mobile Casual</option><option value="game-horror-occult">162 · Horror Occult</option><option value="game-racing-neon">163 · Racing Neon</option><option value="game-strategy-map">164 · Strategy Map</option><option value="game-sim-builder">165 · Sim Builder</option><option value="game-arcade-cabinet">166 · Arcade Cabinet</option><option value="game-stealth-tactical">167 · Stealth Tactical</option><option value="game-puzzle-light">168 · Puzzle Light</option><option value="game-mmo-guild">169 · MMO Guild</option><option value="game-franchise-sports">170 · Franchise Sports</option><option value="game-pinball-neon">171 · Pinball Neon</option><option value="incident-response">172 · Incident Response</option><option value="finops-cost">173 · FinOps Cost</option><option value="fleet-dispatch">174 · Fleet Dispatch</option><option value="fraud-review">175 · Fraud Review</option><option value="slo-budget">176 · SLO Budget</option><option value="data-lineage">177 · Data Lineage</option><option value="access-audit">178 · Access Audit</option><option value="release-train">179 · Release Train</option><option value="support-inbox">180 · Support Inbox</option><option value="regulatory-report">181 · Regulatory Report</option><option value="grocery-delivery">182 · Grocery Delivery</option><option value="marketplace-multi">183 · Marketplace Multi</option><option value="luxury-atelier">184 · Luxury Atelier</option><option value="subscription-box">185 · Subscription Box</option><option value="sneaker-drop">186 · Sneaker Drop</option><option value="wine-cellar">187 · Wine Cellar</option><option value="furniture-studio">188 · Furniture Studio</option><option value="electronics-spec">189 · Electronics Spec</option><option value="pharmacy-store">190 · Pharmacy Store</option><option value="farmers-market">191 · Farmers Market</option><option value="museum-exhibition">192 · Museum Exhibition</option><option value="theatre-season">193 · Theatre Season</option><option value="film-festival">194 · Film Festival</option><option value="public-radio">195 · Public Radio</option><option value="podcast-network">196 · Podcast Network</option><option value="indie-cinema">197 · Indie Cinema</option><option value="library-archive">198 · Library Archive</option><option value="comic-bookstore">199 · Comic Bookstore</option><option value="opera-house">200 · Opera House</option><option value="street-festival">201 · Street Festival</option><option value="clinical-trial">202 · Clinical Trial</option><option value="lab-protocol">203 · Lab Protocol</option><option value="pharmacy-labels">204 · Pharmacy Labels</option><option value="physiotherapy">205 · Physiotherapy</option><option value="mental-wellness">206 · Mental Wellness</option><option value="nutrition-plan">207 · Nutrition Plan</option><option value="dental-clinic">208 · Dental Clinic</option><option value="public-health">209 · Public Health</option><option value="genomics-lab">210 · Genomics Lab</option><option value="veterinary-care">211 · Veterinary Care</option><option value="language-app">212 · Language App</option><option value="skill-tree">213 · Skill Tree</option><option value="university-portal">214 · University Portal</option><option value="coding-bootcamp">215 · Coding Bootcamp</option><option value="kids-classroom">216 · Kids Classroom</option><option value="exam-prep">217 · Exam Prep</option><option value="music-lesson">218 · Music Lesson</option><option value="lab-simulation">219 · Lab Simulation</option><option value="peer-study">220 · Peer Study</option><option value="certificate-wallet">221 · Certificate Wallet</option><option value="terrazzo-stone">222 · Terrazzo Stone</option><option value="linocut-print">223 · Linocut Print</option><option value="risograph-print">224 · Risograph Print</option><option value="denim-textile">225 · Denim Textile</option><option value="cork-oak">226 · Cork Oak</option><option value="cast-concrete">227 · Cast Concrete</option><option value="enamel-jewel">228 · Enamel Jewel</option><option value="hand-thrown-ceramic">229 · Hand-thrown Ceramic</option><option value="raw-steel">230 · Raw Steel</option><option value="recycled-paper">231 · Recycled Paper</option><option value="condensed-news">232 · Condensed News</option><option value="monospace-editorial">233 · Monospace Editorial</option><option value="blackletter-modern">234 · Blackletter Modern</option><option value="variable-weight">235 · Variable Weight</option><option value="justified-book">236 · Justified Book</option><option value="stencil-display">237 · Stencil Display</option><option value="uppercase-only">238 · Uppercase Only</option><option value="italic-accent">239 · Italic Accent</option><option value="numerals-display">240 · Numerals Display</option><option value="small-caps-ledger">241 · Small Caps Ledger</option><option value="agent-console">242 · Agent Console</option><option value="spatial-workspace">243 · Spatial Workspace</option><option value="bio-lab-interface">244 · Bio Lab Interface</option><option value="climate-model">245 · Climate Model</option><option value="orbital-logistics">246 · Orbital Logistics</option><option value="synthetic-media">247 · Synthetic Media</option><option value="quantum-dashboard">248 · Quantum Dashboard</option><option value="digital-twin">249 · Digital Twin</option><option value="neural-canvas">250 · Neural Canvas</option><option value="post-screen-voice">251 · Post-screen Voice</option></select><a href="../../styles/161-game-mobile-casual/shots/01-page.png" target="_blank" rel="noopener">full page ↗</a><a href="../../docs/catalog.md">catalog</a><a href="../live.html?mode=tokens&amp;style=game-mobile-casual">tokens</a></nav><style>.live-bar{position:fixed;inset:0 0 auto;z-index:9999;display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3);padding:var(--space-3) min(4vw,32px);background:var(--bg-2,var(--bg));border-bottom:1px solid var(--line);font:11px var(--font-mono);letter-spacing:.06em}.live-bar[hidden]{display:none}.live-bar .grow{flex:1}.live-bar a,.live-bar select{font:inherit;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--radius);padding:8px 10px;min-height:36px;text-decoration:none}.live-bar b{font:14px var(--font-display);letter-spacing:var(--tracking)}@media(max-width:700px){.live-bar{position:sticky}.live-bar select{min-width:0;max-width:40vw}}</style><script>if(new URLSearchParams(location.search).get('chrome')==='0')document.querySelector('.live-bar').hidden=true;document.getElementById('styleSel').addEventListener('change',e=>location.href='../live.html?style='+encodeURIComponent(e.target.value));</script>
 </body>
 </html>

@@ -1,41 +1,51 @@
 # 05 · Bento Grid
 
-> **Bir cümlede:** Değişken boyutlu modüler kutular; her kutu tek bir cevap verir, ızgara "her şey yerinde" hissini kurar.
+> **In one sentence:** Değişken boyutlu modüler kutular; her kutu tek bir cevap verir, ızgara "her şey yerinde" hissini kurar.
 
 | | |
 |---|---|
-| **Hissiyat** | düzenli, taranabilir, ürün vitrini, "kontrol paneli" |
-| **En iyi** | dashboard, özellik vitrini, ürün landing'i, kişisel ana ekran |
-| **Kaçın** | uzun okuma, tek akışlı form, ağır anlatı sayfası |
-| **Zorluk** | orta (mobil kırılganlığı) · **Erişilebilirlik** | iyi |
-| **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="bento-grid"]` |
-| **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | düzenli, taranabilir, ürün vitrini, "kontrol paneli" |
+| **Best for** | dashboard, özellik vitrini, ürün landing'i, kişisel ana ekran |
+| **Avoid** | uzun okuma, tek akışlı form, ağır anlatı sayfası |
+| **Difficulty** | orta (mobil kırılganlığı) · **Accessibility** |  |
+| **Family** | Minimal (1–7) · **Token** | `kit/tokens.css` → `[data-style="bento-grid"]` |
+| **Composition** | `product` · `utility` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Bento, Japon yemek kutusu düzeninin arayüze uyarlanması: **değişken boyutlu kartlar**, **sabit gutter**, **yüksek radius**, **yumuşak gölge**. Her kutu bağımsız bir "mini cevap" taşır (sayı, grafik, durum, eylem) ve göz ızgarayı tarayarak bilgiyi toplar.
 
 Kazandığı şey: taranabilirlik ve vitrin etkisi. Feda ettiği şey: akış — bento okutmaz, gösterir.
 
-### Ne değildir
+### What is not
 - **Dashboard değildir.** Dashboard işlevsel yoğunluk; bento **vitrin** düzenidir, boşluk ve radius ile nefes alır.
 - **Minimalism değildir.** Minimalizm gölgeyi reddeder; bento yumuşak gölge ve büyük radius kullanır.
 - **Masonry değildir.** Masonry düzensiz yükseklik; bento **hizalı** satır/kolon sistemidir.
 - **"Her şeyi kutuya koy" değildir.** Kutular arasında hiyerarşi yoksa sonuç "kart çorbası" olur.
 
-### Nereden gelir
+### Where it comes from
 Apple/Google'ın widget ekranları, kişisel panolar ve 2022+ ürün sitelerinin "özellik vitrini" ihtiyacı. Kutu boyutu = önem sırası olduğu için pazarlama ile ürün arayüzünü aynı dilde buluşturur.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Kartlar farklı boyutlarda mı (2×1, 1×2, 2×2)?
 2. Gutter her yerde aynı mı (16–20px)?
 3. Radius ≥ 16px, gölge yumuşak mı?
 4. Her kartta tek bir sayı/grafik/eylem mi var?
 5. Mobilde tek kolona düşüyor mu, yoksa kartlar taşıyor mu?
 
-## Zorunlu kurallar
+## Visual signature
+- **Kart anatomisi:** mono etiket (11px) → büyük sayı/başlık (28–34px) → tek satır açıklama.
+- **Kahraman kart:** 2×2, sayı 40px, accent vurgu çubuğu veya mini grafik.
+- **Radius 18px** (küçük kart) / **24px** (büyük kart).
+- **Gölge:** `0 1px 2px rgba(18,19,15,.05), 0 8px 24px rgba(18,19,15,.04)` — iki katman, düşük opaklık.
+- **Accent dokunuşu:** kart başına en fazla 1 accent öğe (ikinci renk yok).
+- **Typography:** Inter (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#1f6feb`; neutral scale `#f4f4f2` → `#12130f`.
+- **Radius:** `18px` / `24px`; Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
+
+## Mandatory rules
 
 1. **Değişken boyut:** en az 3 farklı kart ölçüsü (2×2, 2×1, 1×1); her satırda en fazla 1 "kahraman" kart.
 2. **Sabit gutter:** 16px (mobil 12px); kart aralıkları asla değişmez.
@@ -44,7 +54,66 @@ Apple/Google'ın widget ekranları, kişisel panolar ve 2022+ ürün sitelerinin
 5. **Mobilde tek kolon:** 2+ kolonlu kartlar tam genişliğe düşer, yükseklik korunur.
 6. **Kart içi boşluk 16–20px**, kart başlığı 11–12px mono etiket.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f4f4f2` | page background | as a card background |
+| `--bg-2` | `#ececea` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#fafaf9` | passive chip, hover background | primary button |
+| `--ink` | `#12130f` | title, body, icon | large background |
+| `--ink-soft` | `#5b5f58` | secondary text, description | — |
+| `--ink-faint` | `#8a8f86` | decorative label, separator text | interactive text |
+| `--accent` | `#1f6feb` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `rgba(18,19,15,.08)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **16.94:1** · `ink-soft/bg` **5.92:1** · `ink-faint/bg` **3:1 (decorative)** · `accent-ink/accent` **4.63:1**.
+- Status colors are not derived from accent, but come from separate semantic tokens (--ok/--danger/--warn); accent is the action color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Inter) | 40px (mobile 26px) | 600 | 1.12 | -0.02em |
+| H2 | same | 24px | 600 | 1.22 | -0.015em |
+| H3 | same | 16px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 14px | 400 | 1.55 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.16em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Dense display: 14px body, 13px table, 10.5px mono label. The line height cannot be lower than 1.55.
+- Measure: 72ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- 8 columns of content + 4 columns of panels; tables full width. In-card padding 16px, line 40px.
+- Section vertical space 44px desktop, 28px mobile; card padding 16px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Surfaces are smooth; separation with 1px edge and background tone. Reference line in graphs --line.
+- Radius: `18px` (buton, input, chip), `24px` (kart, modal). Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
+
+## Bans
 
 - 4+ farklı kart ölçüsü, rastgele boşluklar.
 - Kart içinde kart (kutu içinde kutu) — 1 seviye yeter.
@@ -52,104 +121,44 @@ Apple/Google'ın widget ekranları, kişisel panolar ve 2022+ ürün sitelerinin
 - Sert/koyu gölge, kalın kontur, gradient zemin.
 - Mobilde 2 kolon ısrarı (taşma/okunmazlık).
 - Her karta farklı radius/gölge tonu.
+- Gradient for decoration.
+- More than five color series.
+- Animated counter.
 
-## Görsel imza
-- **Kart anatomisi:** mono etiket (11px) → büyük sayı/başlık (28–34px) → tek satır açıklama.
-- **Kahraman kart:** 2×2, sayı 40px, accent vurgu çubuğu veya mini grafik.
-- **Radius 18px** (küçük kart) / **24px** (büyük kart).
-- **Gölge:** `0 1px 2px rgba(18,19,15,.05), 0 8px 24px rgba(18,19,15,.04)` — iki katman, düşük opaklık.
-- **Accent dokunuşu:** kart başına en fazla 1 accent öğe (ikinci renk yok).
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 18px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 18px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 18px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 18px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 18px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 18px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 18px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f4f4f2` | sayfa | kart zemini |
-| `--bg-2` | `#ececea` | bölüm zemini | buton |
-| `--surface` | `#ffffff` | tüm kartlar | — |
-| `--surface-2` | `#fafaf9` | ikincil kart, hover | vurgu |
-| `--ink` | `#12130f` | başlık, sayı | — |
-| `--ink-soft` | `#5b5f58` | kart açıklaması | sayı |
-| `--ink-faint` | `#8a8f86` | mono etiket | gövde metni |
-| `--accent` | `#1f6feb` | tek vurgu, grafik, aktif | geniş zemin |
-| `--accent-ink` | `#ffffff` | accent üstü metin | — |
-| `--line` | `rgba(18,19,15,.08)` | kart kenarı (opsiyonel) | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 4.63:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **16.94:1** · `ink-soft/bg` **5.92:1** · `ink-faint/bg` **2.43:1** · `accent-ink/accent` **4.63:1**.
-- `--ink-faint` yalnızca mono etiket; gövde metni `--ink-soft`.
-- Yasak: kart başına farklı accent; grafikte 3+ renk.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 16px box; full of status icons |
+| photo | There is no photo on the data screen; single illustration in empty case |
+| illustration | Lonely empty/failed single line illustration |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Kart sayısı / display | Inter | 34–40px | 700 | 1.0 | `-0.02em` |
-| Kart başlığı | Inter | 16px | 600 | 1.3 | `-0.01em` |
-| Gövde / açıklama | Inter | 14px | 400 | 1.5 | `0` |
-| Mono etiket | JetBrains Mono | 11px | 500 | 1.2 | `0.12em`, uppercase |
-| Buton | Inter | 13px | 600 | 1 | `0` |
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Sayılar **tabular**; birim (₺, %, adet) 14px `--ink-soft` olarak yanında.
-- Kart içi maksimum satır: başlık 2 satır, açıklama 2 satır.
-- Ölçek: 11 → 14 → 16 → 24 → 34 → 40.
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 4 (mobil 1) / 6 (tablet) / 12 (masaüstü kart alanı) |
-| Gutter | 16px (mobil 12px) |
-| Container | 1200px |
-| Kart iç boşluk | 18px |
-| Breakpoint | 640 / 900 / 1200 px |
-
-- Bento ızgarası `grid-auto-rows` ile sabit satır yüksekliği kullanır (ör. 120px) ve kartlar `span` ile büyür.
-- Bir satırda en fazla 1 kahraman kart; kahraman komşusu küçük kartlarla dengelenir.
-- Bölüm dikey boşluk 56px; kartlar arası 16px — iki farklı ritim karıştırılmaz.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` | yok | sayfa |
-| Kart | `--surface` | `--shadow` (iki katman) | tüm kutular |
-| Yüzen | `--surface` | aynı + 1px kenar | modal, popover |
-
-- Derinlik gölgeden gelir ama **düşük opaklıkta**; koyu gölge bento'yu "eski" gösterir.
-- Radius: küçük kart 18px, büyük kart 24px; buton/input 18px ile uyumlu.
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 40px | 0 16px | 18px | 13/600 | `--accent` + `--accent-ink` | hover: %94 parlaklık · focus: 2px `--accent` halka · disabled: %40 |
-| Buton (sessiz) | 40px | 0 14px | 18px | 13/600 | `--surface-2` + `--line` | hover: `--bg-2` |
-| Input | 44px | 0 14px | 18px | 14/400 | `--surface-2` + 1px `--line` | focus: 2px `--accent` halka · error: `--danger` |
-| Kart | değişken | 18px | 18/24px | etiket + sayı + açıklama | `--surface` + `--shadow` | hover (tıklanabilir): `translateY(-2px)` + gölge %20 güçlenir |
-| Chip | 24px | 0 10px | 999px | 11/500 | `--surface-2` + `--line` | aktif: `--accent` |
-| Nav | 64px | 0 24px | — | 14/500 | `--bg` + alt 1px `--line` | aktif: 2px alt `--accent` |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 | satır altı 1px `--line` | hover: `--surface-2` |
-| Modal | içerik | 24px | 24px | H2 + 14 | `--surface` + `--shadow` | backdrop %35 |
-| Toast | 44px | 0 16px | 18px | 13/500 | `--ink` + `--bg` | 4sn |
-| Grafik | — | — | 4px uç | eksen 10 mono | `--accent` + `%12` dolgu | 2 seri |
-
-- Odak halkası 2px accent, offset 2px; 18px radius'ta halka karta yapışmaz.
-- Dokunma hedefi 44px; kartın tamamı tıklanabilirse 44px altına inmez.
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, 20px, kart etiketinin solunda |
-| Fotoğraf | Kart içinde 18px radius ile kırpılır; 1 kartta en fazla 1 görsel |
-| İllüstrasyon | Küçük ikonografi; büyük illüstrasyon 1 kahraman kartta |
-| Doku | Yok (`--grain: 0`) |
-| Logo | 20px, kartın üst satırında |
-| Mini grafik | Sparkline 24–40px yükseklik, 1 seri |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 1 dev başlık + altında 2×2 kahraman kart + 4 küçük özellik kartı | `shots/01-page.png` |
 | Dashboard | yüksek | 4 kolon ızgara: KPI 1×1 ×3, grafik 2×1, tablo 2×2; her kartta tek sayı | `shots/01-page.png` |
@@ -164,27 +173,33 @@ Apple/Google'ın widget ekranları, kişisel panolar ve 2022+ ürün sitelerinin
 | Hata | düşük | Kart içinde ikon + 2 satır | `shots/01-page.png` |
 | Profil / ayar | orta | 2 kolon ızgara; her ayar grubu 1 kart | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde `ink/bg` 16.94:1, açıklama 5.92:1 → güvenli; `--ink-faint` 2.43:1 yalnızca etiket.
-- Accent üstü beyaz **4.63:1** → 13px/600 buton metni sınırda; 12px altına inme.
-- Kart içi metin 14px altına inmez; etiketler 11px mono (uppercase, tracking'li) okunur.
-- Odak halkası kart radius'una rağmen görünür (offset 2px).
-- Dokunma hedefi 44px; küçük kartlar 1×1 olsa da min yükseklik 120px.
-- Renk tek başına anlam taşımaz: durum etiketi metinle birlikte.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.94:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 5.92:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 4.63:1 | ≥ 4.5 | button text |
+| focus ring/ground | 4.63:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 98.6 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Kart çorbası" | Hiyerarşi yok, hepsi aynı boyut | 1 kahraman 2×2 + farklı span'ler |
 | Mobilde kırılıyor | Sabit `grid-column: span 3` | Mobilde tüm kartlar `span 1` (tam genişlik) |
 | Dağınık | 4+ farklı ölçü, değişken gutter | 3 ölçü + tek gutter |
@@ -192,22 +207,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Eski görünüm | Koyu gölge | İki katman, düşük opaklık |
 | Okunmuyor | 11px etiket + düşük kontrast | Etiket mono uppercase ≥ 11px, `--ink-soft` kullan |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `01 minimalism` (sade zemin + bento vitrin), `02 swiss-design` (ızgara), `12 aurora-ui` (koyu zemin + bento hero).
-- **Yasak:** `31 scrapbook` (hizasız kolaj), `17 maximalism` (katman enflasyonu), `24 pixel-art` (radius çelişkisi).
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `minimalism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `swiss-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `aurora-ui` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `scrapbook` | Two different ornamental languages compete on the same screen |
+| Mixing | `maximalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `pixel-art` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.apple.com/ios/ | Widget/bento düzeni ve radius oranları |
-| https://www.notion.so/product | Özellik vitrininde değişken kart |
-| https://linear.app | Yoğun panoda kart hiyerarşisi |
+| Source | for what |
+| --- | --- |
+| https://www.apple.com/ios/ | Apple iOS — Widget/bento düzeni ve radius oranları |
+| https://www.notion.so/product | Notion Product — Özellik vitrininde değişken kart |
+| https://linear.app | Linear — Yoğun panoda kart hiyerarşisi |
 
 ## AI brief
 
-```
+```text
 Stil: Bento Grid (styles/05-bento-grid/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="bento-grid"]; hard-coded renk/gölge/radius YASAK.
 Izgara: grid-auto-rows sabit (120px) + span'ler (2x2, 2x1, 1x1); gutter 16px (mobil 12px); mobilde tüm kartlar tam genişlik.
@@ -218,15 +239,15 @@ Renk: tek accent (--accent); kart başına en fazla 1 accent öğe.
 Hareket: hover translateY(-2px) + gölge 180ms; reduced-motion'da yalnız opacity.
 Yasak: kart içinde kart, koyu gölge, 4+ ölçü, değişken gutter, mobilde 2 kolon ısrarı.
 Çıktı: kod + tek paragraf not (span dağılımını ve mobil düşüşü nasıl kurdun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] En az 3 farklı kart ölçüsü, satır başına ≤ 1 kahraman kart.
-- [ ] Gutter her yerde aynı (16/12px).
-- [ ] Her kartta tek cevap var.
-- [ ] Radius 18/24px, gölge iki katman ve yumuşak.
-- [ ] Mobilde tek kolon, taşma yok.
-- [ ] Etiketler ≥ 11px, gövde ≥ 14px; kontrast 4.5:1.
+Style: Bento Grid (bento-grid) · family: Minimal (1–7)
+Token: --bg #f4f4f2 · --surface #ffffff · --ink #12130f · --accent #1f6feb · --line rgba(18,19,15,.08)
+Radius: 18px / 24px · Typography: Inter / Inter / JetBrains Mono
+Required: **Değişken boyut:** en az 3 farklı kart ölçüsü (2×2, 2×1, 1×1); her satırda en fazla 1 "kahraman" kart. · **Sabit gutter:** 16px (mobil 12px); kart aralıkları asla değişmez. · **Tek cevap kuralı:** her kartta bir sayı, bir grafik veya bir eylem — ikisi birden değil.
+Banned: 4+ farklı kart ölçüsü, rastgele boşluklar. · Kart içinde kart (kutu içinde kutu) — 1 seviye yeter. · 14px altı gövde metni; kart içinde 5+ satır paragraf.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -237,9 +258,22 @@ Yasak: kart içinde kart, koyu gölge, 4+ ölçü, değişken gutter, mobilde 2 
   --ink: #12130f; --ink-soft: #5b5f58; --ink-faint: #8a8f86;
   --accent: #1f6feb; --accent-ink: #ffffff;
   --line: rgba(18,19,15,.08);
+  --danger: #d62a1d;
+  --danger-ink: #ffffff;
+  --ok: #008138;
+  --ok-ink: #ffffff;
+  --warn: #b55400;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 18px; --radius-lg: 24px;
-  --shadow: 0 1px 2px rgba(18,19,15,.05), 0 8px 24px rgba(18,19,15,.04);
-  --shadow-hard: none;
+  --shadow: 0 1px 2px rgba(18,19,15,.05), 0 8px 24px rgba(18,19,15,.04); --shadow-hard: none;
   --font-display: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;

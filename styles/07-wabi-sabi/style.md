@@ -1,41 +1,52 @@
 # 07 · Wabi-Sabi
 
-> **Bir cümlede:** Kusuru saklamayan düzen: kırık hiza, organik form, el yapımı doku ve eksik bırakılmış boşluk.
+> **In one sentence:** Kusuru saklamayan düzen: kırık hiza, organik form, el yapımı doku ve eksik bırakılmış boşluk.
 
 | | |
 |---|---|
-| **Hissiyat** | organik, elle yapılmış, melankolik sıcaklık, "yaşanmış" |
-| **En iyi** | kişisel/günlük uygulaması, kültür-sanat, sürdürülebilir marka, zanaat ürünü |
-| **Kaçın** | fintech güven ekranı, kurumsal B2B panel, hızlı e-ticaret |
-| **Zorluk** | yüksek (kaosu kontrol etmek zor) · **Erişilebilirlik** | orta risk |
-| **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="wabi-sabi"]` |
-| **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | organik, elle yapılmış, melankolik sıcaklık, "yaşanmış" |
+| **Best for** | kişisel/günlük uygulaması, kültür-sanat, sürdürülebilir marka, zanaat ürünü |
+| **Avoid** | fintech güven ekranı, kurumsal B2B panel, hızlı e-ticaret |
+| **Difficulty** | yüksek (kaosu kontrol etmek zor) · **Accessibility** |  |
+| **Family** | Minimal (1–7) · **Token** | `kit/tokens.css` → `[data-style="wabi-sabi"]` |
+| **Composition** | `centered` · `pill` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Wabi-sabi, kusurun estetiği: **hizasız** yerleşim (0.5–1.5° dönüklük), **asimetrik radius** (3px / 18px karışımı), **kâğıt dokusu** (grain .07), soluk toprak paleti ve sıcak serif. Mükemmel ızgara bilinçli olarak "elle" bozulur — ama okunabilirlik bozulmaz.
 
 Kazandığı şey: samimiyet ve hatırlanma. Feda ettiği şey: kesinlik ve kurumsal güven; bu stil "steril" olamaz.
 
-### Ne değildir
+### What is not
 - **Japandi değildir.** Japandi düzgün ve ölçülü; wabi-sabi kasten eğik ve dokulu.
 - **Scrapbook değildir.** Scrapbook kolaj/bant/polaroid ekler; wabi-sabi aynı kâğıt dili ama **daha az** öğeyle, doku ve hizasızlıkla kurar.
 - **Bohemian değildir.** Bohemian renkli desen; wabi-sabi soluk ve tek tonlu.
 - **"Sadece eğik kart" değildir.** Doku + asimetrik radius + serif + eksik boşluk birlikte gerekir.
 
-### Nereden gelir
+### Where it comes from
 Japon çay seremonisi estetiği (侘寂): geçicilik, kusur, tamamlanmamışlık. Dijitalde zanaat ürünleri, kişisel not uygulamaları ve "slow" markalarca kullanılıyor; kalabalık arayüzlere insani bir alternatif.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Öğeler hafif **eğik** mi (0.5–1.5°), yoksa kusursuz hizalı mı?
 2. Radius **asimetrik** mi (3px/18px karışımı)?
 3. Kâğıt dokusu (grain) görünür mü — abartısız?
 4. Palet soluk toprak (krem, kil, pas) mı?
 5. Boşluk "eksik" mi bırakılmış (kart yarım hizada, kolon dar)?
 
-## Zorunlu kurallar
+## Visual signature
+- **Dönüklük:** hero görseli `-0.7°`, ikincil kart `+0.4°`; metin blokları 0°.
+- **Asimetrik radius:** `18px 4px 18px 4px` (görsel), `3px` (buton/input).
+- **Grain .07:** kâğıt hissi; PNG'de hafif gürültü.
+- **Soluk kontur:** `rgba(42,39,36,.18)` 1px — keskin değil.
+- **Eksik çizgi:** bazı bölümlerde alt çizgi yok, sadece boşluk.
+- **Pas rengi accent:** `#a85831` yalnızca damga/ikon noktası.
+- **Typography:** Fraunces (display) + Inter (body) + Courier New (mono label).
+- **Colour discipline:** a single accent `#a85831`; neutral scale `#ede6da` → `#2a2724`.
+- **Radius:** `3px` / `18px`; Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
+
+## Mandatory rules
 
 1. **Hizasızlık kontrollü:** ekran başına en fazla 3 öğe 0.5–1.5° döner; okunabilir bloklar (paragraf, tablo) asla dönmez.
 2. **Asimetrik radius:** küçük öğe 3px, büyük yüzey 18px; aynı bileşende iki radius (ör. `18px 4px 18px 4px`).
@@ -44,7 +55,66 @@ Japon çay seremonisi estetiği (侘寂): geçicilik, kusur, tamamlanmamışlık
 5. **Serif display (Fraunces), sans gövde (Inter).**
 6. **Eksik boşluk:** bir bölümde bilinçli asimetri (ör. sağda 1 kolon boş).
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#ede6da` | page background | as a card background |
+| `--bg-2` | `#e3d9c9` | partition divider floor, table top | button background |
+| `--surface` | `#f6f1e6` | kart, input, modal | full-page background |
+| `--surface-2` | `#eadfce` | passive chip, hover background | primary button |
+| `--ink` | `#2a2724` | title, body, icon | large background |
+| `--ink-soft` | `#5f574d` | secondary text, description | — |
+| `--ink-faint` | `#8b8376` | decorative label, separator text | interactive text |
+| `--accent` | `#a85831` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fff8ef` | text above accent | non-accent background |
+| `--line` | `rgba(42,39,36,.18)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **11.97:1** · `ink-soft/bg` **5.73:1** · `ink-faint/bg` **3.02:1 (decorative)** · `accent-ink/accent` **4.85:1**.
+- Status colors are not derived from accent, but come from separate semantic tokens (--ok/--danger/--warn); accent is the action color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Fraunces) | 48px (mobile 30px) | 600 | 1.12 | -0.02em |
+| H2 | same | 30px | 600 | 1.22 | -0.015em |
+| H3 | same | 17px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.55 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier New) | 11px | 400 | 1.2 | 0.16em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Dense display: 14px body, 13px table, 10.5px mono label. The line height cannot be lower than 1.55.
+- Measure: 72ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- 8 columns of content + 4 columns of panels; tables full width. In-card padding 16px, line 40px.
+- Section vertical space 44px desktop, 28px mobile; card padding 16px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Surfaces are smooth; separation with 1px edge and background tone. Reference line in graphs --line.
+- Radius: `3px` (buton, input, chip), `18px` (kart, modal). Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
+
+## Bans
 
 - Mükemmel simetri, eşit kart ızgarası (4×2 gibi kusursuz grid).
 - Parlak renk, gradient, cam, sert gölge, neon.
@@ -52,106 +122,44 @@ Japon çay seremonisi estetiği (侘寂): geçicilik, kusur, tamamlanmamışlık
 - 2° üzeri dönüklük (dağınık görünür), rastgele ölçek.
 - İnce serif gövde metni; 15px altı gövde.
 - Doku yoğunluğu > .09 (metin okunmaz).
+- Gradient for decoration.
+- More than five color series.
+- Animated counter.
 
-## Görsel imza
-- **Dönüklük:** hero görseli `-0.7°`, ikincil kart `+0.4°`; metin blokları 0°.
-- **Asimetrik radius:** `18px 4px 18px 4px` (görsel), `3px` (buton/input).
-- **Grain .07:** kâğıt hissi; PNG'de hafif gürültü.
-- **Soluk kontur:** `rgba(42,39,36,.18)` 1px — keskin değil.
-- **Eksik çizgi:** bazı bölümlerde alt çizgi yok, sadece boşluk.
-- **Pas rengi accent:** `#a85831` yalnızca damga/ikon noktası.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 3px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 3px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 3px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 3px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 3px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 3px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 3px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#ede6da` | sayfa (kil) | kart |
-| `--bg-2` | `#e3d9c9` | ikinci zemin | buton |
-| `--surface` | `#f6f1e6` | kâğıt kart | sayfa |
-| `--surface-2` | `#eadfce` | hover, ikincil | vurgu |
-| `--ink` | `#2a2724` | metin | — |
-| `--ink-soft` | `#5f574d` | açıklama | başlık |
-| `--ink-faint` | `#8b8376` | dekoratif etiket | gövde |
-| `--accent` | `#a85831` | damga, ikon noktası, tek buton | geniş zemin |
-| `--accent-ink` | `#fff8ef` | accent üstü metin | — |
-| `--line` | `rgba(42,39,36,.18)` | elle çizilmiş hissi veren kontur | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 4.54:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **11.97:1** · `ink-soft/bg` **5.73:1** · `ink-faint/bg` **2.87:1** · `accent-ink/accent` **4.85:1**.
-- Accent tonu erişilebilirlik için koyulaştırıldı (`#b4643c` → `#a85831`); daha açık ton kullanma.
-- Yasak: doygun kırmızı, mavi accent, 3+ renk.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 16px box; full of status icons |
+| photo | There is no photo on the data screen; single illustration in empty case |
+| illustration | Lonely empty/failed single line illustration |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Fraunces | 48px (mobil 30px) | 400 | 1.1 | `0` |
-| H2 | Fraunces | 30px | 400 | 1.18 | `0` |
-| H3 | Inter | 17px | 600 | 1.35 | `0` |
-| Gövde | Inter | 16px | 400 | 1.7 | `0` |
-| El yazısı vurgu | Caveat (opsiyonel) | 20px | 400 | 1.3 | `0` |
-| Etiket | Courier New | 11px | 400 | 1.2 | `0.12em`, uppercase |
+- Signature motif: `motif-paper` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Display'de Fraunces'in yumuşak ekseni (SOFT) tercih edilir; WONK kapalı.
-- Gövde 64ch; satır aralığı 1.7 (doku nedeniyle biraz daha ferah).
-- El yazısı yalnızca 1 kısa notta; gövde metni olarak yasak.
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (içerik 7, kenarlar bilinçli boş) |
-| Gutter | 28px |
-| Container | 1080px (okuma 640px) |
-| Boşluk ölçeği | 6 · 12 · 18 · 24 · 36 · 54 · 72 |
-| Breakpoint | 640 / 900 / 1080 px |
-| Bölüm dikey | 72px (mobil 48px) |
-
-- Izgara **görünmez ve kusurlu**: bir kart komşusundan 8px kayabilir (bilinçli).
-- Sağ tarafta boş kolon bırakmak serbest (eksiklik estetiği).
-- Bölüm ritmi: 2 eşit genişlikten sonra mutlaka 1 daraltılmış blok.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` + grain | yok | sayfa |
-| Kâğıt kart | `--surface` + 1px `--line` | `0 1px 0 .06` | içerik |
-| Yapıştırılmış | `--surface` + `--shadow-hard` | `2px 2px 0 rgba(42,39,36,.12)` | damga/etiket |
-
-- Derinlik kâğıt katmanından: hafif gölge + doku; 3D/parlaklık yok.
-- Radius: `--radius` 3px (buton/input), `--radius-lg` 18px (görsel/kart köşelerinden biri).
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 0 20px | `18px 4px 18px 4px` | 14/600 | `--accent` + `--accent-ink` | hover: %94 · focus: 2px `--accent` halka · disabled: %40 |
-| Buton (kâğıt) | 44px | 0 18px | 4px | 14/600 | `--surface` + 1px `--line` + `--shadow-hard` | hover: `--surface-2` |
-| Input | 44px | 0 14px | 4px | 15/400 | `--surface` + 1px `--line` | focus: alt kenar 2px `--accent` · error: `--danger` |
-| Kart | içerik | 24px | `18px 4px 18px 4px` | H3 + 15 | `--surface` + `--shadow` | hover: `translateY(-2px)` |
-| Chip / damga | 24px | 0 10px | 3px | 10/400 mono | `--accent` %14 zemin + `--accent` kenar | — |
-| Nav | 66px | 0 32px | — | 14/500 | `--bg` + alt 1px `--line` | aktif: alt 1px `--accent` |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 | alt 1px `--line` | hover: `--surface-2` (dönmez) |
-| Modal | içerik | 28px | 18px | H2 serif | `--surface` + `--shadow-hard` | backdrop %32 + grain |
-| Toast | 44px | 0 16px | 4px | 13/500 | `--ink` + `--bg` | 4.5sn |
-| Grafik | — | — | 3px uç | eksen 10 mono | `--accent` + `--ink-faint` kesikli referans | 2 seri |
-
-- Odak halkası 2px accent, offset 2px; dönen öğelerde bile halka görünür kalır.
-- Dokunma hedefi 44px; damga/etiketler tıklanabilir olursa padding ile büyütülür.
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, hafif düzensiz (el çizimi hissi), 22px |
-| Fotoğraf | Film grain, sıcak beyaz dengesi, kusurlu kırpma (asimetrik radius) |
-| İllüstrasyon | Suluboya/kolaj, soluk toprak |
-| Doku | grain .07 + kâğıt kenarı (opsiyonel) |
-| Logo | El yazısı veya serif wordmark |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 48px serif başlık, daraltılmış metin kolonu, -0.7° görsel, tek pas buton | `shots/01-page.png` |
 | Dashboard | düşük | Doku ve dönüklük minimum; hairline + serif başlık; sayılar mono | `shots/01-page.png` |
@@ -166,49 +174,61 @@ Japon çay seremonisi estetiği (侘寂): geçicilik, kusur, tamamlanmamışlık
 | Hata | düşük | 13px sıcak dil + `--danger` alt kenar | `shots/01-page.png` |
 | Profil / ayar | orta | 7/5 kolon, satır 56px, kesikli ayırıcı | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde 11.97:1, açıklama 5.73:1 → güvenli. `--ink-faint` 2.87:1 → dekoratif.
-- Accent üstü metin 4.85:1 (krem) → buton metni AA; 12px altına inme.
-- Kontur 0.18 opaklık: koyu zeminde 1px görünür; açık zeminde input kenarını `--ink` %28'e çıkar.
-- Dönüklük: **metin blokları dönmez**, yalnızca görsel/kart; ekran okuyucu sırası etkilenmez.
-- Grain .07 üzerinde 14px metin okunur; .09 üzerine çıkarma.
-- Dokunma hedefi 44px; eğik kartlarda tıklama alanı dikdörtgen kalır.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 11.97:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 5.73:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.02:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 4.85:1 | ≥ 4.5 | button text |
+| focus ring/ground | 4.54:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 87.4 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Yarım kalmış" görünüyor | Kusur var, hiyerarşi yok | Serif display + net ölçek ekle, dönüklüğü azalt |
 | Dağınık | 3'ten fazla öğe dönük, 2°+ açı | Ekran başına ≤ 3 öğe, ≤ 1.5° |
 | Okunmuyor | Doku + dönük metin | Metin bloklarını düz tut, grain ≤ .07 |
 | Ucuz | Doygun renk/parlak gölge | Toprak paleti + mat gölge |
 | Kurumsal güven kaybı | Ödeme ekranında tam stil | Ödeme/girişte dönme ve dokuyu kapat |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `06 japandi` (aynı sıcaklık), `31 scrapbook` (kâğıt dili, garnitür), `30 bohemian` (toprak paleti).
-- **Yasak:** `22 cyberpunk` (neon/kir çelişkisi), `05 bento-grid` (kusursuz ızgara), `26 art-deco` (simetri).
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `japandi` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `scrapbook` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `bohemian` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `cyberpunk` | Two different ornamental languages compete on the same screen |
+| Mixing | `bento-grid` | Two different ornamental languages compete on the same screen |
+| Mixing | `art-deco` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://fonts.google.com/specimen/Fraunces | Yumuşak serif ekseni |
-| https://www.are.na | Kâğıt/doku referans panoları |
-| https://www.etsy.com | Zanaat ürünlerinde organik yerleşim |
+| Source | for what |
+| --- | --- |
+| https://fonts.google.com/specimen/Fraunces | Fraunces — Yumuşak serif ekseni |
+| https://www.are.na | Are.na — Kâğıt/doku referans panoları |
+| https://www.etsy.com | Etsy — Zanaat ürünlerinde organik yerleşim |
 
 ## AI brief
 
-```
+```text
 Stil: Wabi-Sabi (styles/07-wabi-sabi/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="wabi-sabi"]; hard-coded renk/ölçü YASAK.
 Doku: grain .07 (kâğıt), 1px kontur rgba(42,39,36,.18).
@@ -219,15 +239,15 @@ Renk: krem/kil/pas (#ede6da, #f6f1e6, #a85831); accent üstü metin #fff8ef (4.8
 Boşluk: bölüm 72px, eksik/asimetrik kolon serbest (bir bölümde 1 kolon boş).
 Yasak: simetrik eşit kart ızgarası, parlak renk/gradient/cam, dönen metin, >1.5° açı, grain > .09.
 Çıktı: kod + tek paragraf not (hangi öğeyi döndürdün, hangisini düz bıraktın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Dönen öğe ≤ 3, açı ≤ 1.5°, metinler düz.
-- [ ] Radius asimetrik kullanıldı (küçük 3px, büyük 18px).
-- [ ] Grain .07, metin okunur.
-- [ ] Palet toprak; doygun renk yok.
-- [ ] Accent üstü metin kontrastı ≥ 4.5:1.
-- [ ] Ödeme/giriş ekranında süs kapatıldı.
+Style: Wabi-Sabi (wabi-sabi) · family: Minimal (1–7)
+Token: --bg #ede6da · --surface #f6f1e6 · --ink #2a2724 · --accent #a85831 · --line rgba(42,39,36,.18)
+Radius: 3px / 18px · Typography: Fraunces / Inter / Courier New
+Required: **Hizasızlık kontrollü:** ekran başına en fazla 3 öğe 0.5–1.5° döner; okunabilir bloklar (paragraf, tablo) asla dönmez. · **Asimetrik radius:** küçük öğe 3px, büyük yüzey 18px; aynı bileşende iki radius (ör. `18px 4px 18px 4px`). · **Kâğıt dokusu:** `--grain: .07`; doku metnin arkasında, okunurluğu bozmaz.
+Banned: Mükemmel simetri, eşit kart ızgarası (4×2 gibi kusursuz grid). · Parlak renk, gradient, cam, sert gölge, neon. · Dönen **metin** blokları ve dönen tablo satırları.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -238,11 +258,25 @@ Yasak: simetrik eşit kart ızgarası, parlak renk/gradient/cam, dönen metin, >
   --ink: #2a2724; --ink-soft: #5f574d; --ink-faint: #8b8376;
   --accent: #a85831; --accent-ink: #fff8ef;
   --line: rgba(42,39,36,.18);
+  --danger: #cc1c11;
+  --danger-ink: #ffffff;
+  --ok: #007830;
+  --ok-ink: #ffffff;
+  --warn: #ac4b00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 3px; --radius-lg: 18px;
-  --shadow: 0 1px 0 rgba(42,39,36,.06); --shadow-hard: 2px 2px 0 rgba(42,39,36,.12);
-  --font-display: "Fraunces", "Lora", Georgia, serif;
+  --shadow: 0 1px 0 rgba(42,39,36,.06); --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "Courier New", ui-monospace, monospace;
-  --tracking: 0em; --blur: 0px; --grain: .07;
+  --tracking: 0em; --blur: 0px; --grain: 0;
 }
 ```

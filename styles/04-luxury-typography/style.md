@@ -1,41 +1,52 @@
 # 04 · Luxury Typography
 
-> **Bir cümlede:** Seyrek yerleşim + ince serif + geniş harf aralığı; lüks, boşluğun ve yavaşlığın fiyatıdır.
+> **In one sentence:** Seyrek yerleşim + ince serif + geniş harf aralığı; lüks, boşluğun ve yavaşlığın fiyatıdır.
 
 | | |
 |---|---|
-| **Hissiyat** | seçkin, sakin, pahalı, "az konuşan marka" |
-| **En iyi** | premium marka, davet/katalog, otel, mücevher, butik ajans |
-| **Kaçın** | yoğun panel, çok özellikli SaaS, fiyat karşılaştırma, çocuk ürünü |
-| **Zorluk** | orta (boşluk ve tipografi bakımı) · **Erişilebilirlik** | orta (ince ağırlık riski) |
-| **Aile** | Sade (01–07) · **Token** | `kit/tokens.css` → `[data-style="luxury-typography"]` |
-| **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | seçkin, sakin, pahalı, "az konuşan marka" |
+| **Best for** | premium marka, davet/katalog, otel, mücevher, butik ajans |
+| **Avoid** | yoğun panel, çok özellikli SaaS, fiyat karşılaştırma, çocuk ürünü |
+| **Difficulty** | orta (boşluk ve tipografi bakımı) · **Accessibility** |  |
+| **Family** | Minimal (1–7) · **Token** | `kit/tokens.css` → `[data-style="luxury-typography"]` |
+| **Composition** | `fullbleed` · `pill` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Lüks, bilgi yoğunluğunun **azaltılmasıyla** üretilir: çok boşluk, az öğe, ince serif (Cormorant), geniş tracking'li küçük büyük-harf etiketler ve tek altın hairline. Her ekran tek bir şey söyler; gerisi boşluktur.
 
 Kazandığı şey: algılanan değer. Feda ettiği şey: bilgi taşıma kapasitesi — bu stil, "çok seçenek" satan ürünlerde tıkanır.
 
-### Ne değildir
+### What is not
 - **Editorial değildir.** Editorial dolu ve ritmik; lüks **seyrek** ve yavaş.
 - **Art Deco değildir.** Art Deco geometrik süs ve altın çerçeve kullanır; burada süs yok, sadece oran var.
 - **Minimalism değildir.** Minimalizm işlevsel boşluk; lüks **törensel** boşluk (hero'da tek satır, 120px üst boşluk).
 - **"Serif + altın" değildir.** Tracking, punto hiyerarşisi ve nefes alanı yoksa sadece "pahalı taklidi" olur.
 
-### Nereden gelir
+### Where it comes from
 Moda evi katalogları, Didot/Bodoni geleneği ve İsviçre minimalizminin lüks yorumu. Dijitalde premium D2C markalar ve otel zincirleriyle standartlaştı.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Ekranda **3'ten az** öğe var mı (hero'da başlık, tek satır, tek bağlantı)?
 2. Etiketler küçük ve **geniş tracking'li büyük harf** mi (10px, `.2em+`)?
 3. Display **ince** (300–400) ve büyük puntolu mu?
 4. Radius ≈ 0, gölge yok, tek altın hairline var mı?
 5. Görsel tam genişlik veya tamamen boş bir alan mı?
 
-## Zorunlu kurallar
+## Visual signature
+- **Merkezlenmiş hero** veya tek kolon geniş boşluklu yerleşim; 120px üst boşluk.
+- **Tracking'li mikro etiket:** `MAISON · 1924`, 10px, `0.3em`.
+- **Altın hairline:** başlık altında 1px, 40–80px uzunlukta, `--accent`.
+- **İnce serif display:** Cormorant 300, 56–72px, satır aralığı 1.1.
+- **Görsel:** tam genişlik veya 4/5 dikey oranlı tek kare; çerçevesiz.
+- **Doku:** grain .03 (kâğıt), görünür gürültü yok.
+- **Typography:** Cormorant Garamond (display) + Jost (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#a78746`; neutral scale `#f6f1e7` → `#1a1815`.
+- **Radius:** `0px` / `2px`; Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
+
+## Mandatory rules
 
 1. **Seyrek yerleşim.** Ekran başına en fazla 1 başlık + 1 paragraf + 1 CTA; toplam 3 etkileşim.
 2. **İnce serif display** (Cormorant, 300–400), 52–72px; asla 700.
@@ -44,7 +55,66 @@ Moda evi katalogları, Didot/Bodoni geleneği ve İsviçre minimalizminin lüks 
 5. **Boşluk baskın:** bölüm dikey boşluk 96–128px; içerik genişliği ≤ 1040px.
 6. **Tek aksan (altın):** yalnızca hairline, küçük etiket ve tek bağlantıda.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f6f1e7` | page background | as a card background |
+| `--bg-2` | `#efe7d8` | partition divider floor, table top | button background |
+| `--surface` | `#fffdf8` | kart, input, modal | full-page background |
+| `--surface-2` | `#f3ecdf` | passive chip, hover background | primary button |
+| `--ink` | `#1a1815` | title, body, icon | large background |
+| `--ink-soft` | `#5c554b` | secondary text, description | — |
+| `--ink-faint` | `#938a7e` | decorative label, separator text | interactive text |
+| `--accent` | `#a78746` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#1a1815` | text above accent | non-accent background |
+| `--line` | `rgba(26,24,21,.16)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **15.74:1** · `ink-soft/bg` **6.53:1** · `ink-faint/bg` **3.02:1 (decorative)** · `accent-ink/accent` **5.23:1**.
+- Status colors are not derived from accent, but come from separate semantic tokens (--ok/--danger/--warn); accent is the action color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Cormorant Garamond) | 64px (mobile 38px) | 600 | 1.12 | -0.02em |
+| H2 | same | 34px | 600 | 1.22 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 14px | 400 | 1.55 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 10px | 400 | 1.2 | 0.16em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
+
+- Dense display: 14px body, 13px table, 10.5px mono label. The line height cannot be lower than 1.55.
+- Measure: 72ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- 8 columns of content + 4 columns of panels; tables full width. In-card padding 16px, line 40px.
+- Section vertical space 44px desktop, 28px mobile; card padding 16px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Surfaces are smooth; separation with 1px edge and background tone. Reference line in graphs --line.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
+
+## Bans
 
 - Gölge, gradient, cam, doku (grain ≤ .03, görünmez).
 - Kalın display (600+), 14px üstü gövde metni (lüks gövde küçük ve seyrek).
@@ -52,108 +122,44 @@ Moda evi katalogları, Didot/Bodoni geleneği ve İsviçre minimalizminin lüks 
 - Çoklu CTA, badge/chip enflasyonu, ikon kalabalığı.
 - Dolgun buton (dolu accent zemin geniş alanda) — ince çerçeve tercih.
 - Ortalanmış olmayan hero: bu stilde **merkezleme serbesttir** (tek istisna).
+- Gradient for decoration.
+- More than five color series.
+- Animated counter.
 
-## Görsel imza
-- **Merkezlenmiş hero** veya tek kolon geniş boşluklu yerleşim; 120px üst boşluk.
-- **Tracking'li mikro etiket:** `MAISON · 1924`, 10px, `0.3em`.
-- **Altın hairline:** başlık altında 1px, 40–80px uzunlukta, `--accent`.
-- **İnce serif display:** Cormorant 300, 56–72px, satır aralığı 1.1.
-- **Görsel:** tam genişlik veya 4/5 dikey oranlı tek kare; çerçevesiz.
-- **Doku:** grain .03 (kâğıt), görünür gürültü yok.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f6f1e7` | sayfa (krem) | kart zemini |
-| `--bg-2` | `#efe7d8` | ikinci zemin, footer | buton |
-| `--surface` | `#fffdf8` | kart | geniş zemin |
-| `--surface-2` | `#f3ecdf` | hover | vurgu |
-| `--ink` | `#1a1815` | metin | — |
-| `--ink-soft` | `#5c554b` | paragraf | başlık |
-| `--ink-faint` | `#938a7e` | mikro etiket | gövde metni |
-| `--accent` | `#a78746` | hairline, mikro etiket, bağlantı | geniş zemin, buton dolgusu |
-| `--accent-ink` | `#1a1815` | accent üstü metin | — |
-| `--line` | `rgba(26,24,21,.16)` | hairline | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 3.33:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **15.74:1** · `ink-soft/bg` **6.53:1** · `ink-faint/bg` **2.76:1** · `accent-ink/accent` **7.63:1**.
-- `--accent` (altın) **metin rengi olarak kullanılmaz** — küçük etikette dahi `--ink` kullan, altını sadece çizgi/ikon için ayır.
-- Yasak: ikinci metallik ton, saf siyah (#000) — `--ink` sıcak siyah.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 16px box; full of status icons |
+| photo | There is no photo on the data screen; single illustration in empty case |
+| illustration | Lonely empty/failed single line illustration |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Cormorant Garamond | 64px (mobil 38px) | 300 | 1.1 | `0.01em` |
-| H2 | Cormorant | 34px | 400 | 1.2 | `0.01em` |
-| H3 | Cormorant | 20px | 600 | 1.3 | `0.02em` |
-| Gövde | Jost | 14px | 400 | 1.75 | `0.02em` |
-| Mikro etiket | Jost / IBM Plex Mono | 10px | 500 | 1.2 | `0.3em`, uppercase |
-| Buton | Jost | 10px | 600 | 1 | `0.18em`, uppercase |
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Ölçek **2.0×+**: 14 → 34 → 64. Gövde küçük, display büyük — lüks oran budur.
-- Gövde satır uzunluğu 46–54ch (dar), çünkü punto küçük ve tracking geniş.
-- 300 ağırlık yalnızca ≥ 32px'te; küçük puntoda okunmaz → H3 ve altı 400/600.
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (içerik 6–8, merkezli) |
-| Gutter | 32px |
-| Container | 1040px (metin 560px) |
-| Boşluk ölçeği | 8 · 16 · 24 · 32 · 48 · 64 · 96 · 128 |
-| Breakpoint | 640 / 900 / 1040 px |
-| Bölüm dikey | 112px (mobil 64px) |
-
-- Hero üst boşluğu ≥ 96px; başlık ile paragraf arası 24px; paragraf ile CTA arası 32px.
-- Ekran başına en fazla **2 bölüm**; üçüncü bölüm ekleme ihtiyacı varsa ikinciyi böl.
-- Görsel tam genişlik kullanıldığında 56px iç boşluk bırakılır.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` | yok | sayfa |
-| Kart | `--surface` + 1px `--line` | yok | ürün kartı |
-| Yüzen | `--surface` + 1px | yok | modal (backdrop %45) |
-
-- Derinlik yok; lüks "düz kâğıt" gibi durur, gölge ucuzlatır.
-- Radius 0 (buton/input), 2px (kart) — daha fazlası "uygulama" hissi verir.
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 46px | 0 28px | 0 | 10/600 uppercase `0.18em` | `transparent` + 1px `--ink` kenar, metin `--ink` | hover: `--ink` zemin + `--bg` metin (yavaş 240ms) · focus: 1px `--accent` dış halka, offset 3px · disabled: %35 |
-| Buton (accent) | 46px | 0 28px | 0 | 10/600 uppercase | `--accent` zemin + `--accent-ink` | yalnızca tek ana CTA |
-| Bağlantı | — | — | — | 11px uppercase `0.14em` | `--ink` + alt 1px `--accent` | hover: alt çizgi 1px `--ink` |
-| Input | 46px | 0 16px | 0 | 14/400 | `transparent` + alt 1px `--line` | focus: alt 1px `--accent` · error: alt `--danger` |
-| Kart (ürün) | içerik | 0 | 2px | başlık H3 serif | `--surface` + 1px `--line` | hover: görsel %4 büyür (transform, 320ms) |
-| Chip / etiket | 20px | 0 8px | 0 | 9.5/500 uppercase `0.24em` | `transparent` + 1px `--accent` kenar | — |
-| Nav | 84px | 0 48px | 0 | 10/500 uppercase `0.22em` | alt 1px `--line`, zemin `--bg` | aktif: 1px alt `--accent` |
-| Tablo satırı | 56px | 14px 12px | 0 | 13/400, sayı serif 15 | alt 1px `--line` | hover: `--surface-2` |
-| Modal | içerik | 40px | 2px | H2 serif + 14 gövde | `--surface` + 1px `--line` | backdrop %45 |
-| Toast | 44px | 0 20px | 0 | 11/500 uppercase | `--ink` zemin + `--bg` | 5sn |
-| Grafik | — | — | — | eksen 10 mono | `--ink` çizgi + `--accent` tek vurgu noktası | 1 seri |
-
-- Odak halkası ince (1–2px) ve altın; siyah halka lüks dili bozar.
-- Dokunma hedefi 44px; görsel olarak küçük etiketler padding ile büyütülür.
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi, 20px, ince; dolgu yok |
-| Fotoğraf | Tek konu, yumuşak ışık, geniş negatif alan; ürün fotoğrafı 4/5 dikey |
-| İllüstrasyon | Yok; gerekiyorsa ince gravür/çizgi |
-| Doku | grain .03 |
-| Logo | Serif wordmark, geniş tracking; 20–24px yükseklik |
-| Video | Sessiz, 6–8sn döngü, metin içermez |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | Merkezli 64px serif başlık, altında 46ch tek paragraf, tek çerçeveli CTA, 40px altın hairline | `shots/01-page.png` |
 | Dashboard | düşük | Lüks geri çekilir: sans gövde 13px, hairline ayırıcı, serif sadece sayfa başlığında | `shots/01-page.png` |
@@ -168,27 +174,33 @@ Moda evi katalogları, Didot/Bodoni geleneği ve İsviçre minimalizminin lüks 
 | Hata | düşük | 13px sakin dil + alt hairline `--danger` | `shots/01-page.png` |
 | Profil / ayar | orta | 6 kolon içerik, 56px satırlar, serif bölüm başlığı | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde 15.74:1, açıklama 6.53:1 → güvenli. `--ink-faint` 2.76:1 → **asla gövde metni**.
-- Altını metin olarak kullanma: `#a78746` krem üzerinde ~2.0:1 — sadece çizgi/ikon.
-- İnce ağırlık (300) 32px altında okunmaz; küçük puntoda 400+ kullan.
-- 14px gövde + geniş tracking okuma hızını düşürür: paragrafları 3 satırla sınırla.
-- Odak halkası 2px altın, offset 3px; krem zeminde 3:1 üstü.
-- Dokunma hedefi 44px; ince bağlantılarda satır yüksekliği ile.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.74:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.53:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.02:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.23:1 | ≥ 4.5 | button text |
+| focus ring/ground | 3.33:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 96.4 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Pahalı değil, boş görünüyor | Boşluk var ama ölçek yok | Display 64px + mikro etiket 10px zıplaması |
 | Ucuz görünüyor | Gölge/radius/dolu buton | Gölgeyi sil, radius 0, ince çerçeve |
 | Okunmuyor | 300 ağırlık + 12px | 400 ağırlık, 14px, 1.75 satır |
@@ -196,22 +208,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Bilgi eksik hissi | 3+ CTA, çok bölüm | Tek CTA, ekran başına 2 bölüm |
 | Mobilde sıkışma | 112px bölüm boşluğu korunmuş | Mobilde 64px'e indir |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `03 editorial-design` (aynı serif dili, daha dolu varyant), `26 art-deco` (altın + geometri, garnitür), `01 minimalism` (boşluk disiplini).
-- **Yasak:** `13 neo-brutalism` (kalın kontur), `18 dopamine-ui` (doygun renk), `24 pixel-art` (çözünürlük/ton çelişkisi).
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `art-deco` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `minimalism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `pixel-art` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.aesop.com | Seyrek yerleşim + ince serif + geniş boşluk |
-| https://www.cos.com | Ürün kartı ve tipografi oranı |
-| https://fonts.google.com/specimen/Cormorant+Garamond | İnce ağırlık kullanımı |
+| Source | for what |
+| --- | --- |
+| https://www.aesop.com | Aesop — Seyrek yerleşim + ince serif + geniş boşluk |
+| https://www.cos.com | COS — Ürün kartı ve tipografi oranı |
+| https://fonts.google.com/specimen/Cormorant+Garamond | Cormorant Garamond — İnce ağırlık kullanımı |
 
 ## AI brief
 
-```
+```text
 Stil: Luxury Typography (styles/04-luxury-typography/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="luxury-typography"]; hard-coded renk/ölçü YASAK.
 Tipografi: Cormorant display 300–400 (52–72px, 1.1, 0.01em) + Jost gövde 14/1.75; mikro etiket 10px uppercase 0.3em.
@@ -221,15 +239,15 @@ Altın (#a78746): yalnızca hairline/ikon/mikro etiket çerçevesi — metin ren
 Hareket: 300–400ms ease-out, sadece opacity/transform/renk.
 Yasak: gölge, gradient, kalın display, dolu accent buton, çoklu CTA, 12px altı metin, 3+ bölüm.
 Çıktı: kod + tek paragraf not (boşluk oranını ve tipografik zıplamayı nasıl kurdun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda ≤ 3 etkileşim, ≤ 2 bölüm.
-- [ ] Display ince (300–400) ve ≥ 52px.
-- [ ] Mikro etiketler 10px, `0.2em+` tracking, uppercase.
-- [ ] Gölge yok, radius ≤ 2px.
-- [ ] Altın metin olarak kullanılmadı.
-- [ ] Gövde ≥ 14px, satır aralığı ≥ 1.7.
+Style: Luxury Typography (luxury-typography) · family: Minimal (1–7)
+Token: --bg #f6f1e7 · --surface #fffdf8 · --ink #1a1815 · --accent #a78746 · --line rgba(26,24,21,.16)
+Radius: 0px / 2px · Typography: Cormorant Garamond / Jost / IBM Plex Mono
+Required: **Seyrek yerleşim.** Ekran başına en fazla 1 başlık + 1 paragraf + 1 CTA; toplam 3 etkileşim. · **İnce serif display** (Cormorant, 300–400), 52–72px; asla 700. · **Geniş tracking etiket:** 10px, büyük harf, `0.2–0.34em`.
+Banned: Gölge, gradient, cam, doku (grain ≤ .03, görünmez). · Kalın display (600+), 14px üstü gövde metni (lüks gövde küçük ve seyrek). · 12px altı gövde metni; 1.7 altı satır aralığı.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -240,11 +258,25 @@ Yasak: gölge, gradient, kalın display, dolu accent buton, çoklu CTA, 12px alt
   --ink: #1a1815; --ink-soft: #5c554b; --ink-faint: #938a7e;
   --accent: #a78746; --accent-ink: #1a1815;
   --line: rgba(26,24,21,.16);
+  --danger: #d5271b;
+  --danger-ink: #ffffff;
+  --ok: #008037;
+  --ok-ink: #ffffff;
+  --warn: #b35200;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
   --shadow: none; --shadow-hard: none;
-  --font-display: "Cormorant Garamond", "Didot", Georgia, serif;
-  --font-body: "Jost", "Inter", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: 0.02em; --blur: 0px; --grain: .03;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
 }
 ```

@@ -1,43 +1,43 @@
 # 45 · Terminal UI
 
-> **Bir cümlede:** Her şeyin tek mono ızgarada hizalandığı, durumu rengin değil metnin söylediği klavye öncelikli arayüz.
+> **In one sentence:** Her şeyin tek mono ızgarada hizalandığı, durumu rengin değil metnin söylediği klavye öncelikli arayüz.
 
 | | |
 |---|---|
-| **Hissiyat** | teknik, kesin, hızlı, dürüst |
-| **En iyi** | geliştirici aracı, CI/deploy paneli, log & gözlem, finans/veri terminali |
-| **Kaçın** | tüketici e-ticareti, lüks marka, çocuk/wellness — burada "soğuk" değil "okunamaz" olur |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 8.62:1) |
-| **Aile** | Teknik (45–46) · **Token** | `kit/tokens.css` → `[data-style="terminal-ui"]` |
-| **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | teknik, kesin, hızlı, dürüst |
+| **Best for** | geliştirici aracı, CI/deploy paneli, log & gözlem, finans/veri terminali |
+| **Avoid** | tüketici e-ticareti, lüks marka, çocuk/wellness — burada "soğuk" değil "okunamaz" olur |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Technical (45–45) · **Token** | `kit/tokens.css` → `[data-style="terminal-ui"]` |
+| **Composition** | `product` · `utility` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Terminal UI, bir arayüzü **karakter ızgarası** olarak ele alır: tek mono aile, sabit satır yüksekliği, hizalı sütunlar, 1px çerçeve ve hiç gölge. Süslemenin yerini **bilgi yoğunluğu** alır; kullanıcı fareyle dolaşmak yerine klavyeyle hedefe gider.
 
 Üç kurucu karar: (1) **tek aile** — display, gövde ve mono aynı font, hiyerarşi punto ve ağırlıkla kurulur; (2) **düz yüzey** — katman ayrımı yalnızca 1px çerçeve ve ters video (accent zemin); (3) **metinle durum** — `[ok]`, `> `, `! `, `..` gibi işaretler rengi yedekler, renk körlüğünde de okunur.
 
 Bedeli: görsel sıcaklık yoktur. Bu stilin "ucuz" görünmemesini sağlayan tek şey **hizalama disiplini** — bir sütunun 1 karakter kayması bütün etkiyi bozar.
 
-### Ne değildir
+### What is not
 - **Cybercore (23) değildir:** cybercore HUD/glitch/neon efektleriyle atmosfer kurar; Terminal UI efekt yasağı getirir, değerini yoğunluktan alır.
 - **Cyberpunk (22) değildir:** cyberpunk çok renkli neon palet ve kirli doku kullanır; burada tek accent ve temiz 1px çizgi var.
 - **Scandinavian Dark (40) değildir:** o stil oransal (proportional) tipografiyle sessiz lüks kurar; Terminal UI mono ızgaradadır.
 - **Utility (44) değildir:** Utility beyaz zeminli ürün arayüzüdür; Terminal UI koyu zemin + karakter ızgarasıdır. Ortak nokta yalnız disiplin.
 
-### Nereden gelir
+### Where it comes from
 VT100/80×24 metin terminalleri, `top`/`htop` panel dili ve 2020'lerin TUI rönesansı (lazygit, k9s, btop). Bugün yeniden kullanılmasının nedeni: ajan ve CLI araçları için **klavye öncelikli, düşük gecikmeli** arayüz ihtiyacı. Klişeye dönüşmemesi için korunacak detay: **karakter ızgarasının bozulmaması** (sütun hizası) ve efekt yasağı.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Ekranda tek font ailesi var; harflerin genişliği her yerde aynı.
 2. Hiçbir yüzeyde gölge veya gradient yok; ayrım 1px çerçeveyle.
 3. Durumlar metinle işaretli: `> ` aktif, `[ok]` başarılı, `! ` hata.
 4. Satır yüksekliği 32px; tablo sütunları dikey hizalı.
 5. Klavye ipuçları görünür (`↑↓ gez`, `enter aç`, `esc kapat`).
 
-## Görsel imza
+## Visual signature
 - **Tek aile:** JetBrains Mono (`--font-display` = `--font-body` = `--font-mono`).
 - **Karakter ızgarası:** gövde 14px/22, tablo 13px/20, satır yüksekliği 32px; `ch` birimiyle ölçü.
 - **1px çerçeve:** panel, tablo, input aynı `--line` çizgisini kullanır; köşe 0–2px.
@@ -45,99 +45,124 @@ VT100/80×24 metin terminalleri, `top`/`htop` panel dili ve 2020'lerin TUI röne
 - **İşaret dili:** `> ` aktif öğe, `[ok]` / `[..]` / `! ` durum, `┌─ ├─ └─` bölüm çerçevesi gerektiğinde ASCII.
 - **Efekt yok:** gölge, blur, gradient, grain (`--grain: 0`), tarama çizgisi, flicker yasak.
 - **İmleç:** tek yanıp sönen öğe; reduced-motion'da durur.
+- **Typography:** JetBrains Mono (display) + JetBrains Mono (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#58e08a`; neutral scale `#0a0d0a` → `#d7e6d2`.
+- **Radius:** `0px` / `2px`; Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#0a0d0a` | terminal zemini | kart zemini |
-| `--surface` | `#0f140f` | panel / tablo gövdesi | birincil buton |
-| `--surface-2` | `#131a13` | başlık satırı, seçili olmayan chip | sayfa zemini |
-| `--ink` | `#d7e6d2` | metin ve çerçeve metni | dekoratif dolgu |
-| `--ink-soft` | `#9bb394` | ikincil metin, etiket | hata metni |
-| `--ink-faint` | `#6d8268` | yalnız dekoratif ayırıcı/yorum | etkileşimli metin |
-| `--accent` | `#58e08a` | birincil eylem, aktif satır, odak | dekorasyon |
-| `--accent-ink` | `#04120a` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(215,230,210,.16)` | tüm çerçeveler | metin |
+1. Tek aile: JetBrains Mono; display = body = mono
+2. Ölçü her yerde sayısal ve hizalı (karakter ızgarası)
+3. Katman ayrımı 1px çerçeve; gölge/blur yok
+4. Durum metinle bildirilir (`[ok]`, `> `, `! `), yalnız renkle değil
+5. Klavye ile tam gezinti: Tab sırası görünür, kısayol ipuçları gösterilir
+6. Yoğunluk: satır yüksekliği 32px, tablo hücresi 4/8px padding
 
-- Ölçülen kontrast: `ink/bg` **15.01:1** · `ink-soft/bg` **8.62:1** · `accent-ink/accent` **11.35:1** · `ink-faint/bg` **4.69:1**.
-- Tek accent kuralı: `--accent` yalnız birincil eylem, seçim ve odak için; ikinci vurgu gerekirse `--warn`/`--danger`.
-- Yasak kombinasyon: accent zemin üstünde `--ink-soft`; iki accent tonu yan yana.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0a0d0a` | page background | as a card background |
+| `--bg-2` | `#0d110d` | partition divider floor, table top | button background |
+| `--surface` | `#0f140f` | kart, input, modal | full-page background |
+| `--surface-2` | `#131a13` | passive chip, hover background | primary button |
+| `--ink` | `#d7e6d2` | title, body, icon | large background |
+| `--ink-soft` | `#9bb394` | secondary text, description | — |
+| `--ink-faint` | `#6d8268` | decorative label, separator text | interactive text |
+| `--accent` | `#58e08a` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#04120a` | text above accent | non-accent background |
+| `--line` | `rgba(215,230,210,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | JetBrains Mono | 40px | 600 | 1.15 | 0 |
-| H2 | JetBrains Mono | 24px | 600 | 1.3 | 0 |
-| H3 | JetBrains Mono | 18px | 600 | 1.35 | 0 |
-| Gövde | JetBrains Mono | 14px | 400 | 1.55 | 0 |
-| Etiket / kısayol | JetBrains Mono | 11–12px | 500 | 1.3 | 0.08em, büyük harf |
-| Kod / log | JetBrains Mono | 12–13px | 400 | 1.5 | 0 |
+- Measured contrast: `ink/bg` **15.01:1** · `ink-soft/bg` **8.62:1** · `ink-faint/bg` **4.69:1 (decorative)** · `accent-ink/accent` **11.35:1**.
+- Status colors are not derived from accent, but come from separate semantic tokens (--ok/--danger/--warn); accent is the action color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek: 11 · 12 · 13 · 14 · 18 · 24 · 40 · (mobil 26). Oran keyfi değil, üç basamaklı sıçrama.
-- Gövde satır uzunluğu en fazla 72ch; log satırları sarmaz, yatay kaydırır.
-- Tüm sayısal sütunlar `font-variant-numeric: tabular-nums`.
-- İtalik yok; 700 üstü ağırlık yok (vurgu accent veya ters video ile).
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (JetBrains Mono) | 40px (mobile 26px) | 600 | 1.12 | -0.02em |
+| H2 | same | 24px | 600 | 1.22 | -0.015em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (JetBrains Mono) | 14px | 400 | 1.55 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.16em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (içerik) · paneller 1–3 sütun |
-| Gutter | 16px (`--space-4`) |
-| Container genişliği | 1180px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 768 altında tablo → yatay kaydırma; panel yığını |
+- Dense display: 14px body, 13px table, 10.5px mono label. The line height cannot be lower than 1.55.
+- Measure: 72ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Bölüm dikey ritmi 64px masaüstü / 40px mobil; panel içi 16px.
-- Hizalama: tüm hücreler `ch` birimine göre; sütun başlığı ile değer aynı sağ kenarda biter.
-- Art arda en fazla 2 farklı hizalama; üçüncüsünde ızgara değişir.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` | — | terminal |
-| Panel | `--surface` + 1px `--line` | yok | tablo, form, kart |
-| Odak katmanı | `--surface` + 1px `--accent` | yok | modal, komut paleti |
+- 8 columns of content + 4 columns of panels; tables full width. In-card padding 16px, line 40px.
+- Section vertical space 44px desktop, 28px mobile; card padding 16px.
 
-- Derinlik yoktur: katman ayrımı çerçeve rengi ve ters video ile kurulur.
-- Radius: `--radius` 0px (tablo, satır), `--radius-lg` 2px (panel, modal). 2px üstü yasak.
-- Modal arka planı `rgba(5,7,5,.72)`; blur yok (tarama efekti sayılır).
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 36px | 6px 12px | `--radius` | 13px/600 | `--accent` / `--accent-ink` | hover %88 karışım · active `translateY(1px)` · focus 1px outline + 2px offset · disabled %45 + kesikli çerçeve · loading `[....]` |
-| Buton (ikincil) | 36px | 6px 12px | `--radius` | 13px/600 | şeffaf + 1px `--line` | hover `--surface-2` · focus aynı |
-| Input | 36px | 0 10px | `--radius` | 13px/400 | `--surface` + 1px `--line` | focus accent çerçeve + imleç · filled aynı · error `! ` + `--danger` · disabled %45 |
-| Panel / kart | — | 16px | `--radius-lg` | 14px gövde | `--surface` + 1px `--line` | seçili panel accent çerçeve |
-| Chip / badge | 20px | 0 6px | `--radius` | 11px/500 | `--surface-2` + 1px `--line` | aktif ters video |
-| Nav (üst bar) | 40px | 0 16px | 0 | 13px/500 | `--bg` + alt 1px `--line` | aktif `> ` + accent metin |
-| Tablo satırı | 32px | 4px 8px | 0 | 13px/400, tabular | çizgisiz; seçili ters video | hover `--surface-2` · seçili accent |
-| Modal / komut paleti | — | 16px | `--radius-lg` | 14px | accent çerçeve, gölge yok | `esc` kapatır, odak tuzağı |
-| Durum satırı / toast | 28px | 4px 10px | `--radius` | 12px/500 | `--surface-2` | 3sn sonra döner, hover'da durur |
-| Grafik | — | — | 0 | 11px eksen | blok karakter sparkline veya tablo | en fazla 4 seri |
+- Surfaces are smooth; separation with 1px edge and background tone. Reference line in graphs --line.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-- Odak halkası: `outline: 1px solid var(--accent); outline-offset: 2px` — tüm etkileşimli öğelerde.
-- Dokunma hedefi: mobilde 44×44px (görsel yükseklik 36px, padding ile büyütülür).
-- Kısayol ipucu her ekranın alt durum satırında: `↑↓ gez · enter aç · esc kapat`.
+## Bans
 
-## Görsel dil
+- Gölge, blur, gradient, grain, CRT tarama çizgisi, flicker.
+- 2px üstü radius, yuvarlak kart, yumuşak gölge.
+- İkinci font ailesi (serif/geometrik display).
+- Süsleme amaçlı ikon/illüstrasyon, emoji ile durum bildirimi.
+- Anlaşılmaz jargon: kısaltma ilk geçtiği yerde açıklanır.
+- Sürekli animasyon (imleç dışında) ve parallax.
+- Gradient for decoration.
+- More than five color series.
+- Animated counter.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi; ASCII/mono karakter tercih edilir (`>`, `#`, `?`), dolu ikon yok |
-| Fotoğraf | yok; zorunluysa 1px çerçevede, düşük doygunluk, max %30 alan |
-| İllüstrasyon | ASCII diyagram (kutu çizimi, ok, ağaç yapısı) |
-| Doku | yok (`--grain: 0`); CRT tarama çizgisi/gürültü yasak |
-| Logo alanı | metin logo, küçük harf veya büyük harf (tek biçim), sol üstte `> marka` |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 11.58:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 16px box; full of status icons |
+| photo | There is no photo on the data screen; single illustration in empty case |
+| illustration | Lonely empty/failed single line illustration |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-grid` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | tek ekran: başlık + 3 özellik satırı + kısayol ipucu | `shots/01-page.png` |
 | Dashboard | çok yüksek | panel ızgarası, KPI tek satır, sparkline | `shots/01-page.png` |
@@ -152,42 +177,33 @@ VT100/80×24 metin terminalleri, `top`/`htop` panel dili ve 2020'lerin TUI röne
 | Hata | düşük | `! ` + neden + sonraki komut | `shots/01-page.png` |
 | Ayar | yüksek | anahtar/değer listesi, 32px satır | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Tek aile: JetBrains Mono; display = body = mono.
-- Satır yüksekliği 32px, tablo hücresi 4/8px padding; sayılar tabular.
-- Tüm katman ayrımı 1px çerçeve; radius 0–2px.
-- Durum her zaman metinle de bildirilir (`> `, `[ok]`, `! `, `[..]`).
-- Klavye ile tam gezinti + görünür odak halkası + kısayol ipucu satırı.
-- Her ekranda en az bir "komut" yolu (kısayol veya komut paleti).
+## Accessibility
 
-## Yasaklar
-- Gölge, blur, gradient, grain, CRT tarama çizgisi, flicker.
-- 2px üstü radius, yuvarlak kart, yumuşak gölge.
-- İkinci font ailesi (serif/geometrik display).
-- Süsleme amaçlı ikon/illüstrasyon, emoji ile durum bildirimi.
-- Anlaşılmaz jargon: kısaltma ilk geçtiği yerde açıklanır.
-- Sürekli animasyon (imleç dışında) ve parallax.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.01:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.62:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.69:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 11.35:1 | ≥ 4.5 | button text |
+| focus ring/ground | 11.58:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 88.6 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
-- Gövde ≥ 4.5:1, büyük metin ≥ 3:1; ölçülen en düşük etkileşimli çift 8.62:1.
-- `--ink-faint` (4.69:1) yalnız dekoratif yorum ve ayırıcı için; etkileşimli metin değil.
-- Durum yalnız renkle anlatılmaz: metin işareti + renk birlikte.
-- Odak halkası 1px accent + 2px offset; koyu zeminde ≤ 3:1 altına düşmez.
-- 390px'te yatay sayfa kaydırması yok; tablo kendi içinde kaydırılır.
-- `prefers-reduced-motion` açıkken imleç ve giriş animasyonu durur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Dağınık terminal" hissi | karışık genişlik/punto | tek aile + 32px satır + tabular |
 | Okunmuyor | koyu zeminde ince 300 ağırlık | 400 taban, vurgu accent/temyiz |
 | Göz yoruyor | sürekli yanıp sönen öğeler | yalnız imleç yanıp söner |
@@ -195,28 +211,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | "Oyun gibi" görünüyor | neon çok renk | tek accent + warn/danger sınırı |
 | Mobilde kullanılamıyor | 32px satır + 36px buton | dikey padding ile 44px hedef |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `cybercore` — aynı teknik kitle, daha atmosferik varyant.
-- **Uyumlu:** `utility` — dokümantasyon bölümlerinde açık zemin alternatifi.
-- **Yasak:** `claymorphism` — yumuşak gölge ve radius dili taban tabana zıt.
-- **Yasak:** `maximalism` — renk ve katman bütçesi çelişir.
-- **Yasak:** `memphis` — dekoratif geometri mono ızgarayı bozar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `cybercore` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `scandinavian-dark` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `maximalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `memphis` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://github.com/charmbracelet/bubbletea | TUI bileşen modeli ve durum mantığı |
-| https://github.com/jesseduffield/lazygit | panel/odak dili, tuş ipuçları |
-| https://www.bloomberg.com/professional/products/bloomberg-terminal/ | yoğun veri düzeni, klavye önceliği |
-| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | odak görünürlüğü ölçütü |
+| Source | for what |
+| --- | --- |
+| https://github.com/charmbracelet/bubbletea | Charm · Bubble Tea — TUI bileşen modeli ve durum mantığı |
+| https://github.com/jesseduffield/lazygit | Lazygit — panel/odak dili, tuş ipuçları |
+| https://www.bloomberg.com/professional/products/bloomberg-terminal/ | Bloomberg Terminal — yoğun veri düzeni, klavye önceliği |
+| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | WCAG 2.2 · Focus Appearance — odak görünürlüğü ölçütü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Terminal UI (styles/45-terminal-ui/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="terminal-ui"] değişkenleri; hard-coded renk/radius/gölge yasak.
 Tipografi: tek aile JetBrains Mono (display = body = mono); hiyerarşi punto + ağırlık (400/600).
@@ -228,16 +245,15 @@ Etkileşim: klavye öncelikli; Tab sırası görünür, odak halkası 1px accent
 Hareket: steps(3,end) 180ms; yalnız bekleyen imleç yanıp söner; prefers-reduced-motion'da durur.
 Yasak: gölge, blur, gradient, CRT tarama, emoji durum, ikinci font, 2px üstü radius.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Tek mono aile; sütunlar `ch` ile hizalı, sayılar tabular.
-- [ ] Gölge/blur/gradient yok; radius ≤ 2px.
-- [ ] Durumlar metin işaretiyle de bildiriliyor.
-- [ ] Klavye gezintisi tam; odak halkası görünür; kısayol ipucu var.
-- [ ] Kontrast: gövde ≥ 4.5:1, accent üstü ≥ 4.5:1.
-- [ ] 390px'te sayfa taşmıyor, tablo kendi içinde kaydırılıyor.
-- [ ] `prefers-reduced-motion` açıkken imleç/animation duruyor.
+Style: Terminal UI (terminal-ui) · family: Technical (45–45)
+Token: --bg #0a0d0a · --surface #0f140f · --ink #d7e6d2 · --accent #58e08a · --line rgba(215,230,210,.16)
+Radius: 0px / 2px · Typography: JetBrains Mono / JetBrains Mono / JetBrains Mono
+Required: Tek aile: JetBrains Mono; display = body = mono · Ölçü her yerde sayısal ve hizalı (karakter ızgarası) · Katman ayrımı 1px çerçeve; gölge/blur yok
+Banned: Gölge, blur, gradient, grain, CRT tarama çizgisi, flicker. · 2px üstü radius, yuvarlak kart, yumuşak gölge. · İkinci font ailesi (serif/geometrik display).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -248,15 +264,25 @@ Yasak: gölge, blur, gradient, CRT tarama, emoji durum, ikinci font, 2px üstü 
   --ink: #d7e6d2; --ink-soft: #9bb394; --ink-faint: #6d8268;
   --accent: #58e08a; --accent-ink: #04120a;
   --line: rgba(215,230,210,.16);
+  --danger: #e3382a;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
   --shadow: none; --shadow-hard: none;
   --font-display: "JetBrains Mono", ui-monospace, monospace;
   --font-body: "JetBrains Mono", ui-monospace, monospace;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: 0em; --blur: 0px; --grain: 0;
-  --danger: #ff6b6b; --danger-ink: #0a0d0a;
-  --ok: #58e08a; --warn: #e0c058;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="terminal-ui"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

@@ -1,43 +1,43 @@
 # 128 · Brass Copper
 
-> **Bir cümlede:** Gravürlenmiş pirinç plaka gibi kurgulanmış; koyu bronz zemin, üst kenarı iç parlaklıklı paneller, bakır accent ve ağır hareket eden lüks metal kataloğu arayüzü.
+> **In one sentence:** Gravürlenmiş pirinç plaka gibi kurgulanmış; koyu bronz zemin, üst kenarı iç parlaklıklı paneller, bakır accent ve ağır hareket eden lüks metal kataloğu arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | ağır, sıcak, törensel, zanaatkâr |
-| **En iyi** | alaşım/malzeme kataloğu, lüks donanım, saat & mücevher butiği, butik metal atölyesi |
-| **Kaçın** | yüksek yoğunluklu operasyon paneli, hızlı ticaret, oyun arayüzü — koyu sıcak zemin ve 920ms giriş orada "yavaş" okunur |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 7.91:1) |
-| **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="brass-copper"]` |
-| **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | ağır, sıcak, törensel, zanaatkâr |
+| **Best for** | alaşım/malzeme kataloğu, lüks donanım, saat & mücevher butiği, butik metal atölyesi |
+| **Avoid** | yüksek yoğunluklu operasyon paneli, hızlı ticaret, oyun arayüzü — koyu sıcak zemin ve 920ms giriş orada "yavaş" okunur |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Material & Luxury (126–135) · **Token** | `kit/tokens.css` → `[data-style="brass-copper"]` |
+| **Composition** | `fullbleed` · `pill` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Brass Copper, arayüzü **gravürlenmiş pirinç plaka** gibi kurar: koyu bronz zemin, üst kenarında 1px iç parlaklık taşıyan plaka panelleri, bakır accent ve Cinzel büyük harf künyeler. Değer, metalin kendisi gibi **ağırlık ve oranla** anlatılır: alaşım adı, bileşim yüzdesi, ağırlık, parti no.
 
 Üç kurucu karar: (1) **plaka kenarı** — her panelin üst kenarında 1px iç parlaklık; bu gloss değil, işlenmiş kenardır; (2) **gravür tipografisi** — Cinzel 600 büyük harf `0.12em` başlık, Jost gövde, Courier Prime künye (daktilo parti kaydı); (3) **ağır hareket** — giriş 920ms `cubic-bezier(.52,.04,.3,1)`; metal gibi yavaş kalkar ve sert oturur.
 
 Bedeli: koyu sıcak zemin uzun okumada yorar; gövde 15px Jost ve 1.6 satır aralığı zorunludur. Kırmızı-turuncu accent geniş alanda kullanılırsa stil "bakır" değil "uyarı" okunur.
 
-### Ne değildir
+### What is not
 - **Art Deco (26) değildir:** koyu yeşil + altın, geometrik simetri ve süs vardır; Brass Copper'da altın yok, bakır accent ve gravür künye var; simetri değil plaka hizası.
 - **Grand Tourer (41–43) değildir:** krem deri, krom hairline ve motor sporları dilidir; burada metal koyu, krom değil pirinç/bakır.
 - **West African Pattern (71) değildir:** koyu kahve zemin + altın accent ve desenli yüzey; Brass Copper desensizdir, accent bakır (hue 27° vs 41°), display Cinzel vs Archivo Black, radius 5/12 vs 0/2 — üç eksende birden farklı.
 - **Machined Metal Panel (57) değildir:** soğuk gri + pas accent ve endüstriyel panel dili; 128 lüks metal kataloğudur.
 
-### Nereden gelir
+### Where it comes from
 Metal atölyesi ve gravür plaka geleneğinden: alaşım etiketi, bileşim yüzdesi, parti numarası, yüzey işlemi (fırçalanmış/aynalı/patina). Bugün yeniden kullanılmasının nedeni: lüks donanım ve malzeme satıcıları ürünü fotoğrafla gösteriyor ama **alaşım oranını ve yüzey işlemini** anlatamıyor; bu bilgi gravür plakada yaşar. Klişeye dönüşmemesi için korunacak detay: **üst kenar iç parlaklığı** ve gerçek bileşim verisi.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin koyu bronz; accent bakır (turuncu-kiremit), altın/parlak metal yok.
 2. Panel üst kenarında 1px iç parlaklık çizgisi var; geniş gloss yok.
 3. Başlıklar büyük harf gravür serifi (Cinzel), geniş harf aralıklı.
 4. Her kartta alaşım chip'i + bileşim (%) + ağırlık (g) + parti no.
 5. Köşeler 5px (kontrol) ve 12px (plaka); hap buton yok.
 
-## Görsel imza
+## Visual signature
 - **Plaka kenarı:** panel/card `box-shadow: inset 0 1px 0 rgba(240,231,218,.10)` — üst kenarda tek 1px parlaklık.
 - **Bakır accent:** `#c9743c` yalnız eylem/seçim/uyarı; accent üstü metin `#1a0d05`.
 - **Gravür başlık:** Cinzel 600, H1 44px/1.1, `0.12em`, büyük harf; H2 `0.08em`.
@@ -45,101 +45,124 @@ Metal atölyesi ve gravür plaka geleneğinden: alaşım etiketi, bileşim yüzd
 - **Fırçalanmış metal:** `--grain: .035` tüm zeminde; yatay ince çizgi hissi.
 - **Perçin detayı:** plaka kartının sol üstünde 4px `--ink-faint` daire (tek, dekoratif).
 - **Bakır halka:** aktif/seçili plaka `--shadow-hard` = 1px bakır halka (gölge değil).
+- **Typography:** Cinzel (display) + Jost (body) + Courier Prime (mono label).
+- **Colour discipline:** a single accent `#c9743c`; neutral scale `#1a1512` → `#f0e7da`.
+- **Radius:** `5px` / `12px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#1a1512` | bronz zemini | kart zemini |
-| `--bg-2` | `#130f0d` | çukur bölüm, nav, input zemini | birincil buton |
-| `--surface` | `#221b16` | plaka panelleri, kart | sayfa zemini |
-| `--surface-2` | `#2c231c` | chip, hover, başlık satırı | metin zemini |
-| `--ink` | `#f0e7da` | metin, gravür değeri | dekoratif dolgu |
-| `--ink-soft` | `#bda892` | ikincil metin, açıklama | accent dolgu üstü |
-| `--ink-faint` | `#8a7862` | birim, etiket, perçin | gövde, etkileşimli metin |
-| `--accent` | `#c9743c` | eylem, seçim, uyarı, bakır halka | dekoratif dolgu (geniş alan) |
-| `--accent-ink` | `#1a0d05` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(240,231,218,.15)` | plaka çerçevesi, ayırıcı | metin |
+1. Her alaşım kaydı: alaşım adı + bileşim (%) + ağırlık (g) + parti no
+2. Plaka kenarında 1px iç parlaklık (üst kenar) — parlak yüzey efekti değil
+3. Cinzel 600 büyük harf başlık, 0.08–0.12em aralık; ağırlıkla hiyerarşi kurulmaz
+4. Bakır accent yalnız eylem/seçim/uyarı; ikinci metal tonu yok
+5. Radius 5px (kontrol) ve 12px (plaka); hap buton yok
+6. Fırçalanmış metal grain .035 yalnız zemin katmanında
 
-- Ölçülen kontrast: `ink/bg` **14.78:1** · `ink-soft/bg` **7.91:1** · `accent-ink/accent` **5.48:1** · `ink-faint/bg` **4.26:1** · accent metin olarak bg'ye **5.21:1**.
-- Tek vurgu kuralı: bakır accent yalnız eylem/seçim/uyarı. `--warn` (pirinç sarısı), `--ok` (zeytin), `--danger` (kiremit-kırmızı) yalnız durum etiketi.
-- Yasak kombinasyon: bakır ile pirinç sarısı yan yana (aciliyet ayrımı kaybolur); accent üstünde `--ink-soft`; gümüş/altın ikinci metal tonu.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#1a1512` | page background | as a card background |
+| `--bg-2` | `#130f0d` | partition divider floor, table top | button background |
+| `--surface` | `#221b16` | kart, input, modal | full-page background |
+| `--surface-2` | `#2c231c` | passive chip, hover background | primary button |
+| `--ink` | `#f0e7da` | title, body, icon | large background |
+| `--ink-soft` | `#bda892` | secondary text, description | — |
+| `--ink-faint` | `#8a7862` | decorative label, separator text | interactive text |
+| `--accent` | `#c9743c` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#1a0d05` | text above accent | non-accent background |
+| `--line` | `rgba(240,231,218,.15)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Cinzel | 44px | 600 | 1.10 | 0.12em, büyük harf |
-| H2 | Cinzel | 26px | 600 | 1.20 | 0.08em, büyük harf |
-| H3 | Jost | 19px | 600 | 1.25 | 0 |
-| Gövde | Jost | 15px | 400 | 1.60 | 0 |
-| Etiket / künye | Courier Prime | 10px | 400 | 1.35 | 0.20em, büyük harf |
-| Parti / ölçü | Courier Prime | 14px | 400 | 1.45 | 0.04em, tabular |
+- Measured contrast: `ink/bg` **14.78:1** · `ink-soft/bg` **7.91:1** · `ink-faint/bg` **4.26:1 (decorative)** · `accent-ink/accent` **5.48:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.7 (15 → 26 → 44); kullanılan basamaklar: 10 · 11 · 13 · 15 · 19 · 26 · 44 · (mobil 28).
-- Ölçü önerisi: `h1 { font-size: clamp(28px, 3.6vw, 44px) }`.
-- Gövde metni maksimum satır uzunluğu: 66ch; alaşım tablosu hücresi sarmaz.
-- Ağırlık kuralı: Cinzel 400/600, Jost 400/600, mono 400. 700 yok; italik yok (gravür eğik yazmaz).
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Cinzel) | 28px (mobile 28px) | 400 | 1.08 | -0.02em |
+| H2 | same | 26px | 600 | 1.2 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier Prime) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 · hero 5/7, alaşım tablosu tam genişlik |
-| Gutter | 16px |
-| Container genişliği | 1220px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 üstü 12 kolon · 768–1200 8 kolon · 768 altı tek kolon, tablo plaka kartına döner |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına 1 asimetrik blok (hero 5/7); alaşım tablosu simetrik.
-- Bölüm ritmi: 56px masaüstü / 32px mobil; bölümler arasında 1px çizgi.
-- Kart içi 20px; tablo satırı 36px; künye ile değer arası 8px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | bronz zemini |
-| Plaka | `--surface` + 1px `--line` + üst iç parlaklık | yok | panel, kart, tablo |
-| Yüzen katman | `--surface` + 1px `--accent` | `var(--shadow)` | modal, menü |
-| Seçili | `--surface-2` + `--shadow-hard` | 1px bakır halka | seçili plaka |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)` + `inset 0 1px 0` üst parlaklık; seçili durumda 1px bakır halka.
-- Derinlik nereden gelir: plaka kenarı + ton katmanı + grain; gloss/glow yok.
-- Radius: `--radius` 5px (buton, input, chip), `--radius-lg` 12px (plaka, modal). 12px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 40px | 10px 20px | `--radius` | 12px/600 Jost büyük harf | `--accent` + `--accent-ink`, gölge yok | hover %90 + üst çizgi · active 1px aşağı · focus 2px bakır halka · disabled %42 · loading 6 dilim |
-| Buton (ikincil) | 40px | 10px 18px | `--radius` | 12px/600 Jost | şeffaf + 1px accent | hover `--surface-2` · focus bakır halka |
-| Input | 40px | 0 12px | `--radius` | 14px Courier Prime | `--bg-2` + 1px `--line` | focus bakır halka + alt 1px · error danger · disabled %42 |
-| Plaka kartı | — | 20px | `--radius-lg` | başlık 19px Jost 600 | `--surface` + üst parlaklık, gölge yok | seçili 1px bakır halka · sol üst perçin |
-| Chip (alaşım) | 22px | 0 8px | `--radius` | 10px Courier Prime | `--surface-2` + 1px `--line` | pirinç · bakır · bronz · tombak · nikel gümüş |
-| Nav (üst bar) | 56px | 0 24px | 0 | 10px mono / 12px Cinzel | `--bg-2`, alt 1px `--line` | aktif bakır alt çizgi · sağda parti no |
-| Tablo satırı | 36px | 6px 10px | 0 | mono yüzde + gövde ad | alt 1px `--line` | hover `--surface-2` · seçili sol 2px bakır |
-| Modal | — | 24px | `--radius-lg` | başlık 26px Cinzel | 1px accent + `var(--shadow)` | gravür künye, kapatma 40px |
-| Toast | 36px | 8px 12px | `--radius` | 12px Courier Prime | `--surface`, sol 3px bakır şerit | 3.6sn · üst üste 3 |
-| Grafik | — | — | 0 | eksen 10px mono | çizgi 2px, alan %8 | ızgara 1px, bakır eksen etiketi |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `5px` (buton, input, chip), `12px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; accent dolgulu butonda `--accent-ink` halka.
-- Dokunma hedefi: 40px görsel, 44×44px hedef (dikey padding ile).
-- Alaşım tablosu: bileşim yüzdeleri sağa hizalı mono tabular; toplam satırı 1px üst çizgiyle.
+## Bans
 
-## Görsel dil
+- Altın parlaklığı, gloss/ayna efekti, gradient metal.
+- Cam/blur, 12px üstü radius, hap buton.
+- Gümüş/altın ikinci accent; neon renk.
+- Büyük harf gövde, 13px altı metin, italik.
+- Sürekli parıldayan metal, parallax, bounce.
+- Renk körlüğüne dayanan tek başına durum bildirimi.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, 20px ızgara, hafif yuvarlak köşe; perçin, tokmak, plaka, terazi |
-| Fotoğraf | pirinç/bakır yüzey makro, sıcak yan ışık, patina izleri, max %40 alan |
-| İllüstrasyon | yalnız gravür çizimi: 1px ince çizgi, tarama dolgu, plaka çerçevesi |
-| Doku | fırçalanmış metal grain `.035`; patina deseni yalnız hero görselinde |
-| Logo alanı | Cinzel 600 büyük harf `0.16em`, sol üst 20px |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 5px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 5px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 5px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 5px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 5px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 5px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 5px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 5.21:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-bars` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 5/7 hero: solda gravür başlık + tek CTA, sağda pirinç yüzey | `shots/01-page.png` |
 | Dashboard | orta | 3 KPI (alaşım, parti, ortalama ağırlık) + alaşım tablosu | `shots/01-page.png` |
@@ -154,43 +177,33 @@ Metal atölyesi ve gravür plaka geleneğinden: alaşım etiketi, bileşim yüzd
 | Hata | düşük | danger çerçeve + neden + yeniden dene | `shots/01-page.png` |
 | Profil / ayar | orta | atölye listesi, birim (g/ons), yüzey tercihi | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Her alaşım kaydı: alaşım + bileşim (%) + ağırlık (g) + parti no.
-- Panel üst kenarında tek 1px iç parlaklık; geniş gloss/parlama yok.
-- Cinzel 600 büyük harf başlık (`0.08–0.12em`), Jost gövde 15px/1.6.
-- Bakır accent yalnız eylem/seçim/uyarı; ikinci metal tonu yok.
-- Radius yalnız 5px ve 12px; hap buton yok.
-- Fırçalanmış metal grain yalnız zemin katmanında; dokunma hedefi 44px.
+## Accessibility
 
-## Yasaklar
-- Altın parlaklığı, gloss/ayna efekti, gradient metal.
-- Cam/blur, 12px üstü radius, hap buton.
-- Gümüş/altın ikinci accent; neon renk.
-- Büyük harf gövde, 13px altı metin, italik.
-- Sürekli parıldayan metal, parallax, bounce.
-- Renk körlüğüne dayanan tek başına durum bildirimi.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 14.78:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.91:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.26:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.48:1 | ≥ 4.5 | button text |
+| focus ring/ground | 5.21:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 92 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
-- Gövde ≥ 4.5:1, büyük metin ≥ 3:1; ölçülen en düşük etkileşimli çift 7.91:1 (`ink-soft/bg`).
-- `--ink-faint` 4.26:1 — birim/etiket ve perçin için; gövde metni olarak kullanılmaz.
-- Bakır accent metin olarak 5.21:1, dolgu üstünde 5.48:1 — ikisi de geçer; accent'te 11px altı metin kullanılmaz.
-- Odak görünürlüğü: 2px bakır halka (5.21:1) + 2px offset; bakır dolgulu butonda `--accent-ink` halka.
-- Durum yalnız renkle verilmez: alaşım chip metni, uyarı etiketi + 3px şerit.
-- 390px'te tablo plaka kartına döner, yüzdeler alt satıra iner; yatay taşma yok.
-- `prefers-reduced-motion` açıkken giriş, pin/scrub ve kenar parlaması durur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Plastik metal" hissi | gloss/ayna efekti | yalnız üst kenar 1px iç parlaklık |
 | Uyarı gibi okunuyor | accent geniş alanda | accent yalnız eylem/seçim |
 | Okunmuyor | 13px gövde | 15px Jost, 1.6 satır |
@@ -199,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Koyu modda parlıyor | iç parlaklık sabit | koyu blokta `.06`'ya indir |
 | Mobilde taşıyor | 12 kolon tablo | plaka kartı + alt satır |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `art-deco` — yakın lüks metal ailesi; ölçülen üç farkla ayrışır: (1) **zemin tonu** bronz `#1a1512` vs koyu yeşil `#0e1b17`, (2) **radius ölçeği** 5/12px vs 0/2px (burada plaka köşesi yumuşak, art-deco'da tam keskin), (3) **motif** gravür plaka + üst kenar iç parlaklığı vs simetrik geometrik süs/fan. Accent hue 24° vs 42° (±30° komşu) ve display ailesi (Cinzel) ortak; kural gereği 2+ eksen ortak olmadığı için çakışma değil, komşuluk.
-- **Uyumlu:** `grand-tourer` — krem deri ve krom; premium donanım vitrininde eş.
-- **Uyumlu:** `machined-metal-panel` — işlenmiş yüzey ve ölçüm dili; teknik künyede tamamlayıcı.
-- **Yasak:** `claymorphism` — pastel yuvarlak gölge, metal ağırlığını yok eder.
-- **Yasak:** `frutiger-aero` — parlak cam ve gradient, mat pirinçle çelişir.
-- **Yasak:** `dopamine-ui` — çok renkli enerji, tek bakır accent kuralını bozar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `art-deco` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `grand-tourer` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `machined-metal-panel` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `frutiger-aero` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.copper.org/ | alaşım bileşimleri, patina ve yüzey işlemleri |
-| https://www.britannica.com/technology/brass-alloy | pirinç/bronz tanımı ve kullanım bağlamı |
-| https://www.vam.ac.uk/collections/metalwork | gravür plaka dili ve künye biçimi |
-| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | 1px plaka kenarı ve odak halkası ölçütü |
+| Source | for what |
+| --- | --- |
+| https://www.copper.org/ | Copper Development Association — alaşım bileşimleri, patina ve yüzey işlemleri |
+| https://www.britannica.com/technology/brass-alloy | Britannica · pirinç alaşımı — pirinç/bronz tanımı ve kullanım bağlamı |
+| https://www.vam.ac.uk/collections/metalwork | V&A · metal işleri koleksiyonu — gravür plaka dili ve künye biçimi |
+| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | WCAG 2.2 · Non-text Contrast — 1px plaka kenarı ve odak halkası ölçütü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Brass Copper (styles/128-brass-copper/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="brass-copper"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Cinzel 600) H1/H2 büyük harf +0.08–0.12em; --font-body (Jost 400/600) gövde 15px/1.6;
@@ -234,16 +247,15 @@ Hareket: enter 0.92s cubic-bezier(.52,.04,.3,1) 9px st.052 · scroll top 66% 0.7
   pin açık scrub 1.32 +175% · hover 195ms scale 1.009; prefers-reduced-motion zorunlu.
 Yasak: gloss/ayna, gradient metal, cam/blur, 12px üstü radius, hap buton, büyük harf gövde, parıldayan metal animasyonu.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Panel üst kenarında tek 1px iç parlaklık var; gloss yok.
-- [ ] Bakır accent yalnız eylem/seçim/uyarı.
-- [ ] Alaşım + bileşim % + ağırlık + parti no görünüyor.
-- [ ] Kontrast: gövde ≥ 4.5:1, accent üstü ≥ 4.5:1, `--ink-faint` yalnız dekoratif.
-- [ ] Odak halkası görünür, dokunma hedefi ≥ 44px.
-- [ ] 390px'te taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Brass Copper (brass-copper) · family: Material & Luxury (126–135)
+Token: --bg #1a1512 · --surface #221b16 · --ink #f0e7da · --accent #c9743c · --line rgba(240,231,218,.15)
+Radius: 5px / 12px · Typography: Cinzel / Jost / Courier Prime
+Required: Her alaşım kaydı: alaşım adı + bileşim (%) + ağırlık (g) + parti no · Plaka kenarında 1px iç parlaklık (üst kenar) — parlak yüzey efekti değil · Cinzel 600 büyük harf başlık, 0.08–0.12em aralık; ağırlıkla hiyerarşi kurulmaz
+Banned: Altın parlaklığı, gloss/ayna efekti, gradient metal. · Cam/blur, 12px üstü radius, hap buton. · Gümüş/altın ikinci accent; neon renk.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -254,22 +266,25 @@ Yasak: gloss/ayna, gradient metal, cam/blur, 12px üstü radius, hap buton, büy
   --ink: #f0e7da; --ink-soft: #bda892; --ink-faint: #8a7862;
   --accent: #c9743c; --accent-ink: #1a0d05;
   --line: rgba(240,231,218,.15);
+  --danger: #e94030;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 5px; --radius-lg: 12px;
-  --shadow: 0 8px 24px -16px rgba(0,0,0,.85); --shadow-hard: 0 0 0 1px rgba(201,116,60,.45);
-  --font-display: "Cinzel", Georgia, serif;
+  --shadow: 0 8px 24px -16px rgba(0,0,0,.85); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif;
   --font-body: "Jost", system-ui, sans-serif;
   --font-mono: "Courier Prime", ui-monospace, monospace;
-  --tracking: .12em; --blur: 0px; --grain: .035;
-  --danger: #e2664f; --danger-ink: #1c0703;
-  --ok: #8fae62; --warn: #d6ab52;
+  --tracking: .12em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `styles/128-brass-copper/token-block.css` ve (integrator aktardığında) `kit/tokens.css` içinde `[data-theme="dark"][data-style="brass-copper"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.
-
-## QA düzeltmeleri (2026-11-04)
-
-- **Kontrast (ölçüldü, kit/color.mjs):** `accent / bg` 5.21:1 · `ink-soft / surface-2` 6.73:1 · `accent-ink / accent` 5.48:1. Devre dışı buton `opacity: .6` + `--ink-soft` metin (önce .45), ghost buton kenarlığı `color-mix(in srgb, var(--ink) 30%, transparent)` (koyu modda görünür), `logo-strip` / footer etiketleri `--ink-faint` → `--ink-soft`.
-- **Örtüşme:** butonlara `white-space: nowrap` (metin ikinci satıra düşmüyor). Dekor katmanı `body.scene-landing .sig { z-index: -1 }` ile içeriğin altına alındı (confetti/rozet/kurdele yazının üstünden geçmiyor).
-- **Yerleşim:** hero kutusu `min-height: 360px` ile sabitlendi (alt yarı boş kalmıyor). Hero imzası `scenes.landing` ile kuruldu: pirinç plaka: 4 perçin + gravür çizgisi.
-- **Hareket:** sayılar değişmedi ve tokens.json ile aynı — `enter 0.92s` / `scroll 0.79s` (ikisi de ≤ 1.2 s).

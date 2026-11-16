@@ -1,221 +1,221 @@
 # 250 · Neural Canvas
 
-> **Bir cümlede:** Sinir ağı tuvali: katman düğümleri, mor accent, ince bağlantılar ve mono katman boyutu.
+> **In one sentence:** Neural network canvas: layer nodes, purple accent, thin connections and mono layer size.
 
 | | |
 |---|---|
-| **Hissiyat** | keşif, deneysel, "katman 3: 512" |
-| **En iyi** | model görselleştirme, eğitim izleme, araştırma notu |
-| **Kaçın** | muhasebe defteri |
-| **Zorluk** | zor · **Erişilebilirlik** | orta |
-| **Aile** | Gelecek & Spekülatif (242–251) · **Token** | `kit/tokens.css` → `[data-style="neural-canvas"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | exploratory, experimental, "layer 3: 512" |
+| **Best for** | model visualisation, training monitor, research note |
+| **Avoid** | muhasebe defteri |
+| **Difficulty** | hard · **Accessibility** | medium |
+| **Family** | Future & Speculative (242–251) · **Token** | `kit/tokens.css` → `[data-style="neural-canvas"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Neural Canvas, modeli katman katman gösterir: boyut, aktivasyon ve parametre.
+### What it is
+Neural Canvas shows the model layer by layer: size, activation and parameters.
 
-### Ne değildir
-- Neon sci-fi klişesi değildir; accent sinyal, zemin sakin.
-- Koyu zemin zorunlu değildir; kontrast ve çizgi dili belirleyici.
+### What is not
+- Neon is not a sci-fi cliché; accent signal, ground calm.
+- Dark background is not mandatory; Contrast and line language are decisive.
 
-### Nereden gelir
-Uzay programı arayüzleri, laboratuvar cihaz panelleri ve sistem şemalarının görsel dili.
+### Where it comes from
+The visual language of space program interfaces, laboratory instrument panels, and system diagrams.
 
-### 3 saniyede tanıma testi
-1. Accent sinyal olarak mı kullanılmış?
-2. Teknik etiketler mono mu?
-3. Gölge yerine çizgi mi?
+### Recognition test in 3 seconds
+1. Was Accent used as a signal?
+2. Are the technical labels mono?
+3. Line instead of shadow?
 
-## Görsel imza
-- **Katman düğümleri:** her katman bir sütun, düğüm sayısı mono.
-- **İnce bağlantı:** 1px, %20 opaklık.
-- **Mor accent:** yalnız seçili katman.
-- **Aktivasyon notu:** mono kısa etiket.
-- **Tipografi:** Space Grotesk (display) + Inter (gövde) + JetBrains Mono (mono etiket).
-- **Renk disiplini:** tek accent `#a97bf0`; nötr skala `#0b0b12` → `#eeeaf7`.
-- **Yarıçap:** `2px` / `6px`; Köşe 2–8px; spekülatif dilde geometri keskin, yuvarlatma ölçülü.
+## Visual signature
+- **Layer nodes:** one column per layer, node count in mono.
+- **Thin connection:** 1px at 20% opacity.
+- **Purple accent:** the selected layer only.
+- **Activation note:** a short mono label.
+- **Typography:** Space Grotesk (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#a97bf0`; neutral scale `#0b0b12` → `#eeeaf7`.
+- **Radius:** `2px` / `6px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Her katmanda boyut ve aktivasyon.
-2. Bağlantılar dekoratif değil, katman ilişkisi.
-3. Parametre sayısı mono.
+1. Size and activation on every layer.
+2. Connections show layer relationships, not decoration.
+3. Parameter count in mono.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#0b0b12` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#101018` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#15151f` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#1d1d29` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#eeeaf7` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#b0aac4` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#847f99` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#a97bf0` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#0c0618` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(238,234,247,.14)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#0b0b12` | page background | as a card background |
+| `--bg-2` | `#101018` | partition divider floor, table top | button background |
+| `--surface` | `#15151f` | kart, input, modal | full-page background |
+| `--surface-2` | `#1d1d29` | passive chip, hover background | primary button |
+| `--ink` | `#eeeaf7` | title, body, icon | large background |
+| `--ink-soft` | `#b0aac4` | secondary text, description | — |
+| `--ink-faint` | `#847f99` | decorative label, separator text | interactive text |
+| `--accent` | `#a97bf0` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#0c0618` | text above accent | non-accent background |
+| `--line` | `rgba(238,234,247,.14)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **16.57:1** · `ink-soft/bg` **8.77:1** · `ink-faint/bg` **5.11:1 (dekoratif)** · `accent-ink/accent` **6.43:1**.
-- Accent bir sinyal rengi; geniş zemin yerine çizgi, etiket ve grafikte kullanılır.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **16.57:1** · `ink-soft/bg` **8.77:1** · `ink-faint/bg` **5.11:1 (decorative)** · `accent-ink/accent` **6.43:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Space Grotesk) | 54px (mobil 32px) | 500 | 1.06 | -0.02em |
-| H2 | aynı | 28px | 600 | 1.18 | -0.015em |
-| H3 | aynı | 19px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Inter) | 15px | 400 | 1.62 | 0 |
-| Küçük gövde | aynı | 14px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (JetBrains Mono) | 10.5px | 400 | 1.2 | 0.14em |
-| Buton | `--font-body` | 12px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Space Grotesk) | 54px (mobile 32px) | 500 | 1.06 | -0.02em |
+| H2 | same | 28px | 600 | 1.18 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 10.5px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-- Display 54px; teknik etiketler mono ve geniş tracking. Gövde 15px, ölçü 62ch.
-- Ölçü: 66ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Izgara yardımcı çizgi olarak hafifçe görünür (accent %8); bölüm aralığı 56px.
-- Bölüm dikey boşluğu masaüstü 72px, mobil 44px; kart içi padding 20px.
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Yüzeyler ince accent kenarla ayrılır; gölge yerine 1px sinyal çizgisi.
-- Radius: `2px` (buton, input, chip), `6px` (kart, modal). Köşe 2–8px; spekülatif dilde geometri keskin, yuvarlatma ölçülü.
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `2px` (buton, input, chip), `6px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Yasaklar
+## Bans
 
-- Animasyonlu eğitim.
-- Sekiz renkli düğüm.
-- Okunamayan etiket.
+- Animated training.
+- An eight-colour node set.
+- An unreadable label.
 - Animasyonlu tarama.
-- Üçten fazla sinyal rengi.
-- Okunamayan 8px etiket.
+- More than three signal colors.
+- Unreadable 8px label.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 2px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 2px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 2px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 2px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 6.33:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.33:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1px çizgi, 20px; ölçüm işareti gibi |
-| Fotoğraf | Teknik görsel: render, diyagram, makro doku |
-| İllüstrasyon | Diyagram/şema; süs illüstrasyon yok |
-| Doku | Tarama çizgisi %3 |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-dots` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Sistem / landing | orta | Tek cümle + ölçüm şeridi | `shots/01-page.png` |
-| Şema | yüksek | Diyagram + mono etiket | `shots/01-page.png` |
-| Veri | yüksek | Grafik + birim + zaman | `shots/01-page.png` |
-| Kontrol | orta | 3 anahtar + eşik | `shots/01-page.png` |
-| Kayıt / erişim | düşük | Tek sütun form | `shots/01-page.png` |
-| Rapor | orta | Özet + tablo | `shots/01-page.png` |
-| Yol haritası | orta | Zaman çizelgesi | `shots/01-page.png` |
-| İletişim | düşük | Form + adres | `shots/01-page.png` |
+| System / landing | medium | Single sentence + measuring tape | `shots/01-page.png` |
+| scheme | high | Diagram + mono label | `shots/01-page.png` |
+| Data | high | Chart + unit + time | `shots/01-page.png` |
+| control | medium | 3 keys + threshold | `shots/01-page.png` |
+| Registration / access | low | single column form | `shots/01-page.png` |
+| Report | medium | Summary + table | `shots/01-page.png` |
+| road map | medium | timeline | `shots/01-page.png` |
+| Contact | low | Form + address | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 16.57:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 8.77:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 5.11:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 6.43:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 6.33:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 95.2 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 16.57:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.77:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.11:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.43:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.33:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 95.2 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Bilim kurgu klişesi | Her yerde neon | Accent'i %10 alana indir |
-| Şema okunmuyor | Etiket üst üste | Etiketi çizgi dışına taşı |
-| Kontrast düşük | Accent metin | Metni --ink, accent'i çizgi yap |
+| science fiction cliché | neon everywhere | Reduce Accent to 10% space |
+| Schema not read | label on top of each other | Move label out of line |
+| Contrast is low | Accent text | Make text --ink, accent line |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `agent-console` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `volumetric-data` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `boutique-hotel` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `regulatory-report` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `agent-console` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `volumetric-data` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `boutique-hotel` | Two different ornamental languages compete on the same screen |
+| Mixing | `regulatory-report` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://en.wikipedia.org/wiki/Neural_network_(machine_learning) | Artificial neural network (Wikipedia) — katman kavramı |
-| https://fonts.google.com/specimen/Space+Grotesk | Space Grotesk (Google Fonts) — başlık ailesi |
-| https://fonts.google.com/specimen/JetBrains+Mono | JetBrains Mono (Google Fonts) — katman/parametre |
+| https://en.wikipedia.org/wiki/Neural_network_(machine_learning) | Artificial neural network (Wikipedia) — layer notion |
+| https://fonts.google.com/specimen/Space+Grotesk | Space Grotesk (Google Fonts) — heading family |
+| https://fonts.google.com/specimen/JetBrains+Mono | JetBrains Mono (Google Fonts) — layer/parameters |
 
 ## AI brief
 
 ```text
-Sinir ağı tuvali tasarla: koyu zemin, katman sütunları, ince bağlantılar, mono boyut/parametre.
+Design a neural network canvas: dark background, layer columns, thin connections, mono size/parameters.
 
-Stil: Neural Canvas (neural-canvas) · aile: Gelecek & Spekülatif (242–251)
+Style: Neural Canvas (neural-canvas) · family: Future & Speculative (242–251)
 Token: --bg #0b0b12 · --surface #15151f · --ink #eeeaf7 · --accent #a97bf0 · --line rgba(238,234,247,.14)
-Yarıçap: 2px / 6px · Tipografi: Space Grotesk / Inter / JetBrains Mono
-Zorunlu: Her katmanda boyut ve aktivasyon. · Bağlantılar dekoratif değil, katman ilişkisi. · Parametre sayısı mono.
-Yasak: Animasyonlu eğitim. · Sekiz renkli düğüm. · Okunamayan etiket.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 2px / 6px · Typography: Space Grotesk / Inter / JetBrains Mono
+Required: Size and activation on every layer. · Connections show layer relationships, not decoration. · Parameter count in mono.
+Banned: Animated training. · An eight-colour node set. · An unreadable label.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

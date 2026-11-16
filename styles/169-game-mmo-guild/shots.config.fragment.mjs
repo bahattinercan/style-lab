@@ -1,7 +1,6 @@
 /**
- * 169 · MMO Guild — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 169 · MMO Guild — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'rings',
   bodyClass: 'upper',

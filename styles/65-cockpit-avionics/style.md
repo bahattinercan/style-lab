@@ -1,43 +1,43 @@
 # 65 · Cockpit Avionics
 
-> **Bir cümlede:** Her panelin bir gösterge çerçevesi taşıdığı, değerin etiket–sayı–birim üçlüsüyle okunduğu kokpit paneli arayüzü.
+> **In one sentence:** Her panelin bir gösterge çerçevesi taşıdığı, değerin etiket–sayı–birim üçlüsüyle okunduğu kokpit paneli arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | keskin, gergin, ölçülü, uyanık |
-| **En iyi** | uçuş/operasyon kokpiti, gerçek zamanlı izleme (SCADA), görev kontrol paneli, kritik onay akışı |
-| **Kaçın** | içerik/blog, e-ticaret, çocuk uygulamaları — düşük punto ve yüksek uyarıklık burada yorucu olur |
-| **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (10px etiket + yoğun koyu zemin; en düşük etkileşimli çift 8.61:1) |
-| **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="cockpit-avionics"]` |
-| **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | keskin, gergin, ölçülü, uyanık |
+| **Best for** | uçuş/operasyon kokpiti, gerçek zamanlı izleme (SCADA), görev kontrol paneli, kritik onay akışı |
+| **Avoid** | içerik/blog, e-ticaret, çocuk uygulamaları — düşük punto ve yüksek uyarıklık burada yorucu olur |
+| **Difficulty** | yüksek · **Accessibility** |  |
+| **Family** | Industrial (56–65) · **Token** | `kit/tokens.css` → `[data-style="cockpit-avionics"]` |
+| **Composition** | `product` · `rail` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Cockpit Avionics, arayüzü bir **gösterge paneli** gibi kurar: her panelin çevresinde bir bezel (çerçeve), içinde etiket–değer–birim üçlüsü, üstünde durum etiketi. Ekran üç bölgeye ayrılır — solda parametre rayı, ortada birincil görev, sağda checklist. Hiçbir değer çıplak durmaz, hiçbir kritik eylem tek tıkla olmaz.
 
 Üç kurucu karar: (1) **bezel fiziği** — her panel dış 1px `--line` + iç 1px soluk çerçeve; aktif panel 1px cyan dış halka (`--shadow-hard`); gölge ve glow yok; (2) **mono okuma** — değerler Share Tech Mono, etiketler 10px mono büyük harf `0.2em`; gövde Inter 14px; (3) **iki adımlı onay** — geri dönüşsüz eylem `ARM → CONFIRM`; tek tıkla silme/başlatma yok.
 
 Bedeli: ekran yoğun ve koyudur; uzun okuma için uygun değildir. Yoğunluğun "karmaşa" değil "kokpit" görünmesini sağlayan şey **bezel kenar boşluğu ve 12px gutter** disiplinidir.
 
-### Ne değildir
+### What is not
 - **Terminal UI (45) değildir:** terminal tek mono ailede, 32px satırda ve yeşil accent'le çalışır; burada üç aile, 34px gösterge satırı ve cyan accent vardır, paneller bezel taşır.
 - **Cybercore (23) değildir:** cybercore HUD/glitch/neon glow ile atmosfer kurar; Cockpit Avionics glow ve tarama çizgisini yasaklar, değerini okunurluktan alır.
 - **Cyberpunk (22) değildir:** cyberpunk çok renkli neon ve kirli doku kullanır; burada tek cyan accent + durum üçlüsü ve temiz bezel.
 - **Maintenance CMMS (63) değildir:** 63 turuncu aciliyet ve iş emri kâğıdı metaforu taşır, 38px başlıkla çalışır; 65 cyan ölçüm dili ve üç bölgeli kokpit düzeni.
 
-### Nereden gelir
+### Where it comes from
 Elektromekanik gösterge paneli ve ECAM/EICAS sistem sayfası geleneğinden: etiket üstte, değer ortada, birim yanda; uyarı önceliği (warning/caution/advisory) ve checklist. Bugün yeniden kullanılmasının nedeni: SCADA, NOC ve görev kontrol panelleri aynı problemi çözüyor — çok sayıda canlı değer, tek ekran, düşük hata toleransı. Klişeye dönüşmemesi için korunacak detay: **bezel + etiket–değer–birim üçlüsü** ve uyarının yanıp sönmek yerine öncelik sırasıyla listelenmesi.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Her panelin çevresinde **çift çizgi bezel**; aktif panelde 1px cyan dış halka.
 2. Değerlerin üstünde 10px büyük harf mono etiket, yanında birim — üçlü asla bozulmaz.
 3. Ekran **üç bölgeye** ayrılmış: parametre rayı · birincil görev · checklist.
 4. Durumlar büyük harf: `ARMED`, `ACTIVE`, `STBY`, `FAULT`; yalnız renkle değil.
 5. Hareket çok hızlı: geçişler 240ms altı, değer saymaz sıçrar; glow/parlama yok.
 
-## Görsel imza
+## Visual signature
 - **Bezel çerçevesi:** panelde `border: 1px solid var(--line)` + `box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--line) 60%, transparent)`; köşe 2–4px.
 - **Üç bölge:** 3 / 6 / 3 kolon; bölge ayırıcı 1px `--line`, panel dışına taşmayan hizalama.
 - **Etiket–değer–birim üçlüsü:** etiket 10px mono `0.2em`; değer 15–22px mono; birim 10px `--ink-faint`; üçü aynı kolonda hizalı.
@@ -45,101 +45,124 @@ Elektromekanik gösterge paneli ve ECAM/EICAS sistem sayfası geleneğinden: eti
 - **Durum noktası + metin:** 6px kare (radius 1px) + büyük harf etiket; `FAULT` 1.2s yanıp söner, 3 turdan sonra sabitlenir.
 - **Radar halkası:** hero görselinde 3 eşmerkezli 1px halka + 45° tarama çizgisi (statik, animasyonsuz).
 - **Sıçrayan değer:** değer değiştiğinde 240ms boyunca `--accent` rengi; sayaç animasyonu yok.
+- **Typography:** Rajdhani (display) + Inter (body) + Share Tech Mono (mono label).
+- **Colour discipline:** a single accent `#35d6e8`; neutral scale `#0a0f14` → `#e8f0f4`.
+- **Radius:** `2px` / `4px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#0a0f14` | kokpit zemini | panel zemini |
-| `--bg-2` | `#10161c` | üst bar, input zemini | birincil buton |
-| `--surface` | `#131a21` | panel gövdesi | sayfa zemini |
-| `--surface-2` | `#1a232b` | başlık şeridi, chip, ikincil buton | metin zemini |
-| `--ink` | `#e8f0f4` | ana metin, değer | dekoratif dolgu |
-| `--ink-soft` | `#9fb0ba` | ikincil metin, açıklama | accent dolgu üstü |
-| `--ink-faint` | `#6d7f8a` | birim, eksen, dekoratif ayırıcı | gövde, etkileşimli metin |
-| `--accent` | `#35d6e8` | aktif panel, birincil eylem, değer vurgusu | dekorasyon, ikinci vurgu |
-| `--accent-ink` | `#032026` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(232,240,244,.15)` | bezel, bölge ayırıcı | metin |
+1. Her gösterge üçlüsü: etiket (10px mono, üstte) + değer (mono, sağa hizalı) + birim (ayrı)
+2. Panel bezel: dış 1px --line + iç 1px soluk çerçeve; aktif panel 1px cyan dış halka
+3. Durum etiketleri büyük harf mono: ARMED · ACTIVE · STBY · FAULT; renk + metin birlikte
+4. Kritik eylem iki adımlı onay (ARM → CONFIRM), tek tıkla geri dönüşsüz işlem yok
+5. Değer güncellemesi sayı saymaz, sıçrar (≤240ms opacity vurgu)
+6. Kokpit düzeni 3 bölge: parametre rayı · birincil görev · checklist; her ekranda aynı
 
-- Ölçülen kontrast: `ink/bg` **16.68:1** · `ink-soft/bg` **8.61:1** · `accent-ink/accent` **9.64:1** · `ink-faint/bg` **4.63:1**.
-- Tek vurgu kuralı: cyan yalnız aktif durum, birincil eylem ve değer vurgusu. `--warn` (amber) caution, `--danger` warning, `--ok` normal — üçü yalnız durum noktası + etiketle.
-- Yasak kombinasyon: cyan ile yeşil yan yana (ayırt edilemezlik); accent üstünde `--ink-soft`; 9px altı doygun renk etiket.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0a0f14` | page background | as a card background |
+| `--bg-2` | `#10161c` | partition divider floor, table top | button background |
+| `--surface` | `#131a21` | kart, input, modal | full-page background |
+| `--surface-2` | `#1a232b` | passive chip, hover background | primary button |
+| `--ink` | `#e8f0f4` | title, body, icon | large background |
+| `--ink-soft` | `#9fb0ba` | secondary text, description | — |
+| `--ink-faint` | `#6d7f8a` | decorative label, separator text | interactive text |
+| `--accent` | `#35d6e8` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#032026` | text above accent | non-accent background |
+| `--line` | `rgba(232,240,244,.15)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Rajdhani | 34px | 700 | 1.02 | 0.06em |
-| H2 | Rajdhani | 22px | 700 | 1.15 | 0.04em |
-| H3 | Inter | 17px | 600 | 1.25 | 0 |
-| Gövde | Inter | 14px | 400 | 1.50 | 0 |
-| Etiket | Share Tech Mono | 10px | 400 | 1.30 | 0.20em, büyük harf |
-| Değer / okuma | Share Tech Mono | 15–22px | 400 | 1.15 | 0.04em, tabular |
+- Measured contrast: `ink/bg` **16.68:1** · `ink-soft/bg` **8.61:1** · `ink-faint/bg` **4.63:1 (decorative)** · `accent-ink/accent` **9.64:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.4 (14 → 22 → 34); kullanılan basamaklar: 10 · 11 · 13 · 14 · 17 · 22 · 34 · (mobil 24). Sıkı ölçek kokpit yoğunluğu içindir.
-- Ölçü önerisi: `h1 { font-size: clamp(24px, 2.6vw, 34px) }`.
-- Gövde metni maksimum satır uzunluğu: 70ch; checklist maddesi 44ch'te kırılır.
-- Ağırlık kuralı: Rajdhani 500/700 (700 başlık), Inter 400/600, mono 400. İtalik yok; bağlantı altı çizilmez, renkle ayrılır.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Rajdhani) | 24px (mobile 24px) | 400 | 1.08 | -0.02em |
+| H2 | same | 22px | 600 | 1.2 | -0.015em |
+| H3 | same | 17px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 14px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Share Tech Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 · 3 / 6 / 3 kokpit düzeni |
-| Gutter | 12px |
-| Container genişliği | 1280px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 üstü 3 bölge · 768–1200 2 bölge (checklist alta) · 768 altı tek bölge, sekmeli |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: düzen zaten asimetriktir (3/6/3); ek başına en fazla 1 ek asimetri (parametre rayında daraltma).
-- Bölüm ritmi: 40px masaüstü / 28px mobil; paneller arası 12px, bölge arası 1px çizgi.
-- Panel içi: 14px padding; gösterge satırı 34px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | kokpit, üst bar |
-| Panel | `--surface` + bezel | yok | gösterge paneli, checklist |
-| Aktif panel | `--surface` + `--shadow-hard` | 1px cyan dış halka | seçili sistem sayfası |
-| Katman | `--surface` + 1px `--accent` çerçeve | `var(--shadow)` hafif | modal, onay diyaloğu |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: dış `1px var(--line)` + iç `1px color-mix(--line 60%)`; aktif panelde dış çizgi `--accent`.
-- Derinlik nereden gelir: yalnız çerçeve katmanları (bezel); glow, blur, iç parlaklık yok.
-- Radius: `--radius` 2px (buton, input, chip), `--radius-lg` 4px (modal, hero çerçevesi). 4px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 34px | 8px 14px | `--radius` | 12px/700 Rajdhani büyük harf | `--accent` + `--accent-ink`, gölge yok | hover %88 · active 1px aşağı · focus 2px accent halka · disabled %40 kesikli · loading segment çubuk |
-| Buton (ikincil) | 34px | 8px 14px | `--radius` | 12px/700 Rajdhani | `--surface-2` + 1px `--line` | hover çerçeve `--ink-soft` · focus accent halka |
-| Input | 34px | 0 10px | `--radius` | 13px Share Tech Mono | `--bg-2` + 1px `--line` | focus accent halka + sol 2px şerit · filled sağa hizalı + üst etiket · error `E/` + danger · disabled %40 |
-| Panel / kart | — | 14px | `--radius` | etiket 10px mono + değer mono | `--surface` + çift bezel | aktif: 1px cyan dış halka |
-| Chip (durum) | 20px | 0 8px | `--radius` | 10px Share Tech Mono | `--surface-2` + 1px `--line` | ARMED accent çerçeve · ACTIVE accent dolgu · STBY line · FAULT danger |
-| Nav (üst bar) | 44px | 0 20px | 0 | 10px mono / 12px Rajdhani | `--bg-2`, alt 1px `--line` | 3 bölge: mod · görev · UTC saat |
-| Tablo satırı | 34px | 4px 10px | 0 | etiket 10px + değer 15px mono | alt 1px `--line` | değer değişimi 240ms accent vurgu · seçili satır accent sol şerit 2px |
-| Modal (checklist) | — | 18px | `--radius-lg` | başlık 22px Rajdhani | 1px accent çerçeve + `--shadow-hard` | iki adım: ARM → CONFIRM, `esc` iptal |
-| Toast (uyarı) | 34px | 6px 12px | `--radius` | 12px mono | `--surface-2`, sol 3px durum şeridi | 3sn · üst üste 3 · FAULT kalıcı |
-| Grafik | — | — | 0 | eksen 10px mono | segment 4px blok; `--data-1…4` | radar halkası 3 halka; gradient alan yok |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; accent dolgulu butonda `outline-color: var(--accent-ink)`.
-- Dokunma hedefi: 34px görsel yükseklik, dokunma alanı 44×44px'e padding ile tamamlanır (kokpitte fiziksel tuş, mobilde parmak).
-- Kritik eylem: `ARM` (ikincil buton) → 3 saniye içinde `CONFIRM` (birincil); süre dolarsa geri `STBY`.
+## Bans
 
-## Görsel dil
+- Neon glow, tarama çizgisi, CRT, sürekli yanıp sönen uyarı.
+- 4px üstü radius, yuvarlak kart, yumuşak/geniş gölge, cam/blur.
+- Serif/geometrik display, italik, altı çizili bağlantı.
+- 9px altı metin; 10px yalnız etiket.
+- Tek tıkla geri dönüşsüz eylem, onaysız checklist geçişi.
+- Yalnız renkle durum; cyan+yeşil yan yana.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi, 16px ızgara, keskin köşe; ufuk, sürat, irtifa sembolleri; dolu ok yok |
-| Fotoğraf | yok denecek kadar az (max %15); gece kokpiti, düşük doygunluk, 1px çerçeve |
-| İllüstrasyon | yalnız gösterge şeması: radar halkaları, ufuk çizgisi, ölçek bantları (statik) |
-| Doku | yok (`--grain: 0`); tarama çizgisi, CRT, glow yasak |
-| Logo alanı | Rajdhani 700 büyük harf `0.14em`, sol üst 16px; mono varyant yalnız alt bilgi |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 10.94:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 3/6/3: solda parametre rayı, ortada başlık + tek CTA, sağda checklist | `shots/01-page.png` |
 | Dashboard | çok yüksek | gösterge paneli ızgarası, segment çubuklar, uyarı listesi öncelik sırasıyla | `shots/01-page.png` |
@@ -154,43 +177,33 @@ Elektromekanik gösterge paneli ve ECAM/EICAS sistem sayfası geleneğinden: eti
 | Hata | düşük | `FAULT` + etkilenen sistem + sonraki adım; kod gizlenmez | `shots/01-page.png` |
 | Profil / ayar | yüksek | anahtar/değer listesi, birim sistemi seçimi (m/ft, kg/lb) | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Her gösterge etiket + değer + birim üçlüsü; birimsiz değer yok.
-- Her panel bezel taşır (dış 1px + iç 1px); aktif panelde 1px cyan dış halka.
-- Durum etiketleri büyük harf mono: `ARMED` · `ACTIVE` · `STBY` · `FAULT`; renk + metin birlikte.
-- Geri dönüşsüz eylem iki adımlı: `ARM` → `CONFIRM` (3 saniye penceresi).
-- Değer saymaz, sıçrar; animasyon ≤ 240ms.
-- Kokpit düzeni üç bölge; bölge sırası ekranlar arasında değişmez.
+## Accessibility
 
-## Yasaklar
-- Neon glow, tarama çizgisi, CRT, sürekli yanıp sönen uyarı.
-- 4px üstü radius, yuvarlak kart, yumuşak/geniş gölge, cam/blur.
-- Serif/geometrik display, italik, altı çizili bağlantı.
-- 9px altı metin; 10px yalnız etiket.
-- Tek tıkla geri dönüşsüz eylem, onaysız checklist geçişi.
-- Yalnız renkle durum; cyan+yeşil yan yana.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.68:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.61:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.63:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 9.64:1 | ≥ 4.5 | button text |
+| focus ring/ground | 10.94:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 96.8 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
-- Gövde ≥ 4.5:1, büyük metin ≥ 3:1; ölçülen en düşük etkileşimli çift 8.61:1 (`ink-soft/bg`).
-- `--ink-faint` 4.63:1 — birim ve eksen için geçer; 14px altı gövde metni olarak kullanılmaz.
-- 10px etiketler yalnız büyük harf + `0.2em` tracking ile; uzun metin asla 10px olmaz.
-- Durum yalnız renkle verilmez: kare nokta + büyük harf etiket + (FAULT'ta) 3 tur yanıp sönme.
-- Odak görünürlüğü: koyu zeminde 2px cyan halka; accent dolgulu butonda `--accent-ink` halka (cyan halka cyan butonda kaybolur).
-- 390px'te üç bölge sekmeye dönüşür; hiçbir gösterge 34px satırın altına inmez.
-- `prefers-reduced-motion` açıkken tüm geçişler durur, FAULT sabit renge döner.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Oyun HUD'u" hissi | glow/tarama eklendi | glow yasak; derinlik yalnız bezel |
 | Değerler okunmuyor | 9px etiket + düşük kontrast | etiket 10px + `--ink-soft`, değer 15px mono |
 | Panel sınırı kayboluyor | tek çizgi yetersiz | dış 1px + iç 1px bezel |
@@ -199,30 +212,30 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Yanlışlıkla başlatma | tek tık | ARM → CONFIRM, 3sn pencere |
 | Mobilde sıkışıyor | 3 bölge aynı ekranda | sekmeli tek bölge, 34px satır korunur |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `terminal-ui` — aynı teknik koyu dil; log/CLI yüzeyi olarak alt panelde kullanılır.
-- **Uyumlu:** `cybercore` — atmosferik teknik varyant; dikkat: glow eklenirse bu stilin kuralı bozulur.
-- **Uyumlu:** `scandinavian-dark` — sakin koyu zemin; rapor/özet ekranlarında eş.
-- **Yasak:** `claymorphism` — yumuşak pastel ve yuvarlak dil, bezel fiziğini yok eder.
-- **Yasak:** `memphis` — dekoratif geometri, gösterge okunurluğunu bozar.
-- **Yasak:** `dopamine-ui` — çok renkli enerji, tek cyan accent ve uyarı önceliğini çökertir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `terminal-ui` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `cybercore` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `scandinavian-dark` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `memphis` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://skybrary.aero/articles/electronic-central-aircraft-monitor-ecam | ECAM sistem sayfası, uyarı önceliği ve checklist mantığı |
-| https://www.faa.gov/aircraft/air_cert/design_approvals/human_factors | kokpit gösterge okunurluğu ve iş yükü ölçütleri |
-| https://www.easa.europa.eu/en | kritik eylem onayı ve uyarı hiyerarşisi yaklaşımı |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | koyu zeminde 10–14px metin kontrastı ölçütü |
-| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | klavye odak halkası görünürlüğü |
+| Source | for what |
+| --- | --- |
+| https://skybrary.aero/articles/electronic-central-aircraft-monitor-ecam | SKYbrary · ECAM (Electronic Centralised Aircraft Monitor) — ECAM sistem sayfası, uyarı önceliği ve checklist mantığı |
+| https://www.faa.gov/aircraft/air_cert/design_approvals/human_factors | FAA · Human Factors (design approvals) — kokpit gösterge okunurluğu ve iş yükü ölçütleri |
+| https://www.easa.europa.eu/en | EASA · uçuşa elverişlilik — kritik eylem onayı ve uyarı hiyerarşisi yaklaşımı |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast (Minimum) — koyu zeminde 10–14px metin kontrastı ölçütü |
+| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | www.w3.org — klavye odak halkası görünürlüğü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Cockpit Avionics (styles/65-cockpit-avionics/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="cockpit-avionics"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Rajdhani 700) H1/H2 ve modal başlığında (büyük harf +0.06em);
@@ -237,16 +250,15 @@ Hareket: enter 0.24s cubic-bezier(0,0,.2,1) 6px stagger 0.055 · scroll top 94% 
   pin kapalı · hover 70ms scale 1.004; değer saymaz sıçrar; prefers-reduced-motion zorunlu.
 Yasak: neon glow, tarama çizgisi, 4px üstü radius, italik, 9px metin, sürekli blink, parallax.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Her panelde bezel var; aktif panel cyan halka ile ayrılıyor.
-- [ ] Her gösterge etiket–değer–birim üçlüsü taşıyor.
-- [ ] Durum etiketleri büyük harf ve renkle birlikte.
-- [ ] Kritik eylem iki adımlı onaydan geçiyor.
-- [ ] Kontrast: gövde ≥ 4.5:1, accent üstü ≥ 4.5:1, `--ink-faint` yalnız birim/eksen.
-- [ ] 390px'te sekmeli düzende taşma yok; dokunma hedefi ≥ 44px.
-- [ ] `prefers-reduced-motion` açıkken blink ve geçişler duruyor.
+Style: Cockpit Avionics (cockpit-avionics) · family: Industrial (56–65)
+Token: --bg #0a0f14 · --surface #131a21 · --ink #e8f0f4 · --accent #35d6e8 · --line rgba(232,240,244,.15)
+Radius: 2px / 4px · Typography: Rajdhani / Inter / Share Tech Mono
+Required: Her gösterge üçlüsü: etiket (10px mono, üstte) + değer (mono, sağa hizalı) + birim (ayrı) · Panel bezel: dış 1px --line + iç 1px soluk çerçeve; aktif panel 1px cyan dış halka · Durum etiketleri büyük harf mono: ARMED · ACTIVE · STBY · FAULT; renk + metin birlikte
+Banned: Neon glow, tarama çizgisi, CRT, sürekli yanıp sönen uyarı. · 4px üstü radius, yuvarlak kart, yumuşak/geniş gölge, cam/blur. · Serif/geometrik display, italik, altı çizili bağlantı.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -257,15 +269,25 @@ Yasak: neon glow, tarama çizgisi, 4px üstü radius, italik, 9px metin, sürekl
   --ink: #e8f0f4; --ink-soft: #9fb0ba; --ink-faint: #6d7f8a;
   --accent: #35d6e8; --accent-ink: #032026;
   --line: rgba(232,240,244,.15);
+  --danger: #e4392b;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 2px; --radius-lg: 4px;
-  --shadow: 0 1px 3px rgba(0,0,0,.5); --shadow-hard: 0 0 0 1px rgba(53,214,232,.45);
+  --shadow: 0 1px 3px rgba(0,0,0,.5); --shadow-hard: none;
   --font-display: "Rajdhani", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "Share Tech Mono", ui-monospace, monospace;
   --tracking: .06em; --blur: 0px; --grain: 0;
-  --danger: #ff6b6b; --danger-ink: #1a0707;
-  --ok: #4fd98a; --warn: #ffb020;
 }
 ```
-
-Koyu mod bloğu `styles/65-cockpit-avionics/token-block.css` ve (integrator aktardığında) `kit/tokens.css` içinde `[data-theme="dark"][data-style="cockpit-avionics"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

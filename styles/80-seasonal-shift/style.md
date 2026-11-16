@@ -1,43 +1,43 @@
 # 80 · Mevsim Geçişi
 
-> **Bir cümlede:** Bir mevsimden diğerine geçen arayüz: sıcak krem zemin, iki tonlu geçiş şeridi (pas turuncusu → yaprak yeşili), serif başlık ve tek yumuşak gölge.
+> **In one sentence:** Bir mevsimden diğerine geçen arayüz: sıcak krem zemin, iki tonlu geçiş şeridi (pas turuncusu → yaprak yeşili), serif başlık ve tek yumuşak gölge.
 
 | | |
 |---|---|
-| **Hissiyat** | geçici, sıcak, doğal, ritmik |
-| **En iyi** | mevsimsel kampanya, tarım/gıda ürünü, etkinlik takvimi, yaşam tarzı abonelik vitrini |
-| **Kaçın** | finans paneli, teknik dokümantasyon, güvenlik arayüzü — iki tonlu süs karar hızını düşürür |
-| **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük metin çifti 7.18:1) |
-| **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="seasonal-shift"]` |
-| **Kompozisyon** | `split` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | geçici, sıcak, doğal, ritmik |
+| **Best for** | mevsimsel kampanya, tarım/gıda ürünü, etkinlik takvimi, yaşam tarzı abonelik vitrini |
+| **Avoid** | finans paneli, teknik dokümantasyon, güvenlik arayüzü — iki tonlu süs karar hızını düşürür |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Nature & Organic (76–85) · **Token** | `kit/tokens.css` → `[data-style="seasonal-shift"]` |
+| **Composition** | `split` · `inline` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Mevsim Geçişi, ekranı **iki mevsim arasındaki eşik** gibi kurar: sıcak krem zemin (`--bg` → `--bg-2` dikey gradyan), bölüm ve kart üstlerinde 3px iki tonlu şerit (pas turuncusu %55 → yaprak yeşili %40), serif başlık (EB Garamond) + sans gövde (Inter), tek yumuşak gölge. Tek renkli sadeliği feda eder; karşılığında **zaman/ritim okuması** kazanır.
 
 Kurucu kararları üç tanedir. Birincisi **iki renk, iki mevsim**: accent (sonbahar) ve ok (ilkbahar) — üçüncü sıcak ton yok. İkincisi **şerit yön taşır**: gradyan soldan sağa akar, "geçiş" kelimesi görselde de okunur. Üçüncüsü **serif başlık + sans gövde**: anlatı sıcak, okunurluk nötr kalır.
 
 Bedeli: iki tonlu süs, operasyonel ekranda dikkat dağıtır. Bu yüzden stilin doğal yeri vitrin, takvim ve kampanya; form/ödeme ekranlarında şerit kaldırılır.
 
-### Ne değildir
+### What is not
 - **Japandi (06) değildir:** 06 tek sıcak nötr skalada kalır ve süs eklemez; 80'de **iki tonlu geçiş şeridi** imzadır.
 - **Biyofilik Botanik (76) değildir:** 76 tek yeşil ailesi + yaprak köşesi kullanır; 80 iki mevsim rengi (pas + yeşil) ve standalone şerit kullanır, radius 8/16px.
 - **Editorial Design (03) değildir:** 03 serif başlık + kolon ritmi ile baskı dili kurar, renk geçişi yok; 80 renk geçişini imza yapar.
 - **Maximalism (17) değildir:** 17 çok renk/desen yığar; 80'de en fazla iki vurgu tonu ve tek şerit.
 
-### Nereden gelir
+### Where it comes from
 Fenoloji (mevsim geçişlerinin gözlemlenebilir eşikleri) ve sonbahar yaprak rengi skalasından; görsel olarak 1960-70'ler doğa takvimleri ve zanaat ambalajlarından. Bugün geri dönüyor çünkü mevsimsel ürünler (tarım aboneliği, etkinlik, moda koleksiyonu) "dönem" anlatmak zorunda. Klişeye dönmemesi için korunacak detay: **şeridin 3px'te kalması** ve iki renkten fazlasına çıkmaması.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin sıcak krem; yukarıdan aşağı hafif koyulaşan gradyan var.
 2. Nav ve kart üstlerinde 3px iki tonlu şerit (turuncu → yeşil) görünüyor.
 3. Başlıklar serif (EB Garamond), gövde sans; iki farklı aile birlikte.
 4. Buton 44px, radius 8px; gölge tek ve yumuşak.
 5. Mevsim etiketleri mono ve büyük harf (İLKBAHAR → YAZ).
 
-## Görsel imza
+## Visual signature
 - **İki tonlu geçiş şeridi:** 3px, `linear-gradient(90deg, accent %55, ok %40)`; nav altında `border-image`, kart üstünde `::before`.
 - **Krem gradyan:** gövde `linear-gradient(180deg, --bg, --bg-2)` + hero görselinde 115° iki mevsim bölünmesi.
 - **Nokta deseni:** hero görselinde 14px nokta ızgarası (ink %10) — tohum/toprak hissi.
@@ -45,99 +45,124 @@ Fenoloji (mevsim geçişlerinin gözlemlenebilir eşikleri) ve sonbahar yaprak r
 - **Mevsim etiketi:** 11px mono, uppercase, `.08em`; ok işaretiyle (`→`).
 - **Tek gölge:** `0 6px 20px rgba(42,32,24,.12)`; sert/ofset gölge yok.
 - **Hareket imzası:** 570ms `cubic-bezier(.42,.12,.2,1)`, 22px — geçiş "döner", sıçramaz.
+- **Typography:** EB Garamond (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#a4471f`; neutral scale `#f6efe2` → `#2a2018`.
+- **Radius:** `8px` / `16px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f6efe2` | sayfa zemini (krem, geçişin başı) | kart zemini |
-| `--bg-2` | `#ede3d2` | gradyanın sonu, ikincil bant | buton zemini |
-| `--surface` | `#fdf9f1` | kart / panel | sayfa zemini |
-| `--surface-2` | `#f7f0e4` | chip, tablo başlığı | birincil CTA |
-| `--ink` | `#2a2018` | başlık, gövde | dekoratif çizgi |
-| `--ink-soft` | `#5c4c3d` | açıklama, ikincil etiket | başlık |
-| `--ink-faint` | `#8a7b68` | yalnız dekoratif çizgi ve alt not | etkileşimli metin |
-| `--accent` | `#a4471f` | sonbahar ucu: birincil eylem, şerit başı | gövde metni |
-| `--accent-ink` | `#fff6ec` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(42,32,24,.14)` | kenarlık, ayırıcı | metin rengi |
+1. Zemin sıcak krem (--bg); saf beyaz yok, gölge yumuşak tek katman
+2. İki tonlu geçiş şeridi imza öğedir: accent (sonbahar) → ok (ilkbahar), 3px, nav ve kart üstünde
+3. Radius 8px kontrol / 16px kart; hap radius yalnız chip
+4. Serif display (EB Garamond) + sans gövde (Inter); iki display ailesi yok
+5. Mevsim etiketi mono ve büyük harf; geçiş yönü okla veya sırayla belirtilir
+6. Renk geçişi iki duraktan fazla olamaz (üçüncü sıcak ton yasak)
 
-- Ölçülen kontrast: `ink / bg` = **13.93:1** · `ink-soft / bg` = **7.18:1** · `accent-ink / accent` = **5.61:1** · `ink-faint / bg` = **3.59:1** (yalnız dekoratif).
-- İki vurgu kuralı (bilinçli istisna): accent (sonbahar) + ok (ilkbahar). Üçüncü sıcak/soğuk vurgu yok; `--ok` şerit ve durum dışında kullanılmaz.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; krem zemin üstünde `--ink-faint` metin.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f6efe2` | page background | as a card background |
+| `--bg-2` | `#ede3d2` | partition divider floor, table top | button background |
+| `--surface` | `#fdf9f1` | kart, input, modal | full-page background |
+| `--surface-2` | `#f7f0e4` | passive chip, hover background | primary button |
+| `--ink` | `#2a2018` | title, body, icon | large background |
+| `--ink-soft` | `#5c4c3d` | secondary text, description | — |
+| `--ink-faint` | `#8a7b68` | decorative label, separator text | interactive text |
+| `--accent` | `#a4471f` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fff6ec` | text above accent | non-accent background |
+| `--line` | `rgba(42,32,24,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | EB Garamond (`--font-display`) | 50px (mobil 30px) | 500 | 1.06 | `0` |
-| H2 | EB Garamond | 32px | 500 | 1.16 | `.01em` |
-| H3 | EB Garamond | 21px | 500 | 1.30 | `.01em` |
-| Gövde | Inter (`--font-body`) | 16px | 400 | 1.65 | `0` |
-| Küçük gövde | Inter | 13px | 400 | 1.55 | `0` |
-| Etiket / mono | JetBrains Mono (`--font-mono`) | 11px | 400 | 1.4 | `.08em` |
+- Measured contrast: `ink/bg` **13.93:1** · `ink-soft/bg` **7.18:1** · `ink-faint/bg` **3.59:1 (decorative)** · `accent-ink/accent` **5.61:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.5** — kullanılan basamaklar 11 · 12 · 13 · 16 · 21 · 32 · 50.
-- Ölçü önerisi: `h1 { font-size: clamp(30px, 4.8vw, 50px); line-height: 1.06 }`.
-- Gövde satır uzunluğu en fazla **64ch**; mevsim anlatısı 56ch'te tutulur.
-- Ağırlık kuralı: display 500 (EB Garamond 700 kullanılmaz — krem zeminde sertleşir), gövde 400/600, mono 400.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (EB Garamond) | 50px (mobile 30px) | 400 | 1.08 | -0.02em |
+| H2 | same | 32px | 600 | 1.2 | -0.015em |
+| H3 | same | 21px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 20px |
-| Container genişliği | 1200px (içerik 1160px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1200; 768 altında tek kolon, şerit 2px |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** asimetrik blok (7/5) — iki mevsim bölünmesi bu blokta.
-- Bölüm ritmi: art arda en fazla **3** kart; dördüncüsü tam genişlik "mevsim bandı" olur.
-- Kart padding 22px, bölüm dikey boşluğu 76px (mobil 44px).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` → `--bg-2` | — | krem gradyan |
-| Kart | `--surface` | `0 6px 20px rgba(42,32,24,.12)` | kart, panel, KPI |
-| Yüzen katman | `--surface` + gölge | `0 16px 40px rgba(42,32,24,.20)` | modal, menü, toast |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; kart üstünde ek 3px iki tonlu şerit.
-- Derinlik nereden gelir: **tek yumuşak gölge + iki ton farkı**. Sert gölge yok.
-- Radius: `--radius: 8px` (buton, input), `--radius-lg: 16px` (kart, panel, modal); chip 999px. Üst sınır 20px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | `0 22px` | 8px | 15px Inter 600 | accent dolgu, accent-ink metin, gölge yok | hover: accent %86 + ink · active: translateY(1px) · focus: 2px accent outline + 3px offset · disabled: opacity .45 · loading: renk accent → ok (700ms tek tur) |
-| Buton (ikincil) | 44px | `0 22px` | 8px | 15px Inter 600 | `--surface` + 1px `--line` | hover: `--surface-2` |
-| Input | 44px | `0 14px` | 8px | 15px Inter | `--surface` + 1px `--line` | focus: accent çerçeve + 2px accent %30 outline · error: `--danger` çerçeve + 12px etiket · disabled: opacity .45 |
-| Kart | içerik | 22px | 16px | H3 + gövde | `--surface` + 1px `--line` + 3px üst şerit + gölge | hover: gölge 6/24 |
-| Chip / badge | 26px | `0 12px` | 999px | 12px Inter 600 | `--surface-2` + 1px `--line` | accent: accent %13 zemin + accent metin |
-| Nav | 62px | `0 26px` | 0 | 15px Inter 500 | `--bg` + 3px iki tonlu alt şerit | aktif: accent metin |
-| Tablo satırı | 44px | `8px 12px` | — | 15px Inter, tabular-nums | satır arası 1px `--line` | hover: `--surface-2` |
-| Modal / sheet | içerik | 26px | 16px | 21px display + mono mevsim etiketi | `--surface` + `0 16px 40px` + üst şerit | açılış: 22px, 570ms |
-| Toast | 42px | `10px 16px` | 8px | 14px Inter 600 | `--surface` + sol uçta 6px iki renkli nokta | hata: nokta `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ok`, `--ink-soft`, `--warn` | en fazla 4 seri; mevsim sınırı 1px kesikli dikey |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `8px` (buton, input, chip), `16px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px` — krem zeminde 2px offset zayıf kalır.
-- Dokunma hedefi: en az 44×44px; butonlar 44px. Chip 26px, hedef padding ile 44px.
+## Bans
 
-## Görsel dil
+- Neon/doygun turkuaz, mor geçişler.
+- Saf beyaz zemin veya saf siyah bölüm.
+- 0px keskin köşe, kalın 3px+ çerçeve.
+- Geometrik sans display, ikinci serif.
+- Ekran başına 1'den fazla sürekli yaprak/kar animasyonu.
+- Aynı ekranda üçten fazla mevsim rengi.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, hafif yuvarlak uç, 22px ızgara; mevsim sembolleri (yaprak, kar, güneş) |
-| Fotoğraf | mevsim geçişi karesi: sıcak-soğuk karşıtlığı, düşük doygunluk, 16px radius kırpma |
-| İllüstrasyon | iki tonlu yaprak/dal çizimi (yarısı accent, yarısı ok) |
-| Doku | grain %3 + ince dikey geçiş çizgisi; parlak yüzey yok |
-| Logo alanı | serif wordmark + iki renkli yaprak işareti, 28px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 8px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 8px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 8px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 8px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 8px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 8px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 8px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 5.71:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | serif H1 + iki mevsim bölünmüş görsel + tek CTA | `shots/01-page.png` |
 | Dashboard | düşük | şerit yok; iki ton yalnız grafik serisinde | `shots/01-page.png` |
@@ -152,43 +177,33 @@ Fenoloji (mevsim geçişlerinin gözlemlenebilir eşikleri) ve sonbahar yaprak r
 | Hata | düşük | nokta `--danger`; zemin değişmez | `shots/01-page.png` |
 | Profil / ayar | orta | iki kolon; mevsim tercihi chip ile | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Zemin sıcak krem (`--bg` → `--bg-2`); saf beyaz zemin yok.
-- İki tonlu geçiş şeridi imza öğedir: 3px, accent → ok; nav ve kart üstünde.
-- En fazla iki vurgu tonu (accent + ok); üçüncü sıcak/soğuk vurgu yok.
-- Radius 8px kontrol / 16px kart; hap radius yalnız chip.
-- Serif display + sans gövde; ikinci serif yok.
-- Mevsim etiketi mono, uppercase ve geçiş yönü belirtilir (`İLKBAHAR → YAZ`).
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 13.93:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.18:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.59:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.61:1 | ≥ 4.5 | button text |
+| focus ring/ground | 5.71:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 93.7 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Neon/doygun turkuaz, mor geçişler.
-- Saf beyaz zemin veya saf siyah bölüm.
-- 0px keskin köşe, kalın 3px+ çerçeve.
-- Geometrik sans display, ikinci serif.
-- Ekran başına 1'den fazla sürekli yaprak/kar animasyonu.
-- Aynı ekranda üçten fazla mevsim rengi.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **7.18:1** (eşik 4.5); `ink-faint / bg` = **3.59:1** yalnız dekoratif çizgi ve alt notta.
-- `--ink-faint` etkileşimli metinde kullanılmaz; mevsim etiketi `--ink-soft`.
-- Hareket/parlama hassasiyeti: düşük — flash yok, sürekli animasyon ekran başına ≤1; `prefers-reduced-motion` şerit animasyonunu kapatır.
-- Şeffaf yüzey yok; opak fallback gerekmez. `border-image` desteklenmezse şerit 3px düz accent çizgiye düşer.
-- Odak görünürlüğü: krem zeminde 2px accent outline + **3px** offset; 2px offset turuncu zeminde zayıf kalır.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "sonbahar teması" gibi klişe | her yerde turuncu kullanılmış | accent yalnız şerit ve CTA'da |
 | İki renk çatışıyor | üçüncü vurgu eklenmiş | accent + ok dışında vurgu yok |
 | Serif başlık ağır | EB Garamond 700 kullanılmış | 500 sabit |
@@ -196,28 +211,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Krem zemin "kirli" | grain %3 üstü + gölge katmanı | grain sabit, tek gölge |
 | Mobilde taşma | 20px gutter korunmuş | 768 altı 16px gutter, tek kolon |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `japandi` — sıcak nötr ve sakin boşluk; Japandi tek bölümde garnitür.
-- **Uyumlu:** `wabi-sabi` — kâğıt dokusu ve doğal ton; Wabi-Sabi boş durumda.
-- **Uyumlu:** `editorial-design` — serif başlık + kolon ritmi; Editorial yalnız makale bölümünde.
-- **Yasak:** `y2k` — krom/neon ve parlak yüzey krem sıcaklığını bozar.
-- **Yasak:** `acid-graphics` — asit renkleri iki ton disiplinini kırar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `japandi` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `wabi-sabi` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `y2k` | Two different ornamental languages compete on the same screen |
+| Mixing | `acid-graphics` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Season | mevsim sınırları ve dönem adları |
-| https://en.wikipedia.org/wiki/Autumn_leaf_color | sonbahar ton skalası (klorofil → karoten) |
-| https://en.wikipedia.org/wiki/Phenology | geçiş zaman çizelgesi ve eşikler |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | krem zemin üstü metin kontrastı |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Season | Season — mevsim sınırları ve dönem adları |
+| https://en.wikipedia.org/wiki/Autumn_leaf_color | Autumn leaf color — sonbahar ton skalası (klorofil → karoten) |
+| https://en.wikipedia.org/wiki/Phenology | Phenology — geçiş zaman çizelgesi ve eşikler |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast Minimum — krem zemin üstü metin kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Mevsim Geçişi (styles/80-seasonal-shift/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="seasonal-shift"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: krem dikey gradyan --bg → --bg-2; hero görselinde 115° iki mevsim bölünmesi + 14px nokta deseni.
@@ -232,15 +247,15 @@ Hareket: enter 570ms cubic-bezier(.42,.12,.2,1) 22px stagger .075; scroll top 96
   pin yok; hover 220ms görsel 1.018. prefers-reduced-motion zorunlu.
 Yasak: neon/mor geçiş, saf beyaz zemin, 0px köşe, kalın çerçeve, ikinci serif, >1 sürekli animasyon.
 Çıktı: bileşen kodu + tek paragraf not (geçiş şeridini ve serif/sans eşleşmesini nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: iki tonlu şerit, krem gradyan, iki mevsim bölünmesi, mono mevsim etiketi.
-- [ ] Hard-coded renk/gölge/radius yok.
-- [ ] Kontrast: 13.93 / 7.18 / 5.61 — hepsi eşik üstü.
-- [ ] Odak halkası 2px accent + 3px offset görünür.
-- [ ] 390px'te tek kolon, şerit 2px, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken şerit ve geçiş animasyonu duruyor.
+Style: Mevsim Geçişi (seasonal-shift) · family: Nature & Organic (76–85)
+Token: --bg #f6efe2 · --surface #fdf9f1 · --ink #2a2018 · --accent #a4471f · --line rgba(42,32,24,.14)
+Radius: 8px / 16px · Typography: EB Garamond / Inter / JetBrains Mono
+Required: Zemin sıcak krem (--bg); saf beyaz yok, gölge yumuşak tek katman · İki tonlu geçiş şeridi imza öğedir: accent (sonbahar) → ok (ilkbahar), 3px, nav ve kart üstünde · Radius 8px kontrol / 16px kart; hap radius yalnız chip
+Banned: Neon/doygun turkuaz, mor geçişler. · Saf beyaz zemin veya saf siyah bölüm. · 0px keskin köşe, kalın 3px+ çerçeve.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -251,15 +266,25 @@ Yasak: neon/mor geçiş, saf beyaz zemin, 0px köşe, kalın çerçeve, ikinci s
   --ink: #2a2018; --ink-soft: #5c4c3d; --ink-faint: #8a7b68;
   --accent: #a4471f; --accent-ink: #fff6ec;
   --line: rgba(42,32,24,.14);
+  --danger: #d3261a;
+  --danger-ink: #ffffff;
+  --ok: #007e35;
+  --ok-ink: #ffffff;
+  --warn: #b25100;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 8px; --radius-lg: 16px;
   --shadow: 0 6px 20px rgba(42,32,24,.12); --shadow-hard: none;
-  --font-display: "EB Garamond", "Lora", Georgia, serif;
+  --font-display: "EB Garamond", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: .02em; --blur: 0px; --grain: 3;
-  --danger: #a02a20; --danger-ink: #ffffff;
-  --ok: #3f6b2c; --warn: #7f5a04;
+  --tracking: .02em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="seasonal-shift"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

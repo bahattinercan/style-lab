@@ -1,146 +1,169 @@
 # 66 · Nordic Folk
 
-> **Bir cümleyle:** Düz boyanmış keten zemin üzerine simetrik bitkisel bir bant: süs dekoratif kalır, ızgara ve tipografi sade durur.
+> **In one sentence:** Nordic Folk
 
 | | |
 |---|---|
-| **Hissiyat** | sıcak, el yapımı, neşeli, disiplinli |
-| **En iyi** | zanaat/yiyecek-içecek markası, kültür etkinliği vitrini, abonelik kutusu, yerel pazar pazaryeri |
-| **Kaçın** | finans/alarm paneli, 20+ satırlık veri tablosu, klinik sağlık formu, kripto ekranı |
-| **Zorluk** | orta (süsü dekoratif katmanda tutmak) · **Erişilebilirlik** | iyi (12.67:1 gövde, 7.02:1 accent üstü) |
-| **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="nordic-folk"]` |
-| **Kompozisyon** | `centered` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | sıcak, el yapımı, neşeli, disiplinli |
+| **Best for** | zanaat/yiyecek-içecek markası, kültür etkinliği vitrini, abonelik kutusu, yerel pazar pazaryeri |
+| **Avoid** | finans/alarm paneli, 20+ satırlık veri tablosu, klinik sağlık formu, kripto ekranı |
+| **Difficulty** | orta (süsü dekoratif katmanda tutmak) · **Accessibility** |  |
+| **Family** | Cultural & Regional (66–75) · **Token** | `kit/tokens.css` → `[data-style="nordic-folk"]` |
+| **Composition** | `centered` · `split` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Nordic Folk, İskandinav halk boyamasının (rosemaling, kurbits, dala) ekran karşılığıdır: **düz boyanmış bir zemin** (keten `#f2ece0`), üstünde **simetrik bitkisel bir bant**, ve onun altında son derece sade bir içerik ızgarası. Süs ile bilgi kesin olarak ayrılır: motif yalnız ayrılmış bantlarda (üst şerit, bölüm ayırıcı, hero köşesi) yaşar; metnin arkasına asla girmez. Bu ayrım stilin hem karakterini hem okunabilirliğini koruyan tek kuraldır.
 
 Kazandığı şey: **sıcaklık + hatırlanma**. Tek bir kırmızı (madder `#9c2b21`) ve iki serif aile, ekranı "el yapımı" hissettirirken hiyerarşiyi boşluk ve punto kurar. Feda ettiği şey: **yoğunluk** — 96px bölüm ritmi ve 24px kart padding'i ile bu stil veri ağır ekranlarda yer israf eder; tablo/dashboard için yalnız tipografi ve radius ödünç alınır.
 
-### Ne değildir
+### What is not
 - **Japandi (06) değildir.** Japandi'de süs yoktur, kontrast yumuşaktır (`ink/bg` ≈ 8:1), accent adaçayı yeşilidir. Burada süs **zorunlu** bir katmandır, kontrast **12.67:1** ve accent **madder kırmızısı**; ayrıca boyalı çift kural (1px accent + 1px line) vardır.
 - **Bohemian (30) değildir.** Bohemian kilim desenini **arka plana** yayar ve el yazısı kullanır; burada desen yalnız bantta, gövde **Lora** (el yazısı değil) ve radius 6/10px (bohemian'da organik/asimetrik).
 - **Victorian (27) değildir.** Victorian süslü çerçeve + small caps + gravür dokusuyla dolu bir yüzey kurar; burada süs **tek bant**, çerçeve yok, `--grain` yalnız .04.
 - **"Kırmızı accent eklenmiş minimalizm" değildir.** Minimalizmde süs kategorik olarak yasak ve radius 8/12px; burada süs katmanı ve boyalı kural imzanın kendisidir.
 - **Scrapbook (31) değildir.** Scrapbook katman/bant/polaroid ekler; burada tek düzlem, tek boya katmanı var.
 
-### Nereden gelir
+### Where it comes from
 Norveç rosemaling'i (18.–19. yy gezici ressamların mobilya ve kilise duvarı boyaması), İsveç kurbits/dala geleneği ve Fin karélien nakışları aynı dili paylaşır: **simetrik bitkisel kıvrım + sınırlı palet + düz zemin**. Dijitalde 2020'lerde "craft revival" ve yerel üretici platformlarıyla geri döndü; nedeni ölçülebilir — düz zemin + tek accent, düşük bant genişliğinde bile kimlik taşır (görsel yerine CSS nokta şeridi yeter).
 
 Klişeye düşmemek için korunması gereken detay: **bandın simetrisi ve ölçüsü**. Motifi büyütmek, metnin arkasına almak veya ikinci bir renk eklemek stili "turistik hediyelik" seviyesine indirir.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin **keten sarısı** mı (`#f2ece0`), beyaz/gri değil mi?
 2. Ekranın üstünde **nokta dizisi** (rosemaling bandı) ve bir köşede **eş merkezli halka** var mı?
 3. Bölüm başlıklarının üstünde **1px kırmızı + 1px ince çizgi** ikilisi (boyalı çift kural) görünüyor mu?
 4. Başlık **serif ve sıcak** (Fraunces 700, ≤54px), gövde de **serif** (Lora) mi — mono yalnız etiketlerde mi?
 5. Kartlarda **gölge yok**, ayrım 1px çizgi mi; accent ekranın ≤ %12'sinde mi?
 
-## Görsel imza
-1. **Boyalı çift kural:** 1px `--accent` + 8px boşluk + 1px `--line`; her bölüm başlığının üstünde, başka yerde yok.
-2. **Rosemaling nokta şeridi:** 32×20px tekrar, 2px accent nokta + 1.5px %40 opaklık ikinci nokta, opacity .50 — yalnız sayfa üst bandı.
-3. **Kurbits köşe:** 148×148px, 2px `%34 accent` halka + 10px iç halka; hero sağ üstte, mobilde 84px.
-4. **Düz boya zemin:** zemin ile kart arasındaki fark yalnız ton (`--bg` → `--surface`); kartta `box-shadow: none`.
-5. **Simetrik bant, asimetrik içerik:** dekoratif eksen ortada, metin ekseni solda; ekran başına en fazla 1 asimetrik blok.
-6. **Kırmızı yalnız üç yerde:** birincil buton, aktif nav işareti, ornament çekirdeği. Dördüncü kullanım yasak.
-7. **Chip = nokta:** pill radius (999px) 24px yükseklik, 1px `%42 accent` kenar — "boyanmış düğme" hissi.
+## Visual signature
+- **Boyalı çift kural:** 1px `--accent` + 8px boşluk + 1px `--line`; her bölüm başlığının üstünde, başka yerde yok.
+- **Rosemaling nokta şeridi:** 32×20px tekrar, 2px accent nokta + 1.5px %40 opaklık ikinci nokta, opacity .50 — yalnız sayfa üst bandı.
+- **Kurbits köşe:** 148×148px, 2px `%34 accent` halka + 10px iç halka; hero sağ üstte, mobilde 84px.
+- **Düz boya zemin:** zemin ile kart arasındaki fark yalnız ton (`--bg` → `--surface`); kartta `box-shadow: none`.
+- **Simetrik bant, asimetrik içerik:** dekoratif eksen ortada, metin ekseni solda; ekran başına en fazla 1 asimetrik blok.
+- **Kırmızı yalnız üç yerde:** birincil buton, aktif nav işareti, ornament çekirdeği. Dördüncü kullanım yasak.
+- **Chip = nokta:** pill radius (999px) 24px yükseklik, 1px `%42 accent` kenar — "boyanmış düğme" hissi.
+- **Typography:** Fraunces (display) + Lora (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#9c2b21`; neutral scale `#f2ece0` → `#1d2a24`.
+- **Radius:** `6px` / `10px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f2ece0` | Sayfa zemini (keten boya) | Kart içi, form alanı |
-| `--bg-2` | `#e9e0cf` | Bölüm şeritleri, alt bilgi | Metin arkası blok |
-| `--surface` | `#fbf7ed` | Kart, panel, form alanı | Sayfa zemini |
-| `--surface-2` | `#e3d9c6` | Chip, ikincil buton hover, tablo başlığı | Geniş alan dolgusu |
-| `--ink` | `#1d2a24` | Gövde, başlık (çam yeşili siyah) | Accent zemin üstü |
-| `--ink-soft` | `#4b5b51` | İkincil metin, açıklama | Küçük etiket |
-| `--ink-faint` | `#6f7d71` | Dekoratif etiket, ayırıcı metin | Etkileşimli metin, gövde |
-| `--accent` | `#9c2b21` | Birincil buton, aktif işaret, ornament | Geniş zemin, gövde metni |
-| `--accent-ink` | `#fdf6e8` | Accent üstü metin | Accent olmayan zemin |
-| `--line` | `rgba(29,42,36,.16)` | Kart kenarı, tablo çizgisi | Accent kural (o accent) |
+1. **Düz boyanmış zemin:** renk bloğu tek parça; gradient, cam ve blur yok (`--blur: 0`).
+2. **Süs yalnız ayrılmış bantta:** üst şerit, bölüm ayırıcı, hero köşesi. Motif metnin arkasına girmez.
+3. **Accent ≤ %12:** madder kırmızı yalnız birincil buton, aktif nav işareti ve ornament çekirdeğinde.
+4. **Boyalı çift kural:** 1px accent + 8px boşluk + 1px line; her bölüm başlığını bu ayırır.
+5. **Serif ikilisi:** display Fraunces 700 (≤ 54px), gövde Lora 400; mono yalnız etiket ve chip'te.
+6. **Ritim 96/56px, ölçü 64ch, kart padding 24px** — üçü birlikte boşluğun ölçüsüdür.
 
-- Ölçülen kontrast: `ink / bg` = **12.67:1** · `ink-soft / bg` = **6.12:1** · `accent-ink / accent` = **7.02:1** · `ink-faint / bg` = **3.68:1** (yalnız dekoratif).
-- Tek vurgu kuralı geçerli: keten + çam + madder. Accent alanı ekranın **≤ %12'si**.
-- Yasak kombinasyon: accent zemin + `--ink-faint` metin (3.0:1 altı), ikinci accent (sarı/mavi), siyah-beyaz saf kontrast.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f2ece0` | page background | as a card background |
+| `--bg-2` | `#e9e0cf` | partition divider floor, table top | button background |
+| `--surface` | `#fbf7ed` | kart, input, modal | full-page background |
+| `--surface-2` | `#e3d9c6` | passive chip, hover background | primary button |
+| `--ink` | `#1d2a24` | title, body, icon | large background |
+| `--ink-soft` | `#4b5b51` | secondary text, description | — |
+| `--ink-faint` | `#6f7d71` | decorative label, separator text | interactive text |
+| `--accent` | `#9c2b21` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fdf6e8` | text above accent | non-accent background |
+| `--line` | `rgba(29,42,36,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Fraunces | 54px (mobil 34px) | 700 | 1.04 | -0.015em |
-| H2 | Fraunces | 30px | 700 | 1.16 | -0.01em |
-| H3 | Fraunces | 20px | 700 | 1.28 | 0 |
-| Gövde | Lora | 16px | 400 | 1.66 | 0 |
-| Lede | Lora | 16.5px | 400 | 1.66 | 0 |
-| Etiket / mono | IBM Plex Mono | 11px | 600 | 1.4 | 0.18em |
+- Measured contrast: `ink/bg` **12.67:1** · `ink-soft/bg` **6.12:1** · `ink-faint/bg` **3.68:1 (decorative)** · `accent-ink/accent` **7.02:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.34 (16 → 20 → 30 → 54); kullanılan basamak sayısı 6.
-- Ölçü önerisi: `h1 { font-size: clamp(34px, 4.2vw, 54px) }`.
-- Gövde metni maksimum satır uzunluğu: **64ch**; lede 46ch.
-- Ağırlık kuralı: yalnız 400 ve 600/700. 300 ve 900/800 yok. Display'de italik yok.
-- Mono yalnız etiket, sayı ve chip metninde; gövdede mono kullanmak stilin sıcaklığını siler.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Fraunces) | 34px (mobile 34px) | 400 | 1.04 | -0.02em |
+| H2 | same | 30px | 600 | 1.16 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Lora) | 16px | 400 | 1.68 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (dekoratif bant 12 kolonu ortalar, içerik 8 kolon kullanır) |
-| Gutter | 24px |
-| Container genişliği | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 / 768 / 390 — 768 altında 1 kolon, dekoratif köşe 84px'e küçülür |
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına en fazla **1** asimetrik blok (hero metni sola, köşe ornamenti sağa); diğer bölümler simetrik ızgarada.
-- Bölüm ritmi: art arda en fazla **3** aynı hizada blok; dördüncüde boyalı çift kural ile nefes verilir.
-- Bölüm dikey boşluk 96px (mobil 56px); kart padding 24px; kart arası 24px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | Sayfa, bölüm şeridi |
-| Kart | `--surface` + `--line` | `none` | Panel, KPI, bileşen kartı |
-| Yüzen katman | `--surface` + `--shadow` | `0 1px 2px rgba(29,42,36,.10)` | Modal, dropdown, hero görseli |
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; sekonder kural gerekirse `1px solid color-mix(in srgb, var(--accent) 42%, transparent)` (yalnız chip).
-- Derinlik nereden gelir: **boya ve kural** — 2px accent çizgi, çift kural, radius-lg; gölge yok.
-- Radius: `--radius` 6px (buton, input) · `--radius-lg` 10px (kart, modal, hero görseli). Pill yalnız chip ve toast'ta (999px).
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 12px 20px | 6px | 15px/600 Lora | `--accent` / `--accent-ink`, gölge yok | hover %90 karışım 190ms · active translateY(1px) · focus 2px accent + 3px offset · disabled opacity .45 kesikli · loading 3 nokta 640ms |
-| Buton (ikincil) | 44px | 12px 20px | 6px | 15px/600 Lora | şeffaf / `--ink`, 1px `--line` | hover `--surface-2` · focus aynı halka |
-| Input | 44px | 0 14px | 6px | 16px/400 Lora | `--surface` + 1px `--line` | focus 2px accent + 2px offset · filled `--surface` · error `--danger` kenar + metin · disabled opacity .45 |
-| Kart | — | 24px | 10px | başlık Fraunces 20px | `--surface`, gölge yok | hover: yalnız kenar koyulaşır (`--line` → accent %30) |
-| Chip / badge | 24px | 0 10px | 999px | 11px/600 mono | `--surface-2`, 1px accent %42 | accent varyantı: accent zemin + accent-ink |
-| Nav | 56px | 0 32px | 0 | 13px/600 Lora + 11px mono etiket | `--surface` zemin + alt çizgi | aktif: accent 2px alt çizgi + accent metin; pasif `--ink-soft` |
-| Tablo satırı | 44px | 10px 14px | 0 | 14px/400 Lora, sayı mono | satır altı 1px `--line` | hover `--bg-2` · seçili: sol 2px accent |
-| Modal / sheet | — | 24px | 10px | H2 Fraunces 30px | 2px accent çerçeve + `--shadow` | kapanış 190ms fade |
-| Toast | 40px | 10px 18px | 999px | 13px/600 Lora | `--ink` zemin / `--bg` metin | sol uçta 6px accent nokta, 3600ms |
-| Grafik paleti | — | — | — | eksen 11px mono | `--accent`, `--ink-soft`, `--ink-faint` | en fazla 3 seri, çizgi 2px, alan dolgusu yok |
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `6px` (buton, input, chip), `10px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px` — düz zeminde accent halka görünür; accent zemin üstünde buton içinde `outline-offset: -4px` kullanılır.
-- Dokunma hedefi: en az 44×44px. Chip görsel olarak 24px, ama satır içi sarmalayıcıya 10px dikey padding verilerek 44px'e çıkarılır.
-- Buton metni asla uppercase değil (folk dili sıcak kalır); tek istisna nav mono etiketleri (11px, .18em).
+## Bans
 
-## Görsel dil
+- Motifi metnin arkasına yerleştirmek; kontrast ve okunabilirlik kırılır.
+- Üçten fazla renk ailesi (keten + çam + madder dışında) ve ikinci accent.
+- Gradient ile hacim taklidi, blur, cam yüzey, neon parlaklık.
+- 900/800 ağırlık, italik display, 10px üstü radius.
+- Asimetrik dekoratif bant (folk bandı daima simetrik kalır).
+- Gövde metninde uppercase veya 0.05em üstü tracking.
+- Neon accent.
+- Stack of round cards.
+- Otomatik carousel.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, yuvarlatılmış uç, 20/24px ızgara; dolu ikon yok |
-| Fotoğraf | Sıcak doğal ışık, mat yüzey, ahşap/keten/kıl; doygunluk düşük; genişlik ekranın en fazla %58'i |
-| İllüstrasyon | El boyaması bitkisel kıvrım (kurbits) — yalnız bant/köşe; içerik illüstrasyonu yok |
-| Doku | `--grain: .04` keten; görünür gürültü değil, boya hissi |
-| Logo alanı | Serif metin logo (Fraunces 700); çevresinde 24px güvenli boşluk; monogram/negatif varyant yok |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 6px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 6px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 6px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 6px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 6px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 6px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 6px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.06:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | Üst nokta bandı + kurbits köşe; boyalı çift kural başlığın üstünde | `shots/01-page.png` |
 | Dashboard | düşük | Süs yok; kartlar 1px çizgi, KPI sayıları mono, accent yalnız trend | `shots/01-page.png` |
@@ -155,47 +178,33 @@ Klişeye düşmemek için korunması gereken detay: **bandın simetrisi ve ölç
 | Hata | düşük | `--danger` kenar + metin; ornament kullanılmaz | `shots/01-page.png` |
 | Profil / ayar | orta | Bölüm başlıkları boyalı çift kural; form alanları 44px | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 12.67:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.12:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.68:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.02:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.06:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 90.8 | ≥ 60 target | thin text |
 
-1. **Düz boyanmış zemin:** renk bloğu tek parça; gradient, cam ve blur yok (`--blur: 0`).
-2. **Süs yalnız ayrılmış bantta:** üst şerit, bölüm ayırıcı, hero köşesi. Motif metnin arkasına girmez.
-3. **Accent ≤ %12:** madder kırmızı yalnız birincil buton, aktif nav işareti ve ornament çekirdeğinde.
-4. **Boyalı çift kural:** 1px accent + 8px boşluk + 1px line; her bölüm başlığını bu ayırır.
-5. **Serif ikilisi:** display Fraunces 700 (≤ 54px), gövde Lora 400; mono yalnız etiket ve chip'te.
-6. **Ritim 96/56px, ölçü 64ch, kart padding 24px** — üçü birlikte boşluğun ölçüsüdür.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Yasaklar
+## Sample images
 
-- Motifi metnin arkasına yerleştirmek; kontrast ve okunabilirlik kırılır.
-- Üçten fazla renk ailesi (keten + çam + madder dışında) ve ikinci accent.
-- Gradient ile hacim taklidi, blur, cam yüzey, neon parlaklık.
-- 900/800 ağırlık, italik display, 10px üstü radius.
-- Asimetrik dekoratif bant (folk bandı daima simetrik kalır).
-- Gövde metninde uppercase veya 0.05em üstü tracking.
+Identical content is rendered with the same text in every style; only the design differs.
 
-## Erişilebilirlik
-
-- Ölçülen riskler: en düşük çift `--ink-faint / --bg` = **3.68:1** (açık) ve **5.70:1** (koyu). Açık temada `--ink-faint` **yalnız dekoratif** (etiket süsü, ayırıcı); etkileşimli metin değil.
-- `--ink-faint` hiçbir buton, bağlantı veya form etiketinde kullanılmaz.
-- Hareket/parlama hassasiyeti: düşük — animasyon yalnız opaklık ve 18–22px dikey kayma; parlama/flash yok.
-- Şeffaf yüzey yok (`--blur: 0`), bu yüzden `@supports` fallback gerekmez; `color-mix` desteklenmezse chip kenarı `1px solid var(--line)` olur.
-- Odak görünürlüğü: accent zeminli butonda accent halka kaybolur → `outline-offset: -4px` ve `outline-color: var(--accent-ink)` ile içeri alınır.
-- Dekoratif katman `.sig` `pointer-events: none` ve `aria-hidden="true"`; ekran okuyucuya motif duyurulmaz.
-
-## Örnek görseller
-
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Metin zor okunuyor | motif hero metninin arkasına taşmış | Motifi `.sig` katmanına al, metnin arkasına `background` koyma |
 | "Turistik hediyelik" hissi | motif büyütülmüş + ikinci renk eklenmiş | Nokta şeridi 32×20px'te kalsın, tek accent (madder) korunsun |
 | Ekran ağır görünüyor | bölüm ritmi 96px yerine 48px, kart padding 16px | 96/56px ritim ve 24px padding'e dön |
@@ -203,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Fazla kırmızı | accent buton + nav + chip + grafik hepsinde | Accent'i 3 yere indir (buton, aktif işaret, ornament çekirdeği) |
 | Kirli kenarlar | `color-mix` yerine sabit rgba | Yalnız `var(--...)` ve `color-mix(in srgb, var(--accent) …)` kullan |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `japandi` — sıcak nötr zemin aynı; garnitür olarak yalnız sessiz bölümlerde kullanılır (süs eklenmez).
-- **Uyumlu:** `bohemian` — el yapımı dili paylaşır; bohemian'ı tek katmanda (ürün kartı) ve desensiz kullan.
-- **Uyumlu:** `editorial-design` — serif + kolon ritmi ortak; uzun makale sayfasında gövde metnini editorial'a bırak.
-- **Yasak:** `neo-brutalism` — sert gölge ve 3px siyah kenar düz boya dilini kırar.
-- **Yasak:** `glassmorphism` — blur ve şeffaflık `--blur: 0` kuralıyla çelişir.
-- **Yasak:** `cyberpunk` — neon ve mono gövde, folk sıcaklığını siler.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `japandi` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `bohemian` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `cyberpunk` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Rosemaling | bitkisel kıvrım, simetri ve üç renk disiplini |
-| https://en.wikipedia.org/wiki/Dala_horse | tek motifli halk ikonu; süsün ölçülü kullanımı |
-| https://www.nasjonalmuseet.no/en/ | halk sanatı arşivi: zemin/şerit oranları |
-| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | dekoratif motifin etkileşimli öğeden ayrılması |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Rosemaling | Rosemaling — Wikipedia — bitkisel kıvrım, simetri ve üç renk disiplini |
+| https://en.wikipedia.org/wiki/Dala_horse | Dala horse — Wikipedia — tek motifli halk ikonu; süsün ölçülü kullanımı |
+| https://www.nasjonalmuseet.no/en/ | Nasjonalmuseet — halk sanatı arşivi: zemin/şerit oranları |
+| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | WCAG 2.2 · Non-text Contrast — dekoratif motifin etkileşimli öğeden ayrılması |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Nordic Folk (styles/66-nordic-folk/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="nordic-folk"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: display Fraunces 700 (H1 <= 54px, tracking -0.015em), gövde Lora 400 16/1.66,
@@ -240,15 +249,15 @@ Hareket: enter 620ms cubic-bezier(.22,.61,.36,1) 18px stagger 45ms; scroll top 8
 Yasak: gradient, blur, cam, ikinci accent, metin arkasinda motif, 900 agirlik, italik display,
   asimetrik dekoratif bant, gövdede uppercase.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (nokta şeridi + boyalı çift kural).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1 (12.67:1), accent üstü ≥ 4.5:1 (7.02:1).
-- [ ] Odak halkası görünür (2px accent + 3px offset), dokunma hedefi ≥ 44px.
-- [ ] 390px genişlikte taşma yok; köşe ornamenti 84px'e küçülüyor.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Nordic Folk (nordic-folk) · family: Cultural & Regional (66–75)
+Token: --bg #f2ece0 · --surface #fbf7ed · --ink #1d2a24 · --accent #9c2b21 · --line rgba(29,42,36,.16)
+Radius: 6px / 10px · Typography: Fraunces / Lora / IBM Plex Mono
+Required: **Düz boyanmış zemin:** renk bloğu tek parça; gradient, cam ve blur yok (`--blur: 0`). · **Süs yalnız ayrılmış bantta:** üst şerit, bölüm ayırıcı, hero köşesi. Motif metnin arkasına girmez. · **Accent ≤ %12:** madder kırmızı yalnız birincil buton, aktif nav işareti ve ornament çekirdeğinde.
+Banned: Motifi metnin arkasına yerleştirmek; kontrast ve okunabilirlik kırılır. · Üçten fazla renk ailesi (keten + çam + madder dışında) ve ikinci accent. · Gradient ile hacim taklidi, blur, cam yüzey, neon parlaklık.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -259,13 +268,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #1d2a24; --ink-soft: #4b5b51; --ink-faint: #6f7d71;
   --accent: #9c2b21; --accent-ink: #fdf6e8;
   --line: rgba(29,42,36,.16);
+  --danger: #d12318;
+  --danger-ink: #ffffff;
+  --ok: #007c34;
+  --ok-ink: #ffffff;
+  --warn: #b04f00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 6px; --radius-lg: 10px;
   --shadow: 0 1px 2px rgba(29,42,36,.10); --shadow-hard: none;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Lora", Georgia, serif;
+  --font-display: "Fraunces", system-ui, sans-serif;
+  --font-body: "Lora", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: -0.015em; --blur: 0px; --grain: 0.04;
+  --tracking: -0.015em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `token-block.css` içinde `[data-theme="dark"][data-style="nordic-folk"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

@@ -1,43 +1,43 @@
 # 110 · Kanban Akışı
 
-> **Bir cümlede:** İşin kolonlar arasında aktığı arayüz: soğuk gri tahta zemini, beyaz kartlar, 3px kategori şeridi ve WIP sayaçlı kolon başlıkları.
+> **In one sentence:** İşin kolonlar arasında aktığı arayüz: soğuk gri tahta zemini, beyaz kartlar, 3px kategori şeridi ve WIP sayaçlı kolon başlıkları.
 
 | | |
 |---|---|
-| **Hissiyat** | akışkan, düzenli, ekipçe, öngörülebilir |
-| **En iyi** | proje/ürün panosu, destek kuyruğu, işe alım akışı, üretim iş emri panosu |
-| **Kaçın** | vitrin/landing, uzun okuma, ödeme ekranı — kolon dili tek bir işi anlatmak için fazla |
-| **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük metin çifti 6.72:1; accent üstü 5.73:1) |
-| **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="kanban-flow"]` |
-| **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | akışkan, düzenli, ekipçe, öngörülebilir |
+| **Best for** | proje/ürün panosu, destek kuyruğu, işe alım akışı, üretim iş emri panosu |
+| **Avoid** | vitrin/landing, uzun okuma, ödeme ekranı — kolon dili tek bir işi anlatmak için fazla |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Interactive (106–115) · **Token** | `kit/tokens.css` → `[data-style="kanban-flow"]` |
+| **Composition** | `product` · `rail` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Kanban Akışı, arayüzü **kolon-kart tahtası** olarak kurar: kolon zemini `--bg-2`, kart zemini `--surface` + 1px çizgi + tek küçük gölge; her kartta sol 3px kategori şeridi, kolon başlığında `GELEN 7/10` biçiminde sayaç. Süsü bırakır; karşılığında **işin nerede durduğunu** ve **nerede tıkandığını** tek bakışta gösterir.
 
 Kurucu kararları üç tanedir. Birincisi **WIP sayacı zorunlu**: sayaçsız kolon akış değil liste olur. İkincisi **kart şeridi bilgi taşır**: renk tek başına yetmez, şeridin yanında kategori etiketi yazılıdır. Üçüncüsü **sürükleme geri bildirimi**: kart kalkar (0 12px 28px) ve hedef kolon 2px accent kesikli çerçeve alır — geri bildirimsiz sürükleme yasak.
 
 Bedeli: kart başına bilgi sınırı. Kartta en fazla 2 chip + 1 avatar; fazlası detay modalına taşınır.
 
-### Ne değildir
+### What is not
 - **Bento Grid (05) değildir:** 05 değişken boyutlu vitrin kutularıdır; 110 kolon-kart hiyerarşisi ve WIP sayacı taşır, sürükleme durumu vardır.
 - **Utility (44) değildir:** 44 tek vurgu mavi ürün arayüzüdür; 110 tahta zemin tonu + kart şeridi ile **akış** anlatır.
 - **MES (59) değildir:** 59 üretim hattı KPI panosudur (ölçüm odaklı); 110 iş öğesi akışıdır (durum odaklı), 59'da sürükleme yoktur.
 - **Neo-Brutalism (13) değildir:** 13 ofset sert gölge ve kalın çerçeve kullanır; 110'da gölge tek küçük katman, çerçeve 1px.
 
-### Nereden gelir
+### Where it comes from
 Toyota üretim sistemindeki kanban kartlarından ve yazılım dünyasındaki görselleştirme pratiğinden (WIP limiti, kümülatif akış diyagramı). Bugün tekrar önemli çünkü uzaktan çalışan ekipler işin durumunu tek ekranda görmek istiyor; klişeye dönmemesi için korunacak detay **WIP sayacının görünürlüğü** ve **kart şeridinin etiketle birlikte kullanılması**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. 3–4 kolon var ve her kolon başlığında `ad / limit` sayacı duruyor.
 2. Her kartın solunda 3px renkli şerit ve yanında kategori etiketi var.
 3. Kart gölgesi küçük ve tek katman; kolon zemini kartdan bir ton koyu.
 4. Chip'ler hap biçimli (999px), kart radius 14px.
 5. Sürüklenen kart belirgin biçimde kalkmış (0 12px 28px), hedef kolon kesikli accent çerçeveli.
 
-## Görsel imza
+## Visual signature
 - **Kolon zemini:** `--bg-2` + 1px `--line`; kart zemini `--surface` — ayrım tonla.
 - **Kart şeridi:** sol 3px accent şerit (`::before`, 999px radius, 8px inset).
 - **WIP sayacı:** `ad / limit` mono 11px, kolon başlığında; limit aşımı `--danger`.
@@ -46,101 +46,124 @@ Toyota üretim sistemindeki kanban kartlarından ve yazılım dünyasındaki gö
 - **Tahta zemini:** 22px nokta ızgarası (ink %6) — kolonlar bu ızgaraya oturur.
 - **Hareket imzası:** 730ms `cubic-bezier(.3,.4,.2,1)`, 19px — kart akar, fırlamaz.
 - **Landing hero (QA):** üç kanban kolonu (TODO/YAPILIYOR/BİTTİ) kart yığını + WIP sayacı altbilgisi.
+- **Typography:** Space Grotesk (display) + Nunito (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#1a62cc`; neutral scale `#f2f4f7` → `#171a20`.
+- **Radius:** `8px` / `14px`; Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f2f4f7` | sayfa/tahta zemini | kart zemini |
-| `--bg-2` | `#e8ebf0` | kolon zemini, üst bar altı | birincil CTA |
-| `--surface` | `#ffffff` | kart, panel | tahta zemini |
-| `--surface-2` | `#f7f9fb` | chip, satır hover | kart zemini |
-| `--ink` | `#171a20` | başlık, kart başlığı | dekoratif çizgi |
-| `--ink-soft` | `#4e5663` | açıklama, kolon sayacı | kart başlığı |
-| `--ink-faint` | `#7d8593` | yalnız ayırıcı, eksen | kart metni |
-| `--accent` | `#1a62cc` | kart şeridi, birincil eylem, hedef kolon | geniş dekoratif dolgu |
-| `--accent-ink` | `#ffffff` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(23,26,32,.14)` | kenarlık, ayırıcı | metin rengi |
+1. Kolon başlığı sayaç taşır: `GELEN 7/10` biçiminde adet + WIP limiti (mono)
+2. Kart 3px sol etiket şeridi taşır; şerit rengi kategori, üstünde metin etiketi de bulunur
+3. Sürükleme durumu görünür: kart 0 12px 28px ile kalkar, hedef kolon 2px accent kesikli çerçeve alır
+4. Kolon zemini `--bg-2`, kart zemini `--surface`; ayrım ton + 1px line ile
+5. Dokunma hedefi: kart içi eylemler 44px hedefe padding ile genişletilir
+6. Kart başına en fazla 2 chip + 1 avatar (24px) — fazlası taşma sayılır
 
-- Ölçülen kontrast: `ink / bg` = **15.82:1** · `ink-soft / bg` = **6.72:1** · `accent-ink / accent` = **5.73:1** · `ink-faint / bg` = **3.37:1** (yalnız ayırıcı).
-- Tek vurgu kuralı: accent (akış mavisi) tek parlak renk. `--ok` (#1f6b3f) = tamamlandı, `--warn` (#7a5300) = riskli, `--danger` (#b3261e) = WIP aşımı; her biri sayaç/etiketle.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; kolon zemini üstünde `--ink-faint` kart metni.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f2f4f7` | page background | as a card background |
+| `--bg-2` | `#e8ebf0` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f7f9fb` | passive chip, hover background | primary button |
+| `--ink` | `#171a20` | title, body, icon | large background |
+| `--ink-soft` | `#4e5663` | secondary text, description | — |
+| `--ink-faint` | `#7d8593` | decorative label, separator text | interactive text |
+| `--accent` | `#1a62cc` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `rgba(23,26,32,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Space Grotesk (`--font-display`) | 36px (mobil 24px) | 600 | 1.12 | `-.01em` |
-| H2 | Space Grotesk | 26px | 600 | 1.20 | `0` |
-| H3 (kart başlığı) | Space Grotesk | 19px | 600 | 1.28 | `0` |
-| Gövde | Nunito (`--font-body`) | 15px | 400 | 1.55 | `0` |
-| Küçük gövde | Nunito | 13px | 400 | 1.5 | `0` |
-| Sayaç / etiket | JetBrains Mono (`--font-mono`) | 11px | 600 | 1.4 | `.06em` |
+- Measured contrast: `ink/bg` **15.82:1** · `ink-soft/bg` **6.72:1** · `ink-faint/bg` **3.37:1 (decorative)** · `accent-ink/accent` **5.73:1**.
+- Status colors are not derived from accent, but come from separate semantic tokens (--ok/--danger/--warn); accent is the action color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.4** — kullanılan basamaklar 11 · 12 · 13 · 15 · 19 · 26 · 36.
-- Ölçü önerisi: `h1 { font-size: clamp(24px, 3.2vw, 36px); line-height: 1.12 }`.
-- Gövde satır uzunluğu en fazla **66ch**; kart açıklaması 2 satırla kırpılır (`line-clamp`).
-- Ağırlık kuralı: display 600, gövde 400/600, sayaç mono 600. 300 ve italik yok.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Space Grotesk) | 36px (mobile 24px) | 600 | 1.12 | -0.02em |
+| H2 | same | 26px | 600 | 1.22 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Nunito) | 15px | 400 | 1.55 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.16em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 → tahtada 3 · 3 · 4 · 2 kolon genişliği |
-| Gutter | 16px |
-| Container genişliği | 1320px (içerik 1288px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1320; 768 altında tahta yatay kaydırmalı, kolon 280px sabit |
+- Dense display: 14px body, 13px table, 10.5px mono label. The line height cannot be lower than 1.55.
+- Measure: 72ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: kolon genişlikleri **eşit değil** (3/3/4/2) — WIP yoğunluğuna göre; ekran başına 1 asimetrik oran.
-- Bölüm ritmi: kolon içinde art arda en fazla **6** kart görünür; fazlası kolon içi kaydırma.
-- Kart arası 8px, kolon iç padding 12px, kolon arası 16px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin (tahta) | `--bg` + 22px nokta | — | sayfa |
-| Kolon | `--bg-2` | yok | kolon kabı (1px line) |
-| Kart | `--surface` | `0 1px 3px rgba(23,26,32,.12)` | kart, panel |
-| Yüzen katman | `--surface` | `0 12px 28px rgba(23,26,32,.18)` | sürüklenen kart, modal, menü |
+- 8 columns of content + 4 columns of panels; tables full width. In-card padding 16px, line 40px.
+- Section vertical space 44px desktop, 28px mobile; card padding 16px.
 
-- Kenarlık formülü: `1px solid var(--line)`; hedef kolonda `2px dashed var(--accent)`.
-- Derinlik nereden gelir: **kolon tonu + tek küçük gölge**; sürüklemede gölge bir kademe büyür. Sert/ofset gölge yok.
-- Radius: `--radius: 8px` (buton, input), `--radius-lg: 14px` (kart, panel, modal); chip 999px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 34px | `0 12px` | 8px | 13px Nunito 600 | accent dolgu, accent-ink metin, gölge yok | hover: accent %88 + ink · active: translateY(1px) · focus: 2px accent outline + 2px offset · disabled: opacity .45 · loading: kart iskeleti 3 satır (700ms) |
-| Buton (ikincil) | 34px | `0 12px` | 8px | 13px Nunito 600 | `--surface` + 1px `--line` | hover: `--surface-2` |
-| Input | 36px | `0 12px` | 8px | 14px Nunito | `--surface` + 1px `--line` | focus: accent çerçeve + 2px accent %30 outline · error: `--danger` çerçeve + 12px etiket · disabled: opacity .45 |
-| Kart | içerik | 14px (sol 17px) | 14px | 19px kart başlığı + 13px gövde | `--surface` + 1px `--line` + küçük gölge | sol 3px şerit; hover: gölge 0 4px 10px · sürüklenen: 0 12px 28px · hedef kolon: 2px dashed accent |
-| Chip / badge | 22px | `0 8px` | 999px | 11px Nunito 600 | `--surface-2` + 1px `--line` | accent: accent %14 zemin + accent metin · kart başına en fazla 2 |
-| Nav (üst bar) | 52px | `0 20px` | 0 | 14px Nunito 600 | `--surface` + alt hairline | sağda WIP özeti mono |
-| Kolon başlığı | 40px | `8px 12px` | 8px | 12px Nunito 700 + 11px mono sayaç | `--bg-2` + alt 1px `--line` | limit aşımı: sayaç `--danger` + "LİMİT" etiketi |
-| Tablo satırı | 36px | `6px 10px` | — | 13px Nunito, tabular-nums | satır arası 1px `--line` | hover: `--surface-2` |
-| Modal | içerik | 20px | 14px | 19px kart başlığı + mono etiketler | `--surface` + `0 12px 28px` | kart detayı: iki kolon (içerik + yan bilgi) |
-| Toast | 36px | `8px 12px` | 8px | 13px Nunito 600 | `--surface` + sol uçta 6px accent nokta | hata: nokta `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ok`, `--warn`, `--danger` | en fazla 4 seri; CFD alan dolgusu %12 |
+- Surfaces are smooth; separation with 1px edge and background tone. Reference line in graphs --line.
+- Radius: `8px` (buton, input, chip), `14px` (kart, modal). Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; kolon zemini üstünde 2px şart.
-- Dokunma hedefi: en az 44×44px; 34px buton mobilde `min-height: 44px`; kart içi eylemler padding ile 44px'e genişletilir.
+## Bans
 
-## Görsel dil
+- Sayaçsız/sınırsız kolon (WIP görünmez).
+- Sürükleme geri bildirimi olmayan hareket.
+- Gradyan zemin ve cam yüzey.
+- Hap radius (chip dışında), kalın çerçeve.
+- Renk-only kategori ayrımı.
+- Serif display.
+- Gradient for decoration.
+- More than five color series.
+- Animated counter.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, 2px köşe, 20px ızgara; etiket, kontrol listesi, ataç |
-| Fotoğraf | avatar 24px daire (kart altbilgisi); başka fotoğraf yok |
-| İllüstrasyon | yok; boş kolon için tek çizgi akış oku |
-| Doku | grain yok; 22px nokta tahta zemini |
-| Logo alanı | Space Grotesk wordmark + akan nokta işareti, 16px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 8px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 8px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 8px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 8px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 8px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 8px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 8px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 5.73:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 16px box; full of status icons |
+| photo | There is no photo on the data screen; single illustration in empty case |
+| illustration | Lonely empty/failed single line illustration |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | solda H1 + tek CTA, sağda 3 kolon mini tahta | `shots/01-page.png` |
 | Dashboard | **yüksek** | 4 kolon + WIP sayaçları; süs yok | `shots/01-page.png` |
@@ -155,45 +178,33 @@ Toyota üretim sistemindeki kanban kartlarından ve yazılım dünyasındaki gö
 | Hata | düşük | kolon sayacı `--danger` + "LİMİT" etiketi | `shots/01-page.png` |
 | Profil / ayar | orta | kolon/WIP ayarları, iki kolon | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Kolon başlığı sayaç taşır: `ad / limit` biçiminde (mono 11px); limit aşımı `--danger` + "LİMİT" etiketi.
-- Kart sol 3px kategori şeridi taşır; şeridin yanında kategori etiketi de yazılır.
-- Sürükleme geri bildirimi zorunlu: kart `0 12px 28px` ile kalkar, hedef kolon 2px accent kesikli çerçeve alır.
-- Kolon zemini `--bg-2`, kart zemini `--surface`; ayrım ton + 1px çizgi.
-- Kart başına en fazla 2 chip + 1 avatar (24px).
-- Dokunma hedefi ≥44px; kart içi eylemler padding ile genişletilir.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.82:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.72:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.37:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.73:1 | ≥ 4.5 | button text |
+| focus ring/ground | 5.73:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 97.6 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Sayaçsız/sınırsız kolon (WIP görünmez).
-- Sürükleme geri bildirimi olmayan hareket.
-- Gradyan zemin ve cam yüzey.
-- Hap radius (chip dışında), kalın çerçeve.
-- Renk-only kategori ayrımı.
-- Serif display.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **6.72:1** (eşik 4.5); `ink-faint / bg` = **3.37:1** yalnız ayırıcıda.
-- `--ink-faint` kart metninde kullanılmaz; kart açıklaması `--ink-soft`.
-- Hareket/parlama hassasiyeti: düşük — flash yok; `prefers-reduced-motion` kart animasyonlarını anlık yapar.
-- Şeffaf yüzey yok; opak fallback gerekmez.
-- Odak görünürlüğü: kolon zemini üstünde 2px accent outline + 2px offset.
-- Sürüklemenin klavye alternatifi zorunlu: kart menüsünde "taşı → kolon" seçeneği (WCAG 2.5.7).
-- Kolon/kart ilişkisi ARIA ile kurulur: kolon `role="list"`, kart `role="listitem"`, sayaç `aria-label` ile okunur.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Liste" gibi görünüyor | kolon zemini yok, kartlar aynı tonda | kolon `--bg-2`, kart `--surface` |
 | Tıkanma görünmüyor | sayaç yok | `ad / limit` + limit aşımında `--danger` |
 | Sürükleme belirsiz | geri bildirim yok | kart gölgesi + hedef kolon kesikli çerçeve |
@@ -201,28 +212,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Renk körlüğünde kategori kayboluyor | yalnız şerit rengi | kategori etiketini yaz |
 | Mobilde kolonlar sıkışık | 3 kolon sığdırılmış | 768 altı yatay kaydırma, 280px kolon |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `bento-grid` — aynı modüler kutu dili; Bento yalnız rapor bölümünde.
-- **Uyumlu:** `utility` — nötr iskelet; Utility form/ayar ekranlarında.
-- **Uyumlu:** `mes-production-line` — üretim iş emri panosu olarak bitişik kullanım.
-- **Yasak:** `brutalist-web` — kalın çerçeve ve ofset gölge kart hiyerarşisini bozar.
-- **Yasak:** `vaporwave` — neon/gradyan dili akış okunurluğunu düşürür.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `bento-grid` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `mes-production-line` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `slavic-late-brutalist` | Two different ornamental languages compete on the same screen |
+| Mixing | `vaporwave` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Kanban_(development) | WIP limiti ve akış kuralları |
-| https://en.wikipedia.org/wiki/Kanban_board | kolon/kart yapısı |
-| https://en.wikipedia.org/wiki/Cumulative_flow_diagram | akış grafiği eksenleri |
-| https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html | sürüklemenin klavye alternatifi |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Kanban_(development | en.wikipedia.org — ) — WIP limiti ve akış kuralları |
+| https://en.wikipedia.org/wiki/Kanban_board | Kanban board — kolon/kart yapısı |
+| https://en.wikipedia.org/wiki/Cumulative_flow_diagram | Cumulative flow diagram — akış grafiği eksenleri |
+| https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html | WCAG 2.2 · Dragging Movements — sürüklemenin klavye alternatifi |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Kanban Akışı (styles/110-kanban-flow/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="kanban-flow"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: --bg soğuk gri + 22px nokta ızgarası (ink %6); kolon zemini --bg-2.
@@ -237,15 +248,15 @@ Hareket: enter 730ms cubic-bezier(.3,.4,.2,1) 19px stagger .068; scroll top 70% 
   pin yok; hover 235ms görsel 1.024. prefers-reduced-motion zorunlu (anlık yerleşim).
 Yasak: sayaçsız kolon, geri bildirimsiz sürükleme, gradyan/cam, hap radius (chip dışında), renk-only kategori.
 Çıktı: bileşen kodu + tek paragraf not (kart şeridini ve WIP sayacını nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: kart şeridi, WIP sayacı, tahta nokta zemini, sürükleme gölgesi.
-- [ ] Hard-coded renk/gölge/radius yok.
-- [ ] Kontrast: 15.82 / 6.72 / 5.73 — hepsi eşik üstü.
-- [ ] Sürüklemenin klavye alternatifi var; odak halkası görünür.
-- [ ] 390px'te yatay kaydırma çalışıyor, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken kart animasyonları anlık.
+Style: Kanban Akışı (kanban-flow) · family: Interactive (106–115)
+Token: --bg #f2f4f7 · --surface #ffffff · --ink #171a20 · --accent #1a62cc · --line rgba(23,26,32,.14)
+Radius: 8px / 14px · Typography: Space Grotesk / Nunito / JetBrains Mono
+Required: Kolon başlığı sayaç taşır: `GELEN 7/10` biçiminde adet + WIP limiti (mono) · Kart 3px sol etiket şeridi taşır; şerit rengi kategori, üstünde metin etiketi de bulunur · Sürükleme durumu görünür: kart 0 12px 28px ile kalkar, hedef kolon 2px accent kesikli çerçeve alır
+Banned: Sayaçsız/sınırsız kolon (WIP görünmez). · Sürükleme geri bildirimi olmayan hareket. · Gradyan zemin ve cam yüzey.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -256,15 +267,25 @@ Yasak: sayaçsız kolon, geri bildirimsiz sürükleme, gradyan/cam, hap radius (
   --ink: #171a20; --ink-soft: #4e5663; --ink-faint: #7d8593;
   --accent: #1a62cc; --accent-ink: #ffffff;
   --line: rgba(23,26,32,.14);
+  --danger: #d62a1d;
+  --danger-ink: #ffffff;
+  --ok: #008138;
+  --ok-ink: #ffffff;
+  --warn: #b55400;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 8px; --radius-lg: 14px;
   --shadow: 0 1px 3px rgba(23,26,32,.12); --shadow-hard: none;
-  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-body: "Nunito", "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: .01em; --blur: 0px; --grain: 0;
-  --danger: #b3261e; --danger-ink: #ffffff;
-  --ok: #1f6b3f; --warn: #7a5300;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="kanban-flow"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

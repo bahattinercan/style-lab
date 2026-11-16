@@ -1,142 +1,168 @@
 # 96 · Kinetic Marquee
 
-> **Bir cümlede:** Tipografiyi sabit bir poster gibi değil, hızla akan bir bant gibi kullanan; eğimi ve ritmi scroll hızından alan hareket stili.
+> **In one sentence:** Tipografiyi sabit bir poster gibi değil, hızla akan bir bant gibi kullanan; eğimi ve ritmi scroll hızından alan hareket stili.
 
 | | |
 |---|---|
-| **Hissiyat** | akan, ritmik, gergin, "yayında" |
-| **En iyi** | etkinlik/lansman landing'i, ajans vitrini, medya/müzik ürünü, ürün lansman duyurusu |
-| **Kaçın** | yoğun veri paneli, mutabakat/finans tablosu, uzun okuma (rapor, sözleşme) — akan bant dikkati böler |
-| **Zorluk** | orta (hareketi durdurulabilir ve erişilebilir tutmak) · **Erişilebilirlik** | orta risk (sonsuz akan bant — durdurma zorunlu; gövde 16.06:1) |
-| **Aile** | Hareket & Optik (96–105) · **Token** | `kit/tokens.css` → `[data-style="kinetic-marquee"]` |
-| **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | akan, ritmik, gergin, "yayında" |
+| **Best for** | etkinlik/lansman landing'i, ajans vitrini, medya/müzik ürünü, ürün lansman duyurusu |
+| **Avoid** | yoğun veri paneli, mutabakat/finans tablosu, uzun okuma (rapor, sözleşme) — akan bant dikkati böler |
+| **Difficulty** | orta (hareketi durdurulabilir ve erişilebilir tutmak) · **Accessibility** |  |
+| **Family** | Motion & Optics (96–105) · **Token** | `kit/tokens.css` → `[data-style="kinetic-marquee"]` |
+| **Composition** | `sticky` · `pill` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Kinetic Marquee, tipografiyi **hız** ile kuran stildir: 32px yüksekliğinde **marquee bandı** (28s / 44s iki hız sınıfı), scroll hızına bağlı en fazla **6° skew**, harf başına 40ms gecikmeli **harf dalgası** ve 620ms'lik **ağırlık geçişi**. Kurucu kararları üç tanedir. Birincisi **hareket eksen**: büyüklük puntodan değil, katmanın akmasından gelir; display 72px'i geçmez. İkincisi **tek yön**: her şey yatay akar; rotasyon ve diagonal yoktur (o, 37'nin imzasıdır). Üçüncüsü **durdurulabilirlik**: her bant hover'da ve reduced-motion'da durur — hareket dekor değil, kontrol edilebilir bir katmandır.
 
 Kazandığı şey: sayfanın "canlı" okunması — tek bir kaynak dosyası (CSS keyframes) ile ekran hareket eder. Feda ettiği şey: **sakinlik ve okuma süresi**; 58 ch ölçü ve tek bant kuralı bu bedeli sınırlar.
 
-### Ne değildir
+### What is not
 - **Kinetic Type (37) değildir** — dört ölçülebilir fark: (1) **font**: 37 Anton kullanır, burada Chakra Petch 600; (2) **zemin/accent**: 37 siyah `#0e0e10` + asit `#e8ff47`, burada sıcak kırık beyaz `#f4f1ea` + soğuk indigo `#2d3ad0`; (3) **pin/scrub**: 37'de pin yok, burada pin açık (`scrub 0.25`, `+240%`); (4) **ölçek-kontrast**: 37'de display 96px ve tracking **-0.03em**, burada display 56–72px ve tracking **+0.02em** — büyüme puntodan değil hareketten gelir.
 - **Acid Graphics (15) değildir:** 15 parlak/neon ve gradyanla doldurur; burada `--blur: 0`, gradyan yok, tek soğuk accent.
 - **Editorial Design (03) değildir:** 03 geniş satır aralığı ve serif ile okutur; burada display sıkı (1.04) ve hareketli.
 - **Swiss Design (02) değildir:** 02 tamamen statiktir ve ızgaraya itaat eder; burada ızgara korunur ama bir katman sürekli akar.
 - **"Animasyonlu landing şablonu" değildir:** kimlik bandın **hız sınıfı** ve skew sınırıdır; rastgele fade-in yığını değil.
 
-### Nereden gelir
+### Where it comes from
 Marquee, 20. yüzyıl baskı ve borsa bantlarından (ticker) gazete binası cephelerine, oradan TV alt bantlarına geçen bir okuma biçimidir; dijitalde CSS `translateX` döngüsüyle yeniden doğdu. 2010'lar sonrası "velocity UI" akımı (scroll hızına bağlı skew/scale) bunu etkileşimli hâle getirdi. Klişeye dönüşmemesi için korunacak detay: **tek yön + en fazla iki bant + durdurulabilirlik**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Sayfada 32px yüksekliğinde, kendi kendine akan bir yazı bandı var.
 2. Hiçbir öğe döndürülmemiş/diagonal değil; her şey yatay akıyor.
 3. Display Chakra Petch ve harfler birbirine değmiyor (pozitif tracking).
 4. Kaydırırken bloklar hafifçe eğiliyor (≤6°) ve durunca düzeliyor.
 5. Bant üzerine gelince hareket duruyor.
 
-## Görsel imza
-1. **Marquee bandı:** 32px yükseklik, 12px büyük harf display, `0.28em` tracking, 28s (birincil) / 44s (ikincil, ters yön) döngü.
-2. **Durdurma:** bantta `animation-play-state: paused` hover'da; `prefers-reduced-motion` açıkken hiç çalışmaz.
-3. **Hıza bağlı skew:** yalnız `hero-visual` katmanında, en fazla `-6deg`; sayfa dururken 0°.
-4. **Harf dalgası:** harf başına 40ms gecikme, en çok 24 harf, toplam ≤ 1s.
-5. **Ağırlık geçişi:** 400 → 600, 620ms; aynı anda yalnız tek öğede.
-6. **İz çizgisi:** kartın üst kenarında 2px accent çizgi; hover'da 24px'e uzar (hız ipucu).
-7. **Hover dili:** 180ms `translateX(2px)` + ölçek `1.006`; gölge yok, parlama yok.
+## Visual signature
+- **Marquee bandı:** 32px yükseklik, 12px büyük harf display, `0.28em` tracking, 28s (birincil) / 44s (ikincil, ters yön) döngü.
+- **Durdurma:** bantta `animation-play-state: paused` hover'da; `prefers-reduced-motion` açıkken hiç çalışmaz.
+- **Hıza bağlı skew:** yalnız `hero-visual` katmanında, en fazla `-6deg`; sayfa dururken 0°.
+- **Harf dalgası:** harf başına 40ms gecikme, en çok 24 harf, toplam ≤ 1s.
+- **Ağırlık geçişi:** 400 → 600, 620ms; aynı anda yalnız tek öğede.
+- **İz çizgisi:** kartın üst kenarında 2px accent çizgi; hover'da 24px'e uzar (hız ipucu).
+- **Hover dili:** 180ms `translateX(2px)` + ölçek `1.006`; gölge yok, parlama yok.
+- **Typography:** Chakra Petch (display) + Space Grotesk (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#2d3ad0`; neutral scale `#f4f1ea` → `#14161a`.
+- **Radius:** `3px` / `8px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f4f1ea` | sayfa zemini (sıcak kırık beyaz) | kart zemini |
-| `--surface` | `#fdfbf6` | kart, panel, modal | sayfa zemini |
-| `--surface-2` | `#f2eee4` | çip, ikincil buton, tablo şeridi | birincil eylem |
-| `--ink` | `#14161a` | başlık, gövde, bant metni | dekoratif çizgi |
-| `--ink-soft` | `#4a4d57` | etiket, ikincil metin, ikincil bant | başlık |
-| `--ink-faint` | `#82858f` | dekoratif: bant ayırıcısı, dipnot | etkileşimli metin |
-| `--accent` | `#2d3ad0` | bant metni, birincil buton, iz çizgisi, odak | dekoratif zemin dolgusu |
-| `--accent-ink` | `#f7f7ff` | accent üstü metin | gövde metni |
-| `--line` | `rgba(20,22,26,.14)` | kart kenarı, bant ayırıcı, tablo çizgisi | metin rengi |
-| `--danger` / `--ok` / `--warn` | `#a3241c` / `#2a9f5d` / `#bf7d00` | hata / onay / uyarı | bant rengi |
+1. Marquee bandı 32px yükseklik, en çok 2 bant; hız sınıfları 28s ve 44s döngü
+2. Bant hover'da ve `prefers-reduced-motion`'da durur; durdurma düğmesi her bantta görünür
+3. Skew yalnız scroll hızına bağlı ve en fazla 6°; sayfa dururken 0°
+4. Harf dalgası: harf başına 40ms gecikme, en çok 24 harf
+5. Display tracking pozitif (0.02em) ve display 72px'i geçmez; büyüme hareketle olur
+6. Ağırlık geçişi (400 → 600) 620ms'de, yalnız tek öğede aynı anda
 
-- Ölçülen kontrast (açık): `ink / bg` = **16.06:1** · `ink-soft / bg` = **7.48:1** · `accent-ink / accent` = **7.50:1** · `ink-faint / bg` = **3.27:1** (yalnız dekoratif).
-- Tek vurgu kuralı: soğuk indigo ekran başına üç işi geçmez — bant, birincil eylem, odak.
-- Yasak kombinasyon: accent zemin üstüne kırık beyaz metin (%92 üstü opaklıkta kontrast düşer); ikinci doygun renk (asit sarı, neon yeşil) eklemek.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f4f1ea` | page background | as a card background |
+| `--bg-2` | `#eae5da` | partition divider floor, table top | button background |
+| `--surface` | `#fdfbf6` | kart, input, modal | full-page background |
+| `--surface-2` | `#f2eee4` | passive chip, hover background | primary button |
+| `--ink` | `#14161a` | title, body, icon | large background |
+| `--ink-soft` | `#4a4d57` | secondary text, description | — |
+| `--ink-faint` | `#82858f` | decorative label, separator text | interactive text |
+| `--accent` | `#2d3ad0` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f7f7ff` | text above accent | non-accent background |
+| `--line` | `rgba(20,22,26,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Chakra Petch (`--font-display`) | 56px (mobil 32px) | 600 | 1.04 | `--tracking` 0.02em |
-| H2 | Chakra Petch | 24px | 600 | 1.18 | 0.02em |
-| H3 | Chakra Petch | 18px | 600 | 1.3 | 0.02em |
-| Bant metni | Chakra Petch | 12px | 600 | 32px sabit | 0.28em |
-| Gövde | Space Grotesk (`--font-body`) | 15px | 400 | 1.6 | 0 |
-| Küçük / açıklama | Space Grotesk | 13px | 400 | 1.5 | 0 |
-| Etiket / mono | JetBrains Mono (`--font-mono`) | 10px | 500 | 1.3 | 0.18em (büyük harf) |
+- Measured contrast: `ink/bg` **16.06:1** · `ink-soft/bg` **7.48:1** · `ink-faint/bg` **3.27:1 (decorative)** · `accent-ink/accent` **7.5:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı **1.5** (10 → 15 → 24 → 56); kullanılan basamak sayısı 5: 10/13/15/24/56.
-- Ölçü: `h1 { font-size: clamp(32px, 4.6vw, 56px) }` — 72px yalnız bant/hero özel ölçüsünde.
-- Gövde metni maksimum satır uzunluğu: **58 ch**.
-- Ağırlık kuralı: Chakra Petch 600, Space Grotesk 400/500. Negatif tracking ve italik yasak.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Chakra Petch) | 56px (mobile 32px) | 500 | 1.06 | -0.02em |
+| H2 | same | 24px | 600 | 1.18 | -0.015em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Space Grotesk) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (1280px üstü), 8 (768–1279), 4 (390–767) |
-| Gutter | 28px |
-| Container genişliği | 1240px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1280px: tam genişlik bant + 7/5 içerik; 768px: bant + 6/6; 390px: bant + tek kolon, skew kapalı |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **2** tam genişlik bant (biri hero altı, biri kapanış); içerik 7/5 bölünür.
-- Bölüm ritmi: 56px (mobil 36px); art arda en fazla **2** kart satırı; üçüncü blok bant olur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, yatay kılavuz çizgileri |
-| Kart | `--surface` | yok | panel, liste, tablo |
-| Yüzen katman | `--surface` + 2px accent kenar | `none` | modal, açılır menü |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; birincil kartta üst kenar 2px `--accent` (hover'da 24px uzunluğunda iz).
-- Derinlik nereden gelir: **hiçbir yerden** — hareket ve çizgi; gölge yok.
-- Radius: `--radius` 3px (buton, input, çip), `--radius-lg` 8px (kart, modal); 8px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 0 22px | `--radius` | 13px/600 Chakra Petch, .08em, büyük harf | accent + accent-ink | hover `translateX(2px)` (180ms) · active 4px · focus 2px halka · disabled %45 (bant durur) · loading `▮▮▮` 600ms steps(3) |
-| Buton (ikincil) | 44px | 0 22px | `--radius` | 13px Space Grotesk | şeffaf + 1px `--ink` | hover zemin `--surface-2` |
-| Input | 42px | 0 12px | `--radius` | 14px Space Grotesk | surface + `--line` | focus 2px halka + alt 2px accent · error `--danger` · disabled %45 |
-| Kart | — | 20px | `--radius-lg` | başlık 24px Chakra Petch | surface + üst 2px accent iz | hover iz 24px'e uzar · aktif (2px accent kenar) |
-| Chip | 22px | 0 8px | `--radius` | 11px/500 mono, .1em | surface-2 + `--line` | seçili: accent zemin + accent-ink |
-| Nav | 64px (+32px bant) | 0 24px | 0 | 13px Space Grotesk | bg + alt çizgi | aktif: 2px accent alt çizgi |
-| Tablo satırı | 36px | 0 10px | 0 | 14px Space Grotesk / mono sayı | alt 1px `--line` | hover satır 2px sağa kayar · seçili sol 2px accent |
-| Modal | — | 24px | `--radius-lg` | başlık 32px Chakra Petch | surface + 2px accent kenar | açılış 620ms (sağdan akar) · Esc kapatır |
-| Toast | 38px | 0 12px | `--radius` | 13px Space Grotesk | surface-2 + sol 2px accent | metin 8s'de bir geçer, hover'da durur · 3200ms |
-| Grafik paleti | — | — | — | eksen 10px mono | accent → ink-soft → warn → danger | en çok 4 seri · 1.5px çizgi, kayan pencere |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `3px` (buton, input, chip), `8px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px`; bant içindeki bağlantılarda `offset: 2px`.
-- Dokunma hedefi: 44px buton, 36px satır mobilde 44px; bant metni etkileşimli değildir (dokunma hedefi gerektirmez).
+## Bans
 
-## Görsel dil
+- Rotasyonlu kart, diagonal accent şerit, eğik bölüm başlığı.
+- Asit/neon palet; ikinci doygun renk.
+- 90px üstü poster tipografisi ve negatif tracking.
+- Durdurulamayan sonsuz animasyon; ekran başına 3'ten fazla hareketli katman.
+- Gradient metin, parlama, `blur` geçişi.
+- Otomatik oynayan video benzeri döngü (bant dışında).
+- Uydurma marka/etkinlik adı; eksik içerik `{{headline}}` gibi işaretli yer tutucu olur.
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 16px, 2px çizgi, keskin köşe; yalnız ok ve oynat/duraklat |
-| Fotoğraf | yok; zorunluysa 8px radius + 1px çerçeve |
-| İllüstrasyon | yok — hareket ve tipografi görselin yerini alır |
-| Doku | bant ayırıcı nokta dizisi + 32px aralıklı yatay kılavuz çizgisi |
-| Logo alanı | Chakra Petch 16px + 6px accent kare; 16px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 3px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 3px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 3px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 3px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 3px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 3px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 3px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.73:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | hero altında 28s bant, 7/5 içerik, skew'li görsel katman | `shots/01-page.png` |
 | Dashboard | orta | 2 satır kart + üstte ince bant (44s) | `shots/01-page.png` |
@@ -151,46 +177,33 @@ Marquee, 20. yüzyıl baskı ve borsa bantlarından (ticker) gazete binası ceph
 | Hata | düşük | bant durur, `--danger` sol şerit, statik mesaj | `shots/01-page.png` |
 | Profil / ayar | orta | 36px satır + "hareketi azalt" anahtarı | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-- **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — hız şeritleri — eğik kart, skew çizgiler, döngü etiketi.
+## Accessibility
 
-## Zorunlu kurallar
-- Marquee bandı 32px, en fazla 2 bant, hız sınıfları 28s/44s; her bant hover ve reduced-motion'da durur.
-- Skew yalnız scroll hızına bağlı, en fazla 6°; sayfa dururken 0°.
-- Harf dalgası harf başına 40ms, en çok 24 harf.
-- Display tracking pozitif (0.02em), display 72px'i geçmez.
-- Ağırlık geçişi 620ms ve aynı anda tek öğe.
-- Rotasyon ve diagonal şerit yok (37-kinetic-type imzası).
-- Renk, radius, gölge yalnız `--…` token'larından gelir.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.06:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.48:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.27:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.5:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.73:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 96.6 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Rotasyonlu kart, diagonal accent şerit, eğik bölüm başlığı.
-- Asit/neon palet; ikinci doygun renk.
-- 90px üstü poster tipografisi ve negatif tracking.
-- Durdurulamayan sonsuz animasyon; ekran başına 3'ten fazla hareketli katman.
-- Gradient metin, parlama, `blur` geçişi.
-- Otomatik oynayan video benzeri döngü (bant dışında).
-- Uydurma marka/etkinlik adı; eksik içerik `{{headline}}` gibi işaretli yer tutucu olur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen riskler: en düşük çift `--ink-faint / bg` = **3.27:1** (bant ayırıcısı ve dipnot); etkileşimli metin `--ink` 16.06:1, `--ink-soft` 7.48:1.
-- Hareket: WCAG 2.2 "Pause, Stop, Hide" — her bant durdurulabilir; `prefers-reduced-motion` tüm hareketi kapatır ve içerik statik poster gibi okunur.
-- Skew yalnız dekoratif katmanda; metin hiçbir koşulda eğilmez (okunurluk).
-- Şeffaf yüzey yok (`--blur: 0px`), `@supports` fallback gerekmez.
-- Odak görünürlüğü: kırık beyaz zeminde 2px indigo halka 7.50:1; bant üstündeki bağlantıda `offset: 2px`.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Sayfa "animasyon şablonu" gibi duruyor | 3'ten fazla hareketli katman | bant sayısını 2'ye, diğer hareketi 1'e indir |
 | 37-kinetic-type ile karışıyor | diagonal şerit / rotasyon eklenmiş | rotasyonu kaldır, hareketi velocity'ye taşı |
 | Okunmuyor | skew metne uygulanmış | skew yalnız görsel katmanda, metin 0° |
@@ -198,28 +211,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Erişilebilirlik ihlali | bant durdurulamıyor | hover + durdurma düğmesi + reduced-motion |
 | Kartlar hareketsiz duruyor | iz çizgisi hover'da uzamıyor | 2px → 24px geçişini 340ms'de kur |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `kinetic-type` — aynı tipografik aile; 37 statik poster, 96 hareketli bant. Birlikte kullanılırsa 37 baskın, 96 yalnız hero bandında garnitür.
-- **Uyumlu:** `editorial-design` — gövde metni ve ölçü disiplini; uzun içerik 03'ten alınır.
-- **Uyumlu:** `acid-graphics` — enerji isteniyorsa garnitür olarak 15 (yalnız afiş bölümünde).
-- **Yasak:** `swiss-design` — 02'nin tam statik ızgara disiplini bant fikrini dışlar.
-- **Yasak:** `minimalism` — 01'in "süs yok" kuralı akan bantla çelişir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `kinetic-type` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `acid-graphics` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `swiss-design` | Two different ornamental languages compete on the same screen |
+| Mixing | `minimalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations | marquee döngüsü, iteration ve paused durumu |
-| https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew | hıza bağlı eğim sınırı ve eksen seçimi |
-| https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html | sonsuz akan bandın durdurulabilir olması |
-| https://fonts.google.com/specimen/Chakra+Petch | teknik display ve 600 ağırlık davranışı |
+| Source | for what |
+| --- | --- |
+| https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animations/Using_CSS_animations | MDN · CSS animations — marquee döngüsü, iteration ve paused durumu |
+| https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew | MDN · skew() — hıza bağlı eğim sınırı ve eksen seçimi |
+| https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html | WCAG 2.2 · Pause, Stop, Hide — sonsuz akan bandın durdurulabilir olması |
+| https://fonts.google.com/specimen/Chakra+Petch | Google Fonts · Chakra Petch — teknik display ve 600 ağırlık davranışı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Kinetic Marquee (styles/96-kinetic-marquee/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="kinetic-marquee"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Chakra Petch 600, pozitif tracking) başlık ve bantta,
@@ -231,15 +245,15 @@ Imza: enter 0.62s cubic-bezier(.12,.9,.2,1) 0px / stagger 0.09; scroll top 70% 0
       pin acik scrub 0.25 / +240%; hover 180ms scale 1.006.
 Yasak: rotasyon/diagonal serit (o 37-kinetic-type'in imzasi), asit palet, 90px ustu display, durdurulamayan bant.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda imza öğelerinden en az 2'si görünüyor (marquee bandı, skew, harf dalgası, iz çizgisi).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1.
-- [ ] Her bant durdurulabiliyor; metin hiçbir yerde eğik değil.
-- [ ] 390px genişlikte taşma yok, skew kapalı.
-- [ ] `prefers-reduced-motion` açıkken hiçbir bant akmıyor.
+Style: Kinetic Marquee (kinetic-marquee) · family: Motion & Optics (96–105)
+Token: --bg #f4f1ea · --surface #fdfbf6 · --ink #14161a · --accent #2d3ad0 · --line rgba(20,22,26,.14)
+Radius: 3px / 8px · Typography: Chakra Petch / Space Grotesk / JetBrains Mono
+Required: Marquee bandı 32px yükseklik, en çok 2 bant; hız sınıfları 28s ve 44s döngü · Bant hover'da ve `prefers-reduced-motion`'da durur; durdurma düğmesi her bantta görünür · Skew yalnız scroll hızına bağlı ve en fazla 6°; sayfa dururken 0°
+Banned: Rotasyonlu kart, diagonal accent şerit, eğik bölüm başlığı. · Asit/neon palet; ikinci doygun renk. · 90px üstü poster tipografisi ve negatif tracking.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -250,14 +264,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #14161a; --ink-soft: #4a4d57; --ink-faint: #82858f;
   --accent: #2d3ad0; --accent-ink: #f7f7ff;
   --line: rgba(20,22,26,.14);
+  --danger: #d5271b;
+  --danger-ink: #ffffff;
+  --ok: #007f36;
+  --ok-ink: #ffffff;
+  --warn: #b35200;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 3px; --radius-lg: 8px;
   --shadow: none; --shadow-hard: none;
   --font-display: "Chakra Petch", system-ui, sans-serif;
   --font-body: "Space Grotesk", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: 0.02em; --blur: 0px; --grain: 0;
-  --danger: #a3241c; --danger-ink: #ffffff; --ok: #2a9f5d; --warn: #bf7d00;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="kinetic-marquee"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

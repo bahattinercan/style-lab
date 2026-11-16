@@ -1,221 +1,221 @@
 # 240 · Numerals Display
 
-> **Bir cümlede:** Rakam odaklı tipografi: dev sayılar, mono hizalama, birim etiketi ve ince çizgi.
+> **In one sentence:** Numeral-driven typography: giant figures, mono alignment, unit label and thin rules.
 
 | | |
 |---|---|
-| **Hissiyat** | ölçülü, veri, "sayı konuşur" |
-| **En iyi** | yıllık rapor, veri hikâyesi, ölçüm panosu |
-| **Kaçın** | çocuk uygulaması |
-| **Zorluk** | zor · **Erişilebilirlik** | orta |
-| **Aile** | Tipografi Denemeleri (232–241) · **Token** | `kit/tokens.css` → `[data-style="numerals-display"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | measured, data, "the number speaks" |
+| **Best for** | annual report, data story, measurement board |
+| **Avoid** | a children's app |
+| **Difficulty** | hard · **Accessibility** | medium |
+| **Family** | Typography Experiments (232–241) · **Token** | `kit/tokens.css` → `[data-style="numerals-display"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Numerals Display, sayıyı başrole koyar: rakam büyük, birim net, gerisi sessiz.
+### What it is
+Numerals Display makes the number the lead: large figures, clear units, everything else silent.
 
-### Ne değildir
-- Büyük başlık tek başına tipografik stil değildir; ızgara ve ölçü de gerekir.
-- Dekoratif font yığını değildir; tek aile yeter.
+### What is not
+- A heading is not typographic style alone; A grid and measurement are also required.
+- It is not a pile of decorative fonts; One family is enough.
 
-### Nereden gelir
-Swiss tipografi, poster baskısı ve editoryal başlık denemeleri.
+### Where it comes from
+Experiments with Swiss typography, poster printing and editorial headlines.
 
-### 3 saniyede tanıma testi
-1. Başlık üç satıra yayılıyor mu?
-2. İkiden fazla font ailesi var mı (olmamalı)?
-3. Köşe yarıçapı 0 mı?
+### Recognition test in 3 seconds
+1. Does the title span three lines?
+2. Are there (shouldn't there be) more than two font families?
+3. Is the corner radius 0?
 
-## Görsel imza
-- **Dev rakam:** 96px display, tabular.
-- **Birim etiketi:** mono 11px, rakamın yanında.
-- **İnce çizgi:** rakam altında 1px.
-- **Az metin:** başlık iki satır sınırı.
-- **Tipografi:** Space Grotesk (display) + Inter (gövde) + Space Mono (mono etiket).
-- **Renk disiplini:** tek accent `#12506e`; nötr skala `#f7f8f9` → `#0f1215`.
-- **Yarıçap:** `0px` / `2px`; Köşe 0px — tipografik denemede geometri metne hizmet eder.
+## Visual signature
+- **Giant figure:** 96px display, tabular.
+- **Unit label:** mono 11px, next to the figure.
+- **Thin rule:** 1px under the figure.
+- **Little text:** headings limited to two lines.
+- **Typography:** Space Grotesk (display) + Inter (body) + Space Mono (mono label).
+- **Colour discipline:** a single accent `#12506e`; neutral scale `#f7f8f9` → `#0f1215`.
+- **Radius:** `0px` / `2px`; Corner 0px — in typographic essay, geometry serves the text.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Tüm rakamlar tabular ve hizalı.
-2. Birim her zaman yazılır.
-3. Basamak gruplama nokta/virgül tutarlı.
+1. All figures are tabular and aligned.
+2. The unit is always written.
+3. Digit grouping stays consistent between separators.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#f7f8f9` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#eceef0` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#ffffff` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#f3f5f6` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#0f1215` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#454b51` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#767c83` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#12506e` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#f6fbfe` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(15,18,21,.14)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#f7f8f9` | page background | as a card background |
+| `--bg-2` | `#eceef0` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f3f5f6` | passive chip, hover background | primary button |
+| `--ink` | `#0f1215` | title, body, icon | large background |
+| `--ink-soft` | `#454b51` | secondary text, description | — |
+| `--ink-faint` | `#767c83` | decorative label, separator text | interactive text |
+| `--accent` | `#12506e` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f6fbfe` | text above accent | non-accent background |
+| `--line` | `rgba(15,18,21,.14)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **17.67:1** · `ink-soft/bg` **8.3:1** · `ink-faint/bg` **3.96:1 (dekoratif)** · `accent-ink/accent` **8.4:1**.
-- İki renk yeter: zemin ve mürekkep. Accent yalnız bağlantı ve vurgu kelimesi.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **17.67:1** · `ink-soft/bg` **8.3:1** · `ink-faint/bg` **3.96:1 (decorative)** · `accent-ink/accent` **8.4:1**.
+- Two colors are enough: ground and ink. Accent is just a word of connection and emphasis.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Space Grotesk) | 72px (mobil 38px) | 700 | 0.98 | -0.035em |
-| H2 | aynı | 32px | 600 | 1.08 | -0.015em |
-| H3 | aynı | 20px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Inter) | 16px | 400 | 1.6 | 0 |
-| Küçük gövde | aynı | 14px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (Space Mono) | 10px | 400 | 1.2 | 0.14em |
-| Buton | `--font-body` | 12px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Space Grotesk) | 72px (mobile 38px) | 700 | 0.98 | -0.035em |
+| H2 | same | 32px | 600 | 1.08 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.6 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Space Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-- Display 72px, satır aralığı 0.98; gövde 16/1.6. Ara punto yok — iki uç arasında zıplama bilinçli.
-- Ölçü: 62ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Display 72px, line spacing 0.98; body 16/1.6. There is no midpoint — the jumping between two extremes is intentional.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- 12 kolon görünmez; başlık 8 kolona yayılır, gövde 6 kolonda kalır.
-- Bölüm dikey boşluğu masaüstü 72px, mobil 44px; kart içi padding 20px.
+- 12 columns are not visible; The title spans 8 columns, the body remains in 6 columns.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Gölge ve yuvarlatma yok; ayrım yalnız hairline ve boşluk.
-- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Köşe 0px — tipografik denemede geometri metne hizmet eder.
+- No shadows and rounding; The only difference is the hairline and space.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 0px — in typographic essay, geometry serves the text.
 
-## Yasaklar
+## Bans
 
-- Animasyonlu sayaç.
+- An animated counter.
 - Dekoratif grafik.
-- Üçten fazla rakam boyutu.
-- Üçüncü font ailesi.
-- Başlıkta gölge/eğim.
-- Gövde metninde uppercase.
+- More than three figure sizes.
+- Third font family.
+- Shadow/bevel in title.
+- uppercase in body text.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 0px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 0px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 0px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 0px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 8.76:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 8.76:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1px çizgi, 16px; metinle aynı ağırlıkta |
-| Fotoğraf | Yalnız gerektiğinde; metni destekler, yarışmaz |
-| İllüstrasyon | Tipografik işaret olarak kullanılabilir |
-| Doku | Yok |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 1px line, 16px; same weight as text |
+| photo | Only when necessary; supports text, does not compete |
+| illustration | Can be used as typographic sign |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-none` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Poster hero | düşük | Tek başlık + tek satır açıklama | `shots/01-page.png` |
-| Manifesto | düşük | Uzun metin, geniş sol boşluk | `shots/01-page.png` |
-| Dizin | yüksek | Numaralı satır listesi, mono | `shots/01-page.png` |
-| Makale | düşük | 62ch ölçü, alıntı 32px | `shots/01-page.png` |
-| Kolofon | düşük | Künye tablosu | `shots/01-page.png` |
-| Form | orta | Etiket üstte, çizgi input | `shots/01-page.png` |
-| Arşiv | yüksek | Yıl + başlık, iki kolon | `shots/01-page.png` |
-| İletişim | düşük | Adres + tek satır e-posta | `shots/01-page.png` |
+| Poster hero | low | One title + one line description | `shots/01-page.png` |
+| Manifesto | low | Long text, wide left space | `shots/01-page.png` |
+| Dizin | high | Numbered line list, mono | `shots/01-page.png` |
+| Makale | low | 62ch size, quote 32px | `shots/01-page.png` |
+| Kolofon | low | imprint table | `shots/01-page.png` |
+| Form | medium | Label on top, line input | `shots/01-page.png` |
+| archive | high | Year + title, two columns | `shots/01-page.png` |
+| Contact | low | Address + single line email | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 17.67:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 8.3:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 3.96:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 8.4:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 8.76:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 101 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 17.67:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.3:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.96:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 8.4:1 | ≥ 4.5 | button text |
+| focus ring/ground | 8.76:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 101 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Başlık taşıyor | max-width yok | 18ch sınırı koy |
-| Metin okunmuyor | Ölçü 90ch | 62ch'e indir |
-| Hiyerarşi düz | Üç ara punto | İki uç punto kullan |
+| bears the title | no max-width | set 18ch limit |
+| Text not readable | Size 90ch | reduce to 62ch |
+| Hierarchy flat | Three intermediate points | Use two-point font |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `ledger-meter` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `variable-weight` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `kids-classroom` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `carnival-festival` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `ledger-meter` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `variable-weight` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `kids-classroom` | Two different ornamental languages compete on the same screen |
+| Mixing | `carnival-festival` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://en.wikipedia.org/wiki/Numeral_system | Numeral system (Wikipedia) — sayı biçimi |
+| https://en.wikipedia.org/wiki/Numeral_system | Numeral system (Wikipedia) — numeral format |
 | https://fonts.google.com/specimen/Space+Grotesk | Space Grotesk (Google Fonts) — display ailesi |
 | https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric | MDN · tabular-nums — hizalama |
 
 ## AI brief
 
 ```text
-Rakam odaklı rapor sayfası tasarla: 96px tabular rakamlar, mono birim, ince çizgi, az metin.
+Design a numeral-driven report page: 96px tabular figures, mono units, thin rules, little text.
 
-Stil: Numerals Display (numerals-display) · aile: Tipografi Denemeleri (232–241)
+Style: Numerals Display (numerals-display) · family: Typography Experiments (232–241)
 Token: --bg #f7f8f9 · --surface #ffffff · --ink #0f1215 · --accent #12506e · --line rgba(15,18,21,.14)
-Yarıçap: 0px / 2px · Tipografi: Space Grotesk / Inter / Space Mono
-Zorunlu: Tüm rakamlar tabular ve hizalı. · Birim her zaman yazılır. · Basamak gruplama nokta/virgül tutarlı.
-Yasak: Animasyonlu sayaç. · Dekoratif grafik. · Üçten fazla rakam boyutu.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 0px / 2px · Typography: Space Grotesk / Inter / Space Mono
+Required: All figures are tabular and aligned. · The unit is always written. · Digit grouping stays consistent between separators.
+Banned: An animated counter. · Dekoratif grafik. · More than three figure sizes.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

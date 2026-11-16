@@ -1,20 +1,20 @@
 # 144 · Virtual Engine
 
-> **Bir cümlede:** Sanal bir dünyayı düzenleyen editör: viewport, varlık hiyerarşisi ve denetçi panelini CRT başlıklı koyu mor bir motorda birleştiren arayüz.
+> **In one sentence:** Sanal bir dünyayı düzenleyen editör: viewport, varlık hiyerarşisi ve denetçi panelini CRT başlıklı koyu mor bir motorda birleştiren arayüz.
 
 | | |
 |---|---|
-| **Hissiyat** | teknik, oyuncul, katmanlı, doğrudan |
-| **En iyi** | oyun motoru editörü, sahne düzenleyici, 3B konfigüratör, sanal dünya yönetim paneli |
-| **Kaçın** | editoryal makale, muhasebe tablosu, sakin sağlık ekranı — koyu viewport burada yorucu olur |
-| **Zorluk** | yüksek · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 5.05:1) |
-| **Aile** | Deneysel & Gelecek (136–145) · **Token** | `styles/144-virtual-engine/tokens.json` → `[data-style="virtual-engine"]` |
-| **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | teknik, oyuncul, katmanlı, doğrudan |
+| **Best for** | oyun motoru editörü, sahne düzenleyici, 3B konfigüratör, sanal dünya yönetim paneli |
+| **Avoid** | editoryal makale, muhasebe tablosu, sakin sağlık ekranı — koyu viewport burada yorucu olur |
+| **Difficulty** | yüksek · **Accessibility** |  |
+| **Family** | Experimental & Future (136–145) · **Token** | `kit/tokens.css` → `[data-style="virtual-engine"]` |
+| **Composition** | `product` · `rail` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Virtual Engine, arayüzü **editör** olarak kurar: ekranın yarısından fazlası viewport'tur (ortografik dünya ızgarası), sağda denetçi, solda varlık hiyerarşisi, altta konsol satırı. Ekran bir "ürün sayfası" değil, bir **çalışma alanı**dır.
 
 Üç kurucu karar: (1) **viewport önce** — viewport her zaman ekranın en büyük yüzeyi ve içeriği şemadır (fotoğraf değil); (2) **tel kafes ızgara** — 32px ızgara, perspektif yok (ortografik); oyun dünyası ölçülebilir olmalı; (3) **seçim üçlü kodlanır** — seçili varlık sol 3px accent çizgi + çerçeve + listede vurgu ile gösterilir, yalnız renkle değil.
@@ -23,121 +23,147 @@ Display **VT323**'dür: CRT terminal estetiği, sayaç ve sahne adları için do
 
 Bedeli: koyu magenta accent ve terminal fontu dikkat çeker. Bu yüzden accent yalnız seçim ve birincil eylemde kalır; glow, tarama çizgisi ve flicker yasaktır (CRT taklidi değil, editör).
 
-### Ne değildir
+### What is not
 - **Pixel Art (24) değildir:** 24 Press Start 2P + blok gölge ile 8-bit oyun estetiğidir (radius 0); Virtual Engine bir **araç** arayüzüdür (radius 8/14, panel hiyerarşisi).
 - **Cybercore (23) değildir:** 23 yeşil neon HUD ve tarama çizgisi kullanır; burada glow/tarama yoktur, accent magenta ve düzen editör düzenidir.
 - **AI Native Mesh (39) değildir:** 39 cam kart ve mesh atmosferle soyut bir ürün dilidir; burada viewport/denetçi/hiyerarşi üçlüsü vardır.
 - **Command Palette (108) değildir:** 108 klavye odaklı komut arayüzüdür (radius 2/6, none); Virtual Engine görsel düzenleme aracıdır.
 
-### Nereden gelir
+### Where it comes from
 Oyun motoru editörleri (Unity, Godot, Blender viewport), 3B konfigüratörler ve sahne düzenleyicileri. Ekranda yeniden kullanılmasının nedeni: "sanal dünya" ürünlerinin vitrin değil **araç** olarak sunulması; kullanıcı dünyayı izlemez, düzenler. Klişeye dönüşmemesi için korunacak detay: viewport'un gerçekten en büyük yüzey olması ve ızgaranın ortografik kalması.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Ekranın yarısından fazlası viewport; içinde 32px ızgara ve seçili varlık çerçevesi var.
 2. Sağda denetçi paneli (özellik satırları), solda varlık listesi (30px satırlar).
 3. Başlık/sayaçlar VT323: terminal karakteri, sabit genişlik.
 4. Koyu mor zemin; accent magenta yalnız seçimde.
 5. Altta tek satır konsol (zaman + mesaj) akıyor.
 
-## Görsel imza
+## Visual signature
 - **Viewport:** ekranın ≥ %55'i; 32px ortografik ızgara, seçili varlıkta 1px accent çerçeve + dış halka.
 - **Eksen işareti:** sol altta 44px yatay/dikey eksen çizgisi (`--ink-faint`).
 - **Varlık listesi:** 30px satır, tür + kimlik + görünürlük; seçili satırda sol 3px accent.
 - **Konsol satırı:** 26px yükseklik, mono 11px, son 5 olay; `--surface-2` zemin.
-- **Radius:** `--radius` 8px (control/chip), `--radius-lg` 14px (panel/modal).
 - **Gölge:** tek katman `0 14px 30px -26px`; glow ve tarama çizgisi yok.
 - **Doku:** `--grain .02` + dünya ızgarası; CRT efekti yasak.
+- **Typography:** VT323 (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#c7307f`; neutral scale `#120c1c` → `#eee8fa`.
+- **Radius:** `8px` / `14px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#120c1c` | editör zemini | viewport zemini |
-| `--bg-2` | `#181024` | viewport zemini, input | panel zemini |
-| `--surface` | `#1d142b` | panel, liste, denetçi | viewport |
-| `--surface-2` | `#251a36` | zebra satır, chip, konsol | birincil panel |
-| `--ink` | `#eee8fa` | metin, değer | dekoratif dolgu |
-| `--ink-soft` | `#b3a7c9` | ikincil metin, özellik adı | seçim vurgusu |
-| `--ink-faint` | `#7f7395` | yalnız ızgara/eksen/ayırıcı | etkileşimli metin |
-| `--accent` | `#c7307f` | seçili varlık, birincil eylem | dekorasyon |
-| `--accent-ink` | `#ffffff` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(238,232,250,.15)` | panel kenarı, ızgara | metin |
+1. Viewport ekranın en az %55'i; denetçi paneli sağda sabit
+2. Her varlık satırı tür + kimlik + görünürlük ikonu; kimlik mono
+3. Sahne ızgarası 32px, perspektif yok (ortografik)
+4. Kare hızı/sayaç her zaman mono ve tabular
+5. Konsol satırı (son 5 olay) ekranın altında, tek satır kayar
+6. Accent magenta yalnız seçili varlık ve birincil eylem
 
-- Ölçülen kontrast: `ink/bg` = **16.03:1** · `ink-soft/bg` = **8.48:1** · `accent-ink/accent` = **5.05:1** · `ink-faint/bg` = **4.37:1**.
-- Tek vurgu kuralı: accent yalnız seçim ve birincil eylem. Alarm `--danger`, uyarı `--warn`, çalışır durum `--ok`.
-- Yasak kombinasyon: accent üstünde `--ink-soft`; aynı ekranda iki farklı seçim rengi.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#120c1c` | page background | as a card background |
+| `--bg-2` | `#181024` | partition divider floor, table top | button background |
+| `--surface` | `#1d142b` | kart, input, modal | full-page background |
+| `--surface-2` | `#251a36` | passive chip, hover background | primary button |
+| `--ink` | `#eee8fa` | title, body, icon | large background |
+| `--ink-soft` | `#b3a7c9` | secondary text, description | — |
+| `--ink-faint` | `#7f7395` | decorative label, separator text | interactive text |
+| `--accent` | `#c7307f` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `rgba(238,232,250,.15)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | VT323 (`--font-display`) | 46px / mobil 28px | 400 | 1.08 | `--tracking` 0.02em |
-| H2 | VT323 | 28px | 400 | 1.2 | 0.01em |
-| H3 | Inter | 20px | 600 | 1.3 | 0 |
-| Gövde | Inter (`--font-body`) | 14px | 400 | 1.54 | 0 |
-| Etiket / sayaç | JetBrains Mono (`--font-mono`) | 10–12px | 400/600 | 1.44 | 0.14em |
+- Measured contrast: `ink/bg` **16.03:1** · `ink-soft/bg` **8.48:1** · `ink-faint/bg` **4.37:1 (decorative)** · `accent-ink/accent` **5.05:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.45; kullanılan basamaklar: 11 · 12 · 13 · 14 · 20 · 28 · 46.
-- Ölçü önerisi: `h1 { font-size: clamp(28px, 3.6vw, 46px); }`
-- Gövde metni maksimum satır uzunluğu: 72 ch.
-- Ağırlık kuralı: VT323 yalnız 400 ve yalnız başlık/sayaç; paragrafta kullanılmaz. Gövdede 400/600.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (VT323) | 28px (mobile 28px) | 500 | 1.06 | -0.02em |
+| H2 | same | 28px | 600 | 1.18 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 14px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 12px |
-| Container genişliği | 1320px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1280 viewport 8/4 · 768 denetçi alta iner · 390 tek sütun, konsol 18px |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: viewport 8/4; ekran başına bir asimetri, gerisi panel ızgarası.
-- Bölüm ritmi: art arda en fazla 3 panel; dördüncü blok tam genişlik viewport olur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | editör, viewport |
-| Panel | `--surface` | yok | hiyerarşi, denetçi |
-| Yüzen katman | `--surface` + `--shadow` | `0 14px 30px -26px rgba(4,1,10,.95)` | modal, varlık detayı |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; seçili varlıkta `1px var(--accent)` + dış halka.
-- Derinlik nereden gelir: panel hiyerarşisi ve ızgara; glow/blur/bevel yok.
-- Radius: `--radius` 8px (control, chip), `--radius-lg` 14px (panel, modal).
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 34px | 0 14px | `--radius` | 11px/600 mono 0.06em | `--accent` zemin, `--accent-ink` | hover %86 (70ms) · active 1px · focus 2px accent · disabled %42 kesikli · loading 4 kare |
-| Buton (ikincil) | 34px | 0 14px | `--radius` | 11px/600 | `--surface`, 1px `--line`, `--ink` | hover `--surface-2` |
-| Input | 34px | 0 10px | `--radius` | 12px mono | `--bg-2`, 1px `--line` | focus 2px accent · error `--danger` · disabled %42 |
-| Kart | içerik | 16px | `--radius-lg` | — | `--surface`, 1px `--line`, gölge yok | seçili: sol 3px accent |
-| Chip / badge | 22px | 0 8px | `--radius` | 12px/400 VT323 | `--surface-2`, 1px `--line` | seçili: accent zemin |
-| Nav | 46px | 0 16px | 0 | 11px mono | `--bg`, alt 1px `--line` | sahne adı ortada, sağda FPS |
-| Tablo satırı | 30px | 4px 8px | 0 | 12px mono | alt 1px `--line`, zebra `--surface-2` | seçili sol 3px accent |
-| Modal / sheet | — | 18px | `--radius-lg` | 14px/400 | `--surface`, 1px `--line`, `--shadow` | sağda denetçi olarak açılır |
-| Toast | 32px | 6px 10px | `--radius` | 11px mono | `--surface-2`, 1px `--line` | 3000ms, sol alt (konsol satırı) |
-| Grafik paleti | — | — | — | — | `--accent` · `--ink-soft` · `--ink-faint` (3 seri) | performans grafiği basamaklı çizgi |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `8px` (buton, input, chip), `14px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 1px`.
-- Dokunma hedefi: en az 44×44px; 34px buton ve 22px chip `::before` ile 44px alan taşır.
+## Bans
 
-## Görsel dil
+- CRT tarama çizgisi, flicker, renkli glow.
+- 14px üzeri radius, hap buton.
+- Gerçek fotoğrafı viewport içeriği yapmak.
+- VT323 ile uzun paragraf.
+- Sürekli dönen kamera veya otomatik sahne turu.
+- Saniyede 1+ flaş.
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, 16px ızgara; sahne, ışık, kamera, katman |
-| Fotoğraf | Yok — viewport içeriği şema (tel kafes/ızgara) |
-| İllüstrasyon | Yalnız tel kafes ızgara + eksen okları |
-| Doku | `--grain .02` + 32px dünya ızgarası; CRT taraması yok |
-| Logo alanı | VT323 kelime logosu, 0.08em; 14px küp çizimi |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 8px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 8px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 8px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 8px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 8px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 8px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 8px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 3.8:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | Viewport 8/4, sağda denetçi önizleme, altta konsol | `shots/01-page.png` |
 | Dashboard | yüksek | Hiyerarşi + viewport + denetçi üçlüsü | `shots/01-page.png` |
@@ -152,45 +178,33 @@ Oyun motoru editörleri (Unity, Godot, Blender viewport), 3B konfigüratörler v
 | Hata | düşük | `--danger` çerçeve + "sahne yüklenemedi" | `shots/01-page.png` |
 | Profil / ayar | orta | Izgara aralığı, eksen, konsol yoğunluğu | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Viewport ekranın en az %55'i; içeriği şema olur, fotoğraf olmaz.
-- Izgara 32px ve ortografik; perspektif/kaçış noktası yok.
-- Seçim üçlü kodlanır: sol 3px accent + çerçeve + listede vurgu.
-- Her varlık satırı tür + kimlik + görünürlük; kimlik mono.
-- Konsol satırı ekranın altında, tek satır ve mono.
-- VT323 yalnız başlık/sayaç; gövde Inter.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.03:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.48:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.37:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.05:1 | ≥ 4.5 | button text |
+| focus ring/ground | 3.8:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 94.2 | ≥ 60 target | thin text |
 
-## Yasaklar
-- CRT tarama çizgisi, flicker, renkli glow.
-- 14px üzeri radius, hap buton.
-- Gerçek fotoğrafı viewport içeriği yapmak.
-- VT323 ile uzun paragraf.
-- Sürekli dönen kamera veya otomatik sahne turu.
-- Saniyede 1+ flaş.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük etkileşimli çift: `accent-ink/accent` = 5.05:1; gövde 16.03:1; `ink-faint/bg` = 4.37:1.
-- `--ink-faint` yalnız ızgara/eksen; etkileşimli metin değil.
-- Seçim yalnız renkle bildirilmez: çerçeve + sol çizgi + liste vurgusu birlikte.
-- Klavye: `Tab` hiyerarşide gezer, `F` çerçeveye odaklanır, `Del` siler; kısayollar konsolda yazılı.
-- Odak halkası 2px accent + 1px offset; koyu zeminde net.
-- 390px'te denetçi alta iner, konsol 18px; taşma yok.
-- `prefers-reduced-motion` açıkken kare geçişleri ve ızgara animasyonu durur.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Oyun vitrini" olmuş | viewport küçük, pazarlama metni baskın | viewport ≥ %55, metin panele taşınır |
 | Seçim belirsiz | yalnız renkli kenar | sol 3px + çerçeve + liste vurgusu |
 | Göz yoruyor | glow + tarama çizgisi | ikisini de kaldır |
@@ -198,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Mobilde kullanılamaz | 8/4 korunmuş | 768 altında denetçi alta |
 | Font okunmuyor | VT323 gövdede | VT323 yalnız başlık/sayaç |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `pixel-art` — oyun kültürü; editör estetiği ile yan yana sergilenebilir.
-- **Uyumlu:** `cybercore` — teknik koyu dil; glow kaldırılırsa uyumlu.
-- **Uyumlu:** `ai-native-mesh` — soyut 3B ürün dili; viewport paneli ortak.
-- **Yasak:** `japandi` — sakin kağıt estetiği editör yoğunluğuyla çelişir.
-- **Yasak:** `minimalism` — panel hiyerarşisini fazla sadeleştirir.
-- **Yasak:** `skeuomorphism` — malzeme taklidi viewport ızgarasını bozar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `pixel-art` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `cybercore` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `ai-native-mesh` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `japandi` | Two different ornamental languages compete on the same screen |
+| Mixing | `minimalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `skeuomorphism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://docs.godotengine.org/en/stable/tutorials/editor/index.html | viewport + denetçi paneli düzeni |
-| https://docs.unity3d.com/Manual/CustomizingYourWorkspace.html | sahne/hiyerarşi/denetçi üçlüsü |
-| https://docs.blender.org/manual/en/latest/editors/3dview/navigate/index.html | ortografik ızgara ve eksen |
-| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | koyu zeminde odak halkası |
+| Source | for what |
+| --- | --- |
+| https://docs.godotengine.org/en/stable/tutorials/editor/index.html | Godot · Editor UI — viewport + denetçi paneli düzeni |
+| https://docs.unity3d.com/Manual/CustomizingYourWorkspace.html | Unity · Editor layout — sahne/hiyerarşi/denetçi üçlüsü |
+| https://docs.blender.org/manual/en/latest/editors/3dview/navigate/index.html | Blender · Viewport navigation — ortografik ızgara ve eksen |
+| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | WCAG 2.2 · Focus appearance — koyu zeminde odak halkası |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Virtual Engine (styles/144-virtual-engine/style.md, tokens.json)
 Token: sadece [data-style="virtual-engine"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: display VT323 400 (yalnız başlık/sayaç), gövde Inter 400/600, kimlik/sayaç JetBrains Mono.
@@ -233,16 +247,15 @@ Hareket: enter .21s steps(6, end) y32 stagger .02; scroll top 95% .24s y40 once;
   pin yok; hover 70ms scale 1.050; reduced-motion'da kare geçişleri durur.
 Yasak: CRT taraması/flicker, glow, 14px üstü radius, fotoğraf viewport, VT323 paragraf, dönen kamera.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Viewport ≥ %55 ve içeriği şema.
-- [ ] Izgara 32px, ortografik; eksen işareti var.
-- [ ] Seçim üçlü kodlanmış.
-- [ ] Kontrast: gövde 16.03:1, accent üstü 5.05:1.
-- [ ] Konsol satırı tek satır ve mono.
-- [ ] 390px'te taşma yok.
-- [ ] `prefers-reduced-motion` açıkken kare geçişi yok.
+Style: Virtual Engine (virtual-engine) · family: Experimental & Future (136–145)
+Token: --bg #120c1c · --surface #1d142b · --ink #eee8fa · --accent #c7307f · --line rgba(238,232,250,.15)
+Radius: 8px / 14px · Typography: VT323 / Inter / JetBrains Mono
+Required: Viewport ekranın en az %55'i; denetçi paneli sağda sabit · Her varlık satırı tür + kimlik + görünürlük ikonu; kimlik mono · Sahne ızgarası 32px, perspektif yok (ortografik)
+Banned: CRT tarama çizgisi, flicker, renkli glow. · 14px üzeri radius, hap buton. · Gerçek fotoğrafı viewport içeriği yapmak.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -253,15 +266,25 @@ Yasak: CRT taraması/flicker, glow, 14px üstü radius, fotoğraf viewport, VT32
   --ink: #eee8fa; --ink-soft: #b3a7c9; --ink-faint: #7f7395;
   --accent: #c7307f; --accent-ink: #ffffff;
   --line: rgba(238,232,250,.15);
+  --danger: #e43a2b;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 8px; --radius-lg: 14px;
-  --shadow: 0 14px 30px -26px rgba(4,1,10,.95); --shadow-hard: 0 0 0 1px var(--line);
+  --shadow: 0 14px 30px -26px rgba(4,1,10,.95); --shadow-hard: none;
   --font-display: "VT323", ui-monospace, monospace;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  --tracking: 0.02em; --blur: 0px; --grain: .02;
-  --danger: #ff7a72; --danger-ink: #1c0606;
-  --ok: #6fe0a8; --warn: #e8c56a;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `styles/144-virtual-engine/token-block.css` içinde `[data-theme="dark"][data-style="virtual-engine"]` olarak durur (10 renk anahtarı `palette.dark` ile birebir); `## Koyu mod` tablosu tek kaynak özetidir.

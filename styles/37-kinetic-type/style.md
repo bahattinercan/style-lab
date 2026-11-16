@@ -1,42 +1,55 @@
 # 37 · Kinetic Type
 
-> **Bir cümlede:** Tipografi dekor değil taşıyıcıdır — 28→96px arasında atlayan dev ölçek, 0.95 satır aralığı ve metni kesen diagonal katmanlarla arayüz poster gibi okunur.
+> **In one sentence:** Tipografi dekor değil taşıyıcıdır — 28→96px arasında atlayan dev ölçek, 0.95 satır aralığı ve metni kesen diagonal katmanlarla arayüz poster gibi okunur.
 
 | | |
 |---|---|
-| **Hissiyat** | hareketli, gürültülü, keskin, enerjik |
-| **En iyi** | ajans/kreatif stüdyo vitrini, etkinlik ve lansman sayfası, ürün tanıtım landing'i, müzik/medya uygulaması, portfolyo |
-| **Kaçın** | yoğun operasyon paneli (20+ satır tablo), finans işlemi ve mutabakat ekranı, sağlık/kamu formu, 8+ saat açık kalan kontrol odası, e-ticaret ürün listesi |
-| **Zorluk** | orta-yüksek (ölçek atlaması + döndürülmüş katman disiplini) · **Erişilebilirlik** | iyi (17.23:1 gövde, 17.29:1 accent üstü; risk tek: rotasyonlu metin) |
-| **Aile** | Tipografik (37) · **Token** | `kit/tokens.css` → `[data-style="kinetic-type"]` |
-| **Kompozisyon** | `type` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | hareketli, gürültülü, keskin, enerjik |
+| **Best for** | ajans/kreatif stüdyo vitrini, etkinlik ve lansman sayfası, ürün tanıtım landing'i, müzik/medya uygulaması, portfolyo |
+| **Avoid** | yoğun operasyon paneli (20+ satır tablo), finans işlemi ve mutabakat ekranı, sağlık/kamu formu, 8+ saat açık kalan kontrol odası, e-ticaret ürün listesi |
+| **Difficulty** | orta-yüksek (ölçek atlaması + döndürülmüş katman disiplini) · **Accessibility** |  |
+| **Family** | Typographic (37–37) · **Token** | `kit/tokens.css` → `[data-style="kinetic-type"]` |
+| **Composition** | `type` · `inline` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Kinetic Type, hiyerarşiyi **renkle değil ölçekle** kurar. Sayfada iki baskın punto vardır: 96px'e kadar çıkan display ve 15px gövde — ara basamaklar neredeyse yoktur. Araya giren 28–44px H2'ler "ara ton" değil, **kontrast kırıcı** olarak kullanılır. Satır aralığı 0.92–1.0'a sıkışır (büyük harfte harfler neredeyse birbirine değer), tracking eksiye gider (`-0.03em`), böylece başlık bir kelime bloğu değil **tek bir biçim** olarak okunur. Palet monokromdur: neredeyse siyah zemin `#0e0e10`, kırık beyaz mürekkep `#f4f2ec` ve tek asit vurgu `#e8ff47`. Vurgu metni renklendirmez, **keser**: kelimenin üstünden geçen diagonal şerit, döndürülmüş ikinci katman veya accent zeminli kelime bloğu.
 
 Kazandığı şey: ekranın 3 saniyede hatırlanması. Tek bir dev kelime, 12 kartlı bir ızgaradan daha güçlü bir çapa kurar; landing'de dönüşümün taşıyıcısı görsel değil başlıktır. Feda ettiği şey: **tarama hızı**. 0.95 satır aralığı ve negatif tracking, 10 satırdan uzun metinde okumayı yavaşlatır; bu yüzden stil veri ve ayar ekranlarında geri çekilir (display 96 → 40px, rotasyon 0°, gövde 1.55 satır aralığına döner).
 
-### Ne değildir
+### What is not
 - **Constructivism (36) değildir.** Constructivism kalın çerçeve (3px), blok gölge (`--shadow-hard`) ve kırmızı-siyah iki renkle çalışır; burada çizgi **1px**, gölge **yok**, palet **monokrom + tek asit** ve karakteri taşıyan şey çubuk değil **punto atlaması**.
 - **Swiss Design (02) değildir.** Swiss ızgaraya **itaat** eder ve tipografiyi hizada tutar (display 62px, tracking 0); burada ızgara korunur ama en az bir blok **6°'ye kadar döner** ve display 96px'e çıkar.
 - **Acid Graphics (15) değildir.** Acid gradyan, parlama ve çoklu neonla doldurur; burada `--blur: 0`, gradyan yasak, vurgu tek renk ve düz.
 - **Neo-brutalism (13) değildir.** Neo-brutalism 0 radius + sert ofset gölgeyle hacim kurar; burada radius 2/4px, `--shadow: none`, hacim **katman sırası ve kontrast** ile kurulur.
 - **Editorial Design (04) değildir.** Editorial serif başlık ve geniş satır aralığıyla okutur; burada display **grotesk/sıkışık** ve satır aralığı 1'in altında.
 
-### Nereden gelir
+### Where it comes from
 Hareketli tipografi (kinetic typography) 1950'lerin film jeneriklerinden (Saul Bass), 1960'lar İsviçre poster tipografisinden (Weingart'ın kırdığı hiza) ve 2000'lerin motion-graphics jeneriklerinden gelir. Web'e taşınması iki teknikle oldu: değişken font ağırlıkları ve `clamp()` — tek satırla 28→96px atlayan, kırpılmayan display kurulabiliyor. Bugün tekrar kullanılmasının nedeni ölçülebilir: kısa dikkat süresinde **tek dev kelime**, aynı alandaki 8 küçük karttan daha hızlı hatırlanıyor. Klişeye düşmemesi için korunması gereken detay: **disiplinli rotasyon** — ekran başına en fazla 2 döndürülmüş katman ve tek yön (sağa yukarı), ölçek atlaması da en fazla 3 basamak. Her şeyi eğmek ve her başlığı 96px yapmak stili "gürültü"ye çevirir.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Tek bir başlık **60px üstü** ve satır aralığı **1.0 altında** mı; gövde ise 15px (ölçek atlaması ≥4×)?
 2. Palet **monokrom** mu; tek vurgu asit sarı-yeşil `#e8ff47` ve ekranın **≤%10**'unda mı?
 3. Metni kesen **diagonal accent şerit** veya **6°'ye kadar döndürülmüş** ikinci katman var mı (en fazla 2)?
 4. Köşeler **2–4px** mi; hiçbir yerde gölge yok mu (`--shadow: none`)?
 5. Etiketler mono, büyük harf ve geniş tracking (`0.18em`) mi; başlıkta uppercase kullanılıyor mu?
 
-## Zorunlu kurallar
+## Visual signature
+- **Dev ölçek atlaması:** `h1 { font-size: clamp(28px, 7vw, 96px); line-height: .95; letter-spacing: -0.03em; text-transform: uppercase; }` — 1440px'te 96px'e oturur, 390px'te 28px.
+- **Negatif tracking + sıkı satır:** display `-0.03em / .95`; H2 `-0.02em / 1.0`. Kelimeler arası boşluk `word-spacing: -0.02em` ile bir miktar kapanır.
+- **Diagonal accent şerit:** `.hero-visual::after` benzeri tek şerit — `transform: rotate(-6deg)`, yükseklik 10–14px, `background: var(--accent)`, metnin **arkasında** (`z-index` düşük), genişlik kapsayıcının %110'u.
+- **Döndürülmüş kelime katmanı:** ekran başına ≤2 katman, `rotate(-6deg)` veya `rotate(3deg)`; içinde yalnız display kelime (26–44px) ya da mono etiket (10px) durur.
+- **Monokrom zemin + 1px çizgi:** yüzeyler `--bg` / `--surface` / `--surface-2` üç kademe; kart `1px solid var(--line)`, `border-radius: 4px`, gölge yok.
+- **Acid vurgu bloğu:** vurgulanan kelime `background: var(--accent); color: var(--accent-ink); padding: 0 .08em;` — satır içi, `border-radius: 2px`.
+- **Mono etiket izi:** tüm etiketler `--font-mono` 10px, `letter-spacing: .18em`, uppercase, `--ink-faint`.
+- **Grain:** `--grain: .05` → örtü opaklığı `.25`, yalnız zemin katmanında; koyu zeminde doku görünür olduğu için .06 üstü yasak.
+- **Typography:** Anton (display) + Space Grotesk (body) + Space Mono (mono label).
+- **Colour discipline:** a single accent `#e8ff47`; neutral scale `#0e0e10` → `#f4f2ec`.
+- **Radius:** `2px` / `4px`; Corner 0px — in typographic essay, geometry serves the text.
+
+## Mandatory rules
 
 1. **Ölçek atlaması:** display `clamp(28px, 7vw, 96px)`, gövde 15px, etiket 10px. Aradaki basamaklar (32 / 44 / 60) yalnız H2 ve KPI sayısında kullanılır; ekran başına en fazla **6 punto** toplam.
 2. **Sıkı satır aralığı:** display `line-height: .95` (en uzun 2 satır), H2 `1.0`, gövde `1.55`. Gövde metni asla `1.4` altına inmez (okunurluk).
@@ -47,7 +60,66 @@ Hareketli tipografi (kinetic typography) 1950'lerin film jeneriklerinden (Saul B
 7. **Çizgi:** `1px solid var(--line)` = `rgba(244,242,236,.18)`. 2px yalnız odak halkasında ve alt-çizgi göstergesinde; 3px ve üstü kalın çerçeve yasak.
 8. **Izgara korunur:** 12 kolon, gutter 24px, container 1200px. Döndürülmüş katman ızgarayı **kırar ama bozmaz** — metin sütununun hizası ekran kenarına paralel kalır.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0e0e10` | page background | as a card background |
+| `--bg-2` | `#17171a` | partition divider floor, table top | button background |
+| `--surface` | `#1b1b1f` | kart, input, modal | full-page background |
+| `--surface-2` | `#232329` | passive chip, hover background | primary button |
+| `--ink` | `#f4f2ec` | title, body, icon | large background |
+| `--ink-soft` | `#a8a49b` | secondary text, description | — |
+| `--ink-faint` | `#6f6b64` | decorative label, separator text | interactive text |
+| `--accent` | `#e8ff47` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#0e0e10` | text above accent | non-accent background |
+| `--line` | `rgba(244,242,236,.18)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **17.23:1** · `ink-soft/bg` **7.76:1** · `ink-faint/bg` **3.64:1 (decorative)** · `accent-ink/accent` **17.29:1**.
+- Two colors are enough: ground and ink. Accent is just a word of connection and emphasis.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Anton) | clamp(28px, 9vw, 44px) (mobile 28px) | 700 | 0.98 | -0.035em |
+| H2 | same | 32px | 600 | 1.08 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Space Grotesk) | 15px | 400 | 1.6 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Space Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Display 72px, line spacing 0.98; body 16/1.6. There is no midpoint — the jumping between two extremes is intentional.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- 12 columns are not visible; The title spans 8 columns, the body remains in 6 columns.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- No shadows and rounding; The only difference is the hairline and space.
+- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Corner 0px — in typographic essay, geometry serves the text.
+
+## Bans
 
 - İki renk arası gradyan (`linear-gradient` renk karışımı), parlama/glow, neon.
 - Gölge: yumuşak gölge, blok gölge, inset gölge, `drop-shadow` — istisna yok.
@@ -59,113 +131,44 @@ Hareketli tipografi (kinetic typography) 1950'lerin film jeneriklerinden (Saul B
 - 3px ve üstü kalın çerçeve, çift kenarlık, `border-radius: 0` (düz köşe bu stile aittir ama 2px taban korunur) — yalnız bölüm ayırıcıları düz olabilir.
 - Serif display (Editorial/Dark Academia karışması), el yazısı font, illüstrasyon kolajı.
 - Gövde metninde uppercase; büyük harf yalnız display ve mono etiketlerde.
+- Third font family.
+- Shadow/bevel in title.
+- uppercase in body text.
 
-## Görsel imza
-- **Dev ölçek atlaması:** `h1 { font-size: clamp(28px, 7vw, 96px); line-height: .95; letter-spacing: -0.03em; text-transform: uppercase; }` — 1440px'te 96px'e oturur, 390px'te 28px.
-- **Negatif tracking + sıkı satır:** display `-0.03em / .95`; H2 `-0.02em / 1.0`. Kelimeler arası boşluk `word-spacing: -0.02em` ile bir miktar kapanır.
-- **Diagonal accent şerit:** `.hero-visual::after` benzeri tek şerit — `transform: rotate(-6deg)`, yükseklik 10–14px, `background: var(--accent)`, metnin **arkasında** (`z-index` düşük), genişlik kapsayıcının %110'u.
-- **Döndürülmüş kelime katmanı:** ekran başına ≤2 katman, `rotate(-6deg)` veya `rotate(3deg)`; içinde yalnız display kelime (26–44px) ya da mono etiket (10px) durur.
-- **Monokrom zemin + 1px çizgi:** yüzeyler `--bg` / `--surface` / `--surface-2` üç kademe; kart `1px solid var(--line)`, `border-radius: 4px`, gölge yok.
-- **Acid vurgu bloğu:** vurgulanan kelime `background: var(--accent); color: var(--accent-ink); padding: 0 .08em;` — satır içi, `border-radius: 2px`.
-- **Mono etiket izi:** tüm etiketler `--font-mono` 10px, `letter-spacing: .18em`, uppercase, `--ink-faint`.
-- **Grain:** `--grain: .05` → örtü opaklığı `.25`, yalnız zemin katmanında; koyu zeminde doku görünür olduğu için .06 üstü yasak.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#0e0e10` | sayfa zemini (neredeyse siyah) | kart yüzeyi |
-| `--bg-2` | `#17171a` | bölüm zemini, logo şeridi, tablo başlığı | metin zemini |
-| `--surface` | `#1b1b1f` | kart, panel, input | sayfa zemini |
-| `--surface-2` | `#232329` | ikincil yüzey, chip, hover | ana kart |
-| `--ink` | `#f4f2ec` | başlık, gövde (**17.23:1**) | accent zemini |
-| `--ink-soft` | `#a8a49b` | açıklama, lede (**7.76:1**) | display başlık |
-| `--ink-faint` | `#6f6b64` | dekoratif etiket, sıra no (**3.64:1**) | etkileşimli metin |
-| `--accent` | `#e8ff47` | şerit, birincil buton, aktif durum, vurgu bloğu | gövde metni |
-| `--accent-ink` | `#0e0e10` | accent üstü metin (**17.29:1**) | accent dışı zeminde |
-| `--line` | `rgba(244,242,236,.18)` | 1px çerçeve, ayırıcı | dolgu yüzeyi |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 17.29:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink / bg` **17.23:1** · `ink-soft / bg` **7.76:1** · `ink-faint / bg` **3.64:1** · `accent-ink / accent` **17.29:1** · `ink / surface` **15.34:1** · `ink / surface-2` **13.96:1** · `ink / bg-2` **15.98:1** · `accent / bg` **17.29:1**.
-- Tek vurgu kuralı: asit renk **eylem ve vurgu** taşır (CTA / aktif / kesme şeridi / vurgulanan kelime). İkinci anlam katmanı renkle değil **ölçek ve çizgi** ile kurulur (dev kelime = başlık, 1px çizgi = bölüm sınırı, mono etiket = meta).
-- Yasak kombinasyon: `--accent` üstü `--ink` (asit üstünde kırık beyaz 1.00:1 — okunmaz), `--ink-faint` üstü `--surface-2` (2.95:1), asit metin + asit zemin.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 16px; same weight as text |
+| photo | Only when necessary; supports text, does not compete |
+| illustration | Can be used as typographic sign |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Anton | `clamp(28px, 7vw, 96px)` | 400 (tek ağırlık) | `0.95` | `-0.03em`, uppercase |
-| H2 | Anton | 32px (mobil 26px) | 400 | `1.0` | `-0.02em`, uppercase |
-| H3 | Space Grotesk | 19px | 700 | `1.2` | `-0.01em`, cümle düzeni |
-| Gövde | Space Grotesk | 15px | 400 (vurgu 700) | `1.55` | `0em` |
-| Etiket / mono | Space Mono | 10px | 400 | `1.2` | `0.18em`, uppercase |
-| Sayı / KPI | Anton | 44px | 400 | `0.95` | `-0.02em`, tabular yok |
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Ölçek oranı: atlamalı (modüler değil) — kullanılan basamaklar **10 · 15 · 19 · 32 · 44 · 96** (6 basamak). 96/15 = **6.4×** atlama; ara basamak eklemek stili bozar.
-- Ölçü önerisi: `h1 { font-size: clamp(28px, 7vw, 96px); line-height: .95; letter-spacing: -.03em; text-transform: uppercase; text-wrap: balance; }`
-- Gövde maksimum satır uzunluğu: **54ch** (koyu zeminde satır daha uzun okunmaz); lede **44ch**. Display satırı en fazla **16ch** ve en fazla **2 satır**.
-- Ağırlık kuralı: Anton **tek ağırlık (400)** — kalınlaştırmak için `-webkit-text-stroke` veya `font-weight: 700` kullanılmaz; vurgu **renk/ölçek** ile yapılır. Space Grotesk 400/700, Space Mono 400/700 var; 300 kullanılmaz.
-- Anton **gövde metninde kullanılmaz** (18px altında harf içi boşluklar kapanır); Space Grotesk uppercase **yalnız 2 kelimeye kadar** etiketlerde.
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 24px |
-| Container genişliği | 1200px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 72 (`--space-1…8`) |
-| Breakpoint davranışı | 640px altı tek kolon (gutter 16px, display 28–40px); 640–960px 8 kolon (gutter 20px); 960px üstü 12 kolon |
-
-- Asimetri kuralı: hero **8/5** (1.6fr / 1fr) veya **7/5**; 6/6 ortalanmış kompozisyon yasak. Ekran başına 1–2 bölüm simetriden çıkar, üçüncüsü tam genişlik alır.
-- Bölüm ritmi: art arda en fazla **2** blok aynı hizada durabilir; üçüncü blok ya tam genişlik ya diagonal kesme alır.
-- Dikey ritim: bölüm arası 72px (mobil 44px), kart içi 24px, başlık ile gövde arası 12px.
-- Dev başlık ile gövde arasında **en az 20px** boşluk bırakılır; sıkı satır aralığı boşluksuz birleşirse iki blok tek leke gibi okunur.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | yok | sayfa, bölüm zemini, logo şeridi, grain katmanı |
-| Kart | `--surface` + `1px var(--line)` | yok | içerik paneli, tablo kabı, form kabı |
-| Yüzen katman | `--surface-2` + `1px var(--line)` + üst `2px var(--accent)` | yok | modal, dropdown, toast |
-
-- Kenarlık formülü: `border: 1px solid var(--line)`; iç ayırıcı aynı değer. Yalnız modal ve öne çıkan kartta üst kenar `2px solid var(--accent)`.
-- Derinlik nereden gelir: **ton kademesi + 1px çizgi + katman sırası**. Işık yönü yok, gölge yok, blur yok — koyu zeminde gölge zaten görünmez, bu yüzden yüzey farkı (bg `#0e0e10` → surface `#1b1b1f`) net tutulur.
-- Radius: `--radius: 2px` (buton, chip, input, etiket), `--radius-lg: 4px` (kart, modal, hero görseli). 8px ve üstü yasak.
-- Backdrop: modal arkası `rgba(14,14,16,.78)` — blur yok (`--blur: 0`).
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 46px | 0 20px | 2px | 12px/700 mono uppercase `0.18em` | `--accent` + `--accent-ink`, gölge yok | hover: `color-mix(in srgb, var(--accent) 84%, var(--ink))` · active: `translateY(2px)` · focus: `outline: 2px solid var(--accent); outline-offset: 2px` · disabled: `opacity .38` · loading: 3 çubuk 90ms |
-| Buton (ikincil) | 46px | 0 18px | 2px | 12px/700 mono uppercase `0.18em` | `--surface` + `1px var(--line)` | hover: `--surface-2` + kenar `--ink-soft` · active: `translateY(2px)` |
-| Input | 50px | 0 14px | 2px | 15px Space Grotesk | `--surface` + `1px var(--line)` | focus: `outline: 2px solid var(--accent); outline-offset: 2px`, etiket `--accent` · filled: kenar `--ink-soft` · error: kenar `--danger` + 12px hata satırı · disabled: `--surface-2` + `opacity .5` |
-| Kart | içerik | 24px | 4px | H2 32 + gövde 15 | `--surface` + `1px var(--line)`, gölge yok | öne çıkan: üst kenar `2px solid var(--accent)`, zemin `--surface-2` |
-| Chip / badge | 26px | 0 10px | 2px | 10px mono uppercase `0.18em` | `--surface-2` + `1px var(--line)` | aktif: `--accent` + `--accent-ink`; dokunma hedefi `min-height: 44px` + padding ile |
-| Nav | 68px | 0 40px | — | 12px mono uppercase `0.16em`, aktif `--ink` | `--bg` + alt `1px var(--line)` | aktif: metnin altında 2px `--accent`, soluna 6px kare nokta |
-| Tablo satırı | 52px | 12px 16px | 2px | 14px Space Grotesk, başlık 10px mono | `1px var(--line)` alt | hover: `--surface-2` · seçili: sol 2px `--accent` + `--surface-2` |
-| Modal / sheet | içerik | 28px | 4px | H2 32 + 15 | `--surface-2` + üst `2px var(--accent)` | backdrop `rgba(14,14,16,.78)`, blur yok; kapatma 44×44, radius 2px |
-| Toast | 50px | 0 16px | 2px | 12px mono uppercase `0.14em` | `--ink` zemin + `--bg` metin | sol 2px `--accent` şerit, 4sn, tek atım |
-| Grafik paleti | — | — | 2px üst | eksen 10px mono `0.14em` | `--data-1` accent, `--data-2` ink, `--data-3` ink-soft, `--data-4` surface-2 | çubuklar arası 8px, taban çizgisi 1px `--line`, yatay grid yok |
-
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px` — asit buton üstünde `outline: 2px solid var(--ink); outline-offset: 2px` (17.23:1).
-- Dokunma hedefi: en az 44×44px. Görsel olarak 26px olan chip ve 10px mono etiketler `min-height: 44px` + `padding: 0 10px` ile büyütülür.
-- Döndürülmüş katmanlar (`rotate(-6deg)`) tıklanabilir **olamaz**; dekoratif kelime katmanı `pointer-events: none` + `aria-hidden`.
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, **keskin köşe** (radius 0), 20px ızgara; dolgu yalnız accent durum ikonunda |
-| Fotoğraf | yüksek kontrast, tek konu, sert ışık, monokrom + tek renk sıçraması; alan ≥%30, tek kare — kolaj yok, üstüne dev kelime binebilir |
-| İllüstrasyon | yok; onun yerine **tipografik blok** ve diagonal şerit |
-| Doku | grain `.05` (zemin, opaklık .25); ikinci desen (nokta/çizgi) yalnız logo şeridinde ve ≤%6 alanda |
-| Logo alanı | 20px kare monogram (`border-radius: 2px`), accent zemin + `--accent-ink` harf; çevresinde ≥24px boşluk |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | display 96px uppercase 2 satır, diagonal accent şerit, 8/4 asimetri, tek CTA | `shots/01-page.png` |
 | Dashboard | düşük | display 44px'e iner, rotasyon 0°, KPI sayıları Anton 44px, accent ≤%6 | `shots/01-page.png` |
@@ -186,30 +189,33 @@ Hareketli tipografi (kinetic typography) 1950'lerin film jeneriklerinden (Saul B
 | Mobil form | çok düşük | tam genişlik 50px input, klavye üstü 46px CTA | `shots/01-page.png` |
 | Mobil liste | düşük | 60px satır, monogram kare baş harf (2px radius), 1px ayırıcı | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Erişilebilirlik
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 17.23:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.76:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.64:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 17.29:1 | ≥ 4.5 | button text |
+| focus ring/ground | 17.29:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 99 | ≥ 60 target | thin text |
 
-- Ölçülen en düşük çift: `--ink-faint / --bg` **3.64:1** — 10px mono etiket ve sıra numarası için; **dekoratif**, etkileşimli metin değil. Talep edilen `#6f6b64` bu eşiği geçiyor, ek koyultma gerekmedi.
-- `--ink / --bg` **17.23:1**, `--ink-soft / --bg` **7.76:1**, `--accent-ink / --accent` **17.29:1** → gövde, açıklama ve buton metni AAA.
-- `--accent` **metin rengi olarak kullanılmaz** (accent üstü `--ink` 1.00:1). Asit renk yalnız zemin/dolgu olarak, üstünde `--accent-ink`.
-- Rotasyonlu metin: yalnız display kelime ve mono etiket, açı ≤6°, punto ≥26px. Gövde metni asla döndürülmez (ekran okuyucu değil, insan gözü için risk).
-- Hareket/parlama hassasiyeti: tek atım vurgu (320ms) ve 220ms geçiş; yanıp sönen öğe yok, otomatik oynayan loop yok.
-- Opak fallback: `@supports` gerekmez (`--blur: 0`, backdrop düz renk); tüm yüzeyler opak.
-- Odak görünürlüğü: `--surface` zemininde 2px `--accent` halka 15.39:1 ile yeterli; asit buton üstünde `--ink` halka (17.23:1). Offset 2px, dokunma hedefi 44px.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Sadece büyük yazı" gibi duruyor | Ölçek atlaması var ama kesme/rotasyon katmanı yok | Ekran başına 1 diagonal şerit + 1 döndürülmüş kelime ekle |
 | Gürültülü, okunmuyor | 3+ döndürülmüş katman, her başlık 96px | Rotasyon ≤2, açı ≤6°, ikinci başlığı 32px'e indir |
 | Harfler birleşiyor | tracking `-0.04em` altı veya satır aralığı `0.88` | Geri çek: `-0.03em` ve `.95`; büyük harfte alt sınır budur, Anton'da daha aşağısı harfleri birleştirir |
@@ -221,26 +227,32 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Yazı animasyonu rahatsız ediyor | Sonsuz marquee / kinetic loop | Yalnız tek atım vurgu (320ms); `prefers-reduced-motion` zorunlu |
 | Grain leke gibi | `--grain` > .06 veya metin katmanında | `.05`, opaklık .25, yalnız zemin katmanı |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `36 constructivism` — diagonal ve uppercase display; yalnız hero katmanında, çerçeve 1px'e indirilerek. `02 swiss-design` — ızgara disiplini ve sola dayalı hiza; yalnız gövde/etiket düzeninde. `01 minimalism` — monokrom sükûnet; veri ve ayar ekranlarında accent'i %6'ya çekerek.
-- **Yasak:** `38 organic-bio` (yumuşak radius + sıcak palet, sıkılığı bozar) · `08 glassmorphism` (blur ve yarı saydamlık, gölgesiz düz yüzey kuralını kırar) · `11 claymorphism` / `10 neumorphism` (çift gölge ve pastel ton) · `04 editorial-design` (serif display ve geniş satır aralığı).
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `constructivism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `swiss-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `minimalism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `organic-bio` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `neumorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `editorial-design` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Kinetic_typography | hareketli tipografinin tanımı, Saul Bass jenerikleri, zamanlama |
-| https://fonts.google.com/specimen/Anton | display: tek ağırlık, dar grotesk, büyük harfte sıkı |
-| https://fonts.google.com/specimen/Space+Grotesk | gövde: teknik grotesk, 15px'te okunur |
-| https://fonts.google.com/specimen/Space+Mono | etiket / ölçü / mono iz |
-| https://en.wikipedia.org/wiki/International_Typographic_Style | ızgara disiplini: 12 kolon + sola dayalı hiza |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Kinetic_typography | Kinetic typography (Wikipedia) — hareketli tipografinin tanımı, Saul Bass jenerikleri, zamanlama |
+| https://fonts.google.com/specimen/Anton | Anton — display: tek ağırlık, dar grotesk, büyük harfte sıkı |
+| https://fonts.google.com/specimen/Space+Grotesk | Space Grotesk — gövde: teknik grotesk, 15px'te okunur |
+| https://fonts.google.com/specimen/Space+Mono | Space Mono — etiket / ölçü / mono iz |
+| https://en.wikipedia.org/wiki/International_Typographic_Style | International Typographic Style — ızgara disiplini: 12 kolon + sola dayalı hiza |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Kinetic Type (styles/37-kinetic-type/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="kinetic-type"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Ölçek: display clamp(28px,7vw,96px)/0.95/-0.03em uppercase (Anton); gövde Space Grotesk 15px/1.55; etiket Space Mono 10px/0.18em uppercase; atlama 96/15 = 6.4×, ara basamak eklenmez.
@@ -252,16 +264,15 @@ Bileşen: "Bileşen reçeteleri" tablosundaki değerler birebir; buton 46px mono
 Hareket: basma 90ms, geçiş 220ms (clip-path reveal), vurgu 320ms tek atım; prefers-reduced-motion zorunlu, marquee/loop yasak.
 Yasak: gölge, gradyan, blur, ikinci aksan, 3px+ çerçeve, serif display, döndürülmüş gövde metni, -0.04em altı tracking.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (dev ölçek atlaması + diagonal şerit / döndürülmüş kelime).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥4.5:1, büyük metin ≥3:1, accent üstü ≥4.5:1.
-- [ ] Odak halkası görünür (2px + 2px offset), dokunma hedefi ≥44px.
-- [ ] 390px genişlikte taşma/kırpılma yok (display `clamp` ile küçülüyor).
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor, şerit statik kalıyor.
-- [ ] Akış ≤2 döndürülmüş öğe, accent alan ≤%10, gölge yok.
+Style: Kinetic Type (kinetic-type) · family: Typographic (37–37)
+Token: --bg #0e0e10 · --surface #1b1b1f · --ink #f4f2ec · --accent #e8ff47 · --line rgba(244,242,236,.18)
+Radius: 2px / 4px · Typography: Anton / Space Grotesk / Space Mono
+Required: **Ölçek atlaması:** display `clamp(28px, 7vw, 96px)`, gövde 15px, etiket 10px. Aradaki basamaklar (32 / 44 / 60) yalnız H2 ve KPI sayısında kullanılır; ekran başına en fazla **6 punto** toplam. · **Sıkı satır aralığı:** display `line-height: .95` (en uzun 2 satır), H2 `1.0`, gövde `1.55`. Gövde metni asla `1.4` altına inmez (okunurluk). · **Negatif tracking:** display `-0.03em`, H2 `-0.02em`, gövde `0em`, mono etiket `+0.18em`. Display'de `-0.04em` altı yasak (harfler birleşir).
+Banned: İki renk arası gradyan (`linear-gradient` renk karışımı), parlama/glow, neon. · Gölge: yumuşak gölge, blok gölge, inset gölge, `drop-shadow` — istisna yok. · İkinci aksan rengi (kırmızı, turuncu, mor); asit sarı-yeşil tek başına anlam taşır.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -272,11 +283,25 @@ Yasak: gölge, gradyan, blur, ikinci aksan, 3px+ çerçeve, serif display, dönd
   --ink: #f4f2ec; --ink-soft: #a8a49b; --ink-faint: #6f6b64;
   --accent: #e8ff47; --accent-ink: #0e0e10;
   --line: rgba(244,242,236,.18);
+  --danger: #e4392b;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 2px; --radius-lg: 4px;
   --shadow: none; --shadow-hard: none;
-  --font-display: "Anton", "Archivo Black", sans-serif;
-  --font-body: "Space Grotesk", "Inter", sans-serif;
+  --font-display: "Anton", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
-  --tracking: -0.03em; --blur: 0px; --grain: .05;
+  --tracking: -0.03em; --blur: 0px; --grain: 0;
 }
 ```

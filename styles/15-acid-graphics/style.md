@@ -1,41 +1,52 @@
 # 15 · Acid Graphics
 
-> **Bir cümlede:** Siyah zemin üzerinde asit yeşili neon, genişletilmiş grotesk tipografi ve distorsiyon — tekno kültürün görsel gürültüsü.
+> **In one sentence:** Siyah zemin üzerinde asit yeşili neon, genişletilmiş grotesk tipografi ve distorsiyon — tekno kültürün görsel gürültüsü.
 
 | | |
 |---|---|
-| **Hissiyat** | keskin, agresif, tekno, "gece 3" enerjisi |
-| **En iyi** | müzik/etkinlik, moda kampanyası, kulüp, indie lansman, kültür dergisi |
-| **Kaçın** | kurumsal SaaS, sağlık, finans, uzun okuma, parlak ortam kullanımı |
-| **Zorluk** | orta · **Erişilebilirlik** | orta-yüksek risk (parlama) |
-| **Aile** | Cesur (13–18) · **Token** | `kit/tokens.css` → `[data-style="acid-graphics"]` |
-| **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | keskin, agresif, tekno, "gece 3" enerjisi |
+| **Best for** | müzik/etkinlik, moda kampanyası, kulüp, indie lansman, kültür dergisi |
+| **Avoid** | kurumsal SaaS, sağlık, finans, uzun okuma, parlak ortam kullanımı |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Bold (13–18) · **Token** | `kit/tokens.css` → `[data-style="acid-graphics"]` |
+| **Composition** | `split-reverse` · `utility` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Acid graphics, 90'lar tekno flyer estetiğinin dijital hali: **siyah zemin**, **asit yeşili** (#ccff00) vurgu, **genişletilmiş grotesk** display (Archivo Expanded/Druk Wide), **glow** ve **distortion/scanline**. Renk sayısı azdır ama kontrast maksimumdur; tipografi poster gibi davranır.
 
 Kazandığı şey: ani dikkat ve kültürel aidiyet. Feda ettiği şey: konfor ve kurumsal güven.
 
-### Ne değildir
+### What is not
 - **Neo-brutalism değildir.** Brutalism siyah *kontur* kullanır; acid'de kontur yok, **glow** var.
 - **Cyberpunk değildir.** Cyberpunk HUD/terminal anlatısı; acid sadece grafik enerji.
 - **Synthwave değildir.** Synthwave pembe/mor sunset; acid tek renk asit yeşili.
 - **"Siyah + yeşil" değildir.** Genişletilmiş tipografi + glow + grain/distortion olmadan sadece "tema" olur.
 
-### Nereden gelir
+### Where it comes from
 90'lar tekno/rave flyer'ları, fotokopi distorsiyonu ve anti-kurumsal grafik dil; 2019+ moda/müzik kampanyalarında geri döndü. Dijitalde etkinlik ve lansman sayfalarında kullanılıyor — okunabilirlik ikinci plandadır ama **kaybolmamalıdır**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin **neredeyse siyah** mı (#050505)?
 2. Tek vurgu **asit yeşili** mi (#ccff00)?
 3. Display **genişletilmiş/condensed** ve büyük harf mi?
 4. Glow (0 0 24px) veya scanline/distortion var mı?
 5. Grain (`.08`) görünür mü — poster baskısı hissi?
 
-## Zorunlu kurallar
+## Visual signature
+- **Asit yeşili blok:** buton, çizgi, tek kelime vurgusu; alan ≤ %15.
+- **Glow:** `0 0 24px rgba(204,255,0,.25)` — sadece birincil buton ve başlıkta.
+- **Scanline:** `repeating-linear-gradient` 1px/4px, opacity .06.
+- **Genişletilmiş display:** 72–96px, satır aralığı 0.9.
+- **Grain .08:** tüm zeminde.
+- **Mono etiket:** 10px, `0.2em`, uppercase.
+- **Typography:** Archivo Expanded (display) + Space Grotesk (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#ccff00`; neutral scale `#050505` → `#f2fff0`.
+- **Radius:** `0px` / `2px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Mandatory rules
 
 1. **Tek vurgu:** asit yeşili; ikinci doygun renk yok (beyaz metin sayılır).
 2. **Glow ölçülü:** tek katman `0 0 24px accent %25`; her öğede glow yok.
@@ -44,7 +55,66 @@ Kazandığı şey: ani dikkat ve kültürel aidiyet. Feda ettiği şey: konfor v
 5. **Kontrast tabanı:** asit üstünde siyah metin (17.35:1), siyah zeminde beyaz metin (19.74:1).
 6. **Hareket/parlama sınırı:** ekran başına 1 sürekli animasyon; `prefers-reduced-motion` durdurur.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#050505` | page background | as a card background |
+| `--bg-2` | `#101010` | partition divider floor, table top | button background |
+| `--surface` | `#0e0e0e` | kart, input, modal | full-page background |
+| `--surface-2` | `#161616` | passive chip, hover background | primary button |
+| `--ink` | `#f2fff0` | title, body, icon | large background |
+| `--ink-soft` | `rgba(242,255,240,.72)` | secondary text, description | — |
+| `--ink-faint` | `rgba(242,255,240,.45)` | decorative label, separator text | interactive text |
+| `--accent` | `#ccff00` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#050505` | text above accent | non-accent background |
+| `--line` | `rgba(204,255,0,.35)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **19.74:1** · `ink-soft/bg` **10.08:1** · `ink-faint/bg` **4.35:1 (decorative)** · `accent-ink/accent` **17.35:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Archivo Expanded) | 88px (mobile 40px) | 400 | 1.08 | -0.02em |
+| H2 | same | 44px | 600 | 1.2 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Space Grotesk) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Bans
 
 - İkinci neon renk (pembe/mor) — synthwave'e kayar.
 - Metni okunmaz kılan distorsiyon (gövde metninde glitch yok).
@@ -52,106 +122,44 @@ Kazandığı şey: ani dikkat ve kültürel aidiyet. Feda ettiği şey: konfor v
 - Uzun paragraf (3 satırdan fazla) asit zemin üstünde.
 - Açık tema / beyaz zemin (stilin karakteri biter).
 - Hızlı yanıp sönen animasyon (fotosensitivite riski).
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-## Görsel imza
-- **Asit yeşili blok:** buton, çizgi, tek kelime vurgusu; alan ≤ %15.
-- **Glow:** `0 0 24px rgba(204,255,0,.25)` — sadece birincil buton ve başlıkta.
-- **Scanline:** `repeating-linear-gradient` 1px/4px, opacity .06.
-- **Genişletilmiş display:** 72–96px, satır aralığı 0.9.
-- **Grain .08:** tüm zeminde.
-- **Mono etiket:** 10px, `0.2em`, uppercase.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#050505` | zemin | kart (kart `--surface`) |
-| `--bg-2` | `#101010` | ikinci zemin, bölüm | metin |
-| `--surface` | `#0e0e0e` | panel | sayfa |
-| `--surface-2` | `#161616` | hover, ikincil | vurgu |
-| `--ink` | `#f2fff0` | metin | — |
-| `--ink-soft` | `rgba(242,255,240,.72)` | açıklama | 12px altı |
-| `--ink-faint` | `rgba(242,255,240,.45)` | dekoratif (4.35:1) | etkileşimli |
-| `--accent` | `#ccff00` | CTA, çizgi, tek kelime, grafik | geniş zemin (metin boğar) |
-| `--accent-ink` | `#050505` | accent üstü metin (**17.35:1**) | — |
-| `--line` | `rgba(204,255,0,.35)` | kenarlık (asit tonlu) | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 17.35:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **19.74:1** · `ink-soft/bg` **10.08:1** · `ink-faint/bg` **4.35:1** · `accent-ink/accent` **17.35:1**.
-- Asit zemin üstünde **siyah** metin; beyaz metin asit üstünde yasak.
-- Yasak: ikinci neon, gradient zemin, pastel tonlar.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Archivo Expanded / Druk Wide | 88px (mobil 40px) | 700 | 0.9 | `0.01em`, uppercase |
-| H2 | aynı | 44px | 700 | 0.95 | `0.01em` |
-| H3 | Space Grotesk | 20px | 700 | 1.2 | `0` |
-| Gövde | Space Grotesk | 16px | 400 | 1.6 | `0` |
-| Etiket | JetBrains Mono | 10px | 500 | 1.15 | `0.2em`, uppercase |
-| Buton | Space Grotesk | 15px | 700 | 1 | `0.08em`, uppercase |
+- Signature motif: `motif-bars` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Genişletilmiş aile yoksa: Archivo Black + `transform: scaleX(1.08)` (yalnız başlıkta, `letter-spacing` azaltılarak).
-- Gövde 16px/1.6, satır 58ch; asit blok üstünde metin ≤ 2 satır.
-- Display'de 700 sabit; 400 kullanma (genişletilmiş font ince kalır, okunmaz).
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (hero 7/5) |
-| Gutter | 20px |
-| Container | 1280px |
-| Boşluk ölçeği | 4 · 8 · 16 · 24 · 40 · 64 · 96 |
-| Breakpoint | 640 / 900 / 1280 px |
-| Bölüm dikey | 88px (mobil 52px) |
-
-- Izgara sıkı: boşluk azaltılır, tipografi büyür — "poster dolu" hissi.
-- Bir bölümde en fazla 1 tam genişlik asit blok.
-- Kart aralığı 12px (sıkı); kart içi 20px.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` + grain + scanline | yok | sayfa |
-| Panel | `--surface` + 1px asit kenar | `--shadow` (glow) | kart, hero |
-| Yüzen | `--surface` | daha güçlü glow | modal |
-
-- Derinlik ışıktan (glow), ızgara gölgesinden değil.
-- Radius 0; istisna 2px (chip/input).
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 48px | 0 24px | 0 | 15/700 uppercase | `--accent` + `--accent-ink` + glow | hover: glow 32px · active: iç gölge · focus: 2px asit halka, offset 3px · disabled: %38 |
-| Buton (çerçeve) | 48px | 0 22px | 0 | 15/700 | `transparent` + 1px asit kenar, asit metin | hover: asit %10 dolgu |
-| Input | 48px | 0 14px | 2px | 15/400 | `--surface` + 1px asit kenar | focus: 2px asit halka · error: `--danger` kenar + metin |
-| Kart | içerik | 20px | 0 | H3 + 15 | `--surface` + 1px `--line` + hafif glow | hover: kenar asit %60 |
-| Chip | 26px | 0 10px | 2px | 10/500 mono | asit %12 dolgu + asit kenar | aktif: asit zemin + siyah metin |
-| Nav | 64px | 0 24px | 0 | 12/700 uppercase | `--bg` + alt 1px `--line` | aktif: asit metin |
-| Tablo satırı | 48px | 10px 12px | 0 | 14/400 mono sayı | satır altı asit %18 | hover: `--surface-2` |
-| Modal | içerik | 24px | 2px | H2 + 15 | `--surface` + güçlü glow | backdrop: `rgba(0,0,0,.7)` + scanline |
-| Toast | 44px | 0 16px | 0 | 13/700 | asit zemin + siyah metin | 3sn |
-| Grafik | — | — | 0 | eksen 10 mono | asit çizgi + asit %25 dolgu | 1 seri |
-
-- Odak halkası asit 2px, offset 3px — siyah zeminde 19:1.
-- Dokunma hedefi 48px; küçük mono etiketler tıklanabilir olmaz.
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, 22px, asit veya beyaz |
-| Fotoğraf | Yüksek kontrast, sert flash, siyah-beyaz + asit duotone |
-| İllüstrasyon | Distortion/glitch, kopya efektli |
-| Doku | grain .08 + scanline .06 |
-| Logo | Genişletilmiş, beyaz veya asit; crop serbest |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | çok yüksek | 88px genişletilmiş başlık, asit blok, glow'lu tek buton, scanline zemin | `shots/01-page.png` |
 | Dashboard | düşük | Glow ve scanline kapanır; mono sayılar + asit vurgu çizgileri | `shots/01-page.png` |
@@ -166,50 +174,61 @@ Kazandığı şey: ani dikkat ve kültürel aidiyet. Feda ettiği şey: konfor v
 | Hata | düşük | Asit yerine `--danger`; kısa metin | `shots/01-page.png` |
 | Profil / ayar | düşük | Düz liste, asit yalnız aktif durumda | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde 19.74:1, açıklama 10.08:1 → güvenli; `--ink-faint` 4.35:1 → etkileşimli değil.
-- Asit üstü siyah 17.35:1 → ideal; beyaz metin yasak.
-- **Parlama riski:** glow + scanline + grain birleşince göz yorar → ekranda 1 glow, 1 scanline.
-- Strobe/flash animasyonu yasak (fotosensitivite); yalnız yavaş scanline.
-- Odak halkası asit; siyah zeminde 19:1.
-- Gövde metni glitch/distortion'a sokulmaz; yalnız display'de 1 kez.
-- Dokunma hedefi 48px.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 19.74:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 10.08:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.35:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 17.35:1 | ≥ 4.5 | button text |
+| focus ring/ground | 17.35:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 105.4 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Migren/göz yorgunluğu | Her öğede glow + scanline + grain | 1 glow, 1 scanline; grain sabit |
 | "Synthwave" göründü | İkinci neon renk eklendi | Tek asit yeşili; pembe/mor yok |
 | Okunmuyor | Asit zemin üstünde beyaz metin | Siyah metin; alan ≤ %15 |
 | Karakter kaybı | Genişletilmiş font yerine Inter | Archivo Expanded veya scaleX(1.08) |
 | Yavaş | Sürekli animasyonlu glow | Statik glow, yalnız hover'da artış |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `22 cyberpunk` (neon + kir), `14 anti-design` (distortion), `24 pixel-art` (tekno nostalji).
-- **Yasak:** `01 minimalism` (sükûnet), `06 japandi` (yumuşaklık), `04 luxury-typography` (seyrek lüks).
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `cyberpunk` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `anti-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `pixel-art` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `minimalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `japandi` | Two different ornamental languages compete on the same screen |
+| Mixing | `luxury-typography` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.awwwards.com/websites/acid/ | Asit grafik örnekleri |
-| https://fonts.google.com/specimen/Archivo | Genişletilmiş eksen (Expanded) |
-| https://www.nngroup.com/articles/flash-animations/ | Flash/strobe riski |
+| Source | for what |
+| --- | --- |
+| https://www.awwwards.com/websites/acid/ | Awwwards · Acid — Asit grafik örnekleri |
+| https://fonts.google.com/specimen/Archivo | Archivo — Genişletilmiş eksen (Expanded) |
+| https://www.nngroup.com/articles/flash-animations/ | NN/g · Flash — Flash/strobe riski |
 
 ## AI brief
 
-```
+```text
 Stil: Acid Graphics (styles/15-acid-graphics/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="acid-graphics"]; hard-coded renk YASAK.
 Zemin: #050505 + grain .08 + 1 scanline katmanı (rgba(204,255,0,.06)).
@@ -220,15 +239,15 @@ Radius 0 (chip/input 2px). Kenarlık 1px asit %35.
 Hareket: 90–240ms, steps(4) serbest; strobe/flash YASAK; reduced-motion'da scanline kapanır.
 Yoğun ekran (form/dashboard/ödeme): glow ve scanline kapanır, asit yalnız vurgu çizgisinde.
 Çıktı: kod + tek paragraf not (asit alan oranı ve parlama önlemi).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Tek vurgu asit yeşili; ikinci neon yok.
-- [ ] Asit üstünde siyah metin; beyaz metin yok.
-- [ ] Asit alanı ≤ %15.
-- [ ] Ekranda 1 glow + 1 scanline.
-- [ ] Radius 0/2, kenarlık asit %35.
-- [ ] Strobe yok; `prefers-reduced-motion` scanline'ı durduruyor.
+Style: Acid Graphics (acid-graphics) · family: Bold (13–18)
+Token: --bg #050505 · --surface #0e0e0e · --ink #f2fff0 · --accent #ccff00 · --line rgba(204,255,0,.35)
+Radius: 0px / 2px · Typography: Archivo Expanded / Space Grotesk / JetBrains Mono
+Required: **Tek vurgu:** asit yeşili; ikinci doygun renk yok (beyaz metin sayılır). · **Glow ölçülü:** tek katman `0 0 24px accent %25`; her öğede glow yok. · **Genişletilmiş display:** Archivo Expanded/Druk Wide, uppercase, `0.01em` tracking.
+Banned: İkinci neon renk (pembe/mor) — synthwave'e kayar. · Metni okunmaz kılan distorsiyon (gövde metninde glitch yok). · Her öğede glow (ışık kirliliği).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -239,11 +258,25 @@ Yoğun ekran (form/dashboard/ödeme): glow ve scanline kapanır, asit yalnız vu
   --ink: #f2fff0; --ink-soft: rgba(242,255,240,.72); --ink-faint: rgba(242,255,240,.45);
   --accent: #ccff00; --accent-ink: #050505;
   --line: rgba(204,255,0,.35);
+  --danger: #df3426;
+  --danger-ink: #000000;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
   --shadow: 0 0 24px rgba(204,255,0,.25); --shadow-hard: none;
-  --font-display: "Archivo Expanded", "Druk Wide", "Anton", sans-serif;
-  --font-body: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-display: "Archivo Expanded", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: 0.01em; --blur: 0px; --grain: .08;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
 }
 ```

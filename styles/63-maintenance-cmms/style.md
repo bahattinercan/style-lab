@@ -1,43 +1,43 @@
 # 63 · Maintenance CMMS
 
-> **Bir cümlede:** Bakım işinin bir iş emri kâğıdı gibi okunduğu, turuncunun yalnız "acil müdahale" anlamına geldiği koyu saha arayüzü.
+> **In one sentence:** Bakım işinin bir iş emri kâğıdı gibi okunduğu, turuncunun yalnız "acil müdahale" anlamına geldiği koyu saha arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | sağlam, acil, teknik, dürüst |
-| **En iyi** | bakım yönetimi (CMMS), arıza/iş emri takibi, varlık & envanter, saha teknisyeni tableti |
-| **Kaçın** | tüketici vitrini, açık zemin pazarlama sayfası, çocuk/wellness — koyu mat dil burada "kirli" görünür |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 7.40:1) |
-| **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="maintenance-cmms"]` |
-| **Kompozisyon** | `split` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | sağlam, acil, teknik, dürüst |
+| **Best for** | bakım yönetimi (CMMS), arıza/iş emri takibi, varlık & envanter, saha teknisyeni tableti |
+| **Avoid** | tüketici vitrini, açık zemin pazarlama sayfası, çocuk/wellness — koyu mat dil burada "kirli" görünür |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Industrial (56–65) · **Token** | `kit/tokens.css` → `[data-style="maintenance-cmms"]` |
+| **Composition** | `split` · `split` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Maintenance CMMS, arayüzü bir **iş emri formu** gibi kurar: iş numarası, makine, öncelik, SLA, atanan kişi, adımlar. Koyu mat yüzey sahada parlamayı azaltır; turuncu accent yalnız acil müdahale ve birincil eylemi işaretler — dekorasyon değildir.
 
 Üç kurucu karar: (1) **üç aile, üç iş** — başlık Chakra Petch (kesik köşeli teknik yazı), gövde Space Grotesk, mono Courier Prime (daktilo iş emri hissi); (2) **kart = kâğıt** — iş emri kartının üstünde 4px delikli şerit, solda mono iş no, sağda öncelik çipi; (3) **adım zorunluluğu** — adımlar numaralı ve onay kutulu, sıra atlanamaz; "yapıldı" işareti olmadan ilerleme yok.
 
 Bedeli: geniş ekranda koyu yüzey ağırdır; bunu taşıyan şey **tek yönlü alt gölge** ve kart başlığındaki mono künyedir, süs değil.
 
-### Ne değildir
+### What is not
 - **Terminal UI (45) değildir:** terminal tek mono ailedir ve yeşil accent kullanır; bu stilde başlık Chakra Petch, gövde Space Grotesk, accent turuncudur ve radius 6/10px'tir.
 - **Scandinavian Dark (40) değildir:** o stil sessiz lüks için geniş boşluk ve ince çizgi kullanır; burada yoğunluk yüksektir, kart 18px padding, satır 44px.
 - **Utility (44) değildir:** Utility açık zeminli ürün arayüzüdür; bu stil koyu saha arayüzüdür ve iş emri metaforu taşır.
 - **Glassmorphism (08) değildir:** cam/blur yasak; derinlik tek yönlü alt gölgeyle kurulur, yüzey mat.
 
-### Nereden gelir
+### Where it comes from
 Bakım atölyesi geleneğinden: daktilo/presli iş emri kâğıdı, makine künyesi, güvenlik kilidi etiketi (LOTO), vardiya defteri. Bugün yeniden kullanılmasının nedeni: CMMS'ler hâlâ teknisyen tarafından tek elle, eldivenle, gürültülü ortamda kullanılıyor; parlak beyaz arayüz eldiven ve gres altında okunmuyor. Klişeye dönüşmemesi için korunacak detay: **mono daktilo künyesi + adım onayı** ve turuncunun yalnız aciliyet anlamına gelmesi.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin koyu mat; yalnız **tek yönlü alt gölge** var, glow/cam yok.
 2. Kart başlığında delikli (dots) 4px şerit ve solda mono iş numarası (`WO-2481`).
 3. Turuncu yalnız acil/öncelik ve birincil butonda; ikinci bir doygun renk yok.
 4. Adımlar numaralı ve onay kutulu; ilerleme çubuğu 8px ve sert köşeli.
 5. Öncelik çipi `ACİL` / `YÜKSEK` / `PLANLI` / `TAMAM` olarak büyük harf mono.
 
-## Görsel imza
+## Visual signature
 - **Delikli kart şeridi:** iş emri kartının üstünde 4px yüksekliğinde `--accent` 16px nokta deseni (`--surface-2` zemin).
 - **Mono künye:** iş no, makine kodu, tarih — 12px Courier Prime, büyük harf, `0.14em` aralık, sol sütunda hizalı.
 - **Tek yönlü gölge:** `0 2px 6px rgba(0,0,0,.35)` — yalnız aşağı; ışık yönü tek, gölge asla iki yana dağılmaz.
@@ -45,101 +45,124 @@ Bakım atölyesi geleneğinden: daktilo/presli iş emri kâğıdı, makine küny
 - **Acil halka:** geciken/CRITICAL işte kart `box-shadow: var(--shadow-hard)` = 2px turuncu dış halka; renk dışında metin de yazar.
 - **Kesik köşe tipografisi:** Chakra Petch'in kesik köşeleri başlıklarda; gövde Space Grotesk ile yumuşar, mono künye daktilo etkisi verir.
 - **Ölçüm birimi disiplini:** sıcaklık/basınç/tork değerleri mono, birim ayrı ve küçük harf (`°C`, `bar`, `Nm`).
+- **Typography:** Chakra Petch (display) + Space Grotesk (body) + Courier Prime (mono label).
+- **Colour discipline:** a single accent `#ff8a3d`; neutral scale `#17191a` → `#ece9e3`.
+- **Radius:** `6px` / `10px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#17191a` | sayfa zemini (atölye) | kart zemini |
-| `--bg-2` | `#1e2122` | bölüm bandı, input zemini | birincil buton |
-| `--surface` | `#222628` | iş emri kartı, panel | sayfa zemini |
-| `--surface-2` | `#2b3032` | mono künye şeridi, chip, ray | metin zemini |
-| `--ink` | `#ece9e3` | metin, başlık | dekoratif dolgu |
-| `--ink-soft` | `#a9a8a2` | ikincil metin, etiket | accent dolgu üstü |
-| `--ink-faint` | `#7a7b77` | künye etiketi, ayırıcı | gövde, etkileşimli metin |
-| `--accent` | `#ff8a3d` | acil/öncelik, birincil eylem, odak | dekorasyon, ikinci vurgu |
-| `--accent-ink` | `#1a0f05` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(236,233,227,.16)` | 1px çerçeve, satır ayırıcı | metin |
+1. Her iş emri tek kart: iş no + makine + öncelik + SLA + atanan kişi
+2. Öncelik hem chip rengiyle hem metinle (ACİL / YÜKSEK / PLANLI / TAMAM)
+3. Adımlar numaralı ve onay kutulu; adım atlanamaz, sıra görünür
+4. Karanlık mat yüzey: gölge yalnız tek yönlü alt gölge; cam/blur yok
+5. Makine kimliği mono (Courier Prime) ve büyük harf; metin gövdesi Space Grotesk 500
+6. Her ekranda 'iş emri aç' birincil eylemi görünür
 
-- Ölçülen kontrast: `ink/bg` **14.56:1** · `ink-soft/bg` **7.40:1** · `accent-ink/accent` **8.04:1** · `ink-faint/bg` **4.14:1** · accent metin olarak bg'ye **7.52:1**.
-- Tek vurgu kuralı: turuncu yalnız aciliyet ve birincil eylem. Durumlar `--warn` (sarı), `--ok` (yeşil), `--danger` (kırmızı) — üçü de yalnız etiket ve ince şerit olarak.
-- Yasak kombinasyon: turuncu ile sarı yan yana (aciliyet ayrımı kaybolur); turuncu üstünde `--ink` (kontrast düşük); koyu zeminde 1px'lik doygun renk çizgi.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#17191a` | page background | as a card background |
+| `--bg-2` | `#1e2122` | partition divider floor, table top | button background |
+| `--surface` | `#222628` | kart, input, modal | full-page background |
+| `--surface-2` | `#2b3032` | passive chip, hover background | primary button |
+| `--ink` | `#ece9e3` | title, body, icon | large background |
+| `--ink-soft` | `#a9a8a2` | secondary text, description | — |
+| `--ink-faint` | `#7a7b77` | decorative label, separator text | interactive text |
+| `--accent` | `#ff8a3d` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#1a0f05` | text above accent | non-accent background |
+| `--line` | `rgba(236,233,227,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Chakra Petch | 38px | 600 | 1.08 | 0 |
-| H2 | Chakra Petch | 24px | 600 | 1.20 | 0.01em |
-| H3 | Space Grotesk | 18px | 700 | 1.25 | 0 |
-| Gövde | Space Grotesk | 15px | 500 | 1.60 | 0 |
-| Etiket / mono | Courier Prime | 11px | 400 | 1.35 | 0.16em, büyük harf |
-| İş no / ölçüm | Courier Prime | 12–13px | 400 | 1.4 | 0.14em, tabular |
+- Measured contrast: `ink/bg` **14.56:1** · `ink-soft/bg` **7.4:1** · `ink-faint/bg` **4.14:1 (decorative)** · `accent-ink/accent` **8.04:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.6 (15 → 24 → 38); kullanılan basamaklar: 11 · 12 · 15 · 18 · 24 · 38 · (mobil 26).
-- Ölçü önerisi: `h1 { font-size: clamp(26px, 3.6vw, 38px) }`.
-- Gövde metni maksimum satır uzunluğu: 64ch; iş adımı metni 48ch'te kırılır.
-- Ağırlık kuralı: Chakra Petch 600, Space Grotesk 500/700, mono 400. Space Grotesk'in 400'ü yok — sahte ince üretme; italik yasak.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Chakra Petch) | 26px (mobile 26px) | 400 | 1.08 | -0.02em |
+| H2 | same | 24px | 600 | 1.2 | -0.015em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Space Grotesk) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier Prime) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 · iş kartı 5/7, dashboard 3 sütun |
-| Gutter | 16px |
-| Container genişliği | 1200px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 üstü 12 kolon · 768–1200 8 kolon · 768 altı tek kolon, iş kartı tam genişlik |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına en fazla 1 asimetrik blok (5/7 iş kartı).
-- Bölüm ritmi: 48px masaüstü / 32px mobil; art arda en fazla 3 kart, sonra 1px ayırıcı + bölüm etiketi.
-- Kart içi: 18px padding; mono künye şeridi 8px 12px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, input zemini |
-| Kart | `--surface` + 1px `--line` | `var(--shadow)` tek yönlü | iş emri kartı, panel |
-| Yüzen katman | `--surface` + 1px `--line` | `var(--shadow)` + 0 32px 64px -40px | modal, açılır menü |
-| Acil katman | `--surface` + `--shadow-hard` | 2px turuncu dış halka | geciken/CRITICAL iş |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; acil durumda gölge yerine 2px halka (`--shadow-hard`).
-- Derinlik nereden gelir: tek yönlü alt gölge + zemin tonu farkı; iç gölge, cam, blur yok.
-- Radius: `--radius` 6px (buton, input, chip), `--radius-lg` 10px (kart, modal). 10px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 40px | 8px 18px | `--radius` | 13px/700 Space Grotesk | `--accent` + `--accent-ink`, `var(--shadow)` | hover %90 · active 2px aşağı · focus 2px warn halka · disabled %45 · loading dönen pul |
-| Buton (ikincil) | 40px | 8px 16px | `--radius` | 13px/700 Space Grotesk | `--surface-2` + 1px `--line` | hover çerçeve `--ink-soft` · focus warn halka |
-| Input | 40px | 0 12px | `--radius` | 14px Courier Prime | `--bg-2` + 1px `--line` | focus 2px accent halka + sol 3px şerit · error `--danger` + açıklama · disabled %45 |
-| Kart (iş emri) | — | 18px | `--radius-lg` | başlık 18px Space Grotesk 700 | `--surface`, `var(--shadow)` | üstte 4px delikli accent şerit · acil: 2px turuncu halka |
-| Chip (öncelik) | 24px | 0 10px | 6px | 11px Courier Prime 0.14em | `--surface-2` + 1px `--line` | ACİL accent dolgu · YÜKSEK warn çerçeve · PLANLI line · TAMAM ok |
-| Nav (üst bar) | 52px | 0 28px | 0 | 13px Space Grotesk 500 | `--bg` + alt 1px `--line` | aktif 3px accent alt çizgi · sağda açık iş sayacı |
-| Tablo satırı | 44px | 8px 12px | 0 | 13px gövde + 12px mono iş no | alt 1px `--line` | hover `--surface-2` · geciken: sol 3px danger şerit |
-| Modal | — | 22px | `--radius-lg` | başlık 24px Chakra Petch | `var(--shadow)` + derin alt gölge | adımlar numaralı, onay kutulu, `esc` |
-| Toast | 40px | 8px 14px | `--radius` | 12px Courier Prime | `--surface`, sol 4px accent şerit | 5sn · eylem düğmesi olabilir · hover'da durur |
-| Grafik | — | — | 0 | eksen 11px mono | `--data-1…4`, eşik 1px kesikli warn | MTBF/MTTR çizgisi 2px, alan dolgusu %8 |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `6px` (buton, input, chip), `10px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--warn); outline-offset: 2px` — turuncu dolgulu butonda `outline-color: var(--accent-ink)`.
-- Dokunma hedefi: 44×44px (eldiven); 40px buton dikey padding ile 44px'e tamamlanır.
-- Adım onayı: 24×24px kutu, 44px dokunma alanı; onaylandığında 2px `--ok` çerçeve + `tamam` mono etiketi.
+## Bans
 
-## Görsel dil
+- Açık/beyaz zemin, 10px üstü radius, hap buton.
+- Neon çok renk, gradient, glow, cam/blur, grain.
+- Turuncu ile sarıyı yan yana kullanmak; turuncu üstünde `--ink`.
+- Onaysız adım geçişi, sadece renkle öncelik bildirimi.
+- Sürekli dönen ikon (yükleme göstergesi dışında), parallax, bounce.
+- İkinci mono aile, el yazısı, italik.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, 22px ızgara, 6px köşe; anahtar, pul, çark, uyarı üçgeni |
-| Fotoğraf | makine parçası/etiket, karanlık stüdyo tonu, tek turuncu vurgu, max %30 alan |
-| İllüstrasyon | yalnız şema: makine kesiti, yağlama noktaları, enerji kesme zinciri |
-| Doku | yok (`--grain: 0`); delikli panel deseni yalnız kart başlığı şeridinde |
-| Logo alanı | Chakra Petch 600 küçük harf sözcük logosu, sol üst 24px; mono varyant iş emri kartında |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 6px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 6px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 6px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 6px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 6px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 6px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 6px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.52:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 5/7 hero: solda başlık + tek CTA, sağda açık iş emri kartı | `shots/01-page.png` |
 | Dashboard | çok yüksek | 4 KPI (açık iş, geciken, MTTR, uyum) + iş kuyruğu | `shots/01-page.png` |
@@ -154,43 +177,33 @@ Bakım atölyesi geleneğinden: daktilo/presli iş emri kâğıdı, makine küny
 | Hata | düşük | danger çerçeve + neden + tekrar dene; veri korunur | `shots/01-page.png` |
 | Profil / ayar | yüksek | varlık listesi, bakım aralığı, bildirim eşikleri | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Her iş tek kart: iş no (mono) + makine + öncelik + SLA + atanan kişi.
-- Öncelik hem renk hem metinle: `ACİL` / `YÜKSEK` / `PLANLI` / `TAMAM`.
-- Adımlar numaralı, onay kutulu ve sıralı; adım atlanamaz.
-- Gölge tek yönlü (aşağı); cam/blur/glow yok. Acil durum gölge değil 2px halka.
-- Mono künye büyük harf `0.14em`; gövde Space Grotesk 500, 15px taban.
-- Dokunma hedefi 44px; birincil eylem "iş emri aç" her ekranda görünür.
+## Accessibility
 
-## Yasaklar
-- Açık/beyaz zemin, 10px üstü radius, hap buton.
-- Neon çok renk, gradient, glow, cam/blur, grain.
-- Turuncu ile sarıyı yan yana kullanmak; turuncu üstünde `--ink`.
-- Onaysız adım geçişi, sadece renkle öncelik bildirimi.
-- Sürekli dönen ikon (yükleme göstergesi dışında), parallax, bounce.
-- İkinci mono aile, el yazısı, italik.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 14.56:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.4:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.14:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 8.04:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.52:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 92.5 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
-- Gövde ≥ 4.5:1, büyük metin ≥ 3:1; ölçülen en düşük etkileşimli çift 7.40:1 (`ink-soft/bg`).
-- `--ink-faint` 4.14:1 — künye etiketi ve ayırıcı; gövde metni olarak kullanılmaz.
-- Turuncu metin olarak 7.52:1, dolgu olarak `--accent-ink` ile 8.04:1 — ikisi de geçer.
-- Öncelik yalnız renkle anlatılmaz: chip metni + sol şerit + (geciken işte) SLA süresi.
-- Odak görünürlüğü: koyu zeminde 2px `--warn` halka; turuncu dolgulu butonda `--accent-ink` halka ile çevrilir (turuncu halka turuncu butonda kaybolur).
-- 390px'te kart tam genişlik, tablo karta dönüşür; yatay kaydırma yok.
-- `prefers-reduced-motion` açıkken giriş, adım onayı ve dönen pul durur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Oyuncu arayüzü" hissi | glow/neon eklendi | turuncu düz dolgu, glow yasak |
 | Kartlar birbirine yapışıyor | gölge iki yana dağılmış | tek yönlü alt gölge + 16px gutter |
 | Aciliyet kayboluyor | turuncu + sarı birlikte | sarı yalnız uyarı etiketi, turuncu yalnız acil/eylem |
@@ -199,30 +212,30 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Sahada dokunamıyor | 32px buton | 40px görsel + 44px hedef |
 | Daktilo etkisi "eski" görünüyor | her metinde mono | mono yalnız künye/ölçüm, gövde Space Grotesk |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `terminal-ui` — aynı teknik koyu dil; log/CLI yüzeyi olarak yan yana konur.
-- **Uyumlu:** `scandinavian-dark` — sakin koyu zemin; rapor/özet ekranlarında eş.
-- **Uyumlu:** `utility` — açık zeminde dokümantasyon ve pazarlama sayfaları için tamamlayıcı.
-- **Yasak:** `claymorphism` — yumuşak yuvarlak dil ve pastel gölge bakım ciddiyetini bozar.
-- **Yasak:** `glassmorphism` — cam/blur sahada parlama ve okunmazlık üretir.
-- **Yasak:** `dopamine-ui` — çok renkli enerji, tek accent/aciliyet kuralını yok eder.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `terminal-ui` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `scandinavian-dark` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.osha.gov/control-hazardous-energy | bakım öncesi enerji kesme (LOTO) adımları ve etiket dili |
-| https://www.isa.org/standards-and-publications | ISA-95/ISA-99 varlık ve bakım terminolojisi |
-| https://en.wikipedia.org/wiki/Computerized_maintenance_management_system | iş emri, önleyici bakım ve SLA kavramları |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | koyu zeminde metin kontrastı ölçütü |
-| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | odak halkası görünürlüğü |
+| Source | for what |
+| --- | --- |
+| https://www.osha.gov/control-hazardous-energy | OSHA · Control of Hazardous Energy (LOTO) — bakım öncesi enerji kesme (LOTO) adımları ve etiket dili |
+| https://www.isa.org/standards-and-publications | ISA · standartlar ve yayınlar — ISA-95/ISA-99 varlık ve bakım terminolojisi |
+| https://en.wikipedia.org/wiki/Computerized_maintenance_management_system | CMMS · kavramsal çerçeve — iş emri, önleyici bakım ve SLA kavramları |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast (Minimum) — koyu zeminde metin kontrastı ölçütü |
+| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | www.w3.org — odak halkası görünürlüğü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Maintenance CMMS (styles/63-maintenance-cmms/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="maintenance-cmms"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Chakra Petch 600) yalnız H1/H2 ve modal başlığı; --font-body (Space Grotesk 500/700) gövde;
@@ -237,16 +250,15 @@ Hareket: enter 0.55s cubic-bezier(.4,0,.2,1) 26px stagger 0.09 · scroll top 72%
   pin kapalı · hover 260ms scale 1.018; prefers-reduced-motion zorunlu.
 Yasak: açık zemin, 10px üstü radius, glow/neon, cam/blur, turuncu+sarı yan yana, onaysız adım, bounce.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Kart üstünde delikli şerit ve mono iş no var.
-- [ ] Öncelik hem renk hem metinle; turuncu yalnız acil/eylem.
-- [ ] Adımlar numaralı ve onay kutulu.
-- [ ] Kontrast: gövde ≥ 4.5:1, accent üstü ≥ 4.5:1, `--ink-faint` yalnız dekoratif.
-- [ ] Odak halkası görünür (turuncu butonda accent-ink), dokunma hedefi ≥ 44px.
-- [ ] 390px'te taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Maintenance CMMS (maintenance-cmms) · family: Industrial (56–65)
+Token: --bg #17191a · --surface #222628 · --ink #ece9e3 · --accent #ff8a3d · --line rgba(236,233,227,.16)
+Radius: 6px / 10px · Typography: Chakra Petch / Space Grotesk / Courier Prime
+Required: Her iş emri tek kart: iş no + makine + öncelik + SLA + atanan kişi · Öncelik hem chip rengiyle hem metinle (ACİL / YÜKSEK / PLANLI / TAMAM) · Adımlar numaralı ve onay kutulu; adım atlanamaz, sıra görünür
+Banned: Açık/beyaz zemin, 10px üstü radius, hap buton. · Neon çok renk, gradient, glow, cam/blur, grain. · Turuncu ile sarıyı yan yana kullanmak; turuncu üstünde `--ink`.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -257,15 +269,25 @@ Yasak: açık zemin, 10px üstü radius, glow/neon, cam/blur, turuncu+sarı yan 
   --ink: #ece9e3; --ink-soft: #a9a8a2; --ink-faint: #7a7b77;
   --accent: #ff8a3d; --accent-ink: #1a0f05;
   --line: rgba(236,233,227,.16);
+  --danger: #eb4232;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 6px; --radius-lg: 10px;
-  --shadow: 0 2px 6px rgba(0,0,0,.35); --shadow-hard: 0 0 0 2px rgba(255,138,61,.32);
+  --shadow: 0 2px 6px rgba(0,0,0,.35); --shadow-hard: none;
   --font-display: "Chakra Petch", system-ui, sans-serif;
   --font-body: "Space Grotesk", system-ui, sans-serif;
   --font-mono: "Courier Prime", ui-monospace, monospace;
   --tracking: 0em; --blur: 0px; --grain: 0;
-  --danger: #ff6b5e; --danger-ink: #1c0806;
-  --ok: #6fd08c; --warn: #f0c04a;
 }
 ```
-
-Koyu mod bloğu `styles/63-maintenance-cmms/token-block.css` ve (integrator aktardığında) `kit/tokens.css` içinde `[data-theme="dark"][data-style="maintenance-cmms"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

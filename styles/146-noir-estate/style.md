@@ -1,21 +1,20 @@
 # 146 · Noir Estate
 
-> **Bir cümlede:** Gece çekilmiş bir mimari fotoğraf gibi: sıcak siyah zemin, ince altın çizgi, cam gezinme çubuğu ve 0.88s perde girişi — prestij ışıktan değil, ışığın azlığından gelir.
+> **In one sentence:** Gece çekilmiş bir mimari fotoğraf gibi: sıcak siyah zemin, ince altın çizgi, cam gezinme çubuğu ve 0.88s perde girişi — prestij ışıktan değil, ışığın azlığından gelir.
 
 | | |
 |---|---|
-| **Hissiyat** | sinematik · pahalı · sessiz · davetkâr |
-| **En iyi** | Lüks emlak ve rezidans, butik otel rezervasyonu, özel müşteri portföyü (concierge), premium otomotiv vitrini |
-| **Kaçın** | Yoğun veri tablosu, klinik/randevu formu, çocuk ürünü, düşük bant genişliğinde video-ağırlıklı sayfa |
-| **Zorluk** | yüksek · **Erişilebilirlik** | orta risk (koyu zemin + altın vurgu ölçülmeden yazılırsa düşer) |
-| **Aile** | Sahne & Prestij (146–151) · **Token** | `kit/tokens.css` → `[data-style="noir-estate"]` (bu klasördeki `token-block.css`) |
-| **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | sinematik · pahalı · sessiz · davetkâr |
+| **Best for** | Lüks emlak ve rezidans, butik otel rezervasyonu, özel müşteri portföyü (concierge), premium otomotiv vitrini |
+| **Avoid** | Yoğun veri tablosu, klinik/randevu formu, çocuk ürünü, düşük bant genişliğinde video-ağırlıklı sayfa |
+| **Difficulty** | yüksek · **Accessibility** |  |
+| **Family** | Stage & Prestige (146–151) · **Token** | `kit/tokens.css` → `[data-style="noir-estate"]` |
+| **Composition** | `fullbleed` · `pill` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-
+### What it is
 Noir Estate, ekranı bir gece mimari fotoğrafı gibi kurar: zemin neredeyse siyah (#0d0b09, kahve-altı sıcaklıkta), tek aydınlık katman hero fotoğrafı, tek vurgu rengi altın (#d3af62). Arayüzün geri kalanı bu iki kutup arasında çalışır; gri tonlar pantone değil, fotoğrafın kendi gölgelerinden türetilmiş gibi davranır.
 
 Hiyerarşiyi kalınlık değil ölçek ve ışık kurar: 56px Cormorant Garamond başlık, 15px Jost gövde, 10px harf aralıklı mono etiket. Cam gezinme çubuğu (blur 18px, %55 saydam yüzey) sayfayı kapatmaz, fotoğrafın üstünde yüzer; altın yalnız 1px çizgi, ince çerçeve ve birincil eylemde görünür.
@@ -24,120 +23,148 @@ Kart yüzeyleri 16px köşeli, 1px var(--line) çerçeveli ve gölgesizdir; deri
 
 Hareket tek bir perde açılışıyla sınırlıdır: 0.88s `blur-in`, 14px yükselme, 60ms kademe. Hero fotoğrafı scroll ile 2 katman parallax yapar (metin 1x, fotoğraf 0.86x); pin yalnız "öne çıkan portföy" bölümünde açıktır (scrub 1.22, +165%). Hover 260ms ve 1.014 ölçek — fark edilir ama sarsmaz.
 
-### Ne değildir
-
+### What is not
 - Glassmorphism (08) değildir: cam yalnız gezinme çubuğunda, tek katman; kartlar mat ve opak.
 - Luxury Typography (04) değildir: o stil krem kâğıt üzerinde açık tema ile çalışır, burada taban siyah ve fotoğraf hero.
 - Brass Copper (128) değildir: 128 gravür/pirinç plaka dilidir ve gloss yasaktır; burada altın ince çizgi + tek yönlü ışık parlaması serbesttir.
 - Art Deco (41) değildir: simetrik süs ve fan motifi yok; asimetri hero fotoğrafının kadrajından gelir.
 - Karanlık mod SaaS vitrini (151) değildir: orada vurgu soğuk cyan ve tipografi geniş/teknolojik, burada altın ve serif.
 
-### Nereden gelir
-
+### Where it comes from
 Kök, gece mimari fotoğrafçılığı ve gayrimenkul vitrin kataloglarıdır: fotoğrafı kesmeyen cam gezinme, altın ince çizgi, harf aralıklı mono künye. Bugün tekrar kullanılmasının nedeni, koyu zeminde tek bir sıcak vurgunun (altın) hem lüks hem okunabilirlik üretmesi: altın `--accent-ink` ile birlikte 9:1 üstü kontrast verir, yani süs değil işlev üstlenir.
 
-### 3 saniyede tanıma testi
-
+### Recognition test in 3 seconds
 1. Zemin siyah ama soğuk değil: `--bg` #0d0b09 (R>G>B), mavi-gri koyu değil.
 2. Hero tam kanama fotoğraf + üstünde cam gezinme çubuğu (blur 18px, hap radius).
 3. Altın yalnız üç yerde: 1px ayırıcı, ince çerçeve, birincil buton dolgusu. Rölyef/gloss yok.
 4. Başlık serif ve cümle düzeninde (Cormorant Garamond 300/500); büyük harf başlık yok.
 5. Kart köşesi 16px, gölge yok, fotoğraf kartın içinde tam kanama.
 
-## Görsel imza
-
+## Visual signature
 - Hero: `fullbleed` arketip; fotoğrafın üstünde `linear-gradient(180deg, rgba(8,6,5,.15), rgba(8,6,5,.72))` scrim, metin sol altta 12 kolonun 5'inde.
 - Cam gezinme çubuğu: `backdrop-filter: blur(18px) saturate(1.25)`, zemin `color-mix(in srgb, var(--bg) 55%, transparent)`, 1px `--line` alt çizgi, hap radius.
 - Altın ince çizgi: bölüm başlıklarının üstünde 32px uzunlukta 1px `--accent`; tam genişlik çizgi yok.
 - Künye etiketi: 10px mono, `.22em` aralık, büyük harf, `--accent`; önünde 24px altın çizgi.
 - Kart: 16px radius, 1px `--line`, `--surface`, gölge yok; hover'da görsel `scale(1.014)` ve çerçeve `--accent` %45.
 - Birincil buton: dikey altın gradient (%100 → %92 açık), `--accent-ink` metin, 6px radius, 48px yükseklik.
+- **Typography:** Cormorant Garamond (display) + Jost (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#d3af62`; neutral scale `#0d0b09` → `#f5f0e7`.
+- **Radius:** `6px` / `16px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#0d0b09` | sayfa zemini; hero fotoğrafının dışındaki her alan | ikinci bir zemin tonu olarak (bg-2 vardır) |
-| `--bg-2` | `#070605` | gezinme, footer, bölüm ayırıcı bandı | kart yüzeyi olarak |
-| `--surface` | `#171310` | kart, panel, arama çubuğu gövdesi | tam kanama bölüm |
-| `--surface-2` | `#211b15` | seçili chip, ikincil buton, tablo başlığı | hero metin zemini |
-| `--ink` | `#f5f0e7` | başlık ve gövde metni | dekoratif çizgi |
-| `--ink-soft` | `#c7bca9` | gövde ikincil metin, kart açıklaması | 12px altı etiket |
-| `--ink-faint` | `#8f8574` | künye, birim, zaman damgası | gövde metni |
-| `--accent` | `#d3af62` | birincil buton, ince çizgi, aktif sekme, fiyat | geniş yüzey dolgusu, gradient arka plan |
-| `--accent-ink` | `#170f04` | altın dolgu üzerindeki metin | altın olmayan zeminde |
-| `--line` | `rgba(245,240,231,.14)` | 1px çerçeve ve ayırıcı | 2px ve üstü kalın kural |
+1. Hero tam kanama gece fotoğrafı + scrim; metin sol altta 5/12 kolonda.
+2. Cam (blur) yalnız gezinme çubuğunda; altında opak `--bg-2` katmanı.
+3. Altın üç yerle sınırlı: 1px çizgi, ince çerçeve, birincil buton dolgusu.
+4. Kart radius 16px, gölge yok, 1px `--line` çerçeve.
+5. Cormorant Garamond 300 başlık, cümle düzeni; büyük harf gövde yok.
+6. Fiyat ve m² mono tabular, sağa hizalı.
 
-- Ölçülen kontrast (`kit/color.mjs`): `ink/bg` **17.31:1** · `ink-soft/bg` **10.47:1** · `accent-ink/accent` **9.11:1** · `ink-faint/bg` **5.40:1** · accent metin olarak bg'ye **9.43:1** · APCA Lc **98**.
-- Tek vurgu kuralı: altın (`--accent`) yalnız eylem, seçim ve fiyat için; ikinci bir sıcak ton kullanılmaz. Gövde metni gri değil, fotoğrafın sıcaklığını taşıyan `--ink-soft` (#c7bca9).
-- Yasak kombinasyon: altın üstüne beyaz metin, neon accent, mor-mavi gradient, dörtten fazla gri tonu
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0d0b09` | page background | as a card background |
+| `--bg-2` | `#070605` | partition divider floor, table top | button background |
+| `--surface` | `#171310` | kart, input, modal | full-page background |
+| `--surface-2` | `#211b15` | passive chip, hover background | primary button |
+| `--ink` | `#f5f0e7` | title, body, icon | large background |
+| `--ink-soft` | `#c7bca9` | secondary text, description | — |
+| `--ink-faint` | `#8f8574` | decorative label, separator text | interactive text |
+| `--accent` | `#d3af62` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#170f04` | text above accent | non-accent background |
+| `--line` | `rgba(245,240,231,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Cormorant Garamond | 56px (mobil 32px) | 300 | 1.06 | .01em |
-| H2 | Cormorant Garamond | 26px | 300 | 1.18 | .01em |
-| H3 | Cormorant Garamond | 19px | 300 | 1.18 | .01em |
-| Gövde | Jost | 15px | 400 | 1.6 | 0 |
-| Küçük | Jost | 13px | 400 | 1.6 | 0 |
-| Etiket / mono | JetBrains Mono | 10px | 400 | 1.4 | .22em |
+- Measured contrast: `ink/bg` **17.31:1** · `ink-soft/bg` **10.47:1** · `ink-faint/bg` **5.4:1 (decorative)** · `accent-ink/accent` **9.11:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek: 1.25 oranı (10 · 13 · 15 · 19 · 26 · 56); 5 basamak gerçekten kullanılıyor, 13px altı yalnız etiket.
-- Ölçü: 62ch; `h1 { font-size: clamp(32px, 4vw, 56px) }`.
-- Yasak: Cormorant 300/500 dışı ağırlık (ailesi ince kesim içermez) · Büyük harf gövde metni · 13px altı gövde · Altın üstüne beyaz metin · Geometrik/mono display.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Cormorant Garamond) | 32px (mobile 32px) | 400 | 1.04 | -0.02em |
+| H2 | same | 26px | 600 | 1.16 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 15px | 400 | 1.68 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 24px |
-| Container genişliği | 1280px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Bölüm ritmi | 80px (mobil 44px) |
-| Kart içi | 24px |
-| Breakpoint | sm 390 / md 768 / lg 1200px |
-| Asimetri | hero 5/7 (metin solda dar, fotoğraf sağda geniş); diğer bölümler simetrik, ekran başına 1 asimetrik blok. |
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Yüzey ve derinlik
+## Grid and space
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa ve bölüm zemini |
-| Kart | `--surface` | none | portföy kartı, panel, arama gövdesi |
-| Yüzen katman | `--surface` + `--blur` | `--shadow` | cam gezinme, modal, açılır menü |
-| Vurgu katmanı | `--surface-2` | `--shadow-hard` (1px altın halka) | öne çıkan portföy kartı |
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-Derinlik fotoğraftan gelir: kartlarda gölge yok, yalnız 1px çerçeve. Gölge sadece yüzen katmanda (cam çubuk, modal, menü).
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
 
-## Bileşen reçeteleri
+## Surface and depth
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge |
-|---|---|---|---|---|---|
-| Buton (birincil) | 48px | 12px 26px | var(--radius) | 12px/600 Jost, .12em, büyük harf | linear-gradient(180deg, color-mix(in srgb, var(--accent) 92%, var(--ink)), var(--accent)) var(--accent-ink) |
-| Buton (ikincil) | 48px | 12px 22px | var(--radius) | 12px/600 Jost, .12em, büyük harf | transparent / var(--ink) |
-| Input | 48px | 0 14px | var(--radius) | 15px/400 Jost | var(--bg-2) + 1px solid var(--line) |
-| Kart | — | 24px | var(--radius-lg) | 15px Jost | var(--surface) / 1px solid var(--line) |
-| Chip / badge | 24px | 0 10px | 999px | 10px/400 JetBrains Mono, .16em, büyük harf | color-mix(in srgb, var(--bg) 62%, transparent) / 1px solid var(--line) |
-| Nav | 64px | 0 24px | — | 11px mono .18em | color-mix(in srgb, var(--bg) 55%, transparent) + blur(18px) / 1px solid var(--line) |
-| Tablo satırı | 56px | 8px 14px | — | 15px Jost | alt 1px var(--line) |
-| Modal / sheet | — | 28px | var(--radius-lg) | Cormorant Garamond 300/500 | 1px solid color-mix(in srgb, var(--accent) 45%, transparent) + var(--shadow) |
-| Toast | 40px | 10px 14px | var(--radius) | 12px/400 JetBrains Mono | sol 3px altın şerit; sağ üst, üst üste 2 |
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-## Görsel dil
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `6px` (buton, input, chip), `16px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, 20px ızgara, yuvarlak uç; dolgu yok |
-| Fotoğraf | gece/dış cephe mimari; sıcak ışık kaynağı kadrajda; alan ≥ %55 (hero ve kartlar) |
-| İllüstrasyon | yok — fotoğraf ve tipografi yeter |
-| Logo | Cormorant 500 büyük harf sözcük logosu, `.18em`, sol üstte 20px boşluk |
-| Doku | grain `.02` yalnız zemin katmanında; fotoğrafın üstünde scrim |
+## Bans
 
-## Ekran reçeteleri
+- İkinci sıcak vurgu (turuncu/terracotta) veya neon
+- Kartlarda gölge, 16px üstü radius, cam kart
+- Büyük harf gövde, 13px altı metin
+- Sonsuz Ken Burns / parıldayan altın animasyonu
+- Altın üstüne beyaz metin
+- Fotoğrafın üstünde scrim olmadan metin
+- Neon accent.
+- Stack of round cards.
+- Otomatik carousel.
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+## Component recipes
+
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 6px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 6px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 6px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 6px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 6px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 6px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 6px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
+
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 9.43:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | tam kanama fotoğraf + sol altta 5/12 metin, sağ üstte cam gezinti; tek altın CTA + tek ghost CTA | `shots/01-page.png` |
 | Arama / filtre | orta | cam panelde 4 alan + tek altın buton; etiketler 10px mono, değerler 15px | `shots/01-page.png` |
@@ -152,45 +179,33 @@ Derinlik fotoğraftan gelir: kartlarda gölge yok, yalnız 1px çerçeve. Gölge
 | Bildirim | orta | 40px toast, sol 3px altın şerit, 3.6s | `shots/01-page.png` |
 | Mobil (390px) | orta | tek sütun, hero 360px yüksek, filtre alttan açılır, dokunma hedefi 44px | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Hero tam kanama gece fotoğrafı + scrim; metin sol altta 5/12 kolonda.
-- Cam (blur) yalnız gezinme çubuğunda; altında opak `--bg-2` katmanı.
-- Altın üç yerle sınırlı: 1px çizgi, ince çerçeve, birincil buton dolgusu.
-- Kart radius 16px, gölge yok, 1px `--line` çerçeve.
-- Cormorant Garamond 300 başlık, cümle düzeni; büyük harf gövde yok.
-- Fiyat ve m² mono tabular, sağa hizalı.
+## Accessibility
 
-## Yasaklar
-- İkinci sıcak vurgu (turuncu/terracotta) veya neon
-- Kartlarda gölge, 16px üstü radius, cam kart
-- Büyük harf gövde, 13px altı metin
-- Sonsuz Ken Burns / parıldayan altın animasyonu
-- Altın üstüne beyaz metin
-- Fotoğrafın üstünde scrim olmadan metin
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 17.31:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 10.47:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.4:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 9.11:1 | ≥ 4.5 | button text |
+| focus ring/ground | 9.43:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 98.1 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
-- Gövde `ink/bg` **17.31:1** (≥ 4.5), `ink-soft/bg` **10.47:1**, `accent-ink/accent` **9.11:1**.
-- APCA Lc **98** (≥ 45 gövde metni).
-- `--ink-faint` **5.40:1** — yalnız etiket/dekor; gövde metni olarak kullanılmaz.
-- Odak halkası: `--accent` hem bg (**9.43:1**) hem surface (**8.86:1**) üzerinde ≥ 3:1; 2px halka + 2px offset.
-- Altın dolgulu butonda metin `--accent-ink` (#170f04) — 9.1:1; beyaz metin kullanılmaz.
-- Cam gezinme çubuğu saydam olduğu için altında `--bg-2` katmanı zorunlu; aksi hâlde kontrast fotoğrafa göre değişir.
-- Durum yalnız renkle verilmez: rezervasyon durumu chip metniyle (satılık/kiralık/rezerve) yazılır.
-- 390px'te arama paneli dikey yığılır, yatay taşma yok; dokunma hedefi ≥ 44px.
-- `prefers-reduced-motion` açıkken perde girişi ve parallax durur, içerik anında görünür.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Ucuz kumarhane" hissi | altın ikinci kez geniş alanda | altın yalnız 1px çizgi / buton / fiyat; rölyef ve gloss yok |
 | Okunmuyor | gövde 13px ve `--ink-faint` | 15px `--ink-soft`, yalnız etiket `--ink-faint` |
 | Cam çubuk içeriği bulandırıyor | blur < 12px + opak zemin | blur 18px + %55 saydam yüzey, zemin `--bg-2` |
@@ -199,29 +214,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Mobilde taşıyor | 4 alanlı cam panel yatay | panel dikey yığılır, alan genişliği %100 |
 | Koyu mod açık modla aynı | koyu blok kopyalanmış | koyu blokta bg bir ton daha derin, accent bir ton parlak |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `luxury-typography` — aynı altın ve serif dili, açık temada; aynı projede birini ana sayfa diğerini bölüm olarak kullanmak tutarlı. Fark ölçülebilir: taban rengi (#0d0b09 vs #f6f1e7) ve hero (fullbleed vs yazı ağırlıklı).
-- **Uyumlu:** `boutique-hotel` (149) — aynı sinematik hero, farklı sıcaklık (terracotta vs altın) ve radius ölçeği (2/10 vs 6/16).
-- **Uyumlu:** `glassmorphism` — yalnız gezinme çubuğu için; kart yüzeyine taşınırsa kimlik bozulur.
-- **Yasak:** `neubrutalism` — 3px siyah çerçeve ve offset gölge, gece fotoğrafı sahnesini parçalar.
-- **Yasak:** `claymorphism` / `frutiger-aero` — pastel ve parlak cam, altının pahalılığını düşürür.
-- **Yasak:** `dopamine-ui` — çok renkli enerji, tek altın kuralını kırar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `luxury-typography` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `boutique-hotel` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `glassmorphism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://fonts.google.com/specimen/Cormorant+Garamond | display serif ölçek ve ağırlık seçimi (300/500) |
-| https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter | cam gezinme çubuğu ve fallback davranışı |
-| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | 1px altın çizgi ve odak halkası ölçütü |
-| https://git.apcacontrast.com/documentation/APCAeasyIntro | koyu zeminde gövde metni okunabilirliği |
+| Source | for what |
+| --- | --- |
+| https://fonts.google.com/specimen/Cormorant+Garamond | Google Fonts · Cormorant Garamond — display serif ölçek ve ağırlık seçimi (300/500) |
+| https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter | MDN · backdrop-filter — cam gezinme çubuğu ve fallback davranışı |
+| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | WCAG 2.2 · Non-text Contrast — 1px altın çizgi ve odak halkası ölçütü |
+| https://git.apcacontrast.com/documentation/APCAeasyIntro | APCA · Readability contrast — koyu zeminde gövde metni okunabilirliği |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Noir Estate (styles/146-noir-estate/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="noir-estate"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Cormorant Garamond 300 başlık / 500 vurgu) H1 56px 1.06 cümle düzeni +0.01em; --font-body (Jost 400/600) gövde 15px/1.6;
@@ -233,46 +248,44 @@ Hareket: enter 0.88s cubic-bezier(.16,.84,.28,1) 14px st.06 · scroll top 72% 0.
   pin açık scrub 1.22 +165% · hover 260ms scale 1.014; prefers-reduced-motion zorunlu.
 Yasak: İkinci sıcak vurgu (turuncu/terracotta) veya neon; Kartlarda gölge, 16px üstü radius, cam kart; Büyük harf gövde, 13px altı metin; Sonsuz Ken Burns / parıldayan altın animasyonu; Altın üstüne beyaz metin; Fotoğrafın üstünde scrim olmadan metin.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Hero tam kanama fotoğraf + scrim var; metin sol altta ve kontrast ≥ 4.5:1.
-- [ ] Cam yalnız gezinme çubuğunda; altında opak zemin katmanı var.
-- [ ] Altın üç yerle sınırlı: 1px çizgi, ince çerçeve, birincil buton.
-- [ ] Kart radius 16px, gölge yok, 1px çerçeve.
-- [ ] Kontrast: gövde ≥ 4.5:1, accent üstü ≥ 4.5:1, odak halkası ≥ 3:1.
-- [ ] 390px'te cam panel dikey yığılıyor, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken perde ve parallax duruyor.
+Style: Noir Estate (noir-estate) · family: Stage & Prestige (146–151)
+Token: --bg #0d0b09 · --surface #171310 · --ink #f5f0e7 · --accent #d3af62 · --line rgba(245,240,231,.14)
+Radius: 6px / 16px · Typography: Cormorant Garamond / Jost / JetBrains Mono
+Required: Hero tam kanama gece fotoğrafı + scrim; metin sol altta 5/12 kolonda. · Cam (blur) yalnız gezinme çubuğunda; altında opak `--bg-2` katmanı. · Altın üç yerle sınırlı: 1px çizgi, ince çerçeve, birincil buton dolgusu.
+Banned: İkinci sıcak vurgu (turuncu/terracotta) veya neon · Kartlarda gölge, 16px üstü radius, cam kart · Büyük harf gövde, 13px altı metin
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
 ```css
 [data-style="noir-estate"] {
-  --bg: #0d0b09;
-  --bg-2: #070605;
-  --surface: #171310;
-  --surface-2: #211b15;
-  --ink: #f5f0e7;
-  --ink-soft: #c7bca9;
-  --ink-faint: #8f8574;
-  --accent: #d3af62;
-  --accent-ink: #170f04;
+  --bg: #0d0b09; --bg-2: #070605;
+  --surface: #171310; --surface-2: #211b15;
+  --ink: #f5f0e7; --ink-soft: #c7bca9; --ink-faint: #8f8574;
+  --accent: #d3af62; --accent-ink: #170f04;
   --line: rgba(245,240,231,.14);
-  --radius: 6px;
-  --radius-lg: 16px;
-  --shadow: 0 18px 48px -28px rgba(0,0,0,.95);
-  --shadow-hard: 0 0 0 1px color-mix(in srgb, var(--accent) 55%, transparent);
-  --font-display: "Cormorant Garamond", Georgia, serif;
+  --danger: #e23729;
+  --danger-ink: #000000;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --radius: 6px; --radius-lg: 16px;
+  --shadow: 0 18px 48px -28px rgba(0,0,0,.95); --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif;
   --font-body: "Jost", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: .01em;
-  --blur: 18px;
-  --grain: .02;
-  --danger: #e2664f;
-  --danger-ink: #1c0703;
-  --ok: #9dbb72;
-  --warn: #e0bb63;
+  --tracking: .01em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `styles/146-noir-estate/token-block.css` ve (integrator aktardığında) `kit/tokens.css` içinde `[data-theme="dark"][data-style="noir-estate"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

@@ -1,5 +1,5 @@
 {
-  "_readme": "Figma variables içe aktarma biçimi: collections[].variables[] = { name, type, values: { <mod adı>: değer } }. Color System v6 tek modlu (Light); Radius/Spacing/Typography tek modlu. kit/export-tokens.mjs üretir.",
+  "_readme": "Figma variables import format: collections[].variables[] = { name, type, values: { <mode name>: value } }.Color System v6 single mode (Light); Radius/Spacing/Typography single mode. It produces kit/export-tokens.mjs.",
   "generatedBy": "kit/export-tokens.mjs",
   "source": "kit/tokens.css + styles/<nn-slug>/tokens.json",
   "collections": [

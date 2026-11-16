@@ -1,51 +1,43 @@
 # 138 · AI-native Ajan Arayüzü
 
-> **Bir cümlede:** Denetlenebilir ajan dili: numaralı iz kaydı, onay kapıları ve gerekçe/atıf şeritleriyle her adımı görünür kılan nötr zeminli arayüz.
+> **In one sentence:** Denetlenebilir ajan dili: numaralı iz kaydı, onay kapıları ve gerekçe/atıf şeritleriyle her adımı görünür kılan nötr zeminli arayüz.
 
 | | |
 |---|---|
-| **Hissiyat** | denetlenebilir, sakin, güvenilir, şeffaf |
-| **En iyi** | ajan/otomasyon konsolu, kod inceleme asistanı, veri hazırlama hattı, iç araç platformu |
-| **Kaçın** | vitrin/landing, oyun, duygusal kampanya — iz kaydı dili heyecan taşımaz |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 7.35:1) |
-| **Aile** | Deneysel & Gelecek (136–145) · **Token** | `kit/tokens.css` → `[data-style="agent-orchestration"]` |
-| **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | denetlenebilir, sakin, güvenilir, şeffaf |
+| **Best for** | ajan/otomasyon konsolu, kod inceleme asistanı, veri hazırlama hattı, iç araç platformu |
+| **Avoid** | vitrin/landing, oyun, duygusal kampanya — iz kaydı dili heyecan taşımaz |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Experimental & Future (136–145) · **Token** | `kit/tokens.css` → `[data-style="agent-orchestration"]` |
+| **Composition** | `product` · `utility` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 AI-native Ajan Arayüzü, ajanı **denetlenebilir bir işçi** gibi gösterir: solda numaralı iz rayı (her araç çağrısı bir satır), adımın yanında süre ve sonuç, geri alınamaz eylemlerde 2px accent çerçeveli **onay kapısı**, sonuçların yanında **gerekçe/atıf şeridi** (mono kaynak etiketi). Gösterişi feda eder; karşılığında **güven** kazanır — kullanıcı ne olduğunu, neden olduğunu ve nasıl geri alacağını görür.
 
 Kurucu kararları üç tanedir. Birincisi **iz kaydı zorunludur**: görünmeyen adım yoktur; her satır numaralıdır ve 1px dikey konektörle bağlanır. İkincisi **onay kapısı**: yıkıcı eylem 2px accent çerçeve + gerekçe + etki listesiyle onay ister. Üçüncüsü **nötr zemin + tek accent**: mesh gradyan, cam panel ve glow yok — dikkat yalnız accent'e ve onay kapısına gider.
 
 Bedeli: yoğunluk. Bu yüzden iz kaydı görünür alanda 12 satırla sınırlanır ve adımlar gruplanır (plan → araç çağrıları → sonuç).
 
-### Ne değildir
+### What is not
 - **AI-native Mesh (39) değildir** — adaşlık dışında ölçülebilir dört fark vardır:
-
-| Ölçüt | 39 · AI-native Mesh | 138 · Agent Orchestration |
-|---|---|---|
-| Zemin | koyu nötr `#0b0c10` + mesh gradyan | açık nötr `#f4f5f6`, gradyan yok |
-| Yüzey dili | cam panel (`backdrop-filter`) | opak panel + 1px çizgi, cam yok |
-| Display ailesi | Geist | Space Mono |
-| İmza motif | mesh gradyan + sakin geometri | numaralı iz rayı + onay kapısı + atıf şeridi |
-
 - **Command Palette (108) değildir:** 108 geçici bir arama katmanıdır (44px satır, chalk accent, blur karartma); 138 kalıcı bir konsoldur (iz satırları 36px, indigo accent, blur yok).
 - **Log Stream (49) değildir:** 49 okuma amaçlı akan olay satırlarıdır; 138'de her satır bir **eylem** ve kararı vardır (onay, geri alma, atıf).
 - **MES (59) değildir:** 59 üretim KPI panosudur; 138 ajan yürütmesinin denetim kaydıdır.
 
-### Nereden gelir
+### Where it comes from
 İnsan-döngüde (human-in-the-loop) otomasyon pratiğinden ve yazılım dünyasının denetim kaydı geleneğinden (audit log, CI adımları). Bugün kritik çünkü ajanlar gerçek eylem yapıyor: dosya siliyor, mesaj gönderiyor, para harcıyor. Klişeye dönmemesi için korunacak detay **iz kaydının numaralı olması** ve **onaysız yıkıcı eylem bulunmaması**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Sol tarafta numaralı ray (01, 02, 03) ve dikey 1px konektör var; her satır bir araç çağrısı.
 2. Geri alınamaz eylem kutusu 2px accent çerçeveyle ayrılıyor (onay kapısı).
 3. Her sonuç satırının yanında mono kaynak etiketi (atıf) duruyor.
 4. Zemin nötr açık gri; gradyan, mesh ve cam yok; tek accent indigo.
 5. Radius 6px kontrol / 16px kart; hap buton yok.
 
-## Görsel imza
+## Visual signature
 - **Numaralı iz rayı:** kart solunda 27px'te 1px dikey konektör + 24px'te 7px accent nokta; satır numarası mono.
 - **Onay kapısı:** 2px `--accent` çerçeve + gerekçe paragrafı + etki listesi (`3 dosya silinecek`).
 - **Gerekçe/atıf şeridi:** her sonucun yanında 11px mono etiket (`kaynak: repo/main@a1b2`).
@@ -53,100 +45,124 @@ Bedeli: yoğunluk. Bu yüzden iz kaydı görünür alanda 12 satırla sınırlan
 - **Nötr zemin:** `--bg #f4f5f6`, gradyan yok; kart ayrımı 1px çizgi + `0 1px 2px`.
 - **Radius disiplini:** 6px kontrol, 16px kart; 16px üstü yasak.
 - **Hareket imzası:** 270ms `cubic-bezier(.72,.04,.2,1)`, 1px — iz satırı "düşer", süzülmez.
+- **Typography:** Space Mono (display) + Inter (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#3b3f8f`; neutral scale `#f4f5f6` → `#16181c`.
+- **Radius:** `6px` / `16px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f4f5f6` | sayfa zemini (nötr) | kart zemini |
-| `--bg-2` | `#eaecee` | ray zemini, ikincil bant | birincil CTA |
-| `--surface` | `#ffffff` | kart / iz satırı | sayfa zemini |
-| `--surface-2` | `#f7f8f9` | chip, hover satır | onay kapısı zemini |
-| `--ink` | `#16181c` | başlık, gövdeler, araç adı | dekoratif çizgi |
-| `--ink-soft` | `#4b5158` | açıklama, süre, atıf | başlık |
-| `--ink-faint` | `#7c838b` | yalnız konektör ve ayırıcı | iz metni, atıf |
-| `--accent` | `#3b3f8f` | onay kapısı, aktif adım, birincil eylem | geniş dekoratif dolgu |
-| `--accent-ink` | `#f6f7ff` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(22,24,28,.14)` | kart ve satır kenarlığı | metin rengi |
+1. Her ajan eylemi iz kaydında numaralı satır olarak görünür (araç adı + süre + sonuç)
+2. Geri alınamaz eylem onay kapısından geçer: 2px accent çerçeve + gerekçe + etki listesi
+3. Gerekçe/atıf şeridi zorunlu: her sonucun yanında mono kaynak etiketi
+4. Tek accent, nötr zemin; mesh gradyan ve cam panel yok
+5. Radius 6px kontrol / 16px kart; durum daima metinle (ÇALIŞIYOR / ONAY BEKLİYOR)
+6. İz satırı 36px, ekranda en fazla 12 satır; fazlası kaydırılır
 
-- Ölçülen kontrast: `ink / bg` = **16.28:1** · `ink-soft / bg` = **7.35:1** · `accent-ink / accent` = **8.57:1** · `ink-faint / bg` = **3.51:1** (yalnız konektör).
-- Tek vurgu kuralı: tek accent (indigo). `--danger` (#a8302a), `--ok` (#1f6b3f), `--warn` (#7a5300) yalnız durum metni ve ikonla.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; iz rayı üstünde `--ink-faint` metin.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f4f5f6` | page background | as a card background |
+| `--bg-2` | `#eaecee` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f7f8f9` | passive chip, hover background | primary button |
+| `--ink` | `#16181c` | title, body, icon | large background |
+| `--ink-soft` | `#4b5158` | secondary text, description | — |
+| `--ink-faint` | `#7c838b` | decorative label, separator text | interactive text |
+| `--accent` | `#3b3f8f` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f6f7ff` | text above accent | non-accent background |
+| `--line` | `rgba(22,24,28,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Space Mono (`--font-display`) | 34px (mobil 24px) | 700 | 1.16 | `-.01em` |
-| H2 | Space Mono | 24px | 700 | 1.26 | `0` |
-| H3 (adım başlığı) | Space Mono | 18px | 700 | 1.32 | `0` |
-| Gövde | Inter (`--font-body`) | 14px | 400 | 1.55 | `0` |
-| Küçük gövde | Inter | 13px | 400 | 1.5 | `0` |
-| Etiket / atıf | IBM Plex Mono (`--font-mono`) | 11px | 400 | 1.4 | `.06em` |
+- Measured contrast: `ink/bg` **16.28:1** · `ink-soft/bg` **7.35:1** · `ink-faint/bg` **3.51:1 (decorative)** · `accent-ink/accent` **8.57:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.4** — kullanılan basamaklar 11 · 12 · 13 · 14 · 18 · 24 · 34.
-- Ölçü önerisi: `h1 { font-size: clamp(24px, 3.2vw, 34px); line-height: 1.16 }`.
-- Gövde satır uzunluğu en fazla **70ch**; gerekçe paragrafı 60ch'te kırılır (okunur argüman).
-- Ağırlık kuralı: display 700, gövde 400/600, mono 400. İtalik yok.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Space Mono) | 34px (mobile 24px) | 500 | 1.06 | -0.02em |
+| H2 | same | 24px | 600 | 1.18 | -0.015em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 14px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (iz kaydı 7, gerekçe/atıf 5) |
-| Gutter | 20px |
-| Container genişliği | 1240px (içerik 1200px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1240; 768 altında tek kolon, ray 28px'e daralır |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** 7/5 bölünme (iz solda, gerekçe sağda). Simetrik iki kolon yok.
-- Bölüm ritmi: art arda en fazla **3** adım grubu (plan → araç → sonuç); dördüncüsü tam genişlik özet bandı olur.
-- İz satırı 36px; satır arası 8px; ray iç boşluğu 44px (numara + nokta sığar).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa + ray zemini |
-| Kart | `--surface` | `0 1px 2px rgba(22,24,28,.08)` | iz satırı, panel |
-| Yüzen katman | `--surface` + 2px accent | `0 8px 24px rgba(22,24,28,.14)` | onay kapısı, modal |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; onay kapısında `2px solid var(--accent)`.
-- Derinlik nereden gelir: **1px çizgi + çok küçük gölge**; derinlik değil okunurluk önceliklidir. Gradyan/glow yok.
-- Radius: `--radius: 6px` (buton, input, chip), `--radius-lg: 16px` (kart, modal). Üst sınır 16px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 36px | `0 14px` | 6px | 13px Inter 600 | accent dolgu, accent-ink metin, gölge yok | hover: accent %88 + ink · active: translateY(1px) · focus: 2px accent outline + 2px offset · disabled: opacity .45 · loading: iz kaydına "çalışıyor" satırı (600ms skeleton) |
-| Buton (ikincil) | 36px | `0 14px` | 6px | 13px Inter 600 | `--surface` + 1px `--line` | hover: `--surface-2` |
-| Input | 38px | `0 12px` | 6px | 14px Inter | `--surface` + 1px `--line` | focus: accent çerçeve + 2px accent %28 outline · error: `--danger` çerçeve + 12px etiket · disabled: opacity .45 |
-| İz satırı (kart) | 36px (satır) | `18px` | 16px | 18px adım + 13px detay | `--surface` + 1px `--line` + 1px gölge | aktif: sol nokta accent dolu · tamamlandı: `--ok` nokta · hata: `--danger` nokta |
-| Onay kapısı | içerik | 20px | 16px | 18px adım + gerekçe | 2px accent çerçeve + `0 8px 24px` | bekliyor / onaylandı / reddedildi |
-| Chip / badge | 22px | `0 8px` | 6px | 11px mono `.06em` | `--surface-2` + 1px `--line` | accent: accent %12 zemin + accent metin |
-| Nav | 50px | `0 20px` | 0 | 14px Inter | `--surface` + alt hairline | sağda ajan durumu (metin + nokta) |
-| Atıf şeridi | 20px | `0 6px` | 4px | 11px mono | `--surface-2` + 1px `--line` | kaynak + commit/tarih |
-| Modal | içerik | 20px | 16px | 18px adım + gerekçe | 2px accent + `0 8px 24px` | onay iki düğme (onayla / reddet) |
-| Toast | 36px | `8px 12px` | 6px | 13px Inter 600 | `--surface` + sol uçta 3px accent | hata: şerit `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ink-soft`, `--warn`, `--danger` | en fazla 4 seri; araç süreleri çubuk, eksen adım no |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `6px` (buton, input, chip), `16px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; onay kapısında 2px outline çerçeveye biner → offset 3px.
-- Dokunma hedefi: en az 44×44px; 36px buton mobilde `min-height: 44px`; iz satırı zaten 44px hedefe padding ile genişler.
+## Bans
 
-## Görsel dil
+- Mesh gradyan, cam panel, glow (39 ile örtüşür).
+- İz kaydı olmadan çalışan "sihirli" adım.
+- Onaysız geri alınamaz işlem.
+- Çoklu parlak renk, 16px üstü radius.
+- Serif display, süs illüstrasyonu.
+- Renk-only durum (metin zorunlu).
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, 2px köşe, 20px ızgara; araç/onay/atıf sembolleri |
-| Fotoğraf | yok — ajan arayüzünde dekoratif görsel kullanılmaz |
-| İllüstrasyon | yok; iz rayı ve onay kapısı imza |
-| Doku | grain yok; 1px çizgi ritmi ve numaralı ray |
-| Logo alanı | Space Mono wordmark + durum noktası, 16px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 6px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 6px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 6px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 6px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 6px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 6px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 6px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 9.16:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | düşük | H1 34px mono + tek CTA + 3 satırlık örnek iz rayı | `shots/01-page.png` |
 | Dashboard | **yüksek** | 7/5: iz kaydı + gerekçe/atıf paneli | `shots/01-page.png` |
@@ -161,45 +177,33 @@ Bedeli: yoğunluk. Bu yüzden iz kaydı görünür alanda 12 satırla sınırlan
 | Hata | orta | satır noktası `--danger` + "geri al" düğmesi | `shots/01-page.png` |
 | Profil / ayar | orta | onay politikası, araç izinleri, oturum kaydı | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Her ajan eylemi iz kaydında numaralı satır olarak görünür (araç + süre + sonuç).
-- Geri alınamaz eylem onay kapısından geçer: 2px accent çerçeve + gerekçe + etki listesi.
-- Gerekçe/atıf şeridi zorunlu: her sonucun yanında mono kaynak etiketi.
-- Tek accent, nötr zemin; mesh gradyan ve cam panel yok.
-- Radius 6px kontrol / 16px kart; durum daima metinle.
-- İz satırı 36px, görünür alanda en fazla 12 satır.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.28:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.35:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.51:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 8.57:1 | ≥ 4.5 | button text |
+| focus ring/ground | 9.16:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 98.5 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Mesh gradyan, cam panel, glow (39 ile örtüşür).
-- İz kaydı olmadan çalışan "sihirli" adım.
-- Onaysız geri alınamaz işlem.
-- Çoklu parlak renk, 16px üstü radius.
-- Serif display, süs illüstrasyonu.
-- Renk-only durum (metin zorunlu).
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **7.35:1** (eşik 4.5); `ink-faint / bg` = **3.51:1** yalnız konektör ve ayırıcıda.
-- `--ink-faint` iz metninde ve atıf şeridinde kullanılmaz; atıf `--ink-soft` (7.35:1).
-- Hareket/parlama hassasiyeti: düşük — flash yok; sürekli "çalışıyor" animasyonu ekran başına ≤1 ve `prefers-reduced-motion` ile durur.
-- Şeffaf yüzey yok; opak fallback gerekmez.
-- Odak görünürlüğü: 2px accent outline + 2px offset; onay kapısında 3px offset (2px çerçeveyle çakışmasın).
-- İz akışı canlı bölge olarak duyurulur: `aria-live="polite"` + her satırda `aria-label` (adım no, araç, sonuç).
-- Sürükleme yok; onay/geri alma klavye ile tam erişilebilir.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Sihirli kutu" hissi | adımlar görünmüyor | her araç çağrısını iz satırı yap |
 | Güven kaybı | onaysız yıkıcı eylem | 2px accent onay kapısı + etki listesi |
 | 39 ile karışıyor | mesh gradyan/cam eklenmiş | nötr zemin + opak panel |
@@ -207,36 +211,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Ray kayboluyor | konektör 1px ve %8 opaklık | %14 konektör, 7px accent nokta |
 | Mobilde sıkışma | ray 44px korunmuş | 768 altı 28px, numara tek satır |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `command-palette` — aynı klavye-öncelikli dünya; palet komut katmanı olarak.
-- **Uyumlu:** `log-stream` — olay akışı okuma paneli.
-- **Uyumlu:** `terminal-ui` — teknik alt panel; tek bölümde.
-- **Yasak:** `maximalism` — çoklu renk/desen denetim odağını dağıtır.
-- **Yasak:** `claymorphism` — yumuşak 3B formlar denetlenebilirlik iddiasıyla çelişir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `command-palette` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `log-stream` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `terminal-ui` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `maximalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
 
-| Eksen (5) | 138 · Agent Orchestration | 39 · AI-native Mesh |
-|---|---|---|
-| Display ailesi | Space Mono 700 | Geist |
-| Zemin bandı | açık nötr `#f4f5f6` | koyu `#0b0c10` |
-| Accent hue | indigo-slate `#3b3f8f` | indigo `#7c8cff` |
-| Radius ölçeği | 6 / 16px | 20 / 28px (39: geniş yüzey) |
-| İmza motif / motion | numaralı iz rayı + onay kapısı · 0.27s · top 61% | mesh gradyan · 0.7s · top 82% |
+## References
 
-## Referanslar
-
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Human-in-the-loop | onay kapısı ve geri alınabilirlik |
-| https://en.wikipedia.org/wiki/AI_agent | araç çağrısı / plan-yürüt modeli |
-| https://www.nist.gov/itl/ai-risk-management-framework | denetlenebilirlik ve kayıt zorunluluğu |
-| https://www.w3.org/WAI/ARIA/apg/patterns/alert/ | iz akışının ekran okuyucu bildirimi |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Human-in-the-loop | Human-in-the-loop — onay kapısı ve geri alınabilirlik |
+| https://en.wikipedia.org/wiki/AI_agent | AI agent (overview) — araç çağrısı / plan-yürüt modeli |
+| https://www.nist.gov/itl/ai-risk-management-framework | NIST AI RMF — denetlenebilirlik ve kayıt zorunluluğu |
+| https://www.w3.org/WAI/ARIA/apg/patterns/alert/ | WAI-ARIA · live regions — iz akışının ekran okuyucu bildirimi |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: AI-native Ajan Arayüzü (styles/138-agent-orchestration/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="agent-orchestration"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: --bg nötr açık gri; gradyan/mesh/cam YOK (39 ile örtüşmemek için).
@@ -250,15 +246,15 @@ Hareket: enter 270ms cubic-bezier(.72,.04,.2,1) 1px stagger .013; scroll top 61%
   pin yok; hover 105ms görsel 1.001. prefers-reduced-motion zorunlu.
 Yasak: mesh gradyan, cam/glow, iz kaydı olmayan adım, onaysız yıkıcı eylem, >16px radius, renk-only durum.
 Çıktı: bileşen kodu + tek paragraf not (iz rayını ve onay kapısını nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: numaralı iz rayı, onay kapısı, atıf şeridi, durum metni.
-- [ ] Hard-coded renk/gölge/radius yok; mesh/cam yok.
-- [ ] Kontrast: 16.28 / 7.35 / 8.57 — hepsi eşik üstü.
-- [ ] Her yıkıcı eylem onay kapısından geçiyor; atıf şeridi var.
-- [ ] 390px'te ray 28px, tek kolon, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken sürekli animasyon duruyor.
+Style: AI-native Ajan Arayüzü (agent-orchestration) · family: Experimental & Future (136–145)
+Token: --bg #f4f5f6 · --surface #ffffff · --ink #16181c · --accent #3b3f8f · --line rgba(22,24,28,.14)
+Radius: 6px / 16px · Typography: Space Mono / Inter / IBM Plex Mono
+Required: Her ajan eylemi iz kaydında numaralı satır olarak görünür (araç adı + süre + sonuç) · Geri alınamaz eylem onay kapısından geçer: 2px accent çerçeve + gerekçe + etki listesi · Gerekçe/atıf şeridi zorunlu: her sonucun yanında mono kaynak etiketi
+Banned: Mesh gradyan, cam panel, glow (39 ile örtüşür). · İz kaydı olmadan çalışan "sihirli" adım. · Onaysız geri alınamaz işlem.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -269,15 +265,25 @@ Yasak: mesh gradyan, cam/glow, iz kaydı olmayan adım, onaysız yıkıcı eylem
   --ink: #16181c; --ink-soft: #4b5158; --ink-faint: #7c838b;
   --accent: #3b3f8f; --accent-ink: #f6f7ff;
   --line: rgba(22,24,28,.14);
+  --danger: #d72b1e;
+  --danger-ink: #ffffff;
+  --ok: #008239;
+  --ok-ink: #ffffff;
+  --warn: #b65400;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 6px; --radius-lg: 16px;
   --shadow: 0 1px 2px rgba(22,24,28,.08); --shadow-hard: none;
   --font-display: "Space Mono", ui-monospace, monospace;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --tracking: .02em; --blur: 0px; --grain: 0;
-  --danger: #a8302a; --danger-ink: #ffffff;
-  --ok: #1f6b3f; --warn: #7a5300;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="agent-orchestration"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

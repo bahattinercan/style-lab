@@ -1,43 +1,43 @@
 # 58 · Güvenlik Tabelası
 
-> **Bir cümlede:** Sahadaki uyarı levhasının mantığı: koyu zemin, çapraz tehlike bandı, 2px uyarı çerçevesi ve piktogram + büyük harf metinle kurulan üç kademeli hiyerarşi.
+> **In one sentence:** Sahadaki uyarı levhasının mantığı: koyu zemin, çapraz tehlike bandı, 2px uyarı çerçevesi ve piktogram + büyük harf metinle kurulan üç kademeli hiyerarşi.
 
 | | |
 |---|---|
-| **Hissiyat** | acil, kesin, yüksek sesli, tartışmasız |
-| **En iyi** | saha/güvenlik paneli, kritik uyarı akışı, iş güvenliği eğitimi, tehlike bildirim ürünü |
-| **Kaçın** | lüks vitrin, sağlık iletişimi (sakinlik gerekir), uzun okuma ekranları — sürekli uyarı yorar |
-| **Zorluk** | düşük · **Erişilebilirlik** | orta risk (fotosensitivite; en düşük metin çifti 10.25:1) |
-| **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="safety-signage"]` |
-| **Kompozisyon** | `split` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | acil, kesin, yüksek sesli, tartışmasız |
+| **Best for** | saha/güvenlik paneli, kritik uyarı akışı, iş güvenliği eğitimi, tehlike bildirim ürünü |
+| **Avoid** | lüks vitrin, sağlık iletişimi (sakinlik gerekir), uzun okuma ekranları — sürekli uyarı yorar |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Industrial (56–65) · **Token** | `kit/tokens.css` → `[data-style="safety-signage"]` |
+| **Composition** | `split` · `inline` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Güvenlik Tabelası, arayüzü bir **uyarı levhası** gibi kurar: koyu asfalt zemin, üstte 8px çapraz tehlike bandı, uyarı kutularında 2px accent çerçeve, başlıklar Anton ile tamamı büyük harf, her durum piktogram + metinle. Sükûneti feda eder; karşılığında **hiçbir uyarının gözden kaçmaması** kazanır.
 
 Kurucu kararları üç tanedir. Birincisi **üç kademeli hiyerarşi sabittir**: 2px accent çerçeve = yasak/tehlike, 2px `--ink` çerçeve = talimat, 1px `--line` = bilgi. İkincisi **renk tek başına anlam taşımaz**: her kademe piktogram + metinle tekrar edilir. Üçüncüsü **hareket kesiktir**: `linear` 140ms — uyarı süzülmez, belirir.
 
 Bedeli: uzun süreli kullanımda yorucudur. Bu yüzden yalnız kritik akış ve saha ekranlarında kullanılır; okuma ekranlarında `--bg` düz, bant yok.
 
-### Ne değildir
+### What is not
 - **Constructivism (36) değildir:** 36 diyagonal kompozisyon ve siyah-kırmızı baskı dili kullanır, uyarı kademesi tanımlamaz. Tabela'da hiyerarşi kuraldır ve piktogram zorunludur.
 - **Neo-Brutalism (13) değildir:** 13 ofset sert gölge ve keyfi çerçeve kalınlığıyla "kaba" görünür; Tabela'da gölge yoktur, çerçeve kalınlığı anlam taşır.
 - **Kinetic Type (37) değildir:** 37 dev tipografiyi hareket ettirir; Tabela'da hareket 140ms'de biter, sürekli animasyon yasak.
 - **Terminal UI (45) değildir:** 45 eşaralıklı mono ve durum metinleriyle konuşur; Tabela Anton + Rajdhani ile ses yükseltir, mono yalnız ölçü etiketinde.
 
-### Nereden gelir
+### Where it comes from
 ISO 3864 / ISO 7010 piktogram sistemi ve OSHA 1910.145 uyarı kategorilerinden. Bugün geri dönüyor çünkü operasyonel yazılımda en pahalı hata **gözden kaçan uyarı**; levha dili, uyarıyı estetik tercih olmaktan çıkarıp sözleşmeye bağlar. Klişeye dönmemesi için korunacak detay: üç kademeli çerçeve kuralı ve piktogram zorunluluğu.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Sayfanın üstünde 8px çapraz sarı-siyah tehlike bandı var.
 2. Başlıklar Anton, tamamı büyük harf, satır aralığı 1.0'ın altında.
 3. Uyarı kutularında radius 0 ve 2px çerçeve; gölge yok.
 4. Her durumun yanında piktogram (üçgen / yuvarlak / kare) duruyor.
 5. Buton 48px yüksekliğinde, dolgu sarı, metin siyah.
 
-## Görsel imza
+## Visual signature
 - **Tehlike bandı:** `repeating-linear-gradient(45deg, var(--accent) 0 20px, var(--accent-ink) 20px 40px)`, 8px yüksekliğinde üst bant (nav üstü).
 - **Üç kademeli çerçeve:** 2px accent (tehlike) · 2px `--ink` (talimat) · 1px `--line` (bilgi) — dördüncü kalınlık yok.
 - **Piktogram zorunluluğu:** her uyarı satırında 24px piktogram; renk körlüğünde tek ayırt edici.
@@ -45,99 +45,124 @@ ISO 3864 / ISO 7010 piktogram sistemi ve OSHA 1910.145 uyarı kategorilerinden. 
 - **Sol 8px bant:** tehlike kartlarında sol kenar 8px accent (levha kenarı).
 - **Radius 0:** her yüzeyde; tek istisna yok.
 - **Hareket imzası:** 140ms `linear`, 16px yukarıdan — belirme, süzülme değil.
+- **Typography:** Anton (display) + Rajdhani (body) + Space Mono (mono label).
+- **Colour discipline:** a single accent `#ffd52e`; neutral scale `#12120e` → `#f6f2e4`.
+- **Radius:** `0px` / `0px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#12120e` | sayfa zemini (asfalt) | kart zemini |
-| `--bg-2` | `#1a1a14` | input zemini, bant | buton zemini |
-| `--surface` | `#1f1f18` | uyarı kutusu / kart | sayfa zemini |
-| `--surface-2` | `#26261d` | ikincil panel, tablo başlığı | birincil uyarı kutusu |
-| `--ink` | `#f6f2e4` | başlık, gövde (yüksek kontrast) | accent dolgu üstü |
-| `--ink-soft` | `#c4c0a9` | açıklama, ikincil etiket | büyük harf H1 |
-| `--ink-faint` | `#8b8874` | yalnız dekoratif ayırıcı ve teknik not | her türlü uyarı metni |
-| `--accent` | `#ffd52e` | tehlike bandı, yasak çerçevesi, birincil eylem | gövde metni rengi |
-| `--accent-ink` | `#14140d` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(246,242,228,.20)` | bilgi kademesi çerçevesi ve ayırıcı | tehlike çerçevesi |
+1. Uyarı hiyerarşisi sabit: 2px accent çerçeve = yasak/tehlike, 2px ink = talimat, 1px line = bilgi
+2. Display daima büyük harf (Anton), line-height ≤ 1.0
+3. Renk tek başına anlam taşımaz: her durum piktogram + metinle birlikte
+4. Radius 0; çapraz tehlike bandı yalnız accent + accent-ink
+5. Dokunma hedefi 48px; birincil eylem accent zemin + accent-ink metin
+6. Kritik uyarı ekranın üst 1/3 içinde, asla katlama altında
 
-- Ölçülen kontrast: `ink / bg` = **16.75:1** · `ink-soft / bg` = **10.25:1** · `accent-ink / accent` = **13.04:1** · `ink-faint / bg` = **5.25:1** (yalnız dekoratif).
-- Çok renk kuralı (bilinçli istisna): üç durum rengi vardır — `--danger` (tehlike), `--warn` (dikkat, accent ile aynı sarı), `--ok` (güvenli). Üçü de **piktogram + metinle** birlikte kullanılır; renk tek başına anlam taşımaz.
-- Yasak kombinasyon: accent üstünde `--ink-soft`; `--surface` üstünde `--ink-faint` uyarı metni.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#12120e` | page background | as a card background |
+| `--bg-2` | `#1a1a14` | partition divider floor, table top | button background |
+| `--surface` | `#1f1f18` | kart, input, modal | full-page background |
+| `--surface-2` | `#26261d` | passive chip, hover background | primary button |
+| `--ink` | `#f6f2e4` | title, body, icon | large background |
+| `--ink-soft` | `#c4c0a9` | secondary text, description | — |
+| `--ink-faint` | `#8b8874` | decorative label, separator text | interactive text |
+| `--accent` | `#ffd52e` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#14140d` | text above accent | non-accent background |
+| `--line` | `rgba(246,242,228,.20)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Anton (`--font-display`) | 72px (mobil 40px) | 400 | 0.94 | `.01em` |
-| H2 | Anton | 40px | 400 | 1.02 | `.02em` |
-| H3 | Anton | 24px | 400 | 1.12 | `.02em` |
-| Gövde | Rajdhani (`--font-body`) | 17px | 500 | 1.45 | `.01em` |
-| Küçük gövde | Rajdhani | 14px | 500 | 1.45 | `.01em` |
-| Etiket / mono | Space Mono (`--font-mono`) | 11–12px | 400 | 1.4 | `.10em` |
+- Measured contrast: `ink/bg` **16.75:1** · `ink-soft/bg` **10.25:1** · `ink-faint/bg` **5.25:1 (decorative)** · `accent-ink/accent` **13.04:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.7** — kullanılan basamaklar 11 · 12 · 14 · 17 · 24 · 40 · 72.
-- Ölçü önerisi: `h1 { font-size: clamp(40px, 8vw, 72px); line-height: .94; text-transform: uppercase }`.
-- Gövde satır uzunluğu en fazla **54ch** — uyarı metni kısa olmalı.
-- Ağırlık kuralı: Anton tek ağırlık (400); Rajdhani 500/700; mono 400. İnce (300) ve italik yasak; display daima büyük harf.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Anton) | 72px (mobile 40px) | 400 | 1.08 | -0.02em |
+| H2 | same | 40px | 600 | 1.2 | -0.015em |
+| H3 | same | 24px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Rajdhani) | 17px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Space Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 12px |
-| Container genişliği | 1160px (içerik 1136px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1160; 768 altında band 6px, tek kolon |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: uyarı bandı her zaman **tam genişlik**; içerik 8/4 bölünür. Ortalanmış başlık yok — metin sola dayalı (levha okuma yönü).
-- Bölüm ritmi: art arda en fazla **2** uyarı kutusu; üçüncü uyarı tam genişlik bant olur (hiyerarşi düşer).
-- Boşluklar 4'ün katı; uyarı kutusu iç padding 16px'ten az olamaz (piktogram sıkışır).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | asfalt zemin, bant |
-| Kart | `--surface` | yok | uyarı kutusu: 2px accent veya 2px `--ink` çerçeve |
-| Yüzen katman | `--surface` + accent çerçeve | yok | modal/toast: 3px accent çerçeve ile ayrılır |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: kademe belirler — 2px accent (tehlike), 2px `--ink` (talimat), 1px `--line` (bilgi). Gölge hiçbir seviyede yok.
-- Derinlik nereden gelir: **hiçbir yerden** — levha düzdür. Ayrım çerçeve kalınlığı ve zemin tonuyla.
-- Radius: `--radius: 0px` ve `--radius-lg: 0px`. İstisna yok.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 48px | `0 20px` | 0 | 15px Rajdhani 700 uppercase `.10em` | accent dolgu, accent-ink metin, 2px accent-ink çerçeve, gölge yok | hover: renkler ters çevrilir · active: translateY(2px) · focus: 3px accent outline + 3px offset · disabled: opacity .55 + 45° tarama · loading: "İŞLENİYOR" + 3 kare nokta |
-| Buton (ikincil) | 48px | `0 20px` | 0 | 15px Rajdhani 700 | şeffaf + 2px `--ink` çerçeve | hover: `--ink` dolgu + `--bg` metin |
-| Input | 48px | `0 14px` | 0 | 16px Rajdhani 500 | `--bg-2` + 2px `--line` | focus: 3px accent outline offset 2px, çerçeve 2px accent · error: 2px `--danger` + `!` piktogram · disabled: opacity .5 |
-| Kart | içerik | 16px | 0 | H3 + gövde | `--surface` + 2px `--line`, tehlike kartında sol 8px accent | hover: çerçeve accent'e döner |
-| Chip / badge | 24px | `0 10px` | 0 | 12px Rajdhani 700 uppercase `.10em` | accent dolgu + accent-ink metin | tehlike: `--danger` dolgu + `--danger-ink` |
-| Nav | 60px | `0 20px` | 0 | 14px Rajdhani 700 uppercase `.08em` | `--accent-ink` zemin + üstte 8px çapraz bant | aktif: accent metin + 2px alt çizgi |
-| Tablo satırı | 44px | `8px 10px` | — | 15px Rajdhani | satır arası 2px `--line` | hover: `--surface-2`; kritik satır sol 8px `--danger` |
-| Modal / sheet | içerik | 20px | 0 | 24px Anton uppercase | `--surface` + 3px accent çerçeve + üstte 12px bant | açılış: 140ms linear |
-| Toast | 48px | `10px 14px` | 0 | 14px Rajdhani 700 | `--surface` + sol uçta 24px piktogram | hata: `--danger` sol bant |
-| Grafik paleti | — | — | — | — | `--accent`, `--ink`, `--danger`, `--ok` | en fazla 4 seri; limit çizgisi 2px accent kesikli |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `0px` (buton, input, chip), `0px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 3px solid var(--accent); outline-offset: 3px` (diğer stillerden kalın: 2px çerçeve yanında 2px outline kaybolur).
-- Dokunma hedefi: en az 48×48px — bu stilde 44px alt sınır değil, 48px hedef; saha eldiveni payı.
+## Bans
 
-## Görsel dil
+- Pastel veya düşük kontrast palet.
+- İnce ağırlık, italik, serif.
+- Yumuşak gölge, blur, cam.
+- Saniyede 3 üstü yanıp sönme (fotosensitivite).
+- Emoji veya marka illüstrasyonu.
+- Küçük harf başlık; ortalanmış levha metni.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, 24px ızgara, yuvarlatma yok; ISO 7010 piktogram üçlüsü (üçgen/yuvarlak/kare) |
-| Fotoğraf | yok — piktogram + tipografi yeterli |
-| İllüstrasyon | yalnız standart piktogram; marka illüstrasyonu yasak |
-| Doku | 45° çapraz bant (accent + accent-ink, 20px/20px); grain 0 |
-| Logo alanı | accent kutu içinde siyah wordmark; kutu dışında 20px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 13.24:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 72px Anton H1 + üstte 8px tehlike bandı + tek CTA | `shots/01-page.png` |
 | Dashboard | orta | KPI'lar 2px çerçeve; kritik olan accent çerçeve | `shots/01-page.png` |
@@ -152,43 +177,33 @@ ISO 3864 / ISO 7010 piktogram sistemi ve OSHA 1910.145 uyarı kategorilerinden. 
 | Hata | yüksek | `--danger` çerçeve + piktogram + 40px Anton başlık | `shots/01-page.png` |
 | Profil / ayar | orta | bant yok; talimat kademesi 2px `--ink` | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Üç kademeli çerçeve sabit: 2px accent (tehlike) · 2px `--ink` (talimat) · 1px `--line` (bilgi).
-- Display daima büyük harf (Anton), `line-height` ≤ 1.0.
-- Renk tek başına anlam taşımaz: her durum piktogram + metinle birlikte.
-- Radius 0; çapraz tehlike bandı yalnız `--accent` + `--accent-ink`.
-- Dokunma hedefi 48px; birincil eylem accent dolgu + accent-ink metin.
-- Kritik uyarı ekranın üst 1/3'ünde; katlama altında kritik uyarı olamaz.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.75:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 10.25:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.25:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 13.04:1 | ≥ 4.5 | button text |
+| focus ring/ground | 13.24:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 98.7 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Pastel veya düşük kontrast palet.
-- İnce ağırlık, italik, serif.
-- Yumuşak gölge, blur, cam.
-- Saniyede 3 üstü yanıp sönme (fotosensitivite).
-- Emoji veya marka illüstrasyonu.
-- Küçük harf başlık; ortalanmış levha metni.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **10.25:1**; `ink-faint / bg` = **5.25:1** yalnız dekoratif ayırıcıda.
-- `--ink-faint` uyarı metninde kullanılmaz; uyarı metni daima `--ink` (16.75:1).
-- Hareket/parlama hassasiyeti: **yüksek risk** — yanıp sönen öğe saniyede 3'ü geçmez, sürekli animasyon ekran başına 1, `prefers-reduced-motion` hepsini kapatır (WCAG 2.3.1 / 2.2.2).
-- Şeffaf yüzey yok; `@supports` fallback gerekmez. `border-image` desteklenmezse bant 8px düz accent şeride düşer.
-- Odak görünürlüğü: 2px çerçeve üstünde 3px accent outline + 3px offset; 2px outline bu stilde yetersiz kalır.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "bağırıyor", hiyerarşi yok | her kutuya accent çerçeve verilmiş | accent yalnız tehlike kademesinde; bilgi 1px `--line` |
 | Sarı yoruyor | accent geniş zemin olarak kullanılmış | accent yalnız bant, çerçeve ve CTA dolgusunda |
 | Uyarı gözden kaçıyor | renk tek başına kullanılmış | piktogram + metin ekle (renk körlüğü) |
@@ -196,28 +211,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Tehlike bandı "dekor" gibi | her bölümde tekrar edilmiş | bant yalnız nav üstü ve modal üstünde |
 | Mobilde buton küçük | 48px korunmamış | `min-height: 48px` sabit; padding kısaltılmaz |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `constructivism` — diyagonal ve baskı dili; Constructivism yalnız hero'da garnitür.
-- **Uyumlu:** `neo-brutalism` — kalın çerçeve ve düz renk aynı ailede okunur.
-- **Uyumlu:** `kinetic-type` — dev tipografi tek bölümde kullanılabilir.
-- **Yasak:** `japandi` — düşük kontrast ve sakinlik uyarı hiyerarşisini öldürür.
-- **Yasak:** `ethereal` — sis/ışıma dili kesin uyarı kademesini bozar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `constructivism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `neo-brutalism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `kinetic-type` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `japandi` | Two different ornamental languages compete on the same screen |
+| Mixing | `ethereal` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.iso.org/standard/68835.html | ISO 3864 güvenlik işaretleri: renk + biçim |
-| https://en.wikipedia.org/wiki/Hazard_symbol | çapraz bant ve uyarı renkleri |
-| https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.145 | uyarı kategorileri ve metin hiyerarşisi |
-| https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html | flash sınırı (saniyede 3 altı) |
+| Source | for what |
+| --- | --- |
+| https://www.iso.org/standard/68835.html | ISO 3864 · güvenlik işaretleri — ISO 3864 güvenlik işaretleri: renk + biçim |
+| https://en.wikipedia.org/wiki/Hazard_symbol | Hazard symbol — çapraz bant ve uyarı renkleri |
+| https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.145 | OSHA 1910.145 — uyarı kategorileri ve metin hiyerarşisi |
+| https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html | WCAG 2.2 · Three Flashes — flash sınırı (saniyede 3 altı) |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Güvenlik Tabelası (styles/58-safety-signage/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="safety-signage"] değişkenleri; hard-coded renk/radius/gölge yasak.
 Zemin: --bg asfalt; üst bant 8px çapraz (repeating-linear-gradient 45°, var(--accent) 0 20px, var(--accent-ink) 20px 40px).
@@ -230,15 +245,15 @@ Hareket: enter 140ms linear 16px stagger .06; scroll top 93% 150ms 22px once; pi
   Sinirde: saniyede 3 flash yok, sürekli animasyon ≤1, prefers-reduced-motion hepsini kapatır.
 Yasak: pastel, italik, serif, gölge, blur, cam, küçük harf başlık, emoji.
 Çıktı: bileşen kodu + tek paragraf not (hangi uyarı kademesini nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: çapraz bant, üç kademeli çerçeve, piktogram, sol 8px bant.
-- [ ] Hard-coded renk/radius/gölge yok; radius 0.
-- [ ] Kontrast: 16.75 / 10.25 / 13.04 — hepsi eşik üstü.
-- [ ] Odak halkası 3px accent + 3px offset görünür.
-- [ ] 390px'te bant 6px, başlık 40px, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hiçbir flash/döngü kalmıyor.
+Style: Güvenlik Tabelası (safety-signage) · family: Industrial (56–65)
+Token: --bg #12120e · --surface #1f1f18 · --ink #f6f2e4 · --accent #ffd52e · --line rgba(246,242,228,.20)
+Radius: 0px / 0px · Typography: Anton / Rajdhani / Space Mono
+Required: Uyarı hiyerarşisi sabit: 2px accent çerçeve = yasak/tehlike, 2px ink = talimat, 1px line = bilgi · Display daima büyük harf (Anton), line-height ≤ 1.0 · Renk tek başına anlam taşımaz: her durum piktogram + metinle birlikte
+Banned: Pastel veya düşük kontrast palet. · İnce ağırlık, italik, serif. · Yumuşak gölge, blur, cam.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -249,15 +264,25 @@ Yasak: pastel, italik, serif, gölge, blur, cam, küçük harf başlık, emoji.
   --ink: #f6f2e4; --ink-soft: #c4c0a9; --ink-faint: #8b8874;
   --accent: #ffd52e; --accent-ink: #14140d;
   --line: rgba(246,242,228,.20);
+  --danger: #e63c2d;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 0px;
   --shadow: none; --shadow-hard: none;
-  --font-display: "Anton", "Archivo Black", system-ui, sans-serif;
-  --font-body: "Rajdhani", "Inter", system-ui, sans-serif;
+  --font-display: "Anton", system-ui, sans-serif;
+  --font-body: "Rajdhani", system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
   --tracking: .01em; --blur: 0px; --grain: 0;
-  --danger: #ff6b57; --danger-ink: #12120e;
-  --ok: #7ee08a; --warn: #ffd52e;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="safety-signage"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

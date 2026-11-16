@@ -3,17 +3,17 @@
  "count": 251,
  "families": [
   {
-   "name": "Sade",
+   "name": "Minimal",
    "from": 1,
    "to": 7
   },
   {
-   "name": "Yüzey",
+   "name": "Surface",
    "from": 8,
    "to": 12
   },
   {
-   "name": "Cesur",
+   "name": "Bold",
    "from": 13,
    "to": 18
   },
@@ -23,155 +23,155 @@
    "to": 27
   },
   {
-   "name": "Sanatsal",
+   "name": "Art",
    "from": 28,
    "to": 34
   },
   {
-   "name": "Geometrik",
+   "name": "Geometric",
    "from": 35,
    "to": 36
   },
   {
-   "name": "Tipografik",
+   "name": "Typographic",
    "from": 37,
    "to": 37
   },
   {
-   "name": "Organik",
+   "name": "Organic",
    "from": 38,
    "to": 38
   },
   {
-   "name": "Yeni Dalga",
+   "name": "New Wave",
    "from": 39,
    "to": 40
   },
   {
-   "name": "Zamansız",
+   "name": "Timeless",
    "from": 41,
    "to": 44
   },
   {
-   "name": "Teknik",
+   "name": "Technical",
    "from": 45,
    "to": 45
   },
   {
-   "name": "Veri & Gösterge",
+   "name": "Data & Indicator",
    "from": 46,
    "to": 55
   },
   {
-   "name": "Endüstriyel",
+   "name": "Industrial",
    "from": 56,
    "to": 65
   },
   {
-   "name": "Kültürel & Bölgesel",
+   "name": "Cultural & Regional",
    "from": 66,
    "to": 75
   },
   {
-   "name": "Doğa & Organik",
+   "name": "Nature & Organic",
    "from": 76,
    "to": 85
   },
   {
-   "name": "Yayın & Tipografi",
+   "name": "Publication & Typography",
    "from": 86,
    "to": 95
   },
   {
-   "name": "Hareket & Optik",
+   "name": "Motion & Optics",
    "from": 96,
    "to": 105
   },
   {
-   "name": "Etkileşim",
+   "name": "Interactive",
    "from": 106,
    "to": 115
   },
   {
-   "name": "Oyuncu",
+   "name": "Playful",
    "from": 116,
    "to": 125
   },
   {
-   "name": "Materyal & Lüks",
+   "name": "Material & Luxury",
    "from": 126,
    "to": 135
   },
   {
-   "name": "Deneysel & Gelecek",
+   "name": "Experimental & Future",
    "from": 136,
    "to": 145
   },
   {
-   "name": "Sahne & Prestij",
+   "name": "Stage & Prestige",
    "from": 146,
    "to": 151
   },
   {
-   "name": "Oyun & Etkileşim",
+   "name": "Games & Interaction",
    "from": 152,
    "to": 171
   },
   {
-   "name": "Operasyon & Veri",
+   "name": "Operations & Data",
    "from": 172,
    "to": 181
   },
   {
-   "name": "Ticaret & Vitrin",
+   "name": "Commerce & Showcase",
    "from": 182,
    "to": 191
   },
   {
-   "name": "Kültür & Yayın",
+   "name": "Culture & Publishing",
    "from": 192,
    "to": 201
   },
   {
-   "name": "Sağlık & Bilim",
+   "name": "Health & Science",
    "from": 202,
    "to": 211
   },
   {
-   "name": "Öğrenme & Oyunlaştırma",
+   "name": "Learning & Gamification",
    "from": 212,
    "to": 221
   },
   {
-   "name": "Materyal & Zanaat",
+   "name": "Material & Craft",
    "from": 222,
    "to": 231
   },
   {
-   "name": "Tipografi Denemeleri",
+   "name": "Typography Experiments",
    "from": 232,
    "to": 241
   },
   {
-   "name": "Gelecek & Spekülatif",
+   "name": "Future & Speculative",
    "from": 242,
    "to": 251
   }
  ],
  "contract": {
-  "dir": "dosya yolu: styles/<num>-<slug>/ (style.md · tokens.json · shots/01-page.png)",
-  "tag": "tek cümlelik kimlik",
-  "tags": "3 etiket (arama/niyet eşleşmesi)",
-  "layout": "kompozisyon arketipi: hero|nav|density (kit/render/layouts.json)",
-  "compatible": "garnitür olarak kullanılabilir stiller (baskın değil)",
-  "forbidden": "birlikte kullanılmayacak stiller"
+  "dir": "file path: styles/<num>-<slug>/ (style.md · tokens.json · shots/01-page.png)",
+  "tag": "one sentence identity",
+  "tags": "3 tags (search/intent match)",
+  "layout": "composition archetype: hero|nav|density (kit/render/layouts.json)",
+  "compatible": "Styles that can be used as garnishes (not dominant)",
+  "forbidden": "Styles that cannot be used together"
  },
  "styles": [
   {
    "num": "01",
    "slug": "minimalism",
    "name": "Minimalism",
-   "family": "Sade",
+   "family": "Minimal",
    "tag": "Fazlalığın silinmesi; hiyerarşiyi renk ve süs değil, boşluk + ölçek + ağırlık kurar.",
    "tags": [
     "boşluk",
@@ -199,7 +199,7 @@
    "num": "02",
    "slug": "swiss-design",
    "name": "Swiss Design",
-   "family": "Sade",
+   "family": "Minimal",
    "tag": "Görünmez bir ızgaraya oturan, sola dayalı, tek yazı karakteriyle kurulmuş rasyonel düzen; süsleme yerine hizalama ve tipografik ölçek konuşur.",
    "tags": [
     "12 kolon",
@@ -226,7 +226,7 @@
    "num": "03",
    "slug": "editorial-design",
    "name": "Editorial Design",
-   "family": "Sade",
+   "family": "Minimal",
    "tag": "Dergi sayfası mantığı: serif display, kolon ritmi, drop cap, dipnot ve hairline — içerik anlatı gibi akar.",
    "tags": [
     "serif başlık",
@@ -253,7 +253,7 @@
    "num": "04",
    "slug": "luxury-typography",
    "name": "Luxury Typography",
-   "family": "Sade",
+   "family": "Minimal",
    "tag": "Seyrek yerleşim + ince serif + geniş harf aralığı; lüks, boşluğun ve yavaşlığın fiyatıdır.",
    "tags": [
     "geniş tracking",
@@ -280,7 +280,7 @@
    "num": "05",
    "slug": "bento-grid",
    "name": "Bento Grid",
-   "family": "Sade",
+   "family": "Minimal",
    "tag": "Değişken boyutlu modüler kutular; her kutu tek bir cevap verir, ızgara \"her şey yerinde\" hissini kurar.",
    "tags": [
     "modüler kutu",
@@ -307,7 +307,7 @@
    "num": "06",
    "slug": "japandi",
    "name": "Japandi",
-   "family": "Sade",
+   "family": "Minimal",
    "tag": "Japon sadeliği + İskandinav sıcaklığı: düşük kontrast, yumuşak serif başlık, kil-linen tonları, ölçülü boşluk.",
    "tags": [
     "sıcak nötr",
@@ -334,7 +334,7 @@
    "num": "07",
    "slug": "wabi-sabi",
    "name": "Wabi-Sabi",
-   "family": "Sade",
+   "family": "Minimal",
    "tag": "Kusuru saklamayan düzen: kırık hiza, organik form, el yapımı doku ve eksik bırakılmış boşluk.",
    "tags": [
     "kırık hiza",
@@ -361,7 +361,7 @@
    "num": "08",
    "slug": "glassmorphism",
    "name": "Glassmorphism",
-   "family": "Yüzey",
+   "family": "Surface",
    "tag": "Medyanın üstünde duran buzlu cam katman; derinlik ışıktan ve bulanıklıktan gelir, süs ne kadar azsa cam o kadar inandırıcı olur.",
    "tags": [
     "backdrop blur",
@@ -388,7 +388,7 @@
    "num": "09",
    "slug": "liquid-glass",
    "name": "Liquid Glass",
-   "family": "Yüzey",
+   "family": "Surface",
    "tag": "Cam sadece bulanıklaştırmakla kalmıyor, büküyor: kenarında ışık kırılan, basınca hafifçe akan, arkasındaki rengi taşıyan optik katman (Apple visionOS/iOS 26 dili).",
    "tags": [
     "refraksiyon",
@@ -415,7 +415,7 @@
    "num": "10",
    "slug": "neumorphism",
    "name": "Neumorphism",
-   "family": "Yüzey",
+   "family": "Surface",
    "tag": "Aynı renkli yumuşak yüzey üzerinde çift gölgeyle kabartma; kontrol \"çizilmiş\" değil \"basılmış\" görünür.",
    "tags": [
     "çift gölge",
@@ -441,7 +441,7 @@
    "num": "11",
    "slug": "claymorphism",
    "name": "Claymorphism",
-   "family": "Yüzey",
+   "family": "Surface",
    "tag": "Kil gibi şişkin, pastel ve oyuncak yüzeyler: iç gölge + dış gölge + kalın yuvarlak hat, dokunulabilir \"oyun hamuru\" hissi.",
    "tags": [
     "pastel",
@@ -468,7 +468,7 @@
    "num": "12",
    "slug": "aurora-ui",
    "name": "Aurora UI",
-   "family": "Yüzey",
+   "family": "Surface",
    "tag": "Koyu zeminin üzerinde kuzey ışığı gibi akan renkli gradient katmanları; cam paneller gradient'i taşır.",
    "tags": [
     "gradient blob",
@@ -495,7 +495,7 @@
    "num": "13",
    "slug": "neo-brutalism",
    "name": "Neo-Brutalism",
-   "family": "Cesur",
+   "family": "Bold",
    "tag": "Arayüzün \"tasarlanmış\" değil \"basılmış\" görünmesi; kalın siyah kontur, ofset gölge, doygun düz renk ve büyük harf tipografi.",
    "tags": [
     "kalın kenar",
@@ -522,7 +522,7 @@
    "num": "14",
    "slug": "anti-design",
    "name": "Anti-Design",
-   "family": "Cesur",
+   "family": "Bold",
    "tag": "Kuralları bilerek çiğneyen düzen: bozuk ızgara, karışık ölçek, kasıtlı dönüklük ve \"hatalı\" görünen tipografi.",
    "tags": [
     "bozuk ızgara",
@@ -549,7 +549,7 @@
    "num": "15",
    "slug": "acid-graphics",
    "name": "Acid Graphics",
-   "family": "Cesur",
+   "family": "Bold",
    "tag": "Siyah zemin üzerinde asit yeşili neon, genişletilmiş grotesk tipografi ve distorsiyon — tekno kültürün görsel gürültüsü.",
    "tags": [
     "asit yeşili",
@@ -576,7 +576,7 @@
    "num": "16",
    "slug": "memphis",
    "name": "Memphis",
-   "family": "Cesur",
+   "family": "Bold",
    "tag": "80'ler Memphis grubunun neşesi: kalın siyah kontur, düz doygun renk, zikzak/nokta/daire geometrisi ve ofset gölge.",
    "tags": [
     "zikzak",
@@ -603,7 +603,7 @@
    "num": "17",
    "slug": "maximalism",
    "name": "Maximalism",
-   "family": "Cesur",
+   "family": "Bold",
    "tag": "Dolu, katmanlı, motifli: her yüzey bir desen, her bölüm bir renk, ama ritim korunur — \"kontrollü bolluk\".",
    "tags": [
     "katman",
@@ -630,7 +630,7 @@
    "num": "18",
    "slug": "dopamine-ui",
    "name": "Dopamine UI",
-   "family": "Cesur",
+   "family": "Bold",
    "tag": "Canlı renk + mikro ödül: her etkileşim küçük bir \"iyi his\" bırakır, ama palet disiplinli kalır.",
    "tags": [
     "doygun blok",
@@ -847,7 +847,7 @@
    "slug": "art-deco",
    "name": "Art Deco",
    "family": "Retro",
-   "tag": "",
+   "tag": "Art Deco",
    "tags": [
     "simetri",
     "altın hairline",
@@ -900,7 +900,7 @@
    "num": "28",
    "slug": "surrealism",
    "name": "Surrealism",
-   "family": "Sanatsal",
+   "family": "Art",
    "tag": "Beklenmedik ölçek ve yer değiştirme: küçük şeyler dev, dev şeyler arka planda; düzen gerçekçi, içerik rüya.",
    "tags": [
     "ölçek oyunu",
@@ -927,7 +927,7 @@
    "num": "29",
    "slug": "ethereal",
    "name": "Ethereal",
-   "family": "Sanatsal",
+   "family": "Art",
    "tag": "Sis ve ışık: neredeyse silinen kontrast, yumuşak serif, cam yüzeyler ve nefes gibi hareket.",
    "tags": [
     "sis",
@@ -954,8 +954,8 @@
    "num": "30",
    "slug": "bohemian",
    "name": "Bohemian",
-   "family": "Sanatsal",
-   "tag": "",
+   "family": "Art",
+   "tag": "Bohemian",
    "tags": [
     "toprak paleti",
     "kilim deseni",
@@ -981,8 +981,8 @@
    "num": "31",
    "slug": "scrapbook",
    "name": "Scrapbook",
-   "family": "Sanatsal",
-   "tag": "",
+   "family": "Art",
+   "tag": "Scrapbook",
    "tags": [
     "bant",
     "polaroid",
@@ -1008,8 +1008,8 @@
    "num": "32",
    "slug": "conceptual-sketch",
    "name": "Conceptual Sketch",
-   "family": "Sanatsal",
-   "tag": "",
+   "family": "Art",
+   "tag": "Conceptual Sketch",
    "tags": [
     "el çizgisi",
     "wireframe",
@@ -1035,8 +1035,8 @@
    "num": "33",
    "slug": "dark-academia",
    "name": "Dark Academia",
-   "family": "Sanatsal",
-   "tag": "",
+   "family": "Art",
+   "tag": "Dark Academia",
    "tags": [
     "koyu ahşap",
     "gotik serif",
@@ -1062,8 +1062,8 @@
    "num": "34",
    "slug": "skeuomorphism",
    "name": "Skeuomorphism",
-   "family": "Sanatsal",
-   "tag": "",
+   "family": "Art",
+   "tag": "Skeuomorphism",
    "tags": [
     "malzeme dokusu",
     "gömülü buton",
@@ -1089,8 +1089,8 @@
    "num": "35",
    "slug": "bauhaus",
    "name": "Bauhaus",
-   "family": "Geometrik",
-   "tag": "",
+   "family": "Geometric",
+   "tag": "Bauhaus",
    "tags": [
     "geometri",
     "temel renkler",
@@ -1116,7 +1116,7 @@
    "num": "36",
    "slug": "constructivism",
    "name": "Constructivism",
-   "family": "Geometrik",
+   "family": "Geometric",
    "tag": "1920'ler Rus konstrüktivizmi: kırmızı–siyah–kırık beyaz, kalın diagonal çubuk, aşırı büyük tipografi ve radius'suz asimetrik montaj.",
    "tags": [
     "diagonal çubuk",
@@ -1143,7 +1143,7 @@
    "num": "37",
    "slug": "kinetic-type",
    "name": "Kinetic Type",
-   "family": "Tipografik",
+   "family": "Typographic",
    "tag": "Tipografi dekor değil taşıyıcıdır — 28→96px arasında atlayan dev ölçek, 0.95 satır aralığı ve metni kesen diagonal katmanlarla arayüz poster gibi okunur.",
    "tags": [
     "dev ölçek atlaması",
@@ -1172,7 +1172,7 @@
    "num": "38",
    "slug": "organic-bio",
    "name": "Organic / Biophilic",
-   "family": "Organik",
+   "family": "Organic",
    "tag": "Doğal büyüme mantığıyla kurulmuş arayüz: asimetrik yumuşak radius, toprak–yeşil palet, katmanlı yaprak dokusu ve insan ölçeğinde tipografi.",
    "tags": [
     "doğal form",
@@ -1200,7 +1200,7 @@
    "num": "39",
    "slug": "ai-native-mesh",
    "name": "AI-native Mesh",
-   "family": "Yeni Dalga",
+   "family": "New Wave",
    "tag": "Koyu nötr bir zeminin üstünde iki katmanlı mesh gradyanın atmosfer kurduğu, içeriğin ise cam yüzeyler ve sakin geometrik tipografiyle taşındığı \"AI konsolu\" arayüzü — parlama gösteri değil, sadece ışığın yönü.",
    "tags": [
     "mesh gradyan",
@@ -1230,7 +1230,7 @@
    "num": "40",
    "slug": "scandinavian-dark",
    "name": "Scandinavian Dark",
-   "family": "Yeni Dalga",
+   "family": "New Wave",
    "tag": "Kuzey ışığının mat hâli: düşük doygunluklu koyu yüzeyler, 1px hairline ile ayrılmış geniş boşluk ve süs yerine ışığın kendisiyle kurulan sakin bir arayüz.",
    "tags": [
     "kuzey ışığı",
@@ -1259,7 +1259,7 @@
    "num": "41",
    "slug": "grand-tourer",
    "name": "Grand Tourer",
-   "family": "Zamansız",
+   "family": "Timeless",
    "tag": "Krem deri, krom hairline ve kadran: 1960'ların klasik GT kokpiti gibi davranan, lüksü süsle değil malzemeyle anlatan bir arayüz.",
    "tags": [
     "krem deri + krom",
@@ -1289,7 +1289,7 @@
    "num": "42",
    "slug": "grand-tourer-oxblood",
    "name": "Grand Tourer Oxblood",
-   "family": "Zamansız",
+   "family": "Timeless",
    "tag": "Grand Tourer sisteminin bordo deri kardeşi: aynı krem kokpit, aynı krom ve kadran, ama vurgu İngiliz kulüp derisinin bordo tonunda — üstüne gravür başlık, künye şeridi ve mat çerçeve eklenmiş \"prime\" katmanı.",
    "tags": [
     "bordo deri",
@@ -1319,7 +1319,7 @@
    "num": "43",
    "slug": "grand-tourer-midnight",
    "name": "Grand Tourer Midnight",
-   "family": "Zamansız",
+   "family": "Timeless",
    "tag": "Grand Tourer'ın gece varyantı: krem kokpit aynı kalır, nötrler maviye kayar ve vurgu gece mavisine döner — gündüz krem, gece koyu lacivert; iki zaman diliminde de aynı krom disiplini.",
    "tags": [
     "gece mavisi",
@@ -1349,7 +1349,7 @@
    "num": "44",
    "slug": "utility",
    "name": "Utility",
-   "family": "Zamansız",
+   "family": "Timeless",
    "tag": "Süsün sıfıra çekildiği, hiyerarşiyi yalnız punto, boşluk ve tek vurgu renginin taşıdığı ölçülü ürün arayüzü.",
    "tags": [
     "hairline disiplin",
@@ -1377,7 +1377,7 @@
    "num": "45",
    "slug": "terminal-ui",
    "name": "Terminal UI",
-   "family": "Teknik",
+   "family": "Technical",
    "tag": "Her şeyin tek mono ızgarada hizalandığı, durumu rengin değil metnin söylediği klavye öncelikli arayüz.",
    "tags": [
     "mono ızgara",
@@ -1404,7 +1404,7 @@
    "num": "46",
    "slug": "telemetry-grid",
    "name": "Telemetry Grid",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Her metriğin kendi hairline hücresinde, 24px ölçüm ızgarasına oturduğu ve durumun yalnız eşik değeriyle konuştuğu gözlemlenebilirlik yüzeyi.",
    "tags": [
     "24px ölçüm ızgarası",
@@ -1431,7 +1431,7 @@
    "num": "47",
    "slug": "trading-desk",
    "name": "Trading Desk",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Fiyatın ve pozisyonun tek bakışta okunduğu, amber vurgulu grafit zeminde 24px satırlarla akan emir defteri arayüzü.",
    "tags": [
     "fiyat merdiveni",
@@ -1458,7 +1458,7 @@
    "num": "48",
    "slug": "executive-kpi",
    "name": "Executive KPI",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Dört sayının bir hairline kâğıda yerleştiği, her sayının yanında tek satır yorum taşıdığı yönetici özeti raporu.",
    "tags": [
     "yönetici özeti",
@@ -1485,7 +1485,7 @@
    "num": "49",
    "slug": "log-stream",
    "name": "Log Stream",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Olayların 28px satırlarda zebra akıp önem düzeyinin çip + renk + nokta üçlüsüyle kodlandığı, kullanıcının akışı her an durdurabildiği kayıt yüzeyi.",
    "tags": [
     "olay zaman çizgisi",
@@ -1512,7 +1512,7 @@
    "num": "50",
    "slug": "lab-instrument",
    "name": "Lab Instrument",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Her ölçümün birimi, toleransı ve kanal numarasıyla birlikte kadran yayı üzerinde okunduğu, köşe artılarıyla çerçevelenmiş enstrüman yüzeyi.",
    "tags": [
     "ölçüm kanalı",
@@ -1539,7 +1539,7 @@
    "num": "51",
    "slug": "atlas-console",
    "name": "Atlas Console",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Haritayı arayüzün zemini sayan, koordinat şeridi ve katman disipliniyle çalışan lacivert saha konsolu; süsü pusula, ölçek ve lejantla değiştirir.",
    "tags": [
     "coğrafi operasyon haritası",
@@ -1566,7 +1566,7 @@
    "num": "52",
    "slug": "experiment-split",
    "name": "Experiment Split",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Her kararı iki panelin yan yana kanıtıyla veren; kontrol/varyant ayrımını renk değil etiket, ölçü ve tek kez çizilen bölme çizgisiyle kuran deney masası.",
    "tags": [
     "deney ve A-B analizi",
@@ -1593,7 +1593,7 @@
    "num": "53",
    "slug": "ledger-meter",
    "name": "Ledger Meter",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Faturayı defter gibi okuyan; her tutarı sağa hizalı tabular rakam ve çift kuralla toplayan, tek ağırlıklı eski stil serifle fildişi kağıt sıcaklığı veren kullanım panosu.",
    "tags": [
     "faturalama ve kullanım metrikleri",
@@ -1620,7 +1620,7 @@
    "num": "54",
    "slug": "vitals-triage",
    "name": "Vitals Triage",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Vital bulguları büyük yuvarlak kartlarda, triyaj seviyesini sol şerit ve metinle kodlayan; sıcak-soğuk klinik zeminli, nabız halkasıyla durumu hissettiren sağlık panosu.",
    "tags": [
     "sağlık vitalleri ve triyaj",
@@ -1647,7 +1647,7 @@
    "num": "55",
    "slug": "fleet-telemetry",
    "name": "Fleet Telemetry",
-   "family": "Veri & Gösterge",
+   "family": "Data & Indicator",
    "tag": "Binlerce cihazın bağlantısını kapsama ızgarası ve tek satırlık cihaz kimliğiyle okuyan; accent'in yalnız \"bağlantı aktif\" anlamına geldiği filo konsolu.",
    "tags": [
     "IoT filo kontrolü",
@@ -1674,7 +1674,7 @@
    "num": "56",
    "slug": "blueprint-drawing",
    "name": "Blueprint Çizimi",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Mühendislik paftasının ekrana taşınmış hâli: cyanotype zemin, 8/64px çizim ızgarası ve hiyerarşiyi yalnız çizgi kalınlığıyla kuran teknik arayüz.",
    "tags": [
     "teknik çizim ızgarası",
@@ -1700,7 +1700,7 @@
    "num": "57",
    "slug": "machined-metal-panel",
    "name": "İşlenmiş Metal Panel",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Frezelenmiş alüminyum panelin dilini ekrana taşıyan arayüz: fırçalanmış yüzey, çift hairline bevel, gravür etiket ve tek amber durum noktası.",
    "tags": [
     "fırçalanmış alüminyum",
@@ -1726,7 +1726,7 @@
    "num": "58",
    "slug": "safety-signage",
    "name": "Güvenlik Tabelası",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Sahadaki uyarı levhasının mantığı: koyu zemin, çapraz tehlike bandı, 2px uyarı çerçevesi ve piktogram + büyük harf metinle kurulan üç kademeli hiyerarşi.",
    "tags": [
     "çapraz tehlike bandı",
@@ -1752,7 +1752,7 @@
    "num": "59",
    "slug": "mes-production-line",
    "name": "Üretim Hattı · MES",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Üretim hattının nabzını tek ekranda tutan operasyon arayüzü: açık gri zemin, tek katman gölge, durum renk kodu ve tabular sayaçlarla kurulmuş yoğun MES panosu.",
    "tags": [
     "durum renk kodu",
@@ -1778,7 +1778,7 @@
    "num": "60",
    "slug": "energy-grid",
    "name": "Enerji Şebekesi",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Elektrik şebekesinin tek hat şemasını ekrana taşıyan SCADA arayüzü: koyu grafit zemin, nokta ızgarası, 1.5px şema hattı, düğüm noktaları ve tek volt yeşili akış rengi.",
    "tags": [
     "tek hat şeması",
@@ -1804,7 +1804,7 @@
    "num": "61",
    "slug": "calibration-lab",
    "name": "Calibration Lab",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Her okumanın bir referansa ve bir toleransa bağlandığı, süsün yerini ölçüm bandının aldığı laboratuvar arayüzü.",
    "tags": [
     "kalibrasyon paneli",
@@ -1831,7 +1831,7 @@
    "num": "62",
    "slug": "warehouse-flow",
    "name": "Warehouse Flow",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Raf, görev ve sevkiyatın tek satırda okunduğu, sarının yalnız \"şimdi ne yapılacak\" sorusunu yanıtladığı depo operasyon arayüzü.",
    "tags": [
     "depo operasyon panosu",
@@ -1858,7 +1858,7 @@
    "num": "63",
    "slug": "maintenance-cmms",
    "name": "Maintenance CMMS",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Bakım işinin bir iş emri kâğıdı gibi okunduğu, turuncunun yalnız \"acil müdahale\" anlamına geldiği koyu saha arayüzü.",
    "tags": [
     "iş emri kartı",
@@ -1885,7 +1885,7 @@
    "num": "64",
    "slug": "construction-site",
    "name": "Construction Site",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Şantiyenin plaka, kalıp ve numara dilini ekrana taşıyan; her blokun 2px çerçeveyle, her metrajın birimle göründüğü saha arayüzü.",
    "tags": [
     "şantiye blok panosu",
@@ -1912,7 +1912,7 @@
    "num": "65",
    "slug": "cockpit-avionics",
    "name": "Cockpit Avionics",
-   "family": "Endüstriyel",
+   "family": "Industrial",
    "tag": "Her panelin bir gösterge çerçevesi taşıdığı, değerin etiket–sayı–birim üçlüsüyle okunduğu kokpit paneli arayüzü.",
    "tags": [
     "kokpit gösterge paneli",
@@ -1939,8 +1939,8 @@
    "num": "66",
    "slug": "nordic-folk",
    "name": "Nordic Folk",
-   "family": "Kültürel & Bölgesel",
-   "tag": "",
+   "family": "Cultural & Regional",
+   "tag": "Nordic Folk",
    "tags": [
     "halk deseni",
     "el boyaması şerit",
@@ -1966,8 +1966,8 @@
    "num": "67",
    "slug": "japanese-ma",
    "name": "Japanese Ma",
-   "family": "Kültürel & Bölgesel",
-   "tag": "",
+   "family": "Cultural & Regional",
+   "tag": "Japanese Ma",
    "tags": [
     "ölçülmüş boşluk",
     "tek yatay çizgi",
@@ -1993,8 +1993,8 @@
    "num": "68",
    "slug": "levant-calligraphy",
    "name": "Levant Calligraphy",
-   "family": "Kültürel & Bölgesel",
-   "tag": "",
+   "family": "Cultural & Regional",
+   "tag": "Levant Calligraphy",
    "tags": [
     "hat hattı",
     "tezhip çerçevesi",
@@ -2020,8 +2020,8 @@
    "num": "69",
    "slug": "andalusian-azulejo",
    "name": "Andalusian Azulejo",
-   "family": "Kültürel & Bölgesel",
-   "tag": "",
+   "family": "Cultural & Regional",
+   "tag": "Andalusian Azulejo",
    "tags": [
     "kobalt çini",
     "harç ızgarası",
@@ -2047,8 +2047,8 @@
    "num": "70",
    "slug": "slavic-late-brutalist",
    "name": "Slavic Late Brutalist",
-   "family": "Kültürel & Bölgesel",
-   "tag": "",
+   "family": "Cultural & Regional",
+   "tag": "Slavic Late Brutalist",
    "tags": [
     "beton panel",
     "sert ofset gölge",
@@ -2074,7 +2074,7 @@
    "num": "71",
    "slug": "west-african-pattern",
    "name": "West African Pattern",
-   "family": "Kültürel & Bölgesel",
+   "family": "Cultural & Regional",
    "tag": "8px dokuma şeritlerinin altın desen bloklarıyla kesildiği koyu zemin üzerinde, süsün yalnız bantlarda yaşadığı dokuma dili.",
    "tags": [
     "dokuma şerit",
@@ -2101,7 +2101,7 @@
    "num": "72",
    "slug": "andean-textile",
    "name": "Andean Textile",
-   "family": "Kültürel & Bölgesel",
+   "family": "Cultural & Regional",
    "tag": "4px adımlı basamak motifinin çözgü şeritleriyle birleştiği ve yalnız birincil yüzeyin 3px ofsetle kabardığı dokuma arayüzü.",
    "tags": [
     "basamak motifi",
@@ -2128,7 +2128,7 @@
    "num": "73",
    "slug": "indian-block-print",
    "name": "Indian Block Print",
-   "family": "Kültürel & Bölgesel",
+   "family": "Cultural & Regional",
    "tag": "Her yüzeyin 1–4px kayma iziyle basıldığı, damganın tek renk ve keskin kaldığı blok baskı arayüzü.",
    "tags": [
     "blok damga",
@@ -2155,7 +2155,7 @@
    "num": "74",
    "slug": "persian-miniature",
    "name": "Persian Miniature",
-   "family": "Kültürel & Bölgesel",
+   "family": "Cultural & Regional",
    "tag": "Gece laciverti bir sayfada çift altın çerçevenin ve madalyon kemerinin içine yerleşen, 58 karakterlik ölçülü metin bloğu.",
    "tags": [
     "altın tezhip çerçevesi",
@@ -2182,7 +2182,7 @@
    "num": "75",
    "slug": "aegean-island",
    "name": "Aegean Island",
-   "family": "Kültürel & Bölgesel",
+   "family": "Cultural & Regional",
    "tag": "Kireç beyazı badana yüzeylerin 22px kemer köşelerle açıldığı, tek Ege mavisiyle kuru ve serin kalan arayüz.",
    "tags": [
     "kireç badana",
@@ -2209,7 +2209,7 @@
    "num": "76",
    "slug": "biophilic-botanical",
    "name": "Biyofilik Botanik",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Doğayı dekor olarak değil ölçü olarak kullanan arayüz: kırık beyaz kâğıt zemin, yaprak biçimli kart, tek yumuşak gölge ve derin yaprak yeşilinin taşıdığı sakin hiyerarşi.",
    "tags": [
     "yumuşak yeşil",
@@ -2235,7 +2235,7 @@
    "num": "77",
    "slug": "weather-atmosphere",
    "name": "Hava Durumu & Atmosfer",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Gökyüzünün katmanlarını taklit eden arayüz: yukarıdan aşağı incelen atmosfer gradyanı, sisli cam nav, bulut kütlesi ve tek gölgeyle kurulan ferah boşluk.",
    "tags": [
     "gökyüzü gradyanı",
@@ -2261,7 +2261,7 @@
    "num": "78",
    "slug": "topographic-terrain",
    "name": "Topografya & Arazi",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Araziyi pafta gibi okuyan arayüz: sıcak harita kâğıdı zemin, eş yükselti halkaları, 1px pafta çerçevesi ve her ölçünün birim taşıdığı düz, gölgesiz bilgi yüzeyi.",
    "tags": [
     "eş yükselti çizgisi",
@@ -2287,7 +2287,7 @@
    "num": "79",
    "slug": "ocean-current",
    "name": "Deniz & Akıntı",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Derin suyun katmanlarını taklit eden koyu arayüz: teal zemin, ince akıntı çizgileri, serif display ve tek turkuaz vurgunun taşıdığı yön bilgisi.",
    "tags": [
     "akıntı çizgisi",
@@ -2313,7 +2313,7 @@
    "num": "80",
    "slug": "seasonal-shift",
    "name": "Mevsim Geçişi",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Bir mevsimden diğerine geçen arayüz: sıcak krem zemin, iki tonlu geçiş şeridi (pas turuncusu → yaprak yeşili), serif başlık ve tek yumuşak gölge.",
    "tags": [
     "mevsim geçişi",
@@ -2339,7 +2339,7 @@
    "num": "81",
    "slug": "forest-bark",
    "name": "Forest Bark",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Orman altının nemli karanlığında, her türün kabuğu ve mevsimiyle kaydedildiği saha defteri arayüzü.",
    "tags": [
     "orman saha defteri",
@@ -2366,7 +2366,7 @@
    "num": "82",
    "slug": "desert-sand",
    "name": "Desert Sand",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Kumul eğrileriyle yumuşayan, sıcak kum zemininde mor alacakaranlık vurgusuyla ölçüm gösteren çöl atlası arayüzü.",
    "tags": [
     "kumul eğrisi arayüz",
@@ -2393,7 +2393,7 @@
    "num": "83",
    "slug": "polar-ice",
    "name": "Polar Ice",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Buz plakası gibi keskin, yüksek anahtarlı bir zeminde her ölçümün etiket-değer-birim üçlüsüyle okunduğu kutup veri arayüzü.",
    "tags": [
     "buz plakası panel",
@@ -2420,7 +2420,7 @@
    "num": "84",
    "slug": "volcanic-mineral",
    "name": "Volcanic Mineral",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Bazalt siyahı keskin yüzeylerde her örneğin katman kalınlığı ve mineral yüzdesiyle kaydedildiği volkanik kesit arayüzü.",
    "tags": [
     "jeolojik kesit paneli",
@@ -2447,7 +2447,7 @@
    "num": "85",
    "slug": "coral-reef",
    "name": "Coral Reef",
-   "family": "Doğa & Organik",
+   "family": "Nature & Organic",
    "tag": "Su altı ışığının yumuşattığı koyu turkuaz zeminde, her türün bölgesi ve derinliğiyle kaydedildiği resif gözlem arayüzü.",
    "tags": [
     "resif gözlem kaydı",
@@ -2475,7 +2475,7 @@
    "num": "86",
    "slug": "literary-hardcover",
    "name": "Literary Hardcover",
-   "family": "Yayın & Tipografi",
+   "family": "Publication & Typography",
    "tag": "Edebiyat kitabının kapağını arayüze çeviren stil: tek serif aile, 17px/1.72 gövde, 64ch ölçü ve derinliği 1px hairline ile kâğıt tonundan alan sakin okuma sayfası.",
    "tags": [
     "edebiyat kitabı",
@@ -2502,7 +2502,7 @@
    "num": "87",
    "slug": "broadsheet-daily",
    "name": "Broadsheet Daily",
-   "family": "Yayın & Tipografi",
+   "family": "Publication & Typography",
    "tag": "Gazete baskısının mantığı: masthead'te tek kalın sans, gövdede haber serifi, bitişik kolonlar ve 0 radius — hareket neredeyse yok, çünkü haber bekletmez.",
    "tags": [
     "gazete kolonu",
@@ -2529,7 +2529,7 @@
    "num": "88",
    "slug": "magazine-feature",
    "name": "Magazine Feature",
-   "family": "Yayın & Tipografi",
+   "family": "Publication & Typography",
    "tag": "Dergi feature açılışı: Fraunces 64px display, 34px kayma, 0.9s reveal ve tek pin'li pull-quote sahnesi — okunan değil \"sayfası çevrilen\" bir editoryal yüzey.",
    "tags": [
     "dergi feature",
@@ -2556,7 +2556,7 @@
    "num": "89",
    "slug": "academic-paper",
    "name": "Academic Paper",
-   "family": "Yayın & Tipografi",
+   "family": "Publication & Typography",
    "tag": "Akademik makale formu: EB Garamond 15.5px/1.66 iki kolon, numaralı başlıklar, dipnot çizgisi ve hareketin neredeyse sıfır olduğu (0.33s linear) bir kanıt yüzeyi.",
    "tags": [
     "akademik makale",
@@ -2583,7 +2583,7 @@
    "num": "90",
    "slug": "poetry-chapbook",
    "name": "Poetry Chapbook",
-   "family": "Yayın & Tipografi",
+   "family": "Publication & Typography",
    "tag": "Şiir kitapçığı: 1.1s'lik nefes alan giriş, Cormorant Garamond italik dizeler, 46ch dar ölçü ve sol kenarda tek 1px el dikişi çizgisi.",
    "tags": [
     "şiir kitapçığı",
@@ -2610,8 +2610,8 @@
    "num": "91",
    "slug": "product-catalog",
    "name": "Product Catalog",
-   "family": "Yayın & Tipografi",
-   "tag": "",
+   "family": "Publication & Typography",
+   "tag": "Product Catalog",
    "tags": [
     "katalog sayfası",
     "kod ve fiyat sütunu",
@@ -2637,8 +2637,8 @@
    "num": "92",
    "slug": "museum-thesis",
    "name": "Museum & Thesis",
-   "family": "Yayın & Tipografi",
-   "tag": "",
+   "family": "Publication & Typography",
+   "tag": "Museum & Thesis",
    "tags": [
     "duvar etiketi",
     "asılı girinti",
@@ -2664,8 +2664,8 @@
    "num": "93",
    "slug": "type-experiment",
    "name": "Type Experiment",
-   "family": "Yayın & Tipografi",
-   "tag": "",
+   "family": "Publication & Typography",
+   "tag": "Type Experiment",
    "tags": [
     "tipografik spesimen",
     "taban çizgisi ızgarası",
@@ -2691,8 +2691,8 @@
    "num": "94",
    "slug": "encyclopedia",
    "name": "Encyclopedia",
-   "family": "Yayın & Tipografi",
-   "tag": "",
+   "family": "Publication & Typography",
+   "tag": "Encyclopedia",
    "tags": [
     "madde başı",
     "numaralı tanımlar",
@@ -2718,8 +2718,8 @@
    "num": "95",
    "slug": "punk-fanzine",
    "name": "Punk Fanzine",
-   "family": "Yayın & Tipografi",
-   "tag": "",
+   "family": "Publication & Typography",
+   "tag": "Punk Fanzine",
    "tags": [
     "fotokopi zine",
     "kes-yapıştır şerit",
@@ -2745,7 +2745,7 @@
    "num": "96",
    "slug": "kinetic-marquee",
    "name": "Kinetic Marquee",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "Tipografiyi sabit bir poster gibi değil, hızla akan bir bant gibi kullanan; eğimi ve ritmi scroll hızından alan hareket stili.",
    "tags": [
     "marquee bandı",
@@ -2772,7 +2772,7 @@
    "num": "97",
    "slug": "optical-illusion",
    "name": "Optical Illusion",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "Kenarları keskinleştirip desen frekansını yükselterek gözü yanıltan, ama hiçbir desenini hareket ettirmeyen statik optik stil.",
    "tags": [
     "moiré katmanı",
@@ -2799,7 +2799,7 @@
    "num": "98",
    "slug": "generative-grid",
    "name": "Generative Grid",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "24px çizim ızgarasına hizalanmış yay, düğüm ve tarama izlerinden oluşan, her deseni bir tohum etiketiyle tekrar üretilebilir kılan çizici arayüzü.",
    "tags": [
     "tohumlu ızgara",
@@ -2826,7 +2826,7 @@
    "num": "99",
    "slug": "depth-parallax",
    "name": "Depth Parallax",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "Üç düzlemin farklı hızda kaydığı ve uzak katmanın 2px pusla geri çekildiği, derinliği gölge hiyerarşisiyle kuran arayüz.",
    "tags": [
     "üç derinlik düzlemi",
@@ -2853,7 +2853,7 @@
    "num": "100",
    "slug": "fluid-simulation",
    "name": "Fluid Simulation",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "Köşeleri damla gibi asimetrik yuvarlatılmış yüzeylerin viskoz bir eğriyle aktığı, dekoratif katmanın 6px bulanık bloblarla kurulduğu yumuşak arayüz.",
    "tags": [
     "akışkan blob",
@@ -2880,7 +2880,7 @@
    "num": "101",
    "slug": "shadow-stage",
    "name": "Shadow Stage",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "Tek bir ışık kaynağının sahnedeki her şeyi sırayla aydınlattığı, hiyerarşiyi rengin değil parlaklık ve gölge yönünün kurduğu koyu sahne arayüzü.",
    "tags": [
     "ışık ve gölge oyunu",
@@ -2907,7 +2907,7 @@
    "num": "102",
    "slug": "moire-field",
    "name": "Moiré Field",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "İki ince çizgi perdesinin üst üste bindirilmesiyle oluşan girişim desenini zemin sayan, orta ton gri üzerinde keskin köşe ve pixel başlıkla kurulmuş optik desen arayüzü.",
    "tags": [
     "moiré ve desen",
@@ -2934,7 +2934,7 @@
    "num": "103",
    "slug": "motion-trail",
    "name": "Motion Trail",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "Her hareket eden öğenin arkasında üç kademeli solan bir iz bıraktığı, hızın kalıcı bir görsel öğe olarak tasarlandığı açık zeminli hareket arayüzü.",
    "tags": [
     "iz bırakma",
@@ -2961,7 +2961,7 @@
    "num": "104",
    "slug": "stepped-mechanism",
    "name": "Stepped Mechanism",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "Her geçişin dört ayrı kademede tamamlandığı, ara değer üretmeyen ve kademe göstergesiyle hareketin nerede olduğunu söyleyen orta gri mekanik kontrol arayüzü.",
    "tags": [
     "mekanik kademeli geçiş",
@@ -2988,7 +2988,7 @@
    "num": "105",
    "slug": "holographic-layer",
    "name": "Holographic Layer",
-   "family": "Hareket & Optik",
+   "family": "Motion & Optics",
    "tag": "Her panelin arkasında 12px kaymış iki soluk katman bulunduğu, ışığın cam kenarında kırıldığı koyu mor holografik arayüz.",
    "tags": [
     "holografik katman",
@@ -3015,7 +3015,7 @@
    "num": "106",
    "slug": "voice-first",
    "name": "Ses-Öncelikli",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "Arayüzün ana girişi ses olan stil: ekranın merkezinde dinleme halkası ve dalga formu, çevresinde tek satırlık transkript, hap biçimli dev butonlar.",
    "tags": [
     "dinleme halkası",
@@ -3041,7 +3041,7 @@
    "num": "107",
    "slug": "spatial-ar-layer",
    "name": "Uzamsal AR Katman",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "Ekranı üç derinlik düzlemine bölen stil: perspektif ızgara zemin, çapa artılı yüzen katmanlar, mono koordinat etiketleri ve kapatılabilir pin-scrub paralaks.",
    "tags": [
     "derinlik katmanı",
@@ -3067,7 +3067,7 @@
    "num": "108",
    "slug": "command-palette",
    "name": "Komut Paleti",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "Fare olmadan çalışan stil: koyu grafit zemin, blur ile karartılmış arka plan, 44px komut satırları, keycap chip'ler ve tek açık (chalk) accent.",
    "tags": [
     "klavye önceliği",
@@ -3093,7 +3093,7 @@
    "num": "109",
    "slug": "timeline-editor",
    "name": "Zaman Çizelgesi Editörü",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "Kurgu masasının dili: 32px kanal şeritleri, tek dikey playhead, mono zaman kodu ve %14 kanal tonlu klip bloklarıyla kurulan sıkı çalışma yüzeyi.",
    "tags": [
     "playhead",
@@ -3119,7 +3119,7 @@
    "num": "110",
    "slug": "kanban-flow",
    "name": "Kanban Akışı",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "İşin kolonlar arasında aktığı arayüz: soğuk gri tahta zemini, beyaz kartlar, 3px kategori şeridi ve WIP sayaçlı kolon başlıkları.",
    "tags": [
     "WIP sayacı",
@@ -3145,7 +3145,7 @@
    "num": "111",
    "slug": "step-wizard",
    "name": "Adım Sihirbazı",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "Ekran başına tek karar veren, sol dikey numaralı adım rayı ve altta sabit geri/ileri çubuğu olan çok adımlı form stili.",
    "tags": [
     "adım rayı",
@@ -3171,7 +3171,7 @@
    "num": "112",
    "slug": "zero-ui",
    "name": "Sıfır Arayüz",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "Görünür kontrolü neredeyse sıfıra indiren, tek niyet satırı ve 1px hairline katmanlarla çalışan monokrom arayüz stili.",
    "tags": [
     "monokrom sadeleşme",
@@ -3197,7 +3197,7 @@
    "num": "113",
    "slug": "notebook-repl",
    "name": "Notebook / REPL",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "Ekranı numaralı yürütme hücrelerine bölen, her bloğun altında ayrı çıktı ve kernel durumu gösteren hesaplama-defteri stili.",
    "tags": [
     "hücre numarası",
@@ -3223,7 +3223,7 @@
    "num": "114",
    "slug": "multiplayer-presence",
    "name": "Eşzamanlı İşbirlikçi",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "Aynı belgede çalışan herkesi canlı imleç, avatar yığını ve uzak seçim vurgusuyla görünür kılan çok kişili çalışma stili.",
    "tags": [
     "canlı imleç",
@@ -3249,7 +3249,7 @@
    "num": "115",
    "slug": "keyboard-first",
    "name": "Klavye-Öncelikli Komut Arayüzü",
-   "family": "Etkileşim",
+   "family": "Interactive",
    "tag": "Her eylemin tuş ipucunu yanında taşıyan, sabit komut satırı ve 2px odak halkasıyla klavyeden hiç ayrılmadan çalışılan komut yüzeyi stili.",
    "tags": [
     "tuş ipucu",
@@ -3275,7 +3275,7 @@
    "num": "116",
    "slug": "kids-playground",
    "name": "Kids Playground",
-   "family": "Oyuncu",
+   "family": "Playful",
    "tag": "Çocuk oyun alanı mantığı: 18px yuvarlak köşe, kalın tek gölge, 4 renkli ama %12 sınırlı bloklar ve 0.46s zıplayan giriş — güvenli, cesur, dokunulabilir.",
    "tags": [
     "çocuk oyun alanı",
@@ -3302,7 +3302,7 @@
    "num": "117",
    "slug": "carnival-festival",
    "name": "Carnival Festival",
-   "family": "Oyuncu",
+   "family": "Playful",
    "tag": "Karnaval afişi mantığı: Anton 72px bant başlık, 30px kayma, 0.28s snap giriş ve hareketli renk şeritleri — müzik, ışık ve kalabalık aynı karede.",
    "tags": [
     "karnaval afişi",
@@ -3329,7 +3329,7 @@
    "num": "118",
    "slug": "sticker-sheet",
    "name": "Sticker Sheet",
-   "family": "Oyuncu",
+   "family": "Playful",
    "tag": "Çıkartma sayfası mantığı: 6px beyaz die-cut halka, 2px ofset gölge ve 12px kayma — her blok sayfadan \"soyulabiliyormuş\" gibi durur.",
    "tags": [
     "çıkartma sayfası",
@@ -3356,7 +3356,7 @@
    "num": "119",
    "slug": "arcade-8bit",
    "name": "Arcade 8-bit",
-   "family": "Oyuncu",
+   "family": "Playful",
    "tag": "Modern arcade kabini: Press Start 2P 32px skor başlığı, CRT tarama dokusu, 0.18s steps(4) giriş ve tek neon aksan — nostalji, ama okunur ve klavye erişilebilir.",
    "tags": [
     "arcade kabin",
@@ -3383,7 +3383,7 @@
    "num": "120",
    "slug": "craft-handmade",
    "name": "Craft Handmade",
-   "family": "Oyuncu",
+   "family": "Playful",
    "tag": "El yapımı zanaat: kraft kâğıt dokusu, Caveat 52px el yazısı başlık, 1px kesikli dikiş çizgisi ve 0.82s ağır giriş — her blok \"elle yerleştirilmiş\" gibi durur.",
    "tags": [
     "el yapımı",
@@ -3410,8 +3410,8 @@
    "num": "121",
    "slug": "celebration-card",
    "name": "Celebration Card",
-   "family": "Oyuncu",
-   "tag": "",
+   "family": "Playful",
+   "tag": "Celebration Card",
    "tags": [
     "die-cut kart",
     "konfeti saçılımı",
@@ -3437,8 +3437,8 @@
    "num": "122",
    "slug": "collectible-card",
    "name": "Collectible Card",
-   "family": "Oyuncu",
-   "tag": "",
+   "family": "Playful",
+   "tag": "Collectible Card",
    "tags": [
     "2.5:3.5 kart",
     "holo bant",
@@ -3464,8 +3464,8 @@
    "num": "123",
    "slug": "comic-story",
    "name": "Comic Story",
-   "family": "Oyuncu",
-   "tag": "",
+   "family": "Playful",
+   "tag": "Comic Story",
    "tags": [
     "panel ızgarası",
     "konuşma balonu",
@@ -3491,8 +3491,8 @@
    "num": "124",
    "slug": "album-sleeve",
    "name": "Album Sleeve",
-   "family": "Oyuncu",
-   "tag": "",
+   "family": "Playful",
+   "tag": "Album Sleeve",
    "tags": [
     "plak kılıfı",
     "sırt yazısı",
@@ -3518,8 +3518,8 @@
    "num": "125",
    "slug": "sports-energy",
    "name": "Sports Energy",
-   "family": "Oyuncu",
-   "tag": "",
+   "family": "Playful",
+   "tag": "Sports Energy",
    "tags": [
     "skor tabelası",
     "forma numarası",
@@ -3545,7 +3545,7 @@
    "num": "126",
    "slug": "marble-vein",
    "name": "Marble Vein",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Damarı kesilmiş bir taş plaka gibi sakin, grafitle çizilmiş lüks bir malzeme kataloğu arayüzü.",
    "tags": [
     "mermer plaka kataloğu",
@@ -3572,7 +3572,7 @@
    "num": "127",
    "slug": "silk-drape",
    "name": "Silk Drape",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Işığı yumuşatan ipek kıvrımları gibi akan, asimetrik köşelerle kesilmiş sıcak bir kumaş atölyesi arayüzü.",
    "tags": [
     "ipek kumaş kartelası",
@@ -3599,7 +3599,7 @@
    "num": "128",
    "slug": "brass-copper",
    "name": "Brass Copper",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Gravürlenmiş pirinç plaka gibi kurgulanmış; koyu bronz zemin, üst kenarı iç parlaklıklı paneller, bakır accent ve ağır hareket eden lüks metal kataloğu arayüzü.",
    "tags": [
     "pirinç alaşım kataloğu",
@@ -3626,7 +3626,7 @@
    "num": "129",
    "slug": "porcelain-glaze",
    "name": "Porcelain Glaze",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Sır gibi pürüzsüz bir zeminde, kobalt çizgilerle ölçülen porselen parçaların sessiz bir koleksiyon arayüzü.",
    "tags": [
     "porselen sır kataloğu",
@@ -3653,7 +3653,7 @@
    "num": "130",
    "slug": "leather-craft",
    "name": "Leather Craft",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Tabaklanmış deri gibi sıcak ve dokulu bir zeminde, dikiş çerçeveli kartlarda el işi emirlerini takip eden atölye arayüzü.",
    "tags": [
     "deri iş emri panosu",
@@ -3680,7 +3680,7 @@
    "num": "131",
    "slug": "optic-prism",
    "name": "Optic Prism",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Optik cam mantığı: 1px prizma kenarı, conic kırılma halkası ve 0.58s hassas giriş — blur yok, sadece ışığın kırılması.",
    "tags": [
     "optik cam",
@@ -3707,7 +3707,7 @@
    "num": "132",
    "slug": "wood-joinery",
    "name": "Wood Joinery",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Marangoz atölyesi mantığı: 1px geçme çizgileri, 4px radius yüzeyler ve 0.66s ölçülü giriş — ahşabın damarından çok birleşim noktaları önemlidir.",
    "tags": [
     "marangoz geçmesi",
@@ -3734,7 +3734,7 @@
    "num": "133",
    "slug": "letterpress-print",
    "name": "Letterpress Print",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Letterpress mantığı: kabartma baskı izi, 2px radius yüzeyler ve 0.30s presleme girişi — tipografi kâğıda gömülür, ekran bunu taklit eder.",
    "tags": [
     "letterpress baskı",
@@ -3761,7 +3761,7 @@
    "num": "134",
    "slug": "concrete-monolith",
    "name": "Concrete Monolith",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Dökme beton kütle: sıfır radius, sıfır kenarlık, tek ton geçişi ve 0.95s ağır giriş — yüzey ayrımı çizgiden değil kütleden gelir.",
    "tags": [
     "dökme beton",
@@ -3788,7 +3788,7 @@
    "num": "135",
    "slug": "enamel-porcelain",
    "name": "Enamel Porcelain",
-   "family": "Materyal & Lüks",
+   "family": "Material & Luxury",
    "tag": "Mine ve porselen: sırlı beyaz yüzey, 6px yumuşak köşe, koyu mine yeşili kontur ve 0.44s parlak ama ölçülü giriş.",
    "tags": [
     "emaye sır",
@@ -3815,7 +3815,7 @@
    "num": "136",
    "slug": "speculative-scifi",
    "name": "Spekülatif Bilim-Kurgu",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "Anlatının içinden çıkmış bir enstrüman plakası: açık kemik zemin, gravür çift çerçeve, radyal kadran tiki ve tek sinyal ambarıyla kurulmuş diegetic arayüz.",
    "tags": [
     "diegetic plaka",
@@ -3841,7 +3841,7 @@
    "num": "137",
    "slug": "volumetric-data",
    "name": "Hologram & Uzamsal Veri",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "Uzamsal veriyi hacim olarak okutan arayüz: derin lacivert zemin, nokta bulutu yoğunluk haritası, izdüşüm ızgarası ve tek sıcak amber accent.",
    "tags": [
     "nokta bulutu",
@@ -3867,7 +3867,7 @@
    "num": "138",
    "slug": "agent-orchestration",
    "name": "AI-native Ajan Arayüzü",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "Denetlenebilir ajan dili: numaralı iz kaydı, onay kapıları ve gerekçe/atıf şeritleriyle her adımı görünür kılan nötr zeminli arayüz.",
    "tags": [
     "iz kaydı",
@@ -3893,7 +3893,7 @@
    "num": "139",
    "slug": "bio-synthetic",
    "name": "Biyo & Sentetik",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "Laboratuvarda büyütülmüş arayüz: koyu kültür ortamı, zar halkaları, hücre kümeleri ve biyo-lime accent ile yumuşak-sentetik bir yüzey dili.",
    "tags": [
     "zar halkası",
@@ -3919,7 +3919,7 @@
    "num": "140",
    "slug": "nanotech",
    "name": "Nanoteknik",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "Moleküler ölçeğin monokrom arayüzü: karbon kafes noktaları, 3px köşeler, nm ölçü etiketleri ve neredeyse siyah tek accent ile hassas ölçüm dili.",
    "tags": [
     "karbon kafes",
@@ -3945,7 +3945,7 @@
    "num": "141",
    "slug": "planetary-service",
    "name": "Planetary Service",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "Gezegen yörüngesindeki servis görevlerini eşmerkezli halkalar, mono telemetri ve fırlatma penceresi sayaçlarıyla tek koyu konsolda toplayan operasyon arayüzü.",
    "tags": [
     "gezegen servis operasyonları",
@@ -3972,7 +3972,7 @@
    "num": "142",
    "slug": "quantum-lab",
    "name": "Quantum Lab",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "Kuantum ölçümlerini daktilo başlıklı, keskin köşeli bir laboratuvar defteri gibi sunan; olasılığı nokta bulutu ve çubuk histogramla konuşturan ölçüm arayüzü.",
    "tags": [
     "kuantum ve veri",
@@ -3999,7 +3999,7 @@
    "num": "143",
    "slug": "retro-future",
    "name": "Retro Future",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "1960'lar uzay çağı afişini ekrana taşıyan; krem kâğıt, hardal mürekkep, yuvarlak paneller ve yörünge yayıyla kurulmuş iyimser fütürizm arayüzü.",
    "tags": [
     "retro-fütürizm",
@@ -4026,7 +4026,7 @@
    "num": "144",
    "slug": "virtual-engine",
    "name": "Virtual Engine",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "Sanal bir dünyayı düzenleyen editör: viewport, varlık hiyerarşisi ve denetçi panelini CRT başlıklı koyu mor bir motorda birleştiren arayüz.",
    "tags": [
     "sanal dünya ve oyun motoru",
@@ -4053,7 +4053,7 @@
    "num": "145",
    "slug": "zero-gravity",
    "name": "Zero Gravity",
-   "family": "Deneysel & Gelecek",
+   "family": "Experimental & Future",
    "tag": "Panellerin yerçekimi yokmuş gibi kademeli kaydığı, ince yörünge yaylarının ve yavaş geçişlerin hâkim olduğu buz mavisi orbital pano.",
    "tags": [
     "orbital ve sıfır yerçekimi",
@@ -4080,7 +4080,7 @@
    "num": "146",
    "slug": "noir-estate",
    "name": "Noir Estate",
-   "family": "Sahne & Prestij",
+   "family": "Stage & Prestige",
    "tag": "Gece çekilmiş bir mimari fotoğraf gibi: sıcak siyah zemin, ince altın çizgi, cam gezinme çubuğu ve 0.88s perde girişi — prestij ışıktan değil, ışığın azlığından gelir.",
    "tags": [
     "sinematik lüks emlak",
@@ -4107,7 +4107,7 @@
    "num": "147",
    "slug": "agency-portfolio",
    "name": "Agency Portfolio",
-   "family": "Sahne & Prestij",
+   "family": "Stage & Prestige",
    "tag": "Dijital ajans vitrini: kâğıt beyazı zemin, 72px Archivo Black başlık, elektrik mavi vurgu ve 0.62s harf kademesi — işi tipografi ve indeks numarası anlatır.",
    "tags": [
     "ajans portfolyosu",
@@ -4134,7 +4134,7 @@
    "num": "148",
    "slug": "product-launch",
    "name": "Product Launch",
-   "family": "Sahne & Prestij",
+   "family": "Stage & Prestige",
    "tag": "Lansman sahnesi: derin lacivert zemin, tepeden inen tek spotlight, mint accent ve 0.74s oturma girişi — ürün çıkar, sayfa süslenmez.",
    "tags": [
     "ürün lansmanı",
@@ -4161,7 +4161,7 @@
    "num": "149",
    "slug": "boutique-hotel",
    "name": "Boutique Hotel",
-   "family": "Sahne & Prestij",
+   "family": "Stage & Prestige",
    "tag": "Butik otel vitrini: kum-koyu zemin, terracotta vurgu, Playfair serif ve 1.02s yumuşak açılma — oda fotoğrafı ile künye aynı sayfada nefes alır.",
    "tags": [
     "butik otel vitrini",
@@ -4188,7 +4188,7 @@
    "num": "150",
    "slug": "lookbook-editorial",
    "name": "Lookbook Editorial",
-   "family": "Sahne & Prestij",
+   "family": "Stage & Prestige",
    "tag": "Kemik kâğıt üzerinde dergi sayfası: Fraunces başlık, 104px dev rakam, kiremit ince çizgi ve 0.7s satır maskesi — ürün değil bakış açısı satılır.",
    "tags": [
     "moda lookbook",
@@ -4215,7 +4215,7 @@
    "num": "151",
    "slug": "dark-dashboard",
    "name": "Dark Dashboard",
-   "family": "Sahne & Prestij",
+   "family": "Stage & Prestige",
    "tag": "Kontrol odası: grafit zemin, 1px çizgi ızgara, cyan yalnız veride ve 0.48s hızlı giriş — süs değil, ölçüm okunur.",
    "tags": [
     "koyu saas paneli",
@@ -4242,17 +4242,17 @@
    "num": "152",
    "slug": "game-hud",
    "name": "Game HUD",
-   "family": "Oyun & Etkileşim",
-   "tag": "Oyun içi katmanın okunur hâli: keskin köşe, tabular rakam, tek sinyal rengi ve durum odaklı hiyerarşi.",
+   "family": "Games & Interaction",
+   "tag": "Readable version of the in-game layer: sharp corner, tabular number, single signal color and state-oriented hierarchy.",
    "tags": [
-    "oyun",
+    "game",
     "hud",
-    "koyu panel"
+    "dark panel"
    ],
    "layout": {
-    "hero": "centered",
+    "hero": "split",
     "nav": "split",
-    "density": "sparse"
+    "density": "balanced"
    },
    "compatible": [
     "game-racing",
@@ -4267,11 +4267,11 @@
    "num": "153",
    "slug": "game-racing",
    "name": "Game Racing",
-   "family": "Oyun & Etkileşim",
-   "tag": "Hız göstergesi dilinde arayüz: dar rakamlar, sıcak accent, eğimli kesim ve yarış telemetrisi hiyerarşisi.",
+   "family": "Games & Interaction",
+   "tag": "Interface in speedometer language: narrow digits, warm accent, beveled cut and racing telemetry hierarchy.",
    "tags": [
-    "oyun",
-    "yarış",
+    "game",
+    "race",
     "telemetri"
    ],
    "layout": {
@@ -4292,12 +4292,12 @@
    "num": "154",
    "slug": "game-fantasy-rpg",
    "name": "Fantasy RPG",
-   "family": "Oyun & Etkileşim",
-   "tag": "Ortaçağ el yazması ile oyun menüsünün kesişimi: altın vurgu, kitabe başlık ve envanter ızgarası.",
+   "family": "Games & Interaction",
+   "tag": "Intersection of medieval manuscript and game menu: gold highlight, inscription title and inventory grid.",
    "tags": [
-    "oyun",
+    "game",
     "fantastik",
-    "altın vurgu"
+    "gold highlight"
    ],
    "layout": {
     "hero": "split",
@@ -4317,10 +4317,10 @@
    "num": "155",
    "slug": "game-sci-fi-cockpit",
    "name": "Sci-Fi Cockpit",
-   "family": "Oyun & Etkileşim",
-   "tag": "Kokpit paneli dili: geniş harf aralıklı teknik başlık, mavi sinyal accent ve ölçüm şeritleri.",
+   "family": "Games & Interaction",
+   "tag": "Cockpit panel language: wide-letter technical title, blue signal accent and gauge strips.",
    "tags": [
-    "oyun",
+    "game",
     "kokpit",
     "telemetri"
    ],
@@ -4342,17 +4342,17 @@
    "num": "156",
    "slug": "game-retro-console",
    "name": "Retro Console",
-   "family": "Oyun & Etkileşim",
-   "tag": "Kartuş dönemi konsolu: pixel başlık, amber accent, 0 köşe ve dar ekran ritmi.",
+   "family": "Games & Interaction",
+   "tag": "Cartridge era console: pixel header, amber accent, 0 corners and narrow screen rhythm.",
    "tags": [
-    "oyun",
+    "game",
     "retro",
     "pixel"
    ],
    "layout": {
-    "hero": "centered",
-    "nav": "pill",
-    "density": "sparse"
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
    },
    "compatible": [
     "arcade-8bit",
@@ -4367,10 +4367,10 @@
    "num": "157",
    "slug": "game-esports-league",
    "name": "Esports League",
-   "family": "Oyun & Etkileşim",
-   "tag": "Yayın grafiği dili: dev başlık, mor accent, maç kartı ve sağa hizalı skor tabloları.",
+   "family": "Games & Interaction",
+   "tag": "Broadcast graphic language: giant banner, purple accent, match card and right-aligned scoreboards.",
    "tags": [
-    "oyun",
+    "game",
     "espor",
     "turnuva"
    ],
@@ -4392,11 +4392,11 @@
    "num": "158",
    "slug": "game-indie-pixel",
    "name": "Indie Pixel",
-   "family": "Oyun & Etkileşim",
-   "tag": "Bağımsız oyun vitrini: pixel etiket, yeşil accent, düşük kontrastlı panel ve el yapımı düzensizlik.",
+   "family": "Games & Interaction",
+   "tag": "Indie gaming showcase: pixel sticker, green accent, low-contrast panel and handmade irregularity.",
    "tags": [
-    "oyun",
-    "bağımsız",
+    "game",
+    "independent",
     "pixel"
    ],
    "layout": {
@@ -4417,12 +4417,12 @@
    "num": "159",
    "slug": "game-card-tcg",
    "name": "Card TCG",
-   "family": "Oyun & Etkileşim",
-   "tag": "Koleksiyon kartı dili: nadirlik çerçevesi, kırmızı mühür, dar sütun ve mono künye.",
+   "family": "Games & Interaction",
+   "tag": "Trading card language: rarity frame, red seal, narrow column and mono imprint.",
    "tags": [
-    "oyun",
+    "game",
     "koleksiyon",
-    "kart"
+    "card"
    ],
    "layout": {
     "hero": "split",
@@ -4442,10 +4442,10 @@
    "num": "160",
    "slug": "game-survival-craft",
    "name": "Survival Craft",
-   "family": "Oyun & Etkileşim",
-   "tag": "Hayatta kalma arayüzü: kirli yeşil accent, kalın mono etiket, dayanıklılık çubukları ve kaba kesim.",
+   "family": "Games & Interaction",
+   "tag": "Survival interface: dirty green accent, thick mono label, durability bars and rough cut.",
    "tags": [
-    "oyun",
+    "game",
     "hayatta kalma",
     "zanaat"
    ],
@@ -4467,17 +4467,17 @@
    "num": "161",
    "slug": "game-mobile-casual",
    "name": "Mobile Casual",
-   "family": "Oyun & Etkileşim",
-   "tag": "Mobil oyun dilinde açık tema: mercan accent, yumuşak yuvarlak kart ve tek dokunuşla anlaşılan hiyerarşi.",
+   "family": "Games & Interaction",
+   "tag": "Clear theme in mobile gaming language: coral accent, soft round card and one-touch hierarchy.",
    "tags": [
-    "oyun",
+    "game",
     "mobil",
-    "açık tema"
+    "open theme"
    ],
    "layout": {
-    "hero": "centered",
-    "nav": "pill",
-    "density": "sparse"
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
    },
    "compatible": [
     "kids-playground",
@@ -4492,12 +4492,12 @@
    "num": "162",
    "slug": "game-horror-occult",
    "name": "Horror Occult",
-   "family": "Oyun & Etkileşim",
-   "tag": "Korku arayüzü: kan kırmızısı mühür, ince serif başlık, geniş siyah boşluk ve mono uyarı satırları.",
+   "family": "Games & Interaction",
+   "tag": "Horror interface: blood red seal, thin serif header, wide black space and mono alert lines.",
    "tags": [
-    "oyun",
+    "game",
     "korku",
-    "koyu"
+    "dark"
    ],
    "layout": {
     "hero": "split",
@@ -4517,10 +4517,10 @@
    "num": "163",
    "slug": "game-racing-neon",
    "name": "Racing Neon",
-   "family": "Oyun & Etkileşim",
-   "tag": "Gece yarışı dili: camgöbeği sinyal, magenta ikinci ton, dev eğik başlık ve hız şeritleri.",
+   "family": "Games & Interaction",
+   "tag": "Night racing language: cyan signal, magenta second tone, giant slanted hood and speed strips.",
    "tags": [
-    "oyun",
+    "game",
     "neon",
     "gece"
    ],
@@ -4542,10 +4542,10 @@
    "num": "164",
    "slug": "game-strategy-map",
    "name": "Strategy Map",
-   "family": "Oyun & Etkileşim",
-   "tag": "Strateji haritası dili: parşömen zemin, çini mavisi accent, altıgen ızgara ve mono künye tabloları.",
+   "family": "Games & Interaction",
+   "tag": "Strategy map language: parchment background, tile blue accent, hexagonal grid and mono imprint tables.",
    "tags": [
-    "oyun",
+    "game",
     "strateji",
     "harita"
    ],
@@ -4567,17 +4567,17 @@
    "num": "165",
    "slug": "game-sim-builder",
    "name": "Sim Builder",
-   "family": "Oyun & Etkileşim",
-   "tag": "Şehir kurma arayüzü: turkuaz accent, ölçülü yuvarlak panel, kaynak sayaçları ve sakin yoğunluk.",
+   "family": "Games & Interaction",
+   "tag": "City-building interface: turquoise accent, restrained round panel, resource counters and calm intensity.",
    "tags": [
-    "oyun",
-    "simülasyon",
+    "game",
+    "simulation",
     "planlama"
    ],
    "layout": {
-    "hero": "centered",
+    "hero": "split",
     "nav": "split",
-    "density": "sparse"
+    "density": "balanced"
    },
    "compatible": [
     "game-survival-craft",
@@ -4592,10 +4592,10 @@
    "num": "166",
    "slug": "game-arcade-cabinet",
    "name": "Arcade Cabinet",
-   "family": "Oyun & Etkileşim",
-   "tag": "Kabin sanatı dili: sarı üstüne kırmızı-mavi, kalın kontur, kutu içinde kutu ve coin-op ritmi.",
+   "family": "Games & Interaction",
+   "tag": "Cabinet art language: red-blue on yellow, bold contour, box-in-box and coin-op rhythm.",
    "tags": [
-    "oyun",
+    "game",
     "arcade",
     "retro"
    ],
@@ -4617,12 +4617,12 @@
    "num": "167",
    "slug": "game-stealth-tactical",
    "name": "Stealth Tactical",
-   "family": "Oyun & Etkileşim",
-   "tag": "Taktik arayüz: zeytin zemin, soluk amber accent, risk göstergesi ve monospace brifing.",
+   "family": "Games & Interaction",
+   "tag": "Tactical interface: olive background, pale amber accent, risk indicator and monospace briefing.",
    "tags": [
-    "oyun",
+    "game",
     "taktik",
-    "koyu"
+    "dark"
    ],
    "layout": {
     "hero": "split",
@@ -4642,12 +4642,12 @@
    "num": "168",
    "slug": "game-puzzle-light",
    "name": "Puzzle Light",
-   "family": "Oyun & Etkileşim",
-   "tag": "Bulmaca oyunu için açık, sakin arayüz: yumuşak mavi accent, geniş boşluk ve tek adımlık ilerleme.",
+   "family": "Games & Interaction",
+   "tag": "Clear, calm interface for the puzzle game: soft blue accent, ample space and one-step progression.",
    "tags": [
-    "oyun",
+    "game",
     "bulmaca",
-    "açık tema"
+    "open theme"
    ],
    "layout": {
     "hero": "split",
@@ -4667,10 +4667,10 @@
    "num": "169",
    "slug": "game-mmo-guild",
    "name": "MMO Guild",
-   "family": "Oyun & Etkileşim",
-   "tag": "Lonca arayüzü: derin mor zemin, pirinç accent, kitabe başlık ve üye tablosu.",
+   "family": "Games & Interaction",
+   "tag": "Guild interface: deep purple background, brass accent, inscription title and member table.",
    "tags": [
-    "oyun",
+    "game",
     "mmo",
     "topluluk"
    ],
@@ -4692,17 +4692,17 @@
    "num": "170",
    "slug": "game-franchise-sports",
    "name": "Franchise Sports",
-   "family": "Oyun & Etkileşim",
-   "tag": "Spor oyunu menüsü: kırmızı-beyaz blok, dev başlık, oyuncu kartı ve sağa hizalı istatistik.",
+   "family": "Games & Interaction",
+   "tag": "Sports game menu: red-white block, giant title, player card and right-aligned statistics.",
    "tags": [
-    "oyun",
+    "game",
     "spor",
     "sezon"
    ],
    "layout": {
-    "hero": "centered",
+    "hero": "split",
     "nav": "split",
-    "density": "sparse"
+    "density": "balanced"
    },
    "compatible": [
     "sports-energy",
@@ -4717,10 +4717,10 @@
    "num": "171",
    "slug": "game-pinball-neon",
    "name": "Pinball Neon",
-   "family": "Oyun & Etkileşim",
-   "tag": "Pinball makinesi dili: elektrik mavisi accent, sarı ikinci ton, çapraz çizgi ve skor tabelası.",
+   "family": "Games & Interaction",
+   "tag": "Pinball machine language: electric blue accent, yellow second tone, diagonal line and scoreboard.",
    "tags": [
-    "oyun",
+    "game",
     "pinball",
     "neon"
    ],
@@ -4742,10 +4742,10 @@
    "num": "172",
    "slug": "incident-response",
    "name": "Incident Response",
-   "family": "Operasyon & Veri",
-   "tag": "Olay müdahale konsolu: zaman çizelgesi, turuncu uyarı, tek sahiplik ve durum etiketleriyle sakin bir kriz ekranı.",
+   "family": "Operations & Data",
+   "tag": "Incident response console: a calm crisis screen with timeline, orange alert, sole ownership and status labels.",
    "tags": [
-    "operasyon",
+    "operation",
     "olay",
     "kriz"
    ],
@@ -4767,10 +4767,10 @@
    "num": "173",
    "slug": "finops-cost",
    "name": "FinOps Cost",
-   "family": "Operasyon & Veri",
-   "tag": "Bulut maliyet paneli: yeşil tasarruf göstergesi, sağa hizalı tutarlar ve bütçe eşiği çizgileri.",
+   "family": "Operations & Data",
+   "tag": "Cloud cost dashboard: green savings indicator, right-aligned amounts and budget threshold lines.",
    "tags": [
-    "operasyon",
+    "operation",
     "maliyet",
     "finans"
    ],
@@ -4792,10 +4792,10 @@
    "num": "174",
    "slug": "fleet-dispatch",
    "name": "Fleet Dispatch",
-   "family": "Operasyon & Veri",
-   "tag": "Filo sevk ekranı: harita üstünde araç kartları, mavi rota accent ve mono ETA sütunları.",
+   "family": "Operations & Data",
+   "tag": "Fleet dispatch screen: vehicle cards on the map, blue route accent and mono ETA columns.",
    "tags": [
-    "operasyon",
+    "operation",
     "lojistik",
     "harita"
    ],
@@ -4817,10 +4817,10 @@
    "num": "175",
    "slug": "fraud-review",
    "name": "Fraud Review",
-   "family": "Operasyon & Veri",
-   "tag": "Risk inceleme kuyruğu: mor uyarı, kanıt paneli ve tek karar düğmesiyle temkinli bir inceleme ekranı.",
+   "family": "Operations & Data",
+   "tag": "Risk review queue: a cautious review screen with purple alert, evidence panel and single decision button.",
    "tags": [
-    "operasyon",
+    "operation",
     "risk",
     "uyum"
    ],
@@ -4842,11 +4842,11 @@
    "num": "176",
    "slug": "slo-budget",
    "name": "SLO Budget",
-   "family": "Operasyon & Veri",
-   "tag": "Hata bütçesi panosu: mavi eşik çizgisi, kalan bütçe göstergesi ve mono hata oranı sütunları.",
+   "family": "Operations & Data",
+   "tag": "Error budget dashboard: blue threshold line, remaining budget indicator, and mono error rate columns.",
    "tags": [
-    "operasyon",
-    "güvenilirlik",
+    "operation",
+    "reliability",
     "slo"
    ],
    "layout": {
@@ -4867,12 +4867,12 @@
    "num": "177",
    "slug": "data-lineage",
    "name": "Data Lineage",
-   "family": "Operasyon & Veri",
-   "tag": "Veri soy ağacı ekranı: düğüm çizgileri, soluk camgöbeği accent ve mono şema etiketleri.",
+   "family": "Operations & Data",
+   "tag": "Data family tree display: node lines, pale cyan accent, and mono schema labels.",
    "tags": [
-    "operasyon",
-    "veri",
-    "şema"
+    "operation",
+    "data",
+    "schema"
    ],
    "layout": {
     "hero": "product",
@@ -4892,11 +4892,11 @@
    "num": "178",
    "slug": "access-audit",
    "name": "Access Audit",
-   "family": "Operasyon & Veri",
-   "tag": "Erişim denetimi: gri tablo, kırmızı yalnız ihlal, mono kimlik ve değişmezlik vurgusu.",
+   "family": "Operations & Data",
+   "tag": "Access control: gray table, red lone violation, mono identity and immutability emphasis.",
    "tags": [
-    "operasyon",
-    "denetim",
+    "operation",
+    "audit",
     "uyum"
    ],
    "layout": {
@@ -4917,11 +4917,11 @@
    "num": "179",
    "slug": "release-train",
    "name": "Release Train",
-   "family": "Operasyon & Veri",
-   "tag": "Sürüm takvimi: haftalık tren çizgisi, mor durum etiketi ve mono sürüm numaraları.",
+   "family": "Operations & Data",
+   "tag": "Release calendar: weekly trend line, purple status tag and mono release numbers.",
    "tags": [
-    "operasyon",
-    "sürüm",
+    "operation",
+    "version",
     "planlama"
    ],
    "layout": {
@@ -4942,11 +4942,11 @@
    "num": "180",
    "slug": "support-inbox",
    "name": "Support Inbox",
-   "family": "Operasyon & Veri",
-   "tag": "Destek gelen kutusu: üç kolon, sarı öncelik, kısa yanıt şablonları ve mono SLA sayacı.",
+   "family": "Operations & Data",
+   "tag": "Support inbox: three columns, yellow priority, short reply templates and mono SLA counter.",
    "tags": [
-    "operasyon",
-    "destek",
+    "operation",
+    "support",
     "kuyruk"
    ],
    "layout": {
@@ -4967,17 +4967,17 @@
    "num": "181",
    "slug": "regulatory-report",
    "name": "Regulatory Report",
-   "family": "Operasyon & Veri",
-   "tag": "Uyum raporu: serif başlık, numaralı bölüm, gri tablo ve tek lacivert accent ile resmî belge düzeni.",
+   "family": "Operations & Data",
+   "tag": "Compliance report: official document layout with serif header, numbered section, gray table and single dark blue accent.",
    "tags": [
-    "operasyon",
+    "operation",
     "uyum",
-    "rapor"
+    "report"
    ],
    "layout": {
-    "hero": "index",
-    "nav": "split",
-    "density": "dense"
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
    },
    "compatible": [
     "academic-paper",
@@ -4992,10 +4992,10 @@
    "num": "182",
    "slug": "grocery-delivery",
    "name": "Grocery Delivery",
-   "family": "Ticaret & Vitrin",
-   "tag": "Market teslimat vitrini: yeşil fiyat accent, ürün ızgarası ve mono sepet özetiyle hızlı alışveriş.",
+   "family": "Commerce & Showcase",
+   "tag": "Grocery delivery showcase: quick shopping with green price accent, product grid and mono cart summary.",
    "tags": [
-    "ticaret",
+    "trade",
     "market",
     "teslimat"
    ],
@@ -5017,12 +5017,12 @@
    "num": "183",
    "slug": "marketplace-multi",
    "name": "Marketplace Multi",
-   "family": "Ticaret & Vitrin",
-   "tag": "Çok satıcılı pazar yeri: gri filtre rayı, satıcı etiketi ve yıldız yerine metin puanlama.",
+   "family": "Commerce & Showcase",
+   "tag": "Multi-vendor marketplace: gray filter rail, seller tag, and text rating instead of stars.",
    "tags": [
-    "ticaret",
+    "trade",
     "pazar yeri",
-    "filtre"
+    "filter"
    ],
    "layout": {
     "hero": "index",
@@ -5042,12 +5042,12 @@
    "num": "184",
    "slug": "luxury-atelier",
    "name": "Luxury Atelier",
-   "family": "Ticaret & Vitrin",
-   "tag": "Atölye lüksü: kemik zemin, bronz accent, geniş boşluk ve tek ürün odaklı sütun.",
+   "family": "Commerce & Showcase",
+   "tag": "Workshop luxury: bone floor, bronze accent, ample space and single product-oriented column.",
    "tags": [
-    "ticaret",
-    "lüks",
-    "atölye"
+    "trade",
+    "luxury",
+    "workshop"
    ],
    "layout": {
     "hero": "index",
@@ -5067,11 +5067,11 @@
    "num": "185",
    "slug": "subscription-box",
    "name": "Subscription Box",
-   "family": "Ticaret & Vitrin",
-   "tag": "Kutu aboneliği: üç plan kartı, aylık vurgu ve mono kargo takvimi.",
+   "family": "Commerce & Showcase",
+   "tag": "Box subscription: three plan cards, monthly highlight and mono shipping calendar.",
    "tags": [
-    "ticaret",
-    "abonelik",
+    "trade",
+    "subscription",
     "plan"
    ],
    "layout": {
@@ -5092,10 +5092,10 @@
    "num": "186",
    "slug": "sneaker-drop",
    "name": "Sneaker Drop",
-   "family": "Ticaret & Vitrin",
-   "tag": "Sınırlı sürüm ayakkabı vitrini: siyah zemin, sarı accent, geri sayım yerine sabit tarih ve mono numara.",
+   "family": "Commerce & Showcase",
+   "tag": "Limited edition shoe display: black base, yellow accent, fixed date instead of countdown and mono number.",
    "tags": [
-    "ticaret",
+    "trade",
     "sneaker",
     "drop"
    ],
@@ -5117,11 +5117,11 @@
    "num": "187",
    "slug": "wine-cellar",
    "name": "Wine Cellar",
-   "family": "Ticaret & Vitrin",
-   "tag": "Şarap mahzeni kataloğu: bordo zemin, pirinç accent, yıl-etiket tabloları ve serif künye.",
+   "family": "Commerce & Showcase",
+   "tag": "Wine cellar catalog: burgundy background, brass accent, year-label tables and serif imprint.",
    "tags": [
-    "ticaret",
-    "şarap",
+    "trade",
+    "wine",
     "koleksiyon"
    ],
    "layout": {
@@ -5142,12 +5142,12 @@
    "num": "188",
    "slug": "furniture-studio",
    "name": "Furniture Studio",
-   "family": "Ticaret & Vitrin",
-   "tag": "Mobilya stüdyosu: sıcak meşe paleti, geniş ürün fotoğrafı, ölçü tablosu ve sade fiyat satırı.",
+   "family": "Commerce & Showcase",
+   "tag": "Furniture studio: warm oak palette, large product photo, size chart and simple price line.",
    "tags": [
-    "ticaret",
+    "trade",
     "mobilya",
-    "ölçü"
+    "measure"
    ],
    "layout": {
     "hero": "index",
@@ -5167,10 +5167,10 @@
    "num": "189",
    "slug": "electronics-spec",
    "name": "Electronics Spec",
-   "family": "Ticaret & Vitrin",
-   "tag": "Elektronik ürün sayfası: teknik tablo, mavi accent, karşılaştırma satırı ve mono birimler.",
+   "family": "Commerce & Showcase",
+   "tag": "Electronic product page: technical table, blue accent, comparison line and mono units.",
    "tags": [
-    "ticaret",
+    "trade",
     "elektronik",
     "spec"
    ],
@@ -5192,12 +5192,12 @@
    "num": "190",
    "slug": "pharmacy-store",
    "name": "Pharmacy Store",
-   "family": "Ticaret & Vitrin",
-   "tag": "Eczane vitrini: beyaz-mavi zemin, yeşil reçete accent, açık doz bilgisi ve güven satırları.",
+   "family": "Commerce & Showcase",
+   "tag": "Pharmacy display case: white-blue background, green prescription accent, clear dosage information and confidence lines.",
    "tags": [
-    "ticaret",
+    "trade",
     "eczane",
-    "sağlık"
+    "health"
    ],
    "layout": {
     "hero": "fullbleed",
@@ -5217,10 +5217,10 @@
    "num": "191",
    "slug": "farmers-market",
    "name": "Farmers Market",
-   "family": "Ticaret & Vitrin",
-   "tag": "Üretici pazarı: toprak tonları, el yazısı etiket yerine serif, sezon takvimi ve üretici künyesi.",
+   "family": "Commerce & Showcase",
+   "tag": "Producer's market: earth tones, serif instead of handwritten label, seasonal calendar and producer's imprint.",
    "tags": [
-    "ticaret",
+    "trade",
     "yerel",
     "sezon"
    ],
@@ -5242,11 +5242,11 @@
    "num": "192",
    "slug": "museum-exhibition",
    "name": "Museum Exhibition",
-   "family": "Kültür & Yayın",
-   "tag": "Sergi sayfası: kemik zemin, ince hairline, tarih-sıra künyesi ve geniş kenar boşluğu.",
+   "family": "Culture & Publishing",
+   "tag": "Exhibit page: bone background, thin hairline, date-order imprint and wide margin.",
    "tags": [
-    "kültür",
-    "müze",
+    "culture",
+    "museum",
     "sergi"
    ],
    "layout": {
@@ -5267,10 +5267,10 @@
    "num": "193",
    "slug": "theatre-season",
    "name": "Theatre Season",
-   "family": "Kültür & Yayın",
-   "tag": "Tiyatro sezonu: derin bordo, altın çizgi, program tablosu ve sahne fotoğrafı.",
+   "family": "Culture & Publishing",
+   "tag": "Theater season: deep burgundy, gold line, program chart and stage photo.",
    "tags": [
-    "kültür",
+    "culture",
     "tiyatro",
     "sezon"
    ],
@@ -5292,10 +5292,10 @@
    "num": "194",
    "slug": "film-festival",
    "name": "Film Festival",
-   "family": "Kültür & Yayın",
-   "tag": "Film festivali: siyah zemin, kırmızı program accent, seans ızgarası ve mono süre bilgisi.",
+   "family": "Culture & Publishing",
+   "tag": "Film festival: black background, red program accent, session grid and mono duration information.",
    "tags": [
-    "kültür",
+    "culture",
     "film",
     "festival"
    ],
@@ -5317,10 +5317,10 @@
    "num": "195",
    "slug": "public-radio",
    "name": "Public Radio",
-   "family": "Kültür & Yayın",
-   "tag": "Kamu radyosu: kâğıt zemin, mavi accent, program kuşağı tablosu ve ses süresi bilgisi.",
+   "family": "Culture & Publishing",
+   "tag": "Public radio: paper background, blue accent, program belt table and audio time information.",
    "tags": [
-    "kültür",
+    "culture",
     "radyo",
     "program"
    ],
@@ -5342,12 +5342,12 @@
    "num": "196",
    "slug": "podcast-network",
    "name": "Podcast Network",
-   "family": "Kültür & Yayın",
-   "tag": "Podcast ağı: koyu grafit, mor accent, bölüm listesi ve mono süre-dinlenme metrikleri.",
+   "family": "Culture & Publishing",
+   "tag": "Podcast network: dark graphite, purple accent, episode list and mono time-rest metrics.",
    "tags": [
-    "kültür",
+    "culture",
     "podcast",
-    "arşiv"
+    "archive"
    ],
    "layout": {
     "hero": "index",
@@ -5367,12 +5367,12 @@
    "num": "197",
    "slug": "indie-cinema",
    "name": "Indie Cinema",
-   "family": "Kültür & Yayın",
-   "tag": "Bağımsız sinema: siyah-beyaz kontrast, tek sarı accent, gösterim takvimi ve bilet notu.",
+   "family": "Culture & Publishing",
+   "tag": "Independent cinema: black-white contrast, single yellow accent, release schedule and ticket note.",
    "tags": [
-    "kültür",
+    "culture",
     "sinema",
-    "gösterim"
+    "impression"
    ],
    "layout": {
     "hero": "type",
@@ -5392,12 +5392,12 @@
    "num": "198",
    "slug": "library-archive",
    "name": "Library Archive",
-   "family": "Kültür & Yayın",
-   "tag": "Kütüphane arşivi: kâğıt zemin, lacivert accent, numaralı kayıt ve mono yer numarası.",
+   "family": "Culture & Publishing",
+   "tag": "Library archive: paper background, dark blue accent, numbered record and mono location number.",
    "tags": [
-    "kültür",
-    "arşiv",
-    "katalog"
+    "culture",
+    "archive",
+    "catalog"
    ],
    "layout": {
     "hero": "type",
@@ -5417,12 +5417,12 @@
    "num": "199",
    "slug": "comic-bookstore",
    "name": "Comic Bookstore",
-   "family": "Kültür & Yayın",
-   "tag": "Çizgi roman dükkânı: sarı konuşma balonu accent, kalın kontur ve sayı-salı takvimi.",
+   "family": "Culture & Publishing",
+   "tag": "Comic shop: yellow speech bubble with accent, bold stroke and number-tuesday calendar.",
    "tags": [
-    "kültür",
-    "çizgi roman",
-    "yayın"
+    "culture",
+    "comics",
+    "broadcast"
    ],
    "layout": {
     "hero": "index",
@@ -5442,10 +5442,10 @@
    "num": "200",
    "slug": "opera-house",
    "name": "Opera House",
-   "family": "Kültür & Yayın",
-   "tag": "Opera evi: gece mavisi, gümüş çizgi, sezon künyesi ve geniş serif başlık.",
+   "family": "Culture & Publishing",
+   "tag": "Opera house: midnight blue, silver stripe, seasonal imprint and wide serif title.",
    "tags": [
-    "kültür",
+    "culture",
     "opera",
     "sezon"
    ],
@@ -5467,10 +5467,10 @@
    "num": "201",
    "slug": "street-festival",
    "name": "Street Festival",
-   "family": "Kültür & Yayın",
-   "tag": "Sokak festivali: doygun turuncu accent, kalın tipografi, sahne programı ve harita bloğu.",
+   "family": "Culture & Publishing",
+   "tag": "Street festival: saturated orange accent, bold typography, stage program and map block.",
    "tags": [
-    "kültür",
+    "culture",
     "festival",
     "sokak"
    ],
@@ -5492,17 +5492,17 @@
    "num": "202",
    "slug": "clinical-trial",
    "name": "Clinical Trial",
-   "family": "Sağlık & Bilim",
-   "tag": "Klinik çalışma protokolü: beyaz-gri düzen, tek mavi accent, faz etiketi ve katılımcı tablosu.",
+   "family": "Health & Science",
+   "tag": "Clinical study protocol: white-grey layout, a single blue accent, phase label and participant table.",
    "tags": [
-    "sağlık",
+    "health",
     "klinik",
     "protokol"
    ],
    "layout": {
-    "hero": "centered",
+    "hero": "split",
     "nav": "split",
-    "density": "sparse"
+    "density": "balanced"
    },
    "compatible": [
     "lab-protocol",
@@ -5517,17 +5517,17 @@
    "num": "203",
    "slug": "lab-protocol",
    "name": "Lab Protocol",
-   "family": "Sağlık & Bilim",
-   "tag": "Laboratuvar protokolü: numaralı adımlar, monospace zaman damgası ve uyarı bloğu.",
+   "family": "Health & Science",
+   "tag": "Laboratory protocol: numbered steps, monospace timestamps and a warning block.",
    "tags": [
-    "sağlık",
+    "health",
     "laboratuvar",
     "protokol"
    ],
    "layout": {
-    "hero": "centered",
+    "hero": "split",
     "nav": "split",
-    "density": "sparse"
+    "density": "balanced"
    },
    "compatible": [
     "clinical-trial",
@@ -5542,17 +5542,17 @@
    "num": "204",
    "slug": "pharmacy-labels",
    "name": "Pharmacy Labels",
-   "family": "Sağlık & Bilim",
-   "tag": "İlaç etiketi okunurluğu: yüksek kontrast, büyük punto, doz tablosu ve net uyarı şeridi.",
+   "family": "Health & Science",
+   "tag": "Medication label legibility: high contrast, large type, dosage table and an unmistakable warning band.",
    "tags": [
-    "sağlık",
-    "ilaç",
+    "health",
+    "medication",
     "okunurluk"
    ],
    "layout": {
-    "hero": "centered",
-    "nav": "pill",
-    "density": "sparse"
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
    },
    "compatible": [
     "pharmacy-store",
@@ -5567,17 +5567,17 @@
    "num": "205",
    "slug": "physiotherapy",
    "name": "Physiotherapy",
-   "family": "Sağlık & Bilim",
-   "tag": "Fizyoterapi planı: yumuşak yeşil, egzersiz kartları, set/tekrar tablosu ve ilerleme çubuğu.",
+   "family": "Health & Science",
+   "tag": "Physiotherapy plan: soft green, exercise cards, set/repetition table and a progress bar.",
    "tags": [
-    "sağlık",
+    "health",
     "fizyoterapi",
     "egzersiz"
    ],
    "layout": {
-    "hero": "sticky",
-    "nav": "inline",
-    "density": "balanced"
+    "hero": "product",
+    "nav": "utility",
+    "density": "dense"
    },
    "compatible": [
     "mental-wellness",
@@ -5592,17 +5592,17 @@
    "num": "206",
    "slug": "mental-wellness",
    "name": "Mental Wellness",
-   "family": "Sağlık & Bilim",
-   "tag": "Zihin sağlığı uygulaması: sakin leylak, yumuşak geçiş, günlük check-in ve nefes ritmi bloğu.",
+   "family": "Health & Science",
+   "tag": "Mental health app: calm lilac, gentle transitions, daily check-in and a breathing rhythm block.",
    "tags": [
-    "sağlık",
+    "health",
     "zihin",
     "sakin"
    ],
    "layout": {
-    "hero": "index",
-    "nav": "split",
-    "density": "dense"
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
    },
    "compatible": [
     "physiotherapy",
@@ -5617,17 +5617,17 @@
    "num": "207",
    "slug": "nutrition-plan",
    "name": "Nutrition Plan",
-   "family": "Sağlık & Bilim",
-   "tag": "Beslenme planı: sebze yeşili accent, öğün kartları, makro halkaları ve mono porsiyon.",
+   "family": "Health & Science",
+   "tag": "Nutrition plan: vegetable-green accent, meal cards, macro rings and mono portions.",
    "tags": [
-    "sağlık",
+    "health",
     "beslenme",
-    "öğün"
+    "meal"
    ],
    "layout": {
-    "hero": "centered",
+    "hero": "split",
     "nav": "split",
-    "density": "sparse"
+    "density": "balanced"
    },
    "compatible": [
     "physiotherapy",
@@ -5642,17 +5642,17 @@
    "num": "208",
    "slug": "dental-clinic",
    "name": "Dental Clinic",
-   "family": "Sağlık & Bilim",
-   "tag": "Diş kliniği: ferah beyaz, camgöbeği accent, randevu formu ve tedavi süresi tablosu.",
+   "family": "Health & Science",
+   "tag": "Dental clinic: airy white, cyan accent, appointment form and a treatment-duration table.",
    "tags": [
-    "sağlık",
+    "health",
     "klinik",
     "randevu"
    ],
    "layout": {
-    "hero": "centered",
-    "nav": "pill",
-    "density": "sparse"
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
    },
    "compatible": [
     "pharmacy-store",
@@ -5667,17 +5667,17 @@
    "num": "209",
    "slug": "public-health",
    "name": "Public Health",
-   "family": "Sağlık & Bilim",
-   "tag": "Halk sağlığı bilgilendirmesi: yüksek kontrast, büyük rakamlar, kaynak dipnotu ve sade dil.",
+   "family": "Health & Science",
+   "tag": "Public health notice: high contrast, large figures, source footnote and plain language.",
    "tags": [
-    "sağlık",
+    "health",
     "kamu",
     "istatistik"
    ],
    "layout": {
-    "hero": "centered",
+    "hero": "split",
     "nav": "split",
-    "density": "sparse"
+    "density": "balanced"
    },
    "compatible": [
     "clinical-trial",
@@ -5692,17 +5692,17 @@
    "num": "210",
    "slug": "genomics-lab",
    "name": "Genomics Lab",
-   "family": "Sağlık & Bilim",
-   "tag": "Genom laboratuvarı: koyu mor zemin, turkuaz accent, dizileme tablosu ve mono baz etiketleri.",
+   "family": "Health & Science",
+   "tag": "Genomics lab: deep purple background, turquoise accent, sequencing table and mono base labels.",
    "tags": [
-    "sağlık",
+    "health",
     "genom",
     "laboratuvar"
    ],
    "layout": {
-    "hero": "centered",
-    "nav": "pill",
-    "density": "sparse"
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
    },
    "compatible": [
     "lab-protocol",
@@ -5717,17 +5717,17 @@
    "num": "211",
    "slug": "veterinary-care",
    "name": "Veterinary Care",
-   "family": "Sağlık & Bilim",
-   "tag": "Veteriner klinik: sıcak krem zemin, kahve accent, aşı takvimi ve hasta kartı.",
+   "family": "Health & Science",
+   "tag": "Veterinary clinic: warm cream background, coffee accent, vaccination schedule and patient card.",
    "tags": [
-    "sağlık",
+    "health",
     "veteriner",
     "takvim"
    ],
    "layout": {
-    "hero": "centered",
-    "nav": "pill",
-    "density": "sparse"
+    "hero": "split",
+    "nav": "inline",
+    "density": "balanced"
    },
    "compatible": [
     "dental-clinic",
@@ -5742,12 +5742,12 @@
    "num": "212",
    "slug": "language-app",
    "name": "Language App",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Dil öğrenme uygulaması: canlı mavi accent, günlük seri, kelime kartı ve telaffuz satırı.",
+   "family": "Learning & Gamification",
+   "tag": "Language learning app: vivid blue accent, daily streak, word card and a pronunciation line.",
    "tags": [
-    "öğrenme",
+    "learning",
     "dil",
-    "alıştırma"
+    "drill"
    ],
    "layout": {
     "hero": "split",
@@ -5767,11 +5767,11 @@
    "num": "213",
    "slug": "skill-tree",
    "name": "Skill Tree",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Yetenek ağacı: mor accent, düğüm haritası, kilit durumları ve mono ilerleme puanı.",
+   "family": "Learning & Gamification",
+   "tag": "Skill tree: purple accent, node map, lock states and a mono progress score.",
    "tags": [
-    "öğrenme",
-    "yol haritası",
+    "learning",
+    "roadmap",
     "yetenek"
    ],
    "layout": {
@@ -5792,11 +5792,11 @@
    "num": "214",
    "slug": "university-portal",
    "name": "University Portal",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Üniversite portalı: kurumsal lacivert, kayıt dönemi şeridi, ders kataloğu ve mono kredi.",
+   "family": "Learning & Gamification",
+   "tag": "University portal: institutional navy, enrolment banner, course catalogue and mono credits.",
    "tags": [
-    "öğrenme",
-    "üniversite",
+    "learning",
+    "university",
     "katalog"
    ],
    "layout": {
@@ -5817,12 +5817,12 @@
    "num": "215",
    "slug": "coding-bootcamp",
    "name": "Coding Bootcamp",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Kod bootcamp'i: terminal yeşili accent, müfredat haftaları, mono süre ve proje kartı.",
+   "family": "Learning & Gamification",
+   "tag": "Coding bootcamp: terminal-green accent, curriculum weeks, mono durations and a project card.",
    "tags": [
-    "öğrenme",
+    "learning",
     "kod",
-    "müfredat"
+    "curriculum"
    ],
    "layout": {
     "hero": "split",
@@ -5842,12 +5842,12 @@
    "num": "216",
    "slug": "kids-classroom",
    "name": "Kids Classroom",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Çocuk sınıfı: yumuşak sarı-mavi, büyük dokunma hedefleri, görev kartları ve yıldız yerine metin ödül.",
+   "family": "Learning & Gamification",
+   "tag": "Kids classroom: soft yellow-blue, large touch targets, task cards and text rewards instead of stars.",
    "tags": [
-    "öğrenme",
-    "çocuk",
-    "sınıf"
+    "learning",
+    "children",
+    "classroom"
    ],
    "layout": {
     "hero": "split-reverse",
@@ -5867,11 +5867,11 @@
    "num": "217",
    "slug": "exam-prep",
    "name": "Exam Prep",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Sınav hazırlığı: gri-mavi düzen, soru sayacı, konu ağırlığı ve mono süre planı.",
+   "family": "Learning & Gamification",
+   "tag": "Exam prep: grey-blue layout, question counter, topic weighting and a mono time plan.",
    "tags": [
-    "öğrenme",
-    "sınav",
+    "learning",
+    "exam",
     "plan"
    ],
    "layout": {
@@ -5892,11 +5892,11 @@
    "num": "218",
    "slug": "music-lesson",
    "name": "Music Lesson",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Müzik dersi: sıcak ahşap zemin, bordo accent, nota satırı ve mono tempo bilgisi.",
+   "family": "Learning & Gamification",
+   "tag": "Music lesson: warm wood background, burgundy accent, staff line and mono tempo readout.",
    "tags": [
-    "öğrenme",
-    "müzik",
+    "learning",
+    "music",
     "pratik"
    ],
    "layout": {
@@ -5917,11 +5917,11 @@
    "num": "219",
    "slug": "lab-simulation",
    "name": "Lab Simulation",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Sanal laboratuvar: koyu zemin, camgöbeği ölçüm, adım kaydırıcıları ve sonuç tablosu.",
+   "family": "Learning & Gamification",
+   "tag": "Virtual lab: dark background, cyan measurement, step sliders and a results table.",
    "tags": [
-    "öğrenme",
-    "simülasyon",
+    "learning",
+    "simulation",
     "laboratuvar"
    ],
    "layout": {
@@ -5942,10 +5942,10 @@
    "num": "220",
    "slug": "peer-study",
    "name": "Peer Study",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Akran çalışma grubu: sıcak gri, mor accent, oturum kartları ve mono katılımcı sayısı.",
+   "family": "Learning & Gamification",
+   "tag": "Peer study group: warm grey, purple accent, session cards and mono attendee counts.",
    "tags": [
-    "öğrenme",
+    "learning",
     "akran",
     "oturum"
    ],
@@ -5967,12 +5967,12 @@
    "num": "221",
    "slug": "certificate-wallet",
    "name": "Certificate Wallet",
-   "family": "Öğrenme & Oyunlaştırma",
-   "tag": "Sertifika cüzdanı: koyu mavi zemin, altın mühür, doğrulama kodu ve mono tarih.",
+   "family": "Learning & Gamification",
+   "tag": "Certificate wallet: deep blue background, gold seal, verification code and mono dates.",
    "tags": [
-    "öğrenme",
+    "learning",
     "sertifika",
-    "doğrulama"
+    "verification"
    ],
    "layout": {
     "hero": "product",
@@ -5992,12 +5992,12 @@
    "num": "222",
    "slug": "terrazzo-stone",
    "name": "Terrazzo Stone",
-   "family": "Materyal & Zanaat",
-   "tag": "Terrazzo yüzey: taş kırıntısı doku, kireç zemin, tek kiremit accent ve sade künye.",
+   "family": "Material & Craft",
+   "tag": "Terrazzo surface: stone-chip texture, lime background, a single tile accent and a plain spec plate.",
    "tags": [
     "materyal",
-    "taş",
-    "doku"
+    "stone",
+    "texture"
    ],
    "layout": {
     "hero": "fullbleed",
@@ -6017,11 +6017,11 @@
    "num": "223",
    "slug": "linocut-print",
    "name": "Linocut Print",
-   "family": "Materyal & Zanaat",
-   "tag": "Linol baskı: mürekkep siyahı, kırık kenar, tek kırmızı vurgu ve el dizgisi ritmi.",
+   "family": "Material & Craft",
+   "tag": "Linocut print: ink black, broken edge, a single red highlight and hand-set rhythm.",
    "tags": [
     "materyal",
-    "baskı",
+    "print",
     "zanaat"
    ],
    "layout": {
@@ -6042,16 +6042,16 @@
    "num": "224",
    "slug": "risograph-print",
    "name": "Risograph Print",
-   "family": "Materyal & Zanaat",
-   "tag": "Riso baskı: iki mürekkep (mavi-pembe), kayma efekti, kâğıt dokusu ve mono adet.",
+   "family": "Material & Craft",
+   "tag": "Risograph print: two inks (blue-pink), misregistration, paper texture and mono edition.",
    "tags": [
     "materyal",
     "riso",
-    "baskı"
+    "print"
    ],
    "layout": {
-    "hero": "split-reverse",
-    "nav": "utility",
+    "hero": "index",
+    "nav": "split",
     "density": "dense"
    },
    "compatible": [
@@ -6067,8 +6067,8 @@
    "num": "225",
    "slug": "denim-textile",
    "name": "Denim Textile",
-   "family": "Materyal & Zanaat",
-   "tag": "Denim dokusu: çivit mavisi, çift dikiş çizgisi, keten zemin ve mono beden tablosu.",
+   "family": "Material & Craft",
+   "tag": "Denim texture: indigo blue, double-stitch line, linen background and a mono size table.",
    "tags": [
     "materyal",
     "tekstil",
@@ -6091,12 +6091,12 @@
    "num": "226",
    "slug": "cork-oak",
    "name": "Cork Oak",
-   "family": "Materyal & Zanaat",
-   "tag": "Mantar meşesi: sıcak kahve zemin, taneli doku, yuvarlak hat ve mono üretim notu.",
+   "family": "Material & Craft",
+   "tag": "Cork oak: warm brown background, grained texture, rounded edges and a mono production note.",
    "tags": [
     "materyal",
     "mantar",
-    "sürdürülebilir"
+    "sustainable"
    ],
    "layout": {
     "hero": "fullbleed",
@@ -6116,12 +6116,12 @@
    "num": "227",
    "slug": "cast-concrete",
    "name": "Cast Concrete",
-   "family": "Materyal & Zanaat",
-   "tag": "Beton döküm: gri skala, kalıp izi, keskin blok ve mono dayanım sınıfı.",
+   "family": "Material & Craft",
+   "tag": "Cast concrete: grey scale, formwork seam, sharp block and mono strength class.",
    "tags": [
     "materyal",
     "beton",
-    "mimarlık"
+    "architecture"
    ],
    "layout": {
     "hero": "fullbleed",
@@ -6141,11 +6141,11 @@
    "num": "228",
    "slug": "enamel-jewel",
    "name": "Enamel Jewel",
-   "family": "Materyal & Zanaat",
-   "tag": "Mineli mücevher: gece moru, altın çizgi, küçük ölçek ve mono taş bilgisi.",
+   "family": "Material & Craft",
+   "tag": "Enamel jewellery: midnight purple, gold line, small scale and mono stone details.",
    "tags": [
     "materyal",
-    "mücevher",
+    "jewellery",
     "mine"
    ],
    "layout": {
@@ -6166,12 +6166,12 @@
    "num": "229",
    "slug": "hand-thrown-ceramic",
    "name": "Hand-thrown Ceramic",
-   "family": "Materyal & Zanaat",
-   "tag": "El yapımı seramik: kil beyazı zemin, sır yeşili accent, düzensiz kenar ve mono fırın notu.",
+   "family": "Material & Craft",
+   "tag": "Handmade ceramic: clay white background, glaze green accent, irregular edge and a mono kiln note.",
    "tags": [
     "materyal",
     "seramik",
-    "el yapımı"
+    "handmade"
    ],
    "layout": {
     "hero": "fullbleed",
@@ -6191,12 +6191,12 @@
    "num": "230",
    "slug": "raw-steel",
    "name": "Raw Steel",
-   "family": "Materyal & Zanaat",
-   "tag": "Ham çelik: soğuk gri, haddelenmiş yüzey, teknik etiket ve mono tolerans.",
+   "family": "Material & Craft",
+   "tag": "Raw steel: cold grey, rolled surface, technical label and mono tolerance.",
    "tags": [
     "materyal",
-    "çelik",
-    "endüstri"
+    "steel",
+    "industry"
    ],
    "layout": {
     "hero": "fullbleed",
@@ -6216,12 +6216,12 @@
    "num": "231",
    "slug": "recycled-paper",
    "name": "Recycled Paper",
-   "family": "Materyal & Zanaat",
-   "tag": "Geri dönüşüm kâğıdı: kirli beyaz, zeytin accent, kenar izleri ve mono geri dönüşüm oranı.",
+   "family": "Material & Craft",
+   "tag": "Recycled paper: off-white, olive accent, edge marks and a mono recycled ratio.",
    "tags": [
     "materyal",
-    "kâğıt",
-    "geri dönüşüm"
+    "paper",
+    "recycling"
    ],
    "layout": {
     "hero": "fullbleed",
@@ -6241,17 +6241,17 @@
    "num": "232",
    "slug": "condensed-news",
    "name": "Condensed News",
-   "family": "Tipografi Denemeleri",
-   "tag": "Sıkı gazete tipografisi: dar başlık, çok kolon, hairline ve mono tarih-imza.",
+   "family": "Typography Experiments",
+   "tag": "Tight newspaper typography: condensed heading, many columns, hairlines and mono date-byline.",
    "tags": [
-    "tipografi",
+    "typography",
     "haber",
     "gazete"
    ],
    "layout": {
-    "hero": "index",
-    "nav": "split",
-    "density": "dense"
+    "hero": "centered",
+    "nav": "pill",
+    "density": "sparse"
    },
    "compatible": [
     "broadsheet-daily",
@@ -6266,12 +6266,12 @@
    "num": "233",
    "slug": "monospace-editorial",
    "name": "Monospace Editorial",
-   "family": "Tipografi Denemeleri",
-   "tag": "Monospace editoryal: kod ritmi, tek accent, uzun ölçü ve mono etiket hiyerarşisi.",
+   "family": "Typography Experiments",
+   "tag": "Monospace editorial: code rhythm, one accent, long measure and a mono label hierarchy.",
    "tags": [
-    "tipografi",
+    "typography",
     "mono",
-    "dokümantasyon"
+    "documentation"
    ],
    "layout": {
     "hero": "type",
@@ -6291,12 +6291,12 @@
    "num": "234",
    "slug": "blackletter-modern",
    "name": "Blackletter Modern",
-   "family": "Tipografi Denemeleri",
-   "tag": "Modern gotik: ağır serif başlık, gece zemin, tek kan rengi ve sade gövde.",
+   "family": "Typography Experiments",
+   "tag": "Modern gothic: heavy serif heading, night background, a single blood colour and a plain body.",
    "tags": [
-    "tipografi",
+    "typography",
     "gotik",
-    "mühür"
+    "seal"
    ],
    "layout": {
     "hero": "sticky",
@@ -6316,11 +6316,11 @@
    "num": "235",
    "slug": "variable-weight",
    "name": "Variable Weight",
-   "family": "Tipografi Denemeleri",
-   "tag": "Değişken ağırlık: aynı ailede 300–900, kontrast sıçraması ve ölçü ritmi.",
+   "family": "Typography Experiments",
+   "tag": "Variable weight: 300–900 in one family, contrast jump and scale rhythm.",
    "tags": [
-    "tipografi",
-    "ağırlık",
+    "typography",
+    "weight",
     "ajans"
    ],
    "layout": {
@@ -6341,10 +6341,10 @@
    "num": "236",
    "slug": "justified-book",
    "name": "Justified Book",
-   "family": "Tipografi Denemeleri",
-   "tag": "Kitap dizgisi: iki yana yaslı serif, 66ch ölçü, bölüm numarası ve mono kolofon.",
+   "family": "Typography Experiments",
+   "tag": "Book typesetting: justified serif, 66ch measure, chapter number and a mono colophon.",
    "tags": [
-    "tipografi",
+    "typography",
     "kitap",
     "dizgi"
    ],
@@ -6366,12 +6366,12 @@
    "num": "237",
    "slug": "stencil-display",
    "name": "Stencil Display",
-   "family": "Tipografi Denemeleri",
-   "tag": "Şablon harf: askerî kalıp, sarı accent, blok başlık ve mono kod etiketi.",
+   "family": "Typography Experiments",
+   "tag": "Stencil display: military stencil, yellow accent, block heading and mono code label.",
    "tags": [
-    "tipografi",
-    "şablon",
-    "endüstri"
+    "typography",
+    "stencil",
+    "industry"
    ],
    "layout": {
     "hero": "type",
@@ -6391,12 +6391,12 @@
    "num": "238",
    "slug": "uppercase-only",
    "name": "Uppercase Only",
-   "family": "Tipografi Denemeleri",
-   "tag": "Yalnız büyük harf: geniş tracking, kısa satır, tek accent ve mimari boşluk.",
+   "family": "Typography Experiments",
+   "tag": "Uppercase only: wide tracking, short lines, one accent and architectural space.",
    "tags": [
-    "tipografi",
-    "büyük harf",
-    "mimarlık"
+    "typography",
+    "uppercase",
+    "architecture"
    ],
    "layout": {
     "hero": "type",
@@ -6416,10 +6416,10 @@
    "num": "239",
    "slug": "italic-accent",
    "name": "Italic Accent",
-   "family": "Tipografi Denemeleri",
-   "tag": "İtalik vurgu: düz gövde içinde eğik başlık, ince serif kontrast ve tek sıcak accent.",
+   "family": "Typography Experiments",
+   "tag": "Italic emphasis: slanted heading inside a roman body, thin serif contrast and one warm accent.",
    "tags": [
-    "tipografi",
+    "typography",
     "italik",
     "edebiyat"
    ],
@@ -6441,12 +6441,12 @@
    "num": "240",
    "slug": "numerals-display",
    "name": "Numerals Display",
-   "family": "Tipografi Denemeleri",
-   "tag": "Rakam odaklı tipografi: dev sayılar, mono hizalama, birim etiketi ve ince çizgi.",
+   "family": "Typography Experiments",
+   "tag": "Numeral-driven typography: giant figures, mono alignment, unit label and thin rules.",
    "tags": [
-    "tipografi",
-    "rakam",
-    "rapor"
+    "typography",
+    "numeral",
+    "report"
    ],
    "layout": {
     "hero": "type",
@@ -6466,10 +6466,10 @@
    "num": "241",
    "slug": "small-caps-ledger",
    "name": "Small Caps Ledger",
-   "family": "Tipografi Denemeleri",
-   "tag": "Küçük kapsüllü defter: başlıklarda small-caps, ince çizgili tablo ve mono toplam.",
+   "family": "Typography Experiments",
+   "tag": "Small-caps ledger: small-caps headings, hairline table and a mono total.",
    "tags": [
-    "tipografi",
+    "typography",
     "defter",
     "muhasebe"
    ],
@@ -6491,8 +6491,8 @@
    "num": "242",
    "slug": "agent-console",
    "name": "Agent Console",
-   "family": "Gelecek & Spekülatif",
-   "tag": "Ajan konsolu: izleme kaydı, camgöbeği sinyal, araç çağrısı tablosu ve mono gecikme.",
+   "family": "Future & Speculative",
+   "tag": "Agent console: trace log, cyan signal, tool-call table and mono latency.",
    "tags": [
     "gelecek",
     "ajan",
@@ -6516,12 +6516,12 @@
    "num": "243",
    "slug": "spatial-workspace",
    "name": "Spatial Workspace",
-   "family": "Gelecek & Spekülatif",
-   "tag": "Uzamsal çalışma alanı: derin gri, katman çizgileri, mor accent ve mono koordinat.",
+   "family": "Future & Speculative",
+   "tag": "Spatial workspace: deep grey, layer outlines, purple accent and mono coordinates.",
    "tags": [
     "gelecek",
     "uzamsal",
-    "katman"
+    "layer"
    ],
    "layout": {
     "hero": "index",
@@ -6541,8 +6541,8 @@
    "num": "244",
    "slug": "bio-lab-interface",
    "name": "Bio Lab Interface",
-   "family": "Gelecek & Spekülatif",
-   "tag": "Biyolojik laboratuvar arayüzü: koyu yeşil, asit accent, kültür tablosu ve mono sıcaklık.",
+   "family": "Future & Speculative",
+   "tag": "Biology lab interface: dark green, acid accent, culture table and mono temperature.",
    "tags": [
     "gelecek",
     "biyoteknoloji",
@@ -6566,8 +6566,8 @@
    "num": "245",
    "slug": "climate-model",
    "name": "Climate Model",
-   "family": "Gelecek & Spekülatif",
-   "tag": "İklim modeli panosu: soğuk mavi, senaryo şeritleri, yıl ekseni ve mono sapma değeri.",
+   "family": "Future & Speculative",
+   "tag": "Climate model board: cold blue, scenario ribbons, year axis and mono deviation value.",
    "tags": [
     "gelecek",
     "iklim",
@@ -6591,8 +6591,8 @@
    "num": "246",
    "slug": "orbital-logistics",
    "name": "Orbital Logistics",
-   "family": "Gelecek & Spekülatif",
-   "tag": "Yörünge lojistiği: gece mavisi, yörünge çizgileri, manifest tablosu ve mono pencere saati.",
+   "family": "Future & Speculative",
+   "tag": "Orbital logistics: night blue, orbit lines, manifest table and mono launch-window time.",
    "tags": [
     "gelecek",
     "uzay",
@@ -6616,8 +6616,8 @@
    "num": "247",
    "slug": "synthetic-media",
    "name": "Synthetic Media",
-   "family": "Gelecek & Spekülatif",
-   "tag": "Sentetik medya: grafit zemin, turkuaz accent, kaynak etiketi ve mono üretim parametresi.",
+   "family": "Future & Speculative",
+   "tag": "Synthetic media: graphite background, turquoise accent, source label and mono generation parameters.",
    "tags": [
     "gelecek",
     "sentetik",
@@ -6641,12 +6641,12 @@
    "num": "248",
    "slug": "quantum-dashboard",
    "name": "Quantum Dashboard",
-   "family": "Gelecek & Spekülatif",
-   "tag": "Kuantum panosu: mor-lacivert, durum vektörü tablosu, altın accent ve mono olasılık.",
+   "family": "Future & Speculative",
+   "tag": "Quantum board: purple-navy, state-vector table, gold accent and mono probability.",
    "tags": [
     "gelecek",
     "kuantum",
-    "olasılık"
+    "probability"
    ],
    "layout": {
     "hero": "product",
@@ -6666,12 +6666,12 @@
    "num": "249",
    "slug": "digital-twin",
    "name": "Digital Twin",
-   "family": "Gelecek & Spekülatif",
-   "tag": "Dijital ikiz: şema-durum eşleşmesi, camgöbeği canlı accent ve mono sensör değeri.",
+   "family": "Future & Speculative",
+   "tag": "Digital twin: diagram-to-state mapping, live cyan accent and mono sensor values.",
    "tags": [
     "gelecek",
     "ikiz",
-    "sensör"
+    "sensor"
    ],
    "layout": {
     "hero": "split",
@@ -6691,12 +6691,12 @@
    "num": "250",
    "slug": "neural-canvas",
    "name": "Neural Canvas",
-   "family": "Gelecek & Spekülatif",
-   "tag": "Sinir ağı tuvali: katman düğümleri, mor accent, ince bağlantılar ve mono katman boyutu.",
+   "family": "Future & Speculative",
+   "tag": "Neural network canvas: layer nodes, purple accent, thin connections and mono layer size.",
    "tags": [
     "gelecek",
     "model",
-    "katman"
+    "layer"
    ],
    "layout": {
     "hero": "centered",
@@ -6716,8 +6716,8 @@
    "num": "251",
    "slug": "post-screen-voice",
    "name": "Post-screen Voice",
-   "family": "Gelecek & Spekülatif",
-   "tag": "Ekran sonrası ses arayüzü: sıcak gri, dalga çizgisi, transkript satırı ve mono süre.",
+   "family": "Future & Speculative",
+   "tag": "Post-screen voice interface: warm grey, waveform line, transcript rows and mono timings.",
    "tags": [
     "gelecek",
     "ses",

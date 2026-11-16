@@ -1,41 +1,51 @@
 # 25 · Frutiger Aero
 
-> **Bir cümlede:** 2004–2010'un parlak teknolojisi: gök mavisi, cam-gloss butonlar, su damlası ve iyimserlik.
+> **In one sentence:** 2004–2010'un parlak teknolojisi: gök mavisi, cam-gloss butonlar, su damlası ve iyimserlik.
 
 | | |
 |---|---|
-| **Hissiyat** | taze, parlak, iyimser, "yeni binyıl" |
-| **En iyi** | nostalji ürünü, kampanya, eğitim, çevre/su temalı marka, lansman |
-| **Kaçın** | kurumsal B2B, sağlık verisi, lüks, koyu arayüz |
-| **Zorluk** | orta (parlaklık dozu) · **Erişilebilirlik** | orta (düşük kontrast riski) |
-| **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="frutiger-aero"]` |
-| **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | taze, parlak, iyimser, "yeni binyıl" |
+| **Best for** | nostalji ürünü, kampanya, eğitim, çevre/su temalı marka, lansman |
+| **Avoid** | kurumsal B2B, sağlık verisi, lüks, koyu arayüz |
+| **Difficulty** | orta (parlaklık dozu) · **Accessibility** |  |
+| **Family** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="frutiger-aero"]` |
+| **Composition** | `split` · `split` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Frutiger Aero, 2000'ler ortasının teknoloji iyimserliği: **gökyüzü mavisi** zemin, **cam parlaklık** (inset beyaz highlight), **su/kabarcık** motifleri, yumuşak gradient'ler ve yuvarlak hatlı tipografi (Segoe UI). Her buton "taze ve temiz" görünür.
 
 Kazandığı şey: anında nostalji + tazelik. Feda ettiği şey: ciddiyet ve kontrast payı (açık mavi üstünde ince metin kaybolur).
 
-### Ne değildir
+### What is not
 - **Y2K değildir.** Y2K metalik/krom ve teknoid tipografi; Aero **organik** (su, gökyüzü, çimen).
 - **Glassmorphism değildir.** Cam orada katman; Aero'da parlaklık **yüzeyin kendisi**.
 - **"Mavi gradient" değildir.** Su/kabarcık motifi + gloss highlight + yuvarlak hat olmadan sadece mavi tema olur.
 - **Flat design değildir.** Aero parlaklık ve hafif gradient ister.
 
-### Nereden gelir
+### Where it comes from
 Windows Vista/7 Aero, erken iPhone ve 2000'ler web 2.0 estetiği; 2020'lerde "aero revival" ile kampanyalarda döndü.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin gökyüzü/su mavisi mi (#dff1ff)?
 2. Butonlarda **cam gloss** (üstte beyaz highlight) var mı?
 3. Su/kabarcık veya yaprak motifi var mı?
 4. Radius 14–22px ve yumuşak mı?
 5. Gradient yumuşak (sert değil) mi?
 
-## Zorunlu kurallar
+## Visual signature
+- **Gloss buton:** `linear-gradient(180deg, #6fc0f0, #2f9be0)` + inset beyaz + mavi gölge.
+- **Cam panel:** yarım saydam beyaz + blur 6px + 1px beyaz kenar.
+- **Kabarcık motifi:** radial gradient daireler, opacity .18.
+- **Yumuşak gradient:** zemin `#ffffff → #dff1ff → #c9e7ff`.
+- **Yuvarlak tipografi:** Segoe UI, 600 ağırlık; keskin grotesk yok.
+- **Typography:** Segoe UI (display) + Segoe UI (body) + Consolas (mono label).
+- **Colour discipline:** a single accent `#2090d5`; neutral scale `#dff1ff` → `#0d2b45`.
+- **Radius:** `14px` / `22px`; Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
+
+## Mandatory rules
 
 1. **Parlaklık üçlüsü:** dikey gradient + `inset 0 1px 0 #fff` + yumuşak mavi gölge.
 2. **Gökyüzü paleti:** bg #dff1ff → bg-2 #bfe3ff; sıcak renk yok.
@@ -44,7 +54,66 @@ Windows Vista/7 Aero, erken iPhone ve 2000'ler web 2.0 estetiği; 2020'lerde "ae
 5. **Metin kontrastı ≥ 4.5:1:** açık mavi üstünde `--ink` (#0d2b45).
 6. **Blur ≤ 6px** ve yalnız cam panelde.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#dff1ff` | page background | as a card background |
+| `--bg-2` | `#bfe3ff` | partition divider floor, table top | button background |
+| `--surface` | `linear-gradient(180deg, #ffffff, #d6ecff)` | kart, input, modal | full-page background |
+| `--surface-2` | `#eaf6ff` | passive chip, hover background | primary button |
+| `--ink` | `#0d2b45` | title, body, icon | large background |
+| `--ink-soft` | `#365a75` | secondary text, description | — |
+| `--ink-faint` | `#6e8da6` | decorative label, separator text | interactive text |
+| `--accent` | `#2090d5` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#06243e` | text above accent | non-accent background |
+| `--line` | `rgba(255,255,255,.85)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **12.54:1** · `ink-soft/bg` **6.32:1** · `ink-faint/bg` **3.02:1 (decorative)** · `accent-ink/accent` **4.52:1**.
+- HUD contrast: status colors (live/damage) are derived from the accent's tones; A fourth hue is not added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Segoe UI) | 44px (mobile 28px) | 700 | 1.1 | 0.01em |
+| H2 | same | 26px | 600 | 1.2 | 0.01em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Segoe UI) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Consolas) | 10px | 400 | 1.2 | 0.2em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Numbers are taboos; score/timer areas are mono and right aligned. Title in uppercase, body in sentence order.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- The screen grid acts like a visible frame: a 1px accent border is placed between sections, no decorative lines are added.
+- Section vertical space 64px desktop, 40px mobile; card padding 18px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Surfaces are opaque; There is no glass/blur. Thin accent edge is used for status notification.
+- Radius: `14px` (buton, input, chip), `22px` (kart, modal). Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
+
+## Bans
 
 - Sert gölge, siyah kontur, 0 radius.
 - Koyu zemin / neon.
@@ -52,83 +121,44 @@ Windows Vista/7 Aero, erken iPhone ve 2000'ler web 2.0 estetiği; 2020'lerde "ae
 - 3+ motif, 3+ gradient yönü.
 - Yoğun tabloda gloss (okunmaz).
 - Skeuomorphism'in ahşap/metal dokusu (bu stil cam/su).
+- Infinite blinking indicator (no animation in v6).
+- More than three status colors.
+- Serif title in HUD.
 
-## Görsel imza
-- **Gloss buton:** `linear-gradient(180deg, #6fc0f0, #2f9be0)` + inset beyaz + mavi gölge.
-- **Cam panel:** yarım saydam beyaz + blur 6px + 1px beyaz kenar.
-- **Kabarcık motifi:** radial gradient daireler, opacity .18.
-- **Yumuşak gradient:** zemin `#ffffff → #dff1ff → #c9e7ff`.
-- **Yuvarlak tipografi:** Segoe UI, 600 ağırlık; keskin grotesk yok.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 14px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 14px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 14px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 14px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 14px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 14px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 14px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Kullanım | Kaçınılır |
-|---|---|---|---|
-| `--bg` | `#dff1ff` | sayfa | metin |
-| `--bg-2` | `#bfe3ff` | bölüm | buton |
-| `--surface` | `linear-gradient(180deg,#fff,#d6ecff)` | cam panel | düz zemin |
-| `--surface-2` | `#eaf6ff` | ikincil, hover | vurgu |
-| `--ink` | `#0d2b45` | metin | — |
-| `--ink-soft` | `#365a75` | açıklama | 12px altı |
-| `--ink-faint` | `#6f8fa8` | dekoratif (2.94:1) | gövde |
-| `--accent` | `#2f9be0` | CTA, aktif | geniş metin zemini |
-| `--accent-ink` | `#0d2b45` | accent üstü (**4.75:1**) | — |
-| `--line` | `rgba(255,255,255,.85)` | cam kenarı | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 3.02:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **12.54:1** · `ink-soft/bg` **6.32:1** · `ink-faint/bg` **2.94:1** · `accent-ink/accent` **4.75:1**.
-- Accent üstünde **koyu** metin; beyaz yasak (1.9:1).
-- Yasak: ne mor ne turuncu; tek mavi ailesi + beyaz.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px block icon, 16/20px canvas; no anti-alias, integer scale |
+| photo | In-game rendering or single object shooting; 25% area, dark vignette |
+| illustration | Sprite/silhouette: up to 3 tones (accent, ink, surface-2) |
+| Texture | Static raster (1px/3px, 4%) on section background only |
+| Logo | Top left 20px, uppercase, mono or display |
 
-| Rol | Aile | Boyut | Ağırlık | Satır | Tracking |
-|---|---|---|---|---|---|
-| Display | Segoe UI / Frutiger | 44px (mobil 28px) | 600 | 1.15 | `0` |
-| H2 | Segoe UI | 26px | 600 | 1.2 | `0` |
-| H3 | Segoe UI | 18px | 600 | 1.3 | `0` |
-| Gövde | Segoe UI / Myriad Pro | 16px | 400 | 1.6 | `0` |
-| Etiket | Consolas | 10px | 500 | 1.2 | `0.12em`, uppercase |
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Primary focus is on one big number/score; second focus single CTA; the rest is label.
 
-- Yuvarlak hatlı sans şart; Inter/Helvetica "soğuk" kalır.
-- Gövde 62ch; açık mavi üstünde 14px altına inme.
+## Screen recipes
 
-## Izgara ve boşluk
-
-Kolon 12 · gutter 24px · container 1160px · bölüm 72/48px · breakpoint 640/900/1160.
-- Gloss payı: buton aralığı ≥ 12px.
-- Motif boşlukta; içeriğe binmez.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Gökyüzü | `--bg` gradient + motif | yok | sayfa |
-| Cam panel | `--surface` + blur 6px | `--shadow` (mavi) | kart |
-| Yüzen | `--surface-2` | aynı + inset | modal |
-
-- Derinlik parlaklık + yumuşak mavi gölge. Radius 14/22px.
-
-## Bileşen reçeteleri
-
-| Bileşen | Y | Padding | Radius | Tipografi | Renk/gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton | 44px | 0 22px | 22px | 15/600 | gloss accent + koyu metin | hover: parlaklık↑ · active: inset · focus: 2px koyu mavi halka · disabled: %45 |
-| Buton (cam) | 44px | 0 20px | 22px | 15/600 | cam gloss + koyu metin | hover: beyaz |
-| Input | 44px | 0 14px | 14px | 15/400 | beyaz + 1px beyaz kenar | focus: 2px accent · error: `--danger` |
-| Kart | içerik | 22px | 22px | H3 + 15 | cam gradient + gölge | hover: inset highlight↑ |
-| Chip | 26px | 0 12px | 999px | 10/500 mono | beyaz %70 + kenar | aktif: accent + koyu |
-| Nav | 68px | 0 28px | — | 14/600 | cam bar + alt kenar | aktif: accent alt çizgi |
-| Tablo satırı | 50px | 12px 16px | — | 14/400 | beyaz %50 alt çizgi | hover: `--surface-2` |
-| Modal | içerik | 26px | 22px | H2 + 15 | cam + blur 6px | backdrop: `rgba(13,43,69,.3)` |
-| Grafik | — | — | 8px uç | eksen 10 mono | accent + açık mavi | 2 seri |
-
-## Görsel dil
-
-İkon: 2px çizgi, 20px, yuvarlak uç; gloss daire içinde. Fotoğraf: parlak, doğa/su, yüksek ışık. İllüstrasyon: kabarcık/yaprak, yumuşak 3B. Doku: yok. Logo: yuvarlak hatlı, parlak.
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing/hero | yüksek | 44px başlık, kabarcık motifi, gloss CTA, cam panel | `shots/01-page.png` |
 | Dashboard | düşük | Gloss azalır; beyaz kart + ince mavi kenar | `shots/01-page.png` |
@@ -143,48 +173,61 @@ Kolon 12 · gutter 24px · container 1160px · bölüm 72/48px · breakpoint 640
 | Hata | düşük | `--danger` kenar + 13px metin | `shots/01-page.png` |
 | Profil/ayar | orta | Beyaz kart listesi | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde 12.54:1, açıklama 6.32:1 → güvenli; `--ink-faint` **2.94:1** → yalnız dekoratif.
-- Açık mavi üstünde beyaz/açık metin yasak; `--ink` kullan.
-- Accent üstü koyu metin 4.75:1 → buton metni 15px/600.
-- Gloss highlight metin alanına girmemeli (üst 35%'te kalır).
-- Odak halkası 2px koyu mavi; cam üstünde de görünür.
-- Dokunma hedefi 44px.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 12.54:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.32:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.02:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 4.52:1 | ≥ 4.5 | button text |
+| focus ring/ground | 3.02:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 91.2 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Okunmuyor | Açık mavi üstünde açık metin | `--ink` (#0d2b45) |
 | Yapay/kitsch | 3+ motif, sert gradient | Motif 1, gradient yumuşak |
 | "Mavi tema" gibi | Gloss ve yuvarlak tipografi yok | inset highlight + Segoe |
 | Ağır | Gloss her öğede | Gloss yalnız buton/panel |
 | Kurumsal güven kaybı | Ödeme ekranında gloss | O ekranlarda sadeleştir |
 
-## Komşu stiller
+## Neighboring styles
 
-**Uyumlu:** `19 y2k` (parlak teknoloji), `09 liquid-glass` (optik), `08 glassmorphism` (cam katman). **Yasak:** `33 dark-academia`, `22 cyberpunk`, `01 minimalism`.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `y2k` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `liquid-glass` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `glassmorphism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `dark-academia` | Two different ornamental languages compete on the same screen |
+| Mixing | `cyberpunk` | Two different ornamental languages compete on the same screen |
+| Mixing | `minimalism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
-|---|---|
-| https://aesthetics.fandom.com/wiki/Frutiger_Aero | Dönem dili ve motifler |
-| https://fonts.google.com/specimen/Inter | Alternatif yuvarlak sans |
-| https://guidebookgallery.org | Vista/7 arayüz arşivi |
+| Source | for what |
+| --- | --- |
+| https://aesthetics.fandom.com/wiki/Frutiger_Aero | Aesthetics Wiki · Frutiger Aero — Dönem dili ve motifler |
+| https://fonts.google.com/specimen/Inter | Inter — Alternatif yuvarlak sans |
+| https://guidebookgallery.org | GUIdebook — Vista/7 arayüz arşivi |
 
 ## AI brief
 
-```
+```text
 Stil: Frutiger Aero (styles/25-frutiger-aero/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="frutiger-aero"]; hard-coded renk YASAK.
 Parlaklık: dikey gradient + inset 0 1px 0 #fff + yumuşak mavi gölge; gloss yalnız buton/panel üst %35.
@@ -194,15 +237,15 @@ Tipografi: Segoe UI 600 display (44/1.15) + gövde 16/1.6; keskin grotesk yok.
 Radius 14/22px; blur ≤ 6px (yalnız cam panel).
 Yasak: sert gölge, siyah kontur, koyu zemin, açık mavi üstünde açık metin, 3+ motif.
 Çıktı: kod + tek paragraf not (gloss dozu ve kontrast önlemi).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Gloss highlight var ve metin alanına girmiyor.
-- [ ] Zemin gökyüzü mavisi; accent üstü koyu metin.
-- [ ] Motif ≤ 1, opacity ≤ .18.
-- [ ] Radius 14/22, blur ≤ 6px.
-- [ ] Gövde kontrastı ≥ 4.5:1; `--ink-faint` dekoratif.
-- [ ] Ödeme/girişte gloss azaltıldı.
+Style: Frutiger Aero (frutiger-aero) · family: Retro (19–27)
+Token: --bg #dff1ff · --surface linear-gradient(180deg, #ffffff, #d6ecff) · --ink #0d2b45 · --accent #2090d5 · --line rgba(255,255,255,.85)
+Radius: 14px / 22px · Typography: Segoe UI / Segoe UI / Consolas
+Required: **Parlaklık üçlüsü:** dikey gradient + `inset 0 1px 0 #fff` + yumuşak mavi gölge. · **Gökyüzü paleti:** bg #dff1ff → bg-2 #bfe3ff; sıcak renk yok. · **Radius 14/22px**; buton pill serbest.
+Banned: Sert gölge, siyah kontur, 0 radius. · Koyu zemin / neon. · Açık mavi üstünde beyaz metin (kontrast 1.4:1).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -213,13 +256,25 @@ Yasak: sert gölge, siyah kontur, koyu zemin, açık mavi üstünde açık metin
   --ink: #0d2b45; --ink-soft: #365a75; --ink-faint: #6e8da6;
   --accent: #2090d5; --accent-ink: #06243e;
   --line: rgba(255,255,255,.85);
+  --danger: #d22519;
+  --danger-ink: #ffffff;
+  --ok: #007e35;
+  --ok-ink: #ffffff;
+  --warn: #b15000;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 14px; --radius-lg: 22px;
-  --shadow: 0 8px 20px rgba(47,155,224,.28), inset 0 1px 0 #ffffff;
-  --shadow-hard: none;
-  --font-display: "Segoe UI", "Frutiger", system-ui, sans-serif;
-  --font-body: "Segoe UI", "Myriad Pro", system-ui, sans-serif;
-  --font-mono: "Consolas", ui-monospace, monospace;
-  --tracking: 0em; --blur: 6px; --grain: 0;
-  --focus: #2a8ac9;
+  --shadow: 0 8px 20px rgba(47,155,224,.28), inset 0 1px 0 #ffffff; --shadow-hard: none;
+  --font-display: "Segoe UI", system-ui, sans-serif;
+  --font-body: "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Consolas", system-ui, sans-serif;
+  --tracking: 0em; --blur: 0px; --grain: 0;
 }
 ```

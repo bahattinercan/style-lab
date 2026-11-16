@@ -1,43 +1,43 @@
 # 61 · Calibration Lab
 
-> **Bir cümlede:** Her okumanın bir referansa ve bir toleransa bağlandığı, süsün yerini ölçüm bandının aldığı laboratuvar arayüzü.
+> **In one sentence:** Her okumanın bir referansa ve bir toleransa bağlandığı, süsün yerini ölçüm bandının aldığı laboratuvar arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | ölçülü, klinik, güvenilir, sessiz |
-| **En iyi** | ölçüm cihazı yazılımı, kalibrasyon/doğrulama paneli, sensör & eşik izleme, sertifikalı raporlama |
-| **Kaçın** | tüketici uygulaması, e-ticaret vitrini, yaratıcı portfolyo — burada "soğuk" değil "davetsiz" olur |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.21:1) |
-| **Aile** | Endüstriyel & Teknik (56–65) · **Token** | `kit/tokens.css` → `[data-style="calibration-lab"]` |
-| **Kompozisyon** | `split` · `split` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | ölçülü, klinik, güvenilir, sessiz |
+| **Best for** | ölçüm cihazı yazılımı, kalibrasyon/doğrulama paneli, sensör & eşik izleme, sertifikalı raporlama |
+| **Avoid** | tüketici uygulaması, e-ticaret vitrini, yaratıcı portfolyo — burada "soğuk" değil "davetsiz" olur |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Industrial (56–65) · **Token** | `kit/tokens.css` → `[data-style="calibration-lab"]` |
+| **Composition** | `split` · `split` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Calibration Lab, arayüzü bir **ölçüm tablosu** olarak ele alır: her sayı bir birimle, her birim bir toleransla, her tolerans bir referansla birlikte görünür. Süsün yerini **okuma bandı** alır — mono, tabular, sağa hizalı, birim sütunu ayrı. Kullanıcı ekranda "güzel" değil "doğrulanabilir" arar.
 
 Üç kurucu karar: (1) **iki aile, iki iş** — başlık ve etiketler Jost 600, gövde Inter 400, tüm sayısal okuma IBM Plex Mono 400 tabular; (2) **hairline yüzey** — katman ayrımı 1px `--line` çerçeve, gölge yalnız yüzen katmanda, cam/blur yok; (3) **durum üçlüsü** — her ölçüm geçerli / süresi geçmiş / bekliyor olarak hem renkle hem metinle işaretlenir.
 
 Bedeli: sıcaklık ve kişilik yoktur. Bu stilin ucuz görünmemesini sağlayan tek şey **hizalama ve ondalık disiplini**; bir sütunun 2px kayması okumanın güvenilirliğini bitirir.
 
-### Ne değildir
+### What is not
 - **Terminal UI (45) değildir:** terminal tek mono ailede ve koyu zeminde yaşar; bu stilde başlık Jost, gövde Inter'dir, zemin açık ve grid 20px gutter'lıdır.
 - **Utility (44) değildir:** Utility genel ürün arayüzüdür, mavi accent ve 680px ölçüyle çalışır; Calibration Lab'de ölçüm bandı, tolerans çubuğu ve birim sütunu vardır.
 - **Scandinavian Dark (40) değildir:** o stil koyu ve geniş boşluklu bir sessizlik kurar; burada yoğunluk yüksektir, satır 30px'tir.
 - **Glassmorphism (08) değildir:** cam/blur bu stilde yasak; derinlik yalnız 1px çizgi ve 1px gölgeyle kurulur.
 
-### Nereden gelir
+### Where it comes from
 Laboratuvar enstrümanı panelinden (Fluke, Mettler Toledo, Sartorius) ve metroloji rapor geleneğinden: ölçüm değeri, birim, tolerans, referans, tarih. Bugün yeniden kullanılmasının nedeni: sensör/IoT ürünlerinin çoğu **eşik ve kalibrasyon** anlatmak zorunda ama bunu tüketici arayüzü diliyle yapınca güven kaybediyor. Klişeye dönüşmemesi için korunacak detay: **birim sütununun ve toleransın hiç gizlenmemesi**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Sağa hizalı, tabular, sabit ondalıklı sayı sütunu ve ayrı bir **birim** sütunu var.
 2. Ekranda en az bir **tolerans çubuğu**: 2px yüksekliğinde, hedef bandı gri, sapma accent.
 3. Tüm etiketler 11px mono büyük harf, +0.14em aralıklı.
 4. Paneller 3px radius ve 1px çizgi; hiçbir kartta yumuşak gölge yok.
 5. Her ölçümün yanında durum metni: `geçerli` / `süresi geçmiş` / `bekliyor`.
 
-## Görsel imza
+## Visual signature
 - **Kalibrasyon ızgarası:** hero görselinin zemininde 28px aralıklı 1px çizgi ızgara, `--line` opaklığında; sayfa zemininde tekrar etmez.
 - **Okuma bandı:** `--surface-2` zemin + üst/alt 1px `--line`, 30px satır, 11–12px IBM Plex Mono, `font-variant-numeric: tabular-nums`.
 - **Birim sütunu:** değerin sağında 44px sabit kolon, 11px mono, `--ink-faint`; birim asla değerin içinde değil.
@@ -45,100 +45,124 @@ Laboratuvar enstrümanı panelinden (Fluke, Mettler Toledo, Sartorius) ve metrol
 - **Hairline çerçeve:** panel 1px `--line`, radius 3px; odaklı panelde ek olarak `--shadow-hard` (0 0 0 1px) — çift çizgi, gölge değil.
 - **Durum üçlüsü:** 6px daire + metin. Daire tek başına anlam taşımaz; metin her zaman yanındadır.
 - **İki punto kuralı:** gövde metni yalnız 15px, etiket yalnız 11px; arada üçüncü bir gövde puntosu yok.
+- **Typography:** Jost (display) + Inter (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#0d5f5c`; neutral scale `#eef1f0` → `#101a1a`.
+- **Radius:** `3px` / `6px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#eef1f0` | sayfa zemini, cihaz çerçevesi | kart zemini |
-| `--surface` | `#fbfcfc` | panel, form, tablo gövdesi | sayfa zemini |
-| `--surface-2` | `#f3f7f6` | okuma bandı, tablo başlığı | birincil buton |
-| `--ink` | `#101a1a` | metin, sayısal okuma | dekoratif dolgu |
-| `--ink-soft` | `#4a5c5b` | ikincil metin, açıklama | accent zemin üstü |
-| `--ink-faint` | `#728482` | birim sütunu, dekoratif ayırıcı | etkileşimli metin, gövde |
-| `--accent` | `#0d5f5c` | birincil eylem, sapma, odak | dekorasyon, ikinci vurgu |
-| `--accent-ink` | `#f4fbfa` | accent zemin üstü metin | accent olmayan zemin |
-| `--line` | `rgba(16,26,26,.15)` | tüm çerçeveler, ızgara | metin |
+1. Her sayısal değer mono, tabular ve sabit ondalıkla; birim ayrı sütunda
+2. Katman ayrımı 1px hairline; gölge yalnız yüzen katmanda
+3. Etiketler 11px mono büyük harf +0.14em; gövde 15px Inter
+4. Ölçüm durumu her zaman metinle de yazılır (geçerli / süresi geçmiş / bekliyor)
+5. Tolerans ve referans değeri ekranda görünür; çıplak sayı yok
+6. Izgara 20px gutter, hücreler aynı sağ kenarda biter
 
-- Ölçülen kontrast: `ink/bg` **15.60:1** · `ink-soft/bg` **6.21:1** · `accent-ink/accent` **7.13:1** · `ink-faint/bg` **3.46:1**.
-- Tek vurgu kuralı: `--accent` yalnız eylem, seçim, sapma ve odak için. Durumlar için `--ok` / `--warn` / `--danger` ayrı durur; accent'e ikinci bir ton eklenmez.
-- Yasak kombinasyon: accent zemin üstünde `--ink-soft`; `--ink-faint` ile gövde metni; iki farklı yeşilin yan yana kullanımı.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#eef1f0` | page background | as a card background |
+| `--bg-2` | `#e5eae9` | partition divider floor, table top | button background |
+| `--surface` | `#fbfcfc` | kart, input, modal | full-page background |
+| `--surface-2` | `#f3f7f6` | passive chip, hover background | primary button |
+| `--ink` | `#101a1a` | title, body, icon | large background |
+| `--ink-soft` | `#4a5c5b` | secondary text, description | — |
+| `--ink-faint` | `#728482` | decorative label, separator text | interactive text |
+| `--accent` | `#0d5f5c` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f4fbfa` | text above accent | non-accent background |
+| `--line` | `rgba(16,26,26,.15)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Jost | 44px | 600 | 1.06 | -0.01em |
-| H2 | Jost | 26px | 600 | 1.16 | 0 |
-| H3 | Jost | 19px | 600 | 1.30 | 0 |
-| Gövde | Inter | 15px | 400 | 1.62 | 0 |
-| Etiket / mono | IBM Plex Mono | 11px | 400 | 1.35 | 0.14em, büyük harf |
-| Okuma / tablo | IBM Plex Mono | 12px | 400 | 1.4 | 0.02em, tabular |
+- Measured contrast: `ink/bg` **15.6:1** · `ink-soft/bg` **6.21:1** · `ink-faint/bg` **3.46:1 (decorative)** · `accent-ink/accent` **7.13:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.7 (15 → 26 → 44); kullanılan basamaklar: 11 · 12 · 15 · 19 · 26 · 44 · (mobil 28). Altıdan fazla basamak yok.
-- Ölçü önerisi: `h1 { font-size: clamp(28px, 4.4vw, 44px) }`.
-- Gövde metni maksimum satır uzunluğu: 62ch; tablo hücresi sarmaz.
-- Ağırlık kuralı: Jost 400/600, Inter 400/600, mono 400. 700 ve üstü yasak (Jost'ta 700 yok, sentetik kalınlaştırma bulanıklaştırır). İtalik yasak.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Jost) | 28px (mobile 28px) | 400 | 1.08 | -0.02em |
+| H2 | same | 26px | 600 | 1.2 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 · hero 7/5, panel ızgarası 3×4 |
-| Gutter | 20px |
-| Container genişliği | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 üstü 12 kolon · 768–1200 8 kolon · 768 altı tek kolon, tablo yatay kaydırır |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına en fazla 1 bölüm simetriden çıkar (hero 7/5).
-- Bölüm ritmi: masaüstü 56px, mobil 32px dikey boşluk; art arda en fazla 3 aynı hizalama, sonra bölüm ayırıcı 1px çizgi.
-- Panel içi padding 20px; okuma bandı hücresi 4/12px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, cihaz kabuğu |
-| Kart | `--surface` + 1px `--line` | yok | panel, tablo, form |
-| Yüzen katman | `--surface` + `--shadow` | `0 1px 2px rgba(16,26,26,.06)` | açılır menü, toast |
-| Odak katmanı | `--surface` + `--shadow-hard` | `0 0 0 1px rgba(16,26,26,.24)` | seçili panel, modal |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; seçili durumda aynı çizgi + `--shadow-hard` = 2 kat çizgi.
-- Derinlik nereden gelir: yalnızca çizgi ve zemin tonu; ışık/gölge yok.
-- Radius: `--radius` 3px (panel, form, buton), `--radius-lg` 6px (modal, hero görsel çerçevesi). 6px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 38px | 8px 16px | `--radius` | 13px/600 Jost | `--accent` / `--accent-ink`, gölge yok | hover %92 accent · active 1px aşağı · focus 2px outline + 2px offset · disabled %42 · loading 3 nokta |
-| Buton (ikincil) | 38px | 8px 16px | `--radius` | 13px/600 Jost | `--surface` + 1px `--line` | hover `--surface-2` · focus aynı halka |
-| Input | 38px | 0 12px | `--radius` | 14px mono tabular | `--surface` + 1px `--line` | focus accent halka + birim etiketi sağda · filled sağa hizalı · error `--danger` + 11px açıklama · disabled %42 |
-| Panel / kart | — | 20px | `--radius` | gövde 15px | `--surface` + 1px `--line` | başlıkta 11px mono etiket + sağda durum chip'i |
-| Chip / badge | 22px | 0 8px | `--radius` | 11px mono 0.1em | `--surface-2` + 1px `--line` | geçerli = accent çerçeve · bekliyor = warn · süresi geçmiş = danger |
-| Nav (üst bar) | 48px | 0 32px | 0 | 11px mono büyük harf | `--bg` + alt 1px `--line` | aktif öğe accent alt çizgi 2px · sağda `REF` etiketi |
-| Tablo satırı | 30px | 4px 12px | 0 | 12px mono tabular | zemin yok; alt 1px `--line` | hover `--surface-2` · seçili accent sol şerit 2px |
-| Modal | — | 24px | `--radius-lg` | başlık 19px Jost | `--shadow-hard` + 0 24px 48px -32px | kapatma 44×44px, `esc`, odak tuzağı |
-| Toast | 36px | 8px 14px | `--radius` | 12px mono | `--surface`, sol 2px accent şerit | 4sn sonra kapanır, hover'da durur |
-| Grafik | — | — | 0 | eksen 11px mono | `--data-1…4`, hedef bandı `--surface-2` | tolerans sınırı 1px kesikli · nokta işareti yok |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `3px` (buton, input, chip), `6px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px` — tüm etkileşimli öğelerde, tablo satırları dahil (`outline-offset: -2px`).
-- Dokunma hedefi: mobilde 44×44px; görsel yükseklik 38px, dikey padding ile büyütülür.
-- Sayı girişi: stepper yok; değer doğrudan yazılır, `↑/↓` 1 birim artırır.
+## Bans
 
-## Görsel dil
+- 8px üstü radius, yuvarlak kart, yumuşak/geniş gölge.
+- Gradient zemin, cam/blur (`--blur: 0`), grain (`--grain: 0`).
+- Animasyonlu sayaç, sürekli nabız, parallax, pin/scrub.
+- İkinci accent tonu; accent'i dekorasyon olarak kullanmak.
+- Büyük harf gövde metni ve 700+ ağırlık.
+- Yalnız renkle durum bildirimi; birimsiz/ondalıksız değer.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, 20px ızgara, yuvarlatma yok; dolu ikon yalnız 6px durum noktası |
-| Fotoğraf | cihaz/numune, nötr beyaz zemin, doygunluk -10, max %35 alan, 3px çerçeve içinde |
-| İllüstrasyon | yalnız teknik diyagram (ölçüm zinciri, kalibrasyon akışı), 1px çizgi + etiket |
-| Doku | yok (`--grain: 0`); ızgara deseni yalnız hero görselinde |
-| Logo alanı | sözcük logosu Jost 600 küçük harf, sol üst 20px boşluk; mono varyant yalnız alt bilgi |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 3px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 3px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 3px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 3px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 3px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 3px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 3px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.27:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-grid` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | hero 7/5: solda başlık + tek CTA, sağda kalibrasyon paneli + okuma bandı | `shots/01-page.png` |
 | Dashboard | çok yüksek | 3 KPI + tolerans çubukları + son ölçümler tablosu | `shots/01-page.png` |
@@ -153,43 +177,33 @@ Laboratuvar enstrümanı panelinden (Fluke, Mettler Toledo, Sartorius) ve metrol
 | Hata | düşük | `--danger` çerçeve + neden + sonraki adım; sayı gizlenmez | `shots/01-page.png` |
 | Profil / ayar | yüksek | anahtar/değer listesi, 30px satır, birim seçimi | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Tüm sayısal okumalar mono + tabular + sabit ondalık; birim ayrı sütunda (değerin içinde birim yok).
-- Her ölçümün yanında tolerans ve referans görünür; çıplak sayı yasak.
-- Durum üçlüsü hem renk hem metinle: `geçerli` / `süresi geçmiş` / `bekliyor`.
-- Katman ayrımı 1px `--line`; gölge yalnız yüzen katmanda (toast, menü).
-- Etiketler 11px mono büyük harf +0.14em; gövde 15px Inter.
-- Izgara 20px gutter; panel içi 20px; tablo satırı 30px.
+## Accessibility
 
-## Yasaklar
-- 8px üstü radius, yuvarlak kart, yumuşak/geniş gölge.
-- Gradient zemin, cam/blur (`--blur: 0`), grain (`--grain: 0`).
-- Animasyonlu sayaç, sürekli nabız, parallax, pin/scrub.
-- İkinci accent tonu; accent'i dekorasyon olarak kullanmak.
-- Büyük harf gövde metni ve 700+ ağırlık.
-- Yalnız renkle durum bildirimi; birimsiz/ondalıksız değer.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.6:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.21:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.46:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.13:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.27:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 95.8 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
-- Gövde ≥ 4.5:1, büyük metin ≥ 3:1; ölçülen en düşük etkileşimli çift 6.21:1 (`ink-soft/bg`).
-- `--ink-faint` 3.46:1 — yalnız birim sütunu, eksen ve dekoratif ayırıcı; etkileşimli metin değil.
-- Durum yalnız renkle anlatılmaz: 6px daire + metin etiketi + chip.
-- Grafik çizgisi ve tolerans sınırı zemine karşı ≥ 3:1; hedef bandı desenle de ayrılır (kesikli sınır).
-- Odak görünürlüğü: açık zeminde 2px accent halka 7.13:1; tablo satırında `outline-offset: -2px` ile kırpılma önlenir.
-- 390px'te sayfa taşmaz; tablo kendi içinde yatay kaydırılır, dondurulmuş birim sütunu 44px.
-- `prefers-reduced-motion` açıkken giriş/scroll/hover hareketi durur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Excel gibi" görünüyor | her şey eşit ağırlıkta | 3 KPI + 1 tolerans çubuğu öne çıkar, gerisi `--ink-soft` |
 | Okuma güven vermiyor | ondalık/birim tutarsız | sabit 3 ondalık + ayrı birim sütunu |
 | Sütunlar kayıyor | px genişlik | `ch` + tabular + sağa hizalama |
@@ -198,30 +212,30 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Mobilde taşıyor | 12 kolon tablo | tablo içi kaydırma + dondurulmuş birim sütunu |
 | Durum kayboluyor | yalnız renkli daire | daire + metin chip'i birlikte |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `scandinavian-dark` — aynı sessiz, çizgi temelli dil; rapor ekranlarında koyu varyant olarak kullanılır.
-- **Uyumlu:** `utility` — açık zeminli ürün arayüzü; pazarlama sayfalarında Calibration Lab'in sade kardeşi.
-- **Uyumlu:** `terminal-ui` — mühendis ekranlarında log/CLI yüzeyi olarak yan yana konur.
-- **Yasak:** `claymorphism` — yumuşak gölge ve yuvarlak dil ölçüm ciddiyetini bozar.
-- **Yasak:** `memphis` — dekoratif geometri ızgara ve birim hizasını kırar.
-- **Yasak:** `aurora-ui` — atmosferik gradient, hairline disiplinini dağıtır.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `scandinavian-dark` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `terminal-ui` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `memphis` | Two different ornamental languages compete on the same screen |
+| Mixing | `aurora-ui` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.fluke.com/en-us | cihaz paneli hiyerarşisi, okuma bandı ve birim gösterimi |
-| https://www.mt.com/ | kalibrasyon durumu, sertifika ve tolerans dili |
-| https://www.ibm.com/design/language/data-visualization/ | yoğun tablo, eksen ve seri renk disiplini |
-| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | grafik çizgisi, çerçeve ve odak halkası 3:1 ölçütü |
-| https://m3.material.io/foundations/layout/understanding-layout/grids | 8/4px boşluk ölçeği ve kolon davranışı |
+| Source | for what |
+| --- | --- |
+| https://www.fluke.com/en-us | Fluke · endüstriyel ölçüm cihazları — cihaz paneli hiyerarşisi, okuma bandı ve birim gösterimi |
+| https://www.mt.com/ | Mettler Toledo · laboratuvar enstrümanları — kalibrasyon durumu, sertifika ve tolerans dili |
+| https://www.ibm.com/design/language/data-visualization/ | IBM Design Language · data visualization — yoğun tablo, eksen ve seri renk disiplini |
+| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | WCAG 2.2 · Non-text Contrast — grafik çizgisi, çerçeve ve odak halkası 3:1 ölçütü |
+| https://m3.material.io/foundations/layout/understanding-layout/grids | m3.material.io — 8/4px boşluk ölçeği ve kolon davranışı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Calibration Lab (styles/61-calibration-lab/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="calibration-lab"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Jost 600) başlıkta, --font-body (Inter 400) gövdede, --font-mono (IBM Plex Mono 400) tüm sayı ve etiketlerde.
@@ -235,16 +249,15 @@ Hareket: enter 0.42s cubic-bezier(.16,.84,.44,1) 8px stagger 0.045 · scroll top
   pin kapalı · hover 140ms scale 1.006; prefers-reduced-motion zorunlu.
 Yasak: gölge (yüzen katman dışında), gradient, blur, cam, sayaç animasyonu, pin, ikinci accent, büyük harf gövde.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Okuma bandında birim sütunu var, sayılar tabular ve sabit ondalıklı.
-- [ ] En az bir tolerans çubuğu ve durum metni görünüyor.
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, accent üstü ≥ 4.5:1, `--ink-faint` yalnız dekoratif.
-- [ ] Odak halkası görünür, dokunma hedefi ≥ 44px.
-- [ ] 390px genişlikte taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Calibration Lab (calibration-lab) · family: Industrial (56–65)
+Token: --bg #eef1f0 · --surface #fbfcfc · --ink #101a1a · --accent #0d5f5c · --line rgba(16,26,26,.15)
+Radius: 3px / 6px · Typography: Jost / Inter / IBM Plex Mono
+Required: Her sayısal değer mono, tabular ve sabit ondalıkla; birim ayrı sütunda · Katman ayrımı 1px hairline; gölge yalnız yüzen katmanda · Etiketler 11px mono büyük harf +0.14em; gövde 15px Inter
+Banned: 8px üstü radius, yuvarlak kart, yumuşak/geniş gölge. · Gradient zemin, cam/blur (`--blur: 0`), grain (`--grain: 0`). · Animasyonlu sayaç, sürekli nabız, parallax, pin/scrub.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -255,15 +268,25 @@ Yasak: gölge (yüzen katman dışında), gradient, blur, cam, sayaç animasyonu
   --ink: #101a1a; --ink-soft: #4a5c5b; --ink-faint: #728482;
   --accent: #0d5f5c; --accent-ink: #f4fbfa;
   --line: rgba(16,26,26,.15);
+  --danger: #d4271b;
+  --danger-ink: #ffffff;
+  --ok: #007f36;
+  --ok-ink: #ffffff;
+  --warn: #b35100;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 3px; --radius-lg: 6px;
-  --shadow: 0 1px 2px rgba(16,26,26,.06); --shadow-hard: 0 0 0 1px rgba(16,26,26,.24);
+  --shadow: 0 1px 2px rgba(16,26,26,.06); --shadow-hard: none;
   --font-display: "Jost", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --tracking: -.01em; --blur: 0px; --grain: 0;
-  --danger: #a32b1e; --danger-ink: #fdf4f2;
-  --ok: #1c6b3f; --warn: #8a5a00;
 }
 ```
-
-Koyu mod bloğu `styles/61-calibration-lab/token-block.css` ve (integrator aktardığında) `kit/tokens.css` içinde `[data-theme="dark"][data-style="calibration-lab"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

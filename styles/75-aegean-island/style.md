@@ -1,141 +1,168 @@
 # 75 · Aegean Island
 
-> **Bir cümlede:** Kireç beyazı badana yüzeylerin 22px kemer köşelerle açıldığı, tek Ege mavisiyle kuru ve serin kalan arayüz.
+> **In one sentence:** Kireç beyazı badana yüzeylerin 22px kemer köşelerle açıldığı, tek Ege mavisiyle kuru ve serin kalan arayüz.
 
 | | |
 |---|---|
-| **Hissiyat** | serin, ferah, badanalı, güneşte solmuş |
-| **En iyi** | konaklama/otel vitrini, ada turizmi, gurme gıda markası, sakin SaaS pazarlama sayfası |
-| **Kaçın** | yoğun veri paneli, güvenlik/kripto, gece modu ağırlıklı ürün — beyaz badana parlama üretir |
-| **Zorluk** | düşük · **Erişilebilirlik** | iyi (gövde 17.14:1, accent üstü 5.44:1; faint 3.36:1 yalnız dekoratif) |
-| **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="aegean-island"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | serin, ferah, badanalı, güneşte solmuş |
+| **Best for** | konaklama/otel vitrini, ada turizmi, gurme gıda markası, sakin SaaS pazarlama sayfası |
+| **Avoid** | yoğun veri paneli, güvenlik/kripto, gece modu ağırlıklı ürün — beyaz badana parlama üretir |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Cultural & Regional (66–75) · **Token** | `kit/tokens.css` → `[data-style="aegean-island"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Aegean Island, Kiklad badana mimarisinin ekran karşılığıdır: **kireç beyazı** zeminler, **22px kemer köşeler**, **1px dashed badana kenarı** ve tek **Ege mavisi** vurgu. Kurucu kararları üç tanedir. Birincisi **kemer formu**: kart ve modal köşeleri 22px, ama gölge yok — kemer, gölge yerine ışığı taşır. İkincisi **badana kenarı**: ikincil yüzeylerde 1px kesikli çizgi ("elle badanalanmış kenar"), birincil yüzeyde düz çizgi. Üçüncüsü **serin sadelik**: accent dışında doygun renk yok; dekorasyon yalnız 2px dalga çizgisi ve 14px kemer işaretiyle sınırlı.
 
 Kazandığı şey: **ferahlık ve hız** — yüksek kontrastlı koyu mavi metin + beyaz zemin, 3 saniyede okunur; kültürel referans güçlü ama süs yükü sıfıra yakın. Feda ettiği şey: **gece kullanımı** — koyu modda badana etkisi kaybolur, stil koyu modda "soğuk cam" gibi davranır.
 
-### Ne değildir
+### What is not
 - **Minimalism (01) değildir:** 01 sıcak nötr (#fafaf9) + Inter + 8/12px radius + mavi accent ile **nötr** kalır; 75 **kireç beyazı** + 14/22px kemer + kesikli badana kenarı ve dalga çizgisi taşır.
 - **Japanese Ma (67) değildir:** 67 tek ince yatay çizgi ve sıfır radius ile boşluğu ölçer; 75'te kemer eğrisi ve dashed kenar imzanın kendisidir.
 - **Andalusian Azulejo (69) değildir:** 69 harç ızgarası + kobalt **döşeme** kurar (2px kenar, gap 2px); 75 **badana duvarı** kurar (1px kenar, 22px kemer, döşeme yok).
 - **Frutiger Aero (25) değildir:** 25 parlak cam/parlama ve gradient kullanır; 75'te parlama yok, gölge neredeyse sıfır.
 - **"Beyaz + mavi kurumsal" jeneriği değildir:** kimlik kemer formu + badana kesik kenarı + dalga çizgisidir; accent rengi tek başına yeterli sayılmaz.
 
-### Nereden gelir
+### Where it comes from
 Kiklad adaları (Santorini, Mykonos, Sifnos) badana geleneği: kireç taşı duvarlar her yıl badanayla yenilenir, kenarlar elle çekilir (bu yüzden hafif düzensizdir), kapı-pencere çerçeveleri tek maviye boyanır. Dijitalde 2010'lar sonrası "slow travel" ve ada markalarıyla yaygınlaştı; nedeni ölçülebilir — iki değer (beyaz + mavi) ve iki form (düz + kemer) ile kimlik kurulabildiği için görsel dosyası gerekmez. Klişeye dönüşmemesi için korunacak detay: **22px kemer oranının ve dashed kenarın simetrik kullanımı**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Kartların köşeleri belirgin yuvarlak (22px) ama gölge neredeyse yok.
 2. İkincil buton ve durum kartlarında 1px kesikli (dashed) kenar görünüyor.
 3. Tek doygun renk Ege mavisi; metin koyu arduvaz, zemin kireç beyazı.
 4. Hero kartının üstünde 2px noktalı dalga çizgisi var.
 5. Nav'daki aktif öğe 14px yarım daire kemerle işaretli.
 
-## Görsel imza
-1. **Kemer köşe:** `--radius-lg: 22px`, `--radius: 14px`; kart/modal dört köşesi 22px — gölge yerine yuvarlaklık taşır.
-2. **Badana kenarı:** ikincil yüzeylerde `border-style: dashed; border-width: 1px`; birincil yüzeyde solid.
-3. **Dalga çizgisi:** 2px yükseklik, 16px aralıklı nokta dizisi (`radial-gradient`), `%55` opaklık; yalnız hero kartı ve modal başlığı üstünde.
-4. **Nokta badana dokusu:** 28px aralıklı 1px nokta, %9 mavi; yalnız hero ve alt bant zemininde.
-5. **Jost display 500:** 40px, `0.02em`; gövde Inter 16px/1.64.
-6. **Tek mavi:** accent yalnız eylem, kemer işareti, dalga çizgisi, odak halkası ve tablo ilk sütun kuralında.
-7. **Hover dili:** 280ms'de zemin %92'ye döner, görsel ölçek `1.020`, alt kenarda 2px badana çizgisi belirir; gölge büyümez.
+## Visual signature
+- **Kemer köşe:** `--radius-lg: 22px`, `--radius: 14px`; kart/modal dört köşesi 22px — gölge yerine yuvarlaklık taşır.
+- **Badana kenarı:** ikincil yüzeylerde `border-style: dashed; border-width: 1px`; birincil yüzeyde solid.
+- **Dalga çizgisi:** 2px yükseklik, 16px aralıklı nokta dizisi (`radial-gradient`), `%55` opaklık; yalnız hero kartı ve modal başlığı üstünde.
+- **Nokta badana dokusu:** 28px aralıklı 1px nokta, %9 mavi; yalnız hero ve alt bant zemininde.
+- **Jost display 500:** 40px, `0.02em`; gövde Inter 16px/1.64.
+- **Tek mavi:** accent yalnız eylem, kemer işareti, dalga çizgisi, odak halkası ve tablo ilk sütun kuralında.
+- **Hover dili:** 280ms'de zemin %92'ye döner, görsel ölçek `1.020`, alt kenarda 2px badana çizgisi belirir; gölge büyümez.
+- **Typography:** Jost (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#0e6f92`; neutral scale `#fbfaf6` → `#12181c`.
+- **Radius:** `14px` / `22px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#fbfaf6` | sayfa zemini (kireç beyazı) | kart zemini |
-| `--surface` | `#ffffff` | kart, panel, modal | sayfa zemini |
-| `--surface-2` | `#f6f6f1` | çip, ikincil buton, tablo şeridi | birincil eylem |
-| `--ink` | `#12181c` | başlık, gövde, tablo metni | dekoratif çizgi |
-| `--ink-soft` | `#44545c` | etiket, açıklama, eksen | başlık |
-| `--ink-faint` | `#7d8b92` | dekoratif: nokta doku, dipnot | etkileşimli metin |
-| `--accent` | `#0e6f92` | birincil buton, kemer işareti, dalga çizgisi, odak halkası | geniş zemin dolgusu |
-| `--accent-ink` | `#f7fbfd` | accent üstü metin | gövde metni |
-| `--line` | `rgba(18,24,28,.13)` | kart kenarı, dashed badana, ayırıcı | metin rengi |
-| `--danger` / `--ok` / `--warn` | `#a33224` / `#1b6146` / `#7a5510` | hata / onay / uyarı | dekorasyon |
+1. Kemer formu: kart ve modal üst köşeleri 22px, alt köşeler de 22px — yarım daire hissi
+2. Badana kenarı: ikincil buton ve toast'ta 1px dashed --line; birincil yüzeyde solid
+3. Dalga çizgisi 2px accent, yalnız hero kartı ve modal başlığı üstünde
+4. Gölge neredeyse yok: yalnız 0 1px 2px; yüzen katmanda en fazla 8px blur
+5. Kireç beyazı zemin (#fbfaf6) + tek Ege mavisi accent; ikinci doygun renk yok
+6. Fiyat/sayaç JetBrains Mono + tabular, birim yazılı
 
-- Ölçülen kontrast (açık): `ink / bg` = **17.14:1** · `ink-soft / bg` = **7.54:1** · `accent-ink / accent` = **5.44:1** · `ink-faint / bg` = **3.36:1** (yalnız dekoratif).
-- Tek vurgu kuralı: Ege mavisi ekran başına dört işi geçmez — eylem, kemer, dalga, odak.
-- Yasak kombinasyon: accent'i kart zemin dolgusu yapmak; ikinci bir doygun renk (terracotta, zeytin yeşili) eklemek.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#fbfaf6` | page background | as a card background |
+| `--bg-2` | `#f2f1ea` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f6f6f1` | passive chip, hover background | primary button |
+| `--ink` | `#12181c` | title, body, icon | large background |
+| `--ink-soft` | `#44545c` | secondary text, description | — |
+| `--ink-faint` | `#7d8b92` | decorative label, separator text | interactive text |
+| `--accent` | `#0e6f92` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f7fbfd` | text above accent | non-accent background |
+| `--line` | `rgba(18,24,28,.13)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Jost (`--font-display`) | 40px (mobil 27px) | 500 | 1.12 | `--tracking` 0.02em |
-| H2 | Jost | 27px | 500 | 1.26 | 0.02em |
-| H3 | Jost | 20px | 500 | 1.3 | 0.02em |
-| Gövde | Inter (`--font-body`) | 16px | 400 | 1.64 | 0 |
-| Küçük / açıklama | Inter | 14px | 400 | 1.55 | 0 |
-| Etiket / mono | JetBrains Mono (`--font-mono`) | 11px | 500 | 1.3 | 0.12em (büyük harf) |
+- Measured contrast: `ink/bg` **17.14:1** · `ink-soft/bg` **7.54:1** · `ink-faint/bg` **3.36:1 (decorative)** · `accent-ink/accent` **5.44:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı **1.5** (11 → 16 → 27 → 40); kullanılan basamak sayısı 5: 11/14/16/27/40.
-- Ölçü: `h1 { font-size: clamp(27px, 3.5vw, 40px) }`.
-- Gövde metni maksimum satır uzunluğu: **66 ch**.
-- Ağırlık kuralı: Jost 500, Inter 400/500. 600+ yasak (geometrik display'de kalınlık badana hafifliğini bozar); italik yasak.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Jost) | 40px (mobile 27px) | 400 | 1.04 | -0.02em |
+| H2 | same | 27px | 600 | 1.16 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.68 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (1200px üstü), 8 (768–1199), 4 (390–767) |
-| Gutter | 22px |
-| Container genişliği | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200px: 5+5 kemer + 1+1 geçit; 768px: 6/6; 390px: tek kolon, kemer 22px korunur |
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** bölüm 7/5; diğer bölümler kemer/geçit ikilisiyle simetrik.
-- Bölüm ritmi: 72px (mobil 44px); art arda en fazla **2** kemerli kart satırı; üçüncü blok tam genişlik dalga ayırıcı olur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, nokta badana dokusu |
-| Kart | `--surface` | `0 1px 2px rgba(18,24,28,.07)` | panel, liste, tablo |
-| Yüzen katman | `--surface` | `0 2px 8px rgba(18,24,28,.10)` | modal, açılır menü |
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
 
-- Kenarlık formülü: birincil yüzeyde `1px solid var(--line)`, ikincil yüzeyde `1px dashed var(--line)`.
-- Derinlik nereden gelir: **zemin tonu + kemer formu**; gölge yalnız 2px (yüzen katmanda 8px) — sert ışık, yumuşak gölge yok.
-- Radius: `--radius` 14px (buton, input), `--radius-lg` 22px (kart, modal); 22px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 46px | 0 24px | `--radius` | 14px/500 Jost, .06em | accent + accent-ink, gölge yok | hover %92 + 2px alt çizgi (280ms) · active 1px aşağı · focus 2px halka offset 3px · disabled %45 · loading 3 nokta 840ms |
-| Buton (ikincil) | 46px | 0 24px | `--radius` | 14px Inter | surface + 1px **dashed** `--line` | hover solid kenar |
-| Input | 46px | 0 14px | `--radius` | 16px Inter | surface + 1px `--line` | focus 2px halka offset 2px · error `--danger` + sol 3px · disabled %45 |
-| Kart | — | 24px | `--radius-lg` | başlık 27px Jos 500 | surface + 1px kenar + 2px gölge | normal · durum kartı (dashed kenar) · seçili (1px accent kenar) |
-| Chip | 24px | 0 10px | 12px | 11px/500 mono, .1em | surface-2 + `--line` | seçili: accent zemin + accent-ink |
-| Nav | 68px | 0 24px | 0 | 14px Inter | surface + alt çizgi | aktif: 14px kemer işareti |
-| Tablo satırı | 46px | 0 12px | 0 | 15px Inter / mono sayı | alt 1px `--line` (yer yer dashed) | hover `--surface-2` · seçili ilk sütunda 3px accent |
-| Modal | — | 28px | `--radius-lg` | başlık 27px Jost | surface + 8px gölge + dalga çizgisi | açılış 440ms · Esc kapatır · odak tuzağı |
-| Toast | 42px | 0 16px | `--radius` | 14px Inter | surface + 1px dashed kenar + sol 2px accent | 4200ms · 3 üst sınır |
-| Grafik paleti | — | — | — | eksen 11px mono | accent → ink-soft → warn → danger | en çok 4 seri · 2px çizgi, %10 dolgu |
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `14px` (buton, input, chip), `22px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px`; input'ta `offset: 2px`.
-- Dokunma hedefi: 46px buton ve 46px tablo satırı ≥ 44px; 24px çipler 44×44px sarmalayıcı ile büyütülür.
+## Bans
 
-## Görsel dil
+- Gradient, parlaklık/glow, cam yüzey, `backdrop-filter`.
+- 22px üstü radius; serif display.
+- Sert siyah gölge veya kalın kontur (durum şeridi 3px'i geçmez).
+- Tam kanamalı doygun fotoğraf.
+- Üçten fazla kemer formunu aynı ekranda tekrarlamak (form, işaret olmaktan çıkar).
+- Animasyonlu dalga veya sürekli hareket.
+- Uydurma ada/otel adı; eksik içerik `{{room}}` gibi işaretli yer tutucu olur.
+- Neon accent.
+- Stack of round cards.
+- Otomatik carousel.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 18px, 1.5px çizgi, yuvarlak uç; 2px yumuşak köşe |
-| Fotoğraf | yok; zorunluysa 22px üst radius (kemer) + açık ton, %85 doygunluk |
-| İllüstrasyon | CSS kemer açıklık (yarım daire), dashed badana kenarı, 2px dalga çizgisi |
-| Doku | 28px nokta badana (%9 mavi), grain 0 — doku çizgiden gelir |
-| Logo alanı | Jost 17px, .04em + solunda 14×18 kemer işareti; 20px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 14px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 14px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 14px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 14px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 14px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 14px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 14px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 5.66:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | 5+5 kemer kartı + 1+1 geçit, hero'da dalga çizgisi | `shots/01-page.png` |
 | Dashboard | düşük | 2 kemerli KPI + 2 dashed durum kartı | `shots/01-page.png` |
@@ -150,45 +177,33 @@ Kiklad adaları (Santorini, Mykonos, Sifnos) badana geleneği: kireç taşı duv
 | Hata | düşük | `--danger` sol şerit + koyu metin; mavi susar | `shots/01-page.png` |
 | Profil / ayar | orta | 46px satır, iki kemerli panel | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Kart ve modal köşeleri 22px (kemer); buton/input 14px. 22px üstü yasak.
-- İkincil yüzeylerde 1px dashed badana kenarı; birincil yüzeyde solid.
-- Dalga çizgisi 2px, yalnız hero kartı ve modal başlığı üstünde.
-- Gölge neredeyse yok: kartta `0 1px 2px`, yüzen katmanda en fazla 8px blur.
-- Tek doygun renk Ege mavisi; ikinci doygun renk yok.
-- Fiyat/sayaç mono tabular; birim yazılı.
-- Renk, radius, gölge yalnız `--…` token'larından gelir.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 17.14:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.54:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.36:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.44:1 | ≥ 4.5 | button text |
+| focus ring/ground | 5.66:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 101.6 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Gradient, parlaklık/glow, cam yüzey, `backdrop-filter`.
-- 22px üstü radius; serif display.
-- Sert siyah gölge veya kalın kontur (durum şeridi 3px'i geçmez).
-- Tam kanamalı doygun fotoğraf.
-- Üçten fazla kemer formunu aynı ekranda tekrarlamak (form, işaret olmaktan çıkar).
-- Animasyonlu dalga veya sürekli hareket.
-- Uydurma ada/otel adı; eksik içerik `{{room}}` gibi işaretli yer tutucu olur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen riskler: en düşük çift `--ink-faint / bg` = **3.36:1** (nokta doku ve dipnot); etkileşimli metin `--ink` 17.14:1, `--ink-soft` 7.54:1.
-- Kemer ve dalga dekoratiftir; seçili/aktif durum daima metin, 3px accent şerit veya accent kenar ile de bildirilir.
-- Hareket: tek seferlik 380ms giriş + 280ms hover; `prefers-reduced-motion` hepsini 0.01ms'e indirir.
-- Şeffaf yüzey yok (`--blur: 0px`), `@supports` fallback gerekmez.
-- Odak görünürlüğü: beyaz zeminde 2px mavi halka 5.44:1; dashed kenarlı kartta `offset: 3px` (kesikli çizgiyle karışmasın).
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "beyaz + mavi kurumsal" gibi duruyor | kemer ve dashed kenar kullanılmamış | 22px kemer + en az bir dashed yüzey kur |
 | Yüzeyler "plastik" görünüyor | gölge güçlendirilmiş veya gradient eklenmiş | gölgeyi 2px'e indir, gradient'i sil |
 | Kemer her yerde → süs gibi | üçten fazla kemer formu tekrar etmiş | kemer sayısını ekran başına 3'te tut |
@@ -196,28 +211,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Koyu modda "ada" hissi kayboluyor | dokulu badana koyuda yoğun | dokuyu %6'ya düşür, accent'i açık deniz mavisi yap |
 | Buton dokunma hedefi küçük | 46px yerine 36px kullanılmış | 46px'e sabitle (mobilde 48px) |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `minimalism` — boşluk ve tek vurgu disiplini ortak; ana stil 75, nötr içerik bölümleri 01'den.
-- **Uyumlu:** `japandi` — doğal sade zemin ve düşük süs yükü; ancak 75'te kemer formu imza.
-- **Uyumlu:** `scandinavian-dark` — koyu modda serin nötr dil; gece görünümü bu ikiliyle kurulur.
-- **Yasak:** `maximalism` — katman ve renk bolluğu badana sadeliğini bozar.
-- **Yasak:** `neo-brutalism` — kalın kontur ve sert gölge kemer formunu ezer.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `minimalism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `japandi` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `scandinavian-dark` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `maximalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `vaporwave` | Two different ornamental languages compete on the same screen |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Cyclades | badana mimarisi, kemer açıklık ve mavi-beyaz oranı |
-| https://www.britannica.com/place/Aegean-Sea | bölgesel bağlam, ışık ve renk referansı |
-| https://fonts.google.com/specimen/Jost | geometrik display ve ağırlık sınırı |
-| https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html | 46px buton ve tablo satırı hedefi |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Cyclades | Wikipedia · Cyclades — badana mimarisi, kemer açıklık ve mavi-beyaz oranı |
+| https://www.britannica.com/place/Aegean-Sea | Britannica · Aegean Sea — bölgesel bağlam, ışık ve renk referansı |
+| https://fonts.google.com/specimen/Jost | Google Fonts · Jost — geometrik display ve ağırlık sınırı |
+| https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html | WCAG 2.2 · Target Size (Minimum) — 46px buton ve tablo satırı hedefi |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Aegean Island (styles/75-aegean-island/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="aegean-island"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Jost 500) başlıkta, --font-body (Inter) gövdede,
@@ -230,15 +246,15 @@ Hareket: enter 0.38s cubic-bezier(.25,.75,.5,1) 8px / stagger 0.08; scroll top 8
          hover 280ms scale 1.020; pin yok. prefers-reduced-motion zorunlu.
 Yasak: "Tuzaklar" ve "Yasaklar" maddeleri (gradient, 22px üstü radius, ikinci doygun renk).
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda imza öğelerinden en az 2'si görünüyor (kemer köşe, dashed kenar, dalga çizgisi, nokta doku).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1.
-- [ ] Kemer formu en fazla 3 kez tekrar ediyor; gölge 2px'i geçmiyor.
-- [ ] 390px genişlikte taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Aegean Island (aegean-island) · family: Cultural & Regional (66–75)
+Token: --bg #fbfaf6 · --surface #ffffff · --ink #12181c · --accent #0e6f92 · --line rgba(18,24,28,.13)
+Radius: 14px / 22px · Typography: Jost / Inter / JetBrains Mono
+Required: Kemer formu: kart ve modal üst köşeleri 22px, alt köşeler de 22px — yarım daire hissi · Badana kenarı: ikincil buton ve toast'ta 1px dashed --line; birincil yüzeyde solid · Dalga çizgisi 2px accent, yalnız hero kartı ve modal başlığı üstünde
+Banned: Gradient, parlaklık/glow, cam yüzey, `backdrop-filter`. · 22px üstü radius; serif display. · Sert siyah gölge veya kalın kontur (durum şeridi 3px'i geçmez).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -249,14 +265,25 @@ Yasak: "Tuzaklar" ve "Yasaklar" maddeleri (gradient, 22px üstü radius, ikinci 
   --ink: #12181c; --ink-soft: #44545c; --ink-faint: #7d8b92;
   --accent: #0e6f92; --accent-ink: #f7fbfd;
   --line: rgba(18,24,28,.13);
+  --danger: #d92d20;
+  --danger-ink: #ffffff;
+  --ok: #00853c;
+  --ok-ink: #ffffff;
+  --warn: #b95800;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 14px; --radius-lg: 22px;
   --shadow: 0 1px 2px rgba(18,24,28,.07); --shadow-hard: none;
   --font-display: "Jost", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: 0.02em; --blur: 0px; --grain: 0;
-  --danger: #a33224; --danger-ink: #ffffff; --ok: #1b6146; --warn: #7a5510;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="aegean-island"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

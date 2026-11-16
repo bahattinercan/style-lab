@@ -1,41 +1,52 @@
 # 26 · Art Deco
 
-> **Bir cümleyle:** Simetri, altın hairline ve ziggurat geometrisi: 1925'in lüksü, süsü ölçülü kullanır.
+> **In one sentence:** Art Deco
 
 | | |
 |---|---|
-| **Hissiyat** | lüks, törensel, geometrik, "grand hotel" |
-| **En iyi** | otel/restoran, etkinlik/davet, mücevher, premium marka, tiyatro |
-| **Kaçın** | yoğun panel, teknoloji aracı, çocuk ürünü, uzun okuma |
-| **Zorluk** | orta · **Erişilebilirlik** | iyi (koyu zemin + krem metin) |
-| **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="art-deco"]` |
-| **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | lüks, törensel, geometrik, "grand hotel" |
+| **Best for** | otel/restoran, etkinlik/davet, mücevher, premium marka, tiyatro |
+| **Avoid** | yoğun panel, teknoloji aracı, çocuk ürünü, uzun okuma |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="art-deco"]` |
+| **Composition** | `fullbleed` · `pill` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Art Deco, 1925 Paris sergisinin geometrik lüksü: **simetri**, **altın hairline**, **ziggurat/şevron** motifleri, koyu yeşil-siyah zemin ve krem metin. Tipografi yüksek tracking'li serif (Cinzel). Süs **çizgiyle** yapılır, dolguyla değil.
 
 Kazandığı şey: tören ve değer algısı. Feda ettiği şey: bilgi yoğunluğu ve modernlik; günlük araç arayüzü olarak ağır kalır.
 
-### Ne değildir
+### What is not
 - **Luxury Typography değildir.** O seyrek ve sade; Art Deco **geometrik süs** kullanır.
 - **Victorian değildir.** Victorian kıvrımlı/gravür; Deco düz çizgi ve simetri.
 - **Maximalism değildir.** Deco desen değil **çizgi geometrisi**; en fazla 2 motif.
 - **"Altın + siyah" değildir.** Simetri, hairline çerçeve ve ziggurat olmadan sadece lüks taklidi olur.
 
-### Nereden gelir
+### Where it comes from
 1925 Exposition Internationale, Chrysler Building, otel/tren afişleri. Bugün hospitality ve premium etkinliklerde kullanılıyor.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Yerleşim **simetrik** mi (merkez ekseni)?
 2. Altın **hairline** çerçeve var mı (tek veya çift)?
 3. Ziggurat/şevron geometrisi var mı?
 4. Display yüksek tracking'li serif mi (Cinzel)?
 5. Zemin koyu yeşil/siyah, metin krem mi?
 
-## Zorunlu kurallar
+## Visual signature
+- **Altın hairline:** `--accent` 1px; çift çerçeve 6px boşlukla.
+- **Şevron:** CSS `clip-path` ile üçgen/şevron şerit, tek renk.
+- **Ziggurat:** kademeli yatay çizgiler (3–5 basamak).
+- **Simetrik tipografi:** merkezlenmiş Cinzel başlık, geniş tracking.
+- **Koyu zemin:** #0e1b17 yeşil-siyah; krem metin #ede3d2.
+- **Grain .03:** baskı hissi, hafif.
+- **Typography:** Cinzel (display) + Jost (body) + Courier New (mono label).
+- **Colour discipline:** a single accent `#c8a24a`; neutral scale `#0e1b17` → `#ede3d2`.
+- **Radius:** `0px` / `2px`; Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
+
+## Mandatory rules
 
 1. **Simetri:** hero, kart ve modal merkez eksende; asimetri yok.
 2. **Çift çerçeve:** dış 1px + 6–8px boşluk + iç 1px altın hairline.
@@ -44,7 +55,66 @@ Kazandığı şey: tören ve değer algısı. Feda ettiği şey: bilgi yoğunlu�
 5. **Tracking:** display `0.22em`, etiket `0.3em`, uppercase.
 6. **Radius 0–2px**; yumuşak köşe yok.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0e1b17` | page background | as a card background |
+| `--bg-2` | `#14241e` | partition divider floor, table top | button background |
+| `--surface` | `#12211c` | kart, input, modal | full-page background |
+| `--surface-2` | `#18302a` | passive chip, hover background | primary button |
+| `--ink` | `#ede3d2` | title, body, icon | large background |
+| `--ink-soft` | `#bcb2a1` | secondary text, description | — |
+| `--ink-faint` | `#8a8172` | decorative label, separator text | interactive text |
+| `--accent` | `#c8a24a` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#0e1b17` | text above accent | non-accent background |
+| `--line` | `rgba(200,162,74,.55)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **13.91:1** · `ink-soft/bg` **8.44:1** · `ink-faint/bg` **4.6:1 (decorative)** · `accent-ink/accent` **7.34:1**.
+- HUD contrast: status colors (live/damage) are derived from the accent's tones; A fourth hue is not added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Cinzel) | 52px (mobile 30px) | 700 | 1.1 | 0.01em |
+| H2 | same | 28px | 600 | 1.2 | 0.01em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier New) | 10px | 400 | 1.2 | 0.2em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Numbers are taboos; score/timer areas are mono and right aligned. Title in uppercase, body in sentence order.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- The screen grid acts like a visible frame: a 1px accent border is placed between sections, no decorative lines are added.
+- Section vertical space 64px desktop, 40px mobile; card padding 18px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Surfaces are opaque; There is no glass/blur. Thin accent edge is used for status notification.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
+
+## Bans
 
 - Asimetrik yerleşim, 3+ motif.
 - Altın rengi gövde metni (kontrast düşer).
@@ -52,85 +122,44 @@ Kazandığı şey: tören ve değer algısı. Feda ettiği şey: bilgi yoğunlu�
 - Eğri/kıvrımlı süs (Victorian'a kayar).
 - 4+ renk (yeşil, siyah, altın, krem yeter).
 - Yoğun tabloda tam süs.
+- Infinite blinking indicator (no animation in v6).
+- More than three status colors.
+- Serif title in HUD.
 
-## Görsel imza
-- **Altın hairline:** `--accent` 1px; çift çerçeve 6px boşlukla.
-- **Şevron:** CSS `clip-path` ile üçgen/şevron şerit, tek renk.
-- **Ziggurat:** kademeli yatay çizgiler (3–5 basamak).
-- **Simetrik tipografi:** merkezlenmiş Cinzel başlık, geniş tracking.
-- **Koyu zemin:** #0e1b17 yeşil-siyah; krem metin #ede3d2.
-- **Grain .03:** baskı hissi, hafif.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Kullanım | Kaçınılır |
-|---|---|---|---|
-| `--bg` | `#0e1b17` | sayfa | metin |
-| `--bg-2` | `#14241e` | bölüm | buton |
-| `--surface` | `#12211c` | panel | sayfa |
-| `--surface-2` | `#18302a` | ikincil, hover | vurgu |
-| `--ink` | `#ede3d2` | metin | — |
-| `--ink-soft` | `#bcb2a1` | açıklama | 10px altı |
-| `--ink-faint` | `#8a8172` | dekoratif (4.60:1) | gövde |
-| `--accent` | `#c8a24a` | hairline, ikon, çerçeve | **metin** |
-| `--accent-ink` | `#0e1b17` | accent üstü (**7.34:1**) | — |
-| `--line` | `rgba(200,162,74,.55)` | çerçeve | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.34:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **13.91:1** · `ink-soft/bg` **8.44:1** · `ink-faint/bg` **4.60:1** · `accent-ink/accent` **7.34:1**.
-- Altın (#c8a24a) koyu zeminde metin olarak ~7:1 verse de **kullanılmaz**: lüks dil için metin krem kalır.
-- Yasak: ikinci metallik (gümüş/bakır) renk.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px block icon, 16/20px canvas; no anti-alias, integer scale |
+| photo | In-game rendering or single object shooting; 25% area, dark vignette |
+| illustration | Sprite/silhouette: up to 3 tones (accent, ink, surface-2) |
+| Texture | Static raster (1px/3px, 4%) on section background only |
+| Logo | Top left 20px, uppercase, mono or display |
 
-| Rol | Aile | Boyut | Ağırlık | Satır | Tracking |
-|---|---|---|---|---|---|
-| Display | Cinzel | 52px (mobil 30px) | 400 | 1.15 | `0.22em`, uppercase |
-| H2 | Cinzel | 28px | 400 | 1.2 | `0.18em` |
-| H3 | Jost | 18px | 500 | 1.35 | `0.08em` |
-| Gövde | Jost | 16px | 400 | 1.7 | `0.03em` |
-| Etiket | Courier New | 10px | 400 | 1.2 | `0.3em`, uppercase |
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Primary focus is on one big number/score; second focus single CTA; the rest is label.
 
-- Geniş tracking okumayı yavaşlatır: gövde 56ch, 3 satır sınırı.
-- Cinzel 20px altında kullanılmaz.
+## Screen recipes
 
-## Izgara ve boşluk
-
-Kolon 12 (içerik merkezde 8) · gutter 32px · container 1080px · bölüm 96/56px · breakpoint 640/900/1080.
-- Simetri: içerik merkezde; yan boşluklar eşit.
-- Hairline çerçeve ile içerik arası 24px.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` + grain | yok | sayfa |
-| Panel | `--surface` + çift çerçeve | yok | kart |
-| Yüzen | `--surface-2` + çerçeve | yok | modal |
-
-- Derinlik yok: çerçeve, simetri ve tipografi taşır. Radius 0/2px.
-
-## Bileşen reçeteleri
-
-| Bileşen | Y | Padding | Radius | Tipografi | Renk/gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton | 46px | 0 26px | 0 | 11/500 uppercase 0.24em | transparent + 1px altın çerçeve, krem metin | hover: altın %12 dolgu · focus: 2px altın dış çerçeve · disabled: %40 |
-| Buton (altın) | 46px | 0 24px | 0 | 11/500 | altın zemin + koyu metin | hover: parlaklık↑ |
-| Input | 46px | 0 16px | 0 | 15/400 Jost | `--surface` + alt 1px altın | focus: alt 2px altın · error: `--danger` |
-| Kart | içerik | 28px | 2px | H2 Cinzel + 16 | `--surface` + çift çerçeve | hover yok |
-| Chip | 24px | 0 10px | 0 | 10/400 Courier uppercase | transparent + 1px altın | aktif: altın zemin |
-| Nav | 76px | 0 40px | — | 11/500 uppercase 0.2em | `--bg` + alt 1px altın | aktif: altın alt 2px |
-| Tablo satırı | 54px | 12px 16px | — | 14/400 | alt 1px altın %30 | hover: `--surface-2` |
-| Modal | içerik | 32px | 2px | H2 + 16 | çift çerçeve | backdrop: `rgba(14,27,23,.7)` |
-| Toast | 46px | 0 20px | 0 | 12/500 uppercase | `--surface-2` + altın çerçeve | 5sn |
-| Grafik | — | — | 0 | eksen 10 mono | altın çizgi + %20 dolgu | 1 seri |
-
-## Görsel dil
-
-İkon: 1px çizgi, 24px, altın; simetrik. Fotoğraf: yüksek kontrast, altın çerçeve. İllüstrasyon: geometrik şevron/ziggurat. Doku: grain .03. Logo: Cinzel wordmark, altın hairline çerçeve.
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing/hero | çok yüksek | Merkezli 52px Cinzel, çift çerçeve panel, tek altın buton | `shots/01-page.png` |
 | Dashboard | düşük | Süs kapanır; hairline ayırıcı + krem metin | `shots/01-page.png` |
@@ -145,48 +174,61 @@ Kolon 12 (içerik merkezde 8) · gutter 32px · container 1080px · bölüm 96/5
 | Hata | düşük | `--danger` hairline + 14px metin | `shots/01-page.png` |
 | Profil/ayar | düşük | Simetrik liste, altın ayırıcı | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde 13.91:1, açıklama 8.44:1 → güvenli; `--ink-faint` 4.60:1.
-- Altını **metin** olarak kullanma: geniş tracking + altın = okunmaz; krem metin.
-- Cinzel + 0.22em tracking okuma hızını düşürür: gövde Jost'ta, 56ch.
-- Hairline çerçeve dekoratif; odak halkası ayrı (2px altın + offset 3px).
-- Dokunma hedefi 46px.
-- `prefers-reduced-motion` süs animasyonunu kapatır.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 13.91:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.44:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.6:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.34:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.34:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 89.2 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Altın tema" gibi | Simetri/çerçeve yok | Çift çerçeve + merkezleme |
 | Okunmuyor | Altın metin | Krem metin, altın yalnız çizgi |
 | Ağır | Her bölümde motif | Motif ≤ 2, süs çizgiyle |
 | Victorian'a kaydı | Kıvrımlı süs | Düz çizgi/şevron |
 | Mobilde taşma | 0.22em tracking + 52px | `clamp()` + tracking 0.12em |
 
-## Komşu stiller
+## Neighboring styles
 
-**Uyumlu:** `04 luxury-typography` (seyrek lüks), `17 maximalism` (desen/lüks), `27 victorian` (dönem). **Yasak:** `11 claymorphism`, `24 pixel-art`, `18 dopamine-ui`.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `luxury-typography` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `maximalism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `victorian` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `pixel-art` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
-|---|---|
-| https://www.metmuseum.org | Art Deco dönem objeleri |
-| https://fonts.google.com/specimen/Cinzel | Display serif |
-| https://en.wikipedia.org/wiki/Art_Deco | Motif sözlüğü |
+| Source | for what |
+| --- | --- |
+| https://www.metmuseum.org | The Met — Art Deco dönem objeleri |
+| https://fonts.google.com/specimen/Cinzel | Cinzel — Display serif |
+| https://en.wikipedia.org/wiki/Art_Deco | Wikipedia · Art Deco — Motif sözlüğü |
 
 ## AI brief
 
-```
+```text
 Stil: Art Deco (styles/26-art-deco/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="art-deco"]; hard-coded renk YASAK.
 Simetri: içerik merkez eksende; asimetri yok.
@@ -197,15 +239,15 @@ Motif: ≤ 2 geometrik (şevron, ziggurat, ışın); radius 0–2px; gölge/blur
 Hareket: 160–600ms ease-in-out (törensel); süs döngüsü yasak.
 Yasak: asimetri, 3+ motif, altın metin, eğri/kıvrımlı süs, 4+ renk.
 Çıktı: kod + tek paragraf not (simetri ve hairline disiplini).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Yerleşim simetrik, içerik merkezde.
-- [ ] Çift altın hairline çerçeve var.
-- [ ] Altın yalnız çizgi/ikon; metin krem.
-- [ ] Motif ≤ 2, radius 0–2, gölge yok.
-- [ ] Tracking display ≥ 0.18em.
-- [ ] Mobilde tracking ve punto küçültüldü.
+Style: Art Deco (art-deco) · family: Retro (19–27)
+Token: --bg #0e1b17 · --surface #12211c · --ink #ede3d2 · --accent #c8a24a · --line rgba(200,162,74,.55)
+Radius: 0px / 2px · Typography: Cinzel / Jost / Courier New
+Required: **Simetri:** hero, kart ve modal merkez eksende; asimetri yok. · **Çift çerçeve:** dış 1px + 6–8px boşluk + iç 1px altın hairline. · **Motif bütçesi:** ekran başına en fazla 2 geometrik motif (şevron, ziggurat, ışın).
+Banned: Asimetrik yerleşim, 3+ motif. · Altın rengi gövde metni (kontrast düşer). · Gradient, blur, cam, gölge.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -216,11 +258,25 @@ Yasak: asimetri, 3+ motif, altın metin, eğri/kıvrımlı süs, 4+ renk.
   --ink: #ede3d2; --ink-soft: #bcb2a1; --ink-faint: #8a8172;
   --accent: #c8a24a; --accent-ink: #0e1b17;
   --line: rgba(200,162,74,.55);
+  --danger: #eb4232;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
   --shadow: none; --shadow-hard: none;
-  --font-display: "Cinzel", "Poiret One", Georgia, serif;
-  --font-body: "Jost", "Inter", system-ui, sans-serif;
+  --font-display: "Cinzel", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
   --font-mono: "Courier New", ui-monospace, monospace;
-  --tracking: 0.22em; --blur: 0px; --grain: .03;
+  --tracking: 0.22em; --blur: 0px; --grain: 0;
 }
 ```

@@ -1,7 +1,6 @@
 /**
- * 219 · Lab Simulation — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 219 · Lab Simulation — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'grid',
   bodyClass: '',

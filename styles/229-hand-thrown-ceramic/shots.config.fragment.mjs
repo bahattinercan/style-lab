@@ -1,7 +1,6 @@
 /**
- * 229 · Hand-thrown Ceramic — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 229 · Hand-thrown Ceramic — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'blob',
   bodyClass: '',

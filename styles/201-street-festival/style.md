@@ -1,220 +1,220 @@
 # 201 · Street Festival
 
-> **Bir cümlede:** Sokak festivali: doygun turuncu accent, kalın tipografi, sahne programı ve harita bloğu.
+> **In one sentence:** Street festival: saturated orange accent, bold typography, stage program and map block.
 
 | | |
 |---|---|
-| **Hissiyat** | kalabalık, gündüz, "sahne 2'de başlıyor" |
-| **En iyi** | sokak festivali, açık hava etkinliği, sahne programı |
-| **Kaçın** | kurumsal yıllık rapor |
-| **Zorluk** | orta · **Erişilebilirlik** | iyi |
-| **Aile** | Kültür & Yayın (192–201) · **Token** | `kit/tokens.css` → `[data-style="street-festival"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | crowded, daytime, "scene starts at 2" |
+| **Best for** | street festival, outdoor event, stage program |
+| **Avoid** | corporate annual report |
+| **Difficulty** | medium · **Accessibility** | iyi |
+| **Family** | Culture & Publishing (192–201) · **Token** | `kit/tokens.css` → `[data-style="street-festival"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Street Festival, kalabalıkta yön bulmayı sağlar: sahne, saat ve harita aynı sayfada.
+### What it is
+Street Festival lets you navigate the crowd: stage, time and map on the same page.
 
-### Ne değildir
-- Müze broşürü kopyası değildir; ekran okunurluğu korunur.
-- Serif zorunlu değildir; boşluk ve ölçek belirleyicidir.
+### What is not
+- It is not a copy of the museum brochure; Screen readability is preserved.
+- Serifs are not required; space and scale are decisive.
 
-### Nereden gelir
-Basılı program dergileri, sergi katalogları ve tiyatro afişlerinin tipografik hiyerarşisi.
+### Where it comes from
+Typographic hierarchy of print program magazines, exhibition catalogs and theater posters.
 
-### 3 saniyede tanıma testi
-1. Başlık en az 3 satıra yayılıyor mu?
-2. Kenar boşluğu 48px üstü mü?
-3. Gölge yerine hairline mı kullanılmış?
+### Recognition test in 3 seconds
+1. Does the title span at least 3 lines?
+2. Is the margin above 48px?
+3. Was hairline used instead of shadow?
 
-## Görsel imza
-- **Sahne programı:** saat mono, sahne adı kalın, 3 sütun.
-- **Turuncu accent:** yalnız saat ve CTA.
-- **Harita bloğu:** koyu zemin, açık çizgi.
-- **Kalın başlık:** Archivo Black, iki satır sınırı.
-- **Tipografi:** Archivo Black (display) + Space Grotesk (gövde) + Space Mono (mono etiket).
-- **Renk disiplini:** tek accent `#a83a0d`; nötr skala `#fdf7ef` → `#1c1409`.
-- **Yarıçap:** `2px` / `6px`; Köşe 0–4px; kültür dili keskin kenar ve geniş boşlukla kurulur.
+## Visual signature
+- **Stage program:** time mono, stage name bold, 3 columns.
+- **Orange accent:** clock and CTA only.
+- **Map block:** dark background, light line.
+- **Bold header:** Archivo Black, two line limit.
+- **Typography:** Archivo Black (display) + Space Grotesk (body) + Space Mono (mono label).
+- **Colour discipline:** a single accent `#a83a0d`; neutral scale `#fdf7ef` → `#1c1409`.
+- **Radius:** `2px` / `6px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Her etkinlikte sahne, saat ve süre.
-2. Harita üzerinde 3 nokta (giriş, sahne, wc).
-3. Fiyat/ücretsiz bilgisi açık.
+1. Stage, time and duration for each event.
+2. 3 points on the map (entrance, stage, toilet).
+3. Price/free information is clear.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#fdf7ef` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#fae9d6` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#fffdf9` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#fdeedd` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#1c1409` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#55402a` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#8a7055` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#a83a0d` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#fff6f1` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(28,20,9,.16)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#fdf7ef` | page background | as a card background |
+| `--bg-2` | `#fae9d6` | partition divider floor, table top | button background |
+| `--surface` | `#fffdf9` | kart, input, modal | full-page background |
+| `--surface-2` | `#fdeedd` | passive chip, hover background | primary button |
+| `--ink` | `#1c1409` | title, body, icon | large background |
+| `--ink-soft` | `#55402a` | secondary text, description | — |
+| `--ink-faint` | `#8a7055` | decorative label, separator text | interactive text |
+| `--accent` | `#a83a0d` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fff6f1` | text above accent | non-accent background |
+| `--line` | `rgba(28,20,9,.16)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **17.1:1** · `ink-soft/bg` **9.16:1** · `ink-faint/bg` **4.36:1 (dekoratif)** · `accent-ink/accent` **6.01:1**.
-- Zemin kâğıt tonu; accent yalnız bağlantı ve program etiketi. Görselin kendi rengi baskın kalır.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **17.1:1** · `ink-soft/bg` **9.16:1** · `ink-faint/bg` **4.36:1 (decorative)** · `accent-ink/accent` **6.01:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Archivo Black) | 58px (mobil 34px) | 400 | 1.04 | -0.02em |
-| H2 | aynı | 32px | 600 | 1.16 | -0.015em |
-| H3 | aynı | 22px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Space Grotesk) | 17px | 400 | 1.68 | 0 |
-| Küçük gövde | aynı | 15px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (Space Mono) | 11px | 400 | 1.2 | 0.14em |
-| Buton | `--font-body` | 13px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Archivo Black) | 58px (mobile 34px) | 400 | 1.04 | -0.02em |
+| H2 | same | 32px | 600 | 1.16 | -0.015em |
+| H3 | same | 22px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Space Grotesk) | 17px | 400 | 1.68 | 0 |
+| Small body | same | 15px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Space Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 13px | 600 | 1 | 0 |
 
-- Başlık geniş ölçekli ve sıkı satır aralıklı; gövde 17px, ölçü 68ch. Etiket mono ve uppercase.
-- Ölçü: 68ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar uppercase: `text-transform: uppercase` + pozitif tracking; gövde metni asla.
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headers uppercase: `text-transform: uppercase` + positive tracking; never body text.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Geniş kenar boşluğu (56px), asimetrik 7/5 kolon. Bölüm başlıkları sol kolonda kalır.
-- Bölüm dikey boşluğu masaüstü 84px, mobil 48px; kart içi padding 20px.
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Gölge yok; ayrım hairline ve zemin tonuyla. Görseller tam kenar ya da 4:3 çerçevede.
-- Radius: `2px` (buton, input, chip), `6px` (kart, modal). Köşe 0–4px; kültür dili keskin kenar ve geniş boşlukla kurulur.
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `2px` (buton, input, chip), `6px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Yasaklar
+## Bans
 
 - Animasyonlu konfeti.
-- Altıdan fazla kategori rengi.
-- Okunamayan ince yazı.
+- More than six category colors.
+- Unreadable fine print.
 - Neon accent.
-- Yuvarlak kart yığını.
+- Stack of round cards.
 - Otomatik carousel.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 2px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 2px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 2px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 2px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 6.31:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.31:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1px çizgi, 20px; minimal |
-| Fotoğraf | Sergi/mekân fotoğrafı, doğal ışık, geniş açı |
-| İllüstrasyon | Yalnız arşiv/afiş çoğaltması |
-| Doku | Kâğıt greni %2 (--grain: .02) |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-dots` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Program / etkinlik | orta | Tarih + mekân + tek CTA; mono etiket | `shots/01-page.png` |
-| Arşiv / koleksiyon | yüksek | Izgara 3 kolon, her kartta yıl ve tür | `shots/01-page.png` |
-| Detay / makale | düşük | 68ch ölçü, 17px gövde, alıntı bloğu | `shots/01-page.png` |
-| Takvim | yüksek | Ay ızgarası, gün hücresi 44px | `shots/01-page.png` |
-| Bilet / kayıt | orta | Tek sütun form + fiyat özeti | `shots/01-page.png` |
-| Hakkında | düşük | Uzun metin + künye tablosu | `shots/01-page.png` |
-| Sponsor / destek | orta | Logo şeridi tek satır | `shots/01-page.png` |
-| İletişim | düşük | Adres + form, 2 kolon | `shots/01-page.png` |
+| Program / etkinlik | medium | Date + venue + single CTA; mono label | `shots/01-page.png` |
+| Archive / collection | high | Grid 3 columns, year and genre on each card | `shots/01-page.png` |
+| Detay / makale | low | 68ch size, 17px body, quote block | `shots/01-page.png` |
+| Takvim | high | Month grid, day cell 44px | `shots/01-page.png` |
+| Ticket / registration | medium | Single column form + price summary | `shots/01-page.png` |
+| About | low | Long text + imprint table | `shots/01-page.png` |
+| Sponsor / support | medium | Logo ribbon single line | `shots/01-page.png` |
+| Contact | low | Address + form, 2 columns | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 17.1:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 9.16:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 4.36:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 6.01:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 6.31:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 100.5 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 17.1:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 9.16:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.36:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.01:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.31:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 100.5 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Sayfa dergi gibi dağılıyor | Çok fazla farklı hizalama | Tek asimetri kuralı seç ve koru |
-| Başlık eziliyor | Satır aralığı fazla | line-height 1.04–1.1 aralığında tut |
+| The page is falling apart like a magazine | Too many different alignments | Select and keep single asymmetry rule |
+| Title gets crushed | Too much line spacing | keep line-height between 1.04–1.1 |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `carnival-festival` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `comic-bookstore` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `regulatory-report` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `access-audit` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `carnival-festival` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `comic-bookstore` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `regulatory-report` | Two different ornamental languages compete on the same screen |
+| Mixing | `access-audit` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://en.wikipedia.org/wiki/Street_festival | Street festival (Wikipedia) — sahne/program yapısı |
-| https://fonts.google.com/specimen/Archivo+Black | Archivo Black (Google Fonts) — kalın başlık |
-| https://fonts.google.com/specimen/Space+Mono | Space Mono (Google Fonts) — saat |
+| https://en.wikipedia.org/wiki/Street_festival | Street festival (Wikipedia) — scene/program structure |
+| https://fonts.google.com/specimen/Archivo+Black | Archivo Black (Google Fonts) — bold title |
+| https://fonts.google.com/specimen/Space+Mono | Space Mono (Google Fonts) — clock |
 
 ## AI brief
 
 ```text
-Sokak festivali sayfası tasarla: sıcak zemin, turuncu accent, kalın başlık, mono sahne programı ve harita bloğu.
+Design street festival page: warm backdrop, orange accent, bold header, mono stage schedule and map block.
 
-Stil: Street Festival (street-festival) · aile: Kültür & Yayın (192–201)
+Style: Street Festival (street-festival) · family: Culture & Publishing (192–201)
 Token: --bg #fdf7ef · --surface #fffdf9 · --ink #1c1409 · --accent #a83a0d · --line rgba(28,20,9,.16)
-Yarıçap: 2px / 6px · Tipografi: Archivo Black / Space Grotesk / Space Mono
-Zorunlu: Her etkinlikte sahne, saat ve süre. · Harita üzerinde 3 nokta (giriş, sahne, wc). · Fiyat/ücretsiz bilgisi açık.
-Yasak: Animasyonlu konfeti. · Altıdan fazla kategori rengi. · Okunamayan ince yazı.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 2px / 6px · Typography: Archivo Black / Space Grotesk / Space Mono
+Required: Stage, time and duration for each event. · 3 points on the map (entrance, stage, toilet). · Price/free information is clear.
+Banned: Animasyonlu konfeti. · More than six category colors. · Unreadable fine print.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

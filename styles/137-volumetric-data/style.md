@@ -1,51 +1,43 @@
 # 137 · Hologram & Uzamsal Veri
 
-> **Bir cümlede:** Uzamsal veriyi hacim olarak okutan arayüz: derin lacivert zemin, nokta bulutu yoğunluk haritası, izdüşüm ızgarası ve tek sıcak amber accent.
+> **In one sentence:** Uzamsal veriyi hacim olarak okutan arayüz: derin lacivert zemin, nokta bulutu yoğunluk haritası, izdüşüm ızgarası ve tek sıcak amber accent.
 
 | | |
 |---|---|
-| **Hissiyat** | hacimli, ölçülü, tarayıcı, sakin-teknik |
-| **En iyi** | 3B tarama/ölçüm paneli, tıbbi görüntüleme (volumetrik), malzeme analizi, dijital ikiz görüntüleyici |
-| **Kaçın** | vitrin/landing, moda, duygusal hikâye — hacim dili anlatı taşımaz |
-| **Zorluk** | yüksek · **Erişilebilirlik** | düşük risk (en düşük metin çifti 9.08:1) |
-| **Aile** | Deneysel & Gelecek (136–145) · **Token** | `kit/tokens.css` → `[data-style="volumetric-data"]` |
-| **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | hacimli, ölçülü, tarayıcı, sakin-teknik |
+| **Best for** | 3B tarama/ölçüm paneli, tıbbi görüntüleme (volumetrik), malzeme analizi, dijital ikiz görüntüleyici |
+| **Avoid** | vitrin/landing, moda, duygusal hikâye — hacim dili anlatı taşımaz |
+| **Difficulty** | yüksek · **Accessibility** |  |
+| **Family** | Experimental & Future (136–145) · **Token** | `kit/tokens.css` → `[data-style="volumetric-data"]` |
+| **Composition** | `product` · `utility` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Hologram & Uzamsal Veri, arayüzü **veri hacminin görüntüleyicisi** olarak kurar: nokta bulutu yoğunluk haritası (8px nokta, yoğunluk accent opaklığı), izdüşüm ızgarası, kesit (dilim) barı ve her eksende ölçü etiketi (`x 1.24`, `y 0.86`, `z 0.42`, `±0.03`). Süsü feda eder; karşılığında **uzayda nerede ve ne kadar** sorusunun tek bakışta cevabını verir.
 
 Kurucu kararları üç tanedir. Birincisi **hacim gerçek veridir**: nokta yoğunluğu opaklıkla kodlanır, rastgele dağıtılmaz. İkincisi **tek sıcak accent**: amber yalnız yoğunluk/eşik ve aktif dilim için yanar; ikinci parlak renk yoktur. Üçüncüsü **ghost katman yoktur**: her panel tek yüzeydir, ayrım 1px çizgi ve zemin tonudur — holografik "kopya katman" efekti bilinçli olarak yasaktır.
 
 Bedeli: yoğunluk okuma eğrisi. Bu yüzden kesit barı ve eksen etiketleri zorunludur; dekoratif hologram dili tek başına yeterli sayılmaz.
 
-### Ne değildir
+### What is not
 - **Holographic Layer (105) değildir** — adaşlık dışında ölçülebilir dört fark vardır:
-
-| Ölçüt | 105 · Holographic Layer | 137 · Volumetric Data |
-|---|---|---|
-| Zemin bandı | koyu mor `#0e0b16` | derin lacivert `#0a1428` |
-| Display ailesi | Michroma 44px | IBM Plex Mono 40px |
-| İmza motif | 12/24px kaydırılmış ghost katman + cam kenar | nokta bulutu yoğunluğu + izdüşüm ızgarası (ghost katman yok) |
-| Hareket / pin | pin scrubs 1.25, `+130%` | pin kapalı (scrub yok), `hover 430ms` |
-
 - **Depth Parallax (99) değildir:** 99 üç düzlemi farklı hızda kaydırır (parallax imza); 137'de parallax yok, pin kapalı, derinlik veri yoğunluğundan okunur.
 - **Atlas Console (51) değildir:** 51 harita zeminlidir (coğrafi); 137'de harita yok, hacim/eksen var.
 - **Telemetry Grid (46) değildir:** 46 hücreli ölçüm ızgarasıdır (2B tablo); 137 üç eksenli hacim ve kesit dilimi kullanır.
 
-### Nereden gelir
+### Where it comes from
 Hacim görüntüleme (volume rendering) ve nokta bulutu pratiğinden; tıbbi BT/MR hacim okuma ve endüstriyel 3B tarama arayüzlerinden. Bugün önemli çünkü sensörler 3B veri üretiyor ama paneller hâlâ 2B tablo gösteriyor; kesit + yoğunluk haritası bu boşluğu kapatır. Klişeye dönmemesi için korunacak detay: **her eksenin etiketli ve birimli olması** ve ghost katman yasağı.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin derin lacivert; üstünde 8px nokta ızgarası ve hacim bölgesinde yoğunlaşan nokta bulutu var.
 2. Kesit barı (0–100%) ve aktif dilim yazılı; altında `x · y · z` etiketleri duruyor.
 3. Tek sıcak accent ambar; ikinci parlak renk yok.
 4. Hiçbir panelin arkasında ghost/kopya katman yok; gölge yalnız yüzen okuma panelinde.
 5. Etiketler mono büyük harf `.14em`; değerler tabular.
 
-## Görsel imza
+## Visual signature
 - **Nokta bulutu:** 7px nokta + 28px izdüşüm ızgarası (accent %42 nokta, ızgara %18).
 - **Kesit barı:** 0–100% tek bar; aktif dilim `%42` mono etiketle yazılır.
 - **Eksen etiketi:** `x 1.24 · y 0.86 · z 0.42` + tolerans `±0.03`; 10px mono `.14em`.
@@ -53,99 +45,124 @@ Hacim görüntüleme (volume rendering) ve nokta bulutu pratiğinden; tıbbi BT/
 - **Zemin katmanları:** `bg → bg-2 → surface → surface-2` arasında 4 puan parlaklık farkı.
 - **Ghost yasağı:** ofset kopya, blur ve cam yok.
 - **Hareket imzası:** 960ms `cubic-bezier(.24,.02,.18,1)`, 38px — hacim "oturur", süzülmez.
+- **Typography:** IBM Plex Mono (display) + Jost (body) + Share Tech Mono (mono label).
+- **Colour discipline:** a single accent `#ffb347`; neutral scale `#0a1428` → `#e6eef8`.
+- **Radius:** `4px` / `10px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#0a1428` | sayfa zemini (derin lacivert) | panel zemini |
-| `--bg-2` | `#0e1a32` | nav, input zemini | birincil CTA |
-| `--surface` | `#122240` | panel / kart | sayfa zemini |
-| `--surface-2` | `#17294a` | chip, ikincil yüzey | modal zemini |
-| `--ink` | `#e6eef8` | başlık, gövde, ölçü değeri | dekoratif çizgi |
-| `--ink-soft` | `#a6b8cf` | açıklama, eksen etiketi | başlık |
-| `--ink-faint` | `#6f819a` | yalnız ızgara ve dekoratif çizgi | eksen etiketi, etkileşimli metin |
-| `--accent` | `#ffb347` | yoğunluk, eşik, birincil eylem | geniş dekoratif dolgu |
-| `--accent-ink` | `#2a1500` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(230,238,248,.16)` | kenarlık, ayırıcı | metin rengi |
+1. Nokta bulutu yoğunluk haritası imza öğedir: 8px nokta ızgarası, yoğunluk accent opaklığıyla okunur
+2. Her projeksiyon eksen etiketlidir: `x 1.24`, `y 0.86`, `z 0.42`, tolerans `±0.03`
+3. Tek sıcak accent (amber); ikinci parlak renk ve mor holografik ton yok
+4. Ghost/offset katman yok: her panel tek yüzey, ayrım 1px line
+5. Kesit (dilim) göstergesi zorunlu: 0–100% arası tek bar, aktif dilim yazılı
+6. Radius 4px kontrol / 10px panel; hap köşe yok
 
-- Ölçülen kontrast: `ink / bg` = **15.70:1** · `ink-soft / bg` = **9.08:1** · `accent-ink / accent` = **9.78:1** · `ink-faint / bg` = **4.62:1** (yalnız ızgara).
-- Tek vurgu kuralı: tek sıcak accent. `--danger` (#ff8f87), `--ok` (#6fe0b0), `--warn` (#ffd06e) parlamaz; yalnız eşik etiketi ve metin rengi.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; `--surface-2` üstünde `--ink-faint` eksen etiketi.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0a1428` | page background | as a card background |
+| `--bg-2` | `#0e1a32` | partition divider floor, table top | button background |
+| `--surface` | `#122240` | kart, input, modal | full-page background |
+| `--surface-2` | `#17294a` | passive chip, hover background | primary button |
+| `--ink` | `#e6eef8` | title, body, icon | large background |
+| `--ink-soft` | `#a6b8cf` | secondary text, description | — |
+| `--ink-faint` | `#6f819a` | decorative label, separator text | interactive text |
+| `--accent` | `#ffb347` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#2a1500` | text above accent | non-accent background |
+| `--line` | `rgba(230,238,248,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | IBM Plex Mono (`--font-display`) | 40px (mobil 26px) | 600 | 1.12 | `-.01em` |
-| H2 | IBM Plex Mono | 28px | 600 | 1.20 | `0` |
-| H3 | IBM Plex Mono | 20px | 600 | 1.28 | `0` |
-| Gövde | Jost (`--font-body`) | 16px | 400 | 1.60 | `0` |
-| Küçük gövde | Jost | 13px | 400 | 1.55 | `0` |
-| Etiket / eksen | Share Tech Mono (`--font-mono`) | 10–11px | 400 | 1.4 | `.14em` |
+- Measured contrast: `ink/bg` **15.7:1** · `ink-soft/bg` **9.08:1** · `ink-faint/bg` **4.62:1 (decorative)** · `accent-ink/accent` **9.78:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.45** — kullanılan basamaklar 10 · 11 · 13 · 16 · 20 · 28 · 40.
-- Ölçü önerisi: `h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.12 }`.
-- Gövde satır uzunluğu en fazla **66ch**; ölçü tabloları 110ch'e kadar genişleyebilir (tabular).
-- Ağırlık kuralı: display 600, gövde 400/600, mono 400. Michroma ve geniş display yasak.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (IBM Plex Mono) | 40px (mobile 26px) | 500 | 1.06 | -0.02em |
+| H2 | same | 28px | 600 | 1.18 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Share Tech Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (projeksiyon 8, okuma paneli 4) |
-| Gutter | 20px |
-| Container genişliği | 1280px (içerik 1240px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1280; 768 altında projeksiyon tek kolon, eksen etiketleri kısalır (`x/y/z` yalnız değer) |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** asimetrik bölünme (8/4) — hacim solda geniş, okuma paneli sağda dar.
-- Bölüm ritmi: art arda en fazla **3** panel; dördüncüsü tam genişlik kesit şeridi olur.
-- Nokta ızgarası 8px; hacim bölgesinde 7px yoğunluk noktaları — iki ızgara üst üste binmez (biri zemin, biri veri).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa + nokta ızgarası |
-| Panel | `--surface` | yok | hacim paneli, kart (1px line) |
-| Yüzen katman | `--surface` + accent çerçeve | `0 10px 30px rgba(3,10,22,.55)` | okuma paneli, modal, toast |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; aktif ölçüm panelinde `1px solid var(--accent)`.
-- Derinlik nereden gelir: **veri hacmi + zemin tonu**; gölge yalnız yüzen panelde. Ghost/ofset kopya yok.
-- Radius: `--radius: 4px` (buton, input, chip), `--radius-lg: 10px` (panel, modal). Üst sınır 10px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 40px | `0 16px` | 4px | 12px mono 600 `.12em` uppercase | accent dolgu, accent-ink metin, gölge yok | hover: accent %86 + ink · active: translateY(1px) · focus: 2px accent outline + 3px offset · disabled: opacity .4 + kesikli · loading: dilim taraması %0→%100 (800ms) |
-| Buton (ikincil) | 40px | `0 16px` | 4px | 12px mono | şeffaf + 1px accent %50 | hover: accent %12 zemin |
-| Input | 40px | `0 12px` | 4px | 13px mono | `--bg-2` + 1px `--line` | focus: accent çerçeve + 2px outline offset 2px · error: `--danger` çerçeve + 10px etiket · disabled: opacity .4 |
-| Panel | içerik | 20px | 10px | H3 + gövde | `--surface` + 1px `--line`, gölge yok | hover: çerçeve accent %30 |
-| Chip / badge | 22px | `0 8px` | 4px | 10px mono `.14em` | `--surface-2` + 1px `--line` | accent: accent %16 zemin + accent metin |
-| Nav | 56px | `0 24px` | 0 | 14px Jost | `--bg-2` + alt hairline | sağda kesit göstergesi (0–100%) |
-| Tablo satırı | 36px | `6px 10px` | — | 12px mono, tabular-nums | satır arası 1px `--line` | hover: `--surface-2`; seçili: sol 2px accent |
-| Modal (okuma) | içerik | 22px | 10px | 20px display + mono eksen | `--surface` + 1px accent + `0 10px 30px` | açılış: 38px oturma, 960ms |
-| Toast | 36px | `8px 12px` | 4px | 12px mono | `--surface` + sol uçta 6px accent nokta | hata: nokta `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ink-soft`, `--warn`, `--danger` | en fazla 4 seri; izo-eğri 1px, dolgu yok |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `4px` (buton, input, chip), `10px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px` — nokta ızgarası üstünde 1–2px offset kaybolur.
-- Dokunma hedefi: en az 44×44px; 40px buton mobilde `min-height: 44px`. Kesit barı sürüklenebilir + ok tuşlarıyla da çalışır.
+## Bans
 
-## Görsel dil
+- Michroma/geniş display ve mor holografik zemin (105 ile örtüşür).
+- Ghost kopya katman, 12/24px ofset kopya, cam/blur.
+- Parallax ve pin-scrub (bu stilde pin kapalı).
+- Süs amaçlı nokta bulutu (her nokta yoğunluk değeri taşır).
+- Fotoğraf, 3B render, renkli glow.
+- Renk-only eşik bildirimi (etiket yazılır).
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, 24px ızgara; eksen, dilim, izo-yüzey sembolleri |
-| Fotoğraf | yok — veri hacmi fotoğrafın yerini alır |
-| İllüstrasyon | nokta bulutu + izdüşüm ızgarası zorunlu imza |
-| Doku | 8px nokta zemini + 7px veri noktaları; grain yok |
-| Logo alanı | mono büyük harf + eksen işareti, 20px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 4px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 4px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 4px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 4px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 4px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 4px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 4px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 10.31:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | solda H1 + eksen etiketleri, sağda hacim görseli | `shots/01-page.png` |
 | Dashboard | **yüksek** | 8/4: hacim + okuma paneli; kesit barı üstte | `shots/01-page.png` |
@@ -160,44 +177,33 @@ Hacim görüntüleme (volume rendering) ve nokta bulutu pratiğinden; tıbbi BT/
 | Hata | orta | eşik aşımı: `--danger` izo-eğri + etiket | `shots/01-page.png` |
 | Profil / ayar | orta | birim/tolerans ayarları, mono | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Nokta bulutu yoğunluk haritası imza öğedir; yoğunluk accent opaklığıyla kodlanır.
-- Her projeksiyon eksen etiketli ve birimli: `x 1.24`, `y 0.86`, `z 0.42`, tolerans `±0.03`.
-- Tek sıcak accent (amber); ikinci parlak renk ve mor holografik ton yok.
-- Ghost/offset katman yok; her panel tek yüzey, ayrım 1px line.
-- Kesit (dilim) göstergesi zorunlu: 0–100% tek bar, aktif dilim yazılı.
-- Radius 4px kontrol / 10px panel; hap köşe yok.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.7:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 9.08:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.62:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 9.78:1 | ≥ 4.5 | button text |
+| focus ring/ground | 10.31:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 95.3 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Michroma/geniş display ve mor holografik zemin (105 ile örtüşür).
-- Ghost kopya katman, 12/24px ofset kopya, cam/blur.
-- Parallax ve pin-scrub (bu stilde pin kapalı).
-- Süs amaçlı nokta bulutu (her nokta yoğunluk değeri taşır).
-- Fotoğraf, 3B render, renkli glow.
-- Renk-only eşik bildirimi (etiket yazılır).
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **9.08:1** (eşik 4.5); `ink-faint / bg` = **4.62:1** yalnız ızgarada.
-- `--ink-faint` eksen etiketinde kullanılmaz; eksen ve ölçü daima `--ink-soft`.
-- Hareket/parlama hassasiyeti: düşük — flash yok, sürekli animasyon yok; `prefers-reduced-motion` kesit taramasını durdurur.
-- Şeffaf yüzey yok; opak fallback gerekmez. `radial-gradient` yoğunluk desteklenmezse noktalar düz accent noktaya düşer (yoğunluk bilgisi tabloda korunur).
-- Odak görünürlüğü: 2px accent outline + **3px** offset (nokta ızgarası offset'i yutar).
-- Kesit barı klavye ile de çalışır: `←/→` 1% adım, `Shift+←/→` 10% adım (WCAG 2.5.7 karşılığı).
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Hologram dekoru" gibi | ghost katman eklenmiş | tek yüzey panel + nokta bulutu verisi |
 | 105 ile karışıyor | mor zemin + Michroma | lacivert zemin + IBM Plex Mono |
 | Yoğunluk okunmuyor | nokta opaklığı sabit | accent opaklığını yoğunluğa bağla |
@@ -205,36 +211,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Kesit barı belirsiz | aktif dilim yazılmamış | `%42 · KATMAN 3` etiketi |
 | Göz yorulması | 6px altı nokta ızgarası | zemin 8px, veri 7px |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `depth-parallax` — derinlik dili; yalnız hero katmanında garnitür.
-- **Uyumlu:** `atlas-console` — coğrafi bağlam gerektiğinde harita katmanı.
-- **Uyumlu:** `telemetry-grid` — 2B ölçüm tablosu gerektiğinde alt panel.
-- **Yasak:** `claymorphism` — yumuşak pastel formlar hacim ölçümünü bozar.
-- **Yasak:** `scrapbook` — kolaj dili eksen disiplinini kırar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `depth-parallax` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `atlas-console` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `telemetry-grid` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `scrapbook` | Two different ornamental languages compete on the same screen |
 
-| Eksen (5) | 137 · Volumetric | 105 · Holographic Layer |
-|---|---|---|
-| Display ailesi | IBM Plex Mono 600 | Michroma 400 |
-| Zemin bandı | derin lacivert `#0a1428` | koyu mor `#0e0b16` |
-| Accent hue | sıcak amber `#ffb347` | mor `#8f7bff` |
-| Radius ölçeği | 4 / 10px | 20 / 28px |
-| İmza motif / motion | nokta bulutu + kesit · pin kapalı · top 63% | ghost katman · pin 1.25 · top 76% |
+## References
 
-## Referanslar
-
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Volume_rendering | yoğunluk haritası ve izo-yüzey |
-| https://en.wikipedia.org/wiki/Point_cloud | nokta bulutu ve eksen etiketleri |
-| https://en.wikipedia.org/wiki/Isosurface | izo-eğri ve eşik değeri |
-| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | nokta/çizgi kontrastı |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Volume_rendering | Volume rendering — yoğunluk haritası ve izo-yüzey |
+| https://en.wikipedia.org/wiki/Point_cloud | Point cloud — nokta bulutu ve eksen etiketleri |
+| https://en.wikipedia.org/wiki/Isosurface | Isosurface — izo-eğri ve eşik değeri |
+| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | WCAG 2.2 · Non-text Contrast — nokta/çizgi kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Hologram & Uzamsal Veri (styles/137-volumetric-data/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="volumetric-data"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: --bg derin lacivert + 8px nokta ızgarası; hacim bölgesinde 7px yoğunluk noktaları (accent opaklık).
@@ -247,15 +245,15 @@ YASAK: ghost/offset katman, cam/blur, Michroma, mor zemin, pin/parallax (105 ile
 Hareket: enter 960ms cubic-bezier(.24,.02,.18,1) 38px stagger .098; scroll top 63% 890ms 31px once;
   pin KAPALI; hover 430ms görsel 1.029. prefers-reduced-motion zorunlu.
 Çıktı: bileşen kodu + tek paragraf not (nokta bulutunu ve kesit barını nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: nokta bulutu, izdüşüm ızgarası, kesit barı, eksen etiketi.
-- [ ] Hard-coded renk/gölge/radius yok; ghost katman yok.
-- [ ] Kontrast: 15.70 / 9.08 / 9.78 — hepsi eşik üstü.
-- [ ] Her eksen birimli; odak halkası 2px accent + 3px offset.
-- [ ] 390px'te tek kolon, eksen etiketleri kısalıyor, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken kesit taraması duruyor.
+Style: Hologram & Uzamsal Veri (volumetric-data) · family: Experimental & Future (136–145)
+Token: --bg #0a1428 · --surface #122240 · --ink #e6eef8 · --accent #ffb347 · --line rgba(230,238,248,.16)
+Radius: 4px / 10px · Typography: IBM Plex Mono / Jost / Share Tech Mono
+Required: Nokta bulutu yoğunluk haritası imza öğedir: 8px nokta ızgarası, yoğunluk accent opaklığıyla okunur · Her projeksiyon eksen etiketlidir: `x 1.24`, `y 0.86`, `z 0.42`, tolerans `±0.03` · Tek sıcak accent (amber); ikinci parlak renk ve mor holografik ton yok
+Banned: Michroma/geniş display ve mor holografik zemin (105 ile örtüşür). · Ghost kopya katman, 12/24px ofset kopya, cam/blur. · Parallax ve pin-scrub (bu stilde pin kapalı).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -266,15 +264,25 @@ Hareket: enter 960ms cubic-bezier(.24,.02,.18,1) 38px stagger .098; scroll top 6
   --ink: #e6eef8; --ink-soft: #a6b8cf; --ink-faint: #6f819a;
   --accent: #ffb347; --accent-ink: #2a1500;
   --line: rgba(230,238,248,.16);
+  --danger: #e83e2e;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 4px; --radius-lg: 10px;
   --shadow: 0 10px 30px rgba(3,10,22,.55); --shadow-hard: none;
   --font-display: "IBM Plex Mono", ui-monospace, monospace;
-  --font-body: "Jost", "Inter", system-ui, sans-serif;
-  --font-mono: "Share Tech Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
   --tracking: .03em; --blur: 0px; --grain: 0;
-  --danger: #ff8f87; --danger-ink: #0a1428;
-  --ok: #6fe0b0; --warn: #ffd06e;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="volumetric-data"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

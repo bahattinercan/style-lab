@@ -1,43 +1,43 @@
 # 78 · Topografya & Arazi
 
-> **Bir cümlede:** Araziyi pafta gibi okuyan arayüz: sıcak harita kâğıdı zemin, eş yükselti halkaları, 1px pafta çerçevesi ve her ölçünün birim taşıdığı düz, gölgesiz bilgi yüzeyi.
+> **In one sentence:** Araziyi pafta gibi okuyan arayüz: sıcak harita kâğıdı zemin, eş yükselti halkaları, 1px pafta çerçevesi ve her ölçünün birim taşıdığı düz, gölgesiz bilgi yüzeyi.
 
 | | |
 |---|---|
-| **Hissiyat** | ölçülü, yere bağlı, keşifçi, kesin |
-| **En iyi** | arazi/harita ürünü, saha planlama, jeolojik-çevresel rapor, açık hava rota uygulaması |
-| **Kaçın** | lüks vitrin, eğlence uygulaması, hızlı tüketim landing'i — pafta dili burada "teknik" okunur |
-| **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük metin çifti 6.58:1) |
-| **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="topographic-terrain"]` |
-| **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | ölçülü, yere bağlı, keşifçi, kesin |
+| **Best for** | arazi/harita ürünü, saha planlama, jeolojik-çevresel rapor, açık hava rota uygulaması |
+| **Avoid** | lüks vitrin, eğlence uygulaması, hızlı tüketim landing'i — pafta dili burada "teknik" okunur |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Nature & Organic (76–85) · **Token** | `kit/tokens.css` → `[data-style="topographic-terrain"]` |
+| **Composition** | `fullbleed` · `inline` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Topografya & Arazi, ekranı bir **harita paftası** gibi kurar: sıcak bej kâğıt zemin, zeminde iki merkezden yayılan eş yükselti halkaları, her kartta 1px dış çerçeve + 6px iç çerçeve, ölçüler mono ve birimli (m, km, mm/yıl). Gölgeyi tamamen bırakır; karşılığında **okunabilir katman hiyerarşisi** ve arazi metaforunun doğal yönlendirmesini kazanır.
 
 Kurucu kararları üç tanedir. Birincisi **gölge yoktur**: katman ayrımı 1px çerçeve + iç boşlukla kurulur, çünkü pafta düzdür. İkincisi **kontur anlam taşır**: her halka bir yükseklik değerine karşılık gelir; süs için halka çizmek stili bozar. Üçüncüsü **etiket mono ve büyük harftir**: pafta kenar bilgisi gibi, `.12em` tracking.
 
 Bedeli: sıcak bej zemin doygun renkleri taşımaz. Bu yüzden tek vurgu (pas turuncusu) yalnız ölçüm ve rota için yanar.
 
-### Ne değildir
+### What is not
 - **Blueprint Çizimi (56) değildir:** 56 soğuk cyanotype mavi + 64px çizim ızgarası kullanır; 78 sıcak bej kâğıt + **radyal kontur halkaları** kullanır.
 - **Wabi-Sabi (07) değildir:** 07 kırık hiza ve düşük kontrastla "eskimiş" görünür; 78'de hiza kesin, `ink-soft/bg` **6.58:1**.
 - **Utility (44) değildir:** 44 radius 8/12px ve mavi tek vurgudur; 78 radius 2/6px, pas turuncusu ve kontur imzası.
 - **Scrapbook (31) değildir:** 31 kâğıt dokusunu kolaj için kullanır (eğik, dağınık); 78 kâğıdı ızgara disipliniyle kullanır.
 
-### Nereden gelir
+### Where it comes from
 USGS/ordinance survey pafta geleneğinden: eş yükselti aralığı, ölçek çubuğu, kenar bilgisi. Bugün geri dönüyor çünkü harita tabanlı ürünler (rota, arazi, afet) veri yoğunluğunu "katman" metaforuyla anlatmak zorunda; klişeye dönmemesi için korunacak detay **konturun anlam taşıması** ve **gölgenin hiç kullanılmaması**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin sıcak bej kâğıt; üstünde eşmerkezli ince halkalar seçilebiliyor.
 2. Hiçbir kartta gölge yok; her yüzey 1px çerçeve + 6px iç çerçeve.
 3. Köşeler keskin: 2px (kontrol) / 6px (kart); hap radius yok.
 4. Etiketler mono, büyük harf, geniş tracking; değerler birimli (m, km, %).
 5. Buton 40px ve mono büyük harf; vurgu rengi tek: pas turuncusu.
 
-## Görsel imza
+## Visual signature
 - **Kontur halkaları:** iki `repeating-radial-gradient` (18px ve 42px aralık) — biri accent %26, biri ink %12; zemin ve hero görselinde.
 - **Pafta çerçevesi:** kart `::after` ile `inset: 6px`, 1px ink %9; dış çerçeve 1px `--line`.
 - **Ölçek çubuğu:** nav altında 3px yüksekliğinde hairline deseni (`inset 0 -3px 0 -2px var(--line)`).
@@ -45,99 +45,124 @@ USGS/ordinance survey pafta geleneğinden: eş yükselti aralığı, ölçek çu
 - **Radius disiplini:** 2px kontrol, 6px kart — 8px üstü yok.
 - **Gölgesizlik:** `--shadow: none`; yüzen katman accent 1px çerçeveyle ayrılır.
 - **Hareket imzası:** 480ms `cubic-bezier(.5,.05,.3,1)`, 32px — pafta "oturur", yay yapmaz.
+- **Typography:** Space Grotesk (display) + Jost (body) + Share Tech Mono (mono label).
+- **Colour discipline:** a single accent `#a34f24`; neutral scale `#ece6d8` → `#241f18`.
+- **Radius:** `2px` / `6px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#ece6d8` | sayfa zemini (harita kâğıdı) | kart zemini |
-| `--bg-2` | `#e2dac9` | nav, ikincil bant | buton zemini |
-| `--surface` | `#f7f3e8` | kart / panel (açık pafta) | sayfa zemini |
-| `--surface-2` | `#f0eadc` | chip, tablo başlığı | birincil CTA |
-| `--ink` | `#241f18` | başlık, gövde, kontur etiketi | dekoratif çizgi |
-| `--ink-soft` | `#574e3e` | açıklama, ikincil etiket | başlık |
-| `--ink-faint` | `#857b64` | yalnız kontur çizgisi ve kenar notu | etkileşimli metin |
-| `--accent` | `#a34f24` | rota, ölçüm vurgusu, birincil eylem | geniş dekoratif dolgu |
-| `--accent-ink` | `#fff8ef` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(36,31,24,.16)` | pafta çerçevesi, ayırıcı | metin rengi |
+1. Eş yükselti (kontur) çizgisi imza öğedir: en az bir bölümde 1px halka dizisi görünür
+2. Zemin harita kâğıdı (--bg sıcak bej); saf beyaz yok
+3. Gölge yok; katman ayrımı 1px çerçeve + 6px iç boşluk
+4. Radius 2px kontrol / 6px kart; 8px üstü yasak
+5. Her veri bloğu birim/ölçek taşır (m, km, %, mm/yıl)
+6. Etiketler mono büyük harf + .12em tracking
 
-- Ölçülen kontrast: `ink / bg` = **13.14:1** · `ink-soft / bg` = **6.58:1** · `accent-ink / accent` = **5.38:1** · `ink-faint / bg` = **3.37:1** (yalnız kontur/kenar notu).
-- Tek vurgu kuralı: tek pas turuncusu. `--ok` (`#3d6b2f`) ve `--danger` (`#a02a1d`) yalnız lejant/rota durumunda, metinle birlikte.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; kâğıt zemin üstünde `--ink-faint` metin.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#ece6d8` | page background | as a card background |
+| `--bg-2` | `#e2dac9` | partition divider floor, table top | button background |
+| `--surface` | `#f7f3e8` | kart, input, modal | full-page background |
+| `--surface-2` | `#f0eadc` | passive chip, hover background | primary button |
+| `--ink` | `#241f18` | title, body, icon | large background |
+| `--ink-soft` | `#574e3e` | secondary text, description | — |
+| `--ink-faint` | `#857b64` | decorative label, separator text | interactive text |
+| `--accent` | `#a34f24` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fff8ef` | text above accent | non-accent background |
+| `--line` | `rgba(36,31,24,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Space Grotesk (`--font-display`) | 46px (mobil 28px) | 500 | 1.06 | `.01em` |
-| H2 | Space Grotesk | 30px | 500 | 1.16 | `.02em` |
-| H3 | Space Grotesk | 20px | 500 | 1.28 | `.02em` |
-| Gövde | Jost (`--font-body`) | 16px | 400 | 1.60 | `0` |
-| Küçük gövde | Jost | 13px | 400 | 1.55 | `0` |
-| Etiket / mono | Share Tech Mono (`--font-mono`) | 10px | 400 | 1.4 | `.12em` |
+- Measured contrast: `ink/bg` **13.14:1** · `ink-soft/bg` **6.58:1** · `ink-faint/bg` **3.37:1 (decorative)** · `accent-ink/accent` **5.38:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.5** — kullanılan basamaklar 10 · 11 · 13 · 16 · 20 · 30 · 46.
-- Ölçü önerisi: `h1 { font-size: clamp(28px, 4.2vw, 46px); line-height: 1.06 }`.
-- Gövde satır uzunluğu en fazla **66ch**; lejant tabloları 100ch'e kadar genişleyebilir (tabular hizalı).
-- Ağırlık kuralı: display 500, gövde 400/500, mono 400. 700 ve italik yok.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Space Grotesk) | 46px (mobile 28px) | 400 | 1.08 | -0.02em |
+| H2 | same | 30px | 600 | 1.2 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Share Tech Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 16px |
-| Container genişliği | 1220px (içerik 1188px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1220; 768 altında tek kolon, iç çerçeve 4px |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** asimetrik bölüm (7/5) — pafta solda geniş, lejant sağda dar.
-- Bölüm ritmi: art arda en fazla **4** aynı hizada pafta; beşincisi tam genişlik "ölçek şeridi" olur.
-- İç çerçeve boşluğu 6px'in altına inmez (pafta kenarı okunmalı).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | kâğıt + kontur halkaları |
-| Kart | `--surface` | yok | pafta: 1px dış + 6px iç çerçeve |
-| Yüzen katman | `--surface` + accent çerçeve | yok | modal, menü, toast: 1px accent çerçeve |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)` (dış) + `::after inset 6px` `1px solid ink %9` (iç).
-- Derinlik nereden gelir: **hiçbir yerden** — düzlük kuraldır. Sıralama çerçeve + boşlukla okunur.
-- Radius: `--radius: 2px` (buton, input, chip), `--radius-lg: 6px` (kart, panel, modal). Üst sınır 6px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 40px | `0 16px` | 2px | 11px mono uppercase `.12em` | accent dolgu, accent-ink metin, gölge yok | hover: accent %88 + ink · active: translateY(1px) · focus: 2px accent outline + 2px offset · disabled: opacity .45 + kesikli çerçeve · loading: 3 kontur halkası sırayla (700ms) |
-| Buton (ikincil) | 40px | `0 16px` | 2px | 11px mono | şeffaf + 1px `--line` | hover: `--surface-2` |
-| Input | 40px | `0 12px` | 2px | 15px Jost | `--surface` + 1px `--line` | focus: accent çerçeve + 2px outline offset 1px · error: `--danger` çerçeve + 10px mono not · disabled: opacity .45 |
-| Kart | içerik | 20px | 6px | H3 + gövde | `--surface` + dış/iç çerçeve, gölge yok | hover: iç çerçeve accent %30 |
-| Chip / badge | 20px | `0 6px` | 2px | 10px mono `.12em` | `--surface-2` + 1px `--line` | accent: accent dolgu + accent-ink metin |
-| Nav | 56px | `0 24px` | 0 | 14px Jost 500 | `--bg-2` + alt 3px ölçek deseni | aktif: accent metin + 2px alt çizgi |
-| Tablo satırı | 38px | `6px 10px` | — | 14px Jost, tabular-nums | satır arası 1px `--line` | hover: `--surface-2` |
-| Modal / sheet | içerik | 24px | 6px | 20px display + mono yükseklik etiketi | `--surface` + 1px accent çerçeve | açılış: 32px yukarıdan, 480ms |
-| Toast | 36px | `8px 12px` | 2px | 12px Jost 500 | `--surface` + sol uçta 2px accent ölçü çizgisi | hata: çizgi `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ink-soft`, `--ok`, `--danger` | en fazla 4 seri; eşik çizgisi kesikli, dolgu %8 tarama |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `2px` (buton, input, chip), `6px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; kontur zeminde 1px yetmez.
-- Dokunma hedefi: en az 44×44px; 40px buton mobilde `min-height: 44px`. Chip 20px, hedef padding ile 44px.
+## Bans
 
-## Görsel dil
+- Yumuşak büyük gölge, cam, gradyan patlaması.
+- 12px üstü radius, hap buton.
+- Serif display, italik.
+- Harita dışı doygun renk (turkuaz, mor, neon yeşil).
+- Emoji ve dolu renkli ikon.
+- Anlam taşımayan süs konturu.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi, keskin köşe, 20px ızgara; yükseklik/rota sembolleri |
-| Fotoğraf | arazi/kaya dokusu: düşük doygunluk, kum tonu, 0–2px radius kırpma |
-| İllüstrasyon | eş yükselti çizimi zorunlu imza; tarama deseni serbest |
-| Doku | grain %4 (kâğıt) + kontur halkaları; parlak yüzey yok |
-| Logo alanı | pafta kenarında mono büyük harf + ölçek çubuğu, 20px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 5.12:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-paper` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 7/5: solda H1 + ölçü etiketleri, sağda kontur paftası | `shots/01-page.png` |
 | Dashboard | düşük | pafta ızgarası + lejant; gölge yok | `shots/01-page.png` |
@@ -152,43 +177,33 @@ USGS/ordinance survey pafta geleneğinden: eş yükselti aralığı, ölçek çu
 | Hata | düşük | `--danger` çerçeve + mono not; zemin değişmez | `shots/01-page.png` |
 | Profil / ayar | orta | lejant düzeni: sol etiket, sağ değer | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Eş yükselti (kontur) çizgisi imza öğedir; en az bir bölümde halka dizisi görünür.
-- Zemin harita kâğıdı (`--bg` sıcak bej); saf beyaz zemin yok.
-- Gölge yok; katman ayrımı 1px dış + 6px iç çerçeve.
-- Radius 2px kontrol / 6px kart; 8px üstü yasak.
-- Her veri bloğu birim/ölçek taşır (m, km, %, mm/yıl).
-- Etiketler mono, büyük harf, `.12em`; değer + birim aynı satırda.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 13.14:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.58:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.37:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.38:1 | ≥ 4.5 | button text |
+| focus ring/ground | 5.12:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 88.7 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Yumuşak büyük gölge, cam, gradyan patlaması.
-- 12px üstü radius, hap buton.
-- Serif display, italik.
-- Harita dışı doygun renk (turkuaz, mor, neon yeşil).
-- Emoji ve dolu renkli ikon.
-- Anlam taşımayan süs konturu.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **6.58:1** (eşik 4.5); `ink-faint / bg` = **3.37:1** yalnız kontur çizgisi ve kenar notunda.
-- `--ink-faint` etkileşimli metinde ve lejant değerinde kullanılmaz; lejant `--ink-soft`.
-- Hareket/parlama hassasiyeti: düşük — flash yok, sürekli animasyon ekran başına ≤1; `prefers-reduced-motion` pin ve kontur animasyonunu kapatır.
-- Şeffaf yüzey yok; opak fallback gerekmez. `repeating-radial-gradient` desteklenmezse zemin düz `--bg` olur (kontur bilgisi grafikte korunur).
-- Odak görünürlüğü: kontur zeminde 2px accent outline + **2px** offset; offset 0 kontur çizgilerine karışır.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Kâğıt hissi" kayboluyor | zemin saf beyaz | `--bg` sıcak bej kullan |
 | Hiyerarşi kayboluyor | her yüzey aynı çerçeve | iç çerçeveyi (6px inset) ekle, accent'i karara ayır |
 | Kontur süs gibi | her bölüme halka eklenmiş | konturu tek bölümde ve değerle kullan |
@@ -196,28 +211,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Mobilde sıkışık | gutter 16px korunmuş | 768 altı 12px, iç çerçeve 4px |
 | Okunmayan lejant | `--ink-faint` metin | lejant değeri `--ink-soft` |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `blueprint-drawing` — aynı pafta/ölçü dili; Blueprint yalnız teknik ek bölümde garnitür.
-- **Uyumlu:** `wabi-sabi` — kâğıt ve doğal doku; Wabi-Sabi tek bölümde.
-- **Uyumlu:** `utility` — nötr iskelet; Utility yalnız form ekranlarında.
-- **Yasak:** `glassmorphism` — cam/blur pafta düzlüğüyle çelişir.
-- **Yasak:** `memphis` — süs renkleri ölçü disiplinini bozar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `blueprint-drawing` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `wabi-sabi` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `memphis` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Topographic_map | eş yükselti aralığı ve etiketleme |
-| https://en.wikipedia.org/wiki/Contour_line | kontur sıklığı ve diklik okuma |
-| https://www.usgs.gov/programs/national-geospatial-program/topographic-maps | sembol ve ölçek çubuğu sözlüğü |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | bej zemin üstü metin kontrastı |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Topographic_map | Topographic map — eş yükselti aralığı ve etiketleme |
+| https://en.wikipedia.org/wiki/Contour_line | Contour line — kontur sıklığı ve diklik okuma |
+| https://www.usgs.gov/programs/national-geospatial-program/topographic-maps | USGS · topo map symbols — sembol ve ölçek çubuğu sözlüğü |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast Minimum — bej zemin üstü metin kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Topografya & Arazi (styles/78-topographic-terrain/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="topographic-terrain"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: --bg harita kâğıdı + iki repeating-radial-gradient kontur halkası (18px accent %26, 42px ink %12).
@@ -232,15 +247,15 @@ Hareket: enter 480ms cubic-bezier(.5,.05,.3,1) 32px stagger .05; scroll top 75% 
   pin scrub 0.7 (+130%, ekran başına 1); hover 150ms görsel 1.006. prefers-reduced-motion zorunlu.
 Yasak: gölge, cam, 12px üstü radius, serif, italik, harita dışı doygun renk, süs konturu.
 Çıktı: bileşen kodu + tek paragraf not (kontur halkasını ve iç çerçeveyi nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: kontur halkaları, iç çerçeve, ölçek şeridi, mono birim etiketi.
-- [ ] Hard-coded renk/gölge/radius yok; gölge hiç kullanılmamış.
-- [ ] Kontrast: 13.14 / 6.58 / 5.38 — hepsi eşik üstü.
-- [ ] Odak halkası 2px accent + 2px offset, kontur üstünde görünür.
-- [ ] 390px'te tek kolon, iç çerçeve 4px, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken pin ve kontur animasyonu duruyor.
+Style: Topografya & Arazi (topographic-terrain) · family: Nature & Organic (76–85)
+Token: --bg #ece6d8 · --surface #f7f3e8 · --ink #241f18 · --accent #a34f24 · --line rgba(36,31,24,.16)
+Radius: 2px / 6px · Typography: Space Grotesk / Jost / Share Tech Mono
+Required: Eş yükselti (kontur) çizgisi imza öğedir: en az bir bölümde 1px halka dizisi görünür · Zemin harita kâğıdı (--bg sıcak bej); saf beyaz yok · Gölge yok; katman ayrımı 1px çerçeve + 6px iç boşluk
+Banned: Yumuşak büyük gölge, cam, gradyan patlaması. · 12px üstü radius, hap buton. · Serif display, italik.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -251,15 +266,25 @@ Yasak: gölge, cam, 12px üstü radius, serif, italik, harita dışı doygun ren
   --ink: #241f18; --ink-soft: #574e3e; --ink-faint: #857b64;
   --accent: #a34f24; --accent-ink: #fff8ef;
   --line: rgba(36,31,24,.16);
+  --danger: #cc1c11;
+  --danger-ink: #ffffff;
+  --ok: #007830;
+  --ok-ink: #ffffff;
+  --warn: #ab4b00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 2px; --radius-lg: 6px;
   --shadow: none; --shadow-hard: none;
-  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-body: "Jost", "Inter", system-ui, sans-serif;
-  --font-mono: "Share Tech Mono", "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: .03em; --blur: 0px; --grain: 4;
-  --danger: #a02a1d; --danger-ink: #ffffff;
-  --ok: #3d6b2f; --warn: #7d5a00;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: .03em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="topographic-terrain"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

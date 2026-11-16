@@ -1,5 +1,5 @@
 {
-  "$description": "style-lab v6 token seti · DTCG 2025.10 ($value/$type) · kaynak: kit/tokens.css + styles/<nn-slug>/tokens.json · üretici: kit/export-tokens.mjs",
+  "$description": "style-lab v6 token set · DTCG 2025.10 ($value/$type) · source: kit/tokens.css + styles/<nn-slug>/tokens.json · manufacturer: kit/export-tokens.mjs",
   "minimalism": {
     "color": {
       "$type": "color",

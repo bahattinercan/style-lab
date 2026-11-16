@@ -1,43 +1,43 @@
 # 82 · Desert Sand
 
-> **Bir cümlede:** Kumul eğrileriyle yumuşayan, sıcak kum zemininde mor alacakaranlık vurgusuyla ölçüm gösteren çöl atlası arayüzü.
+> **In one sentence:** Kumul eğrileriyle yumuşayan, sıcak kum zemininde mor alacakaranlık vurgusuyla ölçüm gösteren çöl atlası arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | sıcak, geniş, sakin, yalın |
-| **En iyi** | iklim/çöl verisi, seyahat & rota atlası, vaha tesis yönetimi, sıcak iklim tarım paneli |
-| **Kaçın** | yüksek yoğunluklu operasyon ekranı, koyu mod zorunlu ürünler, neon/oyun arayüzleri |
-| **Zorluk** | düşük · **Erişilebilirlik** | orta risk (sıcak zemin + mor accent; en düşük etkileşimli çift 6.41:1) |
-| **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="desert-sand"]` |
-| **Kompozisyon** | `split` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | sıcak, geniş, sakin, yalın |
+| **Best for** | iklim/çöl verisi, seyahat & rota atlası, vaha tesis yönetimi, sıcak iklim tarım paneli |
+| **Avoid** | yüksek yoğunluklu operasyon ekranı, koyu mod zorunlu ürünler, neon/oyun arayüzleri |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Nature & Organic (76–85) · **Token** | `kit/tokens.css` → `[data-style="desert-sand"]` |
+| **Composition** | `split` · `split` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Desert Sand, arayüzü bir **çöl atlası** gibi kurar: geniş boşluk, alçak ufuk, kumul eğrisi. Köşeler ya tam yuvarlak (buton, chip, toast) ya da çok büyük (kart 44px) — arada keskin köşe yoktur. Accent, gün batımında kumun üstüne düşen **mor gölge**dir; turuncu/kiremit kullanılmaz.
 
 Üç kurucu karar: (1) **punto hiyerarşisi** — Cormorant Garamond 300 başlıklar ağırlıkla değil boyutla konuşur (58px), gövde Jost 16px; (2) **tek yön gölge** — yalnız aşağı doğru uzun yumuşak gölge (kum üstünde güneş), yukarı ışık ve iç gölge yok; (3) **hap kontrol** — buton/chip/toast 999px; form alanı 24px; hiçbir kontrol 16px altı köşe almaz.
 
 Bedeli: yoğun tablo ve panel ekranlarında bu dil ağır kalır; ekran başına en fazla 2 kart satırı ve 1 tablo önerilir.
 
-### Ne değildir
+### What is not
 - **Japandi (06) değildir:** japandi düşük kontrastlı, yeşilimsi sakinlik ve Lora/Inter ile kurulur; Desert Sand'de sıcak kum + mor accent, Cormorant 300 ve 44px kumul radiusu var.
 - **Bohemian (30) değildir:** bohemian terracotta + dokuma desenle süsler; burada desen yok, tek accent mor ve gölge tek yönlü.
 - **Ethereal (29) değildir:** ethereal pastel lavanta ve cam yüzeylerle çalışır; Desert Sand opak, sıcak ve gölge temellidir.
 - **Editorial (03) değildir:** editorial serif + sıkı ızgara ve 4px radiusla dergi kurar; burada radius 24/44 ve hap butonlar var.
 
-### Nereden gelir
+### Where it comes from
 Çöl haritacılığı ve seyahat atlası geleneğinden: kumul konturu, yükseklik profili, vaha işareti, rüzgâr yönü; alçak ufuk ve geniş boşluk. Bugün yeniden kullanılmasının nedeni: iklim verisi uygulamaları çoğunlukla gri kurumsal panel görünüyor ve sıcak iklim bağlamını taşımıyor. Klişeye dönüşmemesi için korunacak detay: **mor accent** (turuncu değil) ve **tek yön gölge**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Köşeler ya tam hap (999px) ya çok büyük (44px); arada keskin köşe yok.
 2. Accent mordur; turuncu/kiremit hiçbir yerde yok.
 3. Gölge yalnız alta doğru uzun ve yumuşak; hiçbir yüzeyde iç gölge/parlama yok.
 4. Başlıklar ince serif (Cormorant 300), 58px'e kadar çıkar; gövde geometrik Jost 16px.
 5. Ekranda bir kumul konturu (eğri çizgi) ve bir ölçüm satırı (sıcaklık °C / rüzgâr km/s) var.
 
-## Görsel imza
+## Visual signature
 - **Kumul eğrisi:** kart/görsel üst köşe 44px, alt köşe 24px; hero görselinde 2 eşmerkezli eğri kontur (`--line`).
 - **Hap kontrol:** buton, chip, toast 999px radius; yükseklik 48px (dokunma güvenli).
 - **Tek yön gölge:** `0 14px 30px -18px rgba(76,58,34,.45)`; yalnız aşağı, negatif yayılım ile yumuşak.
@@ -45,101 +45,124 @@ Bedeli: yoğun tablo ve panel ekranlarında bu dil ağır kalır; ekran başına
 - **Mor accent:** `#5f4a8a` yalnız eylem/seçim; accent üstü metin `#f7f1e4`.
 - **Bölge chip'i:** çerçeve-only hap, 10px mono büyük harf `0.18em` — erg · reg · hamada · vaha · tuzla.
 - **Kum grain:** `--grain: .05`, sayfa zemininde ince doku; fotoğrafın üstünde kullanılmaz.
+- **Typography:** Cormorant Garamond (display) + Jost (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#5f4a8a`; neutral scale `#f0e5cf` → `#241f18`.
+- **Radius:** `24px` / `44px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f0e5cf` | kum zemini | kart zemini |
-| `--bg-2` | `#e6d9be` | gölgeli kum bandı | birincil buton |
-| `--surface` | `#faf4e6` | kart, form, tablo | sayfa zemini |
-| `--surface-2` | `#efe4cc` | başlık satırı, hover, chip zemini | metin zemini |
-| `--ink` | `#241f18` | başlık, gövde metni | dekoratif dolgu |
-| `--ink-soft` | `#5a4f3e` | ikincil metin, açıklama | accent dolgu üstü |
-| `--ink-faint` | `#857a62` | etiket, eksen, dekoratif ayırıcı | gövde, etkileşimli metin |
-| `--accent` | `#5f4a8a` | birincil eylem, seçim, vurgu | dekoratif dolgu |
-| `--accent-ink` | `#f7f1e4` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(36,31,24,.16)` | kart çerçevesi, ayırıcı | metin |
+1. Kumul eğrisi dili: kart ve görsel köşeleri 24/44px, buton ve chip hap (999px)
+2. Gölge yalnız alta doğru uzun ve yumuşak; yukarı ışık, iç gölge yok
+3. Her ölçüm birimle ve mono: sıcaklık °C, rüzgâr km/s, yağış mm
+4. Bölge chip'i her listede: erg · reg · hamada · vaha · tuzla
+5. Gövde Jost 16px/1.66, başlık Cormorant Garamond 300 — ağırlıkla değil puntoyla hiyerarşi
+6. Sıcak kum zemini + mor accent: accent yalnız eylem/seçim, ikinci sıcak vurgu yok
 
-- Ölçülen kontrast: `ink/bg` **13.09:1** · `ink-soft/bg` **6.41:1** · `accent-ink/accent` **6.59:1** · `ink-faint/bg` **3.39:1** · accent metin olarak bg'ye **5.93:1**.
-- Tek vurgu kuralı: mor accent yalnız eylem/seçim/vurgu; durumlar `--ok` (koyu zeytin), `--warn` (hardal), `--danger` (koyu kiremit) — yalnız etiket ve nokta.
-- Yasak kombinasyon: mor accent yanında ikinci doygun renk; accent üstünde `--ink-soft`; `--ink-faint` gövde metni; turuncu accent.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f0e5cf` | page background | as a card background |
+| `--bg-2` | `#e6d9be` | partition divider floor, table top | button background |
+| `--surface` | `#faf4e6` | kart, input, modal | full-page background |
+| `--surface-2` | `#efe4cc` | passive chip, hover background | primary button |
+| `--ink` | `#241f18` | title, body, icon | large background |
+| `--ink-soft` | `#5a4f3e` | secondary text, description | — |
+| `--ink-faint` | `#857a62` | decorative label, separator text | interactive text |
+| `--accent` | `#5f4a8a` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f7f1e4` | text above accent | non-accent background |
+| `--line` | `rgba(36,31,24,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Cormorant Garamond | 58px | 300 | 1.00 | 0.01em |
-| H2 | Cormorant Garamond | 30px | 300 | 1.12 | 0.02em |
-| H3 | Jost | 20px | 600 | 1.3 | 0.01em |
-| Gövde | Jost | 16px | 400 | 1.66 | 0 |
-| Etiket / mono | IBM Plex Mono | 10px | 400 | 1.35 | 0.22em, büyük harf |
-| Ölçüm / tablo | IBM Plex Mono | 13px | 400 | 1.45 | 0.04em, tabular |
+- Measured contrast: `ink/bg` **13.09:1** · `ink-soft/bg` **6.41:1** · `ink-faint/bg` **3.39:1 (decorative)** · `accent-ink/accent` **6.59:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.9 (16 → 30 → 58); kullanılan basamaklar: 10 · 12 · 13 · 16 · 20 · 30 · 58 · (mobil 32).
-- Ölçü önerisi: `h1 { font-size: clamp(32px, 5.2vw, 58px); font-weight: 300 }`.
-- Gövde metni maksimum satır uzunluğu: 58ch; lede 46ch'te kırılır.
-- Ağırlık kuralı: Cormorant 300 (500 yalnız alıntı), Jost 400/600, mono 400. 700 ve üstü yok; italik yalnız tek vurgu sözcüğünde.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Cormorant Garamond) | 32px (mobile 32px) | 400 | 1.08 | -0.02em |
+| H2 | same | 30px | 600 | 1.2 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 · hero 5/7, içerik 8/4 eğimi |
-| Gutter | 32px |
-| Container genişliği | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 üstü 12 kolon · 768–1200 8 kolon · 768 altı tek kolon, tablo karta döner |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına en fazla 2 asimetrik blok (hero 5/7 + tek 8/4 bölüm).
-- Bölüm ritmi: 72px masaüstü / 44px mobil; bölümler arasında çizgi yok, yalnız boşluk.
-- Kart içi 28px padding; tablo satırı 44px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | kum zemini, gölgeli bant |
-| Kart | `--surface` + 1px `--line` | `var(--shadow)` | panel, kart, tablo |
-| Yüzen katman | `--surface` + 1px `--line` | `var(--shadow)` + 0 40px 80px -50px | modal, açılır menü |
-| Seçili | `--surface-2` + `--shadow-hard` | 1px koyu halka | seçili kart |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)` (kum üstünde neredeyse görünmez); seçili durumda 1px `--shadow-hard`.
-- Derinlik nereden gelir: yalnız aşağı yönlü uzun gölge + zemin tonu; ışık/parlama yok.
-- Radius: `--radius` 24px (input, küçük kart), `--radius-lg` 44px (kart, modal); buton/chip/toast 999px. 16px altı köşe yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 48px | 12px 26px | 999px | 13px/600 Jost büyük harf | `--accent` + `--accent-ink`, `var(--shadow)` | hover %94 · active 2px aşağı · focus 2px accent halka + 4px offset · disabled %45 · loading yarım ay |
-| Buton (ikincil) | 48px | 12px 24px | 999px | 13px/600 Jost | şeffaf + 1px `--ink` | hover `--surface-2` · focus accent halka |
-| Input | 48px | 0 20px | 24px | 15px Jost | `--surface` + 1px `--line` | focus accent halka · filled sağa hizalı + mono birim · error danger · disabled %45 |
-| Kart | — | 28px | `--radius-lg` | başlık 30px Cormorant | `--surface` + 1px `--line`, `var(--shadow)` | hover gölge 4px uzar · seçili 1px koyu halka |
-| Chip (bölge) | 24px | 0 12px | 999px | 10px IBM Plex Mono | şeffaf + 1px `--line` | erg · reg · hamada · vaha · tuzla |
-| Nav (üst bar) | 64px | 0 32px | 0 | 12px Jost büyük harf | `--bg`, alt 1px `--line` | aktif 1px alt çizgi (metin altında, 6px boşluk) |
-| Tablo satırı | 44px | 8px 16px | 0 | gövde 16px + mono ölçüm | alt 1px `--line` | hover `--surface-2` · seçili accent sol nokta |
-| Modal | — | 32px | `--radius-lg` | başlık 30px Cormorant | `var(--shadow)` + derin alt gölge | geniş tek sütun, kapatma 48px |
-| Toast | 44px | 10px 20px | 999px | 14px Jost | `--surface`, sol 8px accent nokta | 4sn · alt ortada · hover'da durur |
-| Grafik | — | — | 0 | eksen 10px mono | alan %10 dolgu, çizgi 2px | ızgara yok, yalnız alt eksen |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `24px` (buton, input, chip), `44px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px` (accent dolgulu butonda `--accent-ink`).
-- Dokunma hedefi: 48×48px; chip 24px görsel, satır içi padding ile 44px'e tamamlanır.
-- Ölçüm satırı: değer sağa hizalı mono, birim üst etiket olarak mono 10px.
+## Bans
 
-## Görsel dil
+- 16px altı kart/buton radiusu, keskin köşe.
+- Yukarı gölge, iç gölge, cam/blur, gradient zemin.
+- Turuncu/kiremit accent veya ikinci doygun renk.
+- 700+ ağırlık, büyük harf gövde, mono gövde metni.
+- Sürekli esen kum animasyonu, bounce, yatay parallax.
+- Fotoğraf üstünde grain.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi, 24px ızgara, tam yuvarlak uç; güneş, kumul, vaha, damla |
-| Fotoğraf | kumul sırtı/çöl dokusu, alçak güneş, sıcak-nötr ton, max %55 alan, 44px radius çerçeve |
-| İllüstrasyon | yalnız kontur: kumul eğrisi, rüzgâr yönü, yükseklik profili (1px) |
-| Doku | ince kum grain `.05`; rüzgâr çizgisi yalnız hero görselinde |
-| Logo alanı | Cormorant 300 büyük harf, geniş aralık, sol üst 28px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 24px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 24px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 24px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 24px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 24px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 24px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 24px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.76:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | 5/7 hero: solda ince serif başlık + tek hap CTA, sağda kumul profili | `shots/01-page.png` |
 | Dashboard | orta | 3 KPI (sıcaklık, rüzgâr, nem) + bölge dağılımı + ölçüm tablosu | `shots/01-page.png` |
@@ -154,43 +177,33 @@ Bedeli: yoğun tablo ve panel ekranlarında bu dil ağır kalır; ekran başına
 | Hata | düşük | danger çerçeve + neden + sonraki adım | `shots/01-page.png` |
 | Profil / ayar | orta | birim sistemi (°C/°F), dil, uyarı eşikleri | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Köşe ikilisi: hap (999px) veya kumul (24/44px); arada keskin köşe yok.
-- Gölge yalnız aşağı doğru uzun ve yumuşak; yukarı ışık, iç gölge yok.
-- Accent mor; turuncu/kiremit hiçbir yerde kullanılmaz.
-- Her ölçüm birimle ve mono tabular; birim üst etiket olarak 10px.
-- Bölge chip'i listede her satırda; ekran başına en fazla 2 kart satırı + 1 tablo.
-- Başlık Cormorant 300, gövde Jost 400; hiyerarşi punto ile.
+## Accessibility
 
-## Yasaklar
-- 16px altı kart/buton radiusu, keskin köşe.
-- Yukarı gölge, iç gölge, cam/blur, gradient zemin.
-- Turuncu/kiremit accent veya ikinci doygun renk.
-- 700+ ağırlık, büyük harf gövde, mono gövde metni.
-- Sürekli esen kum animasyonu, bounce, yatay parallax.
-- Fotoğraf üstünde grain.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 13.09:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.41:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.39:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.59:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.76:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 88.5 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
-- Gövde ≥ 4.5:1, büyük metin ≥ 3:1; ölçülen en düşük etkileşimli çift 6.41:1 (`ink-soft/bg`).
-- `--ink-faint` 3.39:1 — 12px altı yalnız etiket/eksen; gövde metni olarak kullanılmaz.
-- Mor accent metin olarak 5.93:1, dolgu üstünde 6.59:1 — ikisi de geçer; accent'te 13px altı metin kullanılmaz.
-- Odak görünürlüğü: kum zemininde 2px mor halka (5.93:1) + 3px offset; mor dolgulu butonda `--accent-ink` halka.
-- Durum yalnız renkle verilmez: bölge chip'i metin; uyarı noktası + etiket.
-- 390px'te tablo karta döner, ölçüm birimi üst etiket olur; yatay taşma yok.
-- `prefers-reduced-motion` açıkken giriş, pin/scrub ve gölge uzaması durur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Kremsi şablon" hissi | her yüzey aynı kum tonu | `--surface` iki ton açık + tek yön gölge |
 | Kontrast düşük | `--ink-faint` gövdeye kullanılmış | gövde `--ink`/`--ink-soft` |
 | Mor "yapıştırma" görünüyor | accent dekorasyon olarak | accent yalnız eylem/seçim |
@@ -199,30 +212,30 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Mobilde taşıyor | 32px gutter | 16px'e iner, tablo karta döner |
 | Keskin köşe sırıtıyor | 16px altı radius | hap veya 24/44 kullan |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `japandi` — sakin boşluk ve düşük kontrast; aynı ürünün içerik bölümlerinde eş.
-- **Uyumlu:** `ethereal` — yumuşak geçişler; onboarding/duygusal bölümlerde tamamlayıcı.
-- **Uyumlu:** `editorial-design` — uzun okuma ve serif başlık; blog/atlas yazılarında eş.
-- **Yasak:** `pixel-art` — keskin piksel köşeleri kumul radiusuyla çelişir.
-- **Yasak:** `cyberpunk` — neon çok renk, tek mor accent kuralını yok eder.
-- **Yasak:** `neumorphism` — iç gölge, tek yön gölge fiziğini bozar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `japandi` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `ethereal` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `pixel-art` | Two different ornamental languages compete on the same screen |
+| Mixing | `cyberpunk` | Two different ornamental languages compete on the same screen |
+| Mixing | `neumorphism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.unccd.int/ | kuraklık/çölleşme metrikleri ve bölge terminolojisi |
-| https://www.nps.gov/deva/index.htm | kumul, tuzla ve sıcaklık verisi sunumu |
-| https://whc.unesco.org/en/list/ | çöl peyzajı künyesi ve koruma statüsü etiketleri |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | sıcak kum zemininde metin kontrastı |
-| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | 1px çerçeve ve grafik çizgisi kontrastı |
+| Source | for what |
+| --- | --- |
+| https://www.unccd.int/ | UNCCD · çölleşme sözleşmesi — kuraklık/çölleşme metrikleri ve bölge terminolojisi |
+| https://www.nps.gov/deva/index.htm | NPS · Death Valley — kumul, tuzla ve sıcaklık verisi sunumu |
+| https://whc.unesco.org/en/list/ | UNESCO World Heritage · liste — çöl peyzajı künyesi ve koruma statüsü etiketleri |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast (Minimum) — sıcak kum zemininde metin kontrastı |
+| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | www.w3.org — 1px çerçeve ve grafik çizgisi kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Desert Sand (styles/82-desert-sand/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="desert-sand"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Cormorant Garamond 300) yalnız H1/H2 (58px/1.0); --font-body (Jost 400/600) gövde 16px/1.66;
@@ -235,16 +248,15 @@ Hareket: enter 1.15s cubic-bezier(.16,.62,.24,1) 40px stagger 0.16 · scroll top
   pin açık scrub 1.35 +180% · hover 420ms scale 1.038; prefers-reduced-motion zorunlu.
 Yasak: keskin köşe, yukarı/iç gölge, cam/blur, gradient, turuncu accent, bounce, yatay parallax.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Köşeler hap veya 24/44; keskin köşe yok.
-- [ ] Gölge yalnız aşağı yönlü; iç gölge/parlama yok.
-- [ ] Accent mor; turuncu hiçbir yerde yok.
-- [ ] Ölçümler birimle ve mono tabular.
-- [ ] Kontrast: gövde ≥ 4.5:1, accent üstü ≥ 4.5:1, `--ink-faint` yalnız dekoratif.
-- [ ] 390px'te taşma yok; dokunma hedefi ≥ 44px.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Desert Sand (desert-sand) · family: Nature & Organic (76–85)
+Token: --bg #f0e5cf · --surface #faf4e6 · --ink #241f18 · --accent #5f4a8a · --line rgba(36,31,24,.16)
+Radius: 24px / 44px · Typography: Cormorant Garamond / Jost / IBM Plex Mono
+Required: Kumul eğrisi dili: kart ve görsel köşeleri 24/44px, buton ve chip hap (999px) · Gölge yalnız alta doğru uzun ve yumuşak; yukarı ışık, iç gölge yok · Her ölçüm birimle ve mono: sıcaklık °C, rüzgâr km/s, yağış mm
+Banned: 16px altı kart/buton radiusu, keskin köşe. · Yukarı gölge, iç gölge, cam/blur, gradient zemin. · Turuncu/kiremit accent veya ikinci doygun renk.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -255,15 +267,25 @@ Yasak: keskin köşe, yukarı/iç gölge, cam/blur, gradient, turuncu accent, bo
   --ink: #241f18; --ink-soft: #5a4f3e; --ink-faint: #857a62;
   --accent: #5f4a8a; --accent-ink: #f7f1e4;
   --line: rgba(36,31,24,.16);
+  --danger: #cc1b11;
+  --danger-ink: #ffffff;
+  --ok: #007830;
+  --ok-ink: #ffffff;
+  --warn: #ab4a00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 24px; --radius-lg: 44px;
-  --shadow: 0 14px 30px -18px rgba(76,58,34,.45); --shadow-hard: 0 0 0 1px rgba(36,31,24,.22);
-  --font-display: "Cormorant Garamond", Georgia, serif;
+  --shadow: 0 14px 30px -18px rgba(76,58,34,.45); --shadow-hard: none;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif;
   --font-body: "Jost", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: .01em; --blur: 0px; --grain: .05;
-  --danger: #8f2f22; --danger-ink: #fbf0e6;
-  --ok: #46603a; --warn: #8a5a1e;
+  --tracking: .01em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `styles/82-desert-sand/token-block.css` ve (integrator aktardığında) `kit/tokens.css` içinde `[data-theme="dark"][data-style="desert-sand"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

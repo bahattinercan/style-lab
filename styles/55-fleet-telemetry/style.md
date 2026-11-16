@@ -1,141 +1,168 @@
 # 55 · Fleet Telemetry
 
-> **Bir cümlede:** Binlerce cihazın bağlantısını kapsama ızgarası ve tek satırlık cihaz kimliğiyle okuyan; accent'in yalnız "bağlantı aktif" anlamına geldiği filo konsolu.
+> **In one sentence:** Binlerce cihazın bağlantısını kapsama ızgarası ve tek satırlık cihaz kimliğiyle okuyan; accent'in yalnız "bağlantı aktif" anlamına geldiği filo konsolu.
 
 | | |
 |---|---|
-| **Hissiyat** | tetikte, teknik, sakin, izleyen |
-| **En iyi** | IoT filo kontrolü, cihaz filosu izleme, saha sensör ağı, uzaktan bakım/kumanda konsolu |
-| **Kaçın** | lüks vitrin, editoryal içerik, çocuk/wellness ürünü — sürekli sayı "gürültü" olarak okunur |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.07:1) |
-| **Aile** | Veri & Gösterge (46–55) · **Token** | `styles/55-fleet-telemetry/tokens.json` → `[data-style="fleet-telemetry"]` |
-| **Kompozisyon** | `product` · `rail` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | tetikte, teknik, sakin, izleyen |
+| **Best for** | IoT filo kontrolü, cihaz filosu izleme, saha sensör ağı, uzaktan bakım/kumanda konsolu |
+| **Avoid** | lüks vitrin, editoryal içerik, çocuk/wellness ürünü — sürekli sayı "gürültü" olarak okunur |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Data & Indicator (46–55) · **Token** | `kit/tokens.css` → `[data-style="fleet-telemetry"]` |
+| **Composition** | `product` · `rail` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Fleet Telemetry, bir **cihaz filosunun bağlantı durumunu** tek ekranda tutar: her cihaz tek satırda kimlik + durum kodu + sinyal çubuğu + son görülme saati gösterir; üstte kapsama ızgarası (20px nokta/hex deseni) hangi hücrelerde cihaz olduğunu, altta telemetri şeridi (ticker) son uplink olaylarını akıtır. Tipografi telegraphic'tir: display **Share Tech Mono** (tek ağırlık), gövde Inter, sayı JetBrains Mono.
 
 Üç kurucu karar: (1) **kapsama önce** — kullanıcı önce "hangi bölgede cihaz var/yok" sorusunu görür, sonra tek tek cihazları; ızgara deseni dekor değil, kapsama haritasıdır. (2) **satır = cihaz** — her cihaz tek satırda beş alan taşır (kimlik, durum, sinyal, batarya, son görülme); kart yığını yoktur, yoğunluk 36px satırdadır. (3) **tek accent tek anlam** — ahududu accent yalnız "bağlantı aktif / seçili cihaz"; uyarı `--warn`, arıza `--danger`, uykuda `--ink-soft`.
 
 Bedeli: bu stil bir "vitrin" değildir; pazarlama sayfasında büyük başlık ve geniş boşluk beklenmemelidir. Dengeli görünmesini sağlayan tek şey **hizalı sütunlar ve tek renk disiplini**.
 
-### Ne değildir
+### What is not
 - **Telemetry Grid (46) değildir:** 46 açık gri zeminde eşit hairline metrik hücreleri (12 tile, 24px ızgara, Chakra Petch) kurar ve **teal** accent kullanır; Fleet'te kapsama nokta ızgarası + 36px cihaz satırı + **ahududu** accent + Share Tech Mono vardır, radius 0/2'dir (46'da 4/10).
 - **Machined Metal Panel (57) değildir:** 57 fırçalanmış metal dokusu, Michroma display ve bakır accent ile donanım paneli estetiğidir; Fleet'te doku yoktur (`--grain: .02`), accent ahudududur ve kapsama ızgarası vardır.
 - **MES Production Line (59) değildir:** 59 üretim hattı nabzını yeşil accent + JetBrains Mono display ile verir; Fleet'te display Share Tech Mono, accent ahududu, dil "filo/bağlantı"dır (hat/istasyon değil).
 - **Maintenance CMMS (63) değildir:** 63 koyu zeminli iş emri kâğıdıdır (Chakra Petch + turuncu); Fleet açık serin beyazdır.
 
-### Nereden gelir
+### Where it comes from
 Şebeke/haberleşme operasyon merkezleri (NOC), LoRaWAN/LTE-M cihaz konsolları (The Things Network, Chirpstack), filo telemetri panelleri (Samsara, Geotab) ve endüstriyel HMI ölçütleri (ISA-101). Bugün yeniden kullanılmasının nedeni: IoT filolarında asıl sorunun "kaç cihaz var" değil **"hangisi konuşmuyor"** olması. Klişeye dönüşmemesi için korunacak detay: her satırda son görülme saatinin bulunması ve kapsama ızgarasının gerçek veriyle dolması — süs olarak nokta deseni basmak stili bozar.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin serin beyaz; üstte 20px nokta/hex kapsama ızgarası var.
 2. Satırlar 36px ve beş alanlı: kimlik (mono), durum kodu, sinyal çubuğu, batarya, saat.
 3. Display telegraphic mono (Share Tech Mono); başlık 36px, geniş harf aralıklı.
 4. Accent ahududu-magenta ve yalnız "aktif/seçili" anlamında; başka yerde görünmüyor.
 5. Altta tek satır telemetri şeridi (ticker) akıyor, duraklat düğmesi var.
 
-## Görsel imza
+## Visual signature
 - **Kapsama ızgarası:** 20px aralıklı 1.4px nokta, `--line` ile; cihaz olan hücreler accent, boş hücreler nötr.
 - **Cihaz satırı:** 36px yükseklik; kimlik 12px mono 0.04em, durum 11px büyük harf + nokta, sinyal 4 çubuk, saat 11px mono sağa hizalı.
 - **Durum kodu:** üç harf + nokta + renk (ÇEVRİMİÇİ / BEKLEMEDE / ARIZA); nokta 6px, yalnız `currentColor`.
 - **Ticker:** 28px yükseklik, 1px üst çizgi, 12px mono; duraklat/oynat ve `prefers-reduced-motion` desteği zorunlu.
-- **Radius:** `--radius` 0px (kontrol, chip, input — keskin pano köşesi), `--radius-lg` 2px (kart, panel, modal).
 - **Gölge:** tek katman `0 6px 14px -12px`; kenarlık her zaman 1px `--line`.
 - **Doku:** `--grain: .02` (pano yüzeyi); tarama çizgisi, neon ve glow yok.
+- **Typography:** Share Tech Mono (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#a8386f`; neutral scale `#f1f4f7` → `#101820`.
+- **Radius:** `0px` / `2px`; Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f1f4f7` | sayfa zemini (serin beyaz) | kart zemini |
-| `--bg-2` | `#e6ebf0` | bölüm ayırıcı, kapsama ızgarası zemini | cihaz satırı |
-| `--surface` | `#ffffff` | panel, cihaz listesi, kart | sayfa zemini |
-| `--surface-2` | `#edf1f5` | başlık şeridi, zebra satır, chip | seçili cihaz |
-| `--ink` | `#101820` | metin, değer, başlık | dekoratif dolgu |
-| `--ink-soft` | `#47555f` | ikincil metin, uykuda cihaz | arıza metni |
-| `--ink-faint` | `#7b8892` | yalnız dekoratif etiket/kapsama noktası | etkileşimli metin |
-| `--accent` | `#a8386f` | aktif bağlantı, seçili cihaz, birincil eylem | dekorasyon, ikinci durum |
-| `--accent-ink` | `#ffffff` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(16,24,32,.13)` | tüm kenarlık ve satır ayırıcı | metin |
+1. Kapsama ızgarası: 20px hex/nokta deseni; cihaz kimliği + sinyal + son görülme tek satır
+2. Her cihaz satırı: kimlik (mono), durum LED'i, sinyal çubuğu, son görülme saati
+3. Durum üç harfli kod + renk: ÇEVRİMİÇİ / BEKLEMEDE / ARIZA
+4. Alt telemetri şeridi (ticker) ekran başına bir kez, duraklatılabilir
+5. Tüm sayılar mono tabular; birim her değerin yanında
+6. Serin beyaz zemin + tek ahududu accent; accent yalnız "bağlantı aktif" anlamına gelir
 
-- Ölçülen kontrast: `ink/bg` = **16.21:1** · `ink-soft/bg` = **6.96:1** · `accent-ink/accent` = **6.07:1** · `ink-faint/bg` = **3.29:1**.
-- Tek vurgu kuralı: accent yalnız "aktif bağlantı / seçili cihaz / birincil eylem". Arıza `--danger`, uyarı `--warn`, çevrimiçi durum `--ok` (durum noktaları), accent bunların yerine geçmez.
-- Yasak kombinasyon: accent ile `--danger`'ı aynı satırda iki farklı anlam için kullanmak; amber/turuncu accent (bu stil ahududu kullanır).
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f1f4f7` | page background | as a card background |
+| `--bg-2` | `#e6ebf0` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#edf1f5` | passive chip, hover background | primary button |
+| `--ink` | `#101820` | title, body, icon | large background |
+| `--ink-soft` | `#47555f` | secondary text, description | — |
+| `--ink-faint` | `#7b8892` | decorative label, separator text | interactive text |
+| `--accent` | `#a8386f` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `rgba(16,24,32,.13)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Share Tech Mono (`--font-display`) | 36px / mobil 22px | 400 | 1.12 | `--tracking` 0.03em |
-| H2 | Share Tech Mono | 23px | 400 | 1.24 | 0.02em |
-| H3 | Inter | 18px | 600 | 1.3 | 0 |
-| Gövde | Inter (`--font-body`) | 14px | 400 | 1.5 | 0 |
-| Etiket / kimlik / saat | JetBrains Mono (`--font-mono`) | 11–12px | 400/600 | 1.44 | 0.14em (etiket) |
+- Measured contrast: `ink/bg` **16.21:1** · `ink-soft/bg` **6.96:1** · `ink-faint/bg` **3.29:1 (decorative)** · `accent-ink/accent` **6.07:1**.
+- Status colors are not derived from accent, but come from separate semantic tokens (--ok/--danger/--warn); accent is the action color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.35; kullanılan basamaklar: 11 · 12 · 14 · 18 · 23 · 36.
-- Ölçü önerisi: `h1 { font-size: clamp(22px, 2.8vw, 36px); }`
-- Gövde metni maksimum satır uzunluğu: 74 ch (konsol satırları geniş olabilir).
-- Ağırlık kuralı: Share Tech Mono tek ağırlık (400) — sentetik kalınlaştırma yasak; gövdede 400/600.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Share Tech Mono) | 22px (mobile 22px) | 600 | 1.12 | -0.02em |
+| H2 | same | 23px | 600 | 1.22 | -0.015em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 14px | 400 | 1.55 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.16em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 12px |
-| Container genişliği | 1320px (konsol ekranlarında tam genişlik) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1280 cihaz ızgarası 4 sütun · 768 2 sütun · 390 tek sütun, satır 44px'e çıkar |
+- Dense display: 14px body, 13px table, 10.5px mono label. The line height cannot be lower than 1.55.
+- Measure: 72ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: harita/kapsama paneli 8/4; ekran başına bir asimetri, cihaz listesi tam genişlik.
-- Bölüm ritmi: art arda en fazla 2 yoğun blok; üçüncü blok özet şerit (tek satır KPI) olur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, kapsama ızgarası |
-| Kart | `--surface` | yok | cihaz listesi, panel |
-| Yüzen katman | `--surface` + `--shadow` | `0 6px 14px -12px rgba(16,19,23,.5)` | cihaz detay paneli, modal |
+- 8 columns of content + 4 columns of panels; tables full width. In-card padding 16px, line 40px.
+- Section vertical space 44px desktop, 28px mobile; card padding 16px.
 
-- Kenarlık formülü: `1px solid var(--line)`; panel başlığında ek `--surface-2` şerit.
-- Derinlik nereden gelir: kapsama ızgarası + başlık şeridi + 1px çizgi; cam/blur/bevel yok.
-- Radius: `--radius` 0px (kontrol, satır, chip), `--radius-lg` 2px (kart, panel, modal); 2px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 36px | 0 14px | `--radius` | 13px/600 mono 0.04em | `--accent` zemin, `--accent-ink`, gölge yok | hover %88 · active 1px · focus 2px accent · disabled %45 kesikli · loading "…" |
-| Buton (ikincil) | 36px | 0 14px | `--radius` | 13px/600 | `--surface`, 1px `--line`, `--ink` | hover `--surface-2` |
-| Input | 36px | 0 10px | `--radius` | 12px mono | `--surface`, 1px `--line` | focus 2px accent · filled `--bg-2` · error `--danger` + 2px sol şerit · disabled %45 |
-| Kart | içerik | 16px | `--radius-lg` | — | `--surface`, 1px `--line`, gölge yok | başlıkta `--surface-2` şerit |
-| Chip / badge | 22px | 0 8px | `--radius` | 11px/600 mono 0.08em | `--surface-2`, 1px `--line` | aktif: accent zemin |
-| Nav | 48px | 0 20px | 0 | 13px mono | `--bg`, alt 1px `--line` | aktif sekme 2px accent alt çizgi |
-| Tablo satırı | 36px | 6px 10px | 0 | 12px mono kimlik + 11px saat | alt 1px `--line`, zebra `--surface-2` | hover `--surface-2` · seçili sol 3px accent |
-| Modal / sheet | — | 18px | `--radius-lg` | 14px/400 | `--surface`, 1px `--line`, `--shadow` | cihaz detayı yan panel; başlıkta durum noktası + kimlik |
-| Toast | 36px | 8px 12px | `--radius` | 12px mono | `--surface-2`, 1px `--line` | 4s, ticker'ın üstünde tek satır |
-| Grafik paleti | — | — | — | — | `--accent` · `--ink-soft` · `--ok` · `--warn` (en fazla 4) | sparkline 28px yüksek, eksen çizgisi yok |
+- Surfaces are smooth; separation with 1px edge and background tone. Reference line in graphs --line.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; serin beyaz zeminde 6.07:1.
-- Dokunma hedefi: en az 44×44px; 36px satır mobilde 44px'e çıkar, ticker duraklat düğmesi 44×44px'dir.
+## Bans
 
-## Görsel dil
+- Koyu cyber/neon konsol paleti (bu stil açık, serin beyaz).
+- Amber/turuncu accent (başka endüstriyel stillerle karışır; bu stil ahududu kullanır).
+- 2px üzeri radius veya yuvarlak pill kontrol (pano köşeleri keskin kalır).
+- Cam blur, gradient panel, glow, bevel.
+- Sürekli dönen gösterge, 3B animasyon, saniyede 1'den fazla flash.
+- Durumu yalnız renkle kodlamak; saat olmadan "son görülme" göstermek.
+- Süs illüstrasyon ve dekoratif ikon.
+- Gradient for decoration.
+- More than five color series.
+- Animated counter.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, 16px ızgara; sinyal çubuğu, fiş, batarya, termometre |
-| Fotoğraf | Yok — cihaz fotoğrafı yerine kapsama ızgarası ve satır verisi |
-| İllüstrasyon | Yok; telemetri çizgileri ve durum noktaları görsel dili kurar |
-| Doku | `--grain: .02` (pano yüzeyi); tarama çizgisi ve neon yok |
-| Logo alanı | Kelime logosu Share Tech Mono 400, 0.08em; işaret 12px durum noktası, sol üst 16px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.07:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 16px box; full of status icons |
+| photo | There is no photo on the data screen; single illustration in empty case |
+| illustration | Lonely empty/failed single line illustration |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | Solda tek cümle + 2 CTA, sağda kapsama ızgarası + 3 cihaz satırı önizleme | `shots/01-page.png` |
 | Dashboard | yüksek | Üstte kapsama paneli (8/4), altta cihaz tablosu + ticker | `shots/01-page.png` |
@@ -150,46 +177,33 @@ Bedeli: bu stil bir "vitrin" değildir; pazarlama sayfasında büyük başlık v
 | Hata | düşük | Satırda `--danger` nokta + durum kodu + yeniden dene | `shots/01-page.png` |
 | Profil / ayar | orta | Ağ profili, ölçüm aralığı, alarm eşiği, ticker tercihi | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Kapsama ızgarası ekranın üst yarısında görünür: 20px nokta deseni, cihaz olan hücreler accent.
-- Her cihaz satırı beş alan taşır: kimlik (mono), durum kodu (üç harf), sinyal (4 çubuk), batarya, son görülme (saat).
-- Durum üçlü kodlanır: nokta + üç harfli kod + renk; renk tek başına anlam taşımaz.
-- Ticker ekran başına bir kez, duraklat/oynat düğmeli ve `prefers-reduced-motion`'da durur.
-- Display Share Tech Mono yalnız başlıkta (400); gövde Inter, sayı JetBrains Mono.
-- Accent yalnız "aktif bağlantı / seçili cihaz"; arıza/uyarı için `--danger`/`--warn`.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.21:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.96:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.29:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.07:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.07:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 97.8 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Koyu cyber/neon konsol paleti (bu stil açık, serin beyaz).
-- Amber/turuncu accent (başka endüstriyel stillerle karışır; bu stil ahududu kullanır).
-- 2px üzeri radius veya yuvarlak pill kontrol (pano köşeleri keskin kalır).
-- Cam blur, gradient panel, glow, bevel.
-- Sürekli dönen gösterge, 3B animasyon, saniyede 1'den fazla flash.
-- Durumu yalnız renkle kodlamak; saat olmadan "son görülme" göstermek.
-- Süs illüstrasyon ve dekoratif ikon.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük etkileşimli çift: `accent-ink/accent` = 6.07:1; gövde 16.21:1; `ink-faint/bg` 3.29:1 yalnız dekoratif (kapsama noktası, etiket).
-- `--ink-faint` kapsama noktası ve dekoratif etiket için; etkileşimli metin değil.
-- Durum üçlü kodlanır (nokta + kod + renk); sinyal çubuğu ayrıca `aria-label` ile "3/4" okunur.
-- Ticker `aria-live="off"` + duraklat düğmesi (WCAG 2.2.2); reduced-motion'da hiç akmaz.
-- Odak halkası 2px accent + 2px offset; serin beyaz zeminde 6.07:1.
-- 390px'te cihaz satırı 44px, kimlik tek satırda kesilir (`text-overflow: ellipsis`) ama saat görünür kalır.
-- `prefers-reduced-motion` açıkken ticker, durum nabzı ve pin scrub durur.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "46 ile aynı" hissi | açık gri zemin + eşit hücreler | kapsama nokta ızgarası + 36px cihaz satırı; accent ahududuya sabit |
 | Hangi cihaz susmuş okunmuyor | saat sütunu atlanmış | sağa hizalı mono "son görülme" her satırda zorunlu |
 | Renk körlüğünde ayırt edilemiyor | yalnız renkli nokta | üç harfli durum kodu + nokta + renk |
@@ -197,29 +211,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Ticker baş ağrıtıyor | durdurulamıyor | duraklat düğmesi + reduced-motion'da dur |
 | Mobilde kesiliyor | 5 alan sığdırılmış | saat sabit, kimlik ellipsis, batarya ikon-only |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `utility` — aynı sakin ürün dili; ayar ve dokümantasyon bölümlerinde ortak.
-- **Uyumlu:** `bento-grid` — kapsama panelini hücreye oturtmak için.
-- **Uyumlu:** `terminal-ui` — log/komut satırı bölümlerinde terminal estetiği ile yan yana çalışır.
-- **Yasak:** `claymorphism` — yumuşak gölge ve 999px radius satır yoğunluğunu bozar.
-- **Yasak:** `memphis` — dekoratif geometri kapsama ızgarasını anlamsızlaştırır.
-- **Yasak:** `vaporwave` — neon palet durum kodlarının okunurluğunu düşürür.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `bento-grid` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `terminal-ui` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `memphis` | Two different ornamental languages compete on the same screen |
+| Mixing | `vaporwave` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.thethingsnetwork.org/docs/ | cihaz kimliği, sinyal ve son görülme düzeni |
-| https://lora-alliance.org/resource_hub/ | uplink/downlink ve kapsama göstergesi dili |
-| https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards | alarm ve renk kullanım ölçütü |
-| https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html | ticker için duraklat ölçütü |
+| Source | for what |
+| --- | --- |
+| https://www.thethingsnetwork.org/docs/ | The Things Network · console — cihaz kimliği, sinyal ve son görülme düzeni |
+| https://lora-alliance.org/resource_hub/ | LoRa Alliance · device telemetry — uplink/downlink ve kapsama göstergesi dili |
+| https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards | ISA-101 · HMI design standard — alarm ve renk kullanım ölçütü |
+| https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html | www.w3.org — ticker için duraklat ölçütü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Fleet Telemetry (styles/55-fleet-telemetry/style.md, tokens.json)
 Token: sadece [data-style="fleet-telemetry"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: display Share Tech Mono 400 (telegraphic, yalnız h1/h2), gövde Inter 400/600,
@@ -233,16 +247,15 @@ Hareket: enter .88s cubic-bezier(.2,.8,.2,1) y14 stagger .06; scroll top 80% .6s
   1 pin scrub .9 (+80%); hover 130ms scale 1.015; ticker duraklatılabilir; reduced-motion zorunlu.
 Yasak: koyu cyber palet, amber accent, 2px üstü radius, cam/gradient, saniyede 1+ flash.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Kapsama ızgarası görünür ve gerçek veriyle dolu.
-- [ ] Her satırda 5 alan var; saat sağa hizalı ve görünür.
-- [ ] Durum üçlü kodlanmış (nokta + kod + renk).
-- [ ] Ticker duraklatılabilir; reduced-motion'da duruyor.
-- [ ] Kontrast: gövde 16.21:1, accent üstü 6.07:1.
-- [ ] 390px'te taşma yok, saat görünür.
-- [ ] Hiçbir renk/radius hard-coded değil.
+Style: Fleet Telemetry (fleet-telemetry) · family: Data & Indicator (46–55)
+Token: --bg #f1f4f7 · --surface #ffffff · --ink #101820 · --accent #a8386f · --line rgba(16,24,32,.13)
+Radius: 0px / 2px · Typography: Share Tech Mono / Inter / JetBrains Mono
+Required: Kapsama ızgarası: 20px hex/nokta deseni; cihaz kimliği + sinyal + son görülme tek satır · Her cihaz satırı: kimlik (mono), durum LED'i, sinyal çubuğu, son görülme saati · Durum üç harfli kod + renk: ÇEVRİMİÇİ / BEKLEMEDE / ARIZA
+Banned: Koyu cyber/neon konsol paleti (bu stil açık, serin beyaz). · Amber/turuncu accent (başka endüstriyel stillerle karışır; bu stil ahududu kullanır). · 2px üzeri radius veya yuvarlak pill kontrol (pano köşeleri keskin kalır).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -253,15 +266,25 @@ Yasak: koyu cyber palet, amber accent, 2px üstü radius, cam/gradient, saniyede
   --ink: #101820; --ink-soft: #47555f; --ink-faint: #7b8892;
   --accent: #a8386f; --accent-ink: #ffffff;
   --line: rgba(16,24,32,.13);
+  --danger: #d62a1d;
+  --danger-ink: #ffffff;
+  --ok: #008138;
+  --ok-ink: #ffffff;
+  --warn: #b55300;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
-  --shadow: 0 6px 14px -12px rgba(16,19,23,.5); --shadow-hard: 0 0 0 2px var(--line);
-  --font-display: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  --tracking: 0.03em; --blur: 0px; --grain: .02;
-  --danger: #a3201a; --danger-ink: #ffffff;
-  --ok: #1c6b45; --warn: #8a5a06;
+  --shadow: 0 6px 14px -12px rgba(16,19,23,.5); --shadow-hard: none;
+  --font-display: "Share Tech Mono", ui-monospace, monospace;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: 0.03em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `styles/55-fleet-telemetry/token-block.css` içinde `[data-theme="dark"][data-style="fleet-telemetry"]` olarak durur (10 renk anahtarı `palette.dark` ile birebir); `## Koyu mod` tablosu tek kaynak özetidir.

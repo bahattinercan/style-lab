@@ -1,143 +1,168 @@
 # 72 · Andean Textile
 
-> **Bir cümlede:** 4px adımlı basamak motifinin çözgü şeritleriyle birleştiği ve yalnız birincil yüzeyin 3px ofsetle kabardığı dokuma arayüzü.
+> **In one sentence:** 4px adımlı basamak motifinin çözgü şeritleriyle birleştiği ve yalnız birincil yüzeyin 3px ofsetle kabardığı dokuma arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | yüksek, dokunur, simetrik, sıcak-soğuk dengeli |
-| **En iyi** | zanaat/tekstil markası, kültür arşivi, ürün koleksiyonu vitrini, sergi kataloğu |
-| **Kaçın** | sürekli veri paneli, klinik form, oyun arayüzü — simetri ve süs katmanı taramayı yavaşlatır |
-| **Zorluk** | orta · **Erişilebilirlik** | iyi (gövde 15.12:1, accent üstü 8.06:1; faint 3.38:1 yalnız dekoratif) |
-| **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="andean-textile"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | yüksek, dokunur, simetrik, sıcak-soğuk dengeli |
+| **Best for** | zanaat/tekstil markası, kültür arşivi, ürün koleksiyonu vitrini, sergi kataloğu |
+| **Avoid** | sürekli veri paneli, klinik form, oyun arayüzü — simetri ve süs katmanı taramayı yavaşlatır |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Cultural & Regional (66–75) · **Token** | `kit/tokens.css` → `[data-style="andean-textile"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Andean Textile, And dokumasının (Paracas, Nazca, modern pallay) ekran karşılığıdır: **4px adımlı basamak motifi**, 8px aralıklı **çözgü şeritleri** ve **aynalı simetri**. Kurucu kararları üç tanedir. Birincisi **adım birimi**: basamak motifi daima 4px yüksekliğinde adımlarla çizilir; eğri, döndürme veya yuvarlatma yok. İkincisi **tek kabaran yüzey**: yalnız birincil kart ve birincil buton 3px ofset gölge (`--shadow-hard`) taşır — dokumanın iki katı kalınlığı gibi. Üçüncüsü **aynalı düzen**: bölümler iki eşit yarım + ortada şerit; ekran başına yalnız bir bölüm asimetriye çıkar.
 
 Kazandığı şey: **ağırlık ve ritim** — basamak motifinin tekrarı, ürün vitrinine müze kataloğu ciddiyeti verir. Feda ettiği şey: **hafiflik** — gölge tek yüzeyde, radius 4/12px, bölüm ritmi 64px; yoğun tablo ekranlarında simetri kararı yer israf eder.
 
-### Ne değildir
+### What is not
 - **West African Pattern (71) değildir:** 71 koyu zemin + altın **şerit dokuma** ve 8px/24px bant ritmi kullanır; 72 **açık kil zemin + karmin** ve **basamak** motifi; kart 12px radius (71'de 2px), birincil yüzeyde ofset gölge (71'de hiç gölge yok).
 - **Nordic Folk (66) değildir:** 66 bitkisel kıvrım ve madder kırmızısı taşır; 72'de kıvrım yok, motif **dik açılı basamak** ve accent **karmin/magenta**.
 - **Andalusian Azulejo (69) değildir:** 69 harç ızgarası + kobalt çini + Poiret One ile **döşeme**; 72 basamak şeridi + Fraunces ile **dokuma**.
 - **Bohemian (30) değildir:** Bohemian'da organik radius ve serbest doku var; 72'de tüm köşeler 4/12px ve basamak motifi ölçülü.
 - **"Krem zemin + kırmızı accent" jeneriği değildir:** accent karmine (`#8d2148`) ve tüm derinlik **ofset gölgeden** gelir; yumuşak gölge hiç kullanılmaz.
 
-### Nereden gelir
+### Where it comes from
 And dokuması (Peru–Bolivya) dört bin yıllık bir tekniktir: çözgü yüzlü dokuma, pamuk/alpaqa ipliği ve doğal boyar madde (koşineal → karmin). Motif dili **pallay** denilen basamaklı geometridir; her desen bir topluluğun imzasıdır. Dijitalde 2020'lerde kültür arşivleri ve zanaat markalarıyla geri döndü; CSS `repeating-linear-gradient` ile basamak motifi ölçeklenebilir biçimde kurulabildiği için görsel dosyası gerekmez. Klişeye dönüşmemesi için korunacak detay: **4px adım biriminin ve aynalı simetrinin bozulmaması**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Bölüm başlıklarında ya da ayırıcılarda 4px adımlarla inen-çıkan bir basamak bandı var.
 2. Kartların alt kenarında 4px'lik basamak şeridi, üstünde 8px çözgü çizgileri görünüyor.
 3. Yalnız bir kart "kabarmış" duruyor: 3px sağ-alt ofset gölge, blur yok.
 4. Düzen aynalı: iki eşit yarım + ortada dar şerit.
 5. Accent tek: karmin/magenta; gerisi kil beyazı, kil beji ve sıcak koyu metin.
 
-## Görsel imza
-1. **Basamak bandı:** 8px genişlikte iki diş (4px accent + 4px boşluk), 4px yükseklik; ayırıcıda 6px, kart altında 4px.
-2. **Çözgü şeritleri:** 8px aralıklı 1px çizgiler, %4–6 ink karışımı; yalnız zemin ve üst kenar bandında.
-3. **Tek ofset gölge:** `--shadow-hard: 3px 3px 0 rgba(26,22,32,.14)`; sadece birincil kart ve birincil butonda; basınca 0'a iner.
-4. **Aynalı simetri:** 2 eşit yarım + ortada 16–24px şerit; ekran başına 1 bölüm 7/5 asimetrik.
-5. **Fraunces display:** 38px, 500 ağırlık, `0.01em` tracking; başlıkta italik yok.
-6. **Tabular sayaç:** fiyat/aded Courier Prime 700, tabular; birim (`EUR`, `adet`) her zaman yazılı.
-7. **Hover dili:** 240ms'de zemin %90 accent karışımına döner, ölçek `1.014`; gölge büyümez, sadece 2px'e iner (basınç hissi).
+## Visual signature
+- **Basamak bandı:** 8px genişlikte iki diş (4px accent + 4px boşluk), 4px yükseklik; ayırıcıda 6px, kart altında 4px.
+- **Çözgü şeritleri:** 8px aralıklı 1px çizgiler, %4–6 ink karışımı; yalnız zemin ve üst kenar bandında.
+- **Tek ofset gölge:** `--shadow-hard: 3px 3px 0 rgba(26,22,32,.14)`; sadece birincil kart ve birincil butonda; basınca 0'a iner.
+- **Aynalı simetri:** 2 eşit yarım + ortada 16–24px şerit; ekran başına 1 bölüm 7/5 asimetrik.
+- **Fraunces display:** 38px, 500 ağırlık, `0.01em` tracking; başlıkta italik yok.
+- **Tabular sayaç:** fiyat/aded Courier Prime 700, tabular; birim (`EUR`, `adet`) her zaman yazılı.
+- **Hover dili:** 240ms'de zemin %90 accent karışımına döner, ölçek `1.014`; gölge büyümez, sadece 2px'e iner (basınç hissi).
+- **Typography:** Fraunces (display) + Nunito (body) + Courier Prime (mono label).
+- **Colour discipline:** a single accent `#8d2148`; neutral scale `#f1ece2` → `#1a1620`.
+- **Radius:** `4px` / `12px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f1ece2` | sayfa zemini (kil beyazı) | kart zemini |
-| `--surface` | `#fffdf8` | kart, panel, modal | sayfa zemini |
-| `--surface-2` | `#f7f2e8` | çip, ikincil buton, zebra | birincil eylem |
-| `--ink` | `#1a1620` | başlık, gövde, sayı | desen katmanı |
-| `--ink-soft` | `#4e4657` | etiket, açıklama, eksen | başlık |
-| `--ink-faint` | `#857c8f` | dekoratif: çözgü ipucu, dipnot | etkileşimli metin |
-| `--accent` | `#8d2148` | basamak, birincil buton, odak halkası, ofset gölge çizgisi | geniş zemin dolgusu |
-| `--accent-ink` | `#fdf6f7` | accent üstü metin | gövde metni |
-| `--line` | `rgba(26,22,32,.14)` | kart kenarı, ayırıcı, çözgü çizgisi | metin rengi |
-| `--danger` / `--ok` / `--warn` | `#96231d` / `#1d6142` / `#7a5310` | hata / onay / uyarı | dekorasyon |
+1. Basamak (escalera) motifi 4px adım birimiyle çizilir; adım yüksekliği her yerde aynı
+2. Çözgü şeritleri 8px aralıkla, %30 opaklıkta; yalnız bant ve zemin katmanında
+3. Simetri kuralı: bölüm başlıkları aynalı (2 eşit yarım), ekran başına 1 bölüm asimetrik (7/5)
+4. Fiyat/sayaç gibi sayılar Courier Prime + tabular; birimsiz sayı yok
+5. Birincil kart ve buton 3px ofset gölge taşır; başka hiçbir yüzey gölge taşımaz
+6. Kart padding 20px, bölüm ritmi 64px (mobil 40px)
 
-- Ölçülen kontrast (açık): `ink / bg` = **15.12:1** · `ink-soft / bg` = **7.63:1** · `accent-ink / accent` = **8.06:1** · `ink-faint / bg` = **3.38:1** (yalnız dekoratif).
-- Tek vurgu kuralı: karmin ekran başına üç işi geçmez — basamak motifi, birincil eylem, odak.
-- Yasak kombinasyon: accent'i büyük zemin dolgusu yapmak (karmin zemin üzerinde metin okunmaz); ikinci sıcak renk (turuncu/terracotta) eklemek.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f1ece2` | page background | as a card background |
+| `--bg-2` | `#e7e0d2` | partition divider floor, table top | button background |
+| `--surface` | `#fffdf8` | kart, input, modal | full-page background |
+| `--surface-2` | `#f7f2e8` | passive chip, hover background | primary button |
+| `--ink` | `#1a1620` | title, body, icon | large background |
+| `--ink-soft` | `#4e4657` | secondary text, description | — |
+| `--ink-faint` | `#857c8f` | decorative label, separator text | interactive text |
+| `--accent` | `#8d2148` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fdf6f7` | text above accent | non-accent background |
+| `--line` | `rgba(26,22,32,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Fraunces (`--font-display`) | 38px (mobil 26px) | 500 | 1.12 | `--tracking` 0.01em |
-| H2 | Fraunces | 26px | 500 | 1.26 | 0.01em |
-| H3 | Fraunces | 19px | 500 | 1.32 | 0.01em |
-| Sayaç / fiyat | Courier Prime (`--font-mono`) | 32px | 700 | 1.1 | 0 |
-| Gövde | Nunito (`--font-body`) | 16px | 400 | 1.62 | 0 |
-| Küçük / açıklama | Nunito | 14px | 400 | 1.5 | 0 |
-| Etiket / mono | Courier Prime | 11px | 700 | 1.3 | 0.14em (büyük harf) |
+- Measured contrast: `ink/bg` **15.12:1** · `ink-soft/bg` **7.63:1** · `ink-faint/bg` **3.38:1 (decorative)** · `accent-ink/accent` **8.06:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı **1.45** (11 → 16 → 26 → 38); kullanılan basamak sayısı 5: 11/14/16/26/38.
-- Ölçü: `h1 { font-size: clamp(26px, 3.4vw, 38px) }`.
-- Gövde metni maksimum satır uzunluğu: **64 ch**.
-- Ağırlık kuralı: Fraunces 500, Nunito 400/600, Courier Prime 700. Fraunces 900 yasak (basamak motifiyle yarışır).
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Fraunces) | 38px (mobile 26px) | 400 | 1.04 | -0.02em |
+| H2 | same | 26px | 600 | 1.16 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Nunito) | 16px | 400 | 1.68 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier Prime) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (1220px üstü), 8 (768–1219), 4 (390–767) |
-| Gutter | 16px |
-| Container genişliği | 1180px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1220px: aynalı 2×6 + orta şerit; 768px: 2×4 yarım; 390px: tek kolon, simetri bantla korunur |
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** bölüm 7/5; diğer tüm bölümler aynalı 6/6.
-- Bölüm ritmi: art arda en fazla **2** aynalı bölüm; üçüncü blok ya tam genişlik basamak bandı ya alıntı olur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, çözgü şeritleri |
-| Kart | `--surface` | yok | panel, tablo, liste |
-| Birincil kart | `--surface` | `--shadow-hard` (3px ofset) | vitrin kartı, KPI |
-| Yüzen katman | `--surface` | `0 2px 0 var(--line)` | modal, açılır menü |
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; birincil kartta ek olarak 4px basamak alt bandı.
-- Derinlik nereden gelir: **ofset gölgeden** (3px, blur 0) — yumuşak gölge yok; derinlik dokumanın kalınlığı gibi okunur.
-- Radius: `--radius` 4px (buton, input, çip), `--radius-lg` 12px (kart, modal); 12px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 46px | 0 22px | `--radius` | 14px/600 Nunito, .06em | accent + accent-ink + `--shadow-hard` | hover gölge 2px (240ms) · active translate(3px,3px) gölge yok · focus 2px halka · disabled %45 gölge yok · loading 3 basamak 960ms steps(3) |
-| Buton (ikincil) | 46px | 0 22px | `--radius` | 13px/700 Courier Prime | surface + `--line`, gölge yok | hover `--surface-2` |
-| Input | 42px | 0 12px | `--radius` | 15px Nunito | surface + `--line` | focus alt kenar 2px accent + 2px halka · error alt kenar danger · disabled %45 |
-| Kart | — | 20px | `--radius-lg` | başlık 26px Fraunces | surface + üst çözgü + alt basamak | normal · öne çıkan (ofset gölge) · tükenmiş (%60, basamak gri) |
-| Chip | 24px | 0 10px | `--radius` | 11px/700 Courier Prime, .1em | surface-2 + `--line` | seçili: accent zemin + accent-ink |
-| Nav | 64px | 0 24px | 0 | 14px Nunito | surface + altta 8px basamak bandı | aktif: 3px accent alt çizgi |
-| Tablo satırı | 44px | 0 12px | 0 | 15px Nunito / sayı Courier Prime | alt 1px `--line` (grup sonu) | hover `--surface-2` · seçili ilk sütunda 2px accent alt çizgi |
-| Modal | — | 24px | `--radius-lg` | başlık 26px Fraunces | surface + `0 2px 0 var(--line)` | açılış 420ms · Esc kapatır · odak tuzağı |
-| Toast | 40px | 0 14px | `--radius` | 14px Nunito | surface + sol 4px basamak şerit | 5000ms · 2 üst sınır |
-| Grafik paleti | — | — | — | eksen 11px mono | accent → ink-soft → warn → danger | en çok 4 seri · basamaklı (step) alan, 2px çizgi |
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `4px` (buton, input, chip), `12px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; input'ta ek olarak alt kenarda 2px accent.
-- Dokunma hedefi: 46px buton ve 44px tablo satırı ≥ 44px; 24px çipler 44×44px sarmalayıcı ile büyütülür.
+## Bans
 
-## Görsel dil
+- Yumuşak/blur'lu gölge veya `drop-shadow`.
+- Üçüncü süs rengi (accent + kil nötr; durum renkleri hariç).
+- Dönen, eğik veya bounce eden animasyon.
+- Fraunces 900 / italik başlık.
+- Tam kanamalı fotoğraf, gradient, metalik parlaklık.
+- Basamak motifini rastgele döndürmek veya adım yüksekliğini değiştirmek.
+- Uydurma dokuma/topluluk adı; eksik içerik `{{motif}}` gibi işaretli yer tutucu olur.
+- Neon accent.
+- Stack of round cards.
+- Otomatik carousel.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 18px, 1.5px çizgi, basamaklı (çapraz kesimli) köşe; yuvarlak ikon yasak |
-| Fotoğraf | yok; zorunluysa 3px ofset çerçeve, %75 doygunluk, en çok 6 kolon |
-| İllüstrasyon | CSS basamak deseni (4px adım); figüratif illüstrasyon yok |
-| Doku | ince çözgü çizgileri (1px / 8px), grain .03 |
-| Logo alanı | Fraunces 17px + solunda 3 basamaklı 12×12 işaret; 20px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 4px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 4px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 4px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 4px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 4px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 4px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 4px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 8.45:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-bars` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | aynalı 2×6 vitrin + basamak bantlı ayırıcı | `shots/01-page.png` |
 | Dashboard | düşük | 2×2 aynalı KPI + basamaklı alan grafik | `shots/01-page.png` |
@@ -152,45 +177,33 @@ And dokuması (Peru–Bolivya) dört bin yıllık bir tekniktir: çözgü yüzl�
 | Hata | düşük | `--danger` alt kenar + basamak susturulmuş | `shots/01-page.png` |
 | Profil / ayar | orta | 44px satır, aynalı iki kolon | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Basamak motifi 4px adım birimiyle; dik açı, eğri/döndürme yok.
-- Çözgü şeritleri 8px aralık, %4–6 ink karışımı; yalnız zemin ve üst kenar bandı.
-- Aynalı simetri: 2 eşit yarım + orta şerit; ekran başına 1 bölüm 7/5.
-- Ofset gölge yalnız birincil kart ve birincil butonda; blur asla.
-- Sayaç/fiyat Courier Prime 700 + tabular, birim yazılı.
-- Kart padding 20px, bölüm ritmi 64px (mobil 40px), radius 4/12px.
-- Renk, radius, gölge yalnız `--…` token'larından gelir.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.12:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.63:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.38:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 8.06:1 | ≥ 4.5 | button text |
+| focus ring/ground | 8.45:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 93.5 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Yumuşak/blur'lu gölge veya `drop-shadow`.
-- Üçüncü süs rengi (accent + kil nötr; durum renkleri hariç).
-- Dönen, eğik veya bounce eden animasyon.
-- Fraunces 900 / italik başlık.
-- Tam kanamalı fotoğraf, gradient, metalik parlaklık.
-- Basamak motifini rastgele döndürmek veya adım yüksekliğini değiştirmek.
-- Uydurma dokuma/topluluk adı; eksik içerik `{{motif}}` gibi işaretli yer tutucu olur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen riskler: en düşük çift `--ink-faint / bg` = **3.38:1** (yalnız çözgü ipucu ve dipnot); etkileşimli metin `--ink` 15.12:1, `--ink-soft` 7.63:1.
-- Basamak motifi dekoratiftir; seçili/aktif durum daima metin veya 2px accent çizgiyle de bildirilir.
-- Hareket: tek seferlik giriş + 240ms hover; `prefers-reduced-motion` pin/scrub'ı kapatır.
-- Şeffaf yüzey yok (`--blur: 0px`), `@supports` fallback gerekmez.
-- Odak görünürlüğü: kil zeminde 2px karmin halka 8.06:1; ofset gölgeli kartta halka `offset: 4px` (gölgeye değmesin).
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "krem + kırmızı şablon" gibi duruyor | basamak motifi kullanılmamış | en az iki yerde basamak bandı kur (ayırıcı + kart altı) |
 | Her kart kabarık görünüyor | ofset gölge birden fazla yüzeye verilmiş | gölgeyi yalnız birincil kart/butona indir |
 | Motif "dalgalı" duruyor | radius veya transform ile yumuşatılmış | dik açı, radius yalnız kapsayıcıda |
@@ -198,28 +211,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Sayı hizası kayıyor | tabular-nums yok | Courier Prime + tabular, birim yazılı |
 | Koyu modda gölge görünmüyor | açık tonlu ofset gölge | `rgba(0,0,0,.55)` ofset kullan |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `west-african-pattern` — aynı "süs bantta yaşar" disiplini; dokuma 71'den, basamak 72'den alınır.
-- **Uyumlu:** `organic-bio` — doğal boyar madde tonları ve sıcak kil zemin ortak.
-- **Uyumlu:** `nordic-folk` — kültürel süs katmanı aynı sınırda tutulur; radyo/zanaat vitrini bu ikiliyle kurulur.
-- **Yasak:** `swiss-design` — 02'nin nötr ızgarası ve tek kırmızısı simetri kararını dışlar.
-- **Yasak:** `liquid-glass` — cam/blur fizik dokuma ofset gölgesiyle çelişir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `west-african-pattern` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `organic-bio` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `nordic-folk` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `swiss-design` | Two different ornamental languages compete on the same screen |
+| Mixing | `liquid-glass` | Two different ornamental languages compete on the same screen |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://museum.gwu.edu/andean-textiles | çözgü şerit oranları ve basamak motifi |
-| https://www.metmuseum.org/toah/hd/prcs/hd_prcs.htm | basamaklı desen ve iki renkli kontrast |
-| https://artsandculture.google.com/entity/andean-textiles/m09x1y6 | şerit genişliği çeşitliliği, aynalı simetri |
-| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | basamak çizgisi ve ofset gölge eşiği |
+| Source | for what |
+| --- | --- |
+| https://museum.gwu.edu/andean-textiles | The Textile Museum · Andean weaving — çözgü şerit oranları ve basamak motifi |
+| https://www.metmuseum.org/toah/hd/prcs/hd_prcs.htm | Met Museum · Paracas/Nazca textiles — basamaklı desen ve iki renkli kontrast |
+| https://artsandculture.google.com/entity/andean-textiles/m09x1y6 | Google Arts & Culture · Andean textiles — şerit genişliği çeşitliliği, aynalı simetri |
+| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | WCAG 2.2 · Non-text Contrast — basamak çizgisi ve ofset gölge eşiği |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Andean Textile (styles/72-andean-textile/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="andean-textile"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Fraunces 500) başlıkta, --font-body (Nunito) gövdede,
@@ -232,15 +246,15 @@ Hareket: enter 0.72s cubic-bezier(.5,0,.5,1) 16px / stagger 0.075; scroll top 80
          pin açık scrub 1.15 / +95%; hover 240ms scale 1.014. prefers-reduced-motion zorunlu.
 Yasak: "Tuzaklar" ve "Yasaklar" maddeleri (çoklu ofset gölge, dönen hareket, üçüncü süs rengi).
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda imza öğelerinden en az 2'si görünüyor (basamak bandı, çözgü şeritleri, tek ofset gölge, aynalı simetri).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1.
-- [ ] Ofset gölge yalnız bir yüzeyde; blur yok.
-- [ ] 390px genişlikte taşma yok, simetri korunmuş.
-- [ ] `prefers-reduced-motion` açıkken pin/scrub duruyor.
+Style: Andean Textile (andean-textile) · family: Cultural & Regional (66–75)
+Token: --bg #f1ece2 · --surface #fffdf8 · --ink #1a1620 · --accent #8d2148 · --line rgba(26,22,32,.14)
+Radius: 4px / 12px · Typography: Fraunces / Nunito / Courier Prime
+Required: Basamak (escalera) motifi 4px adım birimiyle çizilir; adım yüksekliği her yerde aynı · Çözgü şeritleri 8px aralıkla, %30 opaklıkta; yalnız bant ve zemin katmanında · Simetri kuralı: bölüm başlıkları aynalı (2 eşit yarım), ekran başına 1 bölüm asimetrik (7/5)
+Banned: Yumuşak/blur'lu gölge veya `drop-shadow`. · Üçüncü süs rengi (accent + kil nötr; durum renkleri hariç). · Dönen, eğik veya bounce eden animasyon.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -251,14 +265,25 @@ Yasak: "Tuzaklar" ve "Yasaklar" maddeleri (çoklu ofset gölge, dönen hareket, 
   --ink: #1a1620; --ink-soft: #4e4657; --ink-faint: #857c8f;
   --accent: #8d2148; --accent-ink: #fdf6f7;
   --line: rgba(26,22,32,.14);
+  --danger: #d12217;
+  --danger-ink: #ffffff;
+  --ok: #007c34;
+  --ok-ink: #ffffff;
+  --warn: #b04e00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 4px; --radius-lg: 12px;
-  --shadow: none; --shadow-hard: 3px 3px 0 rgba(26,22,32,.14);
-  --font-display: "Fraunces", Georgia, serif;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, sans-serif;
   --font-mono: "Courier Prime", ui-monospace, monospace;
-  --tracking: 0.01em; --blur: 0px; --grain: 0.03;
-  --danger: #96231d; --danger-ink: #ffffff; --ok: #1d6142; --warn: #7a5310;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="andean-textile"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

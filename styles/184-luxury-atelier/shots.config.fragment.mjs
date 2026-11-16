@@ -1,7 +1,6 @@
 /**
- * 184 · Luxury Atelier — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 184 · Luxury Atelier — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'paper',
   bodyClass: '',

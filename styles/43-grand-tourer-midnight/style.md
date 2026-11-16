@@ -1,41 +1,53 @@
 # 43 · Grand Tourer Midnight
 
-> **Bir cümlede:** Grand Tourer'ın gece varyantı: krem kokpit aynı kalır, nötrler maviye kayar ve vurgu gece mavisine döner — gündüz krem, gece koyu lacivert; iki zaman diliminde de aynı krom disiplini.
+> **In one sentence:** Grand Tourer'ın gece varyantı: krem kokpit aynı kalır, nötrler maviye kayar ve vurgu gece mavisine döner — gündüz krem, gece koyu lacivert; iki zaman diliminde de aynı krom disiplini.
 
 | | |
 |---|---|
-| **Hissiyat** | serin, mesafeli, gece sürüşü, "randevuyla görüşülür" |
-| **En iyi** | üst segment konut/rezidans, özel havacılık/yat, hukuk-danışmanlık, saat/mücevher, kurumsal premium vitrin |
-| **Kaçın** | sıcak/aile markaları (çocuk, yemek, düğün), indie/topluluk ürünü, hızlı tüketim kampanyası, oyun |
-| **Zorluk** | orta · **Erişilebilirlik** | iyi (14.65:1 gövde, 11.44:1 accent üstü) |
-| **Aile** | Zamansız (41–44) · **Token** | `kit/tokens.css` → `[data-style="grand-tourer-midnight"]` |
-| **Kompozisyon** | `fullbleed` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | serin, mesafeli, gece sürüşü, "randevuyla görüşülür" |
+| **Best for** | üst segment konut/rezidans, özel havacılık/yat, hukuk-danışmanlık, saat/mücevher, kurumsal premium vitrin |
+| **Avoid** | sıcak/aile markaları (çocuk, yemek, düğün), indie/topluluk ürünü, hızlı tüketim kampanyası, oyun |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Timeless (41–44) · **Token** | `kit/tokens.css` → `[data-style="grand-tourer-midnight"]` |
+| **Composition** | `fullbleed` · `pill` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Midnight, **Grand Tourer (41) sisteminin soğuk palet varyantıdır**: tipografi, ızgara, krom kenar, kadran, koç çizgisi ve tüm bileşen ölçüleri birebir aynıdır. Değişen: vurgu **gece mavisi** `#1b2e4a`, nötrler **mavi-siyaha** kayar (`--ink #171b23`), zemin bir tık serinler (`#f1ece2`). Sonuç: krem deri değil "gece yarısı deri + krom" okuması.
 
 Kazandığı şey: **mesafe ve prestij**. Lacivert, lüksün en nötr rengidir: düğün de davet eder, banka da; bu yüzden kurumsal premium vitrinlerde en güvenli varyanttır. Feda ettiği şey: **sıcaklık**. Bordo (42) ve yeşil (41) "davet" hissi verirken lacivert "randevu" verir; aile/yaşam markalarında soğuk kalır. Ayrıca lacivert, ekranda siyaha çok yaklaştığı için `--ink` ile karıştırılmamalı: **vurgu lacivert, metin mavi-siyah** — ikisi asla aynı tonda olmaz.
 
-### Ne değildir
+### What is not
 - **Grand Tourer (41) değildir** — sistem aynı, palet farklı: uyum ve ölçüler eş, sıcaklık ve vurgu farklı.
 - **Glassmorphism / Aurora (08, 12) değildir.** Onlar blur ve gradyan ışıkla "teknoloji" kurar; burada `--blur: 0`, opak krem kart ve 1px krom.
 - **Cyberpunk (22) değildir.** Neon, glow ve mono gövde yok; lacivert düşük doygunlukta, gövde Jost.
 - **Swiss Design (02) değildir.** Swiss kurumsal soğukluğu ızgara ve 0 radius ile kurar; burada krom parlama, kadran ve serif büyük harf var.
 
-### Nereden gelir
+### Where it comes from
 Gece mavisi, 1960'ların "midnight blue" araba boyalarından ve gece kulüplerinin/özel bankaların lacivert üniforma geleneğinden gelir; dijitalde premium SaaS'ın "dark navy" furyasıyla yeniden popülerleşti. Klişeye düşmemesi için korunması gereken detay: **krem zemin** — laciverti siyah zemine alırsanız stil Cyberpunk/Scandinavian Dark bölgesine kayar; bu stil gece mavisini **aydınlık krem** üstünde taşır.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin krem mi (`#f1ece2`), vurgu tek **gece mavisi** mi (`#1b2e4a`) — cam/blur/neon var mı? (Olmamalı.)
 2. Nötrler mavi-siyah mı (`--ink #171b23`); sıcak kahve-siyah (41/42 paleti) sızmış mı?
 3. Kartlarda krom iç parlama + tek hairline var mı; koyu blok gölge var mı?
 4. Başlık Cinzel büyük harf `.09em`, fiyat/KPI mono sayaç mı?
 5. Nav altında koç çizgisi + landing'de kadran var mı?
 
-## Zorunlu kurallar
+## Visual signature
+- **Serin krem kart:** `--surface #f8f4ec` üstünde `--ink #171b23`; kart zemini sayfadan %4–%6 açık, gölge yok.
+- **Lacivert tek anlam:** birincil buton, aktif satır işareti, veri serisi 1, odak halkası; başka yerde lacivert yok.
+- **Mavi-siyah metin:** başlık ve gövde `#171b23`; "siyah" hissi verir ama saf siyah değildir (8 saatlik okumada kontrast yanması yapmaz).
+- **Koç çizgisi:** nav altında 1px lacivert + 1px hairline; bölüm ayırıcıda aynı çift çizgi.
+- **Kadran:** 224px; 88/96px krom halka, `.9deg` tik / `9deg` aralık, `1.3deg` lacivert iğne, 4px göbek.
+- **Ceviz damarı:** 92°, 1px / 11px, %2.5 — soğuk paletle sıcak doku kontrastı stilin tek "sıcak" detayı.
+- **Sayaç tipografisi:** fiyat 26px, KPI 22px, 404 44px mono, `letter-spacing: 0`.
+- **Typography:** Cinzel (display) + Jost (body) + Courier Prime (mono label).
+- **Colour discipline:** a single accent `#1b2e4a`; neutral scale `#f1ece2` → `#171b23`.
+- **Radius:** `3px` / `6px`; Card 10–14px, button 6–10px; full circle only chip/badge.
+
+## Mandatory rules
 
 1. **İki mavi ayrımı:** vurgu `#1b2e4a`, metin `#171b23`. Vurgu metin olarak kullanılmaz, metin vurgu yerine geçmez; ikisi komşu ama farklı rolde.
 2. **Krom kenar:** dış `1px var(--line)` + iç `inset 0 0 0 1px rgba(255,255,255,.6)`; toplam 2px, üçüncü çizgi yok.
@@ -47,7 +59,66 @@ Gece mavisi, 1960'ların "midnight blue" araba boyalarından ve gece kulüplerin
 8. **Doku:** `--grain: .035` + yan panellerde ceviz damarı 1px/11px %2.5 (soğuk paletle sıcak ahşap dokusu bilinçli kontrast).
 9. **Kadran:** yalnız landing'de bir tane; gece varyantında iğne lacivert, tikler `--ink` %30.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f1ece2` | page background | as a card background |
+| `--bg-2` | `#e7e0d2` | partition divider floor, table top | button background |
+| `--surface` | `#f8f4ec` | kart, input, modal | full-page background |
+| `--surface-2` | `#e6e1d5` | passive chip, hover background | primary button |
+| `--ink` | `#171b23` | title, body, icon | large background |
+| `--ink-soft` | `#4f5560` | secondary text, description | — |
+| `--ink-faint` | `#5f6470` | decorative label, separator text | interactive text |
+| `--accent` | `#1b2e4a` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f2eadb` | text above accent | non-accent background |
+| `--line` | `rgba(23,27,35,.18)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **14.65:1** · `ink-soft/bg` **6.37:1** · `ink-faint/bg` **5.03:1 (decorative)** · `accent-ink/accent` **11.44:1**.
+- Price and stock information is written with --ink, not accent; accent solo action (cart, buy).
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Cinzel) | 50px (mobile 30px) | 600 | 1.06 | -0.02em |
+| H2 | same | 24px | 600 | 1.18 | -0.015em |
+| H3 | same | 15.5px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 16.5px | 400 | 1.6 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier Prime) | 9.5px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 13px | 600 | 1 | 0 |
+
+- Price 26–32px display, currency 13px mono; product name 15px/600.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- Product grid 3–4 columns; card ratio 4:5. Filter rail 240px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Cards are separated by light shadow; On hover, the shadow grows, the edge does not change.
+- Radius: `3px` (buton, input, chip), `6px` (kart, modal). Card 10–14px, button 6–10px; full circle only chip/badge.
+
+## Bans
 
 - Cyan/turkuaz/neon mavi, glow, blur (`--blur: 0`), cam panel, "SaaS gradient" (`#6366f1` → `#22d3ee`).
 - Siyah zemin (`#0b0f16` ve benzeri) — bu stil gece mavisini **açık** krem zeminde taşır; koyu tema sevk edilmez.
@@ -57,106 +128,44 @@ Gece mavisi, 1960'ların "midnight blue" araba boyalarından ve gece kulüplerin
 - Display 700/italik, el yazısı font, negatif tracking.
 - Emoji, illüstrasyon, foto kolaj, desenli arka plan.
 - Sürekli animasyon (marquee, dönen iğne, nefes alan katman), spring.
+- Stack of discount labels on price.
+- More than four types of rosettes.
+- Auto-playing image.
 
-## Görsel imza
-- **Serin krem kart:** `--surface #f8f4ec` üstünde `--ink #171b23`; kart zemini sayfadan %4–%6 açık, gölge yok.
-- **Lacivert tek anlam:** birincil buton, aktif satır işareti, veri serisi 1, odak halkası; başka yerde lacivert yok.
-- **Mavi-siyah metin:** başlık ve gövde `#171b23`; "siyah" hissi verir ama saf siyah değildir (8 saatlik okumada kontrast yanması yapmaz).
-- **Koç çizgisi:** nav altında 1px lacivert + 1px hairline; bölüm ayırıcıda aynı çift çizgi.
-- **Kadran:** 224px; 88/96px krom halka, `.9deg` tik / `9deg` aralık, `1.3deg` lacivert iğne, 4px göbek.
-- **Ceviz damarı:** 92°, 1px / 11px, %2.5 — soğuk paletle sıcak doku kontrastı stilin tek "sıcak" detayı.
-- **Sayaç tipografisi:** fiyat 26px, KPI 22px, 404 44px mono, `letter-spacing: 0`.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 3px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 3px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 3px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 3px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 3px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 3px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 3px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f1ece2` | sayfa zemini (serin krem) | kart yüzeyi |
-| `--bg-2` | `#e7e0d2` | ikincil bölüm, input zemini, bulk bar | birincil kart |
-| `--surface` | `#f8f4ec` | kart, panel, modal, tablo kabı | tam sayfa zemin |
-| `--surface-2` | `#e6e1d5` | hover, seçili satır, çip zemini | ana kart |
-| `--ink` | `#171b23` | başlık, gövde, sayaç (**14.65:1**) | accent zemin üstünde |
-| `--ink-soft` | `#4f5560` | açıklama, lede, pasif nav (**6.37:1**) | başlık |
-| `--ink-faint` | `#5f6470` | etiket, sıra no, ipucu (**5.03:1**) | uzun gövde metni |
-| `--accent` | `#1b2e4a` | buton, aktif durum, seri 1, odak (**11.61:1** bg üstü) | metin |
-| `--accent-ink` | `#f2eadb` | accent üstü metin (**11.44:1**) | accent dışı zeminde |
-| `--line` | `rgba(23,27,35,.18)` | kenarlık, koç çizgisi | metin |
-| `--danger` | `#8a2b22` | silme/tehlike (**7.28:1**) | dekoratif vurgu |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 12.46:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **14.65:1** · `ink-soft/bg` **6.37:1** · `ink-faint/bg` **5.03:1** · `accent-ink/accent` **11.44:1** · `accent/bg` **11.61:1** · `ink/surface` **15.72:1** · `ink/surface-2` **13.22:1** · `ink-soft/surface-2` **5.75:1** · `ink-faint/surface-2` **4.54:1** · `ok/bg` **7.20:1** · `warn/bg` **5.02:1** · `danger/bg` **7.28:1**.
-- Grafik paleti: `--data-1 #1b2e4a` (lacivert), `--data-2 #6f6250` (ceviz), `--data-3 #9d9079` (krom gölge), `--data-4 #a9762d` (pirinç, yalnız 4. seri — sıcak detay).
-- Yasak kombinasyon: lacivert zemin üstü `--ink` (1.3:1), `--accent-ink` krem zemin üstü, lacivert + altın yan yana, iki mavi seriyi (data-1 + data-3) aynı grafikte karıştırmak.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 20px; basket/favorite full |
+| photo | The product is single object, white/neutral backdrop, shadow is soft; 4:5 |
+| illustration | Thin line only in category title |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Cinzel | 50px (mobil 30px) | 400 | 1.06 | `.09em`, büyük harf |
-| H2 | Cinzel | 24px | 400 | 1.16 | `.07em` |
-| H3 | Cinzel | 15.5px | 400 | 1.3 | `.05em` |
-| Gövde | Jost | 16.5px | 400 | 1.68 | `0` |
-| Küçük gövde | Jost | 13px | 400 | 1.55 | `.01em` |
-| Etiket / mono | Courier Prime | 9.5–10.5px | 400 | 1.2 | `.14–.2em` |
-| Sayaç | Courier Prime | 22–26px | 400 | 1.05 | `0` |
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Basamaklar **9.5 · 11 · 13 · 16.5 · 24 · 50**; ölçü `clamp(30px, 4vw, 50px)`, gövde 62ch, lede 44ch.
-- Ağırlık: yalnız 400/500; Cinzel 400, gövde 300 yasak. Lacivert metinde 300 ağırlık "soluk mavi" gürültüsü yapar.
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 32px |
-| Container | 1160px (galeri 1320px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 96 |
-| Breakpoint | <640 tek kolon (20px), 640–960 8 kolon, >960 12 kolon |
-
-- Asimetri: hero 7/5 veya 8/4; ekran başına en fazla 2 bölüm asimetrik; simetrik hero yasak (tek kart onboarding/404 istisna).
-- Ritim: bölüm 96px (mobil 56px), kart içi 28px, kart–kart 20px, başlık–gövde 12px.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | yok | sayfa + grain + ceviz damarı |
-| Kart | `--surface` + krom kenar | `0 1px 2px rgba(23,27,35,.08)` | panel, KPI, tablo kabı, plan kartı |
-| Yüzen | `--surface` + krom kenar | `0 18px 40px -28px rgba(23,27,35,.45)` | modal, dropdown, tooltip, alt sayfa |
-
-- Derinlik krom iç parlamadan ve ton farkından gelir; koyu blok gölge, blur ve cam yok.
-- Radius: 3px buton/input/chip, 6px kart/modal; 50% yalnız kadran/avatar/rozet/toggle.
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 42px | 0 20px | 3px | Courier Prime 10.5px `.16em` | `--accent` + `--accent-ink`, `inset 0 1px 0 rgba(255,255,255,.3)` + `inset 0 -1px 0 rgba(23,27,35,.24)` | hover: `color-mix(accent 90%, ink)` · active: `translateY(1px)` · focus: `outline 2px accent, offset 2px` · disabled: `.42` |
-| Buton (ikincil) | 42px | 0 18px | 3px | Courier Prime 10.5px | saydam + `1px color-mix(ink 30%)` + `--ink` | hover: `--surface-2` · focus: aynı halka |
-| Input | 42px | 0 14px | 3px | Jost 13px | `--surface` + `1px color-mix(ink 22%)` + `inset 0 1px 2px` | focus: `outline 2px accent, offset 2px` · error: `1px var(--danger)` + 12px satır |
-| Kart | içerik | 28px (20px mobil) | 6px | Cinzel 24 + Jost 16.5 | `--surface` + krom kenar | öne çıkan: `--surface-2` + üst 2px `--accent` |
-| Chip / plaka | 24px | 0 8px | 2px | Courier Prime 8.5px `.18em` | saydam + `1px color-mix(ink 26%)` | aktif: `--accent` + `--accent-ink`; dokunma 44px |
-| Nav | 72px | 0 52px | — | mono 11px `.14em` | `--bg` + koç çizgisi | aktif: 1px lacivert alt çizgi |
-| Tablo satırı | 52px | 12px 14px | 0 / 6px kap | Jost 13px, başlık mono 9.5px | alt `1px var(--line)` | hover: `--surface-2` · seçili: `--surface-2` + sol 2px lacivert |
-| Modal | içerik | 28px | 6px | Cinzel 24 + 16.5 | krom kenar + yüzen gölge | backdrop `rgba(23,27,35,.55)` |
-| Toast | 52px | 0 16px | 3px | Jost 13px | `--surface` + sol 2px durum | 5sn, tek sefer |
-| Grafik | — | — | çubuk üst 2px | eksen mono 8–9px | `--data-1…4` | çubuk arası 12px, yatay grid yok |
-
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; dolu butonda `--accent-ink` halka.
-- Dokunma hedefi: en az 44×44px.
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 1.6px çizgi, 24px ızgara, `currentColor`; dolu ikon yok |
-| Fotoğraf | mavi saat (blue hour), gece çekimi, ıslak asfalt yansıması, cam cephe; tek kare, alan ≥%30, `saturate(.88) contrast(1.05)` |
-| İllüstrasyon | yok — kadran çizimi + mono künye + boşluk |
-| Doku | grain .035 + ceviz damarı (1px/11px, %2.5) + koç çizgisi |
-| Logo alanı | 26px lacivert daire rozet + Cinzel harf, çevresinde ≥24px boşluk |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | 50px Cinzel, 7/5 asimetri, tek lacivert CTA, bir kadran | `shots/01-page.png` |
 | Dashboard | düşük-orta | mono KPI, krom kartlar, lacivert yalnız seri 1 ve aktif satır | `shots/01-page.png` |
@@ -178,29 +187,33 @@ Gece mavisi, 1960'ların "midnight blue" araba boyalarından ve gece kulüplerin
 | Mobil · form | çok düşük | 54px input, 46px CTA | `shots/01-page.png` |
 | Mobil · liste | düşük | 64px satır, durum plakası | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Erişilebilirlik
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 14.65:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.37:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.03:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 11.44:1 | ≥ 4.5 | button text |
+| focus ring/ground | 12.46:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 93.1 | ≥ 60 target | thin text |
 
-- En düşük metin çifti: `--ink-faint / --surface-2` **4.54:1** (dekoratif etiket); `--ink-faint / --bg` **5.03:1**. Gövde metni her zaman `--ink` veya `--ink-soft`.
-- `--accent-ink / --accent` **11.44:1** (AAA) · `--ink / --bg` **14.65:1** · `warn/bg` **5.02:1** — durum metinleri güvenli.
-- Lacivert vurgu, `--ink` mavi-siyaha yakın olduğu için **dolu buton + açık metin** kombinasyonu zorunlu: lacivert zemin üstüne `--ink` yazılmaz (1.3:1).
-- Odak: krem zeminde 2px lacivert halka 11.61:1; dolu butonda `--accent-ink` halka (koyu zeminde açık halka).
-- Grain/ceviz katmanları `pointer-events: none` + `aria-hidden`.
-- `--blur: 0` → `@supports` fallback gerekmez.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Cyberpunk'a kaydı | Lacivert siyah zemine alınmış, neon/glow eklenmiş | Krem zemin `#f1ece2` korunur, `--blur: 0`, glow yok |
 | "SaaS mavisi" gibi duruyor | Doygun mavi (`#3b82f6`) veya gradyan | `#1b2e4a` düşük doygunluk, gradyan yok |
 | Metin vurgudan ayırt edilmiyor | `--ink` laciverte kaydırılmış | `--ink #171b23` mavi-siyah, vurgu `#1b2e4a`; rol ayrımı korunur |
@@ -209,24 +222,33 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Eski ofis yazılımı | Kenar 2px+, kart gölgesi büyük | Krom kenar 2px toplam, gölge `0 1px 2px` |
 | Okumak yoruyor | Gövde büyük harf / 300 ağırlık / saf siyah | Jost 400, `#171b23`, 62ch |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `grand-tourer` (aynı aile, yeşil), `swiss-design` (kurumsal premium bölümü — aynı soğukluk), `editorial-design`.
-- **Yasak:** `grand-tourer-oxblood` (aynı sayfada iki vurgu paleti), `cyberpunk`, `glassmorphism`, `aurora-ui`, `neo-brutalism`, `dopamine-ui`.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `grand-tourer` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `swiss-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `cyberpunk` | Two different ornamental languages compete on the same screen |
+| Mixing | `bauhaus` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://fonts.google.com/specimen/Cinzel | büyük harf display, 400, `.09em` |
-| https://fonts.google.com/specimen/Jost | gövde 16.5/1.68 |
-| https://fonts.google.com/specimen/Courier+Prime | sayaç ve etiket mono |
-| https://www.hagerty.com/media/ | midnight blue klasik GT boyası ve gece kokpiti |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | kontrast eşikleri |
+| Source | for what |
+| --- | --- |
+| https://fonts.google.com/specimen/Cinzel | Cinzel — büyük harf display, 400, .09em |
+| https://fonts.google.com/specimen/Jost | Jost — gövde 16.5/1.68 |
+| https://fonts.google.com/specimen/Courier+Prime | Courier Prime — sayaç ve etiket mono |
+| https://www.hagerty.com/media/ | Hagerty — klasik GT medyası — midnight blue klasik GT boyası ve gece kokpiti |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 — Contrast Minimum — kontrast eşikleri |
 
 ## AI brief
 
-```
+```text
 Stil: Grand Tourer Midnight (styles/43-grand-tourer-midnight/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="grand-tourer-midnight"]; hard-coded renk/gölge/radius yasak.
 Tipografi: Cinzel BÜYÜK HARF 400 (başlık), Jost (gövde), Courier Prime (tüm sayı + etiket).
@@ -241,6 +263,14 @@ Yap:
 Yapma:
 - Siyah zemin, cam/blur, neon/cyan, gradyan, ikinci vurgu, lacivert+altın.
 - 2px+ kenar, 8px+ radius, saf siyah/beyaz, gövdede büyük harf/300 ağırlık, emoji, illüstrasyon.
+
+Style: Grand Tourer Midnight (grand-tourer-midnight) · family: Timeless (41–44)
+Token: --bg #f1ece2 · --surface #f8f4ec · --ink #171b23 · --accent #1b2e4a · --line rgba(23,27,35,.18)
+Radius: 3px / 6px · Typography: Cinzel / Jost / Courier Prime
+Required: **İki mavi ayrımı:** vurgu `#1b2e4a`, metin `#171b23`. Vurgu metin olarak kullanılmaz, metin vurgu yerine geçmez; ikisi komşu ama farklı rolde. · **Krom kenar:** dış `1px var(--line)` + iç `inset 0 0 0 1px rgba(255,255,255,.6)`; toplam 2px, üçüncü çizgi yok. · **Tek vurgu:** gece mavisi ekranın ≤%8'i (veri ekranlarında ≤%4). Cyan, turkuaz, mor, altın ikinci vurgu yasak.
+Banned: Cyan/turkuaz/neon mavi, glow, blur (`--blur: 0`), cam panel, "SaaS gradient" (`#6366f1` → `#22d3ee`). · Siyah zemin (`#0b0f16` ve benzeri) — bu stil gece mavisini **açık** krem zeminde taşır; koyu tema sevk edilmez. · İkinci vurgu (bordo, yeşil, altın); lacivert + altın kombinasyonu (Art Deco/banka klişesi).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token
@@ -252,14 +282,25 @@ Yapma:
   --ink: #171b23; --ink-soft: #4f5560; --ink-faint: #5f6470;
   --accent: #1b2e4a; --accent-ink: #f2eadb;
   --line: rgba(23,27,35,.18);
+  --danger: #d12217;
+  --danger-ink: #ffffff;
+  --ok: #007c34;
+  --ok-ink: #ffffff;
+  --warn: #b04e00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 3px; --radius-lg: 6px;
-  --shadow: inset 0 0 0 1px rgba(255,255,255,.6), 0 1px 2px rgba(23,27,35,.08); --shadow-hard: 3px 3px 0 rgba(23,27,35,.12);
-  --font-display: "Cinzel", "Playfair Display", Georgia, serif;
-  --font-body: "Jost", "Inter", system-ui, sans-serif;
-  --font-mono: "Courier Prime", "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: 0.09em; --blur: 0px; --grain: .035;
-  --data-1: #1b2e4a; --data-2: #6f6250; --data-3: #9d9079; --data-4: #a9762d;
-  --danger: #8a2b22; --danger-ink: #f8f4ec;
-  --ok: #23572f; --warn: #8a5a12;
+  --shadow: inset 0 0 0 1px rgba(255,255,255,.6), 0 1px 2px rgba(23,27,35,.08); --shadow-hard: none;
+  --font-display: "Cinzel", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --tracking: 0.09em; --blur: 0px; --grain: 0;
 }
 ```

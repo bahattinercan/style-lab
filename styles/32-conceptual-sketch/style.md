@@ -1,41 +1,52 @@
 # 32 · Conceptual Sketch
 
-> **Bir cümleyle:** Kâğıt üstünde düşünme: el çizimi kutu, kesikli çerçeve, ok ve notlarla süreç görünür.
+> **In one sentence:** Conceptual Sketch
 
 | | |
 |---|---|
-| **Hissiyat** | samimi, süreç odaklı, "henüz bitmemiş", şeffaf |
-| **En iyi** | prototip/fikir ürünü, ajans süreci, tasarım sistemleri, eğitim |
-| **Kaçın** | premium lüks, finans güveni, final ürün vitrini |
-| **Zorluk** | orta (dağınıklık) · **Erişilebilirlik** | iyi (yüksek kontrast) |
-| **Aile** | Sanatsal (28–34) · **Token** | `kit/tokens.css` → `[data-style="conceptual-sketch"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | samimi, süreç odaklı, "henüz bitmemiş", şeffaf |
+| **Best for** | prototip/fikir ürünü, ajans süreci, tasarım sistemleri, eğitim |
+| **Avoid** | premium lüks, finans güveni, final ürün vitrini |
+| **Difficulty** | orta (dağınıklık) · **Accessibility** |  |
+| **Family** | Art (28–34) · **Token** | `kit/tokens.css` → `[data-style="conceptual-sketch"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Conceptual sketch, wireframe/sketch dilini son ürün diline taşır: **kesikli çerçeve**, **el yazısı display** (Architects Daughter), **kâğıt çizgileri**, oklar ve açıklama notları. Her öğe "çizilmiş" gibi durur; süreç şeffaflaşır.
 
 Kazandığı şey: samimiyet ve süreç anlatımı. Feda ettiği şey: bitmişlik hissi — bu stil **bilinçli olarak "taslak"** görünür.
 
-### Ne değildir
+### What is not
 - **Scrapbook değildir.** Scrapbook polaroid/bant; sketch **çizgi ve wireframe**.
 - **Wabi-Sabi değildir.** Wabi-sabi ahşap/kâğıt doku; sketch **teknik çizim**.
 - **"El yazısı font" değildir.** Kesikli kutu + çizgi + ok olmadan sadece font değişir.
 - **Bitmemiş ürün değildir.** Kasıtlı eskiz, net hiyerarşiyle.
 
-### Nereden gelir
+### Where it comes from
 Ajans süreç sunumları, whiteboard kültürü, design-system dokümantasyonu.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Çerçeveler **kesikli** mi (dashed)?
 2. Display el yazısı mı (Architects Daughter)?
 3. Kâğıt çizgileri / ızgara var mı?
 4. Ok, numara veya not etiketi var mı?
 5. Blok gölge 2px ofset (blursuz) mi?
 
-## Zorunlu kurallar
+## Visual signature
+- **Kesikli çerçeve:** `1.5px dashed rgba(42,42,42,.35)`.
+- **El yazısı başlık:** Architects Daughter 400, 40px.
+- **Kâğıt ızgara:** 32px çizgiler (yatay), %5.
+- **Not etiketi:** numara + ok (`→`, `↳`), mono 11px.
+- **Blok gölge:** 2px ofset.
+- **Grain .02** (hafif kâğıt).
+- **Typography:** Architects Daughter (display) + Inter (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#2b5fad`; neutral scale `#fcfbf7` → `#2a2a2a`.
+- **Radius:** `2px` / `6px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
+
+## Mandatory rules
 
 1. **Kesikli çerçeve:** `1.5px dashed` panel; buton/input tam çizgi.
 2. **El yazısı yalnız başlık/notta**; gövde Inter (okunurluk).
@@ -44,7 +55,66 @@ Ajans süreç sunumları, whiteboard kültürü, design-system dokümantasyonu.
 5. **Blok gölge:** `2px 2px 0 rgba(42,42,42,.18)`; blur yok.
 6. **Kontrast:** gövde `--ink` (13.86:1); kesikli çizgi dekoratif.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#fcfbf7` | page background | as a card background |
+| `--bg-2` | `#f2f0e8` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f7f6f0` | passive chip, hover background | primary button |
+| `--ink` | `#2a2a2a` | title, body, icon | large background |
+| `--ink-soft` | `#5c5c5c` | secondary text, description | — |
+| `--ink-faint` | `#8f8f8f` | decorative label, separator text | interactive text |
+| `--accent` | `#2b5fad` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `#2a2a2a` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **13.86:1** · `ink-soft/bg` **6.46:1** · `ink-faint/bg` **3.12:1 (decorative)** · `accent-ink/accent` **6.28:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Architects Daughter) | 40px (mobile 26px) | 400 | 1.04 | -0.02em |
+| H2 | same | 24px | 600 | 1.16 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.68 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `2px` (buton, input, chip), `6px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
+
+## Bans
 
 - Gradient, blur, cam, yumuşak gölge.
 - El yazısı gövde metninde (uzun paragraf).
@@ -52,81 +122,44 @@ Ajans süreç sunumları, whiteboard kültürü, design-system dokümantasyonu.
 - Doygun renk (tek mavi accent yeter).
 - Kesikli çizgiyi ölçü/kenarlık olarak kullanmak (dekoratif).
 - Yoğun tabloda kesikli çerçeve.
+- Neon accent.
+- Stack of round cards.
+- Otomatik carousel.
 
-## Görsel imza
-- **Kesikli çerçeve:** `1.5px dashed rgba(42,42,42,.35)`.
-- **El yazısı başlık:** Architects Daughter 400, 40px.
-- **Kâğıt ızgara:** 32px çizgiler (yatay), %5.
-- **Not etiketi:** numara + ok (`→`, `↳`), mono 11px.
-- **Blok gölge:** 2px ofset.
-- **Grain .02** (hafif kâğıt).
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Kullanım |
-|---|---|---|
-| `--bg` | `#fcfbf7` | kâğıt |
-| `--surface` | `#ffffff` | kart |
-| `--surface-2` | `#f7f6f0` | ikincil |
-| `--ink` | `#2a2a2a` | metin (13.86:1), çizgi |
-| `--ink-soft` | `#5c5c5c` | açıklama (6.46:1) |
-| `--ink-faint` | `#8f8f8f` | dekoratif (3.12:1) |
-| `--accent` | `#2b5fad` | CTA, vurgu çizgi |
-| `--accent-ink` | `#ffffff` | accent üstü (**6.28:1**) |
-| `--line` | `#2a2a2a` | çizgi (kesikli/tam) |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.28:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **13.86:1** · `ink-soft/bg` **6.46:1** · `ink-faint/bg` **3.12:1** · `accent-ink/accent` **6.28:1**.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır | Tracking |
-|---|---|---|---|---|---|
-| Display | Architects Daughter | 40px (mobil 26px) | 400 | 1.2 | `0` |
-| H2 | Architects Daughter | 24px | 400 | 1.25 | `0` |
-| Gövde | Inter | 16px | 400 | 1.6 | `0` |
-| Etiket | IBM Plex Mono | 11px | 500 | 1.2 | `0.1em`, uppercase |
+- Signature motif: `motif-paper` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- El yazısı 20px altına inmez; gövde her zaman Inter.
-- Gövde 64ch.
+## Screen recipes
 
-## Izgara ve boşluk
-
-Kolon 12 · gutter 24px · container 1120px · bölüm 72/48px · breakpoint 640/900/1120.
-- Kâğıt ızgarası 32px; kutular bu ızgaraya hizalanır (eskiz hissi).
-- Not etiketleri kenar boşluğunda; içeriği kaydırmaz.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Kâğıt | `--bg` + ızgara | yok | sayfa |
-| Kutu | `--surface` + kesikli çerçeve | `--shadow-hard` (2px) | kart |
-| Yüzen | `--surface` + tam çizgi | 4px ofset | modal |
-
-- Derinlik ofset gölgeden; blur yok. Radius 2/6px.
-
-## Bileşen reçeteleri
-
-| Bileşen | Y | Padding | Radius | Tipografi | Renk/gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton | 44px | 0 20px | 2px | 14/600 | `--accent` + beyaz | hover: %94 · focus: 2px accent · disabled: %40 |
-| Buton (çizgi) | 44px | 0 18px | 2px | 14/600 | transparent + 1.5px ink | hover: `--surface-2` |
-| Input | 44px | 0 12px | 2px | 15/400 | `--surface` + **kesikli** alt çizgi | focus: tam 2px accent |
-| Kart | içerik | 20px | 6px | H2 el yazısı + 16 | `--surface` + kesikli çerçeve | hover: çizgi tam olur |
-| Chip / not | 24px | 0 8px | 2px | 11/500 mono | `--surface-2` + kesikli | — |
-| Nav | 64px | 0 24px | — | 13/600 | `--bg` + alt 1.5px ink | aktif: accent alt çizgi |
-| Tablo satırı | 48px | 10px 12px | — | 15/400 | 1px ink %25 alt | hover: `--surface-2` |
-| Modal | içerik | 24px | 6px | H2 + 16 | tam çerçeve + 4px ofset | backdrop: `rgba(42,42,42,.25)` |
-| Toast | 44px | 0 16px | 2px | 13/500 | `--ink` + `--bg` | 4sn |
-| Grafik | — | — | 2px uç | eksen 11 mono | accent çizgi + kesikli referans | 2 seri |
-
-## Görsel dil
-
-İkon: 1.5px çizgi veya el çizimi, 22px. Fotoğraf: eskiz üstüne yapıştırılmış (ince çerçeve). İllüstrasyon: wireframe kutu, ok, numara. Doku: grain .02 + kâğıt çizgisi. Logo: el yazısı.
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing/hero | yüksek | El yazısı başlık, kesikli panel, 2 not etiketi | `shots/01-page.png` |
 | Dashboard | düşük | Kesikli çerçeve kapanır; düz tablo | `shots/01-page.png` |
@@ -141,47 +174,61 @@ Kolon 12 · gutter 24px · container 1120px · bölüm 72/48px · breakpoint 640
 | Hata | orta | Kırmızı kesikli çerçeve + not | `shots/01-page.png` |
 | Profil/ayar | düşük | Düz liste | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde 13.86:1, açıklama 6.46:1 → güvenli; `--ink-faint` 3.12:1 → dekoratif.
-- Accent üstü beyaz 6.28:1 → güvenli.
-- Kesikli çerçeve **dekoratif**; odak/kenar bilgisi tam çizgiyle verilir.
-- El yazısı yalnız başlık; gövde Inter 16px.
-- Dokunma hedefi 44px.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 13.86:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.46:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.12:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.28:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.28:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 98.7 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Bitmemiş ürün" | Her şey kesikli | Kritik kenarlar tam çizgi |
 | Dağınık | 4+ ok/not | Not ≤ 3 |
 | Okunmuyor | El yazısı gövdede | Gövde Inter |
 | Karakter kaybı | Kâğıt ızgarası yok | 32px ızgara %5 |
 | Lüks algısı kaybı | Bu stil lüks için değil | Başka stil seç |
 
-## Komşu stiller
+## Neighboring styles
 
-**Uyumlu:** `02 swiss-design` (ızgara), `23 cybercore` (şema), `13 neo-brutalism` (kalın çizgi). **Yasak:** `04 luxury-typography`, `09 liquid-glass`, `34 skeuomorphism`.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `swiss-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `cybercore` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `neo-brutalism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `luxury-typography` | Two different ornamental languages compete on the same screen |
+| Mixing | `liquid-glass` | Two different ornamental languages compete on the same screen |
+| Mixing | `skeuomorphism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
-|---|---|
-| https://fonts.google.com/specimen/Architects+Daughter | El yazısı display |
-| https://excalidraw.com | Wireframe dili |
-| https://mobbin.com | Süreç/onboarding örnekleri |
+| Source | for what |
+| --- | --- |
+| https://fonts.google.com/specimen/Architects+Daughter | Architects Daughter — El yazısı display |
+| https://excalidraw.com | Excalidraw — Wireframe dili |
+| https://mobbin.com | Mobbin — Süreç/onboarding örnekleri |
 
 ## AI brief
 
-```
+```text
 Stil: Conceptual Sketch (styles/32-conceptual-sketch/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="conceptual-sketch"]; hard-coded renk YASAK.
 Çizgi dili: panel/kart 1.5px dashed; buton/input ve kritik kenarlar TAM çizgi.
@@ -191,15 +238,15 @@ Not bütçesi: ekran başına ≤ 3 (ok, numara, etiket). Blok gölge 2px blur's
 Hareket: 100–300ms ease-out; stroke çizilme tek atım.
 Yasak: gradient/blur/cam, el yazısı gövde, 4+ not, yoğun tabloda kesikli çerçeve.
 Çıktı: kod + tek paragraf not (kesikli/tam çizgi ayrımını nasıl kurdun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Kesikli çerçeve dekoratif; kritik kenarlar tam.
-- [ ] El yazısı yalnız başlık/notta.
-- [ ] Kâğıt ızgarası 32px, %5.
-- [ ] Not/ok ≤ 3; blok gölge 2px.
-- [ ] Accent üstü beyaz 6.28:1.
-- [ ] Yoğun ekranda kesikli çerçeve kapalı.
+Style: Conceptual Sketch (conceptual-sketch) · family: Art (28–34)
+Token: --bg #fcfbf7 · --surface #ffffff · --ink #2a2a2a · --accent #2b5fad · --line #2a2a2a
+Radius: 2px / 6px · Typography: Architects Daughter / Inter / IBM Plex Mono
+Required: **Kesikli çerçeve:** `1.5px dashed` panel; buton/input tam çizgi. · **El yazısı yalnız başlık/notta**; gövde Inter (okunurluk). · **Kâğıt çizgileri:** 32px aralık, %5 opaklık; metnin arkasında.
+Banned: Gradient, blur, cam, yumuşak gölge. · El yazısı gövde metninde (uzun paragraf). · 4+ not/ok (gürültü).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -210,11 +257,25 @@ Yasak: gradient/blur/cam, el yazısı gövde, 4+ not, yoğun tabloda kesikli çe
   --ink: #2a2a2a; --ink-soft: #5c5c5c; --ink-faint: #8f8f8f;
   --accent: #2b5fad; --accent-ink: #ffffff;
   --line: #2a2a2a;
+  --danger: #d92d20;
+  --danger-ink: #ffffff;
+  --ok: #00863d;
+  --ok-ink: #ffffff;
+  --warn: #ba5800;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 2px; --radius-lg: 6px;
-  --shadow: none; --shadow-hard: 2px 2px 0 rgba(42,42,42,.18);
-  --font-display: "Architects Daughter", "Caveat", cursive;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Architects Daughter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: 0em; --blur: 0px; --grain: .02;
+  --tracking: 0em; --blur: 0px; --grain: 0;
 }
 ```

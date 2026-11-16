@@ -1,41 +1,52 @@
 # 18 · Dopamine UI
 
-> **Bir cümlede:** Canlı renk + mikro ödül: her etkileşim küçük bir "iyi his" bırakır, ama palet disiplinli kalır.
+> **In one sentence:** Canlı renk + mikro ödül: her etkileşim küçük bir "iyi his" bırakır, ama palet disiplinli kalır.
 
 | | |
 |---|---|
-| **Hissiyat** | canlı, ödüllendirici, enerjik, genç |
-| **En iyi** | sosyal uygulama, alışveriş, fitness/alışkanlık, oyunlaştırılmış eğitim |
-| **Kaçın** | kurumsal finans, sağlık kaydı, resmi süreç, uzun okuma |
-| **Zorluk** | orta (renk disiplini zor) · **Erişilebilirlik** | orta risk (doygun renk yorgunluğu) |
-| **Aile** | Cesur (13–18) · **Token** | `kit/tokens.css` → `[data-style="dopamine-ui"]` |
-| **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | canlı, ödüllendirici, enerjik, genç |
+| **Best for** | sosyal uygulama, alışveriş, fitness/alışkanlık, oyunlaştırılmış eğitim |
+| **Avoid** | kurumsal finans, sağlık kaydı, resmi süreç, uzun okuma |
+| **Difficulty** | orta (renk disiplini zor) · **Accessibility** |  |
+| **Family** | Bold (13–18) · **Token** | `kit/tokens.css` → `[data-style="dopamine-ui"]` |
+| **Composition** | `split-reverse` · `inline` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Dopamine UI, ödül psikolojisini tasarıma çevirir: **doygun vurgu rengi** (pembe), **pastel yüzey**, **büyük radius** (18/24px), **yumuşak renkli gölge** ve **mikro ödül** (tamamlanınca pop, seri sayacı, konfeti). Renk boldur ama sayısı **3'ü geçmez**; gövde metni nötr koyu tondadır.
 
 Kazandığı şey: motivasyon ve kullanım süresi. Feda ettiği şey: ciddiyet; ayrıca doz kaçarsa "ucuz/oyuncak" algısı.
 
-### Ne değildir
+### What is not
 - **Claymorphism değildir.** Clay hacim (iç gölge) ile; dopamine **renk + hareket** ile konuşur.
 - **Memphis değildir.** Memphis kontur + geometri; dopamine pastel zemin + doygun vurgu.
 - **"Her yeri pembe" değildir.** Accent alanı ≤ %20; gerisi beyaz/krem ve nötr metin.
 - **Sürekli animasyon değildir.** Ödül hareketi **eylem başına bir kez**; sürekli parıltı yorgunluk yapar.
 
-### Nereden gelir
+### Where it comes from
 Oyunlaştırma (Duolingo, Strava) ve sosyal ürünlerin "streak/reward" dili; 2023+ tüketici uygulamalarında pastel + doygun vurgu kombinasyonu standartlaştı.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Accent **doygun** (pembe) ama ekranın ≤ %20'si mi?
 2. Yüzeyler pastel/beyaz, radius ≥ 18px mi?
 3. Gölge renkli ve yumuşak mı (pembe tonlu), sert değil mi?
 4. Ödül/mikro-etkileşim var mı (tek seferlik)?
 5. Accent üstünde **koyu** metin mi (beyaz değil)?
 
-## Zorunlu kurallar
+## Visual signature
+- **Pastel yüzey + doygun vurgu:** `--surface-2` (#ffe3ec) pastel blok, `--accent` (#ff3d71) CTA.
+- **Pembe gölge:** yumuşak, renkli; öğeyi "ışıklı" gösterir.
+- **Büyük radius:** buton pill, kart 24px.
+- **Mikro ödül:** tamamlanan görevde `scale(1→1.06→1)` + konfeti (tek sefer).
+- **Poppins:** geometrik ve dost; başlık 700.
+- **Streak/sayaç:** mono rakam + pill arka plan.
+- **Typography:** Poppins (display) + Poppins (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#ff3d71`; neutral scale `#fffdf7` → `#16121f`.
+- **Radius:** `18px` / `24px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Mandatory rules
 
 1. **Accent bütçesi:** doygun renk ekranın ≤ %20'si; bir ekranda tek doygun hue.
 2. **Accent üstü koyu metin:** `--accent-ink` = #16121f (5.40:1); beyaz metin yasak (3.41:1).
@@ -44,7 +55,66 @@ Oyunlaştırma (Duolingo, Strava) ve sosyal ürünlerin "streak/reward" dili; 20
 5. **Ödül disiplini:** eylem başına 1 animasyon, ≤ 400ms; sürekli parıltı yok.
 6. **Nötr gövde metni:** `--ink` koyu; doygun renkte metin yok.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#fffdf7` | page background | as a card background |
+| `--bg-2` | `#fff3d6` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#ffe3ec` | passive chip, hover background | primary button |
+| `--ink` | `#16121f` | title, body, icon | large background |
+| `--ink-soft` | `#4a4358` | secondary text, description | — |
+| `--ink-faint` | `#837b93` | decorative label, separator text | interactive text |
+| `--accent` | `#ff3d71` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#16121f` | text above accent | non-accent background |
+| `--line` | `rgba(22,18,31,.10)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **18.1:1** · `ink-soft/bg` **9.24:1** · `ink-faint/bg` **3.96:1 (decorative)** · `accent-ink/accent` **5.4:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Poppins) | 48px (mobile 30px) | 400 | 1.08 | -0.02em |
+| H2 | same | 28px | 600 | 1.2 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Poppins) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `18px` (buton, input, chip), `24px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Bans
 
 - 3'ten fazla doygun renk; her kart farklı hue.
 - Accent üstünde beyaz metin.
@@ -52,106 +122,44 @@ Oyunlaştırma (Duolingo, Strava) ve sosyal ürünlerin "streak/reward" dili; 20
 - Sert gölge, kalın siyah kontur (bu stil değil).
 - 12px altı gövde metni; pastel üstünde pastel metin.
 - Ödül animasyonunu form/ödeme ekranına taşımak.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-## Görsel imza
-- **Pastel yüzey + doygun vurgu:** `--surface-2` (#ffe3ec) pastel blok, `--accent` (#ff3d71) CTA.
-- **Pembe gölge:** yumuşak, renkli; öğeyi "ışıklı" gösterir.
-- **Büyük radius:** buton pill, kart 24px.
-- **Mikro ödül:** tamamlanan görevde `scale(1→1.06→1)` + konfeti (tek sefer).
-- **Poppins:** geometrik ve dost; başlık 700.
-- **Streak/sayaç:** mono rakam + pill arka plan.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 18px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 18px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 18px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 18px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 18px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 18px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 18px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#fffdf7` | sayfa | kart |
-| `--bg-2` | `#fff3d6` | ikinci zemin (sıcak) | metin |
-| `--surface` | `#ffffff` | kart | sayfa |
-| `--surface-2` | `#ffe3ec` | pastel blok, ikincil kart | CTA |
-| `--ink` | `#16121f` | tüm metin | — |
-| `--ink-soft` | `#4a4358` | açıklama | başlık |
-| `--ink-faint` | `#837b93` | dekoratif (3.96:1) | gövde metni |
-| `--accent` | `#ff3d71` | CTA, aktif, ödül | geniş zemin (>%20) |
-| `--accent-ink` | `#16121f` | accent üstü metin (**5.40:1**) | — |
-| `--line` | `rgba(22,18,31,.10)` | kenarlık | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 3.41:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **18.10:1** · `ink-soft/bg` **9.24:1** · `ink-faint/bg` **3.96:1** · `accent-ink/accent` **5.40:1**.
-- Accent üstünde **koyu** metin; beyaz 3.41:1 → yasak.
-- İkincil renk olarak pastel sarı (#fff3d6) veya mint kullanılabilir; her biri ≤ %10.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Poppins | 48px (mobil 30px) | 700 | 1.08 | `-0.01em` |
-| H2 | Poppins | 28px | 700 | 1.15 | `0` |
-| H3 | Poppins | 19px | 600 | 1.3 | `0` |
-| Gövde | Poppins | 16px | 400 | 1.6 | `0` |
-| Etiket | JetBrains Mono | 10px | 500 | 1.2 | `0.14em`, uppercase |
-| Buton | Poppins | 15px | 700 | 1 | `0.01em` |
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- Poppins dost ve geometrik; 16px gövde altına inme.
-- Emoji ikon olarak kullanılabilir ama **metrye karışmaz**; en fazla 1 emoji/ekran (mikro ödül).
-- Sayı/streak: mono tabular, 700.
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (hero 6/6) |
-| Gutter | 24px |
-| Container | 1160px |
-| Boşluk ölçeği | 8 · 16 · 24 · 32 · 48 · 64 |
-| Breakpoint | 640 / 900 / 1160 px |
-| Bölüm dikey | 64px (mobil 44px) |
-
-- Kart aralığı 16px; pastel bloklar arasında en az 1 beyaz kart (nefes).
-- Bir bölümde en fazla 2 doygun öğe (örn. 1 CTA + 1 badge).
-- Ödül alanı (streak/kupa) sağ üstte sabit; içerik alanını kaplamaz.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | yok | sayfa |
-| Kart | `--surface` | `--shadow` (pembe) | içerik |
-| Yükseltilmiş | `--surface` | daha güçlü pembe gölge | CTA bloğu, modal |
-
-- Derinlik yumuşak renkli gölgeden; sert gölge yok.
-- Radius: `--radius` 18px (buton), `--radius-lg` 24px (kart); pill 999px serbest.
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 48px | 0 24px | 999px | 15/700 | `--accent` + `--accent-ink` (koyu) + pembe gölge | hover: `translateY(-1px)` · active: `scale(.97)` · focus: 3px white + 2px accent halka · disabled: %40 |
-| Buton (pastel) | 48px | 0 22px | 999px | 15/700 | `--surface-2` + `--ink` | hover: `--bg-2` |
-| Input | 48px | 0 18px | 18px | 16/400 | `--surface` + 1px `--line` | focus: 2px `--accent` halka · error: `--danger` metin |
-| Kart | içerik | 20px | 24px | H3 + 16 | `--surface` + `--shadow` | hover: `translateY(-2px)` |
-| Chip / streak | 28px | 0 12px | 999px | 11/700 mono | pastel `--surface-2` + accent metin | aktif: accent zemin + koyu metin |
-| Nav | 68px | 0 24px | — | 15/700 | `--bg` + alt 1px `--line` | aktif: pill accent |
-| Tablo satırı | 54px | 12px 16px | 16px | 15/400 | satır arası 8px, gölge yok | hover: `--surface-2` |
-| Modal | içerik | 24px | 24px | H2 + 16 | `--surface` + güçlü gölge | backdrop: `rgba(22,18,31,.35)` |
-| Toast | 48px | 0 20px | 999px | 14/700 | accent + koyu metin | 4sn |
-| Grafik | — | — | 8px uç | eksen 10 mono | accent + pastel sarı | 2 seri |
-
-- Odak halkası: beyaz 3px + accent 2px (pastel zeminde accent tek başına zayıf).
-- Dokunma hedefi 48px; ödül ikonları dekoratif olduğu için hedef değil.
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, 22px, yuvarlak uç; dolgulu serbest |
-| Fotoğraf | Aydınlık, yüksek doygunluk, 24px radius |
-| İllüstrasyon | Yuvarlak vektör; 3B obje küçük dozda (ödül ikonları) |
-| Doku | Yok (`--grain: 0`) |
-| Logo | Yuvarlak, kalın; renkli olabilir |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 48px başlık, pastel blok, tek accent CTA, sağda ödül kartı | `shots/01-page.png` |
 | Dashboard | orta | Streak/kupa sağ üstte; KPI'lar pastel, grafik 2 renk | `shots/01-page.png` |
@@ -166,49 +174,61 @@ Oyunlaştırma (Duolingo, Strava) ve sosyal ürünlerin "streak/reward" dili; 20
 | Hata | düşük | Sevimli ama sakin dil; `--danger` yalnız ikon | `shots/01-page.png` |
 | Profil / ayar | orta | Ayar satırı 56px, pill toggle | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde 18.10:1, açıklama 9.24:1 → güvenli. `--ink-faint` 3.96:1 → etkileşimli değil.
-- Accent üstü **koyu** metin 5.40:1; beyaz metin yasak.
-- Doygun renk yorgunluğu: accent alanı ≤ %20, bir ekranda tek hue.
-- Ödül animasyonu: eylem başına 1, ≤ 400ms; `prefers-reduced-motion` zorunlu (vestibüler risk).
-- Odak halkası çift katman (beyaz + accent); pastel zeminde görünür.
-- Dokunma hedefi 48px.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 18.1:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 9.24:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.96:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.4:1 | ≥ 4.5 | button text |
+| focus ring/ground | 3.41:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 103.8 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ucuz/oyuncak | Accent %40'ı geçmiş, 3+ doygun renk | Accent ≤ %20, tek hue |
 | Okunmuyor | Accent üstünde beyaz metin | Koyu metin (5.40:1) |
 | Yorgunluk | Sürekli parıltı/nabız | Ödül yalnız eylemde, 1 kez |
 | Kimlik kaybı | Her kart farklı renk | Pastel + tek doygun hue |
 | Güven kaybı | Ödeme ekranında ödül animasyonu | Ödeme/girişte süs kapat |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `11 claymorphism` (pastel + yumuşaklık), `16 memphis` (neşe), `05 bento-grid` (ödül panosu).
-- **Yasak:** `02 swiss-design` (rasyonel sessizlik), `33 dark-academia` (ciddiyet), `34 skeuomorphism` (malzeme gerçekliği).
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `claymorphism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `memphis` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `bento-grid` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `swiss-design` | Two different ornamental languages compete on the same screen |
+| Mixing | `dark-academia` | Two different ornamental languages compete on the same screen |
+| Mixing | `skeuomorphism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://dribbble.com/tags/dopamine_ui | Renk oranı örnekleri |
-| https://mobbin.com | Streak/ödül akışları |
-| https://developer.apple.com/design/human-interface-guidelines/motion | Hareket ve vestibüler erişilebilirlik |
+| Source | for what |
+| --- | --- |
+| https://dribbble.com/tags/dopamine_ui | Dribbble · Dopamine UI — Renk oranı örnekleri |
+| https://mobbin.com | Mobbin — Streak/ödül akışları |
+| https://developer.apple.com/design/human-interface-guidelines/motion | Apple HIG · Motion — Hareket ve vestibüler erişilebilirlik |
 
 ## AI brief
 
-```
+```text
 Stil: Dopamine UI (styles/18-dopamine-ui/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="dopamine-ui"]; hard-coded renk YASAK.
 Renk bütçesi: doygun accent ≤ %20 ekran alanı, bir ekranda tek hue (#ff3d71); pastel #ffe3ec destek.
@@ -219,15 +239,15 @@ Tipografi: Poppins display 700 (48/1.08) + gövde 16/1.6; etiket mono 10 upperca
 Yoğun/kritik ekran (form, ödeme): doygun rengi azalt, ödül animasyonu kapalı.
 Yasak: 3+ doygun renk, accent üstü beyaz metin, sürekli animasyon, sert gölge, pastel üstünde pastel metin.
 Çıktı: kod + tek paragraf not (renk oranı ve ödül disiplini).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Accent ≤ %20, tek doygun hue.
-- [ ] Accent üstü koyu metin (5.40:1).
-- [ ] Radius 18/24, gölge renkli ve yumuşak.
-- [ ] Ödül animasyonu eylem başına 1, ≤ 400ms.
-- [ ] Ödeme/giriş ekranında süs kapalı.
-- [ ] `prefers-reduced-motion` konfeti dahil kapatıyor.
+Style: Dopamine UI (dopamine-ui) · family: Bold (13–18)
+Token: --bg #fffdf7 · --surface #ffffff · --ink #16121f · --accent #ff3d71 · --line rgba(22,18,31,.10)
+Radius: 18px / 24px · Typography: Poppins / Poppins / JetBrains Mono
+Required: **Accent bütçesi:** doygun renk ekranın ≤ %20'si; bir ekranda tek doygun hue. · **Accent üstü koyu metin:** `--accent-ink` = #16121f (5.40:1); beyaz metin yasak (3.41:1). · **Radius 18/24px**, kart 24px; buton pill/18px.
+Banned: 3'ten fazla doygun renk; her kart farklı hue. · Accent üstünde beyaz metin. · Sürekli animasyon / parıltı / nabız efekti.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -238,10 +258,24 @@ Yasak: 3+ doygun renk, accent üstü beyaz metin, sürekli animasyon, sert gölg
   --ink: #16121f; --ink-soft: #4a4358; --ink-faint: #837b93;
   --accent: #ff3d71; --accent-ink: #16121f;
   --line: rgba(22,18,31,.10);
+  --danger: #d92d20;
+  --danger-ink: #ffffff;
+  --ok: #00873e;
+  --ok-ink: #ffffff;
+  --warn: #bc5900;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 18px; --radius-lg: 24px;
   --shadow: 0 10px 24px rgba(255,61,113,.18); --shadow-hard: none;
-  --font-display: "Poppins", "Inter", system-ui, sans-serif;
-  --font-body: "Poppins", "Inter", system-ui, sans-serif;
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --tracking: -0.01em; --blur: 0px; --grain: 0;
 }

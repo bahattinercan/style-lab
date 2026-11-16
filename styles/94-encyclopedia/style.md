@@ -1,147 +1,169 @@
 # 94 · Encyclopedia
 
-> **Bir cümleyle:** Sözlük maddesi: serif madde başı + mono telaffuz, numaralı tanımlar ve çapraz referans okları.
+> **In one sentence:** Encyclopedia
 
 | | |
 |---|---|
-| **Hissiyat** | otoriter, yoğun, mürekkep kokulu, "kaynak" |
-| **En iyi** | ansiklopedi/sözlük okuma, API ve veri sözlüğü dokümantasyonu, mevzuat-terim araması, üniversite kütüphanesi kataloğu |
-| **Kaçın** | ürün vitrini, kampanya sayfası, oyunlaştırılmış onboarding, görsel ağırlıklı portfolyo |
-| **Zorluk** | orta (yoğunluk + okunurluk dengesi) · **Erişilebilirlik** | iyi (15.72:1 gövde, 9.14:1 accent üstü) |
-| **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="encyclopedia"]` |
-| **Kompozisyon** | `type` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | otoriter, yoğun, mürekkep kokulu, "kaynak" |
+| **Best for** | ansiklopedi/sözlük okuma, API ve veri sözlüğü dokümantasyonu, mevzuat-terim araması, üniversite kütüphanesi kataloğu |
+| **Avoid** | ürün vitrini, kampanya sayfası, oyunlaştırılmış onboarding, görsel ağırlıklı portfolyo |
+| **Difficulty** | orta (yoğunluk + okunurluk dengesi) · **Accessibility** |  |
+| **Family** | Publication & Typography (86–95) · **Token** | `kit/tokens.css` → `[data-style="encyclopedia"]` |
+| **Composition** | `type` · `inline` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Encyclopedia, kaynak metnin biçimidir: **madde başı** (serif Lora 700) + **telaffuz** (mono) → **numaralı tanımlar** (1. 2. 3., mono işaret) → **çapraz referanslar** (accent `→`) → **veri sözlüğü tablosu** (alan / tip / zorunluluk / notlar). Gövde iki kolonda (26–28ch) ve 14.5px'tir: yoğunluk bilinçli, çünkü bu ekran "bir şey öğrenmek için" değil **bir şeyi doğrulamak için** açılır.
 
 Kazandığı şey: **otorite ve taranabilirlik**. Numaralı tanımlar aynı kavramın farklı anlamlarını ayırır; mono tip kolonu veri sözlüğünü okunur kılar; accent (erik moru `#7a1f52`) yalnız yönlendirmede kullanılır. Feda ettiği şey: **görsel çekicilik** — bu stilde hiçbir görsel "kahraman" değildir; ürün veya hikâye anlatımı için uygun değildir.
 
-### Ne değildir
+### What is not
 - **Editorial Design (03) değildir.** Editorial drop cap + kolon ritmiyle **anlatı** kurar (Fraunces + Inter, ölçü geniş); burada drop cap yok, madde başı + telaffuz ikilisi ve **numaralı tanımlar** var, gövde iki kolon ve 14.5px.
 - **Museum & Thesis (92) değildir.** O stil 96px kenarla tek kolon uzun okuma ve `Fig.` künyeleri kurar (EB Garamond); burada kenar 64px, gövde **iki kolon**, karakter **madde başı + tanım numarası + veri tablosu**.
 - **Utility (44) değildir.** Utility operasyonel hairline ve isimli metin stilleriyle çalışır (Poppins, mavi); burada serif madde başı ve erik accent var.
 - **Dark Academia (33) değildir.** O stil koyu mum paletiyle atmosfer kurar; burada zemin açık krem (`#f7f5ee`) ve süs yok.
 - **"İki kolonlu düz metin" değildir.** Telaffuz satırı, numaralı tanım işaretleri ve tip kolonlu tablo olmadan bu stil sadece bir blog şablonudur.
 
-### Nereden gelir
+### Where it comes from
 Ansiklopedi maddesi 250 yıldır aynı işi yapar: bir terimi **tanımla, numaralandır, başka terime bağla**. Basılı sözlükte kolon kuralı, madde başı kalınlığı ve çapraz referans oku okurun gözünü yönetir. Dijitalde iki dalga bu biçimi geri getirdi: (1) API/veri dokümantasyonu ("data dictionary"), (2) açık kaynak bilgi tabanları — ikisi de aynı sorunu çözer: **çok sayıda kısa tanımı taranabilir tutmak**.
 
 Klişeye düşmemesi için korunması gereken detay: **iki kolon + mono tip kolonu**. Gövdeyi tek kolonda 100ch'e yaymak, tanım numaralarını kaldırmak veya accent'i başlıklara taşımak stili "uzun blog yazısı"na çevirir.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Madde başı **serif ve kalın** mı, hemen altında **mono telaffuz** satırı var mı?
 2. Tanımlar **1. 2. 3.** mono işaretleriyle numaralı mı (madde işareti değil)?
 3. Gövde **iki kolon** mu, aralarında 1px kolon kuralı var mı?
 4. Bir yerde **alan / tip / zorunluluk / notlar** kolonlu veri tablosu var mı?
 5. Çapraz referanslar accent **`→`** ile mi; accent ekranın ≤ %7'sinde mi, gölge hiç yok mu?
 
-## Görsel imza
-1. **Madde başı ikilisi:** H1 Lora 700 42px + altında mono 12px telaffuz (`/ɑːn.saɪ.kləˈpiː.di.ə/`), aralarında 8px.
-2. **Numaralı tanımlar:** `ol` listesi, mono 11px accent numara, 1.4em asılı girinti; madde işareti hiç yok.
-3. **Kolon kuralı:** gövde `columns: 2; column-gap: 32px; column-rule: 1px solid var(--line)`; mobilde tek kolon ve kural kapanır.
-4. **Çapraz referans:** accent mono 12px, `→ ` öneki; başlık veya gövde içinde aynı renk kullanılmaz.
-5. **Veri sözlüğü tablosu:** alan (mono), tip (mono accent), zorunluluk (metin), notlar (Inter 13px); başlık altı 1px `--ink`.
-6. **Alfabe şeridi:** landing'de üstte A–Z mono 10px .18em, aktif harf accent kutu (yalnız 1 adet).
-7. **Düz kâğıt:** gölge yok, radius 0, kart 1px `--line`; modal bile 2px mürekkep çerçevesiyle ayrılır.
+## Visual signature
+- **Madde başı ikilisi:** H1 Lora 700 42px + altında mono 12px telaffuz (`/ɑːn.saɪ.kləˈpiː.di.ə/`), aralarında 8px.
+- **Numaralı tanımlar:** `ol` listesi, mono 11px accent numara, 1.4em asılı girinti; madde işareti hiç yok.
+- **Kolon kuralı:** gövde `columns: 2; column-gap: 32px; column-rule: 1px solid var(--line)`; mobilde tek kolon ve kural kapanır.
+- **Çapraz referans:** accent mono 12px, `→ ` öneki; başlık veya gövde içinde aynı renk kullanılmaz.
+- **Veri sözlüğü tablosu:** alan (mono), tip (mono accent), zorunluluk (metin), notlar (Inter 13px); başlık altı 1px `--ink`.
+- **Alfabe şeridi:** landing'de üstte A–Z mono 10px .18em, aktif harf accent kutu (yalnız 1 adet).
+- **Düz kâğıt:** gölge yok, radius 0, kart 1px `--line`; modal bile 2px mürekkep çerçevesiyle ayrılır.
+- **Typography:** Lora (display) + Inter (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#7a1f52`; neutral scale `#f7f5ee` → `#1a1c1a`.
+- **Radius:** `0px` / `2px`; Corner 0px — in typographic essay, geometry serves the text.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f7f5ee` | Sayfa zemini (krem kâğıt) | Kart içi |
-| `--bg-2` | `#efece1` | Alfabe şeridi, alt bilgi | Geniş dolgu |
-| `--surface` | `#fffcf4` | Kart, tablo satırı, form alanı | Sayfa zemini |
-| `--surface-2` | `#ebe7da` | Tip etiketi, chip, hover satır | Metin arkası |
-| `--ink` | `#1a1c1a` | Madde başı, gövde, nav kuralı | Accent zemin üstü |
-| `--ink-soft` | `#4a4f4a` | Telaffuz, açıklama, tablo başlığı | 10px altı etiket |
-| `--ink-faint` | `#767b76` | Alfabe şeridi, dekoratif etiket | Etkileşimli metin |
-| `--accent` | `#7a1f52` | Tanım numarası, çapraz referans, tip kolonu, birincil buton | Gövde metni, geniş zemin |
-| `--accent-ink` | `#fdf6ef` | Accent üstü metin | Accent olmayan zemin |
-| `--line` | `rgba(26,28,26,.16)` | Kolon kuralı, tablo çizgisi, kart kenarı | Metin |
+1. **Madde başı ikilisi:** serif H1 (Lora 700) + mono telaffuz satırı; madde başı tek başına bırakılmaz.
+2. **Numaralı tanımlar:** her tanım `1.` `2.` mono işareti taşır; madde işareti kullanılmaz.
+3. **İki kolon:** gövde `columns: 2`, kolon arası 32px ve 1px kural; 900px altında tek kolon.
+4. **Çapraz referans accent:** `→` + accent mono; accent ekranın ≤ %7'si.
+5. **Veri sözlüğü tablosu:** alan (mono) / tip (mono accent) / zorunluluk / notlar; başlık altı 1px `--ink`.
+6. **Düz kâğıt:** gölge yok, radius 0, ayrım 1px çizgi; alfabe şeridi yalnız landing'de 1 adet.
 
-- Ölçülen kontrast: `ink / bg` = **15.72:1** · `ink-soft / bg` = **7.67:1** · `accent-ink / accent` = **9.14:1** · `ink-faint / bg` = **3.96:1** (yalnız dekoratif).
-- Tek vurgu kuralı: erik moru accent ekranın **≤ %7**'si; vurgu için renk değil kalınlık ve mono işaret kullanılır.
-- Yasak kombinasyon: accent zemin + `--ink-soft`; `--ink-faint` + `--bg-2` (3.5:1); ikinci accent (mavi/yeşil bağlantı rengi).
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f7f5ee` | page background | as a card background |
+| `--bg-2` | `#efece1` | partition divider floor, table top | button background |
+| `--surface` | `#fffcf4` | kart, input, modal | full-page background |
+| `--surface-2` | `#ebe7da` | passive chip, hover background | primary button |
+| `--ink` | `#1a1c1a` | title, body, icon | large background |
+| `--ink-soft` | `#4a4f4a` | secondary text, description | — |
+| `--ink-faint` | `#767b76` | decorative label, separator text | interactive text |
+| `--accent` | `#7a1f52` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fdf6ef` | text above accent | non-accent background |
+| `--line` | `rgba(26,28,26,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Madde başı / H1 | Lora | 42px (mobil 30px) | 700 | 1.08 | -0.005em |
-| H2 | Lora | 26px | 700 | 1.16 | 0 |
-| H3 | Lora | 18px | 700 | 1.3 | 0 |
-| Gövde | Inter | 14.5px | 400 | 1.6 | 0 |
-| Tablo notu | Inter | 13px | 400 | 1.5 | 0 |
-| Telaffuz / mono | IBM Plex Mono | 12px | 400 | 1.45 | 0.04em |
-| Etiket / mono | IBM Plex Mono | 10.5px | 400 | 1.4 | 0.1em |
+- Measured contrast: `ink/bg` **15.72:1** · `ink-soft/bg` **7.67:1** · `ink-faint/bg` **3.96:1 (decorative)** · `accent-ink/accent` **9.14:1**.
+- Two colors are enough: ground and ink. Accent is just a word of connection and emphasis.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.6 (14.5 → 26 → 42); kullanılan basamak sayısı 7.
-- Ölçü önerisi: `h1 { font-size: clamp(30px, 3.4vw, 42px) }`.
-- Gövde metni maksimum satır uzunluğu: **56ch** toplam; iki kolonda kolon başına **26–28ch**.
-- Ağırlık kuralı: gövde 400, vurgu 600, madde başı 700. Gövdede 700 kullanmak sözlük hiyerarşisini bozar; italik yalnız terim adlarında.
-- Gövde 16px üstüne çıkmaz: yoğunluk sözlüğün karakteridir; okunurluk satır aralığı (1.6) ve 26ch kolonla korunur.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Lora) | 30px (mobile 30px) | 700 | 0.98 | -0.035em |
+| H2 | same | 26px | 600 | 1.08 | -0.015em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 14.5px | 400 | 1.6 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 10.5px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (gövde 2×26ch, tablo tam genişlik) |
-| Gutter | 24px (kolon arası 32px) |
-| Container genişliği | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 / 768 / 390 — 900px altında tek kolon, kolon kuralı kapanır, alfabe şeridi 8.5px |
+- Display 72px, line spacing 0.98; body 16/1.6. There is no midpoint — the jumping between two extremes is intentional.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: başlık ve alfabe şeridi tam genişlik; gövde iki kolon. Ekran başına en fazla 1 tam genişlik tablo.
-- Bölüm ritmi: art arda en fazla **4** numaralı tanım; beşincide 1px divider ve 16px boşluk.
-- Bölüm dikey boşluk 64px (mobil 40px); kart padding 20px; tablo satır yüksekliği 34px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | Sayfa, alfabe şeridi |
-| Kart / tablo | `--surface` + 1px `--line` | `none` | Madde kartı, veri tablosu, KPI |
-| Yüzen katman | `--surface` + 2px `--ink` | `none` | Modal, dropdown (perde %55) |
+- 12 columns are not visible; The title spans 8 columns, the body remains in 6 columns.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: kart `1px solid var(--line)`; nav altı ve tablo başlığı `1px solid var(--ink)`; kolon kuralı `column-rule: 1px`.
-- Derinlik nereden gelir: **hiçbir yerden** — kolon kuralı, cetvel ve numaralandırma. `--shadow: none`.
-- Radius: `--radius` 0px (her şey) · `--radius-lg` 2px (yalnız modal). 2px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 13px 16px | 0px | 10.5px/400 mono, .08em | `--accent` / `--accent-ink`, gölge yok | hover %90 130ms · active translateY(1px) · focus 2px accent + 1px offset · disabled opacity .45 kesikli · loading mono `…` |
-| Buton (ikincil) | 44px | 13px 16px | 0px | 10.5px/400 mono | şeffaf / `--ink`, 1px `--line` | hover `--surface-2` · focus aynı |
-| Input (arama) | 44px | 0 10px | 0px | 14.5px/400 Inter | `--surface` + 1px `--line` | focus 2px accent + 1px offset · error `--danger` + mono açıklama · disabled opacity .45 |
-| Kart (madde) | — | 20px | 0px | madde başı Lora 26px | `--surface` + 1px `--line`, gölge yok | hover: kenar `--ink-faint` |
-| Chip / tip etiketi | 20px | 0 6px | 0px | 9.5px/400 mono, .08em | `--surface-2` + 1px `--line` | accent varyantı dolu (tip adı) |
-| Nav | 56px | 0 36px | 0 | marka Lora 700 19px + mono 10.5px | `--bg` + alt 1px `--ink` | aktif: 2px accent alt çizgi; pasif `--ink-soft` |
-| Tablo satırı | 34px | 8px 10px | 0 | alan/tip mono 12px, notlar Inter 13px | alt 1px `--line`, başlık altı 1px `--ink` | hover `--surface-2` · seçili: sol 2px accent |
-| Modal | — | 24px | 2px | H2 Lora 26px + mono telaffuz | 2px `--ink` çerçeve, gölge yok | perde %55, 130ms |
-| Toast | 40px | 10px 14px | 0px | 11px/400 mono | `--ink` zemin / `--bg` metin | sol uçta 1px accent kural, 3200ms |
-| Grafik paleti | — | — | — | eksen 10px mono | `--accent`, `--ink`, `--ink-faint` | en fazla 3 seri; 1px çizgi |
+- No shadows and rounding; The only difference is the hairline and space.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 0px — in typographic essay, geometry serves the text.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 1px`; accent zeminli butonda `outline-color: var(--accent-ink)`, offset -2px.
-- Dokunma hedefi: en az 44×44px; 34px tablo satırında satır içi eylem 44px sarmalayıcı ile büyütülür.
-- Çapraz referans bağlantıları altı çizili değil, accent + `→` ile işaretlenir; hover'da altı çizilir (yalnız hover).
+## Bans
 
-## Görsel dil
+- Sans display, 52px üstü başlık, afiş ölçeği.
+- Gradient, blur, cam yüzey, gölge.
+- 2px üstü radius, pill buton, yuvarlak chip.
+- İkinci accent; bağlantı rengi olarak mavi/yeşil.
+- Numarasız tanım listesi, madde işareti, ikonlu liste.
+- Gövdeyi tek kolonda 100ch'e yaymak; 16px üstü gövde puntoso.
+- Third font family.
+- Shadow/bevel in title.
+- uppercase in body text.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi; çoğunlukla ikon yerine işaret (`→`, `§`, `†`) |
-| Fotoğraf | Yok — zorunluysa 1px çerçeveli küçük levha + mono künye |
-| İllüstrasyon | Yalnız 1px çizgi şema (ağaç/akış) + mono etiket |
-| Doku | `--grain: .015` kâğıt |
-| Logo alanı | Serif kelime markası (Lora 700), 20px güvenli boşluk; alfabe şeridi ayrı bileşen |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 9.55:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 16px; same weight as text |
+| photo | Only when necessary; supports text, does not compete |
+| illustration | Can be used as typographic sign |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | Alfabe şeridi + madde başı + telaffuz + ilk tanım | `shots/01-page.png` |
 | Dashboard | orta | Veri sözlüğü tablosu + 3 KPI; mono tip kolonu | `shots/01-page.png` |
@@ -156,48 +178,33 @@ Klişeye düşmemesi için korunması gereken detay: **iki kolon + mono tip kolo
 | Hata | düşük | `--danger` kenar + mono açıklama satırı | `shots/01-page.png` |
 | Profil / ayar | orta | İki kolon: mono etiket + Inter değer, 1px cetvel | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-- **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — madde kartı — numaralı tanımlar, telaffuz satırı, çapraz referans oku.
+## Accessibility
 
-## Zorunlu kurallar
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.72:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.67:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.96:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 9.14:1 | ≥ 4.5 | button text |
+| focus ring/ground | 9.55:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 98 | ≥ 60 target | thin text |
 
-1. **Madde başı ikilisi:** serif H1 (Lora 700) + mono telaffuz satırı; madde başı tek başına bırakılmaz.
-2. **Numaralı tanımlar:** her tanım `1.` `2.` mono işareti taşır; madde işareti kullanılmaz.
-3. **İki kolon:** gövde `columns: 2`, kolon arası 32px ve 1px kural; 900px altında tek kolon.
-4. **Çapraz referans accent:** `→` + accent mono; accent ekranın ≤ %7'si.
-5. **Veri sözlüğü tablosu:** alan (mono) / tip (mono accent) / zorunluluk / notlar; başlık altı 1px `--ink`.
-6. **Düz kâğıt:** gölge yok, radius 0, ayrım 1px çizgi; alfabe şeridi yalnız landing'de 1 adet.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Yasaklar
+## Sample images
 
-- Sans display, 52px üstü başlık, afiş ölçeği.
-- Gradient, blur, cam yüzey, gölge.
-- 2px üstü radius, pill buton, yuvarlak chip.
-- İkinci accent; bağlantı rengi olarak mavi/yeşil.
-- Numarasız tanım listesi, madde işareti, ikonlu liste.
-- Gövdeyi tek kolonda 100ch'e yaymak; 16px üstü gövde puntoso.
+Identical content is rendered with the same text in every style; only the design differs.
 
-## Erişilebilirlik
-
-- Ölçülen riskler: en düşük çift `--ink-faint / --bg` = **3.96:1** — `--ink-faint` yalnız alfabe şeridi ve dekoratif etiket; etkileşimli metin, telaffuz satırı, tanım metni olamaz.
-- 14.5px gövde + 1.6 satır aralığı + 26–28ch kolon: uzun okuma için sınırda ama kabul edilebilir; `text-spacing` (WCAG 1.4.12) açıldığında kolonlar taşmaz (sabit yükseklik yok).
-- Telaffuz satırı 12px mono: kısa metin kuralı geçerli; `abbr`/`lang` etiketi ile işaretlenir, aksi halde ekran okuyucu yanlış okur.
-- Hareket/parlama hassasiyeti: düşük; `once: false` olan scroll reveal her geçişte tekrar eder, reduced-motion'da durur.
-- Şeffaf yüzey yok (`--blur: 0`, `--shadow: none`); `color-mix` desteklenmezse buton hover'ı `--surface-2` fallback'ine düşer.
-- Odak görünürlüğü: 2px accent + 1px offset; accent zeminli butonda `--accent-ink` halka, offset -2px.
-
-## Örnek görseller
-
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Uzun blog yazısı" gibi | tek kolon + madde işaretli listeler | `columns: 2` + numaralı tanım (`ol` + mono sayaç) |
 | Tanımlar karışıyor | numara yok, asılı girinti yok | 1.4em asılı girinti + mono numara |
 | Accent her yerde | başlıklar ve gövde de erik moru | Accent yalnız numara, `→`, tip kolonu, birincil buton |
@@ -205,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Gövde yoruyor | 1.4 satır aralığı, 60ch kolon | 1.6 satır aralığı, 26–28ch kolon |
 | Modal "yüzüyor" | gölge eklenmiş | Gölgeyi kaldır; 2px mürekkep çerçeve + perde |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `editorial-design` — uzun anlatı gövdesini editorial üstlenir; madde/tanım yapısı bu stilde kalır.
-- **Uyumlu:** `utility` — form ve ayar ekranlarında hairline disiplini ortak; utility'nin isimli stilleri kart içinde.
-- **Uyumlu:** `museum-thesis` — kültür kurumu arşivi bağlamı ortak; künye/levha dili museum-thesis'te kalır.
-- **Yasak:** `maximalism` — katman ve renk çokluğu iki kolonlu taranabilirliği yok eder.
-- **Yasak:** `memphis` — desen ve canlı renk sözlük ciddiyetini bozar.
-- **Yasak:** `dopamine-ui` — mikro ödül animasyonu "doğrulama" işini gürültüye çevirir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `museum-thesis` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `maximalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `memphis` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Encyclopedia | madde başı, numaralı tanım ve çapraz referans düzeni |
-| https://en.wikipedia.org/wiki/Data_dictionary | alan / tip / zorunluluk / notlar tablosu |
-| https://www.britannica.com/ | madde başı hiyerarşisi ve telaffuz satırı |
-| https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html | iki kolonlu 14.5px gövdede satır aralığı ölçütü |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Encyclopedia | Encyclopedia — Wikipedia — madde başı, numaralı tanım ve çapraz referans düzeni |
+| https://en.wikipedia.org/wiki/Data_dictionary | Data dictionary — Wikipedia — alan / tip / zorunluluk / notlar tablosu |
+| https://www.britannica.com/ | Encyclopædia Britannica — madde başı hiyerarşisi ve telaffuz satırı |
+| https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html | WCAG 2.2 · Text Spacing — iki kolonlu 14.5px gövdede satır aralığı ölçütü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Encyclopedia (styles/94-encyclopedia/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="encyclopedia"] değişkenleri; hard-coded renk/golge/radius yasak.
 Tipografi: madde basi Lora 700 (H1 42px / 1.08, mobil 30px), govde Inter 400 14.5px/1.6 (<= 56ch toplam,
@@ -243,15 +250,15 @@ Hareket: enter 330ms cubic-bezier(.4,0,.3,1) 6px stagger 25ms; scroll top 89% / 
 Yasak: sans display, 52px ustu baslik, gradient/blur/golge, 2px ustu radius, ikinci accent,
   numarasiz tanim, tek kolonda 100ch govde, 16px ustu govde puntoso.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (madde başı+telaffuz, numaralı tanım, iki kolon, `→`).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1 (15.72:1), accent üstü ≥ 4.5:1 (9.14:1).
-- [ ] Odak halkası görünür (2px + 1px offset), dokunma hedefi ≥ 44px.
-- [ ] 390px genişlikte taşma yok; kolonlar tek kolona düşüyor.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Encyclopedia (encyclopedia) · family: Publication & Typography (86–95)
+Token: --bg #f7f5ee · --surface #fffcf4 · --ink #1a1c1a · --accent #7a1f52 · --line rgba(26,28,26,.16)
+Radius: 0px / 2px · Typography: Lora / Inter / IBM Plex Mono
+Required: **Madde başı ikilisi:** serif H1 (Lora 700) + mono telaffuz satırı; madde başı tek başına bırakılmaz. · **Numaralı tanımlar:** her tanım `1.` `2.` mono işareti taşır; madde işareti kullanılmaz. · **İki kolon:** gövde `columns: 2`, kolon arası 32px ve 1px kural; 900px altında tek kolon.
+Banned: Sans display, 52px üstü başlık, afiş ölçeği. · Gradient, blur, cam yüzey, gölge. · 2px üstü radius, pill buton, yuvarlak chip.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -262,13 +269,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #1a1c1a; --ink-soft: #4a4f4a; --ink-faint: #767b76;
   --accent: #7a1f52; --accent-ink: #fdf6ef;
   --line: rgba(26,28,26,.16);
+  --danger: #d72b1e;
+  --danger-ink: #ffffff;
+  --ok: #008239;
+  --ok-ink: #ffffff;
+  --warn: #b65400;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
   --shadow: none; --shadow-hard: none;
-  --font-display: "Lora", Georgia, serif;
+  --font-display: "Lora", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: -0.005em; --blur: 0px; --grain: 0.015;
+  --tracking: -0.005em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `token-block.css` içinde `[data-theme="dark"][data-style="encyclopedia"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

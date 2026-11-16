@@ -1,148 +1,170 @@
 # 88 · Magazine Feature
 
-> **Bir cümlede:** Dergi feature açılışı: Fraunces 64px display, 34px kayma, 0.9s reveal ve tek pin'li pull-quote sahnesi — okunan değil "sayfası çevrilen" bir editoryal yüzey.
+> **In one sentence:** Dergi feature açılışı: Fraunces 64px display, 34px kayma, 0.9s reveal ve tek pin'li pull-quote sahnesi — okunan değil "sayfası çevrilen" bir editoryal yüzey.
 
 | | |
 |---|---|
-| **Hissiyat** | gösterişli · editoryal · sinematik · sıcak |
-| **En iyi** | Marka hikâyesi, dergi feature, sezon kampanyası, vaka çalışması |
-| **Kaçın** | Yoğun dashboard, hızlı form akışı, düşük bant genişliği olan pazar |
-| **Zorluk** | yüksek · **Erişilebilirlik** | orta |
-| **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="magazine-feature"]` (bu klasördeki `token-block.css`) |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | gösterişli · editoryal · sinematik · sıcak |
+| **Best for** | Marka hikâyesi, dergi feature, sezon kampanyası, vaka çalışması |
+| **Avoid** | Yoğun dashboard, hızlı form akışı, düşük bant genişliği olan pazar |
+| **Difficulty** | yüksek · **Accessibility** |  |
+| **Family** | Publication & Typography (86–95) · **Token** | `kit/tokens.css` → `[data-style="magazine-feature"]` |
+| **Composition** | `sticky` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-
+### What it is
 Magazine Feature bir sayfayı dergi açılışı gibi kurgular: 7/12 tam kanama görsel, üstünde Fraunces 64px/1.04 display, altında 58ch ölçü gövde (Jost 17px/1.66). Kazanılan şey anlatı hissi ve marka sıcaklığı; feda edilen şey bilgi yoğunluğu — ekran başına en fazla 2 fikir.
 
 Derinlik yumuşak tek gölgeden (`0 10px 30px` %12) ve 14px radius'lu görsel kartlarından gelir. Vurgu böğürtlen `#8a2f52`; yalnız pull-quote işareti, birincil buton ve etiket çizgisinde, ekranın ≤%7'si.
 
 Hareket sinematiktir ama tek sahnede kalır: 0.9s `power2.out` giriş, 1.0s scroll reveal, **tek pin** (scrub 0.9, +110%) ile pull-quote sabitlenir. Pin mobilde kapalı, reduced-motion'da statik poster kalır.
 
-### Ne değildir
-
+### What is not
 - `editorial-design` değildir: editorial iki aile ve numaralı bölümlerle dergi ızgarası kurar, pin'i yoktur; burada tek display ailesi, 34px kayma ve 1 pin vardır.
 - `luxury-typography` değildir: lüks 58px Cormorant ve 320ms hover ile sakin kalır; burada 64px Fraunces, 320ms hover scale 1.03 ve tam kanama görsel vardır.
 - `maximalism` değildir: maximalism katman ve desen yığar; burada ekran başına 1 tam kanama görsel ve 1 pull-quote sınırı vardır.
 - `magazine-feature` bir "blog şablonu" değildir: pin sahnesi ve 7/5 asimetrisi olmadan uygulanmaz.
 
-### Nereden gelir
-
+### Where it comes from
 Kökeni 1960'ların *Esquire*/*Vogue* feature açılışları ve 2010'ların scroll-driven editoryal siteleridir (NYT Snow Fall sonrası). Bugün marka hikâyesi ve vaka çalışması sayfalarında geri döndü çünkü ürün anlatısı aranıyor. Klişeye düşmemek için korunması gereken detay: tek pin sahnesi ve pull-quote'un gerçekten alıntı olması.
 
-### 3 saniyede tanıma testi
-
+### Recognition test in 3 seconds
 1. Display Fraunces 600 64px/1.04, tracking −0.02em; gövde Jost 17px/1.66.
 2. Ekran başına 1 tam kanama görsel (7/12) + 1 pull-quote; ikinci büyük görsel yok.
 3. Görsel kartlarında 14px radius ve tek yumuşak gölge (`0 10px 30px` %12).
 4. Tek vurgu böğürtlen `#8a2f52`, yalnız pull-quote işareti ve birincil CTA'da.
 5. Bir pin sahnesi: pull-quote sabitlenir, scrub 0.9; mobilde pin kapalı.
 
-## Görsel imza
-
+## Visual signature
 - Display Fraunces 600 64px / 1.04 / −0.02em (mobil 36px); gövde Jost 17px / 1.66 / 58ch.
 - 7/5 asimetri: görsel 7 kolon, metin 5 kolon; ekran başına 1 tam kanama görsel.
 - Pull-quote: 28px Fraunces 500, sol 3px accent çizgi, 32px iç boşluk; ekran başına 1.
 - Görsel kartı: 14px radius, tek gölge `0 10px 30px rgba(26,22,20,.12)`, üstünde %2 grain.
 - Etiket çizgisi: mono 11px, tracking .16em, 1px alt hairline, başlığın 14px üstünde.
 - Tek pin sahnesi: scrub 0.9, +110% mesafe, mobilde statik.
+- **Typography:** Fraunces (display) + Jost (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#8a2f52`; neutral scale `#faf6f0` → `#1a1614`.
+- **Radius:** `2px` / `14px`; Corner 0px — in typographic essay, geometry serves the text.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#faf6f0` | sayfa zemini | kart yüzeyi olarak |
-| `--surface` | `#fffdf9` | kart / panel / modal | tam kanama blok |
-| `--ink` | `#1a1614` | gövde ve başlık metni | dekoratif arka plan |
-| `--accent` | `#8a2f52` | böğürtlen: pull-quote çizgisi, birincil CTA, aktif etiket | gövde metni, ikinci renk, gradyan durağı |
-| `--line` | `rgba(26,22,20,.14)` | 1px hairline ayırıcı | 2px+ kalın kural (istisnalar metinde) |
+1. Display Fraunces 600 64px/1.04/−0.02em (mobil 36px); gövde Jost 17px/1.66/58ch
+2. 7/5 asimetri ve ekran başına 1 tam kanama görsel; ikinci büyük görsel yok
+3. Görsel kartı 14px radius + tek yumuşak gölge `0 10px 30px rgba(26,22,20,.12)`
+4. Tek vurgu böğürtlen #8a2f52, ekranın ≤%7'si, accent üstü daima --accent-ink
+5. Ekran başına en fazla 1 pull-quote (28px Fraunces 500 + 3px accent çizgi)
+6. Bölüm arası 104px (mobil 60px), kart içi 30px, radius 2/14px
+7. Tek pin sahnesi: scrub 0.9, +110%, mobilde kapalı
+8. Grain .02 yalnız fotoğraf üstünde; sayfa zemini düz
 
-- Ölçülen kontrast: `ink / bg` = 16.69:1 · `ink-soft / bg` = 9.09:1 · `accent-ink / accent` = 7.38:1 · `ink-faint / bg` = 4.42:1.
-- Tek vurgu kuralı: böğürtlen yalnız pull-quote çizgisi, birincil CTA ve aktif etiket; ekranın ≤%7'si.
-- Yasak kombinasyon: accent + ikinci sıcak renk (turuncu/mercan), gradyan, renkli gölge.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#faf6f0` | page background | as a card background |
+| `--bg-2` | `#f0e9df` | partition divider floor, table top | button background |
+| `--surface` | `#fffdf9` | kart, input, modal | full-page background |
+| `--surface-2` | `#f4eee4` | passive chip, hover background | primary button |
+| `--ink` | `#1a1614` | title, body, icon | large background |
+| `--ink-soft` | `#4b423d` | secondary text, description | — |
+| `--ink-faint` | `#7b716a` | decorative label, separator text | interactive text |
+| `--accent` | `#8a2f52` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fdf3f0` | text above accent | non-accent background |
+| `--line` | `rgba(26,22,20,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Fraunces | 64px (mobil 36px) | 600 | 1.04 | -0.02em |
-| H2 | Fraunces | 38px | 600 | 1.14 | -0.01em |
-| H3 | Fraunces | 24px | 600 | 1.14 | -0.01em |
-| Gövde | Jost | 17px | 400 | 1.66 | 0 |
-| Etiket / mono | JetBrains Mono | 11px | 400 | 1.4 | 0.16em |
+- Measured contrast: `ink/bg` **16.69:1** · `ink-soft/bg` **9.09:1** · `ink-faint/bg` **4.42:1 (decorative)** · `accent-ink/accent` **7.38:1**.
+- Two colors are enough: ground and ink. Accent is just a word of connection and emphasis.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: 1.5 — 6 basamak: 11 · 13 · 17 · 24 · 38 · 64.
-- Ölçü: 58ch (`max-width` ile sabitlenir).
-- Ağırlık kuralı: {"body":400,"strong":500,"display":600}; yasak: ikinci display aile, 700/900 ağırlık, 300 ince ağırlık, italik gövde, gövdede uppercase, gövdede mono, 16px altı gövde, 64px üstü display.
-- Ölçek oranı 1.5; kullanılan 6 basamak: 11 · 13 · 17 · 24 · 38 · 64.
-- `h1 { font-size: clamp(36px, 6vw, 64px) }`; 64px üstü display yasak (feature başlığı 2 satırı geçmez).
-- Ağırlık: display 600 (Fraunces "soft" optik), gövde 400, strong 500; 700/900 yasak.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Fraunces) | 36px (mobile 36px) | 700 | 0.98 | -0.035em |
+| H2 | same | 38px | 600 | 1.08 | -0.015em |
+| H3 | same | 24px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 17px | 400 | 1.6 | 0 |
+| Small body | same | 15px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 13px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 24px |
-| Container genişliği | 1240px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Bölüm ritmi | 104px (mobil 60px) |
-| Kart içi | 30px |
-| Breakpoint davranışı | sm 390 / md 768 / lg 1200; `md` altında kolonlar tek sütuna iner, `lg` üstünde container sabit |
-| Asimetri | Metin 5 kolon, görsel 7 kolon; ekran başına 1 tam kanama görsel ve 1 pull-quote. |
+- Display 72px, line spacing 0.98; body 16/1.6. There is no midpoint — the jumping between two extremes is intentional.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri: metin 5 kolon / görsel 7 kolon; ekran başına 1 tam kanama görsel.
-- Bölüm ritmi: en fazla 2 blok aynı hizada; üçüncüde tam kanama görsel veya pull-quote girer.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa ve bölüm zemini |
-| Kart | `--surface` | 0 10px 30px rgba(26,22,20,.12) | kart, panel, tablo kabı |
-| Yüzen katman | `--surface` + `--shadow` | 0 10px 30px rgba(26,22,20,.12) | modal, açılır menü, toast |
+- 12 columns are not visible; The title spans 8 columns, the body remains in 6 columns.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; kalın kural yalnız metinde belirtilen istisnada.
-- Radius: `--radius` 2px · `--radius-lg` 14px. Radius 2px (buton/input/chip) ve 14px (görsel kartı/modal); 14px üstü yasak; avatar 50%; tablo satırı 0.
-- Derinlik nereden gelir: Tek yumuşak gölge (bir katman) yalnız görsel kartı, hover ve modalda; sert ofset gölge yok; kenarlık + gölge yalnız görsel kartında birlikte.
-- Kenarlık: kart 1px hairline + tek gölge; kenarlık ve gölge aynı anda yalnız görsel kartında.
-- Derinlik kaynağı: yumuşak gölge (tek katman) + radius 14px; sert gölge yok.
-- Radius: `--radius` 2px (buton/input/chip), `--radius-lg` 14px (görsel kartı/modal).
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 48px | 14px 24px | 2px | 15px/500 body, .02em | var(--accent) / var(--accent-ink) | shadow 0 10px 30px rgba(26,22,20,.12), 320ms · translateY(1px) · outline 2px var(--accent), offset 2px · opacity .45 · metin + 2px çizgi |
-| Buton (ikincil) | 48px | 14px 24px | 2px | 15px/500 body | transparent / var(--ink) | border-color var(--ink) |
-| Input | 48px | 12px 14px | 2px | 17px/400 body | var(--surface) + 1px solid var(--line) | outline 2px var(--accent), offset 1px · bg var(--surface-2) · kenar 1px var(--accent) + mono hata satırı · opacity .5 |
-| Kart | — | 30px | 14px | 17px Jost | var(--surface), 0 10px 30px rgba(26,22,20,.12) | shadow 0 14px 40px rgba(26,22,20,.16) |
-| Chip / badge | 26px | 4px 10px | 2px | 11px/400 mono, .16em uppercase | var(--bg-2) | bg var(--accent), color var(--accent-ink) |
-| Nav | 72px | 0 36px | — | 13px/500 body | transparent | color var(--accent) · color var(--ink-soft) |
-| Tablo satırı | 52px | 0 14px | 0 | 15px/400 body | transparent | bg var(--bg-2) · bg var(--surface-2) |
-| Modal / sheet | — | 36px | 14px | 24px Fraunces | 0 10px 30px rgba(26,22,20,.12) | rgba(26,22,20,.45) |
-| Toast | 44px | 12px 18px | 2px | 13px/400 body | var(--ink) / var(--bg) | translateY(8px) + opacity, 260ms |
-| Grafik paleti | — | — | — | 2px çizgi | 2 (accent, ink-soft); yok | mono 11px .16em |
+- No shadows and rounding; The only difference is the hairline and space.
+- Radius: `2px` (buton, input, chip), `14px` (kart, modal). Corner 0px — in typographic essay, geometry serves the text.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px` — krem zeminde 9.1:1.
-- Dokunma hedefi: etiket chip'i 44px'e padding ile çıkar; galeri okları 44×44px.
+## Bans
 
-## Görsel dil
+- İkinci display aile, 700/900 ağırlık, 300 ince ağırlık, italik gövde
+- Çoklu tam kanama görsel, otomatik carousel, marquee, sürekli döngü
+- İkinci vurgu rengi (turuncu/mercan/neon), gradyan zemin, renkli gölge
+- İki scrub veya iki ScrollTrigger; pin'in mobilde açık bırakılması
+- Saf siyah (#000) zemin, saf beyaz (#fff) metin, filter: invert()
+- 16px altı gövde, 58ch üstü ölçü, gövdede uppercase/mono
+- Fotoğraf üstüne renkli overlay (yalnız %12 ink scrim)
+- Third font family.
+- Shadow/bevel in title.
+- uppercase in body text.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, yuvarlak uç, 20px ızgara; dolgulu ikon yok |
-| Fotoğraf | Moda/portre/editoryal fotoğraf; sıcak nötr ton, alan ≤%55, tam kanama 1 kez |
-| İllüstrasyon | Yok — fotoğraf + tipografi yeterli |
-| Doku | Grain `--grain` .02 yalnız fotoğraf üstünde; sayfa zemininde doku yok |
-| Logo alanı | Sol üst 22px boşluk; yazı marka Fraunces 600 20px, sembol yok |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.92:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 16px; same weight as text |
+| photo | Only when necessary; supports text, does not compete |
+| illustration | Can be used as typographic sign |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 7/12 tam kanama görsel + 5/12 metin, h1 64px, etiket çizgisi | `shots/01-page.png` |
 | Dashboard | düşük | İçerik takvimi: 3 kart, 14px radius, tek gölge | `shots/01-page.png` |
@@ -157,64 +179,52 @@ Kökeni 1960'ların *Esquire*/*Vogue* feature açılışları ve 2010'ların scr
 | Hata | düşük | Fraunces 38px başlık + tek paragraf + ikincil buton | `shots/01-page.png` |
 | Profil / ayar | orta | Form 5/12 + görsel 7/12; hairline ayırıcı | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.69:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 9.09:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.42:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.38:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.92:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 99.6 | ≥ 60 target | thin text |
 
-- Display Fraunces 600 64px/1.04/−0.02em (mobil 36px); gövde Jost 17px/1.66/58ch
-- 7/5 asimetri ve ekran başına 1 tam kanama görsel; ikinci büyük görsel yok
-- Görsel kartı 14px radius + tek yumuşak gölge `0 10px 30px rgba(26,22,20,.12)`
-- Tek vurgu böğürtlen #8a2f52, ekranın ≤%7'si, accent üstü daima --accent-ink
-- Ekran başına en fazla 1 pull-quote (28px Fraunces 500 + 3px accent çizgi)
-- Bölüm arası 104px (mobil 60px), kart içi 30px, radius 2/14px
-- Tek pin sahnesi: scrub 0.9, +110%, mobilde kapalı
-- Grain .02 yalnız fotoğraf üstünde; sayfa zemini düz
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Yasaklar
+## Sample images
 
-- İkinci display aile, 700/900 ağırlık, 300 ince ağırlık, italik gövde
-- Çoklu tam kanama görsel, otomatik carousel, marquee, sürekli döngü
-- İkinci vurgu rengi (turuncu/mercan/neon), gradyan zemin, renkli gölge
-- İki scrub veya iki ScrollTrigger; pin'in mobilde açık bırakılması
-- Saf siyah (#000) zemin, saf beyaz (#fff) metin, filter: invert()
-- 16px altı gövde, 58ch üstü ölçü, gövdede uppercase/mono
-- Fotoğraf üstüne renkli overlay (yalnız %12 ink scrim)
+Identical content is rendered with the same text in every style; only the design differs.
 
-## Erişilebilirlik
-
-- En düşük çift: `--ink-faint / --bg` — yalnız künye/tarih satırında dekoratif.
-- `--ink-faint` etkileşimli metin değil; pull-quote daima `--ink`.
-- Hareket hassasiyeti: pin + scrub vestibüler risk taşır; reduced-motion'da tamamen statik.
-- Şeffaf yüzey yok (`--blur: 0`); gölge tek katman, `@supports` gerekmez.
-- Odak görünürlüğü: krem zeminde accent halka 9.1:1; fotoğraf üstünde buton ink zeminle ayrılır.
-
-## Örnek görseller
-
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Sayfa "sonsuz carousel" gibi | Birden fazla tam kanama görsel + otomatik döngü | Ekran başına 1 görsel, döngü yok |
 | Pin titriyor | İki ayrı rAF döngüsü veya ikinci ScrollTrigger | Tek saat: tek ScrollTrigger, tek scrub |
 | Uzun metin okunmuyor | Ölçü 58ch üstü veya satır aralığı 1.6 altı | 58ch + 1.66 satır aralığı |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `editorial-design` — aynı editoryal ritim; bölüm ayrımında garnitür olur.
-- **Uyumlu:** `maximalism` — kanama görsel + katman dili örtüşür, doz düşük tutulur.
-- **Yasak:** `terminal-ui` — mono ızgara ve 0 radius, feature sıcaklığını kırar.
-- **Yasak:** `neo-brutalism` — sert ofset gölge, tek yumuşak gölge kuralına aykırı.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `maximalism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `luxury-typography` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `terminal-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `minimalism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
+| Source | for what |
+| --- | --- |
 | https://fonts.google.com/specimen/Fraunces | Fraunces — Google Fonts — soft display serif, 600 ağırlık, −0.02em |
 | https://fonts.google.com/specimen/Jost | Jost — Google Fonts — gövde geometrik sans, 17px/1.66 |
 | https://gsap.com/docs/v3/Plugins/ScrollTrigger/ | GSAP — ScrollTrigger pin — tek pin sahnesi, scrub ve mobilde kapatma |
@@ -223,9 +233,7 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Magazine Feature (styles/88-magazine-feature/style.md, tokens.json)
 Token: yalnız kit/tokens.css [data-style="magazine-feature"]; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display Fraunces 600 başlıkta, --font-body Jost gövdede, --font-mono JetBrains Mono etikette.
@@ -235,20 +243,44 @@ Hareket: enter 0.9s power2.out 34px / stagger 0.1; scroll top 77% 1.0s 28px once
          pin scrub 0.9 +110% (mobil kapalı); hover 320ms scale 1.03. reduced-motion zorunlu.
 Yasak: "Tuzaklar" ve "Yasaklar" maddeleri (ikinci scrub, çoklu kanama, gradyan, renkli gölge).
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor.
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1.
-- [ ] Odak halkası görünür, dokunma hedefi ≥ 44px.
-- [ ] 390px genişlikte taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Magazine Feature (magazine-feature) · family: Publication & Typography (86–95)
+Token: --bg #faf6f0 · --surface #fffdf9 · --ink #1a1614 · --accent #8a2f52 · --line rgba(26,22,20,.14)
+Radius: 2px / 14px · Typography: Fraunces / Jost / JetBrains Mono
+Required: Display Fraunces 600 64px/1.04/−0.02em (mobil 36px); gövde Jost 17px/1.66/58ch · 7/5 asimetri ve ekran başına 1 tam kanama görsel; ikinci büyük görsel yok · Görsel kartı 14px radius + tek yumuşak gölge `0 10px 30px rgba(26,22,20,.12)`
+Banned: İkinci display aile, 700/900 ağırlık, 300 ince ağırlık, italik gövde · Çoklu tam kanama görsel, otomatik carousel, marquee, sürekli döngü · İkinci vurgu rengi (turuncu/mercan/neon), gradyan zemin, renkli gölge
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
 ```css
-[data-style="magazine-feature"] { --bg: #faf6f0; --bg-2: #f0e9df; --surface: #fffdf9; --surface-2: #f4eee4; --ink: #1a1614; --ink-soft: #4b423d; --ink-faint: #7b716a; --accent: #8a2f52; --accent-ink: #fdf3f0; --line: rgba(26,22,20,.14); --radius: 2px; --radius-lg: 14px; --shadow: 0 10px 30px rgba(26,22,20,.12); --shadow-hard: none; --font-display: "Fraunces", Georgia, serif; --font-body: "Jost", system-ui, sans-serif; --font-mono: "JetBrains Mono", ui-monospace, monospace; --tracking: -0.02em; --blur: 0px; --grain: 0.02; }
+[data-style="magazine-feature"] {
+  --bg: #faf6f0; --bg-2: #f0e9df;
+  --surface: #fffdf9; --surface-2: #f4eee4;
+  --ink: #1a1614; --ink-soft: #4b423d; --ink-faint: #7b716a;
+  --accent: #8a2f52; --accent-ink: #fdf3f0;
+  --line: rgba(26,22,20,.14);
+  --danger: #d92c20;
+  --danger-ink: #ffffff;
+  --ok: #00833a;
+  --ok-ink: #ffffff;
+  --warn: #b75500;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --radius: 2px; --radius-lg: 14px;
+  --shadow: 0 10px 30px rgba(26,22,20,.12); --shadow-hard: none;
+  --font-display: "Fraunces", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --tracking: -0.02em; --blur: 0px; --grain: 0;
+}
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="magazine-feature"]` olarak durur (bu klasördeki `token-block.css` ile aynı); `## Koyu mod` tablosu tek kaynak özetidir.

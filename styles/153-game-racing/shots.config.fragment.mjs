@@ -1,7 +1,6 @@
 /**
- * 153 · Game Racing — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 153 · Game Racing — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'bars',
   bodyClass: 'upper',

@@ -1,43 +1,43 @@
 # 140 · Nanoteknik
 
-> **Bir cümlede:** Moleküler ölçeğin monokrom arayüzü: karbon kafes noktaları, 3px köşeler, nm ölçü etiketleri ve neredeyse siyah tek accent ile hassas ölçüm dili.
+> **In one sentence:** Moleküler ölçeğin monokrom arayüzü: karbon kafes noktaları, 3px köşeler, nm ölçü etiketleri ve neredeyse siyah tek accent ile hassas ölçüm dili.
 
 | | |
 |---|---|
-| **Hissiyat** | hassas, steril, ölçekli, sakin-otoriter |
-| **En iyi** | malzeme bilimi paneli, yarı iletken/kaplama üretimi, ölçüm cihazı UI'ı, derin teknoloji markası |
-| **Kaçın** | tüketici uygulaması, etkinlik vitrini, sıcak hikâye — monokrom dil duygusal anlatım taşımaz |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 7.36:1) |
-| **Aile** | Deneysel & Gelecek (136–145) · **Token** | `kit/tokens.css` → `[data-style="nanotech"]` |
-| **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | hassas, steril, ölçekli, sakin-otoriter |
+| **Best for** | malzeme bilimi paneli, yarı iletken/kaplama üretimi, ölçüm cihazı UI'ı, derin teknoloji markası |
+| **Avoid** | tüketici uygulaması, etkinlik vitrini, sıcak hikâye — monokrom dil duygusal anlatım taşımaz |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Experimental & Future (136–145) · **Token** | `kit/tokens.css` → `[data-style="nanotech"]` |
+| **Composition** | `split` · `split` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Nanoteknik, arayüzü **ölçüm cihazının ölçek penceresi** gibi kurar: neredeyse beyaz zemin, 8px nokta kafesi, altıgen bağ çizgileri, 3px köşe ve **tek "karbon" koyu accent** — renk değil değer vurgusu. Her ölçü nanometre ve tolerans taşır (`Ø 42 nm`, `±1.5 nm`). Sıcaklığı feda eder; karşılığında **ölçek disiplini** ve steril bir otorite kazanır.
 
 Kurucu kararları üç tanedir. Birincisi **monokrom**: accent `#22272c` (karbon) — birincil eylem siyaha yakın, accent-ink açık. İkincisi **kafes imzası**: 8px nokta ızgarası + 60°/−60° altıgen bağ çizgileri; her nokta bir ölçüm düğümüdür. Üçüncüsü **ölçek zorunluluğu**: birimsiz sayı yok, tolerans olmadan ölçüm yok.
 
 Bedeli: sıcaklık yok. Uzun okuma ve duygusal anlatım bu stilde yapılmaz; stil ölçüm, spesifikasyon ve kontrol panelleri içindir.
 
-### Ne değildir
+### What is not
 - **Calibration Lab (61) değildir:** 61 teal accent ve `0.42s` girişli laboratuvar panelidir (kadran/eşik); 140 monokromdur, kafes imzası ve `0.61s` girişi vardır.
 - **Academic Paper (89) değildir:** 89 serif gövde + mavi accent + dipnot dili kullanır; 140 sans gövde, monokrom ve ölçü etiketlidir (bibliyografya görünümü yasak).
 - **Blueprint Çizimi (56) değildir:** 56 koyu cyanotype paftadır; 140 açık steril zemin + altıgen kafes.
 - **Utility (44) değildir:** 44 mavi accent ve 8/12px radius ile ürün arayüzüdür; 140'ta accent karbon (renksiz), radius 3/8px, nm ölçü dili.
 
-### Nereden gelir
+### Where it comes from
 Malzeme bilimi ve yarı iletken ölçüm pratiğinden (nm ölçeği, tolerans, kafes yapısı) ve SEM görüntülerinin görsel dilinden. Bugün önemli çünkü derin teknoloji ürünleri "ölçek" anlatmak zorunda; klişeye dönmemesi için korunacak detay **monokrom accent** ve **her ölçünün tolerans taşıması**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin neredeyse beyaz; 8px nokta kafesi ve 60° bağ çizgileri görünüyor.
 2. Accent renkli değil: siyaha yakın karbon; birincil buton bu tonda.
 3. Köşeler keskin: 3px kontrol, 8px kart; hap yok.
 4. Etiketler mono büyük harf `.12em`; ölçüler `nm` ve `±` toleranslı.
 5. Gölge neredeyse yok; ayrım 1px çizgi ve nokta kafesiyle.
 
-## Görsel imza
+## Visual signature
 - **Nokta kafesi:** 8px `radial-gradient` (ink %10) tüm gövdede.
 - **Altıgen bağ:** `repeating-linear-gradient` 60° ve −60° (ink %12), 18px aralık; hero görselinde accent düğüm noktaları.
 - **Kafes düğümü:** kart sol üstte 3px + 3 offsetli çift nokta (2×2 matris), accent %55.
@@ -45,99 +45,124 @@ Malzeme bilimi ve yarı iletken ölçüm pratiğinden (nm ölçeği, tolerans, k
 - **Radius disiplini:** 3px kontrol, 8px kart; 12px üstü yasak.
 - **Karbon accent:** `#22272c`; birincil eylem dolu koyu, ghost buton çizgi.
 - **Hareket imzası:** 610ms `cubic-bezier(.62,.06,.28,.98)`, 21px — kafes hizaya oturur.
+- **Typography:** Archivo Black (display) + Jost (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#22272c`; neutral scale `#f7f7f5` → `#191b1e`.
+- **Radius:** `3px` / `8px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f7f7f5` | sayfa zemini (steril) | kart zemini |
-| `--bg-2` | `#edede9` | ikincil bant, nav altı | birincil CTA |
-| `--surface` | `#ffffff` | kart / panel | sayfa zemini |
-| `--surface-2` | `#f4f4f1` | chip, satır zemini | modal zemini |
-| `--ink` | `#191b1e` | başlık, gövde, ölçü | dekoratif çizgi |
-| `--ink-soft` | `#4d5257` | açıklama, tolerans | başlık |
-| `--ink-faint` | `#7f858a` | yalnız kafes çizgisi ve dekoratif not | ölçü değeri, etkileşimli metin |
-| `--accent` | `#22272c` | birincil eylem, kafes düğümü, aktif | gövde metni üstü |
-| `--accent-ink` | `#f7f7f5` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(25,27,30,.16)` | kenarlık, ayırıcı | metin rengi |
+1. Monokrom taban: zemin neredeyse beyaz, accent "karbon" koyu; tek renk vurgu
+2. Kafes (lattice) imza öğedir: 8px nokta ızgarası + altıgen bağ çizimi
+3. Tüm ölçüler nanometre ve toleransla: `Ø 42 nm`, `±1.5 nm`
+4. Radius 3px kontrol / 8px kart; 12px üstü yuvarlama yok
+5. Gölge neredeyse yok (0 1px 2px); ayrım 1px çizgiyle
+6. Etiketler mono büyük harf `.12em`; gövde Jost 15px/1.6
 
-- Ölçülen kontrast: `ink / bg` = **16.09:1** · `ink-soft / bg` = **7.36:1** · `accent-ink / accent` = **14.04:1** · `ink-faint / bg` = **3.48:1** (yalnız kafes çizgisi).
-- Tek vurgu kuralı: **tek değer, renk yok** — accent monokrom karbon. `--danger` (#a3281f), `--ok` (#2f6b3f), `--warn` (#7a5300) yalnız ölçüm durumunda, metinle.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; kafes üstünde `--ink-faint` ölçü etiketi.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f7f7f5` | page background | as a card background |
+| `--bg-2` | `#edede9` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f4f4f1` | passive chip, hover background | primary button |
+| `--ink` | `#191b1e` | title, body, icon | large background |
+| `--ink-soft` | `#4d5257` | secondary text, description | — |
+| `--ink-faint` | `#7f858a` | decorative label, separator text | interactive text |
+| `--accent` | `#22272c` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f7f7f5` | text above accent | non-accent background |
+| `--line` | `rgba(25,27,30,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Archivo Black (`--font-display`) | 42px (mobil 26px) | 400 | 1.08 | `-.01em` |
-| H2 | Archivo Black | 27px | 400 | 1.18 | `.02em` |
-| H3 | Archivo Black | 19px | 400 | 1.26 | `.02em` |
-| Gövde | Jost (`--font-body`) | 15px | 400 | 1.60 | `0` |
-| Küçük gövde | Jost | 13px | 400 | 1.55 | `0` |
-| Etiket / ölçü | IBM Plex Mono (`--font-mono`) | 10px | 600 | 1.4 | `.12em` |
+- Measured contrast: `ink/bg` **16.09:1** · `ink-soft/bg` **7.36:1** · `ink-faint/bg` **3.48:1 (decorative)** · `accent-ink/accent` **14.04:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.45** — kullanılan basamaklar 10 · 11 · 13 · 15 · 19 · 27 · 42.
-- Ölçü önerisi: `h1 { font-size: clamp(26px, 3.6vw, 42px); line-height: 1.08 }`.
-- Gövde satır uzunluğu en fazla **68ch**; ölçü tabloları 110ch'e kadar genişleyebilir.
-- Ağırlık kuralı: display 400 (Archivo Black zaten kalın), gövde 400/600, mono 600. İtalik yok.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Archivo Black) | 42px (mobile 26px) | 500 | 1.06 | -0.02em |
+| H2 | same | 27px | 600 | 1.18 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 16px |
-| Container genişliği | 1200px (içerik 1168px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1200; 768 altında tek kolon, kafes 12px aralığa çıkar |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** asimetrik 8/4 bölünme; kafes noktaları kolon kesişimlerine oturur.
-- Bölüm ritmi: art arda en fazla **4** kart; beşincisi tam genişlik ölçüm bandı olur.
-- İç boşluklar 4'ün katı; kafes aralığı (8px) boşluk ölçeğiyle çakışır (bilinçli hizalama).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | steril zemin + 8px nokta kafesi |
-| Kart | `--surface` | `0 1px 2px rgba(25,27,30,.10)` | kart, panel |
-| Yüzen katman | `--surface` + 1px accent | `0 8px 20px rgba(25,27,30,.14)` | modal, menü, toast |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; seçili/ölçüm kartında `1px solid var(--accent)`.
-- Derinlik nereden gelir: **ölçek ve çizgi** — gölge neredeyse yok (0 1px 2px). Sert/ofset gölge ve glow yok.
-- Radius: `--radius: 3px` (buton, input, chip), `--radius-lg: 8px` (kart, modal). Üst sınır 8px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 36px | `0 14px` | 3px | 11px mono 600 uppercase `.12em` | karbon accent dolgu, accent-ink metin, gölge yok | hover: accent %88 + ink (açık ton) · active: translateY(1px) · focus: 2px accent outline + 2px offset · disabled: opacity .45 + kesikli · loading: kafes noktaları sırayla (800ms) |
-| Buton (ikincil) | 36px | `0 14px` | 3px | 11px mono | şeffaf + 1px `--line` | hover: `--surface-2` |
-| Input | 36px | `0 12px` | 3px | 15px Jost | `--surface` + 1px `--line` | focus: accent çerçeve + 2px outline offset 1px · error: `--danger` çerçeve + 10px mono etiket · disabled: opacity .45 |
-| Kart | içerik | 18px | 8px | H3 + gövde | `--surface` + 1px `--line` + 1px gölge | hover: kafes düğümü accent %80 |
-| Chip / badge | 20px | `0 6px` | 3px | 10px mono `.12em` | `--surface-2` + 1px `--line` | accent: accent dolgu + accent-ink metin |
-| Nav | 50px | `0 20px` | 0 | 14px Jost 500 | `--surface` + alt 8px kafes şeridi | aktif: accent metin + 2px alt çizgi |
-| Tablo satırı | 34px | `6px 10px` | — | 13px Jost, tabular-nums | satır arası 1px `--line` | hover: `--surface-2` |
-| Modal | içerik | 20px | 8px | 19px display + mono ölçü | `--surface` + 1px accent + `0 8px 20px` | açılış: 21px oturma, 610ms |
-| Toast | 34px | `8px 12px` | 3px | 13px Jost 600 | `--surface` + sol uçta 3px accent | hata: çizgi `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ink-soft`, `--warn`, `--danger` | en fazla 4 seri; kafes diyagramı 1px, dolgu yok |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `3px` (buton, input, chip), `8px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; kafes üstünde 1px offset kaybolur.
-- Dokunma hedefi: en az 44×44px; 36px buton mobilde `min-height: 44px`. Kafes düğümü dekoratif (`aria-hidden`).
+## Bans
 
-## Görsel dil
+- Doygun/neon renk ve gradyan.
+- Yuvarlak 12px+ radius, hap buton.
+- Yumuşak büyük gölge, glow, cam.
+- Serif display.
+- Bibliyografya/rapor görünümü (academic-paper ile örtüşür).
+- Süs kafesi (her nokta bir ölçüm düğümü).
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi, keskin köşe, 16px ızgara; atom/kafes/bağ sembolleri |
-| Fotoğraf | tek SEM/mikroskop karesi, yüksek kontrast, 3px radius kırpma |
-| İllüstrasyon | karbon kafes (altıgen) + bağ çizimi zorunlu imza |
-| Doku | grain %2 + 8px nokta kafesi; parlak yüzey yok |
-| Logo alanı | mono büyük harf wordmark + kafes noktası, 16px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 3px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 3px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 3px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 3px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 3px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 3px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 3px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 15.06:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 8/4: solda H1 + nm etiketleri, sağda kafes sahnesi | `shots/01-page.png` |
 | Dashboard | **yüksek** | 4 ölçüm kartı; kafes düğümü ve tolerans etiketi | `shots/01-page.png` |
@@ -152,44 +177,33 @@ Malzeme bilimi ve yarı iletken ölçüm pratiğinden (nm ölçeği, tolerans, k
 | Hata | orta | tolerans aşımı: `--danger` çerçeve + etiket | `shots/01-page.png` |
 | Profil / ayar | orta | birim/tolerans/kalibrasyon ayarları | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Monokrom taban: accent "karbon" koyu; ikinci renk vurgu yok.
-- Kafes (lattice) imza öğedir: 8px nokta ızgarası + 60°/−60° bağ çizgisi.
-- Tüm ölçüler nanometre ve toleransla: `Ø 42 nm`, `±1.5 nm`.
-- Radius 3px kontrol / 8px kart; 12px üstü yuvarlama yok.
-- Gölge neredeyse yok (`0 1px 2px`); ayrım 1px çizgiyle.
-- Etiketler mono büyük harf `.12em`; gövde Jost 15px/1.6.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.09:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.36:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.48:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 14.04:1 | ≥ 4.5 | button text |
+| focus ring/ground | 15.06:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 99.3 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Doygun/neon renk ve gradyan.
-- Yuvarlak 12px+ radius, hap buton.
-- Yumuşak büyük gölge, glow, cam.
-- Serif display.
-- Bibliyografya/rapor görünümü (academic-paper ile örtüşür).
-- Süs kafesi (her nokta bir ölçüm düğümü).
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **7.36:1** (eşik 4.5); `ink-faint / bg` = **3.48:1** yalnız kafes çizgisinde.
-- `--ink-faint` ölçü etiketinde ve etkileşimli metinde kullanılmaz; ölçü `--ink` (16.09:1).
-- Hareket/parlama hassasiyeti: düşük — flash yok; `prefers-reduced-motion` pin ve düğüm animasyonunu kapatır.
-- Şeffaf yüzey yok; opak fallback gerekmez. `repeating-linear-gradient` desteklenmezse kafes bağı düz nokta ızgarasına düşer (ölçüm tabloda kalır).
-- Odak görünürlüğü: 2px accent outline + 2px offset; kafes üstünde 1px offset kaybolur.
-- Nanometre değerleri her zaman metin olarak yazılır; birim ikonla değiştirilmez.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Rapor" gibi görünüyor | serif + dipnot dili | sans gövde, ölçü etiketi, kafes |
 | Kafes gürültü | nokta %14 üstü / 6px altı | %10 ve 8px sabit |
 | Accent renkli olmuş | mavi/teal accent eklenmiş | karbon (monokrom) accent |
@@ -197,36 +211,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Okunmuyor | `--ink-faint` ölçü metni | ölçü `--ink` |
 | Mobilde sıkışık | kafes 8px korunmuş | 768 altı 12px, tek kolon |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `calibration-lab` — ölçüm/kalibrasyon dili; tek bölümde.
-- **Uyumlu:** `topographic-terrain` — ölçek/arazi okuma; alt panel olarak.
-- **Uyumlu:** `utility` — nötr iskelet; form ekranlarında.
-- **Yasak:** `dopamine-ui` — doygun renk monokrom disiplini kırar.
-- **Yasak:** `vaporwave` — neon/gradyan ölçek otoritesini bozar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `calibration-lab` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `topographic-terrain` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `vaporwave` | Two different ornamental languages compete on the same screen |
 
-| Eksen (5) | 140 · Nanotech | 61 · Calibration Lab |
-|---|---|---|
-| Display ailesi | Archivo Black 400 | Jost 500 |
-| Zemin bandı | steril beyaz `#f7f7f5` | açık gri-yeşil `#eef1f0` |
-| Accent hue | karbon (renksiz) `#22272c` | teal `#0d5f5c` |
-| Radius ölçeği | 3 / 8px | 6 / 12px |
-| İmza motif / motion | nokta kafesi + altıgen bağ · 0.61s · top 59% | kadran/eşik bandı · 0.42s · top 88% |
+## References
 
-## Referanslar
-
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Nanotechnology | nm ölçeği ve terminoloji |
-| https://en.wikipedia.org/wiki/Carbon_nanotube | kafes/altıgen yapı |
-| https://en.wikipedia.org/wiki/Scanning_electron_microscope | görüntü kontrastı ve ölçek çubuğu |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | monokrom zeminde metin kontrastı |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Nanotechnology | Nanotechnology — nm ölçeği ve terminoloji |
+| https://en.wikipedia.org/wiki/Carbon_nanotube | Carbon nanotube — kafes/altıgen yapı |
+| https://en.wikipedia.org/wiki/Scanning_electron_microscope | Scanning electron microscope — görüntü kontrastı ve ölçek çubuğu |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast Minimum — monokrom zeminde metin kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Nanoteknik (styles/140-nanotech/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="nanotech"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: --bg steril beyaz + 8px nokta kafesi (ink %10) + 60°/−60° bağ çizgisi (ink %12).
@@ -239,15 +245,15 @@ Hareket: enter 610ms cubic-bezier(.62,.06,.28,.98) 21px stagger .031; scroll top
   pin scrub 0.4 (+88%, ekran başına 1); hover 155ms görsel 1.007. prefers-reduced-motion zorunlu.
 Yasak: doygun/neon renk, 12px üstü radius, büyük gölge/glow/cam, serif, bibliyografya görünümü, süs kafesi.
 Çıktı: bileşen kodu + tek paragraf not (kafes düğümünü ve nm etiketini nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: nokta kafesi, altıgen bağ, kafes düğümü, nm etiketi.
-- [ ] Hard-coded renk/gölge/radius yok.
-- [ ] Kontrast: 16.09 / 7.36 / 14.04 — hepsi eşik üstü.
-- [ ] Ölçüler toleranslı ve birimli; odak halkası 2px accent + 2px offset.
-- [ ] 390px'te kafes 12px, tek kolon, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken pin ve düğüm animasyonu duruyor.
+Style: Nanoteknik (nanotech) · family: Experimental & Future (136–145)
+Token: --bg #f7f7f5 · --surface #ffffff · --ink #191b1e · --accent #22272c · --line rgba(25,27,30,.16)
+Radius: 3px / 8px · Typography: Archivo Black / Jost / IBM Plex Mono
+Required: Monokrom taban: zemin neredeyse beyaz, accent "karbon" koyu; tek renk vurgu · Kafes (lattice) imza öğedir: 8px nokta ızgarası + altıgen bağ çizimi · Tüm ölçüler nanometre ve toleransla: `Ø 42 nm`, `±1.5 nm`
+Banned: Doygun/neon renk ve gradyan. · Yuvarlak 12px+ radius, hap buton. · Yumuşak büyük gölge, glow, cam.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -258,15 +264,25 @@ Yasak: doygun/neon renk, 12px üstü radius, büyük gölge/glow/cam, serif, bib
   --ink: #191b1e; --ink-soft: #4d5257; --ink-faint: #7f858a;
   --accent: #22272c; --accent-ink: #f7f7f5;
   --line: rgba(25,27,30,.16);
+  --danger: #d92d20;
+  --danger-ink: #ffffff;
+  --ok: #00833a;
+  --ok-ink: #ffffff;
+  --warn: #b75600;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 3px; --radius-lg: 8px;
   --shadow: 0 1px 2px rgba(25,27,30,.10); --shadow-hard: none;
-  --font-display: "Archivo Black", "Inter", system-ui, sans-serif;
-  --font-body: "Jost", "Inter", system-ui, sans-serif;
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: .04em; --blur: 0px; --grain: 2;
-  --danger: #a3281f; --danger-ink: #ffffff;
-  --ok: #2f6b3f; --warn: #7a5300;
+  --tracking: .04em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="nanotech"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

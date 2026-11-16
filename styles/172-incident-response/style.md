@@ -1,221 +1,221 @@
 # 172 · Incident Response
 
-> **Bir cümlede:** Olay müdahale konsolu: zaman çizelgesi, turuncu uyarı, tek sahiplik ve durum etiketleriyle sakin bir kriz ekranı.
+> **In one sentence:** Incident response console: a calm crisis screen with timeline, orange alert, sole ownership and status labels.
 
 | | |
 |---|---|
-| **Hissiyat** | kontrollü kriz, "kim ne yapıyor" |
-| **En iyi** | SRE/olay yönetimi, kesinti müdahalesi, vardiya panosu |
-| **Kaçın** | pazarlama vitrini, uzun okuma |
-| **Zorluk** | zor · **Erişilebilirlik** | iyi |
-| **Aile** | Operasyon & Veri (172–181) · **Token** | `kit/tokens.css` → `[data-style="incident-response"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | controlled crisis, "who is doing what" |
+| **Best for** | SRE/incident management, outage response, shift dashboard |
+| **Avoid** | marketing showcase, long read |
+| **Difficulty** | hard · **Accessibility** | iyi |
+| **Family** | Operations & Data (172–181) · **Token** | `kit/tokens.css` → `[data-style="incident-response"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Incident Response, kriz anında okunurluğu korur: tek zaman çizelgesi, tek sahip, tek sonraki adım.
+### What it is
+Incident Response maintains readability in a crisis: one timeline, one owner, one next step.
 
-### Ne değildir
-- Dashboard şablonu değildir; her blok bir karar sorusunu cevaplar.
-- Koyu tema zorunlu değildir; kontrast ve yoğunluk belirleyicidir.
+### What is not
+- It is not a dashboard template; each block answers a decision question.
+- Dark theme is not mandatory; Contrast and intensity are decisive.
 
-### Nereden gelir
-NOC/SRE konsolları, finans terminalleri ve lojistik operasyon ekranlarının bilgi yoğun geleneği.
+### Where it comes from
+The information-intensive tradition of NOC/SRE consoles, financial terminals and logistics operations displays.
 
-### 3 saniyede tanıma testi
-1. Satır yüksekliği 40–44px mi?
-2. Sayılar sağa hizalı ve tabular mı?
-3. Grafikte en fazla 3 seri mi?
+### Recognition test in 3 seconds
+1. Is the line height 40–44px?
+2. Are the numbers right-aligned and taboo?
+3. Maximum 3 series on the chart?
 
-## Görsel imza
-- **Zaman çizelgesi:** her olay 44px satır, sol tarafta saat mono.
-- **Turuncu uyarı:** accent yalnız açık olay ve eylem.
-- **Sahiplik:** her satırda tek isim, tek rol.
-- **Sakin kriz:** 4 KPI sınırı, grafik yok.
-- **Tipografi:** Chakra Petch (display) + Chakra Petch (gövde) + IBM Plex Mono (mono etiket).
-- **Renk disiplini:** tek accent `#f08b3c`; nötr skala `#0f1216` → `#e9eef5`.
-- **Yarıçap:** `4px` / `6px`; Köşe 4–6px; 8px üstü yumuşak yuvarlatma operasyonel tabloyla çelişir.
+## Visual signature
+- **Timeline:** each event 44px row, clock mono on left side.
+- **Orange warning:** accent only open event and action.
+- **Ownership:** one name, one role per line.
+- **Calm crisis:** 4 KPI limit, no charts.
+- **Typography:** Chakra Petch (display) + Chakra Petch (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#f08b3c`; neutral scale `#0f1216` → `#e9eef5`.
+- **Radius:** `4px` / `6px`; Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Her olay satırında saat, sahip ve durum yazılır.
-2. Accent yalnız açık/kritik durum.
-3. Ekran başına en fazla 4 KPI.
+1. The time, owner, and status are written on each event line.
+2. Accent is open/critical only.
+3. Up to 4 KPIs per screen.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#0f1216` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#131820` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#171d26` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#1f2833` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#e9eef5` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#a8b4c2` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#7f8c9c` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#f08b3c` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#1a0d03` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(233,238,245,.14)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#0f1216` | page background | as a card background |
+| `--bg-2` | `#131820` | partition divider floor, table top | button background |
+| `--surface` | `#171d26` | kart, input, modal | full-page background |
+| `--surface-2` | `#1f2833` | passive chip, hover background | primary button |
+| `--ink` | `#e9eef5` | title, body, icon | large background |
+| `--ink-soft` | `#a8b4c2` | secondary text, description | — |
+| `--ink-faint` | `#7f8c9c` | decorative label, separator text | interactive text |
+| `--accent` | `#f08b3c` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#1a0d03` | text above accent | non-accent background |
+| `--line` | `rgba(233,238,245,.14)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **16.11:1** · `ink-soft/bg` **8.92:1** · `ink-faint/bg` **5.48:1 (dekoratif)** · `accent-ink/accent` **7.67:1**.
-- Durum renkleri accent'in türevi değil, ayrı semantik token'lar (--ok/--danger/--warn) üzerinden gelir; accent eylem rengidir.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **16.11:1** · `ink-soft/bg` **8.92:1** · `ink-faint/bg` **5.48:1 (decorative)** · `accent-ink/accent` **7.67:1**.
+- Status colors are not derived from accent, but come from separate semantic tokens (--ok/--danger/--warn); accent is the action color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Chakra Petch) | 40px (mobil 26px) | 600 | 1.12 | -0.02em |
-| H2 | aynı | 24px | 600 | 1.22 | -0.015em |
-| H3 | aynı | 17px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Chakra Petch) | 14px | 400 | 1.55 | 0 |
-| Küçük gövde | aynı | 13px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (IBM Plex Mono) | 10.5px | 400 | 1.2 | 0.16em |
-| Buton | `--font-body` | 12px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Chakra Petch) | 40px (mobile 26px) | 600 | 1.12 | -0.02em |
+| H2 | same | 24px | 600 | 1.22 | -0.015em |
+| H3 | same | 17px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Chakra Petch) | 14px | 400 | 1.55 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 10.5px | 400 | 1.2 | 0.16em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-- Yoğun ekran: 14px gövde, 13px tablo, 10.5px mono etiket. Satır yüksekliği 1.55 altına inilmez.
-- Ölçü: 72ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Dense display: 14px body, 13px table, 10.5px mono label. The line height cannot be lower than 1.55.
+- Measure: 72ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- 8 kolon içerik + 4 kolon panel; tablolar tam genişlik. Kart içi padding 16px, satır 40px.
-- Bölüm dikey boşluğu masaüstü 44px, mobil 28px; kart içi padding 16px.
+- 8 columns of content + 4 columns of panels; tables full width. In-card padding 16px, line 40px.
+- Section vertical space 44px desktop, 28px mobile; card padding 16px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Yüzeyler düz; ayrım 1px kenar ve zemin tonuyla. Grafiklerde referans çizgisi --line.
-- Radius: `4px` (buton, input, chip), `6px` (kart, modal). Köşe 4–6px; 8px üstü yumuşak yuvarlatma operasyonel tabloyla çelişir.
+- Surfaces are smooth; separation with 1px edge and background tone. Reference line in graphs --line.
+- Radius: `4px` (buton, input, chip), `6px` (kart, modal). Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-## Yasaklar
+## Bans
 
-- Yanıp sönen alarm ikonu.
-- Beşten fazla durum rengi.
-- Grafik duvarı.
-- Süsleme amaçlı gradient.
-- Beşten fazla renkli seri.
-- Animasyonlu sayaç.
+- Flashing alarm icon.
+- More than five status colors.
+- Graphics wall.
+- Gradient for decoration.
+- More than five color series.
+- Animated counter.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 4px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 4px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 4px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 4px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 4px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 4px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 4px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 4px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 4px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 4px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 4px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 4px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 4px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 7.57:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.57:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1.5px çizgi, 16px kutu; durum ikonları dolu |
-| Fotoğraf | Veri ekranında fotoğraf yok; boş durumda tek illüstrasyon |
-| İllüstrasyon | Yalnız boş/başarısız durumda tek çizgi illüstrasyon |
-| Doku | Yok |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 1.5px line, 16px box; full of status icons |
+| photo | There is no photo on the data screen; single illustration in empty case |
+| illustration | Lonely empty/failed single line illustration |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-grid` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-grid` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Genel bakış | yüksek | 4 KPI + tek zaman serisi; her KPI'da delta ve zaman aralığı | `shots/01-page.png` |
-| Olay / incident | yüksek | Zaman çizelgesi + durum etiketi; 1 satır = 1 olay | `shots/01-page.png` |
-| Tablo / liste | yüksek | Filtre çubuğu + 40px satır + sağa hizalı sayı | `shots/01-page.png` |
-| Servis detayı | yüksek | Metrik + log + eşik; 3 kolon | `shots/01-page.png` |
-| Ayarlar / eşik | orta | Form 2 kolon, birim etiketi sağda mono | `shots/01-page.png` |
-| Boş durum | düşük | Tek cümle + tek buton; illüstrasyon yok | `shots/01-page.png` |
-| Onboarding / bağlantı | orta | 3 adım, her adımda tek doğrulama | `shots/01-page.png` |
-| Rapor / dışa aktar | orta | Tarih aralığı + biçim seçimi + özet | `shots/01-page.png` |
+| Overview | high | 4 KPI + single time series; delta and time range on each KPI | `shots/01-page.png` |
+| Olay / incident | high | Timeline + status tag; 1 row = 1 event | `shots/01-page.png` |
+| Table / list | high | Filter bar + 40px row + right aligned number | `shots/01-page.png` |
+| Service detail | high | Metric + log + threshold; 3 columns | `shots/01-page.png` |
+| Settings / threshold | medium | Form 2 column, unit label mono on right | `shots/01-page.png` |
+| empty status | low | One sentence + one button; no illustration | `shots/01-page.png` |
+| Onboarding / connectivity | medium | 3 steps, single verification at each step | `shots/01-page.png` |
+| Report / export | medium | Date range + format selection + summary | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 16.11:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 8.92:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 5.48:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 7.67:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 7.57:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 95.9 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 16.11:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.92:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.48:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.67:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.57:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 95.9 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Ekran kalabalık ama boş | KPI sayısı fazla | Ekran başına 4 KPI sınırı koy |
-| Tablo okunmuyor | Zebra + renkli hücre | Zebra yerine hairline; rengi yalnız durum için kullan |
-| Grafik yanlış okunuyor | Eksen etiketi eksik | Eksen + birim + zaman aralığı yaz |
+| The screen is crowded but empty | The number of KPIs is high | Set a limit of 4 KPIs per screen |
+| Table not read | Zebra + colored cell | Hairline instead of zebra; use color only for occasion |
+| Chart is read incorrectly | Axis label missing | Write axis + unit + time range |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `log-stream` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `access-audit` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `luxury-typography` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `carnival-festival` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `log-stream` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `access-audit` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `luxury-typography` | Two different ornamental languages compete on the same screen |
+| Mixing | `carnival-festival` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://www.atlassian.com/incident-management | Incident management (Atlassian) — olay akışı ve roller |
-| https://sre.google/sre-book/table-of-contents/ | Google SRE Book — müdahale pratiği |
-| https://fonts.google.com/specimen/IBM+Plex+Mono | IBM Plex Mono (Google Fonts) — zaman ve kimlik etiketi |
+| https://www.atlassian.com/incident-management | Incident management (Atlassian) — event flow and roles |
+| https://sre.google/sre-book/table-of-contents/ | Google SRE Book — intervention practice |
+| https://fonts.google.com/specimen/IBM+Plex+Mono | IBM Plex Mono (Google Fonts) — time and ID tag |
 
 ## AI brief
 
 ```text
-Olay müdahale ekranı tasarla: koyu zemin, zaman çizelgesi, turuncu yalnız açık olayda, 4 KPI sınırı, mono saat.
+Design incident response screen: dark background, timeline, orange only on open incident, 4 KPI limit, mono clock.
 
-Stil: Incident Response (incident-response) · aile: Operasyon & Veri (172–181)
+Style: Incident Response (incident-response) · family: Operations & Data (172–181)
 Token: --bg #0f1216 · --surface #171d26 · --ink #e9eef5 · --accent #f08b3c · --line rgba(233,238,245,.14)
-Yarıçap: 4px / 6px · Tipografi: Chakra Petch / Chakra Petch / IBM Plex Mono
-Zorunlu: Her olay satırında saat, sahip ve durum yazılır. · Accent yalnız açık/kritik durum. · Ekran başına en fazla 4 KPI.
-Yasak: Yanıp sönen alarm ikonu. · Beşten fazla durum rengi. · Grafik duvarı.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 4px / 6px · Typography: Chakra Petch / Chakra Petch / IBM Plex Mono
+Required: The time, owner, and status are written on each event line. · Accent is open/critical only. · Up to 4 KPIs per screen.
+Banned: Flashing alarm icon. · More than five status colors. · Graphics wall.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

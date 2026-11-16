@@ -1,43 +1,43 @@
 # 136 · Spekülatif Bilim-Kurgu
 
-> **Bir cümlede:** Anlatının içinden çıkmış bir enstrüman plakası: açık kemik zemin, gravür çift çerçeve, radyal kadran tiki ve tek sinyal ambarıyla kurulmuş diegetic arayüz.
+> **In one sentence:** Anlatının içinden çıkmış bir enstrüman plakası: açık kemik zemin, gravür çift çerçeve, radyal kadran tiki ve tek sinyal ambarıyla kurulmuş diegetic arayüz.
 
 | | |
 |---|---|
-| **Hissiyat** | meraklı, törensel, ölçülü, yabancı |
-| **En iyi** | kurgu/oyun arayüzü, marka hikâye sitesi, sergi kurulumu, spekülatif ürün konsepti |
-| **Kaçın** | ödeme/güvenlik ekranı, kurumsal SaaS, hızlı ticaret — diegetic dil güveni yavaşlatır |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 6.84:1) |
-| **Aile** | Deneysel & Gelecek (136–145) · **Token** | `kit/tokens.css` → `[data-style="speculative-scifi"]` |
-| **Kompozisyon** | `split` · `split` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | meraklı, törensel, ölçülü, yabancı |
+| **Best for** | kurgu/oyun arayüzü, marka hikâye sitesi, sergi kurulumu, spekülatif ürün konsepti |
+| **Avoid** | ödeme/güvenlik ekranı, kurumsal SaaS, hızlı ticaret — diegetic dil güveni yavaşlatır |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Experimental & Future (136–145) · **Token** | `kit/tokens.css` → `[data-style="speculative-scifi"]` |
+| **Composition** | `split` · `split` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Spekülatif Bilim-Kurgu, arayüzü **anlatının içindeki bir cihazın plakası** gibi kurar: açık kemik zemin, her yüzeyde 1px dış + 4px iç gravür çerçeve, radyal kadran tikleri ve mono ölçü etiketleri (`7.42 AE`, `SEKTÖR 7`, `Δ 0.03`). Tanıdıklığı feda eder; karşılığında **dünya kurma** gücü kazanır — kullanıcı arayüzü değil, o dünyanın enstrümanını okur.
 
 Kurucu kararları üç tanedir. Birincisi **plaka dili**: gölge yok, ayrım çift çerçeve ve zemin tonu. İkincisi **diegetic ölçü**: her sayı bir birim ve bağlam taşır; süs metin yoktur. Üçüncüsü **tek sinyal rengi**: amber yalnız "ölçüm/aktif" anlamına gelir, dekorasyon değildir.
 
 Bedeli: öğrenme eğrisi. Bu yüzden stilin doğal yeri vitrin ve anlatı; operasyonel ekranlarda yalnız hero/boş durum katmanı olarak kullanılır.
 
-### Ne değildir
+### What is not
 - **Cyberpunk (22) değildir:** 22 koyu zemin + neon cyan ile retro-teknoloji satar; 136 **açık kemik** zemin, sıcak amber ve gravür çerçeve kullanır (koyu neon yasak).
 - **Synthwave (21) değildir:** 21 mor/pembe gradyan ve ızgara perspektifi taşır; 136'da gradyan yok, 2px radius ve mono ölçü var.
 - **Lab Instrument (50) değildir:** 50 ölçüm cihazıdır (kadran yayı, mavi accent, açık gri); 136 diegetic kurgu dilidir (amber accent, yabancı birimler, gravür plaka).
 - **Blueprint Çizimi (56) değildir:** 56 koyu cyanotype teknik paftadır; 136 açık plaka + radyal kadran.
 
-### Nereden gelir
+### Where it comes from
 Anlatı içi (diegetic) arayüz geleneğinden — bilim-kurgu filmlerinde karakterin gerçekten kullandığı ekranlar — ve spekülatif tasarım pratiğinden. Bugün geri dönüyor çünkü ürün siteleri "gelecek" anlatmak için gerçek dünya konvansiyonlarından çıkmak istiyor. Klişeye dönmemesi için korunacak detay: **her ölçünün birimli olması** ve çerçevenin çift kalması (dış 1px + iç 4px).
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin açık kemik; her yüzeyde 1px dış ve 4px iç çerçeve görünüyor, gölge yok.
 2. Radyal kadran tikleri (9° aralık) ve iki eşmerkezli halka çizgisi var.
 3. Tüm etiketler mono büyük harf, `.16em` tracking; sayılar birimli (`AE`, `Δ`, `SEKTÖR`).
 4. Buton 38px, radius 2px; hap köşe yok.
 5. Tek sıcak vurgu ambar; ikinci parlak renk yok.
 
-## Görsel imza
+## Visual signature
 - **Gravür çift çerçeve:** dış `1px solid var(--line)` + `::after inset 4px` 1px ink %10.
 - **Kadran tiki:** `repeating-conic-gradient` 0.6° tik / 9° aralık, accent %42; iki eşmerkezli halka (34% ve 58%).
 - **Mono ölçü etiketi:** 10px, `.16em`, uppercase; değer + birim + bağlam (`7.42 AE · KATMAN 3`).
@@ -45,99 +45,124 @@ Anlatı içi (diegetic) arayüz geleneğinden — bilim-kurgu filmlerinde karakt
 - **Radius disiplini:** 2px kontrol, 4px plaka; 6px üstü yasak.
 - **Gölgesizlik:** `--shadow: none`; yüzen katman accent 1px çerçeveyle ayrılır.
 - **Hareket imzası:** 410ms `cubic-bezier(.58,.02,.34,1)`, 11px — plaka "yerine oturur".
+- **Typography:** Chakra Petch (display) + Space Grotesk (body) + Share Tech Mono (mono label).
+- **Colour discipline:** a single accent `#8a5a12`; neutral scale `#e9e8e2` → `#1c1a16`.
+- **Radius:** `2px` / `4px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#e9e8e2` | sayfa zemini (kemik plaka) | kart zemini |
-| `--bg-2` | `#dfded6` | nav, ikincil bant | birincil CTA |
-| `--surface` | `#f4f3ee` | plaka / kart | sayfa zemini |
-| `--surface-2` | `#eeede6` | chip, satır zemini | modal zemini |
-| `--ink` | `#1c1a16` | başlık, gövde, ölçü değeri | dekoratif çizgi |
-| `--ink-soft` | `#524d42` | açıklama, ikincil etiket | başlık |
-| `--ink-faint` | `#837c6d` | yalnız iç çerçeve ve kenar notu | etkileşimli metin |
-| `--accent` | `#8a5a12` | kadran tiki, sinyal, birincil eylem | geniş dekoratif dolgu |
-| `--accent-ink` | `#fff6e6` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(28,26,22,.16)` | dış çerçeve, ayırıcı | metin rengi |
+1. Her yüzey gravür plakadır: dış 1px çerçeve + 4px iç çerçeve, gölge yok
+2. Ölçüler diegetic ve birimlidir: `7.42 AE`, `Δ 0.03`, `SEKTÖR 7` — birimsiz sayı yok
+3. Tek sinyal rengi accent; kadran tikleri ve aktif durum accent ile yanar
+4. Başlık Chakra Petch 600, etiketler mono büyük harf `.16em`
+5. Radius 2px (kontrol) / 4px (plaka); hap biçimli köşe yok
+6. Kadran/tik motifi en az bir bölümde görünür — süs değil, ölçü göstergesi
 
-- Ölçülen kontrast: `ink / bg` = **14.15:1** · `ink-soft / bg` = **6.84:1** · `accent-ink / accent` = **5.51:1** · `ink-faint / bg` = **3.37:1** (yalnız iç çerçeve).
-- Tek vurgu kuralı: tek sinyal ambarı. `--danger` (#a0301f), `--ok` (#2f6b3f), `--warn` (#7a5300) yalnız plaka uyarı satırında, metinle.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; kemik zemin üstünde `--ink-faint` metin.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#e9e8e2` | page background | as a card background |
+| `--bg-2` | `#dfded6` | partition divider floor, table top | button background |
+| `--surface` | `#f4f3ee` | kart, input, modal | full-page background |
+| `--surface-2` | `#eeede6` | passive chip, hover background | primary button |
+| `--ink` | `#1c1a16` | title, body, icon | large background |
+| `--ink-soft` | `#524d42` | secondary text, description | — |
+| `--ink-faint` | `#837c6d` | decorative label, separator text | interactive text |
+| `--accent` | `#8a5a12` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fff6e6` | text above accent | non-accent background |
+| `--line` | `rgba(28,26,22,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Chakra Petch (`--font-display`) | 46px (mobil 28px) | 600 | 1.06 | `.02em` |
-| H2 | Chakra Petch | 30px | 600 | 1.14 | `.04em` |
-| H3 | Chakra Petch | 21px | 600 | 1.26 | `.04em` |
-| Gövde | Space Grotesk (`--font-body`) | 16px | 400 | 1.58 | `0` |
-| Küçük gövde | Space Grotesk | 13px | 400 | 1.55 | `0` |
-| Etiket / ölçü | Share Tech Mono (`--font-mono`) | 10–11px | 500 | 1.4 | `.16em` |
+- Measured contrast: `ink/bg` **14.15:1** · `ink-soft/bg` **6.84:1** · `ink-faint/bg` **3.37:1 (decorative)** · `accent-ink/accent` **5.51:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.5** — kullanılan basamaklar 10 · 11 · 13 · 16 · 21 · 30 · 46.
-- Ölçü önerisi: `h1 { font-size: clamp(28px, 4.4vw, 46px); line-height: 1.06 }`.
-- Gövde satır uzunluğu en fazla **64ch**; ölçü tabloları 96ch'e kadar genişleyebilir.
-- Ağırlık kuralı: display 600, gövde 400/500, mono 500. 700 ve italik yok.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Chakra Petch) | 46px (mobile 28px) | 500 | 1.06 | -0.02em |
+| H2 | same | 30px | 600 | 1.18 | -0.015em |
+| H3 | same | 21px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Space Grotesk) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Share Tech Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 16px |
-| Container genişliği | 1232px (içerik 1200px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1232; 768 altında tek kolon, iç çerçeve 3px |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** asimetrik plaka (7/5) — kadran sol-altta ağırlıklı, metin sağda.
-- Bölüm ritmi: art arda en fazla **3** plaka; dördüncüsü tam genişlik "kontrol bandı" olur.
-- İç çerçeve boşluğu 4px'in altına inmez (gravür okunmalı).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | plaka zemini + 32px gravür ızgarası |
-| Kart | `--surface` | yok | plaka: çift çerçeve |
-| Yüzen katman | `--surface` + accent çerçeve | yok | modal, menü, toast |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: dış `1px solid var(--line)` + iç `::after inset 4px` `1px solid ink %10`.
-- Derinlik nereden gelir: **hiçbir yerden** — düzlük kuraldır; sıralama çerçeve + zemin tonuyla.
-- Radius: `--radius: 2px` (buton, input, chip), `--radius-lg: 4px` (plaka, modal). Üst sınır 4px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 38px | `0 16px` | 2px | 11px mono 600 uppercase `.16em` | accent dolgu, accent-ink metin, gölge yok | hover: accent %86 + ink · active: translateY(1px) + iç çizgi · focus: 2px accent outline + 2px offset · disabled: opacity .45 + kesikli · loading: kadran tiki %0→%100 (700ms) |
-| Buton (ikincil) | 38px | `0 16px` | 2px | 11px mono | şeffaf + 1px `--line` | hover: `--surface-2` |
-| Input | 38px | `0 12px` | 2px | 15px Space Grotesk | `--surface` + 1px `--line` | focus: accent çerçeve + 2px outline offset 1px · error: `--danger` çerçeve + 10px mono not · disabled: opacity .45 |
-| Kart (plaka) | içerik | 20px | 4px | H3 + gövde | `--surface` + çift çerçeve, gölge yok | hover: iç çerçeve accent %40 |
-| Chip / badge | 20px | `0 6px` | 2px | 10px mono `.16em` | `--surface-2` + 1px `--line` | accent: accent dolgu + accent-ink metin |
-| Nav | 52px | `0 24px` | 0 | 14px Space Grotesk 500 | `--bg-2` + alt 3px tik şeridi | aktif: accent metin |
-| Tablo satırı | 36px | `6px 10px` | — | 14px Space Grotesk, tabular-nums | satır arası 1px `--line` | hover: `--surface-2` |
-| Modal | içerik | 24px | 4px | 21px display + mono plaka başlığı | `--surface` + 1px accent çerçeve | açılış: 11px oturma, 410ms |
-| Toast | 34px | `8px 12px` | 2px | 12px mono | `--surface` + sol uçta 2px accent çizgi | hata: çizgi `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ink-soft`, `--warn`, `--danger` | en fazla 4 seri; kadran yayı + tik, sütun yok |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; çift çerçeve üstünde 1px offset kaybolur.
-- Dokunma hedefi: en az 44×44px; 38px buton mobilde `min-height: 44px`. Tik işaretleri dekoratif (`aria-hidden`).
+## Bans
 
-## Görsel dil
+- Koyu neon zemin, cyberpunk/synthwave paleti.
+- Yumuşak gölge, blur, cam, gradyan.
+- Sürekli dönen iğne veya tarama animasyonu.
+- Fotoğraf, 3B render, emoji.
+- Hap radius ve 6px üstü radius.
+- Anlamsız süs çizgisi (her çizgi bir ölçü taşır).
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi, keskin köşe, 20px ızgara; kadran/tik/ok sembolleri |
-| Fotoğraf | yok — diegetic arayüz fotoğraf taşımaz |
-| İllüstrasyon | radyal kadran + tik zorunlu imza; yabancı ölçü birimleri |
-| Doku | grain %3 + 32px gravür ızgarası; parlak yüzey yok |
-| Logo alanı | plaka kenarında mono büyük harf + sinyal noktası, 20px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 5.32:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-grid` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | solda H1 + ölçü etiketleri, sağda kadran; plaka başlığı | `shots/01-page.png` |
 | Dashboard | orta | plaka ızgarası; kadran + mono tablo | `shots/01-page.png` |
@@ -152,44 +177,33 @@ Anlatı içi (diegetic) arayüz geleneğinden — bilim-kurgu filmlerinde karakt
 | Hata | orta | plaka uyarı satırı: `! SEKTÖR 7 · ÖLÇÜM DIŞI` | `shots/01-page.png` |
 | Profil / ayar | orta | birim ve kalibrasyon ayarları | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Her yüzey gravür plakadır: dış 1px + iç 4px çerçeve, gölge yok.
-- Ölçüler diegetic ve birimlidir (`7.42 AE`, `Δ 0.03`, `SEKTÖR 7`); birimsiz sayı yok.
-- Tek sinyal rengi accent; kadran tikleri ve aktif durum accent ile yanar.
-- Başlık Chakra Petch 600; etiket mono büyük harf `.16em`.
-- Radius 2px (kontrol) / 4px (plaka); hap köşe yok.
-- Kadran/tik motifi en az bir bölümde görünür — süs değil, ölçü göstergesi.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 14.15:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.84:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.37:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.51:1 | ≥ 4.5 | button text |
+| focus ring/ground | 5.32:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 90.5 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Koyu neon zemin, cyberpunk/synthwave paleti.
-- Yumuşak gölge, blur, cam, gradyan.
-- Sürekli dönen iğne veya tarama animasyonu.
-- Fotoğraf, 3B render, emoji.
-- Hap radius ve 6px üstü radius.
-- Anlamsız süs çizgisi (her çizgi bir ölçü taşır).
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **6.84:1** (eşik 4.5); `ink-faint / bg` = **3.37:1** yalnız iç çerçeve ve kenar notunda.
-- `--ink-faint` etkileşimli metinde kullanılmaz; ölçü değerleri `--ink` (14.15:1).
-- Hareket/parlama hassasiyeti: düşük — flash yok, sürekli animasyon yok; `prefers-reduced-motion` kadran animasyonunu kapatır.
-- Şeffaf yüzey yok; opak fallback gerekmez. `repeating-conic-gradient` desteklenmezse kadran yerine statik 12 tik çizilir.
-- Odak görünürlüğü: 2px accent outline + 2px offset; çift çerçeve üstünde 1px offset kaybolur.
-- Diegetic metin yine de anlaşılır olmalı: yabancı birim ilk kullanımda açıklanır (`AE — ölçü birimi`).
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Retro terminal" gibi | koyu zemin + neon eklenmiş | açık kemik zemin + amber |
 | Plaka hissi kayboluyor | iç çerçeve unutulmuş | `::after inset 4px` çerçeve ekle |
 | Ölçüler anlamsız | birim yok | her sayıya birim + bağlam yaz |
@@ -197,36 +211,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Gölge sızmış | kart hover'ında gölge | gölge yok; accent çerçeve kullan |
 | Okunmuyor | `--ink-faint` metin | metin `--ink`/`--ink-soft` |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `blueprint-drawing` — ölçü/pafta dili; Blueprint yalnız teknik ek bölümde garnitür.
-- **Uyumlu:** `lab-instrument` — enstrüman dili; Lab yalnız ölçüm panelinde.
-- **Uyumlu:** `calibration-lab` — kalibrasyon adımları; tek bölümde.
-- **Yasak:** `claymorphism` — pastel 3B formlar plaka ciddiyetini bozar.
-- **Yasak:** `dopamine-ui` — çoklu doygun renk tek sinyal kuralını kırar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `blueprint-drawing` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `lab-instrument` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `calibration-lab` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
 
-| Eksen (5) | 136 · Spekülatif | En yakın komşu |
-|---|---|---|
-| Display ailesi | Chakra Petch 600 | 50 Lab: Michroma |
-| Zemin bandı | açık kemik `#e9e8e2` | 56 Blueprint: koyu `#0a1b2b` |
-| Accent hue | ambar `#8a5a12` | 50: mavi `#1a5c8a` |
-| Radius ölçeği | 2 / 4px | 50: 6 / 10px |
-| İmza motif / motion | radyal kadran tiki · 0.41s · top 99% | 50: kadran yayı · 0.42s · top 86% |
+## References
 
-## Referanslar
-
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Diegetic_(narrative) | anlatı içi arayüz mantığı |
-| https://en.wikipedia.org/wiki/Speculative_design | gelecek senaryosu ve inandırıcılık |
-| https://en.wikipedia.org/wiki/Head-up_display | kadran/tik ölçü dili |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | açık plaka üstü metin kontrastı |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Diegetic_(narrative | en.wikipedia.org — ) — anlatı içi arayüz mantığı |
+| https://en.wikipedia.org/wiki/Speculative_design | Speculative design — gelecek senaryosu ve inandırıcılık |
+| https://en.wikipedia.org/wiki/Head-up_display | Instrument panel (HUD) — kadran/tik ölçü dili |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast Minimum — açık plaka üstü metin kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Spekülatif Bilim-Kurgu (styles/136-speculative-scifi/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="speculative-scifi"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: --bg kemik + 32px gravür ızgarası (iki linear-gradient, ink %6).
@@ -240,15 +246,15 @@ Hareket: enter 410ms cubic-bezier(.58,.02,.34,1) 11px stagger .047; scroll top 9
   pin scrub 0.58 (+115%, ekran başına 1); hover 185ms görsel 1.011. prefers-reduced-motion zorunlu.
 Yasak: koyu neon zemin, gölge/blur/cam, sürekli dönen iğne, fotoğraf/3B render, hap radius, birimsiz sayı.
 Çıktı: bileşen kodu + tek paragraf not (kadranı ve ölçü etiketini nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: radyal kadran, çift çerçeve, mono ölçü etiketi, plaka başlığı.
-- [ ] Hard-coded renk/gölge/radius yok; gölge hiç kullanılmamış.
-- [ ] Kontrast: 14.15 / 6.84 / 5.51 — hepsi eşik üstü.
-- [ ] Her sayı birimli; odak halkası 2px accent + 2px offset.
-- [ ] 390px'te tek kolon, iç çerçeve 3px, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken kadran animasyonu duruyor.
+Style: Spekülatif Bilim-Kurgu (speculative-scifi) · family: Experimental & Future (136–145)
+Token: --bg #e9e8e2 · --surface #f4f3ee · --ink #1c1a16 · --accent #8a5a12 · --line rgba(28,26,22,.16)
+Radius: 2px / 4px · Typography: Chakra Petch / Space Grotesk / Share Tech Mono
+Required: Her yüzey gravür plakadır: dış 1px çerçeve + 4px iç çerçeve, gölge yok · Ölçüler diegetic ve birimlidir: `7.42 AE`, `Δ 0.03`, `SEKTÖR 7` — birimsiz sayı yok · Tek sinyal rengi accent; kadran tikleri ve aktif durum accent ile yanar
+Banned: Koyu neon zemin, cyberpunk/synthwave paleti. · Yumuşak gölge, blur, cam, gradyan. · Sürekli dönen iğne veya tarama animasyonu.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -259,15 +265,25 @@ Yasak: koyu neon zemin, gölge/blur/cam, sürekli dönen iğne, fotoğraf/3B ren
   --ink: #1c1a16; --ink-soft: #524d42; --ink-faint: #837c6d;
   --accent: #8a5a12; --accent-ink: #fff6e6;
   --line: rgba(28,26,22,.16);
+  --danger: #cd1d12;
+  --danger-ink: #ffffff;
+  --ok: #007931;
+  --ok-ink: #ffffff;
+  --warn: #ad4b00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 2px; --radius-lg: 4px;
   --shadow: none; --shadow-hard: none;
-  --font-display: "Chakra Petch", "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-mono: "Share Tech Mono", "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: .06em; --blur: 0px; --grain: 3;
-  --danger: #a0301f; --danger-ink: #ffffff;
-  --ok: #2f6b3f; --warn: #7a5300;
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --tracking: .06em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="speculative-scifi"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

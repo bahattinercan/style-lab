@@ -1,41 +1,52 @@
 # 21 · Synthwave
 
-> **Bir cümlede:** Derin mavi gece, neon pembe-cyan glow ve perspektif ızgara; 80'ler arcade'inin hızı.
+> **In one sentence:** Derin mavi gece, neon pembe-cyan glow ve perspektif ızgara; 80'ler arcade'inin hızı.
 
 | | |
 |---|---|
-| **Hissiyat** | neon, hızlı, sinematik, "arcade gecesi" |
-| **En iyi** | oyun, müzik/etkinlik, e-spor, retro lansman, kulüp |
-| **Kaçın** | kurumsal SaaS, sağlık, uzun okuma, parlak ortam kullanımı |
-| **Zorluk** | orta · **Erişilebilirlik** | orta-yüksek (kontrast yanması) |
-| **Aile** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="synthwave"]` |
-| **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | neon, hızlı, sinematik, "arcade gecesi" |
+| **Best for** | oyun, müzik/etkinlik, e-spor, retro lansman, kulüp |
+| **Avoid** | kurumsal SaaS, sağlık, uzun okuma, parlak ortam kullanımı |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Retro (19–27) · **Token** | `kit/tokens.css` → `[data-style="synthwave"]` |
+| **Composition** | `split-reverse` · `utility` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Synthwave, 80'ler outrun estetiği: **koyu mavi-mor zemin**, **neon pembe** ana vurgu, **cyan** ikincil çizgi, **glow**, **perspektif ızgara** ve **gün batımı diski**. Harf aralığı geniş, tipografi büyük harf ve kondanse.
 
 Kazandığı şey: sinematik enerji. Feda ettiği şey: sakin okuma ve göz konforu (neon yanması).
 
-### Ne değildir
+### What is not
 - **Vaporwave değildir.** Vaporwave soluk/yavaş; synthwave doygun/hızlı.
 - **Cyberpunk değildir.** Cyberpunk kir ve distopya; synthwave parlak ve nostaljik.
 - **Acid graphics değildir.** Acid tek asit yeşili; synthwave pembe+cyan çift neon.
 - **"Neon yazı" değildir.** Perspektif ızgara + glow hiyerarşisi olmadan sadece "parlayan tema" olur.
 
-### Nereden gelir
+### Where it comes from
 80'ler arcade/sinema afişleri, outrun müzik sahnesi; 2010'larda "retrowave" ile dijital tasarıma girdi.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin koyu mavi/mor mu (#120458)?
 2. Neon **pembe** ana, **cyan** ikincil mi?
 3. Glow var mı (text-shadow / box-shadow)?
 4. Perspektif ızgara / gün batımı diski var mı?
 5. Display kondanse ve büyük harf mi?
 
-## Zorunlu kurallar
+## Visual signature
+- **Neon pembe:** `#ff2a6d` buton/başlık; üstünde koyu metin (4.90:1).
+- **Cyan çizgi:** `--line` (cyan %55) — 1px bölüm ayırıcı.
+- **Glow:** `0 0 12px accent %65, 0 0 32px cyan %35`.
+- **Perspektif ızgara:** alt %35 bant; 2px çizgi, mask ile soluklaşır.
+- **Gün batımı diski:** radial gradient, hero'da bir kez.
+- **Grain .04:** neon banding'i kırar.
+- **Typography:** Outrun (display) + Inter (body) + Space Mono (mono label).
+- **Colour discipline:** a single accent `#ff2a6d`; neutral scale `#120458` → `#fdfdff`.
+- **Radius:** `4px` / `10px`; Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
+
+## Mandatory rules
 
 1. **İki neon:** pembe (ana) + cyan (ikincil); başka doygun renk yok.
 2. **Glow hiyerarşisi:** ana öğe 1 glow katmanı, ikincil 0; her öğe parlamaz.
@@ -44,7 +55,66 @@ Kazandığı şey: sinematik enerji. Feda ettiği şey: sakin okuma ve göz konf
 5. **Uppercase display**, tracking `0.06em`; gövde normal case.
 6. **Neon alan sınırı:** doygun alan ≤ %25; gerisi koyu zemin.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#120458` | page background | as a card background |
+| `--bg-2` | `#2b1055` | partition divider floor, table top | button background |
+| `--surface` | `#1b0a63` | kart, input, modal | full-page background |
+| `--surface-2` | `#2a1178` | passive chip, hover background | primary button |
+| `--ink` | `#fdfdff` | title, body, icon | large background |
+| `--ink-soft` | `rgba(253,253,255,.78)` | secondary text, description | — |
+| `--ink-faint` | `rgba(253,253,255,.52)` | decorative label, separator text | interactive text |
+| `--accent` | `#ff2a6d` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#120458` | text above accent | non-accent background |
+| `--line` | `rgba(5,217,232,.55)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **17.46:1** · `ink-soft/bg` **10.65:1** · `ink-faint/bg` **5.17:1 (decorative)** · `accent-ink/accent` **4.9:1**.
+- HUD contrast: status colors (live/damage) are derived from the accent's tones; A fourth hue is not added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Outrun) | 64px (mobile 34px) | 700 | 1.1 | 0.01em |
+| H2 | same | 34px | 600 | 1.2 | 0.01em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Space Mono) | 10px | 400 | 1.2 | 0.2em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Numbers are taboos; score/timer areas are mono and right aligned. Title in uppercase, body in sentence order.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- The screen grid acts like a visible frame: a 1px accent border is placed between sections, no decorative lines are added.
+- Section vertical space 64px desktop, 40px mobile; card padding 18px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Surfaces are opaque; There is no glass/blur. Thin accent edge is used for status notification.
+- Radius: `4px` (buton, input, chip), `10px` (kart, modal). Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
+
+## Bans
 
 - Üçüncü neon renk (yeşil/sarı) — acid/cyberpunk'a kayar.
 - Metinde glow (gövde metni); glow yalnız display ve buton.
@@ -52,84 +122,44 @@ Kazandığı şey: sinematik enerji. Feda ettiği şey: sakin okuma ve göz konf
 - Hızlı yanıp sönen animasyon (fotosensitivite).
 - Düşük kontrastlı neon üstüne neon metin.
 - Yoğun tabloda tam glow.
+- Infinite blinking indicator (no animation in v6).
+- More than three status colors.
+- Serif title in HUD.
 
-## Görsel imza
-- **Neon pembe:** `#ff2a6d` buton/başlık; üstünde koyu metin (4.90:1).
-- **Cyan çizgi:** `--line` (cyan %55) — 1px bölüm ayırıcı.
-- **Glow:** `0 0 12px accent %65, 0 0 32px cyan %35`.
-- **Perspektif ızgara:** alt %35 bant; 2px çizgi, mask ile soluklaşır.
-- **Gün batımı diski:** radial gradient, hero'da bir kez.
-- **Grain .04:** neon banding'i kırar.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 4px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 4px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 4px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 4px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 4px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 4px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 4px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Kullanım | Kaçınılır |
-|---|---|---|---|
-| `--bg` | `#120458` | sayfa | panel |
-| `--bg-2` | `#2b1055` | bölüm | metin |
-| `--surface` | `#1b0a63` | panel | sayfa |
-| `--surface-2` | `#2a1178` | ikincil | vurgu |
-| `--ink` | `#fdfdff` | metin | — |
-| `--ink-soft` | `rgba(253,253,255,.78)` | açıklama | 12px altı |
-| `--ink-faint` | `rgba(253,253,255,.52)` | dekoratif (5.17:1) | etkileşimli |
-| `--accent` | `#ff2a6d` | CTA, başlık vurgusu | geniş zemin |
-| `--accent-ink` | `#120458` | accent üstü (**4.90:1**) | — |
-| `--line` | `rgba(5,217,232,.55)` | ayırıcı, çerçeve | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 4.9:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **17.46:1** · `ink-soft/bg` **10.65:1** · `ink-faint/bg` **5.17:1** · `accent-ink/accent` **4.90:1**.
-- Accent üstü **koyu mavi** metin; beyaz 3.4:1 → yasak.
-- Yasak: sarı/yeşil neon; 3. doygun hue.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px block icon, 16/20px canvas; no anti-alias, integer scale |
+| photo | In-game rendering or single object shooting; 25% area, dark vignette |
+| illustration | Sprite/silhouette: up to 3 tones (accent, ink, surface-2) |
+| Texture | Static raster (1px/3px, 4%) on section background only |
+| Logo | Top left 20px, uppercase, mono or display |
 
-| Rol | Aile | Boyut | Ağırlık | Satır | Tracking |
-|---|---|---|---|---|---|
-| Display | Outrun / Turbo / Michroma | 64px (mobil 34px) | 400 | 1.05 | `0.06em`, uppercase |
-| H2 | aynı | 34px | 400 | 1.1 | `0.06em` |
-| H3 | Inter | 18px | 600 | 1.3 | `0.02em` |
-| Gövde | Inter | 16px | 400 | 1.6 | `0.01em` |
-| Etiket | Space Mono | 10px | 400 | 1.2 | `0.2em`, uppercase |
+- Signature motif: `motif-grid` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Primary focus is on one big number/score; second focus single CTA; the rest is label.
 
-- Display glow'lu; glow metnin iç boşluklarını kapatmasın (text-shadow blur ≤ 18px).
-- Gövde 16/1.6, 58ch; glow gövde metninde yasak.
+## Screen recipes
 
-## Izgara ve boşluk
-
-Kolon 12 · gutter 24px · container 1200px · bölüm 88/52px · breakpoint 640/900/1200.
-- Izgara motifi içerik bölümünde kapanır; sadece hero/alt bantta.
-- Kart aralığı 16px; glow payı için 12px ek.
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Gece zemini | `--bg` + ızgara + grain | yok | sayfa |
-| Panel | `--surface` + cyan kenar | hafif glow | kart |
-| Yüzen | `--surface-2` | güçlü glow | modal |
-
-- Derinlik glow ve perspektiften; blur/cam yok. Radius 4/10px.
-
-## Bileşen reçeteleri
-
-| Bileşen | Y | Padding | Radius | Tipografi | Renk/gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton | 48px | 0 24px | 4px | 14/700 uppercase 0.08em | `--accent` + koyu metin + glow | hover: glow 32px · active: iç gölge · focus: 2px cyan halka · disabled: %40 |
-| Buton (cyan) | 48px | 0 22px | 4px | 14/700 | transparent + 1px cyan, cyan metin | hover: cyan %12 dolgu |
-| Input | 48px | 0 14px | 4px | 15/400 | `--surface` + 1px cyan | focus: 2px pembe halka · error: `--danger` |
-| Kart | içerik | 20px | 10px | H3 + 15 | `--surface` + cyan kenar + hafif glow | hover: kenar %80 |
-| Chip | 26px | 0 10px | 4px | 10/400 mono | pembe %14 + pembe kenar | aktif: pembe + koyu metin |
-| Nav | 64px | 0 24px | — | 12/700 uppercase 0.14em | gece + cyan alt çizgi | aktif: pembe alt 3px |
-| Tablo satırı | 48px | 10px 12px | — | 14/400 mono sayı | cyan %25 alt çizgi | hover: `--surface-2` |
-| Modal | içerik | 24px | 10px | H2 + 15 | `--surface-2` + glow | backdrop: `rgba(6,2,26,.7)` |
-| Grafik | — | — | 2px uç | eksen 10 mono | pembe + cyan + soft glow | 2 seri |
-
-## Görsel dil
-
-İkon: 2px çizgi, 22px, cyan. Fotoğraf: neon kenar, yüksek kontrast, koyu. İllüstrasyon: perspektif ızgara, gün batımı. Doku: grain .04. Logo: kondanse, glow'lu.
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing/hero | çok yüksek | 64px glow başlık, gün batımı diski, perspektif ızgara, tek pembe CTA | `shots/01-page.png` |
 | Dashboard | düşük | Izgara/glow kapanır; mono sayılar, cyan ayırıcı | `shots/01-page.png` |
@@ -144,48 +174,61 @@ Kolon 12 · gutter 24px · container 1200px · bölüm 88/52px · breakpoint 640
 | Hata | düşük | `--danger` kenar, kısa metin | `shots/01-page.png` |
 | Profil/ayar | düşük | Düz liste, neon yalnız aktifte | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Gövde 17.46:1, açıklama 10.65:1 → güvenli; `--ink-faint` 5.17:1.
-- Accent üstü koyu metin 4.90:1; beyaz yasak.
-- **Glow + koyu zemin** kontrastı düşürür: glow metnin arkasında değil, kenarında.
-- Parlama: glow blur ≤ 18px, ekran başına ≤ 3 parlayan öğe; strobe yasak.
-- Odak halkası cyan 2px (koyu zeminde 10:1).
-- Dokunma hedefi 48px.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 17.46:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 10.65:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.17:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 4.9:1 | ≥ 4.5 | button text |
+| focus ring/ground | 4.9:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 104.8 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Göz yanması | Her öğede glow + 3+. neon | Glow ≤ 3 öğe, 2 neon |
 | Okunmuyor | Glow metnin içine taşmış | text-shadow blur ≤ 18px, gövdede glow yok |
 | Vaporwave'e kaydı | Soluk pastel kullanılmış | Doygun pembe/cyan, koyu zemin |
 | Karakter kaybı | Perspektif ızgara yok | Hero'da 1 ızgara bandı |
 | Yavaş | Animasyonlu glow | Statik glow, hover'da artış |
 
-## Komşu stiller
+## Neighboring styles
 
-**Uyumlu:** `20 vaporwave` (aynı dönem, yavaş varyant), `22 cyberpunk` (neon + kir), `24 pixel-art` (arcade). **Yasak:** `01 minimalism`, `06 japandi`, `02 swiss-design`.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `vaporwave` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `cyberpunk` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `pixel-art` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `minimalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `japandi` | Two different ornamental languages compete on the same screen |
+| Mixing | `swiss-design` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
-|---|---|
-| https://www.awwwards.com/websites/synthwave/ | Uygulama örnekleri |
-| https://fonts.google.com/specimen/Michroma | Alternatif kondanse display |
-| https://www.nngroup.com/articles/flash-animations/ | Parlama/strobe riski |
+| Source | for what |
+| --- | --- |
+| https://www.awwwards.com/websites/synthwave/ | Awwwards · Synthwave — Uygulama örnekleri |
+| https://fonts.google.com/specimen/Michroma | Michroma — Alternatif kondanse display |
+| https://www.nngroup.com/articles/flash-animations/ | NN/g · Flash — Parlama/strobe riski |
 
 ## AI brief
 
-```
+```text
 Stil: Synthwave (styles/21-synthwave/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="synthwave"]; hard-coded renk YASAK.
 Neon: pembe #ff2a6d (ana, üstünde KOYU metin #120458, 4.90:1) + cyan #05d9e8 (ikincil çizgi); 3. neon yok.
@@ -195,15 +238,15 @@ Tipografi: Outrun/Michroma uppercase 0.06em (64/1.05) + Inter gövde 16/1.6; eti
 Hareket: 120–320ms ease-out; ızgara kayması 12s linear ≤ 8px; strobe/nabız sürekli YASAK.
 Yoğun ekran (form/tablo/ödeme): glow ve ızgara kapanır.
 Çıktı: kod + tek paragraf not (glow hiyerarşisi ve parlama önlemi).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İki neon (pembe + cyan), üçüncü yok.
-- [ ] Accent üstü koyu metin; beyaz yok.
-- [ ] Glow ≤ 3 öğede, gövde metninde yok.
-- [ ] Izgara yalnız alt bantta ve soluk.
-- [ ] Strobe yok; reduced-motion ızgarayı durduruyor.
-- [ ] Yoğun ekranda glow kapalı.
+Style: Synthwave (synthwave) · family: Retro (19–27)
+Token: --bg #120458 · --surface #1b0a63 · --ink #fdfdff · --accent #ff2a6d · --line rgba(5,217,232,.55)
+Radius: 4px / 10px · Typography: Outrun / Inter / Space Mono
+Required: **İki neon:** pembe (ana) + cyan (ikincil); başka doygun renk yok. · **Glow hiyerarşisi:** ana öğe 1 glow katmanı, ikincil 0; her öğe parlamaz. · **Perspektif ızgara:** yalnızca alt bantta, opacity ≤ .35.
+Banned: Üçüncü neon renk (yeşil/sarı) — acid/cyberpunk'a kayar. · Metinde glow (gövde metni); glow yalnız display ve buton. · Parlak (açık) zemin; gündüz modu.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -214,12 +257,25 @@ Yoğun ekran (form/tablo/ödeme): glow ve ızgara kapanır.
   --ink: #fdfdff; --ink-soft: rgba(253,253,255,.78); --ink-faint: rgba(253,253,255,.52);
   --accent: #ff2a6d; --accent-ink: #120458;
   --line: rgba(5,217,232,.55);
+  --danger: #eb4131;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 4px; --radius-lg: 10px;
-  --shadow: 0 0 12px rgba(255,42,109,.65), 0 0 32px rgba(5,217,232,.35);
-  --shadow-hard: none;
-  --font-display: "Outrun", "Turbo", "Michroma", system-ui, sans-serif;
+  --shadow: 0 0 12px rgba(255,42,109,.65), 0 0 32px rgba(5,217,232,.35); --shadow-hard: none;
+  --font-display: "Outrun", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
-  --tracking: 0.06em; --blur: 0px; --grain: .04;
+  --tracking: 0.06em; --blur: 0px; --grain: 0;
 }
 ```

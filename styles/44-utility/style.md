@@ -1,43 +1,43 @@
 # 44 · Utility
 
-> **Bir cümlede:** Süsün sıfıra çekildiği, hiyerarşiyi yalnız punto, boşluk ve tek vurgu renginin taşıdığı ölçülü ürün arayüzü.
+> **In one sentence:** Süsün sıfıra çekildiği, hiyerarşiyi yalnız punto, boşluk ve tek vurgu renginin taşıdığı ölçülü ürün arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | disiplinli, sessiz, öngörülebilir, hızlı |
-| **En iyi** | SaaS paneli, dokümantasyon, dönüşüm landing'i, B2B kurumsal site |
-| **Kaçın** | lüks emlak vitrini, oyun/etkinlik, moda kampanyası — burada "boş" değil "yoksun" okunur |
-| **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (ölçülen en düşük çift 6.43:1) |
-| **Aile** | Zamansız (41–44) · **Token** | `kit/tokens.css` → `[data-style="utility"]` |
-| **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | disiplinli, sessiz, öngörülebilir, hızlı |
+| **Best for** | SaaS paneli, dokümantasyon, dönüşüm landing'i, B2B kurumsal site |
+| **Avoid** | lüks emlak vitrini, oyun/etkinlik, moda kampanyası — burada "boş" değil "yoksun" okunur |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Timeless (41–44) · **Token** | `kit/tokens.css` → `[data-style="utility"]` |
+| **Composition** | `sticky` · `pill` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Utility, bir arayüz sisteminin **kural kısmını** görünür kılan stildir: tek typeface, sabit punto basamakları, 4'ün katı boşluk, tek vurgu rengi, düz zemin. Süsü feda eder; karşılığında üç şey kazanır — hızlı okunurluk, düşük bakım maliyeti, öngörülebilir bileşen davranışı.
 
 Kurucu kararları üç tanedir. Birincisi **tek vurgu**: ekranda accent yalnız birincil eylem ve aktif durum için yanar; dekoratif renk yoktur. İkincisi **düz zemin**: derinlik gölgeden değil, 1px hairline ve yüzey tonu farkından gelir. Üçüncüsü **isimli metin stili**: her metin önceden tanımlı bir stilden (Heading 1…Caption 5) seçilir, serbest punto/ağırlık kombinasyonu yazılmaz.
 
 Bunun bedeli kişiliksizleşme riskidir; Utility'yi "jenerik" olmaktan kurtaran tek şey **disiplinin görünürlüğü**: hizalanmış kenarlar, tutarlı ritim, abartısız ama doğru tipografik zıplamalar.
 
-### Ne değildir
+### What is not
 - **Minimalism (01) değildir:** minimalism sıcak nötr (#fafaf9) ve Inter ile "sakinlik" satar; Utility saf beyaz, Poppins ve ölçü disiplini satar. Ayırt edici: Utility'de başlık gradyanı ve tagline reveal sahnesi vardır, minimalism'de yoktur.
 - **Swiss Design (02) değildir:** Swiss 0 radius, siyah hairline ve Helvetica ile baskı dilidir; Utility 8/12px radius ve mavi tek vurgu ile **yazılım** dilidir.
 - **Bento Grid (05) değildir:** Bento'nun birim kutudur; Utility'nin birimi satırdır — kart sayısı değil, ritim belirler.
 - **AI-native mesh (39) değildir:** gradyan zemin ve ışıma Utility'de yasak; zemin daima düz.
 
-### Nereden gelir
+### Where it comes from
 İsviçre tipografisinin ızgara disiplini ile 2010'lar sonrası ürün arayüzü pratiğinin (design token, isimli text style, 8px grid) kesişimi. Bugün tekrar önemli çünkü ajanlar ürettiği arayüzlerde en sık hata keyfi punto/radius/boşluktur; Utility bu kararları önceden kapatır. Klişeye dönüşmemesi için korunacak detay: **hairline'ın 1px'te kalması** ve vurgunun tek renk olması.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Tüm kenarlıklar 1px ve aynı opaklıkta; hiçbir kartta tek taraflı kenarlık yok.
 2. Başlık ölçeği 60/48/36/30/24/20 dışına çıkmıyor; ara punto (18/22/26) yok.
 3. Ekranda tek doygun renk var; gerisi nötr skala.
 4. Gölge yalnızca yüzen katmanda; kart ayrımı çizgiyle.
 5. Buton yüksekliği 44px, yatay padding 12px, radius 8px.
 
-## Görsel imza
+## Visual signature
 - **Tek typeface:** Poppins (`--font-display` = `--font-body`); mono yalnız kod/veri/rakam için JetBrains Mono.
 - **Başlık gradyanı:** yalnız hero başlığında, soldan sağa; açık temada `#000000 → #666666`, koyuda `#FFFFFF → #9B9B9B`. Metin üstünde gradient, zemin üstünde asla.
 - **Hairline:** `1px solid var(--line)`; kart, panel ve tablo satırı aynı çizgiyi kullanır. Tek taraflı kenarlık yok.
@@ -45,134 +45,127 @@ Bunun bedeli kişiliksizleşme riskidir; Utility'yi "jenerik" olmaktan kurtaran 
 - **Buton geometrisi:** 44px yükseklik, 8px dikey / 12px yatay padding, `--radius`.
 - **Tagline sahnesi:** hero'dan bağımsız, en az iki satır büyük punto; kelimeler tek tek `--ink` rengine geçer (Hareket bölümü).
 - **Hover dili:** renk/ağırlık kayması ve 1px yukarı hareket; parlaklık artışı yok.
+- **Typography:** Poppins (display) + Poppins (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#1d4ed8`; neutral scale `#ffffff` → `#111112`.
+- **Radius:** `8px` / `12px`; Card 10–14px, button 6–10px; full circle only chip/badge.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#ffffff` | sayfa zemini | kart zemini olarak |
-| `--surface` | `#ffffff` | kart / panel (hairline ile ayrılır) | gövde metni arkası |
-| `--surface-2` | `#fafafa` | ikincil panel, tablo başlığı | birincil CTA |
-| `--ink` | `#111112` | başlık, gövde | devre dışı metin |
-| `--ink-soft` | `#5a5f66` | ikincil metin, açıklama | başlık |
-| `--ink-faint` | `#90959d` | dekoratif etiket, ayırıcı | etkileşimli metin |
-| `--accent` | `#1d4ed8` | birincil buton, aktif durum, odak halkası | dekorasyon, ikinci vurgu |
-| `--line` | `rgba(17,17,18,.10)` | kart/panel/tablo kenarlığı | metin rengi |
+1. Tek typeface (Poppins); mono yalnız kod/veri/rakam
+2. Her metin isimli stilden: Heading 1–6, Title 1–5, Body 1–6, Button, Caption
+3. Boşluk yalnız --space-1…8 + 80/48 bölüm ritmi
+4. Kart ayrımı 1px hairline; gölge yalnız yüzen katmanda
+5. Tek vurgu rengi; accent yalnız eylem ve aktif durumda
+6. Hero başlık ve alt başlık max 680px, anlam sınırında satır kırma
+7. Tagline reveal sahnesi: en az 2 satır, kelime kelime renk geçişi
+8. 44×44px dokunma hedefi ve görünür odak halkası
 
-- Ölçülen kontrast: `ink / bg` = **18.87:1** · `ink-soft / bg` = **6.43:1** · `accent-ink / accent` = **6.70:1** · `ink-faint / bg` = **2.91:1** (yalnız dekoratif).
-- Tek vurgu kuralı: ekran başına bir accent rengi; ikinci renk gerekiyorsa `--ink-soft` tonu kullanılır.
-- Yasak kombinasyon: accent üstünde `--ink-soft`; accent'i zemin olarak kullanan büyük bloklar.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#ffffff` | page background | as a card background |
+| `--bg-2` | `#f6f6f7` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#fafafa` | passive chip, hover background | primary button |
+| `--ink` | `#111112` | title, body, icon | large background |
+| `--ink-soft` | `#5a5f66` | secondary text, description | — |
+| `--ink-faint` | `#90959d` | decorative label, separator text | interactive text |
+| `--accent` | `#1d4ed8` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `rgba(17,17,18,.10)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Poppins (`--font-display`) | 60px | 600 | 1.0 | `--tracking` (0) |
-| H2 | Poppins | 48px | 600 | 1.0 | 0 |
-| H3 | Poppins | 36px | 600 | 1.11 | 0 |
-| H4 | Poppins | 30px | 600 | 1.2 | 0 |
-| H5 | Poppins | 24px | 600 | 1.33 | 0 |
-| H6 / Title 1 | Poppins | 20px | 600 / 500 | 1.4 | 0 |
-| Gövde | Poppins (`--font-body`) | 16px | 400–600 | 1.5 | 0 |
-| Küçük gövde | Poppins | 14px | 400–600 | 1.43 | 0 |
-| Etiket / mono | JetBrains Mono (`--font-mono`) | 12–14px | 500 | 1.33 | 0.02em |
+- Measured contrast: `ink/bg` **18.87:1** · `ink-soft/bg` **6.43:1** · `ink-faint/bg` **3.01:1 (decorative)** · `accent-ink/accent` **6.7:1**.
+- Price and stock information is written with --ink, not accent; accent solo action (cart, buy).
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek: Tailwind tabanlı 12/14/16/18/20/24/30/36/48/60/72/96/128. Ara basamak (18/22/26/34) yasak; mevcut değer basamağa **aşağı** yuvarlanır.
-- **İsimli metin stilleri** (kod içinde kebab case sınıf olarak bir kez tanımlanır, her elemanda tekrar edilmez):
+## Typography
 
-| Stil | Basamak | Boyut / satır | Ağırlık |
-|---|---|---|---|
-| Heading 1 | `text-6xl` | 60 / 60 | 600 |
-| Heading 2 | `text-5xl` | 48 / 48 | 600 |
-| Heading 3 | `text-4xl` | 36 / 40 | 600 |
-| Heading 4 | `text-3xl` | 30 / 36 | 600 |
-| Heading 5 | `text-2xl` | 24 / 32 | 600 |
-| Heading 6 | `text-xl` | 20 / 28 | 600 |
-| Title 1–5 | `text-xl` … `text-xs` | 20/28 · 18/28 · 16/24 · 14/20 · 12/16 | 500 |
-| Body 1–3 | `text-base` | 16 / 24 | 600 · 500 · 400 |
-| Body 4–6 | `text-sm` | 14 / 20 | 600 · 500 · 400 |
-| Button-lg/md/sm/Xsm | `text-lg` … `text-xs` | 18/28 · 16/24 · 14/20 · 12/16 | 600 |
-| Caption 1–5 | `text-sm` / `text-xs` | 14/20 · 12/16 | 500 · 400 · 600 · 500 · 400 |
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Poppins) | 60px (mobile 36px) | 600 | 1.06 | -0.02em |
+| H2 | same | 36px | 600 | 1.18 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Poppins) | 16px | 400 | 1.6 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 12px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-- Gövde satır uzunluğu en fazla 68ch; hero başlığı `text-wrap: balance`, gövde `text-wrap: pretty`.
-- İtalik yok, 900/black ağırlık yok (üst sınır 600).
-- `h1` ölçüsü: `clamp(36px, 5vw, 60px)` — 390px'te 36px'in altına inmez.
+- Price 26–32px display, currency 13px mono; product name 15px/600.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 24px (`--space-5`) |
-| Container genişliği | 1200px (içerik 1160px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1200; 768 altında tek sütun |
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-**Eşleme — `ai-design-skills` adları → bu sözleşme** (upstream değerleri global değil, yalnız bu stilde geçerli):
+- Product grid 3–4 columns; card ratio 4:5. Filter rail 240px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-| Upstream | px | Bu stilde |
-|---|---|---|
-| `Spacing-25` | 2 | eşlenmez; yalnız hairline/ikon içi |
-| `Spacing-50` | 4 | `--space-1` |
-| `Spacing-75` | 8 | `--space-2` |
-| `Spacing-100` | 12 | `--space-3` |
-| `Spacing-200` | 16 | `--space-4` |
-| `Spacing-300` | 24 | `--space-5` |
-| `Spacing-400` | 32 | `--space-6` |
-| `Spacing-500` | 40 | eşlenmez; `--space-6` (32) veya `--space-7` (48) seçilir |
-| `Spacing-600` | 48 | `--space-7` |
-| `Spacing-700` | 64 | `--space-8` |
-| `Spacing-800/900` | 80/96 | yalnız bölüm dikey ritmi: 80px masaüstü / 48px mobil |
+## Surface and depth
 
-- Bölüm dikey ritmi: masaüstü 80px, mobil 48px. Kart içi padding 24px, kart arası 24px.
-- Asimetri kuralı: ekran başına en fazla 1 bölüm simetriden çıkar (ör. hero 7/5).
-- Art arda en fazla 3 aynı hizalı blok; dördüncüde ritim değişir.
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-## Yüzey ve derinlik
+- Cards are separated by light shadow; On hover, the shadow grows, the edge does not change.
+- Radius: `8px` (buton, input, chip), `12px` (kart, modal). Card 10–14px, button 6–10px; full circle only chip/badge.
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa |
-| Kart | `--surface` + 1px `--line` | `--shadow` | içerik bloğu |
-| Yüzen katman | `--surface` + `--line` + güçlü gölge | 0 12px 32px rgba(17,17,18,.12) | modal, dropdown, toast |
+## Bans
 
-- Kenarlık formülü: `1px solid var(--line)` — her zaman dört taraf; tek taraflı kenarlık yalnız tablo satırı ayırıcısında (satır altı, `--line`).
-- Derinlik nereden gelir: yüzey tonu farkı + hairline. Gölge ikincil; gradient hiç yok.
-- Radius: `--radius` (8px) buton/input/chip, `--radius-lg` (12px) kart/modal. Tailwind basamakları 2/4/6/8/12/16/24 dışına çıkılmaz.
-- **İç içe radius formülü:** boşluk 32px'in altındaysa `inner = outer − gap`; sonuç 2'nin altındaysa iç şekil kare kalır. Örnek: 16px dış + 8px padding → 8px iç. Sonuç Tailwind basamağına denk gelmiyorsa en yakın basamağa yuvarlanır (ör. 24 − 4 = 20 → 16).
+- Zemin gradienti, ikinci vurgu rengi, dekoratif renk.
+- Tek taraflı kart kenarlığı (tablo satırı ayırıcısı hariç).
+- Keyfi değer: `text-[19px]`, `padding: 18px`, `radius: 14px`.
+- İtalik, 900 ağırlık, ultra bold.
+- `ease` / `linear` geçiş, `top`/`width` animasyonu, sürekli döngü.
+- Material Icons / Material Symbols.
+- Uydurma fiyat, istatistik, müşteri adı; eksik bilgi `{{price}}` gibi işaretli yer tutucu olur.
+- Stack of discount labels on price.
+- More than four types of rosettes.
+- Auto-playing image.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 8px 12px | `--radius` | Button-md 16/24 600 | `--accent` / `--accent-ink`, gölge yok | hover: `--accent` %8 koyu · active: `translateY(1px)` · focus: 2px `--accent` halka + 2px offset · disabled: %40 opaklık · loading: 16px spinner + metin sabit |
-| Buton (ikincil) | 44px | 8px 12px | `--radius` | Button-md | şeffaf, 1px `--line`, `--ink` | hover: `--surface-2` · focus aynı halka |
-| Buton (sessiz) | 36px | 8px 12px | `--radius` | Button-sm 14/20 | metin `--ink-soft` | hover: `--ink` |
-| Input | 44px | 0 12px | `--radius` | Body 3 16/24 400 | `--surface` + 1px `--line` | focus: 2px halka, offset 1px · filled: değişmez · error: 1px `--danger` + 12px açıklama · disabled: %40 |
-| Kart | — | 24px | `--radius-lg` | Heading 6 + Body 3 | `--surface` + 1px `--line` + `--shadow` | hover: yalnız tıklanabilir kartta 1px yukarı |
-| Chip / badge | 24px | 8px | 999px yerine `--radius` | Caption 3 12/16 600 | `--surface-2`, metin `--ink-soft` | aktif: `--accent` %10 zemin + `--accent` metin |
-| Nav | 64px | 0 24px | 0 (üst bar) | Title 4 14/20 500 | `--bg` %80 + `blur(var(--blur))`, alt 1px `--line` | aktif: alt çizgi 2px `--accent` |
-| Tablo satırı | 52px | 12px 16px | 0 | Body 5 14/20 500 | alt çizgi `--line` | hover: `--surface-2` · seçili: `--accent` %6 zemin |
-| Modal / sheet | — | 24px | `--radius-lg` | Heading 5 + Body 3 | `--surface`, yüzen gölge | açılış: 0.5s giriş · kapanış aynı eğri |
-| Toast | 48px | 8px 16px | `--radius` | Caption 1 14/20 500 | `--surface`, 1px `--line`, gölge | 4sn sonra kapanır, hover'da durur |
-| Grafik paleti | — | — | — | mono eksen etiketi 12/16 | `--data-1…4` | seri sayısı en fazla 4 |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 8px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 8px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 8px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 8px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 8px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 8px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 8px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `outline: 2px solid var(--focus); outline-offset: 2px` — `--focus` varsayılan olarak `--accent`.
-- Dokunma hedefi: en az 44×44px; 36px sessiz buton ve 24px chip padding ile 44px'e büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.7:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
-|---|---|
-| İkon | Phosphor/Solar/Iconamoon, 1.5px çizgi, 24px kutu; Material Icons yasak |
-| Fotoğraf | ürün ekran görüntüsü veya nötr stüdyo çekimi; `--radius-lg` kırpma, %4 kontrast artışı sınırı |
-| İllüstrasyon | yok; gerekiyorsa 1.5px line-art, `--ink-soft` |
-| Doku | yok (`--grain: 0`), blur yalnız nav/overlay yüzeyinde (`--blur: 12px`) |
-| Logo alanı | monokrom `--ink`, min 24px yükseklik, çevresinde 1 birim (`--space-3`) boşluk |
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 20px; basket/favorite full |
+| photo | The product is single object, white/neutral backdrop, shadow is soft; 4:5 |
+| illustration | Thin line only in category title |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-## Ekran reçeteleri
+- Signature motif: `motif-grid` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 680px başlık, gradyan metin, tek CTA, altında logo şeridi | `shots/01-page.png` |
 | Dashboard | düşük | 12 kolon, 24px gutter, KPI kartları aynı yükseklikte | `shots/01-page.png` |
@@ -187,36 +180,33 @@ Bunun bedeli kişiliksizleşme riskidir; Utility'yi "jenerik" olmaktan kurtaran 
 | Hata | düşük | ne oldu + ne yapmalı; `window.alert` yasak | `shots/01-page.png` |
 | Profil / ayar | orta | bölüm başlıkları Heading 6, satır 52px | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Tek typeface; mono yalnız kod/veri/rakam için.
-- Her metin isimli stillerden birini kullanır; serbest punto/ağırlık yazılmaz.
-- Boşluk yalnız `--space-1…8` ve 80/48 bölüm ritmi.
-- Radius yalnız `--radius` / `--radius-lg` veya iç içe formülün ürettiği Tailwind basamağı.
-- Her etkileşimli öğe hover, active, focus, disabled, loading durumlarını taşır.
-- Her ekran için boş / yükleme / hata durumu tasarlanır.
-- 390px'te yatay taşma yok, birincil eylem ilk ekranda görünür.
+## Accessibility
 
-## Yasaklar
-- Zemin gradienti, ikinci vurgu rengi, dekoratif renk.
-- Tek taraflı kart kenarlığı (tablo satırı ayırıcısı hariç).
-- Keyfi değer: `text-[19px]`, `padding: 18px`, `radius: 14px`.
-- İtalik, 900 ağırlık, ultra bold.
-- `ease` / `linear` geçiş, `top`/`width` animasyonu, sürekli döngü.
-- Material Icons / Material Symbols.
-- Uydurma fiyat, istatistik, müşteri adı; eksik bilgi `{{price}}` gibi işaretli yer tutucu olur.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 18.87:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.43:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.01:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.7:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.7:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 105.4 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "boş" okunuyor | her şey aynı ağırlıkta, ritim yok | bölüm aralığını 80/48'e çıkar, H2'yi 48'e al |
 | Kartlar kutulanmış görünüyor | gölge + kenarlık birlikte | kartta tek hairline, gölge yalnız yüzen katmanda |
 | Renk cıvıltısı | accent dekorasyona kaymış | accent yalnız eylem/aktif; gerisi nötr |
@@ -224,37 +214,31 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Metin son satırda tek kelime | `text-wrap` yok | başlıkta `balance`, gövdede `pretty` |
 | Mobilde buton taşıyor | sabit genişlik veya uzun etiket | `min-width: 0`, etiketi kısalt, 44px korunur |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `minimalism` — aynı disiplin, daha sıcak nötr; ekran bazlı geçiş yapılabilir.
-- **Uyumlu:** `swiss-design` — kurumsal dokümantasyon bölümlerinde garnitür.
-- **Yasak:** `maximalism` — renk bütçesi ve katman sayısı çelişir.
-- **Yasak:** `neumorphism` — derinlik kaynağı (iç gölge) Utility'nin hairline kuralıyla çakışır.
-- **Yasak:** `aurora-ui` / `ai-native-mesh` — zemin gradienti yasak.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `minimalism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `swiss-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `japandi` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `maximalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `neumorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `aurora-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `ai-native-mesh` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://tailwindcss.com/docs/font-size | punto basamakları ve eşleşen satır yükseklikleri |
-| https://tailwindcss.com/docs/border-radius | radius basamakları |
-| https://phosphoricons.com | ikon seti ve çizgi kalınlığı |
-| https://m3.material.io/foundations/accessible-design | dokunma hedefi ve durum eşlemesi |
-| https://github.com/elayadesign/ai-design-skills | bu stilin türetildiği kural seti (MIT) — ölçek/mapping mantığı |
-
-## Erişilebilirlik
-- Ölçülen en düşük etkileşimli çift `ink-soft / bg` = 6.43:1; `--ink-faint` (2.91:1) yalnız dekoratif, etkileşimli metin değil.
-- Odak halkası her yüzeyde 3:1 üstü: `--focus` = `--accent`, 2px + 2px offset.
-- Durum yalnız renkle anlatılmaz; ikon veya metin eşlik eder.
-- 390px'te yatay kaydırma yok; tablolar `overflow-x: auto` içinde, sayfa gövdesi taşmaz.
-- Koyu modda `--ink-faint` 4.12:1; küçük punto metinde kullanılmaz.
-- Blur'lu nav yüzeyinde `@supports not (backdrop-filter: blur(1px))` için opak `--bg` fallback zorunlu.
+| Source | for what |
+| --- | --- |
+| https://tailwindcss.com/docs/font-size | Tailwind · font-size — punto basamakları ve eşleşen satır yükseklikleri |
+| https://tailwindcss.com/docs/border-radius | Tailwind · border-radius — radius basamakları |
+| https://phosphoricons.com | Phosphor Icons — ikon seti ve çizgi kalınlığı |
+| https://m3.material.io/foundations/accessible-design | m3.material.io — dokunma hedefi ve durum eşlemesi |
+| https://github.com/elayadesign/ai-design-skills | ai-design-skills (MIT) — bu stilin türetildiği kural seti (MIT) — ölçek/mapping mantığı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Utility (styles/44-utility/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="utility"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: tek aile Poppins (--font-display = --font-body), mono yalnız kod/veri için.
@@ -268,17 +252,15 @@ Hareket: cubic-bezier(0.22,1,0.36,1); basma 200ms, geçiş 500ms, scroll reveal 
 Erişilebilirlik: gövde >= 4.5:1, büyük metin >= 3:1, dokunma hedefi >= 44px, görünür odak halkası.
 Yasak: ikinci vurgu rengi, tek taraflı kenarlık, italik, 900 ağırlık, Material Icons, keyfi değer, uydurma veri.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (hairline, gradyan başlık, tek accent, tagline sahnesi).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Tüm metin isimli stillerden; ara punto yok.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1, accent üstü ≥ 4.5:1.
-- [ ] Odak halkası görünür, dokunma hedefi ≥ 44px.
-- [ ] 390px genişlikte taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
-- [ ] Hover/active/focus/disabled/loading + boş/hata durumları var.
+Style: Utility (utility) · family: Timeless (41–44)
+Token: --bg #ffffff · --surface #ffffff · --ink #111112 · --accent #1d4ed8 · --line rgba(17,17,18,.10)
+Radius: 8px / 12px · Typography: Poppins / Poppins / JetBrains Mono
+Required: Tek typeface (Poppins); mono yalnız kod/veri/rakam · Her metin isimli stilden: Heading 1–6, Title 1–5, Body 1–6, Button, Caption · Boşluk yalnız --space-1…8 + 80/48 bölüm ritmi
+Banned: Zemin gradienti, ikinci vurgu rengi, dekoratif renk. · Tek taraflı kart kenarlığı (tablo satırı ayırıcısı hariç). · Keyfi değer: `text-[19px]`, `padding: 18px`, `radius: 14px`.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -289,13 +271,25 @@ Yasak: ikinci vurgu rengi, tek taraflı kenarlık, italik, 900 ağırlık, Mater
   --ink: #111112; --ink-soft: #5a5f66; --ink-faint: #90959d;
   --accent: #1d4ed8; --accent-ink: #ffffff;
   --line: rgba(17,17,18,.10);
+  --danger: #d92d20;
+  --danger-ink: #ffffff;
+  --ok: #008940;
+  --ok-ink: #000000;
+  --warn: #bd5b00;
+  --warn-ink: #000000;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 8px; --radius-lg: 12px;
   --shadow: 0 1px 2px rgba(17,17,18,.06); --shadow-hard: none;
   --font-display: "Poppins", system-ui, sans-serif;
   --font-body: "Poppins", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: 0em; --blur: 12px; --grain: 0;
+  --tracking: 0em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="utility"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

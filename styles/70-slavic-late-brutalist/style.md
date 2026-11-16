@@ -1,146 +1,169 @@
 # 70 · Slavic Late Brutalist
 
-> **Bir cümleyle:** Beton panel estetiği: bitişik bloklar, 3px kenarlar, 5px sert ofset gölge ve tek rust kırmızısı — süs yok, kütle var.
+> **In one sentence:** Slavic Late Brutalist
 
 | | |
 |---|---|
-| **Hissiyat** | ağır, mekanik, dürüst, kamusal |
-| **En iyi** | kültür merkezi/arşiv, mimarlık ofisi, endüstriyel ürün markası, kamu hizmeti duyurusu |
-| **Kaçın** | lüks perakende, sağlık/wellness, çocuk uygulaması, hızlı ödeme akışı |
-| **Zorluk** | orta (kalınlığı ölçülü tutmak: her yeri 3px yapmak gürültü üretir) · **Erişilebilirlik** | iyi (12.25:1 gövde, 5.44:1 accent üstü) |
-| **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="slavic-late-brutalist"]` |
-| **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | ağır, mekanik, dürüst, kamusal |
+| **Best for** | kültür merkezi/arşiv, mimarlık ofisi, endüstriyel ürün markası, kamu hizmeti duyurusu |
+| **Avoid** | lüks perakende, sağlık/wellness, çocuk uygulaması, hızlı ödeme akışı |
+| **Difficulty** | orta (kalınlığı ölçülü tutmak: her yeri 3px yapmak gürültü üretir) · **Accessibility** |  |
+| **Family** | Cultural & Regional (66–75) · **Token** | `kit/tokens.css` → `[data-style="slavic-late-brutalist"]` |
+| **Composition** | `split-reverse` · `inline` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Slavic Late Brutalist, geç dönem Doğu Bloku konut bloklarının (panelák) ekran dilidir: **bitişik beton paneller** (`gap: 0`, ayrım 3px kenar), **sert ofset gölge** (`5px 5px 0`), gri beton zemin (`#d8d6d0`), tek **rust kırmızısı** (`#a8431d`) ve Anton ile kurulmuş **uppercase dev başlıklar** (68px, satır aralığı 0.94). Süs yoktur: 45° tehlike şeridi ekran başına bir kez, yalnız landing alt bandında görünür ve orada da bir uyarı işareti gibi davranır.
 
 Kazandığı şey: **ağırlık ve okunurluk**. Kalın kenar + yüksek kontrast (12.25:1) sayesinde ekran, güneş altında ve düşük kaliteli monitörde bile okunur; hiyerarşi süsle değil punto ve kütleyle kurulduğu için tarama hızlıdır. Feda ettiği şey: **incelik ve sıcaklık** — bu stil hiçbir şeyi "zarif" göstermez; lüks, sağlık ve çocuk ürünlerinde kaba kalır.
 
-### Ne değildir
+### What is not
 - **Neo-Brutalism (13) değildir.** Neo-brutalism parlak sarı/pembe bloklar, 2px kenar ve **renkli** sert gölgeyle "oyuncu" bir dil kurar (radius 0 ama palet canlı). Burada palet **beton grisi + rust**, gölge **siyah**, kenar **3px** ve tehlike şeridi tek bantta.
 - **Constructivism (36) değildir.** Constructivism diagonal çubuk, kırmızı-siyah ve aşırı tipografi ile **afiş** kurar; burada diagonal yalnız bir uyarı şeridinde, kompozisyon ise **dikey-yatay modüler** ve blok bitişik.
 - **Utility (44) değildir.** Utility hairline (1px) disiplini ve isimli metin stilleriyle çalışır; burada hairline **yok**, her ayrım 3px ve ofset gölge var.
 - **Grand Tourer (41–43) değildir.** O aile krom, kadran ve krem deriyle "zarif makine" kurar; burada makine **çıplak**: krom yok, yuvarlak yok, sıcaklık yok.
 - **"Kalın kenarlı kutu" değildir.** Bitişik panel (gap 0), sert ofset gölge, beton dokusu ve 68px uppercase display olmadan bu stil sadece kaba bir wireframe'dir.
 
-### Nereden gelir
+### Where it comes from
 1945–1980 arası Doğu ve Orta Avrupa'da milyonlarca konut, **prefabrik beton panel** ile üretildi: endüstriyel ölçü, tekrar eden modül, kaplamasız yüzey. Aynı dönemin grafik dili (şablon yazı, damga, duyuru panosu, uyarı şeridi) bu estetiği tamamladı. Dijitalde 2010'lardan sonra kültür kurumları ve mimarlık ofisleri tarafından "dürüst malzeme" söylemiyle kullanıldı; nedeni ölçülebilir: kalın kenar + yüksek kontrast, kötü ekran koşullarında okunurluğu artırır.
 
 Klişeye düşmemek için korunması gereken detay: **panel bitişikliği ve gölgenin sertliği**. Boşlukları 16px'e çıkarmak, gölgeyi yumuşatmak veya ikinci bir renk eklemek stili "kaba SaaS teması"na çevirir.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Bloklar **birbirine bitişik** mi (`gap: 0`), ayrım **3px kenar** mı — 1px hairline yok mu?
 2. Bir öğede **5px sert ofset gölge** (blur'suz, kaydırılmış siyah blok) var mı?
 3. Başlık **Anton uppercase, 68px, satır aralığı 0.94** mü (harfler birbirine değiyor)?
 4. Palet **beton grisi + tek rust kırmızısı** mı; ikinci renk yok mu?
 5. Ekranın bir yerinde **45° tehlike şeridi** tek bant olarak var mı (iki kez değil)?
 
-## Görsel imza
-1. **Bitişik panel ızgarası:** `gap: 0`, çocuklar `margin: -1.5px 0 0 -1.5px` ile kenarlar üst üste bindirilir; sonuç 3px tek çizgi (çift çizgi değil).
-2. **Sert ofset gölge:** `--shadow-hard: 5px 5px 0 #16181a`; yalnız hero görseli, modal ve buton hover'da. Blur sıfır, yayılım sıfır.
-3. **Tehlike şeridi:** 24px yükseklik, `repeating-linear-gradient(45deg, accent 0 12px, ink 12px 24px)`; landing alt bandında **tek** kez (mobilde 16px).
-4. **Damga bloğu:** 120×120px, 3px ink kenar, `--bg-2` zemin + sert gölge (mobilde 72×72) — "arşiv mührü" gibi sağ üstte.
-5. **Beton dokusu:** bölüm zeminlerinde 1px yatay tekrar, `%6 ink` opaklığı + `--grain: .05`; kart yüzeyi **düz** kalır.
-6. **Kalın tipografi:** display 68px/0.94, tracking +0.01em; gövde ölçüsü **46ch** (kısa — pano metni gibi blok blok okunur).
-7. **Ters video chip:** dolu `--ink` zemin + `--bg` metin, radius 0, mono .14em; accent varyantı rust.
+## Visual signature
+- **Bitişik panel ızgarası:** `gap: 0`, çocuklar `margin: -1.5px 0 0 -1.5px` ile kenarlar üst üste bindirilir; sonuç 3px tek çizgi (çift çizgi değil).
+- **Sert ofset gölge:** `--shadow-hard: 5px 5px 0 #16181a`; yalnız hero görseli, modal ve buton hover'da. Blur sıfır, yayılım sıfır.
+- **Tehlike şeridi:** 24px yükseklik, `repeating-linear-gradient(45deg, accent 0 12px, ink 12px 24px)`; landing alt bandında **tek** kez (mobilde 16px).
+- **Damga bloğu:** 120×120px, 3px ink kenar, `--bg-2` zemin + sert gölge (mobilde 72×72) — "arşiv mührü" gibi sağ üstte.
+- **Beton dokusu:** bölüm zeminlerinde 1px yatay tekrar, `%6 ink` opaklığı + `--grain: .05`; kart yüzeyi **düz** kalır.
+- **Kalın tipografi:** display 68px/0.94, tracking +0.01em; gövde ölçüsü **46ch** (kısa — pano metni gibi blok blok okunur).
+- **Ters video chip:** dolu `--ink` zemin + `--bg` metin, radius 0, mono .14em; accent varyantı rust.
+- **Typography:** Anton (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#a8431d`; neutral scale `#d8d6d0` → `#16181a`.
+- **Radius:** `0px` / `2px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#d8d6d0` | Sayfa zemini (beton) | Kart içi |
-| `--bg-2` | `#cdcac3` | Damga bloğu, ikincil şerit | Geniş bölüm dolgusu |
-| `--surface` | `#e7e5e0` | Panel yüzeyi | Sayfa zemini |
-| `--surface-2` | `#bfbcb5` | İkincil buton hover, tablo başlığı | Metin arkası |
-| `--ink` | `#16181a` | Başlık, gövde, 3px kenar, sert gölge | Rust zemin üstü |
-| `--ink-soft` | `#43464a` | Lede, ikincil metin | Küçük etiket |
-| `--ink-faint` | `#6b6f74` | Dekoratif etiket, eksen | Etkileşimli metin |
-| `--accent` | `#a8431d` | Birincil buton, tehlike şeridi, aktif blok | Gövde metni, geniş dolgu |
-| `--accent-ink` | `#f7f3ea` | Rust zemin üstü metin | Gri zemin |
-| `--line` | `rgba(22,24,26,.26)` | Panel kenarı (3px), tablo ızgarası | Metin |
+1. **Kalın kenar:** panel, buton, input 3px; bu stilde 1px hairline yok.
+2. **Sert gölge:** `--shadow-hard` (5px 5px 0) yalnız yüzen katman, hero görseli ve buton hover'da; yumuşak gölge yasak.
+3. **Bitişik panel:** `gap: 0` + negatif margin ile tek 3px çizgi; çift çizgi hata kabul edilir.
+4. **Beton dokusu:** yalnız bölüm zeminlerinde 1px yatay tekrar (%6); panel yüzeyi düz.
+5. **Tehlike şeridi:** 45°, 24px, ekran başına 1 kez (yalnız landing alt bandı).
+6. **Tipografi:** Anton 400 uppercase 68px (+0.01em), Inter 400 gövde, JetBrains Mono uppercase etiket.
 
-- Ölçülen kontrast: `ink / bg` = **12.25:1** · `ink-soft / bg` = **6.53:1** · `accent-ink / accent` = **5.44:1** · `ink-faint / bg` = **3.48:1** (yalnız dekoratif).
-- Tek vurgu kuralı: beton + siyah + rust. Rust alanı ekranın ≤ **%10**'u; tehlike şeridi bu paya dahildir.
-- Yasak kombinasyon: rust zemin + `--ink-soft` metin; ikinci accent (sarı/turkuaz); `--ink-faint` + `--surface-2` (3.0:1 altı).
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#d8d6d0` | page background | as a card background |
+| `--bg-2` | `#cdcac3` | partition divider floor, table top | button background |
+| `--surface` | `#e7e5e0` | kart, input, modal | full-page background |
+| `--surface-2` | `#bfbcb5` | passive chip, hover background | primary button |
+| `--ink` | `#16181a` | title, body, icon | large background |
+| `--ink-soft` | `#43464a` | secondary text, description | — |
+| `--ink-faint` | `#6b6f74` | decorative label, separator text | interactive text |
+| `--accent` | `#a8431d` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f7f3ea` | text above accent | non-accent background |
+| `--line` | `rgba(22,24,26,.26)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Anton | 68px (mobil 40px) | 400 | 0.94 | 0.01em |
-| H2 | Anton | 34px | 400 | 1.02 | 0.01em |
-| H3 | Inter | 21px | 600 | 1.18 | 0.015em |
-| Gövde | Inter | 16px | 400 | 1.6 | 0 |
-| Lede | Inter | 16.5px | 400 | 1.6 | 0 (46ch) |
-| Etiket / mono | JetBrains Mono | 11px | 400 | 1.45 | 0.16em |
+- Measured contrast: `ink/bg` **12.25:1** · `ink-soft/bg` **6.53:1** · `ink-faint/bg` **3.48:1 (decorative)** · `accent-ink/accent` **5.44:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.6 (16 → 21 → 34 → 68); kullanılan basamak sayısı 6.
-- Ölçü önerisi: `h1 { font-size: clamp(40px, 5.6vw, 68px) }`.
-- Gövde metni maksimum satır uzunluğu: **46ch** — kısa ölçü bilinçli: pano/duyuru metni gibi taranır.
-- Ağırlık kuralı: display yalnız 400 (Anton tek ağırlık; sahte kalınlaştırma yasak), gövde 400/600. 200/300 ince ağırlık yok.
-- Negatif tracking yasak: Anton zaten dar; `-0.02em` harfleri birbirine yapıştırır ve okunabilirliği düşürür.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Anton) | 40px (mobile 40px) | 400 | 1.04 | -0.02em |
+| H2 | same | 34px | 600 | 1.16 | -0.015em |
+| H3 | same | 21px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.68 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (içerik 7, künye/etiket 5) |
-| Gutter | **0px (bitişik panel)** — ayrım 3px kenarla |
-| Container genişliği | 1240px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 / 768 / 390 — 768 altında paneller alt alta, kenarlar üst üste binmeye devam eder |
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: 5/7 bölünme (künye 5, içerik 7); ekran başına en fazla 1 tam genişlik panel.
-- Bölüm ritmi: art arda en fazla **3** panel satırı; sonra 3px divider + 80px boşluk.
-- Bölüm dikey boşluk 80px (mobil 48px); panel padding 20px; **paneller arası boşluk 0** (istisnasız).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | Sayfa, beton dokusu |
-| Panel | `--surface` + 3px `--line` | `none` | Kart, KPI, bileşen kutusu |
-| Yüzen katman | `--surface` + 3px `--ink` | `--shadow-hard` | Modal, dropdown, hero görseli |
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
 
-- Kenarlık formülü: panel `3px solid var(--line)`; yüzen katman ve birincil buton `3px solid var(--ink)`; bitişik panellerde negatif margin ile tek çizgi.
-- Derinlik nereden gelir: **sert ofset gölge + kütle**; yumuşak gölge, blur ve iç gölge yok.
-- Radius: `--radius` 0px (buton, input, chip, kart) · `--radius-lg` 2px (yalnız modal köşesi). 2px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 48px | 13px 22px | 0px | 12px/400 mono, .14em | `--accent` / `--accent-ink`, 3px `--ink` kenar, gölge yok | hover: `--shadow-hard` + translate(-1px,-1px) 70ms · active: gölge yok · focus 3px ink offset -3 · disabled opacity .4 kesikli · loading 3 kare dolar |
-| Buton (ikincil) | 48px | 13px 22px | 0px | 12px/400 mono | şeffaf / `--ink`, 3px `--ink` kenar | hover `--surface-2` + gölge · focus aynı |
-| Input | 48px | 0 14px | 0px | 16px/400 Inter | `--surface` + 3px `--line` | focus 3px ink offset **-3** (iç halka) · error `--danger` kenar + mono açıklama · disabled opacity .4 |
-| Kart / panel | — | 20px | 0px | H3 Inter 21px | `--surface` + 3px `--line`, gölge yok | bitişik (gap 0); hover yok (mekanik) |
-| Chip / badge | 24px | 3px 7px | 0px | 10px/400 mono, .14em | dolu `--ink` zemin / `--bg` metin | accent varyantı rust |
-| Nav | 60px | 0 32px | 0 | 20px Anton + 11px mono | `--surface` zemin + alt 3px `--ink` | aktif: altında 8px rust blok; pasif `--ink-soft` |
-| Tablo satırı | 44px | 10px 12px | 0 | 14px/400 Inter | hücreler 3px `--line` çerçeveli | hover `--surface-2` · seçili: hücre zemini `--ink` + metin `--bg` |
-| Modal / sheet | — | 24px | 2px | H2 Anton 34px | `--surface` + 3px `--ink` + `--shadow-hard` | perde `--ink` %55, 140ms, kayma yok |
-| Toast | 44px | 12px 16px | 0px | 12px/400 mono | `--ink` zemin / `--bg` metin | sol uçta 6px rust blok, 2600ms |
-| Grafik paleti | — | — | — | eksen 11px mono | `--accent`, `--ink`, `--ink-faint` | en fazla 3 seri; sütunlar bitişik, 3px çerçeveli |
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-- Odak halkası: `outline: 3px solid var(--ink); outline-offset: -3px` — içeri alınmış kalın halka; rust zeminli butonda `outline-color: var(--accent-ink)`.
-- Dokunma hedefi: en az 48×48px (bu stilde 44px altına inilmez; pano dili iri parmakla kullanılır).
-- Kenarlar üst üste bindiği için tek çizgi görünür; çift çizgi görüntüsü bir hatadır (negatif margin unutulmuş demektir).
+## Bans
 
-## Görsel dil
+- Yuvarlak köşe (radius 0, en fazla 2px) ve pill buton.
+- Yumuşak gölge, blur, gradient, cam yüzey.
+- Serif aile, italik, 200/300 ince ağırlık, negatif tracking.
+- Renkli illüstrasyon, emoji, yuvarlak ikon.
+- Birden fazla tehlike şeridi (dekorasyon gürültüsü).
+- Pastel/retro tonlar; accent yalnız rust `#a8431d`.
+- Neon accent.
+- Stack of round cards.
+- Otomatik carousel.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 3px kalın çizgi, kare uç, 24px ızgara; ince (1px) ikon yok |
-| Fotoğraf | Beton, iskele, panel yüzey, gri gökyüzü; yüksek kontrast, düşük doygunluk; alan ekranın %55'i |
-| İllüstrasyon | Yok — tipografi ve geometri yeter; tek istisna 45° tehlike şeridi |
-| Doku | Bölüm zemininde 1px yatay tekrar (%6 ink) + `--grain: .05`; panel yüzeyi düz |
-| Logo alanı | Anton uppercase kelime markası, 24px güvenli boşluk; işaret yok — damga bloğu kullanılır |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 4.79:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-bars` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 68px uppercase başlık, damga bloğu, alt bantta tehlike şeridi | `shots/01-page.png` |
 | Dashboard | düşük | Bitişik KPI panelleri (gap 0), mono sayılar, 3px ızgara | `shots/01-page.png` |
@@ -155,47 +178,33 @@ Klişeye düşmemek için korunması gereken detay: **panel bitişikliği ve gö
 | Hata | düşük | `--danger` kenar + mono açıklama; şerit kullanılmaz | `shots/01-page.png` |
 | Profil / ayar | orta | Künye 5 kolon solda, ayar panelleri 7 kolonda bitişik | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 12.25:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.53:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.48:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.44:1 | ≥ 4.5 | button text |
+| focus ring/ground | 4.79:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 80.7 | ≥ 60 target | thin text |
 
-1. **Kalın kenar:** panel, buton, input 3px; bu stilde 1px hairline yok.
-2. **Sert gölge:** `--shadow-hard` (5px 5px 0) yalnız yüzen katman, hero görseli ve buton hover'da; yumuşak gölge yasak.
-3. **Bitişik panel:** `gap: 0` + negatif margin ile tek 3px çizgi; çift çizgi hata kabul edilir.
-4. **Beton dokusu:** yalnız bölüm zeminlerinde 1px yatay tekrar (%6); panel yüzeyi düz.
-5. **Tehlike şeridi:** 45°, 24px, ekran başına 1 kez (yalnız landing alt bandı).
-6. **Tipografi:** Anton 400 uppercase 68px (+0.01em), Inter 400 gövde, JetBrains Mono uppercase etiket.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Yasaklar
+## Sample images
 
-- Yuvarlak köşe (radius 0, en fazla 2px) ve pill buton.
-- Yumuşak gölge, blur, gradient, cam yüzey.
-- Serif aile, italik, 200/300 ince ağırlık, negatif tracking.
-- Renkli illüstrasyon, emoji, yuvarlak ikon.
-- Birden fazla tehlike şeridi (dekorasyon gürültüsü).
-- Pastel/retro tonlar; accent yalnız rust `#a8431d`.
+Identical content is rendered with the same text in every style; only the design differs.
 
-## Erişilebilirlik
-
-- Ölçülen riskler: en düşük çift `--ink-faint / --bg` = **3.48:1** (açık tema). `--ink-faint` yalnız dekoratif etiket ve eksen yazısı; etkileşimli metin, form etiketi veya nav bağlantısı olamaz.
-- Koyu temada `accent-ink/accent` **4.86:1** — eşiğin üstünde ama en düşük accent çifti; rust zemin üstünde metin 14px'ten küçük kullanılmaz.
-- Tehlike şeridi **bilgi taşımaz**, süs/uyarı ritmidir; `aria-hidden="true"`. Gerçek uyarı metni her zaman yazıyla verilir.
-- Hareket/parlama hassasiyeti: orta — `once: false` kaydırma animasyonu her geçişte tekrar eder; `prefers-reduced-motion` açıkken tamamen durur.
-- Şeffaf yüzey yok (`--blur: 0`); `color-mix` desteklenmezse beton dokusu `rgba` yerine düz zemin rengine düşer (işlevsel kayıp yok).
-- Odak halkası içeri alınmış 3px ink: gri panel üstünde 12.25:1; rust zeminli butonda `outline-color: var(--accent-ink)` kullanılır.
-
-## Örnek görseller
-
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran gürültülü | her öğeye 3px kenar + gölge verilmiş | Kalınlığı taşıyıcı öğelere ayır: gölge yalnız yüzen katman + hover |
 | Çift çizgi görünüyor | bitişik panellerde negatif margin yok | Çocuklara `margin: -1.5px 0 0 -1.5px` ver |
 | "Kaba SaaS" hissi | gutter 16px'e çıkarılmış, gölge yumuşatılmış | `gap: 0` + `--shadow-hard` (blur 0) |
@@ -203,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Başlık okunmuyor | negatif tracking veya Anton yerine sahte kalın | tracking +0.01em, display Anton 400 |
 | Odak görünmüyor | dış offset halka kalın kenarla çakışıyor | `outline-offset: -3px` (iç halka) |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `neo-brutalism` — kalın kenar dili ortak; neo-brutalism'i tek bölümde (etkinlik kartı) tut, paletini ezme.
-- **Uyumlu:** `utility` — kamu hizmeti ciddiyeti ortak; utility'yi form/tablo katmanında kullan (hairline'ı bu stilde 3px'e çekme).
-- **Uyumlu:** `constructivism` — afiş dili ortak; constructivism'i yalnız tek hero bandında kullan.
-- **Yasak:** `claymorphism` — şişkin yumuşak gölge beton sertliğini yok eder.
-- **Yasak:** `glassmorphism` — blur/şeffaflık 3px kenar ve sert gölgeyle çelişir.
-- **Yasak:** `ethereal` — sis, nefes animasyonu ve pastel ışık bu stilin tam tersi.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `neo-brutalism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `constructivism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `ethereal` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Brutalist_architecture | béton brut yüzey, kalın kütle, açık strüktür |
-| https://en.wikipedia.org/wiki/Panel_building | prefabrik panel modülü ve bitişik blok ritmi |
-| https://www.archdaily.com/tag/brutalism | cephe dokusu, sert gölge, blok hiyerarşisi |
-| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | 3px iç odak halkası ölçütü |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Brutalist_architecture | Brutalist architecture — Wikipedia — béton brut yüzey, kalın kütle, açık strüktür |
+| https://en.wikipedia.org/wiki/Panel_building | Panel building — Wikipedia — prefabrik panel modülü ve bitişik blok ritmi |
+| https://www.archdaily.com/tag/brutalism | ArchDaily · Brutalism — cephe dokusu, sert gölge, blok hiyerarşisi |
+| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | WCAG 2.2 · Focus Appearance — 3px iç odak halkası ölçütü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Slavic Late Brutalist (styles/70-slavic-late-brutalist/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="slavic-late-brutalist"] değişkenleri; hard-coded renk/golge/radius yasak.
 Tipografi: display Anton 400 UPPERCASE (H1 68px / line-height .94 / +0.01em, mobil 40px),
@@ -242,15 +251,15 @@ Hareket: enter 260ms cubic-bezier(.85,0,.15,1) 34px stagger 20ms;
 Yasak: yuvarlak kose, yumusak golge, blur, gradient, serif, italik, ince 1px ikon,
   birden fazla tehlike seridi, pastel tonlar, ikinci accent.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (bitişik panel + sert gölge + tehlike şeridi).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1 (12.25:1), accent üstü ≥ 4.5:1 (5.44:1).
-- [ ] Odak halkası görünür (3px, offset -3), dokunma hedefi ≥ 48px.
-- [ ] 390px genişlikte taşma yok; şerit 16px'e iniyor.
-- [ ] `prefers-reduced-motion` açıkken hareket (özellikle `once: false` kaydırma) duruyor.
+Style: Slavic Late Brutalist (slavic-late-brutalist) · family: Cultural & Regional (66–75)
+Token: --bg #d8d6d0 · --surface #e7e5e0 · --ink #16181a · --accent #a8431d · --line rgba(22,24,26,.26)
+Radius: 0px / 2px · Typography: Anton / Inter / JetBrains Mono
+Required: **Kalın kenar:** panel, buton, input 3px; bu stilde 1px hairline yok. · **Sert gölge:** `--shadow-hard` (5px 5px 0) yalnız yüzen katman, hero görseli ve buton hover'da; yumuşak gölge yasak. · **Bitişik panel:** `gap: 0` + negatif margin ile tek 3px çizgi; çift çizgi hata kabul edilir.
+Banned: Yuvarlak köşe (radius 0, en fazla 2px) ve pill buton. · Yumuşak gölge, blur, gradient, cam yüzey. · Serif aile, italik, 200/300 ince ağırlık, negatif tracking.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -261,13 +270,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #16181a; --ink-soft: #43464a; --ink-faint: #6b6f74;
   --accent: #a8431d; --accent-ink: #f7f3ea;
   --line: rgba(22,24,26,.26);
+  --danger: #be0000;
+  --danger-ink: #ffffff;
+  --ok: #006c24;
+  --ok-ink: #ffffff;
+  --warn: #a03f00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
-  --shadow: none; --shadow-hard: 5px 5px 0 #16181a;
-  --font-display: "Anton", Impact, system-ui, sans-serif;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Anton", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: 0.01em; --blur: 0px; --grain: 0.05;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `token-block.css` içinde `[data-theme="dark"][data-style="slavic-late-brutalist"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir (koyuda `--shadow-hard` beton grisine döner).

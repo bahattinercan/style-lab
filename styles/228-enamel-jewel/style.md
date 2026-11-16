@@ -1,220 +1,220 @@
 # 228 · Enamel Jewel
 
-> **Bir cümlede:** Mineli mücevher: gece moru, altın çizgi, küçük ölçek ve mono taş bilgisi.
+> **In one sentence:** Enamel jewellery: midnight purple, gold line, small scale and mono stone details.
 
 | | |
 |---|---|
-| **Hissiyat** | parlak, değerli, "tek taş" |
-| **En iyi** | mücevher, saat, sınırlı koleksiyon |
-| **Kaçın** | hızlı tüketim |
-| **Zorluk** | orta · **Erişilebilirlik** | orta |
-| **Aile** | Materyal & Zanaat (222–231) · **Token** | `kit/tokens.css` → `[data-style="enamel-jewel"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | bright, precious, "one stone" |
+| **Best for** | jewellery, watches, limited collection |
+| **Avoid** | fast-moving consumer goods |
+| **Difficulty** | medium · **Accessibility** | medium |
+| **Family** | Material & Craft (222–231) · **Token** | `kit/tokens.css` → `[data-style="enamel-jewel"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Enamel Jewel, küçük ölçekte lüks kurar: az metin, tek nesne, net malzeme bilgisi.
+### What it is
+Enamel Jewel builds luxury at small scale: little text, one object, clear material facts.
 
-### Ne değildir
-- Karton doku eklemek tek başına stil değildir.
-- Skeuomorphism değildir; doku var, taklit nesne yok.
+### What is not
+- Adding cardboard texture is not style alone.
+- It is not skeuomorphism; There is texture, no imitation objects.
 
-### Nereden gelir
-Letterpress, mürekkep, kâğıt ve metal baskı atölyelerinin malzeme bilgisi.
+### Where it comes from
+Material information of letterpress, ink, paper and metal printing workshops.
 
-### 3 saniyede tanıma testi
-1. Doku %5 altında mı?
-2. Başlık ince ve sessiz mi?
-3. Kenar keskin mi?
+### Recognition test in 3 seconds
+1. Is the tissue under 5%?
+2. Is the hood slim and quiet?
+3. Is the edge sharp?
 
-## Görsel imza
-- **Altın çizgi:** 1px accent, %70 opaklık.
-- **Küçük ölçek:** gövde 14px, başlık 40px — mücevher gibi ölçülü.
-- **Taş bilgisi:** mono karat/kesim.
-- **Gece moru:** tek zemin.
-- **Tipografi:** Cormorant Garamond (display) + Jost (gövde) + IBM Plex Mono (mono etiket).
-- **Renk disiplini:** tek accent `#d0a95c`; nötr skala `#120f1a` → `#f3eef9`.
-- **Yarıçap:** `0px` / `2px`; Köşe 0–6px; malzeme kenarı keskin kalır, yumuşak yuvarlatma dokuyu zayıflatır.
+## Visual signature
+- **Gold line:** 1px accent at 70% opacity.
+- **Small scale:** 14px body, 40px heading — measured like jewellery.
+- **Stone details:** mono carat/cut.
+- **Midnight purple:** a single background.
+- **Typography:** Cormorant Garamond (display) + Jost (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#d0a95c`; neutral scale `#120f1a` → `#f3eef9`.
+- **Radius:** `0px` / `2px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Her parçada taş, karat ve maden.
-2. Görsel 1:1, tek nesne.
-3. Accent yalnız çizgi ve fiyat.
+1. Stone, carat and metal for every piece.
+2. Images at 1:1, a single object.
+3. Accent only on lines and prices.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#120f1a` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#171322` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#1d1829` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#272032` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#f3eef9` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#c0b4d0` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#8e8499` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#d0a95c` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#161003` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(243,238,249,.15)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#120f1a` | page background | as a card background |
+| `--bg-2` | `#171322` | partition divider floor, table top | button background |
+| `--surface` | `#1d1829` | kart, input, modal | full-page background |
+| `--surface-2` | `#272032` | passive chip, hover background | primary button |
+| `--ink` | `#f3eef9` | title, body, icon | large background |
+| `--ink-soft` | `#c0b4d0` | secondary text, description | — |
+| `--ink-faint` | `#8e8499` | decorative label, separator text | interactive text |
+| `--accent` | `#d0a95c` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#161003` | text above accent | non-accent background |
+| `--line` | `rgba(243,238,249,.15)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **16.6:1** · `ink-soft/bg` **9.63:1** · `ink-faint/bg` **5.33:1 (dekoratif)** · `accent-ink/accent` **8.57:1**.
-- Malzeme rengi zemin: accent yalnız damga/etiket. Dokuyu renkle değil grain ve kenarla kur.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **16.6:1** · `ink-soft/bg` **9.63:1** · `ink-faint/bg` **5.33:1 (decorative)** · `accent-ink/accent` **8.57:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Cormorant Garamond) | 52px (mobil 32px) | 400 | 1.08 | -0.02em |
-| H2 | aynı | 28px | 600 | 1.2 | -0.015em |
-| H3 | aynı | 20px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Jost) | 16px | 400 | 1.62 | 0 |
-| Küçük gövde | aynı | 14px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
-| Buton | `--font-body` | 12px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Cormorant Garamond) | 52px (mobile 32px) | 400 | 1.08 | -0.02em |
+| H2 | same | 28px | 600 | 1.2 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-- Başlık 52px/400 — dokunun yanında sessiz kalır. Etiketler mono, geniş tracking.
-- Ölçü: 66ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Kart aralığı 14px; malzeme fotoğrafı tam kenara taşabilir, metin taşamaz.
-- Bölüm dikey boşluğu masaüstü 72px, mobil 44px; kart içi padding 20px.
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Gölge tek seviye; malzeme hissi grain + kenar ile. Cam/blur yok.
-- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Köşe 0–6px; malzeme kenarı keskin kalır, yumuşak yuvarlatma dokuyu zayıflatır.
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Yasaklar
+## Bans
 
-- Parıltı efekti.
-- Beş renkli taş paleti.
-- Yuvarlak kart.
-- Taklit nesne (düğme gibi görünen taş).
-- Yüksek kontrastlı desen üstünde metin.
-- Sekizden fazla doku örneği.
+- A sparkle effect.
+- A five-colour stone palette.
+- A rounded card.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 0px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 0px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 0px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 0px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 8.58:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 8.58:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1px çizgi, 20px; baskı işareti gibi |
-| Fotoğraf | Makro doku: kâğıt, metal, kumaş; yumuşak yan ışık |
-| İllüstrasyon | Yalnız doku örneği |
-| Doku | Malzeme greni (--grain: .04) |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-rings` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Vitrin | orta | Makro doku + tek başlık | `shots/01-page.png` |
-| Numune / swatch | yüksek | Izgara 4 kolon, etiket mono | `shots/01-page.png` |
-| Detay | orta | Doku + künye tablosu | `shots/01-page.png` |
-| Süreç | orta | 3 adım, numaralı | `shots/01-page.png` |
-| Sipariş / talep | düşük | Form 2 kolon | `shots/01-page.png` |
-| Arşiv | yüksek | Yıl + malzeme etiketi | `shots/01-page.png` |
-| Atölye | düşük | Uzun metin + fotoğraf | `shots/01-page.png` |
-| İletişim | düşük | Adres + form | `shots/01-page.png` |
+| Vitrin | medium | Macro texture + single title | `shots/01-page.png` |
+| Numune / swatch | high | Grid 4 columns, label mono | `shots/01-page.png` |
+| Detay | medium | Texture + imprint table | `shots/01-page.png` |
+| Process | medium | 3 steps, numbered | `shots/01-page.png` |
+| Order / request | low | Form 2 kolon | `shots/01-page.png` |
+| archive | high | Year + material label | `shots/01-page.png` |
+| workshop | low | Long text + photo | `shots/01-page.png` |
+| Contact | low | Address + form | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 16.6:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 9.63:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 5.33:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 8.57:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 8.58:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 97.5 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 16.6:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 9.63:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.33:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 8.57:1 | ≥ 4.5 | button text |
+| focus ring/ground | 8.58:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 97.5 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Doku gürültü oluyor | Grain %10 üstü | %4'e indir, yalnız büyük yüzeyde kullan |
-| Başlık eziliyor | Doku metnin arkasında | Metin bloğunu opak yüzeye al |
+| Texture is noisy | Grain above 10% | Reduce to 4%, use only on large surface |
+| Title gets crushed | Texture behind text | Move text block to opaque surface |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `luxury-atelier` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `marble-vein` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `kids-playground` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `grocery-delivery` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `luxury-atelier` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `marble-vein` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `kids-playground` | Two different ornamental languages compete on the same screen |
+| Mixing | `grocery-delivery` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://en.wikipedia.org/wiki/Vitreous_enamel | Vitreous enamel (Wikipedia) — malzeme bağlamı |
+| https://en.wikipedia.org/wiki/Vitreous_enamel | Vitreous enamel (Wikipedia) — material context |
 | https://fonts.google.com/specimen/Cormorant+Garamond | Cormorant Garamond (Google Fonts) — ince serif |
-| https://fonts.google.com/specimen/IBM+Plex+Mono | IBM Plex Mono (Google Fonts) — taş bilgisi |
+| https://fonts.google.com/specimen/IBM+Plex+Mono | IBM Plex Mono (Google Fonts) — stone details |
 
 ## AI brief
 
 ```text
-Mineli mücevher sayfası tasarla: gece moru zemin, altın ince çizgi, tek nesne görseli, mono karat/kesim.
+Design an enamel jewellery page: midnight purple background, thin gold line, single-object image, mono carat/cut.
 
-Stil: Enamel Jewel (enamel-jewel) · aile: Materyal & Zanaat (222–231)
+Style: Enamel Jewel (enamel-jewel) · family: Material & Craft (222–231)
 Token: --bg #120f1a · --surface #1d1829 · --ink #f3eef9 · --accent #d0a95c · --line rgba(243,238,249,.15)
-Yarıçap: 0px / 2px · Tipografi: Cormorant Garamond / Jost / IBM Plex Mono
-Zorunlu: Her parçada taş, karat ve maden. · Görsel 1:1, tek nesne. · Accent yalnız çizgi ve fiyat.
-Yasak: Parıltı efekti. · Beş renkli taş paleti. · Yuvarlak kart.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 0px / 2px · Typography: Cormorant Garamond / Jost / IBM Plex Mono
+Required: Stone, carat and metal for every piece. · Images at 1:1, a single object. · Accent only on lines and prices.
+Banned: A sparkle effect. · A five-colour stone palette. · A rounded card.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

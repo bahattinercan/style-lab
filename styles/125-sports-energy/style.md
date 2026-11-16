@@ -1,147 +1,169 @@
 # 125 · Sports Energy
 
-> **Bir cümleyle:** Stadyum enerjisi: mono tabular skor tabelası, 132px forma numarası konturu, pist şeritleri ve tek volt turuncu.
+> **In one sentence:** Sports Energy
 
 | | |
 |---|---|
-| **Hissiyat** | hızlı, iddialı, yüksek sesli, "santra yapıldı" |
-| **En iyi** | canlı skor/maç takibi, spor kulübü vitrini, antrenman uygulaması, sezon kampanyası, etkinlik geri sayımı |
-| **Kaçın** | sakin okuma sayfası, sağlık raporu, kurumsal form, uzun dokümantasyon |
-| **Zorluk** | orta (yüksek kontrast + kalın kenar dengesi) · **Erişilebilirlik** | iyi (16.68:1 gövde, 5.16:1 accent üstü) |
-| **Aile** | Oyuncu & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="sports-energy"]` |
-| **Kompozisyon** | `split-reverse` · `inline` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | hızlı, iddialı, yüksek sesli, "santra yapıldı" |
+| **Best for** | canlı skor/maç takibi, spor kulübü vitrini, antrenman uygulaması, sezon kampanyası, etkinlik geri sayımı |
+| **Avoid** | sakin okuma sayfası, sağlık raporu, kurumsal form, uzun dokümantasyon |
+| **Difficulty** | orta (yüksek kontrast + kalın kenar dengesi) · **Accessibility** |  |
+| **Family** | Playful (116–125) · **Token** | `kit/tokens.css` → `[data-style="sports-energy"]` |
+| **Composition** | `split` · `split` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Sports Energy, stadyumdaki iki göstergeyi ekrana taşır: **skor tabelası** (mono `tabular-nums`, 40px, sağa dayalı) ve **forma numarası** (132px, 3px mürekkep kontur, içi boş). Zemin nötr beton (`#f1f3f1`), kenarlar **2–3px mürekkep**, alt bantta **78px aralıklı pist şeritleri**, ve tek **volt turuncu** (`#f24a00`) manşet vurgusu, birincil buton ve "canlı" durum için. Tipografi manşet dilidir: Rajdhani 700 (dar, yüksek), Inter gövde, JetBrains Mono skor.
 
 Kazandığı şey: **hız**. Kalın kenar, tabular skor ve turuncu vurgu ilk 200ms'de "burada bir şey oluyor" der; canlı skor/geri sayım ekranlarında bu dil doğal durur. Feda ettiği şey: **sakinlik** — uzun gövde metni bu stilde yorucudur; 4 satırdan fazla paragraf gerekiyorsa o ekran başka stile devredilir (bu stilde yalnız manşet + skor + tablo kalır).
 
-### Ne değildir
+### What is not
 - **Safety Signage (58) değildir.** O stil uyarı levhası mantığıyla çalışır: koyu zemin, çapraz tehlike bandı, tehlike sarısı; burada zemin açık nötr, şeritler **pist** çizgileridir (dikey, 78px) ve accent volt turuncudur.
 - **Telemetry Grid (46) değildir.** Telemetri yoğun veri ızgarası ve küçük punto ile operasyon kurar; burada ekranın yarısı manşet, skor dışındaki sayılar az ve büyüktür.
 - **Dopamine UI (18) değildir.** Dopamine doygun bloklar + mikro ödül + 3px radius kullanır; burada radius 0–2px, gölge sert ve vurgu **tek** turuncudur.
 - **Memphis (16) değildir.** Memphis desen ve konfeti ile oyun kurar; burada tekrar eden tek öğe pist şerididir, dekorasyon yoktur.
 - **"Kalın kenarlı dashboard" değildir.** Forma numarası konturu, pist şeritleri ve tabular skor olmadan bu stil sadece kaba bir panodur.
 
-### Nereden gelir
+### Where it comes from
 Spor ekranının iki kökü var: **skor tabelası** (1960'lardan itibaren LED/blok rakamlar — uzaktan okunur, orantısız rakam kabul etmez) ve **forma tipografisi** (göğüs numarası, konturla ayrışır). Dijitalde bu dil canlı skor uygulamaları, kulüp vitrinleri ve antrenman uygulamalarıyla yayıldı; nedeni ölçülebilir — yüksek kontrast + iri tabular rakam, hareket halinde (koşarken, tribünde) okunur.
 
 Klişeye düşmemesi için korunması gereken detay: **tabular skor ve tek vurgu**. Sayıları orantılı yazmak, ikinci bir kulüp rengi eklemek veya animasyonlu sayaç koymak stili "kumar uygulaması"na çevirir.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Skor/rakamlar **mono ve tabular** mı (hizalı, eşit genişlik); 40px skor bloğu var mı?
 2. Bir yerde **132px kontur forma numarası** (içi boş, 3px stroke) var mı; ekran başına 1 mi?
 3. Alt bantta **78px aralıklı pist şeritleri** var mı; şeritler dikey ve ince mi?
 4. Kenarlar **2–3px mürekkep** mi; bir öğede **6px sert ofset gölge** var mı?
 5. Accent **volt turuncu** ve ekranın ≤ %12'sinde mi; yumuşak gölge/gradient hiç yok mu?
 
-## Görsel imza
-1. **Skor tabelası:** `.kpi .v` mono 40px `tabular-nums`, `letter-spacing: -.02em`, sağa dayalı; kart 2px mürekkep kenar.
-2. **Forma numarası konturu:** 132px Rajdhani 700, `-webkit-text-stroke: 3px var(--ink)`, `color: transparent`; sağ üstte tek adet (mobil 76px / 2px).
-3. **Pist şeritleri:** alt bantta 56px yükseklik, `repeating-linear-gradient(90deg, transparent 0 78px, var(--line) 78px 80px)` + 2px üst çizgi.
-4. **Hız kırığı:** manşet içinde accent zeminli kelime, `skewX(-9deg)`; tek kelime, tek kullanım.
-5. **Kalın kenar:** nav altı ve divider 3px; panel 2px; input/buton 2px. 1px kenar yok.
-6. **Sert gölge:** `6px 6px 0 var(--ink)`; yalnız hero görseli, modal ve buton hover (translate -2px).
-7. **İlerleme bandı:** 8px yükseklik, `--surface-2` zemin + accent dolgu, 1px kenar; sayısal eşlik (mono süre).
+## Visual signature
+- **Skor tabelası:** `.kpi .v` mono 40px `tabular-nums`, `letter-spacing: -.02em`, sağa dayalı; kart 2px mürekkep kenar.
+- **Forma numarası konturu:** 132px Rajdhani 700, `-webkit-text-stroke: 3px var(--ink)`, `color: transparent`; sağ üstte tek adet (mobil 76px / 2px).
+- **Pist şeritleri:** alt bantta 56px yükseklik, `repeating-linear-gradient(90deg, transparent 0 78px, var(--line) 78px 80px)` + 2px üst çizgi.
+- **Hız kırığı:** manşet içinde accent zeminli kelime, `skewX(-9deg)`; tek kelime, tek kullanım.
+- **Kalın kenar:** nav altı ve divider 3px; panel 2px; input/buton 2px. 1px kenar yok.
+- **Sert gölge:** `6px 6px 0 var(--ink)`; yalnız hero görseli, modal ve buton hover (translate -2px).
+- **İlerleme bandı:** 8px yükseklik, `--surface-2` zemin + accent dolgu, 1px kenar; sayısal eşlik (mono süre).
+- **Typography:** Rajdhani (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#f24a00`; neutral scale `#f1f3f1` → `#0f1412`.
+- **Radius:** `2px` / `6px`; Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f1f3f1` | Sayfa zemini (nötr beton) | Kart içi |
-| `--bg-2` | `#e7eae7` | Tablo şeridi, alt bilgi | Geniş dolgu |
-| `--surface` | `#ffffff` | Panel, skor kartı, form | Sayfa zemini |
-| `--surface-2` | `#eceee9` | İlerleme bandı zemini, hover | Metin arkası |
-| `--ink` | `#0f1412` | Metin, kenar, kontur, sert gölge | Accent zemin üstü |
-| `--ink-soft` | `#444d47` | Lede, ikincil metin | Skor rakamları (o `--ink`) |
-| `--ink-faint` | `#6f7a73` | Pist çizgisi etiketi, dekoratif | Etkileşimli metin |
-| `--accent` | `#f24a00` | Manşet vurgusu, birincil buton, canlı durum, ilerleme dolgusu | Gövde metni, geniş zemin |
-| `--accent-ink` | `#17100c` | Accent üstü metin (koyu) | Accent olmayan zemin |
-| `--line` | `rgba(15,20,18,.18)` | Panel kenarı, pist çizgisi, tablo | Ana kenar (o 2–3px ink) |
+1. **Tabular skor:** tüm skor/istatistik sayıları mono + `tabular-nums` + sağa dayalı; orantılı sayı yasak.
+2. **Forma numarası:** ekran başına 1 kontur (132px / mobil 76px, 3px stroke, içi boş).
+3. **Pist şeritleri:** yalnız alt bantta, 78px aralık, 2px çizgi, 56px (mobil 36px) yükseklik.
+4. **Kalın kenar:** panel 2px, nav/divider 3px; 1px kenar hiçbir yerde yok.
+5. **Sert gölge:** `6px 6px 0` yalnız hero, modal ve buton hover; yumuşak gölge yok.
+6. **Accent ≤ %12:** volt turuncu; accent üstü metin **koyu** (`--accent-ink`), beyaz değil.
 
-- Ölçülen kontrast: `ink / bg` = **16.68:1** · `ink-soft / bg` = **7.85:1** · `accent-ink / accent` = **5.16:1** · `ink-faint / bg` = **4.00:1**.
-- Tek vurgu kuralı: volt turuncu ekranın **≤ %12**'si; **accent üstü metin koyudur** (`#17100c`), beyaz değil — beyaz turuncu üstünde 3.4:1'de kalır.
-- Yasak kombinasyon: accent zemin + beyaz metin; ikinci accent (mavi/turkuaz takım rengi); `ink-faint` + `surface-2`.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f1f3f1` | page background | as a card background |
+| `--bg-2` | `#e7eae7` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#eceee9` | passive chip, hover background | primary button |
+| `--ink` | `#0f1412` | title, body, icon | large background |
+| `--ink-soft` | `#444d47` | secondary text, description | — |
+| `--ink-faint` | `#6f7a73` | decorative label, separator text | interactive text |
+| `--accent` | `#f24a00` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#17100c` | text above accent | non-accent background |
+| `--line` | `rgba(15,20,18,.18)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Rajdhani | 62px (mobil 36px) | 700 | 0.9 | 0.005em |
-| H2 | Rajdhani | 32px | 700 | 0.98 | 0.005em |
-| H3 | Rajdhani | 20px | 600 | 1.16 | 0.005em |
-| Gövde | Inter | 15.5px | 400 | 1.6 | 0 |
-| Lede | Inter | 15.5px | 400 | 1.6 | 0 (48ch) |
-| Skor / mono | JetBrains Mono | 40px | 700 | 1.0 | -0.02em |
-| Etiket / mono | JetBrains Mono | 11px | 400 | 1.4 | 0.14em |
+- Measured contrast: `ink/bg` **16.68:1** · `ink-soft/bg` **7.85:1** · `ink-faint/bg` **4:1 (decorative)** · `accent-ink/accent` **5.16:1**.
+- HUD contrast: status colors (live/damage) are derived from the accent's tones; A fourth hue is not added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.95 (15.5 → 32 → 62); skor tablosu ölçek dışıdır (40px mono, sabit).
-- Ölçü önerisi: `h1 { font-size: clamp(36px, 5vw, 62px) }`.
-- Gövde metni maksimum satır uzunluğu: **48ch**; gövde 4 satırı geçmez (manşet + tablo stili).
-- Ağırlık kuralı: display 700 (Rajdhani 700 var; 800 sahte kalın yasak), gövde 400/600, skor mono 700.
-- Skor rakamları daima `tabular-nums` + `letter-spacing: -.02em`; orantılı rakam hizayı bozar ve "skor" okunmaz.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Rajdhani) | 36px (mobile 36px) | 700 | 1.1 | 0.01em |
+| H2 | same | 32px | 600 | 1.2 | 0.01em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 15.5px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.2em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (skor tabelası 4, manşet 8) |
-| Gutter | 16px |
-| Container genişliği | 1220px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 / 768 / 390 — 768 altında skor tabelası manşetin altına iner; kontur 76px'e küçülür |
+- Numbers are taboos; score/timer areas are mono and right aligned. Title in uppercase, body in sentence order.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: skor tabelası solda 4 kolon, manşet 8 kolon; pist şeritleri tam genişlik. Ekran başına 1 forma numarası konturu.
-- Bölüm ritmi: art arda en fazla **3** blok aynı hizada; dördüncüde 3px accent divider.
-- Bölüm dikey boşluk 68px (mobil 40px); panel padding 18px; tablo satırı 40px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | Sayfa, tablo şeridi |
-| Panel | `--surface` + 2px `--line` | `none` | Skor kartı, tablo, form |
-| Yüzen katman | `--surface` + 3px `--ink` + `--shadow-hard` | `6px 6px 0` | Modal, maç detayı |
+- The screen grid acts like a visible frame: a 1px accent border is placed between sections, no decorative lines are added.
+- Section vertical space 64px desktop, 40px mobile; card padding 18px.
 
-- Kenarlık formülü: panel 2px `--line`; nav/divider 3px `--ink`; modal 3px `--ink`; pist çizgisi 2px.
-- Derinlik nereden gelir: **kalın kenar + sert ofset gölge**; yumuşak gölge `none`, blur yok.
-- Radius: `--radius` 2px (panel, input) · `--radius-lg` 6px (modal). Buton ve chip 0px (pano keskinliği).
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 46px | 12px 20px | 0px | 17px/700 Rajdhani, .04em | `--accent` / `--accent-ink`, 2px ink | hover sert gölge + translate(-2px,-2px) 80ms · active gölge yok · focus 3px ink offset 0 · disabled opacity .4 kesikli · loading `- - -` 200ms |
-| Buton (ikincil) | 46px | 12px 20px | 0px | 17px/700 Rajdhani | şeffaf / `--ink`, 2px `--line` | hover `--surface-2` + kenar ink · focus aynı |
-| Input | 46px | 0 12px | 0px | 15.5px/400 Inter | `--surface` + 2px `--line` | focus 3px accent offset 0 · error `--danger` + mono açıklama |
-| Panel / skor kartı | — | 18px | 0px | skor mono 40px | `--surface` + 2px `--line`, gölge yok | canlı: sol 4px accent blok |
-| Chip | 22px | 3px 7px | 0px | 10px/400 mono, .12em | `--ink` zemin / `--bg` metin | accent varyantı = "canlı/başladı" |
-| Nav | 54px | 0 32px | 0 | marka Rajdhani 20px + mono 11px | `--bg` + alt 3px ink | aktif: 3px accent alt blok |
-| Tablo satırı (puan) | 40px | 8px 10px | 0 | takım Rajdhani 17px, O/G/M mono tabular | alt 2px `--line`; başlık `--ink` zemin | hover `--surface-2`; lider satır: sol 4px accent |
-| Modal | — | 24px | 6px | H2 Rajdhani 32px | 3px ink + `--shadow-hard` | perde %55, skor tabelası üstte |
-| Toast | 42px | 10px 14px | 0px | 12px/400 mono | `--ink` zemin / `--bg` metin | sol uçta 8px accent blok, 2400ms |
-| Grafik | — | — | — | eksen 10px mono | `--accent`, `--ink` | en fazla 2 seri; sütunlar bitişik, 2px kenar |
+- Surfaces are opaque; There is no glass/blur. Thin accent edge is used for status notification.
+- Radius: `2px` (buton, input, chip), `6px` (kart, modal). Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-- Odak halkası: `outline: 3px solid var(--ink); outline-offset: 0`; accent zeminli butonda `outline-color: var(--accent-ink)`, offset -5px.
-- Dokunma hedefi: en az 46×46px; tablo satırı 40px görünür ama satırın tamamı 46px hedef olarak tıklanır (satır içi padding).
-- Buton hover'ında `translate(-2px,-2px)` + sert gölge: "buton yerinden fırlar" etkisi; reduced-motion'da yalnız gölge kalır.
+## Bans
 
-## Görsel dil
+- Yumuşak gölge, gradient, blur, cam yüzey.
+- Serif aile, 1px ince kenar, pill buton, yuvarlak avatar.
+- İkinci accent (takım mavisi/turkuaz) ve renkli kulüp rozetleri.
+- Sayaç/skor döngü animasyonu, sürekli döngü.
+- 4 satırdan uzun gövde paragrafı (bu stil manşet + tablo dilidir).
+- Accent zemin üstünde beyaz metin (3.4:1) ve 12px altı accent üstü yazı.
+- Infinite blinking indicator (no animation in v6).
+- More than three status colors.
+- Serif title in HUD.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 2.5px kalın çizgi, kare uç, 24px ızgara; dolu ikon serbest (tek renk) |
-| Fotoğraf | Aksiyon karesi: yüksek kontrast, hareket bulanıklığı serbest; alan ekranın ≤ %55'i |
-| İllüstrasyon | Yok — forma numarası ve pist şeritleri grafik dili taşır |
-| Doku | Pist şeritleri (78px aralık, 2px) + `--grain: .02` |
-| Logo alanı | Rajdhani kelime markası (.08em, uppercase), 20px güvenli boşluk; arma yerine numara konturu |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 3.65:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px block icon, 16/20px canvas; no anti-alias, integer scale |
+| photo | In-game rendering or single object shooting; 25% area, dark vignette |
+| illustration | Sprite/silhouette: up to 3 tones (accent, ink, surface-2) |
+| Texture | Static raster (1px/3px, 4%) on section background only |
+| Logo | Top left 20px, uppercase, mono or display |
+
+- Signature motif: `motif-bars` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Primary focus is on one big number/score; second focus single CTA; the rest is label.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 62px manşet + skor tabelası + forma numarası konturu + pist şeritleri | `shots/01-page.png` |
 | Dashboard | yüksek | Skor kartları + puan tablosu, mono tabular | `shots/01-page.png` |
@@ -156,47 +178,33 @@ Klişeye düşmemesi için korunması gereken detay: **tabular skor ve tek vurgu
 | Hata | düşük | `--danger` kenar + mono açıklama; pist şeridi yok | `shots/01-page.png` |
 | Profil / ayar | orta | Takım/lig ayarları, mono etiketler, tabular tercihler | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.68:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.85:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.16:1 | ≥ 4.5 | button text |
+| focus ring/ground | 3.65:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 97.7 | ≥ 60 target | thin text |
 
-1. **Tabular skor:** tüm skor/istatistik sayıları mono + `tabular-nums` + sağa dayalı; orantılı sayı yasak.
-2. **Forma numarası:** ekran başına 1 kontur (132px / mobil 76px, 3px stroke, içi boş).
-3. **Pist şeritleri:** yalnız alt bantta, 78px aralık, 2px çizgi, 56px (mobil 36px) yükseklik.
-4. **Kalın kenar:** panel 2px, nav/divider 3px; 1px kenar hiçbir yerde yok.
-5. **Sert gölge:** `6px 6px 0` yalnız hero, modal ve buton hover; yumuşak gölge yok.
-6. **Accent ≤ %12:** volt turuncu; accent üstü metin **koyu** (`--accent-ink`), beyaz değil.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Yasaklar
+## Sample images
 
-- Yumuşak gölge, gradient, blur, cam yüzey.
-- Serif aile, 1px ince kenar, pill buton, yuvarlak avatar.
-- İkinci accent (takım mavisi/turkuaz) ve renkli kulüp rozetleri.
-- Sayaç/skor döngü animasyonu, sürekli döngü.
-- 4 satırdan uzun gövde paragrafı (bu stil manşet + tablo dilidir).
-- Accent zemin üstünde beyaz metin (3.4:1) ve 12px altı accent üstü yazı.
+Identical content is rendered with the same text in every style; only the design differs.
 
-## Erişilebilirlik
-
-- Ölçülen riskler: `ink-faint / bg` = **4.00:1** — yalnız pist etiketi ve dekoratif mono; `accent-ink / accent` = **5.16:1** (koyu metin turuncu üstünde) — beyaz metin kullanılsaydı 3.4:1'de kalırdı, bu yüzden accent üstü metin daima koyudur.
-- Skor 40px mono + `tabular-nums`: uzaktan okunur; canlı durum ayrıca **metinle** yazılır (`CANLI 78'`), yalnız renkle değil.
-- Pist şeritleri ve forma numarası dekoratif: `aria-hidden`, `pointer-events: none`; skor bilgisi metinle taşınır.
-- Hareket/parlama hassasiyeti: orta — 240ms enter + `once: false` scroll; `prefers-reduced-motion` hepsini durdurur, skor değişimi anlık olur.
-- Şeffaf yüzey yok (`--blur: 0`); `color-mix` kullanılmıyor, `-webkit-text-stroke` desteklenmezse kontur `color: var(--ink-soft)` dolgusuna düşer (numarası yine görünür).
-- Odak görünürlüğü: 3px mürekkep halka (16.68:1); accent butonda `--accent-ink` halka, offset -5px.
-
-## Örnek görseller
-
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Kumar uygulaması" hissi | ikinci accent + gradient + canlı sayaç | Tek volt accent; döngü/sayaç yok |
 | Skorlar hizasız | orantılı rakam, ortalama | `tabular-nums` + sağa dayalı mono |
 | Ekran gürültülü | 3 forma numarası + 5 şerit bandı | Kontur 1, şerit 1 bant |
@@ -204,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Turuncu üstü metin okunmuyor | beyaz metin kullanılmış (3.4:1) | `--accent-ink` koyu metin (5.16:1) |
 | Koyu modda gölge kayboluyor | siyah sert gölge | Koyu blokta `--shadow-hard: 6px 6px 0 #3f4a43` |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `utility` — tablo/hairline disiplini ortak; utility form ve ayar ekranlarında kalır.
-- **Uyumlu:** `safety-signage` — uyarı/duyuru bağlamı ortak; tehlike sarısını bu stile taşıma.
-- **Uyumlu:** `telemetry-grid` — sayısal veri dili ortak; telemetry yoğun veri ekranında kalır.
-- **Yasak:** `claymorphism` — şişkin yuvarlak form pano keskinliğini yok eder.
-- **Yasak:** `glassmorphism` — blur/şeffaflık yüksek kontrastlı skoru sulandırır.
-- **Yasak:** `wabi-sabi` — kasten kırık hiza ve soluk palet skor okunurluğunu düşürür.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `safety-signage` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `telemetry-grid` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `wabi-sabi` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Scoreboard | tabular rakam düzeni ve uzaktan okunurluk |
-| https://en.wikipedia.org/wiki/Jersey_(sports) | forma numarası tipografisi ve kontur |
-| https://en.wikipedia.org/wiki/Running_track | pist şeritleri ve kulvar aralığı |
-| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | pist çizgisi ve skor çerçevesi ölçütü |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Scoreboard | Scoreboard — Wikipedia — tabular rakam düzeni ve uzaktan okunurluk |
+| https://en.wikipedia.org/wiki/Jersey_(sports | en.wikipedia.org — ) — forma numarası tipografisi ve kontur |
+| https://en.wikipedia.org/wiki/Running_track | Running track — Wikipedia — pist şeritleri ve kulvar aralığı |
+| https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html | WCAG 2.2 · Non-text Contrast — pist çizgisi ve skor çerçevesi ölçütü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Sports Energy (styles/125-sports-energy/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="sports-energy"] değişkenleri; hard-coded renk/golge/radius yasak.
 Tipografi: display Rajdhani 700 (H1 62px / .9, mobil 36px), govde Inter 400 15.5/1.6 (<= 48ch),
@@ -243,15 +251,15 @@ Hareket: enter 240ms cubic-bezier(.9,0,.1,1) 36px stagger 20ms; scroll top 93% /
 Yasak: yumusak golge/gradient/blur, serif, 1px kenar, pill buton, ikinci accent,
   sayac/dongu animasyonu, 4 satirdan uzun govde, accent ustu beyaz metin.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (tabular skor, forma konturu, pist şeritleri).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1 (16.68:1), accent üstü ≥ 4.5:1 (5.16:1).
-- [ ] Odak halkası görünür (3px, offset 0), dokunma hedefi ≥ 46px.
-- [ ] 390px genişlikte taşma yok; kontur ve şeritler küçülüyor.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Sports Energy (sports-energy) · family: Playful (116–125)
+Token: --bg #f1f3f1 · --surface #ffffff · --ink #0f1412 · --accent #f24a00 · --line rgba(15,20,18,.18)
+Radius: 2px / 6px · Typography: Rajdhani / Inter / JetBrains Mono
+Required: **Tabular skor:** tüm skor/istatistik sayıları mono + `tabular-nums` + sağa dayalı; orantılı sayı yasak. · **Forma numarası:** ekran başına 1 kontur (132px / mobil 76px, 3px stroke, içi boş). · **Pist şeritleri:** yalnız alt bantta, 78px aralık, 2px çizgi, 56px (mobil 36px) yükseklik.
+Banned: Yumuşak gölge, gradient, blur, cam yüzey. · Serif aile, 1px ince kenar, pill buton, yuvarlak avatar. · İkinci accent (takım mavisi/turkuaz) ve renkli kulüp rozetleri.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -262,20 +270,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #0f1412; --ink-soft: #444d47; --ink-faint: #6f7a73;
   --accent: #f24a00; --accent-ink: #17100c;
   --line: rgba(15,20,18,.18);
+  --danger: #d5291c;
+  --danger-ink: #ffffff;
+  --ok: #008037;
+  --ok-ink: #ffffff;
+  --warn: #b45300;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 2px; --radius-lg: 6px;
-  --shadow: none; --shadow-hard: 6px 6px 0 #0f1412;
+  --shadow: none; --shadow-hard: none;
   --font-display: "Rajdhani", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: 0.005em; --blur: 0px; --grain: 0.02;
+  --tracking: 0.005em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `token-block.css` içinde `[data-theme="dark"][data-style="sports-energy"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir (koyuda `--shadow-hard` çim grisine döner).
-
-## QA düzeltmeleri (2026-11-04)
-
-- **Kontrast (ölçüldü, kit/color.mjs):** `accent / bg` 3.27:1 · `ink-soft / surface-2` 7.49:1 · `accent-ink / accent` 5.16:1. Devre dışı buton `opacity: .6` + `--ink-soft` metin (önce .45), ghost buton kenarlığı `color-mix(in srgb, var(--ink) 30%, transparent)` (koyu modda görünür), `logo-strip` / footer etiketleri `--ink-faint` → `--ink-soft`.
-- **Örtüşme:** butonlara `white-space: nowrap` (metin ikinci satıra düşmüyor). Dekor katmanı `body.scene-landing .sig { z-index: -1 }` ile içeriğin altına alındı (confetti/rozet/kurdele yazının üstünden geçmiyor).
-- **Yerleşim:** hero kutusu `min-height: 340px` ile sabitlendi (alt yarı boş kalmıyor). Hero imzası `scenes.landing` ile kuruldu: skor tabelası: dev skor + set çubukları.
-- **Hareket:** sayılar değişmedi ve tokens.json ile aynı — `enter 0.24s` / `scroll 0.28s` (ikisi de ≤ 1.2 s).

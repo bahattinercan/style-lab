@@ -1,43 +1,43 @@
 # 76 · Biyofilik Botanik
 
-> **Bir cümlede:** Doğayı dekor olarak değil ölçü olarak kullanan arayüz: kırık beyaz kâğıt zemin, yaprak biçimli kart, tek yumuşak gölge ve derin yaprak yeşilinin taşıdığı sakin hiyerarşi.
+> **In one sentence:** Doğayı dekor olarak değil ölçü olarak kullanan arayüz: kırık beyaz kâğıt zemin, yaprak biçimli kart, tek yumuşak gölge ve derin yaprak yeşilinin taşıdığı sakin hiyerarşi.
 
 | | |
 |---|---|
-| **Hissiyat** | sakin, canlı, davetkâr, soluk alan |
-| **En iyi** | sağlık/wellness ürünü, eğitim platformu, sürdürülebilirlik raporu, yaşam alanı vitrini |
-| **Kaçın** | finans trading ekranı, güvenlik uyarı arayüzü, yoğun veri tablosu — burada "yumuşaklık" okunurluğu yer |
-| **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (ölçülen en düşük metin çifti 6.47:1) |
-| **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="biophilic-botanical"]` |
-| **Kompozisyon** | `centered` · `pill` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | sakin, canlı, davetkâr, soluk alan |
+| **Best for** | sağlık/wellness ürünü, eğitim platformu, sürdürülebilirlik raporu, yaşam alanı vitrini |
+| **Avoid** | finans trading ekranı, güvenlik uyarı arayüzü, yoğun veri tablosu — burada "yumuşaklık" okunurluğu yer |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Nature & Organic (76–85) · **Token** | `kit/tokens.css` → `[data-style="biophilic-botanical"]` |
+| **Composition** | `centered` · `pill` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Biyofilik Botanik, arayüzü bir **kâğıt üzerinde büyüyen form** gibi kurar: kırık beyaz zemin (`--bg`), üstte iki yumuşak radial ışık lekesi, kart köşeleri çapraz biçimde 32/12px kırılmış (yaprak biçimi), gölge tek katman ve daima yumuşak. Sertliği feda eder; karşılığında düşük bilişsel yük ve uzun okuma dayanıklılığı kazanır.
 
 Kurucu kararları üç tanedir. Birincisi **yumuşaklık ölçülüdür**: radius 14px kontrol, 24px kart, `--radius` asla "her yeri yuvarlak" anlamına gelmez — chip hap, kart yaprak, buton 14px. İkincisi **tek organik form**: ekran başına bir yaprak köşesi ailesi ya da bir dal çizgisi; süs çoğalırsa stil "doğal" değil "dağınık" okunur. Üçüncüsü **boşluk cömerttir**: bölüm dikey boşluğu 80px, gövde satır aralığı 1.65.
 
 Bedeli: yoğunluğa dayanmaz. Bu yüzden tablo ve dashboard ekranlarında kart sayısı sınırlanır, veri yoğunluğu gereken yerde bu stil garnitür olarak kalır.
 
-### Ne değildir
+### What is not
 - **Organic / Biophilic (38) değildir:** 38 toprak yeşili + Fraunces ile "organik akış" kurar ama kart köşeleri standart ve gölge yok; 76'da yaprak biçimli çapraz köşe (32/12px) ve tek yumuşak gölge imzadır.
 - **Japandi (06) değildir:** 06 düşük kontrast ve wabi-sabi dinginliği satar; 76'da `ink-soft/bg` **6.47:1** — okunurluktan ödün verilmez.
 - **Claymorphism (11) değildir:** 11 pastel + çift gölge + şişkin 3B form kullanır; 76'da gölge tek, form düz, radius çapraz.
 - **Glassmorphism (08) değildir:** 08 blur ve yarı saydamlıkla katman kurar; 76 opak, blur 0.
 
-### Nereden gelir
+### Where it comes from
 Biyofilik tasarım araştırmalarından (Terrapin'in 14 deseni: görsel doğa bağlantısı, malzeme, ışık) ve 2020'lerin "sakin teknoloji" dalgasından. Bugün tekrar kullanılıyor çünkü uzun oturumlu ürünlerde ekran yorgunluğu ölçülebilir bir sorun; yeşil skala + yumuşak boşluk bunu düşürür. Klişeye dönmemesi için korunacak detay: **boşluğun ölçülü olması** (80px bölüm, 1.65 satır) ve yaprak köşesinin çapraz olması — her kartı yuvarlamak stili jenerik "kart UI"ya çevirir.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin saf beyaz değil, hafif yeşile çalan kırık beyaz; üstte iki yumuşak ışık lekesi var.
 2. Kart köşeleri çapraz: iki köşe geniş, iki köşe dar (32/12px).
 3. Tek gölge var, yumuşak ve büyük; hiçbir yerde sert/ofset gölge yok.
 4. Buton 44px, radius 14px; chip hap biçiminde (999px).
 5. Gövde satır aralığı geniş (1.65), bölümler arası boşluk 80px.
 
-## Görsel imza
+## Visual signature
 - **Yaprak köşesi:** `border-radius: 32px 12px 32px 12px` (kart), `20px 10px 20px 10px` (KPI/input kabı).
 - **Işık lekeleri:** gövdeye iki `radial-gradient` — sol üst accent %10, sağ alt ok %8; başka gradyan yok.
 - **Tek gölge:** `--shadow: 0 8px 24px rgba(27,42,31,.10)`; sert/ofset/iç gölge yasak.
@@ -45,99 +45,124 @@ Biyofilik tasarım araştırmalarından (Terrapin'in 14 deseni: görsel doğa ba
 - **Hap chip:** 26px yükseklik, `999px` radius, 12px 600 gövde yazı.
 - **Nefes ölçüsü:** bölüm dikey 80px (mobil 48px), kart padding 24px.
 - **Hareket imzası:** 680ms `cubic-bezier(.3,.7,.2,1)`, 24px yukarı — "büyüme" hissi, sıçrama yok.
+- **Typography:** Fraunces (display) + Nunito (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#2f6b3f`; neutral scale `#f2f4ea` → `#1b2a1f`.
+- **Radius:** `14px` / `24px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f2f4ea` | sayfa zemini (kırık beyaz) | kart zemini |
-| `--bg-2` | `#e9eddd` | alt bant, ikincil zemin | buton zemini |
-| `--surface` | `#fbfcf6` | kart / panel | sayfa zemini |
-| `--surface-2` | `#f5f8ee` | chip, tablo başlığı, hover | birincil CTA |
-| `--ink` | `#1b2a1f` | başlık, gövde | dekoratif çizgi |
-| `--ink-soft` | `#4a5c4a` | açıklama, ikincil etiket | başlık |
-| `--ink-faint` | `#73826f` | yalnız dekoratif çizgi ve alt not | etkileşimli metin |
-| `--accent` | `#2f6b3f` | birincil eylem, aktif durum, dal çizgisi | geniş dekoratif dolgu |
-| `--accent-ink` | `#ffffff` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(27,42,31,.14)` | kenarlık, ayırıcı | metin rengi |
+1. Yüzeyler yumuşak: radius 14px (kontrol) / 24px (kart), hap biçimli radius yalnız chip
+2. Zemin sıcak kırık beyaz (--bg), saf beyaz #ffffff değil
+3. Derinlik tek yumuşak gölge (0 8px 24px); sert/ofset gölge yok
+4. Her ekranda tek organik form (yaprak köşesi, blob veya dal çizgisi) görünür
+5. Renk paleti bitki skalası: accent derin yaprak yeşili, ikinci doygun renk yok
+6. Gövde satır aralığı ≥ 1.6; boşluklar cömert (bölüm dikey 80px)
 
-- Ölçülen kontrast: `ink / bg` = **13.53:1** · `ink-soft / bg` = **6.47:1** · `accent-ink / accent` = **6.37:1** · `ink-faint / bg` = **3.67:1** (yalnız dekoratif).
-- Tek vurgu kuralı: bir ekranda tek yeşil ailesi (accent). Durum renkleri (`--danger`, `--ok`, `--warn`) yalnız etiket + ikonla, çok renkli dekorasyon yok.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; `--surface` üstünde `--ink-faint` metin.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f2f4ea` | page background | as a card background |
+| `--bg-2` | `#e9eddd` | partition divider floor, table top | button background |
+| `--surface` | `#fbfcf6` | kart, input, modal | full-page background |
+| `--surface-2` | `#f5f8ee` | passive chip, hover background | primary button |
+| `--ink` | `#1b2a1f` | title, body, icon | large background |
+| `--ink-soft` | `#4a5c4a` | secondary text, description | — |
+| `--ink-faint` | `#73826f` | decorative label, separator text | interactive text |
+| `--accent` | `#2f6b3f` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#ffffff` | text above accent | non-accent background |
+| `--line` | `rgba(27,42,31,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Fraunces (`--font-display`) | 48px (mobil 30px) | 500 | 1.08 | `-.01em` |
-| H2 | Fraunces | 32px | 500 | 1.14 | `0` |
-| H3 | Fraunces | 22px | 500 | 1.28 | `0` |
-| Gövde | Nunito (`--font-body`) | 16px | 400 | 1.65 | `0` |
-| Küçük gövde | Nunito | 13px | 400 | 1.6 | `0` |
-| Etiket / mono | IBM Plex Mono (`--font-mono`) | 11px | 400 | 1.4 | `.08em` |
+- Measured contrast: `ink/bg` **13.53:1** · `ink-soft/bg` **6.47:1** · `ink-faint/bg` **3.67:1 (decorative)** · `accent-ink/accent` **6.37:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.5** — kullanılan basamaklar 11 · 12 · 13 · 16 · 22 · 32 · 48.
-- Ölçü önerisi: `h1 { font-size: clamp(30px, 4.6vw, 48px); line-height: 1.08 }`.
-- Gövde satır uzunluğu en fazla **62ch**; uzun metinde satır aralığı 1.65'in altına inmez.
-- Ağırlık kuralı: display 500 (Fraunces 700 kullanılmaz — kontrast fazla sertleşir), gövde 400/600, mono 400. İtalik yok.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Fraunces) | 48px (mobile 30px) | 400 | 1.08 | -0.02em |
+| H2 | same | 32px | 600 | 1.2 | -0.015em |
+| H3 | same | 22px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Nunito) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 24px |
-| Container genişliği | 1200px (içerik 1152px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1200; 768 altında tek kolon, kart radius 24px → 18px |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** asimetrik bölüm (7/5) — metin solda geniş, görsel sağda dar ya da tersi.
-- Bölüm ritmi: art arda en fazla **3** aynı hizada kart; dördüncüsü tam genişlik "nefes bandı" olur.
-- Kart içi padding 24px'in altına inmez; 390px'te 16px'e düşer ama radius korunur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa + iki ışık lekesi |
-| Kart | `--surface` | `0 8px 24px rgba(27,42,31,.10)` | kart, panel, KPI |
-| Yüzen katman | `--surface` + gölge | `0 16px 48px rgba(27,42,31,.16)` | modal, menü, toast |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)` — kart gölgesi varken çerçeve kalır (düşük kontrastlı zeminde sınır kaybolmasın).
-- Derinlik nereden gelir: **yumuşak gölge** (tek katman) + radial ışık. Sert gölge ve ofset gölge yok.
-- Radius: `--radius: 14px` (buton, input), `--radius-lg: 24px` (kart, panel); chip 999px, kart köşesi çapraz 32/12px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | `0 22px` | 14px | 15px Nunito 600 | accent dolgu, accent-ink metin, gölge yok | hover: accent %88 + ink · active: translateY(1px) + scale .995 · focus: 2px accent outline + 3px offset · disabled: opacity .45 · loading: dal çizgisi %0→%100 (600ms) |
-| Buton (ikincil) | 44px | `0 22px` | 14px | 15px Nunito 600 | `--surface` + 1px `--line` | hover: `--surface-2` |
-| Input | 44px | `0 16px` | 14px | 15px Nunito | `--surface` + 1px `--line` | focus: accent çerçeve + 2px accent %35 outline · filled: değer 600 · error: `--danger` çerçeve + 12px etiket · disabled: opacity .5 |
-| Kart | içerik | 24px | 32/12px çapraz | H3 + gövde | `--surface` + 1px `--line` + yumuşak gölge | hover: gölge 1px büyür (0 10px 28px) |
-| Chip / badge | 26px | `0 12px` | 999px | 12px Nunito 600 | `--surface-2` + 1px `--line` | accent: accent %12 zemin + accent metin |
-| Nav | 64px | `0 28px` | 0 | 15px Nunito 600 | `--bg` %86 + `--surface` karışımı + alt hairline | aktif: accent metin (alt çizgi yok) |
-| Tablo satırı | 48px | `10px 14px` | — | 15px Nunito, tabular-nums | satır arası 1px `--line` | hover: `--surface-2` |
-| Modal / sheet | içerik | 28px | 24px | 22px display + 11px mono etiket | `--surface` + `0 16px 48px ink %16` | açılış: 24px yukarıdan, 680ms |
-| Toast | 44px | `10px 16px` | 14px | 14px Nunito 600 | `--surface` + sol uçta 8px yaprak noktası | hata: nokta `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ink-soft`, `--warn`, `--danger` | en fazla 4 seri; çizgi 2px yuvarlak uç, dolgu %10 |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `14px` (buton, input, chip), `24px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px` — kırık beyaz zeminde 2px offset yeterli değil.
-- Dokunma hedefi: en az 44×44px; chip 26px ama satır içi hedef 44px (padding ile).
+## Bans
 
-## Görsel dil
+- Saf gri/beton zemin ve nötr kurumsal mavi.
+- 0px keskin köşe, 2px ve üstü kalın çerçeve.
+- Neon, gradyan patlaması, cam/blur efekti.
+- Geometrik sans display, italik display, 700 üstü Fraunces.
+- Dolu renkli ikon, emoji.
+- Sıkı satır aralığı (1.4 altı) ve 3'ten fazla gölge katmanı.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, tam yuvarlak uç, 24px ızgara; dolu ikon yok |
-| Fotoğraf | doğal ışıkta bitki/mekân: düşük kontrast, sıcak beyaz dengesi, 24px radius kırpma |
-| İllüstrasyon | tek renk botanik çizim (dal, yaprak damarı), %20 opaklıkta zemin dokusu |
-| Doku | grain %3 + iki radial ışık; sert geometrik desen yok |
-| Logo alanı | küçük harf wordmark + tek yaprak işareti, 32px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 14px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 14px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 14px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 14px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 14px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 14px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 14px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.18:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-blob` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 7/5: solda H1 + tek CTA, sağda yaprak köşeli görsel kartı | `shots/01-page.png` |
 | Dashboard | düşük | en fazla 3 KPI kartı; grafik tek, süs yok | `shots/01-page.png` |
@@ -152,43 +177,33 @@ Biyofilik tasarım araştırmalarından (Terrapin'in 14 deseni: görsel doğa ba
 | Hata | düşük | `--danger` nokta + etiket; zemin değişmez | `shots/01-page.png` |
 | Profil / ayar | orta | iki kolon form, bölüm başlıkları 22px display | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Yüzeyler yumuşak: radius 14px (kontrol) / 24px (kart), yaprak köşesi 32/12px; 999px yalnız chip.
-- Zemin kırık beyaz (`--bg`); saf beyaz `#ffffff` zemin olarak kullanılmaz.
-- Derinlik tek yumuşak gölge; sert, ofset ve iç gölge yok.
-- Her ekranda tek organik form: yaprak köşesi ya da dal çizgisi.
-- Renk paleti bitki skalası; ikinci doygun renk yok.
-- Gövde satır aralığı ≥ 1.6, bölüm dikey boşluğu ≥ 80px (mobil 48px).
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 13.53:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.47:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.67:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.37:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.18:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 94.7 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Saf gri/beton zemin ve nötr kurumsal mavi.
-- 0px keskin köşe, 2px ve üstü kalın çerçeve.
-- Neon, gradyan patlaması, cam/blur efekti.
-- Geometrik sans display, italik display, 700 üstü Fraunces.
-- Dolu renkli ikon, emoji.
-- Sıkı satır aralığı (1.4 altı) ve 3'ten fazla gölge katmanı.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **6.47:1** (eşik 4.5); `ink-faint / bg` = **3.67:1** yalnız dekoratif çizgi ve alt notta.
-- `--ink-faint` etkileşimli metinde kullanılmaz; form etiketleri `--ink-soft` (6.47:1).
-- Hareket/parlama hassasiyeti: düşük — flash yok, sürekli animasyon ekran başına ≤1; `prefers-reduced-motion` büyüme ve dal çizgisini durdurur.
-- Şeffaf yüzey yok; opak fallback gerekmez. `border-radius` ile çapraz köşe desteklenmezse 24px düz radius'a düşer (okunurluk değişmez).
-- Odak görünürlüğü: kırık beyaz zeminde 2px accent outline + **3px** offset; 1px offset yeşil zeminde kaybolur.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "şablon kart UI" gibi | her kart eşit yuvarlanmış | yaprak köşesini çapraz uygula (32/12px) |
 | Yeşil okunmuyor | accent metin olarak kullanılmış | accent yalnız dolgu/çizgi; metin `--ink` |
 | Sayfa "oyuncak" görünüyor | radius 24px tüm bileşenlerde | kontrol 14px, kart 24px, chip 999px |
@@ -196,28 +211,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Gölge kirli | çok katmanlı gölge eklenmiş | tek katman `var(--shadow)` |
 | Mobilde taşma | 24px gutter korunmuş | 768 altı 16px gutter, tek kolon |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `organic-bio` — aynı doğal form dili; Organic yalnız grafik/illüstrasyon katmanında garnitür.
-- **Uyumlu:** `japandi` — sıcak nötr zemin + sade tipografi; Japandi tek bölümde.
-- **Uyumlu:** `wabi-sabi` — doku ve kırık hiza; yalnız boş durum illüstrasyonunda.
-- **Yasak:** `terminal-ui` — mono yoğunluk ve kesik hareket yumuşaklık iddiasını bozar.
-- **Yasak:** `neo-brutalism` — sert ofset gölge ve kalın çerçeve fizik çelişkisi.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `organic-bio` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `japandi` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `wabi-sabi` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `terminal-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Biophilic_design | doğa referansının ölçülebilir ilkeleri |
-| https://www.terrapinbrightgreen.com/reports/14-patterns/ | ışık, malzeme ve karmaşıklık desenleri |
-| https://www.wellcertified.com/ | mekân ve görsel bağlantı ölçütleri |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | yeşil tonlarında metin kontrastı |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Biophilic_design | Biophilic design — doğa referansının ölçülebilir ilkeleri |
+| https://www.terrapinbrightgreen.com/reports/14-patterns/ | Terrapin Bright Green · 14 Patterns — ışık, malzeme ve karmaşıklık desenleri |
+| https://www.wellcertified.com/ | WELL Building Standard · Biophilia — mekân ve görsel bağlantı ölçütleri |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast Minimum — yeşil tonlarında metin kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Biyofilik Botanik (styles/76-biophilic-botanical/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="biophilic-botanical"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: --bg kırık beyaz + iki radial ışık (accent %10 sol üst, ok %8 sağ alt).
@@ -232,15 +247,15 @@ Hareket: enter 680ms cubic-bezier(.3,.7,.2,1) 24px stagger .085; scroll top 77% 
   pin yok; hover 320ms görsel 1.03. prefers-reduced-motion zorunlu.
 Yasak: saf gri/beton zemin, 0px köşe, kalın çerçeve, neon, cam, dolu renkli ikon, sıkı satır aralığı.
 Çıktı: bileşen kodu + tek paragraf not (yaprak köşesini ve dal çizgisini nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: çapraz yaprak köşesi, dal çizgisi, radial ışık, hap chip.
-- [ ] Hard-coded renk/gölge/radius yok (`grep -E '#[0-9a-f]{3,6}|box-shadow:|border-radius:'` temiz).
-- [ ] Kontrast: 13.53 / 6.47 / 6.37 — hepsi eşik üstü.
-- [ ] Odak halkası 2px accent + 3px offset görünür.
-- [ ] 390px'te tek kolon, radius 18px, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken büyüme ve dal çizgisi duruyor.
+Style: Biyofilik Botanik (biophilic-botanical) · family: Nature & Organic (76–85)
+Token: --bg #f2f4ea · --surface #fbfcf6 · --ink #1b2a1f · --accent #2f6b3f · --line rgba(27,42,31,.14)
+Radius: 14px / 24px · Typography: Fraunces / Nunito / IBM Plex Mono
+Required: Yüzeyler yumuşak: radius 14px (kontrol) / 24px (kart), hap biçimli radius yalnız chip · Zemin sıcak kırık beyaz (--bg), saf beyaz #ffffff değil · Derinlik tek yumuşak gölge (0 8px 24px); sert/ofset gölge yok
+Banned: Saf gri/beton zemin ve nötr kurumsal mavi. · 0px keskin köşe, 2px ve üstü kalın çerçeve. · Neon, gradyan patlaması, cam/blur efekti.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -251,15 +266,25 @@ Yasak: saf gri/beton zemin, 0px köşe, kalın çerçeve, neon, cam, dolu renkli
   --ink: #1b2a1f; --ink-soft: #4a5c4a; --ink-faint: #73826f;
   --accent: #2f6b3f; --accent-ink: #ffffff;
   --line: rgba(27,42,31,.14);
+  --danger: #d6291d;
+  --danger-ink: #ffffff;
+  --ok: #008138;
+  --ok-ink: #ffffff;
+  --warn: #b45300;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 14px; --radius-lg: 24px;
   --shadow: 0 8px 24px rgba(27,42,31,.10); --shadow-hard: none;
-  --font-display: "Fraunces", "Lora", Georgia, serif;
-  --font-body: "Nunito", "Inter", system-ui, sans-serif;
+  --font-display: "Fraunces", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: .01em; --blur: 0px; --grain: 3;
-  --danger: #a33a2b; --danger-ink: #ffffff;
-  --ok: #2f6b3f; --warn: #8a6212;
+  --tracking: .01em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="biophilic-botanical"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

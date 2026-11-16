@@ -1,221 +1,221 @@
 # 211 · Veterinary Care
 
-> **Bir cümlede:** Veteriner klinik: sıcak krem zemin, kahve accent, aşı takvimi ve hasta kartı.
+> **In one sentence:** Veterinary clinic: warm cream background, coffee accent, vaccination schedule and patient card.
 
 | | |
 |---|---|
-| **Hissiyat** | şefkatli, düzenli, "kontrol zamanı" |
-| **En iyi** | veteriner klinik, aşı takvimi, hasta kaydı |
-| **Kaçın** | koyu teknik panel |
-| **Zorluk** | orta · **Erişilebilirlik** | yüksek — AA üstü, form hataları programatik |
-| **Aile** | Sağlık & Bilim (202–211) · **Token** | `kit/tokens.css` → `[data-style="veterinary-care"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | caring, orderly, "check-up time" |
+| **Best for** | veterinary clinic, vaccination schedule, patient record |
+| **Avoid** | a dark technical panel |
+| **Difficulty** | medium · **Accessibility** | high — above AA, form errors programmatic |
+| **Family** | Health & Science (202–211) · **Token** | `kit/tokens.css` → `[data-style="veterinary-care"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Veterinary Care, sahibin aklındaki üç soruyu cevaplar: ne zaman, ne yapılacak, ne kadar.
+### What it is
+Veterinary Care answers the owner's three questions: when, what happens, how much.
 
-### Ne değildir
-- Hastane broşürü değildir; form ve durum akışı belirleyicidir.
-- Yeşil zorunlu değildir; kontrast ve sakin ritim belirleyicidir.
+### What is not
+- It is not a hospital brochure; form and state flow are decisive.
+- Green is not mandatory; Contrast and calm rhythm are decisive.
 
-### Nereden gelir
-Klinik formlar, hasta bilgilendirme materyalleri ve sağlık uygulamalarının erişilebilirlik pratiği.
+### Where it comes from
+Accessibility practice of clinical forms, patient information materials, and healthcare applications.
 
-### 3 saniyede tanıma testi
-1. Gövde 16px ve üstü mü?
-2. Hata mesajı alanın altında mı?
-3. Odak halkası görünür mü?
+### Recognition test in 3 seconds
+1. Is the body 16px and above?
+2. Is the error message below the field?
+3. Is the focus ring visible?
 
-## Görsel imza
-- **Hasta kartı:** ad, tür, yaş, sahip; 4 satır.
-- **Aşı takvimi:** ay ızgarası, mono tarih.
-- **Kahve accent:** yalnız yaklaşan kontrol.
-- **Sıcak krem:** tek zemin tonu.
-- **Tipografi:** Nunito (display) + Nunito (gövde) + IBM Plex Mono (mono etiket).
-- **Renk disiplini:** tek accent `#7a4a1e`; nötr skala `#fdfaf4` → `#1a1712`.
-- **Yarıçap:** `12px` / `16px`; Köşe 8–12px; form alanları 10px. Keskin 0px köşe klinik dilde sert kalır.
+## Visual signature
+- **Patient card:** name, species, age, owner; four rows.
+- **Vaccination schedule:** month grid, mono dates.
+- **Coffee accent:** the upcoming check-up only.
+- **Warm cream:** a single background tone.
+- **Typography:** Nunito (display) + Nunito (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#7a4a1e`; neutral scale `#fdfaf4` → `#1a1712`.
+- **Radius:** `12px` / `16px`; Corner 8–12px; form fields 10px. Sharp 0px corner remains harsh in clinical language.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Her kayıtta tür, yaş ve sahip.
-2. Aşı tarihleri ay/gün mono.
-3. Acil iletişim görünür.
+1. Species, age and owner on every record.
+2. Vaccination dates are mono month/day.
+3. Emergency contact stays visible.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#fdfaf4` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#f4ecdf` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#ffffff` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#faf4eb` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#1a1712` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#544b3f` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#877c6d` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#7a4a1e` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#fdf8f2` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(26,23,18,.13)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#fdfaf4` | page background | as a card background |
+| `--bg-2` | `#f4ecdf` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#faf4eb` | passive chip, hover background | primary button |
+| `--ink` | `#1a1712` | title, body, icon | large background |
+| `--ink-soft` | `#544b3f` | secondary text, description | — |
+| `--ink-faint` | `#877c6d` | decorative label, separator text | interactive text |
+| `--accent` | `#7a4a1e` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fdf8f2` | text above accent | non-accent background |
+| `--line` | `rgba(26,23,18,.13)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **17.15:1** · `ink-soft/bg` **8.21:1** · `ink-faint/bg` **3.93:1 (dekoratif)** · `accent-ink/accent` **7.04:1**.
-- Güven rengi accent; uyarı ve hata semantik token'lardan gelir. Kırmızı yalnız gerçek risk için.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **17.15:1** · `ink-soft/bg` **8.21:1** · `ink-faint/bg` **3.93:1 (decorative)** · `accent-ink/accent` **7.04:1**.
+- Trust color accent; Warning and error come from semantic tokens. Red is only for real risk.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Nunito) | 48px (mobil 30px) | 500 | 1.08 | -0.02em |
-| H2 | aynı | 28px | 600 | 1.2 | -0.015em |
-| H3 | aynı | 20px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Nunito) | 16px | 400 | 1.65 | 0 |
-| Küçük gövde | aynı | 15px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
-| Buton | `--font-body` | 13px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Nunito) | 48px (mobile 30px) | 500 | 1.08 | -0.02em |
+| H2 | same | 28px | 600 | 1.2 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Nunito) | 16px | 400 | 1.65 | 0 |
+| Small body | same | 15px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 13px | 600 | 1 | 0 |
 
-- Gövde 16px/1.65 — okuma yorgunluğu düşük tutulur. Etiketler 13px, form yardım metni 12px.
-- Ölçü: 66ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Body 16px/1.65 — reading fatigue is kept low. Labels 13px, form help text 12px.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Form 2 kolon (mobil 1), içerik 8 kolon. Kart içi 20px; satır aralığı 44px.
-- Bölüm dikey boşluğu masaüstü 72px, mobil 44px; kart içi padding 20px.
+- Form 2 columns (mobile 1), content 8 columns. 20px inside card; line spacing 44px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Kart yüzeyi opak; yumuşak gölge tek seviye. Odak halkası her yüzeyde 3:1 üzeri.
-- Radius: `12px` (buton, input, chip), `16px` (kart, modal). Köşe 8–12px; form alanları 10px. Keskin 0px köşe klinik dilde sert kalır.
+- Card surface is opaque; soft shadow single level. Focus ring over 3:1 on any surface.
+- Radius: `12px` (buton, input, chip), `16px` (kart, modal). Corner 8–12px; form fields 10px. Sharp 0px corner remains harsh in clinical language.
 
-## Yasaklar
+## Bans
 
-- Sevimli illüstrasyon yığını.
+- A pile of cute illustrations.
 - Animasyonlu pati.
-- Yuvarlak 24px+ kart.
-- Kırmızıyı dekoratif kullanmak.
-- Sağlık iddiası taşıyan illüstrasyon.
-- Otomatik odak değiştirme.
+- A rounded card above 24px.
+- Using red decoratively.
+- Illustration with health claim.
+- Automatic focus changing.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 12px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 12px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 12px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 12px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 12px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 12px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 12px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 12px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 12px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 12px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 12px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 12px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 12px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 7.43:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.43:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1.5px çizgi, 20px; tıbbi sembol yerine nötr geometri |
-| Fotoğraf | Doğal ışık, insan odaklı, stetoskop klişesi yok |
-| İllüstrasyon | Tek çizgi, sakin; anatomik detay yok |
-| Doku | Yok |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 1.5px line, 20px; neutral geometry instead of medical symbol |
+| photo | Natural light, people-oriented, no stethoscope cliche |
+| illustration | Single line, calm; no anatomical details |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-blob` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-blob` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Randevu / landing | orta | Tek mesaj + tek CTA + güven satırı | `shots/01-page.png` |
-| Form / intake | orta | 2 kolon, etiket üstte, hata altta | `shots/01-page.png` |
-| Sonuç / ölçüm | yüksek | Tek büyük sayı + referans aralığı | `shots/01-page.png` |
-| Plan / tedavi | orta | Zaman çizelgesi + durum | `shots/01-page.png` |
-| Mesaj / destek | orta | Balon 68ch altı, zaman etiketi mono | `shots/01-page.png` |
-| Profil | düşük | Özet kartı + izinler | `shots/01-page.png` |
-| Bilgi merkezi | düşük | Makale listesi, 17px gövde | `shots/01-page.png` |
-| Acil durum | yüksek | Tek kırmızı blok + tel numarası | `shots/01-page.png` |
+| Randevu / landing | medium | One message + one CTA + trust line | `shots/01-page.png` |
+| Form / intake | medium | 2 columns, label at the top, error at the bottom | `shots/01-page.png` |
+| Result / measurement | high | Single largest number + reference range | `shots/01-page.png` |
+| Plan/treatment | medium | Timeline + status | `shots/01-page.png` |
+| Message/support | medium | Balloon 68ch sub, time tag mono | `shots/01-page.png` |
+| Profil | low | Summary card + permissions | `shots/01-page.png` |
+| information center | low | Article list, 17px body | `shots/01-page.png` |
+| emergency | high | Single red block + wire number | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 17.15:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 8.21:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 3.93:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 7.04:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 7.43:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 101.8 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 17.15:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.21:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.93:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.04:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.43:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 101.8 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Form korkutuyor | Tek ekranda 8+ alan | Adım başına en fazla 4 alan |
-| Uyarı görünmüyor | Yalnız renk kullanılmış | İkon + metin ekle |
-| Metin yoruyor | Satır uzunluğu 90ch | Ölçüyü 66ch'e indir |
+| Form korkutuyor | 8+ areas on one screen | Up to 4 fields per step |
+| Warning not visible | Only color used | Add icon + text |
+| The text is tiring | Line length 90ch | Reduce size to 66ch |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `dental-clinic` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `physiotherapy` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `terminal-ui` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `game-pinball-neon` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `dental-clinic` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `physiotherapy` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `terminal-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `game-pinball-neon` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://en.wikipedia.org/wiki/Veterinary_medicine | Veterinary medicine (Wikipedia) — klinik akışı |
-| https://fonts.google.com/specimen/Nunito | Nunito (Google Fonts) — yumuşak gövde |
+| https://en.wikipedia.org/wiki/Veterinary_medicine | Veterinary medicine (Wikipedia) — clinic flow |
+| https://fonts.google.com/specimen/Nunito | Nunito (Google Fonts) — soft body |
 | https://fonts.google.com/specimen/IBM+Plex+Mono | IBM Plex Mono (Google Fonts) — tarih |
 
 ## AI brief
 
 ```text
-Veteriner klinik sayfası tasarla: sıcak krem zemin, hasta kartları, mono aşı takvimi, kahve accent.
+Design a veterinary clinic page: warm cream background, patient cards, mono vaccination schedule, coffee accent.
 
-Stil: Veterinary Care (veterinary-care) · aile: Sağlık & Bilim (202–211)
+Style: Veterinary Care (veterinary-care) · family: Health & Science (202–211)
 Token: --bg #fdfaf4 · --surface #ffffff · --ink #1a1712 · --accent #7a4a1e · --line rgba(26,23,18,.13)
-Yarıçap: 12px / 16px · Tipografi: Nunito / Nunito / IBM Plex Mono
-Zorunlu: Her kayıtta tür, yaş ve sahip. · Aşı tarihleri ay/gün mono. · Acil iletişim görünür.
-Yasak: Sevimli illüstrasyon yığını. · Animasyonlu pati. · Yuvarlak 24px+ kart.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 12px / 16px · Typography: Nunito / Nunito / IBM Plex Mono
+Required: Species, age and owner on every record. · Vaccination dates are mono month/day. · Emergency contact stays visible.
+Banned: A pile of cute illustrations. · Animasyonlu pati. · A rounded card above 24px.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

@@ -1,7 +1,6 @@
 /**
- * 227 · Cast Concrete — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 227 · Cast Concrete — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'grid',
   bodyClass: '',

@@ -1,221 +1,221 @@
 # 178 · Access Audit
 
-> **Bir cümlede:** Erişim denetimi: gri tablo, kırmızı yalnız ihlal, mono kimlik ve değişmezlik vurgusu.
+> **In one sentence:** Access control: gray table, red lone violation, mono identity and immutability emphasis.
 
 | | |
 |---|---|
-| **Hissiyat** | resmî, kayıt tutan, "kim ne zaman girdi" |
-| **En iyi** | denetim günlüğü, erişim incelemesi, uyum kanıtı |
-| **Kaçın** | yaratıcı portfolyo |
-| **Zorluk** | zor · **Erişilebilirlik** | iyi |
-| **Aile** | Operasyon & Veri (172–181) · **Token** | `kit/tokens.css` → `[data-style="access-audit"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | official, record-keeper, "who entered when" |
+| **Best for** | audit log, access review, proof of compliance |
+| **Avoid** | creative portfolio |
+| **Difficulty** | hard · **Accessibility** | iyi |
+| **Family** | Operations & Data (172–181) · **Token** | `kit/tokens.css` → `[data-style="access-audit"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Access Audit, bir tabloyu kanıt haline getirir: her satır kim, ne zaman, hangi kaynaktan ve hangi kural.
+### What it is
+Access Audit turns a table into evidence: each row by who, when, from what source, and by what rule.
 
-### Ne değildir
-- Dashboard şablonu değildir; her blok bir karar sorusunu cevaplar.
-- Koyu tema zorunlu değildir; kontrast ve yoğunluk belirleyicidir.
+### What is not
+- It is not a dashboard template; each block answers a decision question.
+- Dark theme is not mandatory; Contrast and intensity are decisive.
 
-### Nereden gelir
-NOC/SRE konsolları, finans terminalleri ve lojistik operasyon ekranlarının bilgi yoğun geleneği.
+### Where it comes from
+The information-intensive tradition of NOC/SRE consoles, financial terminals and logistics operations displays.
 
-### 3 saniyede tanıma testi
-1. Satır yüksekliği 40–44px mi?
-2. Sayılar sağa hizalı ve tabular mı?
-3. Grafikte en fazla 3 seri mi?
+### Recognition test in 3 seconds
+1. Is the line height 40–44px?
+2. Are the numbers right-aligned and taboo?
+3. Maximum 3 series on the chart?
 
-## Görsel imza
-- **Sabit satır:** 40px, mono kimlik ve zaman damgası.
-- **Kırmızı yalnız ihlal:** accent dekoratif kullanılmaz.
-- **Değişmezlik:** her satırda kayıt no ve kaynak.
-- **Gri ölçek:** arayüz nötr; renk bilgi taşır.
-- **Tipografi:** Inter (display) + Inter (gövde) + Courier Prime (mono etiket).
-- **Renk disiplini:** tek accent `#8a1f1f`; nötr skala `#f6f6f7` → `#14161a`.
-- **Yarıçap:** `2px` / `4px`; Köşe 4–6px; 8px üstü yumuşak yuvarlatma operasyonel tabloyla çelişir.
+## Visual signature
+- **Fixed line:** 40px, mono id and timestamp.
+- **Red only violation:** accent decorative is not used.
+- **Immutability:** record number and source on each line.
+- **Gray scale:** interface neutral; Color carries information.
+- **Typography:** Inter (display) + Inter (body) + Courier Prime (mono label).
+- **Colour discipline:** a single accent `#8a1f1f`; neutral scale `#f6f6f7` → `#14161a`.
+- **Radius:** `2px` / `4px`; Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Zaman damgası ISO biçiminde ve mono.
-2. Her ihlal satırında kural kimliği yazılır.
-3. Tablo dışa aktarılabilir; sütun sırası sabit.
+1. The timestamp is in ISO format and mono.
+2. The rule ID is written on each violation line.
+3. The table can be exported; column order is fixed.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#f6f6f7` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#ededf0` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#ffffff` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#f3f3f5` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#14161a` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#4c5159` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#7f858e` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#8a1f1f` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#fdf6f6` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(20,22,26,.14)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#f6f6f7` | page background | as a card background |
+| `--bg-2` | `#ededf0` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f3f3f5` | passive chip, hover background | primary button |
+| `--ink` | `#14161a` | title, body, icon | large background |
+| `--ink-soft` | `#4c5159` | secondary text, description | — |
+| `--ink-faint` | `#7f858e` | decorative label, separator text | interactive text |
+| `--accent` | `#8a1f1f` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fdf6f6` | text above accent | non-accent background |
+| `--line` | `rgba(20,22,26,.14)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **16.77:1** · `ink-soft/bg` **7.4:1** · `ink-faint/bg` **3.44:1 (dekoratif)** · `accent-ink/accent` **8.57:1**.
-- Durum renkleri accent'in türevi değil, ayrı semantik token'lar (--ok/--danger/--warn) üzerinden gelir; accent eylem rengidir.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **16.77:1** · `ink-soft/bg` **7.4:1** · `ink-faint/bg` **3.44:1 (decorative)** · `accent-ink/accent` **8.57:1**.
+- Status colors are not derived from accent, but come from separate semantic tokens (--ok/--danger/--warn); accent is the action color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Inter) | 40px (mobil 26px) | 600 | 1.12 | -0.02em |
-| H2 | aynı | 24px | 600 | 1.22 | -0.015em |
-| H3 | aynı | 17px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Inter) | 14px | 400 | 1.55 | 0 |
-| Küçük gövde | aynı | 13px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (Courier Prime) | 10.5px | 400 | 1.2 | 0.16em |
-| Buton | `--font-body` | 12px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Inter) | 40px (mobile 26px) | 600 | 1.12 | -0.02em |
+| H2 | same | 24px | 600 | 1.22 | -0.015em |
+| H3 | same | 17px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 14px | 400 | 1.55 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier Prime) | 10.5px | 400 | 1.2 | 0.16em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-- Yoğun ekran: 14px gövde, 13px tablo, 10.5px mono etiket. Satır yüksekliği 1.55 altına inilmez.
-- Ölçü: 72ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Dense display: 14px body, 13px table, 10.5px mono label. The line height cannot be lower than 1.55.
+- Measure: 72ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- 8 kolon içerik + 4 kolon panel; tablolar tam genişlik. Kart içi padding 16px, satır 40px.
-- Bölüm dikey boşluğu masaüstü 44px, mobil 28px; kart içi padding 16px.
+- 8 columns of content + 4 columns of panels; tables full width. In-card padding 16px, line 40px.
+- Section vertical space 44px desktop, 28px mobile; card padding 16px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Yüzeyler düz; ayrım 1px kenar ve zemin tonuyla. Grafiklerde referans çizgisi --line.
-- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Köşe 4–6px; 8px üstü yumuşak yuvarlatma operasyonel tabloyla çelişir.
+- Surfaces are smooth; separation with 1px edge and background tone. Reference line in graphs --line.
+- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-## Yasaklar
+## Bans
 
-- Renkli satır arka planı (zebra yalnız gri).
+- Colorful line background (zebra gray alone).
 - Animasyon.
-- Gizlenen sütun (audit kaydı eksiltilemez).
-- Süsleme amaçlı gradient.
-- Beşten fazla renkli seri.
-- Animasyonlu sayaç.
+- Hidden column (audit record cannot be decremented).
+- Gradient for decoration.
+- More than five color series.
+- Animated counter.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 2px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 2px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 2px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 2px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 9.14:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 9.14:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1.5px çizgi, 16px kutu; durum ikonları dolu |
-| Fotoğraf | Veri ekranında fotoğraf yok; boş durumda tek illüstrasyon |
-| İllüstrasyon | Yalnız boş/başarısız durumda tek çizgi illüstrasyon |
-| Doku | Yok |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 1.5px line, 16px box; full of status icons |
+| photo | There is no photo on the data screen; single illustration in empty case |
+| illustration | Lonely empty/failed single line illustration |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-none` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Genel bakış | yüksek | 4 KPI + tek zaman serisi; her KPI'da delta ve zaman aralığı | `shots/01-page.png` |
-| Olay / incident | yüksek | Zaman çizelgesi + durum etiketi; 1 satır = 1 olay | `shots/01-page.png` |
-| Tablo / liste | yüksek | Filtre çubuğu + 40px satır + sağa hizalı sayı | `shots/01-page.png` |
-| Servis detayı | yüksek | Metrik + log + eşik; 3 kolon | `shots/01-page.png` |
-| Ayarlar / eşik | orta | Form 2 kolon, birim etiketi sağda mono | `shots/01-page.png` |
-| Boş durum | düşük | Tek cümle + tek buton; illüstrasyon yok | `shots/01-page.png` |
-| Onboarding / bağlantı | orta | 3 adım, her adımda tek doğrulama | `shots/01-page.png` |
-| Rapor / dışa aktar | orta | Tarih aralığı + biçim seçimi + özet | `shots/01-page.png` |
+| Overview | high | 4 KPI + single time series; delta and time range on each KPI | `shots/01-page.png` |
+| Olay / incident | high | Timeline + status tag; 1 row = 1 event | `shots/01-page.png` |
+| Table / list | high | Filter bar + 40px row + right aligned number | `shots/01-page.png` |
+| Service detail | high | Metric + log + threshold; 3 columns | `shots/01-page.png` |
+| Settings / threshold | medium | Form 2 column, unit label mono on right | `shots/01-page.png` |
+| empty status | low | One sentence + one button; no illustration | `shots/01-page.png` |
+| Onboarding / connectivity | medium | 3 steps, single verification at each step | `shots/01-page.png` |
+| Report / export | medium | Date range + format selection + summary | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 16.77:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 7.4:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 3.44:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 8.57:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 9.14:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 99.5 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 16.77:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.4:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.44:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 8.57:1 | ≥ 4.5 | button text |
+| focus ring/ground | 9.14:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 99.5 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Ekran kalabalık ama boş | KPI sayısı fazla | Ekran başına 4 KPI sınırı koy |
-| Tablo okunmuyor | Zebra + renkli hücre | Zebra yerine hairline; rengi yalnız durum için kullan |
-| Grafik yanlış okunuyor | Eksen etiketi eksik | Eksen + birim + zaman aralığı yaz |
+| The screen is crowded but empty | The number of KPIs is high | Set a limit of 4 KPIs per screen |
+| Table not read | Zebra + colored cell | Hairline instead of zebra; use color only for occasion |
+| Chart is read incorrectly | Axis label missing | Write axis + unit + time range |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `fraud-review` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `regulatory-report` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `dopamine-ui` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `game-mobile-casual` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `fraud-review` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `regulatory-report` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `game-mobile-casual` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://en.wikipedia.org/wiki/Audit_trail | Audit log (Wikipedia) — kayıt yapısı |
-| https://www.nist.gov/cyberframework | NIST Cybersecurity Framework — erişim kontrolü pratiği |
-| https://fonts.google.com/specimen/Courier+Prime | Courier Prime (Google Fonts) — kayıt kimliği |
+| https://en.wikipedia.org/wiki/Audit_trail | Audit log (Wikipedia) — record structure |
+| https://www.nist.gov/cyberframework | NIST Cybersecurity Framework — access control practice |
+| https://fonts.google.com/specimen/Courier+Prime | Courier Prime (Google Fonts) — registration id |
 
 ## AI brief
 
 ```text
-Erişim denetim ekranı tasarla: nötr gri arayüz, 40px sabit satır, mono zaman damgası, kırmızı yalnız ihlalde.
+Design access control screen: neutral gray interface, 40px solid row, mono timestamp, red only in violation.
 
-Stil: Access Audit (access-audit) · aile: Operasyon & Veri (172–181)
+Style: Access Audit (access-audit) · family: Operations & Data (172–181)
 Token: --bg #f6f6f7 · --surface #ffffff · --ink #14161a · --accent #8a1f1f · --line rgba(20,22,26,.14)
-Yarıçap: 2px / 4px · Tipografi: Inter / Inter / Courier Prime
-Zorunlu: Zaman damgası ISO biçiminde ve mono. · Her ihlal satırında kural kimliği yazılır. · Tablo dışa aktarılabilir; sütun sırası sabit.
-Yasak: Renkli satır arka planı (zebra yalnız gri). · Animasyon. · Gizlenen sütun (audit kaydı eksiltilemez).
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 2px / 4px · Typography: Inter / Inter / Courier Prime
+Required: The timestamp is in ISO format and mono. · The rule ID is written on each violation line. · The table can be exported; column order is fixed.
+Banned: Colorful line background (zebra gray alone). · Animasyon. · Hidden column (audit record cannot be decremented).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

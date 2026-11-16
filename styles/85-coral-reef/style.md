@@ -1,43 +1,43 @@
 # 85 · Coral Reef
 
-> **Bir cümlede:** Su altı ışığının yumuşattığı koyu turkuaz zeminde, her türün bölgesi ve derinliğiyle kaydedildiği resif gözlem arayüzü.
+> **In one sentence:** Su altı ışığının yumuşattığı koyu turkuaz zeminde, her türün bölgesi ve derinliğiyle kaydedildiği resif gözlem arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | yumuşak, akışkan, canlı, serin |
-| **En iyi** | deniz/resif gözlem uygulaması, dalış kaydı, sualtı tür kataloğu, akvaryum yönetimi |
-| **Kaçın** | kurumsal finans paneli, yüksek yoğunluklu tablo ekranı, katı endüstriyel ürünler |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 8.15:1) |
-| **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="coral-reef"]` |
-| **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | yumuşak, akışkan, canlı, serin |
+| **Best for** | deniz/resif gözlem uygulaması, dalış kaydı, sualtı tür kataloğu, akvaryum yönetimi |
+| **Avoid** | kurumsal finans paneli, yüksek yoğunluklu tablo ekranı, katı endüstriyel ürünler |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Nature & Organic (76–85) · **Token** | `kit/tokens.css` → `[data-style="coral-reef"]` |
+| **Composition** | `fullbleed` · `inline` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Coral Reef, arayüzü bir **resif kesiti** gibi kurar: her tür bir mercan öbeği kartında, kartın içinde bölge chip'i, derinlik ve su sıcaklığı. Zemin koyu turkuaz (su), accent ise mercan pembesi-turuncusudur ve yalnız eylem/seçim/uyarı için kullanılır.
 
 Üç kurucu karar: (1) **yumuşak form** — buton/chip/toast hap (999px), form 22px, kart 36px ve **asimetrik** köşe (36 36 36 12); keskin köşe yok; (2) **su gölgesi** — yalnız aşağı doğru geniş, düşük opaklıkta gölge; cam/blur ve sualtı ışık huzmesi yasak; (3) **yumuşak hareket** — giriş 980ms süzülür, hover 280ms ve görsel 1.058 büyür; su içinde hareket gibi yavaş ve akışkan.
 
 Bedeli: yumuşak form yoğun tablo ekranlarında yer kaybettirir; ekran başına 2 tablo sınırı vardır. Metin 16px'in altına inmez, aksi halde "çocuk uygulaması" gibi okunur.
 
-### Ne değildir
+### What is not
 - **Ethereal (29) değildir:** pastel lavanta, cam yüzey ve çok düşük kontrastla hayal-üstü bir dil kurar; Coral Reef koyu turkuaz, opak yüzey ve güçlü mercan accent ile çalışır.
 - **Organic Bio (38) değildir:** açık krem zemin, sage yeşili ve blob radiuslarla "temiz organik" kurar; burada su altı koyuluğu ve mercan accent var.
 - **Dopamine UI (18) değildir:** çok renkli enerji ve pastel bloklar kullanır; Coral Reef tek accent (mercan) ve su tonlarıyla sınırlıdır.
 - **Aurora UI (12) değildir:** atmosferik gradient ve mor accentle çalışır; burada gradient yerine grain ve düz su tonları var.
 
-### Nereden gelir
+### Where it comes from
 Resif izleme raporlarından ve dalış kayıt defterinden: bölge (lagün, resif düzlüğü, yamaç), derinlik, sıcaklık, tür, gözlem notu. Bugün yeniden kullanılmasının nedeni: doğa/deniz uygulamaları genelde ya fotoğraf galerisi ya da soğuk veri tablosu oluyor; resifin katmanlı yapısını taşıyan bir arayüz ihtiyacı var. Klişeye dönüşmemesi için korunacak detay: **asimetrik mercan köşesi** ve **tek mercan accent**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin koyu turkuaz; hiçbir yüzey beyaz değil.
 2. Accent mercan pembesi-turuncusu; ikinci doygun renk yok.
 3. Buton/chip/toast hap, kart 36px ve **asimetrik** (alt-sol 12px) köşe.
 4. Her kartta bölge chip'i + derinlik (m) + sıcaklık (°C) görünüyor.
 5. Gölge yalnız aşağı yönde geniş ve yumuşak; parlama/caustic efekti yok.
 
-## Görsel imza
+## Visual signature
 - **Mercan köşesi:** kart `border-radius: 36px 36px 36px 12px`; buton/chip/toast 999px; form 22px.
 - **Su tonu katmanları:** `--bg` → `--surface` → `--surface-2` üç koyu turkuaz kademe; sınır 1px `--line`.
 - **Mercan accent:** `#ff8a73` yalnız eylem/seçim/uyarı; accent üstü metin `#2a0d08`.
@@ -45,101 +45,124 @@ Resif izleme raporlarından ve dalış kayıt defterinden: bölge (lagün, resif
 - **Yumuşak gölge:** `0 10px 24px -14px rgba(4,14,16,.6)` — aşağı, geniş, düşük opaklık.
 - **Su zerresi grain:** `--grain: .03`; fotoğrafın üstünde kullanılmaz.
 - **Bölge chip'i:** hap, 11px `Courier Prime` 0.12em — lagün · resif düzlüğü · yamaç · çukur · gelgit.
+- **Typography:** Baloo 2 (display) + Nunito (body) + Courier Prime (mono label).
+- **Colour discipline:** a single accent `#ff8a73`; neutral scale `#0d2b30` → `#e6f4f2`.
+- **Radius:** `22px` / `36px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#0d2b30` | `#021015` | kart zemini |
-| `--bg-2` | `#092226` | `#051b21` | birincil buton |
-| `--surface` | `#123840` | `#07222a` | sayfa zemini |
-| `--surface-2` | `#174650` | `#0b2c34` | metin zemini |
-| `--ink` | `#e6f4f2` | `#f0fbf9` | dekoratif dolgu |
-| `--ink-soft` | `#a4c6c4` | `#b6d8d6` | accent dolgu üstü |
-| `--ink-faint` | `#779c9b` | `#82a9a7` | gövde, etkileşimli metin |
-| `--accent` | `#ff8a73` | `#ffa88f` | dekoratif dolgu |
-| `--accent-ink` | `#2a0d08` | `#180904` | accent olmayan zemin |
-| `--line` | `rgba(230,244,242,.16)` | `rgba(240,251,249,.22)` | metin |
+1. Her tür kaydı: tür adı + resif bölgesi (chip) + derinlik (m) + su sıcaklığı (°C)
+2. Mercan öbeği kartları asimetrik köşe (36 36 36 12) ve 24px padding
+3. Mercan accent yalnız eylem/seçim/uyarı; su tonları accent değil
+4. Buton/chip/toast hap (999px); form alanı 22px; kart 36px
+5. Gölge aşağı doğru yumuşak; cam/blur, parlama, caustic animasyonu yok
+6. Su zerresi grain .03 yalnız zemin katmanında; derinlik ölçüleri mono tabular
 
-- Ölçülen kontrast: `ink/bg` **13.23:1** · `ink-soft/bg` **8.15:1** · `accent-ink/accent` **7.88:1** · `ink-faint/bg` **4.99:1** · accent metin olarak bg'ye **6.50:1**.
-- Tek vurgu kuralı: mercan accent yalnız eylem/seçim/uyarı. `--ok` (turkuaz yeşil), `--warn` (kum sarısı), `--danger` (mercan kırmızı) yalnız durum etiketi.
-- Yasak kombinasyon: accent ile `--danger` yan yana (aynı sıcaklık ailesi); accent üstünde `--ink-soft`; ikinci doygun accent (mor/mavi).
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0d2b30` | page background | as a card background |
+| `--bg-2` | `#092226` | partition divider floor, table top | button background |
+| `--surface` | `#123840` | kart, input, modal | full-page background |
+| `--surface-2` | `#174650` | passive chip, hover background | primary button |
+| `--ink` | `#e6f4f2` | title, body, icon | large background |
+| `--ink-soft` | `#a4c6c4` | secondary text, description | — |
+| `--ink-faint` | `#779c9b` | decorative label, separator text | interactive text |
+| `--accent` | `#ff8a73` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#2a0d08` | text above accent | non-accent background |
+| `--line` | `rgba(230,244,242,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Baloo 2 | 46px | 600 | 1.08 | 0 |
-| H2 | Baloo 2 | 28px | 600 | 1.20 | 0 |
-| H3 | Nunito | 20px | 700 | 1.3 | 0 |
-| Gövde | Nunito | 16px | 400 | 1.66 | 0 |
-| Etiket / mono | Courier Prime | 11px | 400 | 1.35 | 0.14em, büyük harf |
-| Ölçü / tablo | Courier Prime | 14px | 400 | 1.45 | 0.02em, tabular |
+- Measured contrast: `ink/bg` **13.23:1** · `ink-soft/bg` **8.15:1** · `ink-faint/bg` **4.99:1 (decorative)** · `accent-ink/accent` **7.88:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.65 (16 → 28 → 46); kullanılan basamaklar: 11 · 12 · 14 · 16 · 20 · 28 · 46 · (mobil 30).
-- Ölçü önerisi: `h1 { font-size: clamp(30px, 4.4vw, 46px) }`.
-- Gövde metni maksimum satır uzunluğu: 60ch; gözlem notu 48ch'te kırılır.
-- Ağırlık kuralı: Baloo 2 600, Nunito 400/700, mono 400. İtalik yok; büyük harf yalnız etiket.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Baloo 2) | 30px (mobile 30px) | 400 | 1.08 | -0.02em |
+| H2 | same | 28px | 600 | 1.2 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Nunito) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier Prime) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 · hero 5/7, mercan öbekleri 2/3/2/3 ritmi |
-| Gutter | 20px |
-| Container genişliği | 1200px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 üstü 12 kolon · 768–1200 8 kolon · 768 altı tek kolon, tablo kart demetine döner |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına en fazla 2 asimetrik blok (hero 5/7 + mercan öbek ritmi).
-- Bölüm ritmi: 64px masaüstü / 40px mobil; bölüm geçişlerinde çizgi yok, boşluk var.
-- Kart içi 24px; satır 44px; chip ile başlık arası 10px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | su zemini |
-| Kart | `--surface` + 1px `--line` | `var(--shadow)` | mercan öbeği, panel |
-| Yüzen katman | `--surface` + 1px `--line` | `var(--shadow)` + 0 30px 60px -40px | modal, alt sayfa |
-| Seçili | `--surface-2` + `--shadow-hard` | 1px mercan halka | seçili tür |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; seçili türde `--shadow-hard` (1px mercan halka).
-- Derinlik nereden gelir: yumuşak alt gölge + ton katmanı + grain; blur, iç gölge, parlama yok.
-- Radius: `--radius` 22px (form, iç kutu), `--radius-lg` 36px (kart, modal); buton/chip/toast 999px. Kartta alt-sol 12px asimetrisi.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 48px | 12px 24px | 999px | 14px/700 Nunito | `--accent` + `--accent-ink`, `var(--shadow)` | hover 2px yukarı · active 1px aşağı · focus 2px accent halka + 3px offset · disabled %45 · loading kabarcık |
-| Buton (ikincil) | 48px | 12px 22px | 999px | 14px/700 Nunito | şeffaf + 1px accent çerçeve | hover `--surface-2` · focus accent halka |
-| Input | 48px | 0 18px | 22px | 15px Nunito | `--surface` + 1px `--line` | focus accent halka · filled birim üst etiket · error danger · disabled %45 |
-| Kart (mercan öbeği) | — | 24px | 36 36 36 12 | başlık 20px Nunito 700 | `--surface` + 1px `--line` | sol üst chip · sağ alt derinlik · seçili 1px mercan halka |
-| Chip (bölge) | 24px | 0 12px | 999px | 11px Courier Prime | `--surface-2` + 1px `--line` | lagün · resif düzlüğü · yamaç · çukur · gelgit |
-| Nav (üst bar) | 60px | 0 26px | 0 | 12px Nunito / 11px mono | `--bg`, alt 1px `--line` | aktif: mercan nokta + metin · sağda su sıcaklığı |
-| Tablo satırı | 44px | 8px 14px | 0 | tür gövde + mono ölçü | alt 1px `--line` | hover `--surface-2` · seçili mercan sol şerit 3px |
-| Modal | — | 28px | 36px | başlık 28px Baloo 2 | `var(--shadow)` + derin alt gölge | tür detayı, kapatma 48px |
-| Toast | 44px | 10px 18px | 999px | 14px Nunito | `--surface`, sol 10px mercan nokta | 4.2sn · alt ortada |
-| Grafik | — | — | 0 | eksen 11px mono | alan %14 dolgu, çizgi 2px yuvarlak uç | ızgara yok, yalnız taban çizgisi |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `22px` (buton, input, chip), `36px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px`; accent dolgulu butonda `--accent-ink` halka.
-- Dokunma hedefi: 48×48px; chip 24px görsel, satır içi padding ile 44px.
-- Derinlik ölçüsü: kartın sağ altında mono 14px; birim (`m`) ayrı ve `--ink-faint`.
+## Bans
 
-## Görsel dil
+- Cam/blur, sualtı ışık huzmesi, caustic animasyonu.
+- 12px altı kart köşesi, keskin köşe; hap olmayan buton.
+- İkinci doygun accent (mor/mavi); accent ile `--danger` yan yana.
+- Büyük harf gövde, 14px altı gövde metni, italik.
+- Sürekli yüzen balık/kabarcık döngüsü, bounce, yatay parallax.
+- Beyaz/açık zemin.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 2px çizgi, 22px ızgara, tam yuvarlak uç; mercan, balık, dalga, kabarcık |
-| Fotoğraf | mercan/balık su altı, mavi-yeşil su tonu, tek mercan vurgusu, max %50 alan, 22px radius |
-| İllüstrasyon | yumuşak vektör: mercan dalı, anemon, kabarcık dizisi (2px, yuvarlak uç) |
-| Doku | su zerresi grain `.03`; kabarcık deseni yalnız hero görselinde |
-| Logo alanı | Baloo 2 600 küçük harf, sol üst 24px; mono varyant yalnız alt bilgi |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 22px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 22px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 22px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 22px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 22px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 22px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 22px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.5:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | 5/7 hero: solda başlık + tek hap CTA, sağda mercan öbeği + kabarcıklar | `shots/01-page.png` |
 | Dashboard | orta | 3 KPI (tür, ortalama derinlik, sıcaklık) + bölge dağılımı + gözlem listesi | `shots/01-page.png` |
@@ -154,43 +177,33 @@ Resif izleme raporlarından ve dalış kayıt defterinden: bölge (lagün, resif
 | Hata | düşük | danger çerçeve + neden + yeniden dene | `shots/01-page.png` |
 | Profil / ayar | orta | resif listesi, birim (m/ft, °C/°F), uyarı eşiği | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Her tür kaydı: tür adı + bölge chip'i + derinlik (m) + sıcaklık (°C).
-- Mercan accent yalnız eylem/seçim/uyarı; su tonları accent değildir.
-- Form dili: hap kontrol (999px), 22px form alanı, 36px kart (alt-sol 12px asimetri).
-- Gölge yalnız aşağı yönlü yumuşak; cam/blur, parlama, caustic efekti yok.
-- Gövde 16px Nunito, satır 1.66; etiket 11px Courier Prime büyük harf.
-- Su zerresi grain yalnız zemin katmanında; fotoğrafın üstünde kullanılmaz.
+## Accessibility
 
-## Yasaklar
-- Cam/blur, sualtı ışık huzmesi, caustic animasyonu.
-- 12px altı kart köşesi, keskin köşe; hap olmayan buton.
-- İkinci doygun accent (mor/mavi); accent ile `--danger` yan yana.
-- Büyük harf gövde, 14px altı gövde metni, italik.
-- Sürekli yüzen balık/kabarcık döngüsü, bounce, yatay parallax.
-- Beyaz/açık zemin.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 13.23:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.15:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.99:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.88:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.5:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 95.3 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
-- Gövde ≥ 4.5:1, büyük metin ≥ 3:1; ölçülen en düşük etkileşimli çift 8.15:1 (`ink-soft/bg`).
-- `--ink-faint` 4.99:1 — etiket/eksen için geçer; gövde metni olarak kullanılmaz.
-- Mercan accent metin olarak 6.50:1, dolgu üstünde 7.88:1 — ikisi de geçer; 11px altı accent metin kullanılmaz.
-- Durum yalnız renkle verilmez: bölge chip metni, uyarı etiketi + nokta.
-- Odak görünürlüğü: koyu su zemininde 2px mercan halka (6.50:1) + 3px offset; mercan dolgulu butonda `--accent-ink` halka.
-- 390px'te tablo kart demetine döner, derinlik ve sıcaklık alt satıra iner; yatay taşma yok.
-- `prefers-reduced-motion` açıkken giriş, pin/scrub, hover ölçeği ve kabarcık durur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Çocuk uygulaması" hissi | 14px altı metin + çok yuvarlak her şey | gövde 16px, asimetrik köşe, tek accent |
 | Kontrast düşük | su tonu üstünde `--ink-soft` kullanılmış | gövde `--ink`, ikincil `--ink-soft` |
 | "Cam" kayması | blur/parlama eklendi | `--blur: 0`, opak yüzey |
@@ -199,33 +212,31 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Mobilde taşıyor | 20px gutter + tablo | tek kolon, tablo karta |
 | Koyu modda doku | grain düşük | koyu blokta `.025` + çizgi %18 |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `ocean-current` — aynı sualtı ailesi, ölçülebilir üç farkla ayrışır: accent hue **10°** (mercan) vs **172°** (turkuaz, ±30° dışında); radius **22/36px asimetrik** vs **6/16px simetrik**; motion **0.98s · cubic-bezier(.2,.8,.3,1) · 22px** vs **0.83s · cubic-bezier(.35,.02,.25,1) · 40px**. Ortak zemin tonuna rağmen display ailesi (Baloo 2 vs Cormorant Garamond) ve biçim dili farklı olduğu için çakışma değil, bant çeşitliliği.
-- **Uyumlu:** `ethereal` — yumuşak geçişler; duygusal onboarding bölümlerinde eş.
-- **Uyumlu:** `organic-bio` — organik form dili; açık zemin bölümlerinde tamamlayıcı.
-- **Uyumlu:** `aurora-ui` — atmosferik koyu zemin; pazarlama hero'sunda eş.
-- **Yasak:** `neo-brutalism` — kalın siyah çerçeve ve keskin köşe, mercan formunu yok eder.
-- **Yasak:** `swiss-design` — ızgara katılığı ve 0 radius, yumuşak resif dilini bozar.
-- **Yasak:** `pixel-art` — piksel köşe ve sınırlı palet, su tonlarıyla çelişir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `ocean-current` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `ethereal` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `organic-bio` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `aurora-ui` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `swiss-design` | Two different ornamental languages compete on the same screen |
+| Mixing | `pixel-art` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://coralreefwatch.noaa.gov/ | resif bölgesi, sıcaklık stresi ve derinlik verisi sunumu |
-| https://www.icriforum.org/ | resif koruma statüsü ve izleme terminolojisi |
-| https://www.gbif.org/ | tür kaydı künyesi ve gözlem alanları |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | koyu su zemininde metin kontrastı |
-| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | odak halkası görünürlüğü |
-
-> **79-ocean-current ile ölçülen ayrım:** accent hue 10° vs 172° · radius 22/36 asimetrik vs 6/16 simetrik · motion 0.98s `cubic-bezier(.2,.8,.3,1)` 22px vs 0.83s `cubic-bezier(.35,.02,.25,1)` 40px. Üç eksende de farklı; aynı ürünün "resif" ve "akıntı" ekranlarında yan yana kullanılabilir.
+| Source | for what |
+| --- | --- |
+| https://coralreefwatch.noaa.gov/ | NOAA · Coral Reef Watch — resif bölgesi, sıcaklık stresi ve derinlik verisi sunumu |
+| https://www.icriforum.org/ | International Coral Reef Initiative — resif koruma statüsü ve izleme terminolojisi |
+| https://www.gbif.org/ | GBIF · biyolojik çeşitlilik kaydı — tür kaydı künyesi ve gözlem alanları |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast (Minimum) — koyu su zemininde metin kontrastı |
+| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | www.w3.org — odak halkası görünürlüğü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Coral Reef (styles/85-coral-reef/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="coral-reef"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Baloo 2 600) H1/H2; --font-body (Nunito 400/700) gövde 16px/1.66;
@@ -238,16 +249,15 @@ Hareket: enter 0.98s cubic-bezier(.2,.8,.3,1) 22px stagger 0.08 · scroll top 79
   pin açık scrub 1.05 +110% · hover 280ms scale 1.058; prefers-reduced-motion zorunlu.
 Yasak: cam/blur, caustic animasyonu, keskin köşe, ikinci accent, büyük harf gövde, sürekli yüzen balık/kabarcık, beyaz zemin.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Kart köşesi asimetrik (36/12), butonlar hap.
-- [ ] Mercan accent yalnız eylem/seçim/uyarı.
-- [ ] Her kayıtta bölge + derinlik + sıcaklık var.
-- [ ] Kontrast: gövde ≥ 4.5:1, accent üstü ≥ 4.5:1, `--ink-faint` yalnız dekoratif.
-- [ ] Odak halkası görünür, dokunma hedefi ≥ 44px.
-- [ ] 390px'te taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Coral Reef (coral-reef) · family: Nature & Organic (76–85)
+Token: --bg #0d2b30 · --surface #123840 · --ink #e6f4f2 · --accent #ff8a73 · --line rgba(230,244,242,.16)
+Radius: 22px / 36px · Typography: Baloo 2 / Nunito / Courier Prime
+Required: Her tür kaydı: tür adı + resif bölgesi (chip) + derinlik (m) + su sıcaklığı (°C) · Mercan öbeği kartları asimetrik köşe (36 36 36 12) ve 24px padding · Mercan accent yalnız eylem/seçim/uyarı; su tonları accent değil
+Banned: Cam/blur, sualtı ışık huzmesi, caustic animasyonu. · 12px altı kart köşesi, keskin köşe; hap olmayan buton. · İkinci doygun accent (mor/mavi); accent ile `--danger` yan yana.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -258,15 +268,25 @@ Yasak: cam/blur, caustic animasyonu, keskin köşe, ikinci accent, büyük harf 
   --ink: #e6f4f2; --ink-soft: #a4c6c4; --ink-faint: #779c9b;
   --accent: #ff8a73; --accent-ink: #2a0d08;
   --line: rgba(230,244,242,.16);
+  --danger: #fb513f;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 22px; --radius-lg: 36px;
-  --shadow: 0 10px 24px -14px rgba(4,14,16,.6); --shadow-hard: 0 0 0 1px rgba(255,138,115,.4);
+  --shadow: 0 10px 24px -14px rgba(4,14,16,.6); --shadow-hard: none;
   --font-display: "Baloo 2", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, sans-serif;
   --font-mono: "Courier Prime", ui-monospace, monospace;
-  --tracking: 0em; --blur: 0px; --grain: .03;
-  --danger: #ff7a7a; --danger-ink: #260606;
-  --ok: #7fe0b0; --warn: #ffc46b;
+  --tracking: 0em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `styles/85-coral-reef/token-block.css` ve (integrator aktardığında) `kit/tokens.css` içinde `[data-theme="dark"][data-style="coral-reef"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

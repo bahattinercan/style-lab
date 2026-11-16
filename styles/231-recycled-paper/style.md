@@ -1,220 +1,220 @@
 # 231 · Recycled Paper
 
-> **Bir cümlede:** Geri dönüşüm kâğıdı: kirli beyaz, zeytin accent, kenar izleri ve mono geri dönüşüm oranı.
+> **In one sentence:** Recycled paper: off-white, olive accent, edge marks and a mono recycled ratio.
 
 | | |
 |---|---|
-| **Hissiyat** | dürüst, sade, "%100 geri dönüşüm" |
-| **En iyi** | sürdürülebilir marka, ambalaj, kurumsal sorumluluk |
-| **Kaçın** | neon teknoloji |
-| **Zorluk** | orta · **Erişilebilirlik** | orta |
-| **Aile** | Materyal & Zanaat (222–231) · **Token** | `kit/tokens.css` → `[data-style="recycled-paper"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | honest, plain, "100% recycled" |
+| **Best for** | sustainable brand, packaging, corporate responsibility |
+| **Avoid** | neon teknoloji |
+| **Difficulty** | medium · **Accessibility** | medium |
+| **Family** | Material & Craft (222–231) · **Token** | `kit/tokens.css` → `[data-style="recycled-paper"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Recycled Paper, iddiayı sayıyla verir: oran, gramaj, sertifika.
+### What it is
+Recycled Paper states the claim in numbers: ratio, weight, certificate.
 
-### Ne değildir
-- Karton doku eklemek tek başına stil değildir.
-- Skeuomorphism değildir; doku var, taklit nesne yok.
+### What is not
+- Adding cardboard texture is not style alone.
+- It is not skeuomorphism; There is texture, no imitation objects.
 
-### Nereden gelir
-Letterpress, mürekkep, kâğıt ve metal baskı atölyelerinin malzeme bilgisi.
+### Where it comes from
+Material information of letterpress, ink, paper and metal printing workshops.
 
-### 3 saniyede tanıma testi
-1. Doku %5 altında mı?
-2. Başlık ince ve sessiz mi?
-3. Kenar keskin mi?
+### Recognition test in 3 seconds
+1. Is the tissue under 5%?
+2. Is the hood slim and quiet?
+3. Is the edge sharp?
 
-## Görsel imza
-- **Kirli beyaz:** mürekkep emmiş kâğıt tonu.
-- **Zeytin accent:** tek doğal vurgu.
-- **Kenar izi:** bölüm ayırıcı kesikli 1px.
-- **Oran etiketi:** mono `%100`.
-- **Tipografi:** Lora (display) + Lora (gövde) + IBM Plex Mono (mono etiket).
-- **Renk disiplini:** tek accent `#4d5a1f`; nötr skala `#f7f5ef` → `#1b1913`.
-- **Yarıçap:** `2px` / `4px`; Köşe 0–6px; malzeme kenarı keskin kalır, yumuşak yuvarlatma dokuyu zayıflatır.
+## Visual signature
+- **Off-white:** the tone of paper that has absorbed ink.
+- **Olive accent:** the only natural highlight.
+- **Edge mark:** dashed 1px section divider.
+- **Ratio label:** mono `%100`.
+- **Typography:** Lora (display) + Lora (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#4d5a1f`; neutral scale `#f7f5ef` → `#1b1913`.
+- **Radius:** `2px` / `4px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Geri dönüşüm oranı ve sertifika yazılır.
-2. Kâğıt gramajı mono.
-3. Kesikli çizgi yalnız ayırıcı.
+1. Recycled ratio and certificate are stated.
+2. Paper weight in mono.
+3. Dashed rules are used for dividers only.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#f7f5ef` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#eeebe2` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#fffef9` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#f4f1e8` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#1b1913` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#514c40` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#847e6c` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#4d5a1f` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#fbfdf2` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(27,25,19,.16)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#f7f5ef` | page background | as a card background |
+| `--bg-2` | `#eeebe2` | partition divider floor, table top | button background |
+| `--surface` | `#fffef9` | kart, input, modal | full-page background |
+| `--surface-2` | `#f4f1e8` | passive chip, hover background | primary button |
+| `--ink` | `#1b1913` | title, body, icon | large background |
+| `--ink-soft` | `#514c40` | secondary text, description | — |
+| `--ink-faint` | `#847e6c` | decorative label, separator text | interactive text |
+| `--accent` | `#4d5a1f` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fbfdf2` | text above accent | non-accent background |
+| `--line` | `rgba(27,25,19,.16)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **16.12:1** · `ink-soft/bg` **7.84:1** · `ink-faint/bg` **3.72:1 (dekoratif)** · `accent-ink/accent` **7.3:1**.
-- Malzeme rengi zemin: accent yalnız damga/etiket. Dokuyu renkle değil grain ve kenarla kur.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **16.12:1** · `ink-soft/bg` **7.84:1** · `ink-faint/bg` **3.72:1 (decorative)** · `accent-ink/accent` **7.3:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Lora) | 52px (mobil 32px) | 400 | 1.08 | -0.02em |
-| H2 | aynı | 28px | 600 | 1.2 | -0.015em |
-| H3 | aynı | 20px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Lora) | 16px | 400 | 1.62 | 0 |
-| Küçük gövde | aynı | 14px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
-| Buton | `--font-body` | 12px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Lora) | 52px (mobile 32px) | 400 | 1.08 | -0.02em |
+| H2 | same | 28px | 600 | 1.2 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Lora) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-- Başlık 52px/400 — dokunun yanında sessiz kalır. Etiketler mono, geniş tracking.
-- Ölçü: 66ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Kart aralığı 14px; malzeme fotoğrafı tam kenara taşabilir, metin taşamaz.
-- Bölüm dikey boşluğu masaüstü 72px, mobil 44px; kart içi padding 20px.
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Gölge tek seviye; malzeme hissi grain + kenar ile. Cam/blur yok.
-- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Köşe 0–6px; malzeme kenarı keskin kalır, yumuşak yuvarlatma dokuyu zayıflatır.
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Yasaklar
+## Bans
 
-- Yaprak ikonu yığını.
-- Parlak yeşil.
-- Yuvarlak 12px+ kart.
-- Taklit nesne (düğme gibi görünen taş).
-- Yüksek kontrastlı desen üstünde metin.
-- Sekizden fazla doku örneği.
+- A pile of leaf icons.
+- Bright green.
+- A rounded card above 12px.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 2px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 2px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 2px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 2px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 7.43:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.43:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1px çizgi, 20px; baskı işareti gibi |
-| Fotoğraf | Makro doku: kâğıt, metal, kumaş; yumuşak yan ışık |
-| İllüstrasyon | Yalnız doku örneği |
-| Doku | Malzeme greni (--grain: .04) |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-paper` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-paper` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Vitrin | orta | Makro doku + tek başlık | `shots/01-page.png` |
-| Numune / swatch | yüksek | Izgara 4 kolon, etiket mono | `shots/01-page.png` |
-| Detay | orta | Doku + künye tablosu | `shots/01-page.png` |
-| Süreç | orta | 3 adım, numaralı | `shots/01-page.png` |
-| Sipariş / talep | düşük | Form 2 kolon | `shots/01-page.png` |
-| Arşiv | yüksek | Yıl + malzeme etiketi | `shots/01-page.png` |
-| Atölye | düşük | Uzun metin + fotoğraf | `shots/01-page.png` |
-| İletişim | düşük | Adres + form | `shots/01-page.png` |
+| Vitrin | medium | Macro texture + single title | `shots/01-page.png` |
+| Numune / swatch | high | Grid 4 columns, label mono | `shots/01-page.png` |
+| Detay | medium | Texture + imprint table | `shots/01-page.png` |
+| Process | medium | 3 steps, numbered | `shots/01-page.png` |
+| Order / request | low | Form 2 kolon | `shots/01-page.png` |
+| archive | high | Year + material label | `shots/01-page.png` |
+| workshop | low | Long text + photo | `shots/01-page.png` |
+| Contact | low | Address + form | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 16.12:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 7.84:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 3.72:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 7.3:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 7.43:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 98.4 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 16.12:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.84:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.72:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.3:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.43:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 98.4 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Doku gürültü oluyor | Grain %10 üstü | %4'e indir, yalnız büyük yüzeyde kullan |
-| Başlık eziliyor | Doku metnin arkasında | Metin bloğunu opak yüzeye al |
+| Texture is noisy | Grain above 10% | Reduce to 4%, use only on large surface |
+| Title gets crushed | Texture behind text | Move text block to opaque surface |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `cork-oak` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `letterpress-print` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `synthwave` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `liquid-glass` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `cork-oak` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `letterpress-print` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `synthwave` | Two different ornamental languages compete on the same screen |
+| Mixing | `liquid-glass` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
 | https://en.wikipedia.org/wiki/Recycling | Recycling (Wikipedia) — oran/sertifika dili |
-| https://fonts.google.com/specimen/Lora | Lora (Google Fonts) — gövde serif |
+| https://fonts.google.com/specimen/Lora | Lora (Google Fonts) — serif body |
 | https://fonts.google.com/specimen/IBM+Plex+Mono | IBM Plex Mono (Google Fonts) — gramaj/oran |
 
 ## AI brief
 
 ```text
-Geri dönüşüm kâğıdı sayfası tasarla: kirli beyaz zemin, zeytin accent, kesikli ayırıcı, mono %, gramaj.
+Design a recycled paper page: off-white background, olive accent, dashed divider, mono %, paper weight.
 
-Stil: Recycled Paper (recycled-paper) · aile: Materyal & Zanaat (222–231)
+Style: Recycled Paper (recycled-paper) · family: Material & Craft (222–231)
 Token: --bg #f7f5ef · --surface #fffef9 · --ink #1b1913 · --accent #4d5a1f · --line rgba(27,25,19,.16)
-Yarıçap: 2px / 4px · Tipografi: Lora / Lora / IBM Plex Mono
-Zorunlu: Geri dönüşüm oranı ve sertifika yazılır. · Kâğıt gramajı mono. · Kesikli çizgi yalnız ayırıcı.
-Yasak: Yaprak ikonu yığını. · Parlak yeşil. · Yuvarlak 12px+ kart.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 2px / 4px · Typography: Lora / Lora / IBM Plex Mono
+Required: Recycled ratio and certificate are stated. · Paper weight in mono. · Dashed rules are used for dividers only.
+Banned: A pile of leaf icons. · Bright green. · A rounded card above 12px.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

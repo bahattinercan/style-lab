@@ -1,43 +1,43 @@
 # 108 · Komut Paleti
 
-> **Bir cümlede:** Fare olmadan çalışan stil: koyu grafit zemin, blur ile karartılmış arka plan, 44px komut satırları, keycap chip'ler ve tek açık (chalk) accent.
+> **In one sentence:** Fare olmadan çalışan stil: koyu grafit zemin, blur ile karartılmış arka plan, 44px komut satırları, keycap chip'ler ve tek açık (chalk) accent.
 
 | | |
 |---|---|
-| **Hissiyat** | hızlı, kesin, klavye-öncelikli, sessiz |
-| **En iyi** | geliştirici aracı, proje yönetimi klavye katmanı, komut satırı eklentisi, güç kullanıcı arayüzü |
-| **Kaçın** | vitrin/landing, görsel pazarlama, çocuk uygulaması — palet dili duygusal anlatım taşımaz |
-| **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük metin çifti 8.58:1; accent üstü 15.15:1) |
-| **Aile** | Etkileşim Paradigmaları (106–115) · **Token** | `kit/tokens.css` → `[data-style="command-palette"]` |
-| **Kompozisyon** | `product` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | hızlı, kesin, klavye-öncelikli, sessiz |
+| **Best for** | geliştirici aracı, proje yönetimi klavye katmanı, komut satırı eklentisi, güç kullanıcı arayüzü |
+| **Avoid** | vitrin/landing, görsel pazarlama, çocuk uygulaması — palet dili duygusal anlatım taşımaz |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Interactive (106–115) · **Token** | `kit/tokens.css` → `[data-style="command-palette"]` |
+| **Composition** | `product` · `utility` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Komut Paleti, arayüzü **tek bir arama kutusu + satır listesi** olarak kurar: 52px arama alanı, 44px komut satırları, sağda keycap chip'ler (⌘K), seçim için açık (chalk) accent dolgu ve arka planda blur ile karartılmış içerik. Görsel zenginliği feda eder; karşılığında **saniyeler içinde eylem** kazandırır.
 
 Kurucu kararları üç tanedir. Birincisi **accent açıktır**: `--accent` neredeyse beyaz (`#e8ecf2`), metin koyu; bu, seçim satırını "vurgu" değil "ışık" gibi gösterir ve karanlık arayüzde en yüksek okunurluğu verir. İkincisi **her eylem kısayollu**: satırda kısayol yoksa eylem palete girmez. Üçüncüsü **tek yüzen katman**: yalnız palet gölge taşır; satırlar gölgesizdir.
 
 Bedeli: keşfedilebilirlik — kullanıcı komutları bilmezse palet boş görünür. Bu yüzden palet açıldığında ilk 5 satır "önerilen" olarak dolu gelir.
 
-### Ne değildir
+### What is not
 - **Terminal UI (45) değildir:** 45 tüm ekranı terminale çevirir, monospace her yerdedir ve 0–2px radius kullanır; 108 yalnız **geçici bir katman**dır, gövde Inter, radius 6/12px.
 - **Utility (44) değildir:** 44 açık zeminli ürün arayüzüdür ve mavi accent taşır; 108 koyu zemin + chalk accent + keycap dili.
 - **Log Stream (49) değildir:** 49 akan olay satırlarıdır (okuma), 108 komut satırlarıdır (eylem) ve seçim dolgusu taşır.
 - **Trading Desk (47) değildir:** 47 amber vurgulu finans ekranıdır; 108'de renkli vurgu yok, tek açık accent var.
 
-### Nereden gelir
+### Where it comes from
 Editör komut paletlerinden (VS Code, Sublime) ve 2020'lerin "launcher" uygulamalarından (Raycast/Spotlight çizgisi). Bugün önemli çünkü ürünlerde eylem sayısı arttı; menü hiyerarşisi yerine tek arama kutusu daha hızlı. Klişeye dönmemesi için korunacak detay: **satır yüksekliği 44px** ve **kısayolsuz eylem olmaması**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin koyu grafit; arka plan içerik blur ile karartılmış.
 2. Arama alanı 52px, komut satırları 44px ve mono kısayol chip'leri sağda.
 3. Seçili satır açık (chalk) dolgu + koyu metin; gölge yok.
 4. Tüm etiketler mono, `.06em` tracking; radius 6/12px.
 5. Renkli vurgu yok: tek açık accent + nötr gri skala.
 
-## Görsel imza
+## Visual signature
 - **Chalk accent:** `--accent: #e8ecf2`, `--accent-ink: #14171c`; seçim satırı ve birincil eylem.
 - **Keycap chip:** 20px yükseklik, 4px radius, mono 11px 600, ⌘/⇧/↵ sembolleri.
 - **Satır ritmi:** arama 52px, satır 44px, alt kısayol şeridi 32px; görünür alanda en fazla 8 satır.
@@ -46,98 +46,124 @@ Editör komut paletlerinden (VS Code, Sublime) ve 2020'lerin "launcher" uygulama
 - **Fuzzy eşleşme vurgusu:** eşleşen harfler `--accent` metin; dolgu değil.
 - **Hareket imzası:** 190ms `cubic-bezier(.05,.9,.1,1)`, 5px — palet anlıktır, süzülmez.
 - **Landing hero (QA):** 8 satırlık komut paleti: 52px arama şeridi, seçili satır accent %10, sağda keycap sütunu, `esc` altbilgisi.
+- **Typography:** JetBrains Mono (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#e8ecf2`; neutral scale `#111318` → `#eef0f3`.
+- **Radius:** `6px` / `12px`; Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#111318` | sayfa zemini (grafit) | palet zemini |
-| `--bg-2` | `#16191f` | nav, ikincil bant | seçim satırı |
-| `--surface` | `#1b1f26` | palet gövdesi, kart | sayfa zemini |
-| `--surface-2` | `#222731` | arama alanı, keycap chip | modal zemini |
-| `--ink` | `#eef0f3` | başlık, komut adı | seçim satırı (orada accent-ink) |
-| `--ink-soft` | `#a9b1bc` | açıklama, ikincil etiket | başlık |
-| `--ink-faint` | `#767e8a` | yalnız tablo başlığı/ayırıcı | komut adı, etkileşimli metin |
-| `--accent` | `#e8ecf2` | seçim dolgusu, birincil eylem, eşleşme metni | geniş dekoratif zemin |
-| `--accent-ink` | `#14171c` | accent dolgu üstü metin | accent üstü ikincil metin |
-| `--line` | `rgba(238,240,243,.14)` | kenarlık, ayırıcı | metin rengi |
+1. Klavye öncelikli: her eylem bir kısayolla erişilebilir ve kısayol satırda görünür
+2. Palet satırı 44px, arama alanı 52px; satır sayısı görünür alanda en fazla 8
+3. Seçim yalnız accent dolgu + sol 2px çizgi ile işaretlenir; gölge kullanılmaz
+4. Accent açık (chalk) tondur; metin accent üstünde koyu accent-ink olur
+5. Açık palet arka planı blur + karartma ile ayrılır; palet dışı içerik etkileşimsiz
+6. Tüm kısayollar mono ve 11px; keycap chip 20px/4px radius
 
-- Ölçülen kontrast: `ink / bg` = **16.28:1** · `ink-soft / bg` = **8.58:1** · `accent-ink / accent` = **15.15:1** · `ink-faint / bg` = **4.53:1** (yalnız başlık/ayırıcı).
-- Tek vurgu kuralı (kesin): renkli vurgu yok — accent nötr-açık. `--danger` (#ff8494), `--ok` (#86e0ae), `--warn` (#ffd27a) yalnız durum metni/noktasında.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; `--surface-2` üstünde `--ink-faint` komut metni.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#111318` | page background | as a card background |
+| `--bg-2` | `#16191f` | partition divider floor, table top | button background |
+| `--surface` | `#1b1f26` | kart, input, modal | full-page background |
+| `--surface-2` | `#222731` | passive chip, hover background | primary button |
+| `--ink` | `#eef0f3` | title, body, icon | large background |
+| `--ink-soft` | `#a9b1bc` | secondary text, description | — |
+| `--ink-faint` | `#767e8a` | decorative label, separator text | interactive text |
+| `--accent` | `#e8ecf2` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#14171c` | text above accent | non-accent background |
+| `--line` | `rgba(238,240,243,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | JetBrains Mono (`--font-display`) | 30px (mobil 22px) | 600 | 1.20 | `-.01em` |
-| H2 | JetBrains Mono | 22px | 600 | 1.30 | `0` |
-| H3 | JetBrains Mono | 17px | 600 | 1.35 | `0` |
-| Gövde / komut | Inter (`--font-body`) | 14px | 400 | 1.50 | `0` |
-| Etiket / kısayol | JetBrains Mono (`--font-mono`) | 11px | 600 | 1.4 | `.06em` |
+- Measured contrast: `ink/bg` **16.28:1** · `ink-soft/bg` **8.58:1** · `ink-faint/bg` **4.53:1 (decorative)** · `accent-ink/accent` **15.15:1**.
+- Status colors are not derived from accent, but come from separate semantic tokens (--ok/--danger/--warn); accent is the action color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.4** — kullanılan basamaklar 11 · 12 · 13 · 14 · 17 · 22 · 30.
-- Ölçü önerisi: `h1 { font-size: clamp(22px, 3vw, 30px); line-height: 1.2 }` — palet başlığı asla dev olmaz.
-- Gövde satır uzunluğu en fazla **72ch**; komut açıklaması tek satır (kırpma ile).
-- Ağırlık kuralı: display 600, gövde 400/600, mono 600. 300 ve italik yok.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (JetBrains Mono) | 30px (mobile 22px) | 600 | 1.12 | -0.02em |
+| H2 | same | 22px | 600 | 1.22 | -0.015em |
+| H3 | same | 17px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 14px | 400 | 1.55 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.16em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 16px |
-| Container genişliği | 1040px (palet 640px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1040; 768 altında palet tam genişlik, satır 48px |
+- Dense display: 14px body, 13px table, 10.5px mono label. The line height cannot be lower than 1.55.
+- Measure: 72ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: **asimetri yok** — palet tek kolon, odak tek. Arka plan karartması sahneyi ikinci plana atar.
-- Bölüm ritmi: art arda en fazla **8** komut satırı; fazlası kaydırma, sayfalama yok.
-- Boşluklar 4'ün katı; satır içi padding 12px, dikey 8px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 20 · 28 · 40 · 56 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` + blur karartma | — | arka plan (etkileşimsiz) |
-| Palet gövdesi | `--surface` | `0 24px 60px rgba(0,0,0,.55)` | arama + liste + kısayol şeridi |
-| Seçim satırı | `--accent` dolgu | yok | aktif komut (metin `--accent-ink`) |
+- 8 columns of content + 4 columns of panels; tables full width. In-card padding 16px, line 40px.
+- Section vertical space 44px desktop, 28px mobile; card padding 16px.
 
-- Kenarlık formülü: `1px solid var(--line)`; seçim satırında çerçeve yok, yalnız dolgu + sol 2px çizgi.
-- Derinlik nereden gelir: **tek yüzen gölge** + blur karartma. Satır gölgesi, iç gölge ve ofset yok.
-- Radius: `--radius: 6px` (buton, input, chip çevresi), `--radius-lg: 12px` (palet, modal); keycap chip 4px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 32px | `0 12px` | 6px | 12px mono 600 | `--surface-2` + 1px `--line`, gölge yok | hover: surface-2 %85 + accent %15 · active: translateY(1px) · focus: 2px accent outline + 2px offset · disabled: opacity .4 · loading: 3 nokta (600ms) |
-| Buton (ikincil) | 32px | `0 12px` | 6px | 12px mono | şeffaf + 1px `--line`, `--ink-soft` metin | hover: `--surface-2` |
-| Input (arama) | 52px | `0 16px` | 6px | 15px Inter | `--surface-2` + 1px `--line` | focus: accent çerçeve + 2px outline offset 1px · filled: sağda temizle chip · error: `--danger` çerçeve + 11px etiket |
-| Palet satırı | 44px | `8px 12px` | 6px | 14px Inter + 11px mono kısayol | seçili: accent dolgu + accent-ink metin | hover: `--surface-2`; seçili: sol 2px accent çizgi |
-| Keycap chip | 20px | `0 6px` | 4px | 11px mono 600 | `--surface-2` + 1px `--line` | accent: accent dolgu + accent-ink |
-| Nav | 48px | `0 16px` | 0 | 13px Inter | `--bg-2` + alt hairline | palet açıkken arka plan blur + %60 karartma |
-| Tablo satırı | 44px | `8px 12px` | — | 13px Inter, tabular-nums | satır arası 1px `--line` | hover: `--surface-2` |
-| Modal / palet | içerik | `0` (bölümler kendi padding'i) | 12px | 17px display + mono kısayol | `--surface` + `0 24px 60px` | açılış: 5px belirme, 190ms |
-| Toast | 32px | `6px 12px` | 6px | 12px mono | `--surface` + sol uçta 4px accent çizgi | hata: çizgi `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ink-soft`, `--warn`, `--danger` | en fazla 3 seri; grafik yerine mono sayı satırı |
+- Surfaces are smooth; separation with 1px edge and background tone. Reference line in graphs --line.
+- Radius: `6px` (buton, input, chip), `12px` (kart, modal). Corner 4–6px; Soft rounding above 8px contradicts the operational picture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; seçili satırda halka yerine dolgu + sol çizgi.
-- Dokunma hedefi: en az 44×44px; 32px buton mobilde `min-height: 44px`, palet satırı zaten 44px (mobilde 48px).
+## Bans
 
-## Görsel dil
+- Kısayolsuz eylem (palete giremez).
+- Büyük hero görseli ve dekoratif illüstrasyon.
+- Geniş hap radius, kalın çerçeve.
+- Çoklu parlak renk (tek chalk accent).
+- Gölgeli satır / iç gölge.
+- Serif display.
+- Gradient for decoration.
+- More than five color series.
+- Animated counter.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, 20px ızgara; komut ikonları nötr `--ink-soft` |
-| Fotoğraf | yok — palet ekranı görsel taşımaz |
-| İllüstrasyon | yok; keycap chip ve satır hizası imza |
-| Doku | grain yok; blur 12px arka plan ayrımı |
-| Logo alanı | mono küçük harf wordmark + `>` işareti, 16px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 6px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 6px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 6px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 6px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 6px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 6px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 6px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 15.67:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1.5px line, 16px box; full of status icons |
+| photo | There is no photo on the data screen; single illustration in empty case |
+| illustration | Lonely empty/failed single line illustration |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | düşük | H1 30px mono + tek "⌘K ile başla" CTA; görsel yok | `shots/01-page.png` |
 | Dashboard | düşük | palet katmanı açılır; arka plan blur + %60 karartma | `shots/01-page.png` |
@@ -152,44 +178,33 @@ Editör komut paletlerinden (VS Code, Sublime) ve 2020'lerin "launcher" uygulama
 | Hata | düşük | `--danger` metin + nokta; palet kapanmaz | `shots/01-page.png` |
 | Profil / ayar | orta | kısayol eşleme tablosu (mono) | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Klavye öncelikli: her eylem bir kısayolla erişilebilir ve kısayol satırda görünür.
-- Palet satırı 44px, arama alanı 52px; görünür alanda en fazla 8 satır.
-- Seçim yalnız accent dolgu + sol 2px çizgi ile işaretlenir; gölge kullanılmaz.
-- Accent açık (chalk) tondur; accent üstünde metin daima `--accent-ink`.
-- Palet dışı içerik blur + karartma ile ayrılır ve etkileşimsiz olur.
-- Kısayollar mono 11px; keycap chip 20px / 4px radius.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.28:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.58:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.53:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 15.15:1 | ≥ 4.5 | button text |
+| focus ring/ground | 15.67:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 97.3 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Kısayolsuz eylem (palete giremez).
-- Büyük hero görseli ve dekoratif illüstrasyon.
-- Geniş hap radius, kalın çerçeve.
-- Çoklu parlak renk (tek chalk accent).
-- Gölgeli satır / iç gölge.
-- Serif display.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **8.58:1** (eşik 4.5); `ink-faint / bg` = **4.53:1** yalnız tablo başlığı/ayırıcıda.
-- `--ink-faint` komut adında ve etkileşimli metinde kullanılmaz; komut metni `--ink`.
-- Hareket/parlama hassasiyeti: düşük — 190ms geçiş, flash yok; `prefers-reduced-motion` paleti anlık açar.
-- Blur katman: `@supports not (backdrop-filter: blur(1px))` → opak `--bg` %85 karartma fallback.
-- Odak görünürlüğü: 2px accent outline + 2px offset; seçili satırda dolgu + sol 2px çizgi halka yerine geçer.
-- ARIA: palet `role="listbox"`, satırlar `role="option"`, aktif satır `aria-selected="true"` (WAI-ARIA combobox deseni).
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Palet "form" gibi görünüyor | satır yüksekliği 56px+ | 44px satır, 52px arama |
 | Kısayollar görünmüyor | chip sağa hizalanmamış | satırda `margin-left: auto` mono chip |
 | Seçim okunmuyor | accent renkli (mavi) kullanılmış | chalk accent + koyu metin |
@@ -197,28 +212,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Fare bağımlılığı | kısayolsuz eylem | eylem eklerken kısayol zorunlu |
 | Mobilde sıkışık | 44px satır korunmuş | 768 altı 48px, tam genişlik |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `terminal-ui` — aynı klavye-öncelikli dünya; Terminal alt panelde garnitür.
-- **Uyumlu:** `log-stream` — olay akışı bölümünde okuma katmanı.
-- **Uyumlu:** `utility` — açık temada ürün arayüzü; palet tek katman olarak.
-- **Yasak:** `maximalism` — çoklu renk/desen paletin tek odak kuralını bozar.
-- **Yasak:** `claymorphism` — yumuşak 3B formlar hız iddiasıyla çelişir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `terminal-ui` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `log-stream` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `utility` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `maximalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.nngroup.com/articles/command-palette/ | satır yoğunluğu ve kısayol gösterimi |
-| https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette | eylem adlandırma ve filtreleme |
-| https://www.w3.org/WAI/ARIA/apg/patterns/combobox/ | liste/arama erişilebilirlik modeli |
-| https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html | klavye ile tam erişim |
+| Source | for what |
+| --- | --- |
+| https://www.nngroup.com/articles/command-palette/ | Command palette (pattern) — satır yoğunluğu ve kısayol gösterimi |
+| https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette | VS Code Command Palette docs — eylem adlandırma ve filtreleme |
+| https://www.w3.org/WAI/ARIA/apg/patterns/combobox/ | WAI-ARIA · combobox — liste/arama erişilebilirlik modeli |
+| https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html | WCAG 2.2 · Keyboard — klavye ile tam erişim |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Komut Paleti (styles/108-command-palette/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="command-palette"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: --bg grafit; palet açıkken arka plan blur var(--blur)=12px + %60 karartma (opak fallback).
@@ -233,15 +248,15 @@ Hareket: enter 190ms cubic-bezier(.05,.9,.1,1) 5px stagger .018; scroll top 97% 
   pin yok; hover 65ms görsel 1.000. prefers-reduced-motion zorunlu (anlık açılış).
 Yasak: kısayolsuz eylem, hero görseli, hap radius, çoklu parlak renk, gölgeli satır, serif.
 Çıktı: bileşen kodu + tek paragraf not (seçim dolgusunu ve kısayol chip'ini nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: chalk seçim dolgusu, keycap chip, blur karartma, 44px satır.
-- [ ] Hard-coded renk/gölge/radius yok.
-- [ ] Kontrast: 16.28 / 8.58 / 15.15 — hepsi eşik üstü.
-- [ ] Her görünür eylemin kısayolu yazılı.
-- [ ] 390px'te tam genişlik palet, 48px satır, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken palet anlık açılıyor.
+Style: Komut Paleti (command-palette) · family: Interactive (106–115)
+Token: --bg #111318 · --surface #1b1f26 · --ink #eef0f3 · --accent #e8ecf2 · --line rgba(238,240,243,.14)
+Radius: 6px / 12px · Typography: JetBrains Mono / Inter / JetBrains Mono
+Required: Klavye öncelikli: her eylem bir kısayolla erişilebilir ve kısayol satırda görünür · Palet satırı 44px, arama alanı 52px; satır sayısı görünür alanda en fazla 8 · Seçim yalnız accent dolgu + sol 2px çizgi ile işaretlenir; gölge kullanılmaz
+Banned: Kısayolsuz eylem (palete giremez). · Büyük hero görseli ve dekoratif illüstrasyon. · Geniş hap radius, kalın çerçeve.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -252,15 +267,25 @@ Yasak: kısayolsuz eylem, hero görseli, hap radius, çoklu parlak renk, gölgel
   --ink: #eef0f3; --ink-soft: #a9b1bc; --ink-faint: #767e8a;
   --accent: #e8ecf2; --accent-ink: #14171c;
   --line: rgba(238,240,243,.14);
+  --danger: #e73d2d;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 6px; --radius-lg: 12px;
   --shadow: 0 24px 60px rgba(0,0,0,.55); --shadow-hard: none;
   --font-display: "JetBrains Mono", ui-monospace, monospace;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: 0em; --blur: 12px; --grain: 0;
-  --danger: #ff8494; --danger-ink: #14171c;
-  --ok: #86e0ae; --warn: #ffd27a;
+  --tracking: 0em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="command-palette"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

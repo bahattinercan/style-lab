@@ -1,43 +1,43 @@
 # 79 · Deniz & Akıntı
 
-> **Bir cümlede:** Derin suyun katmanlarını taklit eden koyu arayüz: teal zemin, ince akıntı çizgileri, serif display ve tek turkuaz vurgunun taşıdığı yön bilgisi.
+> **In one sentence:** Derin suyun katmanlarını taklit eden koyu arayüz: teal zemin, ince akıntı çizgileri, serif display ve tek turkuaz vurgunun taşıdığı yön bilgisi.
 
 | | |
 |---|---|
-| **Hissiyat** | derin, akışkan, sakin-güçlü, yönlü |
-| **En iyi** | denizcilik/lojistik izleme, su altı araştırma, iklim-deniz paneli, dalış/tekne ürünü |
-| **Kaçın** | çocuk ürünü, hızlı tüketim vitrini, ödeme ekranı — koyu teal güven ekranında ağırlaşır |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük metin çifti 9.06:1) |
-| **Aile** | Doğa & Organik (76–85) · **Token** | `kit/tokens.css` → `[data-style="ocean-current"]` |
-| **Kompozisyon** | `split` · `split` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | derin, akışkan, sakin-güçlü, yönlü |
+| **Best for** | denizcilik/lojistik izleme, su altı araştırma, iklim-deniz paneli, dalış/tekne ürünü |
+| **Avoid** | çocuk ürünü, hızlı tüketim vitrini, ödeme ekranı — koyu teal güven ekranında ağırlaşır |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Nature & Organic (76–85) · **Token** | `kit/tokens.css` → `[data-style="ocean-current"]` |
+| **Composition** | `split` · `split` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Deniz & Akıntı, ekranı **su kesiti** gibi kurar: koyu teal zemin katmanları (her katman 4–6 puan daha açık), üzerinde 1.5px eğri akıntı çizgileri ve yön okları; display serif (Cormorant Garamond), gövde serif (Lora), okuma satır aralığı 1.75. Renk çeşitliliğini feda eder; karşılığında **yön ve derinlik** okunurluğunu kazanır.
 
 Kurucu kararları üç tanedir. Birincisi **tek parlak renk**: turkuaz accent yalnız akış/aktif durum içindir; ikinci neon yok, glow accent çizgisinde kalır. İkincisi **serif gövde**: 1.75 satır aralığıyla uzun metni su gibi akıtır — bu, listedeki en yüksek gövde satır aralığıdır. Üçüncüsü **akıntı yönü bilgi taşır**: her eğri çizgi bir akış yönü, oku da yönü gösterir; süs amaçlı eğri çizilmez.
 
 Bedeli: koyu zemin + serif küçük puntoda zayıflar. Bu yüzden gövde 16px'in altına inmez ve `ink-soft` (9.06:1) en küçük metin rengidir.
 
-### Ne değildir
+### What is not
 - **Cybercore (23) değildir:** 23 mono terminal + mor/pembe neon; 79 serif display + tek turkuaz, kutu/terminal dili yok.
 - **Ethereal (29) değildir:** 29 sis ve düşük kontrastla rüya kurar; 79'da `ink-soft/bg` **9.06:1**, akıntı çizgileri keskin.
 - **Ocean-current / Glassmorphism (08) değildir:** 79 cam kullanmaz; katman ayrımı parlaklık farkı + 1px çizgi.
 - **Scandinavian Dark (40) değildir:** 40 sıcak nötr + Fraunces ile sakinlik; 79 soğuk teal + akıntı çizgisi imzası.
 
-### Nereden gelir
+### Where it comes from
 Oşinografi haritalarından (akıntı vektörleri, izotermler) ve klasik denizcilik yayıncılığından (serif başlık + ölçüm tablosu). Bugün geri dönüyor çünkü iklim/su verisi ürünleri "yön" anlatmak zorunda; oklar ve eğriler bunu tek bakışta verir. Klişeye dönmemesi için korunacak detay: **akıntının yön taşıması** ve **serif gövdenin 1.75 satır aralığıyla kalması**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin koyu teal; katmanlar arasında belirgin ama küçük parlaklık farkı var.
 2. İnce eğri akıntı çizgileri ve yön okları görünüyor (1.5px, turkuaz).
 3. Başlıklar serif; gövde de serif ve satır aralığı geniş.
 4. Buton 46px, radius 6px; gölge yok, yalnız cam/modal katmanında gölge var.
 5. Ekranda tek parlak renk: turkuaz; ikinci neon yok.
 
-## Görsel imza
+## Visual signature
 - **Akıntı zemin çizgileri:** `repeating-linear-gradient(96deg, accent %7 0 1px, transparent 1px 46px)` — gövde zemini.
 - **Katman parlaklığı:** `bg #0a2029` → `bg-2 #0e2833` → `surface #12323e` → `surface-2 #163a48` (her adım 4–6 puan).
 - **Akıntı eğrileri:** `repeating-radial-gradient` (26px aralık, accent %20) hero görselinde; yön oku zorunlu.
@@ -45,99 +45,124 @@ Oşinografi haritalarından (akıntı vektörleri, izotermler) ve klasik denizci
 - **Serif ölçek:** Cormorant Garamond 56/36/24, Lora gövde 16px/1.75.
 - **Cam yalnız nav:** blur 4px, opaklık %88 — su yüzeyi hissi, tam cam değil.
 - **Hareket imzası:** 830ms `cubic-bezier(.35,.02,.25,1)`, 40px — su kütlesi gibi ağır gelir.
+- **Typography:** Cormorant Garamond (display) + Lora (body) + Courier Prime (mono label).
+- **Colour discipline:** a single accent `#46d8c4`; neutral scale `#0a2029` → `#dff0f4`.
+- **Radius:** `6px` / `16px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#0a2029` | `#01070c` | kart zemini |
-| `--bg-2` | `#0e2833` | `#041019` | birincil CTA |
-| `--surface` | `#12323e` | `#061723` | sayfa zemini |
-| `--surface-2` | `#163a48` | `#0a2130` | modal zemini |
-| `--ink` | `#dff0f4` | `#f2fcff` | dekoratif çizgi |
-| `--ink-soft` | `#a3c4cd` | `#b9d9e0` | başlık |
-| `--ink-faint` | `#6f939d` | `#83aab4` | etkileşimli metin |
-| `--accent` | `#46d8c4` | `#8affe8` | geniş dekoratif dolgu |
-| `--accent-ink` | `#04211d` | `#02100c` | accent üstü ikincil metin |
-| `--line` | `rgba(223,240,244,.16)` | `rgba(242,252,255,.22)` | metin rengi |
+1. Zemin derin su (--bg teal); katmanlar arasında 4–6 puan parlaklık farkı
+2. Akıntı çizgisi imza öğedir: 1.5px eğri hat + yön oku, en az bir bölümde görünür
+3. Tek parlak renk: accent turkuaz; ikinci neon yok, glow yalnız accent çizgisinde
+4. Serif display (Cormorant Garamond) + serif gövde (Lora); geometrik sans yalnız etikette yok
+5. Gövde satır aralığı ≥ 1.7 (su hissi boşlukla kurulur)
+6. Tüm ölçümler birimli: m, kn, °C, ‰
 
-- Ölçülen kontrast: `ink / bg` = **14.31:1** · `ink-soft / bg` = **9.06:1** · `accent-ink / accent` = **9.58:1** · `ink-faint / bg` = **5.06:1** (yalnız dekoratif çizgi).
-- Tek vurgu kuralı (kesin): tek parlak renk. `--danger` (`#ff8a80`) ve `--warn` (`#ffc46b`) parlamaz; yalnız metin + işaret rengi.
-- Yasak kombinasyon: accent dolgu üstünde `--ink-soft`; `--surface-2` üstünde `--ink-faint` ölçüm etiketi.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0a2029` | page background | as a card background |
+| `--bg-2` | `#0e2833` | partition divider floor, table top | button background |
+| `--surface` | `#12323e` | kart, input, modal | full-page background |
+| `--surface-2` | `#163a48` | passive chip, hover background | primary button |
+| `--ink` | `#dff0f4` | title, body, icon | large background |
+| `--ink-soft` | `#a3c4cd` | secondary text, description | — |
+| `--ink-faint` | `#6f939d` | decorative label, separator text | interactive text |
+| `--accent` | `#46d8c4` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#04211d` | text above accent | non-accent background |
+| `--line` | `rgba(223,240,244,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Cormorant Garamond (`--font-display`) | 56px (mobil 34px) | 500 | 1.04 | `.005em` |
-| H2 | Cormorant Garamond | 36px | 500 | 1.14 | `.01em` |
-| H3 | Cormorant Garamond | 24px | 500 | 1.26 | `.01em` |
-| Gövde | Lora (`--font-body`) | 16px | 400 | **1.75** | `0` |
-| Küçük gövde | Lora | 14px | 400 | 1.7 | `0` |
-| Etiket / mono | Courier Prime (`--font-mono`) | 12px | 400 | 1.4 | `.06em` |
+- Measured contrast: `ink/bg` **14.31:1** · `ink-soft/bg` **9.06:1** · `ink-faint/bg` **5.06:1 (decorative)** · `accent-ink/accent` **9.58:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı: **1.55** — kullanılan basamaklar 12 · 14 · 16 · 24 · 36 · 56.
-- Ölçü önerisi: `h1 { font-size: clamp(34px, 5.4vw, 56px); line-height: 1.04 }`.
-- Gövde satır uzunluğu en fazla **60ch**; serif + koyu zemin nedeniyle 66ch üstü okunmaz.
-- Ağırlık kuralı: display 500, gövde 400/600, mono 400. Geometrik sans yok, italik yok.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Cormorant Garamond) | 56px (mobile 34px) | 400 | 1.08 | -0.02em |
+| H2 | same | 36px | 600 | 1.2 | -0.015em |
+| H3 | same | 24px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Lora) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier Prime) | 12px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 24px |
-| Container genişliği | 1240px (içerik 1192px) |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 390 / 768 / 1240; 768 altında tek kolon, akıntı çizgileri 64px aralığa çıkar |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** 7/5 bölünme — görsel geniş kolonda, metin dar kolonda (60ch).
-- Bölüm ritmi: art arda en fazla **3** kart; dördüncüsü tam genişlik "akıntı şeridi" olur.
-- Kart padding 26px; bölüm dikey boşluğu 84px (mobil 48px).
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | su kesiti + akıntı çizgileri |
-| Kart | `--surface` | yok | kart, panel; 1px `--line` + 1.5px üst akıntı çizgisi |
-| Yüzen katman | `--surface` + accent çerçeve | `0 16px 40px rgba(3,12,16,.55)` | modal, menü, toast |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; aktif/ölçüm kartında `1px solid var(--accent)`.
-- Derinlik nereden gelir: **katman parlaklığı** (bg → surface 4–6 puan) + 1px çizgi; gölge yalnız yüzen katmanda.
-- Radius: `--radius: 6px` (buton, input), `--radius-lg: 16px` (kart, panel, modal); chip 999px. Üst sınır 20px.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 46px | `0 24px` | 6px | 15px Lora 600 | accent dolgu, accent-ink metin, gölge yok | hover: accent %86 + ink · active: translateY(1px) · focus: 2px accent outline + 3px offset · disabled: opacity .4 + kesikli çerçeve · loading: akıntı çizgisi soldan sağa (900ms, tek tur) |
-| Buton (ikincil) | 46px | `0 24px` | 6px | 15px Lora 600 | şeffaf + 1px accent %52 | hover: accent %10 zemin |
-| Input | 46px | `0 16px` | 6px | 15px Lora | `--bg-2` + 1px `--line` | focus: accent çerçeve + 2px outline offset 2px · error: `--danger` çerçeve + 12px mono etiket · disabled: opacity .4 |
-| Kart | içerik | 26px | 16px | H3 + gövde | `--surface` + 1px `--line` + 1.5px üst akıntı çizgisi | hover: üst çizgi accent %55 |
-| Chip / badge | 26px | `0 12px` | 999px | 12px Lora 600 | `--bg-2` + 1px `--line` | accent: accent %15 zemin + accent metin |
-| Nav | 60px | `0 28px` | 0 | 15px Lora | `bg-2 %88` + blur 4px + alt 1.5px accent %22 | aktif: accent metin |
-| Tablo satırı | 42px | `8px 12px` | — | 14px Lora, tabular-nums | satır arası 1px `--line` | hover: `--surface-2` |
-| Modal / sheet | içerik | 28px | 16px | 24px display + mono derinlik etiketi | `--surface` + 1px accent + `0 16px 40px` | açılış: 40px yukarıdan, 830ms |
-| Toast | 42px | `10px 16px` | 6px | 14px Lora 600 | `--surface` + sol uçta 6px accent damla | hata: damla `--danger` |
-| Grafik paleti | — | — | — | — | `--accent`, `--ink`, `--warn`, `--danger` | en fazla 4 seri; akıntı çizgisi 1.5px, yön oku zorunlu |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `6px` (buton, input, chip), `16px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px` — koyu teal + akıntı çizgileri üstünde 1px kaybolur.
-- Dokunma hedefi: en az 44×44px; butonlar 46px. Chip 26px, hedef padding ile 44px.
+## Bans
 
-## Görsel dil
+- Saf siyah `#000` zemin.
+- İkinci neon / renkli glow.
+- Keskin 0px köşe, kalın 1.5px üstü çerçeve.
+- Geometrik sans display.
+- Sürekli akıntı animasyonu (ekran başına ≤1).
+- Emoji ile durum bildirimi, renk-only yön göstergesi.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, yuvarlak uç, 24px ızgara; dalga/ok/yön sembolleri |
-| Fotoğraf | su yüzeyi/derinlik: düşük doygunluk, turkuaz-teal ton, 16px radius kırpma |
-| İllüstrasyon | akıntı eğrileri ve derinlik kesiti; serbest |
-| Doku | ince akıntı çizgileri (1px, accent %14); grain 0 |
-| Logo alanı | serif küçük harf wordmark + dalga çizgisi, 24px çevre boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 6px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 6px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 6px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 6px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 6px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 6px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 6px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 9.49:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 7/5: sağda akıntı görseli, solda serif H1 + tek CTA | `shots/01-page.png` |
 | Dashboard | orta | akıntı şeması + ölçüm tablosu; tek parlak renk | `shots/01-page.png` |
@@ -152,43 +177,33 @@ Oşinografi haritalarından (akıntı vektörleri, izotermler) ve klasik denizci
 | Hata | düşük | damla/çizgi `--danger`; zemin değişmez | `shots/01-page.png` |
 | Profil / ayar | orta | iki kolon; ölçüm birimleri mono | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Zemin derin su (`--bg` teal); katmanlar arasında 4–6 puan parlaklık farkı korunur.
-- Akıntı çizgisi imza öğedir: 1.5px eğri hat + yön oku, en az bir bölümde görünür.
-- Tek parlak renk (accent); ikinci neon yok, glow yalnız accent çizgisinde.
-- Serif display + serif gövde; gövde satır aralığı ≥ 1.7.
-- Gölge yalnız yüzen katmanda (`0 16px 40px`); kart gölgesiz.
-- Tüm ölçümler birimli: m, kn, °C, ‰.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 14.31:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 9.06:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.06:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 9.58:1 | ≥ 4.5 | button text |
+| focus ring/ground | 9.49:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 94.2 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Saf siyah `#000` zemin.
-- İkinci neon / renkli glow.
-- Keskin 0px köşe, kalın 1.5px üstü çerçeve.
-- Geometrik sans display.
-- Sürekli akıntı animasyonu (ekran başına ≤1).
-- Emoji ile durum bildirimi, renk-only yön göstergesi.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük metin çifti `ink-soft / bg` = **9.06:1** (eşik 4.5); `ink-faint / bg` = **5.06:1** yalnız dekoratif çizgi ve eksende.
-- `--ink-faint` etkileşimli metinde kullanılmaz; ölçüm etiketi `--ink-soft`.
-- Hareket/parlama hassasiyeti: düşük — flash yok; `prefers-reduced-motion` pin ve akıntı animasyonunu kapatır.
-- Şeffaf yalnız nav (`bg-2 %88` + blur 4px); `@supports` yoksa opak `--bg-2` fallback.
-- Odak görünürlüğü: koyu teal + akıntı çizgileri üstünde 2px accent outline + **3px** offset.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "siyah boşluk" | katman farkı 2 puana inmiş | bg → surface 4–6 puan farkı koru |
 | Neon oyun arayüzü | ikinci parlak renk eklenmiş | tek accent; diğer durumlar parlamaz |
 | Serif okunmuyor | satır aralığı 1.5'e düşmüş | 1.75 sabit, ölçü ≤60ch |
@@ -196,28 +211,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Kontrast düşük | accent metin olarak kullanılmış | accent dolgu/çizgi; metin `--ink` |
 | Pin titriyor | iki ayrı rAF döngüsü | tek ScrollTrigger batch, ekran başına 1 pin |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `ethereal` — sis ve yumuşak geçiş; Ethereal tek bölümde (hikâye) garnitür.
-- **Uyumlu:** `aurora-ui` — atmosferik katman; Aurora yalnız hero zemininde.
-- **Uyumlu:** `wabi-sabi` — doğal doku ve sakinlik; Wabi-Sabi tek bölümde.
-- **Yasak:** `neo-brutalism` — sert ofset gölge ve kalın çerçeve akışkanlık iddiasını bozar.
-- **Yasak:** `safety-signage` — yüksek sesli uyarı dili derinlik/sakinlik ile çelişir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `ethereal` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `aurora-ui` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `wabi-sabi` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `safety-signage` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Ocean_current | akıntı yönü, hız birimleri (kn) |
-| https://en.wikipedia.org/wiki/Thermohaline_circulation | derinlik katmanları ve renk skalası |
-| https://www.noaa.gov/education/resource-collections/ocean-coasts | ölçüm etiketleri ve lejant |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | teal zemin üstü metin kontrastı |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Ocean_current | Ocean current — akıntı yönü, hız birimleri (kn) |
+| https://en.wikipedia.org/wiki/Thermohaline_circulation | Thermohaline circulation — derinlik katmanları ve renk skalası |
+| https://www.noaa.gov/education/resource-collections/ocean-coasts | NOAA · ocean data viz — ölçüm etiketleri ve lejant |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast Minimum — teal zemin üstü metin kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Deniz & Akıntı (styles/79-ocean-current/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="ocean-current"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Zemin: --bg derin teal + ince akıntı çizgileri (repeating-linear-gradient 96deg, accent %7, 46px).
@@ -232,15 +247,15 @@ Hareket: enter 830ms cubic-bezier(.35,.02,.25,1) 40px stagger .115; scroll top 7
   pin scrub 1.05 (+180%, ekran başına 1); hover 380ms görsel 1.022. prefers-reduced-motion zorunlu.
 Yasak: saf siyah, ikinci neon, 0px köşe, kalın çerçeve, geometrik sans display, >1 sürekli akıntı animasyonu.
 Çıktı: bileşen kodu + tek paragraf not (akıntı çizgisini ve yön okunu nereye koydun).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] İmza öğelerinden en az 2'si görünüyor: akıntı çizgisi + yön oku, katman parlaklığı, serif ölçek, kart üst çizgisi.
-- [ ] Hard-coded renk/gölge/radius yok.
-- [ ] Kontrast: 14.31 / 9.06 / 9.58 — hepsi eşik üstü.
-- [ ] Odak halkası 2px accent + 3px offset, akıntı çizgileri üstünde görünür.
-- [ ] 390px'te tek kolon, çizgi aralığı 64px, taşma yok.
-- [ ] `prefers-reduced-motion` açıkken pin ve akıntı animasyonu duruyor.
+Style: Deniz & Akıntı (ocean-current) · family: Nature & Organic (76–85)
+Token: --bg #0a2029 · --surface #12323e · --ink #dff0f4 · --accent #46d8c4 · --line rgba(223,240,244,.16)
+Radius: 6px / 16px · Typography: Cormorant Garamond / Lora / Courier Prime
+Required: Zemin derin su (--bg teal); katmanlar arasında 4–6 puan parlaklık farkı · Akıntı çizgisi imza öğedir: 1.5px eğri hat + yön oku, en az bir bölümde görünür · Tek parlak renk: accent turkuaz; ikinci neon yok, glow yalnız accent çizgisinde
+Banned: Saf siyah `#000` zemin. · İkinci neon / renkli glow. · Keskin 0px köşe, kalın 1.5px üstü çerçeve.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -251,15 +266,25 @@ Yasak: saf siyah, ikinci neon, 0px köşe, kalın çerçeve, geometrik sans disp
   --ink: #dff0f4; --ink-soft: #a3c4cd; --ink-faint: #6f939d;
   --accent: #46d8c4; --accent-ink: #04211d;
   --line: rgba(223,240,244,.16);
+  --danger: #f04636;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 6px; --radius-lg: 16px;
   --shadow: 0 16px 40px rgba(3,12,16,.55); --shadow-hard: none;
-  --font-display: "Cormorant Garamond", "Lora", Georgia, serif;
-  --font-body: "Lora", "Inter", Georgia, serif;
+  --font-display: "Cormorant Garamond", system-ui, sans-serif;
+  --font-body: "Lora", system-ui, sans-serif;
   --font-mono: "Courier Prime", ui-monospace, monospace;
-  --tracking: .015em; --blur: 4px; --grain: 0;
-  --danger: #ff8a80; --danger-ink: #0a2029;
-  --ok: #46d8c4; --warn: #ffc46b;
+  --tracking: .015em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="ocean-current"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

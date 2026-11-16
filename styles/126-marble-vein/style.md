@@ -1,43 +1,43 @@
 # 126 · Marble Vein
 
-> **Bir cümlede:** Damarı kesilmiş bir taş plaka gibi sakin, grafitle çizilmiş lüks bir malzeme kataloğu arayüzü.
+> **In one sentence:** Damarı kesilmiş bir taş plaka gibi sakin, grafitle çizilmiş lüks bir malzeme kataloğu arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | sakin, soğuk, ağır, kusursuz |
-| **En iyi** | malzeme/taş kataloğu, mimarlık stüdyosu portfolyosu, mermer & yüzey seçici, lüks ürün konfigüratörü |
-| **Kaçın** | hızlı operasyon paneli, oyun/etkinlik, çocuk uygulamaları — burada dinginlik "yavaş" okunur |
-| **Zorluk** | düşük · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 6.84:1) |
-| **Aile** | Materyal & Lüks (126–135) · **Token** | `kit/tokens.css` → `[data-style="marble-vein"]` |
-| **Kompozisyon** | `fullbleed` · `inline` · `sparse` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | sakin, soğuk, ağır, kusursuz |
+| **Best for** | malzeme/taş kataloğu, mimarlık stüdyosu portfolyosu, mermer & yüzey seçici, lüks ürün konfigüratörü |
+| **Avoid** | hızlı operasyon paneli, oyun/etkinlik, çocuk uygulamaları — burada dinginlik "yavaş" okunur |
+| **Difficulty** | düşük · **Accessibility** |  |
+| **Family** | Material & Luxury (126–135) · **Token** | `kit/tokens.css` → `[data-style="marble-vein"]` |
+| **Composition** | `fullbleed` · `inline` · `sparse` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Marble Vein, arayüzü **kesilmiş bir taş plaka** gibi kurar: soğuk beyaz zemin, tek ince damar çizgisi, grafitle yazılmış künye. Renk neredeyse yoktur — lüks, süsle değil **yüzey kalitesi ve hizalama** ile anlatılır.
 
 Üç kurucu karar: (1) **grafitle accent** — siyaha yakın bir grafit `#242b2e` tek vurgu; altın/parlak metal yok; (2) **plaka fiziği** — radius 5px (kontrol) ve 12px (kart), 1px çizgi, gölge yalnız yüzen katmanda; (3) **serif + nötr sans** — Lora 600 başlık, Inter 400 gövde, mono yalnız ölçü ve etiketlerde.
 
 Bedeli: vurgu yokluğu hızlı tarama zorlaştırır; bu yüzden her ekranda **tek bir damar çizgisi ve tek birincil eylem** bulunur. İkinci bir vurgu rengi eklenirse stil "katalog"dan "dekorasyon"a kayar.
 
-### Ne değildir
+### What is not
 - **Luxury Typography (04) değildir:** krem zemin, altın accent ve ince serif ile butik dil kurar; Marble Vein soğuk beyaz + grafit accent ve 5/12px ölçülü plaka köşesi kullanır.
 - **Art Deco (26) değildir:** koyu yeşil + altın, simetri ve geometrik süs vardır; burada süs yok, damar tek çizgidir.
 - **Editorial Design (03) değildir:** sıcak krem kâğıt ve terracotta accent ile dergi kurar; bu stil taş beyazı ve grafitle çalışır.
 - **Machined Metal Panel (57) değildir:** soğuk gri + pas accent ve endüstriyel panel dili; 126 malzeme kataloğu ve lüks vitrin dilidir.
 
-### Nereden gelir
+### Where it comes from
 Mermer ocağı ve mimarlık malzeme kütüphanesi geleneğinden: plaka adı, yüzey (mat/parlak), kalınlık, damar yönü, parti no. Bugün yeniden kullanılmasının nedeni: malzeme seçimi yapan mimar/iç mimar ekranda **doku ve damarı** görmek istiyor ama arayüzler genelde e-ticaret ızgarasına benziyor. Klişeye dönüşmemesi için korunacak detay: **tek damar çizgisi** ve grafit accent.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin soğuk beyaz; accent neredeyse siyah (grafit), altın/parlak metal yok.
 2. Ekranda tek bir ince damar çizgisi var; süs tekrarı yok.
 3. Köşeler 5px (buton/input) ve 12px (kart); hap buton yok.
 4. Başlıklar yüksek kontrastlı serif (Lora 600, Didone değil), gövde nötr sans.
 5. Her kartta tür + yüzey + kalınlık (mm) + ağırlık (kg) künyesi var.
 
-## Görsel imza
+## Visual signature
 - **Grafit accent:** `#242b2e` yalnız birincil eylem, seçili öğe ve odak halkası; accent üstü metin beyaz.
 - **Tek damar çizgisi:** hero görselinde 1px eğri damar; sayfada tekrar eden ikinci damar yok.
 - **Plaka köşesi:** radius 5px (kontrol) / 12px (kart, modal); 12px üstü yok.
@@ -45,101 +45,124 @@ Mermer ocağı ve mimarlık malzeme kütüphanesi geleneğinden: plaka adı, yü
 - **Yüzey tonu:** `--bg` → `--surface` yalnız 1–2 ton fark; derinlik gölgeyle değil çizgiyle.
 - **Taş tozu:** `--grain: .02` tüm zeminde; fotoğrafın üstünde kullanılmaz.
 - **Ölçü sütunu:** kalınlık ve ağırlık sabit sütunlarda, birim ayrı ve `--ink-faint`.
+- **Typography:** Lora (display) + Inter (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#242b2e`; neutral scale `#f3f4f3` → `#14181a`.
+- **Radius:** `5px` / `12px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#f3f4f3` | taş zemini | kart zemini |
-| `--bg-2` | `#e8eae8` | bölüm bandı | birincil buton |
-| `--surface` | `#fdfdfc` | plaka kartı, form | sayfa zemini |
-| `--surface-2` | `#f0f2f0` | chip, hover, başlık satırı | metin zemini |
-| `--ink` | `#14181a` | metin, çizgi | dekoratif dolgu |
-| `--ink-soft` | `#4c565a` | ikincil metin, açıklama | accent dolgu üstü |
-| `--ink-faint` | `#748083` | birim, etiket, damar çizgisi | gövde, etkileşimli metin |
-| `--accent` | `#242b2e` | birincil eylem, seçim, odak | geniş dekoratif dolgu |
-| `--accent-ink` | `#f5f7f6` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(20,24,26,.14)` | plaka çerçevesi, ayırıcı | metin |
+1. Her taş kaydı: tür + yüzey (mat/parlak) + kalınlık (mm) + ağırlık (kg)
+2. Damar çizgisi ekran başına 1, 1px ve ince; süs olarak çoğaltılmaz
+3. Katman ayrımı 1px çizgi + 1px ton; gölge yalnız modal/menüde
+4. Lora 600 başlık, Inter 400 gövde; mono yalnız ölçü/etiket
+5. Radius 5px ve 12px dışında değer yok; hap buton yok
+6. Taş tozu grain .02 yalnız zemin katmanında
 
-- Ölçülen kontrast: `ink/bg` **16.20:1** · `ink-soft/bg` **6.84:1** · `accent-ink/accent` **13.37:1** · `ink-faint/bg` **3.69:1** · accent metin olarak bg'ye **13.04:1**.
-- Tek vurgu kuralı: grafit yalnız eylem/seçim/odak. Durumlar `--ok` (koyu yeşil), `--warn` (hardal), `--danger` (koyu kiremit) — yalnız etiket ve 2px şerit.
-- Yasak kombinasyon: grafit accent yanında ikinci vurgu rengi; accent üstünde `--ink-soft`; `--ink-faint` gövde metni.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#f3f4f3` | page background | as a card background |
+| `--bg-2` | `#e8eae8` | partition divider floor, table top | button background |
+| `--surface` | `#fdfdfc` | kart, input, modal | full-page background |
+| `--surface-2` | `#f0f2f0` | passive chip, hover background | primary button |
+| `--ink` | `#14181a` | title, body, icon | large background |
+| `--ink-soft` | `#4c565a` | secondary text, description | — |
+| `--ink-faint` | `#748083` | decorative label, separator text | interactive text |
+| `--accent` | `#242b2e` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f5f7f6` | text above accent | non-accent background |
+| `--line` | `rgba(20,24,26,.14)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Lora | 54px | 600 | 1.06 | -0.01em |
-| H2 | Lora | 30px | 600 | 1.16 | 0 |
-| H3 | Inter | 21px | 600 | 1.28 | 0 |
-| Gövde | Inter | 16px | 400 | 1.64 | 0 |
-| Etiket / mono | JetBrains Mono | 11px | 700 | 1.35 | 0.16em, büyük harf |
-| Ölçü / tablo | JetBrains Mono | 13px | 400 | 1.45 | 0.02em, tabular |
+- Measured contrast: `ink/bg` **16.2:1** · `ink-soft/bg` **6.84:1** · `ink-faint/bg` **3.69:1 (decorative)** · `accent-ink/accent` **13.37:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.7 (16 → 30 → 54); kullanılan basamaklar: 11 · 12 · 13 · 16 · 21 · 30 · 54 · (mobil 32).
-- Ölçü önerisi: `h1 { font-size: clamp(32px, 4.6vw, 54px) }`.
-- Gövde metni maksimum satır uzunluğu: 62ch; künye satırı 44ch'te kırılır.
-- Ağırlık kuralı: Lora 400/600 (başlık 600), Inter 400/600, mono 400/700. İtalik yalnız tek vurgu sözcüğünde.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Lora) | 32px (mobile 32px) | 400 | 1.08 | -0.02em |
+| H2 | same | 30px | 600 | 1.2 | -0.015em |
+| H3 | same | 21px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 · hero 7/5, katalog 3×4 |
-| Gutter | 24px |
-| Container genişliği | 1180px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 üstü 12 kolon · 768–1200 8 kolon · 768 altı tek kolon, katalog 2'li |
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına 1 asimetrik blok (hero 7/5).
-- Bölüm ritmi: 64px masaüstü / 40px mobil; bölüm ayırıcı 1px çizgi.
-- Kart içi 24px; tablo satırı 40px; künye ile başlık arası 10px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | taş yüzeyi |
-| Plaka | `--surface` + 1px `--line` | yok | kart, tablo, form |
-| Yüzen katman | `--surface` + 1px `--ink` | `var(--shadow)` 1–2px | modal, menü |
-| Seçili | `--surface-2` + `--shadow-hard` | 1px grafit halka | seçili plaka |
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; seçili durumda `--shadow-hard` = 1px grafit halka.
-- Derinlik nereden gelir: yalnız çizgi ve ton farkı; ışık/parlama yok.
-- Radius: `--radius` 5px (buton, input, chip), `--radius-lg` 12px (kart, modal). 12px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 10px 20px | `--radius` | 13px/600 Inter | `--accent` + `--accent-ink`, gölge yok | hover %90 · active 1px aşağı · focus 2px grafit halka · disabled %45 · loading 3 nokta |
-| Buton (ikincil) | 44px | 10px 18px | `--radius` | 13px/600 Inter | şeffaf + 1px `--ink` | hover `--surface-2` · focus grafit halka |
-| Input | 44px | 0 14px | `--radius` | 15px Inter | `--surface` + 1px `--line` | focus halka + alt 1px ink · error danger · disabled %45 |
-| Plaka kartı | — | 24px | `--radius-lg` | başlık 21px Inter 600 | `--surface` + 1px `--line`, gölge yok | seçili: 1px grafit halka |
-| Chip (taş türü) | 22px | 0 8px | `--radius` | 10px JetBrains Mono | `--surface-2` + 1px `--line` | carrara · calacatta · traverten · granit · oniks |
-| Nav (üst bar) | 56px | 0 28px | 0 | 13px Inter / 11px mono | `--bg`, alt 1px `--line` | aktif 2px ink alt çizgi · sağda yüzey etiketi |
-| Tablo satırı | 40px | 6px 12px | 0 | tür gövde + mono ölçü | alt 1px `--line` | hover `--surface-2` · seçili sol 2px ink şerit |
-| Modal | — | 28px | `--radius-lg` | başlık 30px Lora | 1px ink + hafif gölge | plaka detayı, kapatma 44px |
-| Toast | 40px | 8px 14px | `--radius` | 13px Inter | `--surface`, sol 2px ink şerit | 4sn · üst sağda |
-| Grafik | — | — | 0 | eksen 11px mono | çizgi 1.5px, alan %6 | ızgara 1px, eşik kesikli |
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `5px` (buton, input, chip), `12px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`; accent dolgulu butonda `--accent-ink` halka.
-- Dokunma hedefi: 44×44px; chip 22px görsel, satır içi padding ile 44px.
-- Ölçü girişi: mm/kg birimleri ayrı seçici; değerler mono tabular.
+## Bans
 
-## Görsel dil
+- Altın/parlak metal accent, glossy yüzey, cam/blur, gradient.
+- 12px üstü radius, hap buton, yumuşak gölge.
+- İkinci vurgu rengi; accent'i dekorasyon olarak kullanmak.
+- Büyük harf gövde, 14px altı metin.
+- Sürekli damar animasyonu, parallax, bounce.
+- Grain'i fotoğraf üstünde kullanmak.
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi, 20px ızgara, keskin köşe; plaka, damar, keski, sütun |
-| Fotoğraf | mermer yüzey/damar makro, nötr beyaz-gri, max %45 alan, 6px çerçeve |
-| İllüstrasyon | yalnız damar çizimi: 1px eğri çizgi ve kesit şeması |
-| Doku | taş tozu grain `.02`; damar deseni yalnız hero görselinde |
-| Logo alanı | Lora 600 küçük harf, sol üst 24px |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 5px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 5px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 5px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 5px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 5px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 5px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 5px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 14.13:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | 7/5 hero: solda başlık + tek grafit CTA, sağda plaka + damar | `shots/01-page.png` |
 | Dashboard | düşük | 3 KPI (plaka, parti, kalınlık) + malzeme listesi | `shots/01-page.png` |
@@ -154,43 +177,33 @@ Mermer ocağı ve mimarlık malzeme kütüphanesi geleneğinden: plaka adı, yü
 | Hata | düşük | danger çerçeve + neden + sonraki adım | `shots/01-page.png` |
 | Profil / ayar | orta | koleksiyon listesi, birim (mm/inç), yüzey tercihi | `shots/01-page.png` |
 
-## Zorunlu kurallar
-- Her plaka kaydı: tür + yüzey + kalınlık (mm) + ağırlık (kg).
-- Tek damar çizgisi; ekran başına ikinci damar yok.
-- Radius yalnız 5px ve 12px; hap buton yok.
-- Grafit accent dışında vurgu rengi yok; durumlar yalnız etiket/şerit.
-- Katman ayrımı 1px çizgi + ton; gölge yalnız yüzen katmanda.
-- Dokunma hedefi 44px; ölçüler mono tabular ve sağa hizalı.
+## Accessibility
 
-## Yasaklar
-- Altın/parlak metal accent, glossy yüzey, cam/blur, gradient.
-- 12px üstü radius, hap buton, yumuşak gölge.
-- İkinci vurgu rengi; accent'i dekorasyon olarak kullanmak.
-- Büyük harf gövde, 14px altı metin.
-- Sürekli damar animasyonu, parallax, bounce.
-- Grain'i fotoğraf üstünde kullanmak.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.2:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 6.84:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.69:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 13.37:1 | ≥ 4.5 | button text |
+| focus ring/ground | 14.13:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 97.9 | ≥ 60 target | thin text |
 
-## Erişilebilirlik
-- Gövde ≥ 4.5:1, büyük metin ≥ 3:1; ölçülen en düşük etkileşimli çift 6.84:1 (`ink-soft/bg`).
-- `--ink-faint` 3.69:1 — birim/etiket ve damar çizgisi için; gövde metni olarak kullanılmaz.
-- Grafit accent metin olarak 13.04:1, dolgu üstünde 13.37:1 — ikisi de yüksek; accent dolgulu butonda `--accent-ink` kullanılır.
-- Odak görünürlüğü: 2px grafit halka (13.04:1) + 2px offset; koyu modda açık mermer halkası (15.36:1).
-- Durum yalnız renkle verilmez: taş türü chip metni, uyarı etiketi + 2px şerit.
-- 390px'te katalog 2'li, tablo karta döner; yatay taşma yok.
-- `prefers-reduced-motion` açıkken giriş, hover ölçeği ve seçim vurgusu durur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Katalog şablonu" hissi | her kartta aynı damar | damar ekran başına 1 |
 | Lüks kayboluyor | altın/parlak accent eklendi | grafit accent, parlaklık yok |
 | Okunmuyor | `--ink-faint` gövdeye | gövde `--ink`/`--ink-soft` |
@@ -199,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Koyu modda damar kayboluyor | çizgi opaklığı düşük | koyu blokta %16 + accent açık |
 | Mobilde taşıyor | 3×4 katalog | 2'li katalog + kart |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `luxury-typography` — aynı sessiz lüks ailesi; butik marka bölümlerinde sıcak alternatif.
-- **Uyumlu:** `editorial-design` — serif başlık ve geniş ölçü; uzun malzeme yazılarında eş.
-- **Uyumlu:** `japanese-ma` — boşluk ve çizgi disiplini; galeri ekranlarında tamamlayıcı.
-- **Yasak:** `claymorphism` — pastel yuvarlak gölge, plaka fiziğini bozar.
-- **Yasak:** `neo-brutalism` — kalın çerçeve ve sert ofset, lüks dinginliği yok eder.
-- **Yasak:** `pixel-art` — piksel ızgara, damar çizgisinin inceliğini kırar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `luxury-typography` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `japanese-ma` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `pixel-art` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.naturalstoneinstitute.org/ | yüzey sınıfları, kalınlık ve bakım terminolojisi |
-| https://www.vam.ac.uk/ | mermer yüzey/damar dili ve künye biçimi |
-| https://www.britannica.com/art/marble | taş türleri ve tarihsel kullanım bağlamı |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | açık taş zemininde metin kontrastı |
+| Source | for what |
+| --- | --- |
+| https://www.naturalstoneinstitute.org/ | Natural Stone Institute · taş standartları — yüzey sınıfları, kalınlık ve bakım terminolojisi |
+| https://www.vam.ac.uk/ | V&A · heykel ve taş koleksiyonu — mermer yüzey/damar dili ve künye biçimi |
+| https://www.britannica.com/art/marble | Britannica · mermer — taş türleri ve tarihsel kullanım bağlamı |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast (Minimum) — açık taş zemininde metin kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Marble Vein (styles/126-marble-vein/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="marble-vein"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Lora 600) H1/H2; --font-body (Inter 400/600) gövde 16px/1.64;
@@ -234,16 +247,15 @@ Hareket: enter 0.64s cubic-bezier(.18,.72,.22,1) 13px st.032 · scroll top 69% 0
   pin kapalı · hover 310ms scale 1.035; prefers-reduced-motion zorunlu.
 Yasak: altın accent, glossy/cam, gradient, 12px üstü radius, hap buton, ikinci vurgu, sürekli damar animasyonu.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda tek damar çizgisi var, tekrar yok.
-- [ ] Accent grafit; altın/parlak metal yok.
-- [ ] Radius yalnız 5px ve 12px.
-- [ ] Kontrast: gövde ≥ 4.5:1, accent üstü ≥ 4.5:1, `--ink-faint` yalnız dekoratif.
-- [ ] Odak halkası görünür, dokunma hedefi ≥ 44px.
-- [ ] 390px'te taşma yok.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Marble Vein (marble-vein) · family: Material & Luxury (126–135)
+Token: --bg #f3f4f3 · --surface #fdfdfc · --ink #14181a · --accent #242b2e · --line rgba(20,24,26,.14)
+Radius: 5px / 12px · Typography: Lora / Inter / JetBrains Mono
+Required: Her taş kaydı: tür + yüzey (mat/parlak) + kalınlık (mm) + ağırlık (kg) · Damar çizgisi ekran başına 1, 1px ve ince; süs olarak çoğaltılmaz · Katman ayrımı 1px çizgi + 1px ton; gölge yalnız modal/menüde
+Banned: Altın/parlak metal accent, glossy yüzey, cam/blur, gradient. · 12px üstü radius, hap buton, yumuşak gölge. · İkinci vurgu rengi; accent'i dekorasyon olarak kullanmak.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -254,22 +266,25 @@ Yasak: altın accent, glossy/cam, gradient, 12px üstü radius, hap buton, ikinc
   --ink: #14181a; --ink-soft: #4c565a; --ink-faint: #748083;
   --accent: #242b2e; --accent-ink: #f5f7f6;
   --line: rgba(20,24,26,.14);
+  --danger: #d62a1d;
+  --danger-ink: #ffffff;
+  --ok: #008138;
+  --ok-ink: #ffffff;
+  --warn: #b55300;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 5px; --radius-lg: 12px;
-  --shadow: 0 1px 2px rgba(20,24,26,.07); --shadow-hard: 0 0 0 1px rgba(20,24,26,.35);
-  --font-display: "Lora", Georgia, serif;
+  --shadow: 0 1px 2px rgba(20,24,26,.07); --shadow-hard: none;
+  --font-display: "Lora", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: -.01em; --blur: 0px; --grain: .02;
-  --danger: #9c2c22; --danger-ink: #fdf4f2;
-  --ok: #2c5c46; --warn: #7d5a12;
+  --tracking: -.01em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `styles/126-marble-vein/token-block.css` ve (integrator aktardığında) `kit/tokens.css` içinde `[data-theme="dark"][data-style="marble-vein"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.
-
-## QA düzeltmeleri (2026-11-04)
-
-- **Kontrast (ölçüldü, kit/color.mjs):** `accent / bg` 13.04:1 · `ink-soft / surface-2` 6.70:1 · `accent-ink / accent` 13.37:1. Devre dışı buton `opacity: .6` + `--ink-soft` metin (önce .45), ghost buton kenarlığı `color-mix(in srgb, var(--ink) 30%, transparent)` (koyu modda görünür), `logo-strip` / footer etiketleri `--ink-faint` → `--ink-soft`.
-- **Örtüşme:** butonlara `white-space: nowrap` (metin ikinci satıra düşmüyor). Dekor katmanı `body.scene-landing .sig { z-index: -1 }` ile içeriğin altına alındı (confetti/rozet/kurdele yazının üstünden geçmiyor).
-- **Yerleşim:** hero kutusu `min-height: 360px` ile sabitlendi (alt yarı boş kalmıyor). Hero imzası `scenes.landing` ile kuruldu: mermer damarı: eğri damarlar + kesit etiketi.
-- **Hareket:** sayılar değişmedi ve tokens.json ile aynı — `enter 0.64s` / `scroll 0.87s` (ikisi de ≤ 1.2 s).

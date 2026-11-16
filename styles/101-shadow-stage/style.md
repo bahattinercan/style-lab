@@ -1,20 +1,20 @@
 # 101 · Shadow Stage
 
-> **Bir cümlede:** Tek bir ışık kaynağının sahnedeki her şeyi sırayla aydınlattığı, hiyerarşiyi rengin değil parlaklık ve gölge yönünün kurduğu koyu sahne arayüzü.
+> **In one sentence:** Tek bir ışık kaynağının sahnedeki her şeyi sırayla aydınlattığı, hiyerarşiyi rengin değil parlaklık ve gölge yönünün kurduğu koyu sahne arayüzü.
 
 | | |
 |---|---|
-| **Hissiyat** | dramatik, sakin, tiyatral, derin |
-| **En iyi** | prodüktör/ajans vitrini, film & etkinlik sayfası, küratörlü portfolyo, gece modu okuma deneyimi |
-| **Kaçın** | veri yoğun tablo ekranları, form ağırlıklı yönetim panelleri, açık havada kullanılan saha uygulamaları |
-| **Zorluk** | orta · **Erişilebilirlik** | düşük risk (en düşük etkileşimli çift 5.10:1) |
-| **Aile** | Hareket & Optik (96–105) · **Token** | `styles/101-shadow-stage/tokens.json` → `[data-style="shadow-stage"]` |
-| **Kompozisyon** | `sticky` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | dramatik, sakin, tiyatral, derin |
+| **Best for** | prodüktör/ajans vitrini, film & etkinlik sayfası, küratörlü portfolyo, gece modu okuma deneyimi |
+| **Avoid** | veri yoğun tablo ekranları, form ağırlıklı yönetim panelleri, açık havada kullanılan saha uygulamaları |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Motion & Optics (96–105) · **Token** | `kit/tokens.css` → `[data-style="shadow-stage"]` |
+| **Composition** | `sticky` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Shadow Stage, arayüzü bir **tiyatro sahnesi** gibi kurar: tek ışık kaynağı üst-soldadır, her yüzey bu kaynağa göre gölge düşürür ve hiyerarşi punto değil **parlaklık** ile kurulur. Başlık en aydınlık öğedir; çevresi kademeli olarak koyulaşır, kenarlarda çok soluk bir vinyet kalır.
 
 Üç kurucu karar vardır. (1) **Tek kaynak kuralı** — bütün gölgeler aynı yöne düşer; ikinci bir ışık (sağdan parlama, renkli drop-shadow) yasaktır, çünkü sahne inandırıcılığı yön birliğinden gelir. (2) **Parlaklık hiyerarşisi** — `--ink` (`#eef1f5`) başlık, `--ink-soft` gövde, `--ink-faint` yalnız dekoratif; opaklıkla oynanmaz, doğru token seçilir. (3) **Vinyet disiplini** — köşe vinyeti en fazla %22 ve daima metnin arkasında; gövde metni hiçbir zaman gölge içinde kalmaz.
@@ -23,121 +23,147 @@ Display **Poiret One**'dır (tek ağırlık): ince geometrik çizgiler sahne ı�
 
 Bedeli: bu stil veri yoğun ekranlarda zayıftır. Tablo gerekli olduğunda gölge bütçesi sıfıra iner ve satır ayrımı yalnız 1px `--line` ile kurulur.
 
-### Ne değildir
+### What is not
 - **Dark Academia (33) değildir:** 33 Cormorant Garamond + toprak paletle nostaljik bir okuma dünyası kurar; Shadow Stage ışığı bir *araç* olarak kullanır, dönem taklidi yapmaz (display Poiret One, accent sarı ışık).
 - **Glassmorphism (08) değildir:** 08 cam yüzey ve blur ile derinlik kurar, çok renkli ışıma taşır; burada blur yoktur (`--blur: 0px`), derinlik yalnız gölge yönünden gelir.
 - **Nordic Folk (66) değildir:** 66 sıcak kağıt zeminli, folklorik motifli açık bir dildir; Shadow Stage koyu zeminde tek ışıkla çalışır.
 - **Acid Graphics (15) değildir:** 15 neon sarı ve parlama ile agresif kontrast kurar; burada accent sarı ama **ışık** gibi davranır (geniş, soluk, tek kaynak), asit parlaklığı yoktur.
 
-### Nereden gelir
+### Where it comes from
 Rönesans chiaroscuro'su (Caravaggio'nun tek kaynak ışığı), tiyatro sahne aydınlatması ve sinema "low-key" ışık düzeni. Ekranda yeniden kullanılmasının nedeni: koyu modun düz siyah ekranlardan sıkıcılaşması — tek kaynak ışık, koyu zemine **derinlik ve sıcaklık** verir. Klişeye dönüşmemesi için korunacak detay: gölge yönünün tek olması ve vinyetin metni örtmemesi.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin koyu ve soğuk; tek bir yönden (üst-sol) yumuşak ışık lekesi var.
 2. Tüm kartlar aynı yöne çok soluk gölge düşürüyor; ikinci ışık yok.
 3. Başlık Poiret One: ince, geniş harf aralıklı, tel gibi.
 4. Köşelerde hafif vinyet; metin hiçbir yerde gölge içinde değil.
 5. Accent sarı yalnız "aydınlanan" öğede (aktif başlık, birincil buton, seçili kart).
 
-## Görsel imza
+## Visual signature
 - **Tek ışık lekesi:** hero görselde üst-sol %12 opaklıkta radial accent; sayfada %22 vinyet.
 - **Gölge yönü:** tüm `--shadow` değerleri aynı yöne (aşağı-sağa) düşer; `0 24px 60px -42px rgba(0,0,0,.92)`.
 - **Parlaklık basamakları:** başlık `--ink`, gövde `--ink-soft`, mikro etiket `--ink-faint` — opaklık yerine token.
 - **Poiret One başlık:** 50px, ağırlık 400, tracking 0.04em; 600/700 denemesi yasak (sentetik bold).
 - **Vinyet:** `radial-gradient(120% 90% at 22% 10%, transparent 30%, var(--bg) 78%)`, opaklık ≤ .22.
-- **Radius:** `--radius` 10px (kontrol), `--radius-lg` 16px (kart); hap buton yok.
 - **Doku:** `--grain: .02` — film greni hissi; tarama çizgisi ve neon yok.
+- **Typography:** Poiret One (display) + Inter (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#e3b341`; neutral scale `#12151a` → `#eef1f5`.
+- **Radius:** `10px` / `16px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#12151a` | sahne zemini | kart zemini |
-| `--bg-2` | `#171b21` | ikincil zemin, input | kart yüzeyi |
-| `--surface` | `#1b2028` | kart, panel (ışık alan) | sayfa zemini |
-| `--surface-2` | `#232a33` | yükseltilmiş yüzey, chip, hover | birincil buton |
-| `--ink` | `#eef1f5` | başlık, değer (en aydınlık) | dekoratif dolgu |
-| `--ink-soft` | `#adb6c2` | gövde, ikincil metin | başlık |
-| `--ink-faint` | `#7e8896` | yalnız dekoratif etiket/ayırıcı | etkileşimli metin |
-| `--accent` | `#e3b341` | ışık vurgusu: aktif öğe, birincil eylem | gövde metni, ikinci durum |
-| `--accent-ink` | `#1a1405` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(238,241,245,.15)` | tüm hairline çerçeveler | metin |
+1. Ekran başına tek ışık kaynağı; tüm gölgeler aynı yöne (üst-sol) düşer
+2. Hiyerarşi parlaklıkla kurulur: başlık en aydınlık, çevre metin kademeli söner
+3. Köşe vinyeti ≤ %22; metnin üstüne binmez
+4. Accent yalnız "aydınlanan" öğe (aktif sekme, seçili kart, birincil eylem)
+5. Gövde metni %100 opak; yalnız dekoratif katman yarı saydam olabilir
+6. Sahne zemini ile kart arasındaki fark en az bir ton basamağı (ΔL ≥ 4)
 
-- Ölçülen kontrast: `ink/bg` = **16.15:1** · `ink-soft/bg` = **8.93:1** · `accent-ink/accent` = **9.41:1** · `ink-faint/bg` = **5.10:1**.
-- Tek vurgu kuralı: accent yalnız "ışık alan" öğe. Alarm `--danger`, uyarı `--warn`, onay `--ok`; accent bunların yerine geçmez.
-- Yasak kombinasyon: accent üstünde `--ink-soft`; aynı ekranda iki farklı gölge yönü.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#12151a` | page background | as a card background |
+| `--bg-2` | `#171b21` | partition divider floor, table top | button background |
+| `--surface` | `#1b2028` | kart, input, modal | full-page background |
+| `--surface-2` | `#232a33` | passive chip, hover background | primary button |
+| `--ink` | `#eef1f5` | title, body, icon | large background |
+| `--ink-soft` | `#adb6c2` | secondary text, description | — |
+| `--ink-faint` | `#7e8896` | decorative label, separator text | interactive text |
+| `--accent` | `#e3b341` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#1a1405` | text above accent | non-accent background |
+| `--line` | `rgba(238,241,245,.15)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Poiret One (`--font-display`) | 50px / mobil 30px | 400 | 1.08 | `--tracking` 0.04em |
-| H2 | Poiret One | 27px | 400 | 1.22 | 0.02em |
-| H3 | Inter | 19px | 600 | 1.3 | 0 |
-| Gövde | Inter (`--font-body`) | 15px | 400 | 1.62 | 0 |
-| Etiket / sayı | IBM Plex Mono (`--font-mono`) | 10–12px | 400 | 1.44 | 0.18em (etiket) |
+- Measured contrast: `ink/bg` **16.15:1** · `ink-soft/bg` **8.93:1** · `ink-faint/bg` **5.1:1 (decorative)** · `accent-ink/accent` **9.41:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.4; kullanılan basamaklar: 10 · 12 · 15 · 19 · 27 · 50.
-- Ölçü önerisi: `h1 { font-size: clamp(30px, 4vw, 50px); }`
-- Gövde metni maksimum satır uzunluğu: 64 ch.
-- Ağırlık kuralı: Poiret One yalnız 400 (gömülü tek ağırlık); sentetik kalınlaştırma yasak. Gövdede 400/600.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Poiret One) | 30px (mobile 30px) | 500 | 1.06 | -0.02em |
+| H2 | same | 27px | 600 | 1.18 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 |
-| Gutter | 16px |
-| Container genişliği | 1200px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1280 ışık huzmesi 5/7 · 768 tek sütun, huzme üstte · 390 vinyet %14'e düşer |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ışık huzmesi paneli 5/7 böler; ekran başına en fazla bir asimetri.
-- Bölüm ritmi: art arda en fazla 3 blok aynı hizada; dördüncü blok tam genişlik "perde" olur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sahne, ikincil zemin |
-| Kart | `--surface` | `0 24px 60px -42px rgba(0,0,0,.92)` | panel, kart, KPI |
-| Yüzen katman | `--surface` + `--shadow` | aynı, tek katman | modal, perde arkası |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; gölge ile birlikte kullanılır (tek katman).
-- Derinlik nereden gelir: ışık yönü + tek katman gölge + vinyet; blur/glow/bevel yok.
-- Radius: `--radius` 10px (kontrol, chip, buton), `--radius-lg` 16px (kart, modal).
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 40px | 0 18px | `--radius` | 13px/600 Inter | `--accent` zemin, `--accent-ink`, gölge yok | hover %90 accent (250ms) · active 1px · focus 2px accent · disabled %42 kesikli · loading sönümlenen ışık |
-| Buton (ikincil) | 40px | 0 18px | `--radius` | 13px/600 | şeffaf, 1px `--line`, `--ink` | hover `--surface-2` |
-| Input | 40px | 0 12px | `--radius` | 14px Inter | `--bg-2`, 1px `--line` | focus 2px accent · filled `--surface` · error `--danger` · disabled %42 |
-| Kart | içerik | 20px | `--radius-lg` | — | `--surface`, 1px `--line`, `--shadow` | hover'da gölge **büyümez** (yön sabit) |
-| Chip / badge | 24px | 0 10px | 999px | 10px/600 mono 0.14em | `--surface-2`, 1px `--line` | seçili: accent zemin |
-| Nav | 56px | 0 24px | 0 | 13px/600 | `--bg`, alt 1px `--line` | aktif: accent alt çizgi |
-| Tablo satırı | 40px | 6px 12px | 0 | 13px (sayı mono) | alt 1px `--line` | hover: yalnız zemin aydınlanır |
-| Modal / sheet | — | 22px | `--radius-lg` | 15px/400 | `--surface`, `--shadow`, %55 bg örtü | tek ışıkla aydınlanır |
-| Toast | 40px | 8px 12px | `--radius` | 12px mono | `--surface-2`, 1px `--line` | 4s, sağ alt |
-| Grafik paleti | — | — | — | — | `--accent` · `--ink-soft` · `--ink-faint` (3 seri) | alan dolgusu %12 accent |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `10px` (buton, input, chip), `16px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 2px`.
-- Dokunma hedefi: en az 44×44px; 24px chip ve 40px buton `::before` ile 44px alan taşır.
+## Bans
 
-## Görsel dil
+- Çok kaynaklı gölge, renkli drop-shadow, neon glow.
+- Gradient mesh/blob arka plan ve cam blur (`--blur: 0px`).
+- Poiret One üzerinde 600/700 (sentetik bold).
+- 16px üzeri radius, hap buton.
+- Metni gölge içinde bırakmak.
+- Sürekli yanıp sönen ışık efekti, parallax.
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, 18px ızgara, yuvarlak uç |
-| Fotoğraf | Low-key, tek kaynak ışıklı kare; yüz gölgede kalabilir |
-| İllüstrasyon | Yok — ışık lekesi ve gölge halkası süsün yerini alır |
-| Doku | `--grain: .02` + vinyet ≤ %22; tarama çizgisi yok |
-| Logo alanı | Poiret One 400, 0.14em aralık; 14px ışık noktası işareti |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 10px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 10px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 10px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 10px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 10px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 10px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 10px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 9.4:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-blob` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | Işık huzmesi 5/7; başlık en aydınlık öğe, tek CTA accent | `shots/01-page.png` |
 | Dashboard | düşük | Kartlar tek ışıkla; KPI'lar soluk gölge, tablo gölgesiz | `shots/01-page.png` |
@@ -152,45 +178,33 @@ Rönesans chiaroscuro'su (Caravaggio'nun tek kaynak ışığı), tiyatro sahne a
 | Hata | düşük | Başlık `--danger`; gölge azaltılır (hata "sahnede" kalır) | `shots/01-page.png` |
 | Profil / ayar | orta | Işık kaynağı ve tema tercihleri; kontrast önizlemesi | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-- **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — sahne — tek ışık konisi, düşen gölge kopyası, zemin çizgisi.
+## Accessibility
 
-## Zorunlu kurallar
-- Ekran başına **tek** ışık kaynağı; tüm gölgeler aynı yöne düşer.
-- Hiyerarşi parlaklıkla: başlık `--ink`, gövde `--ink-soft`, mikro etiket `--ink-faint`.
-- Vinyet ≤ %22 ve daima metnin arkasında; gövde metni gölge içinde kalmaz.
-- Accent yalnız aydınlanan öğe (aktif sekme, seçili kart, birincil eylem).
-- Poiret One yalnız başlıkta ve 400 ağırlıkta; gövde Inter.
-- Sahne ile kart arasında en az bir ton basamağı fark (ΔL ≥ 4).
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.15:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.93:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.1:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 9.41:1 | ≥ 4.5 | button text |
+| focus ring/ground | 9.4:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 97.7 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Çok kaynaklı gölge, renkli drop-shadow, neon glow.
-- Gradient mesh/blob arka plan ve cam blur (`--blur: 0px`).
-- Poiret One üzerinde 600/700 (sentetik bold).
-- 16px üzeri radius, hap buton.
-- Metni gölge içinde bırakmak.
-- Sürekli yanıp sönen ışık efekti, parallax.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen en düşük etkileşimli çift: `ink-faint/bg` = 5.10:1 (dekoratif); gövde 16.15:1, accent üstü 9.41:1 — hepsi eşik üstü.
-- `--ink-faint` yalnız dekoratif etiket/ayırıcı; etkileşimli metin değil.
-- Vinyet metnin arkasında; en köşedeki metin bile ≥ 4.5:1 kontrast korur.
-- Odak halkası 2px accent + 2px offset; koyu zeminde net görünür.
-- 390px'te vinyet %14'e düşer; taşma yok.
-- `prefers-reduced-motion` açıkken ışık ve gölge animasyonu durur.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Sahne "kirli" görünüyor | iki farklı gölge yönü | tüm `--shadow` değerlerini tek yöne sabitle |
 | Okunmuyor | metin vinyet içinde | vinyet ≤ %22 + metni opak katmana al |
 | "Neon" hissi | accent glow eklendi | glow'u sil, accent'i yalnız zemin/metin olarak kullan |
@@ -198,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Koyu modda siyah düz | gölge ve yüzey aynı tonda | `--surface` ile `--bg` arasında ΔL ≥ 4 |
 | Mobilde ağır | vinyet + gölge birlikte tam güçte | mobilde vinyet %14, gölge tek katman |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `dark-academia` — koyu okuma dünyası; ışık vurgusu eklenince ortak dil kurulur.
-- **Uyumlu:** `glassmorphism` — cam yüzey istenirse yalnız dekoratif katmanda, blur ≤ 8px.
-- **Uyumlu:** `museum-thesis` — küratörlü içerik; ışık dramatikliği sergi afişine taşınır.
-- **Yasak:** `memphis` — dekoratif geometri tek ışık kuralını bozar.
-- **Yasak:** `dopamine-ui` — çok renkli palet ışık hiyerarşisini anlamsızlaştırır.
-- **Yasak:** `acid-graphics` — asit parlaklığı sahne ışığını "neon"a çevirir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `dark-academia` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `glassmorphism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `museum-thesis` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `memphis` | Two different ornamental languages compete on the same screen |
+| Mixing | `dopamine-ui` | Two different ornamental languages compete on the same screen |
+| Mixing | `acid-graphics` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Rembrandt_lighting | tek kaynak ışık ve gölge yönü |
-| https://m3.material.io/styles/elevation/overview | tek katman gölge ölçüsü |
-| https://www.awwwards.com/websites/black/ | koyu zemin + tek ışık kompozisyonları |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | gölge içinde kalan metin eşiği |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Rembrandt_lighting | Rembrandt lighting · Wikipedia — tek kaynak ışık ve gölge yönü |
+| https://m3.material.io/styles/elevation/overview | Material 3 · Elevation — tek katman gölge ölçüsü |
+| https://www.awwwards.com/websites/black/ | Awwwards · chiaroscuro collections — koyu zemin + tek ışık kompozisyonları |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast minimum — gölge içinde kalan metin eşiği |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Shadow Stage (styles/101-shadow-stage/style.md, tokens.json)
 Token: sadece [data-style="shadow-stage"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: display Poiret One 400 (tracking .04em, yalnız başlık), gövde Inter 400/600,
@@ -233,16 +247,15 @@ Hareket: enter .43s cubic-bezier(.4,.05,.25,1) y18 stagger .075; scroll top 79% 
   pin yok; hover 250ms scale 1.030; prefers-reduced-motion zorunlu.
 Yasak: çok kaynaklı/renkli gölge, gradient mesh, neon glow, Poiret One 600, 16px üstü radius.
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Tek ışık kaynağı; tüm gölgeler aynı yöne düşüyor.
-- [ ] Vinyet ≤ %22 ve metin gölge içinde değil.
-- [ ] Kontrast: gövde 16.15:1, accent üstü 9.41:1.
-- [ ] Poiret One yalnız başlıkta ve 400.
-- [ ] Odak halkası görünür; dokunma hedefi ≥ 44px.
-- [ ] 390px'te taşma yok, vinyet azaltılmış.
-- [ ] `prefers-reduced-motion` açıkken ışık/gölge duruyor.
+Style: Shadow Stage (shadow-stage) · family: Motion & Optics (96–105)
+Token: --bg #12151a · --surface #1b2028 · --ink #eef1f5 · --accent #e3b341 · --line rgba(238,241,245,.15)
+Radius: 10px / 16px · Typography: Poiret One / Inter / IBM Plex Mono
+Required: Ekran başına tek ışık kaynağı; tüm gölgeler aynı yöne (üst-sol) düşer · Hiyerarşi parlaklıkla kurulur: başlık en aydınlık, çevre metin kademeli söner · Köşe vinyeti ≤ %22; metnin üstüne binmez
+Banned: Çok kaynaklı gölge, renkli drop-shadow, neon glow. · Gradient mesh/blob arka plan ve cam blur (`--blur: 0px`). · Poiret One üzerinde 600/700 (sentetik bold).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -253,15 +266,25 @@ Yasak: çok kaynaklı/renkli gölge, gradient mesh, neon glow, Poiret One 600, 1
   --ink: #eef1f5; --ink-soft: #adb6c2; --ink-faint: #7e8896;
   --accent: #e3b341; --accent-ink: #1a1405;
   --line: rgba(238,241,245,.15);
+  --danger: #e93e2f;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 10px; --radius-lg: 16px;
-  --shadow: 0 24px 60px -42px rgba(0,0,0,.92); --shadow-hard: 0 0 0 1px var(--line);
-  --font-display: "Poiret One", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
-  --tracking: 0.04em; --blur: 0px; --grain: .02;
-  --danger: #ff8a7a; --danger-ink: #1c0a07;
-  --ok: #7ad4a8; --warn: #e8c06a;
+  --shadow: 0 24px 60px -42px rgba(0,0,0,.92); --shadow-hard: none;
+  --font-display: "Poiret One", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --tracking: 0.04em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `styles/101-shadow-stage/token-block.css` içinde `[data-theme="dark"][data-style="shadow-stage"]` olarak durur (10 renk anahtarı `palette.dark` ile birebir); `## Koyu mod` tablosu tek kaynak özetidir.

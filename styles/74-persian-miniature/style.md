@@ -1,142 +1,168 @@
 # 74 · Persian Miniature
 
-> **Bir cümlede:** Gece laciverti bir sayfada çift altın çerçevenin ve madalyon kemerinin içine yerleşen, 58 karakterlik ölçülü metin bloğu.
+> **In one sentence:** Gece laciverti bir sayfada çift altın çerçevenin ve madalyon kemerinin içine yerleşen, 58 karakterlik ölçülü metin bloğu.
 
 | | |
 |---|---|
-| **Hissiyat** | törensel, sabırlı, değerli, sessizce zengin |
-| **En iyi** | kültür yayını, müze/sergi kataloğu, el yazması/kitap ürünü, premium davet ve hediye markası |
-| **Kaçın** | yoğun veri paneli, hızlı e-ticaret listesi, oyun arayüzü — çerçeve ve yavaş ritim taramayı yavaşlatır |
-| **Zorluk** | orta-yüksek (çift çerçeveyi disiplinle uygulamak) · **Erişilebilirlik** | orta (gövde 13.96:1, accent üstü 8.03:1; altın çizgiler dekoratif ama odak halkası güçlü) |
-| **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="persian-miniature"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | törensel, sabırlı, değerli, sessizce zengin |
+| **Best for** | kültür yayını, müze/sergi kataloğu, el yazması/kitap ürünü, premium davet ve hediye markası |
+| **Avoid** | yoğun veri paneli, hızlı e-ticaret listesi, oyun arayüzü — çerçeve ve yavaş ritim taramayı yavaşlatır |
+| **Difficulty** | orta-yüksek (çift çerçeveyi disiplinle uygulamak) · **Accessibility** |  |
+| **Family** | Cultural & Regional (66–75) · **Token** | `kit/tokens.css` → `[data-style="persian-miniature"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Persian Miniature, el yazması sayfasının ekran karşılığıdır: **gece laciverti zemin**, üstünde **çift altın çerçeve** (dış 1px + 4px aralık + iç 1px), **madalyon kemeri** (yarım daire) ve 58 karakterlik dar metin bloğu. Kurucu kararları üç tanedir. Birincisi **çerçeve = derinlik**: gölge değil, çift çizgi katman kurar. İkincisi **altın yalnız çizgi**: accent hiçbir zaman geniş dolgu olmaz; yalnız çerçeve, madalyon, birincil eylem ve odak halkasında. Üçüncüsü **yavaş ritim**: 76px bölüm boşluğu, 28px kart padding, 1150ms giriş — sayfa açılırken acele etmez.
 
 Kazandığı şey: **değer hissi** — altın çizgi + lacivert zemin, ucuz "lüks" efektleri (gradient, parlaklık) kullanmadan pahalı okunur. Feda ettiği şey: **yoğunluk ve hız**; 3'ten fazla grafik serisi, çerçeve içinde kaybolur.
 
-### Ne değildir
+### What is not
 - **Levant Calligraphy (68) değildir:** 68 **açık krem** zemin + navy metin + altın hairline kullanır; 74 **koyu lacivert** zemin + altın çerçeve, ve madalyon kemeri/çift çerçeve imzası vardır.
 - **Art Deco (26) değildir:** 26 derin yeşil zemin, altın geometrik merdiven ve simetrik blok kompozisyonla kurulur; 74'te çerçeve **sayfa** metaforu, radius 10/16px (26'da keskin).
 - **Victorian (27) değildir:** 27 gravür dokusu ve süslü köşe çiçekleri dolu bir yüzey kurar; 74'te süs **yalnız çizgi**, dolgu yok.
 - **Dark Academia (33) değildir:** 33 mum ışığı sıcaklığı ve deri/kâğıt tonlarıdır; 74 soğuk lacivert + metalik altın.
 - **"Koyu tema + altın" jeneriği değildir:** kimlik **çift çerçeve + madalyon kemeri**dir; altın dolgu olarak kullanılırsa stil bozulur.
 
-### Nereden gelir
+### Where it comes from
 Safevi/Timurlu minyatür ve tezhip geleneği: sayfa bir çerçeveyle çevrilir, üstte madalyon (şemse) durur, metin dar bir bloğa yerleşir, altın ve lacivert (lâcverd) kontrastı sayfayı "değerli nesne" yapar. Dijitalde kültür yayıncılığı ve premium hediye markalarıyla geri döndü; nedeni ölçülebilir — çift çizgi çerçeve CSS `border` + `inset` ile kurulabildiği için görsel dosyası gerekmez. Klişeye dönüşmemesi için korunacak detay: **çift çerçevenin 4px aralıkla kalması** ve altının yalnız çizgi olarak kullanılması.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Her panelin çevresinde iki altın çizgi var; aralarında 4px koyu boşluk.
 2. Bir panelin üst kenarında 96×20px yarım daire madalyon kemeri duruyor.
 3. Zemin gece laciverti; metin krem-altın tonunda ve geniş satır aralıklı.
 4. Köşeler belirgin yuvarlak (10–16px) ama çerçeve keskin.
 5. Geçişler yavaş: sayfa açılırken 1 saniyeyi aşan bir yerleşme hissedilir.
 
-## Görsel imza
-1. **Çift altın çerçeve:** dış `1px solid var(--accent)` + `inset: 4px` ile iç 1px çizgi (%55 opaklık); radius `16px - 4px`.
-2. **Madalyon kemeri:** 96×20px, `border-radius: 48px 48px 0 0`, yalnız üst kenarda; en az bir panelde bulunur.
-3. **Altın yalnız çizgi:** accent dolgu yok; yalnız çerçeve, madalyon, birincil buton, odak halkası, sayı vurgusu.
-4. **Altın ızgara dokusu:** 24px aralıklı 1px çizgiler, %8–12 opaklık; yalnız hero ve yan panel.
-5. **EB Garamond display 400:** 42px, `0.02em`; Lora gövde 17px/1.72.
-6. **Sayfa numarası:** alt çerçeve bandında mono tabular (`— 04 —`), her ekranda görünür.
-7. **Hover dili:** yavaş — 440ms'de iç çerçeve %70 opaklığa çıkar, ölçek yalnız `1.008`; gölge yok.
+## Visual signature
+- **Çift altın çerçeve:** dış `1px solid var(--accent)` + `inset: 4px` ile iç 1px çizgi (%55 opaklık); radius `16px - 4px`.
+- **Madalyon kemeri:** 96×20px, `border-radius: 48px 48px 0 0`, yalnız üst kenarda; en az bir panelde bulunur.
+- **Altın yalnız çizgi:** accent dolgu yok; yalnız çerçeve, madalyon, birincil buton, odak halkası, sayı vurgusu.
+- **Altın ızgara dokusu:** 24px aralıklı 1px çizgiler, %8–12 opaklık; yalnız hero ve yan panel.
+- **EB Garamond display 400:** 42px, `0.02em`; Lora gövde 17px/1.72.
+- **Sayfa numarası:** alt çerçeve bandında mono tabular (`— 04 —`), her ekranda görünür.
+- **Hover dili:** yavaş — 440ms'de iç çerçeve %70 opaklığa çıkar, ölçek yalnız `1.008`; gölge yok.
+- **Typography:** EB Garamond (display) + Lora (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#cfa53a`; neutral scale `#131a2c` → `#f0e6ce`.
+- **Radius:** `10px` / `16px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#131a2c` | sayfa zemini (gece laciverti) | kart zemini |
-| `--bg-2` | `#182135` | input zemini, ikincil panel | birincil kart |
-| `--surface` | `#1c2640` | kart, panel, modal | sayfa zemini |
-| `--surface-2` | `#232f4c` | çip, ikincil buton, tablo hover | birincil eylem |
-| `--ink` | `#f0e6ce` | başlık, gövde (krem) | çerçeve |
-| `--ink-soft` | `#bfb193` | ikincil metin, açıklama, eksen | başlık |
-| `--ink-faint` | `#8b8368` | dekoratif: dipnot, sayfa numarası ipucu | etkileşimli metin |
-| `--accent` | `#cfa53a` | çift çerçeve, madalyon, birincil buton, odak halkası | geniş zemin dolgusu, metin bloğu |
-| `--accent-ink` | `#1a1206` | accent üstü metin | gövde metni |
-| `--line` | `rgba(240,230,206,.16)` | ikincil çizgi, tablo ayırıcı, input kenarı | ana çerçeve (o accent) |
-| `--danger` / `--ok` / `--warn` | `#e58a76` / `#86cfa4` / `#e2c076` | hata / onay / uyarı | çerçeve, dekorasyon |
+1. Her panel çift altın çerçeve taşır: dış 1px + 4px aralık + iç 1px (accent)
+2. Sayfa üst ve alt çerçeve bandı zorunlu; içerik bu bandın dışına taşmaz
+3. Madalyon: yarım daire kemer, en az 24px yükseklik, 1px altın çizgi, dolgu yok
+4. Metin ölçüsü 58 ch; gövde Lora 17px/1.72, başlık EB Garamond 400
+5. Sayfa numarası mono tabular ve her ekranın alt bandında görünür
+6. Altın yalnız çerçeve, madalyon ve birincil eylemde; dolgu zemin olarak kullanılmaz
 
-- Ölçülen kontrast (varsayılan koyu zemin): `ink / bg` = **13.96:1** · `ink-soft / bg` = **8.19:1** · `accent-ink / accent` = **8.03:1** · `ink-faint / bg` = **4.58:1**.
-- Tek vurgu kuralı: altın ekran başına dört işi geçmez — dış çerçeve, iç çerçeve (aynı iş sayılır), madalyon, birincil eylem + odak.
-- Yasak kombinasyon: altın zemin üstüne krem metin (kontrast düşer); altını grafik serisi olarak iki kez kullanmak.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#131a2c` | page background | as a card background |
+| `--bg-2` | `#182135` | partition divider floor, table top | button background |
+| `--surface` | `#1c2640` | kart, input, modal | full-page background |
+| `--surface-2` | `#232f4c` | passive chip, hover background | primary button |
+| `--ink` | `#f0e6ce` | title, body, icon | large background |
+| `--ink-soft` | `#bfb193` | secondary text, description | — |
+| `--ink-faint` | `#8b8368` | decorative label, separator text | interactive text |
+| `--accent` | `#cfa53a` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#1a1206` | text above accent | non-accent background |
+| `--line` | `rgba(240,230,206,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | EB Garamond (`--font-display`) | 42px (mobil 28px) | 400 | 1.14 | `--tracking` 0.02em |
-| H2 | EB Garamond | 28px | 400 | 1.3 | 0.02em |
-| H3 | EB Garamond | 20px | 400 | 1.34 | 0.02em |
-| Gövde | Lora (`--font-body`) | 17px | 400 | 1.72 | 0.005em |
-| Küçük / açıklama | Lora | 14px | 400 | 1.6 | 0.005em |
-| Etiket / mono | IBM Plex Mono (`--font-mono`) | 11px | 500 | 1.3 | 0.16em (büyük harf) |
+- Measured contrast: `ink/bg` **13.96:1** · `ink-soft/bg` **8.19:1** · `ink-faint/bg` **4.58:1 (decorative)** · `accent-ink/accent` **8.03:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı **1.42** (11 → 17 → 28 → 42); kullanılan basamak sayısı 5: 11/14/17/28/42 (+20 alt başlık).
-- Ölçü: `h1 { font-size: clamp(28px, 3.8vw, 42px) }`.
-- Gövde metni maksimum satır uzunluğu: **58 ch** (el yazması bloğu gibi dar).
-- Ağırlık kuralı: serif 400, gövde vurgu 600. Sans-serif başlık yasak; italik yalnız tek kelime vurgusunda bir kez.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (EB Garamond) | 42px (mobile 28px) | 400 | 1.04 | -0.02em |
+| H2 | same | 28px | 600 | 1.16 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Lora) | 17px | 400 | 1.68 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (1160px üstü), 8 (768–1159), 4 (390–767) |
-| Gutter | 24px |
-| Container genişliği | 1120px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1160px: metin 7 / madalyon 5; 768px: 6/6; 390px: tek kolon, çerçeve 4px aralıkla kalır |
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: her bölümde metin bloğu 7 kolon, süs/madalyon 5 kolon; başka asimetri eklenmez.
-- Bölüm ritmi: 76px (mobil 48px); art arda en fazla **2** panel; üçüncü blok tam genişlik çerçeveli alıntı olur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, çerçeve dışı boşluk |
-| Kart | `--surface` | yok | panel, liste, tablo |
-| Yüzen katman | `--surface` | `0 2px 6px rgba(0,0,0,.45)` | modal, açılır menü |
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
 
-- Kenarlık formülü: dış `1px solid var(--accent)` + `inset: 4px` iç 1px (`--accent` %55); ikincil öğelerde `1px solid var(--line)`.
-- Derinlik nereden gelir: **çerçeveden**; gölge yalnız yüzen katmanda ve 6px blur ile sınırlı.
-- Radius: `--radius` 10px (buton, input, çip), `--radius-lg` 16px (kart, modal); 16px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 0 24px | `--radius` | 14px/600 Lora, .06em | accent + accent-ink, gölge yok | hover %90 + iç çerçeve 2px (440ms) · active 1px aşağı · focus 2px halka offset 4px · disabled %45 kesikli · loading 3 nokta 1200ms |
-| Buton (ikincil) | 44px | 0 24px | `--radius` | 14px/600 Lora | şeffaf + 1px accent | iç 1px çerçeve (inset 3px) |
-| Input | 44px | 0 14px | `--radius` | 16px Lora | bg-2 + 1px `--line` | focus 2px halka offset 3px + altın alt çizgi · error `--danger` + sol 2px · disabled %45 |
-| Kart | — | 28px | `--radius-lg` | başlık 28px EB Garamond | surface + çift altın çerçeve + madalyon | normal · madalyonlu (birincil) · tükenmiş (%60, çerçeve soluk) |
-| Chip | 24px | 0 10px | `--radius` | 11px/500 mono, .12em | surface-2 + `--line` | seçili: accent zemin + accent-ink |
-| Nav | 68px | 0 28px | 0 | 15px Lora | bg + altında 1px accent + 5px altta ipucu çizgisi | aktif: madalyon noktası + altın alt çizgi |
-| Tablo satırı | 46px | 0 12px | 0 | 16px Lora / mono sayı | alt 1px `--line` | hover `--surface-2` · seçili sol 1px altın |
-| Modal | — | 32px | `--radius-lg` | başlık 28px EB Garamond | surface + çift çerçeve + kemer + `--shadow` | açılış 1150ms · Esc kapatır · odak tuzağı |
-| Toast | 42px | 0 16px | `--radius` | 14px Lora | surface + 1px altın çerçeve | 6000ms · 2 üst sınır |
-| Grafik paleti | — | — | — | eksen 11px mono | accent → ink-soft → warn | en çok 3 seri · 1px çizgi + 2px nokta, dolgu yok |
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `10px` (buton, input, chip), `16px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 4px` — çift çerçeveye değmemesi için en az 4px offset.
-- Dokunma hedefi: 44px buton/input; 24px çipler 44×44px sarmalayıcı ile büyütülür.
+## Bans
 
-## Görsel dil
+- Altını geniş dolgu (kart zemin, buton bloğu) olarak kullanmak.
+- Gradient, parlaklık/glow, cam yüzey, neon.
+- 16px üstü radius; sans-serif başlık.
+- Figüratif fotoğraf veya minyatür taklidi stok illüstrasyon.
+- 200ms altı hızlı geçiş, bounce, sürekli döngü.
+- Madalyonu köşeye veya alta yerleştirmek (daima üst kemer).
+- Uydurma el yazması/sanatçı adı; eksik içerik `{{folio}}` gibi işaretli yer tutucu olur.
+- Neon accent.
+- Stack of round cards.
+- Otomatik carousel.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 14px, 1px çizgi, altın; yalnız yön/ok ve sayfa işaretleri |
-| Fotoğraf | yok — sayfa yüzeyi çizgi ve tipografidir |
-| İllüstrasyon | CSS madalyon (yarım daire), köşe spandrel (çeyrek daire), 1px çerçeve; figüratif görsel yok |
-| Doku | 24px altın ızgara (%8–12) + grain .02 |
-| Logo alanı | EB Garamond 18px + solunda 12×12 madalyon işareti; 24px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 10px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 10px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 10px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 10px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 10px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 10px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 10px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.51:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-rings` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | 7/5 metin-süs bölünmesi, altın ızgara zemin, kemerli panel | `shots/01-page.png` |
 | Dashboard | düşük | 2 çerçeveli KPI + 1 madalyonlu panel, 3 serili grafik | `shots/01-page.png` |
@@ -151,45 +177,33 @@ Safevi/Timurlu minyatür ve tezhip geleneği: sayfa bir çerçeveyle çevrilir, 
 | Hata | düşük | `--danger` çerçeve + krem metin; madalyon susturulur | `shots/01-page.png` |
 | Profil / ayar | orta | 46px satır, çift çerçeveli iki panel | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Her panel çift altın çerçeve: dış 1px + 4px aralık + iç 1px.
-- Sayfa üst/alt çerçeve bandı zorunlu; içerik bandın dışına taşmaz.
-- Madalyon yarım daire, en az 24px yükseklik, 1px altın, dolgu yok; en az bir panelde.
-- Metin ölçüsü 58 ch; gövde Lora 17px/1.72.
-- Sayfa numarası mono tabular, alt bantta görünür.
-- Altın yalnız çizgi/eylem; 4 işten fazlasına çıkmaz.
-- Renk, radius, gölge yalnız `--…` token'larından gelir.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 13.96:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.19:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.58:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 8.03:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.51:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 90.6 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Altını geniş dolgu (kart zemin, buton bloğu) olarak kullanmak.
-- Gradient, parlaklık/glow, cam yüzey, neon.
-- 16px üstü radius; sans-serif başlık.
-- Figüratif fotoğraf veya minyatür taklidi stok illüstrasyon.
-- 200ms altı hızlı geçiş, bounce, sürekli döngü.
-- Madalyonu köşeye veya alta yerleştirmek (daima üst kemer).
-- Uydurma el yazması/sanatçı adı; eksik içerik `{{folio}}` gibi işaretli yer tutucu olur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen riskler: en düşük çift `--ink-faint / bg` = **4.58:1** (dekoratif dipnot); etkileşimli metin `--ink` 13.96:1, `--ink-soft` 8.19:1.
-- Altın çizgi dekoratiftir; seçili/aktif durum daima metin veya 2px altın alt çizgiyle de bildirilir.
-- Hareket: tek seferlik 1150ms giriş + 440ms hover; `prefers-reduced-motion` hepsini kapatır, içerik animasyonsuz görünür.
-- Şeffaf yüzey yok (`--blur: 0px`), `@supports` fallback gerekmez.
-- Odak görünürlüğü: lacivert zeminde 2px altın halka 8.03:1; çift çerçeveli kartta `offset: 4px` (iç çizgiye değmesin).
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "koyu + altın lüks" jeneriğine düşüyor | çift çerçeve yok, altın dolgu var | çerçeveyi 4px aralıkla geri kur, altını çizgiye indir |
 | Çerçeve "çift kenarlık" gibi görünüyor | aralık 4px değil, iç çizgi dış çizgiyle bitişik | `inset: 4px` kullan, radius'u `16 - 4` yap |
 | Sayfa ağır ve boğucu | bölüm ritmi 48px'e düşmüş, metin ölçüsü geniş | 76px ritim + 58 ch ölçü |
@@ -197,28 +211,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Hareket "ucuz" duruyor | 200ms altı hızlı geçiş | 440ms taban, 1150ms giriş |
 | Koyu modda çerçeve kayboluyor | iç çerçeve opaklığı düşük | .62'ye çıkar |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `levant-calligraphy` — aynı el yazması/tezhip ailesi; açık zemin 68'den, gece sayfası 74'ten alınır.
-- **Uyumlu:** `art-deco` — altın çizgi ve simetri disiplini ortak; ama 74'te çerçeve sayfa metaforu taşır.
-- **Uyumlu:** `dark-academia` — koyu okuma atmosferi; arşiv listesi 33'ten, sunum sayfası 74'ten.
-- **Yasak:** `neo-brutalism` — kalın kontur ve sert gölge çift çerçeve fiziğini bozar.
-- **Yasak:** `pixel-art` — çözünürlük ve dönem çelişir; çerçeve çizgisi piksel ızgarasına sıkışır.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `levant-calligraphy` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `art-deco` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `dark-academia` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `liquid-glass` | Two different ornamental languages compete on the same screen |
+| Mixing | `pixel-art` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.metmuseum.org/toah/hd/khan1/hd_khan1.htm | sayfa çerçevesi, madalyon ve altın tezhip oranları |
-| https://viewer.cbl.ie/viewer/ | çift çerçeve, kenar bandı, altın-lacivert kontrast |
-| https://agakhanmuseum.org/collection | madalyon geometrisi ve sayfa düzeni |
-| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | koyu lacivert zeminde odak halkası ölçütü |
+| Source | for what |
+| --- | --- |
+| https://www.metmuseum.org/toah/hd/khan1/hd_khan1.htm | The Met · Persian miniature painting — sayfa çerçevesi, madalyon ve altın tezhip oranları |
+| https://viewer.cbl.ie/viewer/ | Chester Beatty · Islamic manuscript illumination — çift çerçeve, kenar bandı, altın-lacivert kontrast |
+| https://agakhanmuseum.org/collection | Aga Khan Museum · Arts of the book — madalyon geometrisi ve sayfa düzeni |
+| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | WCAG 2.2 · Focus Appearance — koyu lacivert zeminde odak halkası ölçütü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Persian Miniature (styles/74-persian-miniature/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="persian-miniature"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (EB Garamond 400) başlıkta, --font-body (Lora) gövdede,
@@ -231,15 +246,15 @@ Hareket: enter 1.15s cubic-bezier(.45,.05,.55,.95) 26px / stagger 0.1; scroll to
          pin açık scrub 0.85 / +135%; hover 440ms scale 1.008. prefers-reduced-motion zorunlu.
 Yasak: "Tuzaklar" ve "Yasaklar" maddeleri (altın dolgu, hızlı geçiş, 16px üstü radius).
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda imza öğelerinden en az 2'si görünüyor (çift çerçeve, madalyon, altın ızgara, 58 ch blok).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1.
-- [ ] Altın hiçbir yerde geniş dolgu değil.
-- [ ] 390px genişlikte taşma yok; çerçeve aralığı 4px.
-- [ ] `prefers-reduced-motion` açıkken pin/scrub duruyor.
+Style: Persian Miniature (persian-miniature) · family: Cultural & Regional (66–75)
+Token: --bg #131a2c · --surface #1c2640 · --ink #f0e6ce · --accent #cfa53a · --line rgba(240,230,206,.16)
+Radius: 10px / 16px · Typography: EB Garamond / Lora / IBM Plex Mono
+Required: Her panel çift altın çerçeve taşır: dış 1px + 4px aralık + iç 1px (accent) · Sayfa üst ve alt çerçeve bandı zorunlu; içerik bu bandın dışına taşmaz · Madalyon: yarım daire kemer, en az 24px yükseklik, 1px altın çizgi, dolgu yok
+Banned: Altını geniş dolgu (kart zemin, buton bloğu) olarak kullanmak. · Gradient, parlaklık/glow, cam yüzey, neon. · 16px üstü radius; sans-serif başlık.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -250,14 +265,25 @@ Yasak: "Tuzaklar" ve "Yasaklar" maddeleri (altın dolgu, hızlı geçiş, 16px �
   --ink: #f0e6ce; --ink-soft: #bfb193; --ink-faint: #8b8368;
   --accent: #cfa53a; --accent-ink: #1a1206;
   --line: rgba(240,230,206,.16);
+  --danger: #ed4334;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 10px; --radius-lg: 16px;
   --shadow: 0 2px 6px rgba(0,0,0,.45); --shadow-hard: none;
-  --font-display: "EB Garamond", Georgia, serif;
-  --font-body: "Lora", Georgia, serif;
+  --font-display: "EB Garamond", system-ui, sans-serif;
+  --font-body: "Lora", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: 0.02em; --blur: 0px; --grain: 0.02;
-  --danger: #e58a76; --danger-ink: #25100a; --ok: #86cfa4; --warn: #e2c076;
+  --tracking: 0.02em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="persian-miniature"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

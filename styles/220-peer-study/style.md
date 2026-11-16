@@ -1,221 +1,221 @@
 # 220 · Peer Study
 
-> **Bir cümlede:** Akran çalışma grubu: sıcak gri, mor accent, oturum kartları ve mono katılımcı sayısı.
+> **In one sentence:** Peer study group: warm grey, purple accent, session cards and mono attendee counts.
 
 | | |
 |---|---|
-| **Hissiyat** | birlikte, esnek, "bu akşam 20:00" |
-| **En iyi** | çalışma grubu, akran öğrenmesi, oturum planı |
-| **Kaçın** | kurumsal portal |
-| **Zorluk** | kolay · **Erişilebilirlik** | iyi |
-| **Aile** | Öğrenme & Oyunlaştırma (212–221) · **Token** | `kit/tokens.css` → `[data-style="peer-study"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | together, flexible, "tonight at 20:00" |
+| **Best for** | study group, peer learning, session plan |
+| **Avoid** | kurumsal portal |
+| **Difficulty** | easy · **Accessibility** | iyi |
+| **Family** | Learning & Gamification (212–221) · **Token** | `kit/tokens.css` → `[data-style="peer-study"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Peer Study, ortak çalışmayı planlar: ne zaman, kiminle, kaç kişi.
+### What it is
+Peer Study plans the group session: when, with whom, how many.
 
-### Ne değildir
-- Çocuk uygulaması değildir; yetişkin öğrenmede de aynı dil geçerli.
-- Oyunlaştırma her yere rozet koymak değildir.
+### What is not
+- It is not a children's application; The same language applies to adult learning.
+- Gamification is not about putting badges everywhere.
 
-### Nereden gelir
-Ders planı, çalışma kitabı ve ilerleme çizelgesi geleneğinin dijital karşılığı.
+### Where it comes from
+The digital equivalent of the lesson plan, workbook, and progress chart tradition.
 
-### 3 saniyede tanıma testi
-1. İlerleme göstergesi var mı?
-2. Adım başına tek hedef mi?
-3. Süre etiketi mono mu?
+### Recognition test in 3 seconds
+1. Is there a progress indicator?
+2. One target per step?
+3. Is the time tag mono?
 
-## Görsel imza
-- **Oturum kartı:** konu, saat, katılımcı sayısı.
-- **Saat:** mono, gün adı kısa.
-- **Mor accent:** katıl ve seçili oturum.
-- **Sıcak gri:** nötr zemin, tek accent.
-- **Tipografi:** Space Grotesk (display) + Inter (gövde) + Space Mono (mono etiket).
-- **Renk disiplini:** tek accent `#5a3f8a`; nötr skala `#faf9fc` → `#17151e`.
-- **Yarıçap:** `10px` / `14px`; Kart 14px, buton 12px; eğitim ürünlerinde sıcak yuvarlama kabul edilir, 20px üstü yasak.
+## Visual signature
+- **Session card:** topic, time, attendee count.
+- **Time:** mono, weekday abbreviated.
+- **Purple accent:** join and the selected session.
+- **Warm grey:** neutral background, one accent.
+- **Typography:** Space Grotesk (display) + Inter (body) + Space Mono (mono label).
+- **Colour discipline:** a single accent `#5a3f8a`; neutral scale `#faf9fc` → `#17151e`.
+- **Radius:** `10px` / `14px`; Card 14px, button 12px; Hot rolling is accepted in educational products, above 20px is prohibited.
 
-## Zorunlu kurallar
+## Mandatory rules
 
 1. Her oturumda konu, saat ve kontenjan.
-2. Katılım tek tık; durum metinle.
-3. Saat dilimi yazılır.
+2. Joining is one click; status is stated in text.
+3. The time zone is stated.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#faf9fc` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#f0eef5` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#ffffff` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#f5f3f9` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#17151e` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#4d4859` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#7f788c` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#5a3f8a` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#faf7ff` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(23,21,30,.12)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#faf9fc` | page background | as a card background |
+| `--bg-2` | `#f0eef5` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f5f3f9` | passive chip, hover background | primary button |
+| `--ink` | `#17151e` | title, body, icon | large background |
+| `--ink-soft` | `#4d4859` | secondary text, description | — |
+| `--ink-faint` | `#7f788c` | decorative label, separator text | interactive text |
+| `--accent` | `#5a3f8a` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#faf7ff` | text above accent | non-accent background |
+| `--line` | `rgba(23,21,30,.12)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **17.22:1** · `ink-soft/bg` **8.39:1** · `ink-faint/bg` **4.03:1 (dekoratif)** · `accent-ink/accent` **7.89:1**.
-- İlerleme ve başarı accent ile; hata semantik. Renk tek başına durum taşımaz, ikon/metin eklenir.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **17.22:1** · `ink-soft/bg` **8.39:1** · `ink-faint/bg` **4.03:1 (decorative)** · `accent-ink/accent` **7.89:1**.
+- With the accent of progress and success; error semantics. Color alone does not carry status, icon/text is added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Space Grotesk) | 50px (mobil 30px) | 700 | 1.06 | -0.02em |
-| H2 | aynı | 30px | 600 | 1.2 | -0.015em |
-| H3 | aynı | 20px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Inter) | 16px | 400 | 1.62 | 0 |
-| Küçük gövde | aynı | 15px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (Space Mono) | 11px | 400 | 1.2 | 0.14em |
-| Buton | `--font-body` | 13px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Space Grotesk) | 50px (mobile 30px) | 700 | 1.06 | -0.02em |
+| H2 | same | 30px | 600 | 1.2 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Inter) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 15px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Space Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 13px | 600 | 1 | 0 |
 
-- Başlık 50px, gövde 16px. Ders başlıkları 20px/600; süre etiketi mono 11px.
-- Ölçü: 66ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Header 50px, body 16px. Course titles 20px/600; duration tag mono 11px.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Ders kartları 3 kolon; ilerleme çubuğu 6px. Form 2 kolon.
-- Bölüm dikey boşluğu masaüstü 72px, mobil 44px; kart içi padding 20px.
+- Course cards 3 columns; progress bar 6px. Form 2 column.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Kartlar sıcak yüzey; gölge tek seviye. İlerleme çubuğu 6px, accent dolgu.
-- Radius: `10px` (buton, input, chip), `14px` (kart, modal). Kart 14px, buton 12px; eğitim ürünlerinde sıcak yuvarlama kabul edilir, 20px üstü yasak.
+- Cards are hot surface; shadow single level. Progress bar 6px, accent padding.
+- Radius: `10px` (buton, input, chip), `14px` (kart, modal). Card 14px, button 12px; Hot rolling is accepted in educational products, above 20px is prohibited.
 
-## Yasaklar
+## Bans
 
-- Animasyonlu avatar yığını.
-- Beş renkli konu paleti.
-- Yuvarlak 20px+ kart.
-- Sonsuz seri baskısı.
-- Kırmızı ile cezalandırma.
+- An animated avatar stack.
+- A five-colour topic palette.
+- A rounded card above 20px.
+- Infinite serial printing.
+- Punishment in red.
 - Ses/animasyonlu kutlama.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 10px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 10px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 10px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 10px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 10px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 10px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 10px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 10px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 10px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 10px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 10px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 10px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 10px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 8.36:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 8.36:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 2px çizgi, 24px; yuvarlak uç |
-| Fotoğraf | Öğrenme anı, doğal ışık; stok poz yok |
-| İllüstrasyon | Basit geometrik, 3 renk |
-| Doku | Nokta deseni %6 |
-| Logo | Monokrom --ink, en az 24px yükseklik |
+| icon | 2px line, 24px; round tip |
+| photo | Learning moment, natural light; no stock pose |
+| illustration | Simple geometric, 3 colors |
+| Texture | Nokta deseni %6 |
+| Logo | Monochrome --ink, at least 24px height |
 
-- İmza motif: `motif-dots` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Sayfada en fazla bir büyük görsel; gerisi metin ve veri.
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| Kurs landing | orta | Tek vaat + müfredat listesi | `shots/01-page.png` |
-| Ders | yüksek | Sol içindekiler, sağ içerik 66ch | `shots/01-page.png` |
-| Alıştırma | yüksek | Tek soru + 4 seçenek + geri bildirim | `shots/01-page.png` |
-| İlerleme | orta | Haftalık ızgara + seri sayısı | `shots/01-page.png` |
-| Sertifika | düşük | Tek kart, isim + tarih | `shots/01-page.png` |
-| Topluluk | orta | Akış + yorum 68ch | `shots/01-page.png` |
-| Ayarlar | orta | Bildirim ve dil | `shots/01-page.png` |
-| Ödeme | düşük | Tek sütun 480px | `shots/01-page.png` |
+| Kurs landing | medium | Single promise + curriculum list | `shots/01-page.png` |
+| Ders | high | Left contents, right content 66ch | `shots/01-page.png` |
+| exercise | high | One question + 4 options + feedback | `shots/01-page.png` |
+| progress | medium | Weekly grid + number of series | `shots/01-page.png` |
+| Sertifika | low | Single card, name + date | `shots/01-page.png` |
+| Topluluk | medium | Stream + comment 68ch | `shots/01-page.png` |
+| Settings | medium | Notice and language | `shots/01-page.png` |
+| Payment | low | Single column 480px | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 17.22:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 8.39:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 4.03:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 7.89:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 8.36:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 101.5 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 17.22:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.39:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.03:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.89:1 | ≥ 4.5 | button text |
+| focus ring/ground | 8.36:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 101.5 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Rozet enflasyonu | Her eylemde ödül | Ödülü haftalık tek göstergeye indir |
-| Ders uzuyor | Tek ekranda 5+ blok | Her ekran tek hedef |
-| İlerleme belirsiz | Çubuk dekoratif | Yüzde + kalan adım metni ekle |
+| Rozet enflasyonu | Reward for every action | Reduce the reward to a single indicator per week |
+| Ders uzuyor | 5+ blocks on one screen | Each screen is a single target |
+| Progress uncertain | stick decorative | Add percentage + remaining step text |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `language-app` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `podcast-network` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `access-audit` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `regulatory-report` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `language-app` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `podcast-network` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `access-audit` | Two different ornamental languages compete on the same screen |
+| Mixing | `regulatory-report` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
 | https://en.wikipedia.org/wiki/Peer_learning | Peer learning (Wikipedia) — oturum modeli |
-| https://fonts.google.com/specimen/Space+Grotesk | Space Grotesk (Google Fonts) — başlık ailesi |
+| https://fonts.google.com/specimen/Space+Grotesk | Space Grotesk (Google Fonts) — heading family |
 | https://fonts.google.com/specimen/Space+Mono | Space Mono (Google Fonts) — saat/kontenjan |
 
 ## AI brief
 
 ```text
-Akran çalışma grubu sayfası tasarla: sıcak gri zemin, mor accent, oturum kartları, mono saat ve kontenjan.
+Design a peer study group page: warm grey background, purple accent, session cards, mono time and capacity.
 
-Stil: Peer Study (peer-study) · aile: Öğrenme & Oyunlaştırma (212–221)
+Style: Peer Study (peer-study) · family: Learning & Gamification (212–221)
 Token: --bg #faf9fc · --surface #ffffff · --ink #17151e · --accent #5a3f8a · --line rgba(23,21,30,.12)
-Yarıçap: 10px / 14px · Tipografi: Space Grotesk / Inter / Space Mono
-Zorunlu: Her oturumda konu, saat ve kontenjan. · Katılım tek tık; durum metinle. · Saat dilimi yazılır.
-Yasak: Animasyonlu avatar yığını. · Beş renkli konu paleti. · Yuvarlak 20px+ kart.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 10px / 14px · Typography: Space Grotesk / Inter / Space Mono
+Required: Her oturumda konu, saat ve kontenjan. · Joining is one click; status is stated in text. · The time zone is stated.
+Banned: An animated avatar stack. · A five-colour topic palette. · A rounded card above 20px.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

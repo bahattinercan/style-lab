@@ -1,7 +1,6 @@
 /**
- * 202 · Clinical Trial — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 202 · Clinical Trial — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'none',
   bodyClass: '',

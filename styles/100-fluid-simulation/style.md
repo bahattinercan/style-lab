@@ -1,141 +1,167 @@
 # 100 · Fluid Simulation
 
-> **Bir cümlede:** Köşeleri damla gibi asimetrik yuvarlatılmış yüzeylerin viskoz bir eğriyle aktığı, dekoratif katmanın 6px bulanık bloblarla kurulduğu yumuşak arayüz.
+> **In one sentence:** Köşeleri damla gibi asimetrik yuvarlatılmış yüzeylerin viskoz bir eğriyle aktığı, dekoratif katmanın 6px bulanık bloblarla kurulduğu yumuşak arayüz.
 
 | | |
 |---|---|
-| **Hissiyat** | akışkan, sakin, yumuşak, "sıvı" |
-| **En iyi** | wellness/sağlık takibi, fintech birikim uygulaması, ses/müzik ürünü, onboarding akışı |
-| **Kaçın** | yoğun veri tablosu (20+ satır), hukuki/resmi belge ekranı, kesinlik gerektiren ayar paneli |
-| **Zorluk** | orta · **Erişilebilirlik** | orta risk (uzun yumuşak geçişler + blur katmanı; gövde 15.93:1) |
-| **Aile** | Hareket & Optik (96–105) · **Token** | `kit/tokens.css` → `[data-style="fluid-simulation"]` |
-| **Kompozisyon** | `sticky` · `pill` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | akışkan, sakin, yumuşak, "sıvı" |
+| **Best for** | wellness/sağlık takibi, fintech birikim uygulaması, ses/müzik ürünü, onboarding akışı |
+| **Avoid** | yoğun veri tablosu (20+ satır), hukuki/resmi belge ekranı, kesinlik gerektiren ayar paneli |
+| **Difficulty** | orta · **Accessibility** |  |
+| **Family** | Motion & Optics (96–105) · **Token** | `kit/tokens.css` → `[data-style="fluid-simulation"]` |
+| **Composition** | `sticky` · `pill` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Fluid Simulation, formu **yüzey gerilimi** ile kurar: kartlar asimetrik köşeli (`28px 28px 28px 12px` — damla yönü), buton ve çipler 999px pill, dekoratif katmanda 6px blur'lu **blob**'lar ve 12px **dalga ayırıcı**. Kurucu kararları üç tanedir. Birincisi **asimetrik yuvarlaklık**: köşeler eşit değildir, bir köşe diğerlerinden küçüktür — akışkanlık buradan okunur. İkincisi **viskoz hareket**: en kısa 260ms, en uzun 1500ms; `steps()` ve bounce yok. Üçüncüsü **tek dekor katmanı**: blob yalnız dekoratif, %18 opaklık, metin asla üstünde değil.
 
 Kazandığı şey: **dokunma hissi** — arayüz "akan" bir nesne gibi okunur, onboarding ve finans birikimi gibi akış metaforlu ürünlere oturur. Feda ettiği şey: **kesinlik**; 28px radius ve uzun geçişler yoğun tablo ekranlarında yer ve zaman kaybettirir.
 
-### Ne değildir
+### What is not
 - **Organic Bio (38) değildir:** 38 doğal form + toprak yeşili ile **bitkisel** çağrışım kurar, radius asimetrisi organik damlada değil yaprak formundadır; burada accent **sıcak kiremit-turuncu** ve imza `28/28/28/12` damla köşesidir.
 - **Claymorphism (11) değildir:** 11 şişkin 3B kil yüzey ve iç/dış gölge ikilisiyle hacim kurar; burada gölge tek ve 10px yayılımı geçmez, hacim formdan gelir.
 - **Aurora UI (12) değildir:** 12 hareketli degrade zeminlerle atmosfer kurar; burada degrade yok, blob katmanı tek ve %18.
 - **Depth Parallax (99) değildir:** 99 katman hızı ve pus ile derinlik kurar; 100'de katman yok — form ve süre var.
 - **"Yuvarlak köşeli jenerik SaaS" değilir:** kimlik **asimetrik köşe + 999px pill + viskoz süre üçlüsü**dür; tek başına radius yetmez.
 
-### Nereden gelir
+### Where it comes from
 Akışkan arayüz fikri 2010'ların "soft UI" akımından ve sıvı metal/cam deneylerinden gelir; asıl dayanağı **yüzey gerilimi** metaforudur: sıvı damlası bir yönde daha keskin, diğer yönde daha yuvarlaktır. CSS'te asimetrik `border-radius` sözdizimi (`28px 28px 28px 12px`) bunu tek satırda kurar. Klişeye dönüşmemesi için korunacak detay: **köşe asimetrisinin ölçülü kalması** (en çok 28px/12px) ve blob sayısının 2'yi geçmemesi.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Kartların bir köşesi diğerlerinden belirgin küçük (damla yönü).
 2. Butonlar ve çipler tam pill (999px); hiçbir keskin köşe yok.
 3. Arka planda bulanık, yavaşça şekil değiştiren tek bir renk lekesi var.
 4. Geçişler uzun ve yumuşak; hiçbir şey "tık" diye oturmuyor.
 5. Gövde Poppins, başlık Baloo 2, etiketler Courier Prime; accent tek sıcak turuncu.
 
-## Görsel imza
-1. **Asimetrik damla köşesi:** `border-radius: 28px 28px 28px 12px`; durum kartlarında `28px 12px 28px 28px` (ters yön).
-2. **Pill etkileşim:** buton, çip ve toast `999px`; hover'da buton `26px`'e "gerilir" (520ms).
-3. **Blob katmanı:** `filter: blur(6px)`, `%18` accent, asimetrik `border-radius`, ekran başına en fazla 2; 24s/32s yavaş salınım.
-4. **Dalga ayırıcı:** 12px yükseklik, `radial-gradient` ile 7px yarım daire dizisi.
-5. **Yüzey gerilimi halkası:** hero görselinin içinde 2px `%35` accent asimetrik yay.
-6. **Baloo 2 display:** 44px, tracking 0; gövde Poppins 16px/1.68; sayı Courier Prime.
-7. **Hover dili:** 520ms'de ölçek `1.028`, buton radius daralır, tablo satırı `12px → 18px`; renk sıçraması yok.
+## Visual signature
+- **Asimetrik damla köşesi:** `border-radius: 28px 28px 28px 12px`; durum kartlarında `28px 12px 28px 28px` (ters yön).
+- **Pill etkileşim:** buton, çip ve toast `999px`; hover'da buton `26px`'e "gerilir" (520ms).
+- **Blob katmanı:** `filter: blur(6px)`, `%18` accent, asimetrik `border-radius`, ekran başına en fazla 2; 24s/32s yavaş salınım.
+- **Dalga ayırıcı:** 12px yükseklik, `radial-gradient` ile 7px yarım daire dizisi.
+- **Yüzey gerilimi halkası:** hero görselinin içinde 2px `%35` accent asimetrik yay.
+- **Baloo 2 display:** 44px, tracking 0; gövde Poppins 16px/1.68; sayı Courier Prime.
+- **Hover dili:** 520ms'de ölçek `1.028`, buton radius daralır, tablo satırı `12px → 18px`; renk sıçraması yok.
+- **Typography:** Baloo 2 (display) + Poppins (body) + Courier Prime (mono label).
+- **Colour discipline:** a single accent `#b8481a`; neutral scale `#eff4f3` → `#101a1c`.
+- **Radius:** `18px` / `28px`; Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#eff4f3` | sayfa zemini (sıvı yüzey) | kart zemini |
-| `--surface` | `#fbfdfc` | kart, panel, modal | sayfa zemini |
-| `--surface-2` | `#f0f6f4` | çip, satır hover, ikincil buton | birincil eylem |
-| `--ink` | `#101a1c` | başlık, gövde, sayı | dekoratif leke |
-| `--ink-soft` | `#435452` | etiket, açıklama, eksen | başlık |
-| `--ink-faint` | `#7d8b89` | dekoratif: dipnot, blob içi etiket | etkileşimli metin |
-| `--accent` | `#b8481a` | birincil buton, blob, odak halkası | geniş metin bloğu |
-| `--accent-ink` | `#fdf6f2` | accent üstü metin | gövde metni |
-| `--line` | `rgba(16,26,28,.13)` | kart kenarı, ayırıcı, input çerçevesi | metin rengi |
-| `--danger` / `--ok` / `--warn` | `#a02b1c` / `#29a680` / `#c68613` | hata / onay / uyarı | blob, dekorasyon |
+1. Kart köşeleri asimetrik: bir köşe 12px, diğerleri 28px — damla yönü okunur
+2. Buton ve çip 999px pill; hiçbir etkileşimli öğe 4px altı radius kullanmaz
+3. Blob katmanı yalnız dekoratif: 6px blur, %18 opaklık, metin üstünde yasak
+4. Dalga ayırıcı ekran başına 1; 12px yükseklik, radial gradient
+5. Hareket viskoz: en kısa 260ms, en uzun 1500ms; `steps()` ve bounce yasak
+6. Grafik eğrileri yumuşatılmış, çizgi ucu yuvarlak
 
-- Ölçülen kontrast (açık): `ink / bg` = **15.93:1** · `ink-soft / bg` = **7.19:1** · `accent-ink / accent` = **4.94:1** · `ink-faint / bg` = **3.19:1** (yalnız dekoratif).
-- Tek vurgu kuralı: kiremit-turuncu yalnız eylem, blob ve odak; blob `%18` opaklığı geçmez.
-- Yasak kombinasyon: accent zemin üstüne kırık beyaz ince metin (12px altı punto); ikinci doygun renk.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#eff4f3` | page background | as a card background |
+| `--bg-2` | `#e3ecea` | partition divider floor, table top | button background |
+| `--surface` | `#fbfdfc` | kart, input, modal | full-page background |
+| `--surface-2` | `#f0f6f4` | passive chip, hover background | primary button |
+| `--ink` | `#101a1c` | title, body, icon | large background |
+| `--ink-soft` | `#435452` | secondary text, description | — |
+| `--ink-faint` | `#7d8b89` | decorative label, separator text | interactive text |
+| `--accent` | `#b8481a` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fdf6f2` | text above accent | non-accent background |
+| `--line` | `rgba(16,26,28,.13)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Baloo 2 (`--font-display`) | 44px (mobil 29px) | 600 | 1.14 | `--tracking` 0 |
-| H2 | Baloo 2 | 28px | 600 | 1.3 | 0 |
-| H3 | Baloo 2 | 21px | 600 | 1.34 | 0 |
-| Gövde | Poppins (`--font-body`) | 16px | 400 | 1.68 | 0 |
-| Küçük / açıklama | Poppins | 14px | 400 | 1.6 | 0 |
-| Etiket / mono | Courier Prime (`--font-mono`) | 11px | 400 | 1.4 | 0.1em (büyük harf) |
+- Measured contrast: `ink/bg` **15.93:1** · `ink-soft/bg` **7.19:1** · `ink-faint/bg` **3.19:1 (decorative)** · `accent-ink/accent` **4.94:1**.
+- Accent is a signal color; It is used in lines, labels and graphics instead of wide background.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı **1.5** (11 → 16 → 28 → 44); kullanılan basamak sayısı 5: 11/14/16/28/44.
-- Ölçü: `h1 { font-size: clamp(29px, 3.8vw, 44px) }`.
-- Gövde metni maksimum satır uzunluğu: **64 ch**.
-- Ağırlık kuralı: Baloo 2 600, Poppins 400/500. İtalik yasak; 800 ağırlık kullanılmaz (yumuşaklık kaybolur).
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Baloo 2) | 44px (mobile 29px) | 500 | 1.06 | -0.02em |
+| H2 | same | 28px | 600 | 1.18 | -0.015em |
+| H3 | same | 21px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Poppins) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Courier Prime) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (1220px üstü), 8 (768–1219), 4 (390–767) |
-| Gutter | 26px |
-| Container genişliği | 1180px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1220px: 7/5 akış bölünmesi + 1 dalga; 768px: 6/6; 390px: tek kolon, blob %12 opaklık |
+- Display 54px; technical labels mono and wide tracking. Body 15px, size 62ch.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** dalga ayırıcı; içerik 7/5 bölünür.
-- Bölüm ritmi: 80px (mobil 48px); art arda en fazla **2** damla köşeli kart satırı.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, blob katmanı |
-| Kart | `--surface` | `0 2px 10px rgba(16,26,28,.08)` | kart, panel, satır |
-| Yüzen katman | `--surface` | `0 8px 32px rgba(16,26,28,.14)` | modal, açılır menü |
+- The grid is slightly visible as an auxiliary line (accent 8%); section spacing 56px.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; pill öğelerde kenarlık yok (yalnız zemin farkı).
-- Derinlik nereden gelir: **form (asimetrik radius) + düşük gölge**; gölge 10px yayılımı geçmez.
-- Radius: `--radius` 18px (input, alanlar), `--radius-lg` 28px (kart, modal); pill 999px istisnadır.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 48px | 0 28px | 999px | 15px/600 Baloo 2 | accent + accent-ink + `--shadow` | hover radius 26px + %92 (520ms) · active scale(.98) 260ms · focus 2px halka offset 4px · disabled %45 · loading 3 damla 1400ms |
-| Buton (ikincil) | 48px | 0 28px | 999px | 15px Poppins | surface + `--line` | hover iç yüzey `--surface-2` (520ms) |
-| Input | 48px | 0 18px | `--radius` | 15px Poppins | surface + `--line` | focus 2px halka + sol iç 3px accent · error `--danger` · disabled %45 |
-| Kart | — | 26px | 28px 28px 28px 12px | başlık 28px Baloo 2 | surface + `--shadow` | normal · ters damla (durum) · seçili (1px accent) |
-| Chip | 26px | 0 12px | 999px | 12px Courier Prime | surface-2 + `--line` | seçili: accent zemin + accent-ink |
-| Nav | 72px | 0 26px | 0 | 14px Poppins | bg + alt çizgi + 12px dalga | aktif: 999px pill zemin |
-| Tablo satırı | 48px | 0 16px | 12px (hover 18px) | 15px Poppins / mono sayı | satır `--surface-2`, aralar 4px | hover radius 18px · seçili 1px accent |
-| Modal | — | 30px | 28px 28px 18px 18px | başlık 28px Baloo 2 | surface + `0 8px 32px` + arka blob | açılış 1400ms · Esc kapatır |
-| Toast | 46px | 0 18px | 999px | 14px Poppins | surface + sol 6px damla | giriş 520ms · 5200ms · 2 üst sınır |
-| Grafik paleti | — | — | — | eksen 11px mono | accent → ink-soft → warn | en çok 3 seri · 2.5px yuvarlatılmış eğri, %12 dolgu |
+- The surfaces are separated by a thin accent edge; 1px signal line instead of shadow.
+- Radius: `18px` (buton, input, chip), `28px` (kart, modal). Corner 2–8px; In speculative language, geometry is sharp, rounding is measured.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 4px` — pill ve damla köşede halka görünür kalsın.
-- Dokunma hedefi: 48px buton/input ve 48px satır ≥ 44px; 26px çipler 44×44px sarmalayıcı ile büyütülür.
+## Bans
 
-## Görsel dil
+- Keskin köşe (4px altı), 90° form, kalın kontur.
+- Bounce/sıçrama, `steps()` hareket, hızlı (200ms altı) geçiş.
+- Metni blob/blur katmanının üstüne koymak.
+- Üçten fazla doygun renk; gradient metin.
+- İkiden fazla hareketli blob; sürekli şekil değiştiren liste öğeleri.
+- Uydurma finansal tutar/hedef; eksik içerik `{{amount}}` gibi işaretli yer tutucu olur.
+- Animasyonlu tarama.
+- More than three signal colors.
+- Unreadable 8px label.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 18px, 1.6px çizgi, yuvarlak uç; damla/akış metaforu |
-| Fotoğraf | yok; zorunluysa 28px radius + %85 doygunluk |
-| İllüstrasyon | CSS blob, dalga ayırıcı, yüzey gerilimi halkası; figüratif görsel yok |
-| Doku | blob katmanı (blur 6px, %18) + dalga dizisi; grain 0 |
-| Logo alanı | Baloo 2 18px + 14px damla işareti; 20px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 18px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 18px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 18px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 18px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 18px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 18px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 18px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 5.17:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like measuring mark |
+| photo | Technical visual: render, diagram, macro texture |
+| illustration | Diagram/scheme; no ornament illustration |
+| Texture | Scan line 3% |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-blob` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | orta | blob + 7/5 akış bölünmesi + damla köşeli hero kartı | `shots/01-page.png` |
 | Dashboard | düşük | 3 damla köşeli KPI + 3 serili yumuşak grafik | `shots/01-page.png` |
@@ -150,45 +176,33 @@ Akışkan arayüz fikri 2010'ların "soft UI" akımından ve sıvı metal/cam de
 | Hata | düşük | `--danger` sol damla şeridi, blob susturulur | `shots/01-page.png` |
 | Profil / ayar | orta | 48px satır + "hareketi azalt" anahtarı | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-- **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — viskozite ölçer — damla kesiti, pill satırlar, akış/sıcaklık altbilgisi.
+## Accessibility
 
-## Zorunlu kurallar
-- Kart köşeleri asimetrik (`28/28/28/12`); buton ve çipler 999px pill.
-- Hiçbir etkileşimli öğe 4px altı radius kullanmaz.
-- Blob yalnız dekoratif katmanda: 6px blur, %18 opaklık, metin üstünde yasak, en fazla 2 blob.
-- Dalga ayırıcı ekran başına 1, 12px yükseklik.
-- Hareket viskoz: en kısa 260ms, en uzun 1500ms; `steps()` ve bounce yasak.
-- Grafik eğrileri yumuşatılmış, çizgi ucu yuvarlak.
-- Renk, radius, gölge yalnız `--…` token'larından gelir.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.93:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.19:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.19:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 4.94:1 | ≥ 4.5 | button text |
+| focus ring/ground | 5.17:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 97.3 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Keskin köşe (4px altı), 90° form, kalın kontur.
-- Bounce/sıçrama, `steps()` hareket, hızlı (200ms altı) geçiş.
-- Metni blob/blur katmanının üstüne koymak.
-- Üçten fazla doygun renk; gradient metin.
-- İkiden fazla hareketli blob; sürekli şekil değiştiren liste öğeleri.
-- Uydurma finansal tutar/hedef; eksik içerik `{{amount}}` gibi işaretli yer tutucu olur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen riskler: en düşük çift `--ink-faint / bg` = **3.19:1** (dekoratif dipnot); etkileşimli metin `--ink` 15.93:1, `--ink-soft` 7.19:1; `accent-ink / accent` 4.94:1 (accent üstünde 15px altı metin kullanılmaz).
-- Hareket: uzun yumuşak geçişler `prefers-reduced-motion` ile kapanır; ayrıca ayarlarda "hareketi azalt" anahtarı bulunur.
-- Blob dekoratiftir; bilgi taşımaz; `aria-hidden` ile işaretlenir.
-- Şeffaf yüzey yok: blob `filter: blur()` ile bulanıklaştırılmış opak renktir — `@supports` fallback gerekmez.
-- Odak görünürlüğü: açık zeminde 2px kiremit halka 4.94:1; pill butonda `offset: 4px`.
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "yuvarlak SaaS şablonu" gibi duruyor | tüm köşeler eşit | bir köşeyi 12px'e düşür, diğerleri 28px |
 | Bulanık/kirli görünüyor | blob sayısı 3+ veya opaklık %25 üstü | 2 blob, %18 opaklık, 6px blur |
 | Hareket "gecikmiş" hissettiriyor | süreler 1500ms üstüne çıkmış | taban 520ms, giriş 1400ms'de kal |
@@ -196,28 +210,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Kontrast zayıf | accent üstünde küçük metin | accent üstü metni 15px+ yap veya `--ink` kullan |
 | Pill buton tıklanmıyor gibi | dokunma hedefi 40px altı | 48px'e çıkar, dikey padding ekle |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `organic-bio` — doğal form dili ortak; bitkisel içerik 38'den, akışkan yüzey 100'den.
-- **Uyumlu:** `claymorphism` — yumuşak hacim; ancak 100'de gölge tek ve düşük kalır.
-- **Uyumlu:** `aurora-ui` — atmosferik zemin; degrade 12'de kalır, 100 blob kullanır.
-- **Yasak:** `swiss-design` — 02'nin keskin ızgara ve 0 radius disiplini damla formunu dışlar.
-- **Yasak:** `constructivism` — kalın kontur ve sert blok köşe akışkanlığı bozar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `organic-bio` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `claymorphism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `aurora-ui` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `swiss-design` | Two different ornamental languages compete on the same screen |
+| Mixing | `optical-illusion` | Two different ornamental languages compete on the same screen |
+| Mixing | `constructivism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius | asimetrik köşe (blob) sözdizimi ve sınırları |
-| https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function | viskoz eğri seçimi ve karşılaştırma |
-| https://www.nngroup.com/articles/animation-duration/ | uzun yumuşak geçişlerin ne zaman kabul edilebilir olduğu |
-| https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html | hareketin kapatılabilir olması |
+| Source | for what |
+| --- | --- |
+| https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius | MDN · border-radius — asimetrik köşe (blob) sözdizimi ve sınırları |
+| https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function | MDN · easing-function — viskoz eğri seçimi ve karşılaştırma |
+| https://www.nngroup.com/articles/animation-duration/ | Nielsen Norman · Duration and easing — uzun yumuşak geçişlerin ne zaman kabul edilebilir olduğu |
+| https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html | WCAG 2.2 · Animation from Interactions — hareketin kapatılabilir olması |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Fluid Simulation (styles/100-fluid-simulation/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="fluid-simulation"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Baloo 2 600) başlıkta, --font-body (Poppins) gövdede,
@@ -228,15 +243,15 @@ Hareket: viskoz — enter 1.4s cubic-bezier(.22,.9,.24,1) 20px / stagger 0.16;
          scroll top 72% 1.5s 34px once:true; hover 520ms scale 1.028; pin yok; bounce ve steps yasak.
 Yasak: keskin köşe, metin üstünde blob, 3'ten fazla doygun renk, gradient metin, ikiden fazla hareketli blob.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda imza öğelerinden en az 2'si görünüyor (asimetrik damla köşe, pill, blob, dalga ayırıcı).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1, accent üstünde küçük metin yok.
-- [ ] Blob ≤ 2 ve metin üstünde değil.
-- [ ] 390px genişlikte taşma yok.
-- [ ] `prefers-reduced-motion` açıkken blob salınımı duruyor.
+Style: Fluid Simulation (fluid-simulation) · family: Motion & Optics (96–105)
+Token: --bg #eff4f3 · --surface #fbfdfc · --ink #101a1c · --accent #b8481a · --line rgba(16,26,28,.13)
+Radius: 18px / 28px · Typography: Baloo 2 / Poppins / Courier Prime
+Required: Kart köşeleri asimetrik: bir köşe 12px, diğerleri 28px — damla yönü okunur · Buton ve çip 999px pill; hiçbir etkileşimli öğe 4px altı radius kullanmaz · Blob katmanı yalnız dekoratif: 6px blur, %18 opaklık, metin üstünde yasak
+Banned: Keskin köşe (4px altı), 90° form, kalın kontur. · Bounce/sıçrama, `steps()` hareket, hızlı (200ms altı) geçiş. · Metni blob/blur katmanının üstüne koymak.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -247,14 +262,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #101a1c; --ink-soft: #435452; --ink-faint: #7d8b89;
   --accent: #b8481a; --accent-ink: #fdf6f2;
   --line: rgba(16,26,28,.13);
+  --danger: #d6291d;
+  --danger-ink: #ffffff;
+  --ok: #008138;
+  --ok-ink: #ffffff;
+  --warn: #b45300;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 18px; --radius-lg: 28px;
   --shadow: 0 2px 10px rgba(16,26,28,.08); --shadow-hard: none;
   --font-display: "Baloo 2", system-ui, sans-serif;
   --font-body: "Poppins", system-ui, sans-serif;
   --font-mono: "Courier Prime", ui-monospace, monospace;
-  --tracking: 0em; --blur: 6px; --grain: 0;
-  --danger: #a02b1c; --danger-ink: #ffffff; --ok: #29a680; --warn: #c68613;
+  --tracking: 0em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="fluid-simulation"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

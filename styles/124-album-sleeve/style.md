@@ -1,147 +1,169 @@
 # 124 · Album Sleeve
 
-> **Bir cümleyle:** Plak kılıfı: 1:1 kare kapak, solda 26px sırt şeridi, A/B parça listesi ve mono katalog numarası.
+> **In one sentence:** Album Sleeve
 
 | | |
 |---|---|
-| **Hissiyat** | koleksiyonluk, analog, sakin-gururlu, "rafa konulacak" |
-| **En iyi** | müzik/albüm yayını, sanatçı diskografisi, podcast/season kapağı, sınırlı baskı satışı, plak mağazası |
-| **Kaçın** | yoğun işlem formu, kurumsal dashboard, sağlık/random veri ekranı, hızlı kampanya sayfası |
-| **Zorluk** | düşük–orta (oran ve sırt disiplini) · **Erişilebilirlik** | iyi (15.40:1 gövde, 4.66:1 accent üstü) |
-| **Aile** | Oyuncu & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="album-sleeve"]` |
-| **Kompozisyon** | `index` · `pill` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | koleksiyonluk, analog, sakin-gururlu, "rafa konulacak" |
+| **Best for** | müzik/albüm yayını, sanatçı diskografisi, podcast/season kapağı, sınırlı baskı satışı, plak mağazası |
+| **Avoid** | yoğun işlem formu, kurumsal dashboard, sağlık/random veri ekranı, hızlı kampanya sayfası |
+| **Difficulty** | düşük–orta (oran ve sırt disiplini) · **Accessibility** |  |
+| **Family** | Playful (116–125) · **Token** | `kit/tokens.css` → `[data-style="album-sleeve"]` |
+| **Composition** | `index` · `pill` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Album Sleeve, 12 inç plak kılıfının ölçüsünü ekrana taşır: **1:1 kare kapak**, sol kenarda **26px mürekkep sırt şeridi** (dikey yazı: `LP · 33 1/3 RPM`), sağ altta **78×30px barkod dizisi**, sağda **A/B iki yüzlü parça listesi** ve mono **katalog numarası**. Tipografi analog baskı dilidir: Anton 400 (sıkı, yüksek display), Space Grotesk gövde, IBM Plex Mono etiket/süre. Accent tek: kiremit (`#cf3b0c`), yalnız katalog kutusu, birincil buton ve aktif işarette.
 
 Kazandığı şey: **nesne ağırlığı**. Kapak + sırt + parça listesi üçlüsü, dijital bir sayfayı "basılı bir obje" gibi okutur; süre kolonunun mono hizası albümü taranabilir kılar. Feda ettiği şey: **esneklik** — 1:1 oran geniş ekranda boşluk bırakır, kılıf büyütülmez; liste ekranlarında kapak küçültülür, oran değişmez.
 
-### Ne değildir
+### What is not
 - **Vaporwave (20) değildir.** Vaporwave pastel/mor, VHS çizgisi ve kolajla **nostalji parodisi** kurar; burada mat kâğıt, tek accent, sırt şeridi ve gerçek parça listesi var.
 - **Y2K (19) değildir.** Y2K krom/parlak plastik ve buz mavisiyle dönemsel parlaklık kurar; burada yüzey mat, gölge çok hafif (`0 2px 10px`).
 - **Product Catalog (91) değildir.** Catalog kod–ad–ölçü–fiyat dört sütunu ve swatch'larla ticari katalog kurar; burada parça listesi (A/B + süre) ve sırt şeridi karakterdir, fiyat yoktur.
 - **Poetry Chapbook (90) değildir.** Chapbook dar ölçü ve geniş kenarla şiir okuması kurar; burada kare kapak ve tablo hizası var.
 - **"Büyük görsel + başlık" değildir.** Sırt şeridi, barkod ve iki yüzlü parça listesi olmadan bu stil sadece bir kapak vitrinidir.
 
-### Nereden gelir
+### Where it comes from
 12 inç LP kılıfı 1950'lerde standartlaştı: **313×313 mm**, sırt şeridinde sanatçı/albüm adı (rafta görünen tek yüz), arka yüzde A/B parça listesi ve süreler, köşede katalog numarası. Dijitalde bu biçim 2010'lardan sonra "albüm yayını" ve "sınırlı baskı" kültürüyle döndü; nedeni ölçülebilir — kare kapak, akış içinde tek bakışta tanınır ve platformlar arası aynı kalır.
 
 Klişeye düşmemesi için korunması gereken detay: **sırt şeridi ve oran**. Sırtı kaldırmak, kapağı 16:9'a çevirmek veya parça listesini ortalamak stili "müzik uygulaması kartı"na indirger.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Kapak **1:1 kare** mi ve sol kenarında **26px dikey sırt şeridi** var mı?
 2. Parça listesi **A / B** yüz başlıklarına ayrılmış mı; süreler **mono ve sağa dayalı** mı?
 3. Bir yerde **mono katalog numarası** (`CAT. NO. LP-124`) ve **barkod dizisi** var mı?
 4. Display **Anton** (sıkı, çok kalın) mı; gövde Space Grotesk, etiket mono mu?
 5. Accent **kiremit** ve ekranın ≤ %8'inde mi; gölge çok hafif, radius ≤ 4px mi?
 
-## Görsel imza
-1. **1:1 kılıf:** `aspect-ratio: 1/1`, `border: 1px solid var(--line)`, `box-shadow: var(--shadow)`; kapak kartı oranını asla kaybetmez.
-2. **Sırt şeridi:** sol kenarda 26px (mobil 20px) mürekkep şerit; `writing-mode: vertical-rl`, mono 9px, `.22em` tracking.
-3. **Barkod:** 78×30px, `repeating-linear-gradient(90deg, ink 0 2px, transparent 2px 4px, ink 4px 5px, transparent 5px 9px)`; dekoratif, taranmaz.
-4. **Katalog kutusu:** mono 10px `.16em`, accent zemin + `--accent-ink`, padding 4px 8px; hero sol üstte.
-5. **İki yüzlü parça listesi:** `A` / `B` başlıkları mono 10px `.14em`; satır 34px; süre `tabular-nums` sağa dayalı.
-6. **Hafif gölge:** `0 2px 10px rgba(19,20,24,.10)`; kart/panel gölgesiz, yalnız kılıf ve modal.
-7. **Keskin köşe:** radius 2px (kart/kılıf), 4px (modal); buton 0; pill yok.
+## Visual signature
+- **1:1 kılıf:** `aspect-ratio: 1/1`, `border: 1px solid var(--line)`, `box-shadow: var(--shadow)`; kapak kartı oranını asla kaybetmez.
+- **Sırt şeridi:** sol kenarda 26px (mobil 20px) mürekkep şerit; `writing-mode: vertical-rl`, mono 9px, `.22em` tracking.
+- **Barkod:** 78×30px, `repeating-linear-gradient(90deg, ink 0 2px, transparent 2px 4px, ink 4px 5px, transparent 5px 9px)`; dekoratif, taranmaz.
+- **Katalog kutusu:** mono 10px `.16em`, accent zemin + `--accent-ink`, padding 4px 8px; hero sol üstte.
+- **İki yüzlü parça listesi:** `A` / `B` başlıkları mono 10px `.14em`; satır 34px; süre `tabular-nums` sağa dayalı.
+- **Hafif gölge:** `0 2px 10px rgba(19,20,24,.10)`; kart/panel gölgesiz, yalnız kılıf ve modal.
+- **Keskin köşe:** radius 2px (kart/kılıf), 4px (modal); buton 0; pill yok.
+- **Typography:** Anton (display) + Space Grotesk (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#cf3b0c`; neutral scale `#ecebe4` → `#131418`.
+- **Radius:** `2px` / `4px`; Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#ecebe4` | Sayfa zemini (raf kâğıdı) | Kapak içi |
-| `--bg-2` | `#e2e0d8` | Bölüm şeridi, alt bilgi | Geniş dolgu |
-| `--surface` | `#fbfaf5` | Kapak kartı, panel, form | Sayfa zemini |
-| `--surface-2` | `#e6e4da` | Hover satır, ikincil buton | Metin arkası |
-| `--ink` | `#131418` | Metin, sırt şeridi, barkod, tablo başlığı | Accent zemin üstü |
-| `--ink-soft` | `#45474e` | Lede, süre kolonu, ikincil | 10px altı etiket |
-| `--ink-faint` | `#74767c` | Parça numarası, dekoratif etiket | Etkileşimli metin |
-| `--accent` | `#cf3b0c` | Katalog kutusu, birincil buton, aktif işaret | Gövde metni, geniş zemin |
-| `--accent-ink` | `#fff8f2` | Accent üstü metin | Accent olmayan zemin |
-| `--line` | `rgba(19,20,24,.18)` | Kart kenarı, tablo çizgisi | Sırt şeridi (o mürekkep) |
+1. **1:1 kılıf:** kapak `aspect-ratio: 1/1`; oran hiçbir breakpoint'te değişmez.
+2. **Sırt şeridi:** sol kenarda 26px (mobil 20px) dolu şerit + dikey mono yazı; şerit kaldırılmaz.
+3. **A/B listesi:** iki yüz başlığı, satırda no + ad + süre; süre mono ve sağa dayalı.
+4. **Katalog kimliği:** mono `CAT. NO.` kutusu ve barkod dizisi görünür (barkod dekoratif).
+5. **Accent ≤ %8:** kiremit yalnız katalog kutusu, birincil buton, aktif işaret.
+6. **Keskin yüzey:** radius 2/4px, buton 0; gölge yalnız kılıf ve modalda, çok hafif.
 
-- Ölçülen kontrast: `ink / bg` = **15.40:1** · `ink-soft / bg` = **7.76:1** · `accent-ink / accent` = **4.66:1** · `ink-faint / bg` = **3.80:1** (yalnız dekoratif).
-- Tek vurgu kuralı: kiremit accent ekranın **≤ %8**'i; kapak görseli accent'e bağlı değil (albüm kapağı kendi renklerini taşır, arayüz accent'i tek kalır).
-- Yasak kombinasyon: accent zemin + `--ink-soft`; `ink-faint` + `surface-2` (3.1:1); ikinci accent (mavi = "single", yeşil = "yeni").
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#ecebe4` | page background | as a card background |
+| `--bg-2` | `#e2e0d8` | partition divider floor, table top | button background |
+| `--surface` | `#fbfaf5` | kart, input, modal | full-page background |
+| `--surface-2` | `#e6e4da` | passive chip, hover background | primary button |
+| `--ink` | `#131418` | title, body, icon | large background |
+| `--ink-soft` | `#45474e` | secondary text, description | — |
+| `--ink-faint` | `#74767c` | decorative label, separator text | interactive text |
+| `--accent` | `#cf3b0c` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fff8f2` | text above accent | non-accent background |
+| `--line` | `rgba(19,20,24,.18)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Anton | 66px (mobil 40px) | 400 | 0.92 | -0.015em |
-| H2 | Anton | 34px | 400 | 0.98 | -0.01em |
-| H3 (parça adı) | Space Grotesk | 19px | 500 | 1.24 | 0 |
-| Gövde | Space Grotesk | 15px | 400 | 1.68 | 0 |
-| Lede | Space Grotesk | 15px | 400 | 1.68 | 0 (50ch) |
-| Etiket / mono | IBM Plex Mono | 10.5px | 400 | 1.45 | 0.14em |
-| Süre / no | IBM Plex Mono | 11px | 400 | 1.3 | 0.02em |
+- Measured contrast: `ink/bg` **15.4:1** · `ink-soft/bg` **7.76:1** · `ink-faint/bg` **3.8:1 (decorative)** · `accent-ink/accent` **4.66:1**.
+- HUD contrast: status colors (live/damage) are derived from the accent's tones; A fourth hue is not added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 2.0 (15 → 34 → 66); kapak tipografisi bilinçli olarak büyük zıplar.
-- Ölçü önerisi: `h1 { font-size: clamp(40px, 6vw, 66px) }`.
-- Gövde metni maksimum satır uzunluğu: **50ch**; parça listesi satırı tek satır (taşarsa kesme, sarma yok).
-- Ağırlık kuralı: display yalnız 400 (Anton tek ağırlık; sahte kalın yasak), gövde 400/500, mono 400.
-- Kapak başlığı en fazla 6 kelime: Anton 66px'te uzun başlık taşar; taşma yerine başlık kısaltılır.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Anton) | 40px (mobile 40px) | 700 | 1.1 | 0.01em |
+| H2 | same | 34px | 600 | 1.2 | 0.01em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Space Grotesk) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 10.5px | 400 | 1.2 | 0.2em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (kılıf 6, parça listesi 6) |
-| Gutter | 24px |
-| Container genişliği | 1200px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 / 768 / 390 — 768 altında kılıf üstte tam genişlik, liste altta; oran 1:1 korunur |
+- Numbers are taboos; score/timer areas are mono and right aligned. Title in uppercase, body in sentence order.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: hero'da tek kılıf + tek liste; arşiv ekranında 3-4 kılıf ızgarası (hepsi 1:1), liste yan sütunda.
-- Bölüm ritmi: art arda en fazla **2** kılıf satırı; sonra 1px divider ve 32px boşluk.
-- Bölüm dikey boşluk 76px (mobil 44px); kart padding 20px; parça satırı 34px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | Sayfa, şerit |
-| Kılıf | `--surface` + `--shadow` | `0 2px 10px rgba(19,20,24,.10)` | Kapak, modal |
-| Panel | `--surface` + 1px `--line` | `none` | Parça listesi, ayar, KPI |
+- The screen grid acts like a visible frame: a 1px accent border is placed between sections, no decorative lines are added.
+- Section vertical space 64px desktop, 40px mobile; card padding 18px.
 
-- Kenarlık formülü: kılıf/panel `1px solid var(--line)`; tablo başlığı altı `1px solid var(--ink)`; sırt şeridi `--ink` dolu alan.
-- Derinlik nereden gelir: **tek hafif gölge + sırt şeridi**; iç gölge, kalın çerçeve, blur yok.
-- Radius: `--radius` 2px (kılıf, kart) · `--radius-lg` 4px (modal). Buton ve chip 0px — baskı keskinliği.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 12px 18px | 0px | 10.5px/400 mono, .12em | `--accent` / `--accent-ink`, gölge yok | hover %90 380ms · active translateY(1px) · focus 1px accent + 2px offset · disabled opacity .45 kesikli · loading `···` 900ms |
-| Buton (ikincil) | 44px | 12px 18px | 0px | 10.5px/400 mono | şeffaf / `--ink`, 1px `--line` | hover kenar `--ink` · focus aynı |
-| Input | 44px | 0 12px | 2px | 15px/400 Space Grotesk | `--surface` + 1px `--line` | focus 1px accent + 2px offset · error `--danger` + mono açıklama |
-| Kılıf kartı | — | 20px | 2px | başlık Anton 34px | `--surface` + `--shadow` + sırt şeridi | hover: kapak 1.062 ölçek (380ms), oran korunur |
-| Chip | 20px | 2px 6px | 0px | 9.5px/400 mono, .12em | şeffaf + 1px `--line` | accent varyantı dolu (pre-order / yeni single) |
-| Nav | 54px | 0 36px | 0 | marka Anton 22px + mono 10.5px | `--bg` + alt 1px `--line` | aktif: 1px accent alt çizgi |
-| Tablo satırı (parça) | 34px | 8px 10px | 0 | ad Space Grotesk 15px, no/süre mono | alt 1px `--line` | hover `--surface-2`; çalan parça: sol 2px accent |
-| Modal | — | 24px | 4px | H2 Anton 34px | `--surface` + `--shadow` | 1:1 kapak + liste, perde %55 |
-| Toast | 38px | 10px 14px | 0px | 11px/400 mono | `--ink` zemin / `--bg` metin | sol uçta 6px accent kare, 3200ms |
-| Grafik (dinleme) | — | — | — | eksen 10px mono | `--accent`, `--ink` | en fazla 2 seri; 1px çizgi |
+- Surfaces are opaque; There is no glass/blur. Thin accent edge is used for status notification.
+- Radius: `2px` (buton, input, chip), `4px` (kart, modal). Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-- Odak halkası: `outline: 1px solid var(--accent); outline-offset: 2px`; accent butonda `outline-color: var(--accent-ink)`, offset -3px.
-- Dokunma hedefi: en az 44×44px; parça satırı 34px yüksekliğinde ama satır tamamı 44px hedef olarak tıklanır (padding ile).
-- Kapak hover'ında 1.062 ölçek; kılıfın kare oranı ve sırt şeridi yerinde kalır (taşma `overflow: hidden`).
+## Bans
 
-## Görsel dil
+- Dönen plak / iğne animasyonu, sürekli döngü.
+- Kapak oranını 16:9 veya serbest orana çevirmek.
+- Gradient "vinil parlaması", blur, cam yüzey, renkli gölge.
+- 4px üstü radius, pill buton, yuvarlak avatar.
+- İkinci accent (mavi/yeşil) ve renkli "single/yeni" rozetleri.
+- Parça listesinde orantılı sayı veya ortalanmış süre.
+- Infinite blinking indicator (no animation in v6).
+- More than three status colors.
+- Serif title in HUD.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1px çizgi veya dolu disk/play üçgeni, 20px ızgara; dekoratif ikon yok |
-| Fotoğraf | Yalnız kapak içinde 1:1; tek nesne/kolaj, doygunluk serbest |
-| İllüstrasyon | Kapak illüstrasyonu tek katman düz renkler; sayfa gövdesinde illüstrasyon yok |
-| Doku | `--grain: .025` kâğıt; sırt şeridi düz mürekkep |
-| Logo alanı | Anton kelime markası (kılıf köşesi), 20px güvenli boşluk; plak şirketi etiketi mono kutu |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 2px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 2px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 2px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 2px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 2px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 2px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 2px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 4.69:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px block icon, 16/20px canvas; no anti-alias, integer scale |
+| photo | In-game rendering or single object shooting; 25% area, dark vignette |
+| illustration | Sprite/silhouette: up to 3 tones (accent, ink, surface-2) |
+| Texture | Static raster (1px/3px, 4%) on section background only |
+| Logo | Top left 20px, uppercase, mono or display |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Primary focus is on one big number/score; second focus single CTA; the rest is label.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 66px Anton başlık + 1:1 kılıf + sırt şeridi + katalog kutusu | `shots/01-page.png` |
 | Dashboard | orta | Son çalınanlar listesi + küçük kılıflar (1:1) | `shots/01-page.png` |
@@ -156,47 +178,33 @@ Klişeye düşmemesi için korunması gereken detay: **sırt şeridi ve oran**. 
 | Hata | düşük | `--danger` kenar + mono açıklama; barkod/sırt yok | `shots/01-page.png` |
 | Profil / ayar | orta | Diskografi ızgarası (1:1 kılıflar), mono etiketler | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.4:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.76:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.8:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 4.66:1 | ≥ 4.5 | button text |
+| focus ring/ground | 4.69:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 93 | ≥ 60 target | thin text |
 
-1. **1:1 kılıf:** kapak `aspect-ratio: 1/1`; oran hiçbir breakpoint'te değişmez.
-2. **Sırt şeridi:** sol kenarda 26px (mobil 20px) dolu şerit + dikey mono yazı; şerit kaldırılmaz.
-3. **A/B listesi:** iki yüz başlığı, satırda no + ad + süre; süre mono ve sağa dayalı.
-4. **Katalog kimliği:** mono `CAT. NO.` kutusu ve barkod dizisi görünür (barkod dekoratif).
-5. **Accent ≤ %8:** kiremit yalnız katalog kutusu, birincil buton, aktif işaret.
-6. **Keskin yüzey:** radius 2/4px, buton 0; gölge yalnız kılıf ve modalda, çok hafif.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Yasaklar
+## Sample images
 
-- Dönen plak / iğne animasyonu, sürekli döngü.
-- Kapak oranını 16:9 veya serbest orana çevirmek.
-- Gradient "vinil parlaması", blur, cam yüzey, renkli gölge.
-- 4px üstü radius, pill buton, yuvarlak avatar.
-- İkinci accent (mavi/yeşil) ve renkli "single/yeni" rozetleri.
-- Parça listesinde orantılı sayı veya ortalanmış süre.
+Identical content is rendered with the same text in every style; only the design differs.
 
-## Erişilebilirlik
-
-- Ölçülen riskler: `accent-ink / accent` = **4.66:1** (eşiğin hemen üstü) → accent zemin üstünde 10.5px mono etiket yalnız büyük harf/kısa metin; `ink-faint / bg` = **3.80:1** yalnız parça numarası (dekoratif).
-- Parça numarası `--ink-faint` ama süre `--ink-soft` (7.76:1): okunması gereken bilgi soluk renge bırakılmaz.
-- Barkod ve sırt şeridi dekoratif değil **kimlik**tir: barkod `aria-hidden`, sırt şeridi metin olarak okunur (`LP · 33 1/3 RPM`).
-- Hareket: 900ms giriş + `once: false` scroll reveal uzun; `prefers-reduced-motion` hepsini 0.01ms'e çeker, pin/scrub kapanır.
-- Şeffaf yüzey yok (`--blur: 0`); `color-mix` kullanılmıyor.
-- Odak görünürlüğü: 1px accent + 2px offset (4.66:1); accent butonda `--accent-ink` halka, offset -3px.
-
-## Örnek görseller
-
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Müzik uygulaması kartı" gibi | sırt şeridi kaldırılmış, oran 16:9 | 1:1 + 26px sırt şeridi geri getir |
 | Liste okunmuyor | süreler ortalanmış, orantılı sayı | Sağa dayalı mono + `tabular-nums` |
 | Kapak "yüzüyor" | kalın gölge/çerçeve | `0 2px 10px` tek hafif gölge, 1px kenar |
@@ -204,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Accent her yerde | ikinci renk + rozetler | Tek kiremit; durum bilgisi mono metinle |
 | Mobilde oran bozuluyor | sabit yükseklik verilmiş | Yalnız `aspect-ratio: 1/1`; yükseklik serbest |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `editorial-design` — albüm notu/liner notes metnini editorial üstlenir; kılıf oranı korunur.
-- **Uyumlu:** `product-catalog` — diskografi tablosu ve fiyat sütunu ortak; catalog'un dört sütun kuralı bu stilde listeye dönüşür.
-- **Uyumlu:** `grand-tourer` — analog makine/plak dili ortak; grand-tourer yalnız "sınırlı baskı" kartında.
-- **Yasak:** `claymorphism` — şişkin yuvarlak form kılıf keskinliğini yok eder.
-- **Yasak:** `glassmorphism` — blur/şeffaflık mat kâğıt kılıfını kırar.
-- **Yasak:** `ethereal` — sis/nefes dili kapak nesnesini eritir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `editorial-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `product-catalog` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `grand-tourer` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `ethereal` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Album_cover | 12 inç kılıf oranı ve sırt yazısı geleneği |
-| https://en.wikipedia.org/wiki/LP_record | 33 1/3 RPM, A/B yüz ayrımı, süreler |
-| https://www.discogs.com/ | katalog numarası, etiket bilgisi, parça listesi düzeni |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | küçük mono etiket kontrastı |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Album_cover | Album cover — Wikipedia — 12 inç kılıf oranı ve sırt yazısı geleneği |
+| https://en.wikipedia.org/wiki/LP_record | LP record — Wikipedia — 33 1/3 RPM, A/B yüz ayrımı, süreler |
+| https://www.discogs.com/ | Discogs — katalog numarası, etiket bilgisi, parça listesi düzeni |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast (Minimum) — küçük mono etiket kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Album Sleeve (styles/124-album-sleeve/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="album-sleeve"] değişkenleri; hard-coded renk/golge/radius yasak.
 Tipografi: display Anton 400 (H1 66px / .92 / -.015em, mobil 40px), govde Space Grotesk 400 15/1.68
@@ -243,15 +251,15 @@ Hareket: enter 900ms cubic-bezier(.4,.05,.2,1) 18px stagger 100ms; scroll top 80
 Yasak: donen plak/igne animasyonu, 1:1 disi oran, gradient vinil parlamasi, blur/cam,
   4px ustu radius, pill buton, ikinci accent, orantisiz sure.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (1:1 kılıf, sırt şeridi, A/B liste, barkod).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1 (15.40:1), accent üstü ≥ 4.5:1 (4.66:1).
-- [ ] Odak halkası görünür (1px + 2px offset), dokunma hedefi ≥ 44px.
-- [ ] 390px genişlikte taşma yok; kılıf 1:1, sırt 20px.
-- [ ] `prefers-reduced-motion` açıkken hareket ve pin duruyor.
+Style: Album Sleeve (album-sleeve) · family: Playful (116–125)
+Token: --bg #ecebe4 · --surface #fbfaf5 · --ink #131418 · --accent #cf3b0c · --line rgba(19,20,24,.18)
+Radius: 2px / 4px · Typography: Anton / Space Grotesk / IBM Plex Mono
+Required: **1:1 kılıf:** kapak `aspect-ratio: 1/1`; oran hiçbir breakpoint'te değişmez. · **Sırt şeridi:** sol kenarda 26px (mobil 20px) dolu şerit + dikey mono yazı; şerit kaldırılmaz. · **A/B listesi:** iki yüz başlığı, satırda no + ad + süre; süre mono ve sağa dayalı.
+Banned: Dönen plak / iğne animasyonu, sürekli döngü. · Kapak oranını 16:9 veya serbest orana çevirmek. · Gradient "vinil parlaması", blur, cam yüzey, renkli gölge.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -262,20 +270,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #131418; --ink-soft: #45474e; --ink-faint: #74767c;
   --accent: #cf3b0c; --accent-ink: #fff8f2;
   --line: rgba(19,20,24,.18);
+  --danger: #d02015;
+  --danger-ink: #ffffff;
+  --ok: #007b33;
+  --ok-ink: #ffffff;
+  --warn: #af4d00;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 2px; --radius-lg: 4px;
   --shadow: 0 2px 10px rgba(19,20,24,.10); --shadow-hard: none;
-  --font-display: "Anton", Impact, system-ui, sans-serif;
+  --font-display: "Anton", system-ui, sans-serif;
   --font-body: "Space Grotesk", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: -0.015em; --blur: 0px; --grain: 0.025;
+  --tracking: -0.015em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `token-block.css` içinde `[data-theme="dark"][data-style="album-sleeve"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.
-
-## QA düzeltmeleri (2026-11-04)
-
-- **Kontrast (ölçüldü, kit/color.mjs):** `accent / bg` 4.10:1 · `ink-soft / surface-2` 7.28:1 · `accent-ink / accent` 4.66:1. Devre dışı buton `opacity: .6` + `--ink-soft` metin (önce .45), ghost buton kenarlığı `color-mix(in srgb, var(--ink) 30%, transparent)` (koyu modda görünür), `logo-strip` / footer etiketleri `--ink-faint` → `--ink-soft`.
-- **Örtüşme:** butonlara `white-space: nowrap` (metin ikinci satıra düşmüyor). Dekor katmanı `body.scene-landing .sig { z-index: -1 }` ile içeriğin altına alındı (confetti/rozet/kurdele yazının üstünden geçmiyor).
-- **Yerleşim:** hero kutusu zaten `aspect-ratio: 1 / 1`; min-height gerekmedi. Hero imzası `scenes.landing` ile kuruldu: plak: göbek deliği + oluk halkaları + şarkı listesi (kutu 1:1 olduğu için min-height gerekmedi).
-- **Hareket:** sayılar değişmedi ve tokens.json ile aynı — `enter 0.9s` / `scroll 0.95s` (ikisi de ≤ 1.2 s).

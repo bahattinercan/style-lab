@@ -1,147 +1,169 @@
 # 122 · Collectible Card
 
-> **Bir cümleyle:** Koleksiyon kartı: sabit 5:7 oran, 6px içeri çekilmiş ikinci çerçeve, sol üstte holo bant ve altta mono stat şeridi.
+> **In one sentence:** Collectible Card
 
 | | |
 |---|---|
-| **Hissiyat** | toplanabilir, değerli, taktik, "elden ele geçen" |
-| **En iyi** | koleksiyon kartı ürünü (dijital kart, oyun envanteri), albüm/koleksiyon yönetimi, nadirlik vitrini, turnuva/sezon ödülü |
-| **Kaçın** | bankacılık işlem onayı, sağlık formu, uzun okuma sayfası, sade kurumsal vitrin |
-| **Zorluk** | orta (kart oranı + katman disiplini) · **Erişilebilirlik** | iyi (16.04:1 gövde, 6.44:1 accent üstü) |
-| **Aile** | Oyuncu & Duygusal (116–125) · **Token** | `kit/tokens.css` → `[data-style="collectible-card"]` |
-| **Kompozisyon** | `split-reverse` · `utility` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | toplanabilir, değerli, taktik, "elden ele geçen" |
+| **Best for** | koleksiyon kartı ürünü (dijital kart, oyun envanteri), albüm/koleksiyon yönetimi, nadirlik vitrini, turnuva/sezon ödülü |
+| **Avoid** | bankacılık işlem onayı, sağlık formu, uzun okuma sayfası, sade kurumsal vitrin |
+| **Difficulty** | orta (kart oranı + katman disiplini) · **Accessibility** |  |
+| **Family** | Playful (116–125) · **Token** | `kit/tokens.css` → `[data-style="collectible-card"]` |
+| **Composition** | `split` · `inline` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Collectible Card, fiziksel kartın **ölçüsünü** korur: kart `aspect-ratio: 5/7` (2.5×3.5 inç), kenardan **6px içeri çekilmiş ikinci 1px çerçeve**, sol üstte **45° holo bant** (`%50` opaklık) ve alt **%20'de üç hücreli stat şeridi** (mono, `tabular-nums`). Tipografi taktik dildir: Chakra Petch 600 başlık, Jost gövde, JetBrains Mono etiket ve sayı. Accent moru (`#5c33e0`) kartın kimliğini taşır; nadirlik **renkle değil** metinle (`Nadir · 0042/1200`) yazılır.
 
 Kazandığı şey: **sahiplik hissi**. Kart, ekranın içinde "başka bir nesne" gibi durur; set numarası ve stat şeridi onu koleksiyonun parçası yapar. Feda ettiği şey: **akışkanlık** — bu ölçü 5:7'ye kilitli olduğu için geniş ekranlarda boşluk bırakır; liste/tablo ekranlarında kart küçültülür, oran asla değişmez.
 
-### Ne değildir
+### What is not
 - **Bento Grid (05) değildir.** Bento değişken oranlı kutularla modüler düzen kurar; burada **tek oran** (5:7) ve katmanlı çerçeve var, kutular birbirine benzemez çünkü hepsi karttır.
 - **Neo-Brutalism (13) değildir.** Neo-brutalism 2-3px siyah kenar ve sert gölgeyle kaba dil kurar; burada kenar 1px, gölge yumuşak (`0 10px 24px`), radius 10/16px.
 - **Skeuomorphism (34) değildir.** Skeuomorphism malzeme dokusunu (deri, metal) taklit eder; burada doku yok, yalnız holo **bant** ve ince grain `.02`.
 - **Y2K (19) değildir.** Y2K krom/parlak plastik ve cam efektleriyle dönemsel nostalji kurar; burada mat yüzey ve tek accent.
 - **"Kutu + gölge" değildir.** 5:7 oran, 6px iç çerçeve, holo bant ve stat şeridi olmadan bu stil sıradan bir kart bileşenidir.
 
-### Nereden gelir
+### Where it comes from
 Koleksiyon kartı 19. yy sonunda tütün kartlarıyla başladı, 1990'larda oyun kartlarıyla (TCG) standartlaştı: **2.5×3.5 inç**, ön yüzde görsel + tip + metin, alt şeritte istatistik, köşede set numarası. Dijitalde aynı biçim oyun envanterlerine ve koleksiyon uygulamalarına geçti; nedeni ölçülebilir — sabit oran, farklı üreticilerin kartlarını aynı ızgarada birleştirir.
 
 Klişeye düşmemesi için korunması gereken detay: **oran ve katman**. Kartı kareye çevirmek, holo bandı tüm yüzeye yaymak veya nadirliği renkle kodlamak stili "oyuncak vitrin"e çevirir.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Kart **5:7 oranında** mı (dikey, ince uzun); kare kart var mı?
 2. Kenardan **6px içeride ikinci 1px çerçeve** görünüyor mu?
 3. Sol üstte **45° taramalı holo bant** var mı; ekranın başka yerinde yok mu?
 4. Alt şeritte **üç hücreli mono stat** (ör. `7 · 4 · 2`) ve set numarası (`0042/1200`) var mı?
 5. Nadirlik **metinle** mi yazılı (renkli rozet yok); gölge tek katman mı?
 
-## Görsel imza
-1. **Sabit oran:** `aspect-ratio: 5/7`; kart, küçük listede bile oranını korur (grid içinde de sabit).
-2. **Katmanlı çerçeve:** `inset: 6px` ikinci `1px` çerçeve, `accent %40`; kart ile içerik arasında 6px nefes.
-3. **Holo bant:** `repeating-linear-gradient(45deg, accent %55 0 2px, transparent 2px 9px)`, kartın sol üst %60×%160 alanında, opacity `.50`.
-4. **Stat şeridi:** kartın alt %20'si; 3 hücre, 1px dikey çizgi, mono 13px `tabular-nums`.
-5. **Nadirlik taşı:** 22px accent kare, `rotate(45deg)`, çevresinde 4px `%22 accent` halka; landing'de 1 adet.
-6. **Deste:** iki ofset çerçeve (6px ve 12px kaydırma), `rotate(-3deg)`; gölge çoğaltılmaz.
-7. **Tip ikonu:** 20px tek renk sembol, kartın sağ üstünde; ikinci ikon yok.
+## Visual signature
+- **Sabit oran:** `aspect-ratio: 5/7`; kart, küçük listede bile oranını korur (grid içinde de sabit).
+- **Katmanlı çerçeve:** `inset: 6px` ikinci `1px` çerçeve, `accent %40`; kart ile içerik arasında 6px nefes.
+- **Holo bant:** `repeating-linear-gradient(45deg, accent %55 0 2px, transparent 2px 9px)`, kartın sol üst %60×%160 alanında, opacity `.50`.
+- **Stat şeridi:** kartın alt %20'si; 3 hücre, 1px dikey çizgi, mono 13px `tabular-nums`.
+- **Nadirlik taşı:** 22px accent kare, `rotate(45deg)`, çevresinde 4px `%22 accent` halka; landing'de 1 adet.
+- **Deste:** iki ofset çerçeve (6px ve 12px kaydırma), `rotate(-3deg)`; gölge çoğaltılmaz.
+- **Tip ikonu:** 20px tek renk sembol, kartın sağ üstünde; ikinci ikon yok.
+- **Typography:** Chakra Petch (display) + Jost (body) + JetBrains Mono (mono label).
+- **Colour discipline:** a single accent `#5c33e0`; neutral scale `#eef1f7` → `#131521`.
+- **Radius:** `10px` / `16px`; Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#eef1f7` | Sayfa zemini (binder sayfası) | Kart içi |
-| `--bg-2` | `#e5e9f2` | Filtre şeridi, alt bilgi | Geniş dolgu |
-| `--surface` | `#ffffff` | Kart yüzeyi, panel, modal | Sayfa zemini |
-| `--surface-2` | `#e9edf6` | Chip, ikincil buton hover | Metin arkası |
-| `--ink` | `#131521` | Kart başlığı, gövde, sayılar | Accent zemin üstü |
-| `--ink-soft` | `#474b5c` | Lede, kart metni, açıklama | Stat şeridi sayıları (o `--ink`) |
-| `--ink-faint` | `#767b8c` | Set no, dekoratif etiket | Etkileşimli metin |
-| `--accent` | `#5c33e0` | Holo bant, iç çerçeve, nadirlik taşı, birincil buton | Gövde metni |
-| `--accent-ink` | `#f7f4ff` | Accent üstü metin | Accent olmayan zemin |
-| `--line` | `rgba(19,21,33,.16)` | Kart kenarı, tablo çizgisi | Holo bant |
+1. **Oran sabit:** kart `aspect-ratio: 5/7`; hiçbir breakpoint'te kare/geniş karta dönmez.
+2. **İkinci çerçeve:** 6px içeride 1px `accent %40`; tek çerçeve, kalınlaştırılmaz.
+3. **Holo bant tek:** sol üst köşe, 45°, opacity `.50`; kart dışında kullanılmaz.
+4. **Stat şeridi:** 3 hücre, mono tabular, kartın alt %20'si; hücre ayırıcı 1px.
+5. **Set numarası:** `0042/1200` biçiminde mono; nadirlik metinle, renkle değil.
+6. **Tek gölge:** `0 10px 24px`; deste hissi ofset çerçeveden gelir, gölge çoğaltılmaz.
 
-- Ölçülen kontrast: `ink / bg` = **16.04:1** · `ink-soft / bg` = **7.64:1** · `accent-ink / accent` = **6.44:1** · `ink-faint / bg` = **3.73:1** (yalnız dekoratif).
-- Tek vurgu kuralı: mor accent ekranın **≤ %10**'u; nadirlik renkle kodlanmaz, mono metinle yazılır.
-- Yasak kombinasyon: accent zemin + `--ink-soft`; `--ink-faint` + `--surface-2` (3.1:1); ikinci accent (altın = efsanevi, gökkuşağı = holo).
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#eef1f7` | page background | as a card background |
+| `--bg-2` | `#e5e9f2` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#e9edf6` | passive chip, hover background | primary button |
+| `--ink` | `#131521` | title, body, icon | large background |
+| `--ink-soft` | `#474b5c` | secondary text, description | — |
+| `--ink-faint` | `#767b8c` | decorative label, separator text | interactive text |
+| `--accent` | `#5c33e0` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f7f4ff` | text above accent | non-accent background |
+| `--line` | `rgba(19,21,33,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Chakra Petch | 48px (mobil 32px) | 600 | 1.02 | 0.01em |
-| H2 | Chakra Petch | 28px | 600 | 1.1 | 0.01em |
-| H3 (kart adı) | Chakra Petch | 19px | 600 | 1.24 | 0.01em |
-| Gövde (kart metni) | Jost | 15.5px | 400 | 1.66 | 0 |
-| Stat / mono | JetBrains Mono | 13px | 400 | 1.3 | 0.02em |
-| Etiket / mono | JetBrains Mono | 11px | 400 | 1.4 | 0.12em |
+- Measured contrast: `ink/bg` **16.04:1** · `ink-soft/bg` **7.64:1** · `ink-faint/bg` **3.73:1 (decorative)** · `accent-ink/accent` **6.44:1**.
+- HUD contrast: status colors (live/damage) are derived from the accent's tones; A fourth hue is not added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.6 (15.5 → 28 → 48); kart yüzeyinde en fazla 3 punto (19 / 13 / 11).
-- Ölçü önerisi: `h1 { font-size: clamp(32px, 4vw, 48px) }`.
-- Gövde metni maksimum satır uzunluğu: **52ch**; kart içi metin 34ch (dar kolon).
-- Ağırlık kuralı: display 600 (Chakra Petch'te 700 sahte kalın sayılır), gövde 400, stat 400 ama mono + tabular.
-- Stat şeridi sayıları asla serif/sans karışık yazılmaz: tek mono, eşit genişlik, sağa dayalı.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Chakra Petch) | 32px (mobile 32px) | 700 | 1.1 | 0.01em |
+| H2 | same | 28px | 600 | 1.2 | 0.01em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 15.5px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (JetBrains Mono) | 11px | 400 | 1.2 | 0.2em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (kart ızgarası 2 / 3 / 4 sütun) |
-| Gutter | 20px |
-| Container genişliği | 1200px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 / 768 / 390 — 768 altında 2 sütun, 390'da 1 sütun; oran 5:7 sabit |
+- Numbers are taboos; score/timer areas are mono and right aligned. Title in uppercase, body in sentence order.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: hero'da 1 büyük kart solda + istatistik paneli sağda; kart ızgarası simetrik. Ekran başına 1 büyük kart.
-- Bölüm ritmi: art arda en fazla **4** kart satırı; beşincide 24px boşluk ve set başlığı.
-- Bölüm dikey boşluk 80px (mobil 48px); kart padding 18px; kart arası 20px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | Sayfa, filtre şeridi |
-| Kart | `--surface` + `--shadow` | `0 10px 24px rgba(19,21,33,.14)` | Koleksiyon kartı |
-| Panel | `--surface` + 1px `--line` | `none` | Liste, ayar, KPI |
-| Yüzen katman | `--surface` + `--shadow` | aynı | Kart detay modalı |
+- The screen grid acts like a visible frame: a 1px accent border is placed between sections, no decorative lines are added.
+- Section vertical space 64px desktop, 40px mobile; card padding 18px.
 
-- Kenarlık formülü: kart `1px solid var(--line)` + iç `1px solid color-mix(accent 40%)`; panel `1px --line`.
-- Derinlik nereden gelir: **tek gölge + katmanlı çerçeve**; iç gölge, çift gölge, blur yok.
-- Radius: `--radius` 10px (küçük kart, panel) · `--radius-lg` 16px (büyük kart, modal). Buton/chip 2px (kart köşesiyle çelişmesin).
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 12px 16px | 2px | 11px/400 mono, .1em | `--accent` / `--accent-ink`, gölge yok | hover %90 200ms · active translateY(1px) · focus 2px accent + 1px offset · disabled opacity .4 kesikli · loading `◆◆◆` |
-| Buton (ikincil) | 44px | 12px 16px | 2px | 11px/400 mono | şeffaf / `--ink`, 1px `--line` | hover `--surface-2` · focus aynı |
-| Input (arama) | 44px | 0 10px | 2px | 15.5px/400 Jost | `--surface` + 1px `--line` | focus 2px accent + 1px offset · error `--danger` + mono açıklama |
-| Kart | — | 18px | 16px | kart adı Chakra 19px | `--surface` + `--shadow` + iç çerçeve | hover: 1.038 ölçek, 200ms |
-| Chip (nadirlik/tip) | 20px | 0 6px | 2px | 10px/400 mono | `--surface-2` + 1px `--line` | accent varyantı dolu (seçili set) |
-| Nav | 56px | 0 36px | 0 | marka Chakra 18px + mono 11px | `--bg` + alt 1px `--line` | sağda koleksiyon sayacı (mono, tabular) |
-| Tablo satırı | 40px | 10px 12px | 0 | ad Jost 15.5, set/adet mono | alt 1px `--line` | hover `--surface-2` · seçili: sol 2px accent |
-| Modal (kart detay) | — | 24px | 16px | H2 Chakra 28px | `--surface` + `--shadow` | 26px yukarıdan 0.7s; iç 6px çerçeve |
-| Toast | 40px | 10px 14px | 2px | 12px/400 mono | `--ink` zemin / `--bg` metin | 6px accent kare, 2800ms |
-| Grafik (nadirlik dağılımı) | — | — | — | eksen 10px mono | `--accent`, `--ink-soft`, `--ink-faint` | en fazla 3 sütun, 2px radius |
+- Surfaces are opaque; There is no glass/blur. Thin accent edge is used for status notification.
+- Radius: `10px` (buton, input, chip), `16px` (kart, modal). Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 1px`; accent butonda `outline-color: var(--accent-ink)`, offset -3px.
-- Dokunma hedefi: en az 44×44px — küçük kartlarda tüm kart dokunma hedefidir (min 140×196px).
-- Kart hover'ında 3B döndürme yok; yalnız 1.038 ölçek ve gölge %10 koyulaşır.
+## Bans
 
-## Görsel dil
+- 3B tilt/döndürme, holografik eğim, mouse-follow ışık.
+- Gradient holo parlaması, blur, cam yüzey.
+- İkinci accent (altın, gökkuşağı) ve renkli nadirlik rozetleri.
+- Kare kart, 20px üstü radius, pill buton.
+- Kart yüzeyinde 3'ten fazla punto, 4'ten fazla renk.
+- Sürekli holo kayması, parlayan/pulse animasyon.
+- Infinite blinking indicator (no animation in v6).
+- More than three status colors.
+- Serif title in HUD.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi veya 2px dolu sembol (tip), 20px ızgara, tek renk |
-| Fotoğraf | Kartın üst %60'ında 5:7 kadraj; doygunluk düşük, sade fon |
-| İllüstrasyon | Tek karakter/nesne, kart içinde; kart dışında illüstrasyon yok |
-| Doku | Holo bant (45°, %50) + `--grain: .02` |
-| Logo alanı | Chakra Petch kelime markası (.06em), 20px güvenli boşluk; kare monogram serbest |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 10px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 10px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 10px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 10px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 10px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 10px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 10px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.99:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px block icon, 16/20px canvas; no anti-alias, integer scale |
+| photo | In-game rendering or single object shooting; 25% area, dark vignette |
+| illustration | Sprite/silhouette: up to 3 tones (accent, ink, surface-2) |
+| Texture | Static raster (1px/3px, 4%) on section background only |
+| Logo | Top left 20px, uppercase, mono or display |
+
+- Signature motif: `motif-none` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Primary focus is on one big number/score; second focus single CTA; the rest is label.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 1 büyük kart + holo bant + deste ofseti | `shots/01-page.png` |
 | Dashboard | orta | Koleksiyon sayacı + nadirlik dağılımı; kartlar küçük | `shots/01-page.png` |
@@ -156,47 +178,33 @@ Klişeye düşmemesi için korunması gereken detay: **oran ve katman**. Kartı 
 | Hata | düşük | `--danger` kenar + mono açıklama; holo bant yok | `shots/01-page.png` |
 | Profil / ayar | orta | Koleksiyon özeti: kart sayısı, set ilerlemesi | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 16.04:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.64:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.73:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.44:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.99:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 96.4 | ≥ 60 target | thin text |
 
-1. **Oran sabit:** kart `aspect-ratio: 5/7`; hiçbir breakpoint'te kare/geniş karta dönmez.
-2. **İkinci çerçeve:** 6px içeride 1px `accent %40`; tek çerçeve, kalınlaştırılmaz.
-3. **Holo bant tek:** sol üst köşe, 45°, opacity `.50`; kart dışında kullanılmaz.
-4. **Stat şeridi:** 3 hücre, mono tabular, kartın alt %20'si; hücre ayırıcı 1px.
-5. **Set numarası:** `0042/1200` biçiminde mono; nadirlik metinle, renkle değil.
-6. **Tek gölge:** `0 10px 24px`; deste hissi ofset çerçeveden gelir, gölge çoğaltılmaz.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Yasaklar
+## Sample images
 
-- 3B tilt/döndürme, holografik eğim, mouse-follow ışık.
-- Gradient holo parlaması, blur, cam yüzey.
-- İkinci accent (altın, gökkuşağı) ve renkli nadirlik rozetleri.
-- Kare kart, 20px üstü radius, pill buton.
-- Kart yüzeyinde 3'ten fazla punto, 4'ten fazla renk.
-- Sürekli holo kayması, parlayan/pulse animasyon.
+Identical content is rendered with the same text in every style; only the design differs.
 
-## Erişilebilirlik
-
-- Ölçülen riskler: en düşük çift `--ink-faint / --bg` = **3.73:1** — yalnız set numarası ve dekoratif etiket; set no okunurluğu kritikse `--ink-soft` (7.64:1) kullanılır.
-- Kart içi metin 15.5px Jost + 1.66 satır aralığı; 11px altı yalnız mono etiketler, uzun cümle yazılmaz.
-- 3B tilt yasak olduğu için vestibüler risk düşük; pin/scrub'lı deste `prefers-reduced-motion`'da sabitlenir.
-- Holo bant dekoratif: `aria-hidden="true"`, `pointer-events: none`; nadirlik bilgisini metin taşır.
-- Şeffaf yüzey yok (`--blur: 0`); `color-mix` desteklenmezse iç çerçeve `1px solid var(--line)`'a düşer.
-- Odak görünürlüğü: 2px accent + 1px offset (6.44:1); accent butonda `--accent-ink` halka.
-
-## Örnek görseller
-
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Kart "kare kutu" olmuş | oran serbest bırakılmış | `aspect-ratio: 5/7` zorunlu |
 | Holo her yerde | bant tüm yüzeye yayılmış | Yalnız sol üst %60×%160, opacity .50 |
 | "Oyuncak vitrin" hissi | altın/gökkuşağı ikinci accent + glow | Tek mor accent; nadirlik metinle |
@@ -204,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Gölge "yüzüyor" | iki katmanlı gölge | Tek gölge; deste için ofset çerçeve |
 | Stat sayıları kayıyor | orantılı sayı | `tabular-nums` + sağa dayalı mono |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `bento-grid` — kart ızgarası mantığı ortak; bento yalnız panel katmanında, kart oranını ezmeden.
-- **Uyumlu:** `kanban-flow` — kart/liste akışı ortak; kanban'da kart oranı esner, bu stil ezilmez.
-- **Uyumlu:** `neo-brutalism` — koleksiyon vitrininde 1 bölüm; kenar kalınlığını bu stile taşırma.
-- **Yasak:** `ethereal` — sis/nefes dili kartın nesne ağırlığını siler.
-- **Yasak:** `wabi-sabi` — kasten kırık hizalama set disiplinini bozar.
-- **Yasak:** `poetry-chapbook` — geniş kenar/şiir ölçüsü kart ızgarasını seyreltir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `bento-grid` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `kanban-flow` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `neo-brutalism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `ethereal` | Two different ornamental languages compete on the same screen |
+| Mixing | `wabi-sabi` | Two different ornamental languages compete on the same screen |
+| Mixing | `poetry-chapbook` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Trading_card | 2.5×3.5 inç standart ölçü ve katmanlı çerçeve |
-| https://en.wikipedia.org/wiki/Collectible_card_game | nadirlik sistemi, stat şeridi, set numarası |
-| https://scryfall.com/ | kart detay hiyerarşisi (görsel, tip, metin, istatistik) |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | kart içi küçük metin kontrastı |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Trading_card | Trading card — Wikipedia — 2.5×3.5 inç standart ölçü ve katmanlı çerçeve |
+| https://en.wikipedia.org/wiki/Collectible_card_game | Collectible card game — Wikipedia — nadirlik sistemi, stat şeridi, set numarası |
+| https://scryfall.com/ | Scryfall — kart detay hiyerarşisi (görsel, tip, metin, istatistik) |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast (Minimum) — kart içi küçük metin kontrastı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Collectible Card (styles/122-collectible-card/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="collectible-card"] değişkenleri; hard-coded renk/golge/radius yasak.
 Tipografi: display Chakra Petch 600 (H1 48px / .01em, mobil 32px), govde Jost 400 15.5/1.66 (<= 52ch),
@@ -243,15 +251,15 @@ Hareket: enter 700ms cubic-bezier(.16,.9,.24,1) 26px stagger 80ms; scroll top 81
 Yasak: 3B tilt/dondurme, gradient holo parlamasi, blur/cam, ikinci accent, kare kart,
   pill buton, 3'ten fazla punt, pulse/parlama dongusu.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (5:7 kart, iç çerçeve, holo bant, stat şeridi).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1 (16.04:1), accent üstü ≥ 4.5:1 (6.44:1).
-- [ ] Odak halkası görünür (2px + 1px offset), dokunma hedefi ≥ 44px (kart tamamı).
-- [ ] 390px genişlikte taşma yok; kart oranı korunuyor.
-- [ ] `prefers-reduced-motion` açıkken pin/scrub ve ölçek hareketi duruyor.
+Style: Collectible Card (collectible-card) · family: Playful (116–125)
+Token: --bg #eef1f7 · --surface #ffffff · --ink #131521 · --accent #5c33e0 · --line rgba(19,21,33,.16)
+Radius: 10px / 16px · Typography: Chakra Petch / Jost / JetBrains Mono
+Required: **Oran sabit:** kart `aspect-ratio: 5/7`; hiçbir breakpoint'te kare/geniş karta dönmez. · **İkinci çerçeve:** 6px içeride 1px `accent %40`; tek çerçeve, kalınlaştırılmaz. · **Holo bant tek:** sol üst köşe, 45°, opacity `.50`; kart dışında kullanılmaz.
+Banned: 3B tilt/döndürme, holografik eğim, mouse-follow ışık. · Gradient holo parlaması, blur, cam yüzey. · İkinci accent (altın, gökkuşağı) ve renkli nadirlik rozetleri.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -262,20 +270,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #131521; --ink-soft: #474b5c; --ink-faint: #767b8c;
   --accent: #5c33e0; --accent-ink: #f7f4ff;
   --line: rgba(19,21,33,.16);
+  --danger: #d4271b;
+  --danger-ink: #ffffff;
+  --ok: #007f36;
+  --ok-ink: #ffffff;
+  --warn: #b35200;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 10px; --radius-lg: 16px;
   --shadow: 0 10px 24px rgba(19,21,33,.14); --shadow-hard: none;
   --font-display: "Chakra Petch", system-ui, sans-serif;
   --font-body: "Jost", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --tracking: 0.01em; --blur: 0px; --grain: 0.02;
+  --tracking: 0.01em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `token-block.css` içinde `[data-theme="dark"][data-style="collectible-card"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.
-
-## QA düzeltmeleri (2026-11-04)
-
-- **Kontrast (ölçüldü, kit/color.mjs):** `accent / bg` 6.18:1 · `ink-soft / surface-2` 7.37:1 · `accent-ink / accent` 6.44:1. Devre dışı buton `opacity: .6` + `--ink-soft` metin (önce .45), ghost buton kenarlığı `color-mix(in srgb, var(--ink) 30%, transparent)` (koyu modda görünür), `logo-strip` / footer etiketleri `--ink-faint` → `--ink-soft`.
-- **Örtüşme:** butonlara `white-space: nowrap` (metin ikinci satıra düşmüyor). Dekor katmanı `body.scene-landing .sig { z-index: -1 }` ile içeriğin altına alındı (confetti/rozet/kurdele yazının üstünden geçmiyor).
-- **Yerleşim:** hero kutusu `min-height: 360px` ile sabitlendi (alt yarı boş kalmıyor). Hero imzası `scenes.landing` ile kuruldu: folyo çerçeveli kart + derece rozeti + holo noktalar.
-- **Hareket:** sayılar değişmedi ve tokens.json ile aynı — `enter 0.7s` / `scroll 0.78s` (ikisi de ≤ 1.2 s).

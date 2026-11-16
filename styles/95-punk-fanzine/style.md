@@ -1,147 +1,169 @@
 # 95 · Punk Fanzine
 
-> **Bir cümleyle:** Fotokopi zine: toner grenli kâğıt, 2px mürekkep kenarlar, kes-yapıştır şeritler ve tek damga kırmızısı.
+> **In one sentence:** Punk Fanzine
 
 | | |
 |---|---|
-| **Hissiyat** | kaba, acil, el yapımı, öfkeli-neşeli |
-| **En iyi** | etkinlik/line-up afişi, bağımsız yayın ve zine vitrini, müzik-punk markası, topluluk duyurusu |
-| **Kaçın** | ödeme/güvenlik akışı, sağlık ve resmi form, kurumsal yatırımcı sunumu, yaşlı kullanıcı ağırlıklı arayüz |
-| **Zorluk** | yüksek (kaosu ölçülü tutmak) · **Erişilebilirlik** | orta risk (döndürme + yüksek kontrast + gren) — ölçülen kontrast 15.17:1 / 5.10:1 |
-| **Aile** | Yayın & Tipografi (86–95) · **Token** | `kit/tokens.css` → `[data-style="punk-fanzine"]` |
-| **Kompozisyon** | `index` · `pill` · `dense` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | kaba, acil, el yapımı, öfkeli-neşeli |
+| **Best for** | etkinlik/line-up afişi, bağımsız yayın ve zine vitrini, müzik-punk markası, topluluk duyurusu |
+| **Avoid** | ödeme/güvenlik akışı, sağlık ve resmi form, kurumsal yatırımcı sunumu, yaşlı kullanıcı ağırlıklı arayüz |
+| **Difficulty** | yüksek (kaosu ölçülü tutmak) · **Accessibility** |  |
+| **Family** | Publication & Typography (86–95) · **Token** | `kit/tokens.css` → `[data-style="punk-fanzine"]` |
+| **Composition** | `index` · `pill` · `dense` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Punk Fanzine, 1970'lerin fotokopi zine estetiğidir: **gri kâğıt**, **1-bit mürekkep**, **2px kenar**, **sert ofset gölge** (`4px 4px 0`), kes-yapıştır şeritler (en fazla 2 öğe ±0.8–1.4°) ve tek **damga kırmızısı** (`#cf1f2b`). Tipografi bilinçli olarak heterojendir: başlıkta el yazısı **Kalam 700**, gövdede daktilo **Courier Prime**, etiketlerde **Share Tech Mono**; bir başlık satırında en fazla üç farklı ses (ranson punto) kullanılır.
 
 Kazandığı şey: **aciliyet ve sahiplik**. Gren, döndürme ve zımba izleri sayfayı "biri az önce elle yapıştırdı" hissine getirir; bu yüzden etkinlik ve bağış çağrısı gibi hızlı eylem gerektiren bağlamlarda hatırlanır. Feda ettiği şey: **güven ve ölçülülük** — aynı dili ödeme/onay ekranına taşımak kullanıcıyı tedirgin eder; o ekranlarda stil yalnız tipografi ve kenar kalınlığıyla hatırlatılır, döndürme ve gren kapatılır.
 
-### Ne değildir
+### What is not
 - **Scrapbook (31) değildir.** Scrapbook polaroid, bant ve katman gölgesiyle **anı defteri** kurar (Fraunces/Inter, açık pastel); burada **1-bit mürekkep**, toner greni `.12`, el yazısı Kalam ve daktilo Courier var; gölge sert ofset.
 - **Anti-Design (14) değildir.** Anti-design kasıtlı kaosu ızgara bozarak kurar (Anton/Space Grotesk, `cubic-bezier(.2,.9,.2,1)`, 0.035 stagger); burada ızgara korunur, **yalnız 2 öğe** döndürülür ve hareket **steps(2)**.
 - **Neo-Brutalism (13) değildir.** Neo-brutalism parlak sarı/pembe bloklar ve 2px siyah kenarla "oyuncu" dil kurar; burada palet **gri kâğıt + siyah + damga kırmızısı**, gren yüksek, tipografi el yazısı/daktilo.
 - **Pixel Art (24) değildir.** Pixel art 8-bit grid ve sınırlı paletle dijital nostalji kurar; burada bozulma **fotokopi** kaynaklıdır (toner, yarım ton), piksel grid yok.
 - **"Sadece eğik kart" değildir.** Toner greni, 2px kenar, sert gölge ve ranson punto olmadan bu stil sadece dağınık bir düzendir.
 
-### Nereden gelir
+### Where it comes from
 Zine, 1930'ların amatör dergilerinden (fanzine) 1970'lerde punk sahnesine geçti: fotokopi makinesi ucuzladı, üretim dağıtımdan ayrıldı, herkes kendi yayınını yapabildi. Estetiği **zorunluluktan** doğdu: toner bitiyor, kâğıt kayıyor, harfler kesilip yapıştırılıyor. Dijitalde 2010'lardan sonra bu dil "bağımsız/DIY" işareti olarak geri döndü; nedeni ölçülebilir — yüksek kontrast + el yazısı + tek renk, küçük ekranda bile kimlik taşır.
 
 Klişeye düşmemesi için korunması gereken detay: **tek renk ve döndürme bütçesi**. İkinci bir accent eklemek, 4-5 öğeyi döndürmek veya gren yerine gradient kullanmak stili "ucuz retro tema"ya çevirir.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Zemin **gri kâğıt ve grenli** mi (3px tarama, `--grain: .12`); kart yüzeyleri temiz mi?
 2. Kenarlar **2px mürekkep** mi; bir öğede **sert ofset gölge** (blur'suz, 4px) var mı?
 3. Başlık **el yazısı** mı (Kalam 700), gövde **daktilo** (Courier Prime), etiketler mono mu?
 4. En fazla **2 öğe** hafifçe döndürülmüş mü (±0.8–1.4°), daha fazlası değil mi?
 5. Tek renk **damga kırmızısı** mı; ekranın ≤ %10'unda mı ve yumuşak gölge hiç yok mu?
 
-## Görsel imza
-1. **Toner greni:** `--grain: .12` + `repeating-linear-gradient(0deg, … 0 1px, transparent 1px 3px)` yalnız `body` zemininde; kart yüzeyi `background-image: none`.
-2. **2px mürekkep kenar:** kart, buton, input ve chip 2px `--ink`; radius 0.
-3. **Sert ofset gölge:** `4px 4px 0 #0e0e0e` (koyuda `#4b4844`); yalnız hero görseli, modal ve buton hover'da; blur sıfır.
-4. **Kes-yapıştır şerit:** en fazla 2 öğe `rotate(-1.4deg)` / `rotate(.8deg)`; şeritlerde 2px üst-alt kenar.
-5. **Zımba izleri:** sol kenarda 18px'te iki adet 10×10px mürekkep kare (62px arayla; mobilde 44px).
-6. **Yarım ton bandı:** sağ üstte 6px nokta ızgarası, opacity **.18**, gradyan maskeyle köşeye sınırlı.
-7. **Ranson punto:** tek başlık satırında Kalam 46px + ters video mono blok + Courier 14.5px; üçten fazla ses yok.
+## Visual signature
+- **Toner greni:** `--grain: .12` + `repeating-linear-gradient(0deg, … 0 1px, transparent 1px 3px)` yalnız `body` zemininde; kart yüzeyi `background-image: none`.
+- **2px mürekkep kenar:** kart, buton, input ve chip 2px `--ink`; radius 0.
+- **Sert ofset gölge:** `4px 4px 0 #0e0e0e` (koyuda `#4b4844`); yalnız hero görseli, modal ve buton hover'da; blur sıfır.
+- **Kes-yapıştır şerit:** en fazla 2 öğe `rotate(-1.4deg)` / `rotate(.8deg)`; şeritlerde 2px üst-alt kenar.
+- **Zımba izleri:** sol kenarda 18px'te iki adet 10×10px mürekkep kare (62px arayla; mobilde 44px).
+- **Yarım ton bandı:** sağ üstte 6px nokta ızgarası, opacity **.18**, gradyan maskeyle köşeye sınırlı.
+- **Ranson punto:** tek başlık satırında Kalam 46px + ters video mono blok + Courier 14.5px; üçten fazla ses yok.
+- **Typography:** Kalam (display) + Courier Prime (body) + Share Tech Mono (mono label).
+- **Colour discipline:** a single accent `#cf1f2b`; neutral scale `#e6e4dd` → `#0e0e0e`.
+- **Radius:** `0px` / `2px`; Corner 0px — in typographic essay, geometry serves the text.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#e6e4dd` | Sayfa zemini (gri kâğıt, gren burada) | Kart içi |
-| `--bg-2` | `#dbd8d0` | Şerit zemini, alt bilgi | Geniş dolgu |
-| `--surface` | `#f2f0e9` | Kart, modal, input (temiz kâğıt) | Sayfa zemini |
-| `--surface-2` | `#d2cfc6` | İkincil şerit, hover satır | Metin arkası |
-| `--ink` | `#0e0e0e` | Metin, 2px kenar, sert gölge | Damga kırmızısı zemin üstü |
-| `--ink-soft` | `#43433f` | Lede, ikincil metin | 10px altı etiket |
-| `--ink-faint` | `#6d6d68` | Dekoratif etiket, eksen | Etkileşimli metin |
-| `--accent` | `#cf1f2b` | Birincil buton, damga kutusu, aktif işaret | Geniş zemin, gövde metni |
-| `--accent-ink` | `#fff7f1` | Accent üstü metin | Accent olmayan zemin |
-| `--line` | `rgba(14,14,14,.24)` | Tablo çizgisi, ikincil kenar | Ana kenar (o 2px `--ink`) |
+1. **Toner greni:** `--grain: .12` + 3px tarama yalnız zemin katmanında; kart/modal yüzeyi temiz.
+2. **2px mürekkep kenar:** kart, buton, input, chip; radius 0; sert gölge `4px 4px 0` yalnız hero/modal/hover.
+3. **Döndürme bütçesi:** ekran başına en fazla 2 öğe, ±0.8–1.4°; döndürülmüş öğe metni seçilebilir kalır.
+4. **Ranson punto:** başlık satırında en fazla 3 ses (Kalam / mono ters video / Courier).
+5. **Tek renk:** damga kırmızısı ekranın ≤ %10'u; durum bilgisi metinle (`SATILDI`, `İPTAL`).
+6. **Zımba + yarım ton:** zımba izleri yalnız sol kenarda 2 adet; yarım ton bandı yalnız sağ üstte 1 adet.
 
-- Ölçülen kontrast: `ink / bg` = **15.17:1** · `ink-soft / bg` = **7.81:1** · `accent-ink / accent` = **5.10:1** · `ink-faint / bg` = **4.09:1**.
-- Tek renk kuralı: damga kırmızısı ekranın **≤ %10**'u; ikinci renk (sarı, yeşil) hiçbir amaçla yok — durum metinle (`SATILDI`, `İPTAL`).
-- Yasak kombinasyon: accent zemin + `--ink`; `--ink-faint` + `--surface-2` (3.3:1); gren üzerine 11px altı metin.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#e6e4dd` | page background | as a card background |
+| `--bg-2` | `#dbd8d0` | partition divider floor, table top | button background |
+| `--surface` | `#f2f0e9` | kart, input, modal | full-page background |
+| `--surface-2` | `#d2cfc6` | passive chip, hover background | primary button |
+| `--ink` | `#0e0e0e` | title, body, icon | large background |
+| `--ink-soft` | `#43433f` | secondary text, description | — |
+| `--ink-faint` | `#6d6d68` | decorative label, separator text | interactive text |
+| `--accent` | `#cf1f2b` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#fff7f1` | text above accent | non-accent background |
+| `--line` | `rgba(14,14,14,.24)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Kalam | 46px (mobil 30px) | 700 | 1.04 | 0.01em |
-| H2 | Kalam | 28px | 700 | 1.1 | 0.01em |
-| H3 | Kalam | 19px | 700 | 1.2 | 0.01em |
-| Gövde | Courier Prime | 14.5px | 400 | 1.6 | 0 |
-| Lede | Courier Prime | 14.5px | 400 | 1.6 | 0 (54ch) |
-| Etiket / mono | Share Tech Mono | 11px | 400 | 1.4 | 0.12em |
+- Measured contrast: `ink/bg` **15.17:1** · `ink-soft/bg` **7.81:1** · `ink-faint/bg` **4.09:1 (decorative)** · `accent-ink/accent` **5.1:1**.
+- Two colors are enough: ground and ink. Accent is just a word of connection and emphasis.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı ≈ 1.9 (14.5 → 28 → 46); basamak sayısı 6 — zine'de zıplama bilinçli, ama 3'ten fazla ses karışmaz.
-- Ölçü önerisi: `h1 { font-size: clamp(30px, 3.8vw, 46px) }`.
-- Gövde metni maksimum satır uzunluğu: **54ch** (daktilo karakteri geniş, 66ch okunmuyor).
-- Ağırlık kuralı: display 700 (Kalam el yazısı), gövde 400; 300/500 ara ağırlık yok (Kalam ve Courier Prime'da zaten yok, sahte ağırlık yasak).
-- Başlıkta el yazısı 60px'i geçmez: daha büyük puntoda Kalam okunmaz, "kaba" olur ("kaba" ile "okunmaz" farkı bu stilin sınırı).
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Kalam) | 30px (mobile 30px) | 700 | 0.98 | -0.035em |
+| H2 | same | 28px | 600 | 1.08 | -0.015em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Courier Prime) | 14.5px | 400 | 1.6 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Share Tech Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (içerik 8, "kesik şerit" 4) |
-| Gutter | 16px |
-| Container genişliği | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
-| Breakpoint davranışı | 1200 / 768 / 390 — 900px altında döndürme 0.6°'ye iner, zımba aralığı 44px'e düşer |
+- Display 72px, line spacing 0.98; body 16/1.6. There is no midpoint — the jumping between two extremes is intentional.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **en fazla 2** döndürülmüş öğe (±0.8–1.4°); geri kalan her şey hizalı.
-- Bölüm ritmi: art arda en fazla **3** blok aynı hizada; dördüncüde 3px mürekkep divider.
-- Bölüm dikey boşluk 56px (mobil 36px); kart padding 18px; şerit yüksekliği 40px.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` + toner greni | — | Sayfa |
-| Kart | `--surface` + 2px `--ink` | `none` | Panel, line-up, KPI |
-| Kesik şerit | `--bg-2` + 2px üst/alt | `none` | Program şeridi, logo bandı (döndürülmüş) |
-| Yüzen katman | `--surface` + 3px `--ink` | `--shadow-hard` | Modal, dropdown |
+- 12 columns are not visible; The title spans 8 columns, the body remains in 6 columns.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
 
-- Kenarlık formülü: ana kenar `2px solid var(--ink)`; ikincil çizgi `1px solid var(--line)`; şeritlerde yalnız üst-alt 2px.
-- Derinlik nereden gelir: **sert ofset gölge + 2px kenar**; yumuşak gölge, blur ve gradient yok.
-- Radius: `--radius` 0px (her şey) · `--radius-lg` 2px (yalnız modal). Pill yok.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 12px 16px | 0px | 11px/400 mono uppercase, .12em | `--accent` / `--accent-ink`, 2px `--ink` | hover sert gölge + translate(-1px,-1px) 60ms · active gölge yok · focus 3px ink + 2px offset · disabled opacity .4 üstü çizili · loading `***` 120ms |
-| Buton (ikincil) | 44px | 12px 16px | 0px | 11px/400 mono | şeffaf / `--ink`, 2px `--ink` | hover `--surface-2` + sert gölge · focus aynı |
-| Input | 44px | 0 10px | 0px | 14.5px/400 Courier Prime | `--surface` + 2px `--ink` | focus 3px ink + 2px offset · error `--accent` kenar + `!` + mono açıklama · disabled opacity .4 |
-| Kart | — | 18px | 0px | H3 Kalam 19px | `--surface` + 2px `--ink`, gölge yok | en fazla 2 kart 0.8° döndürülür |
-| Chip | 22px | 3px 6px | 0px | 10px/400 mono uppercase | ters video (`--ink` zemin / `--bg` metin) | accent varyantı damga kırmızısı |
-| Nav | 52px | 0 28px | 0 | marka Kalam 22px + mono 11px uppercase | `--bg` + alt 2px `--ink` | aktif: 3px accent blok; pasif `--ink-soft` |
-| Tablo satırı | 36px | 8px 10px | 0 | saat mono 12px, sanatçı Courier 14px | dış çerçeve 2px `--ink`, satır altı 1px `--line` | hover `--surface-2` · seçili: sol 3px accent |
-| Modal | — | 24px | 0px | H2 Kalam 28px | 3px `--ink` + sert gölge, perde %60 | kapat butonu 44×44px |
-| Toast | 40px | 10px 14px | 0px | 11px/400 mono | `--ink` zemin / `--bg` metin | sol uçta 8px accent kare, 2400ms |
-| Grafik paleti | — | — | — | eksen 11px mono | `--accent`, `--ink` (en fazla 2 seri) | 2px mürekkep çerçeve, el çizimi sütun |
+- No shadows and rounding; The only difference is the hairline and space.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 0px — in typographic essay, geometry serves the text.
 
-- Odak halkası: `outline: 3px solid var(--ink); outline-offset: 2px` — kalın halka el çizimi diliyle uyumlu; accent zeminli butonda `outline-color: var(--accent-ink)`.
-- Dokunma hedefi: en az 44×44px; zımba izleri dekoratif, etkileşimli değil.
-- Döndürülmüş öğeler `transform` ile döner; metin **seçilebilir kalır** ve `prefers-reduced-motion` açıkken döndürme korunur (statik açı bilgi taşımaz, dekoratiftir).
+## Bans
 
-## Görsel dil
+- Yumuşak gölge, blur, gradient, cam yüzey.
+- Serif/geometrik sans display; iki farklı el yazısı ailesi.
+- Renkli fotoğraf, pastel palet, ikinci accent (sarı/yeşil).
+- 2px üstü radius, pill buton, yuvarlak chip.
+- 3'ten fazla döndürülmüş öğe; döndürmeyi metin gövdesine uygulamak.
+- Sürekli döngü, marquee, titreme (jitter) animasyonu, parlama.
+- Third font family.
+- Shadow/bevel in title.
+- uppercase in body text.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 2px kalın çizgi veya elle çizilmiş ok/yıldız/çarpı (Kalam); en fazla 3 işaret / ekran |
-| Fotoğraf | Fotokopi estetiği: 1-bit siyah-beyaz, yüksek kontrast, grenli; renkli fotoğraf yasak |
-| İllüstrasyon | El çizimi işaretler (ok, yıldız, kaba kutu); başka illüstrasyon yok |
-| Doku | Toner greni `.12` + 3px yatay tarama + yarım ton nokta bandı (%18, yalnız sağ üst) |
-| Logo alanı | El yazısı kelime markası (Kalam 700), 1.2° döndürülmüş, 16px güvenli boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 4.74:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 16px; same weight as text |
+| photo | Only when necessary; supports text, does not compete |
+| illustration | Can be used as typographic sign |
+| Texture | None |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-paper` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | Ranson punto başlık + zımba izleri + yarım ton bandı | `shots/01-page.png` |
 | Dashboard | orta | 2px kenarlı kartlar, mono sayılar; döndürme yok | `shots/01-page.png` |
@@ -156,48 +178,33 @@ Klişeye düşmemesi için korunması gereken detay: **tek renk ve döndürme b�
 | Hata | düşük | `--accent` kenar + `!` + mono açıklama | `shots/01-page.png` |
 | Profil / ayar | orta | Ayarlar 2px kartlarda; döndürme yok, mono etiketler | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
-- **Landing hero (stile özel sahne):** `shots.config.fragment.mjs → scenes.landing` — fotokopi kolaj — kes-yapıştır şerit, damga, eğik kart.
+## Accessibility
 
-## Zorunlu kurallar
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.17:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.81:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.09:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 5.1:1 | ≥ 4.5 | button text |
+| focus ring/ground | 4.74:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 89.7 | ≥ 60 target | thin text |
 
-1. **Toner greni:** `--grain: .12` + 3px tarama yalnız zemin katmanında; kart/modal yüzeyi temiz.
-2. **2px mürekkep kenar:** kart, buton, input, chip; radius 0; sert gölge `4px 4px 0` yalnız hero/modal/hover.
-3. **Döndürme bütçesi:** ekran başına en fazla 2 öğe, ±0.8–1.4°; döndürülmüş öğe metni seçilebilir kalır.
-4. **Ranson punto:** başlık satırında en fazla 3 ses (Kalam / mono ters video / Courier).
-5. **Tek renk:** damga kırmızısı ekranın ≤ %10'u; durum bilgisi metinle (`SATILDI`, `İPTAL`).
-6. **Zımba + yarım ton:** zımba izleri yalnız sol kenarda 2 adet; yarım ton bandı yalnız sağ üstte 1 adet.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Yasaklar
+## Sample images
 
-- Yumuşak gölge, blur, gradient, cam yüzey.
-- Serif/geometrik sans display; iki farklı el yazısı ailesi.
-- Renkli fotoğraf, pastel palet, ikinci accent (sarı/yeşil).
-- 2px üstü radius, pill buton, yuvarlak chip.
-- 3'ten fazla döndürülmüş öğe; döndürmeyi metin gövdesine uygulamak.
-- Sürekli döngü, marquee, titreme (jitter) animasyonu, parlama.
+Identical content is rendered with the same text in every style; only the design differs.
 
-## Erişilebilirlik
-
-- Ölçülen riskler: en düşük çift `--ink-faint / --bg` = **4.09:1** — yalnız dekoratif etiket ve eksen yazısı; etkileşimli metin olamaz. `accent-ink/accent` = **5.10:1** (damga üstü metin eşiği geçer).
-- Gren (`.12`) 11px altı metinde okunurluğu düşürür: mono etiketler en az 10px, gövde 14.5px ve gren metnin arkasına değil sayfa zeminine uygulanır.
-- Döndürme dekoratiftir, bilgi taşımaz; `prefers-reduced-motion` açıkken de açı korunur (hareket değil, statik eğim).
-- Hareket: `steps(2)` kesik ve çok kısa (150/180ms); vestibüler risk düşük, yine de reduced-motion'da tümü 0.01ms.
-- Şeffaf yüzey yok (`--blur: 0`); `color-mix` desteklenmezse tarama dokusu düz zemine düşer (işlevsel kayıp yok).
-- Odak görünürlüğü: 3px mürekkep halka (15.17:1) her zeminde net; accent zeminli butonda `--accent-ink` halka.
-
-## Örnek görseller
-
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Ucuz retro tema" | ikinci renk + gradient + yumuşak gölge eklenmiş | Tek damga rengi + sert gölge; gradient/blur kaldır |
 | Okunmuyor | gren metnin arkasında, 11px altı punto | Gren yalnız zeminde; gövde 14.5px, etiket 10px |
 | Sayfa dağınık | 4-5 öğe döndürülmüş | Döndürme bütçesi 2; kalanı hizalı |
@@ -205,29 +212,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Kenarlar zayıf | 1px kenar + gölge | 2px `--ink` kenar + `4px 4px 0` sert gölge |
 | Koyu modda gölge kayboluyor | siyah sert gölge | Koyu blokta `--shadow-hard: 4px 4px 0 #4b4844` |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `anti-design` — kırık hiza dili ortak; anti-design yalnız tek bölümde, accent'i ezmeden.
-- **Uyumlu:** `scrapbook` — kâğıt/kolaj dili ortak; scrapbook polaroid bantlarını bu stile taşımadan kullan.
-- **Uyumlu:** `neo-brutalism` — 2px kenar ve düz renk ortak; neo-brutalism'in parlak paletini kullanma.
-- **Yasak:** `claymorphism` — şişkin yuvarlak form ve yumuşak gölge fotokopi dilini yok eder.
-- **Yasak:** `glassmorphism` — blur/şeffaflık 1-bit mürekkep kontrastını kırar.
-- **Yasak:** `ethereal` — sis ve nefes animasyonu zine'in kesik hareket diliyle çelişir.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `anti-design` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `scrapbook` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `neo-brutalism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `claymorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `ethereal` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://en.wikipedia.org/wiki/Zine | fotokopi üretim, zımba/kes-yapıştır dili |
-| https://en.wikipedia.org/wiki/Photocopier | toner greni, 1-bit kontrast, kopyalama bozulması |
-| https://en.wikipedia.org/wiki/Riot_grrrl | el yazısı + damga tipografisi, ranson punto geleneği |
-| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | 3px mürekkep odak halkası ölçütü |
+| Source | for what |
+| --- | --- |
+| https://en.wikipedia.org/wiki/Zine | Zine — Wikipedia — fotokopi üretim, zımba/kes-yapıştır dili |
+| https://en.wikipedia.org/wiki/Photocopier | Photocopier — Wikipedia — toner greni, 1-bit kontrast, kopyalama bozulması |
+| https://en.wikipedia.org/wiki/Riot_grrrl | Riot grrrl — Wikipedia — el yazısı + damga tipografisi, ranson punto geleneği |
+| https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html | WCAG 2.2 · Focus Appearance — 3px mürekkep odak halkası ölçütü |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: Punk Fanzine (styles/95-punk-fanzine/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="punk-fanzine"] değişkenleri; hard-coded renk/golge/radius yasak.
 Tipografi: display Kalam 700 (H1 46px / 1.04 / +0.01em, mobil 30px), govde Courier Prime 400 14.5/1.6
@@ -243,15 +250,15 @@ Hareket: enter 150ms steps(2,end) 30px stagger 50ms; scroll top 96% / 180ms / 34
 Yasak: yumusak golge, blur, gradient, serif/geometrik display, renkli fotograflar, ikinci accent,
   2px ustu radius, 3'ten fazla dondurme, dongu/marquee/jitter.
 Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda stilin imza öğelerinden en az 2'si görünüyor (toner greni + 2px kenar + sert gölge + zımba).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1 (15.17:1), accent üstü ≥ 4.5:1 (5.10:1).
-- [ ] Odak halkası görünür (3px + 2px offset), dokunma hedefi ≥ 44px.
-- [ ] 390px genişlikte taşma yok; döndürme 0.6°'ye iniyor.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: Punk Fanzine (punk-fanzine) · family: Publication & Typography (86–95)
+Token: --bg #e6e4dd · --surface #f2f0e9 · --ink #0e0e0e · --accent #cf1f2b · --line rgba(14,14,14,.24)
+Radius: 0px / 2px · Typography: Kalam / Courier Prime / Share Tech Mono
+Required: **Toner greni:** `--grain: .12` + 3px tarama yalnız zemin katmanında; kart/modal yüzeyi temiz. · **2px mürekkep kenar:** kart, buton, input, chip; radius 0; sert gölge `4px 4px 0` yalnız hero/modal/hover. · **Döndürme bütçesi:** ekran başına en fazla 2 öğe, ±0.8–1.4°; döndürülmüş öğe metni seçilebilir kalır.
+Banned: Yumuşak gölge, blur, gradient, cam yüzey. · Serif/geometrik sans display; iki farklı el yazısı ailesi. · Renkli fotoğraf, pastel palet, ikinci accent (sarı/yeşil).
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -262,13 +269,25 @@ Cikti: bilesen kodu + tek paragraf not (hangi imza ogeyi nerede kullandin).
   --ink: #0e0e0e; --ink-soft: #43433f; --ink-faint: #6d6d68;
   --accent: #cf1f2b; --accent-ink: #fff7f1;
   --line: rgba(14,14,14,.24);
+  --danger: #ca180e;
+  --danger-ink: #ffffff;
+  --ok: #00762e;
+  --ok-ink: #ffffff;
+  --warn: #aa4900;
+  --warn-ink: #ffffff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
-  --shadow: none; --shadow-hard: 4px 4px 0 #0e0e0e;
-  --font-display: "Kalam", "Archivo Black", system-ui, sans-serif;
+  --shadow: none; --shadow-hard: none;
+  --font-display: "Kalam", system-ui, sans-serif;
   --font-body: "Courier Prime", ui-monospace, monospace;
   --font-mono: "Share Tech Mono", ui-monospace, monospace;
-  --tracking: 0em; --blur: 0px; --grain: 0.12;
+  --tracking: 0em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `token-block.css` içinde `[data-theme="dark"][data-style="punk-fanzine"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir (koyuda `--shadow-hard` kâğıt grisine döner).

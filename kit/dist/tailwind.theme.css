@@ -1,6 +1,6 @@
-/* kit/export-tokens.mjs üretir — elle düzenlemeyin. Kaynak: kit/tokens.css + styles/<nn-slug>/tokens.json */
+/* generates kit/export-tokens.mjs — do not edit manually. Source: kit/tokens.css + styles/<nn-slug>/tokens.json */
 
-/* Kullanım: <html data-style="<slug>"> + bu dosyayı theme olarak yükle. */
+/*Usage: <html data-style="<slug>"> + load this file as theme.*/
 
 /* ---- 01 · Minimalism ---- */
 @theme {
@@ -5273,7 +5273,7 @@
   --tracking-display: 0.01em;
 }
 
-/* ---- boşluk: katalog ölçeği = Tailwind 4px tabanı
+/* ---- space: catalog scale = Tailwind base 4px
    --space-1 4px → p-1
    --space-2 8px → p-2
    --space-3 12px → p-3

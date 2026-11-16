@@ -1,141 +1,168 @@
 # 71 · West African Pattern
 
-> **Bir cümlede:** 8px dokuma şeritlerinin altın desen bloklarıyla kesildiği koyu zemin üzerinde, süsün yalnız bantlarda yaşadığı dokuma dili.
+> **In one sentence:** 8px dokuma şeritlerinin altın desen bloklarıyla kesildiği koyu zemin üzerinde, süsün yalnız bantlarda yaşadığı dokuma dili.
 
 | | |
 |---|---|
-| **Hissiyat** | sıcak, ritmik, güçlü, törensel |
-| **En iyi** | zanaat/moda markası, kültür festivali vitrini, müzik/koleksiyon ürünü, yerel pazar platformu |
-| **Kaçın** | sağlık formu, finans uyum ekranı, 20+ satırlık yoğun tablo — desen katmanı veri okumasını yorar |
-| **Zorluk** | orta (deseni bantta tutmak) · **Erişilebilirlik** | iyi (gövde 15.21:1, accent üstü 7.55:1; faint 4.75:1) |
-| **Aile** | Kültürel & Bölgesel (66–75) · **Token** | `kit/tokens.css` → `[data-style="west-african-pattern"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | sıcak, ritmik, güçlü, törensel |
+| **Best for** | zanaat/moda markası, kültür festivali vitrini, müzik/koleksiyon ürünü, yerel pazar platformu |
+| **Avoid** | sağlık formu, finans uyum ekranı, 20+ satırlık yoğun tablo — desen katmanı veri okumasını yorar |
+| **Difficulty** | orta (deseni bantta tutmak) · **Accessibility** |  |
+| **Family** | Cultural & Regional (66–75) · **Token** | `kit/tokens.css` → `[data-style="west-african-pattern"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 West African Pattern, Batı Afrika şerit dokumasının (kente, asafo, adinkra damgaları) ekran karşılığıdır: koyu bir zemin, üstünde **8px'lik dokuma şeritleri** ve her beşinci bantta **24px'lik altın desen bloğu**. Süs ile bilgi kesin ayrılır: motif yalnız ayrılmış bantlarda (nav altı, kart üstü, ayırıcı, hero zemini) yaşar; gövde metninin arkasına hiçbir koşulda girmez. Stilin karakterini ayakta tutan tek kural bu ayrımdır.
 
 Kazandığı şey: **ritim ve ağırlık**. 8px'lik tekrar, ekranda dokuma tezgâhının nabzını kurar; Archivo Black display ve tek altın vurgu bu ritmi törensel bir ciddiyete taşır. Feda ettiği şey: **yoğunluk ve yumuşaklık** — radius 0–2px, gölge yok; 72px bölüm ritmi veri ağır ekranlarda yer israf eder.
 
-### Ne değildir
+### What is not
 - **Nordic Folk (66) değildir:** 66 açık keten zemin + madder kırmızısı + rosemaling bitkisel bandı kullanır; bu stil **koyu zemin + altın** ve **geometrik damga** (bitkisel kıvrım yok), radius 0–2px (66'da 6–10px).
 - **Bohemian (30) değildir:** Bohemian deseni arka plana yayar ve organik radius kullanır; burada desen yalnız bantta, radius keskin, grain .02 (bohemian'da doku serbest).
 - **Maximalism (17) değildir:** maximalism çok renk + katman yığar; burada **tek vurgu altın** ve nötr zemin var, desen katmanı %10–42 opaklıkla sınırlı.
 - **Andalusian Azulejo (69) değildir:** 69 harç ızgarası ve kobalt çini geometrisiyle **döşeme** kurar; bu stil **şerit dokuma** kurar (yatay bant tekrarı, döşeme modülü yok).
 - **"Koyu tema + altın accent" jeneriği değildir:** accent'in işi süslemek değil, **bant ritmini kesmek**; her ekranda en az bir 24px desen bloğu görünmek zorunda.
 
-### Nereden gelir
+### Where it comes from
 Gana/Togo kente dokuması (ipek ve pamuk şeritlerin 8–10 cm'lik bantlar hâlinde dikilmesi), asafo bayrak aplikleri ve Akan adinkra damgaları aynı görsel grameri paylaşır: **dar tekrar + güçlü renk bloğu + sembolik damga**. Dijitalde 2020'lerde zanaat markaları ve kültür etkinlikleriyle geri döndü; nedeni ölçülebilir — desen CSS tekrarlı gradient ile kurulabildiği için yüksek çözünürlüklü görsel gerektirmez. Klişeye dönüşmemesi için korunacak detay: **8px şerit genişliğinin ve her beşinci 24px bloğun bozulmaması**.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Nav'ın hemen altında 12px yüksekliğinde tekrar eden altın/nötr dokuma bandı var.
 2. Her kartın üst kenarında 8px'lik aynı bant desenini görüyorsun.
 3. Başlıklar Archivo Black ile büyük harf ve çok kalın; radius yok denecek kadar keskin.
 4. Ekranda tek doygun renk altın; gerisi sıcak koyu nötr skala.
 5. Bir bantta 24×24px geometrik damga motifi tekrar ediyor.
 
-## Görsel imza
-1. **8px dokuma şeridi:** `repeating-linear-gradient(90deg, accent 0 8px, transparent 8px 16px, line 16px 24px, transparent 24px 40px)`; bant yüksekliği 8px (nav altında 12px).
-2. **24px desen bloğu:** her beşinci bant 24px genişliğinde altın blok; şerit içinde blok genişliği asla değişmez.
-3. **Adinkra damgası:** 24×24px, 2px çizgi, köşesiz; ekran başına en fazla 2 farklı damga, yalnız bant içinde.
-4. **Keskin geometri:** `--radius: 0px`, `--radius-lg: 2px`; hiçbir yüzeyde 2px üstü yuvarlaklık yok.
-5. **Archivo Black display:** 40px, büyük harf, tracking 0; alt başlıklar 26/20px aynı ailede.
-6. **Dokuma zebra:** tablo satırları 40px, `--surface` / `--surface-2` dönüşümlü; ilk sütunda 3px altın şerit (%35 opaklık).
-7. **Hover dili:** 210ms'de zemin %88'e koyulaşır ve öğe 2px sağa kayar ("atkı kayması"); görsel ölçek 1.022, gölge eklenmez.
+## Visual signature
+- **8px dokuma şeridi:** `repeating-linear-gradient(90deg, accent 0 8px, transparent 8px 16px, line 16px 24px, transparent 24px 40px)`; bant yüksekliği 8px (nav altında 12px).
+- **24px desen bloğu:** her beşinci bant 24px genişliğinde altın blok; şerit içinde blok genişliği asla değişmez.
+- **Adinkra damgası:** 24×24px, 2px çizgi, köşesiz; ekran başına en fazla 2 farklı damga, yalnız bant içinde.
+- **Keskin geometri:** `--radius: 0px`, `--radius-lg: 2px`; hiçbir yüzeyde 2px üstü yuvarlaklık yok.
+- **Archivo Black display:** 40px, büyük harf, tracking 0; alt başlıklar 26/20px aynı ailede.
+- **Dokuma zebra:** tablo satırları 40px, `--surface` / `--surface-2` dönüşümlü; ilk sütunda 3px altın şerit (%35 opaklık).
+- **Hover dili:** 210ms'de zemin %88'e koyulaşır ve öğe 2px sağa kayar ("atkı kayması"); görsel ölçek 1.022, gölge eklenmez.
+- **Typography:** Archivo Black (display) + Jost (body) + IBM Plex Mono (mono label).
+- **Colour discipline:** a single accent `#d99a1f`; neutral scale `#17120f` → `#f3e7d3`.
+- **Radius:** `0px` / `2px`; Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-## Renk
+## Mandatory rules
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#17120f` | sayfa zemini, nav arkası | kart zemini |
-| `--surface` | `#241b16` | kart, panel, tablo zemini | sayfa zemini |
-| `--surface-2` | `#2d221b` | dokuma zebra, çip, ikincil buton | birincil eylem |
-| `--ink` | `#f3e7d3` | başlık, gövde, tablo metni | desen katmanı |
-| `--ink-soft` | `#c0ae93` | etiket, açıklama, ikincil metin | başlık |
-| `--ink-faint` | `#8d7f68` | dekoratif: bant ipucu, dipnot | etkileşimli metin |
-| `--accent` | `#d99a1f` | dokuma bloğu, birincil buton, damga, odak halkası | gövde metni arkası |
-| `--accent-ink` | `#1c1206` | accent üstü metin | gövde metni |
-| `--line` | `rgba(243,231,211,.16)` | kart kenarı, bant nötr şeridi, tablo ayırıcı | metin rengi |
-| `--danger` / `--ok` / `--warn` | `#e2694f` / `#6fbf7a` / `#e0b84a` | hata / onay / uyarı durumu | dekorasyon, desen |
+1. Dokuma ritmi 8px: bant genişlikleri 8px ve her beşinci bant 24px desen bloğudur
+2. Desen yalnız ayrılmış bantlarda (nav altı, kart üstü, ayırıcı); metin arkasında asla
+3. Tek vurgu altın; desen katmanı %10–35 opaklıkta, bilgi taşımaz
+4. Display Archivo Black, yalnız büyük harf ve 40px üstü
+5. Ekran başına en fazla 2 damga motifi (24×24), tekrar eden şerit içinde
+6. Radius en fazla 2px; gölge yok
 
-- Ölçülen kontrast (varsayılan koyu zemin): `ink / bg` = **15.21:1** · `ink-soft / bg` = **8.60:1** · `accent-ink / accent` = **7.55:1** · `ink-faint / bg` = **4.75:1**.
-- Tek vurgu kuralı: altın ekran başına iki işten fazlasını taşımaz — **bant ritmi** ve **birincil eylem**.
-- Yasak kombinasyon: altın metni koyu nötr üstünde (kontrast düşer, `--ink` kullan); desen katmanını %45 üstü opaklığa çıkarmak.
+## Color
 
-## Tipografi
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#17120f` | page background | as a card background |
+| `--bg-2` | `#1e1713` | partition divider floor, table top | button background |
+| `--surface` | `#241b16` | kart, input, modal | full-page background |
+| `--surface-2` | `#2d221b` | passive chip, hover background | primary button |
+| `--ink` | `#f3e7d3` | title, body, icon | large background |
+| `--ink-soft` | `#c0ae93` | secondary text, description | — |
+| `--ink-faint` | `#8d7f68` | decorative label, separator text | interactive text |
+| `--accent` | `#d99a1f` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#1c1206` | text above accent | non-accent background |
+| `--line` | `rgba(243,231,211,.16)` | all borders | text colour |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | Archivo Black (`--font-display`) | 40px (mobil 27px) | 400 (tek ağırlık) | 1.1 | `--tracking` 0 |
-| H2 | Archivo Black | 26px | 400 | 1.24 | 0 |
-| H3 | Archivo Black | 20px | 400 | 1.3 | 0 |
-| Gövde | Jost (`--font-body`) | 16px | 400 | 1.6 | 0 |
-| Küçük / açıklama | Jost | 14px | 400 | 1.5 | 0 |
-| Etiket / mono | IBM Plex Mono (`--font-mono`) | 11px | 500 | 1.3 | 0.16em (büyük harf) |
+- Measured contrast: `ink/bg` **15.21:1** · `ink-soft/bg` **8.6:1** · `ink-faint/bg` **4.75:1 (decorative)** · `accent-ink/accent` **7.55:1**.
+- Ground paper tone; accent only link and program tag. The image's own color remains dominant.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-- Ölçek oranı **1.6** (11 → 16 → 26 → 40); kullanılan basamak sayısı 5: 11/14/16/26/40.
-- Ölçü: `h1 { font-size: clamp(27px, 3.6vw, 40px) }`.
-- Gövde metni maksimum satır uzunluğu: **62 ch** (desen katmanı ölçüyü daraltır).
-- Ağırlık kuralı: display yalnız 400 (Archivo Black zaten en kalın); gövde 400/500. 700 yasak, italik yasak.
+## Typography
 
-## Izgara ve boşluk
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (Archivo Black) | 40px (mobile 27px) | 400 | 1.04 | -0.02em |
+| H2 | same | 26px | 600 | 1.16 | -0.015em |
+| H3 | same | 20px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Jost) | 16px | 400 | 1.68 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (IBM Plex Mono) | 11px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
 
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (1240px üstü), 8 (768–1239), 4 (390–767) |
-| Gutter | 24px |
-| Container genişliği | 1200px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`), birim 8px |
-| Breakpoint davranışı | 1240px: 8/4 şerit bölünmesi; 768px: 6/6; 390px: tek kolon, bant yüksekliği 8px kalır |
+- The title is large-scale and tightly spaced; body 17px, size 68ch. Label mono and uppercase.
+- Measure: 68ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-- Asimetri kuralı: ekran başına **1** geniş blok (8 kolon) + 4 kolon yan şerit; diğer satırlar 6/6.
-- Bölüm ritmi: art arda en fazla **2** kart satırı; üçüncü blok ya tam genişlik dokuma bandı ya alıntı olur.
+## Grid and space
 
-## Yüzey ve derinlik
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
 
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| Zemin | `--bg` / `--bg-2` | — | sayfa, dokuma bandı zemini |
-| Kart | `--surface` | yok | kart, panel, tablo |
-| Yüzen katman | `--surface` + 2px accent kenar | `none` | modal, açılır menü |
+- Wide margin (56px), asymmetric 7/5 column. Section titles remain in the left column.
+- Section vertical space 84px desktop, 48px mobile; card padding 20px.
 
-- Kenarlık formülü: `1px solid var(--line)`; birincil butonda 2px soluk nötr kenar, modalda 2px `--accent`.
-- Derinlik nereden gelir: **hiçbir yerden** — düz dokuma düzlemi; ayrım zemin tonu ve bant deseniyle kurulur.
-- Radius: `--radius` 0px (buton, input, çip), `--radius-lg` 2px (kart, modal); 2px üstü yasak.
+## Surface and depth
 
-## Bileşen reçeteleri
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (birincil) | 44px | 0 24px | `--radius` (0) | 13px/400 Archivo Black, .08em, büyük harf | accent + accent-ink, gölge yok | hover %88 + 2px sağa · active translateX(2px) · focus 2px halka offset 3px · disabled %40 kesikli · loading 4 kare damga 800ms steps(4) |
-| Buton (ikincil) | 44px | 0 24px | `--radius` | 13px Jost, .12em | şeffaf + 2px `--line` | hover kenar `--ink-soft` |
-| Input | 40px | 0 12px | `--radius` | 15px Jost | surface + `--line` + sol 4px `--surface-2` şerit | focus sol şerit accent · error sol şerit danger · disabled %40 |
-| Kart | — | 16px | `--radius-lg` | başlık 20px Archivo Black | surface + üstte 8px bant | normal · seçili (2px accent kenar) · yükleniyor (bant %20 opaklık) |
-| Chip | 22px | 0 8px | `--radius` | 11px/500 mono, .12em büyük harf | surface-2 + `--line` | seçili: accent zemin + accent-ink |
-| Nav | 60px | 0 24px | 0 | 13px Jost büyük harf | bg + altta 12px bant | aktif: 8px altın alt çizgi |
-| Tablo satırı | 40px | 0 12px | 0 | 15px Jost / sayı mono | dokuma zebra + ilk sütunda 3px altın şerit | hover `--surface-2` · seçili şerit %100 opak |
-| Modal | — | 24px | `--radius-lg` | başlık 26px Archivo Black | surface + 2px accent kenar + üstte bant | açılış 300ms · Esc kapatır · odak tuzağı |
-| Toast | 38px | 0 12px | `--radius` | 14px Jost | surface-2 + sol 8px bant | 4000ms · 3 üst sınır |
-| Grafik paleti | — | — | — | eksen 11px mono | accent → ink-soft → warn → danger | yalnız çubuk (8px şerit, 4px boşluk); çizgi yok |
+- There is no shadow; distinction by hairline and ground tone. Images are in full-edge or 4:3 frame.
+- Radius: `0px` (buton, input, chip), `2px` (kart, modal). Corner 0–4px; The language of culture is established with sharp edges and wide gaps.
 
-- Odak halkası: `outline: 2px solid var(--accent); outline-offset: 3px` (bant desenine değmesin diye 3px).
-- Dokunma hedefi: 44px buton; 22px çipler 44×44px sarmalayıcı ile büyütülür.
+## Bans
 
-## Görsel dil
+- Desenli zemini gövde metninin arkasına koymak.
+- Hazır ikon seti, emoji veya "etnik" stok illüstrasyon taklidi.
+- Gradient, yumuşak gölge, cam yüzey, blur.
+- Üçüncü bir doygun renk eklemek (altın + nötr zemin; durum renkleri hariç).
+- El yazısı/script font; italik; 700+ gövde ağırlığı.
+- Motifi rastgele serpiştirmek — her bant kendi tekrarına sahip olmalı.
+- Uydurma kültürel sembol adı; eksik içerik `{{pattern}}` gibi işaretli yer tutucu olur.
+- Neon accent.
+- Stack of round cards.
+- Otomatik carousel.
 
-| Öğe | Kural |
-|---|---|
-| İkon | 16px, 2px çizgi, keskin köşe; yalnız geometrik damga dili (ok, kare, baklava) |
-| Fotoğraf | yok; zorunluysa 2px accent çerçeve, %70 doygunluk |
-| İllüstrasyon | CSS ile çizilmiş 24×24 damga; hazır ikon seti veya emoji yasak |
-| Doku | 8px dokuma şeritleri (accent %10 + line); grain .02 |
-| Logo alanı | Archivo Black 16px büyük harf + solunda 8×24px altın blok; çevresinde 16px boşluk |
+## Component recipes
 
-## Ekran reçeteleri
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 7.6:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
+
+## Visual language
+
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; minimal |
+| photo | Exhibition/venue photography, natural light, wide angle |
+| illustration | Archive/banner reproduction only |
+| Texture | Paper grain 2% (--grain: .02) |
+| Logo | Monochrome --ink, at least 24px height |
+
+- Signature motif: `motif-grid` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
+
+## Screen recipes
+
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | 8/4 şerit bölünmesi, hero zemininde dikey dokuma, 40px Archivo Black | `shots/01-page.png` |
 | Dashboard | düşük | 4 kart (üst bantlı) + çubuk grafik | `shots/01-page.png` |
@@ -150,45 +177,33 @@ Gana/Togo kente dokuması (ipek ve pamuk şeritlerin 8–10 cm'lik bantlar hâli
 | Hata | düşük | `--danger` sol şerit + damga; desen susturulur | `shots/01-page.png` |
 | Profil / ayar | orta | tercih listesi 40px satır, dokuma zebra | `shots/01-page.png` |
 
-> `Görsel` kolonu `node kit/sync-shot-tables.mjs --write` ile manifest'ten yenilenir; elle düzenlemeyin.
+## Accessibility
 
-## Zorunlu kurallar
-- Dokuma ritmi 8px; her beşinci bant 24px desen bloğu. Bant genişliği hiçbir bileşende değişmez.
-- Desen yalnız ayrılmış bantlarda (nav altı, kart üstü, ayırıcı, hero zemini); gövde metninin arkasında yasak.
-- Tek vurgu altın; desen katmanı %10–42 opaklık, bilgi taşımaz.
-- Display Archivo Black, büyük harf, 20px altına inmez.
-- Radius en fazla 2px; gölge hiçbir yüzeyde yok.
-- Ekran başına en fazla 2 farklı damga motifi.
-- Renk, radius, gölge yalnız `--…` token'larından gelir.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 15.21:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.6:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.75:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 7.55:1 | ≥ 4.5 | button text |
+| focus ring/ground | 7.6:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 92.4 | ≥ 60 target | thin text |
 
-## Yasaklar
-- Desenli zemini gövde metninin arkasına koymak.
-- Hazır ikon seti, emoji veya "etnik" stok illüstrasyon taklidi.
-- Gradient, yumuşak gölge, cam yüzey, blur.
-- Üçüncü bir doygun renk eklemek (altın + nötr zemin; durum renkleri hariç).
-- El yazısı/script font; italik; 700+ gövde ağırlığı.
-- Motifi rastgele serpiştirmek — her bant kendi tekrarına sahip olmalı.
-- Uydurma kültürel sembol adı; eksik içerik `{{pattern}}` gibi işaretli yer tutucu olur.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Erişilebilirlik
-- Ölçülen riskler: en düşük çift `--ink-faint / bg` = **4.75:1** (dekoratif dipnot); etkileşimli metin `--ink` 15.21:1 ve `--ink-soft` 8.60:1.
-- Desen katmanı bilgi taşımaz; durum her zaman metinle de yazılır (`Hata`, `Onay`).
-- Hareket: tek seferlik giriş + 210ms hover; `prefers-reduced-motion` hepsini 0.01ms'e indirir, statik desen kalır.
-- Şeffaf yüzey yok (`--blur: 0px`), `@supports` fallback gerekmez.
-- Odak görünürlüğü: koyu zeminde altın halka 7.55:1; bant üstündeki öğelerde `outline-offset: 3px` (bant çizgisiyle karışmasın).
+## Sample images
 
-## Örnek görseller
+Identical content is rendered with the same text in every style; only the design differs.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
-
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | Ekran "etnik desen kaplaması" gibi duruyor | desen gövde arkasına yayılmış | deseni bantlara hapset, opaklığı %10–42'de tut |
 | Bant ritmi bozuk görünüyor | 8px/24px oranı bozulmuş | tek gradient formülü kullan, genişliği sabitle |
 | Kart "yüzüyor" | gölge veya 8px radius eklenmiş | gölgeyi sil, radius'u 0–2px'e indir |
@@ -196,28 +211,29 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Tipografi desenle yarışıyor | display 20px altına inmiş veya 700 gövde | display 20px taban, gövde 400 |
 | Koyu modda desen patlıyor | bant opaklığı koyuda artırılmış | koyuda .34'e düşür |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `nordic-folk` — aynı "süs bantta yaşar" disiplini; halk deseni 66'dan, dokuma ritmi 71'den alınır.
-- **Uyumlu:** `bohemian` — sıcak zemin ve zanaat tonu ortak; ancak desen 71'de bantlı kalır.
-- **Uyumlu:** `maximalism` — renk bolluğu isteniyorsa garnitür olarak 17 kullanılır, baskın stil 71 kalır.
-- **Yasak:** `japanese-ma` — 67'nin boşluk ve tek çizgi disiplini bu dokuma ritmiyle çelişir.
-- **Yasak:** `swiss-design` — 02'nin nötr ızgara + kırmızı tek vurgusu desen katmanını dışlar.
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `nordic-folk` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `bohemian` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `maximalism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `japanese-ma` | Two different ornamental languages compete on the same screen |
+| Mixing | `swiss-design` | Two different ornamental languages compete on the same screen |
+| Mixing | `glassmorphism` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://www.metmuseum.org/toah/hd/kent/hd_kent.htm | kente şerit mantığı ve renk blokları |
-| https://africa.si.edu/exhibits/adinkra/ | adinkra damga geometrisi ve tekrar oranı |
-| https://www.cooperhewitt.org/tag/african-textiles/ | bant genişliği ritmi, tekrar oranı |
-| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | desen katmanı ile metin ayrımı |
+| Source | for what |
+| --- | --- |
+| https://www.metmuseum.org/toah/hd/kent/hd_kent.htm | The Metropolitan Museum · Kente cloth — kente şerit mantığı ve renk blokları |
+| https://africa.si.edu/exhibits/adinkra/ | Smithsonian NMAfA · Adinkra symbols — adinkra damga geometrisi ve tekrar oranı |
+| https://www.cooperhewitt.org/tag/african-textiles/ | Cooper Hewitt · African textiles — bant genişliği ritmi, tekrar oranı |
+| https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | WCAG 2.2 · Contrast (Minimum) — desen katmanı ile metin ayrımı |
 
 ## AI brief
 
-Kopyala-yapıştır; uygulayan ajan bu bloğu tek başına kullanabilir:
-
-```
+```text
 Stil: West African Pattern (styles/71-west-african-pattern/style.md, tokens.json)
 Token: sadece kit/tokens.css [data-style="west-african-pattern"] değişkenleri; hard-coded renk/gölge/radius yasak.
 Tipografi: --font-display (Archivo Black, büyük harf) başlıkta, --font-body (Jost) gövdede,
@@ -229,15 +245,15 @@ Hareket: enter 0.5s cubic-bezier(.7,.15,.3,1) 22px / stagger 0.055; scroll top 8
          hover 210ms scale 1.022 + translateX(2px); pin yok. prefers-reduced-motion zorunlu.
 Yasak: "Tuzaklar" ve "Yasaklar" maddeleri (desen gövde arkasında, hazır ikon, gölge).
 Çıktı: bileşen kodu + tek paragraf not (hangi imza öğeyi nerede kullandın).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Ekranda imza öğelerinden en az 2'si görünüyor (8px bant, 24px blok, damga, 40px Archivo Black).
-- [ ] Hiçbir renk/radius/gölge hard-coded değil.
-- [ ] Kontrast: gövde ≥ 4.5:1, büyük metin ≥ 3:1.
-- [ ] Desen hiçbir yerde gövde metninin arkasında değil.
-- [ ] 390px genişlikte taşma yok; bant genişliği korunmuş.
-- [ ] `prefers-reduced-motion` açıkken hareket duruyor.
+Style: West African Pattern (west-african-pattern) · family: Cultural & Regional (66–75)
+Token: --bg #17120f · --surface #241b16 · --ink #f3e7d3 · --accent #d99a1f · --line rgba(243,231,211,.16)
+Radius: 0px / 2px · Typography: Archivo Black / Jost / IBM Plex Mono
+Required: Dokuma ritmi 8px: bant genişlikleri 8px ve her beşinci bant 24px desen bloğudur · Desen yalnız ayrılmış bantlarda (nav altı, kart üstü, ayırıcı); metin arkasında asla · Tek vurgu altın; desen katmanı %10–35 opaklıkta, bilgi taşımaz
+Banned: Desenli zemini gövde metninin arkasına koymak. · Hazır ikon seti, emoji veya "etnik" stok illüstrasyon taklidi. · Gradient, yumuşak gölge, cam yüzey, blur.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -248,14 +264,25 @@ Yasak: "Tuzaklar" ve "Yasaklar" maddeleri (desen gövde arkasında, hazır ikon,
   --ink: #f3e7d3; --ink-soft: #c0ae93; --ink-faint: #8d7f68;
   --accent: #d99a1f; --accent-ink: #1c1206;
   --line: rgba(243,231,211,.16);
+  --danger: #e73d2d;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 0px; --radius-lg: 2px;
   --shadow: none; --shadow-hard: none;
   --font-display: "Archivo Black", system-ui, sans-serif;
   --font-body: "Jost", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --tracking: 0em; --blur: 0px; --grain: 0.02;
-  --danger: #e2694f; --danger-ink: #220a04; --ok: #6fbf7a; --warn: #e0b84a;
+  --tracking: 0em; --blur: 0px; --grain: 0;
 }
 ```
-
-Koyu mod bloğu `kit/tokens.css` içinde `[data-theme="dark"][data-style="west-african-pattern"]` olarak durur; `## Koyu mod` tablosu tek kaynak özetidir.

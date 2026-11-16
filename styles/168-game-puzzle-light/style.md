@@ -1,223 +1,223 @@
 # 168 · Puzzle Light
 
-> **Bir cümlede:** Bulmaca oyunu için açık, sakin arayüz: yumuşak mavi accent, geniş boşluk ve tek adımlık ilerleme.
+> **In one sentence:** Clear, calm interface for the puzzle game: soft blue accent, ample space and one-step progression.
 
 | | |
 |---|---|
-| **Hissiyat** | dingin, net, "bir adım daha" |
-| **En iyi** | bulmaca oyunu, günlük meydan okuma, eğitici mini oyun |
-| **Kaçın** | rekabetçi lig ekranları, koyu HUD |
-| **Zorluk** | orta · **Erişilebilirlik** | orta |
-| **Aile** | Oyun & Etkileşim (152–171) · **Token** | `kit/tokens.css` → `[data-style="game-puzzle-light"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | serene, clear, "one more step" |
+| **Best for** | puzzle game, daily challenge, educational mini game |
+| **Avoid** | competitive league screens, dark HUD |
+| **Difficulty** | medium · **Accessibility** | medium |
+| **Family** | Games & Interaction (152–171) · **Token** | `kit/tokens.css` → `[data-style="game-puzzle-light"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Puzzle Light, bulmacanın kendisini sahnede bırakır: arayüz geri çekilir, yalnız tahta ve tek eylem kalır.
+### What it is
+Puzzle Light leaves the puzzle itself on stage: the interface retreats, leaving only the board and the sole action.
 
-### Ne değildir
-- Neon her yere sürülmüş bir tema değildir; accent sadece durum ve eylem taşır.
-- Koyu zemin tek başına oyun stili yapmaz; sayısal ritim ve keskin köşe gerekir.
-- Pixel font zorunlu değil; yazılım HUD'ları da bu ailedendir.
+### What is not
+- Neon is not a ubiquitous theme; accent carries only case and action.
+- Dark background alone does not make a play style; Numerical rhythm and sharp corners are required.
+- Pixel font is not mandatory; software HUDs are also in this family.
 
-### Nereden gelir
-Arcade kokpitleri, konsol HUD'ları ve PC oyun menülerinin ekran tipografisi geleneği; 2010'lardan sonra canlı yayın ve espor arayüzleriyle sadeleşti.
+### Where it comes from
+The screen typography tradition of arcade cockpits, console HUDs, and PC game menus; After the 2010s, it became simpler with live broadcast and esports interfaces.
 
-### 3 saniyede tanıma testi
-1. Köşeler keskin mi (≤6px)?
-2. Rakamlar tabular ve mono mu?
-3. Accent sayısı tek mi, durum için mi kullanılmış?
+### Recognition test in 3 seconds
+1. Are the corners sharp (≤6px)?
+2. Numbers taboos and mono?
+3. Is the Accent number unique or used for the situation?
 
-## Görsel imza
-- **Geniş boşluk:** bölüm aralığı 80px; ekran nefes alır.
-- **Yumuşak mavi accent:** doğru/aktif durum; kırmızı yalnız hata.
-- **Tek adım:** ilerleme çubuğu 6px, tek parça.
-- **Yuvarlak kart:** 12/18px, tek seviye gölge.
-- **Tipografi:** Poppins (display) + Nunito (gövde) + Space Mono (mono etiket).
-- **Renk disiplini:** tek accent `#2f5aa8`; nötr skala `#f7f9fc` → `#151a22`.
-- **Yarıçap:** `12px` / `18px`; Köşe ya 0 ya da tek küçük değer (≤6px); yumuşak 12px+ yuvarlatma yasak.
+## Visual signature
+- **Wide spacing:** section spacing 80px; The screen breathes.
+- **Soft blue accent:** true/active status; red only error.
+- **One step:** progress bar 6px, one piece.
+- **Round card:** 12/18px, single level shadow.
+- **Typography:** Poppins (display) + Nunito (body) + Space Mono (mono label).
+- **Colour discipline:** a single accent `#2f5aa8`; neutral scale `#f7f9fc` → `#151a22`.
+- **Radius:** `12px` / `18px`; Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Ekran başına tek hedef ve tek ilerleme göstergesi.
-2. Dokunma hedefi ≥ 44px.
-3. Renk körlüğü için doğru/yanlış ikonla da gösterilir.
+1. One target and one progress indicator per screen.
+2. Touch target ≥ 44px.
+3. For color blindness, the correct/incorrect icon is also displayed.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#f7f9fc` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#eef3fa` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#ffffff` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#f1f6fc` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#151a22` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#4d5665` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#7d8798` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#2f5aa8` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#f9fbff` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(21,26,34,.12)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#f7f9fc` | page background | as a card background |
+| `--bg-2` | `#eef3fa` | partition divider floor, table top | button background |
+| `--surface` | `#ffffff` | kart, input, modal | full-page background |
+| `--surface-2` | `#f1f6fc` | passive chip, hover background | primary button |
+| `--ink` | `#151a22` | title, body, icon | large background |
+| `--ink-soft` | `#4d5665` | secondary text, description | — |
+| `--ink-faint` | `#7d8798` | decorative label, separator text | interactive text |
+| `--accent` | `#2f5aa8` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#f9fbff` | text above accent | non-accent background |
+| `--line` | `rgba(21,26,34,.12)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **16.55:1** · `ink-soft/bg` **7.02:1** · `ink-faint/bg` **3.44:1 (dekoratif)** · `accent-ink/accent` **6.44:1**.
-- HUD kontrastı: durum renkleri (canlı/hasar) accent'in tonlarından türetilir; dördüncü bir hue eklenmez.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **16.55:1** · `ink-soft/bg` **7.02:1** · `ink-faint/bg` **3.44:1 (decorative)** · `accent-ink/accent` **6.44:1**.
+- HUD contrast: status colors (live/damage) are derived from the accent's tones; A fourth hue is not added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Poppins) | 42px (mobil 28px) | 700 | 1.1 | 0.01em |
-| H2 | aynı | 26px | 600 | 1.2 | 0.01em |
-| H3 | aynı | 19px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Nunito) | 15px | 400 | 1.62 | 0 |
-| Küçük gövde | aynı | 13px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (Space Mono) | 10px | 400 | 1.2 | 0.2em |
-| Buton | `--font-body` | 11px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Poppins) | 42px (mobile 28px) | 700 | 1.1 | 0.01em |
+| H2 | same | 26px | 600 | 1.2 | 0.01em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Nunito) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Space Mono) | 10px | 400 | 1.2 | 0.2em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-- Rakamlar tabular; skor/timer alanları mono ve sağa hizalı. Başlık uppercase, gövde cümle düzeninde.
-- Ölçü: 62ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar cümle düzeninde (uppercase yok); uppercase yalnız mono etiketlerde.
+- Numbers are taboos; score/timer areas are mono and right aligned. Title in uppercase, body in sentence order.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Ekran ızgarası görünür bir çerçeve gibi davranır: bölümler arasına 1px accent kenar konur, dekoratif çizgi eklenmez.
-- Bölüm dikey boşluğu masaüstü 64px, mobil 40px; kart içi padding 18px.
+- The screen grid acts like a visible frame: a 1px accent border is placed between sections, no decorative lines are added.
+- Section vertical space 64px desktop, 40px mobile; card padding 18px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Yüzeyler opak; cam/blur yok. Durum bildirimi için ince accent kenar kullanılır.
-- Radius: `12px` (buton, input, chip), `18px` (kart, modal). Köşe ya 0 ya da tek küçük değer (≤6px); yumuşak 12px+ yuvarlatma yasak.
+- Surfaces are opaque; There is no glass/blur. Thin accent edge is used for status notification.
+- Radius: `12px` (buton, input, chip), `18px` (kart, modal). Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-## Yasaklar
+## Bans
 
-- Zaman baskısı sayacı (kırmızı yanıp sönen).
+- Time pressure counter (blinking red).
 - Sekiz renkli kutlama.
-- Sıkışık ızgara.
-- Sonsuz yanıp sönen gösterge (v6'da animasyon yok).
-- Üçten fazla durum rengi.
-- HUD içinde serif başlık.
+- Cramped grill.
+- Infinite blinking indicator (no animation in v6).
+- More than three status colors.
+- Serif title in HUD.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 12px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 12px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 12px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 12px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 12px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 12px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 12px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 12px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 12px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 12px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 12px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 12px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 12px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 6.67:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.67:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1px blok ikon, 16/20px tuval; anti-alias yok, tam sayı ölçek |
-| Fotoğraf | Oyun içi render ya da tek nesne çekimi; %25 alan, koyu vinyet |
-| İllüstrasyon | Sprite/silüet: en fazla 3 ton (accent, ink, surface-2) |
-| Doku | Statik tarama (1px/3px, %4) yalnız bölüm zemininde |
-| Logo | Sol üst 20px, uppercase, mono veya display |
+| icon | 1px block icon, 16/20px canvas; no anti-alias, integer scale |
+| photo | In-game rendering or single object shooting; 25% area, dark vignette |
+| illustration | Sprite/silhouette: up to 3 tones (accent, ink, surface-2) |
+| Texture | Static raster (1px/3px, 4%) on section background only |
+| Logo | Top left 20px, uppercase, mono or display |
 
-- İmza motif: `motif-dots` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Birincil odak tek büyük sayı/skor; ikinci odak tek CTA; gerisi etiket.
+- Signature motif: `motif-dots` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Primary focus is on one big number/score; second focus single CTA; the rest is label.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| HUD / oyun içi katman | yüksek | Skor + durum çubuğu + tek CTA; 3 katmandan fazla bindirme yok | `shots/01-page.png` |
-| Menü / lobi | orta | Dikey liste, seçili satırda accent sol kenar, 44px satır | `shots/01-page.png` |
-| Karakter / envanter | yüksek | Izgara 4'lü, her kartta nadirlik etiketi mono | `shots/01-page.png` |
-| Görev / quest | orta | Başlık + 2 satır açıklama + ödül tablosu | `shots/01-page.png` |
-| Maç sonu / skor tablosu | yüksek | Sağa hizalı sayılar, zebra yerine hairline | `shots/01-page.png` |
-| Ayarlar | orta | Anahtar + segment; her satır 56px | `shots/01-page.png` |
-| Mağaza / battle pass | yüksek | 3 kolon plan kartı, ortada accent kenar | `shots/01-page.png` |
-| Form / hesap | düşük | Tek sütun 480px, etiket üstte 12px mono | `shots/01-page.png` |
+| HUD/in-game overlay | high | Score + status bar + single CTA; No overlays of more than 3 layers | `shots/01-page.png` |
+| Menu / lobby | medium | Vertical list, accent left edge on selected row, 44px row | `shots/01-page.png` |
+| Character / inventory | high | Grid 4-pack, rarity tag mono on each card | `shots/01-page.png` |
+| quest | medium | Title + 2 line description + reward table | `shots/01-page.png` |
+| Match end / score table | high | Right aligned numbers, hairline instead of zebra | `shots/01-page.png` |
+| Settings | medium | Key + segment; each line 56px | `shots/01-page.png` |
+| Store / battle pass | high | 3 column plan card, accent edge in the middle | `shots/01-page.png` |
+| Form / account | low | Single column 480px, label 12px mono on top | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 16.55:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 7.02:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 3.44:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 6.44:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 6.67:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 100.6 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 16.55:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 7.02:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 3.44:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.44:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.67:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 100.6 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Arayüz oyuncak gibi görünüyor | Neon ve gölge fazla | Accent'i %14 dolguya indir, gölgeyi sıfırla |
-| Sayılar zıplıyor | Orantısız (proportional) rakam | font-variant-numeric: tabular-nums kullan |
-| Menü okunmuyor | Uppercase + düşük kontrast | Uppercase'i başlıkta tut, gövdeyi cümle düzenine çevir |
-| Kartlar kontrolsüz parlıyor | Kenar accent %40+ | Kenarı %22'ye sabitle, hover'da %34 |
+| The interface looks like a toy | Too much neon and shadow | Reduce Accent to 14% fill, reset shadow |
+| Numbers are jumping | Proportional figure | font-variant-numeric: use tabular-nums |
+| Menu not readable | Uppercase + low contrast | Keep uppercase in title, change body to sentence order |
+| Cards glow uncontrollably | Edge accent 40%+ | Fix edge at 22%, hover at 34% |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `game-mobile-casual` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `minimalism` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `game-horror-occult` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `cyberpunk` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `game-mobile-casual` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `minimalism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `game-horror-occult` | Two different ornamental languages compete on the same screen |
+| Mixing | `cyberpunk` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://fonts.google.com/specimen/Poppins | Poppins (Google Fonts) — başlık ailesi |
-| https://en.wikipedia.org/wiki/Puzzle_video_game | Puzzle video game (Wikipedia) — adım/adım ilerleme |
-| https://fonts.google.com/specimen/Nunito | Nunito (Google Fonts) — gövde ailesi |
+| https://fonts.google.com/specimen/Poppins | Poppins (Google Fonts) — title family |
+| https://en.wikipedia.org/wiki/Puzzle_video_game | Puzzle video game (Wikipedia) — step/step progress |
+| https://fonts.google.com/specimen/Nunito | Nunito (Google Fonts) — body family |
 
 ## AI brief
 
 ```text
-Bulmaca oyunu ekranı tasarla: açık zemin, yumuşak mavi accent, geniş boşluk, tek ilerleme çubuğu, yuvarlak kart.
+Design puzzle game screen: light backdrop, soft blue accent, large space, single progress bar, round card.
 
-Stil: Puzzle Light (game-puzzle-light) · aile: Oyun & Etkileşim (152–171)
+Style: Puzzle Light (game-puzzle-light) · family: Games & Interaction (152–171)
 Token: --bg #f7f9fc · --surface #ffffff · --ink #151a22 · --accent #2f5aa8 · --line rgba(21,26,34,.12)
-Yarıçap: 12px / 18px · Tipografi: Poppins / Nunito / Space Mono
-Zorunlu: Ekran başına tek hedef ve tek ilerleme göstergesi. · Dokunma hedefi ≥ 44px. · Renk körlüğü için doğru/yanlış ikonla da gösterilir.
-Yasak: Zaman baskısı sayacı (kırmızı yanıp sönen). · Sekiz renkli kutlama. · Sıkışık ızgara.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 12px / 18px · Typography: Poppins / Nunito / Space Mono
+Required: One target and one progress indicator per screen. · Touch target ≥ 44px. · For color blindness, the correct/incorrect icon is also displayed.
+Banned: Time pressure counter (blinking red). · Sekiz renkli kutlama. · Cramped grill.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

@@ -1,41 +1,52 @@
 # 09 · Liquid Glass
 
-> **Bir cümlede:** Cam sadece bulanıklaştırmakla kalmıyor, büküyor: kenarında ışık kırılan, basınca hafifçe akan, arkasındaki rengi taşıyan optik katman (Apple visionOS/iOS 26 dili).
+> **In one sentence:** Cam sadece bulanıklaştırmakla kalmıyor, büküyor: kenarında ışık kırılan, basınca hafifçe akan, arkasındaki rengi taşıyan optik katman (Apple visionOS/iOS 26 dili).
 
 | | |
 |---|---|
-| **Hissiyat** | akışkan, optik, "premium donanım", dokunulabilir |
-| **En iyi** | nav/araç katmanı, medya üzeri kontrol, oynatıcı, AR/3D ürün vitrini |
-| **Kaçın** | yoğun veri tablosu, düşük kontrastlı içerik, düşük güçlü cihaz hedefi |
-| **Zorluk** | yüksek (performans + fallback) · **Erişilebilirlik** | orta risk (kontrast/parlama) |
-| **Aile** | Yüzey (08–12) · **Token** | `kit/tokens.css` → `[data-style="liquid-glass"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | akışkan, optik, "premium donanım", dokunulabilir |
+| **Best for** | nav/araç katmanı, medya üzeri kontrol, oynatıcı, AR/3D ürün vitrini |
+| **Avoid** | yoğun veri tablosu, düşük kontrastlı içerik, düşük güçlü cihaz hedefi |
+| **Difficulty** | yüksek (performans + fallback) · **Accessibility** |  |
+| **Family** | Surface (8–12) · **Token** | `kit/tokens.css` → `[data-style="liquid-glass"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
+### What it is
 Glassmorphism'in optik olarak iddialı hali: `backdrop-filter: blur(24px) saturate(150%)` + **inset üst highlight** (specular) + **kenarda ışık kırılması** + **pill (999px) kontroller** + **hafif yay (spring) hareketi**. Yüzey arkasındaki rengi alır, kendi kenarında bir ışık çizgisi taşır; kullanıcı "dokunabilir bir malzeme" hissi alır.
 
 Kazandığı şey: kontrollerin içerikle bütünleşmesi (medya üzerinde ağır bar olmadan). Feda ettiği şey: performans ve kontrast payı.
 
-### Ne değildir
+### What is not
 - **Glassmorphism değildir.** Aradaki fark: refraction/lensing, specular highlight, yay fiziği ve pill kontroller; glassmorphism statik ve daha düzdür.
 - **Neumorphism değildir.** Orada ışık tek renk üzerinde kabartma yapar; burada arka plan görünür ve kırılır.
 - **"Blur'lu siyah bar" değildir.** `saturate()` ve inline highlight olmadan sadece "koyu cam" olur.
 - **Her yerde kullanılmaz:** opak içerik panelleri cam olmaz; cam yalnızca **içeriğin üstünde duran kontrol katmanıdır**.
 
-### Nereden gelir
+### Where it comes from
 Apple'ın visionOS ve iOS 26 "Liquid Glass" materyal sistemi; optik kırılma, gerçek zamanlı ışık ve dokunma geri bildirimi. Donanım gücü arttıkça "materyal" metaforu geri döndü.
 
-### 3 saniyede tanıma testi
+### Recognition test in 3 seconds
 1. Yüzeyde **blur + saturate** birlikte mi (bulanıklık tek başına yetmez)?
 2. Üst kenarda **ince ışık çizgisi** (specular) var mı?
 3. Kontroller **pill** (999px) mi, köşeli mi?
 4. Basınca hafif **yay/ölçek** hareketi var mı (aşırı değil)?
 5. Ekranda cam katman sayısı ≤ 2 mi?
 
-## Zorunlu kurallar
+## Visual signature
+- **Blur 24px + saturate 150%**; `--blur: 24px` token'ı.
+- **Specular highlight:** üst kenarda 1px beyaz %35 inset; sol üstte hafif parlama.
+- **Pill kontrol:** buton/segment/input 999px; nav bar 28px radius.
+- **Kırılma kenarı:** 1px `--line` (beyaz %28) + 6px iç gölge yerine kenar gradient'i.
+- **Derin gölge:** `0 10px 40px rgba(0,0,0,.35)` — yumuşak, bulanık.
+- **Hareket:** basınca `scale(.98)`, bırakınca hafif yay ile geri dönüş.
+- **Typography:** SF Pro Display (display) + SF Pro Text (body) + SF Mono (mono label).
+- **Colour discipline:** a single accent `#4cc9f0`; neutral scale `#0a0d12` → `#f5f7fa`.
+- **Radius:** `20px` / `28px`; Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Mandatory rules
 
 1. **Blur + saturate birlikte:** `blur(var(--blur)) saturate(150%)`; tek başına blur cam sayılmaz.
 2. **Specular kenar:** `inset 0 1px 0 rgba(255,255,255,.35)` + 1px `--line` (beyaz %28).
@@ -44,7 +55,66 @@ Apple'ın visionOS ve iOS 26 "Liquid Glass" materyal sistemi; optik kırılma, g
 5. **Yay hareketi:** `cubic-bezier(.34,1.4,.64,1)`, 140–280ms; `scale(.98)` ile basılma.
 6. **Fallback:** `@supports not (backdrop-filter)` → opak `--surface` karışımı + `--blur: 0`.
 
-## Yasaklar
+## Color
+
+| Token | Value | Where to use | Where not to use |
+| --- | --- | --- | --- |
+| `--bg` | `#0a0d12` | page background | as a card background |
+| `--bg-2` | `#141a24` | partition divider floor, table top | button background |
+| `--surface` | `rgba(255,255,255,.10)` | kart, input, modal | full-page background |
+| `--surface-2` | `rgba(255,255,255,.06)` | passive chip, hover background | primary button |
+| `--ink` | `#f5f7fa` | title, body, icon | large background |
+| `--ink-soft` | `rgba(245,247,250,.76)` | secondary text, description | — |
+| `--ink-faint` | `rgba(245,247,250,.5)` | decorative label, separator text | interactive text |
+| `--accent` | `#4cc9f0` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#041018` | text above accent | non-accent background |
+| `--line` | `rgba(255,255,255,.28)` | all borders | text colour |
+
+- Measured contrast: `ink/bg` **18.13:1** · `ink-soft/bg` **10.54:1** · `ink-faint/bg` **5.05:1 (decorative)** · `accent-ink/accent` **10:1**.
+- Material color background: accent alone stamp/label. Build texture with grain and edges, not color.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
+
+## Typography
+
+| Role | Family | Size | Weight | Line height | Tracking |
+| --- | --- | --- | --- | --- | --- |
+| Display / H1 | `--font-display` (SF Pro Display) | 56px (mobile 32px) | 400 | 1.08 | -0.02em |
+| H2 | same | 26px | 600 | 1.2 | -0.015em |
+| H3 | same | 18px | 600 | 1.3 | 0 |
+| Body | `--font-body` (SF Pro Text) | 16px | 400 | 1.62 | 0 |
+| Small body | same | 14px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (SF Mono) | 10px | 400 | 1.2 | 0.14em |
+| Button | `--font-body` | 12px | 600 | 1 | 0 |
+
+- Title 52px/400 — remains silent next to the texture. Tags mono, wide tracking.
+- Measure: 66ch (reading text), card text at most 52ch.
+- Headings are in sentence order (no uppercase); uppercase only on mono tags.
+
+## Grid and space
+
+| Item | Value |
+| --- | --- |
+| Columns | 12 (content 8, form 4) |
+| Gutter | 24px (mobil 16px) |
+| Container | 1160px |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Breakpoint | 640 / 900 / 1200 px |
+
+- Card spacing 14px; The material photo can extend right to the edge, the text cannot.
+- Section vertical space 72px desktop, 44px mobile; card padding 20px.
+
+## Surface and depth
+
+| Level | Token | Shadow | Usage |
+| --- | --- | --- | --- |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
+
+- Shadow single level; With material feeling grain + edge. No glass/blur.
+- Radius: `20px` (buton, input, chip), `28px` (kart, modal). Corner 0–6px; The material edge remains sharp, soft rounding weakens the texture.
+
+## Bans
 
 - Siyah/opak bar üstüne sahte blur (arkada içerik yoksa cam çalışmaz).
 - Cam üstünde cam (çift blur) ve 3+ katman.
@@ -52,107 +122,44 @@ Apple'ın visionOS ve iOS 26 "Liquid Glass" materyal sistemi; optik kırılma, g
 - Koyu/sert dış gölge (camı "kutu" yapar) — gölge yumuşak ve derin olmalı.
 - Cam üstünde yarı saydam gövde metni (kontrast düşer).
 - Düşük güçlü cihazda tam blur (statik blur'a düşür).
+- Imitation object (stone that looks like a button).
+- Text on high contrast pattern.
+- More than eight tissue samples.
 
-## Görsel imza
-- **Blur 24px + saturate 150%**; `--blur: 24px` token'ı.
-- **Specular highlight:** üst kenarda 1px beyaz %35 inset; sol üstte hafif parlama.
-- **Pill kontrol:** buton/segment/input 999px; nav bar 28px radius.
-- **Kırılma kenarı:** 1px `--line` (beyaz %28) + 6px iç gölge yerine kenar gradient'i.
-- **Derin gölge:** `0 10px 40px rgba(0,0,0,.35)` — yumuşak, bulanık.
-- **Hareket:** basınca `scale(.98)`, bırakınca hafif yay ile geri dönüş.
+## Component recipes
 
-## Renk
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
+| --- | --- | --- | --- | --- | --- | --- |
+| Button (primary) | 44px | 0 20px | 20px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
+| Buton (ikincil) | 44px | 0 18px | 20px | 14/600 | transparent + 1px --line | hover: --surface-2 |
+| Input | 44px | 0 14px | 20px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 20px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
+| Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 20px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 20px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 20px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
-|---|---|---|---|
-| `--bg` | `#0a0d12` | sayfa zemini (içerik) | cam yüzey |
-| `--bg-2` | `#141a24` | zemin gradient üst tonu | buton |
-| `--surface` | `rgba(255,255,255,.10)` | cam bar/kart | opak içerik paneli |
-| `--surface-2` | `rgba(255,255,255,.06)` | ikincil cam | birincil buton |
-| `--ink` | `#f5f7fa` | tüm metin (tam opak) | yarı saydam metin |
-| `--ink-soft` | `rgba(245,247,250,.76)` | açıklama | 12px altı |
-| `--ink-faint` | `rgba(245,247,250,.50)` | dekoratif | etkileşimli |
-| `--accent` | `#4cc9f0` | birincil aksiyon, aktif | geniş zemin |
-| `--accent-ink` | `#041018` | accent üstü metin | — |
-| `--line` | `rgba(255,255,255,.28)` | cam kenarı, specular | metin |
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 10.12:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-- Ölçülen kontrast: `ink/bg` **18.13:1** · `ink-soft/bg` **10.54:1** · `ink-faint/bg` **5.05:1** · `accent-ink/accent` **10.00:1** · cam yüzey üstünde `ink` **14.28:1**.
-- Cam arkasında renk/blur olduğu için metin **tam opak** olmalı; efektif kontrast düşer.
-- Yasak: 3+ doygun blob; cam üstünde gradient metin.
+## Visual language
 
-## Tipografi
+| Item | Rule |
+| --- | --- |
+| icon | 1px line, 20px; like a print mark |
+| photo | Macro texture: paper, metal, fabric; soft side light |
+| illustration | Tissue sample alone |
+| Texture | Material grain (--grain: .04) |
+| Logo | Monochrome --ink, at least 24px height |
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
-|---|---|---|---|---|---|
-| Display / H1 | SF Pro Display / Inter | 56px (mobil 32px) | 600 | 1.06 | `-0.02em` |
-| H2 | aynı | 26px | 600 | 1.2 | `-0.01em` |
-| H3 | aynı | 18px | 600 | 1.3 | `0` |
-| Gövde | SF Pro Text / Inter | 16px | 400 | 1.6 | `0` |
-| Etiket | SF Mono / JetBrains Mono | 10px | 500 | 1.2 | `0.14em`, uppercase |
-| Buton (pill) | gövde | 14px | 600 | 1 | `0` |
+- Signature motif: `motif-blob` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Maximum one large image per page; the rest is text and data.
 
-- SF Pro yoksa Inter'e düşer; fallback'te ağırlık 600'ü koru.
-- Cam üstünde 12px altı metin yasak; etiketler en az 10px + uppercase.
-- Display 700 değil **600**: kalın harf blur ile yarışır.
+## Screen recipes
 
-## Izgara ve boşluk
-
-| Öğe | Değer |
-|---|---|
-| Kolon | 12 (hero 6/6) |
-| Gutter | 24px |
-| Container | 1240px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 |
-| Breakpoint | 640 / 900 / 1240 px |
-| Bölüm dikey | 72px (mobil 48px) |
-
-- Cam katman ekran kenarına yapışır (nav/sheet), 20px iç boşluk.
-- Katman hiyerarşisi: içerik (opak) → cam kontrol → (gerekirse) tek sheet.
-- Cam kartlar arası boşluk ≥ 16px; iki cam yüzey bitişik olmaz (kenarlar karışır).
-
-## Yüzey ve derinlik
-
-| Seviye | Token | Gölge | Kullanım |
-|---|---|---|---|
-| İçerik | `--bg` / `--bg-2` | — | sayfa gövdesi (opak) |
-| Cam kontrol | `--surface` + blur 24px | `--shadow` + inset highlight | nav, toolbar, oynatıcı |
-| Sheet / modal | `--surface` + blur 28px | `--shadow` (daha derin) | alt sheet, modal |
-
-- Derinlik blur + specular + derin yumuşak gölge üçlüsünden gelir.
-- Radius: `--radius` 20px (kart), `--radius-lg` 28px (sheet); kontroller 999px.
-
-## Bileşen reçeteleri
-
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
-|---|---|---|---|---|---|---|
-| Buton (pill, birincil) | 44px | 0 22px | 999px | 14/600 | `--accent` (opak) + `--accent-ink` | hover: brightness(1.06) · active: `scale(.98)` · focus: 2px beyaz %75 halka · disabled: %45 |
-| Buton (cam pill) | 44px | 0 18px | 999px | 14/600 | `--surface-2` + blur + 1px `--line` | hover: `--surface` |
-| Segment kontrol | 36px | 3px iç | 999px | 13/600 | cam zemin + aktif pill `--surface` | aktif: beyaz %16 dolgu + gölge |
-| Input (pill) | 44px | 0 18px | 999px | 15/400 | `--surface-2` + blur | focus: 2px `--accent` halka · error: `--danger` |
-| Kart | içerik | 24px | 20px | H3 + 15 gövde | `--surface` + blur + inset highlight | hover: blur 28px (statik iki durum) |
-| Nav bar | 64px | 0 20px | 28px (yüzen) / 0 (yapışık) | 14/600 | `--surface` + blur 24px + 1px `--line` | aktif: alt pill `--surface` |
-| Sheet | içerik | 28px | 28px (üst) | H2 + 15 | `--surface` + blur 28px + derin gölge | backdrop: `rgba(4,8,14,.50)` + blur 6px |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 | satır altı beyaz %10 | cam üstünde zebra yok |
-| Oynatıcı | 56px | 0 18px | 999px | 13/500 | cam + specular | ilerleme: `--accent` dolgu, ray beyaz %22 |
-| Toast | 46px | 0 18px | 999px | 13/500 | cam + 1px `--line` | 4sn, ikon + metin |
-
-- Odak halkası cam üstünde **beyaz %75** (accent halka düşük kontrast kalır).
-- Dokunma hedefi 44px; pill butonlarda görsel 36px olsa da padding ile 44px.
-
-## Görsel dil
-
-| Öğe | Kural |
-|---|---|
-| İkon | 1.5px çizgi, beyaz, 20px; aktif ikon dolgulu |
-| Fotoğraf | Camın arkasında yüksek kontrastlı medya (video/foto) |
-| İllüstrasyon | Blob/gradient; çizgi illüstrasyon camla yarışır |
-| Doku | Yok (`--grain: 0`); blur zaten yumuşatıyor |
-| Logo | Beyaz monokrom, 20–24px |
-| Işık | Tek yön: sol üstten specular; çoklu highlight yasak |
-
-## Ekran reçeteleri
-
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
 | Landing / hero | yüksek | Arkada medya/gradient, üstte cam nav, hero'da tek cam kontrol kümesi | `shots/01-page.png` |
 | Dashboard | düşük | Cam yalnızca nav + tek toolbar; KPI kartları **opak** | `shots/01-page.png` |
@@ -167,27 +174,33 @@ Apple'ın visionOS ve iOS 26 "Liquid Glass" materyal sistemi; optik kırılma, g
 | Hata | düşük | Opak yüzey + `--danger` kenar (cam üstünde hata okunmaz) | `shots/01-page.png` |
 | Profil / ayar | orta | Cam sidebar + opak içerik; iki cam bitişik olmaz | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-- Cam üstü metin tam opak `--ink` → 14.28:1 (composited). Yarı saydam metin yasak.
-- Risk: ince blur + parlak arka plan → metin kaybolur. Arka planı %20 karart veya cam opaklığını artır.
-- Odak halkası beyaz %75, 2px; accent halka cam üstünde zayıf.
-- `prefers-reduced-transparency` ve `prefers-reduced-motion` zorunlu.
-- Düşük güç modu: blur 12px'e düşür veya statik blur görseli kullan.
-- Dokunma hedefi 44px; segment 36px görünse de padding ile 44px.
+| Pair | Ratio | Threshold | Note |
+| --- | --- | --- | --- |
+| `--ink` / `--bg` | 18.13:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 10.54:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 5.05:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 10:1 | ≥ 4.5 | button text |
+| focus ring/ground | 10.12:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 102.2 | ≥ 60 target | thin text |
 
-## Örnek görseller
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+## Sample images
 
-| Görsel | Neye bak |
+Identical content is rendered with the same text in every style; only the design differs.
+
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
-|---|---|---|
+| Symptom | Cause | Fix |
+| --- | --- | --- |
 | "Koyu şeffaf kutu" | `saturate` ve specular yok | `saturate(150%)` + inset highlight ekle |
 | Metin kayboluyor | Yarı saydam metin + parlak arka plan | Metin opak, arka plan %20 karart |
 | Kare donuyor | 3+ blur katmanı, animasyonlu blur | Katman ≤2, blur animasyonu yok |
@@ -195,22 +208,28 @@ Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızc
 | Ağır/oyuncak görünüm | Sert gölge, kalın kenar | Derin yumuşak gölge + 1px beyaz %28 |
 | Hiyerarşi yok | Her şey cam | Yalnızca üstteki kontrol katmanı cam |
 
-## Komşu stiller
+## Neighboring styles
 
-- **Uyumlu:** `08 glassmorphism` (aynı ailede sade varyant), `12 aurora-ui` (zemin), `01 minimalism` (opak gövde + tek cam katman).
-- **Yasak:** `10 neumorphism` (ışık fiziği çelişir), `13 neo-brutalism` (kontur), `24 pixel-art` (ölçek).
+| Direction | Style | Why |
+| --- | --- | --- |
+| garnish | `glassmorphism` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `aurora-ui` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `minimalism` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `neumorphism` | Two different ornamental languages compete on the same screen |
+| Mixing | `neo-brutalism` | Two different ornamental languages compete on the same screen |
+| Mixing | `pixel-art` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için bakılır |
-|---|---|
-| https://developer.apple.com/design/human-interface-guidelines/materials | Materyal katmanları ve specular mantığı |
-| https://learn.microsoft.com/en-us/windows/apps/design/style/acrylic | Fallback ve performans notları |
-| https://developer.apple.com/design/human-interface-guidelines/motion | Yay eğrisi ve süre önerileri |
+| Source | for what |
+| --- | --- |
+| https://developer.apple.com/design/human-interface-guidelines/materials | Apple HIG · Materials — Materyal katmanları ve specular mantığı |
+| https://learn.microsoft.com/en-us/windows/apps/design/style/acrylic | Fluent · Acrylic — Fallback ve performans notları |
+| https://developer.apple.com/design/human-interface-guidelines/motion | Apple HIG · Motion — Yay eğrisi ve süre önerileri |
 
 ## AI brief
 
-```
+```text
 Stil: Liquid Glass (styles/09-liquid-glass/style.md + tokens.json)
 Token: yalnızca kit/tokens.css [data-style="liquid-glass"]; hard-coded renk/blur YASAK.
 Cam: backdrop-filter: blur(var(--blur)=24px) saturate(150%) + 1px rgba(255,255,255,.28) + inset 0 1px 0 rgba(255,255,255,.35).
@@ -221,15 +240,15 @@ Fallback: @supports not (backdrop-filter) → opak yüzey + --blur: 0; prefers-r
 Gölge: 0 10px 40px rgba(0,0,0,.35) yumuşak; sert gölge yasak.
 Yasak: cam üstünde cam, 3+ katman, opak bar üstünde sahte blur, çoklu highlight.
 Çıktı: kod + tek paragraf not (kaç cam katman, blur değeri, fallback ve kontrast önlemi).
-```
 
-**Teslim öncesi öz-denetim**
-- [ ] Her cam yüzeyde blur + saturate + specular var.
-- [ ] Cam katman ≤ 2; gövde içeriği opak.
-- [ ] Kontroller pill, radius 20/28.
-- [ ] Cam üstü metin opak, kontrast ≥ 4.5:1.
-- [ ] `@supports` fallback + `prefers-reduced-transparency` çalışıyor.
-- [ ] `backdrop-filter` animasyonu yok; mobilde blur ≤ 18px.
+Style: Liquid Glass (liquid-glass) · family: Surface (8–12)
+Token: --bg #0a0d12 · --surface rgba(255,255,255,.10) · --ink #f5f7fa · --accent #4cc9f0 · --line rgba(255,255,255,.28)
+Radius: 20px / 28px · Typography: SF Pro Display / SF Pro Text / SF Mono
+Required: **Blur + saturate birlikte:** `blur(var(--blur)) saturate(150%)`; tek başına blur cam sayılmaz. · **Specular kenar:** `inset 0 1px 0 rgba(255,255,255,.35)` + 1px `--line` (beyaz %28). · **Pill kontroller:** buton/input/segment 999px; kart 28px.
+Banned: Siyah/opak bar üstüne sahte blur (arkada içerik yoksa cam çalışmaz). · Cam üstünde cam (çift blur) ve 3+ katman. · `backdrop-filter` animasyonu; sürekli blur değişimi.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
+```
 
 ## Token
 
@@ -240,12 +259,25 @@ Yasak: cam üstünde cam, 3+ katman, opak bar üstünde sahte blur, çoklu highl
   --ink: #f5f7fa; --ink-soft: rgba(245,247,250,.76); --ink-faint: rgba(245,247,250,.5);
   --accent: #4cc9f0; --accent-ink: #041018;
   --line: rgba(255,255,255,.28);
+  --danger: #e3382a;
+  --danger-ink: #0b0d10;
+  --ok: #12b76a;
+  --ok-ink: #0b0d10;
+  --warn: #f79009;
+  --warn-ink: #0b0d10;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
   --radius: 20px; --radius-lg: 28px;
-  --shadow: 0 10px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.35);
-  --shadow-hard: none;
-  --font-display: "SF Pro Display", "Inter", system-ui, sans-serif;
-  --font-body: "SF Pro Text", "Inter", system-ui, sans-serif;
+  --shadow: 0 10px 40px rgba(0,0,0,.35); --shadow-hard: none;
+  --font-display: "SF Pro Display", system-ui, sans-serif;
+  --font-body: "SF Pro Text", system-ui, sans-serif;
   --font-mono: "SF Mono", ui-monospace, monospace;
-  --tracking: -0.01em; --blur: 24px; --grain: 0;
+  --tracking: -0.01em; --blur: 0px; --grain: 0;
 }
 ```

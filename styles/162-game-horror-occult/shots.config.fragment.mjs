@@ -1,7 +1,6 @@
 /**
- * 162 · Horror Occult — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 162 · Horror Occult — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'paper',
   bodyClass: 'upper',

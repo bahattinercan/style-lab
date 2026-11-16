@@ -1,7 +1,6 @@
 /**
- * 239 · Italic Accent — render imzası.
- * Renk/tipografi/radius kit/tokens.css'ten gelir; burada yalnız var(--...) kullanılır.
- */
+ * 239 · Italic Accent — render signature.
+ * Color/typography/radius comes from kit/tokens.css; Only var(--...) is used here.*/
 export const CONFIG = {
   motif: 'none',
   bodyClass: '',

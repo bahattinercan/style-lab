@@ -1,227 +1,227 @@
 # 153 · Game Racing
 
-> **Bir cümlede:** Hız göstergesi dilinde arayüz: dar rakamlar, sıcak accent, eğimli kesim ve yarış telemetrisi hiyerarşisi.
+> **In one sentence:** Interface in speedometer language: narrow digits, warm accent, beveled cut and racing telemetry hierarchy.
 
 | | |
 |---|---|
-| **Hissiyat** | hız, sıcak metal, "son tur" baskısı |
-| **En iyi** | yarış oyunu menüleri, telemetri paneli, spor yayın grafiği |
-| **Kaçın** | sakin kurumsal form akışları, uzun okuma ekranları |
-| **Zorluk** | orta · **Erişilebilirlik** | orta (sıcak accent büyük puntoda güvenli) |
-| **Aile** | Oyun & Etkileşim (152–171) · **Token** | `kit/tokens.css` → `[data-style="game-racing"]` |
-| **Kompozisyon** | `split` · `inline` · `balanced` (bkz. `kit/render/layouts.json`) |
-| **Görseller** | `shots/01-page.png` (tek sayfa · 1280×2400) |
+| **Feeling** | speed, hot metal, "last lap" pressure |
+| **Best for** | racing game menus, telemetry panel, sports broadcast graphic |
+| **Avoid** | calm corporate form flows, long reading screens |
+| **Difficulty** | medium · **Accessibility** | medium (warm accent safe in large print) |
+| **Family** | Games & Interaction (152–171) · **Token** | `kit/tokens.css` → `[data-style="game-racing"]` |
+| **Composition** | `split` · `inline` · `balanced` (see `kit/render/layouts.json`) |
+| **Images** | `shots/01-page.png` (single page · 1280×2400) |
 
-## Öz
+## Essence
 
-### Nedir
-Game Racing, yarış kokpitinin gösterge mantığını arayüze taşır: her sayı bir karar (fren, vites, sıra) ve her karar tek bakışta okunmalıdır.
+### What it is
+Game Racing brings the display logic of the racing cockpit into the interface: each number is a decision (brake, gear, row) and each decision must be read at a glance.
 
-### Ne değildir
-- Neon her yere sürülmüş bir tema değildir; accent sadece durum ve eylem taşır.
-- Koyu zemin tek başına oyun stili yapmaz; sayısal ritim ve keskin köşe gerekir.
-- Pixel font zorunlu değil; yazılım HUD'ları da bu ailedendir.
+### What is not
+- Neon is not a ubiquitous theme; accent carries only case and action.
+- Dark background alone does not make a play style; Numerical rhythm and sharp corners are required.
+- Pixel font is not mandatory; software HUDs are also in this family.
 
-### Nereden gelir
-Yarış oyunu menüleri, motor sporları yayın grafikleri ve analog gösterge panelleri.
+### Where it comes from
+Racing game menus, motorsport broadcast graphics and analog instrument panels.
 
-### 3 saniyede tanıma testi
-1. Köşeler keskin mi (≤6px)?
-2. Rakamlar tabular ve mono mu?
-3. Accent sayısı tek mi, durum için mi kullanılmış?
+### Recognition test in 3 seconds
+1. Are the corners sharp (≤6px)?
+2. Numbers taboos and mono?
+3. Is the Accent number unique or used for the situation?
 
-## Görsel imza
-- **Eğimli kesim:** köşe yerine 8–12px çapraz kırpma; buton ve kart aynı kesim açısını paylaşır.
-- **Dar rakam:** Rajdhani'nin sıkı genişliği skor ve tur sayısını tek satırda tutar.
-- **Sıcak accent:** turuncu yalnız hız/sıralama vurgusu; soğuk mavi ikinci renk olarak kullanılmaz.
-- **Telemetri şeridi:** yatay çubuklar ince ve mono etiketli; grafik değil gösterge gibi okunur.
-- **Yarış tipografisi:** başlık uppercase ve geniş tracking, gövde 15px sakin.
-- **Tipografi:** Rajdhani (display) + Chakra Petch (gövde) + Share Tech Mono (mono etiket).
-- **Renk disiplini:** tek accent `#ff6a2b`; nötr skala `#121010` → `#f5efe6`.
-- **Yarıçap:** `0px` / `6px`; Köşe ya 0 ya da tek küçük değer (≤6px); yumuşak 12px+ yuvarlatma yasak.
+## Visual signature
+- **Bevel crop:** 8–12px diagonal crop instead of corner; The button and the card share the same cutting angle.
+- **Night figure:** Rajdhani's tight width keeps the score and runs count in one line.
+- **Hot accent:** orange only speed/ranking accent; cold blue is not used as a second color.
+- **Telemetry strip:** horizontal bars labeled thin and mono; It reads like an indicator, not a chart.
+- **Racing typography:** header uppercase and wide tracking, body 15px quiet.
+- **Typography:** Rajdhani (display) + Chakra Petch (body) + Share Tech Mono (mono label).
+- **Colour discipline:** a single accent `#ff6a2b`; neutral scale `#121010` → `#f5efe6`.
+- **Radius:** `0px` / `6px`; Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-## Zorunlu kurallar
+## Mandatory rules
 
-1. Kart ve buton kesimi aynı çapraz açıyla (8–12px) kırpılır.
-2. Accent yalnız hız, sıralama ve birincil eylem için kullanılır.
-3. Tüm sayısal alanlar mono veya dar display; ondalık hizalı.
-4. Şerit göstergeler 6px yüksekliğinde, arka plan `--surface-2`.
-5. Kontrast gövde ≥ 4.5:1.
+1. The card and button cutout are cropped to the same diagonal angle (8–12px).
+2. Accent is used only for speed, ranking and primary action.
+3. All numeric fields mono or narrow display; decimal aligned.
+4. Strip indicators are 6px high, background is `--surface-2`.
+5. Contrast body ≥ 4.5:1.
 
-## Renk
+## Color
 
-| Token | Değer | Nerede kullanılır | Nerede kullanılmaz |
+| Token | Value | Where to use | Where not to use |
 | --- | --- | --- | --- |
-| `--bg` | `#121010` | sayfa zemini | kart zemini olarak |
-| `--bg-2` | `#171313` | bölüm ayırıcı zemin, tablo başı | buton zemini |
-| `--surface` | `#1c1817` | kart, input, modal | tam sayfa zemin |
-| `--surface-2` | `#241f1d` | pasif chip, hover zemini | birincil buton |
-| `--ink` | `#f5efe6` | başlık, gövde, ikon | dev zemin |
-| `--ink-soft` | `#b6a89c` | ikincil metin, açıklama | — |
-| `--ink-faint` | `#8a7c72` | dekoratif etiket, ayırıcı metin | etkileşimli metin |
-| `--accent` | `#ff6a2b` | birincil eylem, aktif durum | geniş zemin (opaklık 0.14 ile) |
-| `--accent-ink` | `#1a0a03` | accent üstü metin | accent olmayan zemin |
-| `--line` | `rgba(245,239,230,.14)` | tüm kenarlıklar | metin rengi |
+| `--bg` | `#121010` | page background | as a card background |
+| `--bg-2` | `#171313` | partition divider floor, table top | button background |
+| `--surface` | `#1c1817` | kart, input, modal | full-page background |
+| `--surface-2` | `#241f1d` | passive chip, hover background | primary button |
+| `--ink` | `#f5efe6` | title, body, icon | large background |
+| `--ink-soft` | `#b6a89c` | secondary text, description | — |
+| `--ink-faint` | `#8a7c72` | decorative label, separator text | interactive text |
+| `--accent` | `#ff6a2b` | primary action, active state | wide background (with opacity 0.14) |
+| `--accent-ink` | `#1a0a03` | text above accent | non-accent background |
+| `--line` | `rgba(245,239,230,.14)` | all borders | text colour |
 
-- Ölçülen kontrast: `ink/bg` **16.59:1** · `ink-soft/bg` **8.19:1** · `ink-faint/bg` **4.7:1 (dekoratif)** · `accent-ink/accent` **6.75:1**.
-- HUD kontrastı: durum renkleri (canlı/hasar) accent'in tonlarından türetilir; dördüncü bir hue eklenmez.
-- Opaklıkla tonlanan accent: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — ikinci bir hex uydurma.
+- Measured contrast: `ink/bg` **16.59:1** · `ink-soft/bg` **8.19:1** · `ink-faint/bg` **4.7:1 (decorative)** · `accent-ink/accent` **6.75:1**.
+- HUD contrast: status colors (live/damage) are derived from the accent's tones; A fourth hue is not added.
+- Accent tinted by opacity: `color-mix(in srgb, var(--accent) 14%, var(--surface))` — never invent a second hex.
 
-## Tipografi
+## Typography
 
-| Rol | Aile | Boyut | Ağırlık | Satır aralığı | Tracking |
+| Role | Family | Size | Weight | Line height | Tracking |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | `--font-display` (Rajdhani) | 50px (mobil 28px) | 700 | 1.1 | 0.01em |
-| H2 | aynı | 26px | 600 | 1.2 | 0.01em |
-| H3 | aynı | 19px | 600 | 1.3 | 0 |
-| Gövde | `--font-body` (Chakra Petch) | 15px | 400 | 1.62 | 0 |
-| Küçük gövde | aynı | 13px | 400 | 1.55 | 0 |
-| Etiket | `--font-mono` (Share Tech Mono) | 10px | 400 | 1.2 | 0.2em |
-| Buton | `--font-body` | 11px | 600 | 1 | 0 |
+| Display / H1 | `--font-display` (Rajdhani) | 50px (mobile 28px) | 700 | 1.1 | 0.01em |
+| H2 | same | 26px | 600 | 1.2 | 0.01em |
+| H3 | same | 19px | 600 | 1.3 | 0 |
+| Body | `--font-body` (Chakra Petch) | 15px | 400 | 1.62 | 0 |
+| Small body | same | 13px | 400 | 1.55 | 0 |
+| Label | `--font-mono` (Share Tech Mono) | 10px | 400 | 1.2 | 0.2em |
+| Button | `--font-body` | 11px | 600 | 1 | 0 |
 
-- Rakamlar tabular; skor/timer alanları mono ve sağa hizalı. Başlık uppercase, gövde cümle düzeninde.
-- Ölçü: 62ch (okuma metni), kart metni en fazla 52ch.
-- Başlıklar uppercase: `text-transform: uppercase` + pozitif tracking; gövde metni asla.
+- Numbers are taboos; score/timer areas are mono and right aligned. Title in uppercase, body in sentence order.
+- Measure: 62ch (reading text), card text at most 52ch.
+- Headers uppercase: `text-transform: uppercase` + positive tracking; never body text.
 
-## Izgara ve boşluk
+## Grid and space
 
-| Öğe | Değer |
+| Item | Value |
 | --- | --- |
-| Kolon | 12 (içerik 8, form 4) |
+| Columns | 12 (content 8, form 4) |
 | Gutter | 24px (mobil 16px) |
 | Container | 1160px |
-| Boşluk ölçeği | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
+| Gap scale | 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 (`--space-1…8`) |
 | Breakpoint | 640 / 900 / 1200 px |
 
-- Ekran ızgarası görünür bir çerçeve gibi davranır: bölümler arasına 1px accent kenar konur, dekoratif çizgi eklenmez.
-- Bölüm dikey boşluğu masaüstü 64px, mobil 40px; kart içi padding 18px.
+- The screen grid acts like a visible frame: a 1px accent border is placed between sections, no decorative lines are added.
+- Section vertical space 64px desktop, 40px mobile; card padding 18px.
 
-## Yüzey ve derinlik
+## Surface and depth
 
-| Seviye | Token | Gölge | Kullanım |
+| Level | Token | Shadow | Usage |
 | --- | --- | --- | --- |
-| Zemin | --bg | yok | sayfa |
-| Kart | --surface + 1px --line | --shadow | içerik bloğu |
-| Yüzen | --surface + --shadow + --line | --shadow | modal, popover, toast |
+| Background | --bg | none | page |
+| Kart | --surface + 1px --line | --shadow | content block |
+| floating | --surface + --shadow + --line | --shadow | modal, popover, toast |
 
-- Yüzeyler opak; cam/blur yok. Durum bildirimi için ince accent kenar kullanılır.
-- Radius: `0px` (buton, input, chip), `6px` (kart, modal). Köşe ya 0 ya da tek küçük değer (≤6px); yumuşak 12px+ yuvarlatma yasak.
+- Surfaces are opaque; There is no glass/blur. Thin accent edge is used for status notification.
+- Radius: `0px` (buton, input, chip), `6px` (kart, modal). Vertex is either 0 or single small value (≤6px); smooth 12px+ rounding is prohibited.
 
-## Yasaklar
+## Bans
 
-- Animasyonlu hız göstergesi veya kayan telemetri (v6 kapsam dışı).
-- Mavi-turuncu tamamlayıcı kontrast yığını.
-- Serif veya el yazısı başlık.
-- Yuvarlak 12px+ kart köşesi.
-- Sonsuz yanıp sönen gösterge (v6'da animasyon yok).
-- Üçten fazla durum rengi.
-- HUD içinde serif başlık.
+- Animated speedometer or scrolling telemetry (v6 out of scope).
+- Blue-orange complementary contrast stack.
+- Serif or handwritten title.
+- Rounded 12px+ card corner.
+- Infinite blinking indicator (no animation in v6).
+- More than three status colors.
+- Serif title in HUD.
 
-## Bileşen reçeteleri
+## Component recipes
 
-| Bileşen | Yükseklik | Padding | Radius | Tipografi | Renk / gölge | Durumlar |
+| Component | Height | Padding | Radius | Typography | Colour/shade | States |
 | --- | --- | --- | --- | --- | --- | --- |
-| Buton (birincil) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: ton koyulaşır · active: 1px aşağı · focus: 2px --accent halka · disabled: --surface-2 + --ink-soft |
+| Button (primary) | 44px | 0 20px | 0px | 14/600 | --accent + --accent-ink | hover: tone gets darker active: 1px down focus: 2px --accent ring disabled: --surface-2 + --ink-soft |
 | Buton (ikincil) | 44px | 0 18px | 0px | 14/600 | transparent + 1px --line | hover: --surface-2 |
-| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent halka · error: --danger kenar + 12px açıklama · disabled: --bg-2 |
-| Kart | içerik | 20px | 0px | H3 + 14 gövde | --surface + --line + --shadow | hover yalnız tıklanabilir kartta: kenar --ink %18 |
+| Input | 44px | 0 14px | 0px | 14/400 | --surface + 1px --line | focus: 2px --accent ring error: --danger edge + 12px description disabled: --bg-2 |
+| Kart | content | 20px | 0px | H3+14 body | --surface + --line + --shadow | hover only on clickable card: edge --ink 18% |
 | Chip / badge | 24px | 0 10px | 999px | 11/500 mono | --surface-2 + --line | aktif: --accent + --accent-ink |
-| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | aktif: --ink + 2px alt çizgi |
-| Tablo satırı | 52px | 12px 16px | — | 14/400 · sayı mono | satır altı 1px --line | hover: --surface-2 · seçili: sol 2px --accent |
-| Modal | içerik | 28px | 0px | H3 + 14 gövde | --surface + --shadow | arka plan --bg %72 + 8px blur |
-| Toast | 44px | 0 16px | 0px | 13/500 | --ink zemin + --bg metin | ikon + tek satır, 4sn |
-| Grafik paleti | — | — | 0px | eksen 11 mono | --accent + accent %16 dolgu + --line referans | en fazla 3 seri |
+| Nav | 64px | 0 24px | — | 14/500 | --bg + alt 1px --line | active: --ink + 2px underline |
+| table row | 52px | 12px 16px | — | 14/400 number mono | underline 1px --line | hover: --surface-2 · selected: left 2px --accent |
+| Modal | content | 28px | 0px | H3+14 body | --surface + --shadow | arka plan --bg %72 + 8px blur |
+| Toast | 44px | 0 16px | 0px | 13/500 | --ink background + --bg text | icon + single line, 4sec |
+| Grafik paleti | — | — | 0px | 11px mono axis | --accent + 16% accent fill + --line reference | three series at most |
 
-- Odak halkası: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; halka 6.64:1 (zemin/surface üstünde ≥ 3).
-- Dokunma hedefi en az 44×44px; ikon butonlarında padding ile hedef büyütülür.
+- Focus ring: `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }`; ring 6.64:1 (≥ 3 on background/surface).
+- Touch target at least 44×44px; The target is enlarged by padding on the icon buttons.
 
-## Görsel dil
+## Visual language
 
-| Öğe | Kural |
+| Item | Rule |
 | --- | --- |
-| İkon | 1px blok ikon, 16/20px tuval; anti-alias yok, tam sayı ölçek |
-| Fotoğraf | Oyun içi render ya da tek nesne çekimi; %25 alan, koyu vinyet |
-| İllüstrasyon | Sprite/silüet: en fazla 3 ton (accent, ink, surface-2) |
-| Doku | Statik tarama (1px/3px, %4) yalnız bölüm zemininde |
-| Logo | Sol üst 20px, uppercase, mono veya display |
+| icon | 1px block icon, 16/20px canvas; no anti-alias, integer scale |
+| photo | In-game rendering or single object shooting; 25% area, dark vignette |
+| illustration | Sprite/silhouette: up to 3 tones (accent, ink, surface-2) |
+| Texture | Static raster (1px/3px, 4%) on section background only |
+| Logo | Top left 20px, uppercase, mono or display |
 
-- İmza motif: `motif-bars` (sahne şablonunda `__MOTIF__`).
-- Görsel hiyerarşi: Birincil odak tek büyük sayı/skor; ikinci odak tek CTA; gerisi etiket.
+- Signature motif: `motif-bars` (in the scene template `__MOTIF__`).
+- Visual hierarchy: Primary focus is on one big number/score; second focus single CTA; the rest is label.
 
-## Ekran reçeteleri
+## Screen recipes
 
-| Ekran | Yoğunluk | Uygulama | Görsel |
+| Screen | Density | Implementation | Image |
 |---|---|---|---|
-| HUD / oyun içi katman | yüksek | Skor + durum çubuğu + tek CTA; 3 katmandan fazla bindirme yok | `shots/01-page.png` |
-| Menü / lobi | orta | Dikey liste, seçili satırda accent sol kenar, 44px satır | `shots/01-page.png` |
-| Karakter / envanter | yüksek | Izgara 4'lü, her kartta nadirlik etiketi mono | `shots/01-page.png` |
-| Görev / quest | orta | Başlık + 2 satır açıklama + ödül tablosu | `shots/01-page.png` |
-| Maç sonu / skor tablosu | yüksek | Sağa hizalı sayılar, zebra yerine hairline | `shots/01-page.png` |
-| Ayarlar | orta | Anahtar + segment; her satır 56px | `shots/01-page.png` |
-| Mağaza / battle pass | yüksek | 3 kolon plan kartı, ortada accent kenar | `shots/01-page.png` |
-| Form / hesap | düşük | Tek sütun 480px, etiket üstte 12px mono | `shots/01-page.png` |
+| HUD/in-game overlay | high | Score + status bar + single CTA; No overlays of more than 3 layers | `shots/01-page.png` |
+| Menu / lobby | medium | Vertical list, accent left edge on selected row, 44px row | `shots/01-page.png` |
+| Character / inventory | high | Grid 4-pack, rarity tag mono on each card | `shots/01-page.png` |
+| quest | medium | Title + 2 line description + reward table | `shots/01-page.png` |
+| Match end / score table | high | Right aligned numbers, hairline instead of zebra | `shots/01-page.png` |
+| Settings | medium | Key + segment; each line 56px | `shots/01-page.png` |
+| Store / battle pass | high | 3 column plan card, accent edge in the middle | `shots/01-page.png` |
+| Form / account | low | Single column 480px, label 12px mono on top | `shots/01-page.png` |
 
-## Erişilebilirlik
+## Accessibility
 
-| Çift | Oran | Eşik | Not |
+| Pair | Ratio | Threshold | Note |
 | --- | --- | --- | --- |
-| `--ink` / `--bg` | 16.59:1 | ≥ 4.5 | gövde metni |
-| `--ink-soft` / `--bg` | 8.19:1 | ≥ 4.5 | ikincil metin |
-| `--ink-faint` / `--bg` | 4.7:1 | ≥ 3 hedef | yalnız dekoratif |
-| `--accent-ink` / `--accent` | 6.75:1 | ≥ 4.5 | buton metni |
-| odak halkası / zemin | 6.64:1 | ≥ 3 | accent halka |
-| APCA `--ink` / `--bg` | Lc 97.4 | ≥ 60 hedef | ince metin |
+| `--ink` / `--bg` | 16.59:1 | ≥ 4.5 | body text |
+| `--ink-soft` / `--bg` | 8.19:1 | ≥ 4.5 | secondary text |
+| `--ink-faint` / `--bg` | 4.7:1 | ≥ 3 target | decorative only |
+| `--accent-ink` / `--accent` | 6.75:1 | ≥ 4.5 | button text |
+| focus ring/ground | 6.64:1 | ≥ 3 | accent ring |
+| APCA `--ink` / `--bg` | Lc 97.4 | ≥ 60 target | thin text |
 
-- `--ink-faint` yalnız dekoratif; gövde metni asla.
-- Renk tek başına anlam taşımaz: durum her zaman metin/ikonla birlikte.
-- Klavye sırası görsel sırayı izler; odak tuzağı yok. prefers-reduced-motion ve prefers-contrast desteklenir.
+- `--ink-faint` is decorative only; never body text.
+- Colour never carries meaning alone: state always comes with text or an icon.
+- Keyboard order follows visual order; no focus traps. prefers-reduced-motion and prefers-contrast are supported.
 
-## Örnek görseller
+## Sample images
 
-Aynı içerik, tüm stillerde birebir aynı metinle render edilir; fark yalnızca tasarımdır.
+Identical content is rendered with the same text in every style; only the design differs.
 
-| Görsel | Neye bak |
+| Image | What to look at |
 |---|---|
-| `shots/01-page.png` | Tek sayfa — 1280×2400: gezinme, hero, üç bölüm, bileşen ızgarası, form/veri, CTA ve alt bilgi tek karede. |
+| `shots/01-page.png` | Single page — 1280×2400: navigation, hero, three sections, component grid, form/data, CTA and footer in one frame. |
 
-## Tuzaklar
+## Traps
 
-| Belirti | Neden | Düzeltme |
+| Symptom | Cause | Fix |
 | --- | --- | --- |
-| Arayüz oyuncak gibi görünüyor | Neon ve gölge fazla | Accent'i %14 dolguya indir, gölgeyi sıfırla |
-| Sayılar zıplıyor | Orantısız (proportional) rakam | font-variant-numeric: tabular-nums kullan |
-| Menü okunmuyor | Uppercase + düşük kontrast | Uppercase'i başlıkta tut, gövdeyi cümle düzenine çevir |
-| Kartlar kontrolsüz parlıyor | Kenar accent %40+ | Kenarı %22'ye sabitle, hover'da %34 |
+| The interface looks like a toy | Too much neon and shadow | Reduce Accent to 14% fill, reset shadow |
+| Numbers are jumping | Proportional figure | font-variant-numeric: use tabular-nums |
+| Menu not readable | Uppercase + low contrast | Keep uppercase in title, change body to sentence order |
+| Cards glow uncontrollably | Edge accent 40%+ | Fix edge at 22%, hover at 34% |
 
-## Komşu stiller
+## Neighboring styles
 
-| Yön | Stil | Neden |
+| Direction | Style | Why |
 | --- | --- | --- |
-| Garnitür | `game-hud` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Garnitür | `sports-energy` | Aynı ciddiyet seviyesi; accent paylaşımı yapılmaz |
-| Karıştırma | `japandi` | İki farklı süs dili aynı ekranda rekabet eder |
-| Karıştırma | `ethereal` | İki farklı süs dili aynı ekranda rekabet eder |
+| garnish | `game-hud` | Same level of seriousness; accent sharing is not allowed |
+| garnish | `sports-energy` | Same level of seriousness; accent sharing is not allowed |
+| Mixing | `japandi` | Two different ornamental languages compete on the same screen |
+| Mixing | `ethereal` | Two different ornamental languages compete on the same screen |
 
-## Referanslar
+## References
 
-| Kaynak | Ne için |
+| Source | for what |
 | --- | --- |
-| https://fonts.google.com/specimen/Rajdhani | Rajdhani (Google Fonts) — dar display; rakam ve başlık ailesi |
-| https://en.wikipedia.org/wiki/Telemetry | Racing telemetry (Wikipedia) — gösterge ve ölçüm hiyerarşisi |
-| https://www.gameuidatabase.com/ | Game UI Database — yarış oyunu menü referansları |
+| https://fonts.google.com/specimen/Rajdhani | Rajdhani (Google Fonts) — narrow display; number and title family |
+| https://en.wikipedia.org/wiki/Telemetry | Racing telemetry (Wikipedia) — indicator and measurement hierarchy |
+| https://www.gameuidatabase.com/ | Game UI Database — racing game menu references |
 
 ## AI brief
 
 ```text
-Yarış oyunu menüsü tasarla: tur, sıralama ve süre aynı şeritte; kartlar çapraz kesimli; accent turuncu yalnız hız vurgusu. Rakamlar dar ve tabular. Animasyon yok, süs yok.
+Design racing game menu: lap, qualifying and time in the same lane; cards are cross-cut; accent orange only emphasis on speed. The numbers are tight and taboo. No animation, no flourishes.
 
-Stil: Game Racing (game-racing) · aile: Oyun & Etkileşim (152–171)
+Style: Game Racing (game-racing) · family: Games & Interaction (152–171)
 Token: --bg #121010 · --surface #1c1817 · --ink #f5efe6 · --accent #ff6a2b · --line rgba(245,239,230,.14)
-Yarıçap: 0px / 6px · Tipografi: Rajdhani / Chakra Petch / Share Tech Mono
-Zorunlu: Kart ve buton kesimi aynı çapraz açıyla (8–12px) kırpılır. · Accent yalnız hız, sıralama ve birincil eylem için kullanılır. · Tüm sayısal alanlar mono veya dar display; ondalık hizalı.
-Yasak: Animasyonlu hız göstergesi veya kayan telemetri (v6 kapsam dışı). · Mavi-turuncu tamamlayıcı kontrast yığını. · Serif veya el yazısı başlık.
-Çıktı: tek sayfa (nav, hero, 3 bölüm, bileşen ızgarası, form+veri, CTA, footer), 1280×2400.
-Kural: renk yalnız var(--…) üzerinden; ikinci accent yok; koyu mod ve animasyon yok.
+Radius: 0px / 6px · Typography: Rajdhani / Chakra Petch / Share Tech Mono
+Required: The card and button cutout are cropped to the same diagonal angle (8–12px). · Accent is used only for speed, ranking and primary action. · All numeric fields mono or narrow display; decimal aligned.
+Banned: Animated speedometer or scrolling telemetry (v6 out of scope). · Blue-orange complementary contrast stack. · Serif or handwritten title.
+Output: single page (nav, hero, 3 sections, component grid, form+data, CTA, footer), 1280×2400.
+Rule: colour only through var(--…); no second accent; no dark mode and no animation.
 ```
 
 ## Token

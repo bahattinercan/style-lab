@@ -1,6 +1,6 @@
-/* kit/export-tokens.mjs üretir — elle düzenlemeyin. Kaynak: kit/tokens.css + styles/<nn-slug>/tokens.json */
+/* generates kit/export-tokens.mjs — do not edit manually. Source: kit/tokens.css + styles/<nn-slug>/tokens.json */
 
-/* varsayılan (fallback): değişken adları her stilde aynıdır, bileşenler stil değişince bozulmaz */
+/* default (fallback): variable names are the same in every style, components do not break when the style changes */
 :root {
   --bg: #fafaf9; --bg-2: #f2f2f0; --surface: #ffffff; --surface-2: #f7f7f5; --ink: #101112; --ink-soft: #5a5f66; --ink-faint: #9aa0a6; --accent: #2563eb; --accent-ink: #ffffff; --line: rgba(16,17,18,.10);
 }
