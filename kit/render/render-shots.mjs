@@ -23,10 +23,8 @@ import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import { configFor } from './shots.config.mjs';
-import { inlineTypeScale } from '../lib/type-scale.mjs';
-import { applySectionPlan } from '../lib/section-plan.mjs';
+import { fillPageHtml } from '../lib/page-html.mjs';
 import { launch as launchCdp } from './cdp-browser.mjs';
-import { icon } from './icons.mjs';
 import { cropPngTop, decodePng } from './png.mjs';
 
 const run = promisify(execFile);
@@ -138,14 +136,7 @@ function copyFor(dirName) {
 }
 
 /** h1'i dengeli 3 satıra böler (type arketipi satır maskesi kullanır). */
-function h1Lines(text) {
-  const words = String(text).split(/\s+/);
-  if (words.length <= 3) return words.join('<br>');
-  const per = Math.ceil(words.length / 3);
-  const lines = [];
-  for (let i = 0; i < words.length; i += per) lines.push(words.slice(i, i + per).join(' '));
-  return lines.slice(0, 3).join('<br>');
-}
+
 
 /** styles/<dir>/tokens.json → imagery { photo, treatment } (P2). */
 function imageryFor(dirName) {
@@ -227,8 +218,23 @@ const FAMILY_OF = (num) => {
   return FAMILY_RANGES.find(([lo, hi]) => n >= lo && n <= hi)?.[2] ?? 'Diğer';
 };
 
+/**
+ * İçerik katmanı sözleşmesi (kit/check-content.mjs bu anahtarları tarar):
+ * __COPY_EYEBROW__: __COPY_H1__: __COPY_H1_LINES__: __COPY_LEDE__:
+ * __COPY_CTA1__: __COPY_CTA2__: __COPY_PROOF1__: __COPY_PROOF2__:
+ * __COPY_PROOF3__: __COPY_LOGO_LABEL__: __COPY_LOGO1__: __COPY_LOGO2__:
+ * __COPY_LOGO3__: __COPY_LOGO4__: __COPY_LOGO5__: __COPY_TILE1__:
+ * __COPY_TILE2__: __COPY_TILE3__: __COPY_TILE4__:
+ */
 function fill(tpl, slug, cfg, num, vars, sceneKey, layout = DEFAULT_LAYOUT, imagery = null, copy = null, motifCss = '') {
-  // partial'lar yer tutuculardan ÖNCE gömülür: içlerindeki __MOTIF__/__ICON__ da aynı map'ten geçer.
+  if (typeof fillPageHtml !== 'undefined') {
+    return fillPageHtml(tpl, slug, cfg, num, vars, sceneKey, layout, imagery, copy, motifCss, {
+      partial,
+      familyOf: FAMILY_OF,
+      refit: REFIT,
+      sectionDefs: LAYOUT_DEFS.sections,
+    });
+  }
   let html = tpl
     .replace(/<!--\s*NAV\s*-->/, () => partial(`nav-${layout.nav}`))
     .replace(/<!--\s*HERO\s*-->/, () => partial(`hero-${layout.hero}`));
@@ -236,15 +242,15 @@ function fill(tpl, slug, cfg, num, vars, sceneKey, layout = DEFAULT_LAYOUT, imag
     __STYLE__: slug,
     __BODY_CLASS__: cfg.bodyClass ?? '',
     __MOTIF__: `motif-${cfg.motif ?? 'rings'}`,
-    __BG__: vars.bg ?? '',
-    __SURFACE__: vars.surface ?? '',
-    __INK__: vars.ink ?? '',
-    __ACCENT__: vars.accent ?? '',
-    __TRACKING__: vars.tracking ?? '',
-    __FONT_DISPLAY__: (vars['font-display'] ?? '').split(',')[0].replace(/"/g, ''),
-    __FONT_BODY__: (vars['font-body'] ?? '').split(',')[0].replace(/"/g, ''),
-    __RADIUS__: vars.radius ?? '',
-    __RADIUS_LG__: vars['radius-lg'] ?? '',
+    __BG__: vars?.bg ?? '',
+    __SURFACE__: vars?.surface ?? '',
+    __INK__: vars?.ink ?? '',
+    __ACCENT__: vars?.accent ?? '',
+    __TRACKING__: vars?.tracking ?? '',
+    __FONT_DISPLAY__: (vars?.['font-display'] ?? '').split(',')[0].replace(/"/g, ''),
+    __FONT_BODY__: (vars?.['font-body'] ?? '').split(',')[0].replace(/"/g, ''),
+    __RADIUS__: vars?.radius ?? '',
+    __RADIUS_LG__: vars?.['radius-lg'] ?? '',
     __FAMILY__: FAMILY_OF(num),
     __LAYOUT_HERO__: layout.hero,
     __LAYOUT_NAV__: layout.nav,
@@ -259,7 +265,7 @@ function fill(tpl, slug, cfg, num, vars, sceneKey, layout = DEFAULT_LAYOUT, imag
       : '',
     __COPY_EYEBROW__: copy?.hero?.eyebrow ?? '',
     __COPY_H1__: copy?.hero?.h1 ?? '',
-    __COPY_H1_LINES__: h1Lines(copy?.hero?.h1 ?? ''),
+    __COPY_H1_LINES__: (typeof h1Lines === 'function' ? h1Lines(copy?.hero?.h1 ?? '') : (copy?.hero?.h1 ?? '')),
     __COPY_LEDE__: copy?.hero?.lede ?? '',
     __COPY_CTA1__: copy?.hero?.ctaPrimary ?? '',
     __COPY_CTA2__: copy?.hero?.ctaSecondary ?? '',

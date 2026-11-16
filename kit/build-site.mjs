@@ -460,6 +460,22 @@ function copy(rel, destRel = rel) {
   fs.copyFileSync(from, to);
 }
 
+function copyDir(relSrc, relDest = relSrc) {
+  const src = path.join(ROOT, relSrc);
+  const dest = path.join(OUT, relDest);
+  if (!fs.existsSync(src)) return;
+  ensureDir(dest);
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const sRel = path.posix.join(relSrc, entry.name);
+    const dRel = path.posix.join(relDest, entry.name);
+    if (entry.isDirectory()) {
+      copyDir(sRel, dRel);
+    } else {
+      copy(sRel, dRel);
+    }
+  }
+}
+
 function build() {
   if (CLEAN && fs.existsSync(OUT)) fs.rmSync(OUT, { recursive: true, force: true });
   ensureDir(OUT);
@@ -468,13 +484,20 @@ function build() {
   for (const f of ['gallery.css', 'gallery.js', 'tokens.css', 'live.html', 'live-styles.js', 'viewer-nav.js', 'viewer-lightbox.js']) {
     copy(`kit/${f}`, `kit/${f}`);
   }
+  copy('kit/render/scene.css', 'kit/render/scene.css');
+  copyDir('kit/live', 'kit/live');
+  copyDir('kit/images', 'kit/images');
+  copy('docs/catalog.md', 'docs/catalog.md');
   const gallery = transformGallery(read('kit/gallery.html'));
   fs.writeFileSync(path.join(OUT, 'kit', 'gallery.html'), gallery);
   fs.writeFileSync(path.join(OUT, 'kit', 'site-config.js'), SITE_CONFIG);
 
   // 2) fontlar
   for (const f of fs.readdirSync(FONTS_DIR)) {
-    if (/\.(woff2|css)$/i.test(f)) copy(`kit/fonts/${f}`, `fonts/${f}`);
+    if (/\.(woff2|css)$/i.test(f)) {
+      copy(`kit/fonts/${f}`, `fonts/${f}`);
+      copy(`kit/fonts/${f}`, `kit/fonts/${f}`);
+    }
   }
 
   // 3) PNG orijinaller (lightbox/indirme hedefi)
@@ -545,10 +568,53 @@ function check() {
     }
   }
 
-  // D) katalog satır sayısı
+  // D) canlı sayfalar ve referansları çözülüyor mu
+  const liveDir = path.join(KIT_DIR, 'live');
+  if (!fs.existsSync(liveDir)) {
+    fail('kit/live klasörü yok — önce node kit/build-live.mjs');
+  } else {
+    const liveFiles = fs.readdirSync(liveDir).filter((f) => f.endsWith('.html'));
+    if (liveFiles.length !== styles.length) {
+      fail(`kit/live: ${liveFiles.length} sayfa var, beklenen ${styles.length}`);
+    }
+    const checkOut = fs.existsSync(OUT);
+    if (checkOut) {
+      const outLive = path.join(OUT, 'kit', 'live');
+      if (!fs.existsSync(outLive)) {
+        fail('_site/kit/live klasörü yok — node kit/build-site.mjs');
+      } else {
+        const outLiveFiles = fs.readdirSync(outLive).filter((f) => f.endsWith('.html'));
+        if (outLiveFiles.length !== styles.length) {
+          fail(`_site/kit/live: ${outLiveFiles.length} sayfa var, beklenen ${styles.length}`);
+        }
+      }
+      if (!fs.existsSync(path.join(OUT, 'kit', 'render', 'scene.css'))) fail('_site/kit/render/scene.css yok');
+      if (!fs.existsSync(path.join(OUT, 'kit', 'fonts', 'fonts.css'))) fail('_site/kit/fonts/fonts.css yok');
+    }
+    const seenRefs = new Set();
+    for (const f of liveFiles) {
+      const html = fs.readFileSync(path.join(liveDir, f), 'utf8');
+      const refs = [...html.matchAll(/(?:src|href)="([^"#:]+)"/g)].map((m) => m[1]);
+      for (const ref of refs) {
+        if (!ref || ref.startsWith('?') || ref.startsWith('data:')) continue;
+        const cleanRef = ref.split('?')[0];
+        if (seenRefs.has(cleanRef)) continue;
+        seenRefs.add(cleanRef);
+        const sitePath = path.posix.normalize(path.posix.join('kit/live', cleanRef));
+        if (!fs.existsSync(repoOf(sitePath))) {
+          fail(`kit/live/${f}: ${cleanRef} → ${sitePath} repoda yok`);
+        }
+        if (checkOut && !fs.existsSync(path.join(OUT, sitePath))) {
+          fail(`kit/live/${f}: ${cleanRef} → _site/${sitePath} yok`);
+        }
+      }
+    }
+  }
+
+  // E) katalog satır sayısı
   katalogPage({ md: read('docs/catalog.md'), styleCount: styles.length });
 
-  // E) landing sayıları kaynakla aynı mı (uydurma sayı yok)
+  // F) landing sayıları kaynakla aynı mı (uydurma sayı yok)
   const landing = landingHtml({ pngBytes: 0, thumbBytes: 0 });
   const shown = Number((landing.match(/<title>[^<]*·\s*(\d+)\s*stil/) ?? [])[1]);
   if (shown !== styles.length) fail(`landing başlığında ${shown} stil yazıyor, kaynak ${styles.length}`);
@@ -560,7 +626,7 @@ function check() {
     process.exit(1);
   }
   console.log(
-    `✓ site bütünlüğü: ${styles.length} stil × ${VARIANTS.length} WebP + PNG · ${families.length} aile · katalog ${styles.length} satır`,
+    `✓ site bütünlüğü: ${styles.length} stil × ${VARIANTS.length} WebP + PNG · ${families.length} aile · katalog ${styles.length} satır · ${styles.length} canlı sayfa`,
   );
 }
 

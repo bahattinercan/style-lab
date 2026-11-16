@@ -36,6 +36,9 @@ const MIME = {
   '.json': 'application/json',
   '.webp': 'image/webp',
   '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
   '.woff2': 'font/woff2',
   '.md': 'text/markdown; charset=utf-8',
   '.txt': 'text/plain; charset=utf-8',
@@ -216,9 +219,9 @@ async function main() {
       p.close();
     }
 
-    // live
+    // live (token numunesi)
     {
-      const p = await openPage(cdp.port, `${base}/kit/live.html?style=game-hud`);
+      const p = await openPage(cdp.port, `${base}/kit/live.html?mode=tokens&style=game-hud`);
       const info = await p.evaluate(`(() => ({
         options: document.querySelectorAll('#styleSel option').length,
         selected: document.querySelector('#styleSel')?.value,
@@ -226,12 +229,51 @@ async function main() {
         bg: getComputedStyle(document.body).backgroundColor,
         fontsLoaded: [...document.fonts].filter((f) => f.status === 'loaded').length,
       }))()`);
-      checks.push({ page: 'kit/live.html', ...info });
+      checks.push({ page: 'kit/live.html (tokens)', ...info });
       check(info.options === 251, `live: ${info.options} seçenek (251 bekleniyor)`);
       check(info.selected === 'game-hud', `live: seçili stil ${info.selected}`);
       check(String(info.fullShot).includes('/styles/152-game-hud/shots/01-page.png'), `live: tam sayfa bağlantısı ${info.fullShot}`);
       check(info.bg !== 'rgb(255, 255, 255)', 'live: stil token’ları uygulanmadı (bg beyaz)');
       check(!p.errors.length, `live konsol: ${p.errors.join(' | ')}`);
+      p.close();
+    }
+
+    // live sayfa (yayınlanan tek sayfa tasarımı)
+    for (const target of [
+      { slug: 'game-hud', path: '/kit/live/152-game-hud.html', motif: 'motif-grid', type: 'stock photo' },
+      { slug: 'fluid-simulation', path: '/kit/live/100-fluid-simulation.html', motif: 'motif-blob', type: 'generated artwork' },
+    ]) {
+      const p = await openPage(cdp.port, `${base}${target.path}`);
+      const info = await p.evaluate(`(async () => {
+        const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+        const img = document.querySelector('.pg-media img.pg-photo, img.pg-photo');
+        for (let i = 0; i < 40; i++) {
+          if (img && img.complete && img.naturalWidth > 0) break;
+          await wait(100);
+        }
+        const h1 = document.querySelector('.hero h1, h1');
+        const media = document.querySelector('figure.pg-media, .pg-media');
+        return {
+          dataStyle: document.documentElement.getAttribute('data-style'),
+          h1Text: h1 ? h1.textContent.trim() : null,
+          hasH1: Boolean(h1 && h1.textContent.trim().length > 0),
+          motifClass: media ? media.className : '',
+          photoSrc: img ? img.getAttribute('src') : null,
+          photoNaturalWidth: img ? img.naturalWidth : 0,
+        };
+      })()`);
+      checks.push({ page: target.path, ...info });
+      check(info.hasH1, `live sayfa (${target.slug}): hero başlığı yok`);
+      check(info.dataStyle === target.slug, `live sayfa (${target.slug}): data-style (${info.dataStyle}) eşleşmedi`);
+      check(
+        info.motifClass.includes(target.motif),
+        `live sayfa (${target.slug}): ${target.motif} sınıfı media figure üzerinde yok (${info.motifClass})`,
+      );
+      check(
+        info.photoNaturalWidth > 0,
+        `live sayfa (${target.slug}): ${target.type} hero görseli yüklenmedi (${info.photoSrc}, naturalWidth=${info.photoNaturalWidth})`,
+      );
+      check(!p.errors.length, `live sayfa (${target.slug}) konsol: ${p.errors.join(' | ')}`);
       p.close();
     }
   } finally {
@@ -248,7 +290,7 @@ async function main() {
   const gallery = checks.find((c) => c.page === 'kit/gallery.html');
   console.log(
     `✓ site duman testi: landing + galeri ${gallery?.cards ?? '?'} kart (webp, lazy ${gallery?.lazy ?? '?'}, priority ${gallery?.priority ?? '?'}) ` +
-      `+ katalog + live · konsol temiz`,
+      `+ katalog + live (token + sayfa) · konsol temiz`,
   );
 }
 

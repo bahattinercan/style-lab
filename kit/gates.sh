@@ -82,6 +82,7 @@ run_visual_regression() {
 run_gate "fragment senkronu" node kit/apply-fragments.mjs --check
 run_gate "şema kapısı" node kit/check-schema.mjs
 run_gate "görsel motif ve artwork" node kit/check-visual.mjs
+run_gate "canlı sayfalar" node kit/build-live.mjs --check
 run_gate "legacy SPEC paritesi" node kit/add-style.mjs kit/specs/legacy-01-151.json --check
 run_gate "kontrast denetimi" node kit/check-contrast.mjs --strict-soft
 

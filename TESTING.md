@@ -1,4 +1,4 @@
-﻿# style-lab Â· opening and testing the site
+# style-lab Â· opening and testing the site
 
 This file is the single answer to "how do I open the site, and how do I test what".
 No dependencies: `node` (22) plus an installed Chrome/Edge is enough. `npm install` is not needed.
@@ -32,8 +32,11 @@ If the port is taken, write `8080` instead of `8000`. Press `Ctrl+C` in the term
 | What | Address | Content |
 |---|---|---|
 | Catalog | `kit/gallery.html` | 251 style cards Â· search Â· filters Â· drawer Â· shortlist Â· compare |
-| Style preview | `kit/live.html?style=bento-grid` | a static component page with the selected style's tokens |
+| Real style page | `kit/live.html?style=bento-grid` | the full responsive page generated from the same template, partials, content, and style CSS as the committed PNG |
+| Token specimen | `kit/live.html?mode=tokens` | the component and typography specimen; style selector remains available |
 | Catalog index | `docs/catalog.md` | one-line identity per style, for all 251 (generated) |
+
+Run `node kit/build-live.mjs` after catalog changes to regenerate `kit/live/<num>-<slug>.html`; use `node kit/build-live.mjs --check` to detect drift. The style page works directly over `file://` without a server. `mode=tokens` keeps the original specimen.
 
 The `style=` value is the folder name without its number: `01-minimalism` â†’ `minimalism`,
 `04-luxury-typography` â†’ `luxury-typography`.
@@ -81,7 +84,7 @@ Filter + search + scene selection are written into the URL â†’ the link is 
 
 ## 5 Â· Automated gates
 
-Full set (37 steps, a few minutes â€” including visual signature + headless measurement):
+Full set (38 steps, a few minutes â€” including visual signature + headless measurement):
 
 ```bash
 bash kit/gates.sh

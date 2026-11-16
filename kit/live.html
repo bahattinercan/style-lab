@@ -3,7 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stil önizlemesi · Tasarım Stilleri</title>
+<title>Stil önizlemesi · Tasarım Stilleri</title><script src="live-styles.js"></script>
+<script>
+(() => {
+  const params = new URLSearchParams(location.search);
+  if (params.get('mode') === 'tokens') return;
+  const slug = params.get('style');
+  if (!slug) return;
+  const style = (window.LIVE_STYLES || []).find((entry) => entry.slug === slug);
+  if (style) location.replace(`live/${style.num}-${style.slug}.html`);
+})();
+</script>
 <script data-style-boot>
     /* Stil ilk boyamadan önce URL'den gelir: <html data-style> runtime'da değişirse
        gövde metni bayat hesaplanabilir; stil değişiminde sayfa yenilenir. */

@@ -1,4 +1,4 @@
-﻿# AGENTS.md Â· style-lab (v6)
+# AGENTS.md Â· style-lab (v6)
 
 ## Project overview
 
@@ -28,6 +28,7 @@ kit/gallery.html + thumbs + fonts + PNG â†’ kit/build-site.mjs â†’ _si
 ```
 styles/<nn-slug>/    style.md Â· tokens.json Â· token-block.css Â· shots.config.fragment.mjs Â· keywords.json Â· motif.css (optional) Â· shots/
 kit/                 generator + gate scripts (.mjs, all with a CLI)
+kit/live/            GENERATED: one responsive real page per style (kit/build-live.mjs)
 kit/specs/           bands.json (family templates) + style SPECs (the 100 v6 styles live here)
 kit/lib/style-spec.mjs  SPEC â†’ source generator
 kit/render/          page.html (the ONLY template), scene.css, partials/, CDP browser, layouts.json
@@ -46,7 +47,7 @@ TESTING.md           opening + testing the site
 
 1. **Never edit a generated file.** `kit/tokens.css`, `kit/render/shots.config.mjs`,
    `kit/gallery.data.mjs`, `kit/gallery.html`, `kit/styles.index.json`, `kit/live-styles.js`,
-   `kit/dist/**`, `docs/catalog.md`, `styles/*/shots/**`, `kit/site/thumbs/**`, `_site/**` are generator output.
+   `kit/dist/**`, `kit/live/**`, `docs/catalog.md`, `styles/*/shots/**`, `kit/site/thumbs/**`, `_site/**` are generator output.
    Changes go into the source
    (`styles/*/tokens.json`, `token-block.css`, `style.md`, fragment, or `kit/specs/*.json`) and are
    produced with `--apply`/`add-style`. The `--check` gates catch hand edits as **drift**.
@@ -96,6 +97,8 @@ TESTING.md           opening + testing the site
 ```bash
 # Open the site (no server needed)
 kit/gallery.html                    # works over file://; search/URL testing needs a server
+kit/live.html?style=minimalism       # real responsive page (generated, works over file://)
+kit/live.html?mode=tokens            # token/component specimen
 python -m http.server 8000 --bind 127.0.0.1
 # â†’ http://localhost:8000/kit/gallery.html Â· kit/live.html?style=game-hud
 
@@ -120,6 +123,8 @@ node kit/render/phash.mjs --check             # signature of the 251 PNGs
 # Tokens / export / docs
 node kit/export-tokens.mjs                    # dist/* (--check: up to date?)
 node kit/build-gallery.mjs                    # gallery.html + styles.index.json
+node kit/build-live.mjs                       # one real-page preview per style in kit/live/
+node kit/build-live.mjs --check                # verify generated live pages
 node kit/build-catalog-doc.mjs                # docs/catalog.md
 node kit/report.mjs                           # dist/report.md
 node kit/composition-report.mjs               # dist/composition.md
@@ -133,7 +138,7 @@ node kit/style-lint.mjs src --style <slug>
 This repo has no `package.json`; the verification gate is `kit/gates.sh`:
 
 ```bash
-bash kit/gates.sh          # 37 steps, a few minutes: parity â†’ catalog â†’ assignments â†’ measurement â†’ export â†’ site â†’ visual signature
+bash kit/gates.sh          # 38 steps, a few minutes: parity â†’ catalog â†’ assignments â†’ measurement â†’ export â†’ site â†’ visual signature
 ```
 
 Quick subsets (by kind of change, not the full set):
@@ -177,7 +182,7 @@ hook with `--no-verify`, run `gates.sh` in a separate long run, show the output,
 - **`neighbors` slugs must exist in the catalog or in the same batch** (`check-schema` looks them up).
 - **Headless render runs WebGL on SwiftShader** â€” it does not measure GPU FPS; not enough for a performance claim.
 - **`replaceState` is blocked under `file://`** â€” testing URL state (filter/share) needs a server.
-- **The pre-commit hook runs 37 steps (>120 s)** and hits the tool timeout; run the gate in a separate
+- **The pre-commit hook runs 38 steps (>120 s)** and hits the tool timeout; run the gate in a separate
   long command, show the clean output, then commit.
 - **Blank-frame risk:** viewport races are possible in the CDP tab pool; `render-shots` now verifies
   `innerWidth`, checks the PNG dimensions, and re-captures a blank frame once (`kit/render/cdp-browser.mjs`).
@@ -199,6 +204,6 @@ hook with `--no-verify`, run `gates.sh` in a separate long run, show the output,
 | Opening, testing, troubleshooting the site | `TESTING.md` | When a page does not open / an image is blank |
 
 ---
-_Verified (v6): `bash kit/gates.sh` â†’ `kapÄ±lar: temiz` (37 steps) Â· 251 styles Â· 251 single-page PNGs Â·
+_Verified (v6): `bash kit/gates.sh` â†’ `kapÄ±lar: temiz` (38 steps) Â· 251 styles Â· 251 single-page PNGs Â·
 31 families Â· 16 distinct hero|nav fingerprints Â· contrast 0 errors / 19 soft warnings Â· phash 251/251 diff 0._
 

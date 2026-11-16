@@ -51,10 +51,19 @@ The landing check uses the real layout partials, the real style body and the thr
 
 **Evidence:** `node kit/check-signature.mjs` · 251 styles, 0 findings. `node kit/check-signature.mjs --self-test`.
 
+## Live pages · Real single-page preview (L1–L2)
+
+- `kit/build-live.mjs` generates responsive HTML pages for all 251 styles under `kit/live/<num>-<slug>.html` from `page.html`, partials, section plans, motif CSS, and tokens.
+- `kit/live.html?style=<slug>` forwards to the generated page; `?mode=tokens` keeps the token specimen.
+- `kit/build-site.mjs` copies `kit/live/**` into `_site/kit/live/**`, along with `kit/render/scene.css`, fonts, and images, ensuring all relative asset references resolve with zero 404s.
+- `kit/check-site.mjs` verifies landing, gallery (251 cards), catalog, token specimen, and published live pages (`152-game-hud` with stock photo, `100-fluid-simulation` with generated artwork SVG) with hero heading, `data-style`, motif class on `.pg-media`, loaded image (`naturalWidth > 0`), and clean console.
+
+**Evidence:** `node kit/build-live.mjs --check` · 251 pages clean. `node kit/build-site.mjs --check` · 251 styles, 251 live pages. `node kit/check-site.mjs` · passed with clean console.
+
 ## Final verification
 
 ```bash
 bash kit/gates.sh
 ```
 
-**Result (2026-11-15):** `kapılar: temiz`. Legacy SPEC parity 151/151, visual signature 251/251 with 0 difference, 0 near pairs in distinctness. A11y 251/251, 0 critical violations; the sample overflow measurement found 0 overflow across 24 scenes; unit tests passed 11/11. Pixel regression was skipped with `↷` because `kit/render/.baseline/` is absent. `bash ~/.pi/agent/bin/verify.sh` could not find an automatic verification command because it does not recognise the stack; `kit/gates.sh` was therefore run by hand for this repo.
+**Result (2026-11-16):** `kapılar: temiz` (38 steps). Live pages check (`node kit/build-live.mjs --check`) added to source/schema gate group; legacy SPEC parity 151/151, visual signature 251/251 with 0 difference, 0 near pairs in distinctness. A11y 251/251, 0 critical violations; sample overflow measurement found 0 overflow across 24 scenes; unit tests passed 11/11; site integrity verified 251 styles × 2 WebP + PNG, 31 families, catalog 251 rows, 251 live pages; site smoke test verified landing, gallery 251 cards, catalog, and live (tokens + published live pages). Pixel regression was skipped with `↷` because `kit/render/.baseline/` is absent.
